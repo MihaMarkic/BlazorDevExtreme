@@ -1,15 +1,37 @@
 ﻿@using BlazorDevExtreme
+@implements IDisposable
 @page "/"
 
 <h1>Hello, world!</h1>
 
-<div id="buttonContainer"></div>
+<div id="@ButtonId"></div>
 
 <button onclick="@InitDevExtreme">Init DevExtreme</button>
+<div></div>
+<label>Clicked count:</label>
+<div>@ClickedCount</div>
 
 @functions {
+    public const string ButtonId = "buttonContainer";
+    public int ClickedCount { get; set; } = 0;
     public void InitDevExtreme()
     {
-        DxButton.Init("#buttonContainer", new DevExpress.Ui.DxButtonOptions { text = "DevExtreme Button" });
+        DxButton.Init($"#{ButtonId}", new DevExpress.Ui.DxButtonOptions { text = "DevExtreme Button", onClickEnabled = true });
+    }
+    protected override void OnInit()
+    {
+        DxButton.Click += DxButton_Click;
+    }
+    void DxButton_Click(object sender, JQueryEventArgs e)
+    {
+        if (e.Identifier == $"#{ButtonId}")
+        {
+            ClickedCount++;
+            StateHasChanged();
+        }
+    }
+    public void Dispose()
+    {
+        DxButton.Click -= DxButton_Click;
     }
 }

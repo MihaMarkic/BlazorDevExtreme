@@ -44,9 +44,9 @@
     }
     public partial class ComponentOptions
     {
-        // couldn't parse onDisposing
-        // couldn't parse onInitialized
-        // couldn't parse onOptionChanged
+        public bool? onDisposingEnabled { get; set; }
+        public bool? onInitializedEnabled { get; set; }
+        public bool? onOptionChangedEnabled { get; set; }
     }
     public partial class GlobalConfig
     {
@@ -95,8 +95,8 @@
         public object bindingOptions { get; set; }
         public object elementAttr { get; set; }
         // couldn't parse height
-        // couldn't parse onDisposing
-        // couldn't parse onOptionChanged
+        public bool? onDisposingEnabled { get; set; }
+        public bool? onOptionChangedEnabled { get; set; }
         public bool? rtlEnabled { get; set; }
         // couldn't parse width
     }
@@ -107,16 +107,16 @@ namespace DevExpress.Data
     {
         // couldn't parse errorHandler
         // couldn't parse key
-        // couldn't parse onInserted
-        // couldn't parse onInserting
-        // couldn't parse onLoaded
-        // couldn't parse onLoading
+        public bool? onInsertedEnabled { get; set; }
+        public bool? onInsertingEnabled { get; set; }
+        public bool? onLoadedEnabled { get; set; }
+        public bool? onLoadingEnabled { get; set; }
         // couldn't parse onModified
         // couldn't parse onModifying
-        // couldn't parse onRemoved
-        // couldn't parse onRemoving
-        // couldn't parse onUpdated
-        // couldn't parse onUpdating
+        public bool? onRemovedEnabled { get; set; }
+        public bool? onRemovingEnabled { get; set; }
+        public bool? onUpdatedEnabled { get; set; }
+        public bool? onUpdatingEnabled { get; set; }
     }
     public partial class ArrayStoreOptions : StoreOptions
     {
@@ -167,8 +167,8 @@ namespace DevExpress.Data
         // couldn't parse group
         // couldn't parse map
         // couldn't parse onChanged
-        // couldn't parse onLoadError
-        // couldn't parse onLoadingChanged
+        public bool? onLoadErrorEnabled { get; set; }
+        public bool? onLoadingChangedEnabled { get; set; }
         public float? pageSize { get; set; }
         public bool? paginate { get; set; }
         // couldn't parse postProcess
@@ -214,9 +214,9 @@ namespace DevExpress.Data
         // couldn't parse fields
         // couldn't parse filter
         // couldn't parse onChanged
-        // couldn't parse onFieldsPrepared
-        // couldn't parse onLoadError
-        // couldn't parse onLoadingChanged
+        public bool? onFieldsPreparedEnabled { get; set; }
+        public bool? onLoadErrorEnabled { get; set; }
+        public bool? onLoadingChangedEnabled { get; set; }
         public bool? remoteOperations { get; set; }
         public bool? retrieveFields { get; set; }
         // couldn't parse store
@@ -458,7 +458,7 @@ namespace DevExpress.Ui
         // couldn't parse itemTemplate
         // couldn't parse itemTitleTemplate
         public bool? multiple { get; set; }
-        // couldn't parse onItemTitleClick
+        public bool? onItemTitleClickEnabled { get; set; }
         public float? selectedIndex { get; set; }
     }
     public partial class DxAccordionItemTemplate : CollectionWidgetItemTemplate
@@ -469,7 +469,7 @@ namespace DevExpress.Ui
     public partial class DxActionSheetOptions : CollectionWidgetOptions
     {
         public string cancelText { get; set; }
-        // couldn't parse onCancelClick
+        public bool? onCancelClickEnabled { get; set; }
         public bool? showCancelButton { get; set; }
         public bool? showTitle { get; set; }
         // couldn't parse target
@@ -480,7 +480,7 @@ namespace DevExpress.Ui
     public partial class DxActionSheetItemTemplate : CollectionWidgetItemTemplate
     {
         public string icon { get; set; }
-        // couldn't parse onClick
+        public bool? onClickEnabled { get; set; }
         public string type { get; set; }
     }
 
@@ -538,7 +538,7 @@ namespace DevExpress.Ui
         public bool? focusStateEnabled { get; set; }
         public bool? hoverStateEnabled { get; set; }
         public string icon { get; set; }
-        // couldn't parse onClick
+        public bool? onClickEnabled { get; set; }
         // couldn't parse template
         public string text { get; set; }
         public string type { get; set; }
@@ -628,11 +628,11 @@ namespace DevExpress.Ui
     {
         // couldn't parse closeOnOutsideClick
         // couldn't parse items
-        // couldn't parse onHidden
-        // couldn't parse onHiding
-        // couldn't parse onPositioning
-        // couldn't parse onShowing
-        // couldn't parse onShown
+        public bool? onHiddenEnabled { get; set; }
+        public bool? onHidingEnabled { get; set; }
+        public bool? onPositioningEnabled { get; set; }
+        public bool? onShowingEnabled { get; set; }
+        public bool? onShownEnabled { get; set; }
         // couldn't parse position
         // couldn't parse showEvent
         public string submenuDirection { get; set; }
@@ -673,23 +673,23 @@ namespace DevExpress.Ui
         // couldn't parse headerFilter
         // couldn't parse loadPanel
         public string noDataText { get; set; }
-        // couldn't parse onAdaptiveDetailRowPreparing
-        // couldn't parse onDataErrorOccurred
-        // couldn't parse onInitNewRow
-        // couldn't parse onKeyDown
-        // couldn't parse onRowCollapsed
-        // couldn't parse onRowCollapsing
-        // couldn't parse onRowExpanded
-        // couldn't parse onRowExpanding
-        // couldn't parse onRowInserted
-        // couldn't parse onRowInserting
-        // couldn't parse onRowRemoved
-        // couldn't parse onRowRemoving
-        // couldn't parse onRowUpdated
-        // couldn't parse onRowUpdating
-        // couldn't parse onRowValidating
-        // couldn't parse onSelectionChanged
-        // couldn't parse onToolbarPreparing
+        public bool? onAdaptiveDetailRowPreparingEnabled { get; set; }
+        public bool? onDataErrorOccurredEnabled { get; set; }
+        public bool? onInitNewRowEnabled { get; set; }
+        public bool? onKeyDownEnabled { get; set; }
+        public bool? onRowCollapsedEnabled { get; set; }
+        public bool? onRowCollapsingEnabled { get; set; }
+        public bool? onRowExpandedEnabled { get; set; }
+        public bool? onRowExpandingEnabled { get; set; }
+        public bool? onRowInsertedEnabled { get; set; }
+        public bool? onRowInsertingEnabled { get; set; }
+        public bool? onRowRemovedEnabled { get; set; }
+        public bool? onRowRemovingEnabled { get; set; }
+        public bool? onRowUpdatedEnabled { get; set; }
+        public bool? onRowUpdatingEnabled { get; set; }
+        public bool? onRowValidatingEnabled { get; set; }
+        public bool? onSelectionChangedEnabled { get; set; }
+        public bool? onToolbarPreparingEnabled { get; set; }
         // couldn't parse pager
         // couldn't parse paging
         public bool? rowAlternationEnabled { get; set; }
@@ -803,18 +803,18 @@ namespace DevExpress.Ui
         // couldn't parse groupPanel
         // couldn't parse keyExpr
         // couldn't parse masterDetail
-        // couldn't parse onCellClick
-        // couldn't parse onCellHoverChanged
-        // couldn't parse onCellPrepared
-        // couldn't parse onContextMenuPreparing
-        // couldn't parse onEditingStart
-        // couldn't parse onEditorPrepared
-        // couldn't parse onEditorPreparing
-        // couldn't parse onExported
-        // couldn't parse onExporting
-        // couldn't parse onFileSaving
-        // couldn't parse onRowClick
-        // couldn't parse onRowPrepared
+        public bool? onCellClickEnabled { get; set; }
+        public bool? onCellHoverChangedEnabled { get; set; }
+        public bool? onCellPreparedEnabled { get; set; }
+        public bool? onContextMenuPreparingEnabled { get; set; }
+        public bool? onEditingStartEnabled { get; set; }
+        public bool? onEditorPreparedEnabled { get; set; }
+        public bool? onEditorPreparingEnabled { get; set; }
+        public bool? onExportedEnabled { get; set; }
+        public bool? onExportingEnabled { get; set; }
+        public bool? onFileSavingEnabled { get; set; }
+        public bool? onRowClickEnabled { get; set; }
+        public bool? onRowPreparedEnabled { get; set; }
         // couldn't parse remoteOperations
         // couldn't parse rowTemplate
         // couldn't parse scrolling
@@ -910,8 +910,8 @@ namespace DevExpress.Ui
     public partial class DxDeferRenderingOptions : WidgetOptions
     {
         // couldn't parse animation
-        // couldn't parse onRendered
-        // couldn't parse onShown
+        public bool? onRenderedEnabled { get; set; }
+        public bool? onShownEnabled { get; set; }
         // couldn't parse renderWhen
         public bool? showLoadIndicator { get; set; }
         public string staggerItemSelector { get; set; }
@@ -933,8 +933,8 @@ namespace DevExpress.Ui
         public bool? hoverStateEnabled { get; set; }
         // couldn't parse items
         // couldn't parse itemTemplate
-        // couldn't parse onButtonClick
-        // couldn't parse onItemClick
+        public bool? onButtonClickEnabled { get; set; }
+        public bool? onItemClickEnabled { get; set; }
         public bool? opened { get; set; }
         // couldn't parse popupHeight
         // couldn't parse popupWidth
@@ -948,12 +948,12 @@ namespace DevExpress.Ui
         public string labelText { get; set; }
         public bool? multiple { get; set; }
         public string name { get; set; }
-        // couldn't parse onProgress
-        // couldn't parse onUploadAborted
-        // couldn't parse onUploaded
-        // couldn't parse onUploadError
-        // couldn't parse onUploadStarted
-        // couldn't parse onValueChanged
+        public bool? onProgressEnabled { get; set; }
+        public bool? onUploadAbortedEnabled { get; set; }
+        public bool? onUploadedEnabled { get; set; }
+        public bool? onUploadErrorEnabled { get; set; }
+        public bool? onUploadStartedEnabled { get; set; }
+        public bool? onValueChangedEnabled { get; set; }
         public float? progress { get; set; }
         public string readyToUploadMessage { get; set; }
         public string selectButtonText { get; set; }
@@ -986,9 +986,9 @@ namespace DevExpress.Ui
         // couldn't parse fields
         // couldn't parse filterOperationDescriptions
         // couldn't parse groupOperationDescriptions
-        // couldn't parse onEditorPrepared
-        // couldn't parse onEditorPreparing
-        // couldn't parse onValueChanged
+        public bool? onEditorPreparedEnabled { get; set; }
+        public bool? onEditorPreparingEnabled { get; set; }
+        public bool? onValueChangedEnabled { get; set; }
         // couldn't parse value
     }
     public partial class DxFormOptions : WidgetOptions
@@ -1002,8 +1002,8 @@ namespace DevExpress.Ui
         // couldn't parse items
         public string labelLocation { get; set; }
         public float? minColWidth { get; set; }
-        // couldn't parse onEditorEnterKey
-        // couldn't parse onFieldDataChanged
+        public bool? onEditorEnterKeyEnabled { get; set; }
+        public bool? onFieldDataChangedEnabled { get; set; }
         public string optionalMark { get; set; }
         public bool? readOnly { get; set; }
         public string requiredMark { get; set; }
@@ -1060,18 +1060,18 @@ namespace DevExpress.Ui
         // couldn't parse menuItems
         public string menuMode { get; set; }
         public string nextButtonText { get; set; }
-        // couldn't parse onGroupRendered
-        // couldn't parse onItemClick
-        // couldn't parse onItemContextMenu
-        // couldn't parse onItemDeleted
-        // couldn't parse onItemDeleting
-        // couldn't parse onItemHold
-        // couldn't parse onItemReordered
-        // couldn't parse onItemSwipe
-        // couldn't parse onPageLoading
-        // couldn't parse onPullRefresh
-        // couldn't parse onScroll
-        // couldn't parse onSelectAllValueChanged
+        public bool? onGroupRenderedEnabled { get; set; }
+        public bool? onItemClickEnabled { get; set; }
+        public bool? onItemContextMenuEnabled { get; set; }
+        public bool? onItemDeletedEnabled { get; set; }
+        public bool? onItemDeletingEnabled { get; set; }
+        public bool? onItemHoldEnabled { get; set; }
+        public bool? onItemReorderedEnabled { get; set; }
+        public bool? onItemSwipeEnabled { get; set; }
+        public bool? onPageLoadingEnabled { get; set; }
+        public bool? onPullRefreshEnabled { get; set; }
+        public bool? onScrollEnabled { get; set; }
+        public bool? onSelectAllValueChangedEnabled { get; set; }
         public string pageLoadingText { get; set; }
         public string pageLoadMode { get; set; }
         public string pulledDownText { get; set; }
@@ -1164,11 +1164,11 @@ namespace DevExpress.Ui
         public bool? grouped { get; set; }
         // couldn't parse groupTemplate
         public string nextButtonText { get; set; }
-        // couldn't parse onPageLoading
-        // couldn't parse onPullRefresh
-        // couldn't parse onScroll
-        // couldn't parse onTitleRendered
-        // couldn't parse onValueChanged
+        public bool? onPageLoadingEnabled { get; set; }
+        public bool? onPullRefreshEnabled { get; set; }
+        public bool? onScrollEnabled { get; set; }
+        public bool? onTitleRenderedEnabled { get; set; }
+        public bool? onValueChangedEnabled { get; set; }
         public string pageLoadingText { get; set; }
         public string pageLoadMode { get; set; }
         public string placeholder { get; set; }
@@ -1211,12 +1211,12 @@ namespace DevExpress.Ui
         // couldn't parse key
         public string markerIconSrc { get; set; }
         // couldn't parse markers
-        // couldn't parse onClick
-        // couldn't parse onMarkerAdded
-        // couldn't parse onMarkerRemoved
-        // couldn't parse onReady
-        // couldn't parse onRouteAdded
-        // couldn't parse onRouteRemoved
+        public bool? onClickEnabled { get; set; }
+        public bool? onMarkerAddedEnabled { get; set; }
+        public bool? onMarkerRemovedEnabled { get; set; }
+        public bool? onReadyEnabled { get; set; }
+        public bool? onRouteAddedEnabled { get; set; }
+        public bool? onRouteRemovedEnabled { get; set; }
         public string provider { get; set; }
         // couldn't parse routes
         public string type { get; set; }
@@ -1246,10 +1246,10 @@ namespace DevExpress.Ui
         public bool? adaptivityEnabled { get; set; }
         public bool? hideSubmenuOnMouseLeave { get; set; }
         // couldn't parse items
-        // couldn't parse onSubmenuHidden
-        // couldn't parse onSubmenuHiding
-        // couldn't parse onSubmenuShowing
-        // couldn't parse onSubmenuShown
+        public bool? onSubmenuHiddenEnabled { get; set; }
+        public bool? onSubmenuHidingEnabled { get; set; }
+        public bool? onSubmenuShowingEnabled { get; set; }
+        public bool? onSubmenuShownEnabled { get; set; }
         public string orientation { get; set; }
         // couldn't parse showFirstSubmenuMode
         public string submenuDirection { get; set; }
@@ -1318,10 +1318,10 @@ namespace DevExpress.Ui
         // couldn't parse maxWidth
         // couldn't parse minHeight
         // couldn't parse minWidth
-        // couldn't parse onHidden
-        // couldn't parse onHiding
-        // couldn't parse onShowing
-        // couldn't parse onShown
+        public bool? onHiddenEnabled { get; set; }
+        public bool? onHidingEnabled { get; set; }
+        public bool? onShowingEnabled { get; set; }
+        public bool? onShownEnabled { get; set; }
         public object position { get; set; }
         public bool? shading { get; set; }
         public string shadingColor { get; set; }
@@ -1370,12 +1370,12 @@ namespace DevExpress.Ui
         // couldn't parse headerFilter
         public bool? hideEmptySummaryCells { get; set; }
         // couldn't parse loadPanel
-        // couldn't parse onCellClick
-        // couldn't parse onCellPrepared
-        // couldn't parse onContextMenuPreparing
-        // couldn't parse onExported
-        // couldn't parse onExporting
-        // couldn't parse onFileSaving
+        public bool? onCellClickEnabled { get; set; }
+        public bool? onCellPreparedEnabled { get; set; }
+        public bool? onContextMenuPreparingEnabled { get; set; }
+        public bool? onExportedEnabled { get; set; }
+        public bool? onExportingEnabled { get; set; }
+        public bool? onFileSavingEnabled { get; set; }
         public string rowHeaderLayout { get; set; }
         // couldn't parse scrolling
         public bool? showBorders { get; set; }
@@ -1414,7 +1414,7 @@ namespace DevExpress.Ui
         // couldn't parse headerFilter
         // couldn't parse height
         // couldn't parse layout
-        // couldn't parse onContextMenuPreparing
+        public bool? onContextMenuPreparingEnabled { get; set; }
         public object state { get; set; }
         // couldn't parse texts
     }
@@ -1450,10 +1450,10 @@ namespace DevExpress.Ui
         public bool? focusStateEnabled { get; set; }
         public bool? fullScreen { get; set; }
         public object height { get; set; }
-        // couldn't parse onResize
-        // couldn't parse onResizeEnd
-        // couldn't parse onResizeStart
-        // couldn't parse onTitleRendered
+        public bool? onResizeEnabled { get; set; }
+        public bool? onResizeEndEnabled { get; set; }
+        public bool? onResizeStartEnabled { get; set; }
+        public bool? onTitleRenderedEnabled { get; set; }
         // couldn't parse position
         public bool? resizeEnabled { get; set; }
         public bool? showCloseButton { get; set; }
@@ -1505,7 +1505,7 @@ namespace DevExpress.Ui
     }
     public partial class DxProgressBarOptions : DxTrackBarOptions
     {
-        // couldn't parse onComplete
+        public bool? onCompleteEnabled { get; set; }
         public bool? showStatus { get; set; }
         // couldn't parse statusFormat
         public float? value { get; set; }
@@ -1529,7 +1529,7 @@ namespace DevExpress.Ui
     {
         public float? end { get; set; }
         public string endName { get; set; }
-        // couldn't parse onValueChanged
+        public bool? onValueChangedEnabled { get; set; }
         public float? start { get; set; }
         public string startName { get; set; }
         public float value { get; set; }
@@ -1542,9 +1542,9 @@ namespace DevExpress.Ui
         public float? maxWidth { get; set; }
         public float? minHeight { get; set; }
         public float? minWidth { get; set; }
-        // couldn't parse onResize
-        // couldn't parse onResizeEnd
-        // couldn't parse onResizeStart
+        public bool? onResizeEnabled { get; set; }
+        public bool? onResizeEndEnabled { get; set; }
+        public bool? onResizeStartEnabled { get; set; }
         public object width { get; set; }
     }
 
@@ -1596,19 +1596,19 @@ namespace DevExpress.Ui
         // couldn't parse maxAppointmentsPerCell
         // couldn't parse min
         public string noDataText { get; set; }
-        // couldn't parse onAppointmentAdded
-        // couldn't parse onAppointmentAdding
-        // couldn't parse onAppointmentClick
-        // couldn't parse onAppointmentContextMenu
-        // couldn't parse onAppointmentDblClick
-        // couldn't parse onAppointmentDeleted
-        // couldn't parse onAppointmentDeleting
-        // couldn't parse onAppointmentFormCreated
-        // couldn't parse onAppointmentRendered
-        // couldn't parse onAppointmentUpdated
-        // couldn't parse onAppointmentUpdating
-        // couldn't parse onCellClick
-        // couldn't parse onCellContextMenu
+        public bool? onAppointmentAddedEnabled { get; set; }
+        public bool? onAppointmentAddingEnabled { get; set; }
+        public bool? onAppointmentClickEnabled { get; set; }
+        public bool? onAppointmentContextMenuEnabled { get; set; }
+        public bool? onAppointmentDblClickEnabled { get; set; }
+        public bool? onAppointmentDeletedEnabled { get; set; }
+        public bool? onAppointmentDeletingEnabled { get; set; }
+        public bool? onAppointmentFormCreatedEnabled { get; set; }
+        public bool? onAppointmentRenderedEnabled { get; set; }
+        public bool? onAppointmentUpdatedEnabled { get; set; }
+        public bool? onAppointmentUpdatingEnabled { get; set; }
+        public bool? onCellClickEnabled { get; set; }
+        public bool? onCellContextMenuEnabled { get; set; }
         public string recurrenceEditMode { get; set; }
         public string recurrenceExceptionExpr { get; set; }
         public string recurrenceRuleExpr { get; set; }
@@ -1649,8 +1649,8 @@ namespace DevExpress.Ui
     }
     public partial class DxScrollViewOptions : DxScrollableOptions
     {
-        // couldn't parse onPullDown
-        // couldn't parse onReachBottom
+        public bool? onPullDownEnabled { get; set; }
+        public bool? onReachBottomEnabled { get; set; }
         public string pulledDownText { get; set; }
         public string pullingDownText { get; set; }
         public string reachBottomText { get; set; }
@@ -1660,7 +1660,7 @@ namespace DevExpress.Ui
     {
         public bool? acceptCustomValue { get; set; }
         // couldn't parse fieldTemplate
-        // couldn't parse onCustomItemCreating
+        public bool? onCustomItemCreatingEnabled { get; set; }
         public string placeholder { get; set; }
         public bool? showSelectionControls { get; set; }
         public string valueChangeEvent { get; set; }
@@ -1678,8 +1678,8 @@ namespace DevExpress.Ui
         // couldn't parse menuItemTemplate
         public string menuPosition { get; set; }
         public bool? menuVisible { get; set; }
-        // couldn't parse onMenuGroupRendered
-        // couldn't parse onMenuItemRendered
+        public bool? onMenuGroupRenderedEnabled { get; set; }
+        public bool? onMenuItemRenderedEnabled { get; set; }
         public float? selectedIndex { get; set; }
         public bool? swipeEnabled { get; set; }
     }
@@ -1744,9 +1744,9 @@ namespace DevExpress.Ui
         public bool? focusStateEnabled { get; set; }
         public bool? hoverStateEnabled { get; set; }
         // couldn't parse itemTitleTemplate
-        // couldn't parse onTitleClick
-        // couldn't parse onTitleHold
-        // couldn't parse onTitleRendered
+        public bool? onTitleClickEnabled { get; set; }
+        public bool? onTitleHoldEnabled { get; set; }
+        public bool? onTitleRenderedEnabled { get; set; }
         public bool? scrollByContent { get; set; }
         public bool? scrollingEnabled { get; set; }
         public bool? showNavButtons { get; set; }
@@ -1765,9 +1765,9 @@ namespace DevExpress.Ui
         public bool? hideSelectedItems { get; set; }
         public float? maxDisplayedTags { get; set; }
         public bool? multiline { get; set; }
-        // couldn't parse onMultiTagPreparing
-        // couldn't parse onSelectAllValueChanged
-        // couldn't parse onSelectionChanged
+        public bool? onMultiTagPreparingEnabled { get; set; }
+        public bool? onSelectAllValueChangedEnabled { get; set; }
+        public bool? onSelectionChangedEnabled { get; set; }
         public string selectAllMode { get; set; }
         // couldn't parse selectedItems
         public bool? showMultiTagOnly { get; set; }
@@ -1931,16 +1931,16 @@ namespace DevExpress.Ui
         // couldn't parse hasItemsExpr
         // couldn't parse itemsExpr
         // couldn't parse keyExpr
-        // couldn't parse onCellClick
-        // couldn't parse onCellHoverChanged
-        // couldn't parse onCellPrepared
-        // couldn't parse onContextMenuPreparing
-        // couldn't parse onEditingStart
-        // couldn't parse onEditorPrepared
-        // couldn't parse onEditorPreparing
-        // couldn't parse onNodesInitialized
-        // couldn't parse onRowClick
-        // couldn't parse onRowPrepared
+        public bool? onCellClickEnabled { get; set; }
+        public bool? onCellHoverChangedEnabled { get; set; }
+        public bool? onCellPreparedEnabled { get; set; }
+        public bool? onContextMenuPreparingEnabled { get; set; }
+        public bool? onEditingStartEnabled { get; set; }
+        public bool? onEditorPreparedEnabled { get; set; }
+        public bool? onEditorPreparingEnabled { get; set; }
+        public bool? onNodesInitializedEnabled { get; set; }
+        public bool? onRowClickEnabled { get; set; }
+        public bool? onRowPreparedEnabled { get; set; }
         // couldn't parse paging
         // couldn't parse parentIdExpr
         // couldn't parse remoteOperations
@@ -1990,14 +1990,14 @@ namespace DevExpress.Ui
         public bool? expandNodesRecursive { get; set; }
         // couldn't parse hasItemsExpr
         // couldn't parse items
-        // couldn't parse onItemClick
-        // couldn't parse onItemCollapsed
-        // couldn't parse onItemContextMenu
-        // couldn't parse onItemExpanded
-        // couldn't parse onItemHold
-        // couldn't parse onItemRendered
-        // couldn't parse onItemSelectionChanged
-        // couldn't parse onSelectionChanged
+        public bool? onItemClickEnabled { get; set; }
+        public bool? onItemCollapsedEnabled { get; set; }
+        public bool? onItemContextMenuEnabled { get; set; }
+        public bool? onItemExpandedEnabled { get; set; }
+        public bool? onItemHoldEnabled { get; set; }
+        public bool? onItemRenderedEnabled { get; set; }
+        public bool? onItemSelectionChangedEnabled { get; set; }
+        public bool? onSelectionChangedEnabled { get; set; }
         // couldn't parse parentIdExpr
         public object rootValue { get; set; }
         public string scrollDirection { get; set; }
@@ -2215,7 +2215,7 @@ namespace DevExpress.Ui
     {
         // couldn't parse adapter
         public string name { get; set; }
-        // couldn't parse onValidated
+        public bool? onValidatedEnabled { get; set; }
         public string validationGroup { get; set; }
         // couldn't parse validationRules
     }
@@ -2241,11 +2241,11 @@ namespace DevExpress.Ui
         // couldn't parse itemTemplate
         // couldn't parse keyExpr
         public string noDataText { get; set; }
-        // couldn't parse onItemClick
-        // couldn't parse onItemContextMenu
-        // couldn't parse onItemHold
-        // couldn't parse onItemRendered
-        // couldn't parse onSelectionChanged
+        public bool? onItemClickEnabled { get; set; }
+        public bool? onItemContextMenuEnabled { get; set; }
+        public bool? onItemHoldEnabled { get; set; }
+        public bool? onItemRenderedEnabled { get; set; }
+        public bool? onSelectionChangedEnabled { get; set; }
         public float? selectedIndex { get; set; }
         public object selectedItem { get; set; }
         // couldn't parse selectedItemKeys
@@ -2310,8 +2310,8 @@ namespace DevExpress.Ui
         public string applyValueMode { get; set; }
         public bool? deferRendering { get; set; }
         // couldn't parse dropDownButtonTemplate
-        // couldn't parse onClosed
-        // couldn't parse onOpened
+        public bool? onClosedEnabled { get; set; }
+        public bool? onOpenedEnabled { get; set; }
         public bool? opened { get; set; }
         public object value { get; set; }
     }
@@ -2328,9 +2328,9 @@ namespace DevExpress.Ui
         // couldn't parse groupTemplate
         public float? minSearchLength { get; set; }
         public string noDataText { get; set; }
-        // couldn't parse onItemClick
-        // couldn't parse onSelectionChanged
-        // couldn't parse onValueChanged
+        public bool? onItemClickEnabled { get; set; }
+        public bool? onSelectionChangedEnabled { get; set; }
+        public bool? onValueChangedEnabled { get; set; }
         public bool? searchEnabled { get; set; }
         // couldn't parse searchExpr
         public string searchMode { get; set; }
@@ -2349,7 +2349,7 @@ namespace DevExpress.Ui
     public partial class EditorOptions : WidgetOptions
     {
         public bool? isValid { get; set; }
-        // couldn't parse onValueChanged
+        public bool? onValueChangedEnabled { get; set; }
         public bool? readOnly { get; set; }
         public object validationError { get; set; }
         public string validationMessageMode { get; set; }
@@ -2756,8 +2756,8 @@ namespace DevExpress.Ui
         public bool? bounceEnabled { get; set; }
         public string direction { get; set; }
         public bool? disabled { get; set; }
-        // couldn't parse onScroll
-        // couldn't parse onUpdated
+        public bool? onScrollEnabled { get; set; }
+        public bool? onUpdatedEnabled { get; set; }
         public bool? scrollByContent { get; set; }
         public bool? scrollByThumb { get; set; }
         public string showScrollbar { get; set; }
@@ -2799,17 +2799,17 @@ namespace DevExpress.Ui
         public string maskInvalidMessage { get; set; }
         public object maskRules { get; set; }
         public string name { get; set; }
-        // couldn't parse onChange
-        // couldn't parse onCopy
-        // couldn't parse onCut
-        // couldn't parse onEnterKey
-        // couldn't parse onFocusIn
-        // couldn't parse onFocusOut
-        // couldn't parse onInput
-        // couldn't parse onKeyDown
-        // couldn't parse onKeyPress
-        // couldn't parse onKeyUp
-        // couldn't parse onPaste
+        public bool? onChangeEnabled { get; set; }
+        public bool? onCopyEnabled { get; set; }
+        public bool? onCutEnabled { get; set; }
+        public bool? onEnterKeyEnabled { get; set; }
+        public bool? onFocusInEnabled { get; set; }
+        public bool? onFocusOutEnabled { get; set; }
+        public bool? onInputEnabled { get; set; }
+        public bool? onKeyDownEnabled { get; set; }
+        public bool? onKeyPressEnabled { get; set; }
+        public bool? onKeyUpEnabled { get; set; }
+        public bool? onPasteEnabled { get; set; }
         public string placeholder { get; set; }
         public bool? showClearButton { get; set; }
         public string showMaskMode { get; set; }
@@ -2882,7 +2882,7 @@ namespace DevExpress.Ui
         public bool? focusStateEnabled { get; set; }
         public string hint { get; set; }
         public bool? hoverStateEnabled { get; set; }
-        // couldn't parse onContentReady
+        public bool? onContentReadyEnabled { get; set; }
         public float? tabIndex { get; set; }
         public bool? visible { get; set; }
     }
@@ -2894,11 +2894,11 @@ namespace DevExpress.Viz
         // couldn't parse export
         // couldn't parse loadingIndicator
         // couldn't parse margin
-        // couldn't parse onDrawn
-        // couldn't parse onExported
-        // couldn't parse onExporting
-        // couldn't parse onFileSaving
-        // couldn't parse onIncidentOccurred
+        public bool? onDrawnEnabled { get; set; }
+        public bool? onExportedEnabled { get; set; }
+        public bool? onExportingEnabled { get; set; }
+        public bool? onFileSavingEnabled { get; set; }
+        public bool? onIncidentOccurredEnabled { get; set; }
         public bool? pathModified { get; set; }
         public bool? redrawOnResize { get; set; }
         public bool? rtlEnabled { get; set; }
@@ -4690,13 +4690,13 @@ namespace DevExpress.Viz.Charts
         public float? maxBubbleSize { get; set; }
         public float? minBubbleSize { get; set; }
         public bool? negativesAsZeroes { get; set; }
-        // couldn't parse onArgumentAxisClick
-        // couldn't parse onLegendClick
-        // couldn't parse onSeriesClick
-        // couldn't parse onSeriesHoverChanged
-        // couldn't parse onSeriesSelectionChanged
-        // couldn't parse onZoomEnd
-        // couldn't parse onZoomStart
+        public bool? onArgumentAxisClickEnabled { get; set; }
+        public bool? onLegendClickEnabled { get; set; }
+        public bool? onSeriesClickEnabled { get; set; }
+        public bool? onSeriesHoverChangedEnabled { get; set; }
+        public bool? onSeriesSelectionChangedEnabled { get; set; }
+        public bool? onZoomEndEnabled { get; set; }
+        public bool? onZoomStartEnabled { get; set; }
         // couldn't parse panes
         public string resolveLabelOverlapping { get; set; }
         public bool? rotated { get; set; }
@@ -5222,7 +5222,7 @@ namespace DevExpress.Viz.Charts
         public float? innerRadius { get; set; }
         // couldn't parse legend
         public float? minDiameter { get; set; }
-        // couldn't parse onLegendClick
+        public bool? onLegendClickEnabled { get; set; }
         // couldn't parse palette
         public string resolveLabelOverlapping { get; set; }
         public string segmentsDirection { get; set; }
@@ -5304,11 +5304,11 @@ namespace DevExpress.Viz.Charts
         public bool? equalBarWidth { get; set; }
         // couldn't parse legend
         public bool? negativesAsZeroes { get; set; }
-        // couldn't parse onArgumentAxisClick
-        // couldn't parse onLegendClick
-        // couldn't parse onSeriesClick
-        // couldn't parse onSeriesHoverChanged
-        // couldn't parse onSeriesSelectionChanged
+        public bool? onArgumentAxisClickEnabled { get; set; }
+        public bool? onLegendClickEnabled { get; set; }
+        public bool? onSeriesClickEnabled { get; set; }
+        public bool? onSeriesHoverChangedEnabled { get; set; }
+        public bool? onSeriesSelectionChangedEnabled { get; set; }
         public string resolveLabelOverlapping { get; set; }
         // couldn't parse series
         public string seriesSelectionMode { get; set; }
@@ -5593,12 +5593,12 @@ namespace DevExpress.Viz.Charts
         // couldn't parse customizePoint
         // couldn't parse dataSource
         // couldn't parse legend
-        // couldn't parse onDone
-        // couldn't parse onPointClick
-        // couldn't parse onPointHoverChanged
-        // couldn't parse onPointSelectionChanged
-        // couldn't parse onTooltipHidden
-        // couldn't parse onTooltipShown
+        public bool? onDoneEnabled { get; set; }
+        public bool? onPointClickEnabled { get; set; }
+        public bool? onPointHoverChangedEnabled { get; set; }
+        public bool? onPointSelectionChangedEnabled { get; set; }
+        public bool? onTooltipHiddenEnabled { get; set; }
+        public bool? onTooltipShownEnabled { get; set; }
         // couldn't parse palette
         public string paletteExtensionMode { get; set; }
         public string pointSelectionMode { get; set; }
@@ -5697,10 +5697,10 @@ namespace DevExpress.Viz.Funnel
         // couldn't parse legend
         public float? neckHeight { get; set; }
         public float? neckWidth { get; set; }
-        // couldn't parse onHoverChanged
-        // couldn't parse onItemClick
-        // couldn't parse onLegendClick
-        // couldn't parse onSelectionChanged
+        public bool? onHoverChangedEnabled { get; set; }
+        public bool? onItemClickEnabled { get; set; }
+        public bool? onLegendClickEnabled { get; set; }
+        public bool? onSelectionChangedEnabled { get; set; }
         // couldn't parse palette
         public string paletteExtensionMode { get; set; }
         public string selectionMode { get; set; }
@@ -5737,8 +5737,8 @@ namespace DevExpress.Viz.Gauges
     {
         // couldn't parse animation
         public string containerBackgroundColor { get; set; }
-        // couldn't parse onTooltipHidden
-        // couldn't parse onTooltipShown
+        public bool? onTooltipHiddenEnabled { get; set; }
+        public bool? onTooltipShownEnabled { get; set; }
         // couldn't parse rangeContainer
         // couldn't parse scale
         // couldn't parse subtitle
@@ -6009,8 +6009,8 @@ namespace DevExpress.Viz.Gauges
         public float? endValue { get; set; }
         // couldn't parse geometry
         // couldn't parse label
-        // couldn't parse onTooltipHidden
-        // couldn't parse onTooltipShown
+        public bool? onTooltipHiddenEnabled { get; set; }
+        public bool? onTooltipShownEnabled { get; set; }
         // couldn't parse palette
         public string paletteExtensionMode { get; set; }
         public float? relativeInnerRadius { get; set; }
@@ -6057,8 +6057,8 @@ namespace DevExpress.Viz.RangeSelector
         // couldn't parse dataSource
         public string dataSourceField { get; set; }
         // couldn't parse indent
-        // couldn't parse onSelectedRangeChanged
-        // couldn't parse onValueChanged
+        public bool? onSelectedRangeChangedEnabled { get; set; }
+        public bool? onValueChangedEnabled { get; set; }
         // couldn't parse scale
         // couldn't parse selectedRange
         public string selectedRangeColor { get; set; }
@@ -6072,8 +6072,8 @@ namespace DevExpress.Viz.Sparklines
 {
     public partial class BaseSparklineOptions : BaseWidgetOptions
     {
-        // couldn't parse onTooltipHidden
-        // couldn't parse onTooltipShown
+        public bool? onTooltipHiddenEnabled { get; set; }
+        public bool? onTooltipShownEnabled { get; set; }
         // couldn't parse tooltip
     }
     public partial class BaseSparklineTooltip : BaseWidgetTooltip
@@ -6168,16 +6168,16 @@ namespace DevExpress.Viz.Map
         // couldn't parse markers
         // couldn't parse markerSettings
         public float? maxZoomFactor { get; set; }
-        // couldn't parse onAreaClick
-        // couldn't parse onAreaSelectionChanged
-        // couldn't parse onCenterChanged
-        // couldn't parse onClick
-        // couldn't parse onMarkerClick
-        // couldn't parse onMarkerSelectionChanged
-        // couldn't parse onSelectionChanged
-        // couldn't parse onTooltipHidden
-        // couldn't parse onTooltipShown
-        // couldn't parse onZoomFactorChanged
+        public bool? onAreaClickEnabled { get; set; }
+        public bool? onAreaSelectionChangedEnabled { get; set; }
+        public bool? onCenterChangedEnabled { get; set; }
+        public bool? onClickEnabled { get; set; }
+        public bool? onMarkerClickEnabled { get; set; }
+        public bool? onMarkerSelectionChangedEnabled { get; set; }
+        public bool? onSelectionChangedEnabled { get; set; }
+        public bool? onTooltipHiddenEnabled { get; set; }
+        public bool? onTooltipShownEnabled { get; set; }
+        public bool? onZoomFactorChangedEnabled { get; set; }
         public bool? panningEnabled { get; set; }
         public object projection { get; set; }
         // couldn't parse tooltip
@@ -6274,12 +6274,12 @@ namespace DevExpress.Viz.TreeMap
         // couldn't parse layoutAlgorithm
         public string layoutDirection { get; set; }
         public float? maxDepth { get; set; }
-        // couldn't parse onClick
-        // couldn't parse onDrill
-        // couldn't parse onHoverChanged
-        // couldn't parse onNodesInitialized
-        // couldn't parse onNodesRendering
-        // couldn't parse onSelectionChanged
+        public bool? onClickEnabled { get; set; }
+        public bool? onDrillEnabled { get; set; }
+        public bool? onHoverChangedEnabled { get; set; }
+        public bool? onNodesInitializedEnabled { get; set; }
+        public bool? onNodesRenderingEnabled { get; set; }
+        public bool? onSelectionChangedEnabled { get; set; }
         public string parentField { get; set; }
         public string resolveLabelOverflow { get; set; }
         public string selectionMode { get; set; }

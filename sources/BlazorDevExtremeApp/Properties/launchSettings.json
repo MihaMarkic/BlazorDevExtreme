@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "BlazorDevExtremeApp": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "http://localhost:44761/"
+    }
+  }
+}

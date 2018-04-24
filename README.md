@@ -4,7 +4,13 @@
 
 This is a library that implements the interop between [Blazor](https://github.com/aspnet/Blazor) and [Developer Express DevExtreme library](https://github.com/DevExpress/DevExtreme). 
 
-Per version 0.1 only initialization with options is implemented. Callbacks aren't implemented at this time, so no events from javascript to Blazor.
+Per version 0.2 initialization with options is implemented., no instance functions at this time.
+
+### Callbacks
+
+Callbacks are implemented in a simple way (no arguments except for jQuery identifier are passed).
+
+To use callbacks, set [onEVENTNAME]Enabled property to true in options. Then bind to static event of the target class and compare the passed identifier to understand which instance fired the event. Don't forget to unsubscribe to events (within Dispose method).
 
 Built against Blazor 0.2.1.
 
@@ -34,22 +40,43 @@ Include DevExtreme style sheets and javascript files
 And init a dxButton with code like this.
 ```csharp
 @using BlazorDevExtreme
+@implements IDisposable
 @page "/"
 
 <h1>Hello, world!</h1>
 
-<div id="buttonContainer"></div>
+<div id="@ButtonId"></div>
 
 <button onclick="@InitDevExtreme">Init DevExtreme</button>
+<div></div>
+<label>Clicked count:</label>
+<div>@ClickedCount</div>
 
 @functions {
+    public const string ButtonId = "buttonContainer";
+    public int ClickedCount { get; set; } = 0;
     public void InitDevExtreme()
     {
-        DxButton.Init("#buttonContainer", new DevExpress.Ui.DxButtonOptions { text = "DevExtreme Button" });
+        DxButton.Init($"#{ButtonId}", new DevExpress.Ui.DxButtonOptions { text = "DevExtreme Button", onClickEnabled = true });
+    }
+    protected override void OnInit()
+    {
+        DxButton.Click += DxButton_Click;
+    }
+    void DxButton_Click(object sender, JQueryEventArgs e)
+    {
+        if (e.Identifier == $"#{ButtonId}")
+        {
+            ClickedCount++;
+            StateHasChanged();
+        }
+    }
+    public void Dispose()
+    {
+        DxButton.Click -= DxButton_Click;
     }
 }
 ```
 Note:
 
 * For now you have to click on the *Init DevExtreme* button to init the dxButton. That's because it is hard to understand when both jQuery and Blazor libraries are loaded.
-* Clicking on dxButton does nothing since callbacks aren't yet implemented.

@@ -1,7 +1,15 @@
-﻿@addTagHelper *, BlazorDevExtreme
-@using BlazorDevExtreme
+﻿@using BlazorDevExtreme
 @page "/"
 
 <h1>Hello, world!</h1>
 
- Welcome to your new app.
+<div id="buttonContainer"></div>
+
+<button onclick="@InitDevExtreme">Init DevExtreme</button>
+
+@functions {
+    public void InitDevExtreme()
+    {
+        DxButton.Init("#buttonContainer", new DevExpress.Ui.DxButtonOptions { text = "DevExtreme Button" });
+    }
+}

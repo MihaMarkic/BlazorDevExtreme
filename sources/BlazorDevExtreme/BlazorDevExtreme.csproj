@@ -6,7 +6,19 @@
     <IsPackable>true</IsPackable>
     <BlazorLinkOnBuild>false</BlazorLinkOnBuild>
   </PropertyGroup>
-
+  <PropertyGroup>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageId>Righthand.BlazorDevExtreme</PackageId>
+    <Authors>Miha Markic</Authors>
+    <Company>Righthand</Company>
+    <Description>Blazor interop library for Devloper Express' DevExtreme library for jQuery.</Description>
+    <PackageProjectUrl>https://github.com/MihaMarkic/BlazorDevExtreme</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/MihaMarkic/BlazorDevExtreme/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageTags>blazor devextreme interop</PackageTags>
+    <IncludeSymbols>false</IncludeSymbols>
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+    <Version>0.1.0</Version>
+  </PropertyGroup>
   <ItemGroup>
     <!-- .js/.css files will be referenced via <script>/<link> tags; other content files will just be included in the app's 'dist' directory without any tags referencing them -->
     <EmbeddedResource Include="content\**\*.js" LogicalName="blazor:js:%(RecursiveDir)%(Filename)%(Extension)" />
@@ -15,13 +27,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.0-preview2-final" PrivateAssets="all" />
-    <PackageReference Include="Microsoft.AspNetCore.Blazor.Browser" Version="0.2.1" />
-    <PackageReference Include="Microsoft.AspNetCore.Blazor.Build" Version="0.2.1" />
+    <None Remove="content\Registration.js" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="content\" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.0-preview2-final" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.AspNetCore.Blazor.Browser" Version="0.2.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Blazor.Build" Version="0.2.1" />
   </ItemGroup>
 
 </Project>

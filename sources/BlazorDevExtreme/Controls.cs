@@ -45,7 +45,7 @@ namespace BlazorDevExtreme
             RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxBox.Init", identifier, json);
         }
     }
-    public static class DxButton
+    public static class DxButtonInterop
     {
         public static event EventHandler<JQueryEventArgs> Click;
         public static void Init(string identifier, DevExpress.Ui.DxButtonOptions options)

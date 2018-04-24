@@ -36,4 +36,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Blazor.Build" Version="0.2.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <BlazorGenerate Remove="Components\DxButton.cshtml" />
+  </ItemGroup>
 </Project>

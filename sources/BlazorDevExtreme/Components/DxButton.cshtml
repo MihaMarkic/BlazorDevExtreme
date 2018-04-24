@@ -1,0 +1,10 @@
+﻿<div id="@Id">Test</div>
+
+@functions {
+    public string Id { get; } = Guid.NewGuid().ToString();
+
+    protected override void OnInit()
+    {
+        //DxButtonInterop.Init(Id, new DevExpress.Ui.DxButtonOptions { text = "First one" });
+    }
+}

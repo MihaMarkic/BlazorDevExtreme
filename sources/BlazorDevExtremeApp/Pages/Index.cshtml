@@ -1,4 +1,6 @@
-﻿@using BlazorDevExtreme
+﻿@addTagHelper *, BlazorDevExtreme
+@using BlazorDevExtreme
+@using BlazorDevExtreme.Components
 @implements IDisposable
 @page "/"
 
@@ -16,15 +18,15 @@
     public int ClickedCount { get; set; } = 0;
     public void InitDevExtreme()
     {
-        DxButton.Init($"#{ButtonId}", new DevExpress.Ui.DxButtonOptions { text = "DevExtreme Button", onClickEnabled = true });
+        DxButtonInterop.Init(ButtonId, new DevExpress.Ui.DxButtonOptions { text = "DevExtreme Button", onClickEnabled = true });
     }
     protected override void OnInit()
     {
-        DxButton.Click += DxButton_Click;
+        DxButtonInterop.Click += DxButton_Click;
     }
     void DxButton_Click(object sender, JQueryEventArgs e)
     {
-        if (e.Identifier == $"#{ButtonId}")
+        if (e.Identifier == ButtonId)
         {
             ClickedCount++;
             StateHasChanged();
@@ -32,6 +34,6 @@
     }
     public void Dispose()
     {
-        DxButton.Click -= DxButton_Click;
+        DxButtonInterop.Click -= DxButton_Click;
     }
 }

@@ -11,7 +11,7 @@
     <PackageId>Righthand.BlazorDevExtreme</PackageId>
     <Authors>Miha Markic</Authors>
     <Company>Righthand</Company>
-    <Description>Blazor interop library for Devloper Express' DevExtreme library for jQuery.</Description>
+    <Description>Blazor interop library for Developer Express' DevExtreme library.</Description>
     <PackageProjectUrl>https://github.com/MihaMarkic/BlazorDevExtreme</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/MihaMarkic/BlazorDevExtreme/blob/master/LICENSE</PackageLicenseUrl>
     <PackageTags>blazor devextreme interop</PackageTags>

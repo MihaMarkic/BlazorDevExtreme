@@ -1,0 +1,32 @@
+@implements IDisposable
+@inherits DxBlazorCompoment<DevExpress.Ui.DxLoadIndicatorOptions>
+
+<div id="@Id"></div>
+
+@functions {
+	public DxLoadIndicator() : base("DxLoadIndicator") { }
+	protected override DevExpress.Ui.DxLoadIndicatorOptions CreateOptions() {
+		return new DevExpress.Ui.DxLoadIndicatorOptions {
+			indicatorSrc = indicatorSrc,
+		};
+	}
+	protected override void Init(DevExpress.Ui.DxLoadIndicatorOptions options) {
+		DxLoadIndicatorInterop.Init(Id, options);
+	}
+	string indicatorSrc;
+	public string IndicatorSrc {
+		get => isInitialized ? DxLoadIndicatorInterop.GetIndicatorSrc(Id) : indicatorSrc;
+		set {
+			if (isInitialized) {
+				DxLoadIndicatorInterop.SetIndicatorSrc(Id, value);
+			} else {
+				this.indicatorSrc = value;
+			}
+		}
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+	}
+	public void Dispose() {
+	}
+}

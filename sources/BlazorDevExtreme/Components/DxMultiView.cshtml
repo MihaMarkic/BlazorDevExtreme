@@ -1,0 +1,92 @@
+@implements IDisposable
+@inherits DxBlazorCompoment<DevExpress.Ui.DxMultiViewOptions>
+
+<div id="@Id"></div>
+
+@functions {
+	public DxMultiView() : base("DxMultiView") { }
+	protected override DevExpress.Ui.DxMultiViewOptions CreateOptions() {
+		return new DevExpress.Ui.DxMultiViewOptions {
+			animationEnabled = animationEnabled,
+			deferRendering = deferRendering,
+			focusStateEnabled = focusStateEnabled,
+			loop = loop,
+			selectedIndex = selectedIndex,
+			swipeEnabled = swipeEnabled,
+		};
+	}
+	protected override void Init(DevExpress.Ui.DxMultiViewOptions options) {
+		DxMultiViewInterop.Init(Id, options);
+	}
+	bool? animationEnabled;
+	public bool? AnimationEnabled {
+		get => isInitialized ? DxMultiViewInterop.GetAnimationEnabled(Id) : animationEnabled;
+		set {
+			if (isInitialized) {
+				DxMultiViewInterop.SetAnimationEnabled(Id, value);
+			} else {
+				this.animationEnabled = value;
+			}
+		}
+	}
+	bool? deferRendering;
+	public bool? DeferRendering {
+		get => isInitialized ? DxMultiViewInterop.GetDeferRendering(Id) : deferRendering;
+		set {
+			if (isInitialized) {
+				DxMultiViewInterop.SetDeferRendering(Id, value);
+			} else {
+				this.deferRendering = value;
+			}
+		}
+	}
+	bool? focusStateEnabled;
+	public bool? FocusStateEnabled {
+		get => isInitialized ? DxMultiViewInterop.GetFocusStateEnabled(Id) : focusStateEnabled;
+		set {
+			if (isInitialized) {
+				DxMultiViewInterop.SetFocusStateEnabled(Id, value);
+			} else {
+				this.focusStateEnabled = value;
+			}
+		}
+	}
+	bool? loop;
+	public bool? Loop {
+		get => isInitialized ? DxMultiViewInterop.GetLoop(Id) : loop;
+		set {
+			if (isInitialized) {
+				DxMultiViewInterop.SetLoop(Id, value);
+			} else {
+				this.loop = value;
+			}
+		}
+	}
+	float? selectedIndex;
+	public float? SelectedIndex {
+		get => isInitialized ? DxMultiViewInterop.GetSelectedIndex(Id) : selectedIndex;
+		set {
+			if (isInitialized) {
+				DxMultiViewInterop.SetSelectedIndex(Id, value);
+			} else {
+				this.selectedIndex = value;
+			}
+		}
+	}
+	bool? swipeEnabled;
+	public bool? SwipeEnabled {
+		get => isInitialized ? DxMultiViewInterop.GetSwipeEnabled(Id) : swipeEnabled;
+		set {
+			if (isInitialized) {
+				DxMultiViewInterop.SetSwipeEnabled(Id, value);
+			} else {
+				this.swipeEnabled = value;
+			}
+		}
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+	}
+	public void Dispose() {
+	}
+}

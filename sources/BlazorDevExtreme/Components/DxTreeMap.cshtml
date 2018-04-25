@@ -1,0 +1,248 @@
+@implements IDisposable
+@inherits DxBlazorCompoment<DevExpress.Viz.TreeMap.DxTreeMapOptions>
+
+<div id="@Id"></div>
+
+@functions {
+	public DxTreeMap() : base("DxTreeMap") { }
+	protected override DevExpress.Viz.TreeMap.DxTreeMapOptions CreateOptions() {
+		return new DevExpress.Viz.TreeMap.DxTreeMapOptions {
+			childrenField = childrenField,
+			colorField = colorField,
+			hoverEnabled = hoverEnabled,
+			idField = idField,
+			interactWithGroup = interactWithGroup,
+			labelField = labelField,
+			layoutDirection = layoutDirection,
+			maxDepth = maxDepth,
+			parentField = parentField,
+			resolveLabelOverflow = resolveLabelOverflow,
+			selectionMode = selectionMode,
+			valueField = valueField,
+			onClickEnabled = onClickEnabled,
+			onDrillEnabled = onDrillEnabled,
+			onHoverChangedEnabled = onHoverChangedEnabled,
+			onNodesInitializedEnabled = onNodesInitializedEnabled,
+			onNodesRenderingEnabled = onNodesRenderingEnabled,
+			onSelectionChangedEnabled = onSelectionChangedEnabled,
+		};
+	}
+	protected override void Init(DevExpress.Viz.TreeMap.DxTreeMapOptions options) {
+		DxTreeMapInterop.Init(Id, options);
+	}
+	string childrenField;
+	public string ChildrenField {
+		get => isInitialized ? DxTreeMapInterop.GetChildrenField(Id) : childrenField;
+		set {
+			if (isInitialized) {
+				DxTreeMapInterop.SetChildrenField(Id, value);
+			} else {
+				this.childrenField = value;
+			}
+		}
+	}
+	string colorField;
+	public string ColorField {
+		get => isInitialized ? DxTreeMapInterop.GetColorField(Id) : colorField;
+		set {
+			if (isInitialized) {
+				DxTreeMapInterop.SetColorField(Id, value);
+			} else {
+				this.colorField = value;
+			}
+		}
+	}
+	bool? hoverEnabled;
+	public bool? HoverEnabled {
+		get => isInitialized ? DxTreeMapInterop.GetHoverEnabled(Id) : hoverEnabled;
+		set {
+			if (isInitialized) {
+				DxTreeMapInterop.SetHoverEnabled(Id, value);
+			} else {
+				this.hoverEnabled = value;
+			}
+		}
+	}
+	string idField;
+	public string IdField {
+		get => isInitialized ? DxTreeMapInterop.GetIdField(Id) : idField;
+		set {
+			if (isInitialized) {
+				DxTreeMapInterop.SetIdField(Id, value);
+			} else {
+				this.idField = value;
+			}
+		}
+	}
+	bool? interactWithGroup;
+	public bool? InteractWithGroup {
+		get => isInitialized ? DxTreeMapInterop.GetInteractWithGroup(Id) : interactWithGroup;
+		set {
+			if (isInitialized) {
+				DxTreeMapInterop.SetInteractWithGroup(Id, value);
+			} else {
+				this.interactWithGroup = value;
+			}
+		}
+	}
+	string labelField;
+	public string LabelField {
+		get => isInitialized ? DxTreeMapInterop.GetLabelField(Id) : labelField;
+		set {
+			if (isInitialized) {
+				DxTreeMapInterop.SetLabelField(Id, value);
+			} else {
+				this.labelField = value;
+			}
+		}
+	}
+	string layoutDirection;
+	public string LayoutDirection {
+		get => isInitialized ? DxTreeMapInterop.GetLayoutDirection(Id) : layoutDirection;
+		set {
+			if (isInitialized) {
+				DxTreeMapInterop.SetLayoutDirection(Id, value);
+			} else {
+				this.layoutDirection = value;
+			}
+		}
+	}
+	float? maxDepth;
+	public float? MaxDepth {
+		get => isInitialized ? DxTreeMapInterop.GetMaxDepth(Id) : maxDepth;
+		set {
+			if (isInitialized) {
+				DxTreeMapInterop.SetMaxDepth(Id, value);
+			} else {
+				this.maxDepth = value;
+			}
+		}
+	}
+	string parentField;
+	public string ParentField {
+		get => isInitialized ? DxTreeMapInterop.GetParentField(Id) : parentField;
+		set {
+			if (isInitialized) {
+				DxTreeMapInterop.SetParentField(Id, value);
+			} else {
+				this.parentField = value;
+			}
+		}
+	}
+	string resolveLabelOverflow;
+	public string ResolveLabelOverflow {
+		get => isInitialized ? DxTreeMapInterop.GetResolveLabelOverflow(Id) : resolveLabelOverflow;
+		set {
+			if (isInitialized) {
+				DxTreeMapInterop.SetResolveLabelOverflow(Id, value);
+			} else {
+				this.resolveLabelOverflow = value;
+			}
+		}
+	}
+	string selectionMode;
+	public string SelectionMode {
+		get => isInitialized ? DxTreeMapInterop.GetSelectionMode(Id) : selectionMode;
+		set {
+			if (isInitialized) {
+				DxTreeMapInterop.SetSelectionMode(Id, value);
+			} else {
+				this.selectionMode = value;
+			}
+		}
+	}
+	string valueField;
+	public string ValueField {
+		get => isInitialized ? DxTreeMapInterop.GetValueField(Id) : valueField;
+		set {
+			if (isInitialized) {
+				DxTreeMapInterop.SetValueField(Id, value);
+			} else {
+				this.valueField = value;
+			}
+		}
+	}
+	bool? onClickEnabled;
+	public bool? OnClickEnabled {
+		get => onClickEnabled;
+		set => this.onClickEnabled = value;
+	}
+	bool? onDrillEnabled;
+	public bool? OnDrillEnabled {
+		get => onDrillEnabled;
+		set => this.onDrillEnabled = value;
+	}
+	bool? onHoverChangedEnabled;
+	public bool? OnHoverChangedEnabled {
+		get => onHoverChangedEnabled;
+		set => this.onHoverChangedEnabled = value;
+	}
+	bool? onNodesInitializedEnabled;
+	public bool? OnNodesInitializedEnabled {
+		get => onNodesInitializedEnabled;
+		set => this.onNodesInitializedEnabled = value;
+	}
+	bool? onNodesRenderingEnabled;
+	public bool? OnNodesRenderingEnabled {
+		get => onNodesRenderingEnabled;
+		set => this.onNodesRenderingEnabled = value;
+	}
+	bool? onSelectionChangedEnabled;
+	public bool? OnSelectionChangedEnabled {
+		get => onSelectionChangedEnabled;
+		set => this.onSelectionChangedEnabled = value;
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+		DxTreeMapInterop.Click += DxTreeMap_Click;
+		DxTreeMapInterop.Drill += DxTreeMap_Drill;
+		DxTreeMapInterop.HoverChanged += DxTreeMap_HoverChanged;
+		DxTreeMapInterop.NodesInitialized += DxTreeMap_NodesInitialized;
+		DxTreeMapInterop.NodesRendering += DxTreeMap_NodesRendering;
+		DxTreeMapInterop.SelectionChanged += DxTreeMap_SelectionChanged;
+	}
+	public Action Click { get; set; }
+	void DxTreeMap_Click(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Click?.Invoke();
+		}
+	}
+	public Action Drill { get; set; }
+	void DxTreeMap_Drill(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Drill?.Invoke();
+		}
+	}
+	public Action HoverChanged { get; set; }
+	void DxTreeMap_HoverChanged(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			HoverChanged?.Invoke();
+		}
+	}
+	public Action NodesInitialized { get; set; }
+	void DxTreeMap_NodesInitialized(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			NodesInitialized?.Invoke();
+		}
+	}
+	public Action NodesRendering { get; set; }
+	void DxTreeMap_NodesRendering(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			NodesRendering?.Invoke();
+		}
+	}
+	public Action SelectionChanged { get; set; }
+	void DxTreeMap_SelectionChanged(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			SelectionChanged?.Invoke();
+		}
+	}
+	public void Dispose() {
+		DxTreeMapInterop.Click -= DxTreeMap_Click;
+		DxTreeMapInterop.Drill -= DxTreeMap_Drill;
+		DxTreeMapInterop.HoverChanged -= DxTreeMap_HoverChanged;
+		DxTreeMapInterop.NodesInitialized -= DxTreeMap_NodesInitialized;
+		DxTreeMapInterop.NodesRendering -= DxTreeMap_NodesRendering;
+		DxTreeMapInterop.SelectionChanged -= DxTreeMap_SelectionChanged;
+	}
+}

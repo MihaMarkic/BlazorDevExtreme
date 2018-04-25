@@ -1,0 +1,56 @@
+@implements IDisposable
+@inherits DxBlazorCompoment<DevExpress.Ui.DxPopoverOptions>
+
+<div id="@Id"></div>
+
+@functions {
+	public DxPopover() : base("DxPopover") { }
+	protected override DevExpress.Ui.DxPopoverOptions CreateOptions() {
+		return new DevExpress.Ui.DxPopoverOptions {
+			closeOnOutsideClick = closeOnOutsideClick,
+			shading = shading,
+			showTitle = showTitle,
+		};
+	}
+	protected override void Init(DevExpress.Ui.DxPopoverOptions options) {
+		DxPopoverInterop.Init(Id, options);
+	}
+	object closeOnOutsideClick;
+	public object CloseOnOutsideClick {
+		get => isInitialized ? DxPopoverInterop.GetCloseOnOutsideClick(Id) : closeOnOutsideClick;
+		set {
+			if (isInitialized) {
+				DxPopoverInterop.SetCloseOnOutsideClick(Id, value);
+			} else {
+				this.closeOnOutsideClick = value;
+			}
+		}
+	}
+	bool? shading;
+	public bool? Shading {
+		get => isInitialized ? DxPopoverInterop.GetShading(Id) : shading;
+		set {
+			if (isInitialized) {
+				DxPopoverInterop.SetShading(Id, value);
+			} else {
+				this.shading = value;
+			}
+		}
+	}
+	bool? showTitle;
+	public bool? ShowTitle {
+		get => isInitialized ? DxPopoverInterop.GetShowTitle(Id) : showTitle;
+		set {
+			if (isInitialized) {
+				DxPopoverInterop.SetShowTitle(Id, value);
+			} else {
+				this.showTitle = value;
+			}
+		}
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+	}
+	public void Dispose() {
+	}
+}

@@ -1,0 +1,58 @@
+@implements IDisposable
+@inherits DxBlazorCompoment<DevExpress.Ui.DxValidatorOptions>
+
+<div id="@Id"></div>
+
+@functions {
+	public DxValidator() : base("DxValidator") { }
+	protected override DevExpress.Ui.DxValidatorOptions CreateOptions() {
+		return new DevExpress.Ui.DxValidatorOptions {
+			name = name,
+			validationGroup = validationGroup,
+			onValidatedEnabled = onValidatedEnabled,
+		};
+	}
+	protected override void Init(DevExpress.Ui.DxValidatorOptions options) {
+		DxValidatorInterop.Init(Id, options);
+	}
+	string name;
+	public string Name {
+		get => isInitialized ? DxValidatorInterop.GetName(Id) : name;
+		set {
+			if (isInitialized) {
+				DxValidatorInterop.SetName(Id, value);
+			} else {
+				this.name = value;
+			}
+		}
+	}
+	string validationGroup;
+	public string ValidationGroup {
+		get => isInitialized ? DxValidatorInterop.GetValidationGroup(Id) : validationGroup;
+		set {
+			if (isInitialized) {
+				DxValidatorInterop.SetValidationGroup(Id, value);
+			} else {
+				this.validationGroup = value;
+			}
+		}
+	}
+	bool? onValidatedEnabled;
+	public bool? OnValidatedEnabled {
+		get => onValidatedEnabled;
+		set => this.onValidatedEnabled = value;
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+		DxValidatorInterop.Validated += DxValidator_Validated;
+	}
+	public Action Validated { get; set; }
+	void DxValidator_Validated(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Validated?.Invoke();
+		}
+	}
+	public void Dispose() {
+		DxValidatorInterop.Validated -= DxValidator_Validated;
+	}
+}

@@ -1,0 +1,168 @@
+@implements IDisposable
+@inherits DxBlazorCompoment<DevExpress.Viz.Gauges.DxBarGaugeOptions>
+
+<div id="@Id"></div>
+
+@functions {
+	public DxBarGauge() : base("DxBarGauge") { }
+	protected override DevExpress.Viz.Gauges.DxBarGaugeOptions CreateOptions() {
+		return new DevExpress.Viz.Gauges.DxBarGaugeOptions {
+			animation = animation,
+			backgroundColor = backgroundColor,
+			barSpacing = barSpacing,
+			baseValue = baseValue,
+			endValue = endValue,
+			paletteExtensionMode = paletteExtensionMode,
+			relativeInnerRadius = relativeInnerRadius,
+			startValue = startValue,
+			title = title,
+			values = values,
+			onTooltipHiddenEnabled = onTooltipHiddenEnabled,
+			onTooltipShownEnabled = onTooltipShownEnabled,
+		};
+	}
+	protected override void Init(DevExpress.Viz.Gauges.DxBarGaugeOptions options) {
+		DxBarGaugeInterop.Init(Id, options);
+	}
+	object animation;
+	public object Animation {
+		get => isInitialized ? DxBarGaugeInterop.GetAnimation(Id) : animation;
+		set {
+			if (isInitialized) {
+				DxBarGaugeInterop.SetAnimation(Id, value);
+			} else {
+				this.animation = value;
+			}
+		}
+	}
+	string backgroundColor;
+	public string BackgroundColor {
+		get => isInitialized ? DxBarGaugeInterop.GetBackgroundColor(Id) : backgroundColor;
+		set {
+			if (isInitialized) {
+				DxBarGaugeInterop.SetBackgroundColor(Id, value);
+			} else {
+				this.backgroundColor = value;
+			}
+		}
+	}
+	float? barSpacing;
+	public float? BarSpacing {
+		get => isInitialized ? DxBarGaugeInterop.GetBarSpacing(Id) : barSpacing;
+		set {
+			if (isInitialized) {
+				DxBarGaugeInterop.SetBarSpacing(Id, value);
+			} else {
+				this.barSpacing = value;
+			}
+		}
+	}
+	float? baseValue;
+	public float? BaseValue {
+		get => isInitialized ? DxBarGaugeInterop.GetBaseValue(Id) : baseValue;
+		set {
+			if (isInitialized) {
+				DxBarGaugeInterop.SetBaseValue(Id, value);
+			} else {
+				this.baseValue = value;
+			}
+		}
+	}
+	float? endValue;
+	public float? EndValue {
+		get => isInitialized ? DxBarGaugeInterop.GetEndValue(Id) : endValue;
+		set {
+			if (isInitialized) {
+				DxBarGaugeInterop.SetEndValue(Id, value);
+			} else {
+				this.endValue = value;
+			}
+		}
+	}
+	string paletteExtensionMode;
+	public string PaletteExtensionMode {
+		get => isInitialized ? DxBarGaugeInterop.GetPaletteExtensionMode(Id) : paletteExtensionMode;
+		set {
+			if (isInitialized) {
+				DxBarGaugeInterop.SetPaletteExtensionMode(Id, value);
+			} else {
+				this.paletteExtensionMode = value;
+			}
+		}
+	}
+	float? relativeInnerRadius;
+	public float? RelativeInnerRadius {
+		get => isInitialized ? DxBarGaugeInterop.GetRelativeInnerRadius(Id) : relativeInnerRadius;
+		set {
+			if (isInitialized) {
+				DxBarGaugeInterop.SetRelativeInnerRadius(Id, value);
+			} else {
+				this.relativeInnerRadius = value;
+			}
+		}
+	}
+	float? startValue;
+	public float? StartValue {
+		get => isInitialized ? DxBarGaugeInterop.GetStartValue(Id) : startValue;
+		set {
+			if (isInitialized) {
+				DxBarGaugeInterop.SetStartValue(Id, value);
+			} else {
+				this.startValue = value;
+			}
+		}
+	}
+	object title;
+	public object Title {
+		get => isInitialized ? DxBarGaugeInterop.GetTitle(Id) : title;
+		set {
+			if (isInitialized) {
+				DxBarGaugeInterop.SetTitle(Id, value);
+			} else {
+				this.title = value;
+			}
+		}
+	}
+	float values;
+	public float Values {
+		get => isInitialized ? DxBarGaugeInterop.GetValues(Id) : values;
+		set {
+			if (isInitialized) {
+				DxBarGaugeInterop.SetValues(Id, value);
+			} else {
+				this.values = value;
+			}
+		}
+	}
+	bool? onTooltipHiddenEnabled;
+	public bool? OnTooltipHiddenEnabled {
+		get => onTooltipHiddenEnabled;
+		set => this.onTooltipHiddenEnabled = value;
+	}
+	bool? onTooltipShownEnabled;
+	public bool? OnTooltipShownEnabled {
+		get => onTooltipShownEnabled;
+		set => this.onTooltipShownEnabled = value;
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+		DxBarGaugeInterop.TooltipHidden += DxBarGauge_TooltipHidden;
+		DxBarGaugeInterop.TooltipShown += DxBarGauge_TooltipShown;
+	}
+	public Action TooltipHidden { get; set; }
+	void DxBarGauge_TooltipHidden(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			TooltipHidden?.Invoke();
+		}
+	}
+	public Action TooltipShown { get; set; }
+	void DxBarGauge_TooltipShown(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			TooltipShown?.Invoke();
+		}
+	}
+	public void Dispose() {
+		DxBarGaugeInterop.TooltipHidden -= DxBarGauge_TooltipHidden;
+		DxBarGaugeInterop.TooltipShown -= DxBarGauge_TooltipShown;
+	}
+}

@@ -1,0 +1,92 @@
+@implements IDisposable
+@inherits DxBlazorCompoment<DevExpress.Ui.DxRadioGroupOptions>
+
+<div id="@Id"></div>
+
+@functions {
+	public DxRadioGroup() : base("DxRadioGroup") { }
+	protected override DevExpress.Ui.DxRadioGroupOptions CreateOptions() {
+		return new DevExpress.Ui.DxRadioGroupOptions {
+			activeStateEnabled = activeStateEnabled,
+			focusStateEnabled = focusStateEnabled,
+			hoverStateEnabled = hoverStateEnabled,
+			layout = layout,
+			name = name,
+			value = value,
+		};
+	}
+	protected override void Init(DevExpress.Ui.DxRadioGroupOptions options) {
+		DxRadioGroupInterop.Init(Id, options);
+	}
+	bool? activeStateEnabled;
+	public bool? ActiveStateEnabled {
+		get => isInitialized ? DxRadioGroupInterop.GetActiveStateEnabled(Id) : activeStateEnabled;
+		set {
+			if (isInitialized) {
+				DxRadioGroupInterop.SetActiveStateEnabled(Id, value);
+			} else {
+				this.activeStateEnabled = value;
+			}
+		}
+	}
+	bool? focusStateEnabled;
+	public bool? FocusStateEnabled {
+		get => isInitialized ? DxRadioGroupInterop.GetFocusStateEnabled(Id) : focusStateEnabled;
+		set {
+			if (isInitialized) {
+				DxRadioGroupInterop.SetFocusStateEnabled(Id, value);
+			} else {
+				this.focusStateEnabled = value;
+			}
+		}
+	}
+	bool? hoverStateEnabled;
+	public bool? HoverStateEnabled {
+		get => isInitialized ? DxRadioGroupInterop.GetHoverStateEnabled(Id) : hoverStateEnabled;
+		set {
+			if (isInitialized) {
+				DxRadioGroupInterop.SetHoverStateEnabled(Id, value);
+			} else {
+				this.hoverStateEnabled = value;
+			}
+		}
+	}
+	string layout;
+	public string Layout {
+		get => isInitialized ? DxRadioGroupInterop.GetLayout(Id) : layout;
+		set {
+			if (isInitialized) {
+				DxRadioGroupInterop.SetLayout(Id, value);
+			} else {
+				this.layout = value;
+			}
+		}
+	}
+	string name;
+	public string Name {
+		get => isInitialized ? DxRadioGroupInterop.GetName(Id) : name;
+		set {
+			if (isInitialized) {
+				DxRadioGroupInterop.SetName(Id, value);
+			} else {
+				this.name = value;
+			}
+		}
+	}
+	object value;
+	public object Value {
+		get => isInitialized ? DxRadioGroupInterop.GetValue(Id) : value;
+		set {
+			if (isInitialized) {
+				DxRadioGroupInterop.SetValue(Id, value);
+			} else {
+				this.value = value;
+			}
+		}
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+	}
+	public void Dispose() {
+	}
+}

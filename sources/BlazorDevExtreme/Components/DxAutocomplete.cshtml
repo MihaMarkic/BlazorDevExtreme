@@ -1,0 +1,56 @@
+@implements IDisposable
+@inherits DxBlazorCompoment<DevExpress.Ui.DxAutocompleteOptions>
+
+<div id="@Id"></div>
+
+@functions {
+	public DxAutocomplete() : base("DxAutocomplete") { }
+	protected override DevExpress.Ui.DxAutocompleteOptions CreateOptions() {
+		return new DevExpress.Ui.DxAutocompleteOptions {
+			maxItemCount = maxItemCount,
+			minSearchLength = minSearchLength,
+			value = value,
+		};
+	}
+	protected override void Init(DevExpress.Ui.DxAutocompleteOptions options) {
+		DxAutocompleteInterop.Init(Id, options);
+	}
+	float? maxItemCount;
+	public float? MaxItemCount {
+		get => isInitialized ? DxAutocompleteInterop.GetMaxItemCount(Id) : maxItemCount;
+		set {
+			if (isInitialized) {
+				DxAutocompleteInterop.SetMaxItemCount(Id, value);
+			} else {
+				this.maxItemCount = value;
+			}
+		}
+	}
+	float? minSearchLength;
+	public float? MinSearchLength {
+		get => isInitialized ? DxAutocompleteInterop.GetMinSearchLength(Id) : minSearchLength;
+		set {
+			if (isInitialized) {
+				DxAutocompleteInterop.SetMinSearchLength(Id, value);
+			} else {
+				this.minSearchLength = value;
+			}
+		}
+	}
+	string value;
+	public string Value {
+		get => isInitialized ? DxAutocompleteInterop.GetValue(Id) : value;
+		set {
+			if (isInitialized) {
+				DxAutocompleteInterop.SetValue(Id, value);
+			} else {
+				this.value = value;
+			}
+		}
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+	}
+	public void Dispose() {
+	}
+}

@@ -1,0 +1,56 @@
+@implements IDisposable
+@inherits DxBlazorCompoment<DevExpress.Ui.DxResponsiveBoxOptions>
+
+<div id="@Id"></div>
+
+@functions {
+	public DxResponsiveBox() : base("DxResponsiveBox") { }
+	protected override DevExpress.Ui.DxResponsiveBoxOptions CreateOptions() {
+		return new DevExpress.Ui.DxResponsiveBoxOptions {
+			height = height,
+			singleColumnScreen = singleColumnScreen,
+			width = width,
+		};
+	}
+	protected override void Init(DevExpress.Ui.DxResponsiveBoxOptions options) {
+		DxResponsiveBoxInterop.Init(Id, options);
+	}
+	object height;
+	public object Height {
+		get => isInitialized ? DxResponsiveBoxInterop.GetHeight(Id) : height;
+		set {
+			if (isInitialized) {
+				DxResponsiveBoxInterop.SetHeight(Id, value);
+			} else {
+				this.height = value;
+			}
+		}
+	}
+	string singleColumnScreen;
+	public string SingleColumnScreen {
+		get => isInitialized ? DxResponsiveBoxInterop.GetSingleColumnScreen(Id) : singleColumnScreen;
+		set {
+			if (isInitialized) {
+				DxResponsiveBoxInterop.SetSingleColumnScreen(Id, value);
+			} else {
+				this.singleColumnScreen = value;
+			}
+		}
+	}
+	object width;
+	public object Width {
+		get => isInitialized ? DxResponsiveBoxInterop.GetWidth(Id) : width;
+		set {
+			if (isInitialized) {
+				DxResponsiveBoxInterop.SetWidth(Id, value);
+			} else {
+				this.width = value;
+			}
+		}
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+	}
+	public void Dispose() {
+	}
+}

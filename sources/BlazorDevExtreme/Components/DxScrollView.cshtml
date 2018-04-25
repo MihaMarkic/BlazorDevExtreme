@@ -1,0 +1,96 @@
+@implements IDisposable
+@inherits DxBlazorCompoment<DevExpress.Ui.DxScrollViewOptions>
+
+<div id="@Id"></div>
+
+@functions {
+	public DxScrollView() : base("DxScrollView") { }
+	protected override DevExpress.Ui.DxScrollViewOptions CreateOptions() {
+		return new DevExpress.Ui.DxScrollViewOptions {
+			pulledDownText = pulledDownText,
+			pullingDownText = pullingDownText,
+			reachBottomText = reachBottomText,
+			refreshingText = refreshingText,
+			onPullDownEnabled = onPullDownEnabled,
+			onReachBottomEnabled = onReachBottomEnabled,
+		};
+	}
+	protected override void Init(DevExpress.Ui.DxScrollViewOptions options) {
+		DxScrollViewInterop.Init(Id, options);
+	}
+	string pulledDownText;
+	public string PulledDownText {
+		get => isInitialized ? DxScrollViewInterop.GetPulledDownText(Id) : pulledDownText;
+		set {
+			if (isInitialized) {
+				DxScrollViewInterop.SetPulledDownText(Id, value);
+			} else {
+				this.pulledDownText = value;
+			}
+		}
+	}
+	string pullingDownText;
+	public string PullingDownText {
+		get => isInitialized ? DxScrollViewInterop.GetPullingDownText(Id) : pullingDownText;
+		set {
+			if (isInitialized) {
+				DxScrollViewInterop.SetPullingDownText(Id, value);
+			} else {
+				this.pullingDownText = value;
+			}
+		}
+	}
+	string reachBottomText;
+	public string ReachBottomText {
+		get => isInitialized ? DxScrollViewInterop.GetReachBottomText(Id) : reachBottomText;
+		set {
+			if (isInitialized) {
+				DxScrollViewInterop.SetReachBottomText(Id, value);
+			} else {
+				this.reachBottomText = value;
+			}
+		}
+	}
+	string refreshingText;
+	public string RefreshingText {
+		get => isInitialized ? DxScrollViewInterop.GetRefreshingText(Id) : refreshingText;
+		set {
+			if (isInitialized) {
+				DxScrollViewInterop.SetRefreshingText(Id, value);
+			} else {
+				this.refreshingText = value;
+			}
+		}
+	}
+	bool? onPullDownEnabled;
+	public bool? OnPullDownEnabled {
+		get => onPullDownEnabled;
+		set => this.onPullDownEnabled = value;
+	}
+	bool? onReachBottomEnabled;
+	public bool? OnReachBottomEnabled {
+		get => onReachBottomEnabled;
+		set => this.onReachBottomEnabled = value;
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+		DxScrollViewInterop.PullDown += DxScrollView_PullDown;
+		DxScrollViewInterop.ReachBottom += DxScrollView_ReachBottom;
+	}
+	public Action PullDown { get; set; }
+	void DxScrollView_PullDown(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			PullDown?.Invoke();
+		}
+	}
+	public Action ReachBottom { get; set; }
+	void DxScrollView_ReachBottom(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			ReachBottom?.Invoke();
+		}
+	}
+	public void Dispose() {
+		DxScrollViewInterop.PullDown -= DxScrollView_PullDown;
+		DxScrollViewInterop.ReachBottom -= DxScrollView_ReachBottom;
+	}
+}

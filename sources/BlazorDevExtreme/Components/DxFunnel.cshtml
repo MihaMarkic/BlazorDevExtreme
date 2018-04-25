@@ -1,0 +1,208 @@
+@implements IDisposable
+@inherits DxBlazorCompoment<DevExpress.Viz.Funnel.DxFunnelOptions>
+
+<div id="@Id"></div>
+
+@functions {
+	public DxFunnel() : base("DxFunnel") { }
+	protected override DevExpress.Viz.Funnel.DxFunnelOptions CreateOptions() {
+		return new DevExpress.Viz.Funnel.DxFunnelOptions {
+			algorithm = algorithm,
+			argumentField = argumentField,
+			colorField = colorField,
+			hoverEnabled = hoverEnabled,
+			inverted = inverted,
+			neckHeight = neckHeight,
+			neckWidth = neckWidth,
+			paletteExtensionMode = paletteExtensionMode,
+			selectionMode = selectionMode,
+			sortData = sortData,
+			valueField = valueField,
+			onHoverChangedEnabled = onHoverChangedEnabled,
+			onItemClickEnabled = onItemClickEnabled,
+			onLegendClickEnabled = onLegendClickEnabled,
+			onSelectionChangedEnabled = onSelectionChangedEnabled,
+		};
+	}
+	protected override void Init(DevExpress.Viz.Funnel.DxFunnelOptions options) {
+		DxFunnelInterop.Init(Id, options);
+	}
+	string algorithm;
+	public string Algorithm {
+		get => isInitialized ? DxFunnelInterop.GetAlgorithm(Id) : algorithm;
+		set {
+			if (isInitialized) {
+				DxFunnelInterop.SetAlgorithm(Id, value);
+			} else {
+				this.algorithm = value;
+			}
+		}
+	}
+	string argumentField;
+	public string ArgumentField {
+		get => isInitialized ? DxFunnelInterop.GetArgumentField(Id) : argumentField;
+		set {
+			if (isInitialized) {
+				DxFunnelInterop.SetArgumentField(Id, value);
+			} else {
+				this.argumentField = value;
+			}
+		}
+	}
+	string colorField;
+	public string ColorField {
+		get => isInitialized ? DxFunnelInterop.GetColorField(Id) : colorField;
+		set {
+			if (isInitialized) {
+				DxFunnelInterop.SetColorField(Id, value);
+			} else {
+				this.colorField = value;
+			}
+		}
+	}
+	bool? hoverEnabled;
+	public bool? HoverEnabled {
+		get => isInitialized ? DxFunnelInterop.GetHoverEnabled(Id) : hoverEnabled;
+		set {
+			if (isInitialized) {
+				DxFunnelInterop.SetHoverEnabled(Id, value);
+			} else {
+				this.hoverEnabled = value;
+			}
+		}
+	}
+	bool? inverted;
+	public bool? Inverted {
+		get => isInitialized ? DxFunnelInterop.GetInverted(Id) : inverted;
+		set {
+			if (isInitialized) {
+				DxFunnelInterop.SetInverted(Id, value);
+			} else {
+				this.inverted = value;
+			}
+		}
+	}
+	float? neckHeight;
+	public float? NeckHeight {
+		get => isInitialized ? DxFunnelInterop.GetNeckHeight(Id) : neckHeight;
+		set {
+			if (isInitialized) {
+				DxFunnelInterop.SetNeckHeight(Id, value);
+			} else {
+				this.neckHeight = value;
+			}
+		}
+	}
+	float? neckWidth;
+	public float? NeckWidth {
+		get => isInitialized ? DxFunnelInterop.GetNeckWidth(Id) : neckWidth;
+		set {
+			if (isInitialized) {
+				DxFunnelInterop.SetNeckWidth(Id, value);
+			} else {
+				this.neckWidth = value;
+			}
+		}
+	}
+	string paletteExtensionMode;
+	public string PaletteExtensionMode {
+		get => isInitialized ? DxFunnelInterop.GetPaletteExtensionMode(Id) : paletteExtensionMode;
+		set {
+			if (isInitialized) {
+				DxFunnelInterop.SetPaletteExtensionMode(Id, value);
+			} else {
+				this.paletteExtensionMode = value;
+			}
+		}
+	}
+	string selectionMode;
+	public string SelectionMode {
+		get => isInitialized ? DxFunnelInterop.GetSelectionMode(Id) : selectionMode;
+		set {
+			if (isInitialized) {
+				DxFunnelInterop.SetSelectionMode(Id, value);
+			} else {
+				this.selectionMode = value;
+			}
+		}
+	}
+	bool? sortData;
+	public bool? SortData {
+		get => isInitialized ? DxFunnelInterop.GetSortData(Id) : sortData;
+		set {
+			if (isInitialized) {
+				DxFunnelInterop.SetSortData(Id, value);
+			} else {
+				this.sortData = value;
+			}
+		}
+	}
+	string valueField;
+	public string ValueField {
+		get => isInitialized ? DxFunnelInterop.GetValueField(Id) : valueField;
+		set {
+			if (isInitialized) {
+				DxFunnelInterop.SetValueField(Id, value);
+			} else {
+				this.valueField = value;
+			}
+		}
+	}
+	bool? onHoverChangedEnabled;
+	public bool? OnHoverChangedEnabled {
+		get => onHoverChangedEnabled;
+		set => this.onHoverChangedEnabled = value;
+	}
+	bool? onItemClickEnabled;
+	public bool? OnItemClickEnabled {
+		get => onItemClickEnabled;
+		set => this.onItemClickEnabled = value;
+	}
+	bool? onLegendClickEnabled;
+	public bool? OnLegendClickEnabled {
+		get => onLegendClickEnabled;
+		set => this.onLegendClickEnabled = value;
+	}
+	bool? onSelectionChangedEnabled;
+	public bool? OnSelectionChangedEnabled {
+		get => onSelectionChangedEnabled;
+		set => this.onSelectionChangedEnabled = value;
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+		DxFunnelInterop.HoverChanged += DxFunnel_HoverChanged;
+		DxFunnelInterop.ItemClick += DxFunnel_ItemClick;
+		DxFunnelInterop.LegendClick += DxFunnel_LegendClick;
+		DxFunnelInterop.SelectionChanged += DxFunnel_SelectionChanged;
+	}
+	public Action HoverChanged { get; set; }
+	void DxFunnel_HoverChanged(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			HoverChanged?.Invoke();
+		}
+	}
+	public Action ItemClick { get; set; }
+	void DxFunnel_ItemClick(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			ItemClick?.Invoke();
+		}
+	}
+	public Action LegendClick { get; set; }
+	void DxFunnel_LegendClick(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			LegendClick?.Invoke();
+		}
+	}
+	public Action SelectionChanged { get; set; }
+	void DxFunnel_SelectionChanged(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			SelectionChanged?.Invoke();
+		}
+	}
+	public void Dispose() {
+		DxFunnelInterop.HoverChanged -= DxFunnel_HoverChanged;
+		DxFunnelInterop.ItemClick -= DxFunnel_ItemClick;
+		DxFunnelInterop.LegendClick -= DxFunnel_LegendClick;
+		DxFunnelInterop.SelectionChanged -= DxFunnel_SelectionChanged;
+	}
+}

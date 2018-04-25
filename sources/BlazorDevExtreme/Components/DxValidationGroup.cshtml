@@ -1,0 +1,20 @@
+@implements IDisposable
+@inherits DxBlazorCompoment<DevExpress.Ui.DxValidationGroupOptions>
+
+<div id="@Id"></div>
+
+@functions {
+	public DxValidationGroup() : base("DxValidationGroup") { }
+	protected override DevExpress.Ui.DxValidationGroupOptions CreateOptions() {
+		return new DevExpress.Ui.DxValidationGroupOptions {
+		};
+	}
+	protected override void Init(DevExpress.Ui.DxValidationGroupOptions options) {
+		DxValidationGroupInterop.Init(Id, options);
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+	}
+	public void Dispose() {
+	}
+}

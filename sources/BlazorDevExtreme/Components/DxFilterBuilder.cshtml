@@ -1,0 +1,74 @@
+@implements IDisposable
+@inherits DxBlazorCompoment<DevExpress.Ui.DxFilterBuilderOptions>
+
+<div id="@Id"></div>
+
+@functions {
+	public DxFilterBuilder() : base("DxFilterBuilder") { }
+	protected override DevExpress.Ui.DxFilterBuilderOptions CreateOptions() {
+		return new DevExpress.Ui.DxFilterBuilderOptions {
+			allowHierarchicalFields = allowHierarchicalFields,
+			onEditorPreparedEnabled = onEditorPreparedEnabled,
+			onEditorPreparingEnabled = onEditorPreparingEnabled,
+			onValueChangedEnabled = onValueChangedEnabled,
+		};
+	}
+	protected override void Init(DevExpress.Ui.DxFilterBuilderOptions options) {
+		DxFilterBuilderInterop.Init(Id, options);
+	}
+	bool? allowHierarchicalFields;
+	public bool? AllowHierarchicalFields {
+		get => isInitialized ? DxFilterBuilderInterop.GetAllowHierarchicalFields(Id) : allowHierarchicalFields;
+		set {
+			if (isInitialized) {
+				DxFilterBuilderInterop.SetAllowHierarchicalFields(Id, value);
+			} else {
+				this.allowHierarchicalFields = value;
+			}
+		}
+	}
+	bool? onEditorPreparedEnabled;
+	public bool? OnEditorPreparedEnabled {
+		get => onEditorPreparedEnabled;
+		set => this.onEditorPreparedEnabled = value;
+	}
+	bool? onEditorPreparingEnabled;
+	public bool? OnEditorPreparingEnabled {
+		get => onEditorPreparingEnabled;
+		set => this.onEditorPreparingEnabled = value;
+	}
+	bool? onValueChangedEnabled;
+	public bool? OnValueChangedEnabled {
+		get => onValueChangedEnabled;
+		set => this.onValueChangedEnabled = value;
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+		DxFilterBuilderInterop.EditorPrepared += DxFilterBuilder_EditorPrepared;
+		DxFilterBuilderInterop.EditorPreparing += DxFilterBuilder_EditorPreparing;
+		DxFilterBuilderInterop.ValueChanged += DxFilterBuilder_ValueChanged;
+	}
+	public Action EditorPrepared { get; set; }
+	void DxFilterBuilder_EditorPrepared(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			EditorPrepared?.Invoke();
+		}
+	}
+	public Action EditorPreparing { get; set; }
+	void DxFilterBuilder_EditorPreparing(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			EditorPreparing?.Invoke();
+		}
+	}
+	public Action ValueChanged { get; set; }
+	void DxFilterBuilder_ValueChanged(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			ValueChanged?.Invoke();
+		}
+	}
+	public void Dispose() {
+		DxFilterBuilderInterop.EditorPrepared -= DxFilterBuilder_EditorPrepared;
+		DxFilterBuilderInterop.EditorPreparing -= DxFilterBuilder_EditorPreparing;
+		DxFilterBuilderInterop.ValueChanged -= DxFilterBuilder_ValueChanged;
+	}
+}

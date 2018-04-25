@@ -1,0 +1,44 @@
+@implements IDisposable
+@inherits DxBlazorCompoment<DevExpress.Ui.DxPivotOptions>
+
+<div id="@Id"></div>
+
+@functions {
+	public DxPivot() : base("DxPivot") { }
+	protected override DevExpress.Ui.DxPivotOptions CreateOptions() {
+		return new DevExpress.Ui.DxPivotOptions {
+			selectedIndex = selectedIndex,
+			swipeEnabled = swipeEnabled,
+		};
+	}
+	protected override void Init(DevExpress.Ui.DxPivotOptions options) {
+		DxPivotInterop.Init(Id, options);
+	}
+	float? selectedIndex;
+	public float? SelectedIndex {
+		get => isInitialized ? DxPivotInterop.GetSelectedIndex(Id) : selectedIndex;
+		set {
+			if (isInitialized) {
+				DxPivotInterop.SetSelectedIndex(Id, value);
+			} else {
+				this.selectedIndex = value;
+			}
+		}
+	}
+	bool? swipeEnabled;
+	public bool? SwipeEnabled {
+		get => isInitialized ? DxPivotInterop.GetSwipeEnabled(Id) : swipeEnabled;
+		set {
+			if (isInitialized) {
+				DxPivotInterop.SetSwipeEnabled(Id, value);
+			} else {
+				this.swipeEnabled = value;
+			}
+		}
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+	}
+	public void Dispose() {
+	}
+}

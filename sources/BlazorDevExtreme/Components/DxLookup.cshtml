@@ -1,0 +1,390 @@
+@implements IDisposable
+@inherits DxBlazorCompoment<DevExpress.Ui.DxLookupOptions>
+
+<div id="@Id"></div>
+
+@functions {
+	public DxLookup() : base("DxLookup") { }
+	protected override DevExpress.Ui.DxLookupOptions CreateOptions() {
+		return new DevExpress.Ui.DxLookupOptions {
+			applyButtonText = applyButtonText,
+			applyValueMode = applyValueMode,
+			cancelButtonText = cancelButtonText,
+			cleanSearchOnOpening = cleanSearchOnOpening,
+			clearButtonText = clearButtonText,
+			focusStateEnabled = focusStateEnabled,
+			fullScreen = fullScreen,
+			grouped = grouped,
+			nextButtonText = nextButtonText,
+			pageLoadingText = pageLoadingText,
+			pageLoadMode = pageLoadMode,
+			placeholder = placeholder,
+			pulledDownText = pulledDownText,
+			pullingDownText = pullingDownText,
+			pullRefreshEnabled = pullRefreshEnabled,
+			refreshingText = refreshingText,
+			searchEnabled = searchEnabled,
+			searchPlaceholder = searchPlaceholder,
+			shading = shading,
+			showCancelButton = showCancelButton,
+			showClearButton = showClearButton,
+			showPopupTitle = showPopupTitle,
+			title = title,
+			useNativeScrolling = useNativeScrolling,
+			usePopover = usePopover,
+			onPageLoadingEnabled = onPageLoadingEnabled,
+			onPullRefreshEnabled = onPullRefreshEnabled,
+			onScrollEnabled = onScrollEnabled,
+			onTitleRenderedEnabled = onTitleRenderedEnabled,
+			onValueChangedEnabled = onValueChangedEnabled,
+		};
+	}
+	protected override void Init(DevExpress.Ui.DxLookupOptions options) {
+		DxLookupInterop.Init(Id, options);
+	}
+	string applyButtonText;
+	public string ApplyButtonText {
+		get => isInitialized ? DxLookupInterop.GetApplyButtonText(Id) : applyButtonText;
+		set {
+			if (isInitialized) {
+				DxLookupInterop.SetApplyButtonText(Id, value);
+			} else {
+				this.applyButtonText = value;
+			}
+		}
+	}
+	string applyValueMode;
+	public string ApplyValueMode {
+		get => isInitialized ? DxLookupInterop.GetApplyValueMode(Id) : applyValueMode;
+		set {
+			if (isInitialized) {
+				DxLookupInterop.SetApplyValueMode(Id, value);
+			} else {
+				this.applyValueMode = value;
+			}
+		}
+	}
+	string cancelButtonText;
+	public string CancelButtonText {
+		get => isInitialized ? DxLookupInterop.GetCancelButtonText(Id) : cancelButtonText;
+		set {
+			if (isInitialized) {
+				DxLookupInterop.SetCancelButtonText(Id, value);
+			} else {
+				this.cancelButtonText = value;
+			}
+		}
+	}
+	bool? cleanSearchOnOpening;
+	public bool? CleanSearchOnOpening {
+		get => isInitialized ? DxLookupInterop.GetCleanSearchOnOpening(Id) : cleanSearchOnOpening;
+		set {
+			if (isInitialized) {
+				DxLookupInterop.SetCleanSearchOnOpening(Id, value);
+			} else {
+				this.cleanSearchOnOpening = value;
+			}
+		}
+	}
+	string clearButtonText;
+	public string ClearButtonText {
+		get => isInitialized ? DxLookupInterop.GetClearButtonText(Id) : clearButtonText;
+		set {
+			if (isInitialized) {
+				DxLookupInterop.SetClearButtonText(Id, value);
+			} else {
+				this.clearButtonText = value;
+			}
+		}
+	}
+	bool? focusStateEnabled;
+	public bool? FocusStateEnabled {
+		get => isInitialized ? DxLookupInterop.GetFocusStateEnabled(Id) : focusStateEnabled;
+		set {
+			if (isInitialized) {
+				DxLookupInterop.SetFocusStateEnabled(Id, value);
+			} else {
+				this.focusStateEnabled = value;
+			}
+		}
+	}
+	bool? fullScreen;
+	public bool? FullScreen {
+		get => isInitialized ? DxLookupInterop.GetFullScreen(Id) : fullScreen;
+		set {
+			if (isInitialized) {
+				DxLookupInterop.SetFullScreen(Id, value);
+			} else {
+				this.fullScreen = value;
+			}
+		}
+	}
+	bool? grouped;
+	public bool? Grouped {
+		get => isInitialized ? DxLookupInterop.GetGrouped(Id) : grouped;
+		set {
+			if (isInitialized) {
+				DxLookupInterop.SetGrouped(Id, value);
+			} else {
+				this.grouped = value;
+			}
+		}
+	}
+	string nextButtonText;
+	public string NextButtonText {
+		get => isInitialized ? DxLookupInterop.GetNextButtonText(Id) : nextButtonText;
+		set {
+			if (isInitialized) {
+				DxLookupInterop.SetNextButtonText(Id, value);
+			} else {
+				this.nextButtonText = value;
+			}
+		}
+	}
+	string pageLoadingText;
+	public string PageLoadingText {
+		get => isInitialized ? DxLookupInterop.GetPageLoadingText(Id) : pageLoadingText;
+		set {
+			if (isInitialized) {
+				DxLookupInterop.SetPageLoadingText(Id, value);
+			} else {
+				this.pageLoadingText = value;
+			}
+		}
+	}
+	string pageLoadMode;
+	public string PageLoadMode {
+		get => isInitialized ? DxLookupInterop.GetPageLoadMode(Id) : pageLoadMode;
+		set {
+			if (isInitialized) {
+				DxLookupInterop.SetPageLoadMode(Id, value);
+			} else {
+				this.pageLoadMode = value;
+			}
+		}
+	}
+	string placeholder;
+	public string Placeholder {
+		get => isInitialized ? DxLookupInterop.GetPlaceholder(Id) : placeholder;
+		set {
+			if (isInitialized) {
+				DxLookupInterop.SetPlaceholder(Id, value);
+			} else {
+				this.placeholder = value;
+			}
+		}
+	}
+	string pulledDownText;
+	public string PulledDownText {
+		get => isInitialized ? DxLookupInterop.GetPulledDownText(Id) : pulledDownText;
+		set {
+			if (isInitialized) {
+				DxLookupInterop.SetPulledDownText(Id, value);
+			} else {
+				this.pulledDownText = value;
+			}
+		}
+	}
+	string pullingDownText;
+	public string PullingDownText {
+		get => isInitialized ? DxLookupInterop.GetPullingDownText(Id) : pullingDownText;
+		set {
+			if (isInitialized) {
+				DxLookupInterop.SetPullingDownText(Id, value);
+			} else {
+				this.pullingDownText = value;
+			}
+		}
+	}
+	bool? pullRefreshEnabled;
+	public bool? PullRefreshEnabled {
+		get => isInitialized ? DxLookupInterop.GetPullRefreshEnabled(Id) : pullRefreshEnabled;
+		set {
+			if (isInitialized) {
+				DxLookupInterop.SetPullRefreshEnabled(Id, value);
+			} else {
+				this.pullRefreshEnabled = value;
+			}
+		}
+	}
+	string refreshingText;
+	public string RefreshingText {
+		get => isInitialized ? DxLookupInterop.GetRefreshingText(Id) : refreshingText;
+		set {
+			if (isInitialized) {
+				DxLookupInterop.SetRefreshingText(Id, value);
+			} else {
+				this.refreshingText = value;
+			}
+		}
+	}
+	bool? searchEnabled;
+	public bool? SearchEnabled {
+		get => isInitialized ? DxLookupInterop.GetSearchEnabled(Id) : searchEnabled;
+		set {
+			if (isInitialized) {
+				DxLookupInterop.SetSearchEnabled(Id, value);
+			} else {
+				this.searchEnabled = value;
+			}
+		}
+	}
+	string searchPlaceholder;
+	public string SearchPlaceholder {
+		get => isInitialized ? DxLookupInterop.GetSearchPlaceholder(Id) : searchPlaceholder;
+		set {
+			if (isInitialized) {
+				DxLookupInterop.SetSearchPlaceholder(Id, value);
+			} else {
+				this.searchPlaceholder = value;
+			}
+		}
+	}
+	bool? shading;
+	public bool? Shading {
+		get => isInitialized ? DxLookupInterop.GetShading(Id) : shading;
+		set {
+			if (isInitialized) {
+				DxLookupInterop.SetShading(Id, value);
+			} else {
+				this.shading = value;
+			}
+		}
+	}
+	bool? showCancelButton;
+	public bool? ShowCancelButton {
+		get => isInitialized ? DxLookupInterop.GetShowCancelButton(Id) : showCancelButton;
+		set {
+			if (isInitialized) {
+				DxLookupInterop.SetShowCancelButton(Id, value);
+			} else {
+				this.showCancelButton = value;
+			}
+		}
+	}
+	bool? showClearButton;
+	public bool? ShowClearButton {
+		get => isInitialized ? DxLookupInterop.GetShowClearButton(Id) : showClearButton;
+		set {
+			if (isInitialized) {
+				DxLookupInterop.SetShowClearButton(Id, value);
+			} else {
+				this.showClearButton = value;
+			}
+		}
+	}
+	bool? showPopupTitle;
+	public bool? ShowPopupTitle {
+		get => isInitialized ? DxLookupInterop.GetShowPopupTitle(Id) : showPopupTitle;
+		set {
+			if (isInitialized) {
+				DxLookupInterop.SetShowPopupTitle(Id, value);
+			} else {
+				this.showPopupTitle = value;
+			}
+		}
+	}
+	string title;
+	public string Title {
+		get => isInitialized ? DxLookupInterop.GetTitle(Id) : title;
+		set {
+			if (isInitialized) {
+				DxLookupInterop.SetTitle(Id, value);
+			} else {
+				this.title = value;
+			}
+		}
+	}
+	bool? useNativeScrolling;
+	public bool? UseNativeScrolling {
+		get => isInitialized ? DxLookupInterop.GetUseNativeScrolling(Id) : useNativeScrolling;
+		set {
+			if (isInitialized) {
+				DxLookupInterop.SetUseNativeScrolling(Id, value);
+			} else {
+				this.useNativeScrolling = value;
+			}
+		}
+	}
+	bool? usePopover;
+	public bool? UsePopover {
+		get => isInitialized ? DxLookupInterop.GetUsePopover(Id) : usePopover;
+		set {
+			if (isInitialized) {
+				DxLookupInterop.SetUsePopover(Id, value);
+			} else {
+				this.usePopover = value;
+			}
+		}
+	}
+	bool? onPageLoadingEnabled;
+	public bool? OnPageLoadingEnabled {
+		get => onPageLoadingEnabled;
+		set => this.onPageLoadingEnabled = value;
+	}
+	bool? onPullRefreshEnabled;
+	public bool? OnPullRefreshEnabled {
+		get => onPullRefreshEnabled;
+		set => this.onPullRefreshEnabled = value;
+	}
+	bool? onScrollEnabled;
+	public bool? OnScrollEnabled {
+		get => onScrollEnabled;
+		set => this.onScrollEnabled = value;
+	}
+	bool? onTitleRenderedEnabled;
+	public bool? OnTitleRenderedEnabled {
+		get => onTitleRenderedEnabled;
+		set => this.onTitleRenderedEnabled = value;
+	}
+	bool? onValueChangedEnabled;
+	public bool? OnValueChangedEnabled {
+		get => onValueChangedEnabled;
+		set => this.onValueChangedEnabled = value;
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+		DxLookupInterop.PageLoading += DxLookup_PageLoading;
+		DxLookupInterop.PullRefresh += DxLookup_PullRefresh;
+		DxLookupInterop.Scroll += DxLookup_Scroll;
+		DxLookupInterop.TitleRendered += DxLookup_TitleRendered;
+		DxLookupInterop.ValueChanged += DxLookup_ValueChanged;
+	}
+	public Action PageLoading { get; set; }
+	void DxLookup_PageLoading(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			PageLoading?.Invoke();
+		}
+	}
+	public Action PullRefresh { get; set; }
+	void DxLookup_PullRefresh(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			PullRefresh?.Invoke();
+		}
+	}
+	public Action Scroll { get; set; }
+	void DxLookup_Scroll(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Scroll?.Invoke();
+		}
+	}
+	public Action TitleRendered { get; set; }
+	void DxLookup_TitleRendered(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			TitleRendered?.Invoke();
+		}
+	}
+	public Action ValueChanged { get; set; }
+	void DxLookup_ValueChanged(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			ValueChanged?.Invoke();
+		}
+	}
+	public void Dispose() {
+		DxLookupInterop.PageLoading -= DxLookup_PageLoading;
+		DxLookupInterop.PullRefresh -= DxLookup_PullRefresh;
+		DxLookupInterop.Scroll -= DxLookup_Scroll;
+		DxLookupInterop.TitleRendered -= DxLookup_TitleRendered;
+		DxLookupInterop.ValueChanged -= DxLookup_ValueChanged;
+	}
+}

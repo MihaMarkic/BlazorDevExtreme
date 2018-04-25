@@ -37,7 +37,40 @@ Include DevExtreme style sheets and javascript files
 ...
 </html>
 ```
+### Using components
+```csharp
+@addTagHelper *, BlazorDevExtreme
+@using BlazorDevExtreme
+@using BlazorDevExtreme.Components
+@page "/"
+
+<h1>Hello, DevExtreme within Blazor!</h1>
+
+<label>Clicked count:</label>
+<div>@ClickedCount</div>
+
+<DxButton Text=@ButtonText Click=@((Action)DxButton_Click) OnClickEnabled="true" />
+
+@functions {
+    public int ClickedCount { get; set; } = 0;
+    void DxButton_Click()
+    {
+        ClickedCount++;
+        StateHasChanged();
+    }
+    string ButtonText => $"Was clicked {ClickedCount} times";
+}
+```
+
+Notes:
+
+* demonstrates how to create a dxButton, enabled and bind it's onClick event and change its text
+* you have to explicitly enabled events with [EVENTNAME]Enabled flag (i.e. OnClickEnabled="true")
+
+### Using interop directly
+
 And init a dxButton with code like this.
+
 ```csharp
 @using BlazorDevExtreme
 @implements IDisposable

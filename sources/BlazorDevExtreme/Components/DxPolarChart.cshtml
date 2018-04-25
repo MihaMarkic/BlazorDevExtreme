@@ -1,0 +1,198 @@
+@implements IDisposable
+@inherits DxBlazorCompoment<DevExpress.Viz.Charts.DxPolarChartOptions>
+
+<div id="@Id"></div>
+
+@functions {
+	public DxPolarChart() : base("DxPolarChart") { }
+	protected override DevExpress.Viz.Charts.DxPolarChartOptions CreateOptions() {
+		return new DevExpress.Viz.Charts.DxPolarChartOptions {
+			barGroupPadding = barGroupPadding,
+			barGroupWidth = barGroupWidth,
+			barWidth = barWidth,
+			containerBackgroundColor = containerBackgroundColor,
+			equalBarWidth = equalBarWidth,
+			negativesAsZeroes = negativesAsZeroes,
+			resolveLabelOverlapping = resolveLabelOverlapping,
+			seriesSelectionMode = seriesSelectionMode,
+			useSpiderWeb = useSpiderWeb,
+			onArgumentAxisClickEnabled = onArgumentAxisClickEnabled,
+			onLegendClickEnabled = onLegendClickEnabled,
+			onSeriesClickEnabled = onSeriesClickEnabled,
+			onSeriesHoverChangedEnabled = onSeriesHoverChangedEnabled,
+			onSeriesSelectionChangedEnabled = onSeriesSelectionChangedEnabled,
+		};
+	}
+	protected override void Init(DevExpress.Viz.Charts.DxPolarChartOptions options) {
+		DxPolarChartInterop.Init(Id, options);
+	}
+	float? barGroupPadding;
+	public float? BarGroupPadding {
+		get => isInitialized ? DxPolarChartInterop.GetBarGroupPadding(Id) : barGroupPadding;
+		set {
+			if (isInitialized) {
+				DxPolarChartInterop.SetBarGroupPadding(Id, value);
+			} else {
+				this.barGroupPadding = value;
+			}
+		}
+	}
+	float? barGroupWidth;
+	public float? BarGroupWidth {
+		get => isInitialized ? DxPolarChartInterop.GetBarGroupWidth(Id) : barGroupWidth;
+		set {
+			if (isInitialized) {
+				DxPolarChartInterop.SetBarGroupWidth(Id, value);
+			} else {
+				this.barGroupWidth = value;
+			}
+		}
+	}
+	float? barWidth;
+	public float? BarWidth {
+		get => isInitialized ? DxPolarChartInterop.GetBarWidth(Id) : barWidth;
+		set {
+			if (isInitialized) {
+				DxPolarChartInterop.SetBarWidth(Id, value);
+			} else {
+				this.barWidth = value;
+			}
+		}
+	}
+	string containerBackgroundColor;
+	public string ContainerBackgroundColor {
+		get => isInitialized ? DxPolarChartInterop.GetContainerBackgroundColor(Id) : containerBackgroundColor;
+		set {
+			if (isInitialized) {
+				DxPolarChartInterop.SetContainerBackgroundColor(Id, value);
+			} else {
+				this.containerBackgroundColor = value;
+			}
+		}
+	}
+	bool? equalBarWidth;
+	public bool? EqualBarWidth {
+		get => isInitialized ? DxPolarChartInterop.GetEqualBarWidth(Id) : equalBarWidth;
+		set {
+			if (isInitialized) {
+				DxPolarChartInterop.SetEqualBarWidth(Id, value);
+			} else {
+				this.equalBarWidth = value;
+			}
+		}
+	}
+	bool? negativesAsZeroes;
+	public bool? NegativesAsZeroes {
+		get => isInitialized ? DxPolarChartInterop.GetNegativesAsZeroes(Id) : negativesAsZeroes;
+		set {
+			if (isInitialized) {
+				DxPolarChartInterop.SetNegativesAsZeroes(Id, value);
+			} else {
+				this.negativesAsZeroes = value;
+			}
+		}
+	}
+	string resolveLabelOverlapping;
+	public string ResolveLabelOverlapping {
+		get => isInitialized ? DxPolarChartInterop.GetResolveLabelOverlapping(Id) : resolveLabelOverlapping;
+		set {
+			if (isInitialized) {
+				DxPolarChartInterop.SetResolveLabelOverlapping(Id, value);
+			} else {
+				this.resolveLabelOverlapping = value;
+			}
+		}
+	}
+	string seriesSelectionMode;
+	public string SeriesSelectionMode {
+		get => isInitialized ? DxPolarChartInterop.GetSeriesSelectionMode(Id) : seriesSelectionMode;
+		set {
+			if (isInitialized) {
+				DxPolarChartInterop.SetSeriesSelectionMode(Id, value);
+			} else {
+				this.seriesSelectionMode = value;
+			}
+		}
+	}
+	bool? useSpiderWeb;
+	public bool? UseSpiderWeb {
+		get => isInitialized ? DxPolarChartInterop.GetUseSpiderWeb(Id) : useSpiderWeb;
+		set {
+			if (isInitialized) {
+				DxPolarChartInterop.SetUseSpiderWeb(Id, value);
+			} else {
+				this.useSpiderWeb = value;
+			}
+		}
+	}
+	bool? onArgumentAxisClickEnabled;
+	public bool? OnArgumentAxisClickEnabled {
+		get => onArgumentAxisClickEnabled;
+		set => this.onArgumentAxisClickEnabled = value;
+	}
+	bool? onLegendClickEnabled;
+	public bool? OnLegendClickEnabled {
+		get => onLegendClickEnabled;
+		set => this.onLegendClickEnabled = value;
+	}
+	bool? onSeriesClickEnabled;
+	public bool? OnSeriesClickEnabled {
+		get => onSeriesClickEnabled;
+		set => this.onSeriesClickEnabled = value;
+	}
+	bool? onSeriesHoverChangedEnabled;
+	public bool? OnSeriesHoverChangedEnabled {
+		get => onSeriesHoverChangedEnabled;
+		set => this.onSeriesHoverChangedEnabled = value;
+	}
+	bool? onSeriesSelectionChangedEnabled;
+	public bool? OnSeriesSelectionChangedEnabled {
+		get => onSeriesSelectionChangedEnabled;
+		set => this.onSeriesSelectionChangedEnabled = value;
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+		DxPolarChartInterop.ArgumentAxisClick += DxPolarChart_ArgumentAxisClick;
+		DxPolarChartInterop.LegendClick += DxPolarChart_LegendClick;
+		DxPolarChartInterop.SeriesClick += DxPolarChart_SeriesClick;
+		DxPolarChartInterop.SeriesHoverChanged += DxPolarChart_SeriesHoverChanged;
+		DxPolarChartInterop.SeriesSelectionChanged += DxPolarChart_SeriesSelectionChanged;
+	}
+	public Action ArgumentAxisClick { get; set; }
+	void DxPolarChart_ArgumentAxisClick(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			ArgumentAxisClick?.Invoke();
+		}
+	}
+	public Action LegendClick { get; set; }
+	void DxPolarChart_LegendClick(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			LegendClick?.Invoke();
+		}
+	}
+	public Action SeriesClick { get; set; }
+	void DxPolarChart_SeriesClick(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			SeriesClick?.Invoke();
+		}
+	}
+	public Action SeriesHoverChanged { get; set; }
+	void DxPolarChart_SeriesHoverChanged(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			SeriesHoverChanged?.Invoke();
+		}
+	}
+	public Action SeriesSelectionChanged { get; set; }
+	void DxPolarChart_SeriesSelectionChanged(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			SeriesSelectionChanged?.Invoke();
+		}
+	}
+	public void Dispose() {
+		DxPolarChartInterop.ArgumentAxisClick -= DxPolarChart_ArgumentAxisClick;
+		DxPolarChartInterop.LegendClick -= DxPolarChart_LegendClick;
+		DxPolarChartInterop.SeriesClick -= DxPolarChart_SeriesClick;
+		DxPolarChartInterop.SeriesHoverChanged -= DxPolarChart_SeriesHoverChanged;
+		DxPolarChartInterop.SeriesSelectionChanged -= DxPolarChart_SeriesSelectionChanged;
+	}
+}

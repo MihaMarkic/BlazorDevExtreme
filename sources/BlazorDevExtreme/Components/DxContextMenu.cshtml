@@ -1,0 +1,114 @@
+@implements IDisposable
+@inherits DxBlazorCompoment<DevExpress.Ui.DxContextMenuOptions>
+
+<div id="@Id"></div>
+
+@functions {
+	public DxContextMenu() : base("DxContextMenu") { }
+	protected override DevExpress.Ui.DxContextMenuOptions CreateOptions() {
+		return new DevExpress.Ui.DxContextMenuOptions {
+			submenuDirection = submenuDirection,
+			visible = visible,
+			onHiddenEnabled = onHiddenEnabled,
+			onHidingEnabled = onHidingEnabled,
+			onPositioningEnabled = onPositioningEnabled,
+			onShowingEnabled = onShowingEnabled,
+			onShownEnabled = onShownEnabled,
+		};
+	}
+	protected override void Init(DevExpress.Ui.DxContextMenuOptions options) {
+		DxContextMenuInterop.Init(Id, options);
+	}
+	string submenuDirection;
+	public string SubmenuDirection {
+		get => isInitialized ? DxContextMenuInterop.GetSubmenuDirection(Id) : submenuDirection;
+		set {
+			if (isInitialized) {
+				DxContextMenuInterop.SetSubmenuDirection(Id, value);
+			} else {
+				this.submenuDirection = value;
+			}
+		}
+	}
+	bool? visible;
+	public bool? Visible {
+		get => isInitialized ? DxContextMenuInterop.GetVisible(Id) : visible;
+		set {
+			if (isInitialized) {
+				DxContextMenuInterop.SetVisible(Id, value);
+			} else {
+				this.visible = value;
+			}
+		}
+	}
+	bool? onHiddenEnabled;
+	public bool? OnHiddenEnabled {
+		get => onHiddenEnabled;
+		set => this.onHiddenEnabled = value;
+	}
+	bool? onHidingEnabled;
+	public bool? OnHidingEnabled {
+		get => onHidingEnabled;
+		set => this.onHidingEnabled = value;
+	}
+	bool? onPositioningEnabled;
+	public bool? OnPositioningEnabled {
+		get => onPositioningEnabled;
+		set => this.onPositioningEnabled = value;
+	}
+	bool? onShowingEnabled;
+	public bool? OnShowingEnabled {
+		get => onShowingEnabled;
+		set => this.onShowingEnabled = value;
+	}
+	bool? onShownEnabled;
+	public bool? OnShownEnabled {
+		get => onShownEnabled;
+		set => this.onShownEnabled = value;
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+		DxContextMenuInterop.Hidden += DxContextMenu_Hidden;
+		DxContextMenuInterop.Hiding += DxContextMenu_Hiding;
+		DxContextMenuInterop.Positioning += DxContextMenu_Positioning;
+		DxContextMenuInterop.Showing += DxContextMenu_Showing;
+		DxContextMenuInterop.Shown += DxContextMenu_Shown;
+	}
+	public Action Hidden { get; set; }
+	void DxContextMenu_Hidden(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Hidden?.Invoke();
+		}
+	}
+	public Action Hiding { get; set; }
+	void DxContextMenu_Hiding(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Hiding?.Invoke();
+		}
+	}
+	public Action Positioning { get; set; }
+	void DxContextMenu_Positioning(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Positioning?.Invoke();
+		}
+	}
+	public Action Showing { get; set; }
+	void DxContextMenu_Showing(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Showing?.Invoke();
+		}
+	}
+	public Action Shown { get; set; }
+	void DxContextMenu_Shown(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Shown?.Invoke();
+		}
+	}
+	public void Dispose() {
+		DxContextMenuInterop.Hidden -= DxContextMenu_Hidden;
+		DxContextMenuInterop.Hiding -= DxContextMenu_Hiding;
+		DxContextMenuInterop.Positioning -= DxContextMenu_Positioning;
+		DxContextMenuInterop.Showing -= DxContextMenu_Showing;
+		DxContextMenuInterop.Shown -= DxContextMenu_Shown;
+	}
+}

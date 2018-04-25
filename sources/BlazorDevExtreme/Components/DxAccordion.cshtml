@@ -1,0 +1,118 @@
+@implements IDisposable
+@inherits DxBlazorCompoment<DevExpress.Ui.DxAccordionOptions>
+
+<div id="@Id"></div>
+
+@functions {
+	public DxAccordion() : base("DxAccordion") { }
+	protected override DevExpress.Ui.DxAccordionOptions CreateOptions() {
+		return new DevExpress.Ui.DxAccordionOptions {
+			animationDuration = animationDuration,
+			collapsible = collapsible,
+			deferRendering = deferRendering,
+			focusStateEnabled = focusStateEnabled,
+			hoverStateEnabled = hoverStateEnabled,
+			multiple = multiple,
+			selectedIndex = selectedIndex,
+			onItemTitleClickEnabled = onItemTitleClickEnabled,
+		};
+	}
+	protected override void Init(DevExpress.Ui.DxAccordionOptions options) {
+		DxAccordionInterop.Init(Id, options);
+	}
+	float? animationDuration;
+	public float? AnimationDuration {
+		get => isInitialized ? DxAccordionInterop.GetAnimationDuration(Id) : animationDuration;
+		set {
+			if (isInitialized) {
+				DxAccordionInterop.SetAnimationDuration(Id, value);
+			} else {
+				this.animationDuration = value;
+			}
+		}
+	}
+	bool? collapsible;
+	public bool? Collapsible {
+		get => isInitialized ? DxAccordionInterop.GetCollapsible(Id) : collapsible;
+		set {
+			if (isInitialized) {
+				DxAccordionInterop.SetCollapsible(Id, value);
+			} else {
+				this.collapsible = value;
+			}
+		}
+	}
+	bool? deferRendering;
+	public bool? DeferRendering {
+		get => isInitialized ? DxAccordionInterop.GetDeferRendering(Id) : deferRendering;
+		set {
+			if (isInitialized) {
+				DxAccordionInterop.SetDeferRendering(Id, value);
+			} else {
+				this.deferRendering = value;
+			}
+		}
+	}
+	bool? focusStateEnabled;
+	public bool? FocusStateEnabled {
+		get => isInitialized ? DxAccordionInterop.GetFocusStateEnabled(Id) : focusStateEnabled;
+		set {
+			if (isInitialized) {
+				DxAccordionInterop.SetFocusStateEnabled(Id, value);
+			} else {
+				this.focusStateEnabled = value;
+			}
+		}
+	}
+	bool? hoverStateEnabled;
+	public bool? HoverStateEnabled {
+		get => isInitialized ? DxAccordionInterop.GetHoverStateEnabled(Id) : hoverStateEnabled;
+		set {
+			if (isInitialized) {
+				DxAccordionInterop.SetHoverStateEnabled(Id, value);
+			} else {
+				this.hoverStateEnabled = value;
+			}
+		}
+	}
+	bool? multiple;
+	public bool? Multiple {
+		get => isInitialized ? DxAccordionInterop.GetMultiple(Id) : multiple;
+		set {
+			if (isInitialized) {
+				DxAccordionInterop.SetMultiple(Id, value);
+			} else {
+				this.multiple = value;
+			}
+		}
+	}
+	float? selectedIndex;
+	public float? SelectedIndex {
+		get => isInitialized ? DxAccordionInterop.GetSelectedIndex(Id) : selectedIndex;
+		set {
+			if (isInitialized) {
+				DxAccordionInterop.SetSelectedIndex(Id, value);
+			} else {
+				this.selectedIndex = value;
+			}
+		}
+	}
+	bool? onItemTitleClickEnabled;
+	public bool? OnItemTitleClickEnabled {
+		get => onItemTitleClickEnabled;
+		set => this.onItemTitleClickEnabled = value;
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+		DxAccordionInterop.ItemTitleClick += DxAccordion_ItemTitleClick;
+	}
+	public Action ItemTitleClick { get; set; }
+	void DxAccordion_ItemTitleClick(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			ItemTitleClick?.Invoke();
+		}
+	}
+	public void Dispose() {
+		DxAccordionInterop.ItemTitleClick -= DxAccordion_ItemTitleClick;
+	}
+}

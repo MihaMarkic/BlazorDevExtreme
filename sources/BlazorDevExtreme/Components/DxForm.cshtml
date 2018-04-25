@@ -1,0 +1,240 @@
+@implements IDisposable
+@inherits DxBlazorCompoment<DevExpress.Ui.DxFormOptions>
+
+<div id="@Id"></div>
+
+@functions {
+	public DxForm() : base("DxForm") { }
+	protected override DevExpress.Ui.DxFormOptions CreateOptions() {
+		return new DevExpress.Ui.DxFormOptions {
+			alignItemLabels = alignItemLabels,
+			alignItemLabelsInAllGroups = alignItemLabelsInAllGroups,
+			colCountByScreen = colCountByScreen,
+			formData = formData,
+			labelLocation = labelLocation,
+			minColWidth = minColWidth,
+			optionalMark = optionalMark,
+			readOnly = readOnly,
+			requiredMark = requiredMark,
+			requiredMessage = requiredMessage,
+			scrollingEnabled = scrollingEnabled,
+			showColonAfterLabel = showColonAfterLabel,
+			showOptionalMark = showOptionalMark,
+			showRequiredMark = showRequiredMark,
+			showValidationSummary = showValidationSummary,
+			validationGroup = validationGroup,
+			onEditorEnterKeyEnabled = onEditorEnterKeyEnabled,
+			onFieldDataChangedEnabled = onFieldDataChangedEnabled,
+		};
+	}
+	protected override void Init(DevExpress.Ui.DxFormOptions options) {
+		DxFormInterop.Init(Id, options);
+	}
+	bool? alignItemLabels;
+	public bool? AlignItemLabels {
+		get => isInitialized ? DxFormInterop.GetAlignItemLabels(Id) : alignItemLabels;
+		set {
+			if (isInitialized) {
+				DxFormInterop.SetAlignItemLabels(Id, value);
+			} else {
+				this.alignItemLabels = value;
+			}
+		}
+	}
+	bool? alignItemLabelsInAllGroups;
+	public bool? AlignItemLabelsInAllGroups {
+		get => isInitialized ? DxFormInterop.GetAlignItemLabelsInAllGroups(Id) : alignItemLabelsInAllGroups;
+		set {
+			if (isInitialized) {
+				DxFormInterop.SetAlignItemLabelsInAllGroups(Id, value);
+			} else {
+				this.alignItemLabelsInAllGroups = value;
+			}
+		}
+	}
+	object colCountByScreen;
+	public object ColCountByScreen {
+		get => isInitialized ? DxFormInterop.GetColCountByScreen(Id) : colCountByScreen;
+		set {
+			if (isInitialized) {
+				DxFormInterop.SetColCountByScreen(Id, value);
+			} else {
+				this.colCountByScreen = value;
+			}
+		}
+	}
+	object formData;
+	public object FormData {
+		get => isInitialized ? DxFormInterop.GetFormData(Id) : formData;
+		set {
+			if (isInitialized) {
+				DxFormInterop.SetFormData(Id, value);
+			} else {
+				this.formData = value;
+			}
+		}
+	}
+	string labelLocation;
+	public string LabelLocation {
+		get => isInitialized ? DxFormInterop.GetLabelLocation(Id) : labelLocation;
+		set {
+			if (isInitialized) {
+				DxFormInterop.SetLabelLocation(Id, value);
+			} else {
+				this.labelLocation = value;
+			}
+		}
+	}
+	float? minColWidth;
+	public float? MinColWidth {
+		get => isInitialized ? DxFormInterop.GetMinColWidth(Id) : minColWidth;
+		set {
+			if (isInitialized) {
+				DxFormInterop.SetMinColWidth(Id, value);
+			} else {
+				this.minColWidth = value;
+			}
+		}
+	}
+	string optionalMark;
+	public string OptionalMark {
+		get => isInitialized ? DxFormInterop.GetOptionalMark(Id) : optionalMark;
+		set {
+			if (isInitialized) {
+				DxFormInterop.SetOptionalMark(Id, value);
+			} else {
+				this.optionalMark = value;
+			}
+		}
+	}
+	bool? readOnly;
+	public bool? ReadOnly {
+		get => isInitialized ? DxFormInterop.GetReadOnly(Id) : readOnly;
+		set {
+			if (isInitialized) {
+				DxFormInterop.SetReadOnly(Id, value);
+			} else {
+				this.readOnly = value;
+			}
+		}
+	}
+	string requiredMark;
+	public string RequiredMark {
+		get => isInitialized ? DxFormInterop.GetRequiredMark(Id) : requiredMark;
+		set {
+			if (isInitialized) {
+				DxFormInterop.SetRequiredMark(Id, value);
+			} else {
+				this.requiredMark = value;
+			}
+		}
+	}
+	string requiredMessage;
+	public string RequiredMessage {
+		get => isInitialized ? DxFormInterop.GetRequiredMessage(Id) : requiredMessage;
+		set {
+			if (isInitialized) {
+				DxFormInterop.SetRequiredMessage(Id, value);
+			} else {
+				this.requiredMessage = value;
+			}
+		}
+	}
+	bool? scrollingEnabled;
+	public bool? ScrollingEnabled {
+		get => isInitialized ? DxFormInterop.GetScrollingEnabled(Id) : scrollingEnabled;
+		set {
+			if (isInitialized) {
+				DxFormInterop.SetScrollingEnabled(Id, value);
+			} else {
+				this.scrollingEnabled = value;
+			}
+		}
+	}
+	bool? showColonAfterLabel;
+	public bool? ShowColonAfterLabel {
+		get => isInitialized ? DxFormInterop.GetShowColonAfterLabel(Id) : showColonAfterLabel;
+		set {
+			if (isInitialized) {
+				DxFormInterop.SetShowColonAfterLabel(Id, value);
+			} else {
+				this.showColonAfterLabel = value;
+			}
+		}
+	}
+	bool? showOptionalMark;
+	public bool? ShowOptionalMark {
+		get => isInitialized ? DxFormInterop.GetShowOptionalMark(Id) : showOptionalMark;
+		set {
+			if (isInitialized) {
+				DxFormInterop.SetShowOptionalMark(Id, value);
+			} else {
+				this.showOptionalMark = value;
+			}
+		}
+	}
+	bool? showRequiredMark;
+	public bool? ShowRequiredMark {
+		get => isInitialized ? DxFormInterop.GetShowRequiredMark(Id) : showRequiredMark;
+		set {
+			if (isInitialized) {
+				DxFormInterop.SetShowRequiredMark(Id, value);
+			} else {
+				this.showRequiredMark = value;
+			}
+		}
+	}
+	bool? showValidationSummary;
+	public bool? ShowValidationSummary {
+		get => isInitialized ? DxFormInterop.GetShowValidationSummary(Id) : showValidationSummary;
+		set {
+			if (isInitialized) {
+				DxFormInterop.SetShowValidationSummary(Id, value);
+			} else {
+				this.showValidationSummary = value;
+			}
+		}
+	}
+	string validationGroup;
+	public string ValidationGroup {
+		get => isInitialized ? DxFormInterop.GetValidationGroup(Id) : validationGroup;
+		set {
+			if (isInitialized) {
+				DxFormInterop.SetValidationGroup(Id, value);
+			} else {
+				this.validationGroup = value;
+			}
+		}
+	}
+	bool? onEditorEnterKeyEnabled;
+	public bool? OnEditorEnterKeyEnabled {
+		get => onEditorEnterKeyEnabled;
+		set => this.onEditorEnterKeyEnabled = value;
+	}
+	bool? onFieldDataChangedEnabled;
+	public bool? OnFieldDataChangedEnabled {
+		get => onFieldDataChangedEnabled;
+		set => this.onFieldDataChangedEnabled = value;
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+		DxFormInterop.EditorEnterKey += DxForm_EditorEnterKey;
+		DxFormInterop.FieldDataChanged += DxForm_FieldDataChanged;
+	}
+	public Action EditorEnterKey { get; set; }
+	void DxForm_EditorEnterKey(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			EditorEnterKey?.Invoke();
+		}
+	}
+	public Action FieldDataChanged { get; set; }
+	void DxForm_FieldDataChanged(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			FieldDataChanged?.Invoke();
+		}
+	}
+	public void Dispose() {
+		DxFormInterop.EditorEnterKey -= DxForm_EditorEnterKey;
+		DxFormInterop.FieldDataChanged -= DxForm_FieldDataChanged;
+	}
+}

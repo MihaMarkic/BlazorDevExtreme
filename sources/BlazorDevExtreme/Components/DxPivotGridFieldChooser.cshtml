@@ -1,0 +1,70 @@
+@implements IDisposable
+@inherits DxBlazorCompoment<DevExpress.Ui.DxPivotGridFieldChooserOptions>
+
+<div id="@Id"></div>
+
+@functions {
+	public DxPivotGridFieldChooser() : base("DxPivotGridFieldChooser") { }
+	protected override DevExpress.Ui.DxPivotGridFieldChooserOptions CreateOptions() {
+		return new DevExpress.Ui.DxPivotGridFieldChooserOptions {
+			allowSearch = allowSearch,
+			applyChangesMode = applyChangesMode,
+			state = state,
+			onContextMenuPreparingEnabled = onContextMenuPreparingEnabled,
+		};
+	}
+	protected override void Init(DevExpress.Ui.DxPivotGridFieldChooserOptions options) {
+		DxPivotGridFieldChooserInterop.Init(Id, options);
+	}
+	bool? allowSearch;
+	public bool? AllowSearch {
+		get => isInitialized ? DxPivotGridFieldChooserInterop.GetAllowSearch(Id) : allowSearch;
+		set {
+			if (isInitialized) {
+				DxPivotGridFieldChooserInterop.SetAllowSearch(Id, value);
+			} else {
+				this.allowSearch = value;
+			}
+		}
+	}
+	string applyChangesMode;
+	public string ApplyChangesMode {
+		get => isInitialized ? DxPivotGridFieldChooserInterop.GetApplyChangesMode(Id) : applyChangesMode;
+		set {
+			if (isInitialized) {
+				DxPivotGridFieldChooserInterop.SetApplyChangesMode(Id, value);
+			} else {
+				this.applyChangesMode = value;
+			}
+		}
+	}
+	object state;
+	public object State {
+		get => isInitialized ? DxPivotGridFieldChooserInterop.GetState(Id) : state;
+		set {
+			if (isInitialized) {
+				DxPivotGridFieldChooserInterop.SetState(Id, value);
+			} else {
+				this.state = value;
+			}
+		}
+	}
+	bool? onContextMenuPreparingEnabled;
+	public bool? OnContextMenuPreparingEnabled {
+		get => onContextMenuPreparingEnabled;
+		set => this.onContextMenuPreparingEnabled = value;
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+		DxPivotGridFieldChooserInterop.ContextMenuPreparing += DxPivotGridFieldChooser_ContextMenuPreparing;
+	}
+	public Action ContextMenuPreparing { get; set; }
+	void DxPivotGridFieldChooser_ContextMenuPreparing(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			ContextMenuPreparing?.Invoke();
+		}
+	}
+	public void Dispose() {
+		DxPivotGridFieldChooserInterop.ContextMenuPreparing -= DxPivotGridFieldChooser_ContextMenuPreparing;
+	}
+}

@@ -1,0 +1,128 @@
+@implements IDisposable
+@inherits DxBlazorCompoment<DevExpress.Ui.DxCalendarOptions>
+
+<div id="@Id"></div>
+
+@functions {
+	public DxCalendar() : base("DxCalendar") { }
+	protected override DevExpress.Ui.DxCalendarOptions CreateOptions() {
+		return new DevExpress.Ui.DxCalendarOptions {
+			activeStateEnabled = activeStateEnabled,
+			dateSerializationFormat = dateSerializationFormat,
+			focusStateEnabled = focusStateEnabled,
+			hoverStateEnabled = hoverStateEnabled,
+			maxZoomLevel = maxZoomLevel,
+			minZoomLevel = minZoomLevel,
+			name = name,
+			showTodayButton = showTodayButton,
+			zoomLevel = zoomLevel,
+		};
+	}
+	protected override void Init(DevExpress.Ui.DxCalendarOptions options) {
+		DxCalendarInterop.Init(Id, options);
+	}
+	bool? activeStateEnabled;
+	public bool? ActiveStateEnabled {
+		get => isInitialized ? DxCalendarInterop.GetActiveStateEnabled(Id) : activeStateEnabled;
+		set {
+			if (isInitialized) {
+				DxCalendarInterop.SetActiveStateEnabled(Id, value);
+			} else {
+				this.activeStateEnabled = value;
+			}
+		}
+	}
+	string dateSerializationFormat;
+	public string DateSerializationFormat {
+		get => isInitialized ? DxCalendarInterop.GetDateSerializationFormat(Id) : dateSerializationFormat;
+		set {
+			if (isInitialized) {
+				DxCalendarInterop.SetDateSerializationFormat(Id, value);
+			} else {
+				this.dateSerializationFormat = value;
+			}
+		}
+	}
+	bool? focusStateEnabled;
+	public bool? FocusStateEnabled {
+		get => isInitialized ? DxCalendarInterop.GetFocusStateEnabled(Id) : focusStateEnabled;
+		set {
+			if (isInitialized) {
+				DxCalendarInterop.SetFocusStateEnabled(Id, value);
+			} else {
+				this.focusStateEnabled = value;
+			}
+		}
+	}
+	bool? hoverStateEnabled;
+	public bool? HoverStateEnabled {
+		get => isInitialized ? DxCalendarInterop.GetHoverStateEnabled(Id) : hoverStateEnabled;
+		set {
+			if (isInitialized) {
+				DxCalendarInterop.SetHoverStateEnabled(Id, value);
+			} else {
+				this.hoverStateEnabled = value;
+			}
+		}
+	}
+	string maxZoomLevel;
+	public string MaxZoomLevel {
+		get => isInitialized ? DxCalendarInterop.GetMaxZoomLevel(Id) : maxZoomLevel;
+		set {
+			if (isInitialized) {
+				DxCalendarInterop.SetMaxZoomLevel(Id, value);
+			} else {
+				this.maxZoomLevel = value;
+			}
+		}
+	}
+	string minZoomLevel;
+	public string MinZoomLevel {
+		get => isInitialized ? DxCalendarInterop.GetMinZoomLevel(Id) : minZoomLevel;
+		set {
+			if (isInitialized) {
+				DxCalendarInterop.SetMinZoomLevel(Id, value);
+			} else {
+				this.minZoomLevel = value;
+			}
+		}
+	}
+	string name;
+	public string Name {
+		get => isInitialized ? DxCalendarInterop.GetName(Id) : name;
+		set {
+			if (isInitialized) {
+				DxCalendarInterop.SetName(Id, value);
+			} else {
+				this.name = value;
+			}
+		}
+	}
+	bool? showTodayButton;
+	public bool? ShowTodayButton {
+		get => isInitialized ? DxCalendarInterop.GetShowTodayButton(Id) : showTodayButton;
+		set {
+			if (isInitialized) {
+				DxCalendarInterop.SetShowTodayButton(Id, value);
+			} else {
+				this.showTodayButton = value;
+			}
+		}
+	}
+	string zoomLevel;
+	public string ZoomLevel {
+		get => isInitialized ? DxCalendarInterop.GetZoomLevel(Id) : zoomLevel;
+		set {
+			if (isInitialized) {
+				DxCalendarInterop.SetZoomLevel(Id, value);
+			} else {
+				this.zoomLevel = value;
+			}
+		}
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+	}
+	public void Dispose() {
+	}
+}

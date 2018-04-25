@@ -1,0 +1,176 @@
+@implements IDisposable
+@inherits DxBlazorCompoment<DevExpress.Ui.DxDateBoxOptions>
+
+<div id="@Id"></div>
+
+@functions {
+	public DxDateBox() : base("DxDateBox") { }
+	protected override DevExpress.Ui.DxDateBoxOptions CreateOptions() {
+		return new DevExpress.Ui.DxDateBoxOptions {
+			adaptivityEnabled = adaptivityEnabled,
+			applyButtonText = applyButtonText,
+			cancelButtonText = cancelButtonText,
+			dateOutOfRangeMessage = dateOutOfRangeMessage,
+			dateSerializationFormat = dateSerializationFormat,
+			interval = interval,
+			invalidDateMessage = invalidDateMessage,
+			maxZoomLevel = maxZoomLevel,
+			minZoomLevel = minZoomLevel,
+			pickerType = pickerType,
+			placeholder = placeholder,
+			showAnalogClock = showAnalogClock,
+			type = type,
+		};
+	}
+	protected override void Init(DevExpress.Ui.DxDateBoxOptions options) {
+		DxDateBoxInterop.Init(Id, options);
+	}
+	bool? adaptivityEnabled;
+	public bool? AdaptivityEnabled {
+		get => isInitialized ? DxDateBoxInterop.GetAdaptivityEnabled(Id) : adaptivityEnabled;
+		set {
+			if (isInitialized) {
+				DxDateBoxInterop.SetAdaptivityEnabled(Id, value);
+			} else {
+				this.adaptivityEnabled = value;
+			}
+		}
+	}
+	string applyButtonText;
+	public string ApplyButtonText {
+		get => isInitialized ? DxDateBoxInterop.GetApplyButtonText(Id) : applyButtonText;
+		set {
+			if (isInitialized) {
+				DxDateBoxInterop.SetApplyButtonText(Id, value);
+			} else {
+				this.applyButtonText = value;
+			}
+		}
+	}
+	string cancelButtonText;
+	public string CancelButtonText {
+		get => isInitialized ? DxDateBoxInterop.GetCancelButtonText(Id) : cancelButtonText;
+		set {
+			if (isInitialized) {
+				DxDateBoxInterop.SetCancelButtonText(Id, value);
+			} else {
+				this.cancelButtonText = value;
+			}
+		}
+	}
+	string dateOutOfRangeMessage;
+	public string DateOutOfRangeMessage {
+		get => isInitialized ? DxDateBoxInterop.GetDateOutOfRangeMessage(Id) : dateOutOfRangeMessage;
+		set {
+			if (isInitialized) {
+				DxDateBoxInterop.SetDateOutOfRangeMessage(Id, value);
+			} else {
+				this.dateOutOfRangeMessage = value;
+			}
+		}
+	}
+	string dateSerializationFormat;
+	public string DateSerializationFormat {
+		get => isInitialized ? DxDateBoxInterop.GetDateSerializationFormat(Id) : dateSerializationFormat;
+		set {
+			if (isInitialized) {
+				DxDateBoxInterop.SetDateSerializationFormat(Id, value);
+			} else {
+				this.dateSerializationFormat = value;
+			}
+		}
+	}
+	float? interval;
+	public float? Interval {
+		get => isInitialized ? DxDateBoxInterop.GetInterval(Id) : interval;
+		set {
+			if (isInitialized) {
+				DxDateBoxInterop.SetInterval(Id, value);
+			} else {
+				this.interval = value;
+			}
+		}
+	}
+	string invalidDateMessage;
+	public string InvalidDateMessage {
+		get => isInitialized ? DxDateBoxInterop.GetInvalidDateMessage(Id) : invalidDateMessage;
+		set {
+			if (isInitialized) {
+				DxDateBoxInterop.SetInvalidDateMessage(Id, value);
+			} else {
+				this.invalidDateMessage = value;
+			}
+		}
+	}
+	string maxZoomLevel;
+	public string MaxZoomLevel {
+		get => isInitialized ? DxDateBoxInterop.GetMaxZoomLevel(Id) : maxZoomLevel;
+		set {
+			if (isInitialized) {
+				DxDateBoxInterop.SetMaxZoomLevel(Id, value);
+			} else {
+				this.maxZoomLevel = value;
+			}
+		}
+	}
+	string minZoomLevel;
+	public string MinZoomLevel {
+		get => isInitialized ? DxDateBoxInterop.GetMinZoomLevel(Id) : minZoomLevel;
+		set {
+			if (isInitialized) {
+				DxDateBoxInterop.SetMinZoomLevel(Id, value);
+			} else {
+				this.minZoomLevel = value;
+			}
+		}
+	}
+	string pickerType;
+	public string PickerType {
+		get => isInitialized ? DxDateBoxInterop.GetPickerType(Id) : pickerType;
+		set {
+			if (isInitialized) {
+				DxDateBoxInterop.SetPickerType(Id, value);
+			} else {
+				this.pickerType = value;
+			}
+		}
+	}
+	string placeholder;
+	public string Placeholder {
+		get => isInitialized ? DxDateBoxInterop.GetPlaceholder(Id) : placeholder;
+		set {
+			if (isInitialized) {
+				DxDateBoxInterop.SetPlaceholder(Id, value);
+			} else {
+				this.placeholder = value;
+			}
+		}
+	}
+	bool? showAnalogClock;
+	public bool? ShowAnalogClock {
+		get => isInitialized ? DxDateBoxInterop.GetShowAnalogClock(Id) : showAnalogClock;
+		set {
+			if (isInitialized) {
+				DxDateBoxInterop.SetShowAnalogClock(Id, value);
+			} else {
+				this.showAnalogClock = value;
+			}
+		}
+	}
+	string type;
+	public string Type {
+		get => isInitialized ? DxDateBoxInterop.GetType(Id) : type;
+		set {
+			if (isInitialized) {
+				DxDateBoxInterop.SetType(Id, value);
+			} else {
+				this.type = value;
+			}
+		}
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+	}
+	public void Dispose() {
+	}
+}

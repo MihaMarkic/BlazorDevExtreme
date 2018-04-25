@@ -1,0 +1,32 @@
+@implements IDisposable
+@inherits DxBlazorCompoment<DevExpress.Ui.DxSliderOptions>
+
+<div id="@Id"></div>
+
+@functions {
+	public DxSlider() : base("DxSlider") { }
+	protected override DevExpress.Ui.DxSliderOptions CreateOptions() {
+		return new DevExpress.Ui.DxSliderOptions {
+			value = value,
+		};
+	}
+	protected override void Init(DevExpress.Ui.DxSliderOptions options) {
+		DxSliderInterop.Init(Id, options);
+	}
+	float? value;
+	public float? Value {
+		get => isInitialized ? DxSliderInterop.GetValue(Id) : value;
+		set {
+			if (isInitialized) {
+				DxSliderInterop.SetValue(Id, value);
+			} else {
+				this.value = value;
+			}
+		}
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+	}
+	public void Dispose() {
+	}
+}

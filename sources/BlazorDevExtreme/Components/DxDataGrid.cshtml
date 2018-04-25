@@ -1,0 +1,188 @@
+@implements IDisposable
+@inherits DxBlazorCompoment<DevExpress.Ui.DxDataGridOptions>
+
+<div id="@Id"></div>
+
+@functions {
+	public DxDataGrid() : base("DxDataGrid") { }
+	protected override DevExpress.Ui.DxDataGridOptions CreateOptions() {
+		return new DevExpress.Ui.DxDataGridOptions {
+			onCellClickEnabled = onCellClickEnabled,
+			onCellHoverChangedEnabled = onCellHoverChangedEnabled,
+			onCellPreparedEnabled = onCellPreparedEnabled,
+			onContextMenuPreparingEnabled = onContextMenuPreparingEnabled,
+			onEditingStartEnabled = onEditingStartEnabled,
+			onEditorPreparedEnabled = onEditorPreparedEnabled,
+			onEditorPreparingEnabled = onEditorPreparingEnabled,
+			onExportedEnabled = onExportedEnabled,
+			onExportingEnabled = onExportingEnabled,
+			onFileSavingEnabled = onFileSavingEnabled,
+			onRowClickEnabled = onRowClickEnabled,
+			onRowPreparedEnabled = onRowPreparedEnabled,
+		};
+	}
+	protected override void Init(DevExpress.Ui.DxDataGridOptions options) {
+		DxDataGridInterop.Init(Id, options);
+	}
+	bool? onCellClickEnabled;
+	public bool? OnCellClickEnabled {
+		get => onCellClickEnabled;
+		set => this.onCellClickEnabled = value;
+	}
+	bool? onCellHoverChangedEnabled;
+	public bool? OnCellHoverChangedEnabled {
+		get => onCellHoverChangedEnabled;
+		set => this.onCellHoverChangedEnabled = value;
+	}
+	bool? onCellPreparedEnabled;
+	public bool? OnCellPreparedEnabled {
+		get => onCellPreparedEnabled;
+		set => this.onCellPreparedEnabled = value;
+	}
+	bool? onContextMenuPreparingEnabled;
+	public bool? OnContextMenuPreparingEnabled {
+		get => onContextMenuPreparingEnabled;
+		set => this.onContextMenuPreparingEnabled = value;
+	}
+	bool? onEditingStartEnabled;
+	public bool? OnEditingStartEnabled {
+		get => onEditingStartEnabled;
+		set => this.onEditingStartEnabled = value;
+	}
+	bool? onEditorPreparedEnabled;
+	public bool? OnEditorPreparedEnabled {
+		get => onEditorPreparedEnabled;
+		set => this.onEditorPreparedEnabled = value;
+	}
+	bool? onEditorPreparingEnabled;
+	public bool? OnEditorPreparingEnabled {
+		get => onEditorPreparingEnabled;
+		set => this.onEditorPreparingEnabled = value;
+	}
+	bool? onExportedEnabled;
+	public bool? OnExportedEnabled {
+		get => onExportedEnabled;
+		set => this.onExportedEnabled = value;
+	}
+	bool? onExportingEnabled;
+	public bool? OnExportingEnabled {
+		get => onExportingEnabled;
+		set => this.onExportingEnabled = value;
+	}
+	bool? onFileSavingEnabled;
+	public bool? OnFileSavingEnabled {
+		get => onFileSavingEnabled;
+		set => this.onFileSavingEnabled = value;
+	}
+	bool? onRowClickEnabled;
+	public bool? OnRowClickEnabled {
+		get => onRowClickEnabled;
+		set => this.onRowClickEnabled = value;
+	}
+	bool? onRowPreparedEnabled;
+	public bool? OnRowPreparedEnabled {
+		get => onRowPreparedEnabled;
+		set => this.onRowPreparedEnabled = value;
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+		DxDataGridInterop.CellClick += DxDataGrid_CellClick;
+		DxDataGridInterop.CellHoverChanged += DxDataGrid_CellHoverChanged;
+		DxDataGridInterop.CellPrepared += DxDataGrid_CellPrepared;
+		DxDataGridInterop.ContextMenuPreparing += DxDataGrid_ContextMenuPreparing;
+		DxDataGridInterop.EditingStart += DxDataGrid_EditingStart;
+		DxDataGridInterop.EditorPrepared += DxDataGrid_EditorPrepared;
+		DxDataGridInterop.EditorPreparing += DxDataGrid_EditorPreparing;
+		DxDataGridInterop.Exported += DxDataGrid_Exported;
+		DxDataGridInterop.Exporting += DxDataGrid_Exporting;
+		DxDataGridInterop.FileSaving += DxDataGrid_FileSaving;
+		DxDataGridInterop.RowClick += DxDataGrid_RowClick;
+		DxDataGridInterop.RowPrepared += DxDataGrid_RowPrepared;
+	}
+	public Action CellClick { get; set; }
+	void DxDataGrid_CellClick(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			CellClick?.Invoke();
+		}
+	}
+	public Action CellHoverChanged { get; set; }
+	void DxDataGrid_CellHoverChanged(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			CellHoverChanged?.Invoke();
+		}
+	}
+	public Action CellPrepared { get; set; }
+	void DxDataGrid_CellPrepared(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			CellPrepared?.Invoke();
+		}
+	}
+	public Action ContextMenuPreparing { get; set; }
+	void DxDataGrid_ContextMenuPreparing(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			ContextMenuPreparing?.Invoke();
+		}
+	}
+	public Action EditingStart { get; set; }
+	void DxDataGrid_EditingStart(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			EditingStart?.Invoke();
+		}
+	}
+	public Action EditorPrepared { get; set; }
+	void DxDataGrid_EditorPrepared(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			EditorPrepared?.Invoke();
+		}
+	}
+	public Action EditorPreparing { get; set; }
+	void DxDataGrid_EditorPreparing(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			EditorPreparing?.Invoke();
+		}
+	}
+	public Action Exported { get; set; }
+	void DxDataGrid_Exported(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Exported?.Invoke();
+		}
+	}
+	public Action Exporting { get; set; }
+	void DxDataGrid_Exporting(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Exporting?.Invoke();
+		}
+	}
+	public Action FileSaving { get; set; }
+	void DxDataGrid_FileSaving(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			FileSaving?.Invoke();
+		}
+	}
+	public Action RowClick { get; set; }
+	void DxDataGrid_RowClick(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			RowClick?.Invoke();
+		}
+	}
+	public Action RowPrepared { get; set; }
+	void DxDataGrid_RowPrepared(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			RowPrepared?.Invoke();
+		}
+	}
+	public void Dispose() {
+		DxDataGridInterop.CellClick -= DxDataGrid_CellClick;
+		DxDataGridInterop.CellHoverChanged -= DxDataGrid_CellHoverChanged;
+		DxDataGridInterop.CellPrepared -= DxDataGrid_CellPrepared;
+		DxDataGridInterop.ContextMenuPreparing -= DxDataGrid_ContextMenuPreparing;
+		DxDataGridInterop.EditingStart -= DxDataGrid_EditingStart;
+		DxDataGridInterop.EditorPrepared -= DxDataGrid_EditorPrepared;
+		DxDataGridInterop.EditorPreparing -= DxDataGrid_EditorPreparing;
+		DxDataGridInterop.Exported -= DxDataGrid_Exported;
+		DxDataGridInterop.Exporting -= DxDataGrid_Exporting;
+		DxDataGridInterop.FileSaving -= DxDataGrid_FileSaving;
+		DxDataGridInterop.RowClick -= DxDataGrid_RowClick;
+		DxDataGridInterop.RowPrepared -= DxDataGrid_RowPrepared;
+	}
+}

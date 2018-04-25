@@ -1,0 +1,20 @@
+@implements IDisposable
+@inherits DxBlazorCompoment<DevExpress.Viz.Gauges.DxLinearGaugeOptions>
+
+<div id="@Id"></div>
+
+@functions {
+	public DxLinearGauge() : base("DxLinearGauge") { }
+	protected override DevExpress.Viz.Gauges.DxLinearGaugeOptions CreateOptions() {
+		return new DevExpress.Viz.Gauges.DxLinearGaugeOptions {
+		};
+	}
+	protected override void Init(DevExpress.Viz.Gauges.DxLinearGaugeOptions options) {
+		DxLinearGaugeInterop.Init(Id, options);
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+	}
+	public void Dispose() {
+	}
+}

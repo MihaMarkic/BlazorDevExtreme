@@ -1,0 +1,92 @@
+@implements IDisposable
+@inherits DxBlazorCompoment<DevExpress.Ui.DxTabsOptions>
+
+<div id="@Id"></div>
+
+@functions {
+	public DxTabs() : base("DxTabs") { }
+	protected override DevExpress.Ui.DxTabsOptions CreateOptions() {
+		return new DevExpress.Ui.DxTabsOptions {
+			focusStateEnabled = focusStateEnabled,
+			hoverStateEnabled = hoverStateEnabled,
+			scrollByContent = scrollByContent,
+			scrollingEnabled = scrollingEnabled,
+			selectionMode = selectionMode,
+			showNavButtons = showNavButtons,
+		};
+	}
+	protected override void Init(DevExpress.Ui.DxTabsOptions options) {
+		DxTabsInterop.Init(Id, options);
+	}
+	bool? focusStateEnabled;
+	public bool? FocusStateEnabled {
+		get => isInitialized ? DxTabsInterop.GetFocusStateEnabled(Id) : focusStateEnabled;
+		set {
+			if (isInitialized) {
+				DxTabsInterop.SetFocusStateEnabled(Id, value);
+			} else {
+				this.focusStateEnabled = value;
+			}
+		}
+	}
+	bool? hoverStateEnabled;
+	public bool? HoverStateEnabled {
+		get => isInitialized ? DxTabsInterop.GetHoverStateEnabled(Id) : hoverStateEnabled;
+		set {
+			if (isInitialized) {
+				DxTabsInterop.SetHoverStateEnabled(Id, value);
+			} else {
+				this.hoverStateEnabled = value;
+			}
+		}
+	}
+	bool? scrollByContent;
+	public bool? ScrollByContent {
+		get => isInitialized ? DxTabsInterop.GetScrollByContent(Id) : scrollByContent;
+		set {
+			if (isInitialized) {
+				DxTabsInterop.SetScrollByContent(Id, value);
+			} else {
+				this.scrollByContent = value;
+			}
+		}
+	}
+	bool? scrollingEnabled;
+	public bool? ScrollingEnabled {
+		get => isInitialized ? DxTabsInterop.GetScrollingEnabled(Id) : scrollingEnabled;
+		set {
+			if (isInitialized) {
+				DxTabsInterop.SetScrollingEnabled(Id, value);
+			} else {
+				this.scrollingEnabled = value;
+			}
+		}
+	}
+	string selectionMode;
+	public string SelectionMode {
+		get => isInitialized ? DxTabsInterop.GetSelectionMode(Id) : selectionMode;
+		set {
+			if (isInitialized) {
+				DxTabsInterop.SetSelectionMode(Id, value);
+			} else {
+				this.selectionMode = value;
+			}
+		}
+	}
+	bool? showNavButtons;
+	public bool? ShowNavButtons {
+		get => isInitialized ? DxTabsInterop.GetShowNavButtons(Id) : showNavButtons;
+		set {
+			if (isInitialized) {
+				DxTabsInterop.SetShowNavButtons(Id, value);
+			} else {
+				this.showNavButtons = value;
+			}
+		}
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+	}
+	public void Dispose() {
+	}
+}

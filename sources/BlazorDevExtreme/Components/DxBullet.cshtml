@@ -1,0 +1,128 @@
+@implements IDisposable
+@inherits DxBlazorCompoment<DevExpress.Viz.Sparklines.DxBulletOptions>
+
+<div id="@Id"></div>
+
+@functions {
+	public DxBullet() : base("DxBullet") { }
+	protected override DevExpress.Viz.Sparklines.DxBulletOptions CreateOptions() {
+		return new DevExpress.Viz.Sparklines.DxBulletOptions {
+			color = color,
+			endScaleValue = endScaleValue,
+			showTarget = showTarget,
+			showZeroLevel = showZeroLevel,
+			startScaleValue = startScaleValue,
+			target = target,
+			targetColor = targetColor,
+			targetWidth = targetWidth,
+			value = value,
+		};
+	}
+	protected override void Init(DevExpress.Viz.Sparklines.DxBulletOptions options) {
+		DxBulletInterop.Init(Id, options);
+	}
+	string color;
+	public string Color {
+		get => isInitialized ? DxBulletInterop.GetColor(Id) : color;
+		set {
+			if (isInitialized) {
+				DxBulletInterop.SetColor(Id, value);
+			} else {
+				this.color = value;
+			}
+		}
+	}
+	float? endScaleValue;
+	public float? EndScaleValue {
+		get => isInitialized ? DxBulletInterop.GetEndScaleValue(Id) : endScaleValue;
+		set {
+			if (isInitialized) {
+				DxBulletInterop.SetEndScaleValue(Id, value);
+			} else {
+				this.endScaleValue = value;
+			}
+		}
+	}
+	bool? showTarget;
+	public bool? ShowTarget {
+		get => isInitialized ? DxBulletInterop.GetShowTarget(Id) : showTarget;
+		set {
+			if (isInitialized) {
+				DxBulletInterop.SetShowTarget(Id, value);
+			} else {
+				this.showTarget = value;
+			}
+		}
+	}
+	bool? showZeroLevel;
+	public bool? ShowZeroLevel {
+		get => isInitialized ? DxBulletInterop.GetShowZeroLevel(Id) : showZeroLevel;
+		set {
+			if (isInitialized) {
+				DxBulletInterop.SetShowZeroLevel(Id, value);
+			} else {
+				this.showZeroLevel = value;
+			}
+		}
+	}
+	float? startScaleValue;
+	public float? StartScaleValue {
+		get => isInitialized ? DxBulletInterop.GetStartScaleValue(Id) : startScaleValue;
+		set {
+			if (isInitialized) {
+				DxBulletInterop.SetStartScaleValue(Id, value);
+			} else {
+				this.startScaleValue = value;
+			}
+		}
+	}
+	float? target;
+	public float? Target {
+		get => isInitialized ? DxBulletInterop.GetTarget(Id) : target;
+		set {
+			if (isInitialized) {
+				DxBulletInterop.SetTarget(Id, value);
+			} else {
+				this.target = value;
+			}
+		}
+	}
+	string targetColor;
+	public string TargetColor {
+		get => isInitialized ? DxBulletInterop.GetTargetColor(Id) : targetColor;
+		set {
+			if (isInitialized) {
+				DxBulletInterop.SetTargetColor(Id, value);
+			} else {
+				this.targetColor = value;
+			}
+		}
+	}
+	float? targetWidth;
+	public float? TargetWidth {
+		get => isInitialized ? DxBulletInterop.GetTargetWidth(Id) : targetWidth;
+		set {
+			if (isInitialized) {
+				DxBulletInterop.SetTargetWidth(Id, value);
+			} else {
+				this.targetWidth = value;
+			}
+		}
+	}
+	float? value;
+	public float? Value {
+		get => isInitialized ? DxBulletInterop.GetValue(Id) : value;
+		set {
+			if (isInitialized) {
+				DxBulletInterop.SetValue(Id, value);
+			} else {
+				this.value = value;
+			}
+		}
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+	}
+	public void Dispose() {
+	}
+}

@@ -1,0 +1,56 @@
+@implements IDisposable
+@inherits DxBlazorCompoment<DevExpress.Ui.DxSlideOutViewOptions>
+
+<div id="@Id"></div>
+
+@functions {
+	public DxSlideOutView() : base("DxSlideOutView") { }
+	protected override DevExpress.Ui.DxSlideOutViewOptions CreateOptions() {
+		return new DevExpress.Ui.DxSlideOutViewOptions {
+			menuPosition = menuPosition,
+			menuVisible = menuVisible,
+			swipeEnabled = swipeEnabled,
+		};
+	}
+	protected override void Init(DevExpress.Ui.DxSlideOutViewOptions options) {
+		DxSlideOutViewInterop.Init(Id, options);
+	}
+	string menuPosition;
+	public string MenuPosition {
+		get => isInitialized ? DxSlideOutViewInterop.GetMenuPosition(Id) : menuPosition;
+		set {
+			if (isInitialized) {
+				DxSlideOutViewInterop.SetMenuPosition(Id, value);
+			} else {
+				this.menuPosition = value;
+			}
+		}
+	}
+	bool? menuVisible;
+	public bool? MenuVisible {
+		get => isInitialized ? DxSlideOutViewInterop.GetMenuVisible(Id) : menuVisible;
+		set {
+			if (isInitialized) {
+				DxSlideOutViewInterop.SetMenuVisible(Id, value);
+			} else {
+				this.menuVisible = value;
+			}
+		}
+	}
+	bool? swipeEnabled;
+	public bool? SwipeEnabled {
+		get => isInitialized ? DxSlideOutViewInterop.GetSwipeEnabled(Id) : swipeEnabled;
+		set {
+			if (isInitialized) {
+				DxSlideOutViewInterop.SetSwipeEnabled(Id, value);
+			} else {
+				this.swipeEnabled = value;
+			}
+		}
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+	}
+	public void Dispose() {
+	}
+}

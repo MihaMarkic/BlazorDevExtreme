@@ -1,0 +1,58 @@
+@implements IDisposable
+@inherits DxBlazorCompoment<DevExpress.Ui.DxProgressBarOptions>
+
+<div id="@Id"></div>
+
+@functions {
+	public DxProgressBar() : base("DxProgressBar") { }
+	protected override DevExpress.Ui.DxProgressBarOptions CreateOptions() {
+		return new DevExpress.Ui.DxProgressBarOptions {
+			showStatus = showStatus,
+			value = value,
+			onCompleteEnabled = onCompleteEnabled,
+		};
+	}
+	protected override void Init(DevExpress.Ui.DxProgressBarOptions options) {
+		DxProgressBarInterop.Init(Id, options);
+	}
+	bool? showStatus;
+	public bool? ShowStatus {
+		get => isInitialized ? DxProgressBarInterop.GetShowStatus(Id) : showStatus;
+		set {
+			if (isInitialized) {
+				DxProgressBarInterop.SetShowStatus(Id, value);
+			} else {
+				this.showStatus = value;
+			}
+		}
+	}
+	float? value;
+	public float? Value {
+		get => isInitialized ? DxProgressBarInterop.GetValue(Id) : value;
+		set {
+			if (isInitialized) {
+				DxProgressBarInterop.SetValue(Id, value);
+			} else {
+				this.value = value;
+			}
+		}
+	}
+	bool? onCompleteEnabled;
+	public bool? OnCompleteEnabled {
+		get => onCompleteEnabled;
+		set => this.onCompleteEnabled = value;
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+		DxProgressBarInterop.Complete += DxProgressBar_Complete;
+	}
+	public Action Complete { get; set; }
+	void DxProgressBar_Complete(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Complete?.Invoke();
+		}
+	}
+	public void Dispose() {
+		DxProgressBarInterop.Complete -= DxProgressBar_Complete;
+	}
+}

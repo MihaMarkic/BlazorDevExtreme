@@ -1,0 +1,44 @@
+@implements IDisposable
+@inherits DxBlazorCompoment<DevExpress.Ui.DxTextBoxOptions>
+
+<div id="@Id"></div>
+
+@functions {
+	public DxTextBox() : base("DxTextBox") { }
+	protected override DevExpress.Ui.DxTextBoxOptions CreateOptions() {
+		return new DevExpress.Ui.DxTextBoxOptions {
+			mode = mode,
+			value = value,
+		};
+	}
+	protected override void Init(DevExpress.Ui.DxTextBoxOptions options) {
+		DxTextBoxInterop.Init(Id, options);
+	}
+	string mode;
+	public string Mode {
+		get => isInitialized ? DxTextBoxInterop.GetMode(Id) : mode;
+		set {
+			if (isInitialized) {
+				DxTextBoxInterop.SetMode(Id, value);
+			} else {
+				this.mode = value;
+			}
+		}
+	}
+	string value;
+	public string Value {
+		get => isInitialized ? DxTextBoxInterop.GetValue(Id) : value;
+		set {
+			if (isInitialized) {
+				DxTextBoxInterop.SetValue(Id, value);
+			} else {
+				this.value = value;
+			}
+		}
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+	}
+	public void Dispose() {
+	}
+}

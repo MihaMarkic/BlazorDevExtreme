@@ -1,0 +1,20 @@
+@implements IDisposable
+@inherits DxBlazorCompoment<DevExpress.Ui.DxTooltipOptions>
+
+<div id="@Id"></div>
+
+@functions {
+	public DxTooltip() : base("DxTooltip") { }
+	protected override DevExpress.Ui.DxTooltipOptions CreateOptions() {
+		return new DevExpress.Ui.DxTooltipOptions {
+		};
+	}
+	protected override void Init(DevExpress.Ui.DxTooltipOptions options) {
+		DxTooltipInterop.Init(Id, options);
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+	}
+	public void Dispose() {
+	}
+}

@@ -1,39 +1,22 @@
 ﻿@addTagHelper *, BlazorDevExtreme
 @using BlazorDevExtreme
 @using BlazorDevExtreme.Components
-@implements IDisposable
 @page "/"
 
-<h1>Hello, world!</h1>
+<h1>Hello, DevExtreme within Blazor!</h1>
 
-<div id="@ButtonId"></div>
-
-<button onclick="@InitDevExtreme">Init DevExtreme</button>
-<div></div>
 <label>Clicked count:</label>
 <div>@ClickedCount</div>
+
+<DxButton Text=@ButtonText Click=@((Action)DxButton_Click) OnClickEnabled="true" />
 
 @functions {
     public const string ButtonId = "buttonContainer";
     public int ClickedCount { get; set; } = 0;
-    public void InitDevExtreme()
+    void DxButton_Click()
     {
-        DxButtonInterop.Init(ButtonId, new DevExpress.Ui.DxButtonOptions { text = "DevExtreme Button", onClickEnabled = true });
+        ClickedCount++;
+        StateHasChanged();
     }
-    protected override void OnInit()
-    {
-        DxButtonInterop.Click += DxButton_Click;
-    }
-    void DxButton_Click(object sender, JQueryEventArgs e)
-    {
-        if (e.Identifier == ButtonId)
-        {
-            ClickedCount++;
-            StateHasChanged();
-        }
-    }
-    public void Dispose()
-    {
-        DxButtonInterop.Click -= DxButton_Click;
-    }
+    string ButtonText => $"Tubular {ClickedCount}";
 }

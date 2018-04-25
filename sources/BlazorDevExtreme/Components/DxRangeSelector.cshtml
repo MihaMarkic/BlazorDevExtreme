@@ -1,0 +1,84 @@
+@implements IDisposable
+@inherits DxBlazorCompoment<DevExpress.Viz.RangeSelector.DxRangeSelectorOptions>
+
+<div id="@Id"></div>
+
+@functions {
+	public DxRangeSelector() : base("DxRangeSelector") { }
+	protected override DevExpress.Viz.RangeSelector.DxRangeSelectorOptions CreateOptions() {
+		return new DevExpress.Viz.RangeSelector.DxRangeSelectorOptions {
+			containerBackgroundColor = containerBackgroundColor,
+			dataSourceField = dataSourceField,
+			selectedRangeColor = selectedRangeColor,
+			onSelectedRangeChangedEnabled = onSelectedRangeChangedEnabled,
+			onValueChangedEnabled = onValueChangedEnabled,
+		};
+	}
+	protected override void Init(DevExpress.Viz.RangeSelector.DxRangeSelectorOptions options) {
+		DxRangeSelectorInterop.Init(Id, options);
+	}
+	string containerBackgroundColor;
+	public string ContainerBackgroundColor {
+		get => isInitialized ? DxRangeSelectorInterop.GetContainerBackgroundColor(Id) : containerBackgroundColor;
+		set {
+			if (isInitialized) {
+				DxRangeSelectorInterop.SetContainerBackgroundColor(Id, value);
+			} else {
+				this.containerBackgroundColor = value;
+			}
+		}
+	}
+	string dataSourceField;
+	public string DataSourceField {
+		get => isInitialized ? DxRangeSelectorInterop.GetDataSourceField(Id) : dataSourceField;
+		set {
+			if (isInitialized) {
+				DxRangeSelectorInterop.SetDataSourceField(Id, value);
+			} else {
+				this.dataSourceField = value;
+			}
+		}
+	}
+	string selectedRangeColor;
+	public string SelectedRangeColor {
+		get => isInitialized ? DxRangeSelectorInterop.GetSelectedRangeColor(Id) : selectedRangeColor;
+		set {
+			if (isInitialized) {
+				DxRangeSelectorInterop.SetSelectedRangeColor(Id, value);
+			} else {
+				this.selectedRangeColor = value;
+			}
+		}
+	}
+	bool? onSelectedRangeChangedEnabled;
+	public bool? OnSelectedRangeChangedEnabled {
+		get => onSelectedRangeChangedEnabled;
+		set => this.onSelectedRangeChangedEnabled = value;
+	}
+	bool? onValueChangedEnabled;
+	public bool? OnValueChangedEnabled {
+		get => onValueChangedEnabled;
+		set => this.onValueChangedEnabled = value;
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+		DxRangeSelectorInterop.SelectedRangeChanged += DxRangeSelector_SelectedRangeChanged;
+		DxRangeSelectorInterop.ValueChanged += DxRangeSelector_ValueChanged;
+	}
+	public Action SelectedRangeChanged { get; set; }
+	void DxRangeSelector_SelectedRangeChanged(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			SelectedRangeChanged?.Invoke();
+		}
+	}
+	public Action ValueChanged { get; set; }
+	void DxRangeSelector_ValueChanged(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			ValueChanged?.Invoke();
+		}
+	}
+	public void Dispose() {
+		DxRangeSelectorInterop.SelectedRangeChanged -= DxRangeSelector_SelectedRangeChanged;
+		DxRangeSelectorInterop.ValueChanged -= DxRangeSelector_ValueChanged;
+	}
+}

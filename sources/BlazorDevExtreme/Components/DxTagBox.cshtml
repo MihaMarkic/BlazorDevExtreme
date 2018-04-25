@@ -1,0 +1,134 @@
+@implements IDisposable
+@inherits DxBlazorCompoment<DevExpress.Ui.DxTagBoxOptions>
+
+<div id="@Id"></div>
+
+@functions {
+	public DxTagBox() : base("DxTagBox") { }
+	protected override DevExpress.Ui.DxTagBoxOptions CreateOptions() {
+		return new DevExpress.Ui.DxTagBoxOptions {
+			applyValueMode = applyValueMode,
+			hideSelectedItems = hideSelectedItems,
+			maxDisplayedTags = maxDisplayedTags,
+			multiline = multiline,
+			selectAllMode = selectAllMode,
+			showMultiTagOnly = showMultiTagOnly,
+			onMultiTagPreparingEnabled = onMultiTagPreparingEnabled,
+			onSelectAllValueChangedEnabled = onSelectAllValueChangedEnabled,
+			onSelectionChangedEnabled = onSelectionChangedEnabled,
+		};
+	}
+	protected override void Init(DevExpress.Ui.DxTagBoxOptions options) {
+		DxTagBoxInterop.Init(Id, options);
+	}
+	string applyValueMode;
+	public string ApplyValueMode {
+		get => isInitialized ? DxTagBoxInterop.GetApplyValueMode(Id) : applyValueMode;
+		set {
+			if (isInitialized) {
+				DxTagBoxInterop.SetApplyValueMode(Id, value);
+			} else {
+				this.applyValueMode = value;
+			}
+		}
+	}
+	bool? hideSelectedItems;
+	public bool? HideSelectedItems {
+		get => isInitialized ? DxTagBoxInterop.GetHideSelectedItems(Id) : hideSelectedItems;
+		set {
+			if (isInitialized) {
+				DxTagBoxInterop.SetHideSelectedItems(Id, value);
+			} else {
+				this.hideSelectedItems = value;
+			}
+		}
+	}
+	float? maxDisplayedTags;
+	public float? MaxDisplayedTags {
+		get => isInitialized ? DxTagBoxInterop.GetMaxDisplayedTags(Id) : maxDisplayedTags;
+		set {
+			if (isInitialized) {
+				DxTagBoxInterop.SetMaxDisplayedTags(Id, value);
+			} else {
+				this.maxDisplayedTags = value;
+			}
+		}
+	}
+	bool? multiline;
+	public bool? Multiline {
+		get => isInitialized ? DxTagBoxInterop.GetMultiline(Id) : multiline;
+		set {
+			if (isInitialized) {
+				DxTagBoxInterop.SetMultiline(Id, value);
+			} else {
+				this.multiline = value;
+			}
+		}
+	}
+	string selectAllMode;
+	public string SelectAllMode {
+		get => isInitialized ? DxTagBoxInterop.GetSelectAllMode(Id) : selectAllMode;
+		set {
+			if (isInitialized) {
+				DxTagBoxInterop.SetSelectAllMode(Id, value);
+			} else {
+				this.selectAllMode = value;
+			}
+		}
+	}
+	bool? showMultiTagOnly;
+	public bool? ShowMultiTagOnly {
+		get => isInitialized ? DxTagBoxInterop.GetShowMultiTagOnly(Id) : showMultiTagOnly;
+		set {
+			if (isInitialized) {
+				DxTagBoxInterop.SetShowMultiTagOnly(Id, value);
+			} else {
+				this.showMultiTagOnly = value;
+			}
+		}
+	}
+	bool? onMultiTagPreparingEnabled;
+	public bool? OnMultiTagPreparingEnabled {
+		get => onMultiTagPreparingEnabled;
+		set => this.onMultiTagPreparingEnabled = value;
+	}
+	bool? onSelectAllValueChangedEnabled;
+	public bool? OnSelectAllValueChangedEnabled {
+		get => onSelectAllValueChangedEnabled;
+		set => this.onSelectAllValueChangedEnabled = value;
+	}
+	bool? onSelectionChangedEnabled;
+	public bool? OnSelectionChangedEnabled {
+		get => onSelectionChangedEnabled;
+		set => this.onSelectionChangedEnabled = value;
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+		DxTagBoxInterop.MultiTagPreparing += DxTagBox_MultiTagPreparing;
+		DxTagBoxInterop.SelectAllValueChanged += DxTagBox_SelectAllValueChanged;
+		DxTagBoxInterop.SelectionChanged += DxTagBox_SelectionChanged;
+	}
+	public Action MultiTagPreparing { get; set; }
+	void DxTagBox_MultiTagPreparing(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			MultiTagPreparing?.Invoke();
+		}
+	}
+	public Action SelectAllValueChanged { get; set; }
+	void DxTagBox_SelectAllValueChanged(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			SelectAllValueChanged?.Invoke();
+		}
+	}
+	public Action SelectionChanged { get; set; }
+	void DxTagBox_SelectionChanged(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			SelectionChanged?.Invoke();
+		}
+	}
+	public void Dispose() {
+		DxTagBoxInterop.MultiTagPreparing -= DxTagBox_MultiTagPreparing;
+		DxTagBoxInterop.SelectAllValueChanged -= DxTagBox_SelectAllValueChanged;
+		DxTagBoxInterop.SelectionChanged -= DxTagBox_SelectionChanged;
+	}
+}

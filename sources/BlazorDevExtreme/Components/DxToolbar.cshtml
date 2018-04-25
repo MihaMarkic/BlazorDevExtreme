@@ -1,0 +1,32 @@
+@implements IDisposable
+@inherits DxBlazorCompoment<DevExpress.Ui.DxToolbarOptions>
+
+<div id="@Id"></div>
+
+@functions {
+	public DxToolbar() : base("DxToolbar") { }
+	protected override DevExpress.Ui.DxToolbarOptions CreateOptions() {
+		return new DevExpress.Ui.DxToolbarOptions {
+			renderAs = renderAs,
+		};
+	}
+	protected override void Init(DevExpress.Ui.DxToolbarOptions options) {
+		DxToolbarInterop.Init(Id, options);
+	}
+	string renderAs;
+	public string RenderAs {
+		get => isInitialized ? DxToolbarInterop.GetRenderAs(Id) : renderAs;
+		set {
+			if (isInitialized) {
+				DxToolbarInterop.SetRenderAs(Id, value);
+			} else {
+				this.renderAs = value;
+			}
+		}
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+	}
+	public void Dispose() {
+	}
+}

@@ -1,0 +1,146 @@
+@implements IDisposable
+@inherits DxBlazorCompoment<DevExpress.Ui.DxTabPanelOptions>
+
+<div id="@Id"></div>
+
+@functions {
+	public DxTabPanel() : base("DxTabPanel") { }
+	protected override DevExpress.Ui.DxTabPanelOptions CreateOptions() {
+		return new DevExpress.Ui.DxTabPanelOptions {
+			animationEnabled = animationEnabled,
+			focusStateEnabled = focusStateEnabled,
+			hoverStateEnabled = hoverStateEnabled,
+			scrollByContent = scrollByContent,
+			scrollingEnabled = scrollingEnabled,
+			showNavButtons = showNavButtons,
+			swipeEnabled = swipeEnabled,
+			onTitleClickEnabled = onTitleClickEnabled,
+			onTitleHoldEnabled = onTitleHoldEnabled,
+			onTitleRenderedEnabled = onTitleRenderedEnabled,
+		};
+	}
+	protected override void Init(DevExpress.Ui.DxTabPanelOptions options) {
+		DxTabPanelInterop.Init(Id, options);
+	}
+	bool? animationEnabled;
+	public bool? AnimationEnabled {
+		get => isInitialized ? DxTabPanelInterop.GetAnimationEnabled(Id) : animationEnabled;
+		set {
+			if (isInitialized) {
+				DxTabPanelInterop.SetAnimationEnabled(Id, value);
+			} else {
+				this.animationEnabled = value;
+			}
+		}
+	}
+	bool? focusStateEnabled;
+	public bool? FocusStateEnabled {
+		get => isInitialized ? DxTabPanelInterop.GetFocusStateEnabled(Id) : focusStateEnabled;
+		set {
+			if (isInitialized) {
+				DxTabPanelInterop.SetFocusStateEnabled(Id, value);
+			} else {
+				this.focusStateEnabled = value;
+			}
+		}
+	}
+	bool? hoverStateEnabled;
+	public bool? HoverStateEnabled {
+		get => isInitialized ? DxTabPanelInterop.GetHoverStateEnabled(Id) : hoverStateEnabled;
+		set {
+			if (isInitialized) {
+				DxTabPanelInterop.SetHoverStateEnabled(Id, value);
+			} else {
+				this.hoverStateEnabled = value;
+			}
+		}
+	}
+	bool? scrollByContent;
+	public bool? ScrollByContent {
+		get => isInitialized ? DxTabPanelInterop.GetScrollByContent(Id) : scrollByContent;
+		set {
+			if (isInitialized) {
+				DxTabPanelInterop.SetScrollByContent(Id, value);
+			} else {
+				this.scrollByContent = value;
+			}
+		}
+	}
+	bool? scrollingEnabled;
+	public bool? ScrollingEnabled {
+		get => isInitialized ? DxTabPanelInterop.GetScrollingEnabled(Id) : scrollingEnabled;
+		set {
+			if (isInitialized) {
+				DxTabPanelInterop.SetScrollingEnabled(Id, value);
+			} else {
+				this.scrollingEnabled = value;
+			}
+		}
+	}
+	bool? showNavButtons;
+	public bool? ShowNavButtons {
+		get => isInitialized ? DxTabPanelInterop.GetShowNavButtons(Id) : showNavButtons;
+		set {
+			if (isInitialized) {
+				DxTabPanelInterop.SetShowNavButtons(Id, value);
+			} else {
+				this.showNavButtons = value;
+			}
+		}
+	}
+	bool? swipeEnabled;
+	public bool? SwipeEnabled {
+		get => isInitialized ? DxTabPanelInterop.GetSwipeEnabled(Id) : swipeEnabled;
+		set {
+			if (isInitialized) {
+				DxTabPanelInterop.SetSwipeEnabled(Id, value);
+			} else {
+				this.swipeEnabled = value;
+			}
+		}
+	}
+	bool? onTitleClickEnabled;
+	public bool? OnTitleClickEnabled {
+		get => onTitleClickEnabled;
+		set => this.onTitleClickEnabled = value;
+	}
+	bool? onTitleHoldEnabled;
+	public bool? OnTitleHoldEnabled {
+		get => onTitleHoldEnabled;
+		set => this.onTitleHoldEnabled = value;
+	}
+	bool? onTitleRenderedEnabled;
+	public bool? OnTitleRenderedEnabled {
+		get => onTitleRenderedEnabled;
+		set => this.onTitleRenderedEnabled = value;
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+		DxTabPanelInterop.TitleClick += DxTabPanel_TitleClick;
+		DxTabPanelInterop.TitleHold += DxTabPanel_TitleHold;
+		DxTabPanelInterop.TitleRendered += DxTabPanel_TitleRendered;
+	}
+	public Action TitleClick { get; set; }
+	void DxTabPanel_TitleClick(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			TitleClick?.Invoke();
+		}
+	}
+	public Action TitleHold { get; set; }
+	void DxTabPanel_TitleHold(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			TitleHold?.Invoke();
+		}
+	}
+	public Action TitleRendered { get; set; }
+	void DxTabPanel_TitleRendered(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			TitleRendered?.Invoke();
+		}
+	}
+	public void Dispose() {
+		DxTabPanelInterop.TitleClick -= DxTabPanel_TitleClick;
+		DxTabPanelInterop.TitleHold -= DxTabPanel_TitleHold;
+		DxTabPanelInterop.TitleRendered -= DxTabPanel_TitleRendered;
+	}
+}

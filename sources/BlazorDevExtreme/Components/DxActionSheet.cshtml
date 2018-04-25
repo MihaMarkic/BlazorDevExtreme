@@ -1,0 +1,106 @@
+@implements IDisposable
+@inherits DxBlazorCompoment<DevExpress.Ui.DxActionSheetOptions>
+
+<div id="@Id"></div>
+
+@functions {
+	public DxActionSheet() : base("DxActionSheet") { }
+	protected override DevExpress.Ui.DxActionSheetOptions CreateOptions() {
+		return new DevExpress.Ui.DxActionSheetOptions {
+			cancelText = cancelText,
+			showCancelButton = showCancelButton,
+			showTitle = showTitle,
+			title = title,
+			usePopover = usePopover,
+			visible = visible,
+			onCancelClickEnabled = onCancelClickEnabled,
+		};
+	}
+	protected override void Init(DevExpress.Ui.DxActionSheetOptions options) {
+		DxActionSheetInterop.Init(Id, options);
+	}
+	string cancelText;
+	public string CancelText {
+		get => isInitialized ? DxActionSheetInterop.GetCancelText(Id) : cancelText;
+		set {
+			if (isInitialized) {
+				DxActionSheetInterop.SetCancelText(Id, value);
+			} else {
+				this.cancelText = value;
+			}
+		}
+	}
+	bool? showCancelButton;
+	public bool? ShowCancelButton {
+		get => isInitialized ? DxActionSheetInterop.GetShowCancelButton(Id) : showCancelButton;
+		set {
+			if (isInitialized) {
+				DxActionSheetInterop.SetShowCancelButton(Id, value);
+			} else {
+				this.showCancelButton = value;
+			}
+		}
+	}
+	bool? showTitle;
+	public bool? ShowTitle {
+		get => isInitialized ? DxActionSheetInterop.GetShowTitle(Id) : showTitle;
+		set {
+			if (isInitialized) {
+				DxActionSheetInterop.SetShowTitle(Id, value);
+			} else {
+				this.showTitle = value;
+			}
+		}
+	}
+	string title;
+	public string Title {
+		get => isInitialized ? DxActionSheetInterop.GetTitle(Id) : title;
+		set {
+			if (isInitialized) {
+				DxActionSheetInterop.SetTitle(Id, value);
+			} else {
+				this.title = value;
+			}
+		}
+	}
+	bool? usePopover;
+	public bool? UsePopover {
+		get => isInitialized ? DxActionSheetInterop.GetUsePopover(Id) : usePopover;
+		set {
+			if (isInitialized) {
+				DxActionSheetInterop.SetUsePopover(Id, value);
+			} else {
+				this.usePopover = value;
+			}
+		}
+	}
+	bool? visible;
+	public bool? Visible {
+		get => isInitialized ? DxActionSheetInterop.GetVisible(Id) : visible;
+		set {
+			if (isInitialized) {
+				DxActionSheetInterop.SetVisible(Id, value);
+			} else {
+				this.visible = value;
+			}
+		}
+	}
+	bool? onCancelClickEnabled;
+	public bool? OnCancelClickEnabled {
+		get => onCancelClickEnabled;
+		set => this.onCancelClickEnabled = value;
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+		DxActionSheetInterop.CancelClick += DxActionSheet_CancelClick;
+	}
+	public Action CancelClick { get; set; }
+	void DxActionSheet_CancelClick(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			CancelClick?.Invoke();
+		}
+	}
+	public void Dispose() {
+		DxActionSheetInterop.CancelClick -= DxActionSheet_CancelClick;
+	}
+}

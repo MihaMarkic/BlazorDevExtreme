@@ -1,0 +1,124 @@
+@implements IDisposable
+@inherits DxBlazorCompoment<DevExpress.Ui.DxMenuOptions>
+
+<div id="@Id"></div>
+
+@functions {
+	public DxMenu() : base("DxMenu") { }
+	protected override DevExpress.Ui.DxMenuOptions CreateOptions() {
+		return new DevExpress.Ui.DxMenuOptions {
+			adaptivityEnabled = adaptivityEnabled,
+			hideSubmenuOnMouseLeave = hideSubmenuOnMouseLeave,
+			orientation = orientation,
+			submenuDirection = submenuDirection,
+			onSubmenuHiddenEnabled = onSubmenuHiddenEnabled,
+			onSubmenuHidingEnabled = onSubmenuHidingEnabled,
+			onSubmenuShowingEnabled = onSubmenuShowingEnabled,
+			onSubmenuShownEnabled = onSubmenuShownEnabled,
+		};
+	}
+	protected override void Init(DevExpress.Ui.DxMenuOptions options) {
+		DxMenuInterop.Init(Id, options);
+	}
+	bool? adaptivityEnabled;
+	public bool? AdaptivityEnabled {
+		get => isInitialized ? DxMenuInterop.GetAdaptivityEnabled(Id) : adaptivityEnabled;
+		set {
+			if (isInitialized) {
+				DxMenuInterop.SetAdaptivityEnabled(Id, value);
+			} else {
+				this.adaptivityEnabled = value;
+			}
+		}
+	}
+	bool? hideSubmenuOnMouseLeave;
+	public bool? HideSubmenuOnMouseLeave {
+		get => isInitialized ? DxMenuInterop.GetHideSubmenuOnMouseLeave(Id) : hideSubmenuOnMouseLeave;
+		set {
+			if (isInitialized) {
+				DxMenuInterop.SetHideSubmenuOnMouseLeave(Id, value);
+			} else {
+				this.hideSubmenuOnMouseLeave = value;
+			}
+		}
+	}
+	string orientation;
+	public string Orientation {
+		get => isInitialized ? DxMenuInterop.GetOrientation(Id) : orientation;
+		set {
+			if (isInitialized) {
+				DxMenuInterop.SetOrientation(Id, value);
+			} else {
+				this.orientation = value;
+			}
+		}
+	}
+	string submenuDirection;
+	public string SubmenuDirection {
+		get => isInitialized ? DxMenuInterop.GetSubmenuDirection(Id) : submenuDirection;
+		set {
+			if (isInitialized) {
+				DxMenuInterop.SetSubmenuDirection(Id, value);
+			} else {
+				this.submenuDirection = value;
+			}
+		}
+	}
+	bool? onSubmenuHiddenEnabled;
+	public bool? OnSubmenuHiddenEnabled {
+		get => onSubmenuHiddenEnabled;
+		set => this.onSubmenuHiddenEnabled = value;
+	}
+	bool? onSubmenuHidingEnabled;
+	public bool? OnSubmenuHidingEnabled {
+		get => onSubmenuHidingEnabled;
+		set => this.onSubmenuHidingEnabled = value;
+	}
+	bool? onSubmenuShowingEnabled;
+	public bool? OnSubmenuShowingEnabled {
+		get => onSubmenuShowingEnabled;
+		set => this.onSubmenuShowingEnabled = value;
+	}
+	bool? onSubmenuShownEnabled;
+	public bool? OnSubmenuShownEnabled {
+		get => onSubmenuShownEnabled;
+		set => this.onSubmenuShownEnabled = value;
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+		DxMenuInterop.SubmenuHidden += DxMenu_SubmenuHidden;
+		DxMenuInterop.SubmenuHiding += DxMenu_SubmenuHiding;
+		DxMenuInterop.SubmenuShowing += DxMenu_SubmenuShowing;
+		DxMenuInterop.SubmenuShown += DxMenu_SubmenuShown;
+	}
+	public Action SubmenuHidden { get; set; }
+	void DxMenu_SubmenuHidden(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			SubmenuHidden?.Invoke();
+		}
+	}
+	public Action SubmenuHiding { get; set; }
+	void DxMenu_SubmenuHiding(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			SubmenuHiding?.Invoke();
+		}
+	}
+	public Action SubmenuShowing { get; set; }
+	void DxMenu_SubmenuShowing(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			SubmenuShowing?.Invoke();
+		}
+	}
+	public Action SubmenuShown { get; set; }
+	void DxMenu_SubmenuShown(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			SubmenuShown?.Invoke();
+		}
+	}
+	public void Dispose() {
+		DxMenuInterop.SubmenuHidden -= DxMenu_SubmenuHidden;
+		DxMenuInterop.SubmenuHiding -= DxMenu_SubmenuHiding;
+		DxMenuInterop.SubmenuShowing -= DxMenu_SubmenuShowing;
+		DxMenuInterop.SubmenuShown -= DxMenu_SubmenuShown;
+	}
+}

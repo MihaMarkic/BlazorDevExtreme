@@ -1,0 +1,116 @@
+@implements IDisposable
+@inherits DxBlazorCompoment<DevExpress.Ui.DxNumberBoxOptions>
+
+<div id="@Id"></div>
+
+@functions {
+	public DxNumberBox() : base("DxNumberBox") { }
+	protected override DevExpress.Ui.DxNumberBoxOptions CreateOptions() {
+		return new DevExpress.Ui.DxNumberBoxOptions {
+			invalidValueMessage = invalidValueMessage,
+			max = max,
+			min = min,
+			mode = mode,
+			showSpinButtons = showSpinButtons,
+			step = step,
+			useLargeSpinButtons = useLargeSpinButtons,
+			value = value,
+		};
+	}
+	protected override void Init(DevExpress.Ui.DxNumberBoxOptions options) {
+		DxNumberBoxInterop.Init(Id, options);
+	}
+	string invalidValueMessage;
+	public string InvalidValueMessage {
+		get => isInitialized ? DxNumberBoxInterop.GetInvalidValueMessage(Id) : invalidValueMessage;
+		set {
+			if (isInitialized) {
+				DxNumberBoxInterop.SetInvalidValueMessage(Id, value);
+			} else {
+				this.invalidValueMessage = value;
+			}
+		}
+	}
+	float? max;
+	public float? Max {
+		get => isInitialized ? DxNumberBoxInterop.GetMax(Id) : max;
+		set {
+			if (isInitialized) {
+				DxNumberBoxInterop.SetMax(Id, value);
+			} else {
+				this.max = value;
+			}
+		}
+	}
+	float? min;
+	public float? Min {
+		get => isInitialized ? DxNumberBoxInterop.GetMin(Id) : min;
+		set {
+			if (isInitialized) {
+				DxNumberBoxInterop.SetMin(Id, value);
+			} else {
+				this.min = value;
+			}
+		}
+	}
+	string mode;
+	public string Mode {
+		get => isInitialized ? DxNumberBoxInterop.GetMode(Id) : mode;
+		set {
+			if (isInitialized) {
+				DxNumberBoxInterop.SetMode(Id, value);
+			} else {
+				this.mode = value;
+			}
+		}
+	}
+	bool? showSpinButtons;
+	public bool? ShowSpinButtons {
+		get => isInitialized ? DxNumberBoxInterop.GetShowSpinButtons(Id) : showSpinButtons;
+		set {
+			if (isInitialized) {
+				DxNumberBoxInterop.SetShowSpinButtons(Id, value);
+			} else {
+				this.showSpinButtons = value;
+			}
+		}
+	}
+	float? step;
+	public float? Step {
+		get => isInitialized ? DxNumberBoxInterop.GetStep(Id) : step;
+		set {
+			if (isInitialized) {
+				DxNumberBoxInterop.SetStep(Id, value);
+			} else {
+				this.step = value;
+			}
+		}
+	}
+	bool? useLargeSpinButtons;
+	public bool? UseLargeSpinButtons {
+		get => isInitialized ? DxNumberBoxInterop.GetUseLargeSpinButtons(Id) : useLargeSpinButtons;
+		set {
+			if (isInitialized) {
+				DxNumberBoxInterop.SetUseLargeSpinButtons(Id, value);
+			} else {
+				this.useLargeSpinButtons = value;
+			}
+		}
+	}
+	float? value;
+	public float? Value {
+		get => isInitialized ? DxNumberBoxInterop.GetValue(Id) : value;
+		set {
+			if (isInitialized) {
+				DxNumberBoxInterop.SetValue(Id, value);
+			} else {
+				this.value = value;
+			}
+		}
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+	}
+	public void Dispose() {
+	}
+}

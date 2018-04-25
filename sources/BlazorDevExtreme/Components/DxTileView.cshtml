@@ -1,0 +1,116 @@
+@implements IDisposable
+@inherits DxBlazorCompoment<DevExpress.Ui.DxTileViewOptions>
+
+<div id="@Id"></div>
+
+@functions {
+	public DxTileView() : base("DxTileView") { }
+	protected override DevExpress.Ui.DxTileViewOptions CreateOptions() {
+		return new DevExpress.Ui.DxTileViewOptions {
+			activeStateEnabled = activeStateEnabled,
+			baseItemHeight = baseItemHeight,
+			baseItemWidth = baseItemWidth,
+			direction = direction,
+			focusStateEnabled = focusStateEnabled,
+			hoverStateEnabled = hoverStateEnabled,
+			itemMargin = itemMargin,
+			showScrollbar = showScrollbar,
+		};
+	}
+	protected override void Init(DevExpress.Ui.DxTileViewOptions options) {
+		DxTileViewInterop.Init(Id, options);
+	}
+	bool? activeStateEnabled;
+	public bool? ActiveStateEnabled {
+		get => isInitialized ? DxTileViewInterop.GetActiveStateEnabled(Id) : activeStateEnabled;
+		set {
+			if (isInitialized) {
+				DxTileViewInterop.SetActiveStateEnabled(Id, value);
+			} else {
+				this.activeStateEnabled = value;
+			}
+		}
+	}
+	float? baseItemHeight;
+	public float? BaseItemHeight {
+		get => isInitialized ? DxTileViewInterop.GetBaseItemHeight(Id) : baseItemHeight;
+		set {
+			if (isInitialized) {
+				DxTileViewInterop.SetBaseItemHeight(Id, value);
+			} else {
+				this.baseItemHeight = value;
+			}
+		}
+	}
+	float? baseItemWidth;
+	public float? BaseItemWidth {
+		get => isInitialized ? DxTileViewInterop.GetBaseItemWidth(Id) : baseItemWidth;
+		set {
+			if (isInitialized) {
+				DxTileViewInterop.SetBaseItemWidth(Id, value);
+			} else {
+				this.baseItemWidth = value;
+			}
+		}
+	}
+	string direction;
+	public string Direction {
+		get => isInitialized ? DxTileViewInterop.GetDirection(Id) : direction;
+		set {
+			if (isInitialized) {
+				DxTileViewInterop.SetDirection(Id, value);
+			} else {
+				this.direction = value;
+			}
+		}
+	}
+	bool? focusStateEnabled;
+	public bool? FocusStateEnabled {
+		get => isInitialized ? DxTileViewInterop.GetFocusStateEnabled(Id) : focusStateEnabled;
+		set {
+			if (isInitialized) {
+				DxTileViewInterop.SetFocusStateEnabled(Id, value);
+			} else {
+				this.focusStateEnabled = value;
+			}
+		}
+	}
+	bool? hoverStateEnabled;
+	public bool? HoverStateEnabled {
+		get => isInitialized ? DxTileViewInterop.GetHoverStateEnabled(Id) : hoverStateEnabled;
+		set {
+			if (isInitialized) {
+				DxTileViewInterop.SetHoverStateEnabled(Id, value);
+			} else {
+				this.hoverStateEnabled = value;
+			}
+		}
+	}
+	float? itemMargin;
+	public float? ItemMargin {
+		get => isInitialized ? DxTileViewInterop.GetItemMargin(Id) : itemMargin;
+		set {
+			if (isInitialized) {
+				DxTileViewInterop.SetItemMargin(Id, value);
+			} else {
+				this.itemMargin = value;
+			}
+		}
+	}
+	bool? showScrollbar;
+	public bool? ShowScrollbar {
+		get => isInitialized ? DxTileViewInterop.GetShowScrollbar(Id) : showScrollbar;
+		set {
+			if (isInitialized) {
+				DxTileViewInterop.SetShowScrollbar(Id, value);
+			} else {
+				this.showScrollbar = value;
+			}
+		}
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+	}
+	public void Dispose() {
+	}
+}

@@ -1,0 +1,94 @@
+@implements IDisposable
+@inherits DxBlazorCompoment<DevExpress.Ui.DxRangeSliderOptions>
+
+<div id="@Id"></div>
+
+@functions {
+	public DxRangeSlider() : base("DxRangeSlider") { }
+	protected override DevExpress.Ui.DxRangeSliderOptions CreateOptions() {
+		return new DevExpress.Ui.DxRangeSliderOptions {
+			end = end,
+			endName = endName,
+			start = start,
+			startName = startName,
+			value = value,
+			onValueChangedEnabled = onValueChangedEnabled,
+		};
+	}
+	protected override void Init(DevExpress.Ui.DxRangeSliderOptions options) {
+		DxRangeSliderInterop.Init(Id, options);
+	}
+	float? end;
+	public float? End {
+		get => isInitialized ? DxRangeSliderInterop.GetEnd(Id) : end;
+		set {
+			if (isInitialized) {
+				DxRangeSliderInterop.SetEnd(Id, value);
+			} else {
+				this.end = value;
+			}
+		}
+	}
+	string endName;
+	public string EndName {
+		get => isInitialized ? DxRangeSliderInterop.GetEndName(Id) : endName;
+		set {
+			if (isInitialized) {
+				DxRangeSliderInterop.SetEndName(Id, value);
+			} else {
+				this.endName = value;
+			}
+		}
+	}
+	float? start;
+	public float? Start {
+		get => isInitialized ? DxRangeSliderInterop.GetStart(Id) : start;
+		set {
+			if (isInitialized) {
+				DxRangeSliderInterop.SetStart(Id, value);
+			} else {
+				this.start = value;
+			}
+		}
+	}
+	string startName;
+	public string StartName {
+		get => isInitialized ? DxRangeSliderInterop.GetStartName(Id) : startName;
+		set {
+			if (isInitialized) {
+				DxRangeSliderInterop.SetStartName(Id, value);
+			} else {
+				this.startName = value;
+			}
+		}
+	}
+	float value;
+	public float Value {
+		get => isInitialized ? DxRangeSliderInterop.GetValue(Id) : value;
+		set {
+			if (isInitialized) {
+				DxRangeSliderInterop.SetValue(Id, value);
+			} else {
+				this.value = value;
+			}
+		}
+	}
+	bool? onValueChangedEnabled;
+	public bool? OnValueChangedEnabled {
+		get => onValueChangedEnabled;
+		set => this.onValueChangedEnabled = value;
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+		DxRangeSliderInterop.ValueChanged += DxRangeSlider_ValueChanged;
+	}
+	public Action ValueChanged { get; set; }
+	void DxRangeSlider_ValueChanged(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			ValueChanged?.Invoke();
+		}
+	}
+	public void Dispose() {
+		DxRangeSliderInterop.ValueChanged -= DxRangeSlider_ValueChanged;
+	}
+}

@@ -1,0 +1,130 @@
+@implements IDisposable
+@inherits DxBlazorCompoment<DevExpress.Viz.Charts.DxPieChartOptions>
+
+<div id="@Id"></div>
+
+@functions {
+	public DxPieChart() : base("DxPieChart") { }
+	protected override DevExpress.Viz.Charts.DxPieChartOptions CreateOptions() {
+		return new DevExpress.Viz.Charts.DxPieChartOptions {
+			diameter = diameter,
+			innerRadius = innerRadius,
+			minDiameter = minDiameter,
+			resolveLabelOverlapping = resolveLabelOverlapping,
+			segmentsDirection = segmentsDirection,
+			sizeGroup = sizeGroup,
+			startAngle = startAngle,
+			type = type,
+			onLegendClickEnabled = onLegendClickEnabled,
+		};
+	}
+	protected override void Init(DevExpress.Viz.Charts.DxPieChartOptions options) {
+		DxPieChartInterop.Init(Id, options);
+	}
+	float? diameter;
+	public float? Diameter {
+		get => isInitialized ? DxPieChartInterop.GetDiameter(Id) : diameter;
+		set {
+			if (isInitialized) {
+				DxPieChartInterop.SetDiameter(Id, value);
+			} else {
+				this.diameter = value;
+			}
+		}
+	}
+	float? innerRadius;
+	public float? InnerRadius {
+		get => isInitialized ? DxPieChartInterop.GetInnerRadius(Id) : innerRadius;
+		set {
+			if (isInitialized) {
+				DxPieChartInterop.SetInnerRadius(Id, value);
+			} else {
+				this.innerRadius = value;
+			}
+		}
+	}
+	float? minDiameter;
+	public float? MinDiameter {
+		get => isInitialized ? DxPieChartInterop.GetMinDiameter(Id) : minDiameter;
+		set {
+			if (isInitialized) {
+				DxPieChartInterop.SetMinDiameter(Id, value);
+			} else {
+				this.minDiameter = value;
+			}
+		}
+	}
+	string resolveLabelOverlapping;
+	public string ResolveLabelOverlapping {
+		get => isInitialized ? DxPieChartInterop.GetResolveLabelOverlapping(Id) : resolveLabelOverlapping;
+		set {
+			if (isInitialized) {
+				DxPieChartInterop.SetResolveLabelOverlapping(Id, value);
+			} else {
+				this.resolveLabelOverlapping = value;
+			}
+		}
+	}
+	string segmentsDirection;
+	public string SegmentsDirection {
+		get => isInitialized ? DxPieChartInterop.GetSegmentsDirection(Id) : segmentsDirection;
+		set {
+			if (isInitialized) {
+				DxPieChartInterop.SetSegmentsDirection(Id, value);
+			} else {
+				this.segmentsDirection = value;
+			}
+		}
+	}
+	string sizeGroup;
+	public string SizeGroup {
+		get => isInitialized ? DxPieChartInterop.GetSizeGroup(Id) : sizeGroup;
+		set {
+			if (isInitialized) {
+				DxPieChartInterop.SetSizeGroup(Id, value);
+			} else {
+				this.sizeGroup = value;
+			}
+		}
+	}
+	float? startAngle;
+	public float? StartAngle {
+		get => isInitialized ? DxPieChartInterop.GetStartAngle(Id) : startAngle;
+		set {
+			if (isInitialized) {
+				DxPieChartInterop.SetStartAngle(Id, value);
+			} else {
+				this.startAngle = value;
+			}
+		}
+	}
+	string type;
+	public string Type {
+		get => isInitialized ? DxPieChartInterop.GetType(Id) : type;
+		set {
+			if (isInitialized) {
+				DxPieChartInterop.SetType(Id, value);
+			} else {
+				this.type = value;
+			}
+		}
+	}
+	bool? onLegendClickEnabled;
+	public bool? OnLegendClickEnabled {
+		get => onLegendClickEnabled;
+		set => this.onLegendClickEnabled = value;
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+		DxPieChartInterop.LegendClick += DxPieChart_LegendClick;
+	}
+	public Action LegendClick { get; set; }
+	void DxPieChart_LegendClick(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			LegendClick?.Invoke();
+		}
+	}
+	public void Dispose() {
+		DxPieChartInterop.LegendClick -= DxPieChart_LegendClick;
+	}
+}

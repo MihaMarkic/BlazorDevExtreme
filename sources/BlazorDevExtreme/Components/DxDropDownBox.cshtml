@@ -1,0 +1,44 @@
+@implements IDisposable
+@inherits DxBlazorCompoment<DevExpress.Ui.DxDropDownBoxOptions>
+
+<div id="@Id"></div>
+
+@functions {
+	public DxDropDownBox() : base("DxDropDownBox") { }
+	protected override DevExpress.Ui.DxDropDownBoxOptions CreateOptions() {
+		return new DevExpress.Ui.DxDropDownBoxOptions {
+			acceptCustomValue = acceptCustomValue,
+			valueChangeEvent = valueChangeEvent,
+		};
+	}
+	protected override void Init(DevExpress.Ui.DxDropDownBoxOptions options) {
+		DxDropDownBoxInterop.Init(Id, options);
+	}
+	bool? acceptCustomValue;
+	public bool? AcceptCustomValue {
+		get => isInitialized ? DxDropDownBoxInterop.GetAcceptCustomValue(Id) : acceptCustomValue;
+		set {
+			if (isInitialized) {
+				DxDropDownBoxInterop.SetAcceptCustomValue(Id, value);
+			} else {
+				this.acceptCustomValue = value;
+			}
+		}
+	}
+	string valueChangeEvent;
+	public string ValueChangeEvent {
+		get => isInitialized ? DxDropDownBoxInterop.GetValueChangeEvent(Id) : valueChangeEvent;
+		set {
+			if (isInitialized) {
+				DxDropDownBoxInterop.SetValueChangeEvent(Id, value);
+			} else {
+				this.valueChangeEvent = value;
+			}
+		}
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+	}
+	public void Dispose() {
+	}
+}

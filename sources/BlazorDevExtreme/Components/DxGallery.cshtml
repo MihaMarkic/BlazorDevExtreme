@@ -1,0 +1,176 @@
+@implements IDisposable
+@inherits DxBlazorCompoment<DevExpress.Ui.DxGalleryOptions>
+
+<div id="@Id"></div>
+
+@functions {
+	public DxGallery() : base("DxGallery") { }
+	protected override DevExpress.Ui.DxGalleryOptions CreateOptions() {
+		return new DevExpress.Ui.DxGalleryOptions {
+			animationDuration = animationDuration,
+			animationEnabled = animationEnabled,
+			focusStateEnabled = focusStateEnabled,
+			indicatorEnabled = indicatorEnabled,
+			initialItemWidth = initialItemWidth,
+			loop = loop,
+			selectedIndex = selectedIndex,
+			showIndicator = showIndicator,
+			showNavButtons = showNavButtons,
+			slideshowDelay = slideshowDelay,
+			stretchImages = stretchImages,
+			swipeEnabled = swipeEnabled,
+			wrapAround = wrapAround,
+		};
+	}
+	protected override void Init(DevExpress.Ui.DxGalleryOptions options) {
+		DxGalleryInterop.Init(Id, options);
+	}
+	float? animationDuration;
+	public float? AnimationDuration {
+		get => isInitialized ? DxGalleryInterop.GetAnimationDuration(Id) : animationDuration;
+		set {
+			if (isInitialized) {
+				DxGalleryInterop.SetAnimationDuration(Id, value);
+			} else {
+				this.animationDuration = value;
+			}
+		}
+	}
+	bool? animationEnabled;
+	public bool? AnimationEnabled {
+		get => isInitialized ? DxGalleryInterop.GetAnimationEnabled(Id) : animationEnabled;
+		set {
+			if (isInitialized) {
+				DxGalleryInterop.SetAnimationEnabled(Id, value);
+			} else {
+				this.animationEnabled = value;
+			}
+		}
+	}
+	bool? focusStateEnabled;
+	public bool? FocusStateEnabled {
+		get => isInitialized ? DxGalleryInterop.GetFocusStateEnabled(Id) : focusStateEnabled;
+		set {
+			if (isInitialized) {
+				DxGalleryInterop.SetFocusStateEnabled(Id, value);
+			} else {
+				this.focusStateEnabled = value;
+			}
+		}
+	}
+	bool? indicatorEnabled;
+	public bool? IndicatorEnabled {
+		get => isInitialized ? DxGalleryInterop.GetIndicatorEnabled(Id) : indicatorEnabled;
+		set {
+			if (isInitialized) {
+				DxGalleryInterop.SetIndicatorEnabled(Id, value);
+			} else {
+				this.indicatorEnabled = value;
+			}
+		}
+	}
+	float? initialItemWidth;
+	public float? InitialItemWidth {
+		get => isInitialized ? DxGalleryInterop.GetInitialItemWidth(Id) : initialItemWidth;
+		set {
+			if (isInitialized) {
+				DxGalleryInterop.SetInitialItemWidth(Id, value);
+			} else {
+				this.initialItemWidth = value;
+			}
+		}
+	}
+	bool? loop;
+	public bool? Loop {
+		get => isInitialized ? DxGalleryInterop.GetLoop(Id) : loop;
+		set {
+			if (isInitialized) {
+				DxGalleryInterop.SetLoop(Id, value);
+			} else {
+				this.loop = value;
+			}
+		}
+	}
+	float? selectedIndex;
+	public float? SelectedIndex {
+		get => isInitialized ? DxGalleryInterop.GetSelectedIndex(Id) : selectedIndex;
+		set {
+			if (isInitialized) {
+				DxGalleryInterop.SetSelectedIndex(Id, value);
+			} else {
+				this.selectedIndex = value;
+			}
+		}
+	}
+	bool? showIndicator;
+	public bool? ShowIndicator {
+		get => isInitialized ? DxGalleryInterop.GetShowIndicator(Id) : showIndicator;
+		set {
+			if (isInitialized) {
+				DxGalleryInterop.SetShowIndicator(Id, value);
+			} else {
+				this.showIndicator = value;
+			}
+		}
+	}
+	bool? showNavButtons;
+	public bool? ShowNavButtons {
+		get => isInitialized ? DxGalleryInterop.GetShowNavButtons(Id) : showNavButtons;
+		set {
+			if (isInitialized) {
+				DxGalleryInterop.SetShowNavButtons(Id, value);
+			} else {
+				this.showNavButtons = value;
+			}
+		}
+	}
+	float? slideshowDelay;
+	public float? SlideshowDelay {
+		get => isInitialized ? DxGalleryInterop.GetSlideshowDelay(Id) : slideshowDelay;
+		set {
+			if (isInitialized) {
+				DxGalleryInterop.SetSlideshowDelay(Id, value);
+			} else {
+				this.slideshowDelay = value;
+			}
+		}
+	}
+	bool? stretchImages;
+	public bool? StretchImages {
+		get => isInitialized ? DxGalleryInterop.GetStretchImages(Id) : stretchImages;
+		set {
+			if (isInitialized) {
+				DxGalleryInterop.SetStretchImages(Id, value);
+			} else {
+				this.stretchImages = value;
+			}
+		}
+	}
+	bool? swipeEnabled;
+	public bool? SwipeEnabled {
+		get => isInitialized ? DxGalleryInterop.GetSwipeEnabled(Id) : swipeEnabled;
+		set {
+			if (isInitialized) {
+				DxGalleryInterop.SetSwipeEnabled(Id, value);
+			} else {
+				this.swipeEnabled = value;
+			}
+		}
+	}
+	bool? wrapAround;
+	public bool? WrapAround {
+		get => isInitialized ? DxGalleryInterop.GetWrapAround(Id) : wrapAround;
+		set {
+			if (isInitialized) {
+				DxGalleryInterop.SetWrapAround(Id, value);
+			} else {
+				this.wrapAround = value;
+			}
+		}
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+	}
+	public void Dispose() {
+	}
+}

@@ -1,0 +1,92 @@
+@implements IDisposable
+@inherits DxBlazorCompoment<DevExpress.Ui.DxCheckBoxOptions>
+
+<div id="@Id"></div>
+
+@functions {
+	public DxCheckBox() : base("DxCheckBox") { }
+	protected override DevExpress.Ui.DxCheckBoxOptions CreateOptions() {
+		return new DevExpress.Ui.DxCheckBoxOptions {
+			activeStateEnabled = activeStateEnabled,
+			focusStateEnabled = focusStateEnabled,
+			hoverStateEnabled = hoverStateEnabled,
+			name = name,
+			text = text,
+			value = value,
+		};
+	}
+	protected override void Init(DevExpress.Ui.DxCheckBoxOptions options) {
+		DxCheckBoxInterop.Init(Id, options);
+	}
+	bool? activeStateEnabled;
+	public bool? ActiveStateEnabled {
+		get => isInitialized ? DxCheckBoxInterop.GetActiveStateEnabled(Id) : activeStateEnabled;
+		set {
+			if (isInitialized) {
+				DxCheckBoxInterop.SetActiveStateEnabled(Id, value);
+			} else {
+				this.activeStateEnabled = value;
+			}
+		}
+	}
+	bool? focusStateEnabled;
+	public bool? FocusStateEnabled {
+		get => isInitialized ? DxCheckBoxInterop.GetFocusStateEnabled(Id) : focusStateEnabled;
+		set {
+			if (isInitialized) {
+				DxCheckBoxInterop.SetFocusStateEnabled(Id, value);
+			} else {
+				this.focusStateEnabled = value;
+			}
+		}
+	}
+	bool? hoverStateEnabled;
+	public bool? HoverStateEnabled {
+		get => isInitialized ? DxCheckBoxInterop.GetHoverStateEnabled(Id) : hoverStateEnabled;
+		set {
+			if (isInitialized) {
+				DxCheckBoxInterop.SetHoverStateEnabled(Id, value);
+			} else {
+				this.hoverStateEnabled = value;
+			}
+		}
+	}
+	string name;
+	public string Name {
+		get => isInitialized ? DxCheckBoxInterop.GetName(Id) : name;
+		set {
+			if (isInitialized) {
+				DxCheckBoxInterop.SetName(Id, value);
+			} else {
+				this.name = value;
+			}
+		}
+	}
+	string text;
+	public string Text {
+		get => isInitialized ? DxCheckBoxInterop.GetText(Id) : text;
+		set {
+			if (isInitialized) {
+				DxCheckBoxInterop.SetText(Id, value);
+			} else {
+				this.text = value;
+			}
+		}
+	}
+	bool? value;
+	public bool? Value {
+		get => isInitialized ? DxCheckBoxInterop.GetValue(Id) : value;
+		set {
+			if (isInitialized) {
+				DxCheckBoxInterop.SetValue(Id, value);
+			} else {
+				this.value = value;
+			}
+		}
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+	}
+	public void Dispose() {
+	}
+}

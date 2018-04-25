@@ -1,0 +1,82 @@
+@implements IDisposable
+@inherits DxBlazorCompoment<DevExpress.Ui.DxSelectBoxOptions>
+
+<div id="@Id"></div>
+
+@functions {
+	public DxSelectBox() : base("DxSelectBox") { }
+	protected override DevExpress.Ui.DxSelectBoxOptions CreateOptions() {
+		return new DevExpress.Ui.DxSelectBoxOptions {
+			acceptCustomValue = acceptCustomValue,
+			placeholder = placeholder,
+			showSelectionControls = showSelectionControls,
+			valueChangeEvent = valueChangeEvent,
+			onCustomItemCreatingEnabled = onCustomItemCreatingEnabled,
+		};
+	}
+	protected override void Init(DevExpress.Ui.DxSelectBoxOptions options) {
+		DxSelectBoxInterop.Init(Id, options);
+	}
+	bool? acceptCustomValue;
+	public bool? AcceptCustomValue {
+		get => isInitialized ? DxSelectBoxInterop.GetAcceptCustomValue(Id) : acceptCustomValue;
+		set {
+			if (isInitialized) {
+				DxSelectBoxInterop.SetAcceptCustomValue(Id, value);
+			} else {
+				this.acceptCustomValue = value;
+			}
+		}
+	}
+	string placeholder;
+	public string Placeholder {
+		get => isInitialized ? DxSelectBoxInterop.GetPlaceholder(Id) : placeholder;
+		set {
+			if (isInitialized) {
+				DxSelectBoxInterop.SetPlaceholder(Id, value);
+			} else {
+				this.placeholder = value;
+			}
+		}
+	}
+	bool? showSelectionControls;
+	public bool? ShowSelectionControls {
+		get => isInitialized ? DxSelectBoxInterop.GetShowSelectionControls(Id) : showSelectionControls;
+		set {
+			if (isInitialized) {
+				DxSelectBoxInterop.SetShowSelectionControls(Id, value);
+			} else {
+				this.showSelectionControls = value;
+			}
+		}
+	}
+	string valueChangeEvent;
+	public string ValueChangeEvent {
+		get => isInitialized ? DxSelectBoxInterop.GetValueChangeEvent(Id) : valueChangeEvent;
+		set {
+			if (isInitialized) {
+				DxSelectBoxInterop.SetValueChangeEvent(Id, value);
+			} else {
+				this.valueChangeEvent = value;
+			}
+		}
+	}
+	bool? onCustomItemCreatingEnabled;
+	public bool? OnCustomItemCreatingEnabled {
+		get => onCustomItemCreatingEnabled;
+		set => this.onCustomItemCreatingEnabled = value;
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+		DxSelectBoxInterop.CustomItemCreating += DxSelectBox_CustomItemCreating;
+	}
+	public Action CustomItemCreating { get; set; }
+	void DxSelectBox_CustomItemCreating(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			CustomItemCreating?.Invoke();
+		}
+	}
+	public void Dispose() {
+		DxSelectBoxInterop.CustomItemCreating -= DxSelectBox_CustomItemCreating;
+	}
+}

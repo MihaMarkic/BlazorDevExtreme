@@ -1,0 +1,322 @@
+@implements IDisposable
+@inherits DxBlazorCompoment<DevExpress.Viz.Charts.DxChartOptions>
+
+<div id="@Id"></div>
+
+@functions {
+	public DxChart() : base("DxChart") { }
+	protected override DevExpress.Viz.Charts.DxChartOptions CreateOptions() {
+		return new DevExpress.Viz.Charts.DxChartOptions {
+			adjustOnZoom = adjustOnZoom,
+			barGroupPadding = barGroupPadding,
+			barGroupWidth = barGroupWidth,
+			barWidth = barWidth,
+			containerBackgroundColor = containerBackgroundColor,
+			defaultPane = defaultPane,
+			equalBarWidth = equalBarWidth,
+			maxBubbleSize = maxBubbleSize,
+			minBubbleSize = minBubbleSize,
+			negativesAsZeroes = negativesAsZeroes,
+			resolveLabelOverlapping = resolveLabelOverlapping,
+			rotated = rotated,
+			scrollingMode = scrollingMode,
+			seriesSelectionMode = seriesSelectionMode,
+			synchronizeMultiAxes = synchronizeMultiAxes,
+			useAggregation = useAggregation,
+			zoomingMode = zoomingMode,
+			onArgumentAxisClickEnabled = onArgumentAxisClickEnabled,
+			onLegendClickEnabled = onLegendClickEnabled,
+			onSeriesClickEnabled = onSeriesClickEnabled,
+			onSeriesHoverChangedEnabled = onSeriesHoverChangedEnabled,
+			onSeriesSelectionChangedEnabled = onSeriesSelectionChangedEnabled,
+			onZoomEndEnabled = onZoomEndEnabled,
+			onZoomStartEnabled = onZoomStartEnabled,
+		};
+	}
+	protected override void Init(DevExpress.Viz.Charts.DxChartOptions options) {
+		DxChartInterop.Init(Id, options);
+	}
+	bool? adjustOnZoom;
+	public bool? AdjustOnZoom {
+		get => isInitialized ? DxChartInterop.GetAdjustOnZoom(Id) : adjustOnZoom;
+		set {
+			if (isInitialized) {
+				DxChartInterop.SetAdjustOnZoom(Id, value);
+			} else {
+				this.adjustOnZoom = value;
+			}
+		}
+	}
+	float? barGroupPadding;
+	public float? BarGroupPadding {
+		get => isInitialized ? DxChartInterop.GetBarGroupPadding(Id) : barGroupPadding;
+		set {
+			if (isInitialized) {
+				DxChartInterop.SetBarGroupPadding(Id, value);
+			} else {
+				this.barGroupPadding = value;
+			}
+		}
+	}
+	float? barGroupWidth;
+	public float? BarGroupWidth {
+		get => isInitialized ? DxChartInterop.GetBarGroupWidth(Id) : barGroupWidth;
+		set {
+			if (isInitialized) {
+				DxChartInterop.SetBarGroupWidth(Id, value);
+			} else {
+				this.barGroupWidth = value;
+			}
+		}
+	}
+	float? barWidth;
+	public float? BarWidth {
+		get => isInitialized ? DxChartInterop.GetBarWidth(Id) : barWidth;
+		set {
+			if (isInitialized) {
+				DxChartInterop.SetBarWidth(Id, value);
+			} else {
+				this.barWidth = value;
+			}
+		}
+	}
+	string containerBackgroundColor;
+	public string ContainerBackgroundColor {
+		get => isInitialized ? DxChartInterop.GetContainerBackgroundColor(Id) : containerBackgroundColor;
+		set {
+			if (isInitialized) {
+				DxChartInterop.SetContainerBackgroundColor(Id, value);
+			} else {
+				this.containerBackgroundColor = value;
+			}
+		}
+	}
+	string defaultPane;
+	public string DefaultPane {
+		get => isInitialized ? DxChartInterop.GetDefaultPane(Id) : defaultPane;
+		set {
+			if (isInitialized) {
+				DxChartInterop.SetDefaultPane(Id, value);
+			} else {
+				this.defaultPane = value;
+			}
+		}
+	}
+	bool? equalBarWidth;
+	public bool? EqualBarWidth {
+		get => isInitialized ? DxChartInterop.GetEqualBarWidth(Id) : equalBarWidth;
+		set {
+			if (isInitialized) {
+				DxChartInterop.SetEqualBarWidth(Id, value);
+			} else {
+				this.equalBarWidth = value;
+			}
+		}
+	}
+	float? maxBubbleSize;
+	public float? MaxBubbleSize {
+		get => isInitialized ? DxChartInterop.GetMaxBubbleSize(Id) : maxBubbleSize;
+		set {
+			if (isInitialized) {
+				DxChartInterop.SetMaxBubbleSize(Id, value);
+			} else {
+				this.maxBubbleSize = value;
+			}
+		}
+	}
+	float? minBubbleSize;
+	public float? MinBubbleSize {
+		get => isInitialized ? DxChartInterop.GetMinBubbleSize(Id) : minBubbleSize;
+		set {
+			if (isInitialized) {
+				DxChartInterop.SetMinBubbleSize(Id, value);
+			} else {
+				this.minBubbleSize = value;
+			}
+		}
+	}
+	bool? negativesAsZeroes;
+	public bool? NegativesAsZeroes {
+		get => isInitialized ? DxChartInterop.GetNegativesAsZeroes(Id) : negativesAsZeroes;
+		set {
+			if (isInitialized) {
+				DxChartInterop.SetNegativesAsZeroes(Id, value);
+			} else {
+				this.negativesAsZeroes = value;
+			}
+		}
+	}
+	string resolveLabelOverlapping;
+	public string ResolveLabelOverlapping {
+		get => isInitialized ? DxChartInterop.GetResolveLabelOverlapping(Id) : resolveLabelOverlapping;
+		set {
+			if (isInitialized) {
+				DxChartInterop.SetResolveLabelOverlapping(Id, value);
+			} else {
+				this.resolveLabelOverlapping = value;
+			}
+		}
+	}
+	bool? rotated;
+	public bool? Rotated {
+		get => isInitialized ? DxChartInterop.GetRotated(Id) : rotated;
+		set {
+			if (isInitialized) {
+				DxChartInterop.SetRotated(Id, value);
+			} else {
+				this.rotated = value;
+			}
+		}
+	}
+	string scrollingMode;
+	public string ScrollingMode {
+		get => isInitialized ? DxChartInterop.GetScrollingMode(Id) : scrollingMode;
+		set {
+			if (isInitialized) {
+				DxChartInterop.SetScrollingMode(Id, value);
+			} else {
+				this.scrollingMode = value;
+			}
+		}
+	}
+	string seriesSelectionMode;
+	public string SeriesSelectionMode {
+		get => isInitialized ? DxChartInterop.GetSeriesSelectionMode(Id) : seriesSelectionMode;
+		set {
+			if (isInitialized) {
+				DxChartInterop.SetSeriesSelectionMode(Id, value);
+			} else {
+				this.seriesSelectionMode = value;
+			}
+		}
+	}
+	bool? synchronizeMultiAxes;
+	public bool? SynchronizeMultiAxes {
+		get => isInitialized ? DxChartInterop.GetSynchronizeMultiAxes(Id) : synchronizeMultiAxes;
+		set {
+			if (isInitialized) {
+				DxChartInterop.SetSynchronizeMultiAxes(Id, value);
+			} else {
+				this.synchronizeMultiAxes = value;
+			}
+		}
+	}
+	bool? useAggregation;
+	public bool? UseAggregation {
+		get => isInitialized ? DxChartInterop.GetUseAggregation(Id) : useAggregation;
+		set {
+			if (isInitialized) {
+				DxChartInterop.SetUseAggregation(Id, value);
+			} else {
+				this.useAggregation = value;
+			}
+		}
+	}
+	string zoomingMode;
+	public string ZoomingMode {
+		get => isInitialized ? DxChartInterop.GetZoomingMode(Id) : zoomingMode;
+		set {
+			if (isInitialized) {
+				DxChartInterop.SetZoomingMode(Id, value);
+			} else {
+				this.zoomingMode = value;
+			}
+		}
+	}
+	bool? onArgumentAxisClickEnabled;
+	public bool? OnArgumentAxisClickEnabled {
+		get => onArgumentAxisClickEnabled;
+		set => this.onArgumentAxisClickEnabled = value;
+	}
+	bool? onLegendClickEnabled;
+	public bool? OnLegendClickEnabled {
+		get => onLegendClickEnabled;
+		set => this.onLegendClickEnabled = value;
+	}
+	bool? onSeriesClickEnabled;
+	public bool? OnSeriesClickEnabled {
+		get => onSeriesClickEnabled;
+		set => this.onSeriesClickEnabled = value;
+	}
+	bool? onSeriesHoverChangedEnabled;
+	public bool? OnSeriesHoverChangedEnabled {
+		get => onSeriesHoverChangedEnabled;
+		set => this.onSeriesHoverChangedEnabled = value;
+	}
+	bool? onSeriesSelectionChangedEnabled;
+	public bool? OnSeriesSelectionChangedEnabled {
+		get => onSeriesSelectionChangedEnabled;
+		set => this.onSeriesSelectionChangedEnabled = value;
+	}
+	bool? onZoomEndEnabled;
+	public bool? OnZoomEndEnabled {
+		get => onZoomEndEnabled;
+		set => this.onZoomEndEnabled = value;
+	}
+	bool? onZoomStartEnabled;
+	public bool? OnZoomStartEnabled {
+		get => onZoomStartEnabled;
+		set => this.onZoomStartEnabled = value;
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+		DxChartInterop.ArgumentAxisClick += DxChart_ArgumentAxisClick;
+		DxChartInterop.LegendClick += DxChart_LegendClick;
+		DxChartInterop.SeriesClick += DxChart_SeriesClick;
+		DxChartInterop.SeriesHoverChanged += DxChart_SeriesHoverChanged;
+		DxChartInterop.SeriesSelectionChanged += DxChart_SeriesSelectionChanged;
+		DxChartInterop.ZoomEnd += DxChart_ZoomEnd;
+		DxChartInterop.ZoomStart += DxChart_ZoomStart;
+	}
+	public Action ArgumentAxisClick { get; set; }
+	void DxChart_ArgumentAxisClick(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			ArgumentAxisClick?.Invoke();
+		}
+	}
+	public Action LegendClick { get; set; }
+	void DxChart_LegendClick(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			LegendClick?.Invoke();
+		}
+	}
+	public Action SeriesClick { get; set; }
+	void DxChart_SeriesClick(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			SeriesClick?.Invoke();
+		}
+	}
+	public Action SeriesHoverChanged { get; set; }
+	void DxChart_SeriesHoverChanged(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			SeriesHoverChanged?.Invoke();
+		}
+	}
+	public Action SeriesSelectionChanged { get; set; }
+	void DxChart_SeriesSelectionChanged(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			SeriesSelectionChanged?.Invoke();
+		}
+	}
+	public Action ZoomEnd { get; set; }
+	void DxChart_ZoomEnd(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			ZoomEnd?.Invoke();
+		}
+	}
+	public Action ZoomStart { get; set; }
+	void DxChart_ZoomStart(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			ZoomStart?.Invoke();
+		}
+	}
+	public void Dispose() {
+		DxChartInterop.ArgumentAxisClick -= DxChart_ArgumentAxisClick;
+		DxChartInterop.LegendClick -= DxChart_LegendClick;
+		DxChartInterop.SeriesClick -= DxChart_SeriesClick;
+		DxChartInterop.SeriesHoverChanged -= DxChart_SeriesHoverChanged;
+		DxChartInterop.SeriesSelectionChanged -= DxChart_SeriesSelectionChanged;
+		DxChartInterop.ZoomEnd -= DxChart_ZoomEnd;
+		DxChartInterop.ZoomStart -= DxChart_ZoomStart;
+	}
+}

@@ -1,0 +1,44 @@
+@implements IDisposable
+@inherits DxBlazorCompoment<DevExpress.Ui.DxTextAreaOptions>
+
+<div id="@Id"></div>
+
+@functions {
+	public DxTextArea() : base("DxTextArea") { }
+	protected override DevExpress.Ui.DxTextAreaOptions CreateOptions() {
+		return new DevExpress.Ui.DxTextAreaOptions {
+			autoResizeEnabled = autoResizeEnabled,
+			spellcheck = spellcheck,
+		};
+	}
+	protected override void Init(DevExpress.Ui.DxTextAreaOptions options) {
+		DxTextAreaInterop.Init(Id, options);
+	}
+	bool? autoResizeEnabled;
+	public bool? AutoResizeEnabled {
+		get => isInitialized ? DxTextAreaInterop.GetAutoResizeEnabled(Id) : autoResizeEnabled;
+		set {
+			if (isInitialized) {
+				DxTextAreaInterop.SetAutoResizeEnabled(Id, value);
+			} else {
+				this.autoResizeEnabled = value;
+			}
+		}
+	}
+	bool? spellcheck;
+	public bool? Spellcheck {
+		get => isInitialized ? DxTextAreaInterop.GetSpellcheck(Id) : spellcheck;
+		set {
+			if (isInitialized) {
+				DxTextAreaInterop.SetSpellcheck(Id, value);
+			} else {
+				this.spellcheck = value;
+			}
+		}
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+	}
+	public void Dispose() {
+	}
+}

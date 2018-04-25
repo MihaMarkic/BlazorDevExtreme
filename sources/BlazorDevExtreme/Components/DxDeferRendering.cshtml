@@ -1,0 +1,72 @@
+@implements IDisposable
+@inherits DxBlazorCompoment<DevExpress.Ui.DxDeferRenderingOptions>
+
+<div id="@Id"></div>
+
+@functions {
+	public DxDeferRendering() : base("DxDeferRendering") { }
+	protected override DevExpress.Ui.DxDeferRenderingOptions CreateOptions() {
+		return new DevExpress.Ui.DxDeferRenderingOptions {
+			showLoadIndicator = showLoadIndicator,
+			staggerItemSelector = staggerItemSelector,
+			onRenderedEnabled = onRenderedEnabled,
+			onShownEnabled = onShownEnabled,
+		};
+	}
+	protected override void Init(DevExpress.Ui.DxDeferRenderingOptions options) {
+		DxDeferRenderingInterop.Init(Id, options);
+	}
+	bool? showLoadIndicator;
+	public bool? ShowLoadIndicator {
+		get => isInitialized ? DxDeferRenderingInterop.GetShowLoadIndicator(Id) : showLoadIndicator;
+		set {
+			if (isInitialized) {
+				DxDeferRenderingInterop.SetShowLoadIndicator(Id, value);
+			} else {
+				this.showLoadIndicator = value;
+			}
+		}
+	}
+	string staggerItemSelector;
+	public string StaggerItemSelector {
+		get => isInitialized ? DxDeferRenderingInterop.GetStaggerItemSelector(Id) : staggerItemSelector;
+		set {
+			if (isInitialized) {
+				DxDeferRenderingInterop.SetStaggerItemSelector(Id, value);
+			} else {
+				this.staggerItemSelector = value;
+			}
+		}
+	}
+	bool? onRenderedEnabled;
+	public bool? OnRenderedEnabled {
+		get => onRenderedEnabled;
+		set => this.onRenderedEnabled = value;
+	}
+	bool? onShownEnabled;
+	public bool? OnShownEnabled {
+		get => onShownEnabled;
+		set => this.onShownEnabled = value;
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+		DxDeferRenderingInterop.Rendered += DxDeferRendering_Rendered;
+		DxDeferRenderingInterop.Shown += DxDeferRendering_Shown;
+	}
+	public Action Rendered { get; set; }
+	void DxDeferRendering_Rendered(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Rendered?.Invoke();
+		}
+	}
+	public Action Shown { get; set; }
+	void DxDeferRendering_Shown(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Shown?.Invoke();
+		}
+	}
+	public void Dispose() {
+		DxDeferRenderingInterop.Rendered -= DxDeferRendering_Rendered;
+		DxDeferRenderingInterop.Shown -= DxDeferRendering_Shown;
+	}
+}

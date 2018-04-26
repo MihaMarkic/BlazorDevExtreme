@@ -4,125 +4,125 @@
 <div id="@Id"></div>
 
 @functions {
-	public DxLoadPanel() : base("DxLoadPanel") { }
-	protected override DevExpress.Ui.DxLoadPanelOptions CreateOptions() {
-		return new DevExpress.Ui.DxLoadPanelOptions {
-			delay = delay,
-			focusStateEnabled = focusStateEnabled,
-			height = height,
-			indicatorSrc = indicatorSrc,
-			message = message,
-			shadingColor = shadingColor,
-			showIndicator = showIndicator,
-			showPane = showPane,
-			width = width,
-		};
-	}
-	protected override void Init(DevExpress.Ui.DxLoadPanelOptions options) {
-		DxLoadPanelInterop.Init(Id, options);
-	}
-	float? delay;
-	public float? Delay {
-		get => isInitialized ? DxLoadPanelInterop.GetDelay(Id) : delay;
-		set {
-			if (isInitialized) {
-				DxLoadPanelInterop.SetDelay(Id, value);
-			} else {
-				this.delay = value;
-			}
-		}
-	}
-	bool? focusStateEnabled;
-	public bool? FocusStateEnabled {
-		get => isInitialized ? DxLoadPanelInterop.GetFocusStateEnabled(Id) : focusStateEnabled;
-		set {
-			if (isInitialized) {
-				DxLoadPanelInterop.SetFocusStateEnabled(Id, value);
-			} else {
-				this.focusStateEnabled = value;
-			}
-		}
-	}
-	float? height;
-	public float? Height {
-		get => isInitialized ? DxLoadPanelInterop.GetHeight(Id) : height;
-		set {
-			if (isInitialized) {
-				DxLoadPanelInterop.SetHeight(Id, value);
-			} else {
-				this.height = value;
-			}
-		}
-	}
-	string indicatorSrc;
-	public string IndicatorSrc {
-		get => isInitialized ? DxLoadPanelInterop.GetIndicatorSrc(Id) : indicatorSrc;
-		set {
-			if (isInitialized) {
-				DxLoadPanelInterop.SetIndicatorSrc(Id, value);
-			} else {
-				this.indicatorSrc = value;
-			}
-		}
-	}
-	string message;
-	public string Message {
-		get => isInitialized ? DxLoadPanelInterop.GetMessage(Id) : message;
-		set {
-			if (isInitialized) {
-				DxLoadPanelInterop.SetMessage(Id, value);
-			} else {
-				this.message = value;
-			}
-		}
-	}
-	object shadingColor;
-	public object ShadingColor {
-		get => isInitialized ? DxLoadPanelInterop.GetShadingColor(Id) : shadingColor;
-		set {
-			if (isInitialized) {
-				DxLoadPanelInterop.SetShadingColor(Id, value);
-			} else {
-				this.shadingColor = value;
-			}
-		}
-	}
-	bool? showIndicator;
-	public bool? ShowIndicator {
-		get => isInitialized ? DxLoadPanelInterop.GetShowIndicator(Id) : showIndicator;
-		set {
-			if (isInitialized) {
-				DxLoadPanelInterop.SetShowIndicator(Id, value);
-			} else {
-				this.showIndicator = value;
-			}
-		}
-	}
-	bool? showPane;
-	public bool? ShowPane {
-		get => isInitialized ? DxLoadPanelInterop.GetShowPane(Id) : showPane;
-		set {
-			if (isInitialized) {
-				DxLoadPanelInterop.SetShowPane(Id, value);
-			} else {
-				this.showPane = value;
-			}
-		}
-	}
-	float? width;
-	public float? Width {
-		get => isInitialized ? DxLoadPanelInterop.GetWidth(Id) : width;
-		set {
-			if (isInitialized) {
-				DxLoadPanelInterop.SetWidth(Id, value);
-			} else {
-				this.width = value;
-			}
-		}
-	}
-	protected override async Task OnInitAsync() {
-		await base.OnInitAsync();
-	}
-	public void Dispose() {
-	}
+    public DxLoadPanel() : base("DxLoadPanel") { }
+    protected override DevExpress.Ui.DxLoadPanelOptions CreateOptions() {
+        return new DevExpress.Ui.DxLoadPanelOptions {
+            delay = delay,
+            focusStateEnabled = focusStateEnabled,
+            height = height,
+            indicatorSrc = indicatorSrc,
+            message = message,
+            //shadingColor = shadingColor,
+            showIndicator = showIndicator,
+            showPane = showPane,
+            width = width,
+        };
+    }
+    protected override void Init(DevExpress.Ui.DxLoadPanelOptions options) {
+        DxLoadPanelInterop.Init(Id, options);
+    }
+    float? delay;
+    public float? Delay {
+        get => isInitialized ? DxLoadPanelInterop.GetDelay(Id) : delay;
+        set {
+            if (isInitialized) {
+                DxLoadPanelInterop.SetDelay(Id, value);
+            } else {
+                this.delay = value;
+            }
+        }
+    }
+    bool? focusStateEnabled;
+    public bool? FocusStateEnabled {
+        get => isInitialized ? DxLoadPanelInterop.GetFocusStateEnabled(Id) : focusStateEnabled;
+        set {
+            if (isInitialized) {
+                DxLoadPanelInterop.SetFocusStateEnabled(Id, value);
+            } else {
+                this.focusStateEnabled = value;
+            }
+        }
+    }
+    float? height;
+    public float? Height {
+        get => isInitialized ? DxLoadPanelInterop.GetHeight(Id) : height;
+        set {
+            if (isInitialized) {
+                DxLoadPanelInterop.SetHeight(Id, value);
+            } else {
+                this.height = value;
+            }
+        }
+    }
+    string indicatorSrc;
+    public string IndicatorSrc {
+        get => isInitialized ? DxLoadPanelInterop.GetIndicatorSrc(Id) : indicatorSrc;
+        set {
+            if (isInitialized) {
+                DxLoadPanelInterop.SetIndicatorSrc(Id, value);
+            } else {
+                this.indicatorSrc = value;
+            }
+        }
+    }
+    string message;
+    public string Message {
+        get => isInitialized ? DxLoadPanelInterop.GetMessage(Id) : message;
+        set {
+            if (isInitialized) {
+                DxLoadPanelInterop.SetMessage(Id, value);
+            } else {
+                this.message = value;
+            }
+        }
+    }
+    object shadingColor;
+    public object ShadingColor {
+        get => isInitialized ? DxLoadPanelInterop.GetShadingColor(Id) : shadingColor;
+        set {
+            if (isInitialized) {
+                DxLoadPanelInterop.SetShadingColor(Id, value);
+            } else {
+                this.shadingColor = value;
+            }
+        }
+    }
+    bool? showIndicator;
+    public bool? ShowIndicator {
+        get => isInitialized ? DxLoadPanelInterop.GetShowIndicator(Id) : showIndicator;
+        set {
+            if (isInitialized) {
+                DxLoadPanelInterop.SetShowIndicator(Id, value);
+            } else {
+                this.showIndicator = value;
+            }
+        }
+    }
+    bool? showPane;
+    public bool? ShowPane {
+        get => isInitialized ? DxLoadPanelInterop.GetShowPane(Id) : showPane;
+        set {
+            if (isInitialized) {
+                DxLoadPanelInterop.SetShowPane(Id, value);
+            } else {
+                this.showPane = value;
+            }
+        }
+    }
+    float? width;
+    public float? Width {
+        get => isInitialized ? DxLoadPanelInterop.GetWidth(Id) : width;
+        set {
+            if (isInitialized) {
+                DxLoadPanelInterop.SetWidth(Id, value);
+            } else {
+                this.width = value;
+            }
+        }
+    }
+    protected override async Task OnInitAsync() {
+        await base.OnInitAsync();
+    }
+    public void Dispose() {
+    }
 }

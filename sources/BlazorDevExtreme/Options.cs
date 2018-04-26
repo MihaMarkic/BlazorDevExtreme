@@ -2,15 +2,15 @@
 {
     public partial class AnimationConfig
     {
-        // couldn't parse complete
+        public object complete { get; set; }
         public float? delay { get; set; }
         public string direction { get; set; }
         public float? duration { get; set; }
         public string easing { get; set; }
-        // couldn't parse from
+        public object from { get; set; }
         public float? staggerDelay { get; set; }
-        // couldn't parse start
-        // couldn't parse to
+        public object start { get; set; }
+        public object to { get; set; }
         public string type { get; set; }
     }
 
@@ -34,13 +34,13 @@
     }
     public partial class PositionConfig
     {
-        // couldn't parse at
-        // couldn't parse boundary
-        // couldn't parse boundaryOffset
-        // couldn't parse collision
-        // couldn't parse my
-        // couldn't parse of
-        // couldn't parse offset
+        public object at { get; set; }
+        public object boundary { get; set; }
+        public object boundaryOffset { get; set; }
+        public object collision { get; set; }
+        public object my { get; set; }
+        public object of { get; set; }
+        public object offset { get; set; }
     }
     public partial class ComponentOptions
     {
@@ -94,25 +94,23 @@
     {
         public object bindingOptions { get; set; }
         public object elementAttr { get; set; }
-        // couldn't parse height
-        public bool? onDisposingEnabled { get; set; }
-        public bool? onOptionChangedEnabled { get; set; }
+        public object height { get; set; }
         public bool? rtlEnabled { get; set; }
-        // couldn't parse width
+        public object width { get; set; }
     }
 }
 namespace DevExpress.Data
 {
     public partial class StoreOptions
     {
-        // couldn't parse errorHandler
-        // couldn't parse key
+        public object errorHandler { get; set; }
+        public object key { get; set; }
         public bool? onInsertedEnabled { get; set; }
         public bool? onInsertingEnabled { get; set; }
         public bool? onLoadedEnabled { get; set; }
         public bool? onLoadingEnabled { get; set; }
-        // couldn't parse onModified
-        // couldn't parse onModifying
+        public object onModified { get; set; }
+        public object onModifying { get; set; }
         public bool? onRemovedEnabled { get; set; }
         public bool? onRemovingEnabled { get; set; }
         public bool? onUpdatedEnabled { get; set; }
@@ -120,7 +118,7 @@ namespace DevExpress.Data
     }
     public partial class ArrayStoreOptions : StoreOptions
     {
-        // couldn't parse data
+        public object data { get; set; }
     }
     public partial class LoadOptions
     {
@@ -131,7 +129,7 @@ namespace DevExpress.Data
         public object groupSummary { get; set; }
         public bool? requireGroupCount { get; set; }
         public bool? requireTotalCount { get; set; }
-        // couldn't parse searchExpr
+        public object searchExpr { get; set; }
         public string searchOperation { get; set; }
         public object searchValue { get; set; }
         public object select { get; set; }
@@ -143,14 +141,14 @@ namespace DevExpress.Data
     }
     public partial class CustomStoreOptions : StoreOptions
     {
-        // couldn't parse byKey
+        public object byKey { get; set; }
         public bool? cacheRawData { get; set; }
-        // couldn't parse insert
-        // couldn't parse load
+        public object insert { get; set; }
+        public object load { get; set; }
         public string loadMode { get; set; }
-        // couldn't parse remove
-        // couldn't parse totalCount
-        // couldn't parse update
+        public object remove { get; set; }
+        public object totalCount { get; set; }
+        public object update { get; set; }
         public bool? useDefaultSearch { get; set; }
     }
 
@@ -162,23 +160,23 @@ namespace DevExpress.Data
     public partial class DataSourceOptions
     {
         public object customQueryParams { get; set; }
-        // couldn't parse expand
-        // couldn't parse filter
-        // couldn't parse group
-        // couldn't parse map
-        // couldn't parse onChanged
+        public object expand { get; set; }
+        public object filter { get; set; }
+        public object group { get; set; }
+        public object map { get; set; }
+        public object onChanged { get; set; }
         public bool? onLoadErrorEnabled { get; set; }
         public bool? onLoadingChangedEnabled { get; set; }
         public float? pageSize { get; set; }
         public bool? paginate { get; set; }
-        // couldn't parse postProcess
+        public object postProcess { get; set; }
         public bool? requireTotalCount { get; set; }
-        // couldn't parse searchExpr
+        public object searchExpr { get; set; }
         public string searchOperation { get; set; }
         public object searchValue { get; set; }
-        // couldn't parse select
-        // couldn't parse sort
-        // couldn't parse store
+        public object select { get; set; }
+        public object sort { get; set; }
+        public object store { get; set; }
     }
     public partial class LocalStoreOptions : ArrayStoreOptions
     {
@@ -188,10 +186,10 @@ namespace DevExpress.Data
     }
     public partial class ODataContextOptions
     {
-        // couldn't parse beforeSend
+        public object beforeSend { get; set; }
         public bool? deserializeDates { get; set; }
         public object entities { get; set; }
-        // couldn't parse errorHandler
+        public object errorHandler { get; set; }
         public bool? jsonp { get; set; }
         public string url { get; set; }
         public float? version { get; set; }
@@ -199,31 +197,30 @@ namespace DevExpress.Data
     }
     public partial class ODataStoreOptions : StoreOptions
     {
-        // couldn't parse beforeSend
+        public object beforeSend { get; set; }
         public bool? deserializeDates { get; set; }
         public object fieldTypes { get; set; }
         public bool? jsonp { get; set; }
-        // couldn't parse keyType
-        public object onLoading { get; set; }
+        public object keyType { get; set; }
         public string url { get; set; }
         public float? version { get; set; }
         public bool? withCredentials { get; set; }
     }
     public partial class PivotGridDataSourceOptions
     {
-        // couldn't parse fields
-        // couldn't parse filter
-        // couldn't parse onChanged
+        public object fields { get; set; }
+        public object filter { get; set; }
+        public object onChanged { get; set; }
         public bool? onFieldsPreparedEnabled { get; set; }
         public bool? onLoadErrorEnabled { get; set; }
         public bool? onLoadingChangedEnabled { get; set; }
         public bool? remoteOperations { get; set; }
         public bool? retrieveFields { get; set; }
-        // couldn't parse store
+        public object store { get; set; }
     }
     public partial class XmlaStoreOptions
     {
-        // couldn't parse beforeSend
+        public object beforeSend { get; set; }
         public string catalog { get; set; }
         public string cube { get; set; }
         public string url { get; set; }
@@ -235,34 +232,34 @@ namespace DevExpress.Data
         public bool? allowFiltering { get; set; }
         public bool? allowSorting { get; set; }
         public bool? allowSortingBySummary { get; set; }
-        // couldn't parse area
+        public object area { get; set; }
         public float? areaIndex { get; set; }
-        // couldn't parse calculateCustomSummary
-        // couldn't parse calculateSummaryValue
+        public object calculateCustomSummary { get; set; }
+        public object calculateSummaryValue { get; set; }
         public string caption { get; set; }
-        // couldn't parse customizeText
+        public object customizeText { get; set; }
         public string dataField { get; set; }
         public string dataType { get; set; }
         public string displayFolder { get; set; }
         public bool? expanded { get; set; }
         public string filterType { get; set; }
-        // couldn't parse filterValues
-        // couldn't parse format
+        public object filterValues { get; set; }
+        public object format { get; set; }
         public float? groupIndex { get; set; }
-        // couldn't parse groupInterval
+        public object groupInterval { get; set; }
         public string groupName { get; set; }
-        // couldn't parse headerFilter
+        public object headerFilter { get; set; }
         public bool? isMeasure { get; set; }
         public float? precision { get; set; }
         public string runningTotal { get; set; }
-        // couldn't parse selector
+        public object selector { get; set; }
         public bool? showGrandTotals { get; set; }
         public bool? showTotals { get; set; }
         public bool? showValues { get; set; }
         public string sortBy { get; set; }
         public string sortBySummaryField { get; set; }
-        // couldn't parse sortBySummaryPath
-        // couldn't parse sortingMethod
+        public object sortBySummaryPath { get; set; }
+        public object sortingMethod { get; set; }
         public string sortOrder { get; set; }
         public string summaryDisplayMode { get; set; }
         public string summaryType { get; set; }
@@ -326,7 +323,7 @@ namespace DevExpress.Framework
         public string icon { get; set; }
         public object iconSrc { get; set; }
         public string id { get; set; }
-        // couldn't parse onExecute
+        public object onExecute { get; set; }
         public string renderStage { get; set; }
         public string title { get; set; }
         public string type { get; set; }
@@ -419,11 +416,11 @@ namespace DevExpress.Framework.Html
         public object animationSet { get; set; }
         public object commandMapping { get; set; }
         public bool? disableViewCache { get; set; }
-        // couldn't parse layoutSet
+        public object layoutSet { get; set; }
         public string mode { get; set; }
         public object @namespace { get; set; }
         public string navigateToRootViewMode { get; set; }
-        // couldn't parse navigation
+        public object navigation { get; set; }
         public object router { get; set; }
         public object stateManager { get; set; }
         public object stateStorage { get; set; }
@@ -452,14 +449,9 @@ namespace DevExpress.Ui
         public float? animationDuration { get; set; }
         public bool? collapsible { get; set; }
         public bool? deferRendering { get; set; }
-        public bool? focusStateEnabled { get; set; }
-        // couldn't parse height
-        public bool? hoverStateEnabled { get; set; }
-        // couldn't parse itemTemplate
-        // couldn't parse itemTitleTemplate
+        public object itemTitleTemplate { get; set; }
         public bool? multiple { get; set; }
         public bool? onItemTitleClickEnabled { get; set; }
-        public float? selectedIndex { get; set; }
     }
     public partial class DxAccordionItemTemplate : CollectionWidgetItemTemplate
     {
@@ -472,10 +464,9 @@ namespace DevExpress.Ui
         public bool? onCancelClickEnabled { get; set; }
         public bool? showCancelButton { get; set; }
         public bool? showTitle { get; set; }
-        // couldn't parse target
+        public object target { get; set; }
         public string title { get; set; }
         public bool? usePopover { get; set; }
-        public bool? visible { get; set; }
     }
     public partial class DxActionSheetItemTemplate : CollectionWidgetItemTemplate
     {
@@ -495,8 +486,6 @@ namespace DevExpress.Ui
     public partial class DxAutocompleteOptions : DxDropDownListOptions
     {
         public float? maxItemCount { get; set; }
-        public float? minSearchLength { get; set; }
-        public string value { get; set; }
     }
     public partial class DxBoxOptions : CollectionWidgetOptions
     {
@@ -527,19 +516,16 @@ namespace DevExpress.Ui
     }
     public partial class DxBoxItemTemplate : CollectionWidgetItemTemplate
     {
-        // couldn't parse baseSize
-        // couldn't parse box
+        public object baseSize { get; set; }
+        public object box { get; set; }
         public float? ratio { get; set; }
         public float? shrink { get; set; }
     }
     public partial class DxButtonOptions : WidgetOptions
     {
-        public bool? activeStateEnabled { get; set; }
-        public bool? focusStateEnabled { get; set; }
-        public bool? hoverStateEnabled { get; set; }
         public string icon { get; set; }
         public bool? onClickEnabled { get; set; }
-        // couldn't parse template
+        public object template { get; set; }
         public string text { get; set; }
         public string type { get; set; }
         public bool? useSubmitBehavior { get; set; }
@@ -561,20 +547,16 @@ namespace DevExpress.Ui
     }
     public partial class DxCalendarOptions : EditorOptions
     {
-        public bool? activeStateEnabled { get; set; }
-        // couldn't parse cellTemplate
+        public object cellTemplate { get; set; }
         public string dateSerializationFormat { get; set; }
-        // couldn't parse disabledDates
-        // couldn't parse firstDayOfWeek
-        public bool? focusStateEnabled { get; set; }
-        public bool? hoverStateEnabled { get; set; }
-        // couldn't parse max
+        public object disabledDates { get; set; }
+        public object firstDayOfWeek { get; set; }
+        public object max { get; set; }
         public string maxZoomLevel { get; set; }
-        // couldn't parse min
+        public object min { get; set; }
         public string minZoomLevel { get; set; }
         public string name { get; set; }
         public bool? showTodayButton { get; set; }
-        // couldn't parse value
         public string zoomLevel { get; set; }
     }
 
@@ -601,22 +583,16 @@ namespace DevExpress.Ui
     }
     public partial class DxCheckBoxOptions : EditorOptions
     {
-        public bool? activeStateEnabled { get; set; }
-        public bool? focusStateEnabled { get; set; }
-        public bool? hoverStateEnabled { get; set; }
         public string name { get; set; }
         public string text { get; set; }
-        public bool? value { get; set; }
     }
     public partial class DxColorBoxOptions : DxDropDownEditorOptions
     {
         public string applyButtonText { get; set; }
-        public string applyValueMode { get; set; }
         public string cancelButtonText { get; set; }
         public bool? editAlphaChannel { get; set; }
-        // couldn't parse fieldTemplate
+        public object fieldTemplate { get; set; }
         public float? keyStep { get; set; }
-        public string value { get; set; }
     }
 
     public static class DxColorBoxOptionsApplyValueMode
@@ -626,18 +602,16 @@ namespace DevExpress.Ui
     }
     public partial class DxContextMenuOptions : DxMenuBaseOptions
     {
-        // couldn't parse closeOnOutsideClick
-        // couldn't parse items
+        public object closeOnOutsideClick { get; set; }
         public bool? onHiddenEnabled { get; set; }
         public bool? onHidingEnabled { get; set; }
         public bool? onPositioningEnabled { get; set; }
         public bool? onShowingEnabled { get; set; }
         public bool? onShownEnabled { get; set; }
-        // couldn't parse position
-        // couldn't parse showEvent
+        public object position { get; set; }
+        public object showEvent { get; set; }
         public string submenuDirection { get; set; }
-        // couldn't parse target
-        public bool? visible { get; set; }
+        public object target { get; set; }
     }
 
     public static class DxContextMenuOptionsSubmenuDirection
@@ -653,25 +627,25 @@ namespace DevExpress.Ui
         public bool? cacheEnabled { get; set; }
         public bool? cellHintEnabled { get; set; }
         public bool? columnAutoWidth { get; set; }
-        // couldn't parse columnChooser
-        // couldn't parse columnFixing
+        public object columnChooser { get; set; }
+        public object columnFixing { get; set; }
         public bool? columnHidingEnabled { get; set; }
         public float? columnMinWidth { get; set; }
         public string columnResizingMode { get; set; }
-        // couldn't parse columns
+        public object columns { get; set; }
         public float? columnWidth { get; set; }
-        // couldn't parse dataSource
+        public object dataSource { get; set; }
         public string dateSerializationFormat { get; set; }
-        // couldn't parse editing
+        public object editing { get; set; }
         public bool? errorRowEnabled { get; set; }
-        // couldn't parse filterBuilder
-        // couldn't parse filterBuilderPopup
-        // couldn't parse filterPanel
-        // couldn't parse filterRow
-        // couldn't parse filterSyncEnabled
-        // couldn't parse filterValue
-        // couldn't parse headerFilter
-        // couldn't parse loadPanel
+        public object filterBuilder { get; set; }
+        public object filterBuilderPopup { get; set; }
+        public object filterPanel { get; set; }
+        public object filterRow { get; set; }
+        public object filterSyncEnabled { get; set; }
+        public object filterValue { get; set; }
+        public object headerFilter { get; set; }
+        public object loadPanel { get; set; }
         public string noDataText { get; set; }
         public bool? onAdaptiveDetailRowPreparingEnabled { get; set; }
         public bool? onDataErrorOccurredEnabled { get; set; }
@@ -690,19 +664,19 @@ namespace DevExpress.Ui
         public bool? onRowValidatingEnabled { get; set; }
         public bool? onSelectionChangedEnabled { get; set; }
         public bool? onToolbarPreparingEnabled { get; set; }
-        // couldn't parse pager
-        // couldn't parse paging
+        public object pager { get; set; }
+        public object paging { get; set; }
         public bool? rowAlternationEnabled { get; set; }
-        // couldn't parse scrolling
-        // couldn't parse searchPanel
-        // couldn't parse selectedRowKeys
-        // couldn't parse selection
+        public object scrolling { get; set; }
+        public object searchPanel { get; set; }
+        public object selectedRowKeys { get; set; }
+        public object selection { get; set; }
         public bool? showBorders { get; set; }
         public bool? showColumnHeaders { get; set; }
         public bool? showColumnLines { get; set; }
         public bool? showRowLines { get; set; }
-        // couldn't parse sorting
-        // couldn't parse stateStoring
+        public object sorting { get; set; }
+        public object stateStoring { get; set; }
         public bool? twoWayBindingEnabled { get; set; }
         public bool? wordWrapEnabled { get; set; }
     }
@@ -717,10 +691,10 @@ namespace DevExpress.Ui
         public bool? allowAdding { get; set; }
         public bool? allowDeleting { get; set; }
         public bool? allowUpdating { get; set; }
-        // couldn't parse form
+        public object form { get; set; }
         public string mode { get; set; }
-        // couldn't parse popup
-        // couldn't parse texts
+        public object popup { get; set; }
+        public object texts { get; set; }
         public bool? useIcons { get; set; }
     }
 
@@ -760,7 +734,7 @@ namespace DevExpress.Ui
         public bool? scrollByContent { get; set; }
         public bool? scrollByThumb { get; set; }
         public string showScrollbar { get; set; }
-        // couldn't parse useNative
+        public object useNative { get; set; }
     }
 
     public static class GridBaseScrollingColumnRenderingMode
@@ -794,15 +768,13 @@ namespace DevExpress.Ui
     }
     public partial class DxDataGridOptions : GridBaseOptions
     {
-        // couldn't parse columns
-        // couldn't parse customizeColumns
-        // couldn't parse customizeExportData
-        // couldn't parse editing
-        // couldn't parse export
-        // couldn't parse grouping
-        // couldn't parse groupPanel
-        // couldn't parse keyExpr
-        // couldn't parse masterDetail
+        public object customizeColumns { get; set; }
+        public object customizeExportData { get; set; }
+        public object export { get; set; }
+        public object grouping { get; set; }
+        public object groupPanel { get; set; }
+        public object keyExpr { get; set; }
+        public object masterDetail { get; set; }
         public bool? onCellClickEnabled { get; set; }
         public bool? onCellHoverChangedEnabled { get; set; }
         public bool? onCellPreparedEnabled { get; set; }
@@ -815,17 +787,14 @@ namespace DevExpress.Ui
         public bool? onFileSavingEnabled { get; set; }
         public bool? onRowClickEnabled { get; set; }
         public bool? onRowPreparedEnabled { get; set; }
-        // couldn't parse remoteOperations
-        // couldn't parse rowTemplate
-        // couldn't parse scrolling
-        // couldn't parse selection
-        // couldn't parse selectionFilter
-        // couldn't parse sortByGroupSummaryInfo
-        // couldn't parse summary
+        public object remoteOperations { get; set; }
+        public object rowTemplate { get; set; }
+        public object selectionFilter { get; set; }
+        public object sortByGroupSummaryInfo { get; set; }
+        public object summary { get; set; }
     }
     public partial class DxDataGridEditing : GridBaseEditing
     {
-        public object texts { get; set; }
     }
     public partial class DxDataGridScrolling : GridBaseScrolling
     {
@@ -861,23 +830,21 @@ namespace DevExpress.Ui
     {
         public bool? adaptivityEnabled { get; set; }
         public string applyButtonText { get; set; }
-        // couldn't parse calendarOptions
+        public object calendarOptions { get; set; }
         public string cancelButtonText { get; set; }
         public string dateOutOfRangeMessage { get; set; }
         public string dateSerializationFormat { get; set; }
-        // couldn't parse disabledDates
-        // couldn't parse displayFormat
+        public object disabledDates { get; set; }
+        public object displayFormat { get; set; }
         public float? interval { get; set; }
         public string invalidDateMessage { get; set; }
-        // couldn't parse max
+        public object max { get; set; }
         public string maxZoomLevel { get; set; }
-        // couldn't parse min
+        public object min { get; set; }
         public string minZoomLevel { get; set; }
         public string pickerType { get; set; }
-        public string placeholder { get; set; }
         public bool? showAnalogClock { get; set; }
         public string type { get; set; }
-        // couldn't parse value
     }
 
     public static class DxDateBoxOptionsMaxZoomLevel
@@ -909,42 +876,37 @@ namespace DevExpress.Ui
     }
     public partial class DxDeferRenderingOptions : WidgetOptions
     {
-        // couldn't parse animation
+        public object animation { get; set; }
         public bool? onRenderedEnabled { get; set; }
         public bool? onShownEnabled { get; set; }
-        // couldn't parse renderWhen
+        public object renderWhen { get; set; }
         public bool? showLoadIndicator { get; set; }
         public string staggerItemSelector { get; set; }
     }
     public partial class DxDropDownBoxOptions : DxDropDownEditorOptions
     {
-        public bool? acceptCustomValue { get; set; }
-        // couldn't parse contentTemplate
-        // couldn't parse dropDownOptions
-        // couldn't parse fieldTemplate
-        public string valueChangeEvent { get; set; }
+        public object contentTemplate { get; set; }
+        public object dropDownOptions { get; set; }
+        public object fieldTemplate { get; set; }
     }
     public partial class DxDropDownMenuOptions : WidgetOptions
     {
-        public bool? activeStateEnabled { get; set; }
         public string buttonIcon { get; set; }
         public string buttonText { get; set; }
-        // couldn't parse dataSource
-        public bool? hoverStateEnabled { get; set; }
-        // couldn't parse items
-        // couldn't parse itemTemplate
+        public object dataSource { get; set; }
+        public object items { get; set; }
+        public object itemTemplate { get; set; }
         public bool? onButtonClickEnabled { get; set; }
         public bool? onItemClickEnabled { get; set; }
         public bool? opened { get; set; }
-        // couldn't parse popupHeight
-        // couldn't parse popupWidth
+        public object popupHeight { get; set; }
+        public object popupWidth { get; set; }
         public bool? usePopover { get; set; }
     }
     public partial class DxFileUploaderOptions : EditorOptions
     {
         public string accept { get; set; }
         public bool? allowCanceling { get; set; }
-        public bool? focusStateEnabled { get; set; }
         public string labelText { get; set; }
         public bool? multiple { get; set; }
         public string name { get; set; }
@@ -953,7 +915,6 @@ namespace DevExpress.Ui
         public bool? onUploadedEnabled { get; set; }
         public bool? onUploadErrorEnabled { get; set; }
         public bool? onUploadStartedEnabled { get; set; }
-        public bool? onValueChangedEnabled { get; set; }
         public float? progress { get; set; }
         public string readyToUploadMessage { get; set; }
         public string selectButtonText { get; set; }
@@ -965,7 +926,6 @@ namespace DevExpress.Ui
         public string uploadMethod { get; set; }
         public string uploadMode { get; set; }
         public string uploadUrl { get; set; }
-        // couldn't parse value
     }
 
     public static class DxFileUploaderOptionsUploadMethod
@@ -982,24 +942,24 @@ namespace DevExpress.Ui
     public partial class DxFilterBuilderOptions : WidgetOptions
     {
         public bool? allowHierarchicalFields { get; set; }
-        // couldn't parse customOperations
-        // couldn't parse fields
-        // couldn't parse filterOperationDescriptions
-        // couldn't parse groupOperationDescriptions
+        public object customOperations { get; set; }
+        public object fields { get; set; }
+        public object filterOperationDescriptions { get; set; }
+        public object groupOperationDescriptions { get; set; }
         public bool? onEditorPreparedEnabled { get; set; }
         public bool? onEditorPreparingEnabled { get; set; }
         public bool? onValueChangedEnabled { get; set; }
-        // couldn't parse value
+        public object value { get; set; }
     }
     public partial class DxFormOptions : WidgetOptions
     {
         public bool? alignItemLabels { get; set; }
         public bool? alignItemLabelsInAllGroups { get; set; }
-        // couldn't parse colCount
+        public object colCount { get; set; }
         public object colCountByScreen { get; set; }
-        // couldn't parse customizeItem
+        public object customizeItem { get; set; }
         public object formData { get; set; }
-        // couldn't parse items
+        public object items { get; set; }
         public string labelLocation { get; set; }
         public float? minColWidth { get; set; }
         public bool? onEditorEnterKeyEnabled { get; set; }
@@ -1008,7 +968,7 @@ namespace DevExpress.Ui
         public bool? readOnly { get; set; }
         public string requiredMark { get; set; }
         public string requiredMessage { get; set; }
-        // couldn't parse screenByWidth
+        public object screenByWidth { get; set; }
         public bool? scrollingEnabled { get; set; }
         public bool? showColonAfterLabel { get; set; }
         public bool? showOptionalMark { get; set; }
@@ -1027,11 +987,9 @@ namespace DevExpress.Ui
     {
         public float? animationDuration { get; set; }
         public bool? animationEnabled { get; set; }
-        public bool? focusStateEnabled { get; set; }
         public bool? indicatorEnabled { get; set; }
         public float? initialItemWidth { get; set; }
         public bool? loop { get; set; }
-        public float? selectedIndex { get; set; }
         public bool? showIndicator { get; set; }
         public bool? showNavButtons { get; set; }
         public float? slideshowDelay { get; set; }
@@ -1046,26 +1004,20 @@ namespace DevExpress.Ui
     }
     public partial class DxListOptions : CollectionWidgetOptions
     {
-        public bool? activeStateEnabled { get; set; }
         public bool? allowItemDeleting { get; set; }
         public bool? allowItemReordering { get; set; }
         public bool? bounceEnabled { get; set; }
         public bool? collapsibleGroups { get; set; }
-        public bool? focusStateEnabled { get; set; }
         public bool? grouped { get; set; }
-        // couldn't parse groupTemplate
-        public bool? hoverStateEnabled { get; set; }
+        public object groupTemplate { get; set; }
         public bool? indicateLoading { get; set; }
         public string itemDeleteMode { get; set; }
-        // couldn't parse menuItems
+        public object menuItems { get; set; }
         public string menuMode { get; set; }
         public string nextButtonText { get; set; }
         public bool? onGroupRenderedEnabled { get; set; }
-        public bool? onItemClickEnabled { get; set; }
-        public bool? onItemContextMenuEnabled { get; set; }
         public bool? onItemDeletedEnabled { get; set; }
         public bool? onItemDeletingEnabled { get; set; }
-        public bool? onItemHoldEnabled { get; set; }
         public bool? onItemReorderedEnabled { get; set; }
         public bool? onItemSwipeEnabled { get; set; }
         public bool? onPageLoadingEnabled { get; set; }
@@ -1132,61 +1084,45 @@ namespace DevExpress.Ui
     }
     public partial class DxLoadPanelOptions : DxOverlayOptions
     {
-        // couldn't parse animation
         public float? delay { get; set; }
-        public bool? focusStateEnabled { get; set; }
-        public float? height { get; set; }
         public string indicatorSrc { get; set; }
         public string message { get; set; }
-        // couldn't parse position
-        public object shadingColor { get; set; }
         public bool? showIndicator { get; set; }
         public bool? showPane { get; set; }
-        public float? width { get; set; }
     }
     public partial class DxLoadPanelAnimation : DxOverlayAnimation
     {
-        // couldn't parse hide
-        // couldn't parse show
     }
     public partial class DxLookupOptions : DxDropDownListOptions
     {
-        // couldn't parse animation
+        public object animation { get; set; }
         public string applyButtonText { get; set; }
-        public string applyValueMode { get; set; }
         public string cancelButtonText { get; set; }
         public bool? cleanSearchOnOpening { get; set; }
         public string clearButtonText { get; set; }
-        // couldn't parse closeOnOutsideClick
-        // couldn't parse fieldTemplate
-        public bool? focusStateEnabled { get; set; }
+        public object closeOnOutsideClick { get; set; }
+        public object fieldTemplate { get; set; }
         public bool? fullScreen { get; set; }
-        public bool? grouped { get; set; }
-        // couldn't parse groupTemplate
         public string nextButtonText { get; set; }
         public bool? onPageLoadingEnabled { get; set; }
         public bool? onPullRefreshEnabled { get; set; }
         public bool? onScrollEnabled { get; set; }
         public bool? onTitleRenderedEnabled { get; set; }
-        public bool? onValueChangedEnabled { get; set; }
         public string pageLoadingText { get; set; }
         public string pageLoadMode { get; set; }
-        public string placeholder { get; set; }
-        // couldn't parse popupHeight
-        // couldn't parse popupWidth
-        // couldn't parse position
+        public object popupHeight { get; set; }
+        public object popupWidth { get; set; }
+        public object position { get; set; }
         public string pulledDownText { get; set; }
         public string pullingDownText { get; set; }
         public bool? pullRefreshEnabled { get; set; }
         public string refreshingText { get; set; }
-        public bool? searchEnabled { get; set; }
         public string searchPlaceholder { get; set; }
         public bool? shading { get; set; }
         public bool? showCancelButton { get; set; }
-        public bool? showClearButton { get; set; }
         public bool? showPopupTitle { get; set; }
         public string title { get; set; }
-        // couldn't parse titleTemplate
+        public object titleTemplate { get; set; }
         public bool? useNativeScrolling { get; set; }
         public bool? usePopover { get; set; }
     }
@@ -1204,13 +1140,11 @@ namespace DevExpress.Ui
     public partial class DxMapOptions : WidgetOptions
     {
         public bool? autoAdjust { get; set; }
-        // couldn't parse center
+        public object center { get; set; }
         public bool? controls { get; set; }
-        public bool? focusStateEnabled { get; set; }
-        public object height { get; set; }
-        // couldn't parse key
+        public object key { get; set; }
         public string markerIconSrc { get; set; }
-        // couldn't parse markers
+        public object markers { get; set; }
         public bool? onClickEnabled { get; set; }
         public bool? onMarkerAddedEnabled { get; set; }
         public bool? onMarkerRemovedEnabled { get; set; }
@@ -1218,9 +1152,8 @@ namespace DevExpress.Ui
         public bool? onRouteAddedEnabled { get; set; }
         public bool? onRouteRemovedEnabled { get; set; }
         public string provider { get; set; }
-        // couldn't parse routes
+        public object routes { get; set; }
         public string type { get; set; }
-        public object width { get; set; }
         public float? zoom { get; set; }
     }
 
@@ -1245,13 +1178,12 @@ namespace DevExpress.Ui
     {
         public bool? adaptivityEnabled { get; set; }
         public bool? hideSubmenuOnMouseLeave { get; set; }
-        // couldn't parse items
         public bool? onSubmenuHiddenEnabled { get; set; }
         public bool? onSubmenuHidingEnabled { get; set; }
         public bool? onSubmenuShowingEnabled { get; set; }
         public bool? onSubmenuShownEnabled { get; set; }
         public string orientation { get; set; }
-        // couldn't parse showFirstSubmenuMode
+        public object showFirstSubmenuMode { get; set; }
         public string submenuDirection { get; set; }
     }
 
@@ -1270,9 +1202,7 @@ namespace DevExpress.Ui
     {
         public bool? animationEnabled { get; set; }
         public bool? deferRendering { get; set; }
-        public bool? focusStateEnabled { get; set; }
         public bool? loop { get; set; }
-        public float? selectedIndex { get; set; }
         public bool? swipeEnabled { get; set; }
     }
     public partial class DxMultiViewItemTemplate : CollectionWidgetItemTemplate
@@ -1280,15 +1210,13 @@ namespace DevExpress.Ui
     }
     public partial class DxNavBarOptions : DxTabsOptions
     {
-        public object scrollByContent { get; set; }
     }
     public partial class DxNavBarItemTemplate : DxTabsItemTemplate
     {
-        public string badge { get; set; }
     }
     public partial class DxNumberBoxOptions : DxTextEditorOptions
     {
-        // couldn't parse format
+        public object format { get; set; }
         public string invalidValueMessage { get; set; }
         public float? max { get; set; }
         public float? min { get; set; }
@@ -1296,7 +1224,6 @@ namespace DevExpress.Ui
         public bool? showSpinButtons { get; set; }
         public float? step { get; set; }
         public bool? useLargeSpinButtons { get; set; }
-        public float? value { get; set; }
     }
 
     public static class DxNumberBoxOptionsMode
@@ -1307,17 +1234,16 @@ namespace DevExpress.Ui
     }
     public partial class DxOverlayOptions : WidgetOptions
     {
-        // couldn't parse animation
+        public object animation { get; set; }
         public bool? closeOnBackButton { get; set; }
-        // couldn't parse closeOnOutsideClick
-        // couldn't parse contentTemplate
+        public object closeOnOutsideClick { get; set; }
+        public object contentTemplate { get; set; }
         public bool? deferRendering { get; set; }
         public bool? dragEnabled { get; set; }
-        // couldn't parse height
-        // couldn't parse maxHeight
-        // couldn't parse maxWidth
-        // couldn't parse minHeight
-        // couldn't parse minWidth
+        public object maxHeight { get; set; }
+        public object maxWidth { get; set; }
+        public object minHeight { get; set; }
+        public object minWidth { get; set; }
         public bool? onHiddenEnabled { get; set; }
         public bool? onHidingEnabled { get; set; }
         public bool? onShowingEnabled { get; set; }
@@ -1325,19 +1251,15 @@ namespace DevExpress.Ui
         public object position { get; set; }
         public bool? shading { get; set; }
         public string shadingColor { get; set; }
-        public bool? visible { get; set; }
-        // couldn't parse width
     }
     public partial class DxOverlayAnimation
     {
-        // couldn't parse hide
-        // couldn't parse show
+        public object hide { get; set; }
+        public object show { get; set; }
     }
     public partial class DxPanoramaOptions : CollectionWidgetOptions
     {
-        // couldn't parse backgroundImage
-        public bool? focusStateEnabled { get; set; }
-        public float? selectedIndex { get; set; }
+        public object backgroundImage { get; set; }
         public string title { get; set; }
     }
     public partial class DxPanoramaItemTemplate : CollectionWidgetItemTemplate
@@ -1346,15 +1268,14 @@ namespace DevExpress.Ui
     }
     public partial class DxPivotOptions : CollectionWidgetOptions
     {
-        // couldn't parse contentTemplate
-        // couldn't parse itemTitleTemplate
-        public float? selectedIndex { get; set; }
+        public object contentTemplate { get; set; }
+        public object itemTitleTemplate { get; set; }
         public bool? swipeEnabled { get; set; }
     }
     public partial class DxPivotItemTemplate : CollectionWidgetItemTemplate
     {
         public string title { get; set; }
-        // couldn't parse titleTemplate
+        public object titleTemplate { get; set; }
     }
     public partial class DxPivotGridOptions : WidgetOptions
     {
@@ -1363,13 +1284,13 @@ namespace DevExpress.Ui
         public bool? allowSorting { get; set; }
         public bool? allowSortingBySummary { get; set; }
         public string dataFieldArea { get; set; }
-        // couldn't parse dataSource
-        // couldn't parse export
-        // couldn't parse fieldChooser
-        // couldn't parse fieldPanel
-        // couldn't parse headerFilter
+        public object dataSource { get; set; }
+        public object export { get; set; }
+        public object fieldChooser { get; set; }
+        public object fieldPanel { get; set; }
+        public object headerFilter { get; set; }
         public bool? hideEmptySummaryCells { get; set; }
-        // couldn't parse loadPanel
+        public object loadPanel { get; set; }
         public bool? onCellClickEnabled { get; set; }
         public bool? onCellPreparedEnabled { get; set; }
         public bool? onContextMenuPreparingEnabled { get; set; }
@@ -1377,15 +1298,15 @@ namespace DevExpress.Ui
         public bool? onExportingEnabled { get; set; }
         public bool? onFileSavingEnabled { get; set; }
         public string rowHeaderLayout { get; set; }
-        // couldn't parse scrolling
+        public object scrolling { get; set; }
         public bool? showBorders { get; set; }
         public bool? showColumnGrandTotals { get; set; }
         public bool? showColumnTotals { get; set; }
         public bool? showRowGrandTotals { get; set; }
         public bool? showRowTotals { get; set; }
         public string showTotalsPrior { get; set; }
-        // couldn't parse stateStoring
-        // couldn't parse texts
+        public object stateStoring { get; set; }
+        public object texts { get; set; }
         public bool? wordWrapEnabled { get; set; }
     }
 
@@ -1410,13 +1331,12 @@ namespace DevExpress.Ui
     {
         public bool? allowSearch { get; set; }
         public string applyChangesMode { get; set; }
-        // couldn't parse dataSource
-        // couldn't parse headerFilter
-        // couldn't parse height
-        // couldn't parse layout
+        public object dataSource { get; set; }
+        public object headerFilter { get; set; }
+        public object layout { get; set; }
         public bool? onContextMenuPreparingEnabled { get; set; }
         public object state { get; set; }
-        // couldn't parse texts
+        public object texts { get; set; }
     }
 
     public static class DxPivotGridFieldChooserOptionsApplyChangesMode
@@ -1426,47 +1346,30 @@ namespace DevExpress.Ui
     }
     public partial class DxPopoverOptions : DxPopupOptions
     {
-        // couldn't parse animation
-        public object closeOnOutsideClick { get; set; }
-        // couldn't parse height
-        // couldn't parse hideEvent
-        // couldn't parse position
-        public bool? shading { get; set; }
-        // couldn't parse showEvent
-        public bool? showTitle { get; set; }
-        // couldn't parse target
-        // couldn't parse width
+        public object hideEvent { get; set; }
+        public object showEvent { get; set; }
+        public object target { get; set; }
     }
     public partial class DxPopoverAnimation : DxPopupAnimation
     {
-        // couldn't parse hide
-        // couldn't parse show
     }
     public partial class DxPopupOptions : DxOverlayOptions
     {
-        public object animation { get; set; }
-        // couldn't parse container
-        public bool? dragEnabled { get; set; }
-        public bool? focusStateEnabled { get; set; }
+        public object container { get; set; }
         public bool? fullScreen { get; set; }
-        public object height { get; set; }
         public bool? onResizeEnabled { get; set; }
         public bool? onResizeEndEnabled { get; set; }
         public bool? onResizeStartEnabled { get; set; }
         public bool? onTitleRenderedEnabled { get; set; }
-        // couldn't parse position
         public bool? resizeEnabled { get; set; }
         public bool? showCloseButton { get; set; }
         public bool? showTitle { get; set; }
         public string title { get; set; }
-        // couldn't parse titleTemplate
-        // couldn't parse toolbarItems
-        public object width { get; set; }
+        public object titleTemplate { get; set; }
+        public object toolbarItems { get; set; }
     }
     public partial class DxPopupAnimation : DxOverlayAnimation
     {
-        public object hide { get; set; }
-        public object show { get; set; }
     }
     public partial class DxPopupToolbarItem
     {
@@ -1474,7 +1377,7 @@ namespace DevExpress.Ui
         public string html { get; set; }
         public string location { get; set; }
         public object options { get; set; }
-        // couldn't parse template
+        public object template { get; set; }
         public string text { get; set; }
         public string toolbar { get; set; }
         public bool? visible { get; set; }
@@ -1507,17 +1410,12 @@ namespace DevExpress.Ui
     {
         public bool? onCompleteEnabled { get; set; }
         public bool? showStatus { get; set; }
-        // couldn't parse statusFormat
-        public float? value { get; set; }
+        public object statusFormat { get; set; }
     }
     public partial class DxRadioGroupOptions : EditorOptions
     {
-        public bool? activeStateEnabled { get; set; }
-        public bool? focusStateEnabled { get; set; }
-        public bool? hoverStateEnabled { get; set; }
         public string layout { get; set; }
         public string name { get; set; }
-        public object value { get; set; }
     }
 
     public static class DxRadioGroupOptionsLayout
@@ -1529,15 +1427,12 @@ namespace DevExpress.Ui
     {
         public float? end { get; set; }
         public string endName { get; set; }
-        public bool? onValueChangedEnabled { get; set; }
         public float? start { get; set; }
         public string startName { get; set; }
-        public float value { get; set; }
     }
     public partial class DxResizableOptions : DOMComponentOptions
     {
         public string handles { get; set; }
-        public object height { get; set; }
         public float? maxHeight { get; set; }
         public float? maxWidth { get; set; }
         public float? minHeight { get; set; }
@@ -1545,7 +1440,6 @@ namespace DevExpress.Ui
         public bool? onResizeEnabled { get; set; }
         public bool? onResizeEndEnabled { get; set; }
         public bool? onResizeStartEnabled { get; set; }
-        public object width { get; set; }
     }
 
     public static class DxResizableOptionsHandles
@@ -1558,43 +1452,40 @@ namespace DevExpress.Ui
     }
     public partial class DxResponsiveBoxOptions : CollectionWidgetOptions
     {
-        // couldn't parse cols
-        public object height { get; set; }
-        // couldn't parse rows
-        // couldn't parse screenByWidth
+        public object cols { get; set; }
+        public object rows { get; set; }
+        public object screenByWidth { get; set; }
         public string singleColumnScreen { get; set; }
-        public object width { get; set; }
     }
     public partial class DxResponsiveBoxItemTemplate : CollectionWidgetItemTemplate
     {
-        // couldn't parse location
+        public object location { get; set; }
     }
     public partial class DxSchedulerOptions : WidgetOptions
     {
         public string allDayExpr { get; set; }
-        // couldn't parse appointmentTemplate
-        // couldn't parse appointmentTooltipTemplate
+        public object appointmentTemplate { get; set; }
+        public object appointmentTooltipTemplate { get; set; }
         public float? cellDuration { get; set; }
         public bool? crossScrollingEnabled { get; set; }
-        // couldn't parse currentDate
+        public object currentDate { get; set; }
         public string currentView { get; set; }
-        // couldn't parse dataCellTemplate
-        // couldn't parse dataSource
-        // couldn't parse dateCellTemplate
+        public object dataCellTemplate { get; set; }
+        public object dataSource { get; set; }
+        public object dateCellTemplate { get; set; }
         public string dateSerializationFormat { get; set; }
         public string descriptionExpr { get; set; }
-        // couldn't parse dropDownAppointmentTemplate
-        // couldn't parse editing
+        public object dropDownAppointmentTemplate { get; set; }
+        public object editing { get; set; }
         public string endDateExpr { get; set; }
         public string endDateTimeZoneExpr { get; set; }
         public float? endDayHour { get; set; }
-        // couldn't parse firstDayOfWeek
-        public bool? focusStateEnabled { get; set; }
+        public object firstDayOfWeek { get; set; }
         public string groups { get; set; }
         public float? indicatorUpdateInterval { get; set; }
-        // couldn't parse max
-        // couldn't parse maxAppointmentsPerCell
-        // couldn't parse min
+        public object max { get; set; }
+        public object maxAppointmentsPerCell { get; set; }
+        public object min { get; set; }
         public string noDataText { get; set; }
         public bool? onAppointmentAddedEnabled { get; set; }
         public bool? onAppointmentAddingEnabled { get; set; }
@@ -1613,9 +1504,9 @@ namespace DevExpress.Ui
         public string recurrenceExceptionExpr { get; set; }
         public string recurrenceRuleExpr { get; set; }
         public bool? remoteFiltering { get; set; }
-        // couldn't parse resourceCellTemplate
-        // couldn't parse resources
-        // couldn't parse selectedCellData
+        public object resourceCellTemplate { get; set; }
+        public object resources { get; set; }
+        public object selectedCellData { get; set; }
         public bool? shadeUntilCurrentTime { get; set; }
         public bool? showAllDayPanel { get; set; }
         public bool? showCurrentTimeIndicator { get; set; }
@@ -1623,10 +1514,10 @@ namespace DevExpress.Ui
         public string startDateTimeZoneExpr { get; set; }
         public float? startDayHour { get; set; }
         public string textExpr { get; set; }
-        // couldn't parse timeCellTemplate
+        public object timeCellTemplate { get; set; }
         public string timeZone { get; set; }
         public bool? useDropDownViewSwitcher { get; set; }
-        // couldn't parse views
+        public object views { get; set; }
     }
 
     public static class DxSchedulerOptionsCurrentView
@@ -1658,29 +1549,23 @@ namespace DevExpress.Ui
     }
     public partial class DxSelectBoxOptions : DxDropDownListOptions
     {
-        public bool? acceptCustomValue { get; set; }
-        // couldn't parse fieldTemplate
+        public object fieldTemplate { get; set; }
         public bool? onCustomItemCreatingEnabled { get; set; }
-        public string placeholder { get; set; }
         public bool? showSelectionControls { get; set; }
-        public string valueChangeEvent { get; set; }
     }
     public partial class DxSliderOptions : DxSliderBaseOptions
     {
-        public float? value { get; set; }
     }
     public partial class DxSlideOutOptions : CollectionWidgetOptions
     {
-        public bool? activeStateEnabled { get; set; }
-        // couldn't parse contentTemplate
+        public object contentTemplate { get; set; }
         public bool? menuGrouped { get; set; }
-        // couldn't parse menuGroupTemplate
-        // couldn't parse menuItemTemplate
+        public object menuGroupTemplate { get; set; }
+        public object menuItemTemplate { get; set; }
         public string menuPosition { get; set; }
         public bool? menuVisible { get; set; }
         public bool? onMenuGroupRenderedEnabled { get; set; }
         public bool? onMenuItemRenderedEnabled { get; set; }
-        public float? selectedIndex { get; set; }
         public bool? swipeEnabled { get; set; }
     }
 
@@ -1691,13 +1576,13 @@ namespace DevExpress.Ui
     }
     public partial class DxSlideOutItemTemplate : CollectionWidgetItemTemplate
     {
-        // couldn't parse menuTemplate
+        public object menuTemplate { get; set; }
     }
     public partial class DxSlideOutViewOptions : WidgetOptions
     {
-        // couldn't parse contentTemplate
+        public object contentTemplate { get; set; }
         public string menuPosition { get; set; }
-        // couldn't parse menuTemplate
+        public object menuTemplate { get; set; }
         public bool? menuVisible { get; set; }
         public bool? swipeEnabled { get; set; }
     }
@@ -1709,21 +1594,14 @@ namespace DevExpress.Ui
     }
     public partial class DxSwitchOptions : EditorOptions
     {
-        public bool? activeStateEnabled { get; set; }
-        public bool? focusStateEnabled { get; set; }
-        public bool? hoverStateEnabled { get; set; }
         public string name { get; set; }
         public string offText { get; set; }
         public string onText { get; set; }
-        public bool? value { get; set; }
     }
     public partial class DxTabsOptions : CollectionWidgetOptions
     {
-        public bool? focusStateEnabled { get; set; }
-        public bool? hoverStateEnabled { get; set; }
         public bool? scrollByContent { get; set; }
         public bool? scrollingEnabled { get; set; }
-        // couldn't parse selectedItems
         public string selectionMode { get; set; }
         public bool? showNavButtons { get; set; }
     }
@@ -1740,39 +1618,32 @@ namespace DevExpress.Ui
     }
     public partial class DxTabPanelOptions : DxMultiViewOptions
     {
-        public bool? animationEnabled { get; set; }
-        public bool? focusStateEnabled { get; set; }
-        public bool? hoverStateEnabled { get; set; }
-        // couldn't parse itemTitleTemplate
+        public object itemTitleTemplate { get; set; }
         public bool? onTitleClickEnabled { get; set; }
         public bool? onTitleHoldEnabled { get; set; }
         public bool? onTitleRenderedEnabled { get; set; }
         public bool? scrollByContent { get; set; }
         public bool? scrollingEnabled { get; set; }
         public bool? showNavButtons { get; set; }
-        public bool? swipeEnabled { get; set; }
     }
     public partial class DxTabPanelItemTemplate : DxMultiViewItemTemplate
     {
         public string badge { get; set; }
         public string icon { get; set; }
-        // couldn't parse tabTemplate
+        public object tabTemplate { get; set; }
         public string title { get; set; }
     }
     public partial class DxTagBoxOptions : DxSelectBoxOptions
     {
-        public string applyValueMode { get; set; }
         public bool? hideSelectedItems { get; set; }
         public float? maxDisplayedTags { get; set; }
         public bool? multiline { get; set; }
         public bool? onMultiTagPreparingEnabled { get; set; }
         public bool? onSelectAllValueChangedEnabled { get; set; }
-        public bool? onSelectionChangedEnabled { get; set; }
         public string selectAllMode { get; set; }
-        // couldn't parse selectedItems
+        public object selectedItems { get; set; }
         public bool? showMultiTagOnly { get; set; }
-        // couldn't parse tagTemplate
-        // couldn't parse value
+        public object tagTemplate { get; set; }
     }
 
     public static class DxTagBoxOptionsApplyValueMode
@@ -1788,15 +1659,13 @@ namespace DevExpress.Ui
     public partial class DxTextAreaOptions : DxTextBoxOptions
     {
         public bool? autoResizeEnabled { get; set; }
-        // couldn't parse maxHeight
-        // couldn't parse minHeight
-        public bool? spellcheck { get; set; }
+        public object maxHeight { get; set; }
+        public object minHeight { get; set; }
     }
     public partial class DxTextBoxOptions : DxTextEditorOptions
     {
-        // couldn't parse maxLength
+        public object maxLength { get; set; }
         public string mode { get; set; }
-        public string value { get; set; }
     }
 
     public static class DxTextBoxOptionsMode
@@ -1810,13 +1679,9 @@ namespace DevExpress.Ui
     }
     public partial class DxTileViewOptions : CollectionWidgetOptions
     {
-        public bool? activeStateEnabled { get; set; }
         public float? baseItemHeight { get; set; }
         public float? baseItemWidth { get; set; }
         public string direction { get; set; }
-        public bool? focusStateEnabled { get; set; }
-        // couldn't parse height
-        public bool? hoverStateEnabled { get; set; }
         public float? itemMargin { get; set; }
         public bool? showScrollbar { get; set; }
     }
@@ -1833,20 +1698,11 @@ namespace DevExpress.Ui
     }
     public partial class DxToastOptions : DxOverlayOptions
     {
-        // couldn't parse animation
-        public bool? closeOnBackButton { get; set; }
         public bool? closeOnClick { get; set; }
-        public object closeOnOutsideClick { get; set; }
         public bool? closeOnSwipe { get; set; }
         public float? displayTime { get; set; }
-        public object height { get; set; }
-        public object maxWidth { get; set; }
         public string message { get; set; }
-        public object minWidth { get; set; }
-        // couldn't parse position
-        public bool? shading { get; set; }
         public string type { get; set; }
-        public object width { get; set; }
     }
 
     public static class DxToastOptionsType
@@ -1859,12 +1715,10 @@ namespace DevExpress.Ui
     }
     public partial class DxToastAnimation : DxOverlayAnimation
     {
-        // couldn't parse hide
-        // couldn't parse show
     }
     public partial class DxToolbarOptions : CollectionWidgetOptions
     {
-        // couldn't parse menuItemTemplate
+        public object menuItemTemplate { get; set; }
         public string renderAs { get; set; }
     }
 
@@ -1877,7 +1731,7 @@ namespace DevExpress.Ui
     {
         public string locateInMenu { get; set; }
         public string location { get; set; }
-        // couldn't parse menuItemTemplate
+        public object menuItemTemplate { get; set; }
         public object options { get; set; }
         public string showText { get; set; }
         public string widget { get; set; }
@@ -1922,15 +1776,13 @@ namespace DevExpress.Ui
     public partial class DxTreeListOptions : GridBaseOptions
     {
         public bool? autoExpandAll { get; set; }
-        // couldn't parse columns
-        // couldn't parse customizeColumns
+        public object customizeColumns { get; set; }
         public string dataStructure { get; set; }
-        // couldn't parse editing
-        // couldn't parse expandedRowKeys
+        public object expandedRowKeys { get; set; }
         public bool? expandNodesOnFiltering { get; set; }
-        // couldn't parse hasItemsExpr
-        // couldn't parse itemsExpr
-        // couldn't parse keyExpr
+        public object hasItemsExpr { get; set; }
+        public object itemsExpr { get; set; }
+        public object keyExpr { get; set; }
         public bool? onCellClickEnabled { get; set; }
         public bool? onCellHoverChangedEnabled { get; set; }
         public bool? onCellPreparedEnabled { get; set; }
@@ -1941,12 +1793,9 @@ namespace DevExpress.Ui
         public bool? onNodesInitializedEnabled { get; set; }
         public bool? onRowClickEnabled { get; set; }
         public bool? onRowPreparedEnabled { get; set; }
-        // couldn't parse paging
-        // couldn't parse parentIdExpr
-        // couldn't parse remoteOperations
+        public object parentIdExpr { get; set; }
+        public object remoteOperations { get; set; }
         public object rootValue { get; set; }
-        // couldn't parse scrolling
-        // couldn't parse selection
     }
 
     public static class DxTreeListOptionsDataStructure
@@ -1956,7 +1805,6 @@ namespace DevExpress.Ui
     }
     public partial class DxTreeListEditing : GridBaseEditing
     {
-        // couldn't parse texts
     }
     public partial class DxTreeListEditingTexts : GridBaseEditingTexts
     {
@@ -1964,7 +1812,6 @@ namespace DevExpress.Ui
     }
     public partial class DxTreeListPaging : GridBasePaging
     {
-        public bool? enabled { get; set; }
     }
     public partial class DxTreeListScrolling : GridBaseScrolling
     {
@@ -1983,22 +1830,16 @@ namespace DevExpress.Ui
     public partial class DxTreeViewOptions : HierarchicalCollectionWidgetOptions
     {
         public bool? animationEnabled { get; set; }
-        // couldn't parse createChildren
+        public object createChildren { get; set; }
         public string dataStructure { get; set; }
         public bool? expandAllEnabled { get; set; }
-        // couldn't parse expandedExpr
+        public object expandedExpr { get; set; }
         public bool? expandNodesRecursive { get; set; }
-        // couldn't parse hasItemsExpr
-        // couldn't parse items
-        public bool? onItemClickEnabled { get; set; }
+        public object hasItemsExpr { get; set; }
         public bool? onItemCollapsedEnabled { get; set; }
-        public bool? onItemContextMenuEnabled { get; set; }
         public bool? onItemExpandedEnabled { get; set; }
-        public bool? onItemHoldEnabled { get; set; }
-        public bool? onItemRenderedEnabled { get; set; }
         public bool? onItemSelectionChangedEnabled { get; set; }
-        public bool? onSelectionChangedEnabled { get; set; }
-        // couldn't parse parentIdExpr
+        public object parentIdExpr { get; set; }
         public object rootValue { get; set; }
         public string scrollDirection { get; set; }
         public string selectAllText { get; set; }
@@ -2068,9 +1909,9 @@ namespace DevExpress.Ui
     }
     public partial class RangeRule
     {
-        // couldn't parse max
+        public object max { get; set; }
         public string message { get; set; }
-        // couldn't parse min
+        public object min { get; set; }
         public bool? reevaluate { get; set; }
         public string type { get; set; }
     }
@@ -2111,7 +1952,7 @@ namespace DevExpress.Ui
         public string message { get; set; }
         public bool? reevaluate { get; set; }
         public string type { get; set; }
-        // couldn't parse validationCallback
+        public object validationCallback { get; set; }
     }
 
     public static class CustomRuleType
@@ -2127,7 +1968,7 @@ namespace DevExpress.Ui
     }
     public partial class CompareRule
     {
-        // couldn't parse comparisonTarget
+        public object comparisonTarget { get; set; }
         public string comparisonType { get; set; }
         public string message { get; set; }
         public bool? reevaluate { get; set; }
@@ -2159,7 +2000,7 @@ namespace DevExpress.Ui
     public partial class PatternRule
     {
         public string message { get; set; }
-        // couldn't parse pattern
+        public object pattern { get; set; }
         public string type { get; set; }
     }
 
@@ -2193,15 +2034,15 @@ namespace DevExpress.Ui
     }
     public partial class DxValidationGroupResult
     {
-        // couldn't parse brokenRules
+        public object brokenRules { get; set; }
         public bool? isValid { get; set; }
-        // couldn't parse validators
+        public object validators { get; set; }
     }
     public partial class DxValidatorResult
     {
-        // couldn't parse brokenRule
+        public object brokenRule { get; set; }
         public bool? isValid { get; set; }
-        // couldn't parse validationRules
+        public object validationRules { get; set; }
         public object value { get; set; }
     }
     public partial class DxValidationGroupOptions : DOMComponentOptions
@@ -2213,15 +2054,15 @@ namespace DevExpress.Ui
     }
     public partial class DxValidatorOptions : DOMComponentOptions
     {
-        // couldn't parse adapter
+        public object adapter { get; set; }
         public string name { get; set; }
         public bool? onValidatedEnabled { get; set; }
         public string validationGroup { get; set; }
-        // couldn't parse validationRules
+        public object validationRules { get; set; }
     }
     public partial class DxCalendarCellTemplate
     {
-        // couldn't parse date
+        public object date { get; set; }
         public string text { get; set; }
         public string view { get; set; }
     }
@@ -2235,11 +2076,11 @@ namespace DevExpress.Ui
     }
     public partial class CollectionWidgetOptions : WidgetOptions
     {
-        // couldn't parse dataSource
+        public object dataSource { get; set; }
         public float? itemHoldTimeout { get; set; }
-        // couldn't parse items
-        // couldn't parse itemTemplate
-        // couldn't parse keyExpr
+        public object items { get; set; }
+        public object itemTemplate { get; set; }
+        public object keyExpr { get; set; }
         public string noDataText { get; set; }
         public bool? onItemClickEnabled { get; set; }
         public bool? onItemContextMenuEnabled { get; set; }
@@ -2248,30 +2089,27 @@ namespace DevExpress.Ui
         public bool? onSelectionChangedEnabled { get; set; }
         public float? selectedIndex { get; set; }
         public object selectedItem { get; set; }
-        // couldn't parse selectedItemKeys
-        // couldn't parse selectedItems
+        public object selectedItemKeys { get; set; }
+        public object selectedItems { get; set; }
     }
     public partial class CollectionWidgetItemTemplate
     {
         public bool? disabled { get; set; }
         public string html { get; set; }
-        // couldn't parse template
+        public object template { get; set; }
         public string text { get; set; }
         public bool? visible { get; set; }
     }
     public partial class DxContextMenuItemTemplate : DxMenuBaseItemTemplate
     {
-        // couldn't parse items
     }
     public partial class DxMenuBaseOptions : HierarchicalCollectionWidgetOptions
     {
-        public bool? activeStateEnabled { get; set; }
-        // couldn't parse animation
+        public object animation { get; set; }
         public string cssClass { get; set; }
-        // couldn't parse items
         public bool? selectByClick { get; set; }
         public string selectionMode { get; set; }
-        // couldn't parse showSubmenuMode
+        public object showSubmenuMode { get; set; }
     }
 
     public static class DxMenuBaseOptionsSelectionMode
@@ -2283,22 +2121,19 @@ namespace DevExpress.Ui
     {
         public bool? beginGroup { get; set; }
         public bool? closeMenuOnClick { get; set; }
-        public bool? disabled { get; set; }
         public string icon { get; set; }
-        // couldn't parse items
+        public object items { get; set; }
         public bool? selectable { get; set; }
         public bool? selected { get; set; }
-        public string text { get; set; }
-        public bool? visible { get; set; }
     }
     public partial class DxDataGridColumn : GridBaseColumn
     {
         public bool? allowExporting { get; set; }
         public bool? allowGrouping { get; set; }
         public bool? autoExpandGroup { get; set; }
-        // couldn't parse calculateGroupValue
-        // couldn't parse columns
-        // couldn't parse groupCellTemplate
+        public object calculateGroupValue { get; set; }
+        public object columns { get; set; }
+        public object groupCellTemplate { get; set; }
         public float? groupIndex { get; set; }
         public float? precision { get; set; }
         public bool? showWhenGrouped { get; set; }
@@ -2306,14 +2141,12 @@ namespace DevExpress.Ui
     public partial class DxDropDownEditorOptions : DxTextBoxOptions
     {
         public bool? acceptCustomValue { get; set; }
-        public bool? activeStateEnabled { get; set; }
         public string applyValueMode { get; set; }
         public bool? deferRendering { get; set; }
-        // couldn't parse dropDownButtonTemplate
+        public object dropDownButtonTemplate { get; set; }
         public bool? onClosedEnabled { get; set; }
         public bool? onOpenedEnabled { get; set; }
         public bool? opened { get; set; }
-        public object value { get; set; }
     }
 
     public static class DxDropDownEditorOptionsApplyValueMode
@@ -2325,20 +2158,17 @@ namespace DevExpress.Ui
     {
         public string displayValue { get; set; }
         public bool? grouped { get; set; }
-        // couldn't parse groupTemplate
+        public object groupTemplate { get; set; }
         public float? minSearchLength { get; set; }
         public string noDataText { get; set; }
         public bool? onItemClickEnabled { get; set; }
         public bool? onSelectionChangedEnabled { get; set; }
-        public bool? onValueChangedEnabled { get; set; }
         public bool? searchEnabled { get; set; }
-        // couldn't parse searchExpr
+        public object searchExpr { get; set; }
         public string searchMode { get; set; }
         public float? searchTimeout { get; set; }
         public object selectedItem { get; set; }
         public bool? showDataBeforeSearch { get; set; }
-        public object value { get; set; }
-        public string valueChangeEvent { get; set; }
     }
 
     public static class DxDropDownListOptionsSearchMode
@@ -2363,34 +2193,34 @@ namespace DevExpress.Ui
     }
     public partial class DataExpressionMixinOptions
     {
-        // couldn't parse dataSource
-        // couldn't parse displayExpr
-        // couldn't parse items
-        // couldn't parse itemTemplate
+        public object dataSource { get; set; }
+        public object displayExpr { get; set; }
+        public object items { get; set; }
+        public object itemTemplate { get; set; }
         public object value { get; set; }
-        // couldn't parse valueExpr
+        public object valueExpr { get; set; }
     }
     public partial class DataExpressionMixinItemTemplate
     {
         public bool? disabled { get; set; }
         public string html { get; set; }
-        // couldn't parse template
+        public object template { get; set; }
         public string text { get; set; }
         public bool? visible { get; set; }
     }
     public partial class DxFilterBuilderField
     {
-        // couldn't parse calculateFilterExpression
+        public object calculateFilterExpression { get; set; }
         public string caption { get; set; }
-        // couldn't parse customizeText
+        public object customizeText { get; set; }
         public string dataField { get; set; }
         public string dataType { get; set; }
         public object editorOptions { get; set; }
-        // couldn't parse editorTemplate
+        public object editorTemplate { get; set; }
         public string falseText { get; set; }
-        // couldn't parse filterOperations
-        // couldn't parse format
-        // couldn't parse lookup
+        public object filterOperations { get; set; }
+        public object format { get; set; }
+        public object lookup { get; set; }
         public string trueText { get; set; }
     }
 
@@ -2405,11 +2235,11 @@ namespace DevExpress.Ui
     }
     public partial class DxFilterBuilderCustomOperation
     {
-        // couldn't parse calculateFilterExpression
+        public object calculateFilterExpression { get; set; }
         public string caption { get; set; }
-        // couldn't parse customizeText
-        // couldn't parse dataTypes
-        // couldn't parse editorTemplate
+        public object customizeText { get; set; }
+        public object dataTypes { get; set; }
+        public object editorTemplate { get; set; }
         public bool? hasValue { get; set; }
         public string icon { get; set; }
         public string name { get; set; }
@@ -2431,10 +2261,10 @@ namespace DevExpress.Ui
         public string helpText { get; set; }
         public bool? isRequired { get; set; }
         public string itemType { get; set; }
-        // couldn't parse label
+        public object label { get; set; }
         public string name { get; set; }
-        // couldn't parse template
-        // couldn't parse validationRules
+        public object template { get; set; }
+        public object validationRules { get; set; }
         public bool? visible { get; set; }
         public float? visibleIndex { get; set; }
     }
@@ -2474,10 +2304,10 @@ namespace DevExpress.Ui
         public object colCountByScreen { get; set; }
         public float? colSpan { get; set; }
         public string cssClass { get; set; }
-        // couldn't parse items
+        public object items { get; set; }
         public string itemType { get; set; }
         public string name { get; set; }
-        // couldn't parse template
+        public object template { get; set; }
         public bool? visible { get; set; }
         public float? visibleIndex { get; set; }
     }
@@ -2496,8 +2326,8 @@ namespace DevExpress.Ui
         public string cssClass { get; set; }
         public string itemType { get; set; }
         public string name { get; set; }
-        // couldn't parse tabPanelOptions
-        // couldn't parse tabs
+        public object tabPanelOptions { get; set; }
+        public object tabs { get; set; }
         public bool? visible { get; set; }
         public float? visibleIndex { get; set; }
     }
@@ -2531,7 +2361,7 @@ namespace DevExpress.Ui
     public partial class DxFormButtonItem
     {
         public string alignment { get; set; }
-        // couldn't parse buttonOptions
+        public object buttonOptions { get; set; }
         public float? colSpan { get; set; }
         public string cssClass { get; set; }
         public string itemType { get; set; }
@@ -2556,7 +2386,7 @@ namespace DevExpress.Ui
     }
     public partial class GridBaseColumn
     {
-        // couldn't parse alignment
+        public object alignment { get; set; }
         public bool? allowEditing { get; set; }
         public bool? allowFiltering { get; set; }
         public bool? allowFixing { get; set; }
@@ -2566,48 +2396,48 @@ namespace DevExpress.Ui
         public bool? allowResizing { get; set; }
         public bool? allowSearch { get; set; }
         public bool? allowSorting { get; set; }
-        // couldn't parse calculateCellValue
-        // couldn't parse calculateDisplayValue
-        // couldn't parse calculateFilterExpression
-        // couldn't parse calculateSortValue
+        public object calculateCellValue { get; set; }
+        public object calculateDisplayValue { get; set; }
+        public object calculateFilterExpression { get; set; }
+        public object calculateSortValue { get; set; }
         public string caption { get; set; }
-        // couldn't parse cellTemplate
+        public object cellTemplate { get; set; }
         public string cssClass { get; set; }
-        // couldn't parse customizeText
+        public object customizeText { get; set; }
         public string dataField { get; set; }
         public string dataType { get; set; }
-        // couldn't parse editCellTemplate
+        public object editCellTemplate { get; set; }
         public object editorOptions { get; set; }
         public bool? encodeHtml { get; set; }
         public string falseText { get; set; }
-        // couldn't parse filterOperations
+        public object filterOperations { get; set; }
         public string filterType { get; set; }
         public object filterValue { get; set; }
-        // couldn't parse filterValues
+        public object filterValues { get; set; }
         public bool? @fixed { get; set; }
         public string fixedPosition { get; set; }
-        // couldn't parse format
-        // couldn't parse formItem
-        // couldn't parse headerCellTemplate
-        // couldn't parse headerFilter
+        public object format { get; set; }
+        public object formItem { get; set; }
+        public object headerCellTemplate { get; set; }
+        public object headerFilter { get; set; }
         public float? hidingPriority { get; set; }
         public bool? isBand { get; set; }
-        // couldn't parse lookup
+        public object lookup { get; set; }
         public float? minWidth { get; set; }
         public string name { get; set; }
         public float? ownerBand { get; set; }
         public string selectedFilterOperation { get; set; }
-        // couldn't parse setCellValue
+        public object setCellValue { get; set; }
         public bool? showEditorAlways { get; set; }
         public bool? showInColumnChooser { get; set; }
         public float? sortIndex { get; set; }
-        // couldn't parse sortingMethod
-        // couldn't parse sortOrder
+        public object sortingMethod { get; set; }
+        public object sortOrder { get; set; }
         public string trueText { get; set; }
-        // couldn't parse validationRules
+        public object validationRules { get; set; }
         public bool? visible { get; set; }
         public float? visibleIndex { get; set; }
-        // couldn't parse width
+        public object width { get; set; }
     }
 
     public static class GridBaseColumnDataType
@@ -2645,7 +2475,7 @@ namespace DevExpress.Ui
     }
     public partial class DxTreeListColumn : GridBaseColumn
     {
-        // couldn't parse columns
+        public object columns { get; set; }
     }
     public partial class DxDataGridRowObject
     {
@@ -2657,7 +2487,7 @@ namespace DevExpress.Ui
         public object key { get; set; }
         public float? rowIndex { get; set; }
         public string rowType { get; set; }
-        // couldn't parse values
+        public object values { get; set; }
     }
     public partial class DxTreeListRowObject
     {
@@ -2666,20 +2496,17 @@ namespace DevExpress.Ui
         public bool? isSelected { get; set; }
         public object key { get; set; }
         public float? level { get; set; }
-        // couldn't parse node
+        public object node { get; set; }
         public float? rowIndex { get; set; }
         public string rowType { get; set; }
-        // couldn't parse values
+        public object values { get; set; }
     }
     public partial class HierarchicalCollectionWidgetOptions : CollectionWidgetOptions
     {
-        // couldn't parse disabledExpr
-        // couldn't parse displayExpr
-        public bool? focusStateEnabled { get; set; }
-        public bool? hoverStateEnabled { get; set; }
-        // couldn't parse itemsExpr
-        // couldn't parse keyExpr
-        // couldn't parse selectedExpr
+        public object disabledExpr { get; set; }
+        public object displayExpr { get; set; }
+        public object itemsExpr { get; set; }
+        public object selectedExpr { get; set; }
     }
     public partial class DxListItemTemplate : CollectionWidgetItemTemplate
     {
@@ -2689,16 +2516,15 @@ namespace DevExpress.Ui
     }
     public partial class DxMenuItemTemplate : DxMenuBaseItemTemplate
     {
-        // couldn't parse items
     }
     public partial class DxPivotGridPivotGridCell
     {
-        // couldn't parse columnPath
+        public object columnPath { get; set; }
         public string columnType { get; set; }
         public float? dataIndex { get; set; }
         public bool? expanded { get; set; }
-        // couldn't parse path
-        // couldn't parse rowPath
+        public object path { get; set; }
+        public object rowPath { get; set; }
         public string rowType { get; set; }
         public string text { get; set; }
         public string type { get; set; }
@@ -2727,27 +2553,22 @@ namespace DevExpress.Ui
     {
         public bool? allDay { get; set; }
         public string description { get; set; }
-        public bool? disabled { get; set; }
-        // couldn't parse endDate
+        public object endDate { get; set; }
         public string endDateTimeZone { get; set; }
-        public string html { get; set; }
         public string recurrenceException { get; set; }
         public string recurrenceRule { get; set; }
-        // couldn't parse startDate
+        public object startDate { get; set; }
         public string startDateTimeZone { get; set; }
-        // couldn't parse template
-        public string text { get; set; }
-        public bool? visible { get; set; }
     }
     public partial class DxSchedulerAppointmentTooltipTemplate
     {
         public bool? allDay { get; set; }
         public string description { get; set; }
-        // couldn't parse endDate
+        public object endDate { get; set; }
         public string endDateTimeZone { get; set; }
         public string recurrenceException { get; set; }
         public string recurrenceRule { get; set; }
-        // couldn't parse startDate
+        public object startDate { get; set; }
         public string startDateTimeZone { get; set; }
         public string text { get; set; }
     }
@@ -2779,20 +2600,15 @@ namespace DevExpress.Ui
     }
     public partial class DxSliderBaseOptions : DxTrackBarOptions
     {
-        public bool? activeStateEnabled { get; set; }
-        public object focusStateEnabled { get; set; }
-        public bool? hoverStateEnabled { get; set; }
         public float? keyStep { get; set; }
-        // couldn't parse label
+        public object label { get; set; }
         public string name { get; set; }
         public bool? showRange { get; set; }
         public float? step { get; set; }
-        // couldn't parse tooltip
+        public object tooltip { get; set; }
     }
     public partial class DxTextEditorOptions : EditorOptions
     {
-        public bool? focusStateEnabled { get; set; }
-        public bool? hoverStateEnabled { get; set; }
         public object inputAttr { get; set; }
         public string mask { get; set; }
         public string maskChar { get; set; }
@@ -2816,7 +2632,6 @@ namespace DevExpress.Ui
         public bool? spellcheck { get; set; }
         public string text { get; set; }
         public bool? useMaskedValue { get; set; }
-        public object value { get; set; }
         public string valueChangeEvent { get; set; }
     }
 
@@ -2827,12 +2642,12 @@ namespace DevExpress.Ui
     }
     public partial class DxTreeListNode
     {
-        // couldn't parse children
+        public object children { get; set; }
         public object data { get; set; }
         public bool? hasChildren { get; set; }
         public object key { get; set; }
         public float? level { get; set; }
-        // couldn't parse parent
+        public object parent { get; set; }
         public bool? visible { get; set; }
     }
     public partial class DxTreeViewItemTemplate : CollectionWidgetItemTemplate
@@ -2840,26 +2655,26 @@ namespace DevExpress.Ui
         public bool? expanded { get; set; }
         public bool? hasItems { get; set; }
         public string icon { get; set; }
-        // couldn't parse items
-        // couldn't parse parentId
+        public object items { get; set; }
+        public object parentId { get; set; }
         public bool? selected { get; set; }
     }
     public partial class DxTreeViewNode
     {
-        // couldn't parse children
+        public object children { get; set; }
         public bool? disabled { get; set; }
         public bool? expanded { get; set; }
         public object itemData { get; set; }
         public object key { get; set; }
-        // couldn't parse parent
+        public object parent { get; set; }
         public bool? selected { get; set; }
         public string text { get; set; }
     }
     public partial class SearchBoxMixinOptions
     {
-        // couldn't parse searchEditorOptions
+        public object searchEditorOptions { get; set; }
         public bool? searchEnabled { get; set; }
-        // couldn't parse searchExpr
+        public object searchExpr { get; set; }
         public string searchMode { get; set; }
         public float? searchTimeout { get; set; }
         public string searchValue { get; set; }
@@ -2891,9 +2706,9 @@ namespace DevExpress.Viz
 {
     public partial class BaseWidgetOptions : DOMComponentOptions
     {
-        // couldn't parse export
-        // couldn't parse loadingIndicator
-        // couldn't parse margin
+        public object export { get; set; }
+        public object loadingIndicator { get; set; }
+        public object margin { get; set; }
         public bool? onDrawnEnabled { get; set; }
         public bool? onExportedEnabled { get; set; }
         public bool? onExportingEnabled { get; set; }
@@ -2901,11 +2716,10 @@ namespace DevExpress.Viz
         public bool? onIncidentOccurredEnabled { get; set; }
         public bool? pathModified { get; set; }
         public bool? redrawOnResize { get; set; }
-        public bool? rtlEnabled { get; set; }
-        // couldn't parse size
+        public object size { get; set; }
         public string theme { get; set; }
-        // couldn't parse title
-        // couldn't parse tooltip
+        public object title { get; set; }
+        public object tooltip { get; set; }
     }
 
     public static class BaseWidgetOptionsTheme
@@ -2933,7 +2747,7 @@ namespace DevExpress.Viz
     public partial class BaseWidgetLoadingIndicator
     {
         public string backgroundColor { get; set; }
-        // couldn't parse font
+        public object font { get; set; }
         public bool? show { get; set; }
         public string text { get; set; }
     }
@@ -2951,11 +2765,11 @@ namespace DevExpress.Viz
     }
     public partial class BaseWidgetTitle
     {
-        // couldn't parse font
+        public object font { get; set; }
         public string horizontalAlignment { get; set; }
-        // couldn't parse margin
+        public object margin { get; set; }
         public float? placeholderSize { get; set; }
-        // couldn't parse subtitle
+        public object subtitle { get; set; }
         public string text { get; set; }
         public string verticalAlignment { get; set; }
     }
@@ -2974,23 +2788,23 @@ namespace DevExpress.Viz
     public partial class BaseWidgetTooltip
     {
         public float? arrowLength { get; set; }
-        // couldn't parse border
+        public object border { get; set; }
         public string color { get; set; }
-        // couldn't parse container
+        public object container { get; set; }
         public bool? enabled { get; set; }
-        // couldn't parse font
-        // couldn't parse format
+        public object font { get; set; }
+        public object format { get; set; }
         public float? opacity { get; set; }
         public float? paddingLeftRight { get; set; }
         public float? paddingTopBottom { get; set; }
         public float? precision { get; set; }
-        // couldn't parse shadow
+        public object shadow { get; set; }
         public float? zIndex { get; set; }
     }
     public partial class ScaleBreak
     {
-        // couldn't parse endValue
-        // couldn't parse startValue
+        public object endValue { get; set; }
+        public object startValue { get; set; }
     }
     public partial class VizTimeInterval
     {
@@ -3006,38 +2820,33 @@ namespace DevExpress.Viz
     }
     public partial class DxChartSeriesTypes
     {
-        // couldn't parse AreaSeries
-        // couldn't parse BarSeries
-        // couldn't parse BubbleSeries
-        // couldn't parse CandleStickSeries
-        // couldn't parse CommonSeries
-        // couldn't parse FullStackedAreaSeries
-        // couldn't parse FullStackedBarSeries
-        // couldn't parse FullStackedLineSeries
-        // couldn't parse FullStackedSplineAreaSeries
-        // couldn't parse FullStackedSplineSeries
-        // couldn't parse LineSeries
-        // couldn't parse RangeAreaSeries
-        // couldn't parse RangeBarSeries
-        // couldn't parse ScatterSeries
-        // couldn't parse SplineAreaSeries
-        // couldn't parse SplineSeries
-        // couldn't parse StackedAreaSeries
-        // couldn't parse StackedBarSeries
-        // couldn't parse StackedLineSeries
-        // couldn't parse StackedSplineAreaSeries
-        // couldn't parse StackedSplineSeries
-        // couldn't parse StepAreaSeries
-        // couldn't parse StepLineSeries
-        // couldn't parse StockSeries
+        public object AreaSeries { get; set; }
+        public object BarSeries { get; set; }
+        public object BubbleSeries { get; set; }
+        public object CandleStickSeries { get; set; }
+        public object CommonSeries { get; set; }
+        public object FullStackedAreaSeries { get; set; }
+        public object FullStackedBarSeries { get; set; }
+        public object FullStackedLineSeries { get; set; }
+        public object FullStackedSplineAreaSeries { get; set; }
+        public object FullStackedSplineSeries { get; set; }
+        public object LineSeries { get; set; }
+        public object RangeAreaSeries { get; set; }
+        public object RangeBarSeries { get; set; }
+        public object ScatterSeries { get; set; }
+        public object SplineAreaSeries { get; set; }
+        public object SplineSeries { get; set; }
+        public object StackedAreaSeries { get; set; }
+        public object StackedBarSeries { get; set; }
+        public object StackedLineSeries { get; set; }
+        public object StackedSplineAreaSeries { get; set; }
+        public object StackedSplineSeries { get; set; }
+        public object StepAreaSeries { get; set; }
+        public object StepLineSeries { get; set; }
+        public object StockSeries { get; set; }
     }
     public partial class DxChartSeriesTypesAreaSeries : DxChartSeriesTypesCommonSeries
     {
-        // couldn't parse aggregation
-        public string hoverMode { get; set; }
-        // couldn't parse label
-        // couldn't parse point
-        public string selectionMode { get; set; }
     }
 
     public static class DxChartSeriesTypesAreaSeriesHoverMode
@@ -3055,7 +2864,6 @@ namespace DevExpress.Viz
     }
     public partial class DxChartSeriesTypesAreaSeriesAggregation : DxChartSeriesTypesCommonSeriesAggregation
     {
-        public string method { get; set; }
     }
 
     public static class DxChartSeriesTypesAreaSeriesAggregationMethod
@@ -3069,18 +2877,12 @@ namespace DevExpress.Viz
     }
     public partial class DxChartSeriesTypesAreaSeriesLabel : DxChartSeriesTypesCommonSeriesLabel
     {
-        // couldn't parse customizeText
     }
     public partial class DxChartSeriesTypesAreaSeriesPoint : DxChartSeriesTypesCommonSeriesPoint
     {
-        public bool? visible { get; set; }
     }
     public partial class DxChartSeriesTypesBarSeries : DxChartSeriesTypesCommonSeries
     {
-        // couldn't parse aggregation
-        public string hoverMode { get; set; }
-        // couldn't parse label
-        public string selectionMode { get; set; }
     }
 
     public static class DxChartSeriesTypesBarSeriesHoverMode
@@ -3099,7 +2901,6 @@ namespace DevExpress.Viz
     }
     public partial class DxChartSeriesTypesBarSeriesAggregation : DxChartSeriesTypesCommonSeriesAggregation
     {
-        public string method { get; set; }
     }
 
     public static class DxChartSeriesTypesBarSeriesAggregationMethod
@@ -3113,14 +2914,9 @@ namespace DevExpress.Viz
     }
     public partial class DxChartSeriesTypesBarSeriesLabel : DxChartSeriesTypesCommonSeriesLabel
     {
-        // couldn't parse customizeText
     }
     public partial class DxChartSeriesTypesBubbleSeries : DxChartSeriesTypesCommonSeries
     {
-        // couldn't parse aggregation
-        public string hoverMode { get; set; }
-        // couldn't parse label
-        public string selectionMode { get; set; }
     }
 
     public static class DxChartSeriesTypesBubbleSeriesHoverMode
@@ -3139,7 +2935,6 @@ namespace DevExpress.Viz
     }
     public partial class DxChartSeriesTypesBubbleSeriesAggregation : DxChartSeriesTypesCommonSeriesAggregation
     {
-        public string method { get; set; }
     }
 
     public static class DxChartSeriesTypesBubbleSeriesAggregationMethod
@@ -3149,17 +2944,9 @@ namespace DevExpress.Viz
     }
     public partial class DxChartSeriesTypesBubbleSeriesLabel : DxChartSeriesTypesCommonSeriesLabel
     {
-        // couldn't parse customizeText
     }
     public partial class DxChartSeriesTypesCandleStickSeries : DxChartSeriesTypesCommonSeries
     {
-        // couldn't parse aggregation
-        public string argumentField { get; set; }
-        public string hoverMode { get; set; }
-        // couldn't parse hoverStyle
-        // couldn't parse label
-        public string selectionMode { get; set; }
-        // couldn't parse selectionStyle
     }
 
     public static class DxChartSeriesTypesCandleStickSeriesHoverMode
@@ -3178,7 +2965,6 @@ namespace DevExpress.Viz
     }
     public partial class DxChartSeriesTypesCandleStickSeriesAggregation : DxChartSeriesTypesCommonSeriesAggregation
     {
-        public string method { get; set; }
     }
 
     public static class DxChartSeriesTypesCandleStickSeriesAggregationMethod
@@ -3188,11 +2974,9 @@ namespace DevExpress.Viz
     }
     public partial class DxChartSeriesTypesCandleStickSeriesHoverStyle : DxChartSeriesTypesCommonSeriesHoverStyle
     {
-        // couldn't parse hatching
     }
     public partial class DxChartSeriesTypesCandleStickSeriesHoverStyleHatching : DxChartSeriesTypesCommonSeriesHoverStyleHatching
     {
-        public string direction { get; set; }
     }
 
     public static class DxChartSeriesTypesCandleStickSeriesHoverStyleHatchingDirection
@@ -3203,15 +2987,12 @@ namespace DevExpress.Viz
     }
     public partial class DxChartSeriesTypesCandleStickSeriesLabel : DxChartSeriesTypesCommonSeriesLabel
     {
-        // couldn't parse customizeText
     }
     public partial class DxChartSeriesTypesCandleStickSeriesSelectionStyle : DxChartSeriesTypesCommonSeriesSelectionStyle
     {
-        // couldn't parse hatching
     }
     public partial class DxChartSeriesTypesCandleStickSeriesSelectionStyleHatching : DxChartSeriesTypesCommonSeriesSelectionStyleHatching
     {
-        public string direction { get; set; }
     }
 
     public static class DxChartSeriesTypesCandleStickSeriesSelectionStyleHatchingDirection
@@ -3222,39 +3003,39 @@ namespace DevExpress.Viz
     }
     public partial class DxChartSeriesTypesCommonSeries
     {
-        // couldn't parse aggregation
+        public object aggregation { get; set; }
         public string argumentField { get; set; }
         public string axis { get; set; }
         public float? barPadding { get; set; }
         public float? barWidth { get; set; }
-        // couldn't parse border
+        public object border { get; set; }
         public string closeValueField { get; set; }
         public string color { get; set; }
         public float? cornerRadius { get; set; }
         public string dashStyle { get; set; }
         public string highValueField { get; set; }
         public string hoverMode { get; set; }
-        // couldn't parse hoverStyle
+        public object hoverStyle { get; set; }
         public bool? ignoreEmptyPoints { get; set; }
         public string innerColor { get; set; }
-        // couldn't parse label
+        public object label { get; set; }
         public string lowValueField { get; set; }
         public float? maxLabelCount { get; set; }
         public float? minBarSize { get; set; }
         public float? opacity { get; set; }
         public string openValueField { get; set; }
         public string pane { get; set; }
-        // couldn't parse point
+        public object point { get; set; }
         public string rangeValue1Field { get; set; }
         public string rangeValue2Field { get; set; }
-        // couldn't parse reduction
+        public object reduction { get; set; }
         public string selectionMode { get; set; }
-        // couldn't parse selectionStyle
+        public object selectionStyle { get; set; }
         public bool? showInLegend { get; set; }
         public string sizeField { get; set; }
         public string stack { get; set; }
         public string tagField { get; set; }
-        // couldn't parse valueErrorBar
+        public object valueErrorBar { get; set; }
         public string valueField { get; set; }
         public bool? visible { get; set; }
         public float? width { get; set; }
@@ -3288,7 +3069,7 @@ namespace DevExpress.Viz
     }
     public partial class DxChartSeriesTypesCommonSeriesAggregation
     {
-        // couldn't parse calculate
+        public object calculate { get; set; }
         public bool? enabled { get; set; }
         public string method { get; set; }
     }
@@ -3321,10 +3102,10 @@ namespace DevExpress.Viz
     }
     public partial class DxChartSeriesTypesCommonSeriesHoverStyle
     {
-        // couldn't parse border
+        public object border { get; set; }
         public string color { get; set; }
         public string dashStyle { get; set; }
-        // couldn't parse hatching
+        public object hatching { get; set; }
         public float? width { get; set; }
     }
 
@@ -3367,14 +3148,14 @@ namespace DevExpress.Viz
     public partial class DxChartSeriesTypesCommonSeriesLabel
     {
         public string alignment { get; set; }
-        // couldn't parse argumentFormat
+        public object argumentFormat { get; set; }
         public float? argumentPrecision { get; set; }
         public string backgroundColor { get; set; }
-        // couldn't parse border
-        // couldn't parse connector
-        // couldn't parse customizeText
-        // couldn't parse font
-        // couldn't parse format
+        public object border { get; set; }
+        public object connector { get; set; }
+        public object customizeText { get; set; }
+        public object font { get; set; }
+        public object format { get; set; }
         public float? horizontalOffset { get; set; }
         public float? percentPrecision { get; set; }
         public string position { get; set; }
@@ -3398,13 +3179,13 @@ namespace DevExpress.Viz
     }
     public partial class DxChartSeriesTypesCommonSeriesPoint
     {
-        // couldn't parse border
+        public object border { get; set; }
         public string color { get; set; }
         public string hoverMode { get; set; }
-        // couldn't parse hoverStyle
-        // couldn't parse image
+        public object hoverStyle { get; set; }
+        public object image { get; set; }
         public string selectionMode { get; set; }
-        // couldn't parse selectionStyle
+        public object selectionStyle { get; set; }
         public float? size { get; set; }
         public string symbol { get; set; }
         public bool? visible { get; set; }
@@ -3435,10 +3216,10 @@ namespace DevExpress.Viz
     }
     public partial class DxChartSeriesTypesCommonSeriesSelectionStyle
     {
-        // couldn't parse border
+        public object border { get; set; }
         public string color { get; set; }
         public string dashStyle { get; set; }
-        // couldn't parse hatching
+        public object hatching { get; set; }
         public float? width { get; set; }
     }
 
@@ -3480,11 +3261,6 @@ namespace DevExpress.Viz
     }
     public partial class DxChartSeriesTypesFullStackedAreaSeries : DxChartSeriesTypesCommonSeries
     {
-        // couldn't parse aggregation
-        public string hoverMode { get; set; }
-        // couldn't parse label
-        // couldn't parse point
-        public string selectionMode { get; set; }
     }
 
     public static class DxChartSeriesTypesFullStackedAreaSeriesHoverMode
@@ -3502,7 +3278,6 @@ namespace DevExpress.Viz
     }
     public partial class DxChartSeriesTypesFullStackedAreaSeriesAggregation : DxChartSeriesTypesCommonSeriesAggregation
     {
-        public string method { get; set; }
     }
 
     public static class DxChartSeriesTypesFullStackedAreaSeriesAggregationMethod
@@ -3516,18 +3291,12 @@ namespace DevExpress.Viz
     }
     public partial class DxChartSeriesTypesFullStackedAreaSeriesLabel : DxChartSeriesTypesCommonSeriesLabel
     {
-        // couldn't parse customizeText
     }
     public partial class DxChartSeriesTypesFullStackedAreaSeriesPoint : DxChartSeriesTypesCommonSeriesPoint
     {
-        public bool? visible { get; set; }
     }
     public partial class DxChartSeriesTypesFullStackedBarSeries : DxChartSeriesTypesCommonSeries
     {
-        // couldn't parse aggregation
-        public string hoverMode { get; set; }
-        // couldn't parse label
-        public string selectionMode { get; set; }
     }
 
     public static class DxChartSeriesTypesFullStackedBarSeriesHoverMode
@@ -3546,7 +3315,6 @@ namespace DevExpress.Viz
     }
     public partial class DxChartSeriesTypesFullStackedBarSeriesAggregation : DxChartSeriesTypesCommonSeriesAggregation
     {
-        public string method { get; set; }
     }
 
     public static class DxChartSeriesTypesFullStackedBarSeriesAggregationMethod
@@ -3560,8 +3328,6 @@ namespace DevExpress.Viz
     }
     public partial class DxChartSeriesTypesFullStackedBarSeriesLabel : DxChartSeriesTypesCommonSeriesLabel
     {
-        // couldn't parse customizeText
-        public string position { get; set; }
     }
 
     public static class DxChartSeriesTypesFullStackedBarSeriesLabelPosition
@@ -3571,10 +3337,6 @@ namespace DevExpress.Viz
     }
     public partial class DxChartSeriesTypesFullStackedLineSeries : DxChartSeriesTypesCommonSeries
     {
-        // couldn't parse aggregation
-        public string hoverMode { get; set; }
-        // couldn't parse label
-        public string selectionMode { get; set; }
     }
 
     public static class DxChartSeriesTypesFullStackedLineSeriesHoverMode
@@ -3592,7 +3354,6 @@ namespace DevExpress.Viz
     }
     public partial class DxChartSeriesTypesFullStackedLineSeriesAggregation : DxChartSeriesTypesCommonSeriesAggregation
     {
-        public string method { get; set; }
     }
 
     public static class DxChartSeriesTypesFullStackedLineSeriesAggregationMethod
@@ -3606,15 +3367,9 @@ namespace DevExpress.Viz
     }
     public partial class DxChartSeriesTypesFullStackedLineSeriesLabel : DxChartSeriesTypesCommonSeriesLabel
     {
-        // couldn't parse customizeText
     }
     public partial class DxChartSeriesTypesFullStackedSplineAreaSeries : DxChartSeriesTypesCommonSeries
     {
-        // couldn't parse aggregation
-        public string hoverMode { get; set; }
-        // couldn't parse label
-        // couldn't parse point
-        public string selectionMode { get; set; }
     }
 
     public static class DxChartSeriesTypesFullStackedSplineAreaSeriesHoverMode
@@ -3632,7 +3387,6 @@ namespace DevExpress.Viz
     }
     public partial class DxChartSeriesTypesFullStackedSplineAreaSeriesAggregation : DxChartSeriesTypesCommonSeriesAggregation
     {
-        public string method { get; set; }
     }
 
     public static class DxChartSeriesTypesFullStackedSplineAreaSeriesAggregationMethod
@@ -3646,18 +3400,12 @@ namespace DevExpress.Viz
     }
     public partial class DxChartSeriesTypesFullStackedSplineAreaSeriesLabel : DxChartSeriesTypesCommonSeriesLabel
     {
-        // couldn't parse customizeText
     }
     public partial class DxChartSeriesTypesFullStackedSplineAreaSeriesPoint : DxChartSeriesTypesCommonSeriesPoint
     {
-        public bool? visible { get; set; }
     }
     public partial class DxChartSeriesTypesFullStackedSplineSeries : DxChartSeriesTypesCommonSeries
     {
-        // couldn't parse aggregation
-        public string hoverMode { get; set; }
-        // couldn't parse label
-        public string selectionMode { get; set; }
     }
 
     public static class DxChartSeriesTypesFullStackedSplineSeriesHoverMode
@@ -3675,7 +3423,6 @@ namespace DevExpress.Viz
     }
     public partial class DxChartSeriesTypesFullStackedSplineSeriesAggregation : DxChartSeriesTypesCommonSeriesAggregation
     {
-        public string method { get; set; }
     }
 
     public static class DxChartSeriesTypesFullStackedSplineSeriesAggregationMethod
@@ -3689,14 +3436,9 @@ namespace DevExpress.Viz
     }
     public partial class DxChartSeriesTypesFullStackedSplineSeriesLabel : DxChartSeriesTypesCommonSeriesLabel
     {
-        // couldn't parse customizeText
     }
     public partial class DxChartSeriesTypesLineSeries : DxChartSeriesTypesCommonSeries
     {
-        // couldn't parse aggregation
-        public string hoverMode { get; set; }
-        // couldn't parse label
-        public string selectionMode { get; set; }
     }
 
     public static class DxChartSeriesTypesLineSeriesHoverMode
@@ -3714,7 +3456,6 @@ namespace DevExpress.Viz
     }
     public partial class DxChartSeriesTypesLineSeriesAggregation : DxChartSeriesTypesCommonSeriesAggregation
     {
-        public string method { get; set; }
     }
 
     public static class DxChartSeriesTypesLineSeriesAggregationMethod
@@ -3728,15 +3469,9 @@ namespace DevExpress.Viz
     }
     public partial class DxChartSeriesTypesLineSeriesLabel : DxChartSeriesTypesCommonSeriesLabel
     {
-        // couldn't parse customizeText
     }
     public partial class DxChartSeriesTypesRangeAreaSeries : DxChartSeriesTypesCommonSeries
     {
-        // couldn't parse aggregation
-        public string hoverMode { get; set; }
-        // couldn't parse label
-        // couldn't parse point
-        public string selectionMode { get; set; }
     }
 
     public static class DxChartSeriesTypesRangeAreaSeriesHoverMode
@@ -3754,7 +3489,6 @@ namespace DevExpress.Viz
     }
     public partial class DxChartSeriesTypesRangeAreaSeriesAggregation : DxChartSeriesTypesCommonSeriesAggregation
     {
-        public string method { get; set; }
     }
 
     public static class DxChartSeriesTypesRangeAreaSeriesAggregationMethod
@@ -3764,18 +3498,12 @@ namespace DevExpress.Viz
     }
     public partial class DxChartSeriesTypesRangeAreaSeriesLabel : DxChartSeriesTypesCommonSeriesLabel
     {
-        // couldn't parse customizeText
     }
     public partial class DxChartSeriesTypesRangeAreaSeriesPoint : DxChartSeriesTypesCommonSeriesPoint
     {
-        public bool? visible { get; set; }
     }
     public partial class DxChartSeriesTypesRangeBarSeries : DxChartSeriesTypesCommonSeries
     {
-        // couldn't parse aggregation
-        public string hoverMode { get; set; }
-        // couldn't parse label
-        public string selectionMode { get; set; }
     }
 
     public static class DxChartSeriesTypesRangeBarSeriesHoverMode
@@ -3794,7 +3522,6 @@ namespace DevExpress.Viz
     }
     public partial class DxChartSeriesTypesRangeBarSeriesAggregation : DxChartSeriesTypesCommonSeriesAggregation
     {
-        public string method { get; set; }
     }
 
     public static class DxChartSeriesTypesRangeBarSeriesAggregationMethod
@@ -3804,16 +3531,12 @@ namespace DevExpress.Viz
     }
     public partial class DxChartSeriesTypesRangeBarSeriesLabel : DxChartSeriesTypesCommonSeriesLabel
     {
-        // couldn't parse customizeText
     }
     public partial class DxChartSeriesTypesScatterSeries : DxChartSeriesTypesCommonSeries
     {
-        // couldn't parse aggregation
-        // couldn't parse label
     }
     public partial class DxChartSeriesTypesScatterSeriesAggregation : DxChartSeriesTypesCommonSeriesAggregation
     {
-        public string method { get; set; }
     }
 
     public static class DxChartSeriesTypesScatterSeriesAggregationMethod
@@ -3827,15 +3550,9 @@ namespace DevExpress.Viz
     }
     public partial class DxChartSeriesTypesScatterSeriesLabel : DxChartSeriesTypesCommonSeriesLabel
     {
-        // couldn't parse customizeText
     }
     public partial class DxChartSeriesTypesSplineAreaSeries : DxChartSeriesTypesCommonSeries
     {
-        // couldn't parse aggregation
-        public string hoverMode { get; set; }
-        // couldn't parse label
-        // couldn't parse point
-        public string selectionMode { get; set; }
     }
 
     public static class DxChartSeriesTypesSplineAreaSeriesHoverMode
@@ -3853,7 +3570,6 @@ namespace DevExpress.Viz
     }
     public partial class DxChartSeriesTypesSplineAreaSeriesAggregation : DxChartSeriesTypesCommonSeriesAggregation
     {
-        public string method { get; set; }
     }
 
     public static class DxChartSeriesTypesSplineAreaSeriesAggregationMethod
@@ -3867,18 +3583,12 @@ namespace DevExpress.Viz
     }
     public partial class DxChartSeriesTypesSplineAreaSeriesLabel : DxChartSeriesTypesCommonSeriesLabel
     {
-        // couldn't parse customizeText
     }
     public partial class DxChartSeriesTypesSplineAreaSeriesPoint : DxChartSeriesTypesCommonSeriesPoint
     {
-        public bool? visible { get; set; }
     }
     public partial class DxChartSeriesTypesSplineSeries : DxChartSeriesTypesCommonSeries
     {
-        // couldn't parse aggregation
-        public string hoverMode { get; set; }
-        // couldn't parse label
-        public string selectionMode { get; set; }
     }
 
     public static class DxChartSeriesTypesSplineSeriesHoverMode
@@ -3896,7 +3606,6 @@ namespace DevExpress.Viz
     }
     public partial class DxChartSeriesTypesSplineSeriesAggregation : DxChartSeriesTypesCommonSeriesAggregation
     {
-        public string method { get; set; }
     }
 
     public static class DxChartSeriesTypesSplineSeriesAggregationMethod
@@ -3910,15 +3619,9 @@ namespace DevExpress.Viz
     }
     public partial class DxChartSeriesTypesSplineSeriesLabel : DxChartSeriesTypesCommonSeriesLabel
     {
-        // couldn't parse customizeText
     }
     public partial class DxChartSeriesTypesStackedAreaSeries : DxChartSeriesTypesCommonSeries
     {
-        // couldn't parse aggregation
-        public string hoverMode { get; set; }
-        // couldn't parse label
-        // couldn't parse point
-        public string selectionMode { get; set; }
     }
 
     public static class DxChartSeriesTypesStackedAreaSeriesHoverMode
@@ -3936,7 +3639,6 @@ namespace DevExpress.Viz
     }
     public partial class DxChartSeriesTypesStackedAreaSeriesAggregation : DxChartSeriesTypesCommonSeriesAggregation
     {
-        public string method { get; set; }
     }
 
     public static class DxChartSeriesTypesStackedAreaSeriesAggregationMethod
@@ -3950,18 +3652,12 @@ namespace DevExpress.Viz
     }
     public partial class DxChartSeriesTypesStackedAreaSeriesLabel : DxChartSeriesTypesCommonSeriesLabel
     {
-        // couldn't parse customizeText
     }
     public partial class DxChartSeriesTypesStackedAreaSeriesPoint : DxChartSeriesTypesCommonSeriesPoint
     {
-        public bool? visible { get; set; }
     }
     public partial class DxChartSeriesTypesStackedBarSeries : DxChartSeriesTypesCommonSeries
     {
-        // couldn't parse aggregation
-        public string hoverMode { get; set; }
-        // couldn't parse label
-        public string selectionMode { get; set; }
     }
 
     public static class DxChartSeriesTypesStackedBarSeriesHoverMode
@@ -3980,7 +3676,6 @@ namespace DevExpress.Viz
     }
     public partial class DxChartSeriesTypesStackedBarSeriesAggregation : DxChartSeriesTypesCommonSeriesAggregation
     {
-        public string method { get; set; }
     }
 
     public static class DxChartSeriesTypesStackedBarSeriesAggregationMethod
@@ -3994,8 +3689,6 @@ namespace DevExpress.Viz
     }
     public partial class DxChartSeriesTypesStackedBarSeriesLabel : DxChartSeriesTypesCommonSeriesLabel
     {
-        // couldn't parse customizeText
-        public string position { get; set; }
     }
 
     public static class DxChartSeriesTypesStackedBarSeriesLabelPosition
@@ -4005,10 +3698,6 @@ namespace DevExpress.Viz
     }
     public partial class DxChartSeriesTypesStackedLineSeries : DxChartSeriesTypesCommonSeries
     {
-        // couldn't parse aggregation
-        public string hoverMode { get; set; }
-        // couldn't parse label
-        public string selectionMode { get; set; }
     }
 
     public static class DxChartSeriesTypesStackedLineSeriesHoverMode
@@ -4026,7 +3715,6 @@ namespace DevExpress.Viz
     }
     public partial class DxChartSeriesTypesStackedLineSeriesAggregation : DxChartSeriesTypesCommonSeriesAggregation
     {
-        public string method { get; set; }
     }
 
     public static class DxChartSeriesTypesStackedLineSeriesAggregationMethod
@@ -4040,15 +3728,9 @@ namespace DevExpress.Viz
     }
     public partial class DxChartSeriesTypesStackedLineSeriesLabel : DxChartSeriesTypesCommonSeriesLabel
     {
-        // couldn't parse customizeText
     }
     public partial class DxChartSeriesTypesStackedSplineAreaSeries : DxChartSeriesTypesCommonSeries
     {
-        // couldn't parse aggregation
-        public string hoverMode { get; set; }
-        // couldn't parse label
-        // couldn't parse point
-        public string selectionMode { get; set; }
     }
 
     public static class DxChartSeriesTypesStackedSplineAreaSeriesHoverMode
@@ -4066,7 +3748,6 @@ namespace DevExpress.Viz
     }
     public partial class DxChartSeriesTypesStackedSplineAreaSeriesAggregation : DxChartSeriesTypesCommonSeriesAggregation
     {
-        public string method { get; set; }
     }
 
     public static class DxChartSeriesTypesStackedSplineAreaSeriesAggregationMethod
@@ -4080,18 +3761,12 @@ namespace DevExpress.Viz
     }
     public partial class DxChartSeriesTypesStackedSplineAreaSeriesLabel : DxChartSeriesTypesCommonSeriesLabel
     {
-        // couldn't parse customizeText
     }
     public partial class DxChartSeriesTypesStackedSplineAreaSeriesPoint : DxChartSeriesTypesCommonSeriesPoint
     {
-        public bool? visible { get; set; }
     }
     public partial class DxChartSeriesTypesStackedSplineSeries : DxChartSeriesTypesCommonSeries
     {
-        // couldn't parse aggregation
-        public string hoverMode { get; set; }
-        // couldn't parse label
-        public string selectionMode { get; set; }
     }
 
     public static class DxChartSeriesTypesStackedSplineSeriesHoverMode
@@ -4109,7 +3784,6 @@ namespace DevExpress.Viz
     }
     public partial class DxChartSeriesTypesStackedSplineSeriesAggregation : DxChartSeriesTypesCommonSeriesAggregation
     {
-        public string method { get; set; }
     }
 
     public static class DxChartSeriesTypesStackedSplineSeriesAggregationMethod
@@ -4123,18 +3797,9 @@ namespace DevExpress.Viz
     }
     public partial class DxChartSeriesTypesStackedSplineSeriesLabel : DxChartSeriesTypesCommonSeriesLabel
     {
-        // couldn't parse customizeText
     }
     public partial class DxChartSeriesTypesStepAreaSeries : DxChartSeriesTypesCommonSeries
     {
-        // couldn't parse aggregation
-        // couldn't parse border
-        public string hoverMode { get; set; }
-        // couldn't parse hoverStyle
-        // couldn't parse label
-        // couldn't parse point
-        public string selectionMode { get; set; }
-        // couldn't parse selectionStyle
     }
 
     public static class DxChartSeriesTypesStepAreaSeriesHoverMode
@@ -4152,7 +3817,6 @@ namespace DevExpress.Viz
     }
     public partial class DxChartSeriesTypesStepAreaSeriesAggregation : DxChartSeriesTypesCommonSeriesAggregation
     {
-        public string method { get; set; }
     }
 
     public static class DxChartSeriesTypesStepAreaSeriesAggregationMethod
@@ -4166,38 +3830,27 @@ namespace DevExpress.Viz
     }
     public partial class DxChartSeriesTypesStepAreaSeriesBorder : DxChartSeriesTypesCommonSeriesBorder
     {
-        public bool? visible { get; set; }
     }
     public partial class DxChartSeriesTypesStepAreaSeriesHoverStyle : DxChartSeriesTypesCommonSeriesHoverStyle
     {
-        // couldn't parse border
     }
     public partial class DxChartSeriesTypesStepAreaSeriesHoverStyleBorder : DxChartSeriesTypesCommonSeriesHoverStyleBorder
     {
-        public bool? visible { get; set; }
     }
     public partial class DxChartSeriesTypesStepAreaSeriesLabel : DxChartSeriesTypesCommonSeriesLabel
     {
-        // couldn't parse customizeText
     }
     public partial class DxChartSeriesTypesStepAreaSeriesPoint : DxChartSeriesTypesCommonSeriesPoint
     {
-        public bool? visible { get; set; }
     }
     public partial class DxChartSeriesTypesStepAreaSeriesSelectionStyle : DxChartSeriesTypesCommonSeriesSelectionStyle
     {
-        // couldn't parse border
     }
     public partial class DxChartSeriesTypesStepAreaSeriesSelectionStyleBorder : DxChartSeriesTypesCommonSeriesSelectionStyleBorder
     {
-        public bool? visible { get; set; }
     }
     public partial class DxChartSeriesTypesStepLineSeries : DxChartSeriesTypesCommonSeries
     {
-        // couldn't parse aggregation
-        public string hoverMode { get; set; }
-        // couldn't parse label
-        public string selectionMode { get; set; }
     }
 
     public static class DxChartSeriesTypesStepLineSeriesHoverMode
@@ -4215,7 +3868,6 @@ namespace DevExpress.Viz
     }
     public partial class DxChartSeriesTypesStepLineSeriesAggregation : DxChartSeriesTypesCommonSeriesAggregation
     {
-        public string method { get; set; }
     }
 
     public static class DxChartSeriesTypesStepLineSeriesAggregationMethod
@@ -4229,15 +3881,9 @@ namespace DevExpress.Viz
     }
     public partial class DxChartSeriesTypesStepLineSeriesLabel : DxChartSeriesTypesCommonSeriesLabel
     {
-        // couldn't parse customizeText
     }
     public partial class DxChartSeriesTypesStockSeries : DxChartSeriesTypesCommonSeries
     {
-        // couldn't parse aggregation
-        public string argumentField { get; set; }
-        public string hoverMode { get; set; }
-        // couldn't parse label
-        public string selectionMode { get; set; }
     }
 
     public static class DxChartSeriesTypesStockSeriesHoverMode
@@ -4256,7 +3902,6 @@ namespace DevExpress.Viz
     }
     public partial class DxChartSeriesTypesStockSeriesAggregation : DxChartSeriesTypesCommonSeriesAggregation
     {
-        public string method { get; set; }
     }
 
     public static class DxChartSeriesTypesStockSeriesAggregationMethod
@@ -4266,11 +3911,10 @@ namespace DevExpress.Viz
     }
     public partial class DxChartSeriesTypesStockSeriesLabel : DxChartSeriesTypesCommonSeriesLabel
     {
-        // couldn't parse customizeText
     }
     public partial class DxExporterOptions : ComponentOptions
     {
-        // couldn't parse exportFormat
+        public object exportFormat { get; set; }
         public string fileName { get; set; }
         public bool? printingEnabled { get; set; }
         public string serverUrl { get; set; }
@@ -4288,13 +3932,13 @@ namespace DevExpress.Viz
         public float? indentFromCenter { get; set; }
         public float? length { get; set; }
         public float? offset { get; set; }
-        // couldn't parse palette
+        public object palette { get; set; }
         public string secondColor { get; set; }
         public float? secondFraction { get; set; }
         public float? size { get; set; }
         public float? spindleGapSize { get; set; }
         public float? spindleSize { get; set; }
-        // couldn't parse text
+        public object text { get; set; }
         public string verticalOrientation { get; set; }
         public float? width { get; set; }
     }
@@ -4311,95 +3955,64 @@ namespace DevExpress.Viz
     }
     public partial class CommonIndicatorText
     {
-        // couldn't parse customizeText
-        // couldn't parse font
-        // couldn't parse format
+        public object customizeText { get; set; }
+        public object font { get; set; }
+        public object format { get; set; }
         public float? indent { get; set; }
         public float? precision { get; set; }
     }
     public partial class CircularRectangleNeedle : CommonIndicator
     {
-        public string color { get; set; }
     }
     public partial class CircularTriangleNeedle : CommonIndicator
     {
-        public string color { get; set; }
     }
     public partial class CircularTwoColorNeedle : CommonIndicator
     {
-        public string color { get; set; }
     }
     public partial class CircularRangeBar : CommonIndicator
     {
-        public string color { get; set; }
-        public float? offset { get; set; }
     }
     public partial class CircularTriangleMarker : CommonIndicator
     {
-        public string color { get; set; }
-        public float? length { get; set; }
-        public float? offset { get; set; }
-        public float? width { get; set; }
     }
     public partial class CircularTextCloud : CommonIndicator
     {
-        public string color { get; set; }
-        public float? offset { get; set; }
-        // couldn't parse text
     }
     public partial class CircularTextCloudText : CommonIndicatorText
     {
-        // couldn't parse font
     }
     public partial class LinearRectangle : CommonIndicator
     {
-        public string color { get; set; }
-        public float? offset { get; set; }
-        public float? width { get; set; }
     }
     public partial class LinearCircle : CommonIndicator
     {
-        public string color { get; set; }
-        public float? offset { get; set; }
     }
     public partial class LinearRhombus : CommonIndicator
     {
-        public string color { get; set; }
-        public float? offset { get; set; }
-        public float? width { get; set; }
     }
     public partial class LinearRangeBar : CommonIndicator
     {
-        public string color { get; set; }
-        public float? offset { get; set; }
     }
     public partial class LinearTriangleMarker : CommonIndicator
     {
-        public string color { get; set; }
-        public float? length { get; set; }
-        public float? offset { get; set; }
-        public float? width { get; set; }
     }
     public partial class LinearTextCloud : CommonIndicator
     {
-        public string color { get; set; }
-        public float? offset { get; set; }
-        // couldn't parse text
     }
     public partial class LinearTextCloudText : CommonIndicatorText
     {
-        // couldn't parse font
     }
     public partial class ChartPointAggregationInfoObject
     {
         public object aggregationInterval { get; set; }
-        // couldn't parse data
+        public object data { get; set; }
         public object intervalEnd { get; set; }
         public object intervalStart { get; set; }
     }
     public partial class DxPieChartSeriesTypes
     {
-        // couldn't parse CommonPieChartSeries
+        public object CommonPieChartSeries { get; set; }
         public object DoughnutSeries { get; set; }
         public object PieSeries { get; set; }
     }
@@ -4407,18 +4020,18 @@ namespace DevExpress.Viz
     {
         public string argumentField { get; set; }
         public string argumentType { get; set; }
-        // couldn't parse border
+        public object border { get; set; }
         public string color { get; set; }
         public string hoverMode { get; set; }
-        // couldn't parse hoverStyle
+        public object hoverStyle { get; set; }
         public float? innerRadius { get; set; }
-        // couldn't parse label
+        public object label { get; set; }
         public float? maxLabelCount { get; set; }
         public float? minSegmentSize { get; set; }
         public string segmentsDirection { get; set; }
         public string selectionMode { get; set; }
-        // couldn't parse selectionStyle
-        // couldn't parse smallValuesGrouping
+        public object selectionStyle { get; set; }
+        public object smallValuesGrouping { get; set; }
         public float? startAngle { get; set; }
         public string tagField { get; set; }
         public string valueField { get; set; }
@@ -4447,18 +4060,15 @@ namespace DevExpress.Viz
     }
     public partial class DxPolarChartSeriesTypes
     {
-        // couldn't parse areapolarseries
-        // couldn't parse barpolarseries
-        // couldn't parse CommonPolarChartSeries
-        // couldn't parse linepolarseries
+        public object areapolarseries { get; set; }
+        public object barpolarseries { get; set; }
+        public object CommonPolarChartSeries { get; set; }
+        public object linepolarseries { get; set; }
         public object scatterpolarseries { get; set; }
-        // couldn't parse stackedbarpolarseries
+        public object stackedbarpolarseries { get; set; }
     }
     public partial class DxPolarChartSeriesTypesAreapolarseries : DxPolarChartSeriesTypesCommonPolarChartSeries
     {
-        public string hoverMode { get; set; }
-        // couldn't parse point
-        public string selectionMode { get; set; }
     }
 
     public static class DxPolarChartSeriesTypesAreapolarseriesHoverMode
@@ -4476,12 +4086,9 @@ namespace DevExpress.Viz
     }
     public partial class DxPolarChartSeriesTypesAreapolarseriesPoint : DxPolarChartSeriesTypesCommonPolarChartSeriesPoint
     {
-        public bool? visible { get; set; }
     }
     public partial class DxPolarChartSeriesTypesBarpolarseries : DxPolarChartSeriesTypesCommonPolarChartSeries
     {
-        public string hoverMode { get; set; }
-        public string selectionMode { get; set; }
     }
 
     public static class DxPolarChartSeriesTypesBarpolarseriesHoverMode
@@ -4503,24 +4110,24 @@ namespace DevExpress.Viz
         public string argumentField { get; set; }
         public float? barPadding { get; set; }
         public float? barWidth { get; set; }
-        // couldn't parse border
+        public object border { get; set; }
         public bool? closed { get; set; }
         public string color { get; set; }
         public string dashStyle { get; set; }
         public string hoverMode { get; set; }
-        // couldn't parse hoverStyle
+        public object hoverStyle { get; set; }
         public bool? ignoreEmptyPoints { get; set; }
-        // couldn't parse label
+        public object label { get; set; }
         public float? maxLabelCount { get; set; }
         public float? minBarSize { get; set; }
         public float? opacity { get; set; }
-        // couldn't parse point
+        public object point { get; set; }
         public string selectionMode { get; set; }
-        // couldn't parse selectionStyle
+        public object selectionStyle { get; set; }
         public bool? showInLegend { get; set; }
         public string stack { get; set; }
         public string tagField { get; set; }
-        // couldn't parse valueErrorBar
+        public object valueErrorBar { get; set; }
         public string valueField { get; set; }
         public bool? visible { get; set; }
         public float? width { get; set; }
@@ -4554,14 +4161,14 @@ namespace DevExpress.Viz
     }
     public partial class DxPolarChartSeriesTypesCommonPolarChartSeriesLabel
     {
-        // couldn't parse argumentFormat
+        public object argumentFormat { get; set; }
         public float? argumentPrecision { get; set; }
         public string backgroundColor { get; set; }
-        // couldn't parse border
-        // couldn't parse connector
-        // couldn't parse customizeText
-        // couldn't parse font
-        // couldn't parse format
+        public object border { get; set; }
+        public object connector { get; set; }
+        public object customizeText { get; set; }
+        public object font { get; set; }
+        public object format { get; set; }
         public string position { get; set; }
         public float? precision { get; set; }
         public float? rotationAngle { get; set; }
@@ -4576,13 +4183,13 @@ namespace DevExpress.Viz
     }
     public partial class DxPolarChartSeriesTypesCommonPolarChartSeriesPoint
     {
-        // couldn't parse border
+        public object border { get; set; }
         public string color { get; set; }
         public string hoverMode { get; set; }
-        // couldn't parse hoverStyle
-        // couldn't parse image
+        public object hoverStyle { get; set; }
+        public object image { get; set; }
         public string selectionMode { get; set; }
-        // couldn't parse selectionStyle
+        public object selectionStyle { get; set; }
         public float? size { get; set; }
         public string symbol { get; set; }
         public bool? visible { get; set; }
@@ -4612,8 +4219,6 @@ namespace DevExpress.Viz
     }
     public partial class DxPolarChartSeriesTypesLinepolarseries : DxPolarChartSeriesTypesCommonPolarChartSeries
     {
-        public string hoverMode { get; set; }
-        public string selectionMode { get; set; }
     }
 
     public static class DxPolarChartSeriesTypesLinepolarseriesHoverMode
@@ -4631,9 +4236,6 @@ namespace DevExpress.Viz
     }
     public partial class DxPolarChartSeriesTypesStackedbarpolarseries : DxPolarChartSeriesTypesCommonPolarChartSeries
     {
-        public string hoverMode { get; set; }
-        // couldn't parse label
-        public string selectionMode { get; set; }
     }
 
     public static class DxPolarChartSeriesTypesStackedbarpolarseriesHoverMode
@@ -4652,7 +4254,6 @@ namespace DevExpress.Viz
     }
     public partial class DxPolarChartSeriesTypesStackedbarpolarseriesLabel : DxPolarChartSeriesTypesCommonPolarChartSeriesLabel
     {
-        public string position { get; set; }
     }
 
     public static class DxPolarChartSeriesTypesStackedbarpolarseriesLabelPosition
@@ -4665,7 +4266,7 @@ namespace DevExpress.Viz
         public string color { get; set; }
         public string family { get; set; }
         public float? opacity { get; set; }
-        // couldn't parse size
+        public object size { get; set; }
         public float? weight { get; set; }
     }
 }
@@ -4674,19 +4275,18 @@ namespace DevExpress.Viz.Charts
     public partial class DxChartOptions : BaseChartOptions
     {
         public bool? adjustOnZoom { get; set; }
-        // couldn't parse argumentAxis
+        public object argumentAxis { get; set; }
         public float? barGroupPadding { get; set; }
         public float? barGroupWidth { get; set; }
         public float? barWidth { get; set; }
-        // couldn't parse commonAxisSettings
-        // couldn't parse commonPaneSettings
-        // couldn't parse commonSeriesSettings
+        public object commonAxisSettings { get; set; }
+        public object commonPaneSettings { get; set; }
+        public object commonSeriesSettings { get; set; }
         public string containerBackgroundColor { get; set; }
-        // couldn't parse crosshair
-        // couldn't parse dataPrepareSettings
+        public object crosshair { get; set; }
+        public object dataPrepareSettings { get; set; }
         public string defaultPane { get; set; }
         public bool? equalBarWidth { get; set; }
-        // couldn't parse legend
         public float? maxBubbleSize { get; set; }
         public float? minBubbleSize { get; set; }
         public bool? negativesAsZeroes { get; set; }
@@ -4697,18 +4297,16 @@ namespace DevExpress.Viz.Charts
         public bool? onSeriesSelectionChangedEnabled { get; set; }
         public bool? onZoomEndEnabled { get; set; }
         public bool? onZoomStartEnabled { get; set; }
-        // couldn't parse panes
+        public object panes { get; set; }
         public string resolveLabelOverlapping { get; set; }
         public bool? rotated { get; set; }
-        // couldn't parse scrollBar
+        public object scrollBar { get; set; }
         public string scrollingMode { get; set; }
-        // couldn't parse series
         public string seriesSelectionMode { get; set; }
-        // couldn't parse seriesTemplate
+        public object seriesTemplate { get; set; }
         public bool? synchronizeMultiAxes { get; set; }
-        // couldn't parse tooltip
         public bool? useAggregation { get; set; }
-        // couldn't parse valueAxis
+        public object valueAxis { get; set; }
         public string zoomingMode { get; set; }
     }
 
@@ -4743,24 +4341,20 @@ namespace DevExpress.Viz.Charts
         public object aggregationInterval { get; set; }
         public string argumentType { get; set; }
         public float? axisDivisionFactor { get; set; }
-        // couldn't parse breaks
-        // couldn't parse categories
-        // couldn't parse constantLines
-        // couldn't parse constantLineStyle
-        public bool? endOnTick { get; set; }
-        // couldn't parse holidays
+        public object breaks { get; set; }
+        public object categories { get; set; }
+        public object constantLines { get; set; }
+        public object holidays { get; set; }
         public string hoverMode { get; set; }
-        // couldn't parse label
         public float? logarithmBase { get; set; }
-        // couldn't parse max
-        // couldn't parse min
+        public object max { get; set; }
+        public object min { get; set; }
         public float? minorTickCount { get; set; }
         public object minorTickInterval { get; set; }
         public string position { get; set; }
-        // couldn't parse singleWorkdays
-        // couldn't parse strips
+        public object singleWorkdays { get; set; }
+        public object strips { get; set; }
         public object tickInterval { get; set; }
-        // couldn't parse title
         public string type { get; set; }
         public bool? workdaysOnly { get; set; }
         public float workWeek { get; set; }
@@ -4792,8 +4386,7 @@ namespace DevExpress.Viz.Charts
     }
     public partial class DxChartArgumentAxisConstantLines : DxChartCommonAxisSettingsConstantLineStyle
     {
-        // couldn't parse label
-        // couldn't parse value
+        public object value { get; set; }
     }
     public partial class DxChartArgumentAxisConstantLinesLabel : DxChartCommonAxisSettingsConstantLineStyleLabel
     {
@@ -4816,7 +4409,6 @@ namespace DevExpress.Viz.Charts
     }
     public partial class DxChartArgumentAxisConstantLineStyle : DxChartCommonAxisSettingsConstantLineStyle
     {
-        // couldn't parse label
     }
     public partial class DxChartArgumentAxisConstantLineStyleLabel : DxChartCommonAxisSettingsConstantLineStyleLabel
     {
@@ -4838,17 +4430,16 @@ namespace DevExpress.Viz.Charts
     }
     public partial class DxChartArgumentAxisLabel : DxChartCommonAxisSettingsLabel
     {
-        // couldn't parse customizeHint
-        // couldn't parse customizeText
-        // couldn't parse format
+        public object customizeHint { get; set; }
+        public object customizeText { get; set; }
+        public object format { get; set; }
         public float? precision { get; set; }
     }
     public partial class DxChartArgumentAxisStrips : DxChartCommonAxisSettingsStripStyle
     {
         public string color { get; set; }
-        // couldn't parse endValue
-        // couldn't parse label
-        // couldn't parse startValue
+        public object endValue { get; set; }
+        public object startValue { get; set; }
     }
     public partial class DxChartArgumentAxisStripsLabel : DxChartCommonAxisSettingsStripStyleLabel
     {
@@ -4861,24 +4452,24 @@ namespace DevExpress.Viz.Charts
     public partial class DxChartCommonAxisSettings
     {
         public bool? allowDecimals { get; set; }
-        // couldn't parse breakStyle
+        public object breakStyle { get; set; }
         public string color { get; set; }
-        // couldn't parse constantLineStyle
+        public object constantLineStyle { get; set; }
         public string discreteAxisDivisionMode { get; set; }
         public bool? endOnTick { get; set; }
-        // couldn't parse grid
+        public object grid { get; set; }
         public bool? inverted { get; set; }
-        // couldn't parse label
+        public object label { get; set; }
         public float? maxValueMargin { get; set; }
-        // couldn't parse minorGrid
-        // couldn't parse minorTick
+        public object minorGrid { get; set; }
+        public object minorTick { get; set; }
         public float? minValueMargin { get; set; }
         public float? opacity { get; set; }
         public float? placeholderSize { get; set; }
         public bool? setTicksAtUnitBeginning { get; set; }
-        // couldn't parse stripStyle
-        // couldn't parse tick
-        // couldn't parse title
+        public object stripStyle { get; set; }
+        public object tick { get; set; }
+        public object title { get; set; }
         public bool? valueMarginsEnabled { get; set; }
         public bool? visible { get; set; }
         public float? width { get; set; }
@@ -4893,7 +4484,7 @@ namespace DevExpress.Viz.Charts
     {
         public string color { get; set; }
         public string dashStyle { get; set; }
-        // couldn't parse label
+        public object label { get; set; }
         public float? paddingLeftRight { get; set; }
         public float? paddingTopBottom { get; set; }
         public float? width { get; set; }
@@ -4908,7 +4499,7 @@ namespace DevExpress.Viz.Charts
     }
     public partial class DxChartCommonAxisSettingsConstantLineStyleLabel
     {
-        // couldn't parse font
+        public object font { get; set; }
         public string position { get; set; }
         public bool? visible { get; set; }
     }
@@ -4922,9 +4513,9 @@ namespace DevExpress.Viz.Charts
     {
         public string alignment { get; set; }
         public string displayMode { get; set; }
-        // couldn't parse font
+        public object font { get; set; }
         public float? indentFromAxis { get; set; }
-        // couldn't parse overlappingBehavior
+        public object overlappingBehavior { get; set; }
         public float? rotationAngle { get; set; }
         public float? staggeringSpacing { get; set; }
         public bool? visible { get; set; }
@@ -4944,13 +4535,13 @@ namespace DevExpress.Viz.Charts
     }
     public partial class DxChartCommonAxisSettingsStripStyle
     {
-        // couldn't parse label
+        public object label { get; set; }
         public float? paddingLeftRight { get; set; }
         public float? paddingTopBottom { get; set; }
     }
     public partial class DxChartCommonAxisSettingsStripStyleLabel
     {
-        // couldn't parse font
+        public object font { get; set; }
         public string horizontalAlignment { get; set; }
         public string verticalAlignment { get; set; }
     }
@@ -4969,13 +4560,13 @@ namespace DevExpress.Viz.Charts
     }
     public partial class DxChartCommonAxisSettingsTitle
     {
-        // couldn't parse font
+        public object font { get; set; }
         public float? margin { get; set; }
     }
     public partial class DxChartCommonPaneSettings
     {
         public string backgroundColor { get; set; }
-        // couldn't parse border
+        public object border { get; set; }
     }
     public partial class DxChartCommonSeriesSettings : DxChartSeriesTypesCommonSeries
     {
@@ -5033,8 +4624,8 @@ namespace DevExpress.Viz.Charts
     }
     public partial class DxChartLegend : BaseChartLegend
     {
-        // couldn't parse customizeHint
-        // couldn't parse customizeText
+        public object customizeHint { get; set; }
+        public object customizeText { get; set; }
         public string hoverMode { get; set; }
         public string position { get; set; }
     }
@@ -5102,16 +4693,13 @@ namespace DevExpress.Viz.Charts
     {
         public bool? autoBreaksEnabled { get; set; }
         public float? axisDivisionFactor { get; set; }
-        // couldn't parse breaks
-        // couldn't parse categories
-        // couldn't parse constantLines
-        // couldn't parse constantLineStyle
-        public bool? endOnTick { get; set; }
-        // couldn't parse label
+        public object breaks { get; set; }
+        public object categories { get; set; }
+        public object constantLines { get; set; }
         public float? logarithmBase { get; set; }
-        // couldn't parse max
+        public object max { get; set; }
         public float? maxAutoBreakCount { get; set; }
-        // couldn't parse min
+        public object min { get; set; }
         public float? minorTickCount { get; set; }
         public object minorTickInterval { get; set; }
         public float? multipleAxesSpacing { get; set; }
@@ -5119,10 +4707,9 @@ namespace DevExpress.Viz.Charts
         public string pane { get; set; }
         public string position { get; set; }
         public bool? showZero { get; set; }
-        // couldn't parse strips
+        public object strips { get; set; }
         public float? synchronizedValue { get; set; }
         public object tickInterval { get; set; }
-        // couldn't parse title
         public string type { get; set; }
         public string valueType { get; set; }
     }
@@ -5148,8 +4735,7 @@ namespace DevExpress.Viz.Charts
     }
     public partial class DxChartValueAxisConstantLines : DxChartCommonAxisSettingsConstantLineStyle
     {
-        // couldn't parse label
-        // couldn't parse value
+        public object value { get; set; }
     }
     public partial class DxChartValueAxisConstantLinesLabel : DxChartCommonAxisSettingsConstantLineStyleLabel
     {
@@ -5172,7 +4758,6 @@ namespace DevExpress.Viz.Charts
     }
     public partial class DxChartValueAxisConstantLineStyle : DxChartCommonAxisSettingsConstantLineStyle
     {
-        // couldn't parse label
     }
     public partial class DxChartValueAxisConstantLineStyleLabel : DxChartCommonAxisSettingsConstantLineStyleLabel
     {
@@ -5194,17 +4779,16 @@ namespace DevExpress.Viz.Charts
     }
     public partial class DxChartValueAxisLabel : DxChartCommonAxisSettingsLabel
     {
-        // couldn't parse customizeHint
-        // couldn't parse customizeText
-        // couldn't parse format
+        public object customizeHint { get; set; }
+        public object customizeText { get; set; }
+        public object format { get; set; }
         public float? precision { get; set; }
     }
     public partial class DxChartValueAxisStrips : DxChartCommonAxisSettingsStripStyle
     {
         public string color { get; set; }
-        // couldn't parse endValue
-        // couldn't parse label
-        // couldn't parse startValue
+        public object endValue { get; set; }
+        public object startValue { get; set; }
     }
     public partial class DxChartValueAxisStripsLabel : DxChartCommonAxisSettingsStripStyleLabel
     {
@@ -5216,18 +4800,14 @@ namespace DevExpress.Viz.Charts
     }
     public partial class DxPieChartOptions : BaseChartOptions
     {
-        // couldn't parse adaptiveLayout
-        // couldn't parse commonSeriesSettings
+        public object commonSeriesSettings { get; set; }
         public float? diameter { get; set; }
         public float? innerRadius { get; set; }
-        // couldn't parse legend
         public float? minDiameter { get; set; }
         public bool? onLegendClickEnabled { get; set; }
-        // couldn't parse palette
         public string resolveLabelOverlapping { get; set; }
         public string segmentsDirection { get; set; }
-        // couldn't parse series
-        // couldn't parse seriesTemplate
+        public object seriesTemplate { get; set; }
         public string sizeGroup { get; set; }
         public float? startAngle { get; set; }
         public string type { get; set; }
@@ -5252,7 +4832,6 @@ namespace DevExpress.Viz.Charts
     }
     public partial class DxPieChartAdaptiveLayout : BaseChartAdaptiveLayout
     {
-        public bool? keepLabels { get; set; }
     }
     public partial class DxPieChartCommonSeriesSettings : DxPieChartSeriesTypesCommonPieChartSeries
     {
@@ -5267,8 +4846,8 @@ namespace DevExpress.Viz.Charts
     }
     public partial class DxPieChartLegend : BaseChartLegend
     {
-        // couldn't parse customizeHint
-        // couldn't parse customizeText
+        public object customizeHint { get; set; }
+        public object customizeText { get; set; }
         public string hoverMode { get; set; }
     }
 
@@ -5292,17 +4871,15 @@ namespace DevExpress.Viz.Charts
     }
     public partial class DxPolarChartOptions : BaseChartOptions
     {
-        // couldn't parse adaptiveLayout
-        // couldn't parse argumentAxis
+        public object argumentAxis { get; set; }
         public float? barGroupPadding { get; set; }
         public float? barGroupWidth { get; set; }
         public float? barWidth { get; set; }
-        // couldn't parse commonAxisSettings
-        // couldn't parse commonSeriesSettings
+        public object commonAxisSettings { get; set; }
+        public object commonSeriesSettings { get; set; }
         public string containerBackgroundColor { get; set; }
-        // couldn't parse dataPrepareSettings
+        public object dataPrepareSettings { get; set; }
         public bool? equalBarWidth { get; set; }
-        // couldn't parse legend
         public bool? negativesAsZeroes { get; set; }
         public bool? onArgumentAxisClickEnabled { get; set; }
         public bool? onLegendClickEnabled { get; set; }
@@ -5310,12 +4887,10 @@ namespace DevExpress.Viz.Charts
         public bool? onSeriesHoverChangedEnabled { get; set; }
         public bool? onSeriesSelectionChangedEnabled { get; set; }
         public string resolveLabelOverlapping { get; set; }
-        // couldn't parse series
         public string seriesSelectionMode { get; set; }
-        // couldn't parse seriesTemplate
-        // couldn't parse tooltip
+        public object seriesTemplate { get; set; }
         public bool? useSpiderWeb { get; set; }
-        // couldn't parse valueAxis
+        public object valueAxis { get; set; }
     }
 
     public static class DxPolarChartOptionsResolveLabelOverlapping
@@ -5330,25 +4905,22 @@ namespace DevExpress.Viz.Charts
     }
     public partial class DxPolarChartAdaptiveLayout : BaseChartAdaptiveLayout
     {
-        public float? height { get; set; }
-        public float? width { get; set; }
     }
     public partial class DxPolarChartArgumentAxis : DxPolarChartCommonAxisSettings
     {
         public string argumentType { get; set; }
         public float? axisDivisionFactor { get; set; }
-        // couldn't parse categories
-        // couldn't parse constantLines
+        public object categories { get; set; }
+        public object constantLines { get; set; }
         public bool? firstPointOnStartAngle { get; set; }
         public string hoverMode { get; set; }
-        // couldn't parse label
         public float? logarithmBase { get; set; }
         public float? minorTickCount { get; set; }
         public object minorTickInterval { get; set; }
         public float? originValue { get; set; }
         public float? period { get; set; }
         public float? startAngle { get; set; }
-        // couldn't parse strips
+        public object strips { get; set; }
         public object tickInterval { get; set; }
         public string type { get; set; }
     }
@@ -5372,8 +4944,7 @@ namespace DevExpress.Viz.Charts
     }
     public partial class DxPolarChartArgumentAxisConstantLines : DxPolarChartCommonAxisSettingsConstantLineStyle
     {
-        // couldn't parse label
-        // couldn't parse value
+        public object value { get; set; }
     }
     public partial class DxPolarChartArgumentAxisConstantLinesLabel : DxPolarChartCommonAxisSettingsConstantLineStyleLabel
     {
@@ -5381,17 +4952,16 @@ namespace DevExpress.Viz.Charts
     }
     public partial class DxPolarChartArgumentAxisLabel : DxPolarChartCommonAxisSettingsLabel
     {
-        // couldn't parse customizeHint
-        // couldn't parse customizeText
-        // couldn't parse format
+        public object customizeHint { get; set; }
+        public object customizeText { get; set; }
+        public object format { get; set; }
         public float? precision { get; set; }
     }
     public partial class DxPolarChartArgumentAxisStrips : DxPolarChartCommonAxisSettingsStripStyle
     {
         public string color { get; set; }
-        // couldn't parse endValue
-        // couldn't parse label
-        // couldn't parse startValue
+        public object endValue { get; set; }
+        public object startValue { get; set; }
     }
     public partial class DxPolarChartArgumentAxisStripsLabel : DxPolarChartCommonAxisSettingsStripStyleLabel
     {
@@ -5401,18 +4971,18 @@ namespace DevExpress.Viz.Charts
     {
         public bool? allowDecimals { get; set; }
         public string color { get; set; }
-        // couldn't parse constantLineStyle
+        public object constantLineStyle { get; set; }
         public string discreteAxisDivisionMode { get; set; }
         public bool? endOnTick { get; set; }
-        // couldn't parse grid
+        public object grid { get; set; }
         public bool? inverted { get; set; }
-        // couldn't parse label
-        // couldn't parse minorGrid
-        // couldn't parse minorTick
+        public object label { get; set; }
+        public object minorGrid { get; set; }
+        public object minorTick { get; set; }
         public float? opacity { get; set; }
         public bool? setTicksAtUnitBeginning { get; set; }
-        // couldn't parse stripStyle
-        // couldn't parse tick
+        public object stripStyle { get; set; }
+        public object tick { get; set; }
         public bool? visible { get; set; }
         public float? width { get; set; }
     }
@@ -5426,7 +4996,7 @@ namespace DevExpress.Viz.Charts
     {
         public string color { get; set; }
         public string dashStyle { get; set; }
-        // couldn't parse label
+        public object label { get; set; }
         public float? width { get; set; }
     }
 
@@ -5439,12 +5009,12 @@ namespace DevExpress.Viz.Charts
     }
     public partial class DxPolarChartCommonAxisSettingsConstantLineStyleLabel
     {
-        // couldn't parse font
+        public object font { get; set; }
         public bool? visible { get; set; }
     }
     public partial class DxPolarChartCommonAxisSettingsLabel
     {
-        // couldn't parse font
+        public object font { get; set; }
         public float? indentFromAxis { get; set; }
         public string overlappingBehavior { get; set; }
         public bool? visible { get; set; }
@@ -5457,11 +5027,11 @@ namespace DevExpress.Viz.Charts
     }
     public partial class DxPolarChartCommonAxisSettingsStripStyle
     {
-        // couldn't parse label
+        public object label { get; set; }
     }
     public partial class DxPolarChartCommonAxisSettingsStripStyleLabel
     {
-        // couldn't parse font
+        public object font { get; set; }
     }
     public partial class DxPolarChartCommonAxisSettingsTick
     {
@@ -5491,8 +5061,8 @@ namespace DevExpress.Viz.Charts
     }
     public partial class DxPolarChartLegend : BaseChartLegend
     {
-        // couldn't parse customizeHint
-        // couldn't parse customizeText
+        public object customizeHint { get; set; }
+        public object customizeText { get; set; }
         public string hoverMode { get; set; }
     }
 
@@ -5524,18 +5094,15 @@ namespace DevExpress.Viz.Charts
     public partial class DxPolarChartValueAxis : DxPolarChartCommonAxisSettings
     {
         public float? axisDivisionFactor { get; set; }
-        // couldn't parse categories
-        // couldn't parse constantLines
-        public bool? endOnTick { get; set; }
-        // couldn't parse label
+        public object categories { get; set; }
+        public object constantLines { get; set; }
         public float? logarithmBase { get; set; }
         public float? maxValueMargin { get; set; }
         public float? minorTickCount { get; set; }
         public object minorTickInterval { get; set; }
         public float? minValueMargin { get; set; }
         public bool? showZero { get; set; }
-        // couldn't parse strips
-        // couldn't parse tick
+        public object strips { get; set; }
         public object tickInterval { get; set; }
         public string type { get; set; }
         public bool? valueMarginsEnabled { get; set; }
@@ -5556,8 +5123,7 @@ namespace DevExpress.Viz.Charts
     }
     public partial class DxPolarChartValueAxisConstantLines : DxPolarChartCommonAxisSettingsConstantLineStyle
     {
-        // couldn't parse label
-        // couldn't parse value
+        public object value { get; set; }
     }
     public partial class DxPolarChartValueAxisConstantLinesLabel : DxPolarChartCommonAxisSettingsConstantLineStyleLabel
     {
@@ -5565,17 +5131,16 @@ namespace DevExpress.Viz.Charts
     }
     public partial class DxPolarChartValueAxisLabel : DxPolarChartCommonAxisSettingsLabel
     {
-        // couldn't parse customizeHint
-        // couldn't parse customizeText
-        // couldn't parse format
+        public object customizeHint { get; set; }
+        public object customizeText { get; set; }
+        public object format { get; set; }
         public float? precision { get; set; }
     }
     public partial class DxPolarChartValueAxisStrips : DxPolarChartCommonAxisSettingsStripStyle
     {
         public string color { get; set; }
-        // couldn't parse endValue
-        // couldn't parse label
-        // couldn't parse startValue
+        public object endValue { get; set; }
+        public object startValue { get; set; }
     }
     public partial class DxPolarChartValueAxisStripsLabel : DxPolarChartCommonAxisSettingsStripStyleLabel
     {
@@ -5583,27 +5148,25 @@ namespace DevExpress.Viz.Charts
     }
     public partial class DxPolarChartValueAxisTick : DxPolarChartCommonAxisSettingsTick
     {
-        public bool? visible { get; set; }
     }
     public partial class BaseChartOptions : BaseWidgetOptions
     {
-        // couldn't parse adaptiveLayout
-        // couldn't parse animation
-        // couldn't parse customizeLabel
-        // couldn't parse customizePoint
-        // couldn't parse dataSource
-        // couldn't parse legend
+        public object adaptiveLayout { get; set; }
+        public object animation { get; set; }
+        public object customizeLabel { get; set; }
+        public object customizePoint { get; set; }
+        public object dataSource { get; set; }
+        public object legend { get; set; }
         public bool? onDoneEnabled { get; set; }
         public bool? onPointClickEnabled { get; set; }
         public bool? onPointHoverChangedEnabled { get; set; }
         public bool? onPointSelectionChangedEnabled { get; set; }
         public bool? onTooltipHiddenEnabled { get; set; }
         public bool? onTooltipShownEnabled { get; set; }
-        // couldn't parse palette
+        public object palette { get; set; }
         public string paletteExtensionMode { get; set; }
         public string pointSelectionMode { get; set; }
-        // couldn't parse series
-        // couldn't parse tooltip
+        public object series { get; set; }
     }
 
     public static class BaseChartOptionsPaletteExtensionMode
@@ -5626,14 +5189,14 @@ namespace DevExpress.Viz.Charts
     public partial class BaseChartLegend
     {
         public string backgroundColor { get; set; }
-        // couldn't parse border
+        public object border { get; set; }
         public float? columnCount { get; set; }
         public float? columnItemSpacing { get; set; }
-        // couldn't parse font
+        public object font { get; set; }
         public string horizontalAlignment { get; set; }
         public string itemsAlignment { get; set; }
         public string itemTextPosition { get; set; }
-        // couldn't parse margin
+        public object margin { get; set; }
         public float? markerSize { get; set; }
         public string orientation { get; set; }
         public float? paddingLeftRight { get; set; }
@@ -5675,9 +5238,9 @@ namespace DevExpress.Viz.Charts
     }
     public partial class BaseChartTooltip : BaseWidgetTooltip
     {
-        // couldn't parse argumentFormat
+        public object argumentFormat { get; set; }
         public float? argumentPrecision { get; set; }
-        // couldn't parse customizeTooltip
+        public object customizeTooltip { get; set; }
         public float? percentPrecision { get; set; }
     }
 }
@@ -5685,27 +5248,26 @@ namespace DevExpress.Viz.Funnel
 {
     public partial class DxFunnelOptions : BaseWidgetOptions
     {
-        // couldn't parse adaptiveLayout
+        public object adaptiveLayout { get; set; }
         public string algorithm { get; set; }
         public string argumentField { get; set; }
         public string colorField { get; set; }
-        // couldn't parse dataSource
+        public object dataSource { get; set; }
         public bool? hoverEnabled { get; set; }
         public bool? inverted { get; set; }
-        // couldn't parse item
-        // couldn't parse label
-        // couldn't parse legend
+        public object item { get; set; }
+        public object label { get; set; }
+        public object legend { get; set; }
         public float? neckHeight { get; set; }
         public float? neckWidth { get; set; }
         public bool? onHoverChangedEnabled { get; set; }
         public bool? onItemClickEnabled { get; set; }
         public bool? onLegendClickEnabled { get; set; }
         public bool? onSelectionChangedEnabled { get; set; }
-        // couldn't parse palette
+        public object palette { get; set; }
         public string paletteExtensionMode { get; set; }
         public string selectionMode { get; set; }
         public bool? sortData { get; set; }
-        // couldn't parse tooltip
         public string valueField { get; set; }
     }
 
@@ -5728,23 +5290,21 @@ namespace DevExpress.Viz.Funnel
     }
     public partial class DxFunnelTooltip : BaseWidgetTooltip
     {
-        // couldn't parse customizeTooltip
+        public object customizeTooltip { get; set; }
     }
 }
 namespace DevExpress.Viz.Gauges
 {
     public partial class BaseGaugeOptions : BaseWidgetOptions
     {
-        // couldn't parse animation
+        public object animation { get; set; }
         public string containerBackgroundColor { get; set; }
         public bool? onTooltipHiddenEnabled { get; set; }
         public bool? onTooltipShownEnabled { get; set; }
-        // couldn't parse rangeContainer
-        // couldn't parse scale
-        // couldn't parse subtitle
+        public object rangeContainer { get; set; }
+        public object scale { get; set; }
+        public object subtitle { get; set; }
         public float subvalues { get; set; }
-        public object title { get; set; }
-        // couldn't parse tooltip
         public float? value { get; set; }
     }
     public partial class BaseGaugeAnimation
@@ -5763,9 +5323,9 @@ namespace DevExpress.Viz.Gauges
     {
         public string backgroundColor { get; set; }
         public float? offset { get; set; }
-        // couldn't parse palette
+        public object palette { get; set; }
         public string paletteExtensionMode { get; set; }
-        // couldn't parse ranges
+        public object ranges { get; set; }
     }
 
     public static class BaseGaugeRangeContainerPaletteExtensionMode
@@ -5784,20 +5344,20 @@ namespace DevExpress.Viz.Gauges
         public bool? hideFirstTick { get; set; }
         public bool? hideLastLabel { get; set; }
         public bool? hideLastTick { get; set; }
-        // couldn't parse label
-        // couldn't parse majorTick
-        // couldn't parse minorTick
+        public object label { get; set; }
+        public object majorTick { get; set; }
+        public object minorTick { get; set; }
         public float? minorTickInterval { get; set; }
         public float? startValue { get; set; }
-        // couldn't parse tick
+        public object tick { get; set; }
         public float? tickInterval { get; set; }
     }
     public partial class BaseGaugeScaleLabel
     {
-        // couldn't parse customizeText
-        // couldn't parse font
-        // couldn't parse format
-        // couldn't parse overlappingBehavior
+        public object customizeText { get; set; }
+        public object font { get; set; }
+        public object format { get; set; }
+        public object overlappingBehavior { get; set; }
         public float? precision { get; set; }
         public bool? useRangeColors { get; set; }
         public bool? visible { get; set; }
@@ -5808,7 +5368,7 @@ namespace DevExpress.Viz.Gauges
     }
     public partial class BaseGaugeSubtitle
     {
-        // couldn't parse font
+        public object font { get; set; }
         public string text { get; set; }
     }
     public partial class BaseGaugeTitle : BaseWidgetTitle
@@ -5827,15 +5387,13 @@ namespace DevExpress.Viz.Gauges
     }
     public partial class BaseGaugeTooltip : BaseWidgetTooltip
     {
-        // couldn't parse customizeTooltip
+        public object customizeTooltip { get; set; }
     }
     public partial class DxCircularGaugeOptions : BaseGaugeOptions
     {
-        // couldn't parse geometry
-        // couldn't parse rangeContainer
-        // couldn't parse scale
-        // couldn't parse subvalueIndicator
-        // couldn't parse valueIndicator
+        public object geometry { get; set; }
+        public object subvalueIndicator { get; set; }
+        public object valueIndicator { get; set; }
     }
     public partial class DxCircularGaugeRangeContainer : BaseGaugeRangeContainer
     {
@@ -5851,7 +5409,6 @@ namespace DevExpress.Viz.Gauges
     }
     public partial class DxCircularGaugeScale : BaseGaugeScale
     {
-        // couldn't parse label
         public string orientation { get; set; }
     }
 
@@ -5865,7 +5422,6 @@ namespace DevExpress.Viz.Gauges
     {
         public string hideFirstOrLast { get; set; }
         public float? indentFromTick { get; set; }
-        // couldn't parse overlappingBehavior
     }
 
     public static class DxCircularGaugeScaleLabelHideFirstOrLast
@@ -5913,17 +5469,15 @@ namespace DevExpress.Viz.Gauges
     }
     public partial class DxLinearGaugeOptions : BaseGaugeOptions
     {
-        // couldn't parse geometry
-        // couldn't parse rangeContainer
-        // couldn't parse scale
-        // couldn't parse subvalueIndicator
-        // couldn't parse valueIndicator
+        public object geometry { get; set; }
+        public object subvalueIndicator { get; set; }
+        public object valueIndicator { get; set; }
     }
     public partial class DxLinearGaugeRangeContainer : BaseGaugeRangeContainer
     {
         public string horizontalOrientation { get; set; }
         public string verticalOrientation { get; set; }
-        // couldn't parse width
+        public object width { get; set; }
     }
 
     public static class DxLinearGaugeRangeContainerHorizontalOrientation
@@ -5941,7 +5495,6 @@ namespace DevExpress.Viz.Gauges
     public partial class DxLinearGaugeScale : BaseGaugeScale
     {
         public string horizontalOrientation { get; set; }
-        // couldn't parse label
         public string verticalOrientation { get; set; }
     }
 
@@ -5960,7 +5513,6 @@ namespace DevExpress.Viz.Gauges
     public partial class DxLinearGaugeScaleLabel : BaseGaugeScaleLabel
     {
         public float? indentFromTick { get; set; }
-        // couldn't parse overlappingBehavior
     }
     public partial class DxLinearGaugeScaleLabelOverlappingBehavior : BaseGaugeScaleLabelOverlappingBehavior
     {
@@ -6007,17 +5559,15 @@ namespace DevExpress.Viz.Gauges
         public float? barSpacing { get; set; }
         public float? baseValue { get; set; }
         public float? endValue { get; set; }
-        // couldn't parse geometry
-        // couldn't parse label
+        public object geometry { get; set; }
+        public object label { get; set; }
         public bool? onTooltipHiddenEnabled { get; set; }
         public bool? onTooltipShownEnabled { get; set; }
-        // couldn't parse palette
+        public object palette { get; set; }
         public string paletteExtensionMode { get; set; }
         public float? relativeInnerRadius { get; set; }
         public float? startValue { get; set; }
-        // couldn't parse subtitle
-        public object title { get; set; }
-        // couldn't parse tooltip
+        public object subtitle { get; set; }
         public float values { get; set; }
     }
 
@@ -6043,29 +5593,29 @@ namespace DevExpress.Viz.Gauges
     }
     public partial class DxBarGaugeTooltip : BaseWidgetTooltip
     {
-        // couldn't parse customizeTooltip
+        public object customizeTooltip { get; set; }
     }
 }
 namespace DevExpress.Viz.RangeSelector
 {
     public partial class DxRangeSelectorOptions : BaseWidgetOptions
     {
-        // couldn't parse background
-        // couldn't parse behavior
-        // couldn't parse chart
+        public object background { get; set; }
+        public object behavior { get; set; }
+        public object chart { get; set; }
         public string containerBackgroundColor { get; set; }
-        // couldn't parse dataSource
+        public object dataSource { get; set; }
         public string dataSourceField { get; set; }
-        // couldn't parse indent
+        public object indent { get; set; }
         public bool? onSelectedRangeChangedEnabled { get; set; }
         public bool? onValueChangedEnabled { get; set; }
-        // couldn't parse scale
-        // couldn't parse selectedRange
+        public object scale { get; set; }
+        public object selectedRange { get; set; }
         public string selectedRangeColor { get; set; }
-        // couldn't parse shutter
-        // couldn't parse sliderHandle
-        // couldn't parse sliderMarker
-        // couldn't parse value
+        public object shutter { get; set; }
+        public object sliderHandle { get; set; }
+        public object sliderMarker { get; set; }
+        public object value { get; set; }
     }
 }
 namespace DevExpress.Viz.Sparklines
@@ -6074,12 +5624,10 @@ namespace DevExpress.Viz.Sparklines
     {
         public bool? onTooltipHiddenEnabled { get; set; }
         public bool? onTooltipShownEnabled { get; set; }
-        // couldn't parse tooltip
     }
     public partial class BaseSparklineTooltip : BaseWidgetTooltip
     {
-        // couldn't parse customizeTooltip
-        public bool? enabled { get; set; }
+        public object customizeTooltip { get; set; }
         public string horizontalAlignment { get; set; }
         public string verticalAlignment { get; set; }
     }
@@ -6100,7 +5648,7 @@ namespace DevExpress.Viz.Sparklines
         public string argumentField { get; set; }
         public string barNegativeColor { get; set; }
         public string barPositiveColor { get; set; }
-        // couldn't parse dataSource
+        public object dataSource { get; set; }
         public string firstLastColor { get; set; }
         public bool? ignoreEmptyPoints { get; set; }
         public string lineColor { get; set; }
@@ -6157,16 +5705,16 @@ namespace DevExpress.Viz.Map
 {
     public partial class DxVectorMapOptions : BaseWidgetOptions
     {
-        // couldn't parse areaSettings
-        // couldn't parse background
+        public object areaSettings { get; set; }
+        public object background { get; set; }
         public float bounds { get; set; }
         public float center { get; set; }
-        // couldn't parse controlBar
-        // couldn't parse layers
-        // couldn't parse legends
-        // couldn't parse mapData
-        // couldn't parse markers
-        // couldn't parse markerSettings
+        public object controlBar { get; set; }
+        public object layers { get; set; }
+        public object legends { get; set; }
+        public object mapData { get; set; }
+        public object markers { get; set; }
+        public object markerSettings { get; set; }
         public float? maxZoomFactor { get; set; }
         public bool? onAreaClickEnabled { get; set; }
         public bool? onAreaSelectionChangedEnabled { get; set; }
@@ -6180,7 +5728,6 @@ namespace DevExpress.Viz.Map
         public bool? onZoomFactorChangedEnabled { get; set; }
         public bool? panningEnabled { get; set; }
         public object projection { get; set; }
-        // couldn't parse tooltip
         public bool? touchEnabled { get; set; }
         public bool? wheelEnabled { get; set; }
         public float? zoomFactor { get; set; }
@@ -6193,13 +5740,13 @@ namespace DevExpress.Viz.Map
         public string color { get; set; }
         public string colorGroupingField { get; set; }
         public float colorGroups { get; set; }
-        // couldn't parse customize
+        public object customize { get; set; }
         public string hoveredBorderColor { get; set; }
         public float? hoveredBorderWidth { get; set; }
         public string hoveredColor { get; set; }
         public bool? hoverEnabled { get; set; }
-        // couldn't parse label
-        // couldn't parse palette
+        public object label { get; set; }
+        public object palette { get; set; }
         public float? paletteSize { get; set; }
         public string selectedBorderColor { get; set; }
         public float? selectedBorderWidth { get; set; }
@@ -6220,16 +5767,16 @@ namespace DevExpress.Viz.Map
         public string color { get; set; }
         public string colorGroupingField { get; set; }
         public float colorGroups { get; set; }
-        // couldn't parse customize
+        public object customize { get; set; }
         public string hoveredBorderColor { get; set; }
         public float? hoveredBorderWidth { get; set; }
         public string hoveredColor { get; set; }
         public bool? hoverEnabled { get; set; }
-        // couldn't parse label
+        public object label { get; set; }
         public float? maxSize { get; set; }
         public float? minSize { get; set; }
         public float? opacity { get; set; }
-        // couldn't parse palette
+        public object palette { get; set; }
         public string selectedBorderColor { get; set; }
         public float? selectedBorderWidth { get; set; }
         public string selectedColor { get; set; }
@@ -6255,7 +5802,7 @@ namespace DevExpress.Viz.Map
     }
     public partial class DxVectorMapTooltip : BaseWidgetTooltip
     {
-        // couldn't parse customizeTooltip
+        public object customizeTooltip { get; set; }
     }
 }
 namespace DevExpress.Viz.TreeMap
@@ -6264,14 +5811,14 @@ namespace DevExpress.Viz.TreeMap
     {
         public string childrenField { get; set; }
         public string colorField { get; set; }
-        // couldn't parse colorizer
-        // couldn't parse dataSource
-        // couldn't parse group
+        public object colorizer { get; set; }
+        public object dataSource { get; set; }
+        public object group { get; set; }
         public bool? hoverEnabled { get; set; }
         public string idField { get; set; }
         public bool? interactWithGroup { get; set; }
         public string labelField { get; set; }
-        // couldn't parse layoutAlgorithm
+        public object layoutAlgorithm { get; set; }
         public string layoutDirection { get; set; }
         public float? maxDepth { get; set; }
         public bool? onClickEnabled { get; set; }
@@ -6283,8 +5830,7 @@ namespace DevExpress.Viz.TreeMap
         public string parentField { get; set; }
         public string resolveLabelOverflow { get; set; }
         public string selectionMode { get; set; }
-        // couldn't parse tile
-        // couldn't parse tooltip
+        public object tile { get; set; }
         public string valueField { get; set; }
     }
 
@@ -6308,6 +5854,6 @@ namespace DevExpress.Viz.TreeMap
     }
     public partial class DxTreeMapTooltip : BaseWidgetTooltip
     {
-        // couldn't parse customizeTooltip
+        public object customizeTooltip { get; set; }
     }
 }

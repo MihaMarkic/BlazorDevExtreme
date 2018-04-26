@@ -4,29 +4,29 @@
 <div id="@Id"></div>
 
 @functions {
-	public DxNavBar() : base("DxNavBar") { }
-	protected override DevExpress.Ui.DxNavBarOptions CreateOptions() {
-		return new DevExpress.Ui.DxNavBarOptions {
-			scrollByContent = scrollByContent,
-		};
-	}
-	protected override void Init(DevExpress.Ui.DxNavBarOptions options) {
-		DxNavBarInterop.Init(Id, options);
-	}
-	object scrollByContent;
-	public object ScrollByContent {
-		get => isInitialized ? DxNavBarInterop.GetScrollByContent(Id) : scrollByContent;
-		set {
-			if (isInitialized) {
-				DxNavBarInterop.SetScrollByContent(Id, value);
-			} else {
-				this.scrollByContent = value;
-			}
-		}
-	}
-	protected override async Task OnInitAsync() {
-		await base.OnInitAsync();
-	}
-	public void Dispose() {
-	}
+    public DxNavBar() : base("DxNavBar") { }
+    protected override DevExpress.Ui.DxNavBarOptions CreateOptions() {
+        return new DevExpress.Ui.DxNavBarOptions {
+            //scrollByContent = scrollByContent,
+        };
+    }
+    protected override void Init(DevExpress.Ui.DxNavBarOptions options) {
+        DxNavBarInterop.Init(Id, options);
+    }
+    object scrollByContent;
+    public object ScrollByContent {
+        get => isInitialized ? DxNavBarInterop.GetScrollByContent(Id) : scrollByContent;
+        set {
+            if (isInitialized) {
+                DxNavBarInterop.SetScrollByContent(Id, value);
+            } else {
+                this.scrollByContent = value;
+            }
+        }
+    }
+    protected override async Task OnInitAsync() {
+        await base.OnInitAsync();
+    }
+    public void Dispose() {
+    }
 }

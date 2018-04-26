@@ -12,6 +12,28 @@ Callbacks are implemented in a simple way (no arguments except for jQuery identi
 
 To use callbacks, set [onEVENTNAME]Enabled property to true in options. Then bind to static event of the target class and compare the passed identifier to understand which instance fired the event. Don't forget to unsubscribe to events (within Dispose method).
 
+### Properties with restrictions
+
+When there is a known string restriction for a certain property, a *static class* with *const string* restrictions is created. Class name consists of  `[ClassName][PropertyName]`.
+
+For example:
+```csharp
+public partial class AnimationConfig
+{
+    public string direction { get; set; }
+}
+    
+public static class AnimationConfigDirection
+{
+   public const string Bottom = "bottom";
+   public const string Left = "left";
+   public const string Right = "right";
+   public const string Top = "top";
+}
+```
+
+## System requirements
+
 Built against Blazor 0.2.1.
 
 ## Sample usage

@@ -12,14 +12,23 @@
 			allowSorting = allowSorting,
 			allowSortingBySummary = allowSortingBySummary,
 			dataFieldArea = dataFieldArea,
+			dataSource = dataSource,
+			export = export,
+			fieldChooser = fieldChooser,
+			fieldPanel = fieldPanel,
+			headerFilter = headerFilter,
 			hideEmptySummaryCells = hideEmptySummaryCells,
+			loadPanel = loadPanel,
 			rowHeaderLayout = rowHeaderLayout,
+			scrolling = scrolling,
 			showBorders = showBorders,
 			showColumnGrandTotals = showColumnGrandTotals,
 			showColumnTotals = showColumnTotals,
 			showRowGrandTotals = showRowGrandTotals,
 			showRowTotals = showRowTotals,
 			showTotalsPrior = showTotalsPrior,
+			stateStoring = stateStoring,
+			texts = texts,
 			wordWrapEnabled = wordWrapEnabled,
 			onCellClickEnabled = onCellClickEnabled,
 			onCellPreparedEnabled = onCellPreparedEnabled,
@@ -30,14 +39,14 @@
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxPivotGridOptions options) {
-		DxPivotGridInterop.Init(Id, options);
+		DevExpress.Ui.DxPivotGridInterop.Init(Id, options);
 	}
 	bool? allowExpandAll;
 	public bool? AllowExpandAll {
-		get => isInitialized ? DxPivotGridInterop.GetAllowExpandAll(Id) : allowExpandAll;
+		get => isInitialized ? DevExpress.Ui.DxPivotGridInterop.GetAllowExpandAll(Id) : allowExpandAll;
 		set {
 			if (isInitialized) {
-				DxPivotGridInterop.SetAllowExpandAll(Id, value);
+				DevExpress.Ui.DxPivotGridInterop.SetAllowExpandAll(Id, value);
 			} else {
 				this.allowExpandAll = value;
 			}
@@ -45,10 +54,10 @@
 	}
 	bool? allowFiltering;
 	public bool? AllowFiltering {
-		get => isInitialized ? DxPivotGridInterop.GetAllowFiltering(Id) : allowFiltering;
+		get => isInitialized ? DevExpress.Ui.DxPivotGridInterop.GetAllowFiltering(Id) : allowFiltering;
 		set {
 			if (isInitialized) {
-				DxPivotGridInterop.SetAllowFiltering(Id, value);
+				DevExpress.Ui.DxPivotGridInterop.SetAllowFiltering(Id, value);
 			} else {
 				this.allowFiltering = value;
 			}
@@ -56,10 +65,10 @@
 	}
 	bool? allowSorting;
 	public bool? AllowSorting {
-		get => isInitialized ? DxPivotGridInterop.GetAllowSorting(Id) : allowSorting;
+		get => isInitialized ? DevExpress.Ui.DxPivotGridInterop.GetAllowSorting(Id) : allowSorting;
 		set {
 			if (isInitialized) {
-				DxPivotGridInterop.SetAllowSorting(Id, value);
+				DevExpress.Ui.DxPivotGridInterop.SetAllowSorting(Id, value);
 			} else {
 				this.allowSorting = value;
 			}
@@ -67,10 +76,10 @@
 	}
 	bool? allowSortingBySummary;
 	public bool? AllowSortingBySummary {
-		get => isInitialized ? DxPivotGridInterop.GetAllowSortingBySummary(Id) : allowSortingBySummary;
+		get => isInitialized ? DevExpress.Ui.DxPivotGridInterop.GetAllowSortingBySummary(Id) : allowSortingBySummary;
 		set {
 			if (isInitialized) {
-				DxPivotGridInterop.SetAllowSortingBySummary(Id, value);
+				DevExpress.Ui.DxPivotGridInterop.SetAllowSortingBySummary(Id, value);
 			} else {
 				this.allowSortingBySummary = value;
 			}
@@ -78,43 +87,120 @@
 	}
 	string dataFieldArea;
 	public string DataFieldArea {
-		get => isInitialized ? DxPivotGridInterop.GetDataFieldArea(Id) : dataFieldArea;
+		get => isInitialized ? DevExpress.Ui.DxPivotGridInterop.GetDataFieldArea(Id) : dataFieldArea;
 		set {
 			if (isInitialized) {
-				DxPivotGridInterop.SetDataFieldArea(Id, value);
+				DevExpress.Ui.DxPivotGridInterop.SetDataFieldArea(Id, value);
 			} else {
 				this.dataFieldArea = value;
 			}
 		}
 	}
-	bool? hideEmptySummaryCells;
-	public bool? HideEmptySummaryCells {
-		get => isInitialized ? DxPivotGridInterop.GetHideEmptySummaryCells(Id) : hideEmptySummaryCells;
+	object dataSource;
+	public object DataSource {
+		get => isInitialized ? DevExpress.Ui.DxPivotGridInterop.GetDataSource(Id) : dataSource;
 		set {
 			if (isInitialized) {
-				DxPivotGridInterop.SetHideEmptySummaryCells(Id, value);
+				DevExpress.Ui.DxPivotGridInterop.SetDataSource(Id, value);
+			} else {
+				this.dataSource = value;
+			}
+		}
+	}
+	object export;
+	public object Export {
+		get => isInitialized ? DevExpress.Ui.DxPivotGridInterop.GetExport(Id) : export;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxPivotGridInterop.SetExport(Id, value);
+			} else {
+				this.export = value;
+			}
+		}
+	}
+	object fieldChooser;
+	public object FieldChooser {
+		get => isInitialized ? DevExpress.Ui.DxPivotGridInterop.GetFieldChooser(Id) : fieldChooser;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxPivotGridInterop.SetFieldChooser(Id, value);
+			} else {
+				this.fieldChooser = value;
+			}
+		}
+	}
+	object fieldPanel;
+	public object FieldPanel {
+		get => isInitialized ? DevExpress.Ui.DxPivotGridInterop.GetFieldPanel(Id) : fieldPanel;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxPivotGridInterop.SetFieldPanel(Id, value);
+			} else {
+				this.fieldPanel = value;
+			}
+		}
+	}
+	object headerFilter;
+	public object HeaderFilter {
+		get => isInitialized ? DevExpress.Ui.DxPivotGridInterop.GetHeaderFilter(Id) : headerFilter;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxPivotGridInterop.SetHeaderFilter(Id, value);
+			} else {
+				this.headerFilter = value;
+			}
+		}
+	}
+	bool? hideEmptySummaryCells;
+	public bool? HideEmptySummaryCells {
+		get => isInitialized ? DevExpress.Ui.DxPivotGridInterop.GetHideEmptySummaryCells(Id) : hideEmptySummaryCells;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxPivotGridInterop.SetHideEmptySummaryCells(Id, value);
 			} else {
 				this.hideEmptySummaryCells = value;
 			}
 		}
 	}
-	string rowHeaderLayout;
-	public string RowHeaderLayout {
-		get => isInitialized ? DxPivotGridInterop.GetRowHeaderLayout(Id) : rowHeaderLayout;
+	object loadPanel;
+	public object LoadPanel {
+		get => isInitialized ? DevExpress.Ui.DxPivotGridInterop.GetLoadPanel(Id) : loadPanel;
 		set {
 			if (isInitialized) {
-				DxPivotGridInterop.SetRowHeaderLayout(Id, value);
+				DevExpress.Ui.DxPivotGridInterop.SetLoadPanel(Id, value);
+			} else {
+				this.loadPanel = value;
+			}
+		}
+	}
+	string rowHeaderLayout;
+	public string RowHeaderLayout {
+		get => isInitialized ? DevExpress.Ui.DxPivotGridInterop.GetRowHeaderLayout(Id) : rowHeaderLayout;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxPivotGridInterop.SetRowHeaderLayout(Id, value);
 			} else {
 				this.rowHeaderLayout = value;
 			}
 		}
 	}
-	bool? showBorders;
-	public bool? ShowBorders {
-		get => isInitialized ? DxPivotGridInterop.GetShowBorders(Id) : showBorders;
+	object scrolling;
+	public object Scrolling {
+		get => isInitialized ? DevExpress.Ui.DxPivotGridInterop.GetScrolling(Id) : scrolling;
 		set {
 			if (isInitialized) {
-				DxPivotGridInterop.SetShowBorders(Id, value);
+				DevExpress.Ui.DxPivotGridInterop.SetScrolling(Id, value);
+			} else {
+				this.scrolling = value;
+			}
+		}
+	}
+	bool? showBorders;
+	public bool? ShowBorders {
+		get => isInitialized ? DevExpress.Ui.DxPivotGridInterop.GetShowBorders(Id) : showBorders;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxPivotGridInterop.SetShowBorders(Id, value);
 			} else {
 				this.showBorders = value;
 			}
@@ -122,10 +208,10 @@
 	}
 	bool? showColumnGrandTotals;
 	public bool? ShowColumnGrandTotals {
-		get => isInitialized ? DxPivotGridInterop.GetShowColumnGrandTotals(Id) : showColumnGrandTotals;
+		get => isInitialized ? DevExpress.Ui.DxPivotGridInterop.GetShowColumnGrandTotals(Id) : showColumnGrandTotals;
 		set {
 			if (isInitialized) {
-				DxPivotGridInterop.SetShowColumnGrandTotals(Id, value);
+				DevExpress.Ui.DxPivotGridInterop.SetShowColumnGrandTotals(Id, value);
 			} else {
 				this.showColumnGrandTotals = value;
 			}
@@ -133,10 +219,10 @@
 	}
 	bool? showColumnTotals;
 	public bool? ShowColumnTotals {
-		get => isInitialized ? DxPivotGridInterop.GetShowColumnTotals(Id) : showColumnTotals;
+		get => isInitialized ? DevExpress.Ui.DxPivotGridInterop.GetShowColumnTotals(Id) : showColumnTotals;
 		set {
 			if (isInitialized) {
-				DxPivotGridInterop.SetShowColumnTotals(Id, value);
+				DevExpress.Ui.DxPivotGridInterop.SetShowColumnTotals(Id, value);
 			} else {
 				this.showColumnTotals = value;
 			}
@@ -144,10 +230,10 @@
 	}
 	bool? showRowGrandTotals;
 	public bool? ShowRowGrandTotals {
-		get => isInitialized ? DxPivotGridInterop.GetShowRowGrandTotals(Id) : showRowGrandTotals;
+		get => isInitialized ? DevExpress.Ui.DxPivotGridInterop.GetShowRowGrandTotals(Id) : showRowGrandTotals;
 		set {
 			if (isInitialized) {
-				DxPivotGridInterop.SetShowRowGrandTotals(Id, value);
+				DevExpress.Ui.DxPivotGridInterop.SetShowRowGrandTotals(Id, value);
 			} else {
 				this.showRowGrandTotals = value;
 			}
@@ -155,10 +241,10 @@
 	}
 	bool? showRowTotals;
 	public bool? ShowRowTotals {
-		get => isInitialized ? DxPivotGridInterop.GetShowRowTotals(Id) : showRowTotals;
+		get => isInitialized ? DevExpress.Ui.DxPivotGridInterop.GetShowRowTotals(Id) : showRowTotals;
 		set {
 			if (isInitialized) {
-				DxPivotGridInterop.SetShowRowTotals(Id, value);
+				DevExpress.Ui.DxPivotGridInterop.SetShowRowTotals(Id, value);
 			} else {
 				this.showRowTotals = value;
 			}
@@ -166,21 +252,43 @@
 	}
 	string showTotalsPrior;
 	public string ShowTotalsPrior {
-		get => isInitialized ? DxPivotGridInterop.GetShowTotalsPrior(Id) : showTotalsPrior;
+		get => isInitialized ? DevExpress.Ui.DxPivotGridInterop.GetShowTotalsPrior(Id) : showTotalsPrior;
 		set {
 			if (isInitialized) {
-				DxPivotGridInterop.SetShowTotalsPrior(Id, value);
+				DevExpress.Ui.DxPivotGridInterop.SetShowTotalsPrior(Id, value);
 			} else {
 				this.showTotalsPrior = value;
 			}
 		}
 	}
-	bool? wordWrapEnabled;
-	public bool? WordWrapEnabled {
-		get => isInitialized ? DxPivotGridInterop.GetWordWrapEnabled(Id) : wordWrapEnabled;
+	object stateStoring;
+	public object StateStoring {
+		get => isInitialized ? DevExpress.Ui.DxPivotGridInterop.GetStateStoring(Id) : stateStoring;
 		set {
 			if (isInitialized) {
-				DxPivotGridInterop.SetWordWrapEnabled(Id, value);
+				DevExpress.Ui.DxPivotGridInterop.SetStateStoring(Id, value);
+			} else {
+				this.stateStoring = value;
+			}
+		}
+	}
+	object texts;
+	public object Texts {
+		get => isInitialized ? DevExpress.Ui.DxPivotGridInterop.GetTexts(Id) : texts;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxPivotGridInterop.SetTexts(Id, value);
+			} else {
+				this.texts = value;
+			}
+		}
+	}
+	bool? wordWrapEnabled;
+	public bool? WordWrapEnabled {
+		get => isInitialized ? DevExpress.Ui.DxPivotGridInterop.GetWordWrapEnabled(Id) : wordWrapEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxPivotGridInterop.SetWordWrapEnabled(Id, value);
 			} else {
 				this.wordWrapEnabled = value;
 			}
@@ -218,12 +326,12 @@
 	}
 	protected override async Task OnInitAsync() {
 		await base.OnInitAsync();
-		DxPivotGridInterop.CellClick += DxPivotGrid_CellClick;
-		DxPivotGridInterop.CellPrepared += DxPivotGrid_CellPrepared;
-		DxPivotGridInterop.ContextMenuPreparing += DxPivotGrid_ContextMenuPreparing;
-		DxPivotGridInterop.Exported += DxPivotGrid_Exported;
-		DxPivotGridInterop.Exporting += DxPivotGrid_Exporting;
-		DxPivotGridInterop.FileSaving += DxPivotGrid_FileSaving;
+		DevExpress.Ui.DxPivotGridInterop.CellClick += DxPivotGrid_CellClick;
+		DevExpress.Ui.DxPivotGridInterop.CellPrepared += DxPivotGrid_CellPrepared;
+		DevExpress.Ui.DxPivotGridInterop.ContextMenuPreparing += DxPivotGrid_ContextMenuPreparing;
+		DevExpress.Ui.DxPivotGridInterop.Exported += DxPivotGrid_Exported;
+		DevExpress.Ui.DxPivotGridInterop.Exporting += DxPivotGrid_Exporting;
+		DevExpress.Ui.DxPivotGridInterop.FileSaving += DxPivotGrid_FileSaving;
 	}
 	public Action CellClick { get; set; }
 	void DxPivotGrid_CellClick(object sender, JQueryEventArgs e) {
@@ -262,11 +370,11 @@
 		}
 	}
 	public void Dispose() {
-		DxPivotGridInterop.CellClick -= DxPivotGrid_CellClick;
-		DxPivotGridInterop.CellPrepared -= DxPivotGrid_CellPrepared;
-		DxPivotGridInterop.ContextMenuPreparing -= DxPivotGrid_ContextMenuPreparing;
-		DxPivotGridInterop.Exported -= DxPivotGrid_Exported;
-		DxPivotGridInterop.Exporting -= DxPivotGrid_Exporting;
-		DxPivotGridInterop.FileSaving -= DxPivotGrid_FileSaving;
+		DevExpress.Ui.DxPivotGridInterop.CellClick -= DxPivotGrid_CellClick;
+		DevExpress.Ui.DxPivotGridInterop.CellPrepared -= DxPivotGrid_CellPrepared;
+		DevExpress.Ui.DxPivotGridInterop.ContextMenuPreparing -= DxPivotGrid_ContextMenuPreparing;
+		DevExpress.Ui.DxPivotGridInterop.Exported -= DxPivotGrid_Exported;
+		DevExpress.Ui.DxPivotGridInterop.Exporting -= DxPivotGrid_Exporting;
+		DevExpress.Ui.DxPivotGridInterop.FileSaving -= DxPivotGrid_FileSaving;
 	}
 }

@@ -1,0 +1,132 @@
+@implements IDisposable
+@inherits DxBlazorCompoment<DevExpress.Ui.DxScrollableOptions>
+
+<div id="@Id"></div>
+
+@functions {
+	public DxScrollable() : base("DxScrollable") { }
+	protected override DevExpress.Ui.DxScrollableOptions CreateOptions() {
+		return new DevExpress.Ui.DxScrollableOptions {
+			bounceEnabled = bounceEnabled,
+			direction = direction,
+			disabled = disabled,
+			scrollByContent = scrollByContent,
+			scrollByThumb = scrollByThumb,
+			showScrollbar = showScrollbar,
+			useNative = useNative,
+			onScrollEnabled = onScrollEnabled,
+			onUpdatedEnabled = onUpdatedEnabled,
+		};
+	}
+	protected override void Init(DevExpress.Ui.DxScrollableOptions options) {
+		DevExpress.Ui.DxScrollableInterop.Init(Id, options);
+	}
+	bool? bounceEnabled;
+	public bool? BounceEnabled {
+		get => isInitialized ? DevExpress.Ui.DxScrollableInterop.GetBounceEnabled(Id) : bounceEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxScrollableInterop.SetBounceEnabled(Id, value);
+			} else {
+				this.bounceEnabled = value;
+			}
+		}
+	}
+	string direction;
+	public string Direction {
+		get => isInitialized ? DevExpress.Ui.DxScrollableInterop.GetDirection(Id) : direction;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxScrollableInterop.SetDirection(Id, value);
+			} else {
+				this.direction = value;
+			}
+		}
+	}
+	bool? disabled;
+	public bool? Disabled {
+		get => isInitialized ? DevExpress.Ui.DxScrollableInterop.GetDisabled(Id) : disabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxScrollableInterop.SetDisabled(Id, value);
+			} else {
+				this.disabled = value;
+			}
+		}
+	}
+	bool? scrollByContent;
+	public bool? ScrollByContent {
+		get => isInitialized ? DevExpress.Ui.DxScrollableInterop.GetScrollByContent(Id) : scrollByContent;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxScrollableInterop.SetScrollByContent(Id, value);
+			} else {
+				this.scrollByContent = value;
+			}
+		}
+	}
+	bool? scrollByThumb;
+	public bool? ScrollByThumb {
+		get => isInitialized ? DevExpress.Ui.DxScrollableInterop.GetScrollByThumb(Id) : scrollByThumb;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxScrollableInterop.SetScrollByThumb(Id, value);
+			} else {
+				this.scrollByThumb = value;
+			}
+		}
+	}
+	string showScrollbar;
+	public string ShowScrollbar {
+		get => isInitialized ? DevExpress.Ui.DxScrollableInterop.GetShowScrollbar(Id) : showScrollbar;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxScrollableInterop.SetShowScrollbar(Id, value);
+			} else {
+				this.showScrollbar = value;
+			}
+		}
+	}
+	bool? useNative;
+	public bool? UseNative {
+		get => isInitialized ? DevExpress.Ui.DxScrollableInterop.GetUseNative(Id) : useNative;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxScrollableInterop.SetUseNative(Id, value);
+			} else {
+				this.useNative = value;
+			}
+		}
+	}
+	bool? onScrollEnabled;
+	public bool? OnScrollEnabled {
+		get => onScrollEnabled;
+		set => this.onScrollEnabled = value;
+	}
+	bool? onUpdatedEnabled;
+	public bool? OnUpdatedEnabled {
+		get => onUpdatedEnabled;
+		set => this.onUpdatedEnabled = value;
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+		DevExpress.Ui.DxScrollableInterop.Scroll += DxScrollable_Scroll;
+		DevExpress.Ui.DxScrollableInterop.Updated += DxScrollable_Updated;
+	}
+	public Action Scroll { get; set; }
+	void DxScrollable_Scroll(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Scroll?.Invoke();
+		}
+	}
+	public Action Updated { get; set; }
+	void DxScrollable_Updated(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Updated?.Invoke();
+		}
+	}
+	public void Dispose() {
+		DevExpress.Ui.DxScrollableInterop.Scroll -= DxScrollable_Scroll;
+		DevExpress.Ui.DxScrollableInterop.Updated -= DxScrollable_Updated;
+	}
+}

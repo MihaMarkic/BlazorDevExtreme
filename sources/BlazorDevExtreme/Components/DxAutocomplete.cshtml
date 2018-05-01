@@ -13,14 +13,14 @@
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxAutocompleteOptions options) {
-		DxAutocompleteInterop.Init(Id, options);
+		DevExpress.Ui.DxAutocompleteInterop.Init(Id, options);
 	}
 	float? maxItemCount;
 	public float? MaxItemCount {
-		get => isInitialized ? DxAutocompleteInterop.GetMaxItemCount(Id) : maxItemCount;
+		get => isInitialized ? DevExpress.Ui.DxAutocompleteInterop.GetMaxItemCount(Id) : maxItemCount;
 		set {
 			if (isInitialized) {
-				DxAutocompleteInterop.SetMaxItemCount(Id, value);
+				DevExpress.Ui.DxAutocompleteInterop.SetMaxItemCount(Id, value);
 			} else {
 				this.maxItemCount = value;
 			}
@@ -28,10 +28,10 @@
 	}
 	float? minSearchLength;
 	public float? MinSearchLength {
-		get => isInitialized ? DxAutocompleteInterop.GetMinSearchLength(Id) : minSearchLength;
+		get => isInitialized ? DevExpress.Ui.DxAutocompleteInterop.GetMinSearchLength(Id) : minSearchLength;
 		set {
 			if (isInitialized) {
-				DxAutocompleteInterop.SetMinSearchLength(Id, value);
+				DevExpress.Ui.DxAutocompleteInterop.SetMinSearchLength(Id, value);
 			} else {
 				this.minSearchLength = value;
 			}
@@ -39,10 +39,10 @@
 	}
 	string value;
 	public string Value {
-		get => isInitialized ? DxAutocompleteInterop.GetValue(Id) : value;
+		get => isInitialized ? DevExpress.Ui.DxAutocompleteInterop.GetValue(Id) : value;
 		set {
 			if (isInitialized) {
-				DxAutocompleteInterop.SetValue(Id, value);
+				DevExpress.Ui.DxAutocompleteInterop.SetValue(Id, value);
 			} else {
 				this.value = value;
 			}

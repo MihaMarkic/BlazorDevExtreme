@@ -13,14 +13,14 @@
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxBoxOptions options) {
-		DxBoxInterop.Init(Id, options);
+		DevExpress.Ui.DxBoxInterop.Init(Id, options);
 	}
 	string align;
 	public string Align {
-		get => isInitialized ? DxBoxInterop.GetAlign(Id) : align;
+		get => isInitialized ? DevExpress.Ui.DxBoxInterop.GetAlign(Id) : align;
 		set {
 			if (isInitialized) {
-				DxBoxInterop.SetAlign(Id, value);
+				DevExpress.Ui.DxBoxInterop.SetAlign(Id, value);
 			} else {
 				this.align = value;
 			}
@@ -28,10 +28,10 @@
 	}
 	string crossAlign;
 	public string CrossAlign {
-		get => isInitialized ? DxBoxInterop.GetCrossAlign(Id) : crossAlign;
+		get => isInitialized ? DevExpress.Ui.DxBoxInterop.GetCrossAlign(Id) : crossAlign;
 		set {
 			if (isInitialized) {
-				DxBoxInterop.SetCrossAlign(Id, value);
+				DevExpress.Ui.DxBoxInterop.SetCrossAlign(Id, value);
 			} else {
 				this.crossAlign = value;
 			}
@@ -39,10 +39,10 @@
 	}
 	string direction;
 	public string Direction {
-		get => isInitialized ? DxBoxInterop.GetDirection(Id) : direction;
+		get => isInitialized ? DevExpress.Ui.DxBoxInterop.GetDirection(Id) : direction;
 		set {
 			if (isInitialized) {
-				DxBoxInterop.SetDirection(Id, value);
+				DevExpress.Ui.DxBoxInterop.SetDirection(Id, value);
 			} else {
 				this.direction = value;
 			}

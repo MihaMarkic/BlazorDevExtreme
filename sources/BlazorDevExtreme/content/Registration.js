@@ -1,13 +1,615 @@
 ﻿const assemblyName = "BlazorDevExtreme";
-const namespace = "BlazorDevExtreme";
 
+// DevExpress.DataHelperMixin interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.DataHelperMixin.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.DataHelperMixin.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.DataHelperMixin.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.DataHelperMixin.getInstance(element).option(key);
+});
+// DevExpress.dxEvent interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.DxEvent.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.dxEvent.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.DxEvent.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.dxEvent.getInstance(element).option(key);
+});
+// DevExpress.localization interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.Localization.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.localization.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.Localization.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.localization.getInstance(element).option(key);
+});
+// DevExpress.animationPresets interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.AnimationPresets.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.animationPresets.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.AnimationPresets.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.animationPresets.getInstance(element).option(key);
+});
+// DevExpress.TransitionExecutor interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.TransitionExecutor.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.TransitionExecutor.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.TransitionExecutor.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.TransitionExecutor.getInstance(element).option(key);
+});
+// DevExpress.Component interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.Component.Init', function (identifier, optionsText) {
+    const options = JSON.parse(optionsText);
+
+    if (options.onDisposingEnabled) {
+        options.onDisposing = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress", "ComponentInterop", "OnDisposing");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onInitializedEnabled) {
+        options.onInitialized = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress", "ComponentInterop", "OnInitialized");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onOptionChangedEnabled) {
+        options.onOptionChanged = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress", "ComponentInterop", "OnOptionChanged");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    let element = document.getElementById(identifier);
+    let instance = new DevExpress.Component(element, options);
+});
+Blazor.registerFunction('BlazorDevExtreme.Component.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.Component.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.Component.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.Component.getInstance(element).option(key);
+});
+// DevExpress.DevicesObject interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.DevicesObject.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.DevicesObject.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.DevicesObject.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.DevicesObject.getInstance(element).option(key);
+});
+// DevExpress.DOMComponent interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.DOMComponent.Init', function (identifier, optionsText) {
+    const options = JSON.parse(optionsText);
+
+    if (options.onDisposingEnabled) {
+        options.onDisposing = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress", "DOMComponentInterop", "OnDisposing");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onOptionChangedEnabled) {
+        options.onOptionChanged = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress", "DOMComponentInterop", "OnOptionChanged");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    let element = document.getElementById(identifier);
+    let instance = new DevExpress.DOMComponent(element, options);
+});
+Blazor.registerFunction('BlazorDevExtreme.DOMComponent.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.DOMComponent.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.DOMComponent.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.DOMComponent.getInstance(element).option(key);
+});
+// DevExpress.EndpointSelector interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.EndpointSelector.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.EndpointSelector.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.EndpointSelector.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.EndpointSelector.getInstance(element).option(key);
+});
+// DevExpress.validationEngine interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.ValidationEngine.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.validationEngine.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.ValidationEngine.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.validationEngine.getInstance(element).option(key);
+});
+// DevExpress.ui interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.Ui.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.ui.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.Ui.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.ui.getInstance(element).option(key);
+});
+// DevExpress.viz interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.Viz.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.viz.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.Viz.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.viz.getInstance(element).option(key);
+});
+// DevExpress.data.Guid interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.Guid.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.data.Guid.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.Guid.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.data.Guid.getInstance(element).option(key);
+});
+// DevExpress.data.Store interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.Store.Init', function (identifier, optionsText) {
+    const options = JSON.parse(optionsText);
+
+    if (options.onInsertedEnabled) {
+        options.onInserted = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Data", "StoreInterop", "OnInserted");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onInsertingEnabled) {
+        options.onInserting = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Data", "StoreInterop", "OnInserting");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onLoadedEnabled) {
+        options.onLoaded = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Data", "StoreInterop", "OnLoaded");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onLoadingEnabled) {
+        options.onLoading = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Data", "StoreInterop", "OnLoading");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onModifiedEnabled) {
+        options.onModified = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Data", "StoreInterop", "OnModified");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onModifyingEnabled) {
+        options.onModifying = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Data", "StoreInterop", "OnModifying");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onRemovedEnabled) {
+        options.onRemoved = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Data", "StoreInterop", "OnRemoved");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onRemovingEnabled) {
+        options.onRemoving = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Data", "StoreInterop", "OnRemoving");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onUpdatedEnabled) {
+        options.onUpdated = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Data", "StoreInterop", "OnUpdated");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onUpdatingEnabled) {
+        options.onUpdating = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Data", "StoreInterop", "OnUpdating");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    let element = document.getElementById(identifier);
+    let instance = new DevExpress.data.Store(element, options);
+});
+Blazor.registerFunction('BlazorDevExtreme.Store.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.data.Store.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.Store.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.data.Store.getInstance(element).option(key);
+});
+// DevExpress.data.ArrayStore interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.ArrayStore.Init', function (identifier, optionsText) {
+    const options = JSON.parse(optionsText);
+
+    let element = document.getElementById(identifier);
+    let instance = new DevExpress.data.ArrayStore(element, options);
+});
+Blazor.registerFunction('BlazorDevExtreme.ArrayStore.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.data.ArrayStore.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.ArrayStore.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.data.ArrayStore.getInstance(element).option(key);
+});
+// DevExpress.data.CustomStore interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.CustomStore.Init', function (identifier, optionsText) {
+    const options = JSON.parse(optionsText);
+
+    let element = document.getElementById(identifier);
+    let instance = new DevExpress.data.CustomStore(element, options);
+});
+Blazor.registerFunction('BlazorDevExtreme.CustomStore.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.data.CustomStore.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.CustomStore.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.data.CustomStore.getInstance(element).option(key);
+});
+// DevExpress.data.DataSource interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.DataSource.Init', function (identifier, optionsText) {
+    const options = JSON.parse(optionsText);
+
+    if (options.onChangedEnabled) {
+        options.onChanged = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Data", "DataSourceInterop", "OnChanged");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onLoadErrorEnabled) {
+        options.onLoadError = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Data", "DataSourceInterop", "OnLoadError");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onLoadingChangedEnabled) {
+        options.onLoadingChanged = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Data", "DataSourceInterop", "OnLoadingChanged");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    let element = document.getElementById(identifier);
+    let instance = new DevExpress.data.DataSource(element, options);
+});
+Blazor.registerFunction('BlazorDevExtreme.DataSource.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.data.DataSource.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.DataSource.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.data.DataSource.getInstance(element).option(key);
+});
+// DevExpress.data.LocalStore interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.LocalStore.Init', function (identifier, optionsText) {
+    const options = JSON.parse(optionsText);
+
+    let element = document.getElementById(identifier);
+    let instance = new DevExpress.data.LocalStore(element, options);
+});
+Blazor.registerFunction('BlazorDevExtreme.LocalStore.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.data.LocalStore.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.LocalStore.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.data.LocalStore.getInstance(element).option(key);
+});
+// DevExpress.data.Query interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.Query.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.data.Query.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.Query.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.data.Query.getInstance(element).option(key);
+});
+// DevExpress.data.ODataContext interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.ODataContext.Init', function (identifier, optionsText) {
+    const options = JSON.parse(optionsText);
+
+    let element = document.getElementById(identifier);
+    let instance = new DevExpress.data.ODataContext(element, options);
+});
+Blazor.registerFunction('BlazorDevExtreme.ODataContext.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.data.ODataContext.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.ODataContext.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.data.ODataContext.getInstance(element).option(key);
+});
+// DevExpress.data.ODataStore interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.ODataStore.Init', function (identifier, optionsText) {
+    const options = JSON.parse(optionsText);
+
+    if (options.onLoadingEnabled) {
+        options.onLoading = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Data", "ODataStoreInterop", "OnLoading");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    let element = document.getElementById(identifier);
+    let instance = new DevExpress.data.ODataStore(element, options);
+});
+Blazor.registerFunction('BlazorDevExtreme.ODataStore.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.data.ODataStore.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.ODataStore.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.data.ODataStore.getInstance(element).option(key);
+});
+// DevExpress.data.EdmLiteral interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.EdmLiteral.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.data.EdmLiteral.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.EdmLiteral.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.data.EdmLiteral.getInstance(element).option(key);
+});
+// DevExpress.data.PivotGridDataSource interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.PivotGridDataSource.Init', function (identifier, optionsText) {
+    const options = JSON.parse(optionsText);
+
+    if (options.onChangedEnabled) {
+        options.onChanged = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Data", "PivotGridDataSourceInterop", "OnChanged");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onFieldsPreparedEnabled) {
+        options.onFieldsPrepared = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Data", "PivotGridDataSourceInterop", "OnFieldsPrepared");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onLoadErrorEnabled) {
+        options.onLoadError = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Data", "PivotGridDataSourceInterop", "OnLoadError");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onLoadingChangedEnabled) {
+        options.onLoadingChanged = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Data", "PivotGridDataSourceInterop", "OnLoadingChanged");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    let element = document.getElementById(identifier);
+    let instance = new DevExpress.data.PivotGridDataSource(element, options);
+});
+Blazor.registerFunction('BlazorDevExtreme.PivotGridDataSource.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.data.PivotGridDataSource.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.PivotGridDataSource.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.data.PivotGridDataSource.getInstance(element).option(key);
+});
+// DevExpress.data.XmlaStore interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.XmlaStore.Init', function (identifier, optionsText) {
+    const options = JSON.parse(optionsText);
+
+    let element = document.getElementById(identifier);
+    let instance = new DevExpress.data.XmlaStore(element, options);
+});
+Blazor.registerFunction('BlazorDevExtreme.XmlaStore.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.data.XmlaStore.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.XmlaStore.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.data.XmlaStore.getInstance(element).option(key);
+});
+// DevExpress.core.EventsMixin interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.EventsMixin.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.core.EventsMixin.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.EventsMixin.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.core.EventsMixin.getInstance(element).option(key);
+});
+// DevExpress.framework.dxCommand interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.DxCommand.Init', function (identifier, optionsText) {
+    const options = JSON.parse(optionsText);
+
+    if (options.onExecuteEnabled) {
+        options.onExecute = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Framework", "DxCommandInterop", "OnExecute");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    let element = document.getElementById(identifier);
+    let instance = new DevExpress.framework.dxCommand(element, options);
+});
+Blazor.registerFunction('BlazorDevExtreme.DxCommand.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.framework.dxCommand.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.DxCommand.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.framework.dxCommand.getInstance(element).option(key);
+});
+// DevExpress.framework.Router interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.Router.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.framework.Router.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.Router.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.framework.Router.getInstance(element).option(key);
+});
+// DevExpress.framework.StateManager interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.StateManager.Init', function (identifier, optionsText) {
+    const options = JSON.parse(optionsText);
+
+    let element = document.getElementById(identifier);
+    let instance = new DevExpress.framework.StateManager(element, options);
+});
+Blazor.registerFunction('BlazorDevExtreme.StateManager.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.framework.StateManager.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.StateManager.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.framework.StateManager.getInstance(element).option(key);
+});
+// DevExpress.framework.ViewCache interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.ViewCache.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.framework.ViewCache.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.ViewCache.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.framework.ViewCache.getInstance(element).option(key);
+});
+// DevExpress.framework.dxCommandContainer interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.DxCommandContainer.Init', function (identifier, optionsText) {
+    const options = JSON.parse(optionsText);
+
+    let element = document.getElementById(identifier);
+    let instance = new DevExpress.framework.dxCommandContainer(element, options);
+});
+Blazor.registerFunction('BlazorDevExtreme.DxCommandContainer.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.framework.dxCommandContainer.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.DxCommandContainer.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.framework.dxCommandContainer.getInstance(element).option(key);
+});
+// DevExpress.framework.dxView interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.DxView.Init', function (identifier, optionsText) {
+    const options = JSON.parse(optionsText);
+
+    let element = document.getElementById(identifier);
+    let instance = new DevExpress.framework.dxView(element, options);
+});
+Blazor.registerFunction('BlazorDevExtreme.DxView.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.framework.dxView.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.DxView.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.framework.dxView.getInstance(element).option(key);
+});
+// DevExpress.framework.dxLayout interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.DxLayout.Init', function (identifier, optionsText) {
+    const options = JSON.parse(optionsText);
+
+    let element = document.getElementById(identifier);
+    let instance = new DevExpress.framework.dxLayout(element, options);
+});
+Blazor.registerFunction('BlazorDevExtreme.DxLayout.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.framework.dxLayout.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.DxLayout.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.framework.dxLayout.getInstance(element).option(key);
+});
+// DevExpress.framework.dxViewPlaceholder interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.DxViewPlaceholder.Init', function (identifier, optionsText) {
+    const options = JSON.parse(optionsText);
+
+    let element = document.getElementById(identifier);
+    let instance = new DevExpress.framework.dxViewPlaceholder(element, options);
+});
+Blazor.registerFunction('BlazorDevExtreme.DxViewPlaceholder.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.framework.dxViewPlaceholder.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.DxViewPlaceholder.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.framework.dxViewPlaceholder.getInstance(element).option(key);
+});
+// DevExpress.framework.dxTransition interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.DxTransition.Init', function (identifier, optionsText) {
+    const options = JSON.parse(optionsText);
+
+    let element = document.getElementById(identifier);
+    let instance = new DevExpress.framework.dxTransition(element, options);
+});
+Blazor.registerFunction('BlazorDevExtreme.DxTransition.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.framework.dxTransition.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.DxTransition.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.framework.dxTransition.getInstance(element).option(key);
+});
+// DevExpress.framework.dxContentPlaceholder interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.DxContentPlaceholder.Init', function (identifier, optionsText) {
+    const options = JSON.parse(optionsText);
+
+    let element = document.getElementById(identifier);
+    let instance = new DevExpress.framework.dxContentPlaceholder(element, options);
+});
+Blazor.registerFunction('BlazorDevExtreme.DxContentPlaceholder.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.framework.dxContentPlaceholder.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.DxContentPlaceholder.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.framework.dxContentPlaceholder.getInstance(element).option(key);
+});
+// DevExpress.framework.dxContent interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.DxContent.Init', function (identifier, optionsText) {
+    const options = JSON.parse(optionsText);
+
+    let element = document.getElementById(identifier);
+    let instance = new DevExpress.framework.dxContent(element, options);
+});
+Blazor.registerFunction('BlazorDevExtreme.DxContent.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.framework.dxContent.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.DxContent.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.framework.dxContent.getInstance(element).option(key);
+});
+// DevExpress.framework.html.HtmlApplication interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.HtmlApplication.Init', function (identifier, optionsText) {
+    const options = JSON.parse(optionsText);
+
+    let element = document.getElementById(identifier);
+    let instance = new DevExpress.framework.html.HtmlApplication(element, options);
+});
+Blazor.registerFunction('BlazorDevExtreme.HtmlApplication.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.framework.html.HtmlApplication.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.HtmlApplication.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.framework.html.HtmlApplication.getInstance(element).option(key);
+});
 // DevExpress.ui.dxAccordion interop automatically generated
 Blazor.registerFunction('BlazorDevExtreme.DxAccordion.Init', function (identifier, optionsText) {
     const options = JSON.parse(optionsText);
 
     if (options.onItemTitleClickEnabled) {
         options.onItemTitleClick = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxAccordionInterop", "OnItemTitleClick");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxAccordionInterop", "OnItemTitleClick");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
@@ -28,7 +630,7 @@ Blazor.registerFunction('BlazorDevExtreme.DxActionSheet.Init', function (identif
 
     if (options.onCancelClickEnabled) {
         options.onCancelClick = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxActionSheetInterop", "OnCancelClick");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxActionSheetInterop", "OnCancelClick");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
@@ -79,7 +681,7 @@ Blazor.registerFunction('BlazorDevExtreme.DxButton.Init', function (identifier, 
 
     if (options.onClickEnabled) {
         options.onClick = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxButtonInterop", "OnClick");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxButtonInterop", "OnClick");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
@@ -145,31 +747,31 @@ Blazor.registerFunction('BlazorDevExtreme.DxContextMenu.Init', function (identif
 
     if (options.onHiddenEnabled) {
         options.onHidden = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxContextMenuInterop", "OnHidden");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxContextMenuInterop", "OnHidden");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onHidingEnabled) {
         options.onHiding = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxContextMenuInterop", "OnHiding");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxContextMenuInterop", "OnHiding");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onPositioningEnabled) {
         options.onPositioning = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxContextMenuInterop", "OnPositioning");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxContextMenuInterop", "OnPositioning");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onShowingEnabled) {
         options.onShowing = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxContextMenuInterop", "OnShowing");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxContextMenuInterop", "OnShowing");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onShownEnabled) {
         options.onShown = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxContextMenuInterop", "OnShown");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxContextMenuInterop", "OnShown");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
@@ -184,79 +786,196 @@ Blazor.registerFunction('BlazorDevExtreme.DxContextMenu.GetOption', function (id
     let element = document.getElementById(identifier);
     return DevExpress.ui.dxContextMenu.getInstance(element).option(key);
 });
+// DevExpress.ui.GridBase interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.GridBase.Init', function (identifier, optionsText) {
+    const options = JSON.parse(optionsText);
+
+    if (options.onAdaptiveDetailRowPreparingEnabled) {
+        options.onAdaptiveDetailRowPreparing = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "GridBaseInterop", "OnAdaptiveDetailRowPreparing");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onDataErrorOccurredEnabled) {
+        options.onDataErrorOccurred = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "GridBaseInterop", "OnDataErrorOccurred");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onInitNewRowEnabled) {
+        options.onInitNewRow = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "GridBaseInterop", "OnInitNewRow");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onKeyDownEnabled) {
+        options.onKeyDown = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "GridBaseInterop", "OnKeyDown");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onRowCollapsedEnabled) {
+        options.onRowCollapsed = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "GridBaseInterop", "OnRowCollapsed");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onRowCollapsingEnabled) {
+        options.onRowCollapsing = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "GridBaseInterop", "OnRowCollapsing");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onRowExpandedEnabled) {
+        options.onRowExpanded = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "GridBaseInterop", "OnRowExpanded");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onRowExpandingEnabled) {
+        options.onRowExpanding = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "GridBaseInterop", "OnRowExpanding");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onRowInsertedEnabled) {
+        options.onRowInserted = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "GridBaseInterop", "OnRowInserted");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onRowInsertingEnabled) {
+        options.onRowInserting = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "GridBaseInterop", "OnRowInserting");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onRowRemovedEnabled) {
+        options.onRowRemoved = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "GridBaseInterop", "OnRowRemoved");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onRowRemovingEnabled) {
+        options.onRowRemoving = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "GridBaseInterop", "OnRowRemoving");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onRowUpdatedEnabled) {
+        options.onRowUpdated = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "GridBaseInterop", "OnRowUpdated");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onRowUpdatingEnabled) {
+        options.onRowUpdating = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "GridBaseInterop", "OnRowUpdating");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onRowValidatingEnabled) {
+        options.onRowValidating = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "GridBaseInterop", "OnRowValidating");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onSelectionChangedEnabled) {
+        options.onSelectionChanged = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "GridBaseInterop", "OnSelectionChanged");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onToolbarPreparingEnabled) {
+        options.onToolbarPreparing = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "GridBaseInterop", "OnToolbarPreparing");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    let element = document.getElementById(identifier);
+    let instance = new DevExpress.ui.GridBase(element, options);
+});
+Blazor.registerFunction('BlazorDevExtreme.GridBase.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.ui.GridBase.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.GridBase.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.ui.GridBase.getInstance(element).option(key);
+});
 // DevExpress.ui.dxDataGrid interop automatically generated
 Blazor.registerFunction('BlazorDevExtreme.DxDataGrid.Init', function (identifier, optionsText) {
     const options = JSON.parse(optionsText);
 
     if (options.onCellClickEnabled) {
         options.onCellClick = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxDataGridInterop", "OnCellClick");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxDataGridInterop", "OnCellClick");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onCellHoverChangedEnabled) {
         options.onCellHoverChanged = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxDataGridInterop", "OnCellHoverChanged");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxDataGridInterop", "OnCellHoverChanged");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onCellPreparedEnabled) {
         options.onCellPrepared = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxDataGridInterop", "OnCellPrepared");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxDataGridInterop", "OnCellPrepared");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onContextMenuPreparingEnabled) {
         options.onContextMenuPreparing = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxDataGridInterop", "OnContextMenuPreparing");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxDataGridInterop", "OnContextMenuPreparing");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onEditingStartEnabled) {
         options.onEditingStart = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxDataGridInterop", "OnEditingStart");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxDataGridInterop", "OnEditingStart");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onEditorPreparedEnabled) {
         options.onEditorPrepared = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxDataGridInterop", "OnEditorPrepared");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxDataGridInterop", "OnEditorPrepared");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onEditorPreparingEnabled) {
         options.onEditorPreparing = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxDataGridInterop", "OnEditorPreparing");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxDataGridInterop", "OnEditorPreparing");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onExportedEnabled) {
         options.onExported = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxDataGridInterop", "OnExported");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxDataGridInterop", "OnExported");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onExportingEnabled) {
         options.onExporting = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxDataGridInterop", "OnExporting");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxDataGridInterop", "OnExporting");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onFileSavingEnabled) {
         options.onFileSaving = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxDataGridInterop", "OnFileSaving");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxDataGridInterop", "OnFileSaving");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onRowClickEnabled) {
         options.onRowClick = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxDataGridInterop", "OnRowClick");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxDataGridInterop", "OnRowClick");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onRowPreparedEnabled) {
         options.onRowPrepared = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxDataGridInterop", "OnRowPrepared");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxDataGridInterop", "OnRowPrepared");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
@@ -292,13 +1011,13 @@ Blazor.registerFunction('BlazorDevExtreme.DxDeferRendering.Init', function (iden
 
     if (options.onRenderedEnabled) {
         options.onRendered = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxDeferRenderingInterop", "OnRendered");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxDeferRenderingInterop", "OnRendered");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onShownEnabled) {
         options.onShown = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxDeferRenderingInterop", "OnShown");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxDeferRenderingInterop", "OnShown");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
@@ -328,43 +1047,70 @@ Blazor.registerFunction('BlazorDevExtreme.DxDropDownBox.GetOption', function (id
     let element = document.getElementById(identifier);
     return DevExpress.ui.dxDropDownBox.getInstance(element).option(key);
 });
+// DevExpress.ui.dxDropDownMenu interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.DxDropDownMenu.Init', function (identifier, optionsText) {
+    const options = JSON.parse(optionsText);
+
+    if (options.onButtonClickEnabled) {
+        options.onButtonClick = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxDropDownMenuInterop", "OnButtonClick");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onItemClickEnabled) {
+        options.onItemClick = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxDropDownMenuInterop", "OnItemClick");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    let element = document.getElementById(identifier);
+    let instance = new DevExpress.ui.dxDropDownMenu(element, options);
+});
+Blazor.registerFunction('BlazorDevExtreme.DxDropDownMenu.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.ui.dxDropDownMenu.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.DxDropDownMenu.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.ui.dxDropDownMenu.getInstance(element).option(key);
+});
 // DevExpress.ui.dxFileUploader interop automatically generated
 Blazor.registerFunction('BlazorDevExtreme.DxFileUploader.Init', function (identifier, optionsText) {
     const options = JSON.parse(optionsText);
 
     if (options.onProgressEnabled) {
         options.onProgress = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxFileUploaderInterop", "OnProgress");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxFileUploaderInterop", "OnProgress");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onUploadAbortedEnabled) {
         options.onUploadAborted = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxFileUploaderInterop", "OnUploadAborted");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxFileUploaderInterop", "OnUploadAborted");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onUploadedEnabled) {
         options.onUploaded = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxFileUploaderInterop", "OnUploaded");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxFileUploaderInterop", "OnUploaded");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onUploadErrorEnabled) {
         options.onUploadError = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxFileUploaderInterop", "OnUploadError");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxFileUploaderInterop", "OnUploadError");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onUploadStartedEnabled) {
         options.onUploadStarted = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxFileUploaderInterop", "OnUploadStarted");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxFileUploaderInterop", "OnUploadStarted");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onValueChangedEnabled) {
         options.onValueChanged = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxFileUploaderInterop", "OnValueChanged");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxFileUploaderInterop", "OnValueChanged");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
@@ -385,19 +1131,19 @@ Blazor.registerFunction('BlazorDevExtreme.DxFilterBuilder.Init', function (ident
 
     if (options.onEditorPreparedEnabled) {
         options.onEditorPrepared = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxFilterBuilderInterop", "OnEditorPrepared");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxFilterBuilderInterop", "OnEditorPrepared");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onEditorPreparingEnabled) {
         options.onEditorPreparing = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxFilterBuilderInterop", "OnEditorPreparing");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxFilterBuilderInterop", "OnEditorPreparing");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onValueChangedEnabled) {
         options.onValueChanged = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxFilterBuilderInterop", "OnValueChanged");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxFilterBuilderInterop", "OnValueChanged");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
@@ -418,13 +1164,13 @@ Blazor.registerFunction('BlazorDevExtreme.DxForm.Init', function (identifier, op
 
     if (options.onEditorEnterKeyEnabled) {
         options.onEditorEnterKey = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxFormInterop", "OnEditorEnterKey");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxFormInterop", "OnEditorEnterKey");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onFieldDataChangedEnabled) {
         options.onFieldDataChanged = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxFormInterop", "OnFieldDataChanged");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxFormInterop", "OnFieldDataChanged");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
@@ -460,73 +1206,73 @@ Blazor.registerFunction('BlazorDevExtreme.DxList.Init', function (identifier, op
 
     if (options.onGroupRenderedEnabled) {
         options.onGroupRendered = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxListInterop", "OnGroupRendered");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxListInterop", "OnGroupRendered");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onItemClickEnabled) {
         options.onItemClick = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxListInterop", "OnItemClick");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxListInterop", "OnItemClick");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onItemContextMenuEnabled) {
         options.onItemContextMenu = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxListInterop", "OnItemContextMenu");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxListInterop", "OnItemContextMenu");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onItemDeletedEnabled) {
         options.onItemDeleted = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxListInterop", "OnItemDeleted");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxListInterop", "OnItemDeleted");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onItemDeletingEnabled) {
         options.onItemDeleting = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxListInterop", "OnItemDeleting");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxListInterop", "OnItemDeleting");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onItemHoldEnabled) {
         options.onItemHold = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxListInterop", "OnItemHold");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxListInterop", "OnItemHold");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onItemReorderedEnabled) {
         options.onItemReordered = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxListInterop", "OnItemReordered");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxListInterop", "OnItemReordered");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onItemSwipeEnabled) {
         options.onItemSwipe = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxListInterop", "OnItemSwipe");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxListInterop", "OnItemSwipe");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onPageLoadingEnabled) {
         options.onPageLoading = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxListInterop", "OnPageLoading");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxListInterop", "OnPageLoading");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onPullRefreshEnabled) {
         options.onPullRefresh = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxListInterop", "OnPullRefresh");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxListInterop", "OnPullRefresh");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onScrollEnabled) {
         options.onScroll = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxListInterop", "OnScroll");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxListInterop", "OnScroll");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onSelectAllValueChangedEnabled) {
         options.onSelectAllValueChanged = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxListInterop", "OnSelectAllValueChanged");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxListInterop", "OnSelectAllValueChanged");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
@@ -577,31 +1323,31 @@ Blazor.registerFunction('BlazorDevExtreme.DxLookup.Init', function (identifier, 
 
     if (options.onPageLoadingEnabled) {
         options.onPageLoading = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxLookupInterop", "OnPageLoading");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxLookupInterop", "OnPageLoading");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onPullRefreshEnabled) {
         options.onPullRefresh = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxLookupInterop", "OnPullRefresh");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxLookupInterop", "OnPullRefresh");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onScrollEnabled) {
         options.onScroll = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxLookupInterop", "OnScroll");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxLookupInterop", "OnScroll");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onTitleRenderedEnabled) {
         options.onTitleRendered = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxLookupInterop", "OnTitleRendered");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxLookupInterop", "OnTitleRendered");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onValueChangedEnabled) {
         options.onValueChanged = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxLookupInterop", "OnValueChanged");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxLookupInterop", "OnValueChanged");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
@@ -622,37 +1368,37 @@ Blazor.registerFunction('BlazorDevExtreme.DxMap.Init', function (identifier, opt
 
     if (options.onClickEnabled) {
         options.onClick = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxMapInterop", "OnClick");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxMapInterop", "OnClick");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onMarkerAddedEnabled) {
         options.onMarkerAdded = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxMapInterop", "OnMarkerAdded");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxMapInterop", "OnMarkerAdded");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onMarkerRemovedEnabled) {
         options.onMarkerRemoved = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxMapInterop", "OnMarkerRemoved");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxMapInterop", "OnMarkerRemoved");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onReadyEnabled) {
         options.onReady = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxMapInterop", "OnReady");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxMapInterop", "OnReady");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onRouteAddedEnabled) {
         options.onRouteAdded = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxMapInterop", "OnRouteAdded");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxMapInterop", "OnRouteAdded");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onRouteRemovedEnabled) {
         options.onRouteRemoved = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxMapInterop", "OnRouteRemoved");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxMapInterop", "OnRouteRemoved");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
@@ -673,25 +1419,25 @@ Blazor.registerFunction('BlazorDevExtreme.DxMenu.Init', function (identifier, op
 
     if (options.onSubmenuHiddenEnabled) {
         options.onSubmenuHidden = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxMenuInterop", "OnSubmenuHidden");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxMenuInterop", "OnSubmenuHidden");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onSubmenuHidingEnabled) {
         options.onSubmenuHiding = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxMenuInterop", "OnSubmenuHiding");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxMenuInterop", "OnSubmenuHiding");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onSubmenuShowingEnabled) {
         options.onSubmenuShowing = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxMenuInterop", "OnSubmenuShowing");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxMenuInterop", "OnSubmenuShowing");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onSubmenuShownEnabled) {
         options.onSubmenuShown = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxMenuInterop", "OnSubmenuShown");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxMenuInterop", "OnSubmenuShown");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
@@ -751,6 +1497,45 @@ Blazor.registerFunction('BlazorDevExtreme.DxNumberBox.GetOption', function (iden
     let element = document.getElementById(identifier);
     return DevExpress.ui.dxNumberBox.getInstance(element).option(key);
 });
+// DevExpress.ui.dxOverlay interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.DxOverlay.Init', function (identifier, optionsText) {
+    const options = JSON.parse(optionsText);
+
+    if (options.onHiddenEnabled) {
+        options.onHidden = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxOverlayInterop", "OnHidden");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onHidingEnabled) {
+        options.onHiding = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxOverlayInterop", "OnHiding");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onShowingEnabled) {
+        options.onShowing = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxOverlayInterop", "OnShowing");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onShownEnabled) {
+        options.onShown = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxOverlayInterop", "OnShown");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    let element = document.getElementById(identifier);
+    let instance = new DevExpress.ui.dxOverlay(element, options);
+});
+Blazor.registerFunction('BlazorDevExtreme.DxOverlay.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.ui.dxOverlay.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.DxOverlay.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.ui.dxOverlay.getInstance(element).option(key);
+});
 // DevExpress.ui.dxPanorama interop automatically generated
 Blazor.registerFunction('BlazorDevExtreme.DxPanorama.Init', function (identifier, optionsText) {
     const options = JSON.parse(optionsText);
@@ -787,37 +1572,37 @@ Blazor.registerFunction('BlazorDevExtreme.DxPivotGrid.Init', function (identifie
 
     if (options.onCellClickEnabled) {
         options.onCellClick = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxPivotGridInterop", "OnCellClick");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxPivotGridInterop", "OnCellClick");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onCellPreparedEnabled) {
         options.onCellPrepared = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxPivotGridInterop", "OnCellPrepared");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxPivotGridInterop", "OnCellPrepared");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onContextMenuPreparingEnabled) {
         options.onContextMenuPreparing = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxPivotGridInterop", "OnContextMenuPreparing");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxPivotGridInterop", "OnContextMenuPreparing");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onExportedEnabled) {
         options.onExported = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxPivotGridInterop", "OnExported");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxPivotGridInterop", "OnExported");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onExportingEnabled) {
         options.onExporting = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxPivotGridInterop", "OnExporting");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxPivotGridInterop", "OnExporting");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onFileSavingEnabled) {
         options.onFileSaving = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxPivotGridInterop", "OnFileSaving");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxPivotGridInterop", "OnFileSaving");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
@@ -838,7 +1623,7 @@ Blazor.registerFunction('BlazorDevExtreme.DxPivotGridFieldChooser.Init', functio
 
     if (options.onContextMenuPreparingEnabled) {
         options.onContextMenuPreparing = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxPivotGridFieldChooserInterop", "OnContextMenuPreparing");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxPivotGridFieldChooserInterop", "OnContextMenuPreparing");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
@@ -874,25 +1659,25 @@ Blazor.registerFunction('BlazorDevExtreme.DxPopup.Init', function (identifier, o
 
     if (options.onResizeEnabled) {
         options.onResize = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxPopupInterop", "OnResize");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxPopupInterop", "OnResize");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onResizeEndEnabled) {
         options.onResizeEnd = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxPopupInterop", "OnResizeEnd");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxPopupInterop", "OnResizeEnd");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onResizeStartEnabled) {
         options.onResizeStart = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxPopupInterop", "OnResizeStart");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxPopupInterop", "OnResizeStart");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onTitleRenderedEnabled) {
         options.onTitleRendered = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxPopupInterop", "OnTitleRendered");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxPopupInterop", "OnTitleRendered");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
@@ -913,7 +1698,7 @@ Blazor.registerFunction('BlazorDevExtreme.DxProgressBar.Init', function (identif
 
     if (options.onCompleteEnabled) {
         options.onComplete = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxProgressBarInterop", "OnComplete");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxProgressBarInterop", "OnComplete");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
@@ -949,7 +1734,7 @@ Blazor.registerFunction('BlazorDevExtreme.DxRangeSlider.Init', function (identif
 
     if (options.onValueChangedEnabled) {
         options.onValueChanged = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxRangeSliderInterop", "OnValueChanged");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxRangeSliderInterop", "OnValueChanged");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
@@ -970,19 +1755,19 @@ Blazor.registerFunction('BlazorDevExtreme.DxResizable.Init', function (identifie
 
     if (options.onResizeEnabled) {
         options.onResize = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxResizableInterop", "OnResize");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxResizableInterop", "OnResize");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onResizeEndEnabled) {
         options.onResizeEnd = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxResizableInterop", "OnResizeEnd");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxResizableInterop", "OnResizeEnd");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onResizeStartEnabled) {
         options.onResizeStart = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxResizableInterop", "OnResizeStart");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxResizableInterop", "OnResizeStart");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
@@ -1018,79 +1803,79 @@ Blazor.registerFunction('BlazorDevExtreme.DxScheduler.Init', function (identifie
 
     if (options.onAppointmentAddedEnabled) {
         options.onAppointmentAdded = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxSchedulerInterop", "OnAppointmentAdded");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxSchedulerInterop", "OnAppointmentAdded");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onAppointmentAddingEnabled) {
         options.onAppointmentAdding = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxSchedulerInterop", "OnAppointmentAdding");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxSchedulerInterop", "OnAppointmentAdding");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onAppointmentClickEnabled) {
         options.onAppointmentClick = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxSchedulerInterop", "OnAppointmentClick");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxSchedulerInterop", "OnAppointmentClick");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onAppointmentContextMenuEnabled) {
         options.onAppointmentContextMenu = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxSchedulerInterop", "OnAppointmentContextMenu");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxSchedulerInterop", "OnAppointmentContextMenu");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onAppointmentDblClickEnabled) {
         options.onAppointmentDblClick = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxSchedulerInterop", "OnAppointmentDblClick");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxSchedulerInterop", "OnAppointmentDblClick");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onAppointmentDeletedEnabled) {
         options.onAppointmentDeleted = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxSchedulerInterop", "OnAppointmentDeleted");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxSchedulerInterop", "OnAppointmentDeleted");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onAppointmentDeletingEnabled) {
         options.onAppointmentDeleting = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxSchedulerInterop", "OnAppointmentDeleting");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxSchedulerInterop", "OnAppointmentDeleting");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onAppointmentFormCreatedEnabled) {
         options.onAppointmentFormCreated = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxSchedulerInterop", "OnAppointmentFormCreated");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxSchedulerInterop", "OnAppointmentFormCreated");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onAppointmentRenderedEnabled) {
         options.onAppointmentRendered = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxSchedulerInterop", "OnAppointmentRendered");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxSchedulerInterop", "OnAppointmentRendered");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onAppointmentUpdatedEnabled) {
         options.onAppointmentUpdated = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxSchedulerInterop", "OnAppointmentUpdated");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxSchedulerInterop", "OnAppointmentUpdated");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onAppointmentUpdatingEnabled) {
         options.onAppointmentUpdating = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxSchedulerInterop", "OnAppointmentUpdating");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxSchedulerInterop", "OnAppointmentUpdating");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onCellClickEnabled) {
         options.onCellClick = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxSchedulerInterop", "OnCellClick");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxSchedulerInterop", "OnCellClick");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onCellContextMenuEnabled) {
         options.onCellContextMenu = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxSchedulerInterop", "OnCellContextMenu");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxSchedulerInterop", "OnCellContextMenu");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
@@ -1111,13 +1896,13 @@ Blazor.registerFunction('BlazorDevExtreme.DxScrollView.Init', function (identifi
 
     if (options.onPullDownEnabled) {
         options.onPullDown = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxScrollViewInterop", "OnPullDown");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxScrollViewInterop", "OnPullDown");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onReachBottomEnabled) {
         options.onReachBottom = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxScrollViewInterop", "OnReachBottom");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxScrollViewInterop", "OnReachBottom");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
@@ -1138,7 +1923,7 @@ Blazor.registerFunction('BlazorDevExtreme.DxSelectBox.Init', function (identifie
 
     if (options.onCustomItemCreatingEnabled) {
         options.onCustomItemCreating = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxSelectBoxInterop", "OnCustomItemCreating");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxSelectBoxInterop", "OnCustomItemCreating");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
@@ -1153,19 +1938,34 @@ Blazor.registerFunction('BlazorDevExtreme.DxSelectBox.GetOption', function (iden
     let element = document.getElementById(identifier);
     return DevExpress.ui.dxSelectBox.getInstance(element).option(key);
 });
+// DevExpress.ui.dxSlider interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.DxSlider.Init', function (identifier, optionsText) {
+    const options = JSON.parse(optionsText);
+
+    let element = document.getElementById(identifier);
+    let instance = new DevExpress.ui.dxSlider(element, options);
+});
+Blazor.registerFunction('BlazorDevExtreme.DxSlider.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.ui.dxSlider.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.DxSlider.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.ui.dxSlider.getInstance(element).option(key);
+});
 // DevExpress.ui.dxSlideOut interop automatically generated
 Blazor.registerFunction('BlazorDevExtreme.DxSlideOut.Init', function (identifier, optionsText) {
     const options = JSON.parse(optionsText);
 
     if (options.onMenuGroupRenderedEnabled) {
         options.onMenuGroupRendered = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxSlideOutInterop", "OnMenuGroupRendered");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxSlideOutInterop", "OnMenuGroupRendered");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onMenuItemRenderedEnabled) {
         options.onMenuItemRendered = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxSlideOutInterop", "OnMenuItemRendered");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxSlideOutInterop", "OnMenuItemRendered");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
@@ -1195,21 +1995,6 @@ Blazor.registerFunction('BlazorDevExtreme.DxSlideOutView.GetOption', function (i
     let element = document.getElementById(identifier);
     return DevExpress.ui.dxSlideOutView.getInstance(element).option(key);
 });
-// DevExpress.ui.dxSlider interop automatically generated
-Blazor.registerFunction('BlazorDevExtreme.DxSlider.Init', function (identifier, optionsText) {
-    const options = JSON.parse(optionsText);
-
-    let element = document.getElementById(identifier);
-    let instance = new DevExpress.ui.dxSlider(element, options);
-});
-Blazor.registerFunction('BlazorDevExtreme.DxSlider.SetOption', function (identifier, key, value) {
-    let element = document.getElementById(identifier);
-    DevExpress.ui.dxSlider.getInstance(element).option(key, value);
-});
-Blazor.registerFunction('BlazorDevExtreme.DxSlider.GetOption', function (identifier, key) {
-    let element = document.getElementById(identifier);
-    return DevExpress.ui.dxSlider.getInstance(element).option(key);
-});
 // DevExpress.ui.dxSwitch interop automatically generated
 Blazor.registerFunction('BlazorDevExtreme.DxSwitch.Init', function (identifier, optionsText) {
     const options = JSON.parse(optionsText);
@@ -1224,39 +2009,6 @@ Blazor.registerFunction('BlazorDevExtreme.DxSwitch.SetOption', function (identif
 Blazor.registerFunction('BlazorDevExtreme.DxSwitch.GetOption', function (identifier, key) {
     let element = document.getElementById(identifier);
     return DevExpress.ui.dxSwitch.getInstance(element).option(key);
-});
-// DevExpress.ui.dxTabPanel interop automatically generated
-Blazor.registerFunction('BlazorDevExtreme.DxTabPanel.Init', function (identifier, optionsText) {
-    const options = JSON.parse(optionsText);
-
-    if (options.onTitleClickEnabled) {
-        options.onTitleClick = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxTabPanelInterop", "OnTitleClick");
-            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
-        }
-    }
-    if (options.onTitleHoldEnabled) {
-        options.onTitleHold = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxTabPanelInterop", "OnTitleHold");
-            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
-        }
-    }
-    if (options.onTitleRenderedEnabled) {
-        options.onTitleRendered = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxTabPanelInterop", "OnTitleRendered");
-            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
-        }
-    }
-    let element = document.getElementById(identifier);
-    let instance = new DevExpress.ui.dxTabPanel(element, options);
-});
-Blazor.registerFunction('BlazorDevExtreme.DxTabPanel.SetOption', function (identifier, key, value) {
-    let element = document.getElementById(identifier);
-    DevExpress.ui.dxTabPanel.getInstance(element).option(key, value);
-});
-Blazor.registerFunction('BlazorDevExtreme.DxTabPanel.GetOption', function (identifier, key) {
-    let element = document.getElementById(identifier);
-    return DevExpress.ui.dxTabPanel.getInstance(element).option(key);
 });
 // DevExpress.ui.dxTabs interop automatically generated
 Blazor.registerFunction('BlazorDevExtreme.DxTabs.Init', function (identifier, optionsText) {
@@ -1273,25 +2025,58 @@ Blazor.registerFunction('BlazorDevExtreme.DxTabs.GetOption', function (identifie
     let element = document.getElementById(identifier);
     return DevExpress.ui.dxTabs.getInstance(element).option(key);
 });
+// DevExpress.ui.dxTabPanel interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.DxTabPanel.Init', function (identifier, optionsText) {
+    const options = JSON.parse(optionsText);
+
+    if (options.onTitleClickEnabled) {
+        options.onTitleClick = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxTabPanelInterop", "OnTitleClick");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onTitleHoldEnabled) {
+        options.onTitleHold = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxTabPanelInterop", "OnTitleHold");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onTitleRenderedEnabled) {
+        options.onTitleRendered = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxTabPanelInterop", "OnTitleRendered");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    let element = document.getElementById(identifier);
+    let instance = new DevExpress.ui.dxTabPanel(element, options);
+});
+Blazor.registerFunction('BlazorDevExtreme.DxTabPanel.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.ui.dxTabPanel.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.DxTabPanel.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.ui.dxTabPanel.getInstance(element).option(key);
+});
 // DevExpress.ui.dxTagBox interop automatically generated
 Blazor.registerFunction('BlazorDevExtreme.DxTagBox.Init', function (identifier, optionsText) {
     const options = JSON.parse(optionsText);
 
     if (options.onMultiTagPreparingEnabled) {
         options.onMultiTagPreparing = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxTagBoxInterop", "OnMultiTagPreparing");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxTagBoxInterop", "OnMultiTagPreparing");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onSelectAllValueChangedEnabled) {
         options.onSelectAllValueChanged = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxTagBoxInterop", "OnSelectAllValueChanged");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxTagBoxInterop", "OnSelectAllValueChanged");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onSelectionChangedEnabled) {
         options.onSelectionChanged = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxTagBoxInterop", "OnSelectionChanged");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxTagBoxInterop", "OnSelectionChanged");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
@@ -1396,67 +2181,82 @@ Blazor.registerFunction('BlazorDevExtreme.DxTooltip.GetOption', function (identi
     let element = document.getElementById(identifier);
     return DevExpress.ui.dxTooltip.getInstance(element).option(key);
 });
+// DevExpress.ui.dxTrackBar interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.DxTrackBar.Init', function (identifier, optionsText) {
+    const options = JSON.parse(optionsText);
+
+    let element = document.getElementById(identifier);
+    let instance = new DevExpress.ui.dxTrackBar(element, options);
+});
+Blazor.registerFunction('BlazorDevExtreme.DxTrackBar.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.ui.dxTrackBar.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.DxTrackBar.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.ui.dxTrackBar.getInstance(element).option(key);
+});
 // DevExpress.ui.dxTreeList interop automatically generated
 Blazor.registerFunction('BlazorDevExtreme.DxTreeList.Init', function (identifier, optionsText) {
     const options = JSON.parse(optionsText);
 
     if (options.onCellClickEnabled) {
         options.onCellClick = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxTreeListInterop", "OnCellClick");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxTreeListInterop", "OnCellClick");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onCellHoverChangedEnabled) {
         options.onCellHoverChanged = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxTreeListInterop", "OnCellHoverChanged");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxTreeListInterop", "OnCellHoverChanged");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onCellPreparedEnabled) {
         options.onCellPrepared = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxTreeListInterop", "OnCellPrepared");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxTreeListInterop", "OnCellPrepared");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onContextMenuPreparingEnabled) {
         options.onContextMenuPreparing = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxTreeListInterop", "OnContextMenuPreparing");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxTreeListInterop", "OnContextMenuPreparing");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onEditingStartEnabled) {
         options.onEditingStart = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxTreeListInterop", "OnEditingStart");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxTreeListInterop", "OnEditingStart");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onEditorPreparedEnabled) {
         options.onEditorPrepared = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxTreeListInterop", "OnEditorPrepared");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxTreeListInterop", "OnEditorPrepared");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onEditorPreparingEnabled) {
         options.onEditorPreparing = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxTreeListInterop", "OnEditorPreparing");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxTreeListInterop", "OnEditorPreparing");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onNodesInitializedEnabled) {
         options.onNodesInitialized = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxTreeListInterop", "OnNodesInitialized");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxTreeListInterop", "OnNodesInitialized");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onRowClickEnabled) {
         options.onRowClick = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxTreeListInterop", "OnRowClick");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxTreeListInterop", "OnRowClick");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onRowPreparedEnabled) {
         options.onRowPrepared = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxTreeListInterop", "OnRowPrepared");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxTreeListInterop", "OnRowPrepared");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
@@ -1477,49 +2277,49 @@ Blazor.registerFunction('BlazorDevExtreme.DxTreeView.Init', function (identifier
 
     if (options.onItemClickEnabled) {
         options.onItemClick = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxTreeViewInterop", "OnItemClick");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxTreeViewInterop", "OnItemClick");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onItemCollapsedEnabled) {
         options.onItemCollapsed = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxTreeViewInterop", "OnItemCollapsed");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxTreeViewInterop", "OnItemCollapsed");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onItemContextMenuEnabled) {
         options.onItemContextMenu = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxTreeViewInterop", "OnItemContextMenu");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxTreeViewInterop", "OnItemContextMenu");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onItemExpandedEnabled) {
         options.onItemExpanded = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxTreeViewInterop", "OnItemExpanded");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxTreeViewInterop", "OnItemExpanded");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onItemHoldEnabled) {
         options.onItemHold = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxTreeViewInterop", "OnItemHold");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxTreeViewInterop", "OnItemHold");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onItemRenderedEnabled) {
         options.onItemRendered = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxTreeViewInterop", "OnItemRendered");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxTreeViewInterop", "OnItemRendered");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onItemSelectionChangedEnabled) {
         options.onItemSelectionChanged = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxTreeViewInterop", "OnItemSelectionChanged");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxTreeViewInterop", "OnItemSelectionChanged");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onSelectionChangedEnabled) {
         options.onSelectionChanged = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxTreeViewInterop", "OnSelectionChanged");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxTreeViewInterop", "OnSelectionChanged");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
@@ -1570,7 +2370,7 @@ Blazor.registerFunction('BlazorDevExtreme.DxValidator.Init', function (identifie
 
     if (options.onValidatedEnabled) {
         options.onValidated = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxValidatorInterop", "OnValidated");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxValidatorInterop", "OnValidated");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
@@ -1585,405 +2385,1086 @@ Blazor.registerFunction('BlazorDevExtreme.DxValidator.GetOption', function (iden
     let element = document.getElementById(identifier);
     return DevExpress.ui.dxValidator.getInstance(element).option(key);
 });
-// DevExpress.viz.gauges.dxBarGauge interop automatically generated
-Blazor.registerFunction('BlazorDevExtreme.DxBarGauge.Init', function (identifier, optionsText) {
+// DevExpress.ui.CollectionWidget interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.CollectionWidget.Init', function (identifier, optionsText) {
     const options = JSON.parse(optionsText);
 
-    if (options.onTooltipHiddenEnabled) {
-        options.onTooltipHidden = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxBarGaugeInterop", "OnTooltipHidden");
-            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
-        }
-    }
-    if (options.onTooltipShownEnabled) {
-        options.onTooltipShown = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxBarGaugeInterop", "OnTooltipShown");
-            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
-        }
-    }
-    let element = document.getElementById(identifier);
-    let instance = new DevExpress.viz.gauges.dxBarGauge(element, options);
-});
-Blazor.registerFunction('BlazorDevExtreme.DxBarGauge.SetOption', function (identifier, key, value) {
-    let element = document.getElementById(identifier);
-    DevExpress.viz.gauges.dxBarGauge.getInstance(element).option(key, value);
-});
-Blazor.registerFunction('BlazorDevExtreme.DxBarGauge.GetOption', function (identifier, key) {
-    let element = document.getElementById(identifier);
-    return DevExpress.viz.gauges.dxBarGauge.getInstance(element).option(key);
-});
-// DevExpress.viz.sparklines.dxBullet interop automatically generated
-Blazor.registerFunction('BlazorDevExtreme.DxBullet.Init', function (identifier, optionsText) {
-    const options = JSON.parse(optionsText);
-
-    let element = document.getElementById(identifier);
-    let instance = new DevExpress.viz.sparklines.dxBullet(element, options);
-});
-Blazor.registerFunction('BlazorDevExtreme.DxBullet.SetOption', function (identifier, key, value) {
-    let element = document.getElementById(identifier);
-    DevExpress.viz.sparklines.dxBullet.getInstance(element).option(key, value);
-});
-Blazor.registerFunction('BlazorDevExtreme.DxBullet.GetOption', function (identifier, key) {
-    let element = document.getElementById(identifier);
-    return DevExpress.viz.sparklines.dxBullet.getInstance(element).option(key);
-});
-// DevExpress.viz.charts.dxChart interop automatically generated
-Blazor.registerFunction('BlazorDevExtreme.DxChart.Init', function (identifier, optionsText) {
-    const options = JSON.parse(optionsText);
-
-    if (options.onArgumentAxisClickEnabled) {
-        options.onArgumentAxisClick = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxChartInterop", "OnArgumentAxisClick");
-            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
-        }
-    }
-    if (options.onLegendClickEnabled) {
-        options.onLegendClick = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxChartInterop", "OnLegendClick");
-            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
-        }
-    }
-    if (options.onSeriesClickEnabled) {
-        options.onSeriesClick = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxChartInterop", "OnSeriesClick");
-            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
-        }
-    }
-    if (options.onSeriesHoverChangedEnabled) {
-        options.onSeriesHoverChanged = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxChartInterop", "OnSeriesHoverChanged");
-            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
-        }
-    }
-    if (options.onSeriesSelectionChangedEnabled) {
-        options.onSeriesSelectionChanged = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxChartInterop", "OnSeriesSelectionChanged");
-            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
-        }
-    }
-    if (options.onZoomEndEnabled) {
-        options.onZoomEnd = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxChartInterop", "OnZoomEnd");
-            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
-        }
-    }
-    if (options.onZoomStartEnabled) {
-        options.onZoomStart = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxChartInterop", "OnZoomStart");
-            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
-        }
-    }
-    let element = document.getElementById(identifier);
-    let instance = new DevExpress.viz.charts.dxChart(element, options);
-});
-Blazor.registerFunction('BlazorDevExtreme.DxChart.SetOption', function (identifier, key, value) {
-    let element = document.getElementById(identifier);
-    DevExpress.viz.charts.dxChart.getInstance(element).option(key, value);
-});
-Blazor.registerFunction('BlazorDevExtreme.DxChart.GetOption', function (identifier, key) {
-    let element = document.getElementById(identifier);
-    return DevExpress.viz.charts.dxChart.getInstance(element).option(key);
-});
-// DevExpress.viz.gauges.dxCircularGauge interop automatically generated
-Blazor.registerFunction('BlazorDevExtreme.DxCircularGauge.Init', function (identifier, optionsText) {
-    const options = JSON.parse(optionsText);
-
-    let element = document.getElementById(identifier);
-    let instance = new DevExpress.viz.gauges.dxCircularGauge(element, options);
-});
-Blazor.registerFunction('BlazorDevExtreme.DxCircularGauge.SetOption', function (identifier, key, value) {
-    let element = document.getElementById(identifier);
-    DevExpress.viz.gauges.dxCircularGauge.getInstance(element).option(key, value);
-});
-Blazor.registerFunction('BlazorDevExtreme.DxCircularGauge.GetOption', function (identifier, key) {
-    let element = document.getElementById(identifier);
-    return DevExpress.viz.gauges.dxCircularGauge.getInstance(element).option(key);
-});
-// DevExpress.viz.funnel.dxFunnel interop automatically generated
-Blazor.registerFunction('BlazorDevExtreme.DxFunnel.Init', function (identifier, optionsText) {
-    const options = JSON.parse(optionsText);
-
-    if (options.onHoverChangedEnabled) {
-        options.onHoverChanged = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxFunnelInterop", "OnHoverChanged");
-            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
-        }
-    }
     if (options.onItemClickEnabled) {
         options.onItemClick = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxFunnelInterop", "OnItemClick");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "CollectionWidgetInterop", "OnItemClick");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
-    if (options.onLegendClickEnabled) {
-        options.onLegendClick = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxFunnelInterop", "OnLegendClick");
+    if (options.onItemContextMenuEnabled) {
+        options.onItemContextMenu = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "CollectionWidgetInterop", "OnItemContextMenu");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onItemHoldEnabled) {
+        options.onItemHold = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "CollectionWidgetInterop", "OnItemHold");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onItemRenderedEnabled) {
+        options.onItemRendered = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "CollectionWidgetInterop", "OnItemRendered");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onSelectionChangedEnabled) {
         options.onSelectionChanged = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxFunnelInterop", "OnSelectionChanged");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "CollectionWidgetInterop", "OnSelectionChanged");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     let element = document.getElementById(identifier);
-    let instance = new DevExpress.viz.funnel.dxFunnel(element, options);
+    let instance = new DevExpress.ui.CollectionWidget(element, options);
 });
-Blazor.registerFunction('BlazorDevExtreme.DxFunnel.SetOption', function (identifier, key, value) {
+Blazor.registerFunction('BlazorDevExtreme.CollectionWidget.SetOption', function (identifier, key, value) {
     let element = document.getElementById(identifier);
-    DevExpress.viz.funnel.dxFunnel.getInstance(element).option(key, value);
+    DevExpress.ui.CollectionWidget.getInstance(element).option(key, value);
 });
-Blazor.registerFunction('BlazorDevExtreme.DxFunnel.GetOption', function (identifier, key) {
+Blazor.registerFunction('BlazorDevExtreme.CollectionWidget.GetOption', function (identifier, key) {
     let element = document.getElementById(identifier);
-    return DevExpress.viz.funnel.dxFunnel.getInstance(element).option(key);
+    return DevExpress.ui.CollectionWidget.getInstance(element).option(key);
 });
-// DevExpress.viz.gauges.dxLinearGauge interop automatically generated
-Blazor.registerFunction('BlazorDevExtreme.DxLinearGauge.Init', function (identifier, optionsText) {
+// DevExpress.ui.dxMenuBase interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.DxMenuBase.Init', function (identifier, optionsText) {
     const options = JSON.parse(optionsText);
 
     let element = document.getElementById(identifier);
-    let instance = new DevExpress.viz.gauges.dxLinearGauge(element, options);
+    let instance = new DevExpress.ui.dxMenuBase(element, options);
 });
-Blazor.registerFunction('BlazorDevExtreme.DxLinearGauge.SetOption', function (identifier, key, value) {
+Blazor.registerFunction('BlazorDevExtreme.DxMenuBase.SetOption', function (identifier, key, value) {
     let element = document.getElementById(identifier);
-    DevExpress.viz.gauges.dxLinearGauge.getInstance(element).option(key, value);
+    DevExpress.ui.dxMenuBase.getInstance(element).option(key, value);
 });
-Blazor.registerFunction('BlazorDevExtreme.DxLinearGauge.GetOption', function (identifier, key) {
+Blazor.registerFunction('BlazorDevExtreme.DxMenuBase.GetOption', function (identifier, key) {
     let element = document.getElementById(identifier);
-    return DevExpress.viz.gauges.dxLinearGauge.getInstance(element).option(key);
+    return DevExpress.ui.dxMenuBase.getInstance(element).option(key);
 });
-// DevExpress.viz.charts.dxPieChart interop automatically generated
-Blazor.registerFunction('BlazorDevExtreme.DxPieChart.Init', function (identifier, optionsText) {
+// DevExpress.ui.dxDropDownEditor interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.DxDropDownEditor.Init', function (identifier, optionsText) {
     const options = JSON.parse(optionsText);
 
-    if (options.onLegendClickEnabled) {
-        options.onLegendClick = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxPieChartInterop", "OnLegendClick");
+    if (options.onClosedEnabled) {
+        options.onClosed = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxDropDownEditorInterop", "OnClosed");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onOpenedEnabled) {
+        options.onOpened = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxDropDownEditorInterop", "OnOpened");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     let element = document.getElementById(identifier);
-    let instance = new DevExpress.viz.charts.dxPieChart(element, options);
+    let instance = new DevExpress.ui.dxDropDownEditor(element, options);
 });
-Blazor.registerFunction('BlazorDevExtreme.DxPieChart.SetOption', function (identifier, key, value) {
+Blazor.registerFunction('BlazorDevExtreme.DxDropDownEditor.SetOption', function (identifier, key, value) {
     let element = document.getElementById(identifier);
-    DevExpress.viz.charts.dxPieChart.getInstance(element).option(key, value);
+    DevExpress.ui.dxDropDownEditor.getInstance(element).option(key, value);
 });
-Blazor.registerFunction('BlazorDevExtreme.DxPieChart.GetOption', function (identifier, key) {
+Blazor.registerFunction('BlazorDevExtreme.DxDropDownEditor.GetOption', function (identifier, key) {
     let element = document.getElementById(identifier);
-    return DevExpress.viz.charts.dxPieChart.getInstance(element).option(key);
+    return DevExpress.ui.dxDropDownEditor.getInstance(element).option(key);
 });
-// DevExpress.viz.charts.dxPolarChart interop automatically generated
-Blazor.registerFunction('BlazorDevExtreme.DxPolarChart.Init', function (identifier, optionsText) {
+// DevExpress.ui.dxDropDownList interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.DxDropDownList.Init', function (identifier, optionsText) {
     const options = JSON.parse(optionsText);
 
-    if (options.onArgumentAxisClickEnabled) {
-        options.onArgumentAxisClick = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxPolarChartInterop", "OnArgumentAxisClick");
+    if (options.onItemClickEnabled) {
+        options.onItemClick = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxDropDownListInterop", "OnItemClick");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
-    if (options.onLegendClickEnabled) {
-        options.onLegendClick = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxPolarChartInterop", "OnLegendClick");
-            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
-        }
-    }
-    if (options.onSeriesClickEnabled) {
-        options.onSeriesClick = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxPolarChartInterop", "OnSeriesClick");
-            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
-        }
-    }
-    if (options.onSeriesHoverChangedEnabled) {
-        options.onSeriesHoverChanged = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxPolarChartInterop", "OnSeriesHoverChanged");
-            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
-        }
-    }
-    if (options.onSeriesSelectionChangedEnabled) {
-        options.onSeriesSelectionChanged = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxPolarChartInterop", "OnSeriesSelectionChanged");
-            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
-        }
-    }
-    let element = document.getElementById(identifier);
-    let instance = new DevExpress.viz.charts.dxPolarChart(element, options);
-});
-Blazor.registerFunction('BlazorDevExtreme.DxPolarChart.SetOption', function (identifier, key, value) {
-    let element = document.getElementById(identifier);
-    DevExpress.viz.charts.dxPolarChart.getInstance(element).option(key, value);
-});
-Blazor.registerFunction('BlazorDevExtreme.DxPolarChart.GetOption', function (identifier, key) {
-    let element = document.getElementById(identifier);
-    return DevExpress.viz.charts.dxPolarChart.getInstance(element).option(key);
-});
-// DevExpress.viz.rangeSelector.dxRangeSelector interop automatically generated
-Blazor.registerFunction('BlazorDevExtreme.DxRangeSelector.Init', function (identifier, optionsText) {
-    const options = JSON.parse(optionsText);
-
-    if (options.onSelectedRangeChangedEnabled) {
-        options.onSelectedRangeChanged = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxRangeSelectorInterop", "OnSelectedRangeChanged");
+    if (options.onSelectionChangedEnabled) {
+        options.onSelectionChanged = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxDropDownListInterop", "OnSelectionChanged");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onValueChangedEnabled) {
         options.onValueChanged = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxRangeSelectorInterop", "OnValueChanged");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxDropDownListInterop", "OnValueChanged");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     let element = document.getElementById(identifier);
-    let instance = new DevExpress.viz.rangeSelector.dxRangeSelector(element, options);
+    let instance = new DevExpress.ui.dxDropDownList(element, options);
 });
-Blazor.registerFunction('BlazorDevExtreme.DxRangeSelector.SetOption', function (identifier, key, value) {
+Blazor.registerFunction('BlazorDevExtreme.DxDropDownList.SetOption', function (identifier, key, value) {
     let element = document.getElementById(identifier);
-    DevExpress.viz.rangeSelector.dxRangeSelector.getInstance(element).option(key, value);
+    DevExpress.ui.dxDropDownList.getInstance(element).option(key, value);
 });
-Blazor.registerFunction('BlazorDevExtreme.DxRangeSelector.GetOption', function (identifier, key) {
+Blazor.registerFunction('BlazorDevExtreme.DxDropDownList.GetOption', function (identifier, key) {
     let element = document.getElementById(identifier);
-    return DevExpress.viz.rangeSelector.dxRangeSelector.getInstance(element).option(key);
+    return DevExpress.ui.dxDropDownList.getInstance(element).option(key);
 });
-// DevExpress.viz.sparklines.dxSparkline interop automatically generated
-Blazor.registerFunction('BlazorDevExtreme.DxSparkline.Init', function (identifier, optionsText) {
+// DevExpress.ui.Editor interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.Editor.Init', function (identifier, optionsText) {
+    const options = JSON.parse(optionsText);
+
+    if (options.onValueChangedEnabled) {
+        options.onValueChanged = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "EditorInterop", "OnValueChanged");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    let element = document.getElementById(identifier);
+    let instance = new DevExpress.ui.Editor(element, options);
+});
+Blazor.registerFunction('BlazorDevExtreme.Editor.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.ui.Editor.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.Editor.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.ui.Editor.getInstance(element).option(key);
+});
+// DevExpress.ui.DataExpressionMixin interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.DataExpressionMixin.Init', function (identifier, optionsText) {
     const options = JSON.parse(optionsText);
 
     let element = document.getElementById(identifier);
-    let instance = new DevExpress.viz.sparklines.dxSparkline(element, options);
+    let instance = new DevExpress.ui.DataExpressionMixin(element, options);
 });
-Blazor.registerFunction('BlazorDevExtreme.DxSparkline.SetOption', function (identifier, key, value) {
+Blazor.registerFunction('BlazorDevExtreme.DataExpressionMixin.SetOption', function (identifier, key, value) {
     let element = document.getElementById(identifier);
-    DevExpress.viz.sparklines.dxSparkline.getInstance(element).option(key, value);
+    DevExpress.ui.DataExpressionMixin.getInstance(element).option(key, value);
 });
-Blazor.registerFunction('BlazorDevExtreme.DxSparkline.GetOption', function (identifier, key) {
+Blazor.registerFunction('BlazorDevExtreme.DataExpressionMixin.GetOption', function (identifier, key) {
     let element = document.getElementById(identifier);
-    return DevExpress.viz.sparklines.dxSparkline.getInstance(element).option(key);
+    return DevExpress.ui.DataExpressionMixin.getInstance(element).option(key);
 });
-// DevExpress.viz.treeMap.dxTreeMap interop automatically generated
-Blazor.registerFunction('BlazorDevExtreme.DxTreeMap.Init', function (identifier, optionsText) {
+// DevExpress.ui.HierarchicalCollectionWidget interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.HierarchicalCollectionWidget.Init', function (identifier, optionsText) {
     const options = JSON.parse(optionsText);
 
-    if (options.onClickEnabled) {
-        options.onClick = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxTreeMapInterop", "OnClick");
-            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
-        }
-    }
-    if (options.onDrillEnabled) {
-        options.onDrill = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxTreeMapInterop", "OnDrill");
-            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
-        }
-    }
-    if (options.onHoverChangedEnabled) {
-        options.onHoverChanged = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxTreeMapInterop", "OnHoverChanged");
-            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
-        }
-    }
-    if (options.onNodesInitializedEnabled) {
-        options.onNodesInitialized = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxTreeMapInterop", "OnNodesInitialized");
-            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
-        }
-    }
-    if (options.onNodesRenderingEnabled) {
-        options.onNodesRendering = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxTreeMapInterop", "OnNodesRendering");
-            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
-        }
-    }
-    if (options.onSelectionChangedEnabled) {
-        options.onSelectionChanged = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxTreeMapInterop", "OnSelectionChanged");
-            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
-        }
-    }
     let element = document.getElementById(identifier);
-    let instance = new DevExpress.viz.treeMap.dxTreeMap(element, options);
+    let instance = new DevExpress.ui.HierarchicalCollectionWidget(element, options);
 });
-Blazor.registerFunction('BlazorDevExtreme.DxTreeMap.SetOption', function (identifier, key, value) {
+Blazor.registerFunction('BlazorDevExtreme.HierarchicalCollectionWidget.SetOption', function (identifier, key, value) {
     let element = document.getElementById(identifier);
-    DevExpress.viz.treeMap.dxTreeMap.getInstance(element).option(key, value);
+    DevExpress.ui.HierarchicalCollectionWidget.getInstance(element).option(key, value);
 });
-Blazor.registerFunction('BlazorDevExtreme.DxTreeMap.GetOption', function (identifier, key) {
+Blazor.registerFunction('BlazorDevExtreme.HierarchicalCollectionWidget.GetOption', function (identifier, key) {
     let element = document.getElementById(identifier);
-    return DevExpress.viz.treeMap.dxTreeMap.getInstance(element).option(key);
+    return DevExpress.ui.HierarchicalCollectionWidget.getInstance(element).option(key);
 });
-// DevExpress.viz.map.dxVectorMap interop automatically generated
-Blazor.registerFunction('BlazorDevExtreme.DxVectorMap.Init', function (identifier, optionsText) {
+// DevExpress.ui.dxPivotGridSummaryCell interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.DxPivotGridSummaryCell.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.ui.dxPivotGridSummaryCell.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.DxPivotGridSummaryCell.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.ui.dxPivotGridSummaryCell.getInstance(element).option(key);
+});
+// DevExpress.ui.dxScrollable interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.DxScrollable.Init', function (identifier, optionsText) {
     const options = JSON.parse(optionsText);
 
-    if (options.onAreaClickEnabled) {
-        options.onAreaClick = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxVectorMapInterop", "OnAreaClick");
+    if (options.onScrollEnabled) {
+        options.onScroll = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxScrollableInterop", "OnScroll");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
-    if (options.onAreaSelectionChangedEnabled) {
-        options.onAreaSelectionChanged = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxVectorMapInterop", "OnAreaSelectionChanged");
+    if (options.onUpdatedEnabled) {
+        options.onUpdated = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxScrollableInterop", "OnUpdated");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
-    if (options.onCenterChangedEnabled) {
-        options.onCenterChanged = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxVectorMapInterop", "OnCenterChanged");
+    let element = document.getElementById(identifier);
+    let instance = new DevExpress.ui.dxScrollable(element, options);
+});
+Blazor.registerFunction('BlazorDevExtreme.DxScrollable.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.ui.dxScrollable.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.DxScrollable.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.ui.dxScrollable.getInstance(element).option(key);
+});
+// DevExpress.ui.dxSliderBase interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.DxSliderBase.Init', function (identifier, optionsText) {
+    const options = JSON.parse(optionsText);
+
+    let element = document.getElementById(identifier);
+    let instance = new DevExpress.ui.dxSliderBase(element, options);
+});
+Blazor.registerFunction('BlazorDevExtreme.DxSliderBase.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.ui.dxSliderBase.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.DxSliderBase.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.ui.dxSliderBase.getInstance(element).option(key);
+});
+// DevExpress.ui.dxTextEditor interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.DxTextEditor.Init', function (identifier, optionsText) {
+    const options = JSON.parse(optionsText);
+
+    if (options.onChangeEnabled) {
+        options.onChange = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxTextEditorInterop", "OnChange");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
-    if (options.onClickEnabled) {
-        options.onClick = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxVectorMapInterop", "OnClick");
+    if (options.onCopyEnabled) {
+        options.onCopy = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxTextEditorInterop", "OnCopy");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
-    if (options.onMarkerClickEnabled) {
-        options.onMarkerClick = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxVectorMapInterop", "OnMarkerClick");
+    if (options.onCutEnabled) {
+        options.onCut = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxTextEditorInterop", "OnCut");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
-    if (options.onMarkerSelectionChangedEnabled) {
-        options.onMarkerSelectionChanged = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxVectorMapInterop", "OnMarkerSelectionChanged");
+    if (options.onEnterKeyEnabled) {
+        options.onEnterKey = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxTextEditorInterop", "OnEnterKey");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
-    if (options.onSelectionChangedEnabled) {
-        options.onSelectionChanged = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxVectorMapInterop", "OnSelectionChanged");
+    if (options.onFocusInEnabled) {
+        options.onFocusIn = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxTextEditorInterop", "OnFocusIn");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onFocusOutEnabled) {
+        options.onFocusOut = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxTextEditorInterop", "OnFocusOut");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onInputEnabled) {
+        options.onInput = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxTextEditorInterop", "OnInput");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onKeyDownEnabled) {
+        options.onKeyDown = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxTextEditorInterop", "OnKeyDown");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onKeyPressEnabled) {
+        options.onKeyPress = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxTextEditorInterop", "OnKeyPress");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onKeyUpEnabled) {
+        options.onKeyUp = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxTextEditorInterop", "OnKeyUp");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onPasteEnabled) {
+        options.onPaste = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "DxTextEditorInterop", "OnPaste");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    let element = document.getElementById(identifier);
+    let instance = new DevExpress.ui.dxTextEditor(element, options);
+});
+Blazor.registerFunction('BlazorDevExtreme.DxTextEditor.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.ui.dxTextEditor.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.DxTextEditor.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.ui.dxTextEditor.getInstance(element).option(key);
+});
+// DevExpress.ui.SearchBoxMixin interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.SearchBoxMixin.Init', function (identifier, optionsText) {
+    const options = JSON.parse(optionsText);
+
+    let element = document.getElementById(identifier);
+    let instance = new DevExpress.ui.SearchBoxMixin(element, options);
+});
+Blazor.registerFunction('BlazorDevExtreme.SearchBoxMixin.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.ui.SearchBoxMixin.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.SearchBoxMixin.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.ui.SearchBoxMixin.getInstance(element).option(key);
+});
+// DevExpress.ui.dxTemplate interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.DxTemplate.Init', function (identifier, optionsText) {
+    const options = JSON.parse(optionsText);
+
+    let element = document.getElementById(identifier);
+    let instance = new DevExpress.ui.dxTemplate(element, options);
+});
+Blazor.registerFunction('BlazorDevExtreme.DxTemplate.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.ui.dxTemplate.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.DxTemplate.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.ui.dxTemplate.getInstance(element).option(key);
+});
+// DevExpress.ui.Widget interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.Widget.Init', function (identifier, optionsText) {
+    const options = JSON.parse(optionsText);
+
+    if (options.onContentReadyEnabled) {
+        options.onContentReady = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Ui", "WidgetInterop", "OnContentReady");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    let element = document.getElementById(identifier);
+    let instance = new DevExpress.ui.Widget(element, options);
+});
+Blazor.registerFunction('BlazorDevExtreme.Widget.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.ui.Widget.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.Widget.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.ui.Widget.getInstance(element).option(key);
+});
+// DevExpress.ui.dialog interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.Dialog.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.ui.dialog.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.Dialog.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.ui.dialog.getInstance(element).option(key);
+});
+// DevExpress.ui.themes interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.Themes.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.ui.themes.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.Themes.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.ui.themes.getInstance(element).option(key);
+});
+// DevExpress.viz.BaseWidget interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.BaseWidget.Init', function (identifier, optionsText) {
+    const options = JSON.parse(optionsText);
+
+    if (options.onDrawnEnabled) {
+        options.onDrawn = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Viz", "BaseWidgetInterop", "OnDrawn");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onExportedEnabled) {
+        options.onExported = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Viz", "BaseWidgetInterop", "OnExported");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onExportingEnabled) {
+        options.onExporting = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Viz", "BaseWidgetInterop", "OnExporting");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onFileSavingEnabled) {
+        options.onFileSaving = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Viz", "BaseWidgetInterop", "OnFileSaving");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onIncidentOccurredEnabled) {
+        options.onIncidentOccurred = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Viz", "BaseWidgetInterop", "OnIncidentOccurred");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    let element = document.getElementById(identifier);
+    let instance = new DevExpress.viz.BaseWidget(element, options);
+});
+Blazor.registerFunction('BlazorDevExtreme.BaseWidget.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.viz.BaseWidget.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.BaseWidget.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.viz.BaseWidget.getInstance(element).option(key);
+});
+// DevExpress.viz.dxChart interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.DxChart.Init', function (identifier, optionsText) {
+    const options = JSON.parse(optionsText);
+
+    if (options.onArgumentAxisClickEnabled) {
+        options.onArgumentAxisClick = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Viz", "DxChartInterop", "OnArgumentAxisClick");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onLegendClickEnabled) {
+        options.onLegendClick = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Viz", "DxChartInterop", "OnLegendClick");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onSeriesClickEnabled) {
+        options.onSeriesClick = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Viz", "DxChartInterop", "OnSeriesClick");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onSeriesHoverChangedEnabled) {
+        options.onSeriesHoverChanged = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Viz", "DxChartInterop", "OnSeriesHoverChanged");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onSeriesSelectionChangedEnabled) {
+        options.onSeriesSelectionChanged = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Viz", "DxChartInterop", "OnSeriesSelectionChanged");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onZoomEndEnabled) {
+        options.onZoomEnd = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Viz", "DxChartInterop", "OnZoomEnd");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onZoomStartEnabled) {
+        options.onZoomStart = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Viz", "DxChartInterop", "OnZoomStart");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    let element = document.getElementById(identifier);
+    let instance = new DevExpress.viz.dxChart(element, options);
+});
+Blazor.registerFunction('BlazorDevExtreme.DxChart.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.viz.dxChart.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.DxChart.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.viz.dxChart.getInstance(element).option(key);
+});
+// DevExpress.viz.dxPieChart interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.DxPieChart.Init', function (identifier, optionsText) {
+    const options = JSON.parse(optionsText);
+
+    if (options.onLegendClickEnabled) {
+        options.onLegendClick = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Viz", "DxPieChartInterop", "OnLegendClick");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    let element = document.getElementById(identifier);
+    let instance = new DevExpress.viz.dxPieChart(element, options);
+});
+Blazor.registerFunction('BlazorDevExtreme.DxPieChart.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.viz.dxPieChart.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.DxPieChart.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.viz.dxPieChart.getInstance(element).option(key);
+});
+// DevExpress.viz.dxPolarChart interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.DxPolarChart.Init', function (identifier, optionsText) {
+    const options = JSON.parse(optionsText);
+
+    if (options.onArgumentAxisClickEnabled) {
+        options.onArgumentAxisClick = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Viz", "DxPolarChartInterop", "OnArgumentAxisClick");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onLegendClickEnabled) {
+        options.onLegendClick = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Viz", "DxPolarChartInterop", "OnLegendClick");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onSeriesClickEnabled) {
+        options.onSeriesClick = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Viz", "DxPolarChartInterop", "OnSeriesClick");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onSeriesHoverChangedEnabled) {
+        options.onSeriesHoverChanged = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Viz", "DxPolarChartInterop", "OnSeriesHoverChanged");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onSeriesSelectionChangedEnabled) {
+        options.onSeriesSelectionChanged = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Viz", "DxPolarChartInterop", "OnSeriesSelectionChanged");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    let element = document.getElementById(identifier);
+    let instance = new DevExpress.viz.dxPolarChart(element, options);
+});
+Blazor.registerFunction('BlazorDevExtreme.DxPolarChart.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.viz.dxPolarChart.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.DxPolarChart.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.viz.dxPolarChart.getInstance(element).option(key);
+});
+// DevExpress.viz.BaseChart interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.BaseChart.Init', function (identifier, optionsText) {
+    const options = JSON.parse(optionsText);
+
+    if (options.onDoneEnabled) {
+        options.onDone = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Viz", "BaseChartInterop", "OnDone");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onPointClickEnabled) {
+        options.onPointClick = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Viz", "BaseChartInterop", "OnPointClick");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onPointHoverChangedEnabled) {
+        options.onPointHoverChanged = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Viz", "BaseChartInterop", "OnPointHoverChanged");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onPointSelectionChangedEnabled) {
+        options.onPointSelectionChanged = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Viz", "BaseChartInterop", "OnPointSelectionChanged");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onTooltipHiddenEnabled) {
         options.onTooltipHidden = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxVectorMapInterop", "OnTooltipHidden");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Viz", "BaseChartInterop", "OnTooltipHidden");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onTooltipShownEnabled) {
         options.onTooltipShown = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxVectorMapInterop", "OnTooltipShown");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Viz", "BaseChartInterop", "OnTooltipShown");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    let element = document.getElementById(identifier);
+    let instance = new DevExpress.viz.BaseChart(element, options);
+});
+Blazor.registerFunction('BlazorDevExtreme.BaseChart.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.viz.BaseChart.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.BaseChart.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.viz.BaseChart.getInstance(element).option(key);
+});
+// DevExpress.viz.dxExporter interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.DxExporter.Init', function (identifier, optionsText) {
+    const options = JSON.parse(optionsText);
+
+    let element = document.getElementById(identifier);
+    let instance = new DevExpress.viz.dxExporter(element, options);
+});
+Blazor.registerFunction('BlazorDevExtreme.DxExporter.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.viz.dxExporter.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.DxExporter.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.viz.dxExporter.getInstance(element).option(key);
+});
+// DevExpress.viz.dxFunnel interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.DxFunnel.Init', function (identifier, optionsText) {
+    const options = JSON.parse(optionsText);
+
+    if (options.onHoverChangedEnabled) {
+        options.onHoverChanged = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Viz", "DxFunnelInterop", "OnHoverChanged");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onItemClickEnabled) {
+        options.onItemClick = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Viz", "DxFunnelInterop", "OnItemClick");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onLegendClickEnabled) {
+        options.onLegendClick = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Viz", "DxFunnelInterop", "OnLegendClick");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onSelectionChangedEnabled) {
+        options.onSelectionChanged = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Viz", "DxFunnelInterop", "OnSelectionChanged");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    let element = document.getElementById(identifier);
+    let instance = new DevExpress.viz.dxFunnel(element, options);
+});
+Blazor.registerFunction('BlazorDevExtreme.DxFunnel.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.viz.dxFunnel.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.DxFunnel.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.viz.dxFunnel.getInstance(element).option(key);
+});
+// DevExpress.viz.BaseGauge interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.BaseGauge.Init', function (identifier, optionsText) {
+    const options = JSON.parse(optionsText);
+
+    if (options.onTooltipHiddenEnabled) {
+        options.onTooltipHidden = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Viz", "BaseGaugeInterop", "OnTooltipHidden");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onTooltipShownEnabled) {
+        options.onTooltipShown = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Viz", "BaseGaugeInterop", "OnTooltipShown");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    let element = document.getElementById(identifier);
+    let instance = new DevExpress.viz.BaseGauge(element, options);
+});
+Blazor.registerFunction('BlazorDevExtreme.BaseGauge.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.viz.BaseGauge.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.BaseGauge.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.viz.BaseGauge.getInstance(element).option(key);
+});
+// DevExpress.viz.dxCircularGauge interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.DxCircularGauge.Init', function (identifier, optionsText) {
+    const options = JSON.parse(optionsText);
+
+    let element = document.getElementById(identifier);
+    let instance = new DevExpress.viz.dxCircularGauge(element, options);
+});
+Blazor.registerFunction('BlazorDevExtreme.DxCircularGauge.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.viz.dxCircularGauge.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.DxCircularGauge.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.viz.dxCircularGauge.getInstance(element).option(key);
+});
+// DevExpress.viz.dxLinearGauge interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.DxLinearGauge.Init', function (identifier, optionsText) {
+    const options = JSON.parse(optionsText);
+
+    let element = document.getElementById(identifier);
+    let instance = new DevExpress.viz.dxLinearGauge(element, options);
+});
+Blazor.registerFunction('BlazorDevExtreme.DxLinearGauge.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.viz.dxLinearGauge.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.DxLinearGauge.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.viz.dxLinearGauge.getInstance(element).option(key);
+});
+// DevExpress.viz.dxBarGauge interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.DxBarGauge.Init', function (identifier, optionsText) {
+    const options = JSON.parse(optionsText);
+
+    if (options.onTooltipHiddenEnabled) {
+        options.onTooltipHidden = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Viz", "DxBarGaugeInterop", "OnTooltipHidden");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onTooltipShownEnabled) {
+        options.onTooltipShown = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Viz", "DxBarGaugeInterop", "OnTooltipShown");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    let element = document.getElementById(identifier);
+    let instance = new DevExpress.viz.dxBarGauge(element, options);
+});
+Blazor.registerFunction('BlazorDevExtreme.DxBarGauge.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.viz.dxBarGauge.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.DxBarGauge.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.viz.dxBarGauge.getInstance(element).option(key);
+});
+// DevExpress.viz.baseSeriesObject interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.BaseSeriesObject.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.viz.baseSeriesObject.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.BaseSeriesObject.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.viz.baseSeriesObject.getInstance(element).option(key);
+});
+// DevExpress.viz.basePointObject interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.BasePointObject.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.viz.basePointObject.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.BasePointObject.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.viz.basePointObject.getInstance(element).option(key);
+});
+// DevExpress.viz.baseLabelObject interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.BaseLabelObject.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.viz.baseLabelObject.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.BaseLabelObject.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.viz.baseLabelObject.getInstance(element).option(key);
+});
+// DevExpress.viz.chartSeriesObject interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.ChartSeriesObject.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.viz.chartSeriesObject.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.ChartSeriesObject.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.viz.chartSeriesObject.getInstance(element).option(key);
+});
+// DevExpress.viz.chartPointObject interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.ChartPointObject.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.viz.chartPointObject.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.ChartPointObject.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.viz.chartPointObject.getInstance(element).option(key);
+});
+// DevExpress.viz.dxFunnelItem interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.DxFunnelItem.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.viz.dxFunnelItem.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.DxFunnelItem.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.viz.dxFunnelItem.getInstance(element).option(key);
+});
+// DevExpress.viz.piePointObject interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.PiePointObject.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.viz.piePointObject.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.PiePointObject.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.viz.piePointObject.getInstance(element).option(key);
+});
+// DevExpress.viz.pieChartSeriesObject interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.PieChartSeriesObject.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.viz.pieChartSeriesObject.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.PieChartSeriesObject.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.viz.pieChartSeriesObject.getInstance(element).option(key);
+});
+// DevExpress.viz.polarChartSeriesObject interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.PolarChartSeriesObject.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.viz.polarChartSeriesObject.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.PolarChartSeriesObject.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.viz.polarChartSeriesObject.getInstance(element).option(key);
+});
+// DevExpress.viz.polarPointObject interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.PolarPointObject.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.viz.polarPointObject.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.PolarPointObject.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.viz.polarPointObject.getInstance(element).option(key);
+});
+// DevExpress.viz.dxTreeMapNode interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.DxTreeMapNode.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.viz.dxTreeMapNode.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.DxTreeMapNode.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.viz.dxTreeMapNode.getInstance(element).option(key);
+});
+// DevExpress.viz.MapLayer interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.MapLayer.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.viz.MapLayer.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.MapLayer.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.viz.MapLayer.getInstance(element).option(key);
+});
+// DevExpress.viz.MapLayerElement interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.MapLayerElement.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.viz.MapLayerElement.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.MapLayerElement.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.viz.MapLayerElement.getInstance(element).option(key);
+});
+// DevExpress.viz.areaObjects interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.AreaObjects.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.viz.areaObjects.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.AreaObjects.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.viz.areaObjects.getInstance(element).option(key);
+});
+// DevExpress.viz.markerObjects interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.MarkerObjects.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.viz.markerObjects.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.MarkerObjects.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.viz.markerObjects.getInstance(element).option(key);
+});
+// DevExpress.viz.dxRangeSelector interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.DxRangeSelector.Init', function (identifier, optionsText) {
+    const options = JSON.parse(optionsText);
+
+    if (options.onSelectedRangeChangedEnabled) {
+        options.onSelectedRangeChanged = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Viz", "DxRangeSelectorInterop", "OnSelectedRangeChanged");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onValueChangedEnabled) {
+        options.onValueChanged = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Viz", "DxRangeSelectorInterop", "OnValueChanged");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    let element = document.getElementById(identifier);
+    let instance = new DevExpress.viz.dxRangeSelector(element, options);
+});
+Blazor.registerFunction('BlazorDevExtreme.DxRangeSelector.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.viz.dxRangeSelector.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.DxRangeSelector.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.viz.dxRangeSelector.getInstance(element).option(key);
+});
+// DevExpress.viz.BaseSparkline interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.BaseSparkline.Init', function (identifier, optionsText) {
+    const options = JSON.parse(optionsText);
+
+    if (options.onTooltipHiddenEnabled) {
+        options.onTooltipHidden = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Viz", "BaseSparklineInterop", "OnTooltipHidden");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onTooltipShownEnabled) {
+        options.onTooltipShown = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Viz", "BaseSparklineInterop", "OnTooltipShown");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    let element = document.getElementById(identifier);
+    let instance = new DevExpress.viz.BaseSparkline(element, options);
+});
+Blazor.registerFunction('BlazorDevExtreme.BaseSparkline.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.viz.BaseSparkline.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.BaseSparkline.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.viz.BaseSparkline.getInstance(element).option(key);
+});
+// DevExpress.viz.dxSparkline interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.DxSparkline.Init', function (identifier, optionsText) {
+    const options = JSON.parse(optionsText);
+
+    let element = document.getElementById(identifier);
+    let instance = new DevExpress.viz.dxSparkline(element, options);
+});
+Blazor.registerFunction('BlazorDevExtreme.DxSparkline.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.viz.dxSparkline.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.DxSparkline.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.viz.dxSparkline.getInstance(element).option(key);
+});
+// DevExpress.viz.dxBullet interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.DxBullet.Init', function (identifier, optionsText) {
+    const options = JSON.parse(optionsText);
+
+    let element = document.getElementById(identifier);
+    let instance = new DevExpress.viz.dxBullet(element, options);
+});
+Blazor.registerFunction('BlazorDevExtreme.DxBullet.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.viz.dxBullet.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.DxBullet.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.viz.dxBullet.getInstance(element).option(key);
+});
+// DevExpress.viz.dxTreeMap interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.DxTreeMap.Init', function (identifier, optionsText) {
+    const options = JSON.parse(optionsText);
+
+    if (options.onClickEnabled) {
+        options.onClick = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Viz", "DxTreeMapInterop", "OnClick");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onDrillEnabled) {
+        options.onDrill = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Viz", "DxTreeMapInterop", "OnDrill");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onHoverChangedEnabled) {
+        options.onHoverChanged = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Viz", "DxTreeMapInterop", "OnHoverChanged");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onNodesInitializedEnabled) {
+        options.onNodesInitialized = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Viz", "DxTreeMapInterop", "OnNodesInitialized");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onNodesRenderingEnabled) {
+        options.onNodesRendering = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Viz", "DxTreeMapInterop", "OnNodesRendering");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onSelectionChangedEnabled) {
+        options.onSelectionChanged = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Viz", "DxTreeMapInterop", "OnSelectionChanged");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    let element = document.getElementById(identifier);
+    let instance = new DevExpress.viz.dxTreeMap(element, options);
+});
+Blazor.registerFunction('BlazorDevExtreme.DxTreeMap.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.viz.dxTreeMap.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.DxTreeMap.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.viz.dxTreeMap.getInstance(element).option(key);
+});
+// DevExpress.viz.dxVectorMap interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.DxVectorMap.Init', function (identifier, optionsText) {
+    const options = JSON.parse(optionsText);
+
+    if (options.onAreaClickEnabled) {
+        options.onAreaClick = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Viz", "DxVectorMapInterop", "OnAreaClick");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onAreaSelectionChangedEnabled) {
+        options.onAreaSelectionChanged = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Viz", "DxVectorMapInterop", "OnAreaSelectionChanged");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onCenterChangedEnabled) {
+        options.onCenterChanged = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Viz", "DxVectorMapInterop", "OnCenterChanged");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onClickEnabled) {
+        options.onClick = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Viz", "DxVectorMapInterop", "OnClick");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onMarkerClickEnabled) {
+        options.onMarkerClick = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Viz", "DxVectorMapInterop", "OnMarkerClick");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onMarkerSelectionChangedEnabled) {
+        options.onMarkerSelectionChanged = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Viz", "DxVectorMapInterop", "OnMarkerSelectionChanged");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onSelectionChangedEnabled) {
+        options.onSelectionChanged = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Viz", "DxVectorMapInterop", "OnSelectionChanged");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onTooltipHiddenEnabled) {
+        options.onTooltipHidden = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Viz", "DxVectorMapInterop", "OnTooltipHidden");
+            Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
+        }
+    }
+    if (options.onTooltipShownEnabled) {
+        options.onTooltipShown = function () {
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Viz", "DxVectorMapInterop", "OnTooltipShown");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     if (options.onZoomFactorChangedEnabled) {
         options.onZoomFactorChanged = function () {
-            const callback = Blazor.platform.findMethod(assemblyName, namespace, "DxVectorMapInterop", "OnZoomFactorChanged");
+            const callback = Blazor.platform.findMethod(assemblyName, "DevExpress.Viz", "DxVectorMapInterop", "OnZoomFactorChanged");
             Blazor.platform.callMethod(callback, null, [Blazor.platform.toDotNetString(identifier)]);
         }
     }
     let element = document.getElementById(identifier);
-    let instance = new DevExpress.viz.map.dxVectorMap(element, options);
+    let instance = new DevExpress.viz.dxVectorMap(element, options);
 });
 Blazor.registerFunction('BlazorDevExtreme.DxVectorMap.SetOption', function (identifier, key, value) {
     let element = document.getElementById(identifier);
-    DevExpress.viz.map.dxVectorMap.getInstance(element).option(key, value);
+    DevExpress.viz.dxVectorMap.getInstance(element).option(key, value);
 });
 Blazor.registerFunction('BlazorDevExtreme.DxVectorMap.GetOption', function (identifier, key) {
     let element = document.getElementById(identifier);
-    return DevExpress.viz.map.dxVectorMap.getInstance(element).option(key);
+    return DevExpress.viz.dxVectorMap.getInstance(element).option(key);
+});
+// DevExpress.viz.core interop automatically generated
+Blazor.registerFunction('BlazorDevExtreme.Core.SetOption', function (identifier, key, value) {
+    let element = document.getElementById(identifier);
+    DevExpress.viz.core.getInstance(element).option(key, value);
+});
+Blazor.registerFunction('BlazorDevExtreme.Core.GetOption', function (identifier, key) {
+    let element = document.getElementById(identifier);
+    return DevExpress.viz.core.getInstance(element).option(key);
 });

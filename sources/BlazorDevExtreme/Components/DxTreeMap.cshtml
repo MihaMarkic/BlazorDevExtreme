@@ -9,15 +9,21 @@
 		return new DevExpress.Viz.TreeMap.DxTreeMapOptions {
 			childrenField = childrenField,
 			colorField = colorField,
+			colorizer = colorizer,
+			dataSource = dataSource,
+			group = group,
 			hoverEnabled = hoverEnabled,
 			idField = idField,
 			interactWithGroup = interactWithGroup,
 			labelField = labelField,
+			layoutAlgorithm = layoutAlgorithm,
 			layoutDirection = layoutDirection,
 			maxDepth = maxDepth,
 			parentField = parentField,
 			resolveLabelOverflow = resolveLabelOverflow,
 			selectionMode = selectionMode,
+			tile = tile,
+			tooltip = tooltip,
 			valueField = valueField,
 			onClickEnabled = onClickEnabled,
 			onDrillEnabled = onDrillEnabled,
@@ -28,14 +34,14 @@
 		};
 	}
 	protected override void Init(DevExpress.Viz.TreeMap.DxTreeMapOptions options) {
-		DxTreeMapInterop.Init(Id, options);
+		DevExpress.Viz.DxTreeMapInterop.Init(Id, options);
 	}
 	string childrenField;
 	public string ChildrenField {
-		get => isInitialized ? DxTreeMapInterop.GetChildrenField(Id) : childrenField;
+		get => isInitialized ? DevExpress.Viz.DxTreeMapInterop.GetChildrenField(Id) : childrenField;
 		set {
 			if (isInitialized) {
-				DxTreeMapInterop.SetChildrenField(Id, value);
+				DevExpress.Viz.DxTreeMapInterop.SetChildrenField(Id, value);
 			} else {
 				this.childrenField = value;
 			}
@@ -43,21 +49,54 @@
 	}
 	string colorField;
 	public string ColorField {
-		get => isInitialized ? DxTreeMapInterop.GetColorField(Id) : colorField;
+		get => isInitialized ? DevExpress.Viz.DxTreeMapInterop.GetColorField(Id) : colorField;
 		set {
 			if (isInitialized) {
-				DxTreeMapInterop.SetColorField(Id, value);
+				DevExpress.Viz.DxTreeMapInterop.SetColorField(Id, value);
 			} else {
 				this.colorField = value;
 			}
 		}
 	}
-	bool? hoverEnabled;
-	public bool? HoverEnabled {
-		get => isInitialized ? DxTreeMapInterop.GetHoverEnabled(Id) : hoverEnabled;
+	object colorizer;
+	public object Colorizer {
+		get => isInitialized ? DevExpress.Viz.DxTreeMapInterop.GetColorizer(Id) : colorizer;
 		set {
 			if (isInitialized) {
-				DxTreeMapInterop.SetHoverEnabled(Id, value);
+				DevExpress.Viz.DxTreeMapInterop.SetColorizer(Id, value);
+			} else {
+				this.colorizer = value;
+			}
+		}
+	}
+	object dataSource;
+	public object DataSource {
+		get => isInitialized ? DevExpress.Viz.DxTreeMapInterop.GetDataSource(Id) : dataSource;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxTreeMapInterop.SetDataSource(Id, value);
+			} else {
+				this.dataSource = value;
+			}
+		}
+	}
+	object group;
+	public object Group {
+		get => isInitialized ? DevExpress.Viz.DxTreeMapInterop.GetGroup(Id) : group;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxTreeMapInterop.SetGroup(Id, value);
+			} else {
+				this.group = value;
+			}
+		}
+	}
+	bool? hoverEnabled;
+	public bool? HoverEnabled {
+		get => isInitialized ? DevExpress.Viz.DxTreeMapInterop.GetHoverEnabled(Id) : hoverEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxTreeMapInterop.SetHoverEnabled(Id, value);
 			} else {
 				this.hoverEnabled = value;
 			}
@@ -65,10 +104,10 @@
 	}
 	string idField;
 	public string IdField {
-		get => isInitialized ? DxTreeMapInterop.GetIdField(Id) : idField;
+		get => isInitialized ? DevExpress.Viz.DxTreeMapInterop.GetIdField(Id) : idField;
 		set {
 			if (isInitialized) {
-				DxTreeMapInterop.SetIdField(Id, value);
+				DevExpress.Viz.DxTreeMapInterop.SetIdField(Id, value);
 			} else {
 				this.idField = value;
 			}
@@ -76,10 +115,10 @@
 	}
 	bool? interactWithGroup;
 	public bool? InteractWithGroup {
-		get => isInitialized ? DxTreeMapInterop.GetInteractWithGroup(Id) : interactWithGroup;
+		get => isInitialized ? DevExpress.Viz.DxTreeMapInterop.GetInteractWithGroup(Id) : interactWithGroup;
 		set {
 			if (isInitialized) {
-				DxTreeMapInterop.SetInteractWithGroup(Id, value);
+				DevExpress.Viz.DxTreeMapInterop.SetInteractWithGroup(Id, value);
 			} else {
 				this.interactWithGroup = value;
 			}
@@ -87,21 +126,32 @@
 	}
 	string labelField;
 	public string LabelField {
-		get => isInitialized ? DxTreeMapInterop.GetLabelField(Id) : labelField;
+		get => isInitialized ? DevExpress.Viz.DxTreeMapInterop.GetLabelField(Id) : labelField;
 		set {
 			if (isInitialized) {
-				DxTreeMapInterop.SetLabelField(Id, value);
+				DevExpress.Viz.DxTreeMapInterop.SetLabelField(Id, value);
 			} else {
 				this.labelField = value;
 			}
 		}
 	}
-	string layoutDirection;
-	public string LayoutDirection {
-		get => isInitialized ? DxTreeMapInterop.GetLayoutDirection(Id) : layoutDirection;
+	object layoutAlgorithm;
+	public object LayoutAlgorithm {
+		get => isInitialized ? DevExpress.Viz.DxTreeMapInterop.GetLayoutAlgorithm(Id) : layoutAlgorithm;
 		set {
 			if (isInitialized) {
-				DxTreeMapInterop.SetLayoutDirection(Id, value);
+				DevExpress.Viz.DxTreeMapInterop.SetLayoutAlgorithm(Id, value);
+			} else {
+				this.layoutAlgorithm = value;
+			}
+		}
+	}
+	string layoutDirection;
+	public string LayoutDirection {
+		get => isInitialized ? DevExpress.Viz.DxTreeMapInterop.GetLayoutDirection(Id) : layoutDirection;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxTreeMapInterop.SetLayoutDirection(Id, value);
 			} else {
 				this.layoutDirection = value;
 			}
@@ -109,10 +159,10 @@
 	}
 	float? maxDepth;
 	public float? MaxDepth {
-		get => isInitialized ? DxTreeMapInterop.GetMaxDepth(Id) : maxDepth;
+		get => isInitialized ? DevExpress.Viz.DxTreeMapInterop.GetMaxDepth(Id) : maxDepth;
 		set {
 			if (isInitialized) {
-				DxTreeMapInterop.SetMaxDepth(Id, value);
+				DevExpress.Viz.DxTreeMapInterop.SetMaxDepth(Id, value);
 			} else {
 				this.maxDepth = value;
 			}
@@ -120,10 +170,10 @@
 	}
 	string parentField;
 	public string ParentField {
-		get => isInitialized ? DxTreeMapInterop.GetParentField(Id) : parentField;
+		get => isInitialized ? DevExpress.Viz.DxTreeMapInterop.GetParentField(Id) : parentField;
 		set {
 			if (isInitialized) {
-				DxTreeMapInterop.SetParentField(Id, value);
+				DevExpress.Viz.DxTreeMapInterop.SetParentField(Id, value);
 			} else {
 				this.parentField = value;
 			}
@@ -131,10 +181,10 @@
 	}
 	string resolveLabelOverflow;
 	public string ResolveLabelOverflow {
-		get => isInitialized ? DxTreeMapInterop.GetResolveLabelOverflow(Id) : resolveLabelOverflow;
+		get => isInitialized ? DevExpress.Viz.DxTreeMapInterop.GetResolveLabelOverflow(Id) : resolveLabelOverflow;
 		set {
 			if (isInitialized) {
-				DxTreeMapInterop.SetResolveLabelOverflow(Id, value);
+				DevExpress.Viz.DxTreeMapInterop.SetResolveLabelOverflow(Id, value);
 			} else {
 				this.resolveLabelOverflow = value;
 			}
@@ -142,21 +192,43 @@
 	}
 	string selectionMode;
 	public string SelectionMode {
-		get => isInitialized ? DxTreeMapInterop.GetSelectionMode(Id) : selectionMode;
+		get => isInitialized ? DevExpress.Viz.DxTreeMapInterop.GetSelectionMode(Id) : selectionMode;
 		set {
 			if (isInitialized) {
-				DxTreeMapInterop.SetSelectionMode(Id, value);
+				DevExpress.Viz.DxTreeMapInterop.SetSelectionMode(Id, value);
 			} else {
 				this.selectionMode = value;
 			}
 		}
 	}
-	string valueField;
-	public string ValueField {
-		get => isInitialized ? DxTreeMapInterop.GetValueField(Id) : valueField;
+	object tile;
+	public object Tile {
+		get => isInitialized ? DevExpress.Viz.DxTreeMapInterop.GetTile(Id) : tile;
 		set {
 			if (isInitialized) {
-				DxTreeMapInterop.SetValueField(Id, value);
+				DevExpress.Viz.DxTreeMapInterop.SetTile(Id, value);
+			} else {
+				this.tile = value;
+			}
+		}
+	}
+	object tooltip;
+	public object Tooltip {
+		get => isInitialized ? DevExpress.Viz.DxTreeMapInterop.GetTooltip(Id) : tooltip;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxTreeMapInterop.SetTooltip(Id, value);
+			} else {
+				this.tooltip = value;
+			}
+		}
+	}
+	string valueField;
+	public string ValueField {
+		get => isInitialized ? DevExpress.Viz.DxTreeMapInterop.GetValueField(Id) : valueField;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxTreeMapInterop.SetValueField(Id, value);
 			} else {
 				this.valueField = value;
 			}
@@ -194,12 +266,12 @@
 	}
 	protected override async Task OnInitAsync() {
 		await base.OnInitAsync();
-		DxTreeMapInterop.Click += DxTreeMap_Click;
-		DxTreeMapInterop.Drill += DxTreeMap_Drill;
-		DxTreeMapInterop.HoverChanged += DxTreeMap_HoverChanged;
-		DxTreeMapInterop.NodesInitialized += DxTreeMap_NodesInitialized;
-		DxTreeMapInterop.NodesRendering += DxTreeMap_NodesRendering;
-		DxTreeMapInterop.SelectionChanged += DxTreeMap_SelectionChanged;
+		DevExpress.Viz.DxTreeMapInterop.Click += DxTreeMap_Click;
+		DevExpress.Viz.DxTreeMapInterop.Drill += DxTreeMap_Drill;
+		DevExpress.Viz.DxTreeMapInterop.HoverChanged += DxTreeMap_HoverChanged;
+		DevExpress.Viz.DxTreeMapInterop.NodesInitialized += DxTreeMap_NodesInitialized;
+		DevExpress.Viz.DxTreeMapInterop.NodesRendering += DxTreeMap_NodesRendering;
+		DevExpress.Viz.DxTreeMapInterop.SelectionChanged += DxTreeMap_SelectionChanged;
 	}
 	public Action Click { get; set; }
 	void DxTreeMap_Click(object sender, JQueryEventArgs e) {
@@ -238,11 +310,11 @@
 		}
 	}
 	public void Dispose() {
-		DxTreeMapInterop.Click -= DxTreeMap_Click;
-		DxTreeMapInterop.Drill -= DxTreeMap_Drill;
-		DxTreeMapInterop.HoverChanged -= DxTreeMap_HoverChanged;
-		DxTreeMapInterop.NodesInitialized -= DxTreeMap_NodesInitialized;
-		DxTreeMapInterop.NodesRendering -= DxTreeMap_NodesRendering;
-		DxTreeMapInterop.SelectionChanged -= DxTreeMap_SelectionChanged;
+		DevExpress.Viz.DxTreeMapInterop.Click -= DxTreeMap_Click;
+		DevExpress.Viz.DxTreeMapInterop.Drill -= DxTreeMap_Drill;
+		DevExpress.Viz.DxTreeMapInterop.HoverChanged -= DxTreeMap_HoverChanged;
+		DevExpress.Viz.DxTreeMapInterop.NodesInitialized -= DxTreeMap_NodesInitialized;
+		DevExpress.Viz.DxTreeMapInterop.NodesRendering -= DxTreeMap_NodesRendering;
+		DevExpress.Viz.DxTreeMapInterop.SelectionChanged -= DxTreeMap_SelectionChanged;
 	}
 }

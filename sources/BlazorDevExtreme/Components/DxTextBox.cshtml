@@ -7,19 +7,31 @@
 	public DxTextBox() : base("DxTextBox") { }
 	protected override DevExpress.Ui.DxTextBoxOptions CreateOptions() {
 		return new DevExpress.Ui.DxTextBoxOptions {
+			maxLength = maxLength,
 			mode = mode,
 			value = value,
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxTextBoxOptions options) {
-		DxTextBoxInterop.Init(Id, options);
+		DevExpress.Ui.DxTextBoxInterop.Init(Id, options);
+	}
+	object maxLength;
+	public object MaxLength {
+		get => isInitialized ? DevExpress.Ui.DxTextBoxInterop.GetMaxLength(Id) : maxLength;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTextBoxInterop.SetMaxLength(Id, value);
+			} else {
+				this.maxLength = value;
+			}
+		}
 	}
 	string mode;
 	public string Mode {
-		get => isInitialized ? DxTextBoxInterop.GetMode(Id) : mode;
+		get => isInitialized ? DevExpress.Ui.DxTextBoxInterop.GetMode(Id) : mode;
 		set {
 			if (isInitialized) {
-				DxTextBoxInterop.SetMode(Id, value);
+				DevExpress.Ui.DxTextBoxInterop.SetMode(Id, value);
 			} else {
 				this.mode = value;
 			}
@@ -27,10 +39,10 @@
 	}
 	string value;
 	public string Value {
-		get => isInitialized ? DxTextBoxInterop.GetValue(Id) : value;
+		get => isInitialized ? DevExpress.Ui.DxTextBoxInterop.GetValue(Id) : value;
 		set {
 			if (isInitialized) {
-				DxTextBoxInterop.SetValue(Id, value);
+				DevExpress.Ui.DxTextBoxInterop.SetValue(Id, value);
 			} else {
 				this.value = value;
 			}

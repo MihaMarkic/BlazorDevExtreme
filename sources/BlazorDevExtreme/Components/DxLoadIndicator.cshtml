@@ -11,14 +11,14 @@
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxLoadIndicatorOptions options) {
-		DxLoadIndicatorInterop.Init(Id, options);
+		DevExpress.Ui.DxLoadIndicatorInterop.Init(Id, options);
 	}
 	string indicatorSrc;
 	public string IndicatorSrc {
-		get => isInitialized ? DxLoadIndicatorInterop.GetIndicatorSrc(Id) : indicatorSrc;
+		get => isInitialized ? DevExpress.Ui.DxLoadIndicatorInterop.GetIndicatorSrc(Id) : indicatorSrc;
 		set {
 			if (isInitialized) {
-				DxLoadIndicatorInterop.SetIndicatorSrc(Id, value);
+				DevExpress.Ui.DxLoadIndicatorInterop.SetIndicatorSrc(Id, value);
 			} else {
 				this.indicatorSrc = value;
 			}

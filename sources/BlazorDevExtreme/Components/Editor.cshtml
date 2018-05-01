@@ -1,0 +1,94 @@
+@implements IDisposable
+@inherits DxBlazorCompoment<DevExpress.Ui.EditorOptions>
+
+<div id="@Id"></div>
+
+@functions {
+	public Editor() : base("Editor") { }
+	protected override DevExpress.Ui.EditorOptions CreateOptions() {
+		return new DevExpress.Ui.EditorOptions {
+			isValid = isValid,
+			readOnly = readOnly,
+			validationError = validationError,
+			validationMessageMode = validationMessageMode,
+			value = value,
+			onValueChangedEnabled = onValueChangedEnabled,
+		};
+	}
+	protected override void Init(DevExpress.Ui.EditorOptions options) {
+		DevExpress.Ui.EditorInterop.Init(Id, options);
+	}
+	bool? isValid;
+	public bool? IsValid {
+		get => isInitialized ? DevExpress.Ui.EditorInterop.GetIsValid(Id) : isValid;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.EditorInterop.SetIsValid(Id, value);
+			} else {
+				this.isValid = value;
+			}
+		}
+	}
+	bool? readOnly;
+	public bool? ReadOnly {
+		get => isInitialized ? DevExpress.Ui.EditorInterop.GetReadOnly(Id) : readOnly;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.EditorInterop.SetReadOnly(Id, value);
+			} else {
+				this.readOnly = value;
+			}
+		}
+	}
+	object validationError;
+	public object ValidationError {
+		get => isInitialized ? DevExpress.Ui.EditorInterop.GetValidationError(Id) : validationError;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.EditorInterop.SetValidationError(Id, value);
+			} else {
+				this.validationError = value;
+			}
+		}
+	}
+	string validationMessageMode;
+	public string ValidationMessageMode {
+		get => isInitialized ? DevExpress.Ui.EditorInterop.GetValidationMessageMode(Id) : validationMessageMode;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.EditorInterop.SetValidationMessageMode(Id, value);
+			} else {
+				this.validationMessageMode = value;
+			}
+		}
+	}
+	object value;
+	public object Value {
+		get => isInitialized ? DevExpress.Ui.EditorInterop.GetValue(Id) : value;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.EditorInterop.SetValue(Id, value);
+			} else {
+				this.value = value;
+			}
+		}
+	}
+	bool? onValueChangedEnabled;
+	public bool? OnValueChangedEnabled {
+		get => onValueChangedEnabled;
+		set => this.onValueChangedEnabled = value;
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+		DevExpress.Ui.EditorInterop.ValueChanged += Editor_ValueChanged;
+	}
+	public Action ValueChanged { get; set; }
+	void Editor_ValueChanged(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			ValueChanged?.Invoke();
+		}
+	}
+	public void Dispose() {
+		DevExpress.Ui.EditorInterop.ValueChanged -= Editor_ValueChanged;
+	}
+}

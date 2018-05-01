@@ -1,0 +1,60 @@
+@implements IDisposable
+@inherits DxBlazorCompoment<DevExpress.Viz.Sparklines.BaseSparklineOptions>
+
+<div id="@Id"></div>
+
+@functions {
+	public BaseSparkline() : base("BaseSparkline") { }
+	protected override DevExpress.Viz.Sparklines.BaseSparklineOptions CreateOptions() {
+		return new DevExpress.Viz.Sparklines.BaseSparklineOptions {
+			tooltip = tooltip,
+			onTooltipHiddenEnabled = onTooltipHiddenEnabled,
+			onTooltipShownEnabled = onTooltipShownEnabled,
+		};
+	}
+	protected override void Init(DevExpress.Viz.Sparklines.BaseSparklineOptions options) {
+		DevExpress.Viz.BaseSparklineInterop.Init(Id, options);
+	}
+	object tooltip;
+	public object Tooltip {
+		get => isInitialized ? DevExpress.Viz.BaseSparklineInterop.GetTooltip(Id) : tooltip;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.BaseSparklineInterop.SetTooltip(Id, value);
+			} else {
+				this.tooltip = value;
+			}
+		}
+	}
+	bool? onTooltipHiddenEnabled;
+	public bool? OnTooltipHiddenEnabled {
+		get => onTooltipHiddenEnabled;
+		set => this.onTooltipHiddenEnabled = value;
+	}
+	bool? onTooltipShownEnabled;
+	public bool? OnTooltipShownEnabled {
+		get => onTooltipShownEnabled;
+		set => this.onTooltipShownEnabled = value;
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+		DevExpress.Viz.BaseSparklineInterop.TooltipHidden += BaseSparkline_TooltipHidden;
+		DevExpress.Viz.BaseSparklineInterop.TooltipShown += BaseSparkline_TooltipShown;
+	}
+	public Action TooltipHidden { get; set; }
+	void BaseSparkline_TooltipHidden(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			TooltipHidden?.Invoke();
+		}
+	}
+	public Action TooltipShown { get; set; }
+	void BaseSparkline_TooltipShown(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			TooltipShown?.Invoke();
+		}
+	}
+	public void Dispose() {
+		DevExpress.Viz.BaseSparklineInterop.TooltipHidden -= BaseSparkline_TooltipHidden;
+		DevExpress.Viz.BaseSparklineInterop.TooltipShown -= BaseSparkline_TooltipShown;
+	}
+}

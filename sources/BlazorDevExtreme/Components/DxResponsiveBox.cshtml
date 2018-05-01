@@ -7,31 +7,67 @@
 	public DxResponsiveBox() : base("DxResponsiveBox") { }
 	protected override DevExpress.Ui.DxResponsiveBoxOptions CreateOptions() {
 		return new DevExpress.Ui.DxResponsiveBoxOptions {
+			cols = cols,
 			height = height,
+			rows = rows,
+			screenByWidth = screenByWidth,
 			singleColumnScreen = singleColumnScreen,
 			width = width,
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxResponsiveBoxOptions options) {
-		DxResponsiveBoxInterop.Init(Id, options);
+		DevExpress.Ui.DxResponsiveBoxInterop.Init(Id, options);
+	}
+	object cols;
+	public object Cols {
+		get => isInitialized ? DevExpress.Ui.DxResponsiveBoxInterop.GetCols(Id) : cols;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxResponsiveBoxInterop.SetCols(Id, value);
+			} else {
+				this.cols = value;
+			}
+		}
 	}
 	object height;
 	public object Height {
-		get => isInitialized ? DxResponsiveBoxInterop.GetHeight(Id) : height;
+		get => isInitialized ? DevExpress.Ui.DxResponsiveBoxInterop.GetHeight(Id) : height;
 		set {
 			if (isInitialized) {
-				DxResponsiveBoxInterop.SetHeight(Id, value);
+				DevExpress.Ui.DxResponsiveBoxInterop.SetHeight(Id, value);
 			} else {
 				this.height = value;
 			}
 		}
 	}
-	string singleColumnScreen;
-	public string SingleColumnScreen {
-		get => isInitialized ? DxResponsiveBoxInterop.GetSingleColumnScreen(Id) : singleColumnScreen;
+	object rows;
+	public object Rows {
+		get => isInitialized ? DevExpress.Ui.DxResponsiveBoxInterop.GetRows(Id) : rows;
 		set {
 			if (isInitialized) {
-				DxResponsiveBoxInterop.SetSingleColumnScreen(Id, value);
+				DevExpress.Ui.DxResponsiveBoxInterop.SetRows(Id, value);
+			} else {
+				this.rows = value;
+			}
+		}
+	}
+	object screenByWidth;
+	public object ScreenByWidth {
+		get => isInitialized ? DevExpress.Ui.DxResponsiveBoxInterop.GetScreenByWidth(Id) : screenByWidth;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxResponsiveBoxInterop.SetScreenByWidth(Id, value);
+			} else {
+				this.screenByWidth = value;
+			}
+		}
+	}
+	string singleColumnScreen;
+	public string SingleColumnScreen {
+		get => isInitialized ? DevExpress.Ui.DxResponsiveBoxInterop.GetSingleColumnScreen(Id) : singleColumnScreen;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxResponsiveBoxInterop.SetSingleColumnScreen(Id, value);
 			} else {
 				this.singleColumnScreen = value;
 			}
@@ -39,10 +75,10 @@
 	}
 	object width;
 	public object Width {
-		get => isInitialized ? DxResponsiveBoxInterop.GetWidth(Id) : width;
+		get => isInitialized ? DevExpress.Ui.DxResponsiveBoxInterop.GetWidth(Id) : width;
 		set {
 			if (isInitialized) {
-				DxResponsiveBoxInterop.SetWidth(Id, value);
+				DevExpress.Ui.DxResponsiveBoxInterop.SetWidth(Id, value);
 			} else {
 				this.width = value;
 			}

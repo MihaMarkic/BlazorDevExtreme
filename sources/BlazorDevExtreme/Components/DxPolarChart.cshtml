@@ -7,15 +7,25 @@
 	public DxPolarChart() : base("DxPolarChart") { }
 	protected override DevExpress.Viz.Charts.DxPolarChartOptions CreateOptions() {
 		return new DevExpress.Viz.Charts.DxPolarChartOptions {
+			adaptiveLayout = adaptiveLayout,
+			argumentAxis = argumentAxis,
 			barGroupPadding = barGroupPadding,
 			barGroupWidth = barGroupWidth,
 			barWidth = barWidth,
+			commonAxisSettings = commonAxisSettings,
+			commonSeriesSettings = commonSeriesSettings,
 			containerBackgroundColor = containerBackgroundColor,
+			dataPrepareSettings = dataPrepareSettings,
 			equalBarWidth = equalBarWidth,
+			legend = legend,
 			negativesAsZeroes = negativesAsZeroes,
 			resolveLabelOverlapping = resolveLabelOverlapping,
+			series = series,
 			seriesSelectionMode = seriesSelectionMode,
+			seriesTemplate = seriesTemplate,
+			tooltip = tooltip,
 			useSpiderWeb = useSpiderWeb,
+			valueAxis = valueAxis,
 			onArgumentAxisClickEnabled = onArgumentAxisClickEnabled,
 			onLegendClickEnabled = onLegendClickEnabled,
 			onSeriesClickEnabled = onSeriesClickEnabled,
@@ -24,14 +34,36 @@
 		};
 	}
 	protected override void Init(DevExpress.Viz.Charts.DxPolarChartOptions options) {
-		DxPolarChartInterop.Init(Id, options);
+		DevExpress.Viz.DxPolarChartInterop.Init(Id, options);
+	}
+	object adaptiveLayout;
+	public object AdaptiveLayout {
+		get => isInitialized ? DevExpress.Viz.DxPolarChartInterop.GetAdaptiveLayout(Id) : adaptiveLayout;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxPolarChartInterop.SetAdaptiveLayout(Id, value);
+			} else {
+				this.adaptiveLayout = value;
+			}
+		}
+	}
+	object argumentAxis;
+	public object ArgumentAxis {
+		get => isInitialized ? DevExpress.Viz.DxPolarChartInterop.GetArgumentAxis(Id) : argumentAxis;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxPolarChartInterop.SetArgumentAxis(Id, value);
+			} else {
+				this.argumentAxis = value;
+			}
+		}
 	}
 	float? barGroupPadding;
 	public float? BarGroupPadding {
-		get => isInitialized ? DxPolarChartInterop.GetBarGroupPadding(Id) : barGroupPadding;
+		get => isInitialized ? DevExpress.Viz.DxPolarChartInterop.GetBarGroupPadding(Id) : barGroupPadding;
 		set {
 			if (isInitialized) {
-				DxPolarChartInterop.SetBarGroupPadding(Id, value);
+				DevExpress.Viz.DxPolarChartInterop.SetBarGroupPadding(Id, value);
 			} else {
 				this.barGroupPadding = value;
 			}
@@ -39,10 +71,10 @@
 	}
 	float? barGroupWidth;
 	public float? BarGroupWidth {
-		get => isInitialized ? DxPolarChartInterop.GetBarGroupWidth(Id) : barGroupWidth;
+		get => isInitialized ? DevExpress.Viz.DxPolarChartInterop.GetBarGroupWidth(Id) : barGroupWidth;
 		set {
 			if (isInitialized) {
-				DxPolarChartInterop.SetBarGroupWidth(Id, value);
+				DevExpress.Viz.DxPolarChartInterop.SetBarGroupWidth(Id, value);
 			} else {
 				this.barGroupWidth = value;
 			}
@@ -50,43 +82,87 @@
 	}
 	float? barWidth;
 	public float? BarWidth {
-		get => isInitialized ? DxPolarChartInterop.GetBarWidth(Id) : barWidth;
+		get => isInitialized ? DevExpress.Viz.DxPolarChartInterop.GetBarWidth(Id) : barWidth;
 		set {
 			if (isInitialized) {
-				DxPolarChartInterop.SetBarWidth(Id, value);
+				DevExpress.Viz.DxPolarChartInterop.SetBarWidth(Id, value);
 			} else {
 				this.barWidth = value;
 			}
 		}
 	}
-	string containerBackgroundColor;
-	public string ContainerBackgroundColor {
-		get => isInitialized ? DxPolarChartInterop.GetContainerBackgroundColor(Id) : containerBackgroundColor;
+	object commonAxisSettings;
+	public object CommonAxisSettings {
+		get => isInitialized ? DevExpress.Viz.DxPolarChartInterop.GetCommonAxisSettings(Id) : commonAxisSettings;
 		set {
 			if (isInitialized) {
-				DxPolarChartInterop.SetContainerBackgroundColor(Id, value);
+				DevExpress.Viz.DxPolarChartInterop.SetCommonAxisSettings(Id, value);
+			} else {
+				this.commonAxisSettings = value;
+			}
+		}
+	}
+	object commonSeriesSettings;
+	public object CommonSeriesSettings {
+		get => isInitialized ? DevExpress.Viz.DxPolarChartInterop.GetCommonSeriesSettings(Id) : commonSeriesSettings;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxPolarChartInterop.SetCommonSeriesSettings(Id, value);
+			} else {
+				this.commonSeriesSettings = value;
+			}
+		}
+	}
+	string containerBackgroundColor;
+	public string ContainerBackgroundColor {
+		get => isInitialized ? DevExpress.Viz.DxPolarChartInterop.GetContainerBackgroundColor(Id) : containerBackgroundColor;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxPolarChartInterop.SetContainerBackgroundColor(Id, value);
 			} else {
 				this.containerBackgroundColor = value;
 			}
 		}
 	}
-	bool? equalBarWidth;
-	public bool? EqualBarWidth {
-		get => isInitialized ? DxPolarChartInterop.GetEqualBarWidth(Id) : equalBarWidth;
+	object dataPrepareSettings;
+	public object DataPrepareSettings {
+		get => isInitialized ? DevExpress.Viz.DxPolarChartInterop.GetDataPrepareSettings(Id) : dataPrepareSettings;
 		set {
 			if (isInitialized) {
-				DxPolarChartInterop.SetEqualBarWidth(Id, value);
+				DevExpress.Viz.DxPolarChartInterop.SetDataPrepareSettings(Id, value);
+			} else {
+				this.dataPrepareSettings = value;
+			}
+		}
+	}
+	bool? equalBarWidth;
+	public bool? EqualBarWidth {
+		get => isInitialized ? DevExpress.Viz.DxPolarChartInterop.GetEqualBarWidth(Id) : equalBarWidth;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxPolarChartInterop.SetEqualBarWidth(Id, value);
 			} else {
 				this.equalBarWidth = value;
 			}
 		}
 	}
-	bool? negativesAsZeroes;
-	public bool? NegativesAsZeroes {
-		get => isInitialized ? DxPolarChartInterop.GetNegativesAsZeroes(Id) : negativesAsZeroes;
+	object legend;
+	public object Legend {
+		get => isInitialized ? DevExpress.Viz.DxPolarChartInterop.GetLegend(Id) : legend;
 		set {
 			if (isInitialized) {
-				DxPolarChartInterop.SetNegativesAsZeroes(Id, value);
+				DevExpress.Viz.DxPolarChartInterop.SetLegend(Id, value);
+			} else {
+				this.legend = value;
+			}
+		}
+	}
+	bool? negativesAsZeroes;
+	public bool? NegativesAsZeroes {
+		get => isInitialized ? DevExpress.Viz.DxPolarChartInterop.GetNegativesAsZeroes(Id) : negativesAsZeroes;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxPolarChartInterop.SetNegativesAsZeroes(Id, value);
 			} else {
 				this.negativesAsZeroes = value;
 			}
@@ -94,34 +170,78 @@
 	}
 	string resolveLabelOverlapping;
 	public string ResolveLabelOverlapping {
-		get => isInitialized ? DxPolarChartInterop.GetResolveLabelOverlapping(Id) : resolveLabelOverlapping;
+		get => isInitialized ? DevExpress.Viz.DxPolarChartInterop.GetResolveLabelOverlapping(Id) : resolveLabelOverlapping;
 		set {
 			if (isInitialized) {
-				DxPolarChartInterop.SetResolveLabelOverlapping(Id, value);
+				DevExpress.Viz.DxPolarChartInterop.SetResolveLabelOverlapping(Id, value);
 			} else {
 				this.resolveLabelOverlapping = value;
 			}
 		}
 	}
-	string seriesSelectionMode;
-	public string SeriesSelectionMode {
-		get => isInitialized ? DxPolarChartInterop.GetSeriesSelectionMode(Id) : seriesSelectionMode;
+	object series;
+	public object Series {
+		get => isInitialized ? DevExpress.Viz.DxPolarChartInterop.GetSeries(Id) : series;
 		set {
 			if (isInitialized) {
-				DxPolarChartInterop.SetSeriesSelectionMode(Id, value);
+				DevExpress.Viz.DxPolarChartInterop.SetSeries(Id, value);
+			} else {
+				this.series = value;
+			}
+		}
+	}
+	string seriesSelectionMode;
+	public string SeriesSelectionMode {
+		get => isInitialized ? DevExpress.Viz.DxPolarChartInterop.GetSeriesSelectionMode(Id) : seriesSelectionMode;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxPolarChartInterop.SetSeriesSelectionMode(Id, value);
 			} else {
 				this.seriesSelectionMode = value;
 			}
 		}
 	}
-	bool? useSpiderWeb;
-	public bool? UseSpiderWeb {
-		get => isInitialized ? DxPolarChartInterop.GetUseSpiderWeb(Id) : useSpiderWeb;
+	object seriesTemplate;
+	public object SeriesTemplate {
+		get => isInitialized ? DevExpress.Viz.DxPolarChartInterop.GetSeriesTemplate(Id) : seriesTemplate;
 		set {
 			if (isInitialized) {
-				DxPolarChartInterop.SetUseSpiderWeb(Id, value);
+				DevExpress.Viz.DxPolarChartInterop.SetSeriesTemplate(Id, value);
+			} else {
+				this.seriesTemplate = value;
+			}
+		}
+	}
+	object tooltip;
+	public object Tooltip {
+		get => isInitialized ? DevExpress.Viz.DxPolarChartInterop.GetTooltip(Id) : tooltip;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxPolarChartInterop.SetTooltip(Id, value);
+			} else {
+				this.tooltip = value;
+			}
+		}
+	}
+	bool? useSpiderWeb;
+	public bool? UseSpiderWeb {
+		get => isInitialized ? DevExpress.Viz.DxPolarChartInterop.GetUseSpiderWeb(Id) : useSpiderWeb;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxPolarChartInterop.SetUseSpiderWeb(Id, value);
 			} else {
 				this.useSpiderWeb = value;
+			}
+		}
+	}
+	object valueAxis;
+	public object ValueAxis {
+		get => isInitialized ? DevExpress.Viz.DxPolarChartInterop.GetValueAxis(Id) : valueAxis;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxPolarChartInterop.SetValueAxis(Id, value);
+			} else {
+				this.valueAxis = value;
 			}
 		}
 	}
@@ -152,11 +272,11 @@
 	}
 	protected override async Task OnInitAsync() {
 		await base.OnInitAsync();
-		DxPolarChartInterop.ArgumentAxisClick += DxPolarChart_ArgumentAxisClick;
-		DxPolarChartInterop.LegendClick += DxPolarChart_LegendClick;
-		DxPolarChartInterop.SeriesClick += DxPolarChart_SeriesClick;
-		DxPolarChartInterop.SeriesHoverChanged += DxPolarChart_SeriesHoverChanged;
-		DxPolarChartInterop.SeriesSelectionChanged += DxPolarChart_SeriesSelectionChanged;
+		DevExpress.Viz.DxPolarChartInterop.ArgumentAxisClick += DxPolarChart_ArgumentAxisClick;
+		DevExpress.Viz.DxPolarChartInterop.LegendClick += DxPolarChart_LegendClick;
+		DevExpress.Viz.DxPolarChartInterop.SeriesClick += DxPolarChart_SeriesClick;
+		DevExpress.Viz.DxPolarChartInterop.SeriesHoverChanged += DxPolarChart_SeriesHoverChanged;
+		DevExpress.Viz.DxPolarChartInterop.SeriesSelectionChanged += DxPolarChart_SeriesSelectionChanged;
 	}
 	public Action ArgumentAxisClick { get; set; }
 	void DxPolarChart_ArgumentAxisClick(object sender, JQueryEventArgs e) {
@@ -189,10 +309,10 @@
 		}
 	}
 	public void Dispose() {
-		DxPolarChartInterop.ArgumentAxisClick -= DxPolarChart_ArgumentAxisClick;
-		DxPolarChartInterop.LegendClick -= DxPolarChart_LegendClick;
-		DxPolarChartInterop.SeriesClick -= DxPolarChart_SeriesClick;
-		DxPolarChartInterop.SeriesHoverChanged -= DxPolarChart_SeriesHoverChanged;
-		DxPolarChartInterop.SeriesSelectionChanged -= DxPolarChart_SeriesSelectionChanged;
+		DevExpress.Viz.DxPolarChartInterop.ArgumentAxisClick -= DxPolarChart_ArgumentAxisClick;
+		DevExpress.Viz.DxPolarChartInterop.LegendClick -= DxPolarChart_LegendClick;
+		DevExpress.Viz.DxPolarChartInterop.SeriesClick -= DxPolarChart_SeriesClick;
+		DevExpress.Viz.DxPolarChartInterop.SeriesHoverChanged -= DxPolarChart_SeriesHoverChanged;
+		DevExpress.Viz.DxPolarChartInterop.SeriesSelectionChanged -= DxPolarChart_SeriesSelectionChanged;
 	}
 }

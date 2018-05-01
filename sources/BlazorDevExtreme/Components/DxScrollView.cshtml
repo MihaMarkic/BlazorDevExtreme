@@ -16,14 +16,14 @@
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxScrollViewOptions options) {
-		DxScrollViewInterop.Init(Id, options);
+		DevExpress.Ui.DxScrollViewInterop.Init(Id, options);
 	}
 	string pulledDownText;
 	public string PulledDownText {
-		get => isInitialized ? DxScrollViewInterop.GetPulledDownText(Id) : pulledDownText;
+		get => isInitialized ? DevExpress.Ui.DxScrollViewInterop.GetPulledDownText(Id) : pulledDownText;
 		set {
 			if (isInitialized) {
-				DxScrollViewInterop.SetPulledDownText(Id, value);
+				DevExpress.Ui.DxScrollViewInterop.SetPulledDownText(Id, value);
 			} else {
 				this.pulledDownText = value;
 			}
@@ -31,10 +31,10 @@
 	}
 	string pullingDownText;
 	public string PullingDownText {
-		get => isInitialized ? DxScrollViewInterop.GetPullingDownText(Id) : pullingDownText;
+		get => isInitialized ? DevExpress.Ui.DxScrollViewInterop.GetPullingDownText(Id) : pullingDownText;
 		set {
 			if (isInitialized) {
-				DxScrollViewInterop.SetPullingDownText(Id, value);
+				DevExpress.Ui.DxScrollViewInterop.SetPullingDownText(Id, value);
 			} else {
 				this.pullingDownText = value;
 			}
@@ -42,10 +42,10 @@
 	}
 	string reachBottomText;
 	public string ReachBottomText {
-		get => isInitialized ? DxScrollViewInterop.GetReachBottomText(Id) : reachBottomText;
+		get => isInitialized ? DevExpress.Ui.DxScrollViewInterop.GetReachBottomText(Id) : reachBottomText;
 		set {
 			if (isInitialized) {
-				DxScrollViewInterop.SetReachBottomText(Id, value);
+				DevExpress.Ui.DxScrollViewInterop.SetReachBottomText(Id, value);
 			} else {
 				this.reachBottomText = value;
 			}
@@ -53,10 +53,10 @@
 	}
 	string refreshingText;
 	public string RefreshingText {
-		get => isInitialized ? DxScrollViewInterop.GetRefreshingText(Id) : refreshingText;
+		get => isInitialized ? DevExpress.Ui.DxScrollViewInterop.GetRefreshingText(Id) : refreshingText;
 		set {
 			if (isInitialized) {
-				DxScrollViewInterop.SetRefreshingText(Id, value);
+				DevExpress.Ui.DxScrollViewInterop.SetRefreshingText(Id, value);
 			} else {
 				this.refreshingText = value;
 			}
@@ -74,8 +74,8 @@
 	}
 	protected override async Task OnInitAsync() {
 		await base.OnInitAsync();
-		DxScrollViewInterop.PullDown += DxScrollView_PullDown;
-		DxScrollViewInterop.ReachBottom += DxScrollView_ReachBottom;
+		DevExpress.Ui.DxScrollViewInterop.PullDown += DxScrollView_PullDown;
+		DevExpress.Ui.DxScrollViewInterop.ReachBottom += DxScrollView_ReachBottom;
 	}
 	public Action PullDown { get; set; }
 	void DxScrollView_PullDown(object sender, JQueryEventArgs e) {
@@ -90,7 +90,7 @@
 		}
 	}
 	public void Dispose() {
-		DxScrollViewInterop.PullDown -= DxScrollView_PullDown;
-		DxScrollViewInterop.ReachBottom -= DxScrollView_ReachBottom;
+		DevExpress.Ui.DxScrollViewInterop.PullDown -= DxScrollView_PullDown;
+		DevExpress.Ui.DxScrollViewInterop.ReachBottom -= DxScrollView_ReachBottom;
 	}
 }

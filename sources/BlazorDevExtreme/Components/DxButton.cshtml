@@ -11,6 +11,7 @@
 			focusStateEnabled = focusStateEnabled,
 			hoverStateEnabled = hoverStateEnabled,
 			icon = icon,
+			template = template,
 			text = text,
 			type = type,
 			useSubmitBehavior = useSubmitBehavior,
@@ -19,14 +20,14 @@
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxButtonOptions options) {
-		DxButtonInterop.Init(Id, options);
+		DevExpress.Ui.DxButtonInterop.Init(Id, options);
 	}
 	bool? activeStateEnabled;
 	public bool? ActiveStateEnabled {
-		get => isInitialized ? DxButtonInterop.GetActiveStateEnabled(Id) : activeStateEnabled;
+		get => isInitialized ? DevExpress.Ui.DxButtonInterop.GetActiveStateEnabled(Id) : activeStateEnabled;
 		set {
 			if (isInitialized) {
-				DxButtonInterop.SetActiveStateEnabled(Id, value);
+				DevExpress.Ui.DxButtonInterop.SetActiveStateEnabled(Id, value);
 			} else {
 				this.activeStateEnabled = value;
 			}
@@ -34,10 +35,10 @@
 	}
 	bool? focusStateEnabled;
 	public bool? FocusStateEnabled {
-		get => isInitialized ? DxButtonInterop.GetFocusStateEnabled(Id) : focusStateEnabled;
+		get => isInitialized ? DevExpress.Ui.DxButtonInterop.GetFocusStateEnabled(Id) : focusStateEnabled;
 		set {
 			if (isInitialized) {
-				DxButtonInterop.SetFocusStateEnabled(Id, value);
+				DevExpress.Ui.DxButtonInterop.SetFocusStateEnabled(Id, value);
 			} else {
 				this.focusStateEnabled = value;
 			}
@@ -45,10 +46,10 @@
 	}
 	bool? hoverStateEnabled;
 	public bool? HoverStateEnabled {
-		get => isInitialized ? DxButtonInterop.GetHoverStateEnabled(Id) : hoverStateEnabled;
+		get => isInitialized ? DevExpress.Ui.DxButtonInterop.GetHoverStateEnabled(Id) : hoverStateEnabled;
 		set {
 			if (isInitialized) {
-				DxButtonInterop.SetHoverStateEnabled(Id, value);
+				DevExpress.Ui.DxButtonInterop.SetHoverStateEnabled(Id, value);
 			} else {
 				this.hoverStateEnabled = value;
 			}
@@ -56,21 +57,32 @@
 	}
 	string icon;
 	public string Icon {
-		get => isInitialized ? DxButtonInterop.GetIcon(Id) : icon;
+		get => isInitialized ? DevExpress.Ui.DxButtonInterop.GetIcon(Id) : icon;
 		set {
 			if (isInitialized) {
-				DxButtonInterop.SetIcon(Id, value);
+				DevExpress.Ui.DxButtonInterop.SetIcon(Id, value);
 			} else {
 				this.icon = value;
 			}
 		}
 	}
-	string text;
-	public string Text {
-		get => isInitialized ? DxButtonInterop.GetText(Id) : text;
+	object template;
+	public object Template {
+		get => isInitialized ? DevExpress.Ui.DxButtonInterop.GetTemplate(Id) : template;
 		set {
 			if (isInitialized) {
-				DxButtonInterop.SetText(Id, value);
+				DevExpress.Ui.DxButtonInterop.SetTemplate(Id, value);
+			} else {
+				this.template = value;
+			}
+		}
+	}
+	string text;
+	public string Text {
+		get => isInitialized ? DevExpress.Ui.DxButtonInterop.GetText(Id) : text;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxButtonInterop.SetText(Id, value);
 			} else {
 				this.text = value;
 			}
@@ -78,10 +90,10 @@
 	}
 	string type;
 	public string Type {
-		get => isInitialized ? DxButtonInterop.GetType(Id) : type;
+		get => isInitialized ? DevExpress.Ui.DxButtonInterop.GetType(Id) : type;
 		set {
 			if (isInitialized) {
-				DxButtonInterop.SetType(Id, value);
+				DevExpress.Ui.DxButtonInterop.SetType(Id, value);
 			} else {
 				this.type = value;
 			}
@@ -89,10 +101,10 @@
 	}
 	bool? useSubmitBehavior;
 	public bool? UseSubmitBehavior {
-		get => isInitialized ? DxButtonInterop.GetUseSubmitBehavior(Id) : useSubmitBehavior;
+		get => isInitialized ? DevExpress.Ui.DxButtonInterop.GetUseSubmitBehavior(Id) : useSubmitBehavior;
 		set {
 			if (isInitialized) {
-				DxButtonInterop.SetUseSubmitBehavior(Id, value);
+				DevExpress.Ui.DxButtonInterop.SetUseSubmitBehavior(Id, value);
 			} else {
 				this.useSubmitBehavior = value;
 			}
@@ -100,10 +112,10 @@
 	}
 	string validationGroup;
 	public string ValidationGroup {
-		get => isInitialized ? DxButtonInterop.GetValidationGroup(Id) : validationGroup;
+		get => isInitialized ? DevExpress.Ui.DxButtonInterop.GetValidationGroup(Id) : validationGroup;
 		set {
 			if (isInitialized) {
-				DxButtonInterop.SetValidationGroup(Id, value);
+				DevExpress.Ui.DxButtonInterop.SetValidationGroup(Id, value);
 			} else {
 				this.validationGroup = value;
 			}
@@ -116,7 +128,7 @@
 	}
 	protected override async Task OnInitAsync() {
 		await base.OnInitAsync();
-		DxButtonInterop.Click += DxButton_Click;
+		DevExpress.Ui.DxButtonInterop.Click += DxButton_Click;
 	}
 	public Action Click { get; set; }
 	void DxButton_Click(object sender, JQueryEventArgs e) {
@@ -125,6 +137,6 @@
 		}
 	}
 	public void Dispose() {
-		DxButtonInterop.Click -= DxButton_Click;
+		DevExpress.Ui.DxButtonInterop.Click -= DxButton_Click;
 	}
 }

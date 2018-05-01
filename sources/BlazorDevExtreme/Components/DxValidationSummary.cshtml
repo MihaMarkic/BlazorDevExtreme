@@ -11,14 +11,14 @@
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxValidationSummaryOptions options) {
-		DxValidationSummaryInterop.Init(Id, options);
+		DevExpress.Ui.DxValidationSummaryInterop.Init(Id, options);
 	}
 	string validationGroup;
 	public string ValidationGroup {
-		get => isInitialized ? DxValidationSummaryInterop.GetValidationGroup(Id) : validationGroup;
+		get => isInitialized ? DevExpress.Ui.DxValidationSummaryInterop.GetValidationGroup(Id) : validationGroup;
 		set {
 			if (isInitialized) {
-				DxValidationSummaryInterop.SetValidationGroup(Id, value);
+				DevExpress.Ui.DxValidationSummaryInterop.SetValidationGroup(Id, value);
 			} else {
 				this.validationGroup = value;
 			}

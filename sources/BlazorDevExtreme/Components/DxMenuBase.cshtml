@@ -1,0 +1,104 @@
+@implements IDisposable
+@inherits DxBlazorCompoment<DevExpress.Ui.DxMenuBaseOptions>
+
+<div id="@Id"></div>
+
+@functions {
+	public DxMenuBase() : base("DxMenuBase") { }
+	protected override DevExpress.Ui.DxMenuBaseOptions CreateOptions() {
+		return new DevExpress.Ui.DxMenuBaseOptions {
+			activeStateEnabled = activeStateEnabled,
+			animation = animation,
+			cssClass = cssClass,
+			items = items,
+			selectByClick = selectByClick,
+			selectionMode = selectionMode,
+			showSubmenuMode = showSubmenuMode,
+		};
+	}
+	protected override void Init(DevExpress.Ui.DxMenuBaseOptions options) {
+		DevExpress.Ui.DxMenuBaseInterop.Init(Id, options);
+	}
+	bool? activeStateEnabled;
+	public bool? ActiveStateEnabled {
+		get => isInitialized ? DevExpress.Ui.DxMenuBaseInterop.GetActiveStateEnabled(Id) : activeStateEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxMenuBaseInterop.SetActiveStateEnabled(Id, value);
+			} else {
+				this.activeStateEnabled = value;
+			}
+		}
+	}
+	object animation;
+	public object Animation {
+		get => isInitialized ? DevExpress.Ui.DxMenuBaseInterop.GetAnimation(Id) : animation;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxMenuBaseInterop.SetAnimation(Id, value);
+			} else {
+				this.animation = value;
+			}
+		}
+	}
+	string cssClass;
+	public string CssClass {
+		get => isInitialized ? DevExpress.Ui.DxMenuBaseInterop.GetCssClass(Id) : cssClass;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxMenuBaseInterop.SetCssClass(Id, value);
+			} else {
+				this.cssClass = value;
+			}
+		}
+	}
+	object items;
+	public object Items {
+		get => isInitialized ? DevExpress.Ui.DxMenuBaseInterop.GetItems(Id) : items;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxMenuBaseInterop.SetItems(Id, value);
+			} else {
+				this.items = value;
+			}
+		}
+	}
+	bool? selectByClick;
+	public bool? SelectByClick {
+		get => isInitialized ? DevExpress.Ui.DxMenuBaseInterop.GetSelectByClick(Id) : selectByClick;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxMenuBaseInterop.SetSelectByClick(Id, value);
+			} else {
+				this.selectByClick = value;
+			}
+		}
+	}
+	string selectionMode;
+	public string SelectionMode {
+		get => isInitialized ? DevExpress.Ui.DxMenuBaseInterop.GetSelectionMode(Id) : selectionMode;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxMenuBaseInterop.SetSelectionMode(Id, value);
+			} else {
+				this.selectionMode = value;
+			}
+		}
+	}
+	object showSubmenuMode;
+	public object ShowSubmenuMode {
+		get => isInitialized ? DevExpress.Ui.DxMenuBaseInterop.GetShowSubmenuMode(Id) : showSubmenuMode;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxMenuBaseInterop.SetShowSubmenuMode(Id, value);
+			} else {
+				this.showSubmenuMode = value;
+			}
+		}
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+	}
+	public void Dispose() {
+	}
+}

@@ -8,11 +8,15 @@
 	protected override DevExpress.Ui.DxMapOptions CreateOptions() {
 		return new DevExpress.Ui.DxMapOptions {
 			autoAdjust = autoAdjust,
+			center = center,
 			controls = controls,
 			focusStateEnabled = focusStateEnabled,
 			height = height,
+			key = key,
 			markerIconSrc = markerIconSrc,
+			markers = markers,
 			provider = provider,
+			routes = routes,
 			type = type,
 			width = width,
 			zoom = zoom,
@@ -25,25 +29,36 @@
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxMapOptions options) {
-		DxMapInterop.Init(Id, options);
+		DevExpress.Ui.DxMapInterop.Init(Id, options);
 	}
 	bool? autoAdjust;
 	public bool? AutoAdjust {
-		get => isInitialized ? DxMapInterop.GetAutoAdjust(Id) : autoAdjust;
+		get => isInitialized ? DevExpress.Ui.DxMapInterop.GetAutoAdjust(Id) : autoAdjust;
 		set {
 			if (isInitialized) {
-				DxMapInterop.SetAutoAdjust(Id, value);
+				DevExpress.Ui.DxMapInterop.SetAutoAdjust(Id, value);
 			} else {
 				this.autoAdjust = value;
 			}
 		}
 	}
-	bool? controls;
-	public bool? Controls {
-		get => isInitialized ? DxMapInterop.GetControls(Id) : controls;
+	object center;
+	public object Center {
+		get => isInitialized ? DevExpress.Ui.DxMapInterop.GetCenter(Id) : center;
 		set {
 			if (isInitialized) {
-				DxMapInterop.SetControls(Id, value);
+				DevExpress.Ui.DxMapInterop.SetCenter(Id, value);
+			} else {
+				this.center = value;
+			}
+		}
+	}
+	bool? controls;
+	public bool? Controls {
+		get => isInitialized ? DevExpress.Ui.DxMapInterop.GetControls(Id) : controls;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxMapInterop.SetControls(Id, value);
 			} else {
 				this.controls = value;
 			}
@@ -51,10 +66,10 @@
 	}
 	bool? focusStateEnabled;
 	public bool? FocusStateEnabled {
-		get => isInitialized ? DxMapInterop.GetFocusStateEnabled(Id) : focusStateEnabled;
+		get => isInitialized ? DevExpress.Ui.DxMapInterop.GetFocusStateEnabled(Id) : focusStateEnabled;
 		set {
 			if (isInitialized) {
-				DxMapInterop.SetFocusStateEnabled(Id, value);
+				DevExpress.Ui.DxMapInterop.SetFocusStateEnabled(Id, value);
 			} else {
 				this.focusStateEnabled = value;
 			}
@@ -62,43 +77,76 @@
 	}
 	object height;
 	public object Height {
-		get => isInitialized ? DxMapInterop.GetHeight(Id) : height;
+		get => isInitialized ? DevExpress.Ui.DxMapInterop.GetHeight(Id) : height;
 		set {
 			if (isInitialized) {
-				DxMapInterop.SetHeight(Id, value);
+				DevExpress.Ui.DxMapInterop.SetHeight(Id, value);
 			} else {
 				this.height = value;
 			}
 		}
 	}
-	string markerIconSrc;
-	public string MarkerIconSrc {
-		get => isInitialized ? DxMapInterop.GetMarkerIconSrc(Id) : markerIconSrc;
+	object key;
+	public object Key {
+		get => isInitialized ? DevExpress.Ui.DxMapInterop.GetKey(Id) : key;
 		set {
 			if (isInitialized) {
-				DxMapInterop.SetMarkerIconSrc(Id, value);
+				DevExpress.Ui.DxMapInterop.SetKey(Id, value);
+			} else {
+				this.key = value;
+			}
+		}
+	}
+	string markerIconSrc;
+	public string MarkerIconSrc {
+		get => isInitialized ? DevExpress.Ui.DxMapInterop.GetMarkerIconSrc(Id) : markerIconSrc;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxMapInterop.SetMarkerIconSrc(Id, value);
 			} else {
 				this.markerIconSrc = value;
 			}
 		}
 	}
-	string provider;
-	public string Provider {
-		get => isInitialized ? DxMapInterop.GetProvider(Id) : provider;
+	object markers;
+	public object Markers {
+		get => isInitialized ? DevExpress.Ui.DxMapInterop.GetMarkers(Id) : markers;
 		set {
 			if (isInitialized) {
-				DxMapInterop.SetProvider(Id, value);
+				DevExpress.Ui.DxMapInterop.SetMarkers(Id, value);
+			} else {
+				this.markers = value;
+			}
+		}
+	}
+	string provider;
+	public string Provider {
+		get => isInitialized ? DevExpress.Ui.DxMapInterop.GetProvider(Id) : provider;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxMapInterop.SetProvider(Id, value);
 			} else {
 				this.provider = value;
 			}
 		}
 	}
-	string type;
-	public string Type {
-		get => isInitialized ? DxMapInterop.GetType(Id) : type;
+	object routes;
+	public object Routes {
+		get => isInitialized ? DevExpress.Ui.DxMapInterop.GetRoutes(Id) : routes;
 		set {
 			if (isInitialized) {
-				DxMapInterop.SetType(Id, value);
+				DevExpress.Ui.DxMapInterop.SetRoutes(Id, value);
+			} else {
+				this.routes = value;
+			}
+		}
+	}
+	string type;
+	public string Type {
+		get => isInitialized ? DevExpress.Ui.DxMapInterop.GetType(Id) : type;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxMapInterop.SetType(Id, value);
 			} else {
 				this.type = value;
 			}
@@ -106,10 +154,10 @@
 	}
 	object width;
 	public object Width {
-		get => isInitialized ? DxMapInterop.GetWidth(Id) : width;
+		get => isInitialized ? DevExpress.Ui.DxMapInterop.GetWidth(Id) : width;
 		set {
 			if (isInitialized) {
-				DxMapInterop.SetWidth(Id, value);
+				DevExpress.Ui.DxMapInterop.SetWidth(Id, value);
 			} else {
 				this.width = value;
 			}
@@ -117,10 +165,10 @@
 	}
 	float? zoom;
 	public float? Zoom {
-		get => isInitialized ? DxMapInterop.GetZoom(Id) : zoom;
+		get => isInitialized ? DevExpress.Ui.DxMapInterop.GetZoom(Id) : zoom;
 		set {
 			if (isInitialized) {
-				DxMapInterop.SetZoom(Id, value);
+				DevExpress.Ui.DxMapInterop.SetZoom(Id, value);
 			} else {
 				this.zoom = value;
 			}
@@ -158,12 +206,12 @@
 	}
 	protected override async Task OnInitAsync() {
 		await base.OnInitAsync();
-		DxMapInterop.Click += DxMap_Click;
-		DxMapInterop.MarkerAdded += DxMap_MarkerAdded;
-		DxMapInterop.MarkerRemoved += DxMap_MarkerRemoved;
-		DxMapInterop.Ready += DxMap_Ready;
-		DxMapInterop.RouteAdded += DxMap_RouteAdded;
-		DxMapInterop.RouteRemoved += DxMap_RouteRemoved;
+		DevExpress.Ui.DxMapInterop.Click += DxMap_Click;
+		DevExpress.Ui.DxMapInterop.MarkerAdded += DxMap_MarkerAdded;
+		DevExpress.Ui.DxMapInterop.MarkerRemoved += DxMap_MarkerRemoved;
+		DevExpress.Ui.DxMapInterop.Ready += DxMap_Ready;
+		DevExpress.Ui.DxMapInterop.RouteAdded += DxMap_RouteAdded;
+		DevExpress.Ui.DxMapInterop.RouteRemoved += DxMap_RouteRemoved;
 	}
 	public Action Click { get; set; }
 	void DxMap_Click(object sender, JQueryEventArgs e) {
@@ -202,11 +250,11 @@
 		}
 	}
 	public void Dispose() {
-		DxMapInterop.Click -= DxMap_Click;
-		DxMapInterop.MarkerAdded -= DxMap_MarkerAdded;
-		DxMapInterop.MarkerRemoved -= DxMap_MarkerRemoved;
-		DxMapInterop.Ready -= DxMap_Ready;
-		DxMapInterop.RouteAdded -= DxMap_RouteAdded;
-		DxMapInterop.RouteRemoved -= DxMap_RouteRemoved;
+		DevExpress.Ui.DxMapInterop.Click -= DxMap_Click;
+		DevExpress.Ui.DxMapInterop.MarkerAdded -= DxMap_MarkerAdded;
+		DevExpress.Ui.DxMapInterop.MarkerRemoved -= DxMap_MarkerRemoved;
+		DevExpress.Ui.DxMapInterop.Ready -= DxMap_Ready;
+		DevExpress.Ui.DxMapInterop.RouteAdded -= DxMap_RouteAdded;
+		DevExpress.Ui.DxMapInterop.RouteRemoved -= DxMap_RouteRemoved;
 	}
 }

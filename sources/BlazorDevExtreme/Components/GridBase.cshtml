@@ -1,0 +1,738 @@
+@implements IDisposable
+@inherits DxBlazorCompoment<DevExpress.Ui.GridBaseOptions>
+
+<div id="@Id"></div>
+
+@functions {
+	public GridBase() : base("GridBase") { }
+	protected override DevExpress.Ui.GridBaseOptions CreateOptions() {
+		return new DevExpress.Ui.GridBaseOptions {
+			allowColumnReordering = allowColumnReordering,
+			allowColumnResizing = allowColumnResizing,
+			cacheEnabled = cacheEnabled,
+			cellHintEnabled = cellHintEnabled,
+			columnAutoWidth = columnAutoWidth,
+			columnChooser = columnChooser,
+			columnFixing = columnFixing,
+			columnHidingEnabled = columnHidingEnabled,
+			columnMinWidth = columnMinWidth,
+			columnResizingMode = columnResizingMode,
+			columns = columns,
+			columnWidth = columnWidth,
+			dataSource = dataSource,
+			dateSerializationFormat = dateSerializationFormat,
+			editing = editing,
+			errorRowEnabled = errorRowEnabled,
+			filterBuilder = filterBuilder,
+			filterBuilderPopup = filterBuilderPopup,
+			filterPanel = filterPanel,
+			filterRow = filterRow,
+			filterSyncEnabled = filterSyncEnabled,
+			filterValue = filterValue,
+			headerFilter = headerFilter,
+			loadPanel = loadPanel,
+			noDataText = noDataText,
+			pager = pager,
+			paging = paging,
+			rowAlternationEnabled = rowAlternationEnabled,
+			scrolling = scrolling,
+			searchPanel = searchPanel,
+			selectedRowKeys = selectedRowKeys,
+			selection = selection,
+			showBorders = showBorders,
+			showColumnHeaders = showColumnHeaders,
+			showColumnLines = showColumnLines,
+			showRowLines = showRowLines,
+			sorting = sorting,
+			stateStoring = stateStoring,
+			twoWayBindingEnabled = twoWayBindingEnabled,
+			wordWrapEnabled = wordWrapEnabled,
+			onAdaptiveDetailRowPreparingEnabled = onAdaptiveDetailRowPreparingEnabled,
+			onDataErrorOccurredEnabled = onDataErrorOccurredEnabled,
+			onInitNewRowEnabled = onInitNewRowEnabled,
+			onKeyDownEnabled = onKeyDownEnabled,
+			onRowCollapsedEnabled = onRowCollapsedEnabled,
+			onRowCollapsingEnabled = onRowCollapsingEnabled,
+			onRowExpandedEnabled = onRowExpandedEnabled,
+			onRowExpandingEnabled = onRowExpandingEnabled,
+			onRowInsertedEnabled = onRowInsertedEnabled,
+			onRowInsertingEnabled = onRowInsertingEnabled,
+			onRowRemovedEnabled = onRowRemovedEnabled,
+			onRowRemovingEnabled = onRowRemovingEnabled,
+			onRowUpdatedEnabled = onRowUpdatedEnabled,
+			onRowUpdatingEnabled = onRowUpdatingEnabled,
+			onRowValidatingEnabled = onRowValidatingEnabled,
+			onSelectionChangedEnabled = onSelectionChangedEnabled,
+			onToolbarPreparingEnabled = onToolbarPreparingEnabled,
+		};
+	}
+	protected override void Init(DevExpress.Ui.GridBaseOptions options) {
+		DevExpress.Ui.GridBaseInterop.Init(Id, options);
+	}
+	bool? allowColumnReordering;
+	public bool? AllowColumnReordering {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetAllowColumnReordering(Id) : allowColumnReordering;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.GridBaseInterop.SetAllowColumnReordering(Id, value);
+			} else {
+				this.allowColumnReordering = value;
+			}
+		}
+	}
+	bool? allowColumnResizing;
+	public bool? AllowColumnResizing {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetAllowColumnResizing(Id) : allowColumnResizing;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.GridBaseInterop.SetAllowColumnResizing(Id, value);
+			} else {
+				this.allowColumnResizing = value;
+			}
+		}
+	}
+	bool? cacheEnabled;
+	public bool? CacheEnabled {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetCacheEnabled(Id) : cacheEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.GridBaseInterop.SetCacheEnabled(Id, value);
+			} else {
+				this.cacheEnabled = value;
+			}
+		}
+	}
+	bool? cellHintEnabled;
+	public bool? CellHintEnabled {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetCellHintEnabled(Id) : cellHintEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.GridBaseInterop.SetCellHintEnabled(Id, value);
+			} else {
+				this.cellHintEnabled = value;
+			}
+		}
+	}
+	bool? columnAutoWidth;
+	public bool? ColumnAutoWidth {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetColumnAutoWidth(Id) : columnAutoWidth;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.GridBaseInterop.SetColumnAutoWidth(Id, value);
+			} else {
+				this.columnAutoWidth = value;
+			}
+		}
+	}
+	object columnChooser;
+	public object ColumnChooser {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetColumnChooser(Id) : columnChooser;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.GridBaseInterop.SetColumnChooser(Id, value);
+			} else {
+				this.columnChooser = value;
+			}
+		}
+	}
+	object columnFixing;
+	public object ColumnFixing {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetColumnFixing(Id) : columnFixing;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.GridBaseInterop.SetColumnFixing(Id, value);
+			} else {
+				this.columnFixing = value;
+			}
+		}
+	}
+	bool? columnHidingEnabled;
+	public bool? ColumnHidingEnabled {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetColumnHidingEnabled(Id) : columnHidingEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.GridBaseInterop.SetColumnHidingEnabled(Id, value);
+			} else {
+				this.columnHidingEnabled = value;
+			}
+		}
+	}
+	float? columnMinWidth;
+	public float? ColumnMinWidth {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetColumnMinWidth(Id) : columnMinWidth;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.GridBaseInterop.SetColumnMinWidth(Id, value);
+			} else {
+				this.columnMinWidth = value;
+			}
+		}
+	}
+	string columnResizingMode;
+	public string ColumnResizingMode {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetColumnResizingMode(Id) : columnResizingMode;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.GridBaseInterop.SetColumnResizingMode(Id, value);
+			} else {
+				this.columnResizingMode = value;
+			}
+		}
+	}
+	object columns;
+	public object Columns {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetColumns(Id) : columns;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.GridBaseInterop.SetColumns(Id, value);
+			} else {
+				this.columns = value;
+			}
+		}
+	}
+	float? columnWidth;
+	public float? ColumnWidth {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetColumnWidth(Id) : columnWidth;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.GridBaseInterop.SetColumnWidth(Id, value);
+			} else {
+				this.columnWidth = value;
+			}
+		}
+	}
+	object dataSource;
+	public object DataSource {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetDataSource(Id) : dataSource;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.GridBaseInterop.SetDataSource(Id, value);
+			} else {
+				this.dataSource = value;
+			}
+		}
+	}
+	string dateSerializationFormat;
+	public string DateSerializationFormat {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetDateSerializationFormat(Id) : dateSerializationFormat;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.GridBaseInterop.SetDateSerializationFormat(Id, value);
+			} else {
+				this.dateSerializationFormat = value;
+			}
+		}
+	}
+	object editing;
+	public object Editing {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetEditing(Id) : editing;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.GridBaseInterop.SetEditing(Id, value);
+			} else {
+				this.editing = value;
+			}
+		}
+	}
+	bool? errorRowEnabled;
+	public bool? ErrorRowEnabled {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetErrorRowEnabled(Id) : errorRowEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.GridBaseInterop.SetErrorRowEnabled(Id, value);
+			} else {
+				this.errorRowEnabled = value;
+			}
+		}
+	}
+	object filterBuilder;
+	public object FilterBuilder {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetFilterBuilder(Id) : filterBuilder;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.GridBaseInterop.SetFilterBuilder(Id, value);
+			} else {
+				this.filterBuilder = value;
+			}
+		}
+	}
+	object filterBuilderPopup;
+	public object FilterBuilderPopup {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetFilterBuilderPopup(Id) : filterBuilderPopup;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.GridBaseInterop.SetFilterBuilderPopup(Id, value);
+			} else {
+				this.filterBuilderPopup = value;
+			}
+		}
+	}
+	object filterPanel;
+	public object FilterPanel {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetFilterPanel(Id) : filterPanel;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.GridBaseInterop.SetFilterPanel(Id, value);
+			} else {
+				this.filterPanel = value;
+			}
+		}
+	}
+	object filterRow;
+	public object FilterRow {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetFilterRow(Id) : filterRow;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.GridBaseInterop.SetFilterRow(Id, value);
+			} else {
+				this.filterRow = value;
+			}
+		}
+	}
+	object filterSyncEnabled;
+	public object FilterSyncEnabled {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetFilterSyncEnabled(Id) : filterSyncEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.GridBaseInterop.SetFilterSyncEnabled(Id, value);
+			} else {
+				this.filterSyncEnabled = value;
+			}
+		}
+	}
+	object filterValue;
+	public object FilterValue {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetFilterValue(Id) : filterValue;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.GridBaseInterop.SetFilterValue(Id, value);
+			} else {
+				this.filterValue = value;
+			}
+		}
+	}
+	object headerFilter;
+	public object HeaderFilter {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetHeaderFilter(Id) : headerFilter;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.GridBaseInterop.SetHeaderFilter(Id, value);
+			} else {
+				this.headerFilter = value;
+			}
+		}
+	}
+	object loadPanel;
+	public object LoadPanel {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetLoadPanel(Id) : loadPanel;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.GridBaseInterop.SetLoadPanel(Id, value);
+			} else {
+				this.loadPanel = value;
+			}
+		}
+	}
+	string noDataText;
+	public string NoDataText {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetNoDataText(Id) : noDataText;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.GridBaseInterop.SetNoDataText(Id, value);
+			} else {
+				this.noDataText = value;
+			}
+		}
+	}
+	object pager;
+	public object Pager {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetPager(Id) : pager;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.GridBaseInterop.SetPager(Id, value);
+			} else {
+				this.pager = value;
+			}
+		}
+	}
+	object paging;
+	public object Paging {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetPaging(Id) : paging;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.GridBaseInterop.SetPaging(Id, value);
+			} else {
+				this.paging = value;
+			}
+		}
+	}
+	bool? rowAlternationEnabled;
+	public bool? RowAlternationEnabled {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetRowAlternationEnabled(Id) : rowAlternationEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.GridBaseInterop.SetRowAlternationEnabled(Id, value);
+			} else {
+				this.rowAlternationEnabled = value;
+			}
+		}
+	}
+	object scrolling;
+	public object Scrolling {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetScrolling(Id) : scrolling;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.GridBaseInterop.SetScrolling(Id, value);
+			} else {
+				this.scrolling = value;
+			}
+		}
+	}
+	object searchPanel;
+	public object SearchPanel {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetSearchPanel(Id) : searchPanel;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.GridBaseInterop.SetSearchPanel(Id, value);
+			} else {
+				this.searchPanel = value;
+			}
+		}
+	}
+	object selectedRowKeys;
+	public object SelectedRowKeys {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetSelectedRowKeys(Id) : selectedRowKeys;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.GridBaseInterop.SetSelectedRowKeys(Id, value);
+			} else {
+				this.selectedRowKeys = value;
+			}
+		}
+	}
+	object selection;
+	public object Selection {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetSelection(Id) : selection;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.GridBaseInterop.SetSelection(Id, value);
+			} else {
+				this.selection = value;
+			}
+		}
+	}
+	bool? showBorders;
+	public bool? ShowBorders {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetShowBorders(Id) : showBorders;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.GridBaseInterop.SetShowBorders(Id, value);
+			} else {
+				this.showBorders = value;
+			}
+		}
+	}
+	bool? showColumnHeaders;
+	public bool? ShowColumnHeaders {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetShowColumnHeaders(Id) : showColumnHeaders;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.GridBaseInterop.SetShowColumnHeaders(Id, value);
+			} else {
+				this.showColumnHeaders = value;
+			}
+		}
+	}
+	bool? showColumnLines;
+	public bool? ShowColumnLines {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetShowColumnLines(Id) : showColumnLines;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.GridBaseInterop.SetShowColumnLines(Id, value);
+			} else {
+				this.showColumnLines = value;
+			}
+		}
+	}
+	bool? showRowLines;
+	public bool? ShowRowLines {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetShowRowLines(Id) : showRowLines;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.GridBaseInterop.SetShowRowLines(Id, value);
+			} else {
+				this.showRowLines = value;
+			}
+		}
+	}
+	object sorting;
+	public object Sorting {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetSorting(Id) : sorting;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.GridBaseInterop.SetSorting(Id, value);
+			} else {
+				this.sorting = value;
+			}
+		}
+	}
+	object stateStoring;
+	public object StateStoring {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetStateStoring(Id) : stateStoring;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.GridBaseInterop.SetStateStoring(Id, value);
+			} else {
+				this.stateStoring = value;
+			}
+		}
+	}
+	bool? twoWayBindingEnabled;
+	public bool? TwoWayBindingEnabled {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetTwoWayBindingEnabled(Id) : twoWayBindingEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.GridBaseInterop.SetTwoWayBindingEnabled(Id, value);
+			} else {
+				this.twoWayBindingEnabled = value;
+			}
+		}
+	}
+	bool? wordWrapEnabled;
+	public bool? WordWrapEnabled {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetWordWrapEnabled(Id) : wordWrapEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.GridBaseInterop.SetWordWrapEnabled(Id, value);
+			} else {
+				this.wordWrapEnabled = value;
+			}
+		}
+	}
+	bool? onAdaptiveDetailRowPreparingEnabled;
+	public bool? OnAdaptiveDetailRowPreparingEnabled {
+		get => onAdaptiveDetailRowPreparingEnabled;
+		set => this.onAdaptiveDetailRowPreparingEnabled = value;
+	}
+	bool? onDataErrorOccurredEnabled;
+	public bool? OnDataErrorOccurredEnabled {
+		get => onDataErrorOccurredEnabled;
+		set => this.onDataErrorOccurredEnabled = value;
+	}
+	bool? onInitNewRowEnabled;
+	public bool? OnInitNewRowEnabled {
+		get => onInitNewRowEnabled;
+		set => this.onInitNewRowEnabled = value;
+	}
+	bool? onKeyDownEnabled;
+	public bool? OnKeyDownEnabled {
+		get => onKeyDownEnabled;
+		set => this.onKeyDownEnabled = value;
+	}
+	bool? onRowCollapsedEnabled;
+	public bool? OnRowCollapsedEnabled {
+		get => onRowCollapsedEnabled;
+		set => this.onRowCollapsedEnabled = value;
+	}
+	bool? onRowCollapsingEnabled;
+	public bool? OnRowCollapsingEnabled {
+		get => onRowCollapsingEnabled;
+		set => this.onRowCollapsingEnabled = value;
+	}
+	bool? onRowExpandedEnabled;
+	public bool? OnRowExpandedEnabled {
+		get => onRowExpandedEnabled;
+		set => this.onRowExpandedEnabled = value;
+	}
+	bool? onRowExpandingEnabled;
+	public bool? OnRowExpandingEnabled {
+		get => onRowExpandingEnabled;
+		set => this.onRowExpandingEnabled = value;
+	}
+	bool? onRowInsertedEnabled;
+	public bool? OnRowInsertedEnabled {
+		get => onRowInsertedEnabled;
+		set => this.onRowInsertedEnabled = value;
+	}
+	bool? onRowInsertingEnabled;
+	public bool? OnRowInsertingEnabled {
+		get => onRowInsertingEnabled;
+		set => this.onRowInsertingEnabled = value;
+	}
+	bool? onRowRemovedEnabled;
+	public bool? OnRowRemovedEnabled {
+		get => onRowRemovedEnabled;
+		set => this.onRowRemovedEnabled = value;
+	}
+	bool? onRowRemovingEnabled;
+	public bool? OnRowRemovingEnabled {
+		get => onRowRemovingEnabled;
+		set => this.onRowRemovingEnabled = value;
+	}
+	bool? onRowUpdatedEnabled;
+	public bool? OnRowUpdatedEnabled {
+		get => onRowUpdatedEnabled;
+		set => this.onRowUpdatedEnabled = value;
+	}
+	bool? onRowUpdatingEnabled;
+	public bool? OnRowUpdatingEnabled {
+		get => onRowUpdatingEnabled;
+		set => this.onRowUpdatingEnabled = value;
+	}
+	bool? onRowValidatingEnabled;
+	public bool? OnRowValidatingEnabled {
+		get => onRowValidatingEnabled;
+		set => this.onRowValidatingEnabled = value;
+	}
+	bool? onSelectionChangedEnabled;
+	public bool? OnSelectionChangedEnabled {
+		get => onSelectionChangedEnabled;
+		set => this.onSelectionChangedEnabled = value;
+	}
+	bool? onToolbarPreparingEnabled;
+	public bool? OnToolbarPreparingEnabled {
+		get => onToolbarPreparingEnabled;
+		set => this.onToolbarPreparingEnabled = value;
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+		DevExpress.Ui.GridBaseInterop.AdaptiveDetailRowPreparing += GridBase_AdaptiveDetailRowPreparing;
+		DevExpress.Ui.GridBaseInterop.DataErrorOccurred += GridBase_DataErrorOccurred;
+		DevExpress.Ui.GridBaseInterop.InitNewRow += GridBase_InitNewRow;
+		DevExpress.Ui.GridBaseInterop.KeyDown += GridBase_KeyDown;
+		DevExpress.Ui.GridBaseInterop.RowCollapsed += GridBase_RowCollapsed;
+		DevExpress.Ui.GridBaseInterop.RowCollapsing += GridBase_RowCollapsing;
+		DevExpress.Ui.GridBaseInterop.RowExpanded += GridBase_RowExpanded;
+		DevExpress.Ui.GridBaseInterop.RowExpanding += GridBase_RowExpanding;
+		DevExpress.Ui.GridBaseInterop.RowInserted += GridBase_RowInserted;
+		DevExpress.Ui.GridBaseInterop.RowInserting += GridBase_RowInserting;
+		DevExpress.Ui.GridBaseInterop.RowRemoved += GridBase_RowRemoved;
+		DevExpress.Ui.GridBaseInterop.RowRemoving += GridBase_RowRemoving;
+		DevExpress.Ui.GridBaseInterop.RowUpdated += GridBase_RowUpdated;
+		DevExpress.Ui.GridBaseInterop.RowUpdating += GridBase_RowUpdating;
+		DevExpress.Ui.GridBaseInterop.RowValidating += GridBase_RowValidating;
+		DevExpress.Ui.GridBaseInterop.SelectionChanged += GridBase_SelectionChanged;
+		DevExpress.Ui.GridBaseInterop.ToolbarPreparing += GridBase_ToolbarPreparing;
+	}
+	public Action AdaptiveDetailRowPreparing { get; set; }
+	void GridBase_AdaptiveDetailRowPreparing(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			AdaptiveDetailRowPreparing?.Invoke();
+		}
+	}
+	public Action DataErrorOccurred { get; set; }
+	void GridBase_DataErrorOccurred(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			DataErrorOccurred?.Invoke();
+		}
+	}
+	public Action InitNewRow { get; set; }
+	void GridBase_InitNewRow(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			InitNewRow?.Invoke();
+		}
+	}
+	public Action KeyDown { get; set; }
+	void GridBase_KeyDown(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			KeyDown?.Invoke();
+		}
+	}
+	public Action RowCollapsed { get; set; }
+	void GridBase_RowCollapsed(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			RowCollapsed?.Invoke();
+		}
+	}
+	public Action RowCollapsing { get; set; }
+	void GridBase_RowCollapsing(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			RowCollapsing?.Invoke();
+		}
+	}
+	public Action RowExpanded { get; set; }
+	void GridBase_RowExpanded(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			RowExpanded?.Invoke();
+		}
+	}
+	public Action RowExpanding { get; set; }
+	void GridBase_RowExpanding(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			RowExpanding?.Invoke();
+		}
+	}
+	public Action RowInserted { get; set; }
+	void GridBase_RowInserted(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			RowInserted?.Invoke();
+		}
+	}
+	public Action RowInserting { get; set; }
+	void GridBase_RowInserting(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			RowInserting?.Invoke();
+		}
+	}
+	public Action RowRemoved { get; set; }
+	void GridBase_RowRemoved(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			RowRemoved?.Invoke();
+		}
+	}
+	public Action RowRemoving { get; set; }
+	void GridBase_RowRemoving(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			RowRemoving?.Invoke();
+		}
+	}
+	public Action RowUpdated { get; set; }
+	void GridBase_RowUpdated(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			RowUpdated?.Invoke();
+		}
+	}
+	public Action RowUpdating { get; set; }
+	void GridBase_RowUpdating(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			RowUpdating?.Invoke();
+		}
+	}
+	public Action RowValidating { get; set; }
+	void GridBase_RowValidating(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			RowValidating?.Invoke();
+		}
+	}
+	public Action SelectionChanged { get; set; }
+	void GridBase_SelectionChanged(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			SelectionChanged?.Invoke();
+		}
+	}
+	public Action ToolbarPreparing { get; set; }
+	void GridBase_ToolbarPreparing(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			ToolbarPreparing?.Invoke();
+		}
+	}
+	public void Dispose() {
+		DevExpress.Ui.GridBaseInterop.AdaptiveDetailRowPreparing -= GridBase_AdaptiveDetailRowPreparing;
+		DevExpress.Ui.GridBaseInterop.DataErrorOccurred -= GridBase_DataErrorOccurred;
+		DevExpress.Ui.GridBaseInterop.InitNewRow -= GridBase_InitNewRow;
+		DevExpress.Ui.GridBaseInterop.KeyDown -= GridBase_KeyDown;
+		DevExpress.Ui.GridBaseInterop.RowCollapsed -= GridBase_RowCollapsed;
+		DevExpress.Ui.GridBaseInterop.RowCollapsing -= GridBase_RowCollapsing;
+		DevExpress.Ui.GridBaseInterop.RowExpanded -= GridBase_RowExpanded;
+		DevExpress.Ui.GridBaseInterop.RowExpanding -= GridBase_RowExpanding;
+		DevExpress.Ui.GridBaseInterop.RowInserted -= GridBase_RowInserted;
+		DevExpress.Ui.GridBaseInterop.RowInserting -= GridBase_RowInserting;
+		DevExpress.Ui.GridBaseInterop.RowRemoved -= GridBase_RowRemoved;
+		DevExpress.Ui.GridBaseInterop.RowRemoving -= GridBase_RowRemoving;
+		DevExpress.Ui.GridBaseInterop.RowUpdated -= GridBase_RowUpdated;
+		DevExpress.Ui.GridBaseInterop.RowUpdating -= GridBase_RowUpdating;
+		DevExpress.Ui.GridBaseInterop.RowValidating -= GridBase_RowValidating;
+		DevExpress.Ui.GridBaseInterop.SelectionChanged -= GridBase_SelectionChanged;
+		DevExpress.Ui.GridBaseInterop.ToolbarPreparing -= GridBase_ToolbarPreparing;
+	}
+}

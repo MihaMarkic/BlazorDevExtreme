@@ -11,19 +11,20 @@
 			hoverStateEnabled = hoverStateEnabled,
 			scrollByContent = scrollByContent,
 			scrollingEnabled = scrollingEnabled,
+			selectedItems = selectedItems,
 			selectionMode = selectionMode,
 			showNavButtons = showNavButtons,
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxTabsOptions options) {
-		DxTabsInterop.Init(Id, options);
+		DevExpress.Ui.DxTabsInterop.Init(Id, options);
 	}
 	bool? focusStateEnabled;
 	public bool? FocusStateEnabled {
-		get => isInitialized ? DxTabsInterop.GetFocusStateEnabled(Id) : focusStateEnabled;
+		get => isInitialized ? DevExpress.Ui.DxTabsInterop.GetFocusStateEnabled(Id) : focusStateEnabled;
 		set {
 			if (isInitialized) {
-				DxTabsInterop.SetFocusStateEnabled(Id, value);
+				DevExpress.Ui.DxTabsInterop.SetFocusStateEnabled(Id, value);
 			} else {
 				this.focusStateEnabled = value;
 			}
@@ -31,10 +32,10 @@
 	}
 	bool? hoverStateEnabled;
 	public bool? HoverStateEnabled {
-		get => isInitialized ? DxTabsInterop.GetHoverStateEnabled(Id) : hoverStateEnabled;
+		get => isInitialized ? DevExpress.Ui.DxTabsInterop.GetHoverStateEnabled(Id) : hoverStateEnabled;
 		set {
 			if (isInitialized) {
-				DxTabsInterop.SetHoverStateEnabled(Id, value);
+				DevExpress.Ui.DxTabsInterop.SetHoverStateEnabled(Id, value);
 			} else {
 				this.hoverStateEnabled = value;
 			}
@@ -42,10 +43,10 @@
 	}
 	bool? scrollByContent;
 	public bool? ScrollByContent {
-		get => isInitialized ? DxTabsInterop.GetScrollByContent(Id) : scrollByContent;
+		get => isInitialized ? DevExpress.Ui.DxTabsInterop.GetScrollByContent(Id) : scrollByContent;
 		set {
 			if (isInitialized) {
-				DxTabsInterop.SetScrollByContent(Id, value);
+				DevExpress.Ui.DxTabsInterop.SetScrollByContent(Id, value);
 			} else {
 				this.scrollByContent = value;
 			}
@@ -53,21 +54,32 @@
 	}
 	bool? scrollingEnabled;
 	public bool? ScrollingEnabled {
-		get => isInitialized ? DxTabsInterop.GetScrollingEnabled(Id) : scrollingEnabled;
+		get => isInitialized ? DevExpress.Ui.DxTabsInterop.GetScrollingEnabled(Id) : scrollingEnabled;
 		set {
 			if (isInitialized) {
-				DxTabsInterop.SetScrollingEnabled(Id, value);
+				DevExpress.Ui.DxTabsInterop.SetScrollingEnabled(Id, value);
 			} else {
 				this.scrollingEnabled = value;
 			}
 		}
 	}
-	string selectionMode;
-	public string SelectionMode {
-		get => isInitialized ? DxTabsInterop.GetSelectionMode(Id) : selectionMode;
+	object selectedItems;
+	public object SelectedItems {
+		get => isInitialized ? DevExpress.Ui.DxTabsInterop.GetSelectedItems(Id) : selectedItems;
 		set {
 			if (isInitialized) {
-				DxTabsInterop.SetSelectionMode(Id, value);
+				DevExpress.Ui.DxTabsInterop.SetSelectedItems(Id, value);
+			} else {
+				this.selectedItems = value;
+			}
+		}
+	}
+	string selectionMode;
+	public string SelectionMode {
+		get => isInitialized ? DevExpress.Ui.DxTabsInterop.GetSelectionMode(Id) : selectionMode;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTabsInterop.SetSelectionMode(Id, value);
 			} else {
 				this.selectionMode = value;
 			}
@@ -75,10 +87,10 @@
 	}
 	bool? showNavButtons;
 	public bool? ShowNavButtons {
-		get => isInitialized ? DxTabsInterop.GetShowNavButtons(Id) : showNavButtons;
+		get => isInitialized ? DevExpress.Ui.DxTabsInterop.GetShowNavButtons(Id) : showNavButtons;
 		set {
 			if (isInitialized) {
-				DxTabsInterop.SetShowNavButtons(Id, value);
+				DevExpress.Ui.DxTabsInterop.SetShowNavButtons(Id, value);
 			} else {
 				this.showNavButtons = value;
 			}

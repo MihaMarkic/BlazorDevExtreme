@@ -17,14 +17,14 @@
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxSwitchOptions options) {
-		DxSwitchInterop.Init(Id, options);
+		DevExpress.Ui.DxSwitchInterop.Init(Id, options);
 	}
 	bool? activeStateEnabled;
 	public bool? ActiveStateEnabled {
-		get => isInitialized ? DxSwitchInterop.GetActiveStateEnabled(Id) : activeStateEnabled;
+		get => isInitialized ? DevExpress.Ui.DxSwitchInterop.GetActiveStateEnabled(Id) : activeStateEnabled;
 		set {
 			if (isInitialized) {
-				DxSwitchInterop.SetActiveStateEnabled(Id, value);
+				DevExpress.Ui.DxSwitchInterop.SetActiveStateEnabled(Id, value);
 			} else {
 				this.activeStateEnabled = value;
 			}
@@ -32,10 +32,10 @@
 	}
 	bool? focusStateEnabled;
 	public bool? FocusStateEnabled {
-		get => isInitialized ? DxSwitchInterop.GetFocusStateEnabled(Id) : focusStateEnabled;
+		get => isInitialized ? DevExpress.Ui.DxSwitchInterop.GetFocusStateEnabled(Id) : focusStateEnabled;
 		set {
 			if (isInitialized) {
-				DxSwitchInterop.SetFocusStateEnabled(Id, value);
+				DevExpress.Ui.DxSwitchInterop.SetFocusStateEnabled(Id, value);
 			} else {
 				this.focusStateEnabled = value;
 			}
@@ -43,10 +43,10 @@
 	}
 	bool? hoverStateEnabled;
 	public bool? HoverStateEnabled {
-		get => isInitialized ? DxSwitchInterop.GetHoverStateEnabled(Id) : hoverStateEnabled;
+		get => isInitialized ? DevExpress.Ui.DxSwitchInterop.GetHoverStateEnabled(Id) : hoverStateEnabled;
 		set {
 			if (isInitialized) {
-				DxSwitchInterop.SetHoverStateEnabled(Id, value);
+				DevExpress.Ui.DxSwitchInterop.SetHoverStateEnabled(Id, value);
 			} else {
 				this.hoverStateEnabled = value;
 			}
@@ -54,10 +54,10 @@
 	}
 	string name;
 	public string Name {
-		get => isInitialized ? DxSwitchInterop.GetName(Id) : name;
+		get => isInitialized ? DevExpress.Ui.DxSwitchInterop.GetName(Id) : name;
 		set {
 			if (isInitialized) {
-				DxSwitchInterop.SetName(Id, value);
+				DevExpress.Ui.DxSwitchInterop.SetName(Id, value);
 			} else {
 				this.name = value;
 			}
@@ -65,10 +65,10 @@
 	}
 	string offText;
 	public string OffText {
-		get => isInitialized ? DxSwitchInterop.GetOffText(Id) : offText;
+		get => isInitialized ? DevExpress.Ui.DxSwitchInterop.GetOffText(Id) : offText;
 		set {
 			if (isInitialized) {
-				DxSwitchInterop.SetOffText(Id, value);
+				DevExpress.Ui.DxSwitchInterop.SetOffText(Id, value);
 			} else {
 				this.offText = value;
 			}
@@ -76,10 +76,10 @@
 	}
 	string onText;
 	public string OnText {
-		get => isInitialized ? DxSwitchInterop.GetOnText(Id) : onText;
+		get => isInitialized ? DevExpress.Ui.DxSwitchInterop.GetOnText(Id) : onText;
 		set {
 			if (isInitialized) {
-				DxSwitchInterop.SetOnText(Id, value);
+				DevExpress.Ui.DxSwitchInterop.SetOnText(Id, value);
 			} else {
 				this.onText = value;
 			}
@@ -87,10 +87,10 @@
 	}
 	bool? value;
 	public bool? Value {
-		get => isInitialized ? DxSwitchInterop.GetValue(Id) : value;
+		get => isInitialized ? DevExpress.Ui.DxSwitchInterop.GetValue(Id) : value;
 		set {
 			if (isInitialized) {
-				DxSwitchInterop.SetValue(Id, value);
+				DevExpress.Ui.DxSwitchInterop.SetValue(Id, value);
 			} else {
 				this.value = value;
 			}

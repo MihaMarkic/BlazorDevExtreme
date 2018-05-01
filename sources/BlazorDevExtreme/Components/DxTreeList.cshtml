@@ -8,9 +8,21 @@
 	protected override DevExpress.Ui.DxTreeListOptions CreateOptions() {
 		return new DevExpress.Ui.DxTreeListOptions {
 			autoExpandAll = autoExpandAll,
+			columns = columns,
+			customizeColumns = customizeColumns,
 			dataStructure = dataStructure,
+			editing = editing,
+			expandedRowKeys = expandedRowKeys,
 			expandNodesOnFiltering = expandNodesOnFiltering,
+			hasItemsExpr = hasItemsExpr,
+			itemsExpr = itemsExpr,
+			keyExpr = keyExpr,
+			paging = paging,
+			parentIdExpr = parentIdExpr,
+			remoteOperations = remoteOperations,
 			rootValue = rootValue,
+			scrolling = scrolling,
+			selection = selection,
 			onCellClickEnabled = onCellClickEnabled,
 			onCellHoverChangedEnabled = onCellHoverChangedEnabled,
 			onCellPreparedEnabled = onCellPreparedEnabled,
@@ -24,49 +36,181 @@
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxTreeListOptions options) {
-		DxTreeListInterop.Init(Id, options);
+		DevExpress.Ui.DxTreeListInterop.Init(Id, options);
 	}
 	bool? autoExpandAll;
 	public bool? AutoExpandAll {
-		get => isInitialized ? DxTreeListInterop.GetAutoExpandAll(Id) : autoExpandAll;
+		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetAutoExpandAll(Id) : autoExpandAll;
 		set {
 			if (isInitialized) {
-				DxTreeListInterop.SetAutoExpandAll(Id, value);
+				DevExpress.Ui.DxTreeListInterop.SetAutoExpandAll(Id, value);
 			} else {
 				this.autoExpandAll = value;
 			}
 		}
 	}
-	string dataStructure;
-	public string DataStructure {
-		get => isInitialized ? DxTreeListInterop.GetDataStructure(Id) : dataStructure;
+	object columns;
+	public object Columns {
+		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetColumns(Id) : columns;
 		set {
 			if (isInitialized) {
-				DxTreeListInterop.SetDataStructure(Id, value);
+				DevExpress.Ui.DxTreeListInterop.SetColumns(Id, value);
+			} else {
+				this.columns = value;
+			}
+		}
+	}
+	object customizeColumns;
+	public object CustomizeColumns {
+		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetCustomizeColumns(Id) : customizeColumns;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetCustomizeColumns(Id, value);
+			} else {
+				this.customizeColumns = value;
+			}
+		}
+	}
+	string dataStructure;
+	public string DataStructure {
+		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetDataStructure(Id) : dataStructure;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetDataStructure(Id, value);
 			} else {
 				this.dataStructure = value;
 			}
 		}
 	}
-	bool? expandNodesOnFiltering;
-	public bool? ExpandNodesOnFiltering {
-		get => isInitialized ? DxTreeListInterop.GetExpandNodesOnFiltering(Id) : expandNodesOnFiltering;
+	object editing;
+	public object Editing {
+		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetEditing(Id) : editing;
 		set {
 			if (isInitialized) {
-				DxTreeListInterop.SetExpandNodesOnFiltering(Id, value);
+				DevExpress.Ui.DxTreeListInterop.SetEditing(Id, value);
+			} else {
+				this.editing = value;
+			}
+		}
+	}
+	object expandedRowKeys;
+	public object ExpandedRowKeys {
+		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetExpandedRowKeys(Id) : expandedRowKeys;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetExpandedRowKeys(Id, value);
+			} else {
+				this.expandedRowKeys = value;
+			}
+		}
+	}
+	bool? expandNodesOnFiltering;
+	public bool? ExpandNodesOnFiltering {
+		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetExpandNodesOnFiltering(Id) : expandNodesOnFiltering;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetExpandNodesOnFiltering(Id, value);
 			} else {
 				this.expandNodesOnFiltering = value;
 			}
 		}
 	}
-	object rootValue;
-	public object RootValue {
-		get => isInitialized ? DxTreeListInterop.GetRootValue(Id) : rootValue;
+	object hasItemsExpr;
+	public object HasItemsExpr {
+		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetHasItemsExpr(Id) : hasItemsExpr;
 		set {
 			if (isInitialized) {
-				DxTreeListInterop.SetRootValue(Id, value);
+				DevExpress.Ui.DxTreeListInterop.SetHasItemsExpr(Id, value);
+			} else {
+				this.hasItemsExpr = value;
+			}
+		}
+	}
+	object itemsExpr;
+	public object ItemsExpr {
+		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetItemsExpr(Id) : itemsExpr;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetItemsExpr(Id, value);
+			} else {
+				this.itemsExpr = value;
+			}
+		}
+	}
+	object keyExpr;
+	public object KeyExpr {
+		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetKeyExpr(Id) : keyExpr;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetKeyExpr(Id, value);
+			} else {
+				this.keyExpr = value;
+			}
+		}
+	}
+	object paging;
+	public object Paging {
+		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetPaging(Id) : paging;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetPaging(Id, value);
+			} else {
+				this.paging = value;
+			}
+		}
+	}
+	object parentIdExpr;
+	public object ParentIdExpr {
+		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetParentIdExpr(Id) : parentIdExpr;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetParentIdExpr(Id, value);
+			} else {
+				this.parentIdExpr = value;
+			}
+		}
+	}
+	object remoteOperations;
+	public object RemoteOperations {
+		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetRemoteOperations(Id) : remoteOperations;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetRemoteOperations(Id, value);
+			} else {
+				this.remoteOperations = value;
+			}
+		}
+	}
+	object rootValue;
+	public object RootValue {
+		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetRootValue(Id) : rootValue;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetRootValue(Id, value);
 			} else {
 				this.rootValue = value;
+			}
+		}
+	}
+	object scrolling;
+	public object Scrolling {
+		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetScrolling(Id) : scrolling;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetScrolling(Id, value);
+			} else {
+				this.scrolling = value;
+			}
+		}
+	}
+	object selection;
+	public object Selection {
+		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetSelection(Id) : selection;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetSelection(Id, value);
+			} else {
+				this.selection = value;
 			}
 		}
 	}
@@ -122,16 +266,16 @@
 	}
 	protected override async Task OnInitAsync() {
 		await base.OnInitAsync();
-		DxTreeListInterop.CellClick += DxTreeList_CellClick;
-		DxTreeListInterop.CellHoverChanged += DxTreeList_CellHoverChanged;
-		DxTreeListInterop.CellPrepared += DxTreeList_CellPrepared;
-		DxTreeListInterop.ContextMenuPreparing += DxTreeList_ContextMenuPreparing;
-		DxTreeListInterop.EditingStart += DxTreeList_EditingStart;
-		DxTreeListInterop.EditorPrepared += DxTreeList_EditorPrepared;
-		DxTreeListInterop.EditorPreparing += DxTreeList_EditorPreparing;
-		DxTreeListInterop.NodesInitialized += DxTreeList_NodesInitialized;
-		DxTreeListInterop.RowClick += DxTreeList_RowClick;
-		DxTreeListInterop.RowPrepared += DxTreeList_RowPrepared;
+		DevExpress.Ui.DxTreeListInterop.CellClick += DxTreeList_CellClick;
+		DevExpress.Ui.DxTreeListInterop.CellHoverChanged += DxTreeList_CellHoverChanged;
+		DevExpress.Ui.DxTreeListInterop.CellPrepared += DxTreeList_CellPrepared;
+		DevExpress.Ui.DxTreeListInterop.ContextMenuPreparing += DxTreeList_ContextMenuPreparing;
+		DevExpress.Ui.DxTreeListInterop.EditingStart += DxTreeList_EditingStart;
+		DevExpress.Ui.DxTreeListInterop.EditorPrepared += DxTreeList_EditorPrepared;
+		DevExpress.Ui.DxTreeListInterop.EditorPreparing += DxTreeList_EditorPreparing;
+		DevExpress.Ui.DxTreeListInterop.NodesInitialized += DxTreeList_NodesInitialized;
+		DevExpress.Ui.DxTreeListInterop.RowClick += DxTreeList_RowClick;
+		DevExpress.Ui.DxTreeListInterop.RowPrepared += DxTreeList_RowPrepared;
 	}
 	public Action CellClick { get; set; }
 	void DxTreeList_CellClick(object sender, JQueryEventArgs e) {
@@ -194,15 +338,15 @@
 		}
 	}
 	public void Dispose() {
-		DxTreeListInterop.CellClick -= DxTreeList_CellClick;
-		DxTreeListInterop.CellHoverChanged -= DxTreeList_CellHoverChanged;
-		DxTreeListInterop.CellPrepared -= DxTreeList_CellPrepared;
-		DxTreeListInterop.ContextMenuPreparing -= DxTreeList_ContextMenuPreparing;
-		DxTreeListInterop.EditingStart -= DxTreeList_EditingStart;
-		DxTreeListInterop.EditorPrepared -= DxTreeList_EditorPrepared;
-		DxTreeListInterop.EditorPreparing -= DxTreeList_EditorPreparing;
-		DxTreeListInterop.NodesInitialized -= DxTreeList_NodesInitialized;
-		DxTreeListInterop.RowClick -= DxTreeList_RowClick;
-		DxTreeListInterop.RowPrepared -= DxTreeList_RowPrepared;
+		DevExpress.Ui.DxTreeListInterop.CellClick -= DxTreeList_CellClick;
+		DevExpress.Ui.DxTreeListInterop.CellHoverChanged -= DxTreeList_CellHoverChanged;
+		DevExpress.Ui.DxTreeListInterop.CellPrepared -= DxTreeList_CellPrepared;
+		DevExpress.Ui.DxTreeListInterop.ContextMenuPreparing -= DxTreeList_ContextMenuPreparing;
+		DevExpress.Ui.DxTreeListInterop.EditingStart -= DxTreeList_EditingStart;
+		DevExpress.Ui.DxTreeListInterop.EditorPrepared -= DxTreeList_EditorPrepared;
+		DevExpress.Ui.DxTreeListInterop.EditorPreparing -= DxTreeList_EditorPreparing;
+		DevExpress.Ui.DxTreeListInterop.NodesInitialized -= DxTreeList_NodesInitialized;
+		DevExpress.Ui.DxTreeListInterop.RowClick -= DxTreeList_RowClick;
+		DevExpress.Ui.DxTreeListInterop.RowPrepared -= DxTreeList_RowPrepared;
 	}
 }

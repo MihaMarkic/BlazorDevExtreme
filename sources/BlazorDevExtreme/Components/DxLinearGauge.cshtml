@@ -7,10 +7,70 @@
 	public DxLinearGauge() : base("DxLinearGauge") { }
 	protected override DevExpress.Viz.Gauges.DxLinearGaugeOptions CreateOptions() {
 		return new DevExpress.Viz.Gauges.DxLinearGaugeOptions {
+			geometry = geometry,
+			rangeContainer = rangeContainer,
+			scale = scale,
+			subvalueIndicator = subvalueIndicator,
+			valueIndicator = valueIndicator,
 		};
 	}
 	protected override void Init(DevExpress.Viz.Gauges.DxLinearGaugeOptions options) {
-		DxLinearGaugeInterop.Init(Id, options);
+		DevExpress.Viz.DxLinearGaugeInterop.Init(Id, options);
+	}
+	object geometry;
+	public object Geometry {
+		get => isInitialized ? DevExpress.Viz.DxLinearGaugeInterop.GetGeometry(Id) : geometry;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxLinearGaugeInterop.SetGeometry(Id, value);
+			} else {
+				this.geometry = value;
+			}
+		}
+	}
+	object rangeContainer;
+	public object RangeContainer {
+		get => isInitialized ? DevExpress.Viz.DxLinearGaugeInterop.GetRangeContainer(Id) : rangeContainer;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxLinearGaugeInterop.SetRangeContainer(Id, value);
+			} else {
+				this.rangeContainer = value;
+			}
+		}
+	}
+	object scale;
+	public object Scale {
+		get => isInitialized ? DevExpress.Viz.DxLinearGaugeInterop.GetScale(Id) : scale;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxLinearGaugeInterop.SetScale(Id, value);
+			} else {
+				this.scale = value;
+			}
+		}
+	}
+	object subvalueIndicator;
+	public object SubvalueIndicator {
+		get => isInitialized ? DevExpress.Viz.DxLinearGaugeInterop.GetSubvalueIndicator(Id) : subvalueIndicator;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxLinearGaugeInterop.SetSubvalueIndicator(Id, value);
+			} else {
+				this.subvalueIndicator = value;
+			}
+		}
+	}
+	object valueIndicator;
+	public object ValueIndicator {
+		get => isInitialized ? DevExpress.Viz.DxLinearGaugeInterop.GetValueIndicator(Id) : valueIndicator;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxLinearGaugeInterop.SetValueIndicator(Id, value);
+			} else {
+				this.valueIndicator = value;
+			}
+		}
 	}
 	protected override async Task OnInitAsync() {
 		await base.OnInitAsync();

@@ -1,0 +1,130 @@
+@implements IDisposable
+@inherits DxBlazorCompoment<DevExpress.Ui.WidgetOptions>
+
+<div id="@Id"></div>
+
+@functions {
+	public Widget() : base("Widget") { }
+	protected override DevExpress.Ui.WidgetOptions CreateOptions() {
+		return new DevExpress.Ui.WidgetOptions {
+			accessKey = accessKey,
+			activeStateEnabled = activeStateEnabled,
+			disabled = disabled,
+			focusStateEnabled = focusStateEnabled,
+			hint = hint,
+			hoverStateEnabled = hoverStateEnabled,
+			tabIndex = tabIndex,
+			visible = visible,
+			onContentReadyEnabled = onContentReadyEnabled,
+		};
+	}
+	protected override void Init(DevExpress.Ui.WidgetOptions options) {
+		DevExpress.Ui.WidgetInterop.Init(Id, options);
+	}
+	string accessKey;
+	public string AccessKey {
+		get => isInitialized ? DevExpress.Ui.WidgetInterop.GetAccessKey(Id) : accessKey;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.WidgetInterop.SetAccessKey(Id, value);
+			} else {
+				this.accessKey = value;
+			}
+		}
+	}
+	bool? activeStateEnabled;
+	public bool? ActiveStateEnabled {
+		get => isInitialized ? DevExpress.Ui.WidgetInterop.GetActiveStateEnabled(Id) : activeStateEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.WidgetInterop.SetActiveStateEnabled(Id, value);
+			} else {
+				this.activeStateEnabled = value;
+			}
+		}
+	}
+	bool? disabled;
+	public bool? Disabled {
+		get => isInitialized ? DevExpress.Ui.WidgetInterop.GetDisabled(Id) : disabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.WidgetInterop.SetDisabled(Id, value);
+			} else {
+				this.disabled = value;
+			}
+		}
+	}
+	bool? focusStateEnabled;
+	public bool? FocusStateEnabled {
+		get => isInitialized ? DevExpress.Ui.WidgetInterop.GetFocusStateEnabled(Id) : focusStateEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.WidgetInterop.SetFocusStateEnabled(Id, value);
+			} else {
+				this.focusStateEnabled = value;
+			}
+		}
+	}
+	string hint;
+	public string Hint {
+		get => isInitialized ? DevExpress.Ui.WidgetInterop.GetHint(Id) : hint;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.WidgetInterop.SetHint(Id, value);
+			} else {
+				this.hint = value;
+			}
+		}
+	}
+	bool? hoverStateEnabled;
+	public bool? HoverStateEnabled {
+		get => isInitialized ? DevExpress.Ui.WidgetInterop.GetHoverStateEnabled(Id) : hoverStateEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.WidgetInterop.SetHoverStateEnabled(Id, value);
+			} else {
+				this.hoverStateEnabled = value;
+			}
+		}
+	}
+	float? tabIndex;
+	public float? TabIndex {
+		get => isInitialized ? DevExpress.Ui.WidgetInterop.GetTabIndex(Id) : tabIndex;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.WidgetInterop.SetTabIndex(Id, value);
+			} else {
+				this.tabIndex = value;
+			}
+		}
+	}
+	bool? visible;
+	public bool? Visible {
+		get => isInitialized ? DevExpress.Ui.WidgetInterop.GetVisible(Id) : visible;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.WidgetInterop.SetVisible(Id, value);
+			} else {
+				this.visible = value;
+			}
+		}
+	}
+	bool? onContentReadyEnabled;
+	public bool? OnContentReadyEnabled {
+		get => onContentReadyEnabled;
+		set => this.onContentReadyEnabled = value;
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+		DevExpress.Ui.WidgetInterop.ContentReady += Widget_ContentReady;
+	}
+	public Action ContentReady { get; set; }
+	void Widget_ContentReady(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			ContentReady?.Invoke();
+		}
+	}
+	public void Dispose() {
+		DevExpress.Ui.WidgetInterop.ContentReady -= Widget_ContentReady;
+	}
+}

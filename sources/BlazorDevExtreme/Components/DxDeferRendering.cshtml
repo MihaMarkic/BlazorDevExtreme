@@ -7,6 +7,8 @@
 	public DxDeferRendering() : base("DxDeferRendering") { }
 	protected override DevExpress.Ui.DxDeferRenderingOptions CreateOptions() {
 		return new DevExpress.Ui.DxDeferRenderingOptions {
+			animation = animation,
+			renderWhen = renderWhen,
 			showLoadIndicator = showLoadIndicator,
 			staggerItemSelector = staggerItemSelector,
 			onRenderedEnabled = onRenderedEnabled,
@@ -14,14 +16,36 @@
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxDeferRenderingOptions options) {
-		DxDeferRenderingInterop.Init(Id, options);
+		DevExpress.Ui.DxDeferRenderingInterop.Init(Id, options);
+	}
+	object animation;
+	public object Animation {
+		get => isInitialized ? DevExpress.Ui.DxDeferRenderingInterop.GetAnimation(Id) : animation;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDeferRenderingInterop.SetAnimation(Id, value);
+			} else {
+				this.animation = value;
+			}
+		}
+	}
+	object renderWhen;
+	public object RenderWhen {
+		get => isInitialized ? DevExpress.Ui.DxDeferRenderingInterop.GetRenderWhen(Id) : renderWhen;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDeferRenderingInterop.SetRenderWhen(Id, value);
+			} else {
+				this.renderWhen = value;
+			}
+		}
 	}
 	bool? showLoadIndicator;
 	public bool? ShowLoadIndicator {
-		get => isInitialized ? DxDeferRenderingInterop.GetShowLoadIndicator(Id) : showLoadIndicator;
+		get => isInitialized ? DevExpress.Ui.DxDeferRenderingInterop.GetShowLoadIndicator(Id) : showLoadIndicator;
 		set {
 			if (isInitialized) {
-				DxDeferRenderingInterop.SetShowLoadIndicator(Id, value);
+				DevExpress.Ui.DxDeferRenderingInterop.SetShowLoadIndicator(Id, value);
 			} else {
 				this.showLoadIndicator = value;
 			}
@@ -29,10 +53,10 @@
 	}
 	string staggerItemSelector;
 	public string StaggerItemSelector {
-		get => isInitialized ? DxDeferRenderingInterop.GetStaggerItemSelector(Id) : staggerItemSelector;
+		get => isInitialized ? DevExpress.Ui.DxDeferRenderingInterop.GetStaggerItemSelector(Id) : staggerItemSelector;
 		set {
 			if (isInitialized) {
-				DxDeferRenderingInterop.SetStaggerItemSelector(Id, value);
+				DevExpress.Ui.DxDeferRenderingInterop.SetStaggerItemSelector(Id, value);
 			} else {
 				this.staggerItemSelector = value;
 			}
@@ -50,8 +74,8 @@
 	}
 	protected override async Task OnInitAsync() {
 		await base.OnInitAsync();
-		DxDeferRenderingInterop.Rendered += DxDeferRendering_Rendered;
-		DxDeferRenderingInterop.Shown += DxDeferRendering_Shown;
+		DevExpress.Ui.DxDeferRenderingInterop.Rendered += DxDeferRendering_Rendered;
+		DevExpress.Ui.DxDeferRenderingInterop.Shown += DxDeferRendering_Shown;
 	}
 	public Action Rendered { get; set; }
 	void DxDeferRendering_Rendered(object sender, JQueryEventArgs e) {
@@ -66,7 +90,7 @@
 		}
 	}
 	public void Dispose() {
-		DxDeferRenderingInterop.Rendered -= DxDeferRendering_Rendered;
-		DxDeferRenderingInterop.Shown -= DxDeferRendering_Shown;
+		DevExpress.Ui.DxDeferRenderingInterop.Rendered -= DxDeferRendering_Rendered;
+		DevExpress.Ui.DxDeferRenderingInterop.Shown -= DxDeferRendering_Shown;
 	}
 }

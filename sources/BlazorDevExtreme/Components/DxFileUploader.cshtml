@@ -4,305 +4,317 @@
 <div id="@Id"></div>
 
 @functions {
-    public DxFileUploader() : base("DxFileUploader") { }
-    protected override DevExpress.Ui.DxFileUploaderOptions CreateOptions() {
-        return new DevExpress.Ui.DxFileUploaderOptions {
-            accept = accept,
-            allowCanceling = allowCanceling,
-            focusStateEnabled = focusStateEnabled,
-            labelText = labelText,
-            multiple = multiple,
-            name = name,
-            progress = progress,
-            readyToUploadMessage = readyToUploadMessage,
-            selectButtonText = selectButtonText,
-            showFileList = showFileList,
-            uploadButtonText = uploadButtonText,
-            uploadedMessage = uploadedMessage,
-            uploadFailedMessage = uploadFailedMessage,
-            uploadHeaders = uploadHeaders,
-            uploadMethod = uploadMethod,
-            uploadMode = uploadMode,
-            uploadUrl = uploadUrl,
-            onProgressEnabled = onProgressEnabled,
-            onUploadAbortedEnabled = onUploadAbortedEnabled,
-            onUploadedEnabled = onUploadedEnabled,
-            onUploadErrorEnabled = onUploadErrorEnabled,
-            onUploadStartedEnabled = onUploadStartedEnabled,
-            onValueChangedEnabled = onValueChangedEnabled,
-        };
-    }
-    protected override void Init(DevExpress.Ui.DxFileUploaderOptions options) {
-        DxFileUploaderInterop.Init(Id, options);
-    }
-    string accept;
-    public string Accept {
-        get => isInitialized ? DxFileUploaderInterop.GetAccept(Id) : accept;
-        set {
-            if (isInitialized) {
-                DxFileUploaderInterop.SetAccept(Id, value);
-            } else {
-                this.accept = value;
-            }
-        }
-    }
-    bool? allowCanceling;
-    public bool? AllowCanceling {
-        get => isInitialized ? DxFileUploaderInterop.GetAllowCanceling(Id) : allowCanceling;
-        set {
-            if (isInitialized) {
-                DxFileUploaderInterop.SetAllowCanceling(Id, value);
-            } else {
-                this.allowCanceling = value;
-            }
-        }
-    }
-    bool? focusStateEnabled;
-    public bool? FocusStateEnabled {
-        get => isInitialized ? DxFileUploaderInterop.GetFocusStateEnabled(Id) : focusStateEnabled;
-        set {
-            if (isInitialized) {
-                DxFileUploaderInterop.SetFocusStateEnabled(Id, value);
-            } else {
-                this.focusStateEnabled = value;
-            }
-        }
-    }
-    string labelText;
-    public string LabelText {
-        get => isInitialized ? DxFileUploaderInterop.GetLabelText(Id) : labelText;
-        set {
-            if (isInitialized) {
-                DxFileUploaderInterop.SetLabelText(Id, value);
-            } else {
-                this.labelText = value;
-            }
-        }
-    }
-    bool? multiple;
-    public bool? Multiple {
-        get => isInitialized ? DxFileUploaderInterop.GetMultiple(Id) : multiple;
-        set {
-            if (isInitialized) {
-                DxFileUploaderInterop.SetMultiple(Id, value);
-            } else {
-                this.multiple = value;
-            }
-        }
-    }
-    string name;
-    public string Name {
-        get => isInitialized ? DxFileUploaderInterop.GetName(Id) : name;
-        set {
-            if (isInitialized) {
-                DxFileUploaderInterop.SetName(Id, value);
-            } else {
-                this.name = value;
-            }
-        }
-    }
-    float? progress;
-    public float? Progress {
-        get => isInitialized ? DxFileUploaderInterop.GetProgress(Id) : progress;
-        set {
-            if (isInitialized) {
-                DxFileUploaderInterop.SetProgress(Id, value);
-            } else {
-                this.progress = value;
-            }
-        }
-    }
-    string readyToUploadMessage;
-    public string ReadyToUploadMessage {
-        get => isInitialized ? DxFileUploaderInterop.GetReadyToUploadMessage(Id) : readyToUploadMessage;
-        set {
-            if (isInitialized) {
-                DxFileUploaderInterop.SetReadyToUploadMessage(Id, value);
-            } else {
-                this.readyToUploadMessage = value;
-            }
-        }
-    }
-    string selectButtonText;
-    public string SelectButtonText {
-        get => isInitialized ? DxFileUploaderInterop.GetSelectButtonText(Id) : selectButtonText;
-        set {
-            if (isInitialized) {
-                DxFileUploaderInterop.SetSelectButtonText(Id, value);
-            } else {
-                this.selectButtonText = value;
-            }
-        }
-    }
-    bool? showFileList;
-    public bool? ShowFileList {
-        get => isInitialized ? DxFileUploaderInterop.GetShowFileList(Id) : showFileList;
-        set {
-            if (isInitialized) {
-                DxFileUploaderInterop.SetShowFileList(Id, value);
-            } else {
-                this.showFileList = value;
-            }
-        }
-    }
-    string uploadButtonText;
-    public string UploadButtonText {
-        get => isInitialized ? DxFileUploaderInterop.GetUploadButtonText(Id) : uploadButtonText;
-        set {
-            if (isInitialized) {
-                DxFileUploaderInterop.SetUploadButtonText(Id, value);
-            } else {
-                this.uploadButtonText = value;
-            }
-        }
-    }
-    string uploadedMessage;
-    public string UploadedMessage {
-        get => isInitialized ? DxFileUploaderInterop.GetUploadedMessage(Id) : uploadedMessage;
-        set {
-            if (isInitialized) {
-                DxFileUploaderInterop.SetUploadedMessage(Id, value);
-            } else {
-                this.uploadedMessage = value;
-            }
-        }
-    }
-    string uploadFailedMessage;
-    public string UploadFailedMessage {
-        get => isInitialized ? DxFileUploaderInterop.GetUploadFailedMessage(Id) : uploadFailedMessage;
-        set {
-            if (isInitialized) {
-                DxFileUploaderInterop.SetUploadFailedMessage(Id, value);
-            } else {
-                this.uploadFailedMessage = value;
-            }
-        }
-    }
-    object uploadHeaders;
-    public object UploadHeaders {
-        get => isInitialized ? DxFileUploaderInterop.GetUploadHeaders(Id) : uploadHeaders;
-        set {
-            if (isInitialized) {
-                DxFileUploaderInterop.SetUploadHeaders(Id, value);
-            } else {
-                this.uploadHeaders = value;
-            }
-        }
-    }
-    string uploadMethod;
-    public string UploadMethod {
-        get => isInitialized ? DxFileUploaderInterop.GetUploadMethod(Id) : uploadMethod;
-        set {
-            if (isInitialized) {
-                DxFileUploaderInterop.SetUploadMethod(Id, value);
-            } else {
-                this.uploadMethod = value;
-            }
-        }
-    }
-    string uploadMode;
-    public string UploadMode {
-        get => isInitialized ? DxFileUploaderInterop.GetUploadMode(Id) : uploadMode;
-        set {
-            if (isInitialized) {
-                DxFileUploaderInterop.SetUploadMode(Id, value);
-            } else {
-                this.uploadMode = value;
-            }
-        }
-    }
-    string uploadUrl;
-    public string UploadUrl {
-        get => isInitialized ? DxFileUploaderInterop.GetUploadUrl(Id) : uploadUrl;
-        set {
-            if (isInitialized) {
-                DxFileUploaderInterop.SetUploadUrl(Id, value);
-            } else {
-                this.uploadUrl = value;
-            }
-        }
-    }
-    bool? onProgressEnabled;
-    public bool? OnProgressEnabled {
-        get => onProgressEnabled;
-        set => this.onProgressEnabled = value;
-    }
-    bool? onUploadAbortedEnabled;
-    public bool? OnUploadAbortedEnabled {
-        get => onUploadAbortedEnabled;
-        set => this.onUploadAbortedEnabled = value;
-    }
-    bool? onUploadedEnabled;
-    public bool? OnUploadedEnabled {
-        get => onUploadedEnabled;
-        set => this.onUploadedEnabled = value;
-    }
-    bool? onUploadErrorEnabled;
-    public bool? OnUploadErrorEnabled {
-        get => onUploadErrorEnabled;
-        set => this.onUploadErrorEnabled = value;
-    }
-    bool? onUploadStartedEnabled;
-    public bool? OnUploadStartedEnabled {
-        get => onUploadStartedEnabled;
-        set => this.onUploadStartedEnabled = value;
-    }
-    bool? onValueChangedEnabled;
-    public bool? OnValueChangedEnabled {
-        get => onValueChangedEnabled;
-        set => this.onValueChangedEnabled = value;
-    }
-    protected override async Task OnInitAsync() {
-        await base.OnInitAsync();
-        //DxFileUploaderInterop.Progress += DxFileUploader_Progress;
-        DxFileUploaderInterop.UploadAborted += DxFileUploader_UploadAborted;
-        DxFileUploaderInterop.Uploaded += DxFileUploader_Uploaded;
-        DxFileUploaderInterop.UploadError += DxFileUploader_UploadError;
-        DxFileUploaderInterop.UploadStarted += DxFileUploader_UploadStarted;
-        DxFileUploaderInterop.ValueChanged += DxFileUploader_ValueChanged;
-    }
-    //public Action Progress { get; set; }
-    //void DxFileUploader_Progress(object sender, JQueryEventArgs e) {
-    //	if (e.Identifier == Id) {
-    //		Progress?.Invoke();
-    //	}
-    //}
-    public Action UploadAborted { get; set; }
-    void DxFileUploader_UploadAborted(object sender, JQueryEventArgs e) {
-        if (e.Identifier == Id) {
-            UploadAborted?.Invoke();
-        }
-    }
-    public Action Uploaded { get; set; }
-    void DxFileUploader_Uploaded(object sender, JQueryEventArgs e) {
-        if (e.Identifier == Id) {
-            Uploaded?.Invoke();
-        }
-    }
-    public Action UploadError { get; set; }
-    void DxFileUploader_UploadError(object sender, JQueryEventArgs e) {
-        if (e.Identifier == Id) {
-            UploadError?.Invoke();
-        }
-    }
-    public Action UploadStarted { get; set; }
-    void DxFileUploader_UploadStarted(object sender, JQueryEventArgs e) {
-        if (e.Identifier == Id) {
-            UploadStarted?.Invoke();
-        }
-    }
-    public Action ValueChanged { get; set; }
-    void DxFileUploader_ValueChanged(object sender, JQueryEventArgs e) {
-        if (e.Identifier == Id) {
-            ValueChanged?.Invoke();
-        }
-    }
-    public void Dispose() {
-        //DxFileUploaderInterop.Progress -= DxFileUploader_Progress;
-        DxFileUploaderInterop.UploadAborted -= DxFileUploader_UploadAborted;
-        DxFileUploaderInterop.Uploaded -= DxFileUploader_Uploaded;
-        DxFileUploaderInterop.UploadError -= DxFileUploader_UploadError;
-        DxFileUploaderInterop.UploadStarted -= DxFileUploader_UploadStarted;
-        DxFileUploaderInterop.ValueChanged -= DxFileUploader_ValueChanged;
-    }
+	public DxFileUploader() : base("DxFileUploader") { }
+	protected override DevExpress.Ui.DxFileUploaderOptions CreateOptions() {
+		return new DevExpress.Ui.DxFileUploaderOptions {
+			accept = accept,
+			allowCanceling = allowCanceling,
+			focusStateEnabled = focusStateEnabled,
+			labelText = labelText,
+			multiple = multiple,
+			name = name,
+			progress = progressValue,
+			readyToUploadMessage = readyToUploadMessage,
+			selectButtonText = selectButtonText,
+			showFileList = showFileList,
+			uploadButtonText = uploadButtonText,
+			uploadedMessage = uploadedMessage,
+			uploadFailedMessage = uploadFailedMessage,
+			uploadHeaders = uploadHeaders,
+			uploadMethod = uploadMethod,
+			uploadMode = uploadMode,
+			uploadUrl = uploadUrl,
+			value = value,
+			onProgressEnabled = onProgressEnabled,
+			onUploadAbortedEnabled = onUploadAbortedEnabled,
+			onUploadedEnabled = onUploadedEnabled,
+			onUploadErrorEnabled = onUploadErrorEnabled,
+			onUploadStartedEnabled = onUploadStartedEnabled,
+			onValueChangedEnabled = onValueChangedEnabled,
+		};
+	}
+	protected override void Init(DevExpress.Ui.DxFileUploaderOptions options) {
+		DevExpress.Ui.DxFileUploaderInterop.Init(Id, options);
+	}
+	string accept;
+	public string Accept {
+		get => isInitialized ? DevExpress.Ui.DxFileUploaderInterop.GetAccept(Id) : accept;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxFileUploaderInterop.SetAccept(Id, value);
+			} else {
+				this.accept = value;
+			}
+		}
+	}
+	bool? allowCanceling;
+	public bool? AllowCanceling {
+		get => isInitialized ? DevExpress.Ui.DxFileUploaderInterop.GetAllowCanceling(Id) : allowCanceling;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxFileUploaderInterop.SetAllowCanceling(Id, value);
+			} else {
+				this.allowCanceling = value;
+			}
+		}
+	}
+	bool? focusStateEnabled;
+	public bool? FocusStateEnabled {
+		get => isInitialized ? DevExpress.Ui.DxFileUploaderInterop.GetFocusStateEnabled(Id) : focusStateEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxFileUploaderInterop.SetFocusStateEnabled(Id, value);
+			} else {
+				this.focusStateEnabled = value;
+			}
+		}
+	}
+	string labelText;
+	public string LabelText {
+		get => isInitialized ? DevExpress.Ui.DxFileUploaderInterop.GetLabelText(Id) : labelText;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxFileUploaderInterop.SetLabelText(Id, value);
+			} else {
+				this.labelText = value;
+			}
+		}
+	}
+	bool? multiple;
+	public bool? Multiple {
+		get => isInitialized ? DevExpress.Ui.DxFileUploaderInterop.GetMultiple(Id) : multiple;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxFileUploaderInterop.SetMultiple(Id, value);
+			} else {
+				this.multiple = value;
+			}
+		}
+	}
+	string name;
+	public string Name {
+		get => isInitialized ? DevExpress.Ui.DxFileUploaderInterop.GetName(Id) : name;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxFileUploaderInterop.SetName(Id, value);
+			} else {
+				this.name = value;
+			}
+		}
+	}
+	float? progressValue;
+	public float? ProgressValue {
+		get => isInitialized ? DevExpress.Ui.DxFileUploaderInterop.GetProgress(Id) : progressValue;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxFileUploaderInterop.SetProgress(Id, value);
+			} else {
+				this.progressValue = value;
+			}
+		}
+	}
+	string readyToUploadMessage;
+	public string ReadyToUploadMessage {
+		get => isInitialized ? DevExpress.Ui.DxFileUploaderInterop.GetReadyToUploadMessage(Id) : readyToUploadMessage;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxFileUploaderInterop.SetReadyToUploadMessage(Id, value);
+			} else {
+				this.readyToUploadMessage = value;
+			}
+		}
+	}
+	string selectButtonText;
+	public string SelectButtonText {
+		get => isInitialized ? DevExpress.Ui.DxFileUploaderInterop.GetSelectButtonText(Id) : selectButtonText;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxFileUploaderInterop.SetSelectButtonText(Id, value);
+			} else {
+				this.selectButtonText = value;
+			}
+		}
+	}
+	bool? showFileList;
+	public bool? ShowFileList {
+		get => isInitialized ? DevExpress.Ui.DxFileUploaderInterop.GetShowFileList(Id) : showFileList;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxFileUploaderInterop.SetShowFileList(Id, value);
+			} else {
+				this.showFileList = value;
+			}
+		}
+	}
+	string uploadButtonText;
+	public string UploadButtonText {
+		get => isInitialized ? DevExpress.Ui.DxFileUploaderInterop.GetUploadButtonText(Id) : uploadButtonText;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxFileUploaderInterop.SetUploadButtonText(Id, value);
+			} else {
+				this.uploadButtonText = value;
+			}
+		}
+	}
+	string uploadedMessage;
+	public string UploadedMessage {
+		get => isInitialized ? DevExpress.Ui.DxFileUploaderInterop.GetUploadedMessage(Id) : uploadedMessage;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxFileUploaderInterop.SetUploadedMessage(Id, value);
+			} else {
+				this.uploadedMessage = value;
+			}
+		}
+	}
+	string uploadFailedMessage;
+	public string UploadFailedMessage {
+		get => isInitialized ? DevExpress.Ui.DxFileUploaderInterop.GetUploadFailedMessage(Id) : uploadFailedMessage;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxFileUploaderInterop.SetUploadFailedMessage(Id, value);
+			} else {
+				this.uploadFailedMessage = value;
+			}
+		}
+	}
+	object uploadHeaders;
+	public object UploadHeaders {
+		get => isInitialized ? DevExpress.Ui.DxFileUploaderInterop.GetUploadHeaders(Id) : uploadHeaders;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxFileUploaderInterop.SetUploadHeaders(Id, value);
+			} else {
+				this.uploadHeaders = value;
+			}
+		}
+	}
+	string uploadMethod;
+	public string UploadMethod {
+		get => isInitialized ? DevExpress.Ui.DxFileUploaderInterop.GetUploadMethod(Id) : uploadMethod;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxFileUploaderInterop.SetUploadMethod(Id, value);
+			} else {
+				this.uploadMethod = value;
+			}
+		}
+	}
+	string uploadMode;
+	public string UploadMode {
+		get => isInitialized ? DevExpress.Ui.DxFileUploaderInterop.GetUploadMode(Id) : uploadMode;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxFileUploaderInterop.SetUploadMode(Id, value);
+			} else {
+				this.uploadMode = value;
+			}
+		}
+	}
+	string uploadUrl;
+	public string UploadUrl {
+		get => isInitialized ? DevExpress.Ui.DxFileUploaderInterop.GetUploadUrl(Id) : uploadUrl;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxFileUploaderInterop.SetUploadUrl(Id, value);
+			} else {
+				this.uploadUrl = value;
+			}
+		}
+	}
+	object value;
+	public object Value {
+		get => isInitialized ? DevExpress.Ui.DxFileUploaderInterop.GetValue(Id) : value;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxFileUploaderInterop.SetValue(Id, value);
+			} else {
+				this.value = value;
+			}
+		}
+	}
+	bool? onProgressEnabled;
+	public bool? OnProgressEnabled {
+		get => onProgressEnabled;
+		set => this.onProgressEnabled = value;
+	}
+	bool? onUploadAbortedEnabled;
+	public bool? OnUploadAbortedEnabled {
+		get => onUploadAbortedEnabled;
+		set => this.onUploadAbortedEnabled = value;
+	}
+	bool? onUploadedEnabled;
+	public bool? OnUploadedEnabled {
+		get => onUploadedEnabled;
+		set => this.onUploadedEnabled = value;
+	}
+	bool? onUploadErrorEnabled;
+	public bool? OnUploadErrorEnabled {
+		get => onUploadErrorEnabled;
+		set => this.onUploadErrorEnabled = value;
+	}
+	bool? onUploadStartedEnabled;
+	public bool? OnUploadStartedEnabled {
+		get => onUploadStartedEnabled;
+		set => this.onUploadStartedEnabled = value;
+	}
+	bool? onValueChangedEnabled;
+	public bool? OnValueChangedEnabled {
+		get => onValueChangedEnabled;
+		set => this.onValueChangedEnabled = value;
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+		DevExpress.Ui.DxFileUploaderInterop.Progress += DxFileUploader_Progress;
+		DevExpress.Ui.DxFileUploaderInterop.UploadAborted += DxFileUploader_UploadAborted;
+		DevExpress.Ui.DxFileUploaderInterop.Uploaded += DxFileUploader_Uploaded;
+		DevExpress.Ui.DxFileUploaderInterop.UploadError += DxFileUploader_UploadError;
+		DevExpress.Ui.DxFileUploaderInterop.UploadStarted += DxFileUploader_UploadStarted;
+		DevExpress.Ui.DxFileUploaderInterop.ValueChanged += DxFileUploader_ValueChanged;
+	}
+	public Action Progress { get; set; }
+	void DxFileUploader_Progress(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Progress?.Invoke();
+		}
+	}
+	public Action UploadAborted { get; set; }
+	void DxFileUploader_UploadAborted(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			UploadAborted?.Invoke();
+		}
+	}
+	public Action Uploaded { get; set; }
+	void DxFileUploader_Uploaded(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Uploaded?.Invoke();
+		}
+	}
+	public Action UploadError { get; set; }
+	void DxFileUploader_UploadError(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			UploadError?.Invoke();
+		}
+	}
+	public Action UploadStarted { get; set; }
+	void DxFileUploader_UploadStarted(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			UploadStarted?.Invoke();
+		}
+	}
+	public Action ValueChanged { get; set; }
+	void DxFileUploader_ValueChanged(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			ValueChanged?.Invoke();
+		}
+	}
+	public void Dispose() {
+		DevExpress.Ui.DxFileUploaderInterop.Progress -= DxFileUploader_Progress;
+		DevExpress.Ui.DxFileUploaderInterop.UploadAborted -= DxFileUploader_UploadAborted;
+		DevExpress.Ui.DxFileUploaderInterop.Uploaded -= DxFileUploader_Uploaded;
+		DevExpress.Ui.DxFileUploaderInterop.UploadError -= DxFileUploader_UploadError;
+		DevExpress.Ui.DxFileUploaderInterop.UploadStarted -= DxFileUploader_UploadStarted;
+		DevExpress.Ui.DxFileUploaderInterop.ValueChanged -= DxFileUploader_ValueChanged;
+	}
 }

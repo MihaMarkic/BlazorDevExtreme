@@ -7,20 +7,33 @@
 	public DxValidator() : base("DxValidator") { }
 	protected override DevExpress.Ui.DxValidatorOptions CreateOptions() {
 		return new DevExpress.Ui.DxValidatorOptions {
+			adapter = adapter,
 			name = name,
 			validationGroup = validationGroup,
+			validationRules = validationRules,
 			onValidatedEnabled = onValidatedEnabled,
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxValidatorOptions options) {
-		DxValidatorInterop.Init(Id, options);
+		DevExpress.Ui.DxValidatorInterop.Init(Id, options);
+	}
+	object adapter;
+	public object Adapter {
+		get => isInitialized ? DevExpress.Ui.DxValidatorInterop.GetAdapter(Id) : adapter;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxValidatorInterop.SetAdapter(Id, value);
+			} else {
+				this.adapter = value;
+			}
+		}
 	}
 	string name;
 	public string Name {
-		get => isInitialized ? DxValidatorInterop.GetName(Id) : name;
+		get => isInitialized ? DevExpress.Ui.DxValidatorInterop.GetName(Id) : name;
 		set {
 			if (isInitialized) {
-				DxValidatorInterop.SetName(Id, value);
+				DevExpress.Ui.DxValidatorInterop.SetName(Id, value);
 			} else {
 				this.name = value;
 			}
@@ -28,12 +41,23 @@
 	}
 	string validationGroup;
 	public string ValidationGroup {
-		get => isInitialized ? DxValidatorInterop.GetValidationGroup(Id) : validationGroup;
+		get => isInitialized ? DevExpress.Ui.DxValidatorInterop.GetValidationGroup(Id) : validationGroup;
 		set {
 			if (isInitialized) {
-				DxValidatorInterop.SetValidationGroup(Id, value);
+				DevExpress.Ui.DxValidatorInterop.SetValidationGroup(Id, value);
 			} else {
 				this.validationGroup = value;
+			}
+		}
+	}
+	object validationRules;
+	public object ValidationRules {
+		get => isInitialized ? DevExpress.Ui.DxValidatorInterop.GetValidationRules(Id) : validationRules;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxValidatorInterop.SetValidationRules(Id, value);
+			} else {
+				this.validationRules = value;
 			}
 		}
 	}
@@ -44,7 +68,7 @@
 	}
 	protected override async Task OnInitAsync() {
 		await base.OnInitAsync();
-		DxValidatorInterop.Validated += DxValidator_Validated;
+		DevExpress.Ui.DxValidatorInterop.Validated += DxValidator_Validated;
 	}
 	public Action Validated { get; set; }
 	void DxValidator_Validated(object sender, JQueryEventArgs e) {
@@ -53,6 +77,6 @@
 		}
 	}
 	public void Dispose() {
-		DxValidatorInterop.Validated -= DxValidator_Validated;
+		DevExpress.Ui.DxValidatorInterop.Validated -= DxValidator_Validated;
 	}
 }

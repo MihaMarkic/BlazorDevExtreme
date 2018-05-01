@@ -14,9 +14,11 @@
 			collapsibleGroups = collapsibleGroups,
 			focusStateEnabled = focusStateEnabled,
 			grouped = grouped,
+			groupTemplate = groupTemplate,
 			hoverStateEnabled = hoverStateEnabled,
 			indicateLoading = indicateLoading,
 			itemDeleteMode = itemDeleteMode,
+			menuItems = menuItems,
 			menuMode = menuMode,
 			nextButtonText = nextButtonText,
 			pageLoadingText = pageLoadingText,
@@ -48,14 +50,14 @@
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxListOptions options) {
-		DxListInterop.Init(Id, options);
+		DevExpress.Ui.DxListInterop.Init(Id, options);
 	}
 	bool? activeStateEnabled;
 	public bool? ActiveStateEnabled {
-		get => isInitialized ? DxListInterop.GetActiveStateEnabled(Id) : activeStateEnabled;
+		get => isInitialized ? DevExpress.Ui.DxListInterop.GetActiveStateEnabled(Id) : activeStateEnabled;
 		set {
 			if (isInitialized) {
-				DxListInterop.SetActiveStateEnabled(Id, value);
+				DevExpress.Ui.DxListInterop.SetActiveStateEnabled(Id, value);
 			} else {
 				this.activeStateEnabled = value;
 			}
@@ -63,10 +65,10 @@
 	}
 	bool? allowItemDeleting;
 	public bool? AllowItemDeleting {
-		get => isInitialized ? DxListInterop.GetAllowItemDeleting(Id) : allowItemDeleting;
+		get => isInitialized ? DevExpress.Ui.DxListInterop.GetAllowItemDeleting(Id) : allowItemDeleting;
 		set {
 			if (isInitialized) {
-				DxListInterop.SetAllowItemDeleting(Id, value);
+				DevExpress.Ui.DxListInterop.SetAllowItemDeleting(Id, value);
 			} else {
 				this.allowItemDeleting = value;
 			}
@@ -74,10 +76,10 @@
 	}
 	bool? allowItemReordering;
 	public bool? AllowItemReordering {
-		get => isInitialized ? DxListInterop.GetAllowItemReordering(Id) : allowItemReordering;
+		get => isInitialized ? DevExpress.Ui.DxListInterop.GetAllowItemReordering(Id) : allowItemReordering;
 		set {
 			if (isInitialized) {
-				DxListInterop.SetAllowItemReordering(Id, value);
+				DevExpress.Ui.DxListInterop.SetAllowItemReordering(Id, value);
 			} else {
 				this.allowItemReordering = value;
 			}
@@ -85,10 +87,10 @@
 	}
 	bool? bounceEnabled;
 	public bool? BounceEnabled {
-		get => isInitialized ? DxListInterop.GetBounceEnabled(Id) : bounceEnabled;
+		get => isInitialized ? DevExpress.Ui.DxListInterop.GetBounceEnabled(Id) : bounceEnabled;
 		set {
 			if (isInitialized) {
-				DxListInterop.SetBounceEnabled(Id, value);
+				DevExpress.Ui.DxListInterop.SetBounceEnabled(Id, value);
 			} else {
 				this.bounceEnabled = value;
 			}
@@ -96,10 +98,10 @@
 	}
 	bool? collapsibleGroups;
 	public bool? CollapsibleGroups {
-		get => isInitialized ? DxListInterop.GetCollapsibleGroups(Id) : collapsibleGroups;
+		get => isInitialized ? DevExpress.Ui.DxListInterop.GetCollapsibleGroups(Id) : collapsibleGroups;
 		set {
 			if (isInitialized) {
-				DxListInterop.SetCollapsibleGroups(Id, value);
+				DevExpress.Ui.DxListInterop.SetCollapsibleGroups(Id, value);
 			} else {
 				this.collapsibleGroups = value;
 			}
@@ -107,10 +109,10 @@
 	}
 	bool? focusStateEnabled;
 	public bool? FocusStateEnabled {
-		get => isInitialized ? DxListInterop.GetFocusStateEnabled(Id) : focusStateEnabled;
+		get => isInitialized ? DevExpress.Ui.DxListInterop.GetFocusStateEnabled(Id) : focusStateEnabled;
 		set {
 			if (isInitialized) {
-				DxListInterop.SetFocusStateEnabled(Id, value);
+				DevExpress.Ui.DxListInterop.SetFocusStateEnabled(Id, value);
 			} else {
 				this.focusStateEnabled = value;
 			}
@@ -118,21 +120,32 @@
 	}
 	bool? grouped;
 	public bool? Grouped {
-		get => isInitialized ? DxListInterop.GetGrouped(Id) : grouped;
+		get => isInitialized ? DevExpress.Ui.DxListInterop.GetGrouped(Id) : grouped;
 		set {
 			if (isInitialized) {
-				DxListInterop.SetGrouped(Id, value);
+				DevExpress.Ui.DxListInterop.SetGrouped(Id, value);
 			} else {
 				this.grouped = value;
 			}
 		}
 	}
-	bool? hoverStateEnabled;
-	public bool? HoverStateEnabled {
-		get => isInitialized ? DxListInterop.GetHoverStateEnabled(Id) : hoverStateEnabled;
+	object groupTemplate;
+	public object GroupTemplate {
+		get => isInitialized ? DevExpress.Ui.DxListInterop.GetGroupTemplate(Id) : groupTemplate;
 		set {
 			if (isInitialized) {
-				DxListInterop.SetHoverStateEnabled(Id, value);
+				DevExpress.Ui.DxListInterop.SetGroupTemplate(Id, value);
+			} else {
+				this.groupTemplate = value;
+			}
+		}
+	}
+	bool? hoverStateEnabled;
+	public bool? HoverStateEnabled {
+		get => isInitialized ? DevExpress.Ui.DxListInterop.GetHoverStateEnabled(Id) : hoverStateEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxListInterop.SetHoverStateEnabled(Id, value);
 			} else {
 				this.hoverStateEnabled = value;
 			}
@@ -140,10 +153,10 @@
 	}
 	bool? indicateLoading;
 	public bool? IndicateLoading {
-		get => isInitialized ? DxListInterop.GetIndicateLoading(Id) : indicateLoading;
+		get => isInitialized ? DevExpress.Ui.DxListInterop.GetIndicateLoading(Id) : indicateLoading;
 		set {
 			if (isInitialized) {
-				DxListInterop.SetIndicateLoading(Id, value);
+				DevExpress.Ui.DxListInterop.SetIndicateLoading(Id, value);
 			} else {
 				this.indicateLoading = value;
 			}
@@ -151,21 +164,32 @@
 	}
 	string itemDeleteMode;
 	public string ItemDeleteMode {
-		get => isInitialized ? DxListInterop.GetItemDeleteMode(Id) : itemDeleteMode;
+		get => isInitialized ? DevExpress.Ui.DxListInterop.GetItemDeleteMode(Id) : itemDeleteMode;
 		set {
 			if (isInitialized) {
-				DxListInterop.SetItemDeleteMode(Id, value);
+				DevExpress.Ui.DxListInterop.SetItemDeleteMode(Id, value);
 			} else {
 				this.itemDeleteMode = value;
 			}
 		}
 	}
-	string menuMode;
-	public string MenuMode {
-		get => isInitialized ? DxListInterop.GetMenuMode(Id) : menuMode;
+	object menuItems;
+	public object MenuItems {
+		get => isInitialized ? DevExpress.Ui.DxListInterop.GetMenuItems(Id) : menuItems;
 		set {
 			if (isInitialized) {
-				DxListInterop.SetMenuMode(Id, value);
+				DevExpress.Ui.DxListInterop.SetMenuItems(Id, value);
+			} else {
+				this.menuItems = value;
+			}
+		}
+	}
+	string menuMode;
+	public string MenuMode {
+		get => isInitialized ? DevExpress.Ui.DxListInterop.GetMenuMode(Id) : menuMode;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxListInterop.SetMenuMode(Id, value);
 			} else {
 				this.menuMode = value;
 			}
@@ -173,10 +197,10 @@
 	}
 	string nextButtonText;
 	public string NextButtonText {
-		get => isInitialized ? DxListInterop.GetNextButtonText(Id) : nextButtonText;
+		get => isInitialized ? DevExpress.Ui.DxListInterop.GetNextButtonText(Id) : nextButtonText;
 		set {
 			if (isInitialized) {
-				DxListInterop.SetNextButtonText(Id, value);
+				DevExpress.Ui.DxListInterop.SetNextButtonText(Id, value);
 			} else {
 				this.nextButtonText = value;
 			}
@@ -184,10 +208,10 @@
 	}
 	string pageLoadingText;
 	public string PageLoadingText {
-		get => isInitialized ? DxListInterop.GetPageLoadingText(Id) : pageLoadingText;
+		get => isInitialized ? DevExpress.Ui.DxListInterop.GetPageLoadingText(Id) : pageLoadingText;
 		set {
 			if (isInitialized) {
-				DxListInterop.SetPageLoadingText(Id, value);
+				DevExpress.Ui.DxListInterop.SetPageLoadingText(Id, value);
 			} else {
 				this.pageLoadingText = value;
 			}
@@ -195,10 +219,10 @@
 	}
 	string pageLoadMode;
 	public string PageLoadMode {
-		get => isInitialized ? DxListInterop.GetPageLoadMode(Id) : pageLoadMode;
+		get => isInitialized ? DevExpress.Ui.DxListInterop.GetPageLoadMode(Id) : pageLoadMode;
 		set {
 			if (isInitialized) {
-				DxListInterop.SetPageLoadMode(Id, value);
+				DevExpress.Ui.DxListInterop.SetPageLoadMode(Id, value);
 			} else {
 				this.pageLoadMode = value;
 			}
@@ -206,10 +230,10 @@
 	}
 	string pulledDownText;
 	public string PulledDownText {
-		get => isInitialized ? DxListInterop.GetPulledDownText(Id) : pulledDownText;
+		get => isInitialized ? DevExpress.Ui.DxListInterop.GetPulledDownText(Id) : pulledDownText;
 		set {
 			if (isInitialized) {
-				DxListInterop.SetPulledDownText(Id, value);
+				DevExpress.Ui.DxListInterop.SetPulledDownText(Id, value);
 			} else {
 				this.pulledDownText = value;
 			}
@@ -217,10 +241,10 @@
 	}
 	string pullingDownText;
 	public string PullingDownText {
-		get => isInitialized ? DxListInterop.GetPullingDownText(Id) : pullingDownText;
+		get => isInitialized ? DevExpress.Ui.DxListInterop.GetPullingDownText(Id) : pullingDownText;
 		set {
 			if (isInitialized) {
-				DxListInterop.SetPullingDownText(Id, value);
+				DevExpress.Ui.DxListInterop.SetPullingDownText(Id, value);
 			} else {
 				this.pullingDownText = value;
 			}
@@ -228,10 +252,10 @@
 	}
 	bool? pullRefreshEnabled;
 	public bool? PullRefreshEnabled {
-		get => isInitialized ? DxListInterop.GetPullRefreshEnabled(Id) : pullRefreshEnabled;
+		get => isInitialized ? DevExpress.Ui.DxListInterop.GetPullRefreshEnabled(Id) : pullRefreshEnabled;
 		set {
 			if (isInitialized) {
-				DxListInterop.SetPullRefreshEnabled(Id, value);
+				DevExpress.Ui.DxListInterop.SetPullRefreshEnabled(Id, value);
 			} else {
 				this.pullRefreshEnabled = value;
 			}
@@ -239,10 +263,10 @@
 	}
 	string refreshingText;
 	public string RefreshingText {
-		get => isInitialized ? DxListInterop.GetRefreshingText(Id) : refreshingText;
+		get => isInitialized ? DevExpress.Ui.DxListInterop.GetRefreshingText(Id) : refreshingText;
 		set {
 			if (isInitialized) {
-				DxListInterop.SetRefreshingText(Id, value);
+				DevExpress.Ui.DxListInterop.SetRefreshingText(Id, value);
 			} else {
 				this.refreshingText = value;
 			}
@@ -250,10 +274,10 @@
 	}
 	bool? scrollByContent;
 	public bool? ScrollByContent {
-		get => isInitialized ? DxListInterop.GetScrollByContent(Id) : scrollByContent;
+		get => isInitialized ? DevExpress.Ui.DxListInterop.GetScrollByContent(Id) : scrollByContent;
 		set {
 			if (isInitialized) {
-				DxListInterop.SetScrollByContent(Id, value);
+				DevExpress.Ui.DxListInterop.SetScrollByContent(Id, value);
 			} else {
 				this.scrollByContent = value;
 			}
@@ -261,10 +285,10 @@
 	}
 	bool? scrollByThumb;
 	public bool? ScrollByThumb {
-		get => isInitialized ? DxListInterop.GetScrollByThumb(Id) : scrollByThumb;
+		get => isInitialized ? DevExpress.Ui.DxListInterop.GetScrollByThumb(Id) : scrollByThumb;
 		set {
 			if (isInitialized) {
-				DxListInterop.SetScrollByThumb(Id, value);
+				DevExpress.Ui.DxListInterop.SetScrollByThumb(Id, value);
 			} else {
 				this.scrollByThumb = value;
 			}
@@ -272,10 +296,10 @@
 	}
 	bool? scrollingEnabled;
 	public bool? ScrollingEnabled {
-		get => isInitialized ? DxListInterop.GetScrollingEnabled(Id) : scrollingEnabled;
+		get => isInitialized ? DevExpress.Ui.DxListInterop.GetScrollingEnabled(Id) : scrollingEnabled;
 		set {
 			if (isInitialized) {
-				DxListInterop.SetScrollingEnabled(Id, value);
+				DevExpress.Ui.DxListInterop.SetScrollingEnabled(Id, value);
 			} else {
 				this.scrollingEnabled = value;
 			}
@@ -283,10 +307,10 @@
 	}
 	string selectAllMode;
 	public string SelectAllMode {
-		get => isInitialized ? DxListInterop.GetSelectAllMode(Id) : selectAllMode;
+		get => isInitialized ? DevExpress.Ui.DxListInterop.GetSelectAllMode(Id) : selectAllMode;
 		set {
 			if (isInitialized) {
-				DxListInterop.SetSelectAllMode(Id, value);
+				DevExpress.Ui.DxListInterop.SetSelectAllMode(Id, value);
 			} else {
 				this.selectAllMode = value;
 			}
@@ -294,10 +318,10 @@
 	}
 	string selectionMode;
 	public string SelectionMode {
-		get => isInitialized ? DxListInterop.GetSelectionMode(Id) : selectionMode;
+		get => isInitialized ? DevExpress.Ui.DxListInterop.GetSelectionMode(Id) : selectionMode;
 		set {
 			if (isInitialized) {
-				DxListInterop.SetSelectionMode(Id, value);
+				DevExpress.Ui.DxListInterop.SetSelectionMode(Id, value);
 			} else {
 				this.selectionMode = value;
 			}
@@ -305,10 +329,10 @@
 	}
 	string showScrollbar;
 	public string ShowScrollbar {
-		get => isInitialized ? DxListInterop.GetShowScrollbar(Id) : showScrollbar;
+		get => isInitialized ? DevExpress.Ui.DxListInterop.GetShowScrollbar(Id) : showScrollbar;
 		set {
 			if (isInitialized) {
-				DxListInterop.SetShowScrollbar(Id, value);
+				DevExpress.Ui.DxListInterop.SetShowScrollbar(Id, value);
 			} else {
 				this.showScrollbar = value;
 			}
@@ -316,10 +340,10 @@
 	}
 	bool? showSelectionControls;
 	public bool? ShowSelectionControls {
-		get => isInitialized ? DxListInterop.GetShowSelectionControls(Id) : showSelectionControls;
+		get => isInitialized ? DevExpress.Ui.DxListInterop.GetShowSelectionControls(Id) : showSelectionControls;
 		set {
 			if (isInitialized) {
-				DxListInterop.SetShowSelectionControls(Id, value);
+				DevExpress.Ui.DxListInterop.SetShowSelectionControls(Id, value);
 			} else {
 				this.showSelectionControls = value;
 			}
@@ -327,10 +351,10 @@
 	}
 	bool? useNativeScrolling;
 	public bool? UseNativeScrolling {
-		get => isInitialized ? DxListInterop.GetUseNativeScrolling(Id) : useNativeScrolling;
+		get => isInitialized ? DevExpress.Ui.DxListInterop.GetUseNativeScrolling(Id) : useNativeScrolling;
 		set {
 			if (isInitialized) {
-				DxListInterop.SetUseNativeScrolling(Id, value);
+				DevExpress.Ui.DxListInterop.SetUseNativeScrolling(Id, value);
 			} else {
 				this.useNativeScrolling = value;
 			}
@@ -398,18 +422,18 @@
 	}
 	protected override async Task OnInitAsync() {
 		await base.OnInitAsync();
-		DxListInterop.GroupRendered += DxList_GroupRendered;
-		DxListInterop.ItemClick += DxList_ItemClick;
-		DxListInterop.ItemContextMenu += DxList_ItemContextMenu;
-		DxListInterop.ItemDeleted += DxList_ItemDeleted;
-		DxListInterop.ItemDeleting += DxList_ItemDeleting;
-		DxListInterop.ItemHold += DxList_ItemHold;
-		DxListInterop.ItemReordered += DxList_ItemReordered;
-		DxListInterop.ItemSwipe += DxList_ItemSwipe;
-		DxListInterop.PageLoading += DxList_PageLoading;
-		DxListInterop.PullRefresh += DxList_PullRefresh;
-		DxListInterop.Scroll += DxList_Scroll;
-		DxListInterop.SelectAllValueChanged += DxList_SelectAllValueChanged;
+		DevExpress.Ui.DxListInterop.GroupRendered += DxList_GroupRendered;
+		DevExpress.Ui.DxListInterop.ItemClick += DxList_ItemClick;
+		DevExpress.Ui.DxListInterop.ItemContextMenu += DxList_ItemContextMenu;
+		DevExpress.Ui.DxListInterop.ItemDeleted += DxList_ItemDeleted;
+		DevExpress.Ui.DxListInterop.ItemDeleting += DxList_ItemDeleting;
+		DevExpress.Ui.DxListInterop.ItemHold += DxList_ItemHold;
+		DevExpress.Ui.DxListInterop.ItemReordered += DxList_ItemReordered;
+		DevExpress.Ui.DxListInterop.ItemSwipe += DxList_ItemSwipe;
+		DevExpress.Ui.DxListInterop.PageLoading += DxList_PageLoading;
+		DevExpress.Ui.DxListInterop.PullRefresh += DxList_PullRefresh;
+		DevExpress.Ui.DxListInterop.Scroll += DxList_Scroll;
+		DevExpress.Ui.DxListInterop.SelectAllValueChanged += DxList_SelectAllValueChanged;
 	}
 	public Action GroupRendered { get; set; }
 	void DxList_GroupRendered(object sender, JQueryEventArgs e) {
@@ -484,17 +508,17 @@
 		}
 	}
 	public void Dispose() {
-		DxListInterop.GroupRendered -= DxList_GroupRendered;
-		DxListInterop.ItemClick -= DxList_ItemClick;
-		DxListInterop.ItemContextMenu -= DxList_ItemContextMenu;
-		DxListInterop.ItemDeleted -= DxList_ItemDeleted;
-		DxListInterop.ItemDeleting -= DxList_ItemDeleting;
-		DxListInterop.ItemHold -= DxList_ItemHold;
-		DxListInterop.ItemReordered -= DxList_ItemReordered;
-		DxListInterop.ItemSwipe -= DxList_ItemSwipe;
-		DxListInterop.PageLoading -= DxList_PageLoading;
-		DxListInterop.PullRefresh -= DxList_PullRefresh;
-		DxListInterop.Scroll -= DxList_Scroll;
-		DxListInterop.SelectAllValueChanged -= DxList_SelectAllValueChanged;
+		DevExpress.Ui.DxListInterop.GroupRendered -= DxList_GroupRendered;
+		DevExpress.Ui.DxListInterop.ItemClick -= DxList_ItemClick;
+		DevExpress.Ui.DxListInterop.ItemContextMenu -= DxList_ItemContextMenu;
+		DevExpress.Ui.DxListInterop.ItemDeleted -= DxList_ItemDeleted;
+		DevExpress.Ui.DxListInterop.ItemDeleting -= DxList_ItemDeleting;
+		DevExpress.Ui.DxListInterop.ItemHold -= DxList_ItemHold;
+		DevExpress.Ui.DxListInterop.ItemReordered -= DxList_ItemReordered;
+		DevExpress.Ui.DxListInterop.ItemSwipe -= DxList_ItemSwipe;
+		DevExpress.Ui.DxListInterop.PageLoading -= DxList_PageLoading;
+		DevExpress.Ui.DxListInterop.PullRefresh -= DxList_PullRefresh;
+		DevExpress.Ui.DxListInterop.Scroll -= DxList_Scroll;
+		DevExpress.Ui.DxListInterop.SelectAllValueChanged -= DxList_SelectAllValueChanged;
 	}
 }

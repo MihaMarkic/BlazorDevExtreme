@@ -1,0 +1,130 @@
+@implements IDisposable
+@inherits DxBlazorCompoment<DevExpress.Framework.DxCommandOptions>
+
+<div id="@Id"></div>
+
+@functions {
+	public DxCommand() : base("DxCommand") { }
+	protected override DevExpress.Framework.DxCommandOptions CreateOptions() {
+		return new DevExpress.Framework.DxCommandOptions {
+			disabled = disabled,
+			icon = icon,
+			iconSrc = iconSrc,
+			id = id,
+			renderStage = renderStage,
+			title = title,
+			type = type,
+			visible = visible,
+			onExecuteEnabled = onExecuteEnabled,
+		};
+	}
+	protected override void Init(DevExpress.Framework.DxCommandOptions options) {
+		DevExpress.Framework.DxCommandInterop.Init(Id, options);
+	}
+	bool? disabled;
+	public bool? Disabled {
+		get => isInitialized ? DevExpress.Framework.DxCommandInterop.GetDisabled(Id) : disabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Framework.DxCommandInterop.SetDisabled(Id, value);
+			} else {
+				this.disabled = value;
+			}
+		}
+	}
+	string icon;
+	public string Icon {
+		get => isInitialized ? DevExpress.Framework.DxCommandInterop.GetIcon(Id) : icon;
+		set {
+			if (isInitialized) {
+				DevExpress.Framework.DxCommandInterop.SetIcon(Id, value);
+			} else {
+				this.icon = value;
+			}
+		}
+	}
+	object iconSrc;
+	public object IconSrc {
+		get => isInitialized ? DevExpress.Framework.DxCommandInterop.GetIconSrc(Id) : iconSrc;
+		set {
+			if (isInitialized) {
+				DevExpress.Framework.DxCommandInterop.SetIconSrc(Id, value);
+			} else {
+				this.iconSrc = value;
+			}
+		}
+	}
+	string id;
+	public string Id {
+		get => isInitialized ? DevExpress.Framework.DxCommandInterop.GetId(Id) : id;
+		set {
+			if (isInitialized) {
+				DevExpress.Framework.DxCommandInterop.SetId(Id, value);
+			} else {
+				this.id = value;
+			}
+		}
+	}
+	string renderStage;
+	public string RenderStage {
+		get => isInitialized ? DevExpress.Framework.DxCommandInterop.GetRenderStage(Id) : renderStage;
+		set {
+			if (isInitialized) {
+				DevExpress.Framework.DxCommandInterop.SetRenderStage(Id, value);
+			} else {
+				this.renderStage = value;
+			}
+		}
+	}
+	string title;
+	public string Title {
+		get => isInitialized ? DevExpress.Framework.DxCommandInterop.GetTitle(Id) : title;
+		set {
+			if (isInitialized) {
+				DevExpress.Framework.DxCommandInterop.SetTitle(Id, value);
+			} else {
+				this.title = value;
+			}
+		}
+	}
+	string type;
+	public string Type {
+		get => isInitialized ? DevExpress.Framework.DxCommandInterop.GetType(Id) : type;
+		set {
+			if (isInitialized) {
+				DevExpress.Framework.DxCommandInterop.SetType(Id, value);
+			} else {
+				this.type = value;
+			}
+		}
+	}
+	bool? visible;
+	public bool? Visible {
+		get => isInitialized ? DevExpress.Framework.DxCommandInterop.GetVisible(Id) : visible;
+		set {
+			if (isInitialized) {
+				DevExpress.Framework.DxCommandInterop.SetVisible(Id, value);
+			} else {
+				this.visible = value;
+			}
+		}
+	}
+	bool? onExecuteEnabled;
+	public bool? OnExecuteEnabled {
+		get => onExecuteEnabled;
+		set => this.onExecuteEnabled = value;
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+		DevExpress.Framework.DxCommandInterop.Execute += DxCommand_Execute;
+	}
+	public Action Execute { get; set; }
+	void DxCommand_Execute(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Execute?.Invoke();
+		}
+	}
+	public void Dispose() {
+		DevExpress.Framework.DxCommandInterop.Execute -= DxCommand_Execute;
+	}
+}

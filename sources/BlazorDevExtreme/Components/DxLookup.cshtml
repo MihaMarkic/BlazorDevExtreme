@@ -7,18 +7,25 @@
 	public DxLookup() : base("DxLookup") { }
 	protected override DevExpress.Ui.DxLookupOptions CreateOptions() {
 		return new DevExpress.Ui.DxLookupOptions {
+			animation = animation,
 			applyButtonText = applyButtonText,
 			applyValueMode = applyValueMode,
 			cancelButtonText = cancelButtonText,
 			cleanSearchOnOpening = cleanSearchOnOpening,
 			clearButtonText = clearButtonText,
+			closeOnOutsideClick = closeOnOutsideClick,
+			fieldTemplate = fieldTemplate,
 			focusStateEnabled = focusStateEnabled,
 			fullScreen = fullScreen,
 			grouped = grouped,
+			groupTemplate = groupTemplate,
 			nextButtonText = nextButtonText,
 			pageLoadingText = pageLoadingText,
 			pageLoadMode = pageLoadMode,
 			placeholder = placeholder,
+			popupHeight = popupHeight,
+			popupWidth = popupWidth,
+			position = position,
 			pulledDownText = pulledDownText,
 			pullingDownText = pullingDownText,
 			pullRefreshEnabled = pullRefreshEnabled,
@@ -30,6 +37,7 @@
 			showClearButton = showClearButton,
 			showPopupTitle = showPopupTitle,
 			title = title,
+			titleTemplate = titleTemplate,
 			useNativeScrolling = useNativeScrolling,
 			usePopover = usePopover,
 			onPageLoadingEnabled = onPageLoadingEnabled,
@@ -40,14 +48,25 @@
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxLookupOptions options) {
-		DxLookupInterop.Init(Id, options);
+		DevExpress.Ui.DxLookupInterop.Init(Id, options);
+	}
+	object animation;
+	public object Animation {
+		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetAnimation(Id) : animation;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxLookupInterop.SetAnimation(Id, value);
+			} else {
+				this.animation = value;
+			}
+		}
 	}
 	string applyButtonText;
 	public string ApplyButtonText {
-		get => isInitialized ? DxLookupInterop.GetApplyButtonText(Id) : applyButtonText;
+		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetApplyButtonText(Id) : applyButtonText;
 		set {
 			if (isInitialized) {
-				DxLookupInterop.SetApplyButtonText(Id, value);
+				DevExpress.Ui.DxLookupInterop.SetApplyButtonText(Id, value);
 			} else {
 				this.applyButtonText = value;
 			}
@@ -55,10 +74,10 @@
 	}
 	string applyValueMode;
 	public string ApplyValueMode {
-		get => isInitialized ? DxLookupInterop.GetApplyValueMode(Id) : applyValueMode;
+		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetApplyValueMode(Id) : applyValueMode;
 		set {
 			if (isInitialized) {
-				DxLookupInterop.SetApplyValueMode(Id, value);
+				DevExpress.Ui.DxLookupInterop.SetApplyValueMode(Id, value);
 			} else {
 				this.applyValueMode = value;
 			}
@@ -66,10 +85,10 @@
 	}
 	string cancelButtonText;
 	public string CancelButtonText {
-		get => isInitialized ? DxLookupInterop.GetCancelButtonText(Id) : cancelButtonText;
+		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetCancelButtonText(Id) : cancelButtonText;
 		set {
 			if (isInitialized) {
-				DxLookupInterop.SetCancelButtonText(Id, value);
+				DevExpress.Ui.DxLookupInterop.SetCancelButtonText(Id, value);
 			} else {
 				this.cancelButtonText = value;
 			}
@@ -77,10 +96,10 @@
 	}
 	bool? cleanSearchOnOpening;
 	public bool? CleanSearchOnOpening {
-		get => isInitialized ? DxLookupInterop.GetCleanSearchOnOpening(Id) : cleanSearchOnOpening;
+		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetCleanSearchOnOpening(Id) : cleanSearchOnOpening;
 		set {
 			if (isInitialized) {
-				DxLookupInterop.SetCleanSearchOnOpening(Id, value);
+				DevExpress.Ui.DxLookupInterop.SetCleanSearchOnOpening(Id, value);
 			} else {
 				this.cleanSearchOnOpening = value;
 			}
@@ -88,21 +107,43 @@
 	}
 	string clearButtonText;
 	public string ClearButtonText {
-		get => isInitialized ? DxLookupInterop.GetClearButtonText(Id) : clearButtonText;
+		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetClearButtonText(Id) : clearButtonText;
 		set {
 			if (isInitialized) {
-				DxLookupInterop.SetClearButtonText(Id, value);
+				DevExpress.Ui.DxLookupInterop.SetClearButtonText(Id, value);
 			} else {
 				this.clearButtonText = value;
 			}
 		}
 	}
-	bool? focusStateEnabled;
-	public bool? FocusStateEnabled {
-		get => isInitialized ? DxLookupInterop.GetFocusStateEnabled(Id) : focusStateEnabled;
+	object closeOnOutsideClick;
+	public object CloseOnOutsideClick {
+		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetCloseOnOutsideClick(Id) : closeOnOutsideClick;
 		set {
 			if (isInitialized) {
-				DxLookupInterop.SetFocusStateEnabled(Id, value);
+				DevExpress.Ui.DxLookupInterop.SetCloseOnOutsideClick(Id, value);
+			} else {
+				this.closeOnOutsideClick = value;
+			}
+		}
+	}
+	object fieldTemplate;
+	public object FieldTemplate {
+		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetFieldTemplate(Id) : fieldTemplate;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxLookupInterop.SetFieldTemplate(Id, value);
+			} else {
+				this.fieldTemplate = value;
+			}
+		}
+	}
+	bool? focusStateEnabled;
+	public bool? FocusStateEnabled {
+		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetFocusStateEnabled(Id) : focusStateEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxLookupInterop.SetFocusStateEnabled(Id, value);
 			} else {
 				this.focusStateEnabled = value;
 			}
@@ -110,10 +151,10 @@
 	}
 	bool? fullScreen;
 	public bool? FullScreen {
-		get => isInitialized ? DxLookupInterop.GetFullScreen(Id) : fullScreen;
+		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetFullScreen(Id) : fullScreen;
 		set {
 			if (isInitialized) {
-				DxLookupInterop.SetFullScreen(Id, value);
+				DevExpress.Ui.DxLookupInterop.SetFullScreen(Id, value);
 			} else {
 				this.fullScreen = value;
 			}
@@ -121,21 +162,32 @@
 	}
 	bool? grouped;
 	public bool? Grouped {
-		get => isInitialized ? DxLookupInterop.GetGrouped(Id) : grouped;
+		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetGrouped(Id) : grouped;
 		set {
 			if (isInitialized) {
-				DxLookupInterop.SetGrouped(Id, value);
+				DevExpress.Ui.DxLookupInterop.SetGrouped(Id, value);
 			} else {
 				this.grouped = value;
 			}
 		}
 	}
-	string nextButtonText;
-	public string NextButtonText {
-		get => isInitialized ? DxLookupInterop.GetNextButtonText(Id) : nextButtonText;
+	object groupTemplate;
+	public object GroupTemplate {
+		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetGroupTemplate(Id) : groupTemplate;
 		set {
 			if (isInitialized) {
-				DxLookupInterop.SetNextButtonText(Id, value);
+				DevExpress.Ui.DxLookupInterop.SetGroupTemplate(Id, value);
+			} else {
+				this.groupTemplate = value;
+			}
+		}
+	}
+	string nextButtonText;
+	public string NextButtonText {
+		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetNextButtonText(Id) : nextButtonText;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxLookupInterop.SetNextButtonText(Id, value);
 			} else {
 				this.nextButtonText = value;
 			}
@@ -143,10 +195,10 @@
 	}
 	string pageLoadingText;
 	public string PageLoadingText {
-		get => isInitialized ? DxLookupInterop.GetPageLoadingText(Id) : pageLoadingText;
+		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetPageLoadingText(Id) : pageLoadingText;
 		set {
 			if (isInitialized) {
-				DxLookupInterop.SetPageLoadingText(Id, value);
+				DevExpress.Ui.DxLookupInterop.SetPageLoadingText(Id, value);
 			} else {
 				this.pageLoadingText = value;
 			}
@@ -154,10 +206,10 @@
 	}
 	string pageLoadMode;
 	public string PageLoadMode {
-		get => isInitialized ? DxLookupInterop.GetPageLoadMode(Id) : pageLoadMode;
+		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetPageLoadMode(Id) : pageLoadMode;
 		set {
 			if (isInitialized) {
-				DxLookupInterop.SetPageLoadMode(Id, value);
+				DevExpress.Ui.DxLookupInterop.SetPageLoadMode(Id, value);
 			} else {
 				this.pageLoadMode = value;
 			}
@@ -165,21 +217,54 @@
 	}
 	string placeholder;
 	public string Placeholder {
-		get => isInitialized ? DxLookupInterop.GetPlaceholder(Id) : placeholder;
+		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetPlaceholder(Id) : placeholder;
 		set {
 			if (isInitialized) {
-				DxLookupInterop.SetPlaceholder(Id, value);
+				DevExpress.Ui.DxLookupInterop.SetPlaceholder(Id, value);
 			} else {
 				this.placeholder = value;
 			}
 		}
 	}
-	string pulledDownText;
-	public string PulledDownText {
-		get => isInitialized ? DxLookupInterop.GetPulledDownText(Id) : pulledDownText;
+	object popupHeight;
+	public object PopupHeight {
+		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetPopupHeight(Id) : popupHeight;
 		set {
 			if (isInitialized) {
-				DxLookupInterop.SetPulledDownText(Id, value);
+				DevExpress.Ui.DxLookupInterop.SetPopupHeight(Id, value);
+			} else {
+				this.popupHeight = value;
+			}
+		}
+	}
+	object popupWidth;
+	public object PopupWidth {
+		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetPopupWidth(Id) : popupWidth;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxLookupInterop.SetPopupWidth(Id, value);
+			} else {
+				this.popupWidth = value;
+			}
+		}
+	}
+	object position;
+	public object Position {
+		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetPosition(Id) : position;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxLookupInterop.SetPosition(Id, value);
+			} else {
+				this.position = value;
+			}
+		}
+	}
+	string pulledDownText;
+	public string PulledDownText {
+		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetPulledDownText(Id) : pulledDownText;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxLookupInterop.SetPulledDownText(Id, value);
 			} else {
 				this.pulledDownText = value;
 			}
@@ -187,10 +272,10 @@
 	}
 	string pullingDownText;
 	public string PullingDownText {
-		get => isInitialized ? DxLookupInterop.GetPullingDownText(Id) : pullingDownText;
+		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetPullingDownText(Id) : pullingDownText;
 		set {
 			if (isInitialized) {
-				DxLookupInterop.SetPullingDownText(Id, value);
+				DevExpress.Ui.DxLookupInterop.SetPullingDownText(Id, value);
 			} else {
 				this.pullingDownText = value;
 			}
@@ -198,10 +283,10 @@
 	}
 	bool? pullRefreshEnabled;
 	public bool? PullRefreshEnabled {
-		get => isInitialized ? DxLookupInterop.GetPullRefreshEnabled(Id) : pullRefreshEnabled;
+		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetPullRefreshEnabled(Id) : pullRefreshEnabled;
 		set {
 			if (isInitialized) {
-				DxLookupInterop.SetPullRefreshEnabled(Id, value);
+				DevExpress.Ui.DxLookupInterop.SetPullRefreshEnabled(Id, value);
 			} else {
 				this.pullRefreshEnabled = value;
 			}
@@ -209,10 +294,10 @@
 	}
 	string refreshingText;
 	public string RefreshingText {
-		get => isInitialized ? DxLookupInterop.GetRefreshingText(Id) : refreshingText;
+		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetRefreshingText(Id) : refreshingText;
 		set {
 			if (isInitialized) {
-				DxLookupInterop.SetRefreshingText(Id, value);
+				DevExpress.Ui.DxLookupInterop.SetRefreshingText(Id, value);
 			} else {
 				this.refreshingText = value;
 			}
@@ -220,10 +305,10 @@
 	}
 	bool? searchEnabled;
 	public bool? SearchEnabled {
-		get => isInitialized ? DxLookupInterop.GetSearchEnabled(Id) : searchEnabled;
+		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetSearchEnabled(Id) : searchEnabled;
 		set {
 			if (isInitialized) {
-				DxLookupInterop.SetSearchEnabled(Id, value);
+				DevExpress.Ui.DxLookupInterop.SetSearchEnabled(Id, value);
 			} else {
 				this.searchEnabled = value;
 			}
@@ -231,10 +316,10 @@
 	}
 	string searchPlaceholder;
 	public string SearchPlaceholder {
-		get => isInitialized ? DxLookupInterop.GetSearchPlaceholder(Id) : searchPlaceholder;
+		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetSearchPlaceholder(Id) : searchPlaceholder;
 		set {
 			if (isInitialized) {
-				DxLookupInterop.SetSearchPlaceholder(Id, value);
+				DevExpress.Ui.DxLookupInterop.SetSearchPlaceholder(Id, value);
 			} else {
 				this.searchPlaceholder = value;
 			}
@@ -242,10 +327,10 @@
 	}
 	bool? shading;
 	public bool? Shading {
-		get => isInitialized ? DxLookupInterop.GetShading(Id) : shading;
+		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetShading(Id) : shading;
 		set {
 			if (isInitialized) {
-				DxLookupInterop.SetShading(Id, value);
+				DevExpress.Ui.DxLookupInterop.SetShading(Id, value);
 			} else {
 				this.shading = value;
 			}
@@ -253,10 +338,10 @@
 	}
 	bool? showCancelButton;
 	public bool? ShowCancelButton {
-		get => isInitialized ? DxLookupInterop.GetShowCancelButton(Id) : showCancelButton;
+		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetShowCancelButton(Id) : showCancelButton;
 		set {
 			if (isInitialized) {
-				DxLookupInterop.SetShowCancelButton(Id, value);
+				DevExpress.Ui.DxLookupInterop.SetShowCancelButton(Id, value);
 			} else {
 				this.showCancelButton = value;
 			}
@@ -264,10 +349,10 @@
 	}
 	bool? showClearButton;
 	public bool? ShowClearButton {
-		get => isInitialized ? DxLookupInterop.GetShowClearButton(Id) : showClearButton;
+		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetShowClearButton(Id) : showClearButton;
 		set {
 			if (isInitialized) {
-				DxLookupInterop.SetShowClearButton(Id, value);
+				DevExpress.Ui.DxLookupInterop.SetShowClearButton(Id, value);
 			} else {
 				this.showClearButton = value;
 			}
@@ -275,10 +360,10 @@
 	}
 	bool? showPopupTitle;
 	public bool? ShowPopupTitle {
-		get => isInitialized ? DxLookupInterop.GetShowPopupTitle(Id) : showPopupTitle;
+		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetShowPopupTitle(Id) : showPopupTitle;
 		set {
 			if (isInitialized) {
-				DxLookupInterop.SetShowPopupTitle(Id, value);
+				DevExpress.Ui.DxLookupInterop.SetShowPopupTitle(Id, value);
 			} else {
 				this.showPopupTitle = value;
 			}
@@ -286,21 +371,32 @@
 	}
 	string title;
 	public string Title {
-		get => isInitialized ? DxLookupInterop.GetTitle(Id) : title;
+		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetTitle(Id) : title;
 		set {
 			if (isInitialized) {
-				DxLookupInterop.SetTitle(Id, value);
+				DevExpress.Ui.DxLookupInterop.SetTitle(Id, value);
 			} else {
 				this.title = value;
 			}
 		}
 	}
-	bool? useNativeScrolling;
-	public bool? UseNativeScrolling {
-		get => isInitialized ? DxLookupInterop.GetUseNativeScrolling(Id) : useNativeScrolling;
+	object titleTemplate;
+	public object TitleTemplate {
+		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetTitleTemplate(Id) : titleTemplate;
 		set {
 			if (isInitialized) {
-				DxLookupInterop.SetUseNativeScrolling(Id, value);
+				DevExpress.Ui.DxLookupInterop.SetTitleTemplate(Id, value);
+			} else {
+				this.titleTemplate = value;
+			}
+		}
+	}
+	bool? useNativeScrolling;
+	public bool? UseNativeScrolling {
+		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetUseNativeScrolling(Id) : useNativeScrolling;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxLookupInterop.SetUseNativeScrolling(Id, value);
 			} else {
 				this.useNativeScrolling = value;
 			}
@@ -308,10 +404,10 @@
 	}
 	bool? usePopover;
 	public bool? UsePopover {
-		get => isInitialized ? DxLookupInterop.GetUsePopover(Id) : usePopover;
+		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetUsePopover(Id) : usePopover;
 		set {
 			if (isInitialized) {
-				DxLookupInterop.SetUsePopover(Id, value);
+				DevExpress.Ui.DxLookupInterop.SetUsePopover(Id, value);
 			} else {
 				this.usePopover = value;
 			}
@@ -344,11 +440,11 @@
 	}
 	protected override async Task OnInitAsync() {
 		await base.OnInitAsync();
-		DxLookupInterop.PageLoading += DxLookup_PageLoading;
-		DxLookupInterop.PullRefresh += DxLookup_PullRefresh;
-		DxLookupInterop.Scroll += DxLookup_Scroll;
-		DxLookupInterop.TitleRendered += DxLookup_TitleRendered;
-		DxLookupInterop.ValueChanged += DxLookup_ValueChanged;
+		DevExpress.Ui.DxLookupInterop.PageLoading += DxLookup_PageLoading;
+		DevExpress.Ui.DxLookupInterop.PullRefresh += DxLookup_PullRefresh;
+		DevExpress.Ui.DxLookupInterop.Scroll += DxLookup_Scroll;
+		DevExpress.Ui.DxLookupInterop.TitleRendered += DxLookup_TitleRendered;
+		DevExpress.Ui.DxLookupInterop.ValueChanged += DxLookup_ValueChanged;
 	}
 	public Action PageLoading { get; set; }
 	void DxLookup_PageLoading(object sender, JQueryEventArgs e) {
@@ -381,10 +477,10 @@
 		}
 	}
 	public void Dispose() {
-		DxLookupInterop.PageLoading -= DxLookup_PageLoading;
-		DxLookupInterop.PullRefresh -= DxLookup_PullRefresh;
-		DxLookupInterop.Scroll -= DxLookup_Scroll;
-		DxLookupInterop.TitleRendered -= DxLookup_TitleRendered;
-		DxLookupInterop.ValueChanged -= DxLookup_ValueChanged;
+		DevExpress.Ui.DxLookupInterop.PageLoading -= DxLookup_PageLoading;
+		DevExpress.Ui.DxLookupInterop.PullRefresh -= DxLookup_PullRefresh;
+		DevExpress.Ui.DxLookupInterop.Scroll -= DxLookup_Scroll;
+		DevExpress.Ui.DxLookupInterop.TitleRendered -= DxLookup_TitleRendered;
+		DevExpress.Ui.DxLookupInterop.ValueChanged -= DxLookup_ValueChanged;
 	}
 }

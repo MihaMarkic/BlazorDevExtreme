@@ -7,6 +7,7 @@
 	public DxNumberBox() : base("DxNumberBox") { }
 	protected override DevExpress.Ui.DxNumberBoxOptions CreateOptions() {
 		return new DevExpress.Ui.DxNumberBoxOptions {
+			format = format,
 			invalidValueMessage = invalidValueMessage,
 			max = max,
 			min = min,
@@ -18,14 +19,25 @@
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxNumberBoxOptions options) {
-		DxNumberBoxInterop.Init(Id, options);
+		DevExpress.Ui.DxNumberBoxInterop.Init(Id, options);
+	}
+	object format;
+	public object Format {
+		get => isInitialized ? DevExpress.Ui.DxNumberBoxInterop.GetFormat(Id) : format;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxNumberBoxInterop.SetFormat(Id, value);
+			} else {
+				this.format = value;
+			}
+		}
 	}
 	string invalidValueMessage;
 	public string InvalidValueMessage {
-		get => isInitialized ? DxNumberBoxInterop.GetInvalidValueMessage(Id) : invalidValueMessage;
+		get => isInitialized ? DevExpress.Ui.DxNumberBoxInterop.GetInvalidValueMessage(Id) : invalidValueMessage;
 		set {
 			if (isInitialized) {
-				DxNumberBoxInterop.SetInvalidValueMessage(Id, value);
+				DevExpress.Ui.DxNumberBoxInterop.SetInvalidValueMessage(Id, value);
 			} else {
 				this.invalidValueMessage = value;
 			}
@@ -33,10 +45,10 @@
 	}
 	float? max;
 	public float? Max {
-		get => isInitialized ? DxNumberBoxInterop.GetMax(Id) : max;
+		get => isInitialized ? DevExpress.Ui.DxNumberBoxInterop.GetMax(Id) : max;
 		set {
 			if (isInitialized) {
-				DxNumberBoxInterop.SetMax(Id, value);
+				DevExpress.Ui.DxNumberBoxInterop.SetMax(Id, value);
 			} else {
 				this.max = value;
 			}
@@ -44,10 +56,10 @@
 	}
 	float? min;
 	public float? Min {
-		get => isInitialized ? DxNumberBoxInterop.GetMin(Id) : min;
+		get => isInitialized ? DevExpress.Ui.DxNumberBoxInterop.GetMin(Id) : min;
 		set {
 			if (isInitialized) {
-				DxNumberBoxInterop.SetMin(Id, value);
+				DevExpress.Ui.DxNumberBoxInterop.SetMin(Id, value);
 			} else {
 				this.min = value;
 			}
@@ -55,10 +67,10 @@
 	}
 	string mode;
 	public string Mode {
-		get => isInitialized ? DxNumberBoxInterop.GetMode(Id) : mode;
+		get => isInitialized ? DevExpress.Ui.DxNumberBoxInterop.GetMode(Id) : mode;
 		set {
 			if (isInitialized) {
-				DxNumberBoxInterop.SetMode(Id, value);
+				DevExpress.Ui.DxNumberBoxInterop.SetMode(Id, value);
 			} else {
 				this.mode = value;
 			}
@@ -66,10 +78,10 @@
 	}
 	bool? showSpinButtons;
 	public bool? ShowSpinButtons {
-		get => isInitialized ? DxNumberBoxInterop.GetShowSpinButtons(Id) : showSpinButtons;
+		get => isInitialized ? DevExpress.Ui.DxNumberBoxInterop.GetShowSpinButtons(Id) : showSpinButtons;
 		set {
 			if (isInitialized) {
-				DxNumberBoxInterop.SetShowSpinButtons(Id, value);
+				DevExpress.Ui.DxNumberBoxInterop.SetShowSpinButtons(Id, value);
 			} else {
 				this.showSpinButtons = value;
 			}
@@ -77,10 +89,10 @@
 	}
 	float? step;
 	public float? Step {
-		get => isInitialized ? DxNumberBoxInterop.GetStep(Id) : step;
+		get => isInitialized ? DevExpress.Ui.DxNumberBoxInterop.GetStep(Id) : step;
 		set {
 			if (isInitialized) {
-				DxNumberBoxInterop.SetStep(Id, value);
+				DevExpress.Ui.DxNumberBoxInterop.SetStep(Id, value);
 			} else {
 				this.step = value;
 			}
@@ -88,10 +100,10 @@
 	}
 	bool? useLargeSpinButtons;
 	public bool? UseLargeSpinButtons {
-		get => isInitialized ? DxNumberBoxInterop.GetUseLargeSpinButtons(Id) : useLargeSpinButtons;
+		get => isInitialized ? DevExpress.Ui.DxNumberBoxInterop.GetUseLargeSpinButtons(Id) : useLargeSpinButtons;
 		set {
 			if (isInitialized) {
-				DxNumberBoxInterop.SetUseLargeSpinButtons(Id, value);
+				DevExpress.Ui.DxNumberBoxInterop.SetUseLargeSpinButtons(Id, value);
 			} else {
 				this.useLargeSpinButtons = value;
 			}
@@ -99,10 +111,10 @@
 	}
 	float? value;
 	public float? Value {
-		get => isInitialized ? DxNumberBoxInterop.GetValue(Id) : value;
+		get => isInitialized ? DevExpress.Ui.DxNumberBoxInterop.GetValue(Id) : value;
 		set {
 			if (isInitialized) {
-				DxNumberBoxInterop.SetValue(Id, value);
+				DevExpress.Ui.DxNumberBoxInterop.SetValue(Id, value);
 			} else {
 				this.value = value;
 			}

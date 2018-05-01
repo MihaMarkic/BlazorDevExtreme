@@ -1,0 +1,366 @@
+@implements IDisposable
+@inherits DxBlazorCompoment<DevExpress.Ui.DxTextEditorOptions>
+
+<div id="@Id"></div>
+
+@functions {
+	public DxTextEditor() : base("DxTextEditor") { }
+	protected override DevExpress.Ui.DxTextEditorOptions CreateOptions() {
+		return new DevExpress.Ui.DxTextEditorOptions {
+			focusStateEnabled = focusStateEnabled,
+			hoverStateEnabled = hoverStateEnabled,
+			inputAttr = inputAttr,
+			mask = mask,
+			maskChar = maskChar,
+			maskInvalidMessage = maskInvalidMessage,
+			maskRules = maskRules,
+			name = name,
+			placeholder = placeholder,
+			showClearButton = showClearButton,
+			showMaskMode = showMaskMode,
+			spellcheck = spellcheck,
+			text = text,
+			useMaskedValue = useMaskedValue,
+			value = value,
+			valueChangeEvent = valueChangeEvent,
+			onChangeEnabled = onChangeEnabled,
+			onCopyEnabled = onCopyEnabled,
+			onCutEnabled = onCutEnabled,
+			onEnterKeyEnabled = onEnterKeyEnabled,
+			onFocusInEnabled = onFocusInEnabled,
+			onFocusOutEnabled = onFocusOutEnabled,
+			onInputEnabled = onInputEnabled,
+			onKeyDownEnabled = onKeyDownEnabled,
+			onKeyPressEnabled = onKeyPressEnabled,
+			onKeyUpEnabled = onKeyUpEnabled,
+			onPasteEnabled = onPasteEnabled,
+		};
+	}
+	protected override void Init(DevExpress.Ui.DxTextEditorOptions options) {
+		DevExpress.Ui.DxTextEditorInterop.Init(Id, options);
+	}
+	bool? focusStateEnabled;
+	public bool? FocusStateEnabled {
+		get => isInitialized ? DevExpress.Ui.DxTextEditorInterop.GetFocusStateEnabled(Id) : focusStateEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTextEditorInterop.SetFocusStateEnabled(Id, value);
+			} else {
+				this.focusStateEnabled = value;
+			}
+		}
+	}
+	bool? hoverStateEnabled;
+	public bool? HoverStateEnabled {
+		get => isInitialized ? DevExpress.Ui.DxTextEditorInterop.GetHoverStateEnabled(Id) : hoverStateEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTextEditorInterop.SetHoverStateEnabled(Id, value);
+			} else {
+				this.hoverStateEnabled = value;
+			}
+		}
+	}
+	object inputAttr;
+	public object InputAttr {
+		get => isInitialized ? DevExpress.Ui.DxTextEditorInterop.GetInputAttr(Id) : inputAttr;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTextEditorInterop.SetInputAttr(Id, value);
+			} else {
+				this.inputAttr = value;
+			}
+		}
+	}
+	string mask;
+	public string Mask {
+		get => isInitialized ? DevExpress.Ui.DxTextEditorInterop.GetMask(Id) : mask;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTextEditorInterop.SetMask(Id, value);
+			} else {
+				this.mask = value;
+			}
+		}
+	}
+	string maskChar;
+	public string MaskChar {
+		get => isInitialized ? DevExpress.Ui.DxTextEditorInterop.GetMaskChar(Id) : maskChar;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTextEditorInterop.SetMaskChar(Id, value);
+			} else {
+				this.maskChar = value;
+			}
+		}
+	}
+	string maskInvalidMessage;
+	public string MaskInvalidMessage {
+		get => isInitialized ? DevExpress.Ui.DxTextEditorInterop.GetMaskInvalidMessage(Id) : maskInvalidMessage;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTextEditorInterop.SetMaskInvalidMessage(Id, value);
+			} else {
+				this.maskInvalidMessage = value;
+			}
+		}
+	}
+	object maskRules;
+	public object MaskRules {
+		get => isInitialized ? DevExpress.Ui.DxTextEditorInterop.GetMaskRules(Id) : maskRules;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTextEditorInterop.SetMaskRules(Id, value);
+			} else {
+				this.maskRules = value;
+			}
+		}
+	}
+	string name;
+	public string Name {
+		get => isInitialized ? DevExpress.Ui.DxTextEditorInterop.GetName(Id) : name;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTextEditorInterop.SetName(Id, value);
+			} else {
+				this.name = value;
+			}
+		}
+	}
+	string placeholder;
+	public string Placeholder {
+		get => isInitialized ? DevExpress.Ui.DxTextEditorInterop.GetPlaceholder(Id) : placeholder;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTextEditorInterop.SetPlaceholder(Id, value);
+			} else {
+				this.placeholder = value;
+			}
+		}
+	}
+	bool? showClearButton;
+	public bool? ShowClearButton {
+		get => isInitialized ? DevExpress.Ui.DxTextEditorInterop.GetShowClearButton(Id) : showClearButton;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTextEditorInterop.SetShowClearButton(Id, value);
+			} else {
+				this.showClearButton = value;
+			}
+		}
+	}
+	string showMaskMode;
+	public string ShowMaskMode {
+		get => isInitialized ? DevExpress.Ui.DxTextEditorInterop.GetShowMaskMode(Id) : showMaskMode;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTextEditorInterop.SetShowMaskMode(Id, value);
+			} else {
+				this.showMaskMode = value;
+			}
+		}
+	}
+	bool? spellcheck;
+	public bool? Spellcheck {
+		get => isInitialized ? DevExpress.Ui.DxTextEditorInterop.GetSpellcheck(Id) : spellcheck;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTextEditorInterop.SetSpellcheck(Id, value);
+			} else {
+				this.spellcheck = value;
+			}
+		}
+	}
+	string text;
+	public string Text {
+		get => isInitialized ? DevExpress.Ui.DxTextEditorInterop.GetText(Id) : text;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTextEditorInterop.SetText(Id, value);
+			} else {
+				this.text = value;
+			}
+		}
+	}
+	bool? useMaskedValue;
+	public bool? UseMaskedValue {
+		get => isInitialized ? DevExpress.Ui.DxTextEditorInterop.GetUseMaskedValue(Id) : useMaskedValue;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTextEditorInterop.SetUseMaskedValue(Id, value);
+			} else {
+				this.useMaskedValue = value;
+			}
+		}
+	}
+	object value;
+	public object Value {
+		get => isInitialized ? DevExpress.Ui.DxTextEditorInterop.GetValue(Id) : value;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTextEditorInterop.SetValue(Id, value);
+			} else {
+				this.value = value;
+			}
+		}
+	}
+	string valueChangeEvent;
+	public string ValueChangeEvent {
+		get => isInitialized ? DevExpress.Ui.DxTextEditorInterop.GetValueChangeEvent(Id) : valueChangeEvent;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTextEditorInterop.SetValueChangeEvent(Id, value);
+			} else {
+				this.valueChangeEvent = value;
+			}
+		}
+	}
+	bool? onChangeEnabled;
+	public bool? OnChangeEnabled {
+		get => onChangeEnabled;
+		set => this.onChangeEnabled = value;
+	}
+	bool? onCopyEnabled;
+	public bool? OnCopyEnabled {
+		get => onCopyEnabled;
+		set => this.onCopyEnabled = value;
+	}
+	bool? onCutEnabled;
+	public bool? OnCutEnabled {
+		get => onCutEnabled;
+		set => this.onCutEnabled = value;
+	}
+	bool? onEnterKeyEnabled;
+	public bool? OnEnterKeyEnabled {
+		get => onEnterKeyEnabled;
+		set => this.onEnterKeyEnabled = value;
+	}
+	bool? onFocusInEnabled;
+	public bool? OnFocusInEnabled {
+		get => onFocusInEnabled;
+		set => this.onFocusInEnabled = value;
+	}
+	bool? onFocusOutEnabled;
+	public bool? OnFocusOutEnabled {
+		get => onFocusOutEnabled;
+		set => this.onFocusOutEnabled = value;
+	}
+	bool? onInputEnabled;
+	public bool? OnInputEnabled {
+		get => onInputEnabled;
+		set => this.onInputEnabled = value;
+	}
+	bool? onKeyDownEnabled;
+	public bool? OnKeyDownEnabled {
+		get => onKeyDownEnabled;
+		set => this.onKeyDownEnabled = value;
+	}
+	bool? onKeyPressEnabled;
+	public bool? OnKeyPressEnabled {
+		get => onKeyPressEnabled;
+		set => this.onKeyPressEnabled = value;
+	}
+	bool? onKeyUpEnabled;
+	public bool? OnKeyUpEnabled {
+		get => onKeyUpEnabled;
+		set => this.onKeyUpEnabled = value;
+	}
+	bool? onPasteEnabled;
+	public bool? OnPasteEnabled {
+		get => onPasteEnabled;
+		set => this.onPasteEnabled = value;
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+		DevExpress.Ui.DxTextEditorInterop.Change += DxTextEditor_Change;
+		DevExpress.Ui.DxTextEditorInterop.Copy += DxTextEditor_Copy;
+		DevExpress.Ui.DxTextEditorInterop.Cut += DxTextEditor_Cut;
+		DevExpress.Ui.DxTextEditorInterop.EnterKey += DxTextEditor_EnterKey;
+		DevExpress.Ui.DxTextEditorInterop.FocusIn += DxTextEditor_FocusIn;
+		DevExpress.Ui.DxTextEditorInterop.FocusOut += DxTextEditor_FocusOut;
+		DevExpress.Ui.DxTextEditorInterop.Input += DxTextEditor_Input;
+		DevExpress.Ui.DxTextEditorInterop.KeyDown += DxTextEditor_KeyDown;
+		DevExpress.Ui.DxTextEditorInterop.KeyPress += DxTextEditor_KeyPress;
+		DevExpress.Ui.DxTextEditorInterop.KeyUp += DxTextEditor_KeyUp;
+		DevExpress.Ui.DxTextEditorInterop.Paste += DxTextEditor_Paste;
+	}
+	public Action Change { get; set; }
+	void DxTextEditor_Change(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Change?.Invoke();
+		}
+	}
+	public Action Copy { get; set; }
+	void DxTextEditor_Copy(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Copy?.Invoke();
+		}
+	}
+	public Action Cut { get; set; }
+	void DxTextEditor_Cut(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Cut?.Invoke();
+		}
+	}
+	public Action EnterKey { get; set; }
+	void DxTextEditor_EnterKey(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			EnterKey?.Invoke();
+		}
+	}
+	public Action FocusIn { get; set; }
+	void DxTextEditor_FocusIn(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			FocusIn?.Invoke();
+		}
+	}
+	public Action FocusOut { get; set; }
+	void DxTextEditor_FocusOut(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			FocusOut?.Invoke();
+		}
+	}
+	public Action Input { get; set; }
+	void DxTextEditor_Input(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Input?.Invoke();
+		}
+	}
+	public Action KeyDown { get; set; }
+	void DxTextEditor_KeyDown(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			KeyDown?.Invoke();
+		}
+	}
+	public Action KeyPress { get; set; }
+	void DxTextEditor_KeyPress(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			KeyPress?.Invoke();
+		}
+	}
+	public Action KeyUp { get; set; }
+	void DxTextEditor_KeyUp(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			KeyUp?.Invoke();
+		}
+	}
+	public Action Paste { get; set; }
+	void DxTextEditor_Paste(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Paste?.Invoke();
+		}
+	}
+	public void Dispose() {
+		DevExpress.Ui.DxTextEditorInterop.Change -= DxTextEditor_Change;
+		DevExpress.Ui.DxTextEditorInterop.Copy -= DxTextEditor_Copy;
+		DevExpress.Ui.DxTextEditorInterop.Cut -= DxTextEditor_Cut;
+		DevExpress.Ui.DxTextEditorInterop.EnterKey -= DxTextEditor_EnterKey;
+		DevExpress.Ui.DxTextEditorInterop.FocusIn -= DxTextEditor_FocusIn;
+		DevExpress.Ui.DxTextEditorInterop.FocusOut -= DxTextEditor_FocusOut;
+		DevExpress.Ui.DxTextEditorInterop.Input -= DxTextEditor_Input;
+		DevExpress.Ui.DxTextEditorInterop.KeyDown -= DxTextEditor_KeyDown;
+		DevExpress.Ui.DxTextEditorInterop.KeyPress -= DxTextEditor_KeyPress;
+		DevExpress.Ui.DxTextEditorInterop.KeyUp -= DxTextEditor_KeyUp;
+		DevExpress.Ui.DxTextEditorInterop.Paste -= DxTextEditor_Paste;
+	}
+}

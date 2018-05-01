@@ -14,24 +14,6 @@
         public string type { get; set; }
     }
 
-    public static class AnimationConfigDirection
-    {
-        public const string Bottom = "bottom";
-        public const string Left = "left";
-        public const string Right = "right";
-        public const string Top = "top";
-    }
-    public static class AnimationConfigType
-    {
-        public const string Css = "css";
-        public const string Fade = "fade";
-        public const string FadeIn = "fadeIn";
-        public const string FadeOut = "fadeOut";
-        public const string Pop = "pop";
-        public const string Slide = "slide";
-        public const string SlideIn = "slideIn";
-        public const string SlideOut = "slideOut";
-    }
     public partial class PositionConfig
     {
         public object at { get; set; }
@@ -42,12 +24,14 @@
         public object of { get; set; }
         public object offset { get; set; }
     }
+
     public partial class ComponentOptions
     {
         public bool? onDisposingEnabled { get; set; }
         public bool? onInitializedEnabled { get; set; }
         public bool? onOptionChangedEnabled { get; set; }
     }
+
     public partial class GlobalConfig
     {
         public string decimalSeparator { get; set; }
@@ -57,6 +41,7 @@
         public string serverDecimalSeparator { get; set; }
         public string thousandsSeparator { get; set; }
     }
+
     public partial class Device
     {
         public bool? android { get; set; }
@@ -67,29 +52,10 @@
         public bool? phone { get; set; }
         public string platform { get; set; }
         public bool? tablet { get; set; }
-        public float version { get; set; }
+        public object version { get; set; }
         public bool? win { get; set; }
     }
 
-    public static class DeviceDeviceType
-    {
-        public const string Phone = "phone";
-        public const string Tablet = "tablet";
-        public const string Desktop = "desktop";
-    }
-    public static class DeviceGrade
-    {
-        public const string A = "A";
-        public const string B = "B";
-        public const string C = "C";
-    }
-    public static class DevicePlatform
-    {
-        public const string Android = "android";
-        public const string Ios = "ios";
-        public const string Win = "win";
-        public const string Generic = "generic";
-    }
     public partial class DOMComponentOptions : ComponentOptions
     {
         public object bindingOptions { get; set; }
@@ -98,6 +64,7 @@
         public bool? rtlEnabled { get; set; }
         public object width { get; set; }
     }
+
 }
 namespace DevExpress.Data
 {
@@ -109,17 +76,19 @@ namespace DevExpress.Data
         public bool? onInsertingEnabled { get; set; }
         public bool? onLoadedEnabled { get; set; }
         public bool? onLoadingEnabled { get; set; }
-        public object onModified { get; set; }
-        public object onModifying { get; set; }
+        public bool? onModifiedEnabled { get; set; }
+        public bool? onModifyingEnabled { get; set; }
         public bool? onRemovedEnabled { get; set; }
         public bool? onRemovingEnabled { get; set; }
         public bool? onUpdatedEnabled { get; set; }
         public bool? onUpdatingEnabled { get; set; }
     }
+
     public partial class ArrayStoreOptions : StoreOptions
     {
         public object data { get; set; }
     }
+
     public partial class LoadOptions
     {
         public object customQueryParams { get; set; }
@@ -139,6 +108,7 @@ namespace DevExpress.Data
         public object totalSummary { get; set; }
         public object userData { get; set; }
     }
+
     public partial class CustomStoreOptions : StoreOptions
     {
         public object byKey { get; set; }
@@ -152,11 +122,6 @@ namespace DevExpress.Data
         public bool? useDefaultSearch { get; set; }
     }
 
-    public static class CustomStoreOptionsLoadMode
-    {
-        public const string Processed = "processed";
-        public const string Raw = "raw";
-    }
     public partial class DataSourceOptions
     {
         public object customQueryParams { get; set; }
@@ -164,7 +129,7 @@ namespace DevExpress.Data
         public object filter { get; set; }
         public object group { get; set; }
         public object map { get; set; }
-        public object onChanged { get; set; }
+        public bool? onChangedEnabled { get; set; }
         public bool? onLoadErrorEnabled { get; set; }
         public bool? onLoadingChangedEnabled { get; set; }
         public float? pageSize { get; set; }
@@ -178,12 +143,14 @@ namespace DevExpress.Data
         public object sort { get; set; }
         public object store { get; set; }
     }
+
     public partial class LocalStoreOptions : ArrayStoreOptions
     {
         public float? flushInterval { get; set; }
         public bool? immediate { get; set; }
         public string name { get; set; }
     }
+
     public partial class ODataContextOptions
     {
         public object beforeSend { get; set; }
@@ -195,6 +162,7 @@ namespace DevExpress.Data
         public float? version { get; set; }
         public bool? withCredentials { get; set; }
     }
+
     public partial class ODataStoreOptions : StoreOptions
     {
         public object beforeSend { get; set; }
@@ -206,11 +174,12 @@ namespace DevExpress.Data
         public float? version { get; set; }
         public bool? withCredentials { get; set; }
     }
+
     public partial class PivotGridDataSourceOptions
     {
         public object fields { get; set; }
         public object filter { get; set; }
-        public object onChanged { get; set; }
+        public bool? onChangedEnabled { get; set; }
         public bool? onFieldsPreparedEnabled { get; set; }
         public bool? onLoadErrorEnabled { get; set; }
         public bool? onLoadingChangedEnabled { get; set; }
@@ -218,6 +187,7 @@ namespace DevExpress.Data
         public bool? retrieveFields { get; set; }
         public object store { get; set; }
     }
+
     public partial class XmlaStoreOptions
     {
         public object beforeSend { get; set; }
@@ -225,6 +195,7 @@ namespace DevExpress.Data
         public string cube { get; set; }
         public string url { get; set; }
     }
+
     public partial class PivotGridDataSourceField
     {
         public bool? allowCrossGroupCalculation { get; set; }
@@ -268,52 +239,6 @@ namespace DevExpress.Data
         public bool? wordWrapEnabled { get; set; }
     }
 
-    public static class PivotGridDataSourceFieldDataType
-    {
-        public const string Date = "date";
-        public const string Number = "number";
-        public const string String = "string";
-    }
-    public static class PivotGridDataSourceFieldFilterType
-    {
-        public const string Exclude = "exclude";
-        public const string Include = "include";
-    }
-    public static class PivotGridDataSourceFieldRunningTotal
-    {
-        public const string Column = "column";
-        public const string Row = "row";
-    }
-    public static class PivotGridDataSourceFieldSortBy
-    {
-        public const string DisplayText = "displayText";
-        public const string Value = "value";
-        public const string None = "none";
-    }
-    public static class PivotGridDataSourceFieldSortOrder
-    {
-        public const string Asc = "asc";
-        public const string Desc = "desc";
-    }
-    public static class PivotGridDataSourceFieldSummaryDisplayMode
-    {
-        public const string AbsoluteVariation = "absoluteVariation";
-        public const string PercentOfColumnGrandTotal = "percentOfColumnGrandTotal";
-        public const string PercentOfColumnTotal = "percentOfColumnTotal";
-        public const string PercentOfGrandTotal = "percentOfGrandTotal";
-        public const string PercentOfRowGrandTotal = "percentOfRowGrandTotal";
-        public const string PercentOfRowTotal = "percentOfRowTotal";
-        public const string PercentVariation = "percentVariation";
-    }
-    public static class PivotGridDataSourceFieldSummaryType
-    {
-        public const string Avg = "avg";
-        public const string Count = "count";
-        public const string Custom = "custom";
-        public const string Max = "max";
-        public const string Min = "min";
-        public const string Sum = "sum";
-    }
 }
 namespace DevExpress.Framework
 {
@@ -323,26 +248,23 @@ namespace DevExpress.Framework
         public string icon { get; set; }
         public object iconSrc { get; set; }
         public string id { get; set; }
-        public object onExecute { get; set; }
+        public bool? onExecuteEnabled { get; set; }
         public string renderStage { get; set; }
         public string title { get; set; }
         public string type { get; set; }
         public bool? visible { get; set; }
     }
 
-    public static class DxCommandOptionsRenderStage
-    {
-        public const string OnViewShown = "onViewShown";
-        public const string OnViewRendering = "onViewRendering";
-    }
     public partial class StateManagerOptions
     {
         public object storage { get; set; }
     }
+
     public partial class DxCommandContainerOptions
     {
         public string id { get; set; }
     }
+
     public partial class DxViewOptions
     {
         public bool? disableCache { get; set; }
@@ -353,24 +275,16 @@ namespace DevExpress.Framework
         public string title { get; set; }
     }
 
-    public static class DxViewOptionsOrientation
-    {
-        public const string Portrait = "portrait";
-        public const string Landscape = "landscape";
-    }
-    public static class DxViewOptionsPane
-    {
-        public const string Master = "master";
-        public const string Detail = "detail";
-    }
     public partial class DxLayoutOptions
     {
         public string name { get; set; }
     }
+
     public partial class DxViewPlaceholderOptions
     {
         public string viewName { get; set; }
     }
+
     public partial class DxTransitionOptions
     {
         public string animation { get; set; }
@@ -378,12 +292,6 @@ namespace DevExpress.Framework
         public string type { get; set; }
     }
 
-    public static class DxTransitionOptionsType
-    {
-        public const string Slide = "slide";
-        public const string Fade = "fade";
-        public const string Overflow = "overflow";
-    }
     public partial class DxContentPlaceholderOptions
     {
         public string animation { get; set; }
@@ -392,22 +300,11 @@ namespace DevExpress.Framework
         public string transition { get; set; }
     }
 
-    public static class DxContentPlaceholderOptionsContentCssPosition
-    {
-        public const string Absolute = "absolute";
-        public const string Static = "static";
-    }
-    public static class DxContentPlaceholderOptionsTransition
-    {
-        public const string None = "none";
-        public const string Slide = "slide";
-        public const string Fade = "fade";
-        public const string Overflow = "overflow";
-    }
     public partial class DxContentOptions
     {
         public string targetPlaceholder { get; set; }
     }
+
 }
 namespace DevExpress.Framework.Html
 {
@@ -431,16 +328,6 @@ namespace DevExpress.Framework.Html
         public object viewPort { get; set; }
     }
 
-    public static class HtmlApplicationOptionsMode
-    {
-        public const string MobileApp = "mobileApp";
-        public const string WebSite = "webSite";
-    }
-    public static class HtmlApplicationOptionsNavigateToRootViewMode
-    {
-        public const string KeepHistory = "keepHistory";
-        public const string ResetHistory = "resetHistory";
-    }
 }
 namespace DevExpress.Ui
 {
@@ -453,11 +340,13 @@ namespace DevExpress.Ui
         public bool? multiple { get; set; }
         public bool? onItemTitleClickEnabled { get; set; }
     }
+
     public partial class DxAccordionItemTemplate : CollectionWidgetItemTemplate
     {
         public string icon { get; set; }
         public string title { get; set; }
     }
+
     public partial class DxActionSheetOptions : CollectionWidgetOptions
     {
         public string cancelText { get; set; }
@@ -468,6 +357,7 @@ namespace DevExpress.Ui
         public string title { get; set; }
         public bool? usePopover { get; set; }
     }
+
     public partial class DxActionSheetItemTemplate : CollectionWidgetItemTemplate
     {
         public string icon { get; set; }
@@ -475,18 +365,11 @@ namespace DevExpress.Ui
         public string type { get; set; }
     }
 
-    public static class DxActionSheetItemTemplateType
-    {
-        public const string Back = "back";
-        public const string Danger = "danger";
-        public const string Default = "default";
-        public const string Normal = "normal";
-        public const string Success = "success";
-    }
     public partial class DxAutocompleteOptions : DxDropDownListOptions
     {
         public float? maxItemCount { get; set; }
     }
+
     public partial class DxBoxOptions : CollectionWidgetOptions
     {
         public string align { get; set; }
@@ -494,26 +377,6 @@ namespace DevExpress.Ui
         public string direction { get; set; }
     }
 
-    public static class DxBoxOptionsAlign
-    {
-        public const string Center = "center";
-        public const string End = "end";
-        public const string SpaceAround = "space-around";
-        public const string SpaceBetween = "space-between";
-        public const string Start = "start";
-    }
-    public static class DxBoxOptionsCrossAlign
-    {
-        public const string Center = "center";
-        public const string End = "end";
-        public const string Start = "start";
-        public const string Stretch = "stretch";
-    }
-    public static class DxBoxOptionsDirection
-    {
-        public const string Col = "col";
-        public const string Row = "row";
-    }
     public partial class DxBoxItemTemplate : CollectionWidgetItemTemplate
     {
         public object baseSize { get; set; }
@@ -521,6 +384,7 @@ namespace DevExpress.Ui
         public float? ratio { get; set; }
         public float? shrink { get; set; }
     }
+
     public partial class DxButtonOptions : WidgetOptions
     {
         public string icon { get; set; }
@@ -532,19 +396,12 @@ namespace DevExpress.Ui
         public string validationGroup { get; set; }
     }
 
-    public static class DxButtonOptionsType
-    {
-        public const string Back = "back";
-        public const string Danger = "danger";
-        public const string Default = "default";
-        public const string Normal = "normal";
-        public const string Success = "success";
-    }
     public partial class DxButtonDefaultTemplate
     {
         public string icon { get; set; }
         public string text { get; set; }
     }
+
     public partial class DxCalendarOptions : EditorOptions
     {
         public object cellTemplate { get; set; }
@@ -560,32 +417,12 @@ namespace DevExpress.Ui
         public string zoomLevel { get; set; }
     }
 
-    public static class DxCalendarOptionsMaxZoomLevel
-    {
-        public const string Century = "century";
-        public const string Decade = "decade";
-        public const string Month = "month";
-        public const string Year = "year";
-    }
-    public static class DxCalendarOptionsMinZoomLevel
-    {
-        public const string Century = "century";
-        public const string Decade = "decade";
-        public const string Month = "month";
-        public const string Year = "year";
-    }
-    public static class DxCalendarOptionsZoomLevel
-    {
-        public const string Century = "century";
-        public const string Decade = "decade";
-        public const string Month = "month";
-        public const string Year = "year";
-    }
     public partial class DxCheckBoxOptions : EditorOptions
     {
         public string name { get; set; }
         public string text { get; set; }
     }
+
     public partial class DxColorBoxOptions : DxDropDownEditorOptions
     {
         public string applyButtonText { get; set; }
@@ -595,11 +432,6 @@ namespace DevExpress.Ui
         public float? keyStep { get; set; }
     }
 
-    public static class DxColorBoxOptionsApplyValueMode
-    {
-        public const string Instantly = "instantly";
-        public const string UseButtons = "useButtons";
-    }
     public partial class DxContextMenuOptions : DxMenuBaseOptions
     {
         public object closeOnOutsideClick { get; set; }
@@ -614,12 +446,6 @@ namespace DevExpress.Ui
         public object target { get; set; }
     }
 
-    public static class DxContextMenuOptionsSubmenuDirection
-    {
-        public const string Auto = "auto";
-        public const string Left = "left";
-        public const string Right = "right";
-    }
     public partial class GridBaseOptions : WidgetOptions
     {
         public bool? allowColumnReordering { get; set; }
@@ -681,11 +507,6 @@ namespace DevExpress.Ui
         public bool? wordWrapEnabled { get; set; }
     }
 
-    public static class GridBaseOptionsColumnResizingMode
-    {
-        public const string NextColumn = "nextColumn";
-        public const string Widget = "widget";
-    }
     public partial class GridBaseEditing
     {
         public bool? allowAdding { get; set; }
@@ -698,14 +519,6 @@ namespace DevExpress.Ui
         public bool? useIcons { get; set; }
     }
 
-    public static class GridBaseEditingMode
-    {
-        public const string Batch = "batch";
-        public const string Cell = "cell";
-        public const string Row = "row";
-        public const string Form = "form";
-        public const string Popup = "popup";
-    }
     public partial class GridBaseEditingTexts
     {
         public string addRow { get; set; }
@@ -720,12 +533,14 @@ namespace DevExpress.Ui
         public string undeleteRow { get; set; }
         public string validationCancelChanges { get; set; }
     }
+
     public partial class GridBasePaging
     {
         public bool? enabled { get; set; }
         public float? pageIndex { get; set; }
         public float? pageSize { get; set; }
     }
+
     public partial class GridBaseScrolling
     {
         public string columnRenderingMode { get; set; }
@@ -737,35 +552,12 @@ namespace DevExpress.Ui
         public object useNative { get; set; }
     }
 
-    public static class GridBaseScrollingColumnRenderingMode
-    {
-        public const string Standard = "standard";
-        public const string Virtual = "virtual";
-    }
-    public static class GridBaseScrollingRowRenderingMode
-    {
-        public const string Standard = "standard";
-        public const string Virtual = "virtual";
-    }
-    public static class GridBaseScrollingShowScrollbar
-    {
-        public const string Always = "always";
-        public const string Never = "never";
-        public const string OnHover = "onHover";
-        public const string OnScroll = "onScroll";
-    }
     public partial class GridBaseSelection
     {
         public bool? allowSelectAll { get; set; }
         public string mode { get; set; }
     }
 
-    public static class GridBaseSelectionMode
-    {
-        public const string Multiple = "multiple";
-        public const string None = "none";
-        public const string Single = "single";
-    }
     public partial class DxDataGridOptions : GridBaseOptions
     {
         public object customizeColumns { get; set; }
@@ -793,20 +585,16 @@ namespace DevExpress.Ui
         public object sortByGroupSummaryInfo { get; set; }
         public object summary { get; set; }
     }
+
     public partial class DxDataGridEditing : GridBaseEditing
     {
     }
+
     public partial class DxDataGridScrolling : GridBaseScrolling
     {
         public string mode { get; set; }
     }
 
-    public static class DxDataGridScrollingMode
-    {
-        public const string Infinite = "infinite";
-        public const string Standard = "standard";
-        public const string Virtual = "virtual";
-    }
     public partial class DxDataGridSelection : GridBaseSelection
     {
         public bool? deferred { get; set; }
@@ -814,18 +602,6 @@ namespace DevExpress.Ui
         public string showCheckBoxesMode { get; set; }
     }
 
-    public static class DxDataGridSelectionSelectAllMode
-    {
-        public const string AllPages = "allPages";
-        public const string Page = "page";
-    }
-    public static class DxDataGridSelectionShowCheckBoxesMode
-    {
-        public const string Always = "always";
-        public const string None = "none";
-        public const string OnClick = "onClick";
-        public const string OnLongTap = "onLongTap";
-    }
     public partial class DxDateBoxOptions : DxDropDownEditorOptions
     {
         public bool? adaptivityEnabled { get; set; }
@@ -847,33 +623,6 @@ namespace DevExpress.Ui
         public string type { get; set; }
     }
 
-    public static class DxDateBoxOptionsMaxZoomLevel
-    {
-        public const string Century = "century";
-        public const string Decade = "decade";
-        public const string Month = "month";
-        public const string Year = "year";
-    }
-    public static class DxDateBoxOptionsMinZoomLevel
-    {
-        public const string Century = "century";
-        public const string Decade = "decade";
-        public const string Month = "month";
-        public const string Year = "year";
-    }
-    public static class DxDateBoxOptionsPickerType
-    {
-        public const string Calendar = "calendar";
-        public const string List = "list";
-        public const string Native = "native";
-        public const string Rollers = "rollers";
-    }
-    public static class DxDateBoxOptionsType
-    {
-        public const string Date = "date";
-        public const string Datetime = "datetime";
-        public const string Time = "time";
-    }
     public partial class DxDeferRenderingOptions : WidgetOptions
     {
         public object animation { get; set; }
@@ -883,12 +632,19 @@ namespace DevExpress.Ui
         public bool? showLoadIndicator { get; set; }
         public string staggerItemSelector { get; set; }
     }
+
     public partial class DxDropDownBoxOptions : DxDropDownEditorOptions
     {
         public object contentTemplate { get; set; }
         public object dropDownOptions { get; set; }
         public object fieldTemplate { get; set; }
+        public object dataSource { get; set; }
+        public object displayExpr { get; set; }
+        public object items { get; set; }
+        public object itemTemplate { get; set; }
+        public object valueExpr { get; set; }
     }
+
     public partial class DxDropDownMenuOptions : WidgetOptions
     {
         public string buttonIcon { get; set; }
@@ -903,6 +659,7 @@ namespace DevExpress.Ui
         public object popupWidth { get; set; }
         public bool? usePopover { get; set; }
     }
+
     public partial class DxFileUploaderOptions : EditorOptions
     {
         public string accept { get; set; }
@@ -928,17 +685,6 @@ namespace DevExpress.Ui
         public string uploadUrl { get; set; }
     }
 
-    public static class DxFileUploaderOptionsUploadMethod
-    {
-        public const string POST = "POST";
-        public const string PUT = "PUT";
-    }
-    public static class DxFileUploaderOptionsUploadMode
-    {
-        public const string Instantly = "instantly";
-        public const string UseButtons = "useButtons";
-        public const string UseForm = "useForm";
-    }
     public partial class DxFilterBuilderOptions : WidgetOptions
     {
         public bool? allowHierarchicalFields { get; set; }
@@ -951,6 +697,7 @@ namespace DevExpress.Ui
         public bool? onValueChangedEnabled { get; set; }
         public object value { get; set; }
     }
+
     public partial class DxFormOptions : WidgetOptions
     {
         public bool? alignItemLabels { get; set; }
@@ -977,12 +724,6 @@ namespace DevExpress.Ui
         public string validationGroup { get; set; }
     }
 
-    public static class DxFormOptionsLabelLocation
-    {
-        public const string Left = "left";
-        public const string Right = "right";
-        public const string Top = "top";
-    }
     public partial class DxGalleryOptions : CollectionWidgetOptions
     {
         public float? animationDuration { get; set; }
@@ -997,11 +738,13 @@ namespace DevExpress.Ui
         public bool? swipeEnabled { get; set; }
         public bool? wrapAround { get; set; }
     }
+
     public partial class DxGalleryItemTemplate : CollectionWidgetItemTemplate
     {
         public string imageAlt { get; set; }
         public string imageSrc { get; set; }
     }
+
     public partial class DxListOptions : CollectionWidgetOptions
     {
         public bool? allowItemDeleting { get; set; }
@@ -1038,50 +781,19 @@ namespace DevExpress.Ui
         public string showScrollbar { get; set; }
         public bool? showSelectionControls { get; set; }
         public bool? useNativeScrolling { get; set; }
+        public object searchEditorOptions { get; set; }
+        public bool? searchEnabled { get; set; }
+        public object searchExpr { get; set; }
+        public string searchMode { get; set; }
+        public float? searchTimeout { get; set; }
+        public string searchValue { get; set; }
     }
 
-    public static class DxListOptionsItemDeleteMode
-    {
-        public const string Context = "context";
-        public const string SlideButton = "slideButton";
-        public const string SlideItem = "slideItem";
-        public const string Static = "static";
-        public const string Swipe = "swipe";
-        public const string Toggle = "toggle";
-    }
-    public static class DxListOptionsMenuMode
-    {
-        public const string Context = "context";
-        public const string Slide = "slide";
-    }
-    public static class DxListOptionsPageLoadMode
-    {
-        public const string NextButton = "nextButton";
-        public const string ScrollBottom = "scrollBottom";
-    }
-    public static class DxListOptionsSelectAllMode
-    {
-        public const string AllPages = "allPages";
-        public const string Page = "page";
-    }
-    public static class DxListOptionsSelectionMode
-    {
-        public const string All = "all";
-        public const string Multiple = "multiple";
-        public const string None = "none";
-        public const string Single = "single";
-    }
-    public static class DxListOptionsShowScrollbar
-    {
-        public const string Always = "always";
-        public const string Never = "never";
-        public const string OnHover = "onHover";
-        public const string OnScroll = "onScroll";
-    }
     public partial class DxLoadIndicatorOptions : WidgetOptions
     {
         public string indicatorSrc { get; set; }
     }
+
     public partial class DxLoadPanelOptions : DxOverlayOptions
     {
         public float? delay { get; set; }
@@ -1090,9 +802,11 @@ namespace DevExpress.Ui
         public bool? showIndicator { get; set; }
         public bool? showPane { get; set; }
     }
+
     public partial class DxLoadPanelAnimation : DxOverlayAnimation
     {
     }
+
     public partial class DxLookupOptions : DxDropDownListOptions
     {
         public object animation { get; set; }
@@ -1127,16 +841,6 @@ namespace DevExpress.Ui
         public bool? usePopover { get; set; }
     }
 
-    public static class DxLookupOptionsApplyValueMode
-    {
-        public const string Instantly = "instantly";
-        public const string UseButtons = "useButtons";
-    }
-    public static class DxLookupOptionsPageLoadMode
-    {
-        public const string NextButton = "nextButton";
-        public const string ScrollBottom = "scrollBottom";
-    }
     public partial class DxMapOptions : WidgetOptions
     {
         public bool? autoAdjust { get; set; }
@@ -1157,23 +861,12 @@ namespace DevExpress.Ui
         public float? zoom { get; set; }
     }
 
-    public static class DxMapOptionsProvider
-    {
-        public const string Bing = "bing";
-        public const string Google = "google";
-        public const string GoogleStatic = "googleStatic";
-    }
-    public static class DxMapOptionsType
-    {
-        public const string Hybrid = "hybrid";
-        public const string Roadmap = "roadmap";
-        public const string Satellite = "satellite";
-    }
     public partial class MapLocation
     {
         public float? lat { get; set; }
         public float? lng { get; set; }
     }
+
     public partial class DxMenuOptions : DxMenuBaseOptions
     {
         public bool? adaptivityEnabled { get; set; }
@@ -1187,17 +880,6 @@ namespace DevExpress.Ui
         public string submenuDirection { get; set; }
     }
 
-    public static class DxMenuOptionsOrientation
-    {
-        public const string Horizontal = "horizontal";
-        public const string Vertical = "vertical";
-    }
-    public static class DxMenuOptionsSubmenuDirection
-    {
-        public const string Auto = "auto";
-        public const string LeftOrTop = "leftOrTop";
-        public const string RightOrBottom = "rightOrBottom";
-    }
     public partial class DxMultiViewOptions : CollectionWidgetOptions
     {
         public bool? animationEnabled { get; set; }
@@ -1205,15 +887,19 @@ namespace DevExpress.Ui
         public bool? loop { get; set; }
         public bool? swipeEnabled { get; set; }
     }
+
     public partial class DxMultiViewItemTemplate : CollectionWidgetItemTemplate
     {
     }
+
     public partial class DxNavBarOptions : DxTabsOptions
     {
     }
+
     public partial class DxNavBarItemTemplate : DxTabsItemTemplate
     {
     }
+
     public partial class DxNumberBoxOptions : DxTextEditorOptions
     {
         public object format { get; set; }
@@ -1226,12 +912,6 @@ namespace DevExpress.Ui
         public bool? useLargeSpinButtons { get; set; }
     }
 
-    public static class DxNumberBoxOptionsMode
-    {
-        public const string Number = "number";
-        public const string Text = "text";
-        public const string Tel = "tel";
-    }
     public partial class DxOverlayOptions : WidgetOptions
     {
         public object animation { get; set; }
@@ -1252,31 +932,37 @@ namespace DevExpress.Ui
         public bool? shading { get; set; }
         public string shadingColor { get; set; }
     }
+
     public partial class DxOverlayAnimation
     {
         public object hide { get; set; }
         public object show { get; set; }
     }
+
     public partial class DxPanoramaOptions : CollectionWidgetOptions
     {
         public object backgroundImage { get; set; }
         public string title { get; set; }
     }
+
     public partial class DxPanoramaItemTemplate : CollectionWidgetItemTemplate
     {
         public string title { get; set; }
     }
+
     public partial class DxPivotOptions : CollectionWidgetOptions
     {
         public object contentTemplate { get; set; }
         public object itemTitleTemplate { get; set; }
         public bool? swipeEnabled { get; set; }
     }
+
     public partial class DxPivotItemTemplate : CollectionWidgetItemTemplate
     {
         public string title { get; set; }
         public object titleTemplate { get; set; }
     }
+
     public partial class DxPivotGridOptions : WidgetOptions
     {
         public bool? allowExpandAll { get; set; }
@@ -1310,23 +996,6 @@ namespace DevExpress.Ui
         public bool? wordWrapEnabled { get; set; }
     }
 
-    public static class DxPivotGridOptionsDataFieldArea
-    {
-        public const string Column = "column";
-        public const string Row = "row";
-    }
-    public static class DxPivotGridOptionsRowHeaderLayout
-    {
-        public const string Standard = "standard";
-        public const string Tree = "tree";
-    }
-    public static class DxPivotGridOptionsShowTotalsPrior
-    {
-        public const string Both = "both";
-        public const string Columns = "columns";
-        public const string None = "none";
-        public const string Rows = "rows";
-    }
     public partial class DxPivotGridFieldChooserOptions : WidgetOptions
     {
         public bool? allowSearch { get; set; }
@@ -1339,20 +1008,17 @@ namespace DevExpress.Ui
         public object texts { get; set; }
     }
 
-    public static class DxPivotGridFieldChooserOptionsApplyChangesMode
-    {
-        public const string Instantly = "instantly";
-        public const string OnDemand = "onDemand";
-    }
     public partial class DxPopoverOptions : DxPopupOptions
     {
         public object hideEvent { get; set; }
         public object showEvent { get; set; }
         public object target { get; set; }
     }
+
     public partial class DxPopoverAnimation : DxPopupAnimation
     {
     }
+
     public partial class DxPopupOptions : DxOverlayOptions
     {
         public object container { get; set; }
@@ -1368,9 +1034,11 @@ namespace DevExpress.Ui
         public object titleTemplate { get; set; }
         public object toolbarItems { get; set; }
     }
+
     public partial class DxPopupAnimation : DxOverlayAnimation
     {
     }
+
     public partial class DxPopupToolbarItem
     {
         public bool? disabled { get; set; }
@@ -1384,45 +1052,24 @@ namespace DevExpress.Ui
         public string widget { get; set; }
     }
 
-    public static class DxPopupToolbarItemLocation
-    {
-        public const string After = "after";
-        public const string Before = "before";
-        public const string Center = "center";
-    }
-    public static class DxPopupToolbarItemToolbar
-    {
-        public const string Bottom = "bottom";
-        public const string Top = "top";
-    }
-    public static class DxPopupToolbarItemWidget
-    {
-        public const string DxAutocomplete = "dxAutocomplete";
-        public const string DxButton = "dxButton";
-        public const string DxCheckBox = "dxCheckBox";
-        public const string DxDateBox = "dxDateBox";
-        public const string DxMenu = "dxMenu";
-        public const string DxSelectBox = "dxSelectBox";
-        public const string DxTabs = "dxTabs";
-        public const string DxTextBox = "dxTextBox";
-    }
     public partial class DxProgressBarOptions : DxTrackBarOptions
     {
         public bool? onCompleteEnabled { get; set; }
         public bool? showStatus { get; set; }
         public object statusFormat { get; set; }
     }
+
     public partial class DxRadioGroupOptions : EditorOptions
     {
         public string layout { get; set; }
         public string name { get; set; }
+        public object dataSource { get; set; }
+        public object displayExpr { get; set; }
+        public object items { get; set; }
+        public object itemTemplate { get; set; }
+        public object valueExpr { get; set; }
     }
 
-    public static class DxRadioGroupOptionsLayout
-    {
-        public const string Horizontal = "horizontal";
-        public const string Vertical = "vertical";
-    }
     public partial class DxRangeSliderOptions : DxSliderBaseOptions
     {
         public float? end { get; set; }
@@ -1430,6 +1077,7 @@ namespace DevExpress.Ui
         public float? start { get; set; }
         public string startName { get; set; }
     }
+
     public partial class DxResizableOptions : DOMComponentOptions
     {
         public string handles { get; set; }
@@ -1442,14 +1090,6 @@ namespace DevExpress.Ui
         public bool? onResizeStartEnabled { get; set; }
     }
 
-    public static class DxResizableOptionsHandles
-    {
-        public const string Top = "top";
-        public const string Bottom = "bottom";
-        public const string Right = "right";
-        public const string Left = "left";
-        public const string All = "all";
-    }
     public partial class DxResponsiveBoxOptions : CollectionWidgetOptions
     {
         public object cols { get; set; }
@@ -1457,10 +1097,12 @@ namespace DevExpress.Ui
         public object screenByWidth { get; set; }
         public string singleColumnScreen { get; set; }
     }
+
     public partial class DxResponsiveBoxItemTemplate : CollectionWidgetItemTemplate
     {
         public object location { get; set; }
     }
+
     public partial class DxSchedulerOptions : WidgetOptions
     {
         public string allDayExpr { get; set; }
@@ -1481,7 +1123,7 @@ namespace DevExpress.Ui
         public string endDateTimeZoneExpr { get; set; }
         public float? endDayHour { get; set; }
         public object firstDayOfWeek { get; set; }
-        public string groups { get; set; }
+        public object groups { get; set; }
         public float? indicatorUpdateInterval { get; set; }
         public object max { get; set; }
         public object maxAppointmentsPerCell { get; set; }
@@ -1520,23 +1162,17 @@ namespace DevExpress.Ui
         public object views { get; set; }
     }
 
-    public static class DxSchedulerOptionsCurrentView
+    public static class DxSchedulerOptionsViews
     {
-        public const string Agenda = "agenda";
         public const string Day = "day";
-        public const string Month = "month";
-        public const string TimelineDay = "timelineDay";
-        public const string TimelineMonth = "timelineMonth";
-        public const string TimelineWeek = "timelineWeek";
-        public const string TimelineWorkWeek = "timelineWorkWeek";
         public const string Week = "week";
         public const string WorkWeek = "workWeek";
-    }
-    public static class DxSchedulerOptionsRecurrenceEditMode
-    {
-        public const string Dialog = "dialog";
-        public const string Occurrence = "occurrence";
-        public const string Series = "series";
+        public const string Month = "month";
+        public const string TimelineDay = "timelineDay";
+        public const string TimelineWeek = "timelineWeek";
+        public const string TimelineWorkWeek = "timelineWorkWeek";
+        public const string TimelineMonth = "timelineMonth";
+        public const string Agenda = "agenda";
     }
     public partial class DxScrollViewOptions : DxScrollableOptions
     {
@@ -1547,15 +1183,18 @@ namespace DevExpress.Ui
         public string reachBottomText { get; set; }
         public string refreshingText { get; set; }
     }
+
     public partial class DxSelectBoxOptions : DxDropDownListOptions
     {
         public object fieldTemplate { get; set; }
         public bool? onCustomItemCreatingEnabled { get; set; }
         public bool? showSelectionControls { get; set; }
     }
+
     public partial class DxSliderOptions : DxSliderBaseOptions
     {
     }
+
     public partial class DxSlideOutOptions : CollectionWidgetOptions
     {
         public object contentTemplate { get; set; }
@@ -1569,15 +1208,11 @@ namespace DevExpress.Ui
         public bool? swipeEnabled { get; set; }
     }
 
-    public static class DxSlideOutOptionsMenuPosition
-    {
-        public const string Inverted = "inverted";
-        public const string Normal = "normal";
-    }
     public partial class DxSlideOutItemTemplate : CollectionWidgetItemTemplate
     {
         public object menuTemplate { get; set; }
     }
+
     public partial class DxSlideOutViewOptions : WidgetOptions
     {
         public object contentTemplate { get; set; }
@@ -1587,17 +1222,13 @@ namespace DevExpress.Ui
         public bool? swipeEnabled { get; set; }
     }
 
-    public static class DxSlideOutViewOptionsMenuPosition
-    {
-        public const string Inverted = "inverted";
-        public const string Normal = "normal";
-    }
     public partial class DxSwitchOptions : EditorOptions
     {
         public string name { get; set; }
         public string offText { get; set; }
         public string onText { get; set; }
     }
+
     public partial class DxTabsOptions : CollectionWidgetOptions
     {
         public bool? scrollByContent { get; set; }
@@ -1606,16 +1237,12 @@ namespace DevExpress.Ui
         public bool? showNavButtons { get; set; }
     }
 
-    public static class DxTabsOptionsSelectionMode
-    {
-        public const string Multiple = "multiple";
-        public const string Single = "single";
-    }
     public partial class DxTabsItemTemplate : CollectionWidgetItemTemplate
     {
         public string badge { get; set; }
         public string icon { get; set; }
     }
+
     public partial class DxTabPanelOptions : DxMultiViewOptions
     {
         public object itemTitleTemplate { get; set; }
@@ -1626,6 +1253,7 @@ namespace DevExpress.Ui
         public bool? scrollingEnabled { get; set; }
         public bool? showNavButtons { get; set; }
     }
+
     public partial class DxTabPanelItemTemplate : DxMultiViewItemTemplate
     {
         public string badge { get; set; }
@@ -1633,6 +1261,7 @@ namespace DevExpress.Ui
         public object tabTemplate { get; set; }
         public string title { get; set; }
     }
+
     public partial class DxTagBoxOptions : DxSelectBoxOptions
     {
         public bool? hideSelectedItems { get; set; }
@@ -1646,37 +1275,19 @@ namespace DevExpress.Ui
         public object tagTemplate { get; set; }
     }
 
-    public static class DxTagBoxOptionsApplyValueMode
-    {
-        public const string Instantly = "instantly";
-        public const string UseButtons = "useButtons";
-    }
-    public static class DxTagBoxOptionsSelectAllMode
-    {
-        public const string AllPages = "allPages";
-        public const string Page = "page";
-    }
     public partial class DxTextAreaOptions : DxTextBoxOptions
     {
         public bool? autoResizeEnabled { get; set; }
         public object maxHeight { get; set; }
         public object minHeight { get; set; }
     }
+
     public partial class DxTextBoxOptions : DxTextEditorOptions
     {
         public object maxLength { get; set; }
         public string mode { get; set; }
     }
 
-    public static class DxTextBoxOptionsMode
-    {
-        public const string Email = "email";
-        public const string Password = "password";
-        public const string Search = "search";
-        public const string Tel = "tel";
-        public const string Text = "text";
-        public const string Url = "url";
-    }
     public partial class DxTileViewOptions : CollectionWidgetOptions
     {
         public float? baseItemHeight { get; set; }
@@ -1686,16 +1297,12 @@ namespace DevExpress.Ui
         public bool? showScrollbar { get; set; }
     }
 
-    public static class DxTileViewOptionsDirection
-    {
-        public const string Horizontal = "horizontal";
-        public const string Vertical = "vertical";
-    }
     public partial class DxTileViewItemTemplate : CollectionWidgetItemTemplate
     {
         public float? heightRatio { get; set; }
         public float? widthRatio { get; set; }
     }
+
     public partial class DxToastOptions : DxOverlayOptions
     {
         public bool? closeOnClick { get; set; }
@@ -1705,28 +1312,16 @@ namespace DevExpress.Ui
         public string type { get; set; }
     }
 
-    public static class DxToastOptionsType
-    {
-        public const string Custom = "custom";
-        public const string Error = "error";
-        public const string Info = "info";
-        public const string Success = "success";
-        public const string Warning = "warning";
-    }
     public partial class DxToastAnimation : DxOverlayAnimation
     {
     }
+
     public partial class DxToolbarOptions : CollectionWidgetOptions
     {
         public object menuItemTemplate { get; set; }
         public string renderAs { get; set; }
     }
 
-    public static class DxToolbarOptionsRenderAs
-    {
-        public const string BottomToolbar = "bottomToolbar";
-        public const string TopToolbar = "topToolbar";
-    }
     public partial class DxToolbarItemTemplate : CollectionWidgetItemTemplate
     {
         public string locateInMenu { get; set; }
@@ -1737,42 +1332,16 @@ namespace DevExpress.Ui
         public string widget { get; set; }
     }
 
-    public static class DxToolbarItemTemplateLocateInMenu
-    {
-        public const string Always = "always";
-        public const string Auto = "auto";
-        public const string Never = "never";
-    }
-    public static class DxToolbarItemTemplateLocation
-    {
-        public const string After = "after";
-        public const string Before = "before";
-        public const string Center = "center";
-    }
-    public static class DxToolbarItemTemplateShowText
-    {
-        public const string Always = "always";
-        public const string InMenu = "inMenu";
-    }
-    public static class DxToolbarItemTemplateWidget
-    {
-        public const string DxAutocomplete = "dxAutocomplete";
-        public const string DxButton = "dxButton";
-        public const string DxCheckBox = "dxCheckBox";
-        public const string DxDateBox = "dxDateBox";
-        public const string DxMenu = "dxMenu";
-        public const string DxSelectBox = "dxSelectBox";
-        public const string DxTabs = "dxTabs";
-        public const string DxTextBox = "dxTextBox";
-    }
     public partial class DxTooltipOptions : DxPopoverOptions
     {
     }
+
     public partial class DxTrackBarOptions : EditorOptions
     {
         public float? max { get; set; }
         public float? min { get; set; }
     }
+
     public partial class DxTreeListOptions : GridBaseOptions
     {
         public bool? autoExpandAll { get; set; }
@@ -1798,35 +1367,29 @@ namespace DevExpress.Ui
         public object rootValue { get; set; }
     }
 
-    public static class DxTreeListOptionsDataStructure
-    {
-        public const string Plain = "plain";
-        public const string Tree = "tree";
-    }
     public partial class DxTreeListEditing : GridBaseEditing
     {
     }
+
     public partial class DxTreeListEditingTexts : GridBaseEditingTexts
     {
         public string addRowToNode { get; set; }
     }
+
     public partial class DxTreeListPaging : GridBasePaging
     {
     }
+
     public partial class DxTreeListScrolling : GridBaseScrolling
     {
         public string mode { get; set; }
     }
 
-    public static class DxTreeListScrollingMode
-    {
-        public const string Standard = "standard";
-        public const string Virtual = "virtual";
-    }
     public partial class DxTreeListSelection : GridBaseSelection
     {
         public bool? recursive { get; set; }
     }
+
     public partial class DxTreeViewOptions : HierarchicalCollectionWidgetOptions
     {
         public bool? animationEnabled { get; set; }
@@ -1848,30 +1411,14 @@ namespace DevExpress.Ui
         public bool? selectNodesRecursive { get; set; }
         public string showCheckBoxesMode { get; set; }
         public bool? virtualModeEnabled { get; set; }
+        public object searchEditorOptions { get; set; }
+        public bool? searchEnabled { get; set; }
+        public object searchExpr { get; set; }
+        public string searchMode { get; set; }
+        public float? searchTimeout { get; set; }
+        public string searchValue { get; set; }
     }
 
-    public static class DxTreeViewOptionsDataStructure
-    {
-        public const string Plain = "plain";
-        public const string Tree = "tree";
-    }
-    public static class DxTreeViewOptionsScrollDirection
-    {
-        public const string Both = "both";
-        public const string Horizontal = "horizontal";
-        public const string Vertical = "vertical";
-    }
-    public static class DxTreeViewOptionsSelectionMode
-    {
-        public const string Multiple = "multiple";
-        public const string Single = "single";
-    }
-    public static class DxTreeViewOptionsShowCheckBoxesMode
-    {
-        public const string None = "none";
-        public const string Normal = "normal";
-        public const string SelectAll = "selectAll";
-    }
     public partial class RequiredRule
     {
         public string message { get; set; }
@@ -1879,34 +1426,12 @@ namespace DevExpress.Ui
         public string type { get; set; }
     }
 
-    public static class RequiredRuleType
-    {
-        public const string Required = "required";
-        public const string Numeric = "numeric";
-        public const string Range = "range";
-        public const string StringLength = "stringLength";
-        public const string Custom = "custom";
-        public const string Compare = "compare";
-        public const string Pattern = "pattern";
-        public const string Email = "email";
-    }
     public partial class NumericRule
     {
         public string message { get; set; }
         public string type { get; set; }
     }
 
-    public static class NumericRuleType
-    {
-        public const string Required = "required";
-        public const string Numeric = "numeric";
-        public const string Range = "range";
-        public const string StringLength = "stringLength";
-        public const string Custom = "custom";
-        public const string Compare = "compare";
-        public const string Pattern = "pattern";
-        public const string Email = "email";
-    }
     public partial class RangeRule
     {
         public object max { get; set; }
@@ -1916,17 +1441,6 @@ namespace DevExpress.Ui
         public string type { get; set; }
     }
 
-    public static class RangeRuleType
-    {
-        public const string Required = "required";
-        public const string Numeric = "numeric";
-        public const string Range = "range";
-        public const string StringLength = "stringLength";
-        public const string Custom = "custom";
-        public const string Compare = "compare";
-        public const string Pattern = "pattern";
-        public const string Email = "email";
-    }
     public partial class StringLengthRule
     {
         public float? max { get; set; }
@@ -1936,17 +1450,6 @@ namespace DevExpress.Ui
         public string type { get; set; }
     }
 
-    public static class StringLengthRuleType
-    {
-        public const string Required = "required";
-        public const string Numeric = "numeric";
-        public const string Range = "range";
-        public const string StringLength = "stringLength";
-        public const string Custom = "custom";
-        public const string Compare = "compare";
-        public const string Pattern = "pattern";
-        public const string Email = "email";
-    }
     public partial class CustomRule
     {
         public string message { get; set; }
@@ -1955,17 +1458,6 @@ namespace DevExpress.Ui
         public object validationCallback { get; set; }
     }
 
-    public static class CustomRuleType
-    {
-        public const string Required = "required";
-        public const string Numeric = "numeric";
-        public const string Range = "range";
-        public const string StringLength = "stringLength";
-        public const string Custom = "custom";
-        public const string Compare = "compare";
-        public const string Pattern = "pattern";
-        public const string Email = "email";
-    }
     public partial class CompareRule
     {
         public object comparisonTarget { get; set; }
@@ -1975,28 +1467,6 @@ namespace DevExpress.Ui
         public string type { get; set; }
     }
 
-    public static class CompareRuleComparisonType
-    {
-        public const string NotEqual = "!=";
-        public const string StrictNotEqual = "!==";
-        public const string LowerThan = "<";
-        public const string LowerOrEqualThan = "<=";
-        public const string Equal = "==";
-        public const string StrictEqual = "===";
-        public const string GreaterThan = ">";
-        public const string GreaterThanEqual = ">=";
-    }
-    public static class CompareRuleType
-    {
-        public const string Required = "required";
-        public const string Numeric = "numeric";
-        public const string Range = "range";
-        public const string StringLength = "stringLength";
-        public const string Custom = "custom";
-        public const string Compare = "compare";
-        public const string Pattern = "pattern";
-        public const string Email = "email";
-    }
     public partial class PatternRule
     {
         public string message { get; set; }
@@ -2004,40 +1474,19 @@ namespace DevExpress.Ui
         public string type { get; set; }
     }
 
-    public static class PatternRuleType
-    {
-        public const string Required = "required";
-        public const string Numeric = "numeric";
-        public const string Range = "range";
-        public const string StringLength = "stringLength";
-        public const string Custom = "custom";
-        public const string Compare = "compare";
-        public const string Pattern = "pattern";
-        public const string Email = "email";
-    }
     public partial class EmailRule
     {
         public string message { get; set; }
         public string type { get; set; }
     }
 
-    public static class EmailRuleType
-    {
-        public const string Required = "required";
-        public const string Numeric = "numeric";
-        public const string Range = "range";
-        public const string StringLength = "stringLength";
-        public const string Custom = "custom";
-        public const string Compare = "compare";
-        public const string Pattern = "pattern";
-        public const string Email = "email";
-    }
     public partial class DxValidationGroupResult
     {
         public object brokenRules { get; set; }
         public bool? isValid { get; set; }
         public object validators { get; set; }
     }
+
     public partial class DxValidatorResult
     {
         public object brokenRule { get; set; }
@@ -2045,13 +1494,16 @@ namespace DevExpress.Ui
         public object validationRules { get; set; }
         public object value { get; set; }
     }
+
     public partial class DxValidationGroupOptions : DOMComponentOptions
     {
     }
+
     public partial class DxValidationSummaryOptions : CollectionWidgetOptions
     {
         public string validationGroup { get; set; }
     }
+
     public partial class DxValidatorOptions : DOMComponentOptions
     {
         public object adapter { get; set; }
@@ -2060,6 +1512,7 @@ namespace DevExpress.Ui
         public string validationGroup { get; set; }
         public object validationRules { get; set; }
     }
+
     public partial class DxCalendarCellTemplate
     {
         public object date { get; set; }
@@ -2067,13 +1520,6 @@ namespace DevExpress.Ui
         public string view { get; set; }
     }
 
-    public static class DxCalendarCellTemplateView
-    {
-        public const string Month = "month";
-        public const string Year = "year";
-        public const string Decade = "decade";
-        public const string Century = "century";
-    }
     public partial class CollectionWidgetOptions : WidgetOptions
     {
         public object dataSource { get; set; }
@@ -2092,6 +1538,7 @@ namespace DevExpress.Ui
         public object selectedItemKeys { get; set; }
         public object selectedItems { get; set; }
     }
+
     public partial class CollectionWidgetItemTemplate
     {
         public bool? disabled { get; set; }
@@ -2100,9 +1547,11 @@ namespace DevExpress.Ui
         public string text { get; set; }
         public bool? visible { get; set; }
     }
+
     public partial class DxContextMenuItemTemplate : DxMenuBaseItemTemplate
     {
     }
+
     public partial class DxMenuBaseOptions : HierarchicalCollectionWidgetOptions
     {
         public object animation { get; set; }
@@ -2112,11 +1561,6 @@ namespace DevExpress.Ui
         public object showSubmenuMode { get; set; }
     }
 
-    public static class DxMenuBaseOptionsSelectionMode
-    {
-        public const string None = "none";
-        public const string Single = "single";
-    }
     public partial class DxMenuBaseItemTemplate : CollectionWidgetItemTemplate
     {
         public bool? beginGroup { get; set; }
@@ -2126,6 +1570,7 @@ namespace DevExpress.Ui
         public bool? selectable { get; set; }
         public bool? selected { get; set; }
     }
+
     public partial class DxDataGridColumn : GridBaseColumn
     {
         public bool? allowExporting { get; set; }
@@ -2138,6 +1583,7 @@ namespace DevExpress.Ui
         public float? precision { get; set; }
         public bool? showWhenGrouped { get; set; }
     }
+
     public partial class DxDropDownEditorOptions : DxTextBoxOptions
     {
         public bool? acceptCustomValue { get; set; }
@@ -2149,11 +1595,6 @@ namespace DevExpress.Ui
         public bool? opened { get; set; }
     }
 
-    public static class DxDropDownEditorOptionsApplyValueMode
-    {
-        public const string Instantly = "instantly";
-        public const string UseButtons = "useButtons";
-    }
     public partial class DxDropDownListOptions : DxDropDownEditorOptions
     {
         public string displayValue { get; set; }
@@ -2169,13 +1610,13 @@ namespace DevExpress.Ui
         public float? searchTimeout { get; set; }
         public object selectedItem { get; set; }
         public bool? showDataBeforeSearch { get; set; }
+        public object dataSource { get; set; }
+        public object displayExpr { get; set; }
+        public object items { get; set; }
+        public object itemTemplate { get; set; }
+        public object valueExpr { get; set; }
     }
 
-    public static class DxDropDownListOptionsSearchMode
-    {
-        public const string Contains = "contains";
-        public const string Startswith = "startswith";
-    }
     public partial class EditorOptions : WidgetOptions
     {
         public bool? isValid { get; set; }
@@ -2186,11 +1627,6 @@ namespace DevExpress.Ui
         public object value { get; set; }
     }
 
-    public static class EditorOptionsValidationMessageMode
-    {
-        public const string Always = "always";
-        public const string Auto = "auto";
-    }
     public partial class DataExpressionMixinOptions
     {
         public object dataSource { get; set; }
@@ -2200,6 +1636,7 @@ namespace DevExpress.Ui
         public object value { get; set; }
         public object valueExpr { get; set; }
     }
+
     public partial class DataExpressionMixinItemTemplate
     {
         public bool? disabled { get; set; }
@@ -2208,6 +1645,7 @@ namespace DevExpress.Ui
         public string text { get; set; }
         public bool? visible { get; set; }
     }
+
     public partial class DxFilterBuilderField
     {
         public object calculateFilterExpression { get; set; }
@@ -2224,14 +1662,21 @@ namespace DevExpress.Ui
         public string trueText { get; set; }
     }
 
-    public static class DxFilterBuilderFieldDataType
+    public static class DxFilterBuilderFieldFilterOperations
     {
-        public const string String = "string";
-        public const string Number = "number";
-        public const string Date = "date";
-        public const string Boolean = "boolean";
-        public const string Object = "object";
-        public const string Datetime = "datetime";
+        public const string Assignment = "=";
+        public const string LowerGreaterThan = "<>";
+        public const string LowerThan = "<";
+        public const string LowerOrEqualThan = "<=";
+        public const string GreaterThan = ">";
+        public const string GreaterThanEqual = ">=";
+        public const string Contains = "contains";
+        public const string Endswith = "endswith";
+        public const string Isblank = "isblank";
+        public const string Isnotblank = "isnotblank";
+        public const string Notcontains = "notcontains";
+        public const string Startswith = "startswith";
+        public const string Between = "between";
     }
     public partial class DxFilterBuilderCustomOperation
     {
@@ -2244,6 +1689,16 @@ namespace DevExpress.Ui
         public string icon { get; set; }
         public string name { get; set; }
     }
+
+    public static class DxFilterBuilderCustomOperationDataTypes
+    {
+        public const string String = "string";
+        public const string Number = "number";
+        public const string Date = "date";
+        public const string Boolean = "boolean";
+        public const string Object = "object";
+        public const string Datetime = "datetime";
+    }
     public partial class ColCountResponsible
     {
         public float? lg { get; set; }
@@ -2251,6 +1706,7 @@ namespace DevExpress.Ui
         public float? sm { get; set; }
         public float? xs { get; set; }
     }
+
     public partial class DxFormSimpleItem
     {
         public float? colSpan { get; set; }
@@ -2269,33 +1725,6 @@ namespace DevExpress.Ui
         public float? visibleIndex { get; set; }
     }
 
-    public static class DxFormSimpleItemEditorType
-    {
-        public const string DxAutocomplete = "dxAutocomplete";
-        public const string DxCalendar = "dxCalendar";
-        public const string DxCheckBox = "dxCheckBox";
-        public const string DxColorBox = "dxColorBox";
-        public const string DxDateBox = "dxDateBox";
-        public const string DxDropDownBox = "dxDropDownBox";
-        public const string DxLookup = "dxLookup";
-        public const string DxNumberBox = "dxNumberBox";
-        public const string DxRadioGroup = "dxRadioGroup";
-        public const string DxRangeSlider = "dxRangeSlider";
-        public const string DxSelectBox = "dxSelectBox";
-        public const string DxSlider = "dxSlider";
-        public const string DxSwitch = "dxSwitch";
-        public const string DxTagBox = "dxTagBox";
-        public const string DxTextArea = "dxTextArea";
-        public const string DxTextBox = "dxTextBox";
-    }
-    public static class DxFormSimpleItemItemType
-    {
-        public const string Empty = "empty";
-        public const string Group = "group";
-        public const string Simple = "simple";
-        public const string Tabbed = "tabbed";
-        public const string Button = "button";
-    }
     public partial class DxFormGroupItem
     {
         public bool? alignItemLabels { get; set; }
@@ -2312,14 +1741,6 @@ namespace DevExpress.Ui
         public float? visibleIndex { get; set; }
     }
 
-    public static class DxFormGroupItemItemType
-    {
-        public const string Empty = "empty";
-        public const string Group = "group";
-        public const string Simple = "simple";
-        public const string Tabbed = "tabbed";
-        public const string Button = "button";
-    }
     public partial class DxFormTabbedItem
     {
         public float? colSpan { get; set; }
@@ -2332,14 +1753,6 @@ namespace DevExpress.Ui
         public float? visibleIndex { get; set; }
     }
 
-    public static class DxFormTabbedItemItemType
-    {
-        public const string Empty = "empty";
-        public const string Group = "group";
-        public const string Simple = "simple";
-        public const string Tabbed = "tabbed";
-        public const string Button = "button";
-    }
     public partial class DxFormEmptyItem
     {
         public float? colSpan { get; set; }
@@ -2350,14 +1763,6 @@ namespace DevExpress.Ui
         public float? visibleIndex { get; set; }
     }
 
-    public static class DxFormEmptyItemItemType
-    {
-        public const string Empty = "empty";
-        public const string Group = "group";
-        public const string Simple = "simple";
-        public const string Tabbed = "tabbed";
-        public const string Button = "button";
-    }
     public partial class DxFormButtonItem
     {
         public string alignment { get; set; }
@@ -2370,20 +1775,6 @@ namespace DevExpress.Ui
         public float? visibleIndex { get; set; }
     }
 
-    public static class DxFormButtonItemAlignment
-    {
-        public const string Center = "center";
-        public const string Left = "left";
-        public const string Right = "right";
-    }
-    public static class DxFormButtonItemItemType
-    {
-        public const string Empty = "empty";
-        public const string Group = "group";
-        public const string Simple = "simple";
-        public const string Tabbed = "tabbed";
-        public const string Button = "button";
-    }
     public partial class GridBaseColumn
     {
         public object alignment { get; set; }
@@ -2440,43 +1831,25 @@ namespace DevExpress.Ui
         public object width { get; set; }
     }
 
-    public static class GridBaseColumnDataType
+    public static class GridBaseColumnFilterOperations
     {
-        public const string String = "string";
-        public const string Number = "number";
-        public const string Date = "date";
-        public const string Boolean = "boolean";
-        public const string Object = "object";
-        public const string Datetime = "datetime";
-    }
-    public static class GridBaseColumnFilterType
-    {
-        public const string Exclude = "exclude";
-        public const string Include = "include";
-    }
-    public static class GridBaseColumnFixedPosition
-    {
-        public const string Left = "left";
-        public const string Right = "right";
-    }
-    public static class GridBaseColumnSelectedFilterOperation
-    {
+        public const string Assignment = "=";
+        public const string LowerGreaterThan = "<>";
         public const string LowerThan = "<";
         public const string LowerOrEqualThan = "<=";
-        public const string LowerGreaterThan = "<>";
-        public const string Assignment = "=";
         public const string GreaterThan = ">";
         public const string GreaterThanEqual = ">=";
-        public const string Between = "between";
-        public const string Contains = "contains";
-        public const string Endswith = "endswith";
         public const string Notcontains = "notcontains";
+        public const string Contains = "contains";
         public const string Startswith = "startswith";
+        public const string Endswith = "endswith";
+        public const string Between = "between";
     }
     public partial class DxTreeListColumn : GridBaseColumn
     {
         public object columns { get; set; }
     }
+
     public partial class DxDataGridRowObject
     {
         public object data { get; set; }
@@ -2489,6 +1862,7 @@ namespace DevExpress.Ui
         public string rowType { get; set; }
         public object values { get; set; }
     }
+
     public partial class DxTreeListRowObject
     {
         public bool? isEditing { get; set; }
@@ -2501,6 +1875,7 @@ namespace DevExpress.Ui
         public string rowType { get; set; }
         public object values { get; set; }
     }
+
     public partial class HierarchicalCollectionWidgetOptions : CollectionWidgetOptions
     {
         public object disabledExpr { get; set; }
@@ -2508,15 +1883,18 @@ namespace DevExpress.Ui
         public object itemsExpr { get; set; }
         public object selectedExpr { get; set; }
     }
+
     public partial class DxListItemTemplate : CollectionWidgetItemTemplate
     {
         public string badge { get; set; }
         public string key { get; set; }
         public bool? showChevron { get; set; }
     }
+
     public partial class DxMenuItemTemplate : DxMenuBaseItemTemplate
     {
     }
+
     public partial class DxPivotGridPivotGridCell
     {
         public object columnPath { get; set; }
@@ -2531,24 +1909,6 @@ namespace DevExpress.Ui
         public object value { get; set; }
     }
 
-    public static class DxPivotGridPivotGridCellColumnType
-    {
-        public const string D = "D";
-        public const string T = "T";
-        public const string GT = "GT";
-    }
-    public static class DxPivotGridPivotGridCellRowType
-    {
-        public const string D = "D";
-        public const string T = "T";
-        public const string GT = "GT";
-    }
-    public static class DxPivotGridPivotGridCellType
-    {
-        public const string D = "D";
-        public const string T = "T";
-        public const string GT = "GT";
-    }
     public partial class DxSchedulerAppointmentTemplate : CollectionWidgetItemTemplate
     {
         public bool? allDay { get; set; }
@@ -2560,6 +1920,7 @@ namespace DevExpress.Ui
         public object startDate { get; set; }
         public string startDateTimeZone { get; set; }
     }
+
     public partial class DxSchedulerAppointmentTooltipTemplate
     {
         public bool? allDay { get; set; }
@@ -2572,6 +1933,7 @@ namespace DevExpress.Ui
         public string startDateTimeZone { get; set; }
         public string text { get; set; }
     }
+
     public partial class DxScrollableOptions : DOMComponentOptions
     {
         public bool? bounceEnabled { get; set; }
@@ -2585,19 +1947,6 @@ namespace DevExpress.Ui
         public bool? useNative { get; set; }
     }
 
-    public static class DxScrollableOptionsDirection
-    {
-        public const string Both = "both";
-        public const string Horizontal = "horizontal";
-        public const string Vertical = "vertical";
-    }
-    public static class DxScrollableOptionsShowScrollbar
-    {
-        public const string OnScroll = "onScroll";
-        public const string OnHover = "onHover";
-        public const string Always = "always";
-        public const string Never = "never";
-    }
     public partial class DxSliderBaseOptions : DxTrackBarOptions
     {
         public float? keyStep { get; set; }
@@ -2607,6 +1956,7 @@ namespace DevExpress.Ui
         public float? step { get; set; }
         public object tooltip { get; set; }
     }
+
     public partial class DxTextEditorOptions : EditorOptions
     {
         public object inputAttr { get; set; }
@@ -2635,11 +1985,6 @@ namespace DevExpress.Ui
         public string valueChangeEvent { get; set; }
     }
 
-    public static class DxTextEditorOptionsShowMaskMode
-    {
-        public const string Always = "always";
-        public const string OnFocus = "onFocus";
-    }
     public partial class DxTreeListNode
     {
         public object children { get; set; }
@@ -2650,6 +1995,7 @@ namespace DevExpress.Ui
         public object parent { get; set; }
         public bool? visible { get; set; }
     }
+
     public partial class DxTreeViewItemTemplate : CollectionWidgetItemTemplate
     {
         public bool? expanded { get; set; }
@@ -2659,6 +2005,7 @@ namespace DevExpress.Ui
         public object parentId { get; set; }
         public bool? selected { get; set; }
     }
+
     public partial class DxTreeViewNode
     {
         public object children { get; set; }
@@ -2670,6 +2017,7 @@ namespace DevExpress.Ui
         public bool? selected { get; set; }
         public string text { get; set; }
     }
+
     public partial class SearchBoxMixinOptions
     {
         public object searchEditorOptions { get; set; }
@@ -2680,15 +2028,11 @@ namespace DevExpress.Ui
         public string searchValue { get; set; }
     }
 
-    public static class SearchBoxMixinOptionsSearchMode
-    {
-        public const string Contains = "contains";
-        public const string Startswith = "startswith";
-    }
     public partial class DxTemplateOptions
     {
         public string name { get; set; }
     }
+
     public partial class WidgetOptions : DOMComponentOptions
     {
         public string accessKey { get; set; }
@@ -2701,6 +2045,7 @@ namespace DevExpress.Ui
         public float? tabIndex { get; set; }
         public bool? visible { get; set; }
     }
+
 }
 namespace DevExpress.Viz
 {
@@ -2722,28 +2067,16 @@ namespace DevExpress.Viz
         public object tooltip { get; set; }
     }
 
-    public static class BaseWidgetOptionsTheme
-    {
-        public const string GenericLight = "generic.light";
-        public const string GenericDark = "generic.dark";
-        public const string GenericContrast = "generic.contrast";
-        public const string GenericCarmine = "generic.carmine";
-        public const string GenericDarkmoon = "generic.darkmoon";
-        public const string GenericSoftblue = "generic.softblue";
-        public const string GenericDarkviolet = "generic.darkviolet";
-        public const string GenericGreenmist = "generic.greenmist";
-        public const string Android5Light = "android5.light";
-        public const string Ios7Default = "ios7.default";
-    }
     public partial class BaseWidgetExport
     {
         public string backgroundColor { get; set; }
         public bool? enabled { get; set; }
         public string fileName { get; set; }
-        public string formats { get; set; }
+        public object formats { get; set; }
         public bool? printingEnabled { get; set; }
         public string proxyUrl { get; set; }
     }
+
     public partial class BaseWidgetLoadingIndicator
     {
         public string backgroundColor { get; set; }
@@ -2751,6 +2084,7 @@ namespace DevExpress.Viz
         public bool? show { get; set; }
         public string text { get; set; }
     }
+
     public partial class BaseWidgetMargin
     {
         public float? bottom { get; set; }
@@ -2758,11 +2092,13 @@ namespace DevExpress.Viz
         public float? right { get; set; }
         public float? top { get; set; }
     }
+
     public partial class BaseWidgetSize
     {
         public float? height { get; set; }
         public float? width { get; set; }
     }
+
     public partial class BaseWidgetTitle
     {
         public object font { get; set; }
@@ -2774,17 +2110,6 @@ namespace DevExpress.Viz
         public string verticalAlignment { get; set; }
     }
 
-    public static class BaseWidgetTitleHorizontalAlignment
-    {
-        public const string Center = "center";
-        public const string Left = "left";
-        public const string Right = "right";
-    }
-    public static class BaseWidgetTitleVerticalAlignment
-    {
-        public const string Bottom = "bottom";
-        public const string Top = "top";
-    }
     public partial class BaseWidgetTooltip
     {
         public float? arrowLength { get; set; }
@@ -2801,11 +2126,13 @@ namespace DevExpress.Viz
         public object shadow { get; set; }
         public float? zIndex { get; set; }
     }
+
     public partial class ScaleBreak
     {
         public object endValue { get; set; }
         public object startValue { get; set; }
     }
+
     public partial class VizTimeInterval
     {
         public float? days { get; set; }
@@ -2818,6 +2145,7 @@ namespace DevExpress.Viz
         public float? weeks { get; set; }
         public float? years { get; set; }
     }
+
     public partial class DxChartSeriesTypes
     {
         public object AreaSeries { get; set; }
@@ -2845,162 +2173,75 @@ namespace DevExpress.Viz
         public object StepLineSeries { get; set; }
         public object StockSeries { get; set; }
     }
+
     public partial class DxChartSeriesTypesAreaSeries : DxChartSeriesTypesCommonSeries
     {
     }
 
-    public static class DxChartSeriesTypesAreaSeriesHoverMode
-    {
-        public const string NearestPoint = "nearestPoint";
-        public const string IncludePoints = "includePoints";
-        public const string ExcludePoints = "excludePoints";
-        public const string None = "none";
-    }
-    public static class DxChartSeriesTypesAreaSeriesSelectionMode
-    {
-        public const string IncludePoints = "includePoints";
-        public const string ExcludePoints = "excludePoints";
-        public const string None = "none";
-    }
     public partial class DxChartSeriesTypesAreaSeriesAggregation : DxChartSeriesTypesCommonSeriesAggregation
     {
     }
 
-    public static class DxChartSeriesTypesAreaSeriesAggregationMethod
-    {
-        public const string Avg = "avg";
-        public const string Count = "count";
-        public const string Max = "max";
-        public const string Min = "min";
-        public const string Sum = "sum";
-        public const string Custom = "custom";
-    }
     public partial class DxChartSeriesTypesAreaSeriesLabel : DxChartSeriesTypesCommonSeriesLabel
     {
     }
+
     public partial class DxChartSeriesTypesAreaSeriesPoint : DxChartSeriesTypesCommonSeriesPoint
     {
     }
+
     public partial class DxChartSeriesTypesBarSeries : DxChartSeriesTypesCommonSeries
     {
     }
 
-    public static class DxChartSeriesTypesBarSeriesHoverMode
-    {
-        public const string OnlyPoint = "onlyPoint";
-        public const string AllSeriesPoints = "allSeriesPoints";
-        public const string AllArgumentPoints = "allArgumentPoints";
-        public const string None = "none";
-    }
-    public static class DxChartSeriesTypesBarSeriesSelectionMode
-    {
-        public const string OnlyPoint = "onlyPoint";
-        public const string AllSeriesPoints = "allSeriesPoints";
-        public const string AllArgumentPoints = "allArgumentPoints";
-        public const string None = "none";
-    }
     public partial class DxChartSeriesTypesBarSeriesAggregation : DxChartSeriesTypesCommonSeriesAggregation
     {
     }
 
-    public static class DxChartSeriesTypesBarSeriesAggregationMethod
-    {
-        public const string Avg = "avg";
-        public const string Count = "count";
-        public const string Max = "max";
-        public const string Min = "min";
-        public const string Sum = "sum";
-        public const string Custom = "custom";
-    }
     public partial class DxChartSeriesTypesBarSeriesLabel : DxChartSeriesTypesCommonSeriesLabel
     {
     }
+
     public partial class DxChartSeriesTypesBubbleSeries : DxChartSeriesTypesCommonSeries
     {
     }
 
-    public static class DxChartSeriesTypesBubbleSeriesHoverMode
-    {
-        public const string OnlyPoint = "onlyPoint";
-        public const string AllSeriesPoints = "allSeriesPoints";
-        public const string AllArgumentPoints = "allArgumentPoints";
-        public const string None = "none";
-    }
-    public static class DxChartSeriesTypesBubbleSeriesSelectionMode
-    {
-        public const string OnlyPoint = "onlyPoint";
-        public const string AllSeriesPoints = "allSeriesPoints";
-        public const string AllArgumentPoints = "allArgumentPoints";
-        public const string None = "none";
-    }
     public partial class DxChartSeriesTypesBubbleSeriesAggregation : DxChartSeriesTypesCommonSeriesAggregation
     {
     }
 
-    public static class DxChartSeriesTypesBubbleSeriesAggregationMethod
-    {
-        public const string Avg = "avg";
-        public const string Custom = "custom";
-    }
     public partial class DxChartSeriesTypesBubbleSeriesLabel : DxChartSeriesTypesCommonSeriesLabel
     {
     }
+
     public partial class DxChartSeriesTypesCandleStickSeries : DxChartSeriesTypesCommonSeries
     {
     }
 
-    public static class DxChartSeriesTypesCandleStickSeriesHoverMode
-    {
-        public const string OnlyPoint = "onlyPoint";
-        public const string AllSeriesPoints = "allSeriesPoints";
-        public const string AllArgumentPoints = "allArgumentPoints";
-        public const string None = "none";
-    }
-    public static class DxChartSeriesTypesCandleStickSeriesSelectionMode
-    {
-        public const string OnlyPoint = "onlyPoint";
-        public const string AllSeriesPoints = "allSeriesPoints";
-        public const string AllArgumentPoints = "allArgumentPoints";
-        public const string None = "none";
-    }
     public partial class DxChartSeriesTypesCandleStickSeriesAggregation : DxChartSeriesTypesCommonSeriesAggregation
     {
     }
 
-    public static class DxChartSeriesTypesCandleStickSeriesAggregationMethod
-    {
-        public const string Ohlc = "ohlc";
-        public const string Custom = "custom";
-    }
     public partial class DxChartSeriesTypesCandleStickSeriesHoverStyle : DxChartSeriesTypesCommonSeriesHoverStyle
     {
     }
+
     public partial class DxChartSeriesTypesCandleStickSeriesHoverStyleHatching : DxChartSeriesTypesCommonSeriesHoverStyleHatching
     {
     }
 
-    public static class DxChartSeriesTypesCandleStickSeriesHoverStyleHatchingDirection
-    {
-        public const string Left = "left";
-        public const string None = "none";
-        public const string Right = "right";
-    }
     public partial class DxChartSeriesTypesCandleStickSeriesLabel : DxChartSeriesTypesCommonSeriesLabel
     {
     }
+
     public partial class DxChartSeriesTypesCandleStickSeriesSelectionStyle : DxChartSeriesTypesCommonSeriesSelectionStyle
     {
     }
+
     public partial class DxChartSeriesTypesCandleStickSeriesSelectionStyleHatching : DxChartSeriesTypesCommonSeriesSelectionStyleHatching
     {
     }
 
-    public static class DxChartSeriesTypesCandleStickSeriesSelectionStyleHatchingDirection
-    {
-        public const string Left = "left";
-        public const string None = "none";
-        public const string Right = "right";
-    }
     public partial class DxChartSeriesTypesCommonSeries
     {
         public object aggregation { get; set; }
@@ -3041,32 +2282,6 @@ namespace DevExpress.Viz
         public float? width { get; set; }
     }
 
-    public static class DxChartSeriesTypesCommonSeriesDashStyle
-    {
-        public const string Dash = "dash";
-        public const string Dot = "dot";
-        public const string LongDash = "longDash";
-        public const string Solid = "solid";
-    }
-    public static class DxChartSeriesTypesCommonSeriesHoverMode
-    {
-        public const string AllArgumentPoints = "allArgumentPoints";
-        public const string AllSeriesPoints = "allSeriesPoints";
-        public const string ExcludePoints = "excludePoints";
-        public const string IncludePoints = "includePoints";
-        public const string NearestPoint = "nearestPoint";
-        public const string None = "none";
-        public const string OnlyPoint = "onlyPoint";
-    }
-    public static class DxChartSeriesTypesCommonSeriesSelectionMode
-    {
-        public const string AllArgumentPoints = "allArgumentPoints";
-        public const string AllSeriesPoints = "allSeriesPoints";
-        public const string ExcludePoints = "excludePoints";
-        public const string IncludePoints = "includePoints";
-        public const string None = "none";
-        public const string OnlyPoint = "onlyPoint";
-    }
     public partial class DxChartSeriesTypesCommonSeriesAggregation
     {
         public object calculate { get; set; }
@@ -3074,17 +2289,6 @@ namespace DevExpress.Viz
         public string method { get; set; }
     }
 
-    public static class DxChartSeriesTypesCommonSeriesAggregationMethod
-    {
-        public const string Avg = "avg";
-        public const string Count = "count";
-        public const string Max = "max";
-        public const string Min = "min";
-        public const string Ohlc = "ohlc";
-        public const string Range = "range";
-        public const string Sum = "sum";
-        public const string Custom = "custom";
-    }
     public partial class DxChartSeriesTypesCommonSeriesBorder
     {
         public string color { get; set; }
@@ -3093,13 +2297,6 @@ namespace DevExpress.Viz
         public float? width { get; set; }
     }
 
-    public static class DxChartSeriesTypesCommonSeriesBorderDashStyle
-    {
-        public const string Dash = "dash";
-        public const string Dot = "dot";
-        public const string LongDash = "longDash";
-        public const string Solid = "solid";
-    }
     public partial class DxChartSeriesTypesCommonSeriesHoverStyle
     {
         public object border { get; set; }
@@ -3109,13 +2306,6 @@ namespace DevExpress.Viz
         public float? width { get; set; }
     }
 
-    public static class DxChartSeriesTypesCommonSeriesHoverStyleDashStyle
-    {
-        public const string Dash = "dash";
-        public const string Dot = "dot";
-        public const string LongDash = "longDash";
-        public const string Solid = "solid";
-    }
     public partial class DxChartSeriesTypesCommonSeriesHoverStyleBorder
     {
         public string color { get; set; }
@@ -3124,13 +2314,6 @@ namespace DevExpress.Viz
         public float? width { get; set; }
     }
 
-    public static class DxChartSeriesTypesCommonSeriesHoverStyleBorderDashStyle
-    {
-        public const string Dash = "dash";
-        public const string Dot = "dot";
-        public const string LongDash = "longDash";
-        public const string Solid = "solid";
-    }
     public partial class DxChartSeriesTypesCommonSeriesHoverStyleHatching
     {
         public string direction { get; set; }
@@ -3139,12 +2322,6 @@ namespace DevExpress.Viz
         public float? width { get; set; }
     }
 
-    public static class DxChartSeriesTypesCommonSeriesHoverStyleHatchingDirection
-    {
-        public const string Left = "left";
-        public const string None = "none";
-        public const string Right = "right";
-    }
     public partial class DxChartSeriesTypesCommonSeriesLabel
     {
         public string alignment { get; set; }
@@ -3166,17 +2343,6 @@ namespace DevExpress.Viz
         public bool? visible { get; set; }
     }
 
-    public static class DxChartSeriesTypesCommonSeriesLabelAlignment
-    {
-        public const string Center = "center";
-        public const string Left = "left";
-        public const string Right = "right";
-    }
-    public static class DxChartSeriesTypesCommonSeriesLabelPosition
-    {
-        public const string Inside = "inside";
-        public const string Outside = "outside";
-    }
     public partial class DxChartSeriesTypesCommonSeriesPoint
     {
         public object border { get; set; }
@@ -3191,29 +2357,6 @@ namespace DevExpress.Viz
         public bool? visible { get; set; }
     }
 
-    public static class DxChartSeriesTypesCommonSeriesPointHoverMode
-    {
-        public const string AllArgumentPoints = "allArgumentPoints";
-        public const string AllSeriesPoints = "allSeriesPoints";
-        public const string None = "none";
-        public const string OnlyPoint = "onlyPoint";
-    }
-    public static class DxChartSeriesTypesCommonSeriesPointSelectionMode
-    {
-        public const string AllArgumentPoints = "allArgumentPoints";
-        public const string AllSeriesPoints = "allSeriesPoints";
-        public const string None = "none";
-        public const string OnlyPoint = "onlyPoint";
-    }
-    public static class DxChartSeriesTypesCommonSeriesPointSymbol
-    {
-        public const string Circle = "circle";
-        public const string Cross = "cross";
-        public const string Polygon = "polygon";
-        public const string Square = "square";
-        public const string TriangleDown = "triangleDown";
-        public const string TriangleUp = "triangleUp";
-    }
     public partial class DxChartSeriesTypesCommonSeriesSelectionStyle
     {
         public object border { get; set; }
@@ -3223,13 +2366,6 @@ namespace DevExpress.Viz
         public float? width { get; set; }
     }
 
-    public static class DxChartSeriesTypesCommonSeriesSelectionStyleDashStyle
-    {
-        public const string Dash = "dash";
-        public const string Dot = "dot";
-        public const string LongDash = "longDash";
-        public const string Solid = "solid";
-    }
     public partial class DxChartSeriesTypesCommonSeriesSelectionStyleBorder
     {
         public string color { get; set; }
@@ -3238,13 +2374,6 @@ namespace DevExpress.Viz
         public float? width { get; set; }
     }
 
-    public static class DxChartSeriesTypesCommonSeriesSelectionStyleBorderDashStyle
-    {
-        public const string Dash = "dash";
-        public const string Dot = "dot";
-        public const string LongDash = "longDash";
-        public const string Solid = "solid";
-    }
     public partial class DxChartSeriesTypesCommonSeriesSelectionStyleHatching
     {
         public string direction { get; set; }
@@ -3253,665 +2382,282 @@ namespace DevExpress.Viz
         public float? width { get; set; }
     }
 
-    public static class DxChartSeriesTypesCommonSeriesSelectionStyleHatchingDirection
-    {
-        public const string Left = "left";
-        public const string None = "none";
-        public const string Right = "right";
-    }
     public partial class DxChartSeriesTypesFullStackedAreaSeries : DxChartSeriesTypesCommonSeries
     {
     }
 
-    public static class DxChartSeriesTypesFullStackedAreaSeriesHoverMode
-    {
-        public const string NearestPoint = "nearestPoint";
-        public const string IncludePoints = "includePoints";
-        public const string ExcludePoints = "excludePoints";
-        public const string None = "none";
-    }
-    public static class DxChartSeriesTypesFullStackedAreaSeriesSelectionMode
-    {
-        public const string IncludePoints = "includePoints";
-        public const string ExcludePoints = "excludePoints";
-        public const string None = "none";
-    }
     public partial class DxChartSeriesTypesFullStackedAreaSeriesAggregation : DxChartSeriesTypesCommonSeriesAggregation
     {
     }
 
-    public static class DxChartSeriesTypesFullStackedAreaSeriesAggregationMethod
-    {
-        public const string Avg = "avg";
-        public const string Count = "count";
-        public const string Max = "max";
-        public const string Min = "min";
-        public const string Sum = "sum";
-        public const string Custom = "custom";
-    }
     public partial class DxChartSeriesTypesFullStackedAreaSeriesLabel : DxChartSeriesTypesCommonSeriesLabel
     {
     }
+
     public partial class DxChartSeriesTypesFullStackedAreaSeriesPoint : DxChartSeriesTypesCommonSeriesPoint
     {
     }
+
     public partial class DxChartSeriesTypesFullStackedBarSeries : DxChartSeriesTypesCommonSeries
     {
     }
 
-    public static class DxChartSeriesTypesFullStackedBarSeriesHoverMode
-    {
-        public const string OnlyPoint = "onlyPoint";
-        public const string AllSeriesPoints = "allSeriesPoints";
-        public const string AllArgumentPoints = "allArgumentPoints";
-        public const string None = "none";
-    }
-    public static class DxChartSeriesTypesFullStackedBarSeriesSelectionMode
-    {
-        public const string OnlyPoint = "onlyPoint";
-        public const string AllSeriesPoints = "allSeriesPoints";
-        public const string AllArgumentPoints = "allArgumentPoints";
-        public const string None = "none";
-    }
     public partial class DxChartSeriesTypesFullStackedBarSeriesAggregation : DxChartSeriesTypesCommonSeriesAggregation
     {
     }
 
-    public static class DxChartSeriesTypesFullStackedBarSeriesAggregationMethod
-    {
-        public const string Avg = "avg";
-        public const string Count = "count";
-        public const string Max = "max";
-        public const string Min = "min";
-        public const string Sum = "sum";
-        public const string Custom = "custom";
-    }
     public partial class DxChartSeriesTypesFullStackedBarSeriesLabel : DxChartSeriesTypesCommonSeriesLabel
     {
     }
 
-    public static class DxChartSeriesTypesFullStackedBarSeriesLabelPosition
-    {
-        public const string Inside = "inside";
-        public const string Outside = "outside";
-    }
     public partial class DxChartSeriesTypesFullStackedLineSeries : DxChartSeriesTypesCommonSeries
     {
     }
 
-    public static class DxChartSeriesTypesFullStackedLineSeriesHoverMode
-    {
-        public const string NearestPoint = "nearestPoint";
-        public const string IncludePoints = "includePoints";
-        public const string ExcludePoints = "excludePoints";
-        public const string None = "none";
-    }
-    public static class DxChartSeriesTypesFullStackedLineSeriesSelectionMode
-    {
-        public const string IncludePoints = "includePoints";
-        public const string ExcludePoints = "excludePoints";
-        public const string None = "none";
-    }
     public partial class DxChartSeriesTypesFullStackedLineSeriesAggregation : DxChartSeriesTypesCommonSeriesAggregation
     {
     }
 
-    public static class DxChartSeriesTypesFullStackedLineSeriesAggregationMethod
-    {
-        public const string Avg = "avg";
-        public const string Count = "count";
-        public const string Max = "max";
-        public const string Min = "min";
-        public const string Sum = "sum";
-        public const string Custom = "custom";
-    }
     public partial class DxChartSeriesTypesFullStackedLineSeriesLabel : DxChartSeriesTypesCommonSeriesLabel
     {
     }
+
     public partial class DxChartSeriesTypesFullStackedSplineAreaSeries : DxChartSeriesTypesCommonSeries
     {
     }
 
-    public static class DxChartSeriesTypesFullStackedSplineAreaSeriesHoverMode
-    {
-        public const string NearestPoint = "nearestPoint";
-        public const string IncludePoints = "includePoints";
-        public const string ExcludePoints = "excludePoints";
-        public const string None = "none";
-    }
-    public static class DxChartSeriesTypesFullStackedSplineAreaSeriesSelectionMode
-    {
-        public const string IncludePoints = "includePoints";
-        public const string ExcludePoints = "excludePoints";
-        public const string None = "none";
-    }
     public partial class DxChartSeriesTypesFullStackedSplineAreaSeriesAggregation : DxChartSeriesTypesCommonSeriesAggregation
     {
     }
 
-    public static class DxChartSeriesTypesFullStackedSplineAreaSeriesAggregationMethod
-    {
-        public const string Avg = "avg";
-        public const string Count = "count";
-        public const string Max = "max";
-        public const string Min = "min";
-        public const string Sum = "sum";
-        public const string Custom = "custom";
-    }
     public partial class DxChartSeriesTypesFullStackedSplineAreaSeriesLabel : DxChartSeriesTypesCommonSeriesLabel
     {
     }
+
     public partial class DxChartSeriesTypesFullStackedSplineAreaSeriesPoint : DxChartSeriesTypesCommonSeriesPoint
     {
     }
+
     public partial class DxChartSeriesTypesFullStackedSplineSeries : DxChartSeriesTypesCommonSeries
     {
     }
 
-    public static class DxChartSeriesTypesFullStackedSplineSeriesHoverMode
-    {
-        public const string NearestPoint = "nearestPoint";
-        public const string IncludePoints = "includePoints";
-        public const string ExcludePoints = "excludePoints";
-        public const string None = "none";
-    }
-    public static class DxChartSeriesTypesFullStackedSplineSeriesSelectionMode
-    {
-        public const string IncludePoints = "includePoints";
-        public const string ExcludePoints = "excludePoints";
-        public const string None = "none";
-    }
     public partial class DxChartSeriesTypesFullStackedSplineSeriesAggregation : DxChartSeriesTypesCommonSeriesAggregation
     {
     }
 
-    public static class DxChartSeriesTypesFullStackedSplineSeriesAggregationMethod
-    {
-        public const string Avg = "avg";
-        public const string Count = "count";
-        public const string Max = "max";
-        public const string Min = "min";
-        public const string Sum = "sum";
-        public const string Custom = "custom";
-    }
     public partial class DxChartSeriesTypesFullStackedSplineSeriesLabel : DxChartSeriesTypesCommonSeriesLabel
     {
     }
+
     public partial class DxChartSeriesTypesLineSeries : DxChartSeriesTypesCommonSeries
     {
     }
 
-    public static class DxChartSeriesTypesLineSeriesHoverMode
-    {
-        public const string NearestPoint = "nearestPoint";
-        public const string IncludePoints = "includePoints";
-        public const string ExcludePoints = "excludePoints";
-        public const string None = "none";
-    }
-    public static class DxChartSeriesTypesLineSeriesSelectionMode
-    {
-        public const string IncludePoints = "includePoints";
-        public const string ExcludePoints = "excludePoints";
-        public const string None = "none";
-    }
     public partial class DxChartSeriesTypesLineSeriesAggregation : DxChartSeriesTypesCommonSeriesAggregation
     {
     }
 
-    public static class DxChartSeriesTypesLineSeriesAggregationMethod
-    {
-        public const string Avg = "avg";
-        public const string Count = "count";
-        public const string Max = "max";
-        public const string Min = "min";
-        public const string Sum = "sum";
-        public const string Custom = "custom";
-    }
     public partial class DxChartSeriesTypesLineSeriesLabel : DxChartSeriesTypesCommonSeriesLabel
     {
     }
+
     public partial class DxChartSeriesTypesRangeAreaSeries : DxChartSeriesTypesCommonSeries
     {
     }
 
-    public static class DxChartSeriesTypesRangeAreaSeriesHoverMode
-    {
-        public const string NearestPoint = "nearestPoint";
-        public const string IncludePoints = "includePoints";
-        public const string ExcludePoints = "excludePoints";
-        public const string None = "none";
-    }
-    public static class DxChartSeriesTypesRangeAreaSeriesSelectionMode
-    {
-        public const string IncludePoints = "includePoints";
-        public const string ExcludePoints = "excludePoints";
-        public const string None = "none";
-    }
     public partial class DxChartSeriesTypesRangeAreaSeriesAggregation : DxChartSeriesTypesCommonSeriesAggregation
     {
     }
 
-    public static class DxChartSeriesTypesRangeAreaSeriesAggregationMethod
-    {
-        public const string Range = "range";
-        public const string Custom = "custom";
-    }
     public partial class DxChartSeriesTypesRangeAreaSeriesLabel : DxChartSeriesTypesCommonSeriesLabel
     {
     }
+
     public partial class DxChartSeriesTypesRangeAreaSeriesPoint : DxChartSeriesTypesCommonSeriesPoint
     {
     }
+
     public partial class DxChartSeriesTypesRangeBarSeries : DxChartSeriesTypesCommonSeries
     {
     }
 
-    public static class DxChartSeriesTypesRangeBarSeriesHoverMode
-    {
-        public const string OnlyPoint = "onlyPoint";
-        public const string AllSeriesPoints = "allSeriesPoints";
-        public const string AllArgumentPoints = "allArgumentPoints";
-        public const string None = "none";
-    }
-    public static class DxChartSeriesTypesRangeBarSeriesSelectionMode
-    {
-        public const string OnlyPoint = "onlyPoint";
-        public const string AllSeriesPoints = "allSeriesPoints";
-        public const string AllArgumentPoints = "allArgumentPoints";
-        public const string None = "none";
-    }
     public partial class DxChartSeriesTypesRangeBarSeriesAggregation : DxChartSeriesTypesCommonSeriesAggregation
     {
     }
 
-    public static class DxChartSeriesTypesRangeBarSeriesAggregationMethod
-    {
-        public const string Range = "range";
-        public const string Custom = "custom";
-    }
     public partial class DxChartSeriesTypesRangeBarSeriesLabel : DxChartSeriesTypesCommonSeriesLabel
     {
     }
+
     public partial class DxChartSeriesTypesScatterSeries : DxChartSeriesTypesCommonSeries
     {
     }
+
     public partial class DxChartSeriesTypesScatterSeriesAggregation : DxChartSeriesTypesCommonSeriesAggregation
     {
     }
 
-    public static class DxChartSeriesTypesScatterSeriesAggregationMethod
-    {
-        public const string Avg = "avg";
-        public const string Count = "count";
-        public const string Max = "max";
-        public const string Min = "min";
-        public const string Sum = "sum";
-        public const string Custom = "custom";
-    }
     public partial class DxChartSeriesTypesScatterSeriesLabel : DxChartSeriesTypesCommonSeriesLabel
     {
     }
+
     public partial class DxChartSeriesTypesSplineAreaSeries : DxChartSeriesTypesCommonSeries
     {
     }
 
-    public static class DxChartSeriesTypesSplineAreaSeriesHoverMode
-    {
-        public const string NearestPoint = "nearestPoint";
-        public const string IncludePoints = "includePoints";
-        public const string ExcludePoints = "excludePoints";
-        public const string None = "none";
-    }
-    public static class DxChartSeriesTypesSplineAreaSeriesSelectionMode
-    {
-        public const string IncludePoints = "includePoints";
-        public const string ExcludePoints = "excludePoints";
-        public const string None = "none";
-    }
     public partial class DxChartSeriesTypesSplineAreaSeriesAggregation : DxChartSeriesTypesCommonSeriesAggregation
     {
     }
 
-    public static class DxChartSeriesTypesSplineAreaSeriesAggregationMethod
-    {
-        public const string Avg = "avg";
-        public const string Count = "count";
-        public const string Max = "max";
-        public const string Min = "min";
-        public const string Sum = "sum";
-        public const string Custom = "custom";
-    }
     public partial class DxChartSeriesTypesSplineAreaSeriesLabel : DxChartSeriesTypesCommonSeriesLabel
     {
     }
+
     public partial class DxChartSeriesTypesSplineAreaSeriesPoint : DxChartSeriesTypesCommonSeriesPoint
     {
     }
+
     public partial class DxChartSeriesTypesSplineSeries : DxChartSeriesTypesCommonSeries
     {
     }
 
-    public static class DxChartSeriesTypesSplineSeriesHoverMode
-    {
-        public const string NearestPoint = "nearestPoint";
-        public const string IncludePoints = "includePoints";
-        public const string ExcludePoints = "excludePoints";
-        public const string None = "none";
-    }
-    public static class DxChartSeriesTypesSplineSeriesSelectionMode
-    {
-        public const string IncludePoints = "includePoints";
-        public const string ExcludePoints = "excludePoints";
-        public const string None = "none";
-    }
     public partial class DxChartSeriesTypesSplineSeriesAggregation : DxChartSeriesTypesCommonSeriesAggregation
     {
     }
 
-    public static class DxChartSeriesTypesSplineSeriesAggregationMethod
-    {
-        public const string Avg = "avg";
-        public const string Count = "count";
-        public const string Max = "max";
-        public const string Min = "min";
-        public const string Sum = "sum";
-        public const string Custom = "custom";
-    }
     public partial class DxChartSeriesTypesSplineSeriesLabel : DxChartSeriesTypesCommonSeriesLabel
     {
     }
+
     public partial class DxChartSeriesTypesStackedAreaSeries : DxChartSeriesTypesCommonSeries
     {
     }
 
-    public static class DxChartSeriesTypesStackedAreaSeriesHoverMode
-    {
-        public const string NearestPoint = "nearestPoint";
-        public const string IncludePoints = "includePoints";
-        public const string ExcludePoints = "excludePoints";
-        public const string None = "none";
-    }
-    public static class DxChartSeriesTypesStackedAreaSeriesSelectionMode
-    {
-        public const string IncludePoints = "includePoints";
-        public const string ExcludePoints = "excludePoints";
-        public const string None = "none";
-    }
     public partial class DxChartSeriesTypesStackedAreaSeriesAggregation : DxChartSeriesTypesCommonSeriesAggregation
     {
     }
 
-    public static class DxChartSeriesTypesStackedAreaSeriesAggregationMethod
-    {
-        public const string Avg = "avg";
-        public const string Count = "count";
-        public const string Max = "max";
-        public const string Min = "min";
-        public const string Sum = "sum";
-        public const string Custom = "custom";
-    }
     public partial class DxChartSeriesTypesStackedAreaSeriesLabel : DxChartSeriesTypesCommonSeriesLabel
     {
     }
+
     public partial class DxChartSeriesTypesStackedAreaSeriesPoint : DxChartSeriesTypesCommonSeriesPoint
     {
     }
+
     public partial class DxChartSeriesTypesStackedBarSeries : DxChartSeriesTypesCommonSeries
     {
     }
 
-    public static class DxChartSeriesTypesStackedBarSeriesHoverMode
-    {
-        public const string OnlyPoint = "onlyPoint";
-        public const string AllSeriesPoints = "allSeriesPoints";
-        public const string AllArgumentPoints = "allArgumentPoints";
-        public const string None = "none";
-    }
-    public static class DxChartSeriesTypesStackedBarSeriesSelectionMode
-    {
-        public const string OnlyPoint = "onlyPoint";
-        public const string AllSeriesPoints = "allSeriesPoints";
-        public const string AllArgumentPoints = "allArgumentPoints";
-        public const string None = "none";
-    }
     public partial class DxChartSeriesTypesStackedBarSeriesAggregation : DxChartSeriesTypesCommonSeriesAggregation
     {
     }
 
-    public static class DxChartSeriesTypesStackedBarSeriesAggregationMethod
-    {
-        public const string Avg = "avg";
-        public const string Count = "count";
-        public const string Max = "max";
-        public const string Min = "min";
-        public const string Sum = "sum";
-        public const string Custom = "custom";
-    }
     public partial class DxChartSeriesTypesStackedBarSeriesLabel : DxChartSeriesTypesCommonSeriesLabel
     {
     }
 
-    public static class DxChartSeriesTypesStackedBarSeriesLabelPosition
-    {
-        public const string Inside = "inside";
-        public const string Outside = "outside";
-    }
     public partial class DxChartSeriesTypesStackedLineSeries : DxChartSeriesTypesCommonSeries
     {
     }
 
-    public static class DxChartSeriesTypesStackedLineSeriesHoverMode
-    {
-        public const string NearestPoint = "nearestPoint";
-        public const string IncludePoints = "includePoints";
-        public const string ExcludePoints = "excludePoints";
-        public const string None = "none";
-    }
-    public static class DxChartSeriesTypesStackedLineSeriesSelectionMode
-    {
-        public const string IncludePoints = "includePoints";
-        public const string ExcludePoints = "excludePoints";
-        public const string None = "none";
-    }
     public partial class DxChartSeriesTypesStackedLineSeriesAggregation : DxChartSeriesTypesCommonSeriesAggregation
     {
     }
 
-    public static class DxChartSeriesTypesStackedLineSeriesAggregationMethod
-    {
-        public const string Avg = "avg";
-        public const string Count = "count";
-        public const string Max = "max";
-        public const string Min = "min";
-        public const string Sum = "sum";
-        public const string Custom = "custom";
-    }
     public partial class DxChartSeriesTypesStackedLineSeriesLabel : DxChartSeriesTypesCommonSeriesLabel
     {
     }
+
     public partial class DxChartSeriesTypesStackedSplineAreaSeries : DxChartSeriesTypesCommonSeries
     {
     }
 
-    public static class DxChartSeriesTypesStackedSplineAreaSeriesHoverMode
-    {
-        public const string NearestPoint = "nearestPoint";
-        public const string IncludePoints = "includePoints";
-        public const string ExcludePoints = "excludePoints";
-        public const string None = "none";
-    }
-    public static class DxChartSeriesTypesStackedSplineAreaSeriesSelectionMode
-    {
-        public const string IncludePoints = "includePoints";
-        public const string ExcludePoints = "excludePoints";
-        public const string None = "none";
-    }
     public partial class DxChartSeriesTypesStackedSplineAreaSeriesAggregation : DxChartSeriesTypesCommonSeriesAggregation
     {
     }
 
-    public static class DxChartSeriesTypesStackedSplineAreaSeriesAggregationMethod
-    {
-        public const string Avg = "avg";
-        public const string Count = "count";
-        public const string Max = "max";
-        public const string Min = "min";
-        public const string Sum = "sum";
-        public const string Custom = "custom";
-    }
     public partial class DxChartSeriesTypesStackedSplineAreaSeriesLabel : DxChartSeriesTypesCommonSeriesLabel
     {
     }
+
     public partial class DxChartSeriesTypesStackedSplineAreaSeriesPoint : DxChartSeriesTypesCommonSeriesPoint
     {
     }
+
     public partial class DxChartSeriesTypesStackedSplineSeries : DxChartSeriesTypesCommonSeries
     {
     }
 
-    public static class DxChartSeriesTypesStackedSplineSeriesHoverMode
-    {
-        public const string NearestPoint = "nearestPoint";
-        public const string IncludePoints = "includePoints";
-        public const string ExcludePoints = "excludePoints";
-        public const string None = "none";
-    }
-    public static class DxChartSeriesTypesStackedSplineSeriesSelectionMode
-    {
-        public const string IncludePoints = "includePoints";
-        public const string ExcludePoints = "excludePoints";
-        public const string None = "none";
-    }
     public partial class DxChartSeriesTypesStackedSplineSeriesAggregation : DxChartSeriesTypesCommonSeriesAggregation
     {
     }
 
-    public static class DxChartSeriesTypesStackedSplineSeriesAggregationMethod
-    {
-        public const string Avg = "avg";
-        public const string Count = "count";
-        public const string Max = "max";
-        public const string Min = "min";
-        public const string Sum = "sum";
-        public const string Custom = "custom";
-    }
     public partial class DxChartSeriesTypesStackedSplineSeriesLabel : DxChartSeriesTypesCommonSeriesLabel
     {
     }
+
     public partial class DxChartSeriesTypesStepAreaSeries : DxChartSeriesTypesCommonSeries
     {
     }
 
-    public static class DxChartSeriesTypesStepAreaSeriesHoverMode
-    {
-        public const string NearestPoint = "nearestPoint";
-        public const string IncludePoints = "includePoints";
-        public const string ExcludePoints = "excludePoints";
-        public const string None = "none";
-    }
-    public static class DxChartSeriesTypesStepAreaSeriesSelectionMode
-    {
-        public const string IncludePoints = "includePoints";
-        public const string ExcludePoints = "excludePoints";
-        public const string None = "none";
-    }
     public partial class DxChartSeriesTypesStepAreaSeriesAggregation : DxChartSeriesTypesCommonSeriesAggregation
     {
     }
 
-    public static class DxChartSeriesTypesStepAreaSeriesAggregationMethod
-    {
-        public const string Avg = "avg";
-        public const string Count = "count";
-        public const string Max = "max";
-        public const string Min = "min";
-        public const string Sum = "sum";
-        public const string Custom = "custom";
-    }
     public partial class DxChartSeriesTypesStepAreaSeriesBorder : DxChartSeriesTypesCommonSeriesBorder
     {
     }
+
     public partial class DxChartSeriesTypesStepAreaSeriesHoverStyle : DxChartSeriesTypesCommonSeriesHoverStyle
     {
     }
+
     public partial class DxChartSeriesTypesStepAreaSeriesHoverStyleBorder : DxChartSeriesTypesCommonSeriesHoverStyleBorder
     {
     }
+
     public partial class DxChartSeriesTypesStepAreaSeriesLabel : DxChartSeriesTypesCommonSeriesLabel
     {
     }
+
     public partial class DxChartSeriesTypesStepAreaSeriesPoint : DxChartSeriesTypesCommonSeriesPoint
     {
     }
+
     public partial class DxChartSeriesTypesStepAreaSeriesSelectionStyle : DxChartSeriesTypesCommonSeriesSelectionStyle
     {
     }
+
     public partial class DxChartSeriesTypesStepAreaSeriesSelectionStyleBorder : DxChartSeriesTypesCommonSeriesSelectionStyleBorder
     {
     }
+
     public partial class DxChartSeriesTypesStepLineSeries : DxChartSeriesTypesCommonSeries
     {
     }
 
-    public static class DxChartSeriesTypesStepLineSeriesHoverMode
-    {
-        public const string NearestPoint = "nearestPoint";
-        public const string IncludePoints = "includePoints";
-        public const string ExcludePoints = "excludePoints";
-        public const string None = "none";
-    }
-    public static class DxChartSeriesTypesStepLineSeriesSelectionMode
-    {
-        public const string IncludePoints = "includePoints";
-        public const string ExcludePoints = "excludePoints";
-        public const string None = "none";
-    }
     public partial class DxChartSeriesTypesStepLineSeriesAggregation : DxChartSeriesTypesCommonSeriesAggregation
     {
     }
 
-    public static class DxChartSeriesTypesStepLineSeriesAggregationMethod
-    {
-        public const string Avg = "avg";
-        public const string Count = "count";
-        public const string Max = "max";
-        public const string Min = "min";
-        public const string Sum = "sum";
-        public const string Custom = "custom";
-    }
     public partial class DxChartSeriesTypesStepLineSeriesLabel : DxChartSeriesTypesCommonSeriesLabel
     {
     }
+
     public partial class DxChartSeriesTypesStockSeries : DxChartSeriesTypesCommonSeries
     {
     }
 
-    public static class DxChartSeriesTypesStockSeriesHoverMode
-    {
-        public const string OnlyPoint = "onlyPoint";
-        public const string AllSeriesPoints = "allSeriesPoints";
-        public const string AllArgumentPoints = "allArgumentPoints";
-        public const string None = "none";
-    }
-    public static class DxChartSeriesTypesStockSeriesSelectionMode
-    {
-        public const string OnlyPoint = "onlyPoint";
-        public const string AllSeriesPoints = "allSeriesPoints";
-        public const string AllArgumentPoints = "allArgumentPoints";
-        public const string None = "none";
-    }
     public partial class DxChartSeriesTypesStockSeriesAggregation : DxChartSeriesTypesCommonSeriesAggregation
     {
     }
 
-    public static class DxChartSeriesTypesStockSeriesAggregationMethod
-    {
-        public const string Ohlc = "ohlc";
-        public const string Custom = "custom";
-    }
     public partial class DxChartSeriesTypesStockSeriesLabel : DxChartSeriesTypesCommonSeriesLabel
     {
     }
+
     public partial class DxExporterOptions : ComponentOptions
     {
         public object exportFormat { get; set; }
@@ -3920,6 +2666,15 @@ namespace DevExpress.Viz
         public string serverUrl { get; set; }
         public bool? showMenu { get; set; }
         public string sourceContainer { get; set; }
+    }
+
+    public static class DxExporterOptionsExportFormat
+    {
+        public const string PNG = "PNG";
+        public const string JPEG = "JPEG";
+        public const string GIF = "GIF";
+        public const string PDF = "PDF";
+        public const string SVG = "SVG";
     }
     public partial class CommonIndicator
     {
@@ -3943,16 +2698,6 @@ namespace DevExpress.Viz
         public float? width { get; set; }
     }
 
-    public static class CommonIndicatorHorizontalOrientation
-    {
-        public const string Left = "left";
-        public const string Right = "right";
-    }
-    public static class CommonIndicatorVerticalOrientation
-    {
-        public const string Bottom = "bottom";
-        public const string Top = "top";
-    }
     public partial class CommonIndicatorText
     {
         public object customizeText { get; set; }
@@ -3961,48 +2706,63 @@ namespace DevExpress.Viz
         public float? indent { get; set; }
         public float? precision { get; set; }
     }
+
     public partial class CircularRectangleNeedle : CommonIndicator
     {
     }
+
     public partial class CircularTriangleNeedle : CommonIndicator
     {
     }
+
     public partial class CircularTwoColorNeedle : CommonIndicator
     {
     }
+
     public partial class CircularRangeBar : CommonIndicator
     {
     }
+
     public partial class CircularTriangleMarker : CommonIndicator
     {
     }
+
     public partial class CircularTextCloud : CommonIndicator
     {
     }
+
     public partial class CircularTextCloudText : CommonIndicatorText
     {
     }
+
     public partial class LinearRectangle : CommonIndicator
     {
     }
+
     public partial class LinearCircle : CommonIndicator
     {
     }
+
     public partial class LinearRhombus : CommonIndicator
     {
     }
+
     public partial class LinearRangeBar : CommonIndicator
     {
     }
+
     public partial class LinearTriangleMarker : CommonIndicator
     {
     }
+
     public partial class LinearTextCloud : CommonIndicator
     {
     }
+
     public partial class LinearTextCloudText : CommonIndicatorText
     {
     }
+
     public partial class ChartPointAggregationInfoObject
     {
         public object aggregationInterval { get; set; }
@@ -4010,12 +2770,14 @@ namespace DevExpress.Viz
         public object intervalEnd { get; set; }
         public object intervalStart { get; set; }
     }
+
     public partial class DxPieChartSeriesTypes
     {
         public object CommonPieChartSeries { get; set; }
         public object DoughnutSeries { get; set; }
         public object PieSeries { get; set; }
     }
+
     public partial class DxPieChartSeriesTypesCommonPieChartSeries
     {
         public string argumentField { get; set; }
@@ -4037,27 +2799,6 @@ namespace DevExpress.Viz
         public string valueField { get; set; }
     }
 
-    public static class DxPieChartSeriesTypesCommonPieChartSeriesArgumentType
-    {
-        public const string Datetime = "datetime";
-        public const string Numeric = "numeric";
-        public const string String = "string";
-    }
-    public static class DxPieChartSeriesTypesCommonPieChartSeriesHoverMode
-    {
-        public const string None = "none";
-        public const string OnlyPoint = "onlyPoint";
-    }
-    public static class DxPieChartSeriesTypesCommonPieChartSeriesSegmentsDirection
-    {
-        public const string Anticlockwise = "anticlockwise";
-        public const string Clockwise = "clockwise";
-    }
-    public static class DxPieChartSeriesTypesCommonPieChartSeriesSelectionMode
-    {
-        public const string None = "none";
-        public const string OnlyPoint = "onlyPoint";
-    }
     public partial class DxPolarChartSeriesTypes
     {
         public object areapolarseries { get; set; }
@@ -4067,44 +2808,19 @@ namespace DevExpress.Viz
         public object scatterpolarseries { get; set; }
         public object stackedbarpolarseries { get; set; }
     }
+
     public partial class DxPolarChartSeriesTypesAreapolarseries : DxPolarChartSeriesTypesCommonPolarChartSeries
     {
     }
 
-    public static class DxPolarChartSeriesTypesAreapolarseriesHoverMode
-    {
-        public const string NearestPoint = "nearestPoint";
-        public const string IncludePoints = "includePoints";
-        public const string ExcludePoints = "excludePoints";
-        public const string None = "none";
-    }
-    public static class DxPolarChartSeriesTypesAreapolarseriesSelectionMode
-    {
-        public const string IncludePoints = "includePoints";
-        public const string ExcludePoints = "excludePoints";
-        public const string None = "none";
-    }
     public partial class DxPolarChartSeriesTypesAreapolarseriesPoint : DxPolarChartSeriesTypesCommonPolarChartSeriesPoint
     {
     }
+
     public partial class DxPolarChartSeriesTypesBarpolarseries : DxPolarChartSeriesTypesCommonPolarChartSeries
     {
     }
 
-    public static class DxPolarChartSeriesTypesBarpolarseriesHoverMode
-    {
-        public const string OnlyPoint = "onlyPoint";
-        public const string AllSeriesPoints = "allSeriesPoints";
-        public const string AllArgumentPoints = "allArgumentPoints";
-        public const string None = "none";
-    }
-    public static class DxPolarChartSeriesTypesBarpolarseriesSelectionMode
-    {
-        public const string OnlyPoint = "onlyPoint";
-        public const string AllSeriesPoints = "allSeriesPoints";
-        public const string AllArgumentPoints = "allArgumentPoints";
-        public const string None = "none";
-    }
     public partial class DxPolarChartSeriesTypesCommonPolarChartSeries
     {
         public string argumentField { get; set; }
@@ -4133,32 +2849,6 @@ namespace DevExpress.Viz
         public float? width { get; set; }
     }
 
-    public static class DxPolarChartSeriesTypesCommonPolarChartSeriesDashStyle
-    {
-        public const string Dash = "dash";
-        public const string Dot = "dot";
-        public const string LongDash = "longDash";
-        public const string Solid = "solid";
-    }
-    public static class DxPolarChartSeriesTypesCommonPolarChartSeriesHoverMode
-    {
-        public const string AllArgumentPoints = "allArgumentPoints";
-        public const string AllSeriesPoints = "allSeriesPoints";
-        public const string ExcludePoints = "excludePoints";
-        public const string IncludePoints = "includePoints";
-        public const string NearestPoint = "nearestPoint";
-        public const string None = "none";
-        public const string OnlyPoint = "onlyPoint";
-    }
-    public static class DxPolarChartSeriesTypesCommonPolarChartSeriesSelectionMode
-    {
-        public const string AllArgumentPoints = "allArgumentPoints";
-        public const string AllSeriesPoints = "allSeriesPoints";
-        public const string ExcludePoints = "excludePoints";
-        public const string IncludePoints = "includePoints";
-        public const string None = "none";
-        public const string OnlyPoint = "onlyPoint";
-    }
     public partial class DxPolarChartSeriesTypesCommonPolarChartSeriesLabel
     {
         public object argumentFormat { get; set; }
@@ -4176,11 +2866,6 @@ namespace DevExpress.Viz
         public bool? visible { get; set; }
     }
 
-    public static class DxPolarChartSeriesTypesCommonPolarChartSeriesLabelPosition
-    {
-        public const string Inside = "inside";
-        public const string Outside = "outside";
-    }
     public partial class DxPolarChartSeriesTypesCommonPolarChartSeriesPoint
     {
         public object border { get; set; }
@@ -4195,72 +2880,18 @@ namespace DevExpress.Viz
         public bool? visible { get; set; }
     }
 
-    public static class DxPolarChartSeriesTypesCommonPolarChartSeriesPointHoverMode
-    {
-        public const string AllArgumentPoints = "allArgumentPoints";
-        public const string AllSeriesPoints = "allSeriesPoints";
-        public const string None = "none";
-        public const string OnlyPoint = "onlyPoint";
-    }
-    public static class DxPolarChartSeriesTypesCommonPolarChartSeriesPointSelectionMode
-    {
-        public const string AllArgumentPoints = "allArgumentPoints";
-        public const string AllSeriesPoints = "allSeriesPoints";
-        public const string None = "none";
-        public const string OnlyPoint = "onlyPoint";
-    }
-    public static class DxPolarChartSeriesTypesCommonPolarChartSeriesPointSymbol
-    {
-        public const string Circle = "circle";
-        public const string Cross = "cross";
-        public const string Polygon = "polygon";
-        public const string Square = "square";
-        public const string Triangle = "triangle";
-    }
     public partial class DxPolarChartSeriesTypesLinepolarseries : DxPolarChartSeriesTypesCommonPolarChartSeries
     {
     }
 
-    public static class DxPolarChartSeriesTypesLinepolarseriesHoverMode
-    {
-        public const string NearestPoint = "nearestPoint";
-        public const string IncludePoints = "includePoints";
-        public const string ExcludePoints = "excludePoints";
-        public const string None = "none";
-    }
-    public static class DxPolarChartSeriesTypesLinepolarseriesSelectionMode
-    {
-        public const string IncludePoints = "includePoints";
-        public const string ExcludePoints = "excludePoints";
-        public const string None = "none";
-    }
     public partial class DxPolarChartSeriesTypesStackedbarpolarseries : DxPolarChartSeriesTypesCommonPolarChartSeries
     {
     }
 
-    public static class DxPolarChartSeriesTypesStackedbarpolarseriesHoverMode
-    {
-        public const string OnlyPoint = "onlyPoint";
-        public const string AllSeriesPoints = "allSeriesPoints";
-        public const string AllArgumentPoints = "allArgumentPoints";
-        public const string None = "none";
-    }
-    public static class DxPolarChartSeriesTypesStackedbarpolarseriesSelectionMode
-    {
-        public const string OnlyPoint = "onlyPoint";
-        public const string AllSeriesPoints = "allSeriesPoints";
-        public const string AllArgumentPoints = "allArgumentPoints";
-        public const string None = "none";
-    }
     public partial class DxPolarChartSeriesTypesStackedbarpolarseriesLabel : DxPolarChartSeriesTypesCommonPolarChartSeriesLabel
     {
     }
 
-    public static class DxPolarChartSeriesTypesStackedbarpolarseriesLabelPosition
-    {
-        public const string Inside = "inside";
-        public const string Outside = "outside";
-    }
     public partial class Font
     {
         public string color { get; set; }
@@ -4269,6 +2900,7 @@ namespace DevExpress.Viz
         public object size { get; set; }
         public float? weight { get; set; }
     }
+
 }
 namespace DevExpress.Viz.Charts
 {
@@ -4310,31 +2942,6 @@ namespace DevExpress.Viz.Charts
         public string zoomingMode { get; set; }
     }
 
-    public static class DxChartOptionsResolveLabelOverlapping
-    {
-        public const string Hide = "hide";
-        public const string None = "none";
-        public const string Stack = "stack";
-    }
-    public static class DxChartOptionsScrollingMode
-    {
-        public const string All = "all";
-        public const string Mouse = "mouse";
-        public const string None = "none";
-        public const string Touch = "touch";
-    }
-    public static class DxChartOptionsSeriesSelectionMode
-    {
-        public const string Multiple = "multiple";
-        public const string Single = "single";
-    }
-    public static class DxChartOptionsZoomingMode
-    {
-        public const string All = "all";
-        public const string Mouse = "mouse";
-        public const string None = "none";
-        public const string Touch = "touch";
-    }
     public partial class DxChartArgumentAxis : DxChartCommonAxisSettings
     {
         public float? aggregationGroupWidth { get; set; }
@@ -4357,37 +2964,14 @@ namespace DevExpress.Viz.Charts
         public object tickInterval { get; set; }
         public string type { get; set; }
         public bool? workdaysOnly { get; set; }
-        public float workWeek { get; set; }
+        public object workWeek { get; set; }
     }
 
-    public static class DxChartArgumentAxisArgumentType
-    {
-        public const string Datetime = "datetime";
-        public const string Numeric = "numeric";
-        public const string String = "string";
-    }
-    public static class DxChartArgumentAxisHoverMode
-    {
-        public const string AllArgumentPoints = "allArgumentPoints";
-        public const string None = "none";
-    }
-    public static class DxChartArgumentAxisPosition
-    {
-        public const string Bottom = "bottom";
-        public const string Left = "left";
-        public const string Right = "right";
-        public const string Top = "top";
-    }
-    public static class DxChartArgumentAxisType
-    {
-        public const string Continuous = "continuous";
-        public const string Discrete = "discrete";
-        public const string Logarithmic = "logarithmic";
-    }
     public partial class DxChartArgumentAxisConstantLines : DxChartCommonAxisSettingsConstantLineStyle
     {
         public object value { get; set; }
     }
+
     public partial class DxChartArgumentAxisConstantLinesLabel : DxChartCommonAxisSettingsConstantLineStyleLabel
     {
         public string horizontalAlignment { get; set; }
@@ -4395,39 +2979,16 @@ namespace DevExpress.Viz.Charts
         public string verticalAlignment { get; set; }
     }
 
-    public static class DxChartArgumentAxisConstantLinesLabelHorizontalAlignment
-    {
-        public const string Center = "center";
-        public const string Left = "left";
-        public const string Right = "right";
-    }
-    public static class DxChartArgumentAxisConstantLinesLabelVerticalAlignment
-    {
-        public const string Bottom = "bottom";
-        public const string Center = "center";
-        public const string Top = "top";
-    }
     public partial class DxChartArgumentAxisConstantLineStyle : DxChartCommonAxisSettingsConstantLineStyle
     {
     }
+
     public partial class DxChartArgumentAxisConstantLineStyleLabel : DxChartCommonAxisSettingsConstantLineStyleLabel
     {
         public string horizontalAlignment { get; set; }
         public string verticalAlignment { get; set; }
     }
 
-    public static class DxChartArgumentAxisConstantLineStyleLabelHorizontalAlignment
-    {
-        public const string Center = "center";
-        public const string Left = "left";
-        public const string Right = "right";
-    }
-    public static class DxChartArgumentAxisConstantLineStyleLabelVerticalAlignment
-    {
-        public const string Bottom = "bottom";
-        public const string Center = "center";
-        public const string Top = "top";
-    }
     public partial class DxChartArgumentAxisLabel : DxChartCommonAxisSettingsLabel
     {
         public object customizeHint { get; set; }
@@ -4435,20 +2996,24 @@ namespace DevExpress.Viz.Charts
         public object format { get; set; }
         public float? precision { get; set; }
     }
+
     public partial class DxChartArgumentAxisStrips : DxChartCommonAxisSettingsStripStyle
     {
         public string color { get; set; }
         public object endValue { get; set; }
         public object startValue { get; set; }
     }
+
     public partial class DxChartArgumentAxisStripsLabel : DxChartCommonAxisSettingsStripStyleLabel
     {
         public string text { get; set; }
     }
+
     public partial class DxChartArgumentAxisTitle : DxChartCommonAxisSettingsTitle
     {
         public string text { get; set; }
     }
+
     public partial class DxChartCommonAxisSettings
     {
         public bool? allowDecimals { get; set; }
@@ -4475,11 +3040,6 @@ namespace DevExpress.Viz.Charts
         public float? width { get; set; }
     }
 
-    public static class DxChartCommonAxisSettingsDiscreteAxisDivisionMode
-    {
-        public const string BetweenLabels = "betweenLabels";
-        public const string CrossLabels = "crossLabels";
-    }
     public partial class DxChartCommonAxisSettingsConstantLineStyle
     {
         public string color { get; set; }
@@ -4490,13 +3050,6 @@ namespace DevExpress.Viz.Charts
         public float? width { get; set; }
     }
 
-    public static class DxChartCommonAxisSettingsConstantLineStyleDashStyle
-    {
-        public const string Dash = "dash";
-        public const string Dot = "dot";
-        public const string LongDash = "longDash";
-        public const string Solid = "solid";
-    }
     public partial class DxChartCommonAxisSettingsConstantLineStyleLabel
     {
         public object font { get; set; }
@@ -4504,11 +3057,6 @@ namespace DevExpress.Viz.Charts
         public bool? visible { get; set; }
     }
 
-    public static class DxChartCommonAxisSettingsConstantLineStyleLabelPosition
-    {
-        public const string Inside = "inside";
-        public const string Outside = "outside";
-    }
     public partial class DxChartCommonAxisSettingsLabel
     {
         public string alignment { get; set; }
@@ -4521,24 +3069,13 @@ namespace DevExpress.Viz.Charts
         public bool? visible { get; set; }
     }
 
-    public static class DxChartCommonAxisSettingsLabelAlignment
-    {
-        public const string Center = "center";
-        public const string Left = "left";
-        public const string Right = "right";
-    }
-    public static class DxChartCommonAxisSettingsLabelDisplayMode
-    {
-        public const string Rotate = "rotate";
-        public const string Stagger = "stagger";
-        public const string Standard = "standard";
-    }
     public partial class DxChartCommonAxisSettingsStripStyle
     {
         public object label { get; set; }
         public float? paddingLeftRight { get; set; }
         public float? paddingTopBottom { get; set; }
     }
+
     public partial class DxChartCommonAxisSettingsStripStyleLabel
     {
         public object font { get; set; }
@@ -4546,28 +3083,18 @@ namespace DevExpress.Viz.Charts
         public string verticalAlignment { get; set; }
     }
 
-    public static class DxChartCommonAxisSettingsStripStyleLabelHorizontalAlignment
-    {
-        public const string Center = "center";
-        public const string Left = "left";
-        public const string Right = "right";
-    }
-    public static class DxChartCommonAxisSettingsStripStyleLabelVerticalAlignment
-    {
-        public const string Bottom = "bottom";
-        public const string Center = "center";
-        public const string Top = "top";
-    }
     public partial class DxChartCommonAxisSettingsTitle
     {
         public object font { get; set; }
         public float? margin { get; set; }
     }
+
     public partial class DxChartCommonPaneSettings
     {
         public string backgroundColor { get; set; }
         public object border { get; set; }
     }
+
     public partial class DxChartCommonSeriesSettings : DxChartSeriesTypesCommonSeries
     {
         public object area { get; set; }
@@ -4596,32 +3123,6 @@ namespace DevExpress.Viz.Charts
         public string type { get; set; }
     }
 
-    public static class DxChartCommonSeriesSettingsType
-    {
-        public const string Area = "area";
-        public const string Bar = "bar";
-        public const string Bubble = "bubble";
-        public const string Candlestick = "candlestick";
-        public const string Fullstackedarea = "fullstackedarea";
-        public const string Fullstackedbar = "fullstackedbar";
-        public const string Fullstackedline = "fullstackedline";
-        public const string Fullstackedspline = "fullstackedspline";
-        public const string Fullstackedsplinearea = "fullstackedsplinearea";
-        public const string Line = "line";
-        public const string Rangearea = "rangearea";
-        public const string Rangebar = "rangebar";
-        public const string Scatter = "scatter";
-        public const string Spline = "spline";
-        public const string Splinearea = "splinearea";
-        public const string Stackedarea = "stackedarea";
-        public const string Stackedbar = "stackedbar";
-        public const string Stackedline = "stackedline";
-        public const string Stackedspline = "stackedspline";
-        public const string Stackedsplinearea = "stackedsplinearea";
-        public const string Steparea = "steparea";
-        public const string Stepline = "stepline";
-        public const string Stock = "stock";
-    }
     public partial class DxChartLegend : BaseChartLegend
     {
         public object customizeHint { get; set; }
@@ -4630,21 +3131,11 @@ namespace DevExpress.Viz.Charts
         public string position { get; set; }
     }
 
-    public static class DxChartLegendHoverMode
-    {
-        public const string ExcludePoints = "excludePoints";
-        public const string IncludePoints = "includePoints";
-        public const string None = "none";
-    }
-    public static class DxChartLegendPosition
-    {
-        public const string Inside = "inside";
-        public const string Outside = "outside";
-    }
     public partial class DxChartPanes : DxChartCommonPaneSettings
     {
         public string name { get; set; }
     }
+
     public partial class DxChartSeries : DxChartSeriesTypesCommonSeries
     {
         public string name { get; set; }
@@ -4652,43 +3143,12 @@ namespace DevExpress.Viz.Charts
         public string type { get; set; }
     }
 
-    public static class DxChartSeriesType
-    {
-        public const string Area = "area";
-        public const string Bar = "bar";
-        public const string Bubble = "bubble";
-        public const string Candlestick = "candlestick";
-        public const string Fullstackedarea = "fullstackedarea";
-        public const string Fullstackedbar = "fullstackedbar";
-        public const string Fullstackedline = "fullstackedline";
-        public const string Fullstackedspline = "fullstackedspline";
-        public const string Fullstackedsplinearea = "fullstackedsplinearea";
-        public const string Line = "line";
-        public const string Rangearea = "rangearea";
-        public const string Rangebar = "rangebar";
-        public const string Scatter = "scatter";
-        public const string Spline = "spline";
-        public const string Splinearea = "splinearea";
-        public const string Stackedarea = "stackedarea";
-        public const string Stackedbar = "stackedbar";
-        public const string Stackedline = "stackedline";
-        public const string Stackedspline = "stackedspline";
-        public const string Stackedsplinearea = "stackedsplinearea";
-        public const string Steparea = "steparea";
-        public const string Stepline = "stepline";
-        public const string Stock = "stock";
-    }
     public partial class DxChartTooltip : BaseChartTooltip
     {
         public string location { get; set; }
         public bool? shared { get; set; }
     }
 
-    public static class DxChartTooltipLocation
-    {
-        public const string Center = "center";
-        public const string Edge = "edge";
-    }
     public partial class DxChartValueAxis : DxChartCommonAxisSettings
     {
         public bool? autoBreaksEnabled { get; set; }
@@ -4714,29 +3174,11 @@ namespace DevExpress.Viz.Charts
         public string valueType { get; set; }
     }
 
-    public static class DxChartValueAxisPosition
-    {
-        public const string Bottom = "bottom";
-        public const string Left = "left";
-        public const string Right = "right";
-        public const string Top = "top";
-    }
-    public static class DxChartValueAxisType
-    {
-        public const string Continuous = "continuous";
-        public const string Discrete = "discrete";
-        public const string Logarithmic = "logarithmic";
-    }
-    public static class DxChartValueAxisValueType
-    {
-        public const string Datetime = "datetime";
-        public const string Numeric = "numeric";
-        public const string String = "string";
-    }
     public partial class DxChartValueAxisConstantLines : DxChartCommonAxisSettingsConstantLineStyle
     {
         public object value { get; set; }
     }
+
     public partial class DxChartValueAxisConstantLinesLabel : DxChartCommonAxisSettingsConstantLineStyleLabel
     {
         public string horizontalAlignment { get; set; }
@@ -4744,39 +3186,16 @@ namespace DevExpress.Viz.Charts
         public string verticalAlignment { get; set; }
     }
 
-    public static class DxChartValueAxisConstantLinesLabelHorizontalAlignment
-    {
-        public const string Center = "center";
-        public const string Left = "left";
-        public const string Right = "right";
-    }
-    public static class DxChartValueAxisConstantLinesLabelVerticalAlignment
-    {
-        public const string Bottom = "bottom";
-        public const string Center = "center";
-        public const string Top = "top";
-    }
     public partial class DxChartValueAxisConstantLineStyle : DxChartCommonAxisSettingsConstantLineStyle
     {
     }
+
     public partial class DxChartValueAxisConstantLineStyleLabel : DxChartCommonAxisSettingsConstantLineStyleLabel
     {
         public string horizontalAlignment { get; set; }
         public string verticalAlignment { get; set; }
     }
 
-    public static class DxChartValueAxisConstantLineStyleLabelHorizontalAlignment
-    {
-        public const string Center = "center";
-        public const string Left = "left";
-        public const string Right = "right";
-    }
-    public static class DxChartValueAxisConstantLineStyleLabelVerticalAlignment
-    {
-        public const string Bottom = "bottom";
-        public const string Center = "center";
-        public const string Top = "top";
-    }
     public partial class DxChartValueAxisLabel : DxChartCommonAxisSettingsLabel
     {
         public object customizeHint { get; set; }
@@ -4784,20 +3203,24 @@ namespace DevExpress.Viz.Charts
         public object format { get; set; }
         public float? precision { get; set; }
     }
+
     public partial class DxChartValueAxisStrips : DxChartCommonAxisSettingsStripStyle
     {
         public string color { get; set; }
         public object endValue { get; set; }
         public object startValue { get; set; }
     }
+
     public partial class DxChartValueAxisStripsLabel : DxChartCommonAxisSettingsStripStyleLabel
     {
         public string text { get; set; }
     }
+
     public partial class DxChartValueAxisTitle : DxChartCommonAxisSettingsTitle
     {
         public string text { get; set; }
     }
+
     public partial class DxPieChartOptions : BaseChartOptions
     {
         public object commonSeriesSettings { get; set; }
@@ -4813,37 +3236,15 @@ namespace DevExpress.Viz.Charts
         public string type { get; set; }
     }
 
-    public static class DxPieChartOptionsResolveLabelOverlapping
-    {
-        public const string Hide = "hide";
-        public const string None = "none";
-        public const string Shift = "shift";
-    }
-    public static class DxPieChartOptionsSegmentsDirection
-    {
-        public const string Anticlockwise = "anticlockwise";
-        public const string Clockwise = "clockwise";
-    }
-    public static class DxPieChartOptionsType
-    {
-        public const string Donut = "donut";
-        public const string Doughnut = "doughnut";
-        public const string Pie = "pie";
-    }
     public partial class DxPieChartAdaptiveLayout : BaseChartAdaptiveLayout
     {
     }
+
     public partial class DxPieChartCommonSeriesSettings : DxPieChartSeriesTypesCommonPieChartSeries
     {
         public string type { get; set; }
     }
 
-    public static class DxPieChartCommonSeriesSettingsType
-    {
-        public const string Donut = "donut";
-        public const string Doughnut = "doughnut";
-        public const string Pie = "pie";
-    }
     public partial class DxPieChartLegend : BaseChartLegend
     {
         public object customizeHint { get; set; }
@@ -4851,11 +3252,6 @@ namespace DevExpress.Viz.Charts
         public string hoverMode { get; set; }
     }
 
-    public static class DxPieChartLegendHoverMode
-    {
-        public const string None = "none";
-        public const string AllArgumentPoints = "allArgumentPoints";
-    }
     public partial class DxPieChartSeries : DxPieChartSeriesTypesCommonPieChartSeries
     {
         public string name { get; set; }
@@ -4863,12 +3259,6 @@ namespace DevExpress.Viz.Charts
         public string type { get; set; }
     }
 
-    public static class DxPieChartSeriesType
-    {
-        public const string Donut = "donut";
-        public const string Doughnut = "doughnut";
-        public const string Pie = "pie";
-    }
     public partial class DxPolarChartOptions : BaseChartOptions
     {
         public object argumentAxis { get; set; }
@@ -4893,19 +3283,10 @@ namespace DevExpress.Viz.Charts
         public object valueAxis { get; set; }
     }
 
-    public static class DxPolarChartOptionsResolveLabelOverlapping
-    {
-        public const string Hide = "hide";
-        public const string None = "none";
-    }
-    public static class DxPolarChartOptionsSeriesSelectionMode
-    {
-        public const string Multiple = "multiple";
-        public const string Single = "single";
-    }
     public partial class DxPolarChartAdaptiveLayout : BaseChartAdaptiveLayout
     {
     }
+
     public partial class DxPolarChartArgumentAxis : DxPolarChartCommonAxisSettings
     {
         public string argumentType { get; set; }
@@ -4925,31 +3306,16 @@ namespace DevExpress.Viz.Charts
         public string type { get; set; }
     }
 
-    public static class DxPolarChartArgumentAxisArgumentType
-    {
-        public const string Datetime = "datetime";
-        public const string Numeric = "numeric";
-        public const string String = "string";
-    }
-    public static class DxPolarChartArgumentAxisHoverMode
-    {
-        public const string AllArgumentPoints = "allArgumentPoints";
-        public const string None = "none";
-    }
-    public static class DxPolarChartArgumentAxisType
-    {
-        public const string Continuous = "continuous";
-        public const string Discrete = "discrete";
-        public const string Logarithmic = "logarithmic";
-    }
     public partial class DxPolarChartArgumentAxisConstantLines : DxPolarChartCommonAxisSettingsConstantLineStyle
     {
         public object value { get; set; }
     }
+
     public partial class DxPolarChartArgumentAxisConstantLinesLabel : DxPolarChartCommonAxisSettingsConstantLineStyleLabel
     {
         public string text { get; set; }
     }
+
     public partial class DxPolarChartArgumentAxisLabel : DxPolarChartCommonAxisSettingsLabel
     {
         public object customizeHint { get; set; }
@@ -4957,16 +3323,19 @@ namespace DevExpress.Viz.Charts
         public object format { get; set; }
         public float? precision { get; set; }
     }
+
     public partial class DxPolarChartArgumentAxisStrips : DxPolarChartCommonAxisSettingsStripStyle
     {
         public string color { get; set; }
         public object endValue { get; set; }
         public object startValue { get; set; }
     }
+
     public partial class DxPolarChartArgumentAxisStripsLabel : DxPolarChartCommonAxisSettingsStripStyleLabel
     {
         public string text { get; set; }
     }
+
     public partial class DxPolarChartCommonAxisSettings
     {
         public bool? allowDecimals { get; set; }
@@ -4987,11 +3356,6 @@ namespace DevExpress.Viz.Charts
         public float? width { get; set; }
     }
 
-    public static class DxPolarChartCommonAxisSettingsDiscreteAxisDivisionMode
-    {
-        public const string BetweenLabels = "betweenLabels";
-        public const string CrossLabels = "crossLabels";
-    }
     public partial class DxPolarChartCommonAxisSettingsConstantLineStyle
     {
         public string color { get; set; }
@@ -5000,18 +3364,12 @@ namespace DevExpress.Viz.Charts
         public float? width { get; set; }
     }
 
-    public static class DxPolarChartCommonAxisSettingsConstantLineStyleDashStyle
-    {
-        public const string Dash = "dash";
-        public const string Dot = "dot";
-        public const string LongDash = "longDash";
-        public const string Solid = "solid";
-    }
     public partial class DxPolarChartCommonAxisSettingsConstantLineStyleLabel
     {
         public object font { get; set; }
         public bool? visible { get; set; }
     }
+
     public partial class DxPolarChartCommonAxisSettingsLabel
     {
         public object font { get; set; }
@@ -5020,19 +3378,16 @@ namespace DevExpress.Viz.Charts
         public bool? visible { get; set; }
     }
 
-    public static class DxPolarChartCommonAxisSettingsLabelOverlappingBehavior
-    {
-        public const string Hide = "hide";
-        public const string None = "none";
-    }
     public partial class DxPolarChartCommonAxisSettingsStripStyle
     {
         public object label { get; set; }
     }
+
     public partial class DxPolarChartCommonAxisSettingsStripStyleLabel
     {
         public object font { get; set; }
     }
+
     public partial class DxPolarChartCommonAxisSettingsTick
     {
         public string color { get; set; }
@@ -5041,6 +3396,7 @@ namespace DevExpress.Viz.Charts
         public bool? visible { get; set; }
         public float? width { get; set; }
     }
+
     public partial class DxPolarChartCommonSeriesSettings : DxPolarChartSeriesTypesCommonPolarChartSeries
     {
         public object area { get; set; }
@@ -5051,14 +3407,6 @@ namespace DevExpress.Viz.Charts
         public string type { get; set; }
     }
 
-    public static class DxPolarChartCommonSeriesSettingsType
-    {
-        public const string Area = "area";
-        public const string Bar = "bar";
-        public const string Line = "line";
-        public const string Scatter = "scatter";
-        public const string Stackedbar = "stackedbar";
-    }
     public partial class DxPolarChartLegend : BaseChartLegend
     {
         public object customizeHint { get; set; }
@@ -5066,12 +3414,6 @@ namespace DevExpress.Viz.Charts
         public string hoverMode { get; set; }
     }
 
-    public static class DxPolarChartLegendHoverMode
-    {
-        public const string ExcludePoints = "excludePoints";
-        public const string IncludePoints = "includePoints";
-        public const string None = "none";
-    }
     public partial class DxPolarChartSeries : DxPolarChartSeriesTypesCommonPolarChartSeries
     {
         public string name { get; set; }
@@ -5079,18 +3421,11 @@ namespace DevExpress.Viz.Charts
         public string type { get; set; }
     }
 
-    public static class DxPolarChartSeriesType
-    {
-        public const string Area = "area";
-        public const string Bar = "bar";
-        public const string Line = "line";
-        public const string Scatter = "scatter";
-        public const string Stackedbar = "stackedbar";
-    }
     public partial class DxPolarChartTooltip : BaseChartTooltip
     {
         public bool? shared { get; set; }
     }
+
     public partial class DxPolarChartValueAxis : DxPolarChartCommonAxisSettings
     {
         public float? axisDivisionFactor { get; set; }
@@ -5109,26 +3444,16 @@ namespace DevExpress.Viz.Charts
         public string valueType { get; set; }
     }
 
-    public static class DxPolarChartValueAxisType
-    {
-        public const string Continuous = "continuous";
-        public const string Discrete = "discrete";
-        public const string Logarithmic = "logarithmic";
-    }
-    public static class DxPolarChartValueAxisValueType
-    {
-        public const string Datetime = "datetime";
-        public const string Numeric = "numeric";
-        public const string String = "string";
-    }
     public partial class DxPolarChartValueAxisConstantLines : DxPolarChartCommonAxisSettingsConstantLineStyle
     {
         public object value { get; set; }
     }
+
     public partial class DxPolarChartValueAxisConstantLinesLabel : DxPolarChartCommonAxisSettingsConstantLineStyleLabel
     {
         public string text { get; set; }
     }
+
     public partial class DxPolarChartValueAxisLabel : DxPolarChartCommonAxisSettingsLabel
     {
         public object customizeHint { get; set; }
@@ -5136,19 +3461,23 @@ namespace DevExpress.Viz.Charts
         public object format { get; set; }
         public float? precision { get; set; }
     }
+
     public partial class DxPolarChartValueAxisStrips : DxPolarChartCommonAxisSettingsStripStyle
     {
         public string color { get; set; }
         public object endValue { get; set; }
         public object startValue { get; set; }
     }
+
     public partial class DxPolarChartValueAxisStripsLabel : DxPolarChartCommonAxisSettingsStripStyleLabel
     {
         public string text { get; set; }
     }
+
     public partial class DxPolarChartValueAxisTick : DxPolarChartCommonAxisSettingsTick
     {
     }
+
     public partial class BaseChartOptions : BaseWidgetOptions
     {
         public object adaptiveLayout { get; set; }
@@ -5169,23 +3498,13 @@ namespace DevExpress.Viz.Charts
         public object series { get; set; }
     }
 
-    public static class BaseChartOptionsPaletteExtensionMode
-    {
-        public const string Alternate = "alternate";
-        public const string Blend = "blend";
-        public const string Extrapolate = "extrapolate";
-    }
-    public static class BaseChartOptionsPointSelectionMode
-    {
-        public const string Multiple = "multiple";
-        public const string Single = "single";
-    }
     public partial class BaseChartAdaptiveLayout
     {
         public float? height { get; set; }
         public bool? keepLabels { get; set; }
         public float? width { get; set; }
     }
+
     public partial class BaseChartLegend
     {
         public string backgroundColor { get; set; }
@@ -5207,35 +3526,6 @@ namespace DevExpress.Viz.Charts
         public bool? visible { get; set; }
     }
 
-    public static class BaseChartLegendHorizontalAlignment
-    {
-        public const string Center = "center";
-        public const string Left = "left";
-        public const string Right = "right";
-    }
-    public static class BaseChartLegendItemsAlignment
-    {
-        public const string Center = "center";
-        public const string Left = "left";
-        public const string Right = "right";
-    }
-    public static class BaseChartLegendItemTextPosition
-    {
-        public const string Bottom = "bottom";
-        public const string Left = "left";
-        public const string Right = "right";
-        public const string Top = "top";
-    }
-    public static class BaseChartLegendOrientation
-    {
-        public const string Horizontal = "horizontal";
-        public const string Vertical = "vertical";
-    }
-    public static class BaseChartLegendVerticalAlignment
-    {
-        public const string Bottom = "bottom";
-        public const string Top = "top";
-    }
     public partial class BaseChartTooltip : BaseWidgetTooltip
     {
         public object argumentFormat { get; set; }
@@ -5243,6 +3533,7 @@ namespace DevExpress.Viz.Charts
         public object customizeTooltip { get; set; }
         public float? percentPrecision { get; set; }
     }
+
 }
 namespace DevExpress.Viz.Funnel
 {
@@ -5271,27 +3562,11 @@ namespace DevExpress.Viz.Funnel
         public string valueField { get; set; }
     }
 
-    public static class DxFunnelOptionsAlgorithm
-    {
-        public const string DynamicHeight = "dynamicHeight";
-        public const string DynamicSlope = "dynamicSlope";
-    }
-    public static class DxFunnelOptionsPaletteExtensionMode
-    {
-        public const string Alternate = "alternate";
-        public const string Blend = "blend";
-        public const string Extrapolate = "extrapolate";
-    }
-    public static class DxFunnelOptionsSelectionMode
-    {
-        public const string Multiple = "multiple";
-        public const string None = "none";
-        public const string Single = "single";
-    }
     public partial class DxFunnelTooltip : BaseWidgetTooltip
     {
         public object customizeTooltip { get; set; }
     }
+
 }
 namespace DevExpress.Viz.Gauges
 {
@@ -5304,9 +3579,10 @@ namespace DevExpress.Viz.Gauges
         public object rangeContainer { get; set; }
         public object scale { get; set; }
         public object subtitle { get; set; }
-        public float subvalues { get; set; }
+        public object subvalues { get; set; }
         public float? value { get; set; }
     }
+
     public partial class BaseGaugeAnimation
     {
         public float? duration { get; set; }
@@ -5314,11 +3590,6 @@ namespace DevExpress.Viz.Gauges
         public bool? enabled { get; set; }
     }
 
-    public static class BaseGaugeAnimationEasing
-    {
-        public const string EaseOutCubic = "easeOutCubic";
-        public const string Linear = "linear";
-    }
     public partial class BaseGaugeRangeContainer
     {
         public string backgroundColor { get; set; }
@@ -5328,17 +3599,11 @@ namespace DevExpress.Viz.Gauges
         public object ranges { get; set; }
     }
 
-    public static class BaseGaugeRangeContainerPaletteExtensionMode
-    {
-        public const string Alternate = "alternate";
-        public const string Blend = "blend";
-        public const string Extrapolate = "extrapolate";
-    }
     public partial class BaseGaugeScale
     {
         public bool? allowDecimals { get; set; }
-        public float customMinorTicks { get; set; }
-        public float customTicks { get; set; }
+        public object customMinorTicks { get; set; }
+        public object customTicks { get; set; }
         public float? endValue { get; set; }
         public bool? hideFirstLabel { get; set; }
         public bool? hideFirstTick { get; set; }
@@ -5352,6 +3617,7 @@ namespace DevExpress.Viz.Gauges
         public object tick { get; set; }
         public float? tickInterval { get; set; }
     }
+
     public partial class BaseGaugeScaleLabel
     {
         public object customizeText { get; set; }
@@ -5362,117 +3628,74 @@ namespace DevExpress.Viz.Gauges
         public bool? useRangeColors { get; set; }
         public bool? visible { get; set; }
     }
+
     public partial class BaseGaugeScaleLabelOverlappingBehavior
     {
         public bool? useAutoArrangement { get; set; }
     }
+
     public partial class BaseGaugeSubtitle
     {
         public object font { get; set; }
         public string text { get; set; }
     }
+
     public partial class BaseGaugeTitle : BaseWidgetTitle
     {
         public string position { get; set; }
     }
 
-    public static class BaseGaugeTitlePosition
-    {
-        public const string BottomCenter = "bottom-center";
-        public const string BottomLeft = "bottom-left";
-        public const string BottomRight = "bottom-right";
-        public const string TopCenter = "top-center";
-        public const string TopLeft = "top-left";
-        public const string TopRight = "top-right";
-    }
     public partial class BaseGaugeTooltip : BaseWidgetTooltip
     {
         public object customizeTooltip { get; set; }
     }
+
     public partial class DxCircularGaugeOptions : BaseGaugeOptions
     {
         public object geometry { get; set; }
         public object subvalueIndicator { get; set; }
         public object valueIndicator { get; set; }
     }
+
     public partial class DxCircularGaugeRangeContainer : BaseGaugeRangeContainer
     {
         public string orientation { get; set; }
         public float? width { get; set; }
     }
 
-    public static class DxCircularGaugeRangeContainerOrientation
-    {
-        public const string Center = "center";
-        public const string Inside = "inside";
-        public const string Outside = "outside";
-    }
     public partial class DxCircularGaugeScale : BaseGaugeScale
     {
         public string orientation { get; set; }
     }
 
-    public static class DxCircularGaugeScaleOrientation
-    {
-        public const string Center = "center";
-        public const string Inside = "inside";
-        public const string Outside = "outside";
-    }
     public partial class DxCircularGaugeScaleLabel : BaseGaugeScaleLabel
     {
         public string hideFirstOrLast { get; set; }
         public float? indentFromTick { get; set; }
     }
 
-    public static class DxCircularGaugeScaleLabelHideFirstOrLast
-    {
-        public const string First = "first";
-        public const string Last = "last";
-    }
     public partial class DxCircularGaugeScaleLabelOverlappingBehavior : BaseGaugeScaleLabelOverlappingBehavior
     {
         public string hideFirstOrLast { get; set; }
     }
 
-    public static class DxCircularGaugeScaleLabelOverlappingBehaviorHideFirstOrLast
-    {
-        public const string First = "first";
-        public const string Last = "last";
-    }
     public partial class DxCircularGaugeSubvalueIndicator : CommonIndicator
     {
         public string type { get; set; }
     }
 
-    public static class DxCircularGaugeSubvalueIndicatorType
-    {
-        public const string RectangleNeedle = "rectangleNeedle";
-        public const string TriangleNeedle = "triangleNeedle";
-        public const string TwoColorNeedle = "twoColorNeedle";
-        public const string RangeBar = "rangeBar";
-        public const string TriangleMarker = "triangleMarker";
-        public const string TextCloud = "textCloud";
-    }
     public partial class DxCircularGaugeValueIndicator : CommonIndicator
     {
         public string type { get; set; }
     }
 
-    public static class DxCircularGaugeValueIndicatorType
-    {
-        public const string RectangleNeedle = "rectangleNeedle";
-        public const string TriangleNeedle = "triangleNeedle";
-        public const string TwoColorNeedle = "twoColorNeedle";
-        public const string RangeBar = "rangeBar";
-        public const string TriangleMarker = "triangleMarker";
-        public const string TextCloud = "textCloud";
-    }
     public partial class DxLinearGaugeOptions : BaseGaugeOptions
     {
         public object geometry { get; set; }
         public object subvalueIndicator { get; set; }
         public object valueIndicator { get; set; }
     }
+
     public partial class DxLinearGaugeRangeContainer : BaseGaugeRangeContainer
     {
         public string horizontalOrientation { get; set; }
@@ -5480,78 +3703,32 @@ namespace DevExpress.Viz.Gauges
         public object width { get; set; }
     }
 
-    public static class DxLinearGaugeRangeContainerHorizontalOrientation
-    {
-        public const string Center = "center";
-        public const string Left = "left";
-        public const string Right = "right";
-    }
-    public static class DxLinearGaugeRangeContainerVerticalOrientation
-    {
-        public const string Bottom = "bottom";
-        public const string Center = "center";
-        public const string Top = "top";
-    }
     public partial class DxLinearGaugeScale : BaseGaugeScale
     {
         public string horizontalOrientation { get; set; }
         public string verticalOrientation { get; set; }
     }
 
-    public static class DxLinearGaugeScaleHorizontalOrientation
-    {
-        public const string Center = "center";
-        public const string Left = "left";
-        public const string Right = "right";
-    }
-    public static class DxLinearGaugeScaleVerticalOrientation
-    {
-        public const string Bottom = "bottom";
-        public const string Center = "center";
-        public const string Top = "top";
-    }
     public partial class DxLinearGaugeScaleLabel : BaseGaugeScaleLabel
     {
         public float? indentFromTick { get; set; }
     }
+
     public partial class DxLinearGaugeScaleLabelOverlappingBehavior : BaseGaugeScaleLabelOverlappingBehavior
     {
         public string hideFirstOrLast { get; set; }
     }
 
-    public static class DxLinearGaugeScaleLabelOverlappingBehaviorHideFirstOrLast
-    {
-        public const string First = "first";
-        public const string Last = "last";
-    }
     public partial class DxLinearGaugeSubvalueIndicator : CommonIndicator
     {
         public string type { get; set; }
     }
 
-    public static class DxLinearGaugeSubvalueIndicatorType
-    {
-        public const string Rectangle = "rectangle";
-        public const string Circle = "circle";
-        public const string Rhombus = "rhombus";
-        public const string RangeBar = "rangeBar";
-        public const string TriangleMarker = "triangleMarker";
-        public const string TextCloud = "textCloud";
-    }
     public partial class DxLinearGaugeValueIndicator : CommonIndicator
     {
         public string type { get; set; }
     }
 
-    public static class DxLinearGaugeValueIndicatorType
-    {
-        public const string Rectangle = "rectangle";
-        public const string Circle = "circle";
-        public const string Rhombus = "rhombus";
-        public const string RangeBar = "rangeBar";
-        public const string TriangleMarker = "triangleMarker";
-        public const string TextCloud = "textCloud";
-    }
     public partial class DxBarGaugeOptions : BaseWidgetOptions
     {
         public object animation { get; set; }
@@ -5568,33 +3745,19 @@ namespace DevExpress.Viz.Gauges
         public float? relativeInnerRadius { get; set; }
         public float? startValue { get; set; }
         public object subtitle { get; set; }
-        public float values { get; set; }
+        public object values { get; set; }
     }
 
-    public static class DxBarGaugeOptionsPaletteExtensionMode
-    {
-        public const string Alternate = "alternate";
-        public const string Blend = "blend";
-        public const string Extrapolate = "extrapolate";
-    }
     public partial class DxBarGaugeTitle : BaseWidgetTitle
     {
         public string position { get; set; }
     }
 
-    public static class DxBarGaugeTitlePosition
-    {
-        public const string BottomCenter = "bottom-center";
-        public const string BottomLeft = "bottom-left";
-        public const string BottomRight = "bottom-right";
-        public const string TopCenter = "top-center";
-        public const string TopLeft = "top-left";
-        public const string TopRight = "top-right";
-    }
     public partial class DxBarGaugeTooltip : BaseWidgetTooltip
     {
         public object customizeTooltip { get; set; }
     }
+
 }
 namespace DevExpress.Viz.RangeSelector
 {
@@ -5617,6 +3780,7 @@ namespace DevExpress.Viz.RangeSelector
         public object sliderMarker { get; set; }
         public object value { get; set; }
     }
+
 }
 namespace DevExpress.Viz.Sparklines
 {
@@ -5625,6 +3789,7 @@ namespace DevExpress.Viz.Sparklines
         public bool? onTooltipHiddenEnabled { get; set; }
         public bool? onTooltipShownEnabled { get; set; }
     }
+
     public partial class BaseSparklineTooltip : BaseWidgetTooltip
     {
         public object customizeTooltip { get; set; }
@@ -5632,17 +3797,6 @@ namespace DevExpress.Viz.Sparklines
         public string verticalAlignment { get; set; }
     }
 
-    public static class BaseSparklineTooltipHorizontalAlignment
-    {
-        public const string Center = "center";
-        public const string Left = "left";
-        public const string Right = "right";
-    }
-    public static class BaseSparklineTooltipVerticalAlignment
-    {
-        public const string Bottom = "bottom";
-        public const string Top = "top";
-    }
     public partial class DxSparklineOptions : BaseSparklineOptions
     {
         public string argumentField { get; set; }
@@ -5669,25 +3823,6 @@ namespace DevExpress.Viz.Sparklines
         public float? winlossThreshold { get; set; }
     }
 
-    public static class DxSparklineOptionsPointSymbol
-    {
-        public const string Circle = "circle";
-        public const string Cross = "cross";
-        public const string Polygon = "polygon";
-        public const string Square = "square";
-        public const string Triangle = "triangle";
-    }
-    public static class DxSparklineOptionsType
-    {
-        public const string Area = "area";
-        public const string Bar = "bar";
-        public const string Line = "line";
-        public const string Spline = "spline";
-        public const string Splinearea = "splinearea";
-        public const string Steparea = "steparea";
-        public const string Stepline = "stepline";
-        public const string Winloss = "winloss";
-    }
     public partial class DxBulletOptions : BaseSparklineOptions
     {
         public string color { get; set; }
@@ -5700,6 +3835,7 @@ namespace DevExpress.Viz.Sparklines
         public float? targetWidth { get; set; }
         public float? value { get; set; }
     }
+
 }
 namespace DevExpress.Viz.Map
 {
@@ -5707,8 +3843,8 @@ namespace DevExpress.Viz.Map
     {
         public object areaSettings { get; set; }
         public object background { get; set; }
-        public float bounds { get; set; }
-        public float center { get; set; }
+        public object bounds { get; set; }
+        public object center { get; set; }
         public object controlBar { get; set; }
         public object layers { get; set; }
         public object legends { get; set; }
@@ -5733,13 +3869,14 @@ namespace DevExpress.Viz.Map
         public float? zoomFactor { get; set; }
         public bool? zoomingEnabled { get; set; }
     }
+
     public partial class DxVectorMapAreaSettings
     {
         public string borderColor { get; set; }
         public float? borderWidth { get; set; }
         public string color { get; set; }
         public string colorGroupingField { get; set; }
-        public float colorGroups { get; set; }
+        public object colorGroups { get; set; }
         public object customize { get; set; }
         public string hoveredBorderColor { get; set; }
         public float? hoveredBorderWidth { get; set; }
@@ -5754,19 +3891,13 @@ namespace DevExpress.Viz.Map
         public string selectionMode { get; set; }
     }
 
-    public static class DxVectorMapAreaSettingsSelectionMode
-    {
-        public const string Multiple = "multiple";
-        public const string None = "none";
-        public const string Single = "single";
-    }
     public partial class DxVectorMapMarkerSettings
     {
         public string borderColor { get; set; }
         public float? borderWidth { get; set; }
         public string color { get; set; }
         public string colorGroupingField { get; set; }
-        public float colorGroups { get; set; }
+        public object colorGroups { get; set; }
         public object customize { get; set; }
         public string hoveredBorderColor { get; set; }
         public float? hoveredBorderWidth { get; set; }
@@ -5783,27 +3914,15 @@ namespace DevExpress.Viz.Map
         public string selectionMode { get; set; }
         public float? size { get; set; }
         public string sizeGroupingField { get; set; }
-        public float sizeGroups { get; set; }
+        public object sizeGroups { get; set; }
         public string type { get; set; }
     }
 
-    public static class DxVectorMapMarkerSettingsSelectionMode
-    {
-        public const string Multiple = "multiple";
-        public const string None = "none";
-        public const string Single = "single";
-    }
-    public static class DxVectorMapMarkerSettingsType
-    {
-        public const string Bubble = "bubble";
-        public const string Dot = "dot";
-        public const string Image = "image";
-        public const string Pie = "pie";
-    }
     public partial class DxVectorMapTooltip : BaseWidgetTooltip
     {
         public object customizeTooltip { get; set; }
     }
+
 }
 namespace DevExpress.Viz.TreeMap
 {
@@ -5834,26 +3953,9 @@ namespace DevExpress.Viz.TreeMap
         public string valueField { get; set; }
     }
 
-    public static class DxTreeMapOptionsLayoutDirection
-    {
-        public const string LeftBottomRightTop = "leftBottomRightTop";
-        public const string LeftTopRightBottom = "leftTopRightBottom";
-        public const string RightBottomLeftTop = "rightBottomLeftTop";
-        public const string RightTopLeftBottom = "rightTopLeftBottom";
-    }
-    public static class DxTreeMapOptionsResolveLabelOverflow
-    {
-        public const string Ellipsis = "ellipsis";
-        public const string Hide = "hide";
-    }
-    public static class DxTreeMapOptionsSelectionMode
-    {
-        public const string Multiple = "multiple";
-        public const string None = "none";
-        public const string Single = "single";
-    }
     public partial class DxTreeMapTooltip : BaseWidgetTooltip
     {
         public object customizeTooltip { get; set; }
     }
+
 }

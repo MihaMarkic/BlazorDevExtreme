@@ -1,0 +1,44 @@
+@implements IDisposable
+@inherits DxBlazorCompoment<DevExpress.Ui.DxTrackBarOptions>
+
+<div id="@Id"></div>
+
+@functions {
+	public DxTrackBar() : base("DxTrackBar") { }
+	protected override DevExpress.Ui.DxTrackBarOptions CreateOptions() {
+		return new DevExpress.Ui.DxTrackBarOptions {
+			max = max,
+			min = min,
+		};
+	}
+	protected override void Init(DevExpress.Ui.DxTrackBarOptions options) {
+		DevExpress.Ui.DxTrackBarInterop.Init(Id, options);
+	}
+	float? max;
+	public float? Max {
+		get => isInitialized ? DevExpress.Ui.DxTrackBarInterop.GetMax(Id) : max;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTrackBarInterop.SetMax(Id, value);
+			} else {
+				this.max = value;
+			}
+		}
+	}
+	float? min;
+	public float? Min {
+		get => isInitialized ? DevExpress.Ui.DxTrackBarInterop.GetMin(Id) : min;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTrackBarInterop.SetMin(Id, value);
+			} else {
+				this.min = value;
+			}
+		}
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+	}
+	public void Dispose() {
+	}
+}

@@ -10,6 +10,7 @@
 			animationEnabled = animationEnabled,
 			focusStateEnabled = focusStateEnabled,
 			hoverStateEnabled = hoverStateEnabled,
+			itemTitleTemplate = itemTitleTemplate,
 			scrollByContent = scrollByContent,
 			scrollingEnabled = scrollingEnabled,
 			showNavButtons = showNavButtons,
@@ -20,14 +21,14 @@
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxTabPanelOptions options) {
-		DxTabPanelInterop.Init(Id, options);
+		DevExpress.Ui.DxTabPanelInterop.Init(Id, options);
 	}
 	bool? animationEnabled;
 	public bool? AnimationEnabled {
-		get => isInitialized ? DxTabPanelInterop.GetAnimationEnabled(Id) : animationEnabled;
+		get => isInitialized ? DevExpress.Ui.DxTabPanelInterop.GetAnimationEnabled(Id) : animationEnabled;
 		set {
 			if (isInitialized) {
-				DxTabPanelInterop.SetAnimationEnabled(Id, value);
+				DevExpress.Ui.DxTabPanelInterop.SetAnimationEnabled(Id, value);
 			} else {
 				this.animationEnabled = value;
 			}
@@ -35,10 +36,10 @@
 	}
 	bool? focusStateEnabled;
 	public bool? FocusStateEnabled {
-		get => isInitialized ? DxTabPanelInterop.GetFocusStateEnabled(Id) : focusStateEnabled;
+		get => isInitialized ? DevExpress.Ui.DxTabPanelInterop.GetFocusStateEnabled(Id) : focusStateEnabled;
 		set {
 			if (isInitialized) {
-				DxTabPanelInterop.SetFocusStateEnabled(Id, value);
+				DevExpress.Ui.DxTabPanelInterop.SetFocusStateEnabled(Id, value);
 			} else {
 				this.focusStateEnabled = value;
 			}
@@ -46,21 +47,32 @@
 	}
 	bool? hoverStateEnabled;
 	public bool? HoverStateEnabled {
-		get => isInitialized ? DxTabPanelInterop.GetHoverStateEnabled(Id) : hoverStateEnabled;
+		get => isInitialized ? DevExpress.Ui.DxTabPanelInterop.GetHoverStateEnabled(Id) : hoverStateEnabled;
 		set {
 			if (isInitialized) {
-				DxTabPanelInterop.SetHoverStateEnabled(Id, value);
+				DevExpress.Ui.DxTabPanelInterop.SetHoverStateEnabled(Id, value);
 			} else {
 				this.hoverStateEnabled = value;
 			}
 		}
 	}
-	bool? scrollByContent;
-	public bool? ScrollByContent {
-		get => isInitialized ? DxTabPanelInterop.GetScrollByContent(Id) : scrollByContent;
+	object itemTitleTemplate;
+	public object ItemTitleTemplate {
+		get => isInitialized ? DevExpress.Ui.DxTabPanelInterop.GetItemTitleTemplate(Id) : itemTitleTemplate;
 		set {
 			if (isInitialized) {
-				DxTabPanelInterop.SetScrollByContent(Id, value);
+				DevExpress.Ui.DxTabPanelInterop.SetItemTitleTemplate(Id, value);
+			} else {
+				this.itemTitleTemplate = value;
+			}
+		}
+	}
+	bool? scrollByContent;
+	public bool? ScrollByContent {
+		get => isInitialized ? DevExpress.Ui.DxTabPanelInterop.GetScrollByContent(Id) : scrollByContent;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTabPanelInterop.SetScrollByContent(Id, value);
 			} else {
 				this.scrollByContent = value;
 			}
@@ -68,10 +80,10 @@
 	}
 	bool? scrollingEnabled;
 	public bool? ScrollingEnabled {
-		get => isInitialized ? DxTabPanelInterop.GetScrollingEnabled(Id) : scrollingEnabled;
+		get => isInitialized ? DevExpress.Ui.DxTabPanelInterop.GetScrollingEnabled(Id) : scrollingEnabled;
 		set {
 			if (isInitialized) {
-				DxTabPanelInterop.SetScrollingEnabled(Id, value);
+				DevExpress.Ui.DxTabPanelInterop.SetScrollingEnabled(Id, value);
 			} else {
 				this.scrollingEnabled = value;
 			}
@@ -79,10 +91,10 @@
 	}
 	bool? showNavButtons;
 	public bool? ShowNavButtons {
-		get => isInitialized ? DxTabPanelInterop.GetShowNavButtons(Id) : showNavButtons;
+		get => isInitialized ? DevExpress.Ui.DxTabPanelInterop.GetShowNavButtons(Id) : showNavButtons;
 		set {
 			if (isInitialized) {
-				DxTabPanelInterop.SetShowNavButtons(Id, value);
+				DevExpress.Ui.DxTabPanelInterop.SetShowNavButtons(Id, value);
 			} else {
 				this.showNavButtons = value;
 			}
@@ -90,10 +102,10 @@
 	}
 	bool? swipeEnabled;
 	public bool? SwipeEnabled {
-		get => isInitialized ? DxTabPanelInterop.GetSwipeEnabled(Id) : swipeEnabled;
+		get => isInitialized ? DevExpress.Ui.DxTabPanelInterop.GetSwipeEnabled(Id) : swipeEnabled;
 		set {
 			if (isInitialized) {
-				DxTabPanelInterop.SetSwipeEnabled(Id, value);
+				DevExpress.Ui.DxTabPanelInterop.SetSwipeEnabled(Id, value);
 			} else {
 				this.swipeEnabled = value;
 			}
@@ -116,9 +128,9 @@
 	}
 	protected override async Task OnInitAsync() {
 		await base.OnInitAsync();
-		DxTabPanelInterop.TitleClick += DxTabPanel_TitleClick;
-		DxTabPanelInterop.TitleHold += DxTabPanel_TitleHold;
-		DxTabPanelInterop.TitleRendered += DxTabPanel_TitleRendered;
+		DevExpress.Ui.DxTabPanelInterop.TitleClick += DxTabPanel_TitleClick;
+		DevExpress.Ui.DxTabPanelInterop.TitleHold += DxTabPanel_TitleHold;
+		DevExpress.Ui.DxTabPanelInterop.TitleRendered += DxTabPanel_TitleRendered;
 	}
 	public Action TitleClick { get; set; }
 	void DxTabPanel_TitleClick(object sender, JQueryEventArgs e) {
@@ -139,8 +151,8 @@
 		}
 	}
 	public void Dispose() {
-		DxTabPanelInterop.TitleClick -= DxTabPanel_TitleClick;
-		DxTabPanelInterop.TitleHold -= DxTabPanel_TitleHold;
-		DxTabPanelInterop.TitleRendered -= DxTabPanel_TitleRendered;
+		DevExpress.Ui.DxTabPanelInterop.TitleClick -= DxTabPanel_TitleClick;
+		DevExpress.Ui.DxTabPanelInterop.TitleHold -= DxTabPanel_TitleHold;
+		DevExpress.Ui.DxTabPanelInterop.TitleRendered -= DxTabPanel_TitleRendered;
 	}
 }

@@ -8,30 +8,42 @@
 	protected override DevExpress.Ui.DxProgressBarOptions CreateOptions() {
 		return new DevExpress.Ui.DxProgressBarOptions {
 			showStatus = showStatus,
+			statusFormat = statusFormat,
 			value = value,
 			onCompleteEnabled = onCompleteEnabled,
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxProgressBarOptions options) {
-		DxProgressBarInterop.Init(Id, options);
+		DevExpress.Ui.DxProgressBarInterop.Init(Id, options);
 	}
 	bool? showStatus;
 	public bool? ShowStatus {
-		get => isInitialized ? DxProgressBarInterop.GetShowStatus(Id) : showStatus;
+		get => isInitialized ? DevExpress.Ui.DxProgressBarInterop.GetShowStatus(Id) : showStatus;
 		set {
 			if (isInitialized) {
-				DxProgressBarInterop.SetShowStatus(Id, value);
+				DevExpress.Ui.DxProgressBarInterop.SetShowStatus(Id, value);
 			} else {
 				this.showStatus = value;
 			}
 		}
 	}
-	float? value;
-	public float? Value {
-		get => isInitialized ? DxProgressBarInterop.GetValue(Id) : value;
+	object statusFormat;
+	public object StatusFormat {
+		get => isInitialized ? DevExpress.Ui.DxProgressBarInterop.GetStatusFormat(Id) : statusFormat;
 		set {
 			if (isInitialized) {
-				DxProgressBarInterop.SetValue(Id, value);
+				DevExpress.Ui.DxProgressBarInterop.SetStatusFormat(Id, value);
+			} else {
+				this.statusFormat = value;
+			}
+		}
+	}
+	float? value;
+	public float? Value {
+		get => isInitialized ? DevExpress.Ui.DxProgressBarInterop.GetValue(Id) : value;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxProgressBarInterop.SetValue(Id, value);
 			} else {
 				this.value = value;
 			}
@@ -44,7 +56,7 @@
 	}
 	protected override async Task OnInitAsync() {
 		await base.OnInitAsync();
-		DxProgressBarInterop.Complete += DxProgressBar_Complete;
+		DevExpress.Ui.DxProgressBarInterop.Complete += DxProgressBar_Complete;
 	}
 	public Action Complete { get; set; }
 	void DxProgressBar_Complete(object sender, JQueryEventArgs e) {
@@ -53,6 +65,6 @@
 		}
 	}
 	public void Dispose() {
-		DxProgressBarInterop.Complete -= DxProgressBar_Complete;
+		DevExpress.Ui.DxProgressBarInterop.Complete -= DxProgressBar_Complete;
 	}
 }

@@ -8,29 +8,53 @@
 	protected override DevExpress.Ui.DxTextAreaOptions CreateOptions() {
 		return new DevExpress.Ui.DxTextAreaOptions {
 			autoResizeEnabled = autoResizeEnabled,
+			maxHeight = maxHeight,
+			minHeight = minHeight,
 			spellcheck = spellcheck,
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxTextAreaOptions options) {
-		DxTextAreaInterop.Init(Id, options);
+		DevExpress.Ui.DxTextAreaInterop.Init(Id, options);
 	}
 	bool? autoResizeEnabled;
 	public bool? AutoResizeEnabled {
-		get => isInitialized ? DxTextAreaInterop.GetAutoResizeEnabled(Id) : autoResizeEnabled;
+		get => isInitialized ? DevExpress.Ui.DxTextAreaInterop.GetAutoResizeEnabled(Id) : autoResizeEnabled;
 		set {
 			if (isInitialized) {
-				DxTextAreaInterop.SetAutoResizeEnabled(Id, value);
+				DevExpress.Ui.DxTextAreaInterop.SetAutoResizeEnabled(Id, value);
 			} else {
 				this.autoResizeEnabled = value;
 			}
 		}
 	}
-	bool? spellcheck;
-	public bool? Spellcheck {
-		get => isInitialized ? DxTextAreaInterop.GetSpellcheck(Id) : spellcheck;
+	object maxHeight;
+	public object MaxHeight {
+		get => isInitialized ? DevExpress.Ui.DxTextAreaInterop.GetMaxHeight(Id) : maxHeight;
 		set {
 			if (isInitialized) {
-				DxTextAreaInterop.SetSpellcheck(Id, value);
+				DevExpress.Ui.DxTextAreaInterop.SetMaxHeight(Id, value);
+			} else {
+				this.maxHeight = value;
+			}
+		}
+	}
+	object minHeight;
+	public object MinHeight {
+		get => isInitialized ? DevExpress.Ui.DxTextAreaInterop.GetMinHeight(Id) : minHeight;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTextAreaInterop.SetMinHeight(Id, value);
+			} else {
+				this.minHeight = value;
+			}
+		}
+	}
+	bool? spellcheck;
+	public bool? Spellcheck {
+		get => isInitialized ? DevExpress.Ui.DxTextAreaInterop.GetSpellcheck(Id) : spellcheck;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTextAreaInterop.SetSpellcheck(Id, value);
 			} else {
 				this.spellcheck = value;
 			}

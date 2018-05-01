@@ -1,0 +1,132 @@
+@implements IDisposable
+@inherits DxBlazorCompoment<DevExpress.Ui.DxDropDownEditorOptions>
+
+<div id="@Id"></div>
+
+@functions {
+	public DxDropDownEditor() : base("DxDropDownEditor") { }
+	protected override DevExpress.Ui.DxDropDownEditorOptions CreateOptions() {
+		return new DevExpress.Ui.DxDropDownEditorOptions {
+			acceptCustomValue = acceptCustomValue,
+			activeStateEnabled = activeStateEnabled,
+			applyValueMode = applyValueMode,
+			deferRendering = deferRendering,
+			dropDownButtonTemplate = dropDownButtonTemplate,
+			opened = isOpened,
+			value = value,
+			onClosedEnabled = onClosedEnabled,
+			onOpenedEnabled = onOpenedEnabled,
+		};
+	}
+	protected override void Init(DevExpress.Ui.DxDropDownEditorOptions options) {
+		DevExpress.Ui.DxDropDownEditorInterop.Init(Id, options);
+	}
+	bool? acceptCustomValue;
+	public bool? AcceptCustomValue {
+		get => isInitialized ? DevExpress.Ui.DxDropDownEditorInterop.GetAcceptCustomValue(Id) : acceptCustomValue;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDropDownEditorInterop.SetAcceptCustomValue(Id, value);
+			} else {
+				this.acceptCustomValue = value;
+			}
+		}
+	}
+	bool? activeStateEnabled;
+	public bool? ActiveStateEnabled {
+		get => isInitialized ? DevExpress.Ui.DxDropDownEditorInterop.GetActiveStateEnabled(Id) : activeStateEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDropDownEditorInterop.SetActiveStateEnabled(Id, value);
+			} else {
+				this.activeStateEnabled = value;
+			}
+		}
+	}
+	string applyValueMode;
+	public string ApplyValueMode {
+		get => isInitialized ? DevExpress.Ui.DxDropDownEditorInterop.GetApplyValueMode(Id) : applyValueMode;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDropDownEditorInterop.SetApplyValueMode(Id, value);
+			} else {
+				this.applyValueMode = value;
+			}
+		}
+	}
+	bool? deferRendering;
+	public bool? DeferRendering {
+		get => isInitialized ? DevExpress.Ui.DxDropDownEditorInterop.GetDeferRendering(Id) : deferRendering;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDropDownEditorInterop.SetDeferRendering(Id, value);
+			} else {
+				this.deferRendering = value;
+			}
+		}
+	}
+	object dropDownButtonTemplate;
+	public object DropDownButtonTemplate {
+		get => isInitialized ? DevExpress.Ui.DxDropDownEditorInterop.GetDropDownButtonTemplate(Id) : dropDownButtonTemplate;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDropDownEditorInterop.SetDropDownButtonTemplate(Id, value);
+			} else {
+				this.dropDownButtonTemplate = value;
+			}
+		}
+	}
+	bool? isOpened;
+	public bool? IsOpened {
+		get => isInitialized ? DevExpress.Ui.DxDropDownEditorInterop.GetOpened(Id) : isOpened;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDropDownEditorInterop.SetOpened(Id, value);
+			} else {
+				this.isOpened = value;
+			}
+		}
+	}
+	object value;
+	public object Value {
+		get => isInitialized ? DevExpress.Ui.DxDropDownEditorInterop.GetValue(Id) : value;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDropDownEditorInterop.SetValue(Id, value);
+			} else {
+				this.value = value;
+			}
+		}
+	}
+	bool? onClosedEnabled;
+	public bool? OnClosedEnabled {
+		get => onClosedEnabled;
+		set => this.onClosedEnabled = value;
+	}
+	bool? onOpenedEnabled;
+	public bool? OnOpenedEnabled {
+		get => onOpenedEnabled;
+		set => this.onOpenedEnabled = value;
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+		DevExpress.Ui.DxDropDownEditorInterop.Closed += DxDropDownEditor_Closed;
+		DevExpress.Ui.DxDropDownEditorInterop.Opened += DxDropDownEditor_Opened;
+	}
+	public Action Closed { get; set; }
+	void DxDropDownEditor_Closed(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Closed?.Invoke();
+		}
+	}
+	public Action Opened { get; set; }
+	void DxDropDownEditor_Opened(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Opened?.Invoke();
+		}
+	}
+	public void Dispose() {
+		DevExpress.Ui.DxDropDownEditorInterop.Closed -= DxDropDownEditor_Closed;
+		DevExpress.Ui.DxDropDownEditorInterop.Opened -= DxDropDownEditor_Opened;
+	}
+}

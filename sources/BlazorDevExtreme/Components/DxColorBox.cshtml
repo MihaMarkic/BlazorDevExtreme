@@ -11,19 +11,20 @@
 			applyValueMode = applyValueMode,
 			cancelButtonText = cancelButtonText,
 			editAlphaChannel = editAlphaChannel,
+			fieldTemplate = fieldTemplate,
 			keyStep = keyStep,
 			value = value,
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxColorBoxOptions options) {
-		DxColorBoxInterop.Init(Id, options);
+		DevExpress.Ui.DxColorBoxInterop.Init(Id, options);
 	}
 	string applyButtonText;
 	public string ApplyButtonText {
-		get => isInitialized ? DxColorBoxInterop.GetApplyButtonText(Id) : applyButtonText;
+		get => isInitialized ? DevExpress.Ui.DxColorBoxInterop.GetApplyButtonText(Id) : applyButtonText;
 		set {
 			if (isInitialized) {
-				DxColorBoxInterop.SetApplyButtonText(Id, value);
+				DevExpress.Ui.DxColorBoxInterop.SetApplyButtonText(Id, value);
 			} else {
 				this.applyButtonText = value;
 			}
@@ -31,10 +32,10 @@
 	}
 	string applyValueMode;
 	public string ApplyValueMode {
-		get => isInitialized ? DxColorBoxInterop.GetApplyValueMode(Id) : applyValueMode;
+		get => isInitialized ? DevExpress.Ui.DxColorBoxInterop.GetApplyValueMode(Id) : applyValueMode;
 		set {
 			if (isInitialized) {
-				DxColorBoxInterop.SetApplyValueMode(Id, value);
+				DevExpress.Ui.DxColorBoxInterop.SetApplyValueMode(Id, value);
 			} else {
 				this.applyValueMode = value;
 			}
@@ -42,10 +43,10 @@
 	}
 	string cancelButtonText;
 	public string CancelButtonText {
-		get => isInitialized ? DxColorBoxInterop.GetCancelButtonText(Id) : cancelButtonText;
+		get => isInitialized ? DevExpress.Ui.DxColorBoxInterop.GetCancelButtonText(Id) : cancelButtonText;
 		set {
 			if (isInitialized) {
-				DxColorBoxInterop.SetCancelButtonText(Id, value);
+				DevExpress.Ui.DxColorBoxInterop.SetCancelButtonText(Id, value);
 			} else {
 				this.cancelButtonText = value;
 			}
@@ -53,21 +54,32 @@
 	}
 	bool? editAlphaChannel;
 	public bool? EditAlphaChannel {
-		get => isInitialized ? DxColorBoxInterop.GetEditAlphaChannel(Id) : editAlphaChannel;
+		get => isInitialized ? DevExpress.Ui.DxColorBoxInterop.GetEditAlphaChannel(Id) : editAlphaChannel;
 		set {
 			if (isInitialized) {
-				DxColorBoxInterop.SetEditAlphaChannel(Id, value);
+				DevExpress.Ui.DxColorBoxInterop.SetEditAlphaChannel(Id, value);
 			} else {
 				this.editAlphaChannel = value;
 			}
 		}
 	}
-	float? keyStep;
-	public float? KeyStep {
-		get => isInitialized ? DxColorBoxInterop.GetKeyStep(Id) : keyStep;
+	object fieldTemplate;
+	public object FieldTemplate {
+		get => isInitialized ? DevExpress.Ui.DxColorBoxInterop.GetFieldTemplate(Id) : fieldTemplate;
 		set {
 			if (isInitialized) {
-				DxColorBoxInterop.SetKeyStep(Id, value);
+				DevExpress.Ui.DxColorBoxInterop.SetFieldTemplate(Id, value);
+			} else {
+				this.fieldTemplate = value;
+			}
+		}
+	}
+	float? keyStep;
+	public float? KeyStep {
+		get => isInitialized ? DevExpress.Ui.DxColorBoxInterop.GetKeyStep(Id) : keyStep;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxColorBoxInterop.SetKeyStep(Id, value);
 			} else {
 				this.keyStep = value;
 			}
@@ -75,10 +87,10 @@
 	}
 	string value;
 	public string Value {
-		get => isInitialized ? DxColorBoxInterop.GetValue(Id) : value;
+		get => isInitialized ? DevExpress.Ui.DxColorBoxInterop.GetValue(Id) : value;
 		set {
 			if (isInitialized) {
-				DxColorBoxInterop.SetValue(Id, value);
+				DevExpress.Ui.DxColorBoxInterop.SetValue(Id, value);
 			} else {
 				this.value = value;
 			}

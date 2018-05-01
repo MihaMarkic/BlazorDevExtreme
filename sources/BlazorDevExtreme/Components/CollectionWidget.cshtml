@@ -1,0 +1,210 @@
+@implements IDisposable
+@inherits DxBlazorCompoment<DevExpress.Ui.CollectionWidgetOptions>
+
+<div id="@Id"></div>
+
+@functions {
+	public CollectionWidget() : base("CollectionWidget") { }
+	protected override DevExpress.Ui.CollectionWidgetOptions CreateOptions() {
+		return new DevExpress.Ui.CollectionWidgetOptions {
+			dataSource = dataSource,
+			itemHoldTimeout = itemHoldTimeout,
+			items = items,
+			itemTemplate = itemTemplate,
+			keyExpr = keyExpr,
+			noDataText = noDataText,
+			selectedIndex = selectedIndex,
+			selectedItem = selectedItem,
+			selectedItemKeys = selectedItemKeys,
+			selectedItems = selectedItems,
+			onItemClickEnabled = onItemClickEnabled,
+			onItemContextMenuEnabled = onItemContextMenuEnabled,
+			onItemHoldEnabled = onItemHoldEnabled,
+			onItemRenderedEnabled = onItemRenderedEnabled,
+			onSelectionChangedEnabled = onSelectionChangedEnabled,
+		};
+	}
+	protected override void Init(DevExpress.Ui.CollectionWidgetOptions options) {
+		DevExpress.Ui.CollectionWidgetInterop.Init(Id, options);
+	}
+	object dataSource;
+	public object DataSource {
+		get => isInitialized ? DevExpress.Ui.CollectionWidgetInterop.GetDataSource(Id) : dataSource;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.CollectionWidgetInterop.SetDataSource(Id, value);
+			} else {
+				this.dataSource = value;
+			}
+		}
+	}
+	float? itemHoldTimeout;
+	public float? ItemHoldTimeout {
+		get => isInitialized ? DevExpress.Ui.CollectionWidgetInterop.GetItemHoldTimeout(Id) : itemHoldTimeout;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.CollectionWidgetInterop.SetItemHoldTimeout(Id, value);
+			} else {
+				this.itemHoldTimeout = value;
+			}
+		}
+	}
+	object items;
+	public object Items {
+		get => isInitialized ? DevExpress.Ui.CollectionWidgetInterop.GetItems(Id) : items;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.CollectionWidgetInterop.SetItems(Id, value);
+			} else {
+				this.items = value;
+			}
+		}
+	}
+	object itemTemplate;
+	public object ItemTemplate {
+		get => isInitialized ? DevExpress.Ui.CollectionWidgetInterop.GetItemTemplate(Id) : itemTemplate;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.CollectionWidgetInterop.SetItemTemplate(Id, value);
+			} else {
+				this.itemTemplate = value;
+			}
+		}
+	}
+	object keyExpr;
+	public object KeyExpr {
+		get => isInitialized ? DevExpress.Ui.CollectionWidgetInterop.GetKeyExpr(Id) : keyExpr;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.CollectionWidgetInterop.SetKeyExpr(Id, value);
+			} else {
+				this.keyExpr = value;
+			}
+		}
+	}
+	string noDataText;
+	public string NoDataText {
+		get => isInitialized ? DevExpress.Ui.CollectionWidgetInterop.GetNoDataText(Id) : noDataText;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.CollectionWidgetInterop.SetNoDataText(Id, value);
+			} else {
+				this.noDataText = value;
+			}
+		}
+	}
+	float? selectedIndex;
+	public float? SelectedIndex {
+		get => isInitialized ? DevExpress.Ui.CollectionWidgetInterop.GetSelectedIndex(Id) : selectedIndex;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.CollectionWidgetInterop.SetSelectedIndex(Id, value);
+			} else {
+				this.selectedIndex = value;
+			}
+		}
+	}
+	object selectedItem;
+	public object SelectedItem {
+		get => isInitialized ? DevExpress.Ui.CollectionWidgetInterop.GetSelectedItem(Id) : selectedItem;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.CollectionWidgetInterop.SetSelectedItem(Id, value);
+			} else {
+				this.selectedItem = value;
+			}
+		}
+	}
+	object selectedItemKeys;
+	public object SelectedItemKeys {
+		get => isInitialized ? DevExpress.Ui.CollectionWidgetInterop.GetSelectedItemKeys(Id) : selectedItemKeys;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.CollectionWidgetInterop.SetSelectedItemKeys(Id, value);
+			} else {
+				this.selectedItemKeys = value;
+			}
+		}
+	}
+	object selectedItems;
+	public object SelectedItems {
+		get => isInitialized ? DevExpress.Ui.CollectionWidgetInterop.GetSelectedItems(Id) : selectedItems;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.CollectionWidgetInterop.SetSelectedItems(Id, value);
+			} else {
+				this.selectedItems = value;
+			}
+		}
+	}
+	bool? onItemClickEnabled;
+	public bool? OnItemClickEnabled {
+		get => onItemClickEnabled;
+		set => this.onItemClickEnabled = value;
+	}
+	bool? onItemContextMenuEnabled;
+	public bool? OnItemContextMenuEnabled {
+		get => onItemContextMenuEnabled;
+		set => this.onItemContextMenuEnabled = value;
+	}
+	bool? onItemHoldEnabled;
+	public bool? OnItemHoldEnabled {
+		get => onItemHoldEnabled;
+		set => this.onItemHoldEnabled = value;
+	}
+	bool? onItemRenderedEnabled;
+	public bool? OnItemRenderedEnabled {
+		get => onItemRenderedEnabled;
+		set => this.onItemRenderedEnabled = value;
+	}
+	bool? onSelectionChangedEnabled;
+	public bool? OnSelectionChangedEnabled {
+		get => onSelectionChangedEnabled;
+		set => this.onSelectionChangedEnabled = value;
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+		DevExpress.Ui.CollectionWidgetInterop.ItemClick += CollectionWidget_ItemClick;
+		DevExpress.Ui.CollectionWidgetInterop.ItemContextMenu += CollectionWidget_ItemContextMenu;
+		DevExpress.Ui.CollectionWidgetInterop.ItemHold += CollectionWidget_ItemHold;
+		DevExpress.Ui.CollectionWidgetInterop.ItemRendered += CollectionWidget_ItemRendered;
+		DevExpress.Ui.CollectionWidgetInterop.SelectionChanged += CollectionWidget_SelectionChanged;
+	}
+	public Action ItemClick { get; set; }
+	void CollectionWidget_ItemClick(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			ItemClick?.Invoke();
+		}
+	}
+	public Action ItemContextMenu { get; set; }
+	void CollectionWidget_ItemContextMenu(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			ItemContextMenu?.Invoke();
+		}
+	}
+	public Action ItemHold { get; set; }
+	void CollectionWidget_ItemHold(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			ItemHold?.Invoke();
+		}
+	}
+	public Action ItemRendered { get; set; }
+	void CollectionWidget_ItemRendered(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			ItemRendered?.Invoke();
+		}
+	}
+	public Action SelectionChanged { get; set; }
+	void CollectionWidget_SelectionChanged(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			SelectionChanged?.Invoke();
+		}
+	}
+	public void Dispose() {
+		DevExpress.Ui.CollectionWidgetInterop.ItemClick -= CollectionWidget_ItemClick;
+		DevExpress.Ui.CollectionWidgetInterop.ItemContextMenu -= CollectionWidget_ItemContextMenu;
+		DevExpress.Ui.CollectionWidgetInterop.ItemHold -= CollectionWidget_ItemHold;
+		DevExpress.Ui.CollectionWidgetInterop.ItemRendered -= CollectionWidget_ItemRendered;
+		DevExpress.Ui.CollectionWidgetInterop.SelectionChanged -= CollectionWidget_SelectionChanged;
+	}
+}

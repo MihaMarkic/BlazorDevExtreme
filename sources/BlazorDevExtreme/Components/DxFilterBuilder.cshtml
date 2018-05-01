@@ -8,22 +8,82 @@
 	protected override DevExpress.Ui.DxFilterBuilderOptions CreateOptions() {
 		return new DevExpress.Ui.DxFilterBuilderOptions {
 			allowHierarchicalFields = allowHierarchicalFields,
+			customOperations = customOperations,
+			fields = fields,
+			filterOperationDescriptions = filterOperationDescriptions,
+			groupOperationDescriptions = groupOperationDescriptions,
+			value = value,
 			onEditorPreparedEnabled = onEditorPreparedEnabled,
 			onEditorPreparingEnabled = onEditorPreparingEnabled,
 			onValueChangedEnabled = onValueChangedEnabled,
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxFilterBuilderOptions options) {
-		DxFilterBuilderInterop.Init(Id, options);
+		DevExpress.Ui.DxFilterBuilderInterop.Init(Id, options);
 	}
 	bool? allowHierarchicalFields;
 	public bool? AllowHierarchicalFields {
-		get => isInitialized ? DxFilterBuilderInterop.GetAllowHierarchicalFields(Id) : allowHierarchicalFields;
+		get => isInitialized ? DevExpress.Ui.DxFilterBuilderInterop.GetAllowHierarchicalFields(Id) : allowHierarchicalFields;
 		set {
 			if (isInitialized) {
-				DxFilterBuilderInterop.SetAllowHierarchicalFields(Id, value);
+				DevExpress.Ui.DxFilterBuilderInterop.SetAllowHierarchicalFields(Id, value);
 			} else {
 				this.allowHierarchicalFields = value;
+			}
+		}
+	}
+	object customOperations;
+	public object CustomOperations {
+		get => isInitialized ? DevExpress.Ui.DxFilterBuilderInterop.GetCustomOperations(Id) : customOperations;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxFilterBuilderInterop.SetCustomOperations(Id, value);
+			} else {
+				this.customOperations = value;
+			}
+		}
+	}
+	object fields;
+	public object Fields {
+		get => isInitialized ? DevExpress.Ui.DxFilterBuilderInterop.GetFields(Id) : fields;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxFilterBuilderInterop.SetFields(Id, value);
+			} else {
+				this.fields = value;
+			}
+		}
+	}
+	object filterOperationDescriptions;
+	public object FilterOperationDescriptions {
+		get => isInitialized ? DevExpress.Ui.DxFilterBuilderInterop.GetFilterOperationDescriptions(Id) : filterOperationDescriptions;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxFilterBuilderInterop.SetFilterOperationDescriptions(Id, value);
+			} else {
+				this.filterOperationDescriptions = value;
+			}
+		}
+	}
+	object groupOperationDescriptions;
+	public object GroupOperationDescriptions {
+		get => isInitialized ? DevExpress.Ui.DxFilterBuilderInterop.GetGroupOperationDescriptions(Id) : groupOperationDescriptions;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxFilterBuilderInterop.SetGroupOperationDescriptions(Id, value);
+			} else {
+				this.groupOperationDescriptions = value;
+			}
+		}
+	}
+	object value;
+	public object Value {
+		get => isInitialized ? DevExpress.Ui.DxFilterBuilderInterop.GetValue(Id) : value;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxFilterBuilderInterop.SetValue(Id, value);
+			} else {
+				this.value = value;
 			}
 		}
 	}
@@ -44,9 +104,9 @@
 	}
 	protected override async Task OnInitAsync() {
 		await base.OnInitAsync();
-		DxFilterBuilderInterop.EditorPrepared += DxFilterBuilder_EditorPrepared;
-		DxFilterBuilderInterop.EditorPreparing += DxFilterBuilder_EditorPreparing;
-		DxFilterBuilderInterop.ValueChanged += DxFilterBuilder_ValueChanged;
+		DevExpress.Ui.DxFilterBuilderInterop.EditorPrepared += DxFilterBuilder_EditorPrepared;
+		DevExpress.Ui.DxFilterBuilderInterop.EditorPreparing += DxFilterBuilder_EditorPreparing;
+		DevExpress.Ui.DxFilterBuilderInterop.ValueChanged += DxFilterBuilder_ValueChanged;
 	}
 	public Action EditorPrepared { get; set; }
 	void DxFilterBuilder_EditorPrepared(object sender, JQueryEventArgs e) {
@@ -67,8 +127,8 @@
 		}
 	}
 	public void Dispose() {
-		DxFilterBuilderInterop.EditorPrepared -= DxFilterBuilder_EditorPrepared;
-		DxFilterBuilderInterop.EditorPreparing -= DxFilterBuilder_EditorPreparing;
-		DxFilterBuilderInterop.ValueChanged -= DxFilterBuilder_ValueChanged;
+		DevExpress.Ui.DxFilterBuilderInterop.EditorPrepared -= DxFilterBuilder_EditorPrepared;
+		DevExpress.Ui.DxFilterBuilderInterop.EditorPreparing -= DxFilterBuilder_EditorPreparing;
+		DevExpress.Ui.DxFilterBuilderInterop.ValueChanged -= DxFilterBuilder_ValueChanged;
 	}
 }

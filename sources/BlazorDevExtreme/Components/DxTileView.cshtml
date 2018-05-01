@@ -12,20 +12,21 @@
 			baseItemWidth = baseItemWidth,
 			direction = direction,
 			focusStateEnabled = focusStateEnabled,
+			height = height,
 			hoverStateEnabled = hoverStateEnabled,
 			itemMargin = itemMargin,
 			showScrollbar = showScrollbar,
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxTileViewOptions options) {
-		DxTileViewInterop.Init(Id, options);
+		DevExpress.Ui.DxTileViewInterop.Init(Id, options);
 	}
 	bool? activeStateEnabled;
 	public bool? ActiveStateEnabled {
-		get => isInitialized ? DxTileViewInterop.GetActiveStateEnabled(Id) : activeStateEnabled;
+		get => isInitialized ? DevExpress.Ui.DxTileViewInterop.GetActiveStateEnabled(Id) : activeStateEnabled;
 		set {
 			if (isInitialized) {
-				DxTileViewInterop.SetActiveStateEnabled(Id, value);
+				DevExpress.Ui.DxTileViewInterop.SetActiveStateEnabled(Id, value);
 			} else {
 				this.activeStateEnabled = value;
 			}
@@ -33,10 +34,10 @@
 	}
 	float? baseItemHeight;
 	public float? BaseItemHeight {
-		get => isInitialized ? DxTileViewInterop.GetBaseItemHeight(Id) : baseItemHeight;
+		get => isInitialized ? DevExpress.Ui.DxTileViewInterop.GetBaseItemHeight(Id) : baseItemHeight;
 		set {
 			if (isInitialized) {
-				DxTileViewInterop.SetBaseItemHeight(Id, value);
+				DevExpress.Ui.DxTileViewInterop.SetBaseItemHeight(Id, value);
 			} else {
 				this.baseItemHeight = value;
 			}
@@ -44,10 +45,10 @@
 	}
 	float? baseItemWidth;
 	public float? BaseItemWidth {
-		get => isInitialized ? DxTileViewInterop.GetBaseItemWidth(Id) : baseItemWidth;
+		get => isInitialized ? DevExpress.Ui.DxTileViewInterop.GetBaseItemWidth(Id) : baseItemWidth;
 		set {
 			if (isInitialized) {
-				DxTileViewInterop.SetBaseItemWidth(Id, value);
+				DevExpress.Ui.DxTileViewInterop.SetBaseItemWidth(Id, value);
 			} else {
 				this.baseItemWidth = value;
 			}
@@ -55,10 +56,10 @@
 	}
 	string direction;
 	public string Direction {
-		get => isInitialized ? DxTileViewInterop.GetDirection(Id) : direction;
+		get => isInitialized ? DevExpress.Ui.DxTileViewInterop.GetDirection(Id) : direction;
 		set {
 			if (isInitialized) {
-				DxTileViewInterop.SetDirection(Id, value);
+				DevExpress.Ui.DxTileViewInterop.SetDirection(Id, value);
 			} else {
 				this.direction = value;
 			}
@@ -66,21 +67,32 @@
 	}
 	bool? focusStateEnabled;
 	public bool? FocusStateEnabled {
-		get => isInitialized ? DxTileViewInterop.GetFocusStateEnabled(Id) : focusStateEnabled;
+		get => isInitialized ? DevExpress.Ui.DxTileViewInterop.GetFocusStateEnabled(Id) : focusStateEnabled;
 		set {
 			if (isInitialized) {
-				DxTileViewInterop.SetFocusStateEnabled(Id, value);
+				DevExpress.Ui.DxTileViewInterop.SetFocusStateEnabled(Id, value);
 			} else {
 				this.focusStateEnabled = value;
 			}
 		}
 	}
-	bool? hoverStateEnabled;
-	public bool? HoverStateEnabled {
-		get => isInitialized ? DxTileViewInterop.GetHoverStateEnabled(Id) : hoverStateEnabled;
+	object height;
+	public object Height {
+		get => isInitialized ? DevExpress.Ui.DxTileViewInterop.GetHeight(Id) : height;
 		set {
 			if (isInitialized) {
-				DxTileViewInterop.SetHoverStateEnabled(Id, value);
+				DevExpress.Ui.DxTileViewInterop.SetHeight(Id, value);
+			} else {
+				this.height = value;
+			}
+		}
+	}
+	bool? hoverStateEnabled;
+	public bool? HoverStateEnabled {
+		get => isInitialized ? DevExpress.Ui.DxTileViewInterop.GetHoverStateEnabled(Id) : hoverStateEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTileViewInterop.SetHoverStateEnabled(Id, value);
 			} else {
 				this.hoverStateEnabled = value;
 			}
@@ -88,10 +100,10 @@
 	}
 	float? itemMargin;
 	public float? ItemMargin {
-		get => isInitialized ? DxTileViewInterop.GetItemMargin(Id) : itemMargin;
+		get => isInitialized ? DevExpress.Ui.DxTileViewInterop.GetItemMargin(Id) : itemMargin;
 		set {
 			if (isInitialized) {
-				DxTileViewInterop.SetItemMargin(Id, value);
+				DevExpress.Ui.DxTileViewInterop.SetItemMargin(Id, value);
 			} else {
 				this.itemMargin = value;
 			}
@@ -99,10 +111,10 @@
 	}
 	bool? showScrollbar;
 	public bool? ShowScrollbar {
-		get => isInitialized ? DxTileViewInterop.GetShowScrollbar(Id) : showScrollbar;
+		get => isInitialized ? DevExpress.Ui.DxTileViewInterop.GetShowScrollbar(Id) : showScrollbar;
 		set {
 			if (isInitialized) {
-				DxTileViewInterop.SetShowScrollbar(Id, value);
+				DevExpress.Ui.DxTileViewInterop.SetShowScrollbar(Id, value);
 			} else {
 				this.showScrollbar = value;
 			}

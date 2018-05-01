@@ -20,14 +20,14 @@
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxResizableOptions options) {
-		DxResizableInterop.Init(Id, options);
+		DevExpress.Ui.DxResizableInterop.Init(Id, options);
 	}
 	string handles;
 	public string Handles {
-		get => isInitialized ? DxResizableInterop.GetHandles(Id) : handles;
+		get => isInitialized ? DevExpress.Ui.DxResizableInterop.GetHandles(Id) : handles;
 		set {
 			if (isInitialized) {
-				DxResizableInterop.SetHandles(Id, value);
+				DevExpress.Ui.DxResizableInterop.SetHandles(Id, value);
 			} else {
 				this.handles = value;
 			}
@@ -35,10 +35,10 @@
 	}
 	object height;
 	public object Height {
-		get => isInitialized ? DxResizableInterop.GetHeight(Id) : height;
+		get => isInitialized ? DevExpress.Ui.DxResizableInterop.GetHeight(Id) : height;
 		set {
 			if (isInitialized) {
-				DxResizableInterop.SetHeight(Id, value);
+				DevExpress.Ui.DxResizableInterop.SetHeight(Id, value);
 			} else {
 				this.height = value;
 			}
@@ -46,10 +46,10 @@
 	}
 	float? maxHeight;
 	public float? MaxHeight {
-		get => isInitialized ? DxResizableInterop.GetMaxHeight(Id) : maxHeight;
+		get => isInitialized ? DevExpress.Ui.DxResizableInterop.GetMaxHeight(Id) : maxHeight;
 		set {
 			if (isInitialized) {
-				DxResizableInterop.SetMaxHeight(Id, value);
+				DevExpress.Ui.DxResizableInterop.SetMaxHeight(Id, value);
 			} else {
 				this.maxHeight = value;
 			}
@@ -57,10 +57,10 @@
 	}
 	float? maxWidth;
 	public float? MaxWidth {
-		get => isInitialized ? DxResizableInterop.GetMaxWidth(Id) : maxWidth;
+		get => isInitialized ? DevExpress.Ui.DxResizableInterop.GetMaxWidth(Id) : maxWidth;
 		set {
 			if (isInitialized) {
-				DxResizableInterop.SetMaxWidth(Id, value);
+				DevExpress.Ui.DxResizableInterop.SetMaxWidth(Id, value);
 			} else {
 				this.maxWidth = value;
 			}
@@ -68,10 +68,10 @@
 	}
 	float? minHeight;
 	public float? MinHeight {
-		get => isInitialized ? DxResizableInterop.GetMinHeight(Id) : minHeight;
+		get => isInitialized ? DevExpress.Ui.DxResizableInterop.GetMinHeight(Id) : minHeight;
 		set {
 			if (isInitialized) {
-				DxResizableInterop.SetMinHeight(Id, value);
+				DevExpress.Ui.DxResizableInterop.SetMinHeight(Id, value);
 			} else {
 				this.minHeight = value;
 			}
@@ -79,10 +79,10 @@
 	}
 	float? minWidth;
 	public float? MinWidth {
-		get => isInitialized ? DxResizableInterop.GetMinWidth(Id) : minWidth;
+		get => isInitialized ? DevExpress.Ui.DxResizableInterop.GetMinWidth(Id) : minWidth;
 		set {
 			if (isInitialized) {
-				DxResizableInterop.SetMinWidth(Id, value);
+				DevExpress.Ui.DxResizableInterop.SetMinWidth(Id, value);
 			} else {
 				this.minWidth = value;
 			}
@@ -90,10 +90,10 @@
 	}
 	object width;
 	public object Width {
-		get => isInitialized ? DxResizableInterop.GetWidth(Id) : width;
+		get => isInitialized ? DevExpress.Ui.DxResizableInterop.GetWidth(Id) : width;
 		set {
 			if (isInitialized) {
-				DxResizableInterop.SetWidth(Id, value);
+				DevExpress.Ui.DxResizableInterop.SetWidth(Id, value);
 			} else {
 				this.width = value;
 			}
@@ -116,9 +116,9 @@
 	}
 	protected override async Task OnInitAsync() {
 		await base.OnInitAsync();
-		DxResizableInterop.Resize += DxResizable_Resize;
-		DxResizableInterop.ResizeEnd += DxResizable_ResizeEnd;
-		DxResizableInterop.ResizeStart += DxResizable_ResizeStart;
+		DevExpress.Ui.DxResizableInterop.Resize += DxResizable_Resize;
+		DevExpress.Ui.DxResizableInterop.ResizeEnd += DxResizable_ResizeEnd;
+		DevExpress.Ui.DxResizableInterop.ResizeStart += DxResizable_ResizeStart;
 	}
 	public Action Resize { get; set; }
 	void DxResizable_Resize(object sender, JQueryEventArgs e) {
@@ -139,8 +139,8 @@
 		}
 	}
 	public void Dispose() {
-		DxResizableInterop.Resize -= DxResizable_Resize;
-		DxResizableInterop.ResizeEnd -= DxResizable_ResizeEnd;
-		DxResizableInterop.ResizeStart -= DxResizable_ResizeStart;
+		DevExpress.Ui.DxResizableInterop.Resize -= DxResizable_Resize;
+		DevExpress.Ui.DxResizableInterop.ResizeEnd -= DxResizable_ResizeEnd;
+		DevExpress.Ui.DxResizableInterop.ResizeStart -= DxResizable_ResizeStart;
 	}
 }

@@ -7,31 +7,55 @@
 	public DxSlideOutView() : base("DxSlideOutView") { }
 	protected override DevExpress.Ui.DxSlideOutViewOptions CreateOptions() {
 		return new DevExpress.Ui.DxSlideOutViewOptions {
+			contentTemplate = contentTemplate,
 			menuPosition = menuPosition,
+			menuTemplate = menuTemplate,
 			menuVisible = menuVisible,
 			swipeEnabled = swipeEnabled,
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxSlideOutViewOptions options) {
-		DxSlideOutViewInterop.Init(Id, options);
+		DevExpress.Ui.DxSlideOutViewInterop.Init(Id, options);
+	}
+	object contentTemplate;
+	public object ContentTemplate {
+		get => isInitialized ? DevExpress.Ui.DxSlideOutViewInterop.GetContentTemplate(Id) : contentTemplate;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxSlideOutViewInterop.SetContentTemplate(Id, value);
+			} else {
+				this.contentTemplate = value;
+			}
+		}
 	}
 	string menuPosition;
 	public string MenuPosition {
-		get => isInitialized ? DxSlideOutViewInterop.GetMenuPosition(Id) : menuPosition;
+		get => isInitialized ? DevExpress.Ui.DxSlideOutViewInterop.GetMenuPosition(Id) : menuPosition;
 		set {
 			if (isInitialized) {
-				DxSlideOutViewInterop.SetMenuPosition(Id, value);
+				DevExpress.Ui.DxSlideOutViewInterop.SetMenuPosition(Id, value);
 			} else {
 				this.menuPosition = value;
 			}
 		}
 	}
-	bool? menuVisible;
-	public bool? MenuVisible {
-		get => isInitialized ? DxSlideOutViewInterop.GetMenuVisible(Id) : menuVisible;
+	object menuTemplate;
+	public object MenuTemplate {
+		get => isInitialized ? DevExpress.Ui.DxSlideOutViewInterop.GetMenuTemplate(Id) : menuTemplate;
 		set {
 			if (isInitialized) {
-				DxSlideOutViewInterop.SetMenuVisible(Id, value);
+				DevExpress.Ui.DxSlideOutViewInterop.SetMenuTemplate(Id, value);
+			} else {
+				this.menuTemplate = value;
+			}
+		}
+	}
+	bool? menuVisible;
+	public bool? MenuVisible {
+		get => isInitialized ? DevExpress.Ui.DxSlideOutViewInterop.GetMenuVisible(Id) : menuVisible;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxSlideOutViewInterop.SetMenuVisible(Id, value);
 			} else {
 				this.menuVisible = value;
 			}
@@ -39,10 +63,10 @@
 	}
 	bool? swipeEnabled;
 	public bool? SwipeEnabled {
-		get => isInitialized ? DxSlideOutViewInterop.GetSwipeEnabled(Id) : swipeEnabled;
+		get => isInitialized ? DevExpress.Ui.DxSlideOutViewInterop.GetSwipeEnabled(Id) : swipeEnabled;
 		set {
 			if (isInitialized) {
-				DxSlideOutViewInterop.SetSwipeEnabled(Id, value);
+				DevExpress.Ui.DxSlideOutViewInterop.SetSwipeEnabled(Id, value);
 			} else {
 				this.swipeEnabled = value;
 			}

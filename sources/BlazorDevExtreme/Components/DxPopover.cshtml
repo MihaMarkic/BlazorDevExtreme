@@ -7,44 +7,128 @@
 	public DxPopover() : base("DxPopover") { }
 	protected override DevExpress.Ui.DxPopoverOptions CreateOptions() {
 		return new DevExpress.Ui.DxPopoverOptions {
+			animation = animation,
 			closeOnOutsideClick = closeOnOutsideClick,
+			height = height,
+			hideEvent = hideEvent,
+			position = position,
 			shading = shading,
+			showEvent = showEvent,
 			showTitle = showTitle,
+			target = target,
+			width = width,
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxPopoverOptions options) {
-		DxPopoverInterop.Init(Id, options);
+		DevExpress.Ui.DxPopoverInterop.Init(Id, options);
+	}
+	object animation;
+	public object Animation {
+		get => isInitialized ? DevExpress.Ui.DxPopoverInterop.GetAnimation(Id) : animation;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxPopoverInterop.SetAnimation(Id, value);
+			} else {
+				this.animation = value;
+			}
+		}
 	}
 	object closeOnOutsideClick;
 	public object CloseOnOutsideClick {
-		get => isInitialized ? DxPopoverInterop.GetCloseOnOutsideClick(Id) : closeOnOutsideClick;
+		get => isInitialized ? DevExpress.Ui.DxPopoverInterop.GetCloseOnOutsideClick(Id) : closeOnOutsideClick;
 		set {
 			if (isInitialized) {
-				DxPopoverInterop.SetCloseOnOutsideClick(Id, value);
+				DevExpress.Ui.DxPopoverInterop.SetCloseOnOutsideClick(Id, value);
 			} else {
 				this.closeOnOutsideClick = value;
 			}
 		}
 	}
-	bool? shading;
-	public bool? Shading {
-		get => isInitialized ? DxPopoverInterop.GetShading(Id) : shading;
+	object height;
+	public object Height {
+		get => isInitialized ? DevExpress.Ui.DxPopoverInterop.GetHeight(Id) : height;
 		set {
 			if (isInitialized) {
-				DxPopoverInterop.SetShading(Id, value);
+				DevExpress.Ui.DxPopoverInterop.SetHeight(Id, value);
+			} else {
+				this.height = value;
+			}
+		}
+	}
+	object hideEvent;
+	public object HideEvent {
+		get => isInitialized ? DevExpress.Ui.DxPopoverInterop.GetHideEvent(Id) : hideEvent;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxPopoverInterop.SetHideEvent(Id, value);
+			} else {
+				this.hideEvent = value;
+			}
+		}
+	}
+	object position;
+	public object Position {
+		get => isInitialized ? DevExpress.Ui.DxPopoverInterop.GetPosition(Id) : position;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxPopoverInterop.SetPosition(Id, value);
+			} else {
+				this.position = value;
+			}
+		}
+	}
+	bool? shading;
+	public bool? Shading {
+		get => isInitialized ? DevExpress.Ui.DxPopoverInterop.GetShading(Id) : shading;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxPopoverInterop.SetShading(Id, value);
 			} else {
 				this.shading = value;
 			}
 		}
 	}
-	bool? showTitle;
-	public bool? ShowTitle {
-		get => isInitialized ? DxPopoverInterop.GetShowTitle(Id) : showTitle;
+	object showEvent;
+	public object ShowEvent {
+		get => isInitialized ? DevExpress.Ui.DxPopoverInterop.GetShowEvent(Id) : showEvent;
 		set {
 			if (isInitialized) {
-				DxPopoverInterop.SetShowTitle(Id, value);
+				DevExpress.Ui.DxPopoverInterop.SetShowEvent(Id, value);
+			} else {
+				this.showEvent = value;
+			}
+		}
+	}
+	bool? showTitle;
+	public bool? ShowTitle {
+		get => isInitialized ? DevExpress.Ui.DxPopoverInterop.GetShowTitle(Id) : showTitle;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxPopoverInterop.SetShowTitle(Id, value);
 			} else {
 				this.showTitle = value;
+			}
+		}
+	}
+	object target;
+	public object Target {
+		get => isInitialized ? DevExpress.Ui.DxPopoverInterop.GetTarget(Id) : target;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxPopoverInterop.SetTarget(Id, value);
+			} else {
+				this.target = value;
+			}
+		}
+	}
+	object width;
+	public object Width {
+		get => isInitialized ? DevExpress.Ui.DxPopoverInterop.GetWidth(Id) : width;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxPopoverInterop.SetWidth(Id, value);
+			} else {
+				this.width = value;
 			}
 		}
 	}

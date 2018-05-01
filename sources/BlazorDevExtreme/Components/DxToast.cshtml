@@ -7,6 +7,7 @@
 	public DxToast() : base("DxToast") { }
 	protected override DevExpress.Ui.DxToastOptions CreateOptions() {
 		return new DevExpress.Ui.DxToastOptions {
+			animation = animation,
 			closeOnBackButton = closeOnBackButton,
 			closeOnClick = closeOnClick,
 			closeOnOutsideClick = closeOnOutsideClick,
@@ -16,20 +17,32 @@
 			maxWidth = maxWidth,
 			message = message,
 			minWidth = minWidth,
+			position = position,
 			shading = shading,
 			type = type,
 			width = width,
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxToastOptions options) {
-		DxToastInterop.Init(Id, options);
+		DevExpress.Ui.DxToastInterop.Init(Id, options);
+	}
+	object animation;
+	public object Animation {
+		get => isInitialized ? DevExpress.Ui.DxToastInterop.GetAnimation(Id) : animation;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxToastInterop.SetAnimation(Id, value);
+			} else {
+				this.animation = value;
+			}
+		}
 	}
 	bool? closeOnBackButton;
 	public bool? CloseOnBackButton {
-		get => isInitialized ? DxToastInterop.GetCloseOnBackButton(Id) : closeOnBackButton;
+		get => isInitialized ? DevExpress.Ui.DxToastInterop.GetCloseOnBackButton(Id) : closeOnBackButton;
 		set {
 			if (isInitialized) {
-				DxToastInterop.SetCloseOnBackButton(Id, value);
+				DevExpress.Ui.DxToastInterop.SetCloseOnBackButton(Id, value);
 			} else {
 				this.closeOnBackButton = value;
 			}
@@ -37,10 +50,10 @@
 	}
 	bool? closeOnClick;
 	public bool? CloseOnClick {
-		get => isInitialized ? DxToastInterop.GetCloseOnClick(Id) : closeOnClick;
+		get => isInitialized ? DevExpress.Ui.DxToastInterop.GetCloseOnClick(Id) : closeOnClick;
 		set {
 			if (isInitialized) {
-				DxToastInterop.SetCloseOnClick(Id, value);
+				DevExpress.Ui.DxToastInterop.SetCloseOnClick(Id, value);
 			} else {
 				this.closeOnClick = value;
 			}
@@ -48,10 +61,10 @@
 	}
 	object closeOnOutsideClick;
 	public object CloseOnOutsideClick {
-		get => isInitialized ? DxToastInterop.GetCloseOnOutsideClick(Id) : closeOnOutsideClick;
+		get => isInitialized ? DevExpress.Ui.DxToastInterop.GetCloseOnOutsideClick(Id) : closeOnOutsideClick;
 		set {
 			if (isInitialized) {
-				DxToastInterop.SetCloseOnOutsideClick(Id, value);
+				DevExpress.Ui.DxToastInterop.SetCloseOnOutsideClick(Id, value);
 			} else {
 				this.closeOnOutsideClick = value;
 			}
@@ -59,10 +72,10 @@
 	}
 	bool? closeOnSwipe;
 	public bool? CloseOnSwipe {
-		get => isInitialized ? DxToastInterop.GetCloseOnSwipe(Id) : closeOnSwipe;
+		get => isInitialized ? DevExpress.Ui.DxToastInterop.GetCloseOnSwipe(Id) : closeOnSwipe;
 		set {
 			if (isInitialized) {
-				DxToastInterop.SetCloseOnSwipe(Id, value);
+				DevExpress.Ui.DxToastInterop.SetCloseOnSwipe(Id, value);
 			} else {
 				this.closeOnSwipe = value;
 			}
@@ -70,10 +83,10 @@
 	}
 	float? displayTime;
 	public float? DisplayTime {
-		get => isInitialized ? DxToastInterop.GetDisplayTime(Id) : displayTime;
+		get => isInitialized ? DevExpress.Ui.DxToastInterop.GetDisplayTime(Id) : displayTime;
 		set {
 			if (isInitialized) {
-				DxToastInterop.SetDisplayTime(Id, value);
+				DevExpress.Ui.DxToastInterop.SetDisplayTime(Id, value);
 			} else {
 				this.displayTime = value;
 			}
@@ -81,10 +94,10 @@
 	}
 	object height;
 	public object Height {
-		get => isInitialized ? DxToastInterop.GetHeight(Id) : height;
+		get => isInitialized ? DevExpress.Ui.DxToastInterop.GetHeight(Id) : height;
 		set {
 			if (isInitialized) {
-				DxToastInterop.SetHeight(Id, value);
+				DevExpress.Ui.DxToastInterop.SetHeight(Id, value);
 			} else {
 				this.height = value;
 			}
@@ -92,10 +105,10 @@
 	}
 	object maxWidth;
 	public object MaxWidth {
-		get => isInitialized ? DxToastInterop.GetMaxWidth(Id) : maxWidth;
+		get => isInitialized ? DevExpress.Ui.DxToastInterop.GetMaxWidth(Id) : maxWidth;
 		set {
 			if (isInitialized) {
-				DxToastInterop.SetMaxWidth(Id, value);
+				DevExpress.Ui.DxToastInterop.SetMaxWidth(Id, value);
 			} else {
 				this.maxWidth = value;
 			}
@@ -103,10 +116,10 @@
 	}
 	string message;
 	public string Message {
-		get => isInitialized ? DxToastInterop.GetMessage(Id) : message;
+		get => isInitialized ? DevExpress.Ui.DxToastInterop.GetMessage(Id) : message;
 		set {
 			if (isInitialized) {
-				DxToastInterop.SetMessage(Id, value);
+				DevExpress.Ui.DxToastInterop.SetMessage(Id, value);
 			} else {
 				this.message = value;
 			}
@@ -114,21 +127,32 @@
 	}
 	object minWidth;
 	public object MinWidth {
-		get => isInitialized ? DxToastInterop.GetMinWidth(Id) : minWidth;
+		get => isInitialized ? DevExpress.Ui.DxToastInterop.GetMinWidth(Id) : minWidth;
 		set {
 			if (isInitialized) {
-				DxToastInterop.SetMinWidth(Id, value);
+				DevExpress.Ui.DxToastInterop.SetMinWidth(Id, value);
 			} else {
 				this.minWidth = value;
 			}
 		}
 	}
-	bool? shading;
-	public bool? Shading {
-		get => isInitialized ? DxToastInterop.GetShading(Id) : shading;
+	object position;
+	public object Position {
+		get => isInitialized ? DevExpress.Ui.DxToastInterop.GetPosition(Id) : position;
 		set {
 			if (isInitialized) {
-				DxToastInterop.SetShading(Id, value);
+				DevExpress.Ui.DxToastInterop.SetPosition(Id, value);
+			} else {
+				this.position = value;
+			}
+		}
+	}
+	bool? shading;
+	public bool? Shading {
+		get => isInitialized ? DevExpress.Ui.DxToastInterop.GetShading(Id) : shading;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxToastInterop.SetShading(Id, value);
 			} else {
 				this.shading = value;
 			}
@@ -136,10 +160,10 @@
 	}
 	string type;
 	public string Type {
-		get => isInitialized ? DxToastInterop.GetType(Id) : type;
+		get => isInitialized ? DevExpress.Ui.DxToastInterop.GetType(Id) : type;
 		set {
 			if (isInitialized) {
-				DxToastInterop.SetType(Id, value);
+				DevExpress.Ui.DxToastInterop.SetType(Id, value);
 			} else {
 				this.type = value;
 			}
@@ -147,10 +171,10 @@
 	}
 	object width;
 	public object Width {
-		get => isInitialized ? DxToastInterop.GetWidth(Id) : width;
+		get => isInitialized ? DevExpress.Ui.DxToastInterop.GetWidth(Id) : width;
 		set {
 			if (isInitialized) {
-				DxToastInterop.SetWidth(Id, value);
+				DevExpress.Ui.DxToastInterop.SetWidth(Id, value);
 			} else {
 				this.width = value;
 			}

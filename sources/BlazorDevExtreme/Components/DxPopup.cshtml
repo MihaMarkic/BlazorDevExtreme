@@ -8,14 +8,18 @@
 	protected override DevExpress.Ui.DxPopupOptions CreateOptions() {
 		return new DevExpress.Ui.DxPopupOptions {
 			animation = animation,
+			container = container,
 			dragEnabled = dragEnabled,
 			focusStateEnabled = focusStateEnabled,
 			fullScreen = fullScreen,
 			height = height,
+			position = position,
 			resizeEnabled = resizeEnabled,
 			showCloseButton = showCloseButton,
 			showTitle = showTitle,
 			title = title,
+			titleTemplate = titleTemplate,
+			toolbarItems = toolbarItems,
 			width = width,
 			onResizeEnabled = onResizeEnabled,
 			onResizeEndEnabled = onResizeEndEnabled,
@@ -24,25 +28,36 @@
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxPopupOptions options) {
-		DxPopupInterop.Init(Id, options);
+		DevExpress.Ui.DxPopupInterop.Init(Id, options);
 	}
 	object animation;
 	public object Animation {
-		get => isInitialized ? DxPopupInterop.GetAnimation(Id) : animation;
+		get => isInitialized ? DevExpress.Ui.DxPopupInterop.GetAnimation(Id) : animation;
 		set {
 			if (isInitialized) {
-				DxPopupInterop.SetAnimation(Id, value);
+				DevExpress.Ui.DxPopupInterop.SetAnimation(Id, value);
 			} else {
 				this.animation = value;
 			}
 		}
 	}
-	bool? dragEnabled;
-	public bool? DragEnabled {
-		get => isInitialized ? DxPopupInterop.GetDragEnabled(Id) : dragEnabled;
+	object container;
+	public object Container {
+		get => isInitialized ? DevExpress.Ui.DxPopupInterop.GetContainer(Id) : container;
 		set {
 			if (isInitialized) {
-				DxPopupInterop.SetDragEnabled(Id, value);
+				DevExpress.Ui.DxPopupInterop.SetContainer(Id, value);
+			} else {
+				this.container = value;
+			}
+		}
+	}
+	bool? dragEnabled;
+	public bool? DragEnabled {
+		get => isInitialized ? DevExpress.Ui.DxPopupInterop.GetDragEnabled(Id) : dragEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxPopupInterop.SetDragEnabled(Id, value);
 			} else {
 				this.dragEnabled = value;
 			}
@@ -50,10 +65,10 @@
 	}
 	bool? focusStateEnabled;
 	public bool? FocusStateEnabled {
-		get => isInitialized ? DxPopupInterop.GetFocusStateEnabled(Id) : focusStateEnabled;
+		get => isInitialized ? DevExpress.Ui.DxPopupInterop.GetFocusStateEnabled(Id) : focusStateEnabled;
 		set {
 			if (isInitialized) {
-				DxPopupInterop.SetFocusStateEnabled(Id, value);
+				DevExpress.Ui.DxPopupInterop.SetFocusStateEnabled(Id, value);
 			} else {
 				this.focusStateEnabled = value;
 			}
@@ -61,10 +76,10 @@
 	}
 	bool? fullScreen;
 	public bool? FullScreen {
-		get => isInitialized ? DxPopupInterop.GetFullScreen(Id) : fullScreen;
+		get => isInitialized ? DevExpress.Ui.DxPopupInterop.GetFullScreen(Id) : fullScreen;
 		set {
 			if (isInitialized) {
-				DxPopupInterop.SetFullScreen(Id, value);
+				DevExpress.Ui.DxPopupInterop.SetFullScreen(Id, value);
 			} else {
 				this.fullScreen = value;
 			}
@@ -72,21 +87,32 @@
 	}
 	object height;
 	public object Height {
-		get => isInitialized ? DxPopupInterop.GetHeight(Id) : height;
+		get => isInitialized ? DevExpress.Ui.DxPopupInterop.GetHeight(Id) : height;
 		set {
 			if (isInitialized) {
-				DxPopupInterop.SetHeight(Id, value);
+				DevExpress.Ui.DxPopupInterop.SetHeight(Id, value);
 			} else {
 				this.height = value;
 			}
 		}
 	}
-	bool? resizeEnabled;
-	public bool? ResizeEnabled {
-		get => isInitialized ? DxPopupInterop.GetResizeEnabled(Id) : resizeEnabled;
+	object position;
+	public object Position {
+		get => isInitialized ? DevExpress.Ui.DxPopupInterop.GetPosition(Id) : position;
 		set {
 			if (isInitialized) {
-				DxPopupInterop.SetResizeEnabled(Id, value);
+				DevExpress.Ui.DxPopupInterop.SetPosition(Id, value);
+			} else {
+				this.position = value;
+			}
+		}
+	}
+	bool? resizeEnabled;
+	public bool? ResizeEnabled {
+		get => isInitialized ? DevExpress.Ui.DxPopupInterop.GetResizeEnabled(Id) : resizeEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxPopupInterop.SetResizeEnabled(Id, value);
 			} else {
 				this.resizeEnabled = value;
 			}
@@ -94,10 +120,10 @@
 	}
 	bool? showCloseButton;
 	public bool? ShowCloseButton {
-		get => isInitialized ? DxPopupInterop.GetShowCloseButton(Id) : showCloseButton;
+		get => isInitialized ? DevExpress.Ui.DxPopupInterop.GetShowCloseButton(Id) : showCloseButton;
 		set {
 			if (isInitialized) {
-				DxPopupInterop.SetShowCloseButton(Id, value);
+				DevExpress.Ui.DxPopupInterop.SetShowCloseButton(Id, value);
 			} else {
 				this.showCloseButton = value;
 			}
@@ -105,10 +131,10 @@
 	}
 	bool? showTitle;
 	public bool? ShowTitle {
-		get => isInitialized ? DxPopupInterop.GetShowTitle(Id) : showTitle;
+		get => isInitialized ? DevExpress.Ui.DxPopupInterop.GetShowTitle(Id) : showTitle;
 		set {
 			if (isInitialized) {
-				DxPopupInterop.SetShowTitle(Id, value);
+				DevExpress.Ui.DxPopupInterop.SetShowTitle(Id, value);
 			} else {
 				this.showTitle = value;
 			}
@@ -116,21 +142,43 @@
 	}
 	string title;
 	public string Title {
-		get => isInitialized ? DxPopupInterop.GetTitle(Id) : title;
+		get => isInitialized ? DevExpress.Ui.DxPopupInterop.GetTitle(Id) : title;
 		set {
 			if (isInitialized) {
-				DxPopupInterop.SetTitle(Id, value);
+				DevExpress.Ui.DxPopupInterop.SetTitle(Id, value);
 			} else {
 				this.title = value;
 			}
 		}
 	}
-	object width;
-	public object Width {
-		get => isInitialized ? DxPopupInterop.GetWidth(Id) : width;
+	object titleTemplate;
+	public object TitleTemplate {
+		get => isInitialized ? DevExpress.Ui.DxPopupInterop.GetTitleTemplate(Id) : titleTemplate;
 		set {
 			if (isInitialized) {
-				DxPopupInterop.SetWidth(Id, value);
+				DevExpress.Ui.DxPopupInterop.SetTitleTemplate(Id, value);
+			} else {
+				this.titleTemplate = value;
+			}
+		}
+	}
+	object toolbarItems;
+	public object ToolbarItems {
+		get => isInitialized ? DevExpress.Ui.DxPopupInterop.GetToolbarItems(Id) : toolbarItems;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxPopupInterop.SetToolbarItems(Id, value);
+			} else {
+				this.toolbarItems = value;
+			}
+		}
+	}
+	object width;
+	public object Width {
+		get => isInitialized ? DevExpress.Ui.DxPopupInterop.GetWidth(Id) : width;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxPopupInterop.SetWidth(Id, value);
 			} else {
 				this.width = value;
 			}
@@ -158,10 +206,10 @@
 	}
 	protected override async Task OnInitAsync() {
 		await base.OnInitAsync();
-		DxPopupInterop.Resize += DxPopup_Resize;
-		DxPopupInterop.ResizeEnd += DxPopup_ResizeEnd;
-		DxPopupInterop.ResizeStart += DxPopup_ResizeStart;
-		DxPopupInterop.TitleRendered += DxPopup_TitleRendered;
+		DevExpress.Ui.DxPopupInterop.Resize += DxPopup_Resize;
+		DevExpress.Ui.DxPopupInterop.ResizeEnd += DxPopup_ResizeEnd;
+		DevExpress.Ui.DxPopupInterop.ResizeStart += DxPopup_ResizeStart;
+		DevExpress.Ui.DxPopupInterop.TitleRendered += DxPopup_TitleRendered;
 	}
 	public Action Resize { get; set; }
 	void DxPopup_Resize(object sender, JQueryEventArgs e) {
@@ -188,9 +236,9 @@
 		}
 	}
 	public void Dispose() {
-		DxPopupInterop.Resize -= DxPopup_Resize;
-		DxPopupInterop.ResizeEnd -= DxPopup_ResizeEnd;
-		DxPopupInterop.ResizeStart -= DxPopup_ResizeStart;
-		DxPopupInterop.TitleRendered -= DxPopup_TitleRendered;
+		DevExpress.Ui.DxPopupInterop.Resize -= DxPopup_Resize;
+		DevExpress.Ui.DxPopupInterop.ResizeEnd -= DxPopup_ResizeEnd;
+		DevExpress.Ui.DxPopupInterop.ResizeStart -= DxPopup_ResizeStart;
+		DevExpress.Ui.DxPopupInterop.TitleRendered -= DxPopup_TitleRendered;
 	}
 }

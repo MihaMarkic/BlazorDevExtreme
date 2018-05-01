@@ -1,0 +1,268 @@
+@implements IDisposable
+@inherits DxBlazorCompoment<DevExpress.Ui.DxOverlayOptions>
+
+<div id="@Id"></div>
+
+@functions {
+	public DxOverlay() : base("DxOverlay") { }
+	protected override DevExpress.Ui.DxOverlayOptions CreateOptions() {
+		return new DevExpress.Ui.DxOverlayOptions {
+			animation = animation,
+			closeOnBackButton = closeOnBackButton,
+			closeOnOutsideClick = closeOnOutsideClick,
+			contentTemplate = contentTemplate,
+			deferRendering = deferRendering,
+			dragEnabled = dragEnabled,
+			height = height,
+			maxHeight = maxHeight,
+			maxWidth = maxWidth,
+			minHeight = minHeight,
+			minWidth = minWidth,
+			position = position,
+			shading = shading,
+			shadingColor = shadingColor,
+			visible = visible,
+			width = width,
+			onHiddenEnabled = onHiddenEnabled,
+			onHidingEnabled = onHidingEnabled,
+			onShowingEnabled = onShowingEnabled,
+			onShownEnabled = onShownEnabled,
+		};
+	}
+	protected override void Init(DevExpress.Ui.DxOverlayOptions options) {
+		DevExpress.Ui.DxOverlayInterop.Init(Id, options);
+	}
+	object animation;
+	public object Animation {
+		get => isInitialized ? DevExpress.Ui.DxOverlayInterop.GetAnimation(Id) : animation;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxOverlayInterop.SetAnimation(Id, value);
+			} else {
+				this.animation = value;
+			}
+		}
+	}
+	bool? closeOnBackButton;
+	public bool? CloseOnBackButton {
+		get => isInitialized ? DevExpress.Ui.DxOverlayInterop.GetCloseOnBackButton(Id) : closeOnBackButton;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxOverlayInterop.SetCloseOnBackButton(Id, value);
+			} else {
+				this.closeOnBackButton = value;
+			}
+		}
+	}
+	object closeOnOutsideClick;
+	public object CloseOnOutsideClick {
+		get => isInitialized ? DevExpress.Ui.DxOverlayInterop.GetCloseOnOutsideClick(Id) : closeOnOutsideClick;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxOverlayInterop.SetCloseOnOutsideClick(Id, value);
+			} else {
+				this.closeOnOutsideClick = value;
+			}
+		}
+	}
+	object contentTemplate;
+	public object ContentTemplate {
+		get => isInitialized ? DevExpress.Ui.DxOverlayInterop.GetContentTemplate(Id) : contentTemplate;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxOverlayInterop.SetContentTemplate(Id, value);
+			} else {
+				this.contentTemplate = value;
+			}
+		}
+	}
+	bool? deferRendering;
+	public bool? DeferRendering {
+		get => isInitialized ? DevExpress.Ui.DxOverlayInterop.GetDeferRendering(Id) : deferRendering;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxOverlayInterop.SetDeferRendering(Id, value);
+			} else {
+				this.deferRendering = value;
+			}
+		}
+	}
+	bool? dragEnabled;
+	public bool? DragEnabled {
+		get => isInitialized ? DevExpress.Ui.DxOverlayInterop.GetDragEnabled(Id) : dragEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxOverlayInterop.SetDragEnabled(Id, value);
+			} else {
+				this.dragEnabled = value;
+			}
+		}
+	}
+	object height;
+	public object Height {
+		get => isInitialized ? DevExpress.Ui.DxOverlayInterop.GetHeight(Id) : height;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxOverlayInterop.SetHeight(Id, value);
+			} else {
+				this.height = value;
+			}
+		}
+	}
+	object maxHeight;
+	public object MaxHeight {
+		get => isInitialized ? DevExpress.Ui.DxOverlayInterop.GetMaxHeight(Id) : maxHeight;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxOverlayInterop.SetMaxHeight(Id, value);
+			} else {
+				this.maxHeight = value;
+			}
+		}
+	}
+	object maxWidth;
+	public object MaxWidth {
+		get => isInitialized ? DevExpress.Ui.DxOverlayInterop.GetMaxWidth(Id) : maxWidth;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxOverlayInterop.SetMaxWidth(Id, value);
+			} else {
+				this.maxWidth = value;
+			}
+		}
+	}
+	object minHeight;
+	public object MinHeight {
+		get => isInitialized ? DevExpress.Ui.DxOverlayInterop.GetMinHeight(Id) : minHeight;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxOverlayInterop.SetMinHeight(Id, value);
+			} else {
+				this.minHeight = value;
+			}
+		}
+	}
+	object minWidth;
+	public object MinWidth {
+		get => isInitialized ? DevExpress.Ui.DxOverlayInterop.GetMinWidth(Id) : minWidth;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxOverlayInterop.SetMinWidth(Id, value);
+			} else {
+				this.minWidth = value;
+			}
+		}
+	}
+	object position;
+	public object Position {
+		get => isInitialized ? DevExpress.Ui.DxOverlayInterop.GetPosition(Id) : position;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxOverlayInterop.SetPosition(Id, value);
+			} else {
+				this.position = value;
+			}
+		}
+	}
+	bool? shading;
+	public bool? Shading {
+		get => isInitialized ? DevExpress.Ui.DxOverlayInterop.GetShading(Id) : shading;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxOverlayInterop.SetShading(Id, value);
+			} else {
+				this.shading = value;
+			}
+		}
+	}
+	string shadingColor;
+	public string ShadingColor {
+		get => isInitialized ? DevExpress.Ui.DxOverlayInterop.GetShadingColor(Id) : shadingColor;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxOverlayInterop.SetShadingColor(Id, value);
+			} else {
+				this.shadingColor = value;
+			}
+		}
+	}
+	bool? visible;
+	public bool? Visible {
+		get => isInitialized ? DevExpress.Ui.DxOverlayInterop.GetVisible(Id) : visible;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxOverlayInterop.SetVisible(Id, value);
+			} else {
+				this.visible = value;
+			}
+		}
+	}
+	object width;
+	public object Width {
+		get => isInitialized ? DevExpress.Ui.DxOverlayInterop.GetWidth(Id) : width;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxOverlayInterop.SetWidth(Id, value);
+			} else {
+				this.width = value;
+			}
+		}
+	}
+	bool? onHiddenEnabled;
+	public bool? OnHiddenEnabled {
+		get => onHiddenEnabled;
+		set => this.onHiddenEnabled = value;
+	}
+	bool? onHidingEnabled;
+	public bool? OnHidingEnabled {
+		get => onHidingEnabled;
+		set => this.onHidingEnabled = value;
+	}
+	bool? onShowingEnabled;
+	public bool? OnShowingEnabled {
+		get => onShowingEnabled;
+		set => this.onShowingEnabled = value;
+	}
+	bool? onShownEnabled;
+	public bool? OnShownEnabled {
+		get => onShownEnabled;
+		set => this.onShownEnabled = value;
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+		DevExpress.Ui.DxOverlayInterop.Hidden += DxOverlay_Hidden;
+		DevExpress.Ui.DxOverlayInterop.Hiding += DxOverlay_Hiding;
+		DevExpress.Ui.DxOverlayInterop.Showing += DxOverlay_Showing;
+		DevExpress.Ui.DxOverlayInterop.Shown += DxOverlay_Shown;
+	}
+	public Action Hidden { get; set; }
+	void DxOverlay_Hidden(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Hidden?.Invoke();
+		}
+	}
+	public Action Hiding { get; set; }
+	void DxOverlay_Hiding(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Hiding?.Invoke();
+		}
+	}
+	public Action Showing { get; set; }
+	void DxOverlay_Showing(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Showing?.Invoke();
+		}
+	}
+	public Action Shown { get; set; }
+	void DxOverlay_Shown(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Shown?.Invoke();
+		}
+	}
+	public void Dispose() {
+		DevExpress.Ui.DxOverlayInterop.Hidden -= DxOverlay_Hidden;
+		DevExpress.Ui.DxOverlayInterop.Hiding -= DxOverlay_Hiding;
+		DevExpress.Ui.DxOverlayInterop.Showing -= DxOverlay_Showing;
+		DevExpress.Ui.DxOverlayInterop.Shown -= DxOverlay_Shown;
+	}
+}

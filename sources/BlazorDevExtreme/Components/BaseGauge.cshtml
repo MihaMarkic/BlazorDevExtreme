@@ -1,0 +1,156 @@
+@implements IDisposable
+@inherits DxBlazorCompoment<DevExpress.Viz.Gauges.BaseGaugeOptions>
+
+<div id="@Id"></div>
+
+@functions {
+	public BaseGauge() : base("BaseGauge") { }
+	protected override DevExpress.Viz.Gauges.BaseGaugeOptions CreateOptions() {
+		return new DevExpress.Viz.Gauges.BaseGaugeOptions {
+			animation = animation,
+			containerBackgroundColor = containerBackgroundColor,
+			rangeContainer = rangeContainer,
+			scale = scale,
+			subtitle = subtitle,
+			subvalues = subvalues,
+			title = title,
+			tooltip = tooltip,
+			value = value,
+			onTooltipHiddenEnabled = onTooltipHiddenEnabled,
+			onTooltipShownEnabled = onTooltipShownEnabled,
+		};
+	}
+	protected override void Init(DevExpress.Viz.Gauges.BaseGaugeOptions options) {
+		DevExpress.Viz.BaseGaugeInterop.Init(Id, options);
+	}
+	object animation;
+	public object Animation {
+		get => isInitialized ? DevExpress.Viz.BaseGaugeInterop.GetAnimation(Id) : animation;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.BaseGaugeInterop.SetAnimation(Id, value);
+			} else {
+				this.animation = value;
+			}
+		}
+	}
+	string containerBackgroundColor;
+	public string ContainerBackgroundColor {
+		get => isInitialized ? DevExpress.Viz.BaseGaugeInterop.GetContainerBackgroundColor(Id) : containerBackgroundColor;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.BaseGaugeInterop.SetContainerBackgroundColor(Id, value);
+			} else {
+				this.containerBackgroundColor = value;
+			}
+		}
+	}
+	object rangeContainer;
+	public object RangeContainer {
+		get => isInitialized ? DevExpress.Viz.BaseGaugeInterop.GetRangeContainer(Id) : rangeContainer;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.BaseGaugeInterop.SetRangeContainer(Id, value);
+			} else {
+				this.rangeContainer = value;
+			}
+		}
+	}
+	object scale;
+	public object Scale {
+		get => isInitialized ? DevExpress.Viz.BaseGaugeInterop.GetScale(Id) : scale;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.BaseGaugeInterop.SetScale(Id, value);
+			} else {
+				this.scale = value;
+			}
+		}
+	}
+	object subtitle;
+	public object Subtitle {
+		get => isInitialized ? DevExpress.Viz.BaseGaugeInterop.GetSubtitle(Id) : subtitle;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.BaseGaugeInterop.SetSubtitle(Id, value);
+			} else {
+				this.subtitle = value;
+			}
+		}
+	}
+	object subvalues;
+	public object Subvalues {
+		get => isInitialized ? DevExpress.Viz.BaseGaugeInterop.GetSubvalues(Id) : subvalues;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.BaseGaugeInterop.SetSubvalues(Id, value);
+			} else {
+				this.subvalues = value;
+			}
+		}
+	}
+	object title;
+	public object Title {
+		get => isInitialized ? DevExpress.Viz.BaseGaugeInterop.GetTitle(Id) : title;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.BaseGaugeInterop.SetTitle(Id, value);
+			} else {
+				this.title = value;
+			}
+		}
+	}
+	object tooltip;
+	public object Tooltip {
+		get => isInitialized ? DevExpress.Viz.BaseGaugeInterop.GetTooltip(Id) : tooltip;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.BaseGaugeInterop.SetTooltip(Id, value);
+			} else {
+				this.tooltip = value;
+			}
+		}
+	}
+	float? value;
+	public float? Value {
+		get => isInitialized ? DevExpress.Viz.BaseGaugeInterop.GetValue(Id) : value;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.BaseGaugeInterop.SetValue(Id, value);
+			} else {
+				this.value = value;
+			}
+		}
+	}
+	bool? onTooltipHiddenEnabled;
+	public bool? OnTooltipHiddenEnabled {
+		get => onTooltipHiddenEnabled;
+		set => this.onTooltipHiddenEnabled = value;
+	}
+	bool? onTooltipShownEnabled;
+	public bool? OnTooltipShownEnabled {
+		get => onTooltipShownEnabled;
+		set => this.onTooltipShownEnabled = value;
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+		DevExpress.Viz.BaseGaugeInterop.TooltipHidden += BaseGauge_TooltipHidden;
+		DevExpress.Viz.BaseGaugeInterop.TooltipShown += BaseGauge_TooltipShown;
+	}
+	public Action TooltipHidden { get; set; }
+	void BaseGauge_TooltipHidden(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			TooltipHidden?.Invoke();
+		}
+	}
+	public Action TooltipShown { get; set; }
+	void BaseGauge_TooltipShown(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			TooltipShown?.Invoke();
+		}
+	}
+	public void Dispose() {
+		DevExpress.Viz.BaseGaugeInterop.TooltipHidden -= BaseGauge_TooltipHidden;
+		DevExpress.Viz.BaseGaugeInterop.TooltipShown -= BaseGauge_TooltipShown;
+	}
+}

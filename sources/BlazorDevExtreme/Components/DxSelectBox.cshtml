@@ -8,6 +8,7 @@
 	protected override DevExpress.Ui.DxSelectBoxOptions CreateOptions() {
 		return new DevExpress.Ui.DxSelectBoxOptions {
 			acceptCustomValue = acceptCustomValue,
+			fieldTemplate = fieldTemplate,
 			placeholder = placeholder,
 			showSelectionControls = showSelectionControls,
 			valueChangeEvent = valueChangeEvent,
@@ -15,25 +16,36 @@
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxSelectBoxOptions options) {
-		DxSelectBoxInterop.Init(Id, options);
+		DevExpress.Ui.DxSelectBoxInterop.Init(Id, options);
 	}
 	bool? acceptCustomValue;
 	public bool? AcceptCustomValue {
-		get => isInitialized ? DxSelectBoxInterop.GetAcceptCustomValue(Id) : acceptCustomValue;
+		get => isInitialized ? DevExpress.Ui.DxSelectBoxInterop.GetAcceptCustomValue(Id) : acceptCustomValue;
 		set {
 			if (isInitialized) {
-				DxSelectBoxInterop.SetAcceptCustomValue(Id, value);
+				DevExpress.Ui.DxSelectBoxInterop.SetAcceptCustomValue(Id, value);
 			} else {
 				this.acceptCustomValue = value;
 			}
 		}
 	}
-	string placeholder;
-	public string Placeholder {
-		get => isInitialized ? DxSelectBoxInterop.GetPlaceholder(Id) : placeholder;
+	object fieldTemplate;
+	public object FieldTemplate {
+		get => isInitialized ? DevExpress.Ui.DxSelectBoxInterop.GetFieldTemplate(Id) : fieldTemplate;
 		set {
 			if (isInitialized) {
-				DxSelectBoxInterop.SetPlaceholder(Id, value);
+				DevExpress.Ui.DxSelectBoxInterop.SetFieldTemplate(Id, value);
+			} else {
+				this.fieldTemplate = value;
+			}
+		}
+	}
+	string placeholder;
+	public string Placeholder {
+		get => isInitialized ? DevExpress.Ui.DxSelectBoxInterop.GetPlaceholder(Id) : placeholder;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxSelectBoxInterop.SetPlaceholder(Id, value);
 			} else {
 				this.placeholder = value;
 			}
@@ -41,10 +53,10 @@
 	}
 	bool? showSelectionControls;
 	public bool? ShowSelectionControls {
-		get => isInitialized ? DxSelectBoxInterop.GetShowSelectionControls(Id) : showSelectionControls;
+		get => isInitialized ? DevExpress.Ui.DxSelectBoxInterop.GetShowSelectionControls(Id) : showSelectionControls;
 		set {
 			if (isInitialized) {
-				DxSelectBoxInterop.SetShowSelectionControls(Id, value);
+				DevExpress.Ui.DxSelectBoxInterop.SetShowSelectionControls(Id, value);
 			} else {
 				this.showSelectionControls = value;
 			}
@@ -52,10 +64,10 @@
 	}
 	string valueChangeEvent;
 	public string ValueChangeEvent {
-		get => isInitialized ? DxSelectBoxInterop.GetValueChangeEvent(Id) : valueChangeEvent;
+		get => isInitialized ? DevExpress.Ui.DxSelectBoxInterop.GetValueChangeEvent(Id) : valueChangeEvent;
 		set {
 			if (isInitialized) {
-				DxSelectBoxInterop.SetValueChangeEvent(Id, value);
+				DevExpress.Ui.DxSelectBoxInterop.SetValueChangeEvent(Id, value);
 			} else {
 				this.valueChangeEvent = value;
 			}
@@ -68,7 +80,7 @@
 	}
 	protected override async Task OnInitAsync() {
 		await base.OnInitAsync();
-		DxSelectBoxInterop.CustomItemCreating += DxSelectBox_CustomItemCreating;
+		DevExpress.Ui.DxSelectBoxInterop.CustomItemCreating += DxSelectBox_CustomItemCreating;
 	}
 	public Action CustomItemCreating { get; set; }
 	void DxSelectBox_CustomItemCreating(object sender, JQueryEventArgs e) {
@@ -77,6 +89,6 @@
 		}
 	}
 	public void Dispose() {
-		DxSelectBoxInterop.CustomItemCreating -= DxSelectBox_CustomItemCreating;
+		DevExpress.Ui.DxSelectBoxInterop.CustomItemCreating -= DxSelectBox_CustomItemCreating;
 	}
 }

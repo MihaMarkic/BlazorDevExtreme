@@ -9,7 +9,9 @@
 		return new DevExpress.Ui.DxMenuOptions {
 			adaptivityEnabled = adaptivityEnabled,
 			hideSubmenuOnMouseLeave = hideSubmenuOnMouseLeave,
+			items = items,
 			orientation = orientation,
+			showFirstSubmenuMode = showFirstSubmenuMode,
 			submenuDirection = submenuDirection,
 			onSubmenuHiddenEnabled = onSubmenuHiddenEnabled,
 			onSubmenuHidingEnabled = onSubmenuHidingEnabled,
@@ -18,14 +20,14 @@
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxMenuOptions options) {
-		DxMenuInterop.Init(Id, options);
+		DevExpress.Ui.DxMenuInterop.Init(Id, options);
 	}
 	bool? adaptivityEnabled;
 	public bool? AdaptivityEnabled {
-		get => isInitialized ? DxMenuInterop.GetAdaptivityEnabled(Id) : adaptivityEnabled;
+		get => isInitialized ? DevExpress.Ui.DxMenuInterop.GetAdaptivityEnabled(Id) : adaptivityEnabled;
 		set {
 			if (isInitialized) {
-				DxMenuInterop.SetAdaptivityEnabled(Id, value);
+				DevExpress.Ui.DxMenuInterop.SetAdaptivityEnabled(Id, value);
 			} else {
 				this.adaptivityEnabled = value;
 			}
@@ -33,32 +35,54 @@
 	}
 	bool? hideSubmenuOnMouseLeave;
 	public bool? HideSubmenuOnMouseLeave {
-		get => isInitialized ? DxMenuInterop.GetHideSubmenuOnMouseLeave(Id) : hideSubmenuOnMouseLeave;
+		get => isInitialized ? DevExpress.Ui.DxMenuInterop.GetHideSubmenuOnMouseLeave(Id) : hideSubmenuOnMouseLeave;
 		set {
 			if (isInitialized) {
-				DxMenuInterop.SetHideSubmenuOnMouseLeave(Id, value);
+				DevExpress.Ui.DxMenuInterop.SetHideSubmenuOnMouseLeave(Id, value);
 			} else {
 				this.hideSubmenuOnMouseLeave = value;
 			}
 		}
 	}
-	string orientation;
-	public string Orientation {
-		get => isInitialized ? DxMenuInterop.GetOrientation(Id) : orientation;
+	object items;
+	public object Items {
+		get => isInitialized ? DevExpress.Ui.DxMenuInterop.GetItems(Id) : items;
 		set {
 			if (isInitialized) {
-				DxMenuInterop.SetOrientation(Id, value);
+				DevExpress.Ui.DxMenuInterop.SetItems(Id, value);
+			} else {
+				this.items = value;
+			}
+		}
+	}
+	string orientation;
+	public string Orientation {
+		get => isInitialized ? DevExpress.Ui.DxMenuInterop.GetOrientation(Id) : orientation;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxMenuInterop.SetOrientation(Id, value);
 			} else {
 				this.orientation = value;
 			}
 		}
 	}
-	string submenuDirection;
-	public string SubmenuDirection {
-		get => isInitialized ? DxMenuInterop.GetSubmenuDirection(Id) : submenuDirection;
+	object showFirstSubmenuMode;
+	public object ShowFirstSubmenuMode {
+		get => isInitialized ? DevExpress.Ui.DxMenuInterop.GetShowFirstSubmenuMode(Id) : showFirstSubmenuMode;
 		set {
 			if (isInitialized) {
-				DxMenuInterop.SetSubmenuDirection(Id, value);
+				DevExpress.Ui.DxMenuInterop.SetShowFirstSubmenuMode(Id, value);
+			} else {
+				this.showFirstSubmenuMode = value;
+			}
+		}
+	}
+	string submenuDirection;
+	public string SubmenuDirection {
+		get => isInitialized ? DevExpress.Ui.DxMenuInterop.GetSubmenuDirection(Id) : submenuDirection;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxMenuInterop.SetSubmenuDirection(Id, value);
 			} else {
 				this.submenuDirection = value;
 			}
@@ -86,10 +110,10 @@
 	}
 	protected override async Task OnInitAsync() {
 		await base.OnInitAsync();
-		DxMenuInterop.SubmenuHidden += DxMenu_SubmenuHidden;
-		DxMenuInterop.SubmenuHiding += DxMenu_SubmenuHiding;
-		DxMenuInterop.SubmenuShowing += DxMenu_SubmenuShowing;
-		DxMenuInterop.SubmenuShown += DxMenu_SubmenuShown;
+		DevExpress.Ui.DxMenuInterop.SubmenuHidden += DxMenu_SubmenuHidden;
+		DevExpress.Ui.DxMenuInterop.SubmenuHiding += DxMenu_SubmenuHiding;
+		DevExpress.Ui.DxMenuInterop.SubmenuShowing += DxMenu_SubmenuShowing;
+		DevExpress.Ui.DxMenuInterop.SubmenuShown += DxMenu_SubmenuShown;
 	}
 	public Action SubmenuHidden { get; set; }
 	void DxMenu_SubmenuHidden(object sender, JQueryEventArgs e) {
@@ -116,9 +140,9 @@
 		}
 	}
 	public void Dispose() {
-		DxMenuInterop.SubmenuHidden -= DxMenu_SubmenuHidden;
-		DxMenuInterop.SubmenuHiding -= DxMenu_SubmenuHiding;
-		DxMenuInterop.SubmenuShowing -= DxMenu_SubmenuShowing;
-		DxMenuInterop.SubmenuShown -= DxMenu_SubmenuShown;
+		DevExpress.Ui.DxMenuInterop.SubmenuHidden -= DxMenu_SubmenuHidden;
+		DevExpress.Ui.DxMenuInterop.SubmenuHiding -= DxMenu_SubmenuHiding;
+		DevExpress.Ui.DxMenuInterop.SubmenuShowing -= DxMenu_SubmenuShowing;
+		DevExpress.Ui.DxMenuInterop.SubmenuShown -= DxMenu_SubmenuShown;
 	}
 }

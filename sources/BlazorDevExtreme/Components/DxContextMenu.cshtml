@@ -7,7 +7,12 @@
 	public DxContextMenu() : base("DxContextMenu") { }
 	protected override DevExpress.Ui.DxContextMenuOptions CreateOptions() {
 		return new DevExpress.Ui.DxContextMenuOptions {
+			closeOnOutsideClick = closeOnOutsideClick,
+			items = items,
+			position = position,
+			showEvent = showEvent,
 			submenuDirection = submenuDirection,
+			target = target,
 			visible = visible,
 			onHiddenEnabled = onHiddenEnabled,
 			onHidingEnabled = onHidingEnabled,
@@ -17,25 +22,80 @@
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxContextMenuOptions options) {
-		DxContextMenuInterop.Init(Id, options);
+		DevExpress.Ui.DxContextMenuInterop.Init(Id, options);
+	}
+	object closeOnOutsideClick;
+	public object CloseOnOutsideClick {
+		get => isInitialized ? DevExpress.Ui.DxContextMenuInterop.GetCloseOnOutsideClick(Id) : closeOnOutsideClick;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxContextMenuInterop.SetCloseOnOutsideClick(Id, value);
+			} else {
+				this.closeOnOutsideClick = value;
+			}
+		}
+	}
+	object items;
+	public object Items {
+		get => isInitialized ? DevExpress.Ui.DxContextMenuInterop.GetItems(Id) : items;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxContextMenuInterop.SetItems(Id, value);
+			} else {
+				this.items = value;
+			}
+		}
+	}
+	object position;
+	public object Position {
+		get => isInitialized ? DevExpress.Ui.DxContextMenuInterop.GetPosition(Id) : position;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxContextMenuInterop.SetPosition(Id, value);
+			} else {
+				this.position = value;
+			}
+		}
+	}
+	object showEvent;
+	public object ShowEvent {
+		get => isInitialized ? DevExpress.Ui.DxContextMenuInterop.GetShowEvent(Id) : showEvent;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxContextMenuInterop.SetShowEvent(Id, value);
+			} else {
+				this.showEvent = value;
+			}
+		}
 	}
 	string submenuDirection;
 	public string SubmenuDirection {
-		get => isInitialized ? DxContextMenuInterop.GetSubmenuDirection(Id) : submenuDirection;
+		get => isInitialized ? DevExpress.Ui.DxContextMenuInterop.GetSubmenuDirection(Id) : submenuDirection;
 		set {
 			if (isInitialized) {
-				DxContextMenuInterop.SetSubmenuDirection(Id, value);
+				DevExpress.Ui.DxContextMenuInterop.SetSubmenuDirection(Id, value);
 			} else {
 				this.submenuDirection = value;
 			}
 		}
 	}
-	bool? visible;
-	public bool? Visible {
-		get => isInitialized ? DxContextMenuInterop.GetVisible(Id) : visible;
+	object target;
+	public object Target {
+		get => isInitialized ? DevExpress.Ui.DxContextMenuInterop.GetTarget(Id) : target;
 		set {
 			if (isInitialized) {
-				DxContextMenuInterop.SetVisible(Id, value);
+				DevExpress.Ui.DxContextMenuInterop.SetTarget(Id, value);
+			} else {
+				this.target = value;
+			}
+		}
+	}
+	bool? visible;
+	public bool? Visible {
+		get => isInitialized ? DevExpress.Ui.DxContextMenuInterop.GetVisible(Id) : visible;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxContextMenuInterop.SetVisible(Id, value);
 			} else {
 				this.visible = value;
 			}
@@ -68,11 +128,11 @@
 	}
 	protected override async Task OnInitAsync() {
 		await base.OnInitAsync();
-		DxContextMenuInterop.Hidden += DxContextMenu_Hidden;
-		DxContextMenuInterop.Hiding += DxContextMenu_Hiding;
-		DxContextMenuInterop.Positioning += DxContextMenu_Positioning;
-		DxContextMenuInterop.Showing += DxContextMenu_Showing;
-		DxContextMenuInterop.Shown += DxContextMenu_Shown;
+		DevExpress.Ui.DxContextMenuInterop.Hidden += DxContextMenu_Hidden;
+		DevExpress.Ui.DxContextMenuInterop.Hiding += DxContextMenu_Hiding;
+		DevExpress.Ui.DxContextMenuInterop.Positioning += DxContextMenu_Positioning;
+		DevExpress.Ui.DxContextMenuInterop.Showing += DxContextMenu_Showing;
+		DevExpress.Ui.DxContextMenuInterop.Shown += DxContextMenu_Shown;
 	}
 	public Action Hidden { get; set; }
 	void DxContextMenu_Hidden(object sender, JQueryEventArgs e) {
@@ -105,10 +165,10 @@
 		}
 	}
 	public void Dispose() {
-		DxContextMenuInterop.Hidden -= DxContextMenu_Hidden;
-		DxContextMenuInterop.Hiding -= DxContextMenu_Hiding;
-		DxContextMenuInterop.Positioning -= DxContextMenu_Positioning;
-		DxContextMenuInterop.Showing -= DxContextMenu_Showing;
-		DxContextMenuInterop.Shown -= DxContextMenu_Shown;
+		DevExpress.Ui.DxContextMenuInterop.Hidden -= DxContextMenu_Hidden;
+		DevExpress.Ui.DxContextMenuInterop.Hiding -= DxContextMenu_Hiding;
+		DevExpress.Ui.DxContextMenuInterop.Positioning -= DxContextMenu_Positioning;
+		DevExpress.Ui.DxContextMenuInterop.Showing -= DxContextMenu_Showing;
+		DevExpress.Ui.DxContextMenuInterop.Shown -= DxContextMenu_Shown;
 	}
 }

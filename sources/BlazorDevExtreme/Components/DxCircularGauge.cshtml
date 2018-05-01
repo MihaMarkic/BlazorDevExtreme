@@ -7,10 +7,70 @@
 	public DxCircularGauge() : base("DxCircularGauge") { }
 	protected override DevExpress.Viz.Gauges.DxCircularGaugeOptions CreateOptions() {
 		return new DevExpress.Viz.Gauges.DxCircularGaugeOptions {
+			geometry = geometry,
+			rangeContainer = rangeContainer,
+			scale = scale,
+			subvalueIndicator = subvalueIndicator,
+			valueIndicator = valueIndicator,
 		};
 	}
 	protected override void Init(DevExpress.Viz.Gauges.DxCircularGaugeOptions options) {
-		DxCircularGaugeInterop.Init(Id, options);
+		DevExpress.Viz.DxCircularGaugeInterop.Init(Id, options);
+	}
+	object geometry;
+	public object Geometry {
+		get => isInitialized ? DevExpress.Viz.DxCircularGaugeInterop.GetGeometry(Id) : geometry;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxCircularGaugeInterop.SetGeometry(Id, value);
+			} else {
+				this.geometry = value;
+			}
+		}
+	}
+	object rangeContainer;
+	public object RangeContainer {
+		get => isInitialized ? DevExpress.Viz.DxCircularGaugeInterop.GetRangeContainer(Id) : rangeContainer;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxCircularGaugeInterop.SetRangeContainer(Id, value);
+			} else {
+				this.rangeContainer = value;
+			}
+		}
+	}
+	object scale;
+	public object Scale {
+		get => isInitialized ? DevExpress.Viz.DxCircularGaugeInterop.GetScale(Id) : scale;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxCircularGaugeInterop.SetScale(Id, value);
+			} else {
+				this.scale = value;
+			}
+		}
+	}
+	object subvalueIndicator;
+	public object SubvalueIndicator {
+		get => isInitialized ? DevExpress.Viz.DxCircularGaugeInterop.GetSubvalueIndicator(Id) : subvalueIndicator;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxCircularGaugeInterop.SetSubvalueIndicator(Id, value);
+			} else {
+				this.subvalueIndicator = value;
+			}
+		}
+	}
+	object valueIndicator;
+	public object ValueIndicator {
+		get => isInitialized ? DevExpress.Viz.DxCircularGaugeInterop.GetValueIndicator(Id) : valueIndicator;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxCircularGaugeInterop.SetValueIndicator(Id, value);
+			} else {
+				this.valueIndicator = value;
+			}
+		}
 	}
 	protected override async Task OnInitAsync() {
 		await base.OnInitAsync();

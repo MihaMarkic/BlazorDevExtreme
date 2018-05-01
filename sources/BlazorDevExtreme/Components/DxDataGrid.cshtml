@@ -7,6 +7,22 @@
 	public DxDataGrid() : base("DxDataGrid") { }
 	protected override DevExpress.Ui.DxDataGridOptions CreateOptions() {
 		return new DevExpress.Ui.DxDataGridOptions {
+			columns = columns,
+			customizeColumns = customizeColumns,
+			customizeExportData = customizeExportData,
+			editing = editing,
+			export = export,
+			grouping = grouping,
+			groupPanel = groupPanel,
+			keyExpr = keyExpr,
+			masterDetail = masterDetail,
+			remoteOperations = remoteOperations,
+			rowTemplate = rowTemplate,
+			scrolling = scrolling,
+			selection = selection,
+			selectionFilter = selectionFilter,
+			sortByGroupSummaryInfo = sortByGroupSummaryInfo,
+			summary = summary,
 			onCellClickEnabled = onCellClickEnabled,
 			onCellHoverChangedEnabled = onCellHoverChangedEnabled,
 			onCellPreparedEnabled = onCellPreparedEnabled,
@@ -22,7 +38,183 @@
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxDataGridOptions options) {
-		DxDataGridInterop.Init(Id, options);
+		DevExpress.Ui.DxDataGridInterop.Init(Id, options);
+	}
+	object columns;
+	public object Columns {
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetColumns(Id) : columns;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetColumns(Id, value);
+			} else {
+				this.columns = value;
+			}
+		}
+	}
+	object customizeColumns;
+	public object CustomizeColumns {
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetCustomizeColumns(Id) : customizeColumns;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetCustomizeColumns(Id, value);
+			} else {
+				this.customizeColumns = value;
+			}
+		}
+	}
+	object customizeExportData;
+	public object CustomizeExportData {
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetCustomizeExportData(Id) : customizeExportData;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetCustomizeExportData(Id, value);
+			} else {
+				this.customizeExportData = value;
+			}
+		}
+	}
+	object editing;
+	public object Editing {
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetEditing(Id) : editing;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetEditing(Id, value);
+			} else {
+				this.editing = value;
+			}
+		}
+	}
+	object export;
+	public object Export {
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetExport(Id) : export;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetExport(Id, value);
+			} else {
+				this.export = value;
+			}
+		}
+	}
+	object grouping;
+	public object Grouping {
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetGrouping(Id) : grouping;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetGrouping(Id, value);
+			} else {
+				this.grouping = value;
+			}
+		}
+	}
+	object groupPanel;
+	public object GroupPanel {
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetGroupPanel(Id) : groupPanel;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetGroupPanel(Id, value);
+			} else {
+				this.groupPanel = value;
+			}
+		}
+	}
+	object keyExpr;
+	public object KeyExpr {
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetKeyExpr(Id) : keyExpr;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetKeyExpr(Id, value);
+			} else {
+				this.keyExpr = value;
+			}
+		}
+	}
+	object masterDetail;
+	public object MasterDetail {
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetMasterDetail(Id) : masterDetail;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetMasterDetail(Id, value);
+			} else {
+				this.masterDetail = value;
+			}
+		}
+	}
+	object remoteOperations;
+	public object RemoteOperations {
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetRemoteOperations(Id) : remoteOperations;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetRemoteOperations(Id, value);
+			} else {
+				this.remoteOperations = value;
+			}
+		}
+	}
+	object rowTemplate;
+	public object RowTemplate {
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetRowTemplate(Id) : rowTemplate;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetRowTemplate(Id, value);
+			} else {
+				this.rowTemplate = value;
+			}
+		}
+	}
+	object scrolling;
+	public object Scrolling {
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetScrolling(Id) : scrolling;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetScrolling(Id, value);
+			} else {
+				this.scrolling = value;
+			}
+		}
+	}
+	object selection;
+	public object Selection {
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetSelection(Id) : selection;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetSelection(Id, value);
+			} else {
+				this.selection = value;
+			}
+		}
+	}
+	object selectionFilter;
+	public object SelectionFilter {
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetSelectionFilter(Id) : selectionFilter;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetSelectionFilter(Id, value);
+			} else {
+				this.selectionFilter = value;
+			}
+		}
+	}
+	object sortByGroupSummaryInfo;
+	public object SortByGroupSummaryInfo {
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetSortByGroupSummaryInfo(Id) : sortByGroupSummaryInfo;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetSortByGroupSummaryInfo(Id, value);
+			} else {
+				this.sortByGroupSummaryInfo = value;
+			}
+		}
+	}
+	object summary;
+	public object Summary {
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetSummary(Id) : summary;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetSummary(Id, value);
+			} else {
+				this.summary = value;
+			}
+		}
 	}
 	bool? onCellClickEnabled;
 	public bool? OnCellClickEnabled {
@@ -86,18 +278,18 @@
 	}
 	protected override async Task OnInitAsync() {
 		await base.OnInitAsync();
-		DxDataGridInterop.CellClick += DxDataGrid_CellClick;
-		DxDataGridInterop.CellHoverChanged += DxDataGrid_CellHoverChanged;
-		DxDataGridInterop.CellPrepared += DxDataGrid_CellPrepared;
-		DxDataGridInterop.ContextMenuPreparing += DxDataGrid_ContextMenuPreparing;
-		DxDataGridInterop.EditingStart += DxDataGrid_EditingStart;
-		DxDataGridInterop.EditorPrepared += DxDataGrid_EditorPrepared;
-		DxDataGridInterop.EditorPreparing += DxDataGrid_EditorPreparing;
-		DxDataGridInterop.Exported += DxDataGrid_Exported;
-		DxDataGridInterop.Exporting += DxDataGrid_Exporting;
-		DxDataGridInterop.FileSaving += DxDataGrid_FileSaving;
-		DxDataGridInterop.RowClick += DxDataGrid_RowClick;
-		DxDataGridInterop.RowPrepared += DxDataGrid_RowPrepared;
+		DevExpress.Ui.DxDataGridInterop.CellClick += DxDataGrid_CellClick;
+		DevExpress.Ui.DxDataGridInterop.CellHoverChanged += DxDataGrid_CellHoverChanged;
+		DevExpress.Ui.DxDataGridInterop.CellPrepared += DxDataGrid_CellPrepared;
+		DevExpress.Ui.DxDataGridInterop.ContextMenuPreparing += DxDataGrid_ContextMenuPreparing;
+		DevExpress.Ui.DxDataGridInterop.EditingStart += DxDataGrid_EditingStart;
+		DevExpress.Ui.DxDataGridInterop.EditorPrepared += DxDataGrid_EditorPrepared;
+		DevExpress.Ui.DxDataGridInterop.EditorPreparing += DxDataGrid_EditorPreparing;
+		DevExpress.Ui.DxDataGridInterop.Exported += DxDataGrid_Exported;
+		DevExpress.Ui.DxDataGridInterop.Exporting += DxDataGrid_Exporting;
+		DevExpress.Ui.DxDataGridInterop.FileSaving += DxDataGrid_FileSaving;
+		DevExpress.Ui.DxDataGridInterop.RowClick += DxDataGrid_RowClick;
+		DevExpress.Ui.DxDataGridInterop.RowPrepared += DxDataGrid_RowPrepared;
 	}
 	public Action CellClick { get; set; }
 	void DxDataGrid_CellClick(object sender, JQueryEventArgs e) {
@@ -172,17 +364,17 @@
 		}
 	}
 	public void Dispose() {
-		DxDataGridInterop.CellClick -= DxDataGrid_CellClick;
-		DxDataGridInterop.CellHoverChanged -= DxDataGrid_CellHoverChanged;
-		DxDataGridInterop.CellPrepared -= DxDataGrid_CellPrepared;
-		DxDataGridInterop.ContextMenuPreparing -= DxDataGrid_ContextMenuPreparing;
-		DxDataGridInterop.EditingStart -= DxDataGrid_EditingStart;
-		DxDataGridInterop.EditorPrepared -= DxDataGrid_EditorPrepared;
-		DxDataGridInterop.EditorPreparing -= DxDataGrid_EditorPreparing;
-		DxDataGridInterop.Exported -= DxDataGrid_Exported;
-		DxDataGridInterop.Exporting -= DxDataGrid_Exporting;
-		DxDataGridInterop.FileSaving -= DxDataGrid_FileSaving;
-		DxDataGridInterop.RowClick -= DxDataGrid_RowClick;
-		DxDataGridInterop.RowPrepared -= DxDataGrid_RowPrepared;
+		DevExpress.Ui.DxDataGridInterop.CellClick -= DxDataGrid_CellClick;
+		DevExpress.Ui.DxDataGridInterop.CellHoverChanged -= DxDataGrid_CellHoverChanged;
+		DevExpress.Ui.DxDataGridInterop.CellPrepared -= DxDataGrid_CellPrepared;
+		DevExpress.Ui.DxDataGridInterop.ContextMenuPreparing -= DxDataGrid_ContextMenuPreparing;
+		DevExpress.Ui.DxDataGridInterop.EditingStart -= DxDataGrid_EditingStart;
+		DevExpress.Ui.DxDataGridInterop.EditorPrepared -= DxDataGrid_EditorPrepared;
+		DevExpress.Ui.DxDataGridInterop.EditorPreparing -= DxDataGrid_EditorPreparing;
+		DevExpress.Ui.DxDataGridInterop.Exported -= DxDataGrid_Exported;
+		DevExpress.Ui.DxDataGridInterop.Exporting -= DxDataGrid_Exporting;
+		DevExpress.Ui.DxDataGridInterop.FileSaving -= DxDataGrid_FileSaving;
+		DevExpress.Ui.DxDataGridInterop.RowClick -= DxDataGrid_RowClick;
+		DevExpress.Ui.DxDataGridInterop.RowPrepared -= DxDataGrid_RowPrepared;
 	}
 }

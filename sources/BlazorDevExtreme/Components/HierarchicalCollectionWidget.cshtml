@@ -1,0 +1,104 @@
+@implements IDisposable
+@inherits DxBlazorCompoment<DevExpress.Ui.HierarchicalCollectionWidgetOptions>
+
+<div id="@Id"></div>
+
+@functions {
+	public HierarchicalCollectionWidget() : base("HierarchicalCollectionWidget") { }
+	protected override DevExpress.Ui.HierarchicalCollectionWidgetOptions CreateOptions() {
+		return new DevExpress.Ui.HierarchicalCollectionWidgetOptions {
+			disabledExpr = disabledExpr,
+			displayExpr = displayExpr,
+			focusStateEnabled = focusStateEnabled,
+			hoverStateEnabled = hoverStateEnabled,
+			itemsExpr = itemsExpr,
+			keyExpr = keyExpr,
+			selectedExpr = selectedExpr,
+		};
+	}
+	protected override void Init(DevExpress.Ui.HierarchicalCollectionWidgetOptions options) {
+		DevExpress.Ui.HierarchicalCollectionWidgetInterop.Init(Id, options);
+	}
+	object disabledExpr;
+	public object DisabledExpr {
+		get => isInitialized ? DevExpress.Ui.HierarchicalCollectionWidgetInterop.GetDisabledExpr(Id) : disabledExpr;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.HierarchicalCollectionWidgetInterop.SetDisabledExpr(Id, value);
+			} else {
+				this.disabledExpr = value;
+			}
+		}
+	}
+	object displayExpr;
+	public object DisplayExpr {
+		get => isInitialized ? DevExpress.Ui.HierarchicalCollectionWidgetInterop.GetDisplayExpr(Id) : displayExpr;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.HierarchicalCollectionWidgetInterop.SetDisplayExpr(Id, value);
+			} else {
+				this.displayExpr = value;
+			}
+		}
+	}
+	bool? focusStateEnabled;
+	public bool? FocusStateEnabled {
+		get => isInitialized ? DevExpress.Ui.HierarchicalCollectionWidgetInterop.GetFocusStateEnabled(Id) : focusStateEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.HierarchicalCollectionWidgetInterop.SetFocusStateEnabled(Id, value);
+			} else {
+				this.focusStateEnabled = value;
+			}
+		}
+	}
+	bool? hoverStateEnabled;
+	public bool? HoverStateEnabled {
+		get => isInitialized ? DevExpress.Ui.HierarchicalCollectionWidgetInterop.GetHoverStateEnabled(Id) : hoverStateEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.HierarchicalCollectionWidgetInterop.SetHoverStateEnabled(Id, value);
+			} else {
+				this.hoverStateEnabled = value;
+			}
+		}
+	}
+	object itemsExpr;
+	public object ItemsExpr {
+		get => isInitialized ? DevExpress.Ui.HierarchicalCollectionWidgetInterop.GetItemsExpr(Id) : itemsExpr;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.HierarchicalCollectionWidgetInterop.SetItemsExpr(Id, value);
+			} else {
+				this.itemsExpr = value;
+			}
+		}
+	}
+	object keyExpr;
+	public object KeyExpr {
+		get => isInitialized ? DevExpress.Ui.HierarchicalCollectionWidgetInterop.GetKeyExpr(Id) : keyExpr;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.HierarchicalCollectionWidgetInterop.SetKeyExpr(Id, value);
+			} else {
+				this.keyExpr = value;
+			}
+		}
+	}
+	object selectedExpr;
+	public object SelectedExpr {
+		get => isInitialized ? DevExpress.Ui.HierarchicalCollectionWidgetInterop.GetSelectedExpr(Id) : selectedExpr;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.HierarchicalCollectionWidgetInterop.SetSelectedExpr(Id, value);
+			} else {
+				this.selectedExpr = value;
+			}
+		}
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+	}
+	public void Dispose() {
+	}
+}

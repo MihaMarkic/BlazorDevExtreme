@@ -18,6 +18,7 @@
     {
         ClickedCount++;
         StateHasChanged();
+        // displays a notification using a static method
         UiInterop.Notify($"Clicked {ClickedCount}!", "info", 5000);
     }
     string ButtonText => $"Tubular {ClickedCount}";

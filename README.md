@@ -6,6 +6,8 @@ This is a library that implements the interop between [Blazor](https://github.co
 
 Per version 0.2 initialization with options is implemented., no instance functions at this time.
 
+Instance and static methods implemented in 0.4.
+
 ### Callbacks
 
 Callbacks are implemented in a simple way (no arguments except for jQuery identifier are passed).
@@ -31,6 +33,12 @@ public static class AnimationConfigDirection
    public const string Top = "top";
 }
 ```
+
+## Method restrictions
+
+Some methods have conflicting names with properties and have *Ex* appended (i.e. Values). Also some method overloads are duplicates when argument types are object types (type mismatch from typescript).
+
+Javascript methods are postfixed with ordinal method number to avoid overloading problems.
 
 ## System requirements
 
@@ -79,6 +87,7 @@ Include DevExtreme style sheets and javascript files
     {
         ClickedCount++;
         StateHasChanged();
+        UiInterop.Notify($"Clicked {ClickedCount}!", "info", 5000); // displays a notification using a static method
     }
     string ButtonText => $"Was clicked {ClickedCount} times";
 }

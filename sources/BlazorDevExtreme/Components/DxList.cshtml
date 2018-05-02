@@ -507,6 +507,57 @@
 			SelectAllValueChanged?.Invoke();
 		}
 	}
+	public float ClientHeight() {
+		return DevExpress.Ui.DxListInterop.ClientHeight(Id);
+	}
+	public object CollapseGroup(float groupIndex) {
+		return DevExpress.Ui.DxListInterop.CollapseGroup(Id, groupIndex);
+	}
+	public object DeleteItem(object itemElement) {
+		return DevExpress.Ui.DxListInterop.DeleteItem(Id, itemElement);
+	}
+	public object ExpandGroup(float groupIndex) {
+		return DevExpress.Ui.DxListInterop.ExpandGroup(Id, groupIndex);
+	}
+	public bool IsItemSelected(object itemElement) {
+		return DevExpress.Ui.DxListInterop.IsItemSelected(Id, itemElement);
+	}
+	public void Reload() {
+		DevExpress.Ui.DxListInterop.Reload(Id);
+	}
+	public object ReorderItem(object itemElement, object toItemElement) {
+		return DevExpress.Ui.DxListInterop.ReorderItem(Id, itemElement, toItemElement);
+	}
+	public void ScrollBy(float distance) {
+		DevExpress.Ui.DxListInterop.ScrollBy(Id, distance);
+	}
+	public float ScrollHeight() {
+		return DevExpress.Ui.DxListInterop.ScrollHeight(Id);
+	}
+	public void ScrollTo(float location) {
+		DevExpress.Ui.DxListInterop.ScrollTo(Id, location);
+	}
+	public void ScrollToItem(object itemElement) {
+		DevExpress.Ui.DxListInterop.ScrollToItem(Id, itemElement);
+	}
+	public float ScrollTop() {
+		return DevExpress.Ui.DxListInterop.ScrollTop(Id);
+	}
+	public void SelectAll() {
+		DevExpress.Ui.DxListInterop.SelectAll(Id);
+	}
+	public void SelectItem(object itemElement) {
+		DevExpress.Ui.DxListInterop.SelectItem(Id, itemElement);
+	}
+	public void UnselectAll() {
+		DevExpress.Ui.DxListInterop.UnselectAll(Id);
+	}
+	public void UnselectItem(object itemElement) {
+		DevExpress.Ui.DxListInterop.UnselectItem(Id, itemElement);
+	}
+	public object UpdateDimensions() {
+		return DevExpress.Ui.DxListInterop.UpdateDimensions(Id);
+	}
 	public void Dispose() {
 		DevExpress.Ui.DxListInterop.GroupRendered -= DxList_GroupRendered;
 		DevExpress.Ui.DxListInterop.ItemClick -= DxList_ItemClick;

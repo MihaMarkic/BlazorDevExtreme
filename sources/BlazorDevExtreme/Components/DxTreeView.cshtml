@@ -323,6 +323,30 @@
 			SelectionChanged?.Invoke();
 		}
 	}
+	public void CollapseItem(object itemData) {
+		DevExpress.Ui.DxTreeViewInterop.CollapseItem(Id, itemData);
+	}
+	public void ExpandItem(object itemData) {
+		DevExpress.Ui.DxTreeViewInterop.ExpandItem(Id, itemData);
+	}
+	public object GetNodes() {
+		return DevExpress.Ui.DxTreeViewInterop.GetNodes(Id);
+	}
+	public void SelectAll() {
+		DevExpress.Ui.DxTreeViewInterop.SelectAll(Id);
+	}
+	public void SelectItem(object itemData) {
+		DevExpress.Ui.DxTreeViewInterop.SelectItem(Id, itemData);
+	}
+	public void UnselectAll() {
+		DevExpress.Ui.DxTreeViewInterop.UnselectAll(Id);
+	}
+	public void UnselectItem(object itemData) {
+		DevExpress.Ui.DxTreeViewInterop.UnselectItem(Id, itemData);
+	}
+	public object UpdateDimensions() {
+		return DevExpress.Ui.DxTreeViewInterop.UpdateDimensions(Id);
+	}
 	public void Dispose() {
 		DevExpress.Ui.DxTreeViewInterop.ItemClick -= DxTreeView_ItemClick;
 		DevExpress.Ui.DxTreeViewInterop.ItemCollapsed -= DxTreeView_ItemCollapsed;

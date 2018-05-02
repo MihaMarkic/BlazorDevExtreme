@@ -148,6 +148,15 @@
 			ItemTitleClick?.Invoke();
 		}
 	}
+	public object CollapseItem(float index) {
+		return DevExpress.Ui.DxAccordionInterop.CollapseItem(Id, index);
+	}
+	public object ExpandItem(float index) {
+		return DevExpress.Ui.DxAccordionInterop.ExpandItem(Id, index);
+	}
+	public object UpdateDimensions() {
+		return DevExpress.Ui.DxAccordionInterop.UpdateDimensions(Id);
+	}
 	public void Dispose() {
 		DevExpress.Ui.DxAccordionInterop.ItemTitleClick -= DxAccordion_ItemTitleClick;
 	}

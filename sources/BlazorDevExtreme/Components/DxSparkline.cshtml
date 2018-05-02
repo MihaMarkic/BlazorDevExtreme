@@ -279,6 +279,9 @@
 	protected override async Task OnInitAsync() {
 		await base.OnInitAsync();
 	}
+	public object GetDataSourceEx() {
+		return DevExpress.Viz.DxSparklineInterop.GetDataSourceEx(Id);
+	}
 	public void Dispose() {
 	}
 }

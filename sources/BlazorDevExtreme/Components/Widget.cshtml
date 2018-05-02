@@ -124,6 +124,15 @@
 			ContentReady?.Invoke();
 		}
 	}
+	public void Focus() {
+		DevExpress.Ui.WidgetInterop.Focus(Id);
+	}
+	public void RegisterKeyHandler(string key, object handler) {
+		DevExpress.Ui.WidgetInterop.RegisterKeyHandler(Id, key, handler);
+	}
+	public void Repaint() {
+		DevExpress.Ui.WidgetInterop.Repaint(Id);
+	}
 	public void Dispose() {
 		DevExpress.Ui.WidgetInterop.ContentReady -= Widget_ContentReady;
 	}

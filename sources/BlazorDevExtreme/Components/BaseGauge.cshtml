@@ -149,6 +149,18 @@
 			TooltipShown?.Invoke();
 		}
 	}
+	public object SubvaluesEx() {
+		return DevExpress.Viz.BaseGaugeInterop.SubvaluesEx(Id);
+	}
+	public void SubvaluesEx(object subvalues) {
+		DevExpress.Viz.BaseGaugeInterop.SubvaluesEx(Id, subvalues);
+	}
+	public float ValueEx() {
+		return DevExpress.Viz.BaseGaugeInterop.ValueEx(Id);
+	}
+	public void ValueEx(float value) {
+		DevExpress.Viz.BaseGaugeInterop.ValueEx(Id, value);
+	}
 	public void Dispose() {
 		DevExpress.Viz.BaseGaugeInterop.TooltipHidden -= BaseGauge_TooltipHidden;
 		DevExpress.Viz.BaseGaugeInterop.TooltipShown -= BaseGauge_TooltipShown;

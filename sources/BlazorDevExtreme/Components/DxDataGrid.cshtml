@@ -363,6 +363,63 @@
 			RowPrepared?.Invoke();
 		}
 	}
+	public void AddColumn(object columnOptions) {
+		DevExpress.Ui.DxDataGridInterop.AddColumn(Id, columnOptions);
+	}
+	public void AddRow() {
+		DevExpress.Ui.DxDataGridInterop.AddRow(Id);
+	}
+	public void ClearGrouping() {
+		DevExpress.Ui.DxDataGridInterop.ClearGrouping(Id);
+	}
+	public void CollapseAll(float groupIndex) {
+		DevExpress.Ui.DxDataGridInterop.CollapseAll(Id, groupIndex);
+	}
+	public object CollapseRow(object key) {
+		return DevExpress.Ui.DxDataGridInterop.CollapseRow(Id, key);
+	}
+	public void ExpandAll(float groupIndex) {
+		DevExpress.Ui.DxDataGridInterop.ExpandAll(Id, groupIndex);
+	}
+	public object ExpandRow(object key) {
+		return DevExpress.Ui.DxDataGridInterop.ExpandRow(Id, key);
+	}
+	public void ExportToExcel(bool selectionOnly) {
+		DevExpress.Ui.DxDataGridInterop.ExportToExcel(Id, selectionOnly);
+	}
+	public object GetSelectedRowKeys() {
+		return DevExpress.Ui.DxDataGridInterop.GetSelectedRowKeys(Id);
+	}
+	public object GetSelectedRowsData() {
+		return DevExpress.Ui.DxDataGridInterop.GetSelectedRowsData(Id);
+	}
+	public object GetTotalSummaryValue(string summaryItemName) {
+		return DevExpress.Ui.DxDataGridInterop.GetTotalSummaryValue(Id, summaryItemName);
+	}
+	public object GetVisibleColumns() {
+		return DevExpress.Ui.DxDataGridInterop.GetVisibleColumns(Id);
+	}
+	public object GetVisibleColumns(float headerLevel) {
+		return DevExpress.Ui.DxDataGridInterop.GetVisibleColumns(Id, headerLevel);
+	}
+	public object GetVisibleRows() {
+		return DevExpress.Ui.DxDataGridInterop.GetVisibleRows(Id);
+	}
+	public void InsertRow() {
+		DevExpress.Ui.DxDataGridInterop.InsertRow(Id);
+	}
+	public bool IsRowExpanded(object key) {
+		return DevExpress.Ui.DxDataGridInterop.IsRowExpanded(Id, key);
+	}
+	public bool IsRowSelected(object data) {
+		return DevExpress.Ui.DxDataGridInterop.IsRowSelected(Id, data);
+	}
+	public void RemoveRow(float rowIndex) {
+		DevExpress.Ui.DxDataGridInterop.RemoveRow(Id, rowIndex);
+	}
+	public float TotalCount() {
+		return DevExpress.Ui.DxDataGridInterop.TotalCount(Id);
+	}
 	public void Dispose() {
 		DevExpress.Ui.DxDataGridInterop.CellClick -= DxDataGrid_CellClick;
 		DevExpress.Ui.DxDataGridInterop.CellHoverChanged -= DxDataGrid_CellHoverChanged;

@@ -210,6 +210,9 @@
 			ValueChanged?.Invoke();
 		}
 	}
+	public object GetDataSourceEx() {
+		return DevExpress.Ui.DxDropDownListInterop.GetDataSourceEx(Id);
+	}
 	public void Dispose() {
 		DevExpress.Ui.DxDropDownListInterop.ItemClick -= DxDropDownList_ItemClick;
 		DevExpress.Ui.DxDropDownListInterop.SelectionChanged -= DxDropDownList_SelectionChanged;

@@ -196,6 +196,15 @@
 			LegendClick?.Invoke();
 		}
 	}
+	public object GetSeriesEx() {
+		return DevExpress.Viz.DxPieChartInterop.GetSeriesEx(Id);
+	}
+	public object GetSeriesByName(object seriesName) {
+		return DevExpress.Viz.DxPieChartInterop.GetSeriesByName(Id, seriesName);
+	}
+	public object GetSeriesByPos(float seriesIndex) {
+		return DevExpress.Viz.DxPieChartInterop.GetSeriesByPos(Id, seriesIndex);
+	}
 	public void Dispose() {
 		DevExpress.Viz.DxPieChartInterop.LegendClick -= DxPieChart_LegendClick;
 	}

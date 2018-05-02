@@ -164,6 +164,15 @@
 			Shown?.Invoke();
 		}
 	}
+	public object Hide() {
+		return DevExpress.Ui.DxContextMenuInterop.Hide(Id);
+	}
+	public object Show() {
+		return DevExpress.Ui.DxContextMenuInterop.Show(Id);
+	}
+	public object Toggle(bool showing) {
+		return DevExpress.Ui.DxContextMenuInterop.Toggle(Id, showing);
+	}
 	public void Dispose() {
 		DevExpress.Ui.DxContextMenuInterop.Hidden -= DxContextMenu_Hidden;
 		DevExpress.Ui.DxContextMenuInterop.Hiding -= DxContextMenu_Hiding;

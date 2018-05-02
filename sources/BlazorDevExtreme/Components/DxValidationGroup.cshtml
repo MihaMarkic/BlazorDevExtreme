@@ -15,6 +15,12 @@
 	protected override async Task OnInitAsync() {
 		await base.OnInitAsync();
 	}
+	public void Reset() {
+		DevExpress.Ui.DxValidationGroupInterop.Reset(Id);
+	}
+	public object Validate() {
+		return DevExpress.Ui.DxValidationGroupInterop.Validate(Id);
+	}
 	public void Dispose() {
 	}
 }

@@ -716,6 +716,192 @@
 			ToolbarPreparing?.Invoke();
 		}
 	}
+	public void BeginCustomLoading(string messageText) {
+		DevExpress.Ui.GridBaseInterop.BeginCustomLoading(Id, messageText);
+	}
+	public object ByKey(object key) {
+		return DevExpress.Ui.GridBaseInterop.ByKey(Id, key);
+	}
+	public void CancelEditData() {
+		DevExpress.Ui.GridBaseInterop.CancelEditData(Id);
+	}
+	public object CellValue(float rowIndex, string dataField) {
+		return DevExpress.Ui.GridBaseInterop.CellValue(Id, rowIndex, dataField);
+	}
+	public void CellValue(float rowIndex, string dataField, object value) {
+		DevExpress.Ui.GridBaseInterop.CellValue(Id, rowIndex, dataField, value);
+	}
+	public object CellValue(float rowIndex, float visibleColumnIndex) {
+		return DevExpress.Ui.GridBaseInterop.CellValue(Id, rowIndex, visibleColumnIndex);
+	}
+	public void CellValue(float rowIndex, float visibleColumnIndex, object value) {
+		DevExpress.Ui.GridBaseInterop.CellValue(Id, rowIndex, visibleColumnIndex, value);
+	}
+	public void ClearFilter() {
+		DevExpress.Ui.GridBaseInterop.ClearFilter(Id);
+	}
+	public void ClearFilter(string filterName) {
+		DevExpress.Ui.GridBaseInterop.ClearFilter(Id, filterName);
+	}
+	public void ClearSelection() {
+		DevExpress.Ui.GridBaseInterop.ClearSelection(Id);
+	}
+	public void ClearSorting() {
+		DevExpress.Ui.GridBaseInterop.ClearSorting(Id);
+	}
+	public void CloseEditCell() {
+		DevExpress.Ui.GridBaseInterop.CloseEditCell(Id);
+	}
+	public void CollapseAdaptiveDetailRow() {
+		DevExpress.Ui.GridBaseInterop.CollapseAdaptiveDetailRow(Id);
+	}
+	public float ColumnCount() {
+		return DevExpress.Ui.GridBaseInterop.ColumnCount(Id);
+	}
+	public object ColumnOption(object id) {
+		return DevExpress.Ui.GridBaseInterop.ColumnOption(Id, id);
+	}
+	public object ColumnOption(object id, string optionName) {
+		return DevExpress.Ui.GridBaseInterop.ColumnOption(Id, id, optionName);
+	}
+	public void ColumnOption(object id, string optionName, object optionValue) {
+		DevExpress.Ui.GridBaseInterop.ColumnOption(Id, id, optionName, optionValue);
+	}
+	public void ColumnOption(object id, object options) {
+		DevExpress.Ui.GridBaseInterop.ColumnOption(Id, id, options);
+	}
+	public void DeleteColumn(object id) {
+		DevExpress.Ui.GridBaseInterop.DeleteColumn(Id, id);
+	}
+	public void DeleteRow(float rowIndex) {
+		DevExpress.Ui.GridBaseInterop.DeleteRow(Id, rowIndex);
+	}
+	public object DeselectAll() {
+		return DevExpress.Ui.GridBaseInterop.DeselectAll(Id);
+	}
+	public object DeselectRows(object keys) {
+		return DevExpress.Ui.GridBaseInterop.DeselectRows(Id, keys);
+	}
+	public void EditCell(float rowIndex, string dataField) {
+		DevExpress.Ui.GridBaseInterop.EditCell(Id, rowIndex, dataField);
+	}
+	public void EditCell(float rowIndex, float visibleColumnIndex) {
+		DevExpress.Ui.GridBaseInterop.EditCell(Id, rowIndex, visibleColumnIndex);
+	}
+	public void EditRow(float rowIndex) {
+		DevExpress.Ui.GridBaseInterop.EditRow(Id, rowIndex);
+	}
+	public void EndCustomLoading() {
+		DevExpress.Ui.GridBaseInterop.EndCustomLoading(Id);
+	}
+	public void ExpandAdaptiveDetailRow(object key) {
+		DevExpress.Ui.GridBaseInterop.ExpandAdaptiveDetailRow(Id, key);
+	}
+	public object Filter() {
+		return DevExpress.Ui.GridBaseInterop.Filter(Id);
+	}
+	public void Filter(object filterExpr) {
+		DevExpress.Ui.GridBaseInterop.Filter(Id, filterExpr);
+	}
+	public void Focus() {
+		DevExpress.Ui.GridBaseInterop.Focus(Id);
+	}
+	public void Focus(object element) {
+		DevExpress.Ui.GridBaseInterop.Focus(Id, element);
+	}
+	public object GetCellElement(float rowIndex, string dataField) {
+		return DevExpress.Ui.GridBaseInterop.GetCellElement(Id, rowIndex, dataField);
+	}
+	public object GetCellElement(float rowIndex, float visibleColumnIndex) {
+		return DevExpress.Ui.GridBaseInterop.GetCellElement(Id, rowIndex, visibleColumnIndex);
+	}
+	public object GetCombinedFilter() {
+		return DevExpress.Ui.GridBaseInterop.GetCombinedFilter(Id);
+	}
+	public object GetCombinedFilter(bool returnDataField) {
+		return DevExpress.Ui.GridBaseInterop.GetCombinedFilter(Id, returnDataField);
+	}
+	public object GetDataSourceEx() {
+		return DevExpress.Ui.GridBaseInterop.GetDataSourceEx(Id);
+	}
+	public object GetKeyByRowIndex(float rowIndex) {
+		return DevExpress.Ui.GridBaseInterop.GetKeyByRowIndex(Id, rowIndex);
+	}
+	public object GetRowElement(float rowIndex) {
+		return DevExpress.Ui.GridBaseInterop.GetRowElement(Id, rowIndex);
+	}
+	public float GetRowIndexByKey(object key) {
+		return DevExpress.Ui.GridBaseInterop.GetRowIndexByKey(Id, key);
+	}
+	public object GetScrollable() {
+		return DevExpress.Ui.GridBaseInterop.GetScrollable(Id);
+	}
+	public bool HasEditData() {
+		return DevExpress.Ui.GridBaseInterop.HasEditData(Id);
+	}
+	public void HideColumnChooser() {
+		DevExpress.Ui.GridBaseInterop.HideColumnChooser(Id);
+	}
+	public void IsAdaptiveDetailRowExpanded(object key) {
+		DevExpress.Ui.GridBaseInterop.IsAdaptiveDetailRowExpanded(Id, key);
+	}
+	public bool IsRowSelected(object key) {
+		return DevExpress.Ui.GridBaseInterop.IsRowSelected(Id, key);
+	}
+	public object KeyOf(object obj) {
+		return DevExpress.Ui.GridBaseInterop.KeyOf(Id, obj);
+	}
+	public float PageCount() {
+		return DevExpress.Ui.GridBaseInterop.PageCount(Id);
+	}
+	public float PageIndex() {
+		return DevExpress.Ui.GridBaseInterop.PageIndex(Id);
+	}
+	public object PageIndex(float newIndex) {
+		return DevExpress.Ui.GridBaseInterop.PageIndex(Id, newIndex);
+	}
+	public float PageSize() {
+		return DevExpress.Ui.GridBaseInterop.PageSize(Id);
+	}
+	public void PageSize(float value) {
+		DevExpress.Ui.GridBaseInterop.PageSize(Id, value);
+	}
+	public object Refresh() {
+		return DevExpress.Ui.GridBaseInterop.Refresh(Id);
+	}
+	public void RepaintRows(object rowIndexes) {
+		DevExpress.Ui.GridBaseInterop.RepaintRows(Id, rowIndexes);
+	}
+	public object SaveEditData() {
+		return DevExpress.Ui.GridBaseInterop.SaveEditData(Id);
+	}
+	public void SearchByText(string text) {
+		DevExpress.Ui.GridBaseInterop.SearchByText(Id, text);
+	}
+	public object SelectAll() {
+		return DevExpress.Ui.GridBaseInterop.SelectAll(Id);
+	}
+	public object SelectRows(object keys, bool preserve) {
+		return DevExpress.Ui.GridBaseInterop.SelectRows(Id, keys, preserve);
+	}
+	public object SelectRowsByIndexes(object indexes) {
+		return DevExpress.Ui.GridBaseInterop.SelectRowsByIndexes(Id, indexes);
+	}
+	public void ShowColumnChooser() {
+		DevExpress.Ui.GridBaseInterop.ShowColumnChooser(Id);
+	}
+	public object State() {
+		return DevExpress.Ui.GridBaseInterop.State(Id);
+	}
+	public void State(object state) {
+		DevExpress.Ui.GridBaseInterop.State(Id, state);
+	}
+	public void UndeleteRow(float rowIndex) {
+		DevExpress.Ui.GridBaseInterop.UndeleteRow(Id, rowIndex);
+	}
+	public void UpdateDimensions() {
+		DevExpress.Ui.GridBaseInterop.UpdateDimensions(Id);
+	}
 	public void Dispose() {
 		DevExpress.Ui.GridBaseInterop.AdaptiveDetailRowPreparing -= GridBase_AdaptiveDetailRowPreparing;
 		DevExpress.Ui.GridBaseInterop.DataErrorOccurred -= GridBase_DataErrorOccurred;

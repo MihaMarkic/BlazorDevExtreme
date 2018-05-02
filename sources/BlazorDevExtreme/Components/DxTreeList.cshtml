@@ -337,6 +337,66 @@
 			RowPrepared?.Invoke();
 		}
 	}
+	public void AddColumn(object columnOptions) {
+		DevExpress.Ui.DxTreeListInterop.AddColumn(Id, columnOptions);
+	}
+	public void AddRow() {
+		DevExpress.Ui.DxTreeListInterop.AddRow(Id);
+	}
+	public void AddRow(object parentId) {
+		DevExpress.Ui.DxTreeListInterop.AddRow(Id, parentId);
+	}
+	public object CollapseRow(object key) {
+		return DevExpress.Ui.DxTreeListInterop.CollapseRow(Id, key);
+	}
+	public object ExpandRow(object key) {
+		return DevExpress.Ui.DxTreeListInterop.ExpandRow(Id, key);
+	}
+	public void ForEachNode(object callback) {
+		DevExpress.Ui.DxTreeListInterop.ForEachNode(Id, callback);
+	}
+	public void ForEachNode(object nodes, object callback) {
+		DevExpress.Ui.DxTreeListInterop.ForEachNode(Id, nodes, callback);
+	}
+	public object GetNodeByKey(object key) {
+		return DevExpress.Ui.DxTreeListInterop.GetNodeByKey(Id, key);
+	}
+	public object GetRootNode() {
+		return DevExpress.Ui.DxTreeListInterop.GetRootNode(Id);
+	}
+	public object GetSelectedRowKeys() {
+		return DevExpress.Ui.DxTreeListInterop.GetSelectedRowKeys(Id);
+	}
+	public object GetSelectedRowKeys(bool leavesOnly) {
+		return DevExpress.Ui.DxTreeListInterop.GetSelectedRowKeys(Id, leavesOnly);
+	}
+	public object GetSelectedRowKeys(string mode) {
+		return DevExpress.Ui.DxTreeListInterop.GetSelectedRowKeys(Id, mode);
+	}
+	public object GetSelectedRowsData() {
+		return DevExpress.Ui.DxTreeListInterop.GetSelectedRowsData(Id);
+	}
+	public object GetVisibleColumns() {
+		return DevExpress.Ui.DxTreeListInterop.GetVisibleColumns(Id);
+	}
+	public object GetVisibleColumns(float headerLevel) {
+		return DevExpress.Ui.DxTreeListInterop.GetVisibleColumns(Id, headerLevel);
+	}
+	public object GetVisibleRows() {
+		return DevExpress.Ui.DxTreeListInterop.GetVisibleRows(Id);
+	}
+	public bool IsRowExpanded(object key) {
+		return DevExpress.Ui.DxTreeListInterop.IsRowExpanded(Id, key);
+	}
+	public object LoadDescendants() {
+		return DevExpress.Ui.DxTreeListInterop.LoadDescendants(Id);
+	}
+	public object LoadDescendants(object keys) {
+		return DevExpress.Ui.DxTreeListInterop.LoadDescendants(Id, keys);
+	}
+	public object LoadDescendants(object keys, bool childrenOnly) {
+		return DevExpress.Ui.DxTreeListInterop.LoadDescendants(Id, keys, childrenOnly);
+	}
 	public void Dispose() {
 		DevExpress.Ui.DxTreeListInterop.CellClick -= DxTreeList_CellClick;
 		DevExpress.Ui.DxTreeListInterop.CellHoverChanged -= DxTreeList_CellHoverChanged;

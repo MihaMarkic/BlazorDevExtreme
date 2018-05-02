@@ -88,6 +88,9 @@
 			ValueChanged?.Invoke();
 		}
 	}
+	public void Reset() {
+		DevExpress.Ui.EditorInterop.Reset(Id);
+	}
 	public void Dispose() {
 		DevExpress.Ui.EditorInterop.ValueChanged -= Editor_ValueChanged;
 	}

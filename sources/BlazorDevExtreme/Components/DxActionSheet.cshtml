@@ -112,6 +112,15 @@
 			CancelClick?.Invoke();
 		}
 	}
+	public object Hide() {
+		return DevExpress.Ui.DxActionSheetInterop.Hide(Id);
+	}
+	public object Show() {
+		return DevExpress.Ui.DxActionSheetInterop.Show(Id);
+	}
+	public object Toggle(bool showing) {
+		return DevExpress.Ui.DxActionSheetInterop.Toggle(Id, showing);
+	}
 	public void Dispose() {
 		DevExpress.Ui.DxActionSheetInterop.CancelClick -= DxActionSheet_CancelClick;
 	}

@@ -309,6 +309,27 @@
 			SelectionChanged?.Invoke();
 		}
 	}
+	public void ClearSelection() {
+		DevExpress.Viz.DxTreeMapInterop.ClearSelection(Id);
+	}
+	public void DrillUp() {
+		DevExpress.Viz.DxTreeMapInterop.DrillUp(Id);
+	}
+	public object GetCurrentNode() {
+		return DevExpress.Viz.DxTreeMapInterop.GetCurrentNode(Id);
+	}
+	public object GetDataSourceEx() {
+		return DevExpress.Viz.DxTreeMapInterop.GetDataSourceEx(Id);
+	}
+	public object GetRootNode() {
+		return DevExpress.Viz.DxTreeMapInterop.GetRootNode(Id);
+	}
+	public void HideTooltip() {
+		DevExpress.Viz.DxTreeMapInterop.HideTooltip(Id);
+	}
+	public void ResetDrillDown() {
+		DevExpress.Viz.DxTreeMapInterop.ResetDrillDown(Id);
+	}
 	public void Dispose() {
 		DevExpress.Viz.DxTreeMapInterop.Click -= DxTreeMap_Click;
 		DevExpress.Viz.DxTreeMapInterop.Drill -= DxTreeMap_Drill;

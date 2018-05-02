@@ -124,6 +124,9 @@
 			Execute?.Invoke();
 		}
 	}
+	public void DoExecute() {
+		DevExpress.Framework.DxCommandInterop.DoExecute(Id);
+	}
 	public void Dispose() {
 		DevExpress.Framework.DxCommandInterop.Execute -= DxCommand_Execute;
 	}

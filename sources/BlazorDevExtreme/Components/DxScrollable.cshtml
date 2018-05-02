@@ -125,6 +125,48 @@
 			Updated?.Invoke();
 		}
 	}
+	public float ClientHeight() {
+		return DevExpress.Ui.DxScrollableInterop.ClientHeight(Id);
+	}
+	public float ClientWidth() {
+		return DevExpress.Ui.DxScrollableInterop.ClientWidth(Id);
+	}
+	public object Content() {
+		return DevExpress.Ui.DxScrollableInterop.Content(Id);
+	}
+	public void ScrollBy(float distance) {
+		DevExpress.Ui.DxScrollableInterop.ScrollBy(Id, distance);
+	}
+	public void ScrollBy(object distanceObject) {
+		DevExpress.Ui.DxScrollableInterop.ScrollBy(Id, distanceObject);
+	}
+	public float ScrollHeight() {
+		return DevExpress.Ui.DxScrollableInterop.ScrollHeight(Id);
+	}
+	public float ScrollLeft() {
+		return DevExpress.Ui.DxScrollableInterop.ScrollLeft(Id);
+	}
+	public object ScrollOffset() {
+		return DevExpress.Ui.DxScrollableInterop.ScrollOffset(Id);
+	}
+	public void ScrollTo(float targetLocation) {
+		DevExpress.Ui.DxScrollableInterop.ScrollTo(Id, targetLocation);
+	}
+	public void ScrollTo(object targetLocation) {
+		DevExpress.Ui.DxScrollableInterop.ScrollTo(Id, targetLocation);
+	}
+	public void ScrollToElement(object element) {
+		DevExpress.Ui.DxScrollableInterop.ScrollToElement(Id, element);
+	}
+	public float ScrollTop() {
+		return DevExpress.Ui.DxScrollableInterop.ScrollTop(Id);
+	}
+	public float ScrollWidth() {
+		return DevExpress.Ui.DxScrollableInterop.ScrollWidth(Id);
+	}
+	public object Update() {
+		return DevExpress.Ui.DxScrollableInterop.Update(Id);
+	}
 	public void Dispose() {
 		DevExpress.Ui.DxScrollableInterop.Scroll -= DxScrollable_Scroll;
 		DevExpress.Ui.DxScrollableInterop.Updated -= DxScrollable_Updated;

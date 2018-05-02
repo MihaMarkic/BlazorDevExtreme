@@ -124,6 +124,18 @@
 			ContextMenuPreparing?.Invoke();
 		}
 	}
+	public void ApplyChanges() {
+		DevExpress.Ui.DxPivotGridFieldChooserInterop.ApplyChanges(Id);
+	}
+	public void CancelChanges() {
+		DevExpress.Ui.DxPivotGridFieldChooserInterop.CancelChanges(Id);
+	}
+	public object GetDataSourceEx() {
+		return DevExpress.Ui.DxPivotGridFieldChooserInterop.GetDataSourceEx(Id);
+	}
+	public void UpdateDimensions() {
+		DevExpress.Ui.DxPivotGridFieldChooserInterop.UpdateDimensions(Id);
+	}
 	public void Dispose() {
 		DevExpress.Ui.DxPivotGridFieldChooserInterop.ContextMenuPreparing -= DxPivotGridFieldChooser_ContextMenuPreparing;
 	}

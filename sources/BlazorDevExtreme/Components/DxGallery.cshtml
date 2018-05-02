@@ -171,6 +171,15 @@
 	protected override async Task OnInitAsync() {
 		await base.OnInitAsync();
 	}
+	public object GoToItem(float itemIndex, bool animation) {
+		return DevExpress.Ui.DxGalleryInterop.GoToItem(Id, itemIndex, animation);
+	}
+	public object NextItem(bool animation) {
+		return DevExpress.Ui.DxGalleryInterop.NextItem(Id, animation);
+	}
+	public object PrevItem(bool animation) {
+		return DevExpress.Ui.DxGalleryInterop.PrevItem(Id, animation);
+	}
 	public void Dispose() {
 	}
 }

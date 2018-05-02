@@ -76,6 +76,15 @@
 			Validated?.Invoke();
 		}
 	}
+	public void Focus() {
+		DevExpress.Ui.DxValidatorInterop.Focus(Id);
+	}
+	public void Reset() {
+		DevExpress.Ui.DxValidatorInterop.Reset(Id);
+	}
+	public object Validate() {
+		return DevExpress.Ui.DxValidatorInterop.Validate(Id);
+	}
 	public void Dispose() {
 		DevExpress.Ui.DxValidatorInterop.Validated -= DxValidator_Validated;
 	}

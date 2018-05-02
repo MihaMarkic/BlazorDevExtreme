@@ -243,6 +243,12 @@
 	protected override async Task OnInitAsync() {
 		await base.OnInitAsync();
 	}
+	public void Close() {
+		DevExpress.Ui.DxDateBoxInterop.Close(Id);
+	}
+	public void Open() {
+		DevExpress.Ui.DxDateBoxInterop.Open(Id);
+	}
 	public void Dispose() {
 	}
 }

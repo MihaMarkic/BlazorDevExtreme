@@ -281,6 +281,33 @@
 			FieldDataChanged?.Invoke();
 		}
 	}
+	public object GetEditor(string dataField) {
+		return DevExpress.Ui.DxFormInterop.GetEditor(Id, dataField);
+	}
+	public object ItemOption(string id) {
+		return DevExpress.Ui.DxFormInterop.ItemOption(Id, id);
+	}
+	public void ItemOption(string id, string option, object value) {
+		DevExpress.Ui.DxFormInterop.ItemOption(Id, id, option, value);
+	}
+	public void ItemOption(string id, object options) {
+		DevExpress.Ui.DxFormInterop.ItemOption(Id, id, options);
+	}
+	public void ResetValues() {
+		DevExpress.Ui.DxFormInterop.ResetValues(Id);
+	}
+	public void UpdateData(object data) {
+		DevExpress.Ui.DxFormInterop.UpdateData(Id, data);
+	}
+	public void UpdateData(string dataField, object value) {
+		DevExpress.Ui.DxFormInterop.UpdateData(Id, dataField, value);
+	}
+	public object UpdateDimensions() {
+		return DevExpress.Ui.DxFormInterop.UpdateDimensions(Id);
+	}
+	public object Validate() {
+		return DevExpress.Ui.DxFormInterop.Validate(Id);
+	}
 	public void Dispose() {
 		DevExpress.Ui.DxFormInterop.EditorEnterKey -= DxForm_EditorEnterKey;
 		DevExpress.Ui.DxFormInterop.FieldDataChanged -= DxForm_FieldDataChanged;

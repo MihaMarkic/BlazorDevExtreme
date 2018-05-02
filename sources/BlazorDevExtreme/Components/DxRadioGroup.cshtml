@@ -87,6 +87,9 @@
 	protected override async Task OnInitAsync() {
 		await base.OnInitAsync();
 	}
+	public object GetDataSourceEx() {
+		return DevExpress.Ui.DxRadioGroupInterop.GetDataSourceEx(Id);
+	}
 	public void Dispose() {
 	}
 }

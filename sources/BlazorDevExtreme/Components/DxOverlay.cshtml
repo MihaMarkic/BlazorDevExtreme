@@ -259,6 +259,21 @@
 			Shown?.Invoke();
 		}
 	}
+	public object Content() {
+		return DevExpress.Ui.DxOverlayInterop.Content(Id);
+	}
+	public object Hide() {
+		return DevExpress.Ui.DxOverlayInterop.Hide(Id);
+	}
+	public void Repaint() {
+		DevExpress.Ui.DxOverlayInterop.Repaint(Id);
+	}
+	public object Show() {
+		return DevExpress.Ui.DxOverlayInterop.Show(Id);
+	}
+	public object Toggle(bool showing) {
+		return DevExpress.Ui.DxOverlayInterop.Toggle(Id, showing);
+	}
 	public void Dispose() {
 		DevExpress.Ui.DxOverlayInterop.Hidden -= DxOverlay_Hidden;
 		DevExpress.Ui.DxOverlayInterop.Hiding -= DxOverlay_Hiding;

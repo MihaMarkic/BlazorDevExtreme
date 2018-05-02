@@ -123,6 +123,9 @@
 	protected override async Task OnInitAsync() {
 		await base.OnInitAsync();
 	}
+	public float ScrollPosition() {
+		return DevExpress.Ui.DxTileViewInterop.ScrollPosition(Id);
+	}
 	public void Dispose() {
 	}
 }

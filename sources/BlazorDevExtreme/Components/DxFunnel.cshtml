@@ -283,6 +283,18 @@
 			SelectionChanged?.Invoke();
 		}
 	}
+	public void ClearSelection() {
+		DevExpress.Viz.DxFunnelInterop.ClearSelection(Id);
+	}
+	public object GetAllItems() {
+		return DevExpress.Viz.DxFunnelInterop.GetAllItems(Id);
+	}
+	public object GetDataSourceEx() {
+		return DevExpress.Viz.DxFunnelInterop.GetDataSourceEx(Id);
+	}
+	public void HideTooltip() {
+		DevExpress.Viz.DxFunnelInterop.HideTooltip(Id);
+	}
 	public void Dispose() {
 		DevExpress.Viz.DxFunnelInterop.HoverChanged -= DxFunnel_HoverChanged;
 		DevExpress.Viz.DxFunnelInterop.ItemClick -= DxFunnel_ItemClick;

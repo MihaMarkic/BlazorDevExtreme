@@ -369,6 +369,21 @@
 			FileSaving?.Invoke();
 		}
 	}
+	public object BindChart(object chart, object integrationOptions) {
+		return DevExpress.Ui.DxPivotGridInterop.BindChart(Id, chart, integrationOptions);
+	}
+	public void ExportToExcel() {
+		DevExpress.Ui.DxPivotGridInterop.ExportToExcel(Id);
+	}
+	public object GetDataSourceEx() {
+		return DevExpress.Ui.DxPivotGridInterop.GetDataSourceEx(Id);
+	}
+	public object GetFieldChooserPopup() {
+		return DevExpress.Ui.DxPivotGridInterop.GetFieldChooserPopup(Id);
+	}
+	public void UpdateDimensions() {
+		DevExpress.Ui.DxPivotGridInterop.UpdateDimensions(Id);
+	}
 	public void Dispose() {
 		DevExpress.Ui.DxPivotGridInterop.CellClick -= DxPivotGrid_CellClick;
 		DevExpress.Ui.DxPivotGridInterop.CellPrepared -= DxPivotGrid_CellPrepared;

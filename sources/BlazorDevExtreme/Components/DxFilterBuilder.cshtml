@@ -126,6 +126,9 @@
 			ValueChanged?.Invoke();
 		}
 	}
+	public object GetFilterExpression() {
+		return DevExpress.Ui.DxFilterBuilderInterop.GetFilterExpression(Id);
+	}
 	public void Dispose() {
 		DevExpress.Ui.DxFilterBuilderInterop.EditorPrepared -= DxFilterBuilder_EditorPrepared;
 		DevExpress.Ui.DxFilterBuilderInterop.EditorPreparing -= DxFilterBuilder_EditorPreparing;

@@ -350,6 +350,12 @@
 			Paste?.Invoke();
 		}
 	}
+	public void Blur() {
+		DevExpress.Ui.DxTextEditorInterop.Blur(Id);
+	}
+	public void Focus() {
+		DevExpress.Ui.DxTextEditorInterop.Focus(Id);
+	}
 	public void Dispose() {
 		DevExpress.Ui.DxTextEditorInterop.Change -= DxTextEditor_Change;
 		DevExpress.Ui.DxTextEditorInterop.Copy -= DxTextEditor_Copy;

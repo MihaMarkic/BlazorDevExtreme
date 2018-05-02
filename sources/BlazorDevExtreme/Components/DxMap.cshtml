@@ -249,6 +249,18 @@
 			RouteRemoved?.Invoke();
 		}
 	}
+	public object AddMarker(object markerOptions) {
+		return DevExpress.Ui.DxMapInterop.AddMarker(Id, markerOptions);
+	}
+	public object AddRoute(object options) {
+		return DevExpress.Ui.DxMapInterop.AddRoute(Id, options);
+	}
+	public object RemoveMarker(object marker) {
+		return DevExpress.Ui.DxMapInterop.RemoveMarker(Id, marker);
+	}
+	public object RemoveRoute(object route) {
+		return DevExpress.Ui.DxMapInterop.RemoveRoute(Id, route);
+	}
 	public void Dispose() {
 		DevExpress.Ui.DxMapInterop.Click -= DxMap_Click;
 		DevExpress.Ui.DxMapInterop.MarkerAdded -= DxMap_MarkerAdded;

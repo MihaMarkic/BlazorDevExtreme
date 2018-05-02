@@ -225,6 +225,30 @@
 			TooltipShown?.Invoke();
 		}
 	}
+	public void ClearSelection() {
+		DevExpress.Viz.BaseChartInterop.ClearSelection(Id);
+	}
+	public object GetAllSeries() {
+		return DevExpress.Viz.BaseChartInterop.GetAllSeries(Id);
+	}
+	public object GetDataSourceEx() {
+		return DevExpress.Viz.BaseChartInterop.GetDataSourceEx(Id);
+	}
+	public object GetSeriesByName(object seriesName) {
+		return DevExpress.Viz.BaseChartInterop.GetSeriesByName(Id, seriesName);
+	}
+	public object GetSeriesByPos(float seriesIndex) {
+		return DevExpress.Viz.BaseChartInterop.GetSeriesByPos(Id, seriesIndex);
+	}
+	public void HideTooltip() {
+		DevExpress.Viz.BaseChartInterop.HideTooltip(Id);
+	}
+	public void Render() {
+		DevExpress.Viz.BaseChartInterop.Render(Id);
+	}
+	public void Render(object renderOptions) {
+		DevExpress.Viz.BaseChartInterop.Render(Id, renderOptions);
+	}
 	public void Dispose() {
 		DevExpress.Viz.BaseChartInterop.Done -= BaseChart_Done;
 		DevExpress.Viz.BaseChartInterop.PointClick -= BaseChart_PointClick;

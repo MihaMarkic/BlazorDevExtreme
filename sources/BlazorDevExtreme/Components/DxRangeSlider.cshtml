@@ -88,6 +88,9 @@
 			ValueChanged?.Invoke();
 		}
 	}
+	public void Reset() {
+		DevExpress.Ui.DxRangeSliderInterop.Reset(Id);
+	}
 	public void Dispose() {
 		DevExpress.Ui.DxRangeSliderInterop.ValueChanged -= DxRangeSlider_ValueChanged;
 	}

@@ -221,6 +221,12 @@
 			TooltipShown?.Invoke();
 		}
 	}
+	public object ValuesEx() {
+		return DevExpress.Viz.DxBarGaugeInterop.ValuesEx(Id);
+	}
+	public void ValuesEx(object values) {
+		DevExpress.Viz.DxBarGaugeInterop.ValuesEx(Id, values);
+	}
 	public void Dispose() {
 		DevExpress.Viz.DxBarGaugeInterop.TooltipHidden -= DxBarGauge_TooltipHidden;
 		DevExpress.Viz.DxBarGaugeInterop.TooltipShown -= DxBarGauge_TooltipShown;

@@ -173,6 +173,12 @@
 			ItemClick?.Invoke();
 		}
 	}
+	public void Close() {
+		DevExpress.Ui.DxDropDownMenuInterop.Close(Id);
+	}
+	public void Open() {
+		DevExpress.Ui.DxDropDownMenuInterop.Open(Id);
+	}
 	public void Dispose() {
 		DevExpress.Ui.DxDropDownMenuInterop.ButtonClick -= DxDropDownMenu_ButtonClick;
 		DevExpress.Ui.DxDropDownMenuInterop.ItemClick -= DxDropDownMenu_ItemClick;

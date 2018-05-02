@@ -75,6 +75,21 @@
 	protected override async Task OnInitAsync() {
 		await base.OnInitAsync();
 	}
+	public object Content() {
+		return DevExpress.Ui.DxSlideOutViewInterop.Content(Id);
+	}
+	public object HideMenu() {
+		return DevExpress.Ui.DxSlideOutViewInterop.HideMenu(Id);
+	}
+	public object MenuContent() {
+		return DevExpress.Ui.DxSlideOutViewInterop.MenuContent(Id);
+	}
+	public object ShowMenu() {
+		return DevExpress.Ui.DxSlideOutViewInterop.ShowMenu(Id);
+	}
+	public object ToggleMenuVisibility() {
+		return DevExpress.Ui.DxSlideOutViewInterop.ToggleMenuVisibility(Id);
+	}
 	public void Dispose() {
 	}
 }

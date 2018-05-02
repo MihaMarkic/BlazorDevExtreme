@@ -89,6 +89,12 @@
 			ReachBottom?.Invoke();
 		}
 	}
+	public void Refresh() {
+		DevExpress.Ui.DxScrollViewInterop.Refresh(Id);
+	}
+	public object Release(bool preventScrollBottom) {
+		return DevExpress.Ui.DxScrollViewInterop.Release(Id, preventScrollBottom);
+	}
 	public void Dispose() {
 		DevExpress.Ui.DxScrollViewInterop.PullDown -= DxScrollView_PullDown;
 		DevExpress.Ui.DxScrollViewInterop.ReachBottom -= DxScrollView_ReachBottom;

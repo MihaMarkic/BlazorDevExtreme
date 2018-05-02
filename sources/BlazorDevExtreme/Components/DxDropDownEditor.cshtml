@@ -125,6 +125,21 @@
 			Opened?.Invoke();
 		}
 	}
+	public void Close() {
+		DevExpress.Ui.DxDropDownEditorInterop.Close(Id);
+	}
+	public object Content() {
+		return DevExpress.Ui.DxDropDownEditorInterop.Content(Id);
+	}
+	public object Field() {
+		return DevExpress.Ui.DxDropDownEditorInterop.Field(Id);
+	}
+	public void Open() {
+		DevExpress.Ui.DxDropDownEditorInterop.Open(Id);
+	}
+	public void Reset() {
+		DevExpress.Ui.DxDropDownEditorInterop.Reset(Id);
+	}
 	public void Dispose() {
 		DevExpress.Ui.DxDropDownEditorInterop.Closed -= DxDropDownEditor_Closed;
 		DevExpress.Ui.DxDropDownEditorInterop.Opened -= DxDropDownEditor_Opened;

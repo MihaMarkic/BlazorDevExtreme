@@ -209,6 +209,27 @@
 			ValueChanged?.Invoke();
 		}
 	}
+	public object GetDataSourceEx() {
+		return DevExpress.Viz.DxRangeSelectorInterop.GetDataSourceEx(Id);
+	}
+	public object GetSelectedRangeEx() {
+		return DevExpress.Viz.DxRangeSelectorInterop.GetSelectedRangeEx(Id);
+	}
+	public object GetValueEx() {
+		return DevExpress.Viz.DxRangeSelectorInterop.GetValueEx(Id);
+	}
+	public void Render() {
+		DevExpress.Viz.DxRangeSelectorInterop.Render(Id);
+	}
+	public void Render(bool skipChartAnimation) {
+		DevExpress.Viz.DxRangeSelectorInterop.Render(Id, skipChartAnimation);
+	}
+	public void SetSelectedRangeEx(object selectedRange) {
+		DevExpress.Viz.DxRangeSelectorInterop.SetSelectedRangeEx(Id, selectedRange);
+	}
+	public void SetValueEx(object value) {
+		DevExpress.Viz.DxRangeSelectorInterop.SetValueEx(Id, value);
+	}
 	public void Dispose() {
 		DevExpress.Viz.DxRangeSelectorInterop.SelectedRangeChanged -= DxRangeSelector_SelectedRangeChanged;
 		DevExpress.Viz.DxRangeSelectorInterop.ValueChanged -= DxRangeSelector_ValueChanged;

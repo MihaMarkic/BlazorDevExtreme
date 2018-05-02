@@ -75,6 +75,9 @@
 	protected override async Task OnInitAsync() {
 		await base.OnInitAsync();
 	}
+	public object GetDataSourceEx() {
+		return DevExpress.Ui.DxDropDownBoxInterop.GetDataSourceEx(Id);
+	}
 	public void Dispose() {
 	}
 }

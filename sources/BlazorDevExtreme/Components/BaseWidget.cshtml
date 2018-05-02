@@ -200,6 +200,27 @@
 			IncidentOccurred?.Invoke();
 		}
 	}
+	public void ExportTo(string fileName, string format) {
+		DevExpress.Viz.BaseWidgetInterop.ExportTo(Id, fileName, format);
+	}
+	public object GetSizeEx() {
+		return DevExpress.Viz.BaseWidgetInterop.GetSizeEx(Id);
+	}
+	public void HideLoadingIndicator() {
+		DevExpress.Viz.BaseWidgetInterop.HideLoadingIndicator(Id);
+	}
+	public void Print() {
+		DevExpress.Viz.BaseWidgetInterop.Print(Id);
+	}
+	public void Render() {
+		DevExpress.Viz.BaseWidgetInterop.Render(Id);
+	}
+	public void ShowLoadingIndicator() {
+		DevExpress.Viz.BaseWidgetInterop.ShowLoadingIndicator(Id);
+	}
+	public string Svg() {
+		return DevExpress.Viz.BaseWidgetInterop.Svg(Id);
+	}
 	public void Dispose() {
 		DevExpress.Viz.BaseWidgetInterop.Drawn -= BaseWidget_Drawn;
 		DevExpress.Viz.BaseWidgetInterop.Exported -= BaseWidget_Exported;

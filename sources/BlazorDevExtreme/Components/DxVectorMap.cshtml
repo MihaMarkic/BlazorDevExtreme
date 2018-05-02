@@ -361,6 +361,51 @@
 			ZoomFactorChanged?.Invoke();
 		}
 	}
+	public object CenterEx() {
+		return DevExpress.Viz.DxVectorMapInterop.CenterEx(Id);
+	}
+	public void CenterEx(object centerCoordinates) {
+		DevExpress.Viz.DxVectorMapInterop.CenterEx(Id, centerCoordinates);
+	}
+	public void ClearAreaSelection() {
+		DevExpress.Viz.DxVectorMapInterop.ClearAreaSelection(Id);
+	}
+	public void ClearMarkerSelection() {
+		DevExpress.Viz.DxVectorMapInterop.ClearMarkerSelection(Id);
+	}
+	public void ClearSelection() {
+		DevExpress.Viz.DxVectorMapInterop.ClearSelection(Id);
+	}
+	public object ConvertCoordinates(float x, float y) {
+		return DevExpress.Viz.DxVectorMapInterop.ConvertCoordinates(Id, x, y);
+	}
+	public object GetAreas() {
+		return DevExpress.Viz.DxVectorMapInterop.GetAreas(Id);
+	}
+	public object GetLayerByIndex(float index) {
+		return DevExpress.Viz.DxVectorMapInterop.GetLayerByIndex(Id, index);
+	}
+	public object GetLayerByName(string name) {
+		return DevExpress.Viz.DxVectorMapInterop.GetLayerByName(Id, name);
+	}
+	public object GetLayersEx() {
+		return DevExpress.Viz.DxVectorMapInterop.GetLayersEx(Id);
+	}
+	public object GetMarkersEx() {
+		return DevExpress.Viz.DxVectorMapInterop.GetMarkersEx(Id);
+	}
+	public object Viewport() {
+		return DevExpress.Viz.DxVectorMapInterop.Viewport(Id);
+	}
+	public void Viewport(object viewportCoordinates) {
+		DevExpress.Viz.DxVectorMapInterop.Viewport(Id, viewportCoordinates);
+	}
+	public float ZoomFactorEx() {
+		return DevExpress.Viz.DxVectorMapInterop.ZoomFactorEx(Id);
+	}
+	public void ZoomFactorEx(float zoomFactor) {
+		DevExpress.Viz.DxVectorMapInterop.ZoomFactorEx(Id, zoomFactor);
+	}
 	public void Dispose() {
 		DevExpress.Viz.DxVectorMapInterop.AreaClick -= DxVectorMap_AreaClick;
 		DevExpress.Viz.DxVectorMapInterop.AreaSelectionChanged -= DxVectorMap_AreaSelectionChanged;

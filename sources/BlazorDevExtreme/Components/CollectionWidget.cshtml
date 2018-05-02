@@ -200,6 +200,9 @@
 			SelectionChanged?.Invoke();
 		}
 	}
+	public object GetDataSourceEx() {
+		return DevExpress.Ui.CollectionWidgetInterop.GetDataSourceEx(Id);
+	}
 	public void Dispose() {
 		DevExpress.Ui.CollectionWidgetInterop.ItemClick -= CollectionWidget_ItemClick;
 		DevExpress.Ui.CollectionWidgetInterop.ItemContextMenu -= CollectionWidget_ItemContextMenu;

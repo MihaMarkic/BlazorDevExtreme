@@ -6,18 +6,106 @@ namespace DevExpress
 {
     public class DataHelperMixinInterop
     {
+        public static object GetDataSourceEx(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataHelperMixin.getDataSource_0", identifier);
+        }
     }
     public class DxEventInterop
     {
+        public static bool IsDefaultPrevented(string identifier)
+        {
+            return RegisteredFunction.Invoke<bool>("BlazorDevExtreme.DxEvent.isDefaultPrevented_0", identifier);
+        }
+        public static bool IsImmediatePropagationStopped(string identifier)
+        {
+            return RegisteredFunction.Invoke<bool>("BlazorDevExtreme.DxEvent.isImmediatePropagationStopped_1", identifier);
+        }
+        public static bool IsPropagationStopped(string identifier)
+        {
+            return RegisteredFunction.Invoke<bool>("BlazorDevExtreme.DxEvent.isPropagationStopped_2", identifier);
+        }
+        public static void PreventDefault(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxEvent.preventDefault_3", identifier);
+        }
+        public static void StopImmediatePropagation(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxEvent.stopImmediatePropagation_4", identifier);
+        }
+        public static void StopPropagation(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxEvent.stopPropagation_5", identifier);
+        }
     }
     public class LocalizationInterop
     {
+        public static void LoadMessages(object messages)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.Localization.loadMessages_0", messages);
+        }
+        public static string Locale()
+        {
+            return RegisteredFunction.Invoke<string>("BlazorDevExtreme.Localization.locale_1");
+        }
+        public static void Locale(string locale)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.Localization.locale_2", locale);
+        }
     }
     public class AnimationPresetsInterop
     {
+        public static void ApplyChanges(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.AnimationPresets.applyChanges_0", identifier);
+        }
+        public static void Clear(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.AnimationPresets.clear_1", identifier);
+        }
+        public static void Clear(string identifier, string name)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.AnimationPresets.clear_2", identifier, name);
+        }
+        public static object GetPreset(string identifier, string name)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.AnimationPresets.getPreset_3", identifier, name);
+        }
+        public static void RegisterDefaultPresets(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.AnimationPresets.registerDefaultPresets_4", identifier);
+        }
+        public static void RegisterPreset(string identifier, string name, object config)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.AnimationPresets.registerPreset_5", identifier, name, config);
+        }
+        public static void ResetToDefaults(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.AnimationPresets.resetToDefaults_6", identifier);
+        }
     }
     public class TransitionExecutorInterop
     {
+        public static void Enter(string identifier, object elements, object animation)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.TransitionExecutor.enter_0", identifier, elements, animation);
+        }
+        public static void Leave(string identifier, object elements, object animation)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.TransitionExecutor.leave_1", identifier, elements, animation);
+        }
+        public static void Reset(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.TransitionExecutor.reset_2", identifier);
+        }
+        public static object Start(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.TransitionExecutor.start_3", identifier);
+        }
+        public static void Stop(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.TransitionExecutor.stop_4", identifier);
+        }
     }
     public class ComponentInterop
     {
@@ -41,9 +129,85 @@ namespace DevExpress
         {
             OptionChanged?.Invoke(null, new JQueryEventArgs(identifier));
         }
+        public static void BeginUpdate(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.Component.beginUpdate_0", identifier);
+        }
+        public static void EndUpdate(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.Component.endUpdate_1", identifier);
+        }
+        public static object Instance(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Component.instance_2", identifier);
+        }
+        public static object Off(string identifier, string eventName)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Component.off_3", identifier, eventName);
+        }
+        public static object Off(string identifier, string eventName, object eventHandler)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Component.off_4", identifier, eventName, eventHandler);
+        }
+        public static object On(string identifier, string eventName, object eventHandler)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Component.on_5", identifier, eventName, eventHandler);
+        }
+        public static object On(string identifier, object events)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Component.on_6", identifier, events);
+        }
+        public static object Option(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Component.option_7", identifier);
+        }
+        public static object Option(string identifier, string optionName)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Component.option_8", identifier, optionName);
+        }
+        public static void Option(string identifier, string optionName, object optionValue)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.Component.option_9", identifier, optionName, optionValue);
+        }
+        public static void Option(string identifier, object options)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.Component.option_10", identifier, options);
+        }
     }
     public class DevicesObjectInterop
     {
+        public static object Current(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DevicesObject.current_0", identifier);
+        }
+        public static void Current(string identifier, object deviceName)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DevicesObject.current_1", identifier, deviceName);
+        }
+        public static object Off(string identifier, string eventName)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DevicesObject.off_2", identifier, eventName);
+        }
+        public static object Off(string identifier, string eventName, object eventHandler)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DevicesObject.off_3", identifier, eventName, eventHandler);
+        }
+        public static object On(string identifier, string eventName, object eventHandler)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DevicesObject.on_4", identifier, eventName, eventHandler);
+        }
+        public static object On(string identifier, object events)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DevicesObject.on_5", identifier, events);
+        }
+        public static string Orientation(string identifier)
+        {
+            return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DevicesObject.orientation_6", identifier);
+        }
+        public static object Real(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DevicesObject.real_7", identifier);
+        }
     }
     public class DOMComponentInterop : ComponentInterop
     {
@@ -102,24 +266,152 @@ namespace DevExpress
         {
             RegisteredFunction.Invoke<object>("BlazorDevExtreme.DOMComponent.SetOption", identifier, "width", value);
         }
+        public static void DefaultOptions(object rule)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DOMComponent.defaultOptions_0", rule);
+        }
+        public static object GetInstance(object element)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DOMComponent.getInstance_1", element);
+        }
+        public static void Dispose(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DOMComponent.dispose_0", identifier);
+        }
+        public static object Element(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DOMComponent.element_1", identifier);
+        }
     }
     public class EndpointSelectorInterop
     {
+        public static string UrlFor(string identifier, string key)
+        {
+            return RegisteredFunction.Invoke<string>("BlazorDevExtreme.EndpointSelector.urlFor_0", identifier, key);
+        }
     }
     public class ValidationEngineInterop
     {
+        public static object GetGroupConfig()
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.ValidationEngine.getGroupConfig_0");
+        }
+        public static object GetGroupConfig(object group)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.ValidationEngine.getGroupConfig_1", group);
+        }
+        public static void RegisterModelForValidation(object model)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.ValidationEngine.registerModelForValidation_2", model);
+        }
+        public static void ResetGroup()
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.ValidationEngine.resetGroup_3");
+        }
+        public static void ResetGroup(object group)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.ValidationEngine.resetGroup_4", group);
+        }
+        public static void UnregisterModelForValidation(object model)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.ValidationEngine.unregisterModelForValidation_5", model);
+        }
+        public static object ValidateGroup()
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.ValidationEngine.validateGroup_6");
+        }
+        public static object ValidateGroup(object group)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.ValidationEngine.validateGroup_7", group);
+        }
+        public static object ValidateModel(object model)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.ValidationEngine.validateModel_8", model);
+        }
     }
     public class UiInterop
     {
+        public static void Notify(string message, string type, float displayTime)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.Ui.notify_0", message, type, displayTime);
+        }
+        public static void Notify(object options, string type, float displayTime)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.Ui.notify_1", options, type, displayTime);
+        }
+        public static void SetTemplateEngine(string templateEngineName)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.Ui.setTemplateEngine_2", templateEngineName);
+        }
+        public static void SetTemplateEngine(object templateEngineOptions)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.Ui.setTemplateEngine_3", templateEngineOptions);
+        }
     }
     public class VizInterop
     {
+        public static void CurrentPalette(string paletteName)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.Viz.currentPalette_0", paletteName);
+        }
+        public static string CurrentTheme()
+        {
+            return RegisteredFunction.Invoke<string>("BlazorDevExtreme.Viz.currentTheme_1");
+        }
+        public static void CurrentTheme(string platform, string colorScheme)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.Viz.currentTheme_2", platform, colorScheme);
+        }
+        public static void CurrentTheme(string theme)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.Viz.currentTheme_3", theme);
+        }
+        public static void ExportFromMarkup(string markup, object options)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.Viz.exportFromMarkup_4", markup, options);
+        }
+        public static string GetMarkup(object widgetInstances)
+        {
+            return RegisteredFunction.Invoke<string>("BlazorDevExtreme.Viz.getMarkup_5", widgetInstances);
+        }
+        public static object GetPalette(string paletteName)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Viz.getPalette_6", paletteName);
+        }
+        public static object GetTheme(string theme)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Viz.getTheme_7", theme);
+        }
+        public static void RefreshPaths()
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.Viz.refreshPaths_8");
+        }
+        public static void RefreshTheme()
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.Viz.refreshTheme_9");
+        }
+        public static void RegisterPalette(string paletteName, object palette)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.Viz.registerPalette_10", paletteName, palette);
+        }
+        public static void RegisterTheme(object customTheme, string baseTheme)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.Viz.registerTheme_11", customTheme, baseTheme);
+        }
     }
 }
 namespace DevExpress.Data
 {
     public class GuidInterop
     {
+        public static string ToString(string identifier)
+        {
+            return RegisteredFunction.Invoke<string>("BlazorDevExtreme.Guid.toString_0", identifier);
+        }
+        public static string ValueOf(string identifier)
+        {
+            return RegisteredFunction.Invoke<string>("BlazorDevExtreme.Guid.valueOf_1", identifier);
+        }
     }
     public class StoreInterop
     {
@@ -194,6 +486,58 @@ namespace DevExpress.Data
         {
             RegisteredFunction.Invoke<object>("BlazorDevExtreme.Store.SetOption", identifier, "key", value);
         }
+        public static object ByKey(string identifier, object key)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Store.byKey_0", identifier, key);
+        }
+        public static object Insert(string identifier, object values)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Store.insert_1", identifier, values);
+        }
+        public static object Key(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Store.key_2", identifier);
+        }
+        public static object KeyOf(string identifier, object obj)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Store.keyOf_3", identifier, obj);
+        }
+        public static object Load(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Store.load_4", identifier);
+        }
+        public static object Load(string identifier, object options)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Store.load_5", identifier, options);
+        }
+        public static object Off(string identifier, string eventName)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Store.off_6", identifier, eventName);
+        }
+        public static object Off(string identifier, string eventName, object eventHandler)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Store.off_7", identifier, eventName, eventHandler);
+        }
+        public static object On(string identifier, string eventName, object eventHandler)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Store.on_8", identifier, eventName, eventHandler);
+        }
+        public static object On(string identifier, object events)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Store.on_9", identifier, events);
+        }
+        public static object Remove(string identifier, object key)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Store.remove_10", identifier, key);
+        }
+        public static object TotalCount(string identifier, object obj)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Store.totalCount_11", identifier, obj);
+        }
+        public static object Update(string identifier, object key, object values)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Store.update_12", identifier, key, values);
+        }
     }
     public class ArrayStoreInterop : StoreInterop
     {
@@ -209,6 +553,14 @@ namespace DevExpress.Data
         public static void SetData(string identifier, object value)
         {
             RegisteredFunction.Invoke<object>("BlazorDevExtreme.ArrayStore.SetOption", identifier, "data", value);
+        }
+        public static void Clear(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.ArrayStore.clear_0", identifier);
+        }
+        public static object CreateQuery(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.ArrayStore.createQuery_1", identifier);
         }
     }
     public class CustomStoreInterop : StoreInterop
@@ -289,6 +641,10 @@ namespace DevExpress.Data
         public static void SetUseDefaultSearch(string identifier, bool? value)
         {
             RegisteredFunction.Invoke<object>("BlazorDevExtreme.CustomStore.SetOption", identifier, "useDefaultSearch", value);
+        }
+        public static void ClearRawDataCache(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.CustomStore.clearRawDataCache_0", identifier);
         }
     }
     public class DataSourceInterop
@@ -433,6 +789,158 @@ namespace DevExpress.Data
         {
             RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.SetOption", identifier, "store", value);
         }
+        public static bool Cancel(string identifier)
+        {
+            return RegisteredFunction.Invoke<bool>("BlazorDevExtreme.DataSource.cancel_0", identifier);
+        }
+        public static void Dispose(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.dispose_1", identifier);
+        }
+        public static object Filter(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.filter_2", identifier);
+        }
+        public static void Filter(string identifier, object filterExpr)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.filter_3", identifier, filterExpr);
+        }
+        public static object Group(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.group_4", identifier);
+        }
+        public static void Group(string identifier, object groupExpr)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.group_5", identifier, groupExpr);
+        }
+        public static bool IsLastPage(string identifier)
+        {
+            return RegisteredFunction.Invoke<bool>("BlazorDevExtreme.DataSource.isLastPage_6", identifier);
+        }
+        public static bool IsLoaded(string identifier)
+        {
+            return RegisteredFunction.Invoke<bool>("BlazorDevExtreme.DataSource.isLoaded_7", identifier);
+        }
+        public static bool IsLoading(string identifier)
+        {
+            return RegisteredFunction.Invoke<bool>("BlazorDevExtreme.DataSource.isLoading_8", identifier);
+        }
+        public static object Items(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.items_9", identifier);
+        }
+        public static object Key(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.key_10", identifier);
+        }
+        public static object Load(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.load_11", identifier);
+        }
+        public static object LoadOptions(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.loadOptions_12", identifier);
+        }
+        public static object Off(string identifier, string eventName)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.off_13", identifier, eventName);
+        }
+        public static object Off(string identifier, string eventName, object eventHandler)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.off_14", identifier, eventName, eventHandler);
+        }
+        public static object On(string identifier, string eventName, object eventHandler)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.on_15", identifier, eventName, eventHandler);
+        }
+        public static object On(string identifier, object events)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.on_16", identifier, events);
+        }
+        public static float PageIndex(string identifier)
+        {
+            return RegisteredFunction.Invoke<float>("BlazorDevExtreme.DataSource.pageIndex_17", identifier);
+        }
+        public static void PageIndex(string identifier, float newIndex)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.pageIndex_18", identifier, newIndex);
+        }
+        public static float PageSize(string identifier)
+        {
+            return RegisteredFunction.Invoke<float>("BlazorDevExtreme.DataSource.pageSize_19", identifier);
+        }
+        public static void PageSize(string identifier, float value)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.pageSize_20", identifier, value);
+        }
+        public static bool Paginate(string identifier)
+        {
+            return RegisteredFunction.Invoke<bool>("BlazorDevExtreme.DataSource.paginate_21", identifier);
+        }
+        public static void Paginate(string identifier, bool value)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.paginate_22", identifier, value);
+        }
+        public static object Reload(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.reload_23", identifier);
+        }
+        public static bool RequireTotalCount(string identifier)
+        {
+            return RegisteredFunction.Invoke<bool>("BlazorDevExtreme.DataSource.requireTotalCount_24", identifier);
+        }
+        public static void RequireTotalCount(string identifier, bool value)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.requireTotalCount_25", identifier, value);
+        }
+        public static object SearchExpr(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.searchExpr_26", identifier);
+        }
+        public static void SearchExpr(string identifier, object expr)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.searchExpr_27", identifier, expr);
+        }
+        public static string SearchOperation(string identifier)
+        {
+            return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DataSource.searchOperation_28", identifier);
+        }
+        public static void SearchOperation(string identifier, string op)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.searchOperation_29", identifier, op);
+        }
+        public static object SearchValue(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.searchValue_30", identifier);
+        }
+        public static void SearchValue(string identifier, object value)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.searchValue_31", identifier, value);
+        }
+        public static object Select(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.select_32", identifier);
+        }
+        public static void Select(string identifier, object expr)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.select_33", identifier, expr);
+        }
+        public static object Sort(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.sort_34", identifier);
+        }
+        public static void Sort(string identifier, object sortExpr)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.sort_35", identifier, sortExpr);
+        }
+        public static object Store(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.store_36", identifier);
+        }
+        public static float TotalCount(string identifier)
+        {
+            return RegisteredFunction.Invoke<float>("BlazorDevExtreme.DataSource.totalCount_37", identifier);
+        }
     }
     public class LocalStoreInterop : ArrayStoreInterop
     {
@@ -465,9 +973,97 @@ namespace DevExpress.Data
         {
             RegisteredFunction.Invoke<object>("BlazorDevExtreme.LocalStore.SetOption", identifier, "name", value);
         }
+        public static void Clear(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.LocalStore.clear_0", identifier);
+        }
     }
     public class QueryInterop
     {
+        public static object Aggregate(string identifier, object seed, object step, object finalize)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Query.aggregate_0", identifier, seed, step, finalize);
+        }
+        public static object Aggregate(string identifier, object step)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Query.aggregate_1", identifier, step);
+        }
+        public static object Avg(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Query.avg_2", identifier);
+        }
+        public static object Avg(string identifier, object getter)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Query.avg_3", identifier, getter);
+        }
+        public static object Count(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Query.count_4", identifier);
+        }
+        public static object Enumerate(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Query.enumerate_5", identifier);
+        }
+        public static object Filter(string identifier, object criteria)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Query.filter_6", identifier, criteria);
+        }
+        public static object GroupBy(string identifier, object getter)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Query.groupBy_8", identifier, getter);
+        }
+        public static object Max(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Query.max_9", identifier);
+        }
+        public static object Max(string identifier, object getter)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Query.max_10", identifier, getter);
+        }
+        public static object Min(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Query.min_11", identifier);
+        }
+        public static object Min(string identifier, object getter)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Query.min_12", identifier, getter);
+        }
+        public static object Select(string identifier, object getter)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Query.select_13", identifier, getter);
+        }
+        public static object Slice(string identifier, float skip, float take)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Query.slice_14", identifier, skip, take);
+        }
+        public static object SortBy(string identifier, object getter)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Query.sortBy_15", identifier, getter);
+        }
+        public static object SortBy(string identifier, object getter, bool desc)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Query.sortBy_16", identifier, getter, desc);
+        }
+        public static object Sum(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Query.sum_17", identifier);
+        }
+        public static object Sum(string identifier, object getter)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Query.sum_18", identifier, getter);
+        }
+        public static object ThenBy(string identifier, object getter)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Query.thenBy_19", identifier, getter);
+        }
+        public static object ThenBy(string identifier, object getter, bool desc)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Query.thenBy_20", identifier, getter, desc);
+        }
+        public static object ToArray(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Query.toArray_21", identifier);
+        }
     }
     public class ODataContextInterop
     {
@@ -539,6 +1135,18 @@ namespace DevExpress.Data
         public static void SetWithCredentials(string identifier, bool? value)
         {
             RegisteredFunction.Invoke<object>("BlazorDevExtreme.ODataContext.SetOption", identifier, "withCredentials", value);
+        }
+        public static object Get(string identifier, string operationName, object @params)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.ODataContext.get_0", identifier, operationName, @params);
+        }
+        public static object Invoke(string identifier, string operationName, object @params, object httpMethod)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.ODataContext.invoke_1", identifier, operationName, @params, httpMethod);
+        }
+        public static object ObjectLink(string identifier, string entityAlias, object key)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.ODataContext.objectLink_2", identifier, entityAlias, key);
         }
     }
     public class ODataStoreInterop : StoreInterop
@@ -617,9 +1225,33 @@ namespace DevExpress.Data
         {
             RegisteredFunction.Invoke<object>("BlazorDevExtreme.ODataStore.SetOption", identifier, "withCredentials", value);
         }
+        public static object ByKey(string identifier, object key)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.ODataStore.byKey_0", identifier, key);
+        }
+        public static object ByKey(string identifier, object key, object extraOptions)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.ODataStore.byKey_1", identifier, key, extraOptions);
+        }
+        public static object CreateQuery(string identifier, object loadOptions)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.ODataStore.createQuery_2", identifier, loadOptions);
+        }
+        public static object Load(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.ODataStore.load_3", identifier);
+        }
+        public static object Load(string identifier, object options)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.ODataStore.load_4", identifier, options);
+        }
     }
     public class EdmLiteralInterop
     {
+        public static string ValueOf(string identifier)
+        {
+            return RegisteredFunction.Invoke<string>("BlazorDevExtreme.EdmLiteral.valueOf_0", identifier);
+        }
     }
     public class PivotGridDataSourceInterop
     {
@@ -688,6 +1320,98 @@ namespace DevExpress.Data
         {
             RegisteredFunction.Invoke<object>("BlazorDevExtreme.PivotGridDataSource.SetOption", identifier, "store", value);
         }
+        public static void CollapseAll(string identifier, object id)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.PivotGridDataSource.collapseAll_0", identifier, id);
+        }
+        public static void CollapseHeaderItem(string identifier, string area, object path)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.PivotGridDataSource.collapseHeaderItem_1", identifier, area, path);
+        }
+        public static object CreateDrillDownDataSource(string identifier, object options)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.PivotGridDataSource.createDrillDownDataSource_2", identifier, options);
+        }
+        public static void Dispose(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.PivotGridDataSource.dispose_3", identifier);
+        }
+        public static void ExpandAll(string identifier, object id)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.PivotGridDataSource.expandAll_4", identifier, id);
+        }
+        public static void ExpandHeaderItem(string identifier, string area, object path)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.PivotGridDataSource.expandHeaderItem_5", identifier, area, path);
+        }
+        public static object Field(string identifier, object id)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.PivotGridDataSource.field_6", identifier, id);
+        }
+        public static void Field(string identifier, object id, object options)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.PivotGridDataSource.field_7", identifier, id, options);
+        }
+        public static object Fields(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.PivotGridDataSource.fields_8", identifier);
+        }
+        public static void Fields(string identifier, object fields)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.PivotGridDataSource.fields_9", identifier, fields);
+        }
+        public static object Filter(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.PivotGridDataSource.filter_10", identifier);
+        }
+        public static void Filter(string identifier, object filterExpr)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.PivotGridDataSource.filter_11", identifier, filterExpr);
+        }
+        public static object GetAreaFields(string identifier, string area, bool collectGroups)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.PivotGridDataSource.getAreaFields_12", identifier, area, collectGroups);
+        }
+        public static object GetData(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.PivotGridDataSource.getData_13", identifier);
+        }
+        public static bool IsLoading(string identifier)
+        {
+            return RegisteredFunction.Invoke<bool>("BlazorDevExtreme.PivotGridDataSource.isLoading_14", identifier);
+        }
+        public static object Load(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.PivotGridDataSource.load_15", identifier);
+        }
+        public static object Off(string identifier, string eventName)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.PivotGridDataSource.off_16", identifier, eventName);
+        }
+        public static object Off(string identifier, string eventName, object eventHandler)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.PivotGridDataSource.off_17", identifier, eventName, eventHandler);
+        }
+        public static object On(string identifier, string eventName, object eventHandler)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.PivotGridDataSource.on_18", identifier, eventName, eventHandler);
+        }
+        public static object On(string identifier, object events)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.PivotGridDataSource.on_19", identifier, events);
+        }
+        public static object Reload(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.PivotGridDataSource.reload_20", identifier);
+        }
+        public static object State(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.PivotGridDataSource.state_21", identifier);
+        }
+        public static void State(string identifier, object state)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.PivotGridDataSource.state_22", identifier, state);
+        }
     }
     public class XmlaStoreInterop
     {
@@ -734,6 +1458,22 @@ namespace DevExpress.Core
 {
     public class EventsMixinInterop
     {
+        public static object Off(string identifier, string eventName)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.EventsMixin.off_0", identifier, eventName);
+        }
+        public static object Off(string identifier, string eventName, object eventHandler)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.EventsMixin.off_1", identifier, eventName, eventHandler);
+        }
+        public static object On(string identifier, string eventName, object eventHandler)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.EventsMixin.on_2", identifier, eventName, eventHandler);
+        }
+        public static object On(string identifier, object events)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.EventsMixin.on_3", identifier, events);
+        }
     }
 }
 namespace DevExpress.Framework
@@ -814,9 +1554,25 @@ namespace DevExpress.Framework
         {
             RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxCommand.SetOption", identifier, "visible", value);
         }
+        public static void DoExecute(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxCommand.execute_0", identifier);
+        }
     }
     public class RouterInterop
     {
+        public static string Format(string identifier, object obj)
+        {
+            return RegisteredFunction.Invoke<string>("BlazorDevExtreme.Router.format_0", identifier, obj);
+        }
+        public static object Parse(string identifier, string uri)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Router.parse_1", identifier, uri);
+        }
+        public static void Register(string identifier, string pattern, object defaults, object constraints)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.Router.register_2", identifier, pattern, defaults, constraints);
+        }
     }
     public class StateManagerInterop
     {
@@ -833,9 +1589,65 @@ namespace DevExpress.Framework
         {
             RegisteredFunction.Invoke<object>("BlazorDevExtreme.StateManager.SetOption", identifier, "storage", value);
         }
+        public static void AddStateSource(string identifier, object stateSource)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.StateManager.addStateSource_0", identifier, stateSource);
+        }
+        public static void ClearState(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.StateManager.clearState_1", identifier);
+        }
+        public static void RemoveStateSource(string identifier, object stateSource)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.StateManager.removeStateSource_2", identifier, stateSource);
+        }
+        public static void RestoreState(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.StateManager.restoreState_3", identifier);
+        }
+        public static void SaveState(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.StateManager.saveState_4", identifier);
+        }
     }
     public class ViewCacheInterop
     {
+        public static void Clear(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.ViewCache.clear_0", identifier);
+        }
+        public static object GetView(string identifier, string key)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.ViewCache.getView_1", identifier, key);
+        }
+        public static bool HasView(string identifier, string key)
+        {
+            return RegisteredFunction.Invoke<bool>("BlazorDevExtreme.ViewCache.hasView_2", identifier, key);
+        }
+        public static object Off(string identifier, string eventName)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.ViewCache.off_3", identifier, eventName);
+        }
+        public static object Off(string identifier, string eventName, object eventHandler)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.ViewCache.off_4", identifier, eventName, eventHandler);
+        }
+        public static object On(string identifier, string eventName, object eventHandler)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.ViewCache.on_5", identifier, eventName, eventHandler);
+        }
+        public static object On(string identifier, object events)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.ViewCache.on_6", identifier, events);
+        }
+        public static object RemoveView(string identifier, string key)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.ViewCache.removeView_7", identifier, key);
+        }
+        public static void SetView(string identifier, string key, object viewInfo)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.ViewCache.setView_8", identifier, key, viewInfo);
+        }
     }
     public class DxCommandContainerInterop
     {
@@ -1167,6 +1979,74 @@ namespace DevExpress.Framework.Html
         {
             RegisteredFunction.Invoke<object>("BlazorDevExtreme.HtmlApplication.SetOption", identifier, "viewPort", value);
         }
+        public static void Back(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.HtmlApplication.back_0", identifier);
+        }
+        public static bool CanBack(string identifier)
+        {
+            return RegisteredFunction.Invoke<bool>("BlazorDevExtreme.HtmlApplication.canBack_1", identifier);
+        }
+        public static void ClearState(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.HtmlApplication.clearState_2", identifier);
+        }
+        public static void CreateNavigation(string identifier, object navigationConfig)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.HtmlApplication.createNavigation_3", identifier, navigationConfig);
+        }
+        public static object GetViewTemplate(string identifier, string viewName)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.HtmlApplication.getViewTemplate_4", identifier, viewName);
+        }
+        public static object GetViewTemplateInfo(string identifier, string viewName)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.HtmlApplication.getViewTemplateInfo_5", identifier, viewName);
+        }
+        public static object LoadTemplates(string identifier, object source)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.HtmlApplication.loadTemplates_6", identifier, source);
+        }
+        public static void Navigate(string identifier, object uri)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.HtmlApplication.navigate_7", identifier, uri);
+        }
+        public static void Navigate(string identifier, object uri, object options)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.HtmlApplication.navigate_8", identifier, uri, options);
+        }
+        public static object Off(string identifier, string eventName)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.HtmlApplication.off_9", identifier, eventName);
+        }
+        public static object Off(string identifier, string eventName, object eventHandler)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.HtmlApplication.off_10", identifier, eventName, eventHandler);
+        }
+        public static object On(string identifier, string eventName, object eventHandler)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.HtmlApplication.on_11", identifier, eventName, eventHandler);
+        }
+        public static object On(string identifier, object events)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.HtmlApplication.on_12", identifier, events);
+        }
+        public static void RenderNavigation(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.HtmlApplication.renderNavigation_13", identifier);
+        }
+        public static void RestoreState(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.HtmlApplication.restoreState_14", identifier);
+        }
+        public static void SaveState(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.HtmlApplication.saveState_15", identifier);
+        }
+        public static object TemplateContext(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.HtmlApplication.templateContext_16", identifier);
+        }
     }
 }
 namespace DevExpress.Ui
@@ -1263,6 +2143,18 @@ namespace DevExpress.Ui
         {
             RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxAccordion.SetOption", identifier, "selectedIndex", value);
         }
+        public static object CollapseItem(string identifier, float index)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxAccordion.collapseItem_0", identifier, index);
+        }
+        public static object ExpandItem(string identifier, float index)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxAccordion.expandItem_1", identifier, index);
+        }
+        public static object UpdateDimensions(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxAccordion.updateDimensions_2", identifier);
+        }
     }
     public class DxActionSheetInterop : CollectionWidgetInterop
     {
@@ -1331,6 +2223,18 @@ namespace DevExpress.Ui
         public static new void SetVisible(string identifier, bool? value)
         {
             RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxActionSheet.SetOption", identifier, "visible", value);
+        }
+        public static object Hide(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxActionSheet.hide_0", identifier);
+        }
+        public static object Show(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxActionSheet.show_1", identifier);
+        }
+        public static object Toggle(string identifier, bool showing)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxActionSheet.toggle_2", identifier, showing);
         }
     }
     public class DxAutocompleteInterop : DxDropDownListInterop
@@ -1818,6 +2722,18 @@ namespace DevExpress.Ui
         {
             RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxContextMenu.SetOption", identifier, "visible", value);
         }
+        public static object Hide(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxContextMenu.hide_0", identifier);
+        }
+        public static object Show(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxContextMenu.show_1", identifier);
+        }
+        public static object Toggle(string identifier, bool showing)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxContextMenu.toggle_2", identifier, showing);
+        }
     }
     public class GridBaseInterop : WidgetInterop
     {
@@ -2231,6 +3147,254 @@ namespace DevExpress.Ui
         {
             RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.SetOption", identifier, "wordWrapEnabled", value);
         }
+        public static void BeginCustomLoading(string identifier, string messageText)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.beginCustomLoading_0", identifier, messageText);
+        }
+        public static object ByKey(string identifier, object key)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.byKey_1", identifier, key);
+        }
+        public static void CancelEditData(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.cancelEditData_2", identifier);
+        }
+        public static object CellValue(string identifier, float rowIndex, string dataField)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.cellValue_3", identifier, rowIndex, dataField);
+        }
+        public static void CellValue(string identifier, float rowIndex, string dataField, object value)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.cellValue_4", identifier, rowIndex, dataField, value);
+        }
+        public static object CellValue(string identifier, float rowIndex, float visibleColumnIndex)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.cellValue_5", identifier, rowIndex, visibleColumnIndex);
+        }
+        public static void CellValue(string identifier, float rowIndex, float visibleColumnIndex, object value)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.cellValue_6", identifier, rowIndex, visibleColumnIndex, value);
+        }
+        public static void ClearFilter(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.clearFilter_7", identifier);
+        }
+        public static void ClearFilter(string identifier, string filterName)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.clearFilter_8", identifier, filterName);
+        }
+        public static void ClearSelection(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.clearSelection_9", identifier);
+        }
+        public static void ClearSorting(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.clearSorting_10", identifier);
+        }
+        public static void CloseEditCell(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.closeEditCell_11", identifier);
+        }
+        public static void CollapseAdaptiveDetailRow(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.collapseAdaptiveDetailRow_12", identifier);
+        }
+        public static float ColumnCount(string identifier)
+        {
+            return RegisteredFunction.Invoke<float>("BlazorDevExtreme.GridBase.columnCount_13", identifier);
+        }
+        public static object ColumnOption(string identifier, object id)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.columnOption_14", identifier, id);
+        }
+        public static object ColumnOption(string identifier, object id, string optionName)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.columnOption_15", identifier, id, optionName);
+        }
+        public static void ColumnOption(string identifier, object id, string optionName, object optionValue)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.columnOption_16", identifier, id, optionName, optionValue);
+        }
+        public static void ColumnOption(string identifier, object id, object options)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.columnOption_17", identifier, id, options);
+        }
+        public static void DeleteColumn(string identifier, object id)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.deleteColumn_18", identifier, id);
+        }
+        public static void DeleteRow(string identifier, float rowIndex)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.deleteRow_19", identifier, rowIndex);
+        }
+        public static object DeselectAll(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.deselectAll_20", identifier);
+        }
+        public static object DeselectRows(string identifier, object keys)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.deselectRows_21", identifier, keys);
+        }
+        public static void EditCell(string identifier, float rowIndex, string dataField)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.editCell_22", identifier, rowIndex, dataField);
+        }
+        public static void EditCell(string identifier, float rowIndex, float visibleColumnIndex)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.editCell_23", identifier, rowIndex, visibleColumnIndex);
+        }
+        public static void EditRow(string identifier, float rowIndex)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.editRow_24", identifier, rowIndex);
+        }
+        public static void EndCustomLoading(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.endCustomLoading_25", identifier);
+        }
+        public static void ExpandAdaptiveDetailRow(string identifier, object key)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.expandAdaptiveDetailRow_26", identifier, key);
+        }
+        public static object Filter(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.filter_27", identifier);
+        }
+        public static void Filter(string identifier, object filterExpr)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.filter_28", identifier, filterExpr);
+        }
+        public static void Focus(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.focus_29", identifier);
+        }
+        public static void Focus(string identifier, object element)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.focus_30", identifier, element);
+        }
+        public static object GetCellElement(string identifier, float rowIndex, string dataField)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.getCellElement_31", identifier, rowIndex, dataField);
+        }
+        public static object GetCellElement(string identifier, float rowIndex, float visibleColumnIndex)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.getCellElement_32", identifier, rowIndex, visibleColumnIndex);
+        }
+        public static object GetCombinedFilter(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.getCombinedFilter_33", identifier);
+        }
+        public static object GetCombinedFilter(string identifier, bool returnDataField)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.getCombinedFilter_34", identifier, returnDataField);
+        }
+        public static object GetDataSourceEx(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.getDataSource_35", identifier);
+        }
+        public static object GetKeyByRowIndex(string identifier, float rowIndex)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.getKeyByRowIndex_36", identifier, rowIndex);
+        }
+        public static object GetRowElement(string identifier, float rowIndex)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.getRowElement_37", identifier, rowIndex);
+        }
+        public static float GetRowIndexByKey(string identifier, object key)
+        {
+            return RegisteredFunction.Invoke<float>("BlazorDevExtreme.GridBase.getRowIndexByKey_38", identifier, key);
+        }
+        public static object GetScrollable(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.getScrollable_39", identifier);
+        }
+        public static bool HasEditData(string identifier)
+        {
+            return RegisteredFunction.Invoke<bool>("BlazorDevExtreme.GridBase.hasEditData_40", identifier);
+        }
+        public static void HideColumnChooser(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.hideColumnChooser_41", identifier);
+        }
+        public static void IsAdaptiveDetailRowExpanded(string identifier, object key)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.isAdaptiveDetailRowExpanded_42", identifier, key);
+        }
+        public static bool IsRowSelected(string identifier, object key)
+        {
+            return RegisteredFunction.Invoke<bool>("BlazorDevExtreme.GridBase.isRowSelected_43", identifier, key);
+        }
+        public static object KeyOf(string identifier, object obj)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.keyOf_44", identifier, obj);
+        }
+        public static float PageCount(string identifier)
+        {
+            return RegisteredFunction.Invoke<float>("BlazorDevExtreme.GridBase.pageCount_45", identifier);
+        }
+        public static float PageIndex(string identifier)
+        {
+            return RegisteredFunction.Invoke<float>("BlazorDevExtreme.GridBase.pageIndex_46", identifier);
+        }
+        public static object PageIndex(string identifier, float newIndex)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.pageIndex_47", identifier, newIndex);
+        }
+        public static float PageSize(string identifier)
+        {
+            return RegisteredFunction.Invoke<float>("BlazorDevExtreme.GridBase.pageSize_48", identifier);
+        }
+        public static void PageSize(string identifier, float value)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.pageSize_49", identifier, value);
+        }
+        public static object Refresh(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.refresh_50", identifier);
+        }
+        public static void RepaintRows(string identifier, object rowIndexes)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.repaintRows_51", identifier, rowIndexes);
+        }
+        public static object SaveEditData(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.saveEditData_52", identifier);
+        }
+        public static void SearchByText(string identifier, string text)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.searchByText_53", identifier, text);
+        }
+        public static object SelectAll(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.selectAll_54", identifier);
+        }
+        public static object SelectRows(string identifier, object keys, bool preserve)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.selectRows_55", identifier, keys, preserve);
+        }
+        public static object SelectRowsByIndexes(string identifier, object indexes)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.selectRowsByIndexes_56", identifier, indexes);
+        }
+        public static void ShowColumnChooser(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.showColumnChooser_57", identifier);
+        }
+        public static object State(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.state_58", identifier);
+        }
+        public static void State(string identifier, object state)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.state_59", identifier, state);
+        }
+        public static void UndeleteRow(string identifier, float rowIndex)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.undeleteRow_60", identifier, rowIndex);
+        }
+        public static void UpdateDimensions(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.updateDimensions_61", identifier);
+        }
     }
     public class DxDataGridInterop : GridBaseInterop
     {
@@ -2427,6 +3591,82 @@ namespace DevExpress.Ui
         {
             RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDataGrid.SetOption", identifier, "summary", value);
         }
+        public static void AddColumn(string identifier, object columnOptions)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDataGrid.addColumn_0", identifier, columnOptions);
+        }
+        public static void AddRow(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDataGrid.addRow_1", identifier);
+        }
+        public static void ClearGrouping(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDataGrid.clearGrouping_2", identifier);
+        }
+        public static void CollapseAll(string identifier, float groupIndex)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDataGrid.collapseAll_3", identifier, groupIndex);
+        }
+        public static object CollapseRow(string identifier, object key)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDataGrid.collapseRow_4", identifier, key);
+        }
+        public static void ExpandAll(string identifier, float groupIndex)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDataGrid.expandAll_5", identifier, groupIndex);
+        }
+        public static object ExpandRow(string identifier, object key)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDataGrid.expandRow_6", identifier, key);
+        }
+        public static void ExportToExcel(string identifier, bool selectionOnly)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDataGrid.exportToExcel_7", identifier, selectionOnly);
+        }
+        public static object GetSelectedRowKeys(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDataGrid.getSelectedRowKeys_8", identifier);
+        }
+        public static object GetSelectedRowsData(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDataGrid.getSelectedRowsData_9", identifier);
+        }
+        public static object GetTotalSummaryValue(string identifier, string summaryItemName)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDataGrid.getTotalSummaryValue_10", identifier, summaryItemName);
+        }
+        public static object GetVisibleColumns(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDataGrid.getVisibleColumns_11", identifier);
+        }
+        public static object GetVisibleColumns(string identifier, float headerLevel)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDataGrid.getVisibleColumns_12", identifier, headerLevel);
+        }
+        public static object GetVisibleRows(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDataGrid.getVisibleRows_13", identifier);
+        }
+        public static void InsertRow(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDataGrid.insertRow_14", identifier);
+        }
+        public static bool IsRowExpanded(string identifier, object key)
+        {
+            return RegisteredFunction.Invoke<bool>("BlazorDevExtreme.DxDataGrid.isRowExpanded_15", identifier, key);
+        }
+        public static bool IsRowSelected(string identifier, object data)
+        {
+            return RegisteredFunction.Invoke<bool>("BlazorDevExtreme.DxDataGrid.isRowSelected_16", identifier, data);
+        }
+        public static void RemoveRow(string identifier, float rowIndex)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDataGrid.removeRow_18", identifier, rowIndex);
+        }
+        public static float TotalCount(string identifier)
+        {
+            return RegisteredFunction.Invoke<float>("BlazorDevExtreme.DxDataGrid.totalCount_19", identifier);
+        }
     }
     public class DxDateBoxInterop : DxDropDownEditorInterop
     {
@@ -2587,6 +3827,14 @@ namespace DevExpress.Ui
         {
             RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDateBox.SetOption", identifier, "value", value);
         }
+        public static void Close(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDateBox.close_0", identifier);
+        }
+        public static void Open(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDateBox.open_1", identifier);
+        }
     }
     public class DxDeferRenderingInterop : WidgetInterop
     {
@@ -2684,6 +3932,10 @@ namespace DevExpress.Ui
         public static new void SetValueChangeEvent(string identifier, string value)
         {
             RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownBox.SetOption", identifier, "valueChangeEvent", value);
+        }
+        public static object GetDataSourceEx(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownBox.getDataSource_0", identifier);
         }
     }
     public class DxDropDownMenuInterop : WidgetInterop
@@ -2790,6 +4042,14 @@ namespace DevExpress.Ui
         public static void SetUsePopover(string identifier, bool? value)
         {
             RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownMenu.SetOption", identifier, "usePopover", value);
+        }
+        public static void Close(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownMenu.close_0", identifier);
+        }
+        public static void Open(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownMenu.open_1", identifier);
         }
     }
     public class DxFileUploaderInterop : EditorInterop
@@ -3044,6 +4304,10 @@ namespace DevExpress.Ui
         {
             RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFilterBuilder.SetOption", identifier, "value", value);
         }
+        public static object GetFilterExpression(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFilterBuilder.getFilterExpression_0", identifier);
+        }
     }
     public class DxFormInterop : WidgetInterop
     {
@@ -3222,6 +4486,42 @@ namespace DevExpress.Ui
         {
             RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxForm.SetOption", identifier, "validationGroup", value);
         }
+        public static object GetEditor(string identifier, string dataField)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxForm.getEditor_0", identifier, dataField);
+        }
+        public static object ItemOption(string identifier, string id)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxForm.itemOption_1", identifier, id);
+        }
+        public static void ItemOption(string identifier, string id, string option, object value)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxForm.itemOption_2", identifier, id, option, value);
+        }
+        public static void ItemOption(string identifier, string id, object options)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxForm.itemOption_3", identifier, id, options);
+        }
+        public static void ResetValues(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxForm.resetValues_4", identifier);
+        }
+        public static void UpdateData(string identifier, object data)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxForm.updateData_5", identifier, data);
+        }
+        public static void UpdateData(string identifier, string dataField, object value)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxForm.updateData_6", identifier, dataField, value);
+        }
+        public static object UpdateDimensions(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxForm.updateDimensions_7", identifier);
+        }
+        public static object Validate(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxForm.validate_8", identifier);
+        }
     }
     public class DxGalleryInterop : CollectionWidgetInterop
     {
@@ -3333,6 +4633,18 @@ namespace DevExpress.Ui
         public static void SetWrapAround(string identifier, bool? value)
         {
             RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxGallery.SetOption", identifier, "wrapAround", value);
+        }
+        public static object GoToItem(string identifier, float itemIndex, bool animation)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxGallery.goToItem_0", identifier, itemIndex, animation);
+        }
+        public static object NextItem(string identifier, bool animation)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxGallery.nextItem_1", identifier, animation);
+        }
+        public static object PrevItem(string identifier, bool animation)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxGallery.prevItem_2", identifier, animation);
         }
     }
     public class DxListInterop : CollectionWidgetInterop
@@ -3625,6 +4937,74 @@ namespace DevExpress.Ui
         public static void SetUseNativeScrolling(string identifier, bool? value)
         {
             RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxList.SetOption", identifier, "useNativeScrolling", value);
+        }
+        public static float ClientHeight(string identifier)
+        {
+            return RegisteredFunction.Invoke<float>("BlazorDevExtreme.DxList.clientHeight_0", identifier);
+        }
+        public static object CollapseGroup(string identifier, float groupIndex)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxList.collapseGroup_1", identifier, groupIndex);
+        }
+        public static object DeleteItem(string identifier, object itemElement)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxList.deleteItem_2", identifier, itemElement);
+        }
+        public static object ExpandGroup(string identifier, float groupIndex)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxList.expandGroup_4", identifier, groupIndex);
+        }
+        public static bool IsItemSelected(string identifier, object itemElement)
+        {
+            return RegisteredFunction.Invoke<bool>("BlazorDevExtreme.DxList.isItemSelected_5", identifier, itemElement);
+        }
+        public static void Reload(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxList.reload_7", identifier);
+        }
+        public static object ReorderItem(string identifier, object itemElement, object toItemElement)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxList.reorderItem_8", identifier, itemElement, toItemElement);
+        }
+        public static void ScrollBy(string identifier, float distance)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxList.scrollBy_10", identifier, distance);
+        }
+        public static float ScrollHeight(string identifier)
+        {
+            return RegisteredFunction.Invoke<float>("BlazorDevExtreme.DxList.scrollHeight_11", identifier);
+        }
+        public static void ScrollTo(string identifier, float location)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxList.scrollTo_12", identifier, location);
+        }
+        public static void ScrollToItem(string identifier, object itemElement)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxList.scrollToItem_13", identifier, itemElement);
+        }
+        public static float ScrollTop(string identifier)
+        {
+            return RegisteredFunction.Invoke<float>("BlazorDevExtreme.DxList.scrollTop_15", identifier);
+        }
+        public static void SelectAll(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxList.selectAll_16", identifier);
+        }
+        public static void SelectItem(string identifier, object itemElement)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxList.selectItem_17", identifier, itemElement);
+        }
+        public static void UnselectAll(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxList.unselectAll_19", identifier);
+        }
+        public static void UnselectItem(string identifier, object itemElement)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxList.unselectItem_20", identifier, itemElement);
+        }
+        public static object UpdateDimensions(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxList.updateDimensions_22", identifier);
         }
     }
     public class DxLoadIndicatorInterop : WidgetInterop
@@ -4177,6 +5557,22 @@ namespace DevExpress.Ui
         {
             RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxMap.SetOption", identifier, "zoom", value);
         }
+        public static object AddMarker(string identifier, object markerOptions)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxMap.addMarker_0", identifier, markerOptions);
+        }
+        public static object AddRoute(string identifier, object options)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxMap.addRoute_1", identifier, options);
+        }
+        public static object RemoveMarker(string identifier, object marker)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxMap.removeMarker_2", identifier, marker);
+        }
+        public static object RemoveRoute(string identifier, object route)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxMap.removeRoute_3", identifier, route);
+        }
     }
     public class DxMenuInterop : DxMenuBaseInterop
     {
@@ -4561,6 +5957,26 @@ namespace DevExpress.Ui
         {
             RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxOverlay.SetOption", identifier, "width", value);
         }
+        public static object Content(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxOverlay.content_0", identifier);
+        }
+        public static object Hide(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxOverlay.hide_1", identifier);
+        }
+        public static void Repaint(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxOverlay.repaint_2", identifier);
+        }
+        public static object Show(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxOverlay.show_3", identifier);
+        }
+        public static object Toggle(string identifier, bool showing)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxOverlay.toggle_4", identifier, showing);
+        }
     }
     public class DxPanoramaInterop : CollectionWidgetInterop
     {
@@ -4863,6 +6279,26 @@ namespace DevExpress.Ui
         {
             RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGrid.SetOption", identifier, "wordWrapEnabled", value);
         }
+        public static object BindChart(string identifier, object chart, object integrationOptions)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGrid.bindChart_0", identifier, chart, integrationOptions);
+        }
+        public static void ExportToExcel(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGrid.exportToExcel_1", identifier);
+        }
+        public static object GetDataSourceEx(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGrid.getDataSource_2", identifier);
+        }
+        public static object GetFieldChooserPopup(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGrid.getFieldChooserPopup_3", identifier);
+        }
+        public static void UpdateDimensions(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGrid.updateDimensions_4", identifier);
+        }
     }
     public class DxPivotGridFieldChooserInterop : WidgetInterop
     {
@@ -4939,6 +6375,22 @@ namespace DevExpress.Ui
         public static void SetTexts(string identifier, object value)
         {
             RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGridFieldChooser.SetOption", identifier, "texts", value);
+        }
+        public static void ApplyChanges(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGridFieldChooser.applyChanges_0", identifier);
+        }
+        public static void CancelChanges(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGridFieldChooser.cancelChanges_1", identifier);
+        }
+        public static object GetDataSourceEx(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGridFieldChooser.getDataSource_2", identifier);
+        }
+        public static void UpdateDimensions(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGridFieldChooser.updateDimensions_3", identifier);
         }
     }
     public class DxPopoverInterop : DxPopupInterop
@@ -5027,6 +6479,14 @@ namespace DevExpress.Ui
         public static new void SetWidth(string identifier, object value)
         {
             RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPopover.SetOption", identifier, "width", value);
+        }
+        public static object Show(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPopover.show_0", identifier);
+        }
+        public static object Show(string identifier, object target)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPopover.show_1", identifier, target);
         }
     }
     public class DxPopupInterop : DxOverlayInterop
@@ -5261,6 +6721,10 @@ namespace DevExpress.Ui
         {
             RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxRadioGroup.SetOption", identifier, "value", value);
         }
+        public static object GetDataSourceEx(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxRadioGroup.getDataSource_0", identifier);
+        }
     }
     public class DxRangeSliderInterop : DxSliderBaseInterop
     {
@@ -5313,6 +6777,10 @@ namespace DevExpress.Ui
         public static new void SetValue(string identifier, object value)
         {
             RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxRangeSlider.SetOption", identifier, "value", value);
+        }
+        public static void Reset(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxRangeSlider.reset_0", identifier);
         }
     }
     public class DxResizableInterop : DOMComponentInterop
@@ -5866,6 +7334,54 @@ namespace DevExpress.Ui
         {
             RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.SetOption", identifier, "views", value);
         }
+        public static void AddAppointment(string identifier, object appointment)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.addAppointment_0", identifier, appointment);
+        }
+        public static void DeleteAppointment(string identifier, object appointment)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.deleteAppointment_1", identifier, appointment);
+        }
+        public static object GetDataSourceEx(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.getDataSource_2", identifier);
+        }
+        public static object GetEndViewDate(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.getEndViewDate_3", identifier);
+        }
+        public static object GetStartViewDate(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.getStartViewDate_4", identifier);
+        }
+        public static void HideAppointmentPopup(string identifier, bool saveChanges)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.hideAppointmentPopup_5", identifier, saveChanges);
+        }
+        public static void HideAppointmentTooltip(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.hideAppointmentTooltip_6", identifier);
+        }
+        public static void RegisterKeyHandler(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.registerKeyHandler_7", identifier);
+        }
+        public static void ScrollToTime(string identifier, float hours, float minutes, object date)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.scrollToTime_8", identifier, hours, minutes, date);
+        }
+        public static void ShowAppointmentPopup(string identifier, object appointmentData, bool createNewAppointment, object currentAppointmentData)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.showAppointmentPopup_9", identifier, appointmentData, createNewAppointment, currentAppointmentData);
+        }
+        public static void ShowAppointmentTooltip(string identifier, object appointmentData, object target, object currentAppointmentData)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.showAppointmentTooltip_10", identifier, appointmentData, target, currentAppointmentData);
+        }
+        public static void UpdateAppointment(string identifier, object target, object appointment)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.updateAppointment_11", identifier, target, appointment);
+        }
     }
     public class DxScrollViewInterop : DxScrollableInterop
     {
@@ -5915,6 +7431,14 @@ namespace DevExpress.Ui
         public static void SetRefreshingText(string identifier, string value)
         {
             RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScrollView.SetOption", identifier, "refreshingText", value);
+        }
+        public static void Refresh(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScrollView.refresh_0", identifier);
+        }
+        public static object Release(string identifier, bool preventScrollBottom)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScrollView.release_1", identifier, preventScrollBottom);
         }
     }
     public class DxSelectBoxInterop : DxDropDownListInterop
@@ -6075,6 +7599,18 @@ namespace DevExpress.Ui
         {
             RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSlideOut.SetOption", identifier, "swipeEnabled", value);
         }
+        public static object HideMenu(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSlideOut.hideMenu_0", identifier);
+        }
+        public static object ShowMenu(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSlideOut.showMenu_1", identifier);
+        }
+        public static object ToggleMenuVisibility(string identifier, bool showing)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSlideOut.toggleMenuVisibility_2", identifier, showing);
+        }
     }
     public class DxSlideOutViewInterop : WidgetInterop
     {
@@ -6122,6 +7658,26 @@ namespace DevExpress.Ui
         public static void SetSwipeEnabled(string identifier, bool? value)
         {
             RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSlideOutView.SetOption", identifier, "swipeEnabled", value);
+        }
+        public static object Content(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSlideOutView.content_0", identifier);
+        }
+        public static object HideMenu(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSlideOutView.hideMenu_1", identifier);
+        }
+        public static object MenuContent(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSlideOutView.menuContent_2", identifier);
+        }
+        public static object ShowMenu(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSlideOutView.showMenu_3", identifier);
+        }
+        public static object ToggleMenuVisibility(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSlideOutView.toggleMenuVisibility_4", identifier);
         }
     }
     public class DxSwitchInterop : EditorInterop
@@ -6585,6 +8141,10 @@ namespace DevExpress.Ui
         {
             RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTileView.SetOption", identifier, "showScrollbar", value);
         }
+        public static float ScrollPosition(string identifier)
+        {
+            return RegisteredFunction.Invoke<float>("BlazorDevExtreme.DxTileView.scrollPosition_0", identifier);
+        }
     }
     public class DxToastInterop : DxOverlayInterop
     {
@@ -6947,6 +8507,86 @@ namespace DevExpress.Ui
         {
             RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeList.SetOption", identifier, "selection", value);
         }
+        public static void AddColumn(string identifier, object columnOptions)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeList.addColumn_0", identifier, columnOptions);
+        }
+        public static void AddRow(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeList.addRow_1", identifier);
+        }
+        public static void AddRow(string identifier, object parentId)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeList.addRow_2", identifier, parentId);
+        }
+        public static object CollapseRow(string identifier, object key)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeList.collapseRow_3", identifier, key);
+        }
+        public static object ExpandRow(string identifier, object key)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeList.expandRow_4", identifier, key);
+        }
+        public static void ForEachNode(string identifier, object callback)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeList.forEachNode_5", identifier, callback);
+        }
+        public static void ForEachNode(string identifier, object nodes, object callback)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeList.forEachNode_6", identifier, nodes, callback);
+        }
+        public static object GetNodeByKey(string identifier, object key)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeList.getNodeByKey_7", identifier, key);
+        }
+        public static object GetRootNode(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeList.getRootNode_8", identifier);
+        }
+        public static object GetSelectedRowKeys(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeList.getSelectedRowKeys_9", identifier);
+        }
+        public static object GetSelectedRowKeys(string identifier, bool leavesOnly)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeList.getSelectedRowKeys_10", identifier, leavesOnly);
+        }
+        public static object GetSelectedRowKeys(string identifier, string mode)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeList.getSelectedRowKeys_11", identifier, mode);
+        }
+        public static object GetSelectedRowsData(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeList.getSelectedRowsData_12", identifier);
+        }
+        public static object GetVisibleColumns(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeList.getVisibleColumns_13", identifier);
+        }
+        public static object GetVisibleColumns(string identifier, float headerLevel)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeList.getVisibleColumns_14", identifier, headerLevel);
+        }
+        public static object GetVisibleRows(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeList.getVisibleRows_15", identifier);
+        }
+        public static bool IsRowExpanded(string identifier, object key)
+        {
+            return RegisteredFunction.Invoke<bool>("BlazorDevExtreme.DxTreeList.isRowExpanded_16", identifier, key);
+        }
+        public static object LoadDescendants(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeList.loadDescendants_17", identifier);
+        }
+        public static object LoadDescendants(string identifier, object keys)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeList.loadDescendants_18", identifier, keys);
+        }
+        public static object LoadDescendants(string identifier, object keys, bool childrenOnly)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeList.loadDescendants_19", identifier, keys, childrenOnly);
+        }
     }
     public class DxTreeViewInterop : HierarchicalCollectionWidgetInterop
     {
@@ -7131,6 +8771,38 @@ namespace DevExpress.Ui
         {
             RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeView.SetOption", identifier, "virtualModeEnabled", value);
         }
+        public static void CollapseItem(string identifier, object itemData)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeView.collapseItem_0", identifier, itemData);
+        }
+        public static void ExpandItem(string identifier, object itemData)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeView.expandItem_3", identifier, itemData);
+        }
+        public static object GetNodes(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeView.getNodes_6", identifier);
+        }
+        public static void SelectAll(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeView.selectAll_7", identifier);
+        }
+        public static void SelectItem(string identifier, object itemData)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeView.selectItem_8", identifier, itemData);
+        }
+        public static void UnselectAll(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeView.unselectAll_11", identifier);
+        }
+        public static void UnselectItem(string identifier, object itemData)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeView.unselectItem_12", identifier, itemData);
+        }
+        public static object UpdateDimensions(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeView.updateDimensions_15", identifier);
+        }
     }
     public class DxValidationGroupInterop : DOMComponentInterop
     {
@@ -7138,6 +8810,14 @@ namespace DevExpress.Ui
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxValidationGroup.Init", identifier, json);
+        }
+        public static void Reset(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxValidationGroup.reset_0", identifier);
+        }
+        public static object Validate(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxValidationGroup.validate_1", identifier);
         }
     }
     public class DxValidationSummaryInterop : CollectionWidgetInterop
@@ -7199,6 +8879,18 @@ namespace DevExpress.Ui
         public static void SetValidationRules(string identifier, object value)
         {
             RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxValidator.SetOption", identifier, "validationRules", value);
+        }
+        public static void Focus(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxValidator.focus_0", identifier);
+        }
+        public static void Reset(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxValidator.reset_1", identifier);
+        }
+        public static object Validate(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxValidator.validate_2", identifier);
         }
     }
     public class CollectionWidgetInterop : WidgetInterop
@@ -7313,6 +9005,10 @@ namespace DevExpress.Ui
         {
             RegisteredFunction.Invoke<object>("BlazorDevExtreme.CollectionWidget.SetOption", identifier, "selectedItems", value);
         }
+        public static object GetDataSourceEx(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.CollectionWidget.getDataSource_0", identifier);
+        }
     }
     public class DxMenuBaseInterop : HierarchicalCollectionWidgetInterop
     {
@@ -7376,6 +9072,14 @@ namespace DevExpress.Ui
         public static void SetShowSubmenuMode(string identifier, object value)
         {
             RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxMenuBase.SetOption", identifier, "showSubmenuMode", value);
+        }
+        public static void SelectItem(string identifier, object itemElement)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxMenuBase.selectItem_0", identifier, itemElement);
+        }
+        public static void UnselectItem(string identifier, object itemElement)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxMenuBase.unselectItem_1", identifier, itemElement);
         }
     }
     public class DxDropDownEditorInterop : DxTextBoxInterop
@@ -7450,6 +9154,26 @@ namespace DevExpress.Ui
         public static new void SetValue(string identifier, object value)
         {
             RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownEditor.SetOption", identifier, "value", value);
+        }
+        public static void Close(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownEditor.close_0", identifier);
+        }
+        public static object Content(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownEditor.content_1", identifier);
+        }
+        public static object Field(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownEditor.field_2", identifier);
+        }
+        public static void Open(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownEditor.open_3", identifier);
+        }
+        public static void Reset(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownEditor.reset_4", identifier);
         }
     }
     public class DxDropDownListInterop : DxDropDownEditorInterop
@@ -7578,6 +9302,10 @@ namespace DevExpress.Ui
         {
             RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownList.SetOption", identifier, "valueChangeEvent", value);
         }
+        public static object GetDataSourceEx(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownList.getDataSource_0", identifier);
+        }
     }
     public class EditorInterop : WidgetInterop
     {
@@ -7630,6 +9358,10 @@ namespace DevExpress.Ui
         public static void SetValue(string identifier, object value)
         {
             RegisteredFunction.Invoke<object>("BlazorDevExtreme.Editor.SetOption", identifier, "value", value);
+        }
+        public static void Reset(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.Editor.reset_0", identifier);
         }
     }
     public class DataExpressionMixinInterop
@@ -7686,6 +9418,10 @@ namespace DevExpress.Ui
         public static void SetValueExpr(string identifier, object value)
         {
             RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataExpressionMixin.SetOption", identifier, "valueExpr", value);
+        }
+        public static object GetDataSourceEx(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataExpressionMixin.getDataSource_0", identifier);
         }
     }
     public class HierarchicalCollectionWidgetInterop : CollectionWidgetInterop
@@ -7754,6 +9490,66 @@ namespace DevExpress.Ui
     }
     public class DxPivotGridSummaryCellInterop
     {
+        public static object Child(string identifier, string direction, object fieldValue)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGridSummaryCell.child_0", identifier, direction, fieldValue);
+        }
+        public static object Children(string identifier, string direction)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGridSummaryCell.children_1", identifier, direction);
+        }
+        public static object Field(string identifier, string area)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGridSummaryCell.field_2", identifier, area);
+        }
+        public static object GrandTotal(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGridSummaryCell.grandTotal_3", identifier);
+        }
+        public static object GrandTotal(string identifier, string direction)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGridSummaryCell.grandTotal_4", identifier, direction);
+        }
+        public static object Next(string identifier, string direction)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGridSummaryCell.next_5", identifier, direction);
+        }
+        public static object Next(string identifier, string direction, bool allowCrossGroup)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGridSummaryCell.next_6", identifier, direction, allowCrossGroup);
+        }
+        public static object Parent(string identifier, string direction)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGridSummaryCell.parent_7", identifier, direction);
+        }
+        public static object Prev(string identifier, string direction)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGridSummaryCell.prev_8", identifier, direction);
+        }
+        public static object Prev(string identifier, string direction, bool allowCrossGroup)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGridSummaryCell.prev_9", identifier, direction, allowCrossGroup);
+        }
+        public static object Slice(string identifier, object field, object value)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGridSummaryCell.slice_10", identifier, field, value);
+        }
+        public static object ValueEx(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGridSummaryCell.value_11", identifier);
+        }
+        public static object ValueEx(string identifier, object field)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGridSummaryCell.value_12", identifier, field);
+        }
+        public static object ValueEx(string identifier, object field, bool isCalculatedValue)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGridSummaryCell.value_13", identifier, field, isCalculatedValue);
+        }
+        public static object ValueEx(string identifier, bool isCalculatedValue)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGridSummaryCell.value_14", identifier, isCalculatedValue);
+        }
     }
     public class DxScrollableInterop : DOMComponentInterop
     {
@@ -7827,6 +9623,62 @@ namespace DevExpress.Ui
         public static void SetUseNative(string identifier, bool? value)
         {
             RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScrollable.SetOption", identifier, "useNative", value);
+        }
+        public static float ClientHeight(string identifier)
+        {
+            return RegisteredFunction.Invoke<float>("BlazorDevExtreme.DxScrollable.clientHeight_0", identifier);
+        }
+        public static float ClientWidth(string identifier)
+        {
+            return RegisteredFunction.Invoke<float>("BlazorDevExtreme.DxScrollable.clientWidth_1", identifier);
+        }
+        public static object Content(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScrollable.content_2", identifier);
+        }
+        public static void ScrollBy(string identifier, float distance)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScrollable.scrollBy_3", identifier, distance);
+        }
+        public static void ScrollBy(string identifier, object distanceObject)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScrollable.scrollBy_4", identifier, distanceObject);
+        }
+        public static float ScrollHeight(string identifier)
+        {
+            return RegisteredFunction.Invoke<float>("BlazorDevExtreme.DxScrollable.scrollHeight_5", identifier);
+        }
+        public static float ScrollLeft(string identifier)
+        {
+            return RegisteredFunction.Invoke<float>("BlazorDevExtreme.DxScrollable.scrollLeft_6", identifier);
+        }
+        public static object ScrollOffset(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScrollable.scrollOffset_7", identifier);
+        }
+        public static void ScrollTo(string identifier, float targetLocation)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScrollable.scrollTo_8", identifier, targetLocation);
+        }
+        public static void ScrollTo(string identifier, object targetLocation)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScrollable.scrollTo_9", identifier, targetLocation);
+        }
+        public static void ScrollToElement(string identifier, object element)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScrollable.scrollToElement_10", identifier, element);
+        }
+        public static float ScrollTop(string identifier)
+        {
+            return RegisteredFunction.Invoke<float>("BlazorDevExtreme.DxScrollable.scrollTop_11", identifier);
+        }
+        public static float ScrollWidth(string identifier)
+        {
+            return RegisteredFunction.Invoke<float>("BlazorDevExtreme.DxScrollable.scrollWidth_12", identifier);
+        }
+        public static object Update(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScrollable.update_13", identifier);
         }
     }
     public class DxSliderBaseInterop : DxTrackBarInterop
@@ -8099,6 +9951,14 @@ namespace DevExpress.Ui
         {
             RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTextEditor.SetOption", identifier, "valueChangeEvent", value);
         }
+        public static void Blur(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTextEditor.blur_0", identifier);
+        }
+        public static void Focus(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTextEditor.focus_1", identifier);
+        }
     }
     public class SearchBoxMixinInterop
     {
@@ -8248,12 +10108,48 @@ namespace DevExpress.Ui
         {
             RegisteredFunction.Invoke<object>("BlazorDevExtreme.Widget.SetOption", identifier, "visible", value);
         }
+        public static void Focus(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.Widget.focus_0", identifier);
+        }
+        public static void RegisterKeyHandler(string identifier, string key, object handler)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.Widget.registerKeyHandler_1", identifier, key, handler);
+        }
+        public static void Repaint(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.Widget.repaint_2", identifier);
+        }
     }
     public class DialogInterop
     {
+        public static object Alert(string message, string title)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Dialog.alert_0", message, title);
+        }
+        public static object Confirm(string message, string title)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Dialog.confirm_1", message, title);
+        }
+        public static object Custom(object options)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Dialog.custom_2", options);
+        }
     }
     public class ThemesInterop
     {
+        public static string Current()
+        {
+            return RegisteredFunction.Invoke<string>("BlazorDevExtreme.Themes.current_0");
+        }
+        public static void Current(string themeName)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.Themes.current_1", themeName);
+        }
+        public static void Ready(object callback)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.Themes.ready_2", callback);
+        }
     }
 }
 namespace DevExpress.Viz
@@ -8369,6 +10265,34 @@ namespace DevExpress.Viz
         public static void SetTooltip(string identifier, object value)
         {
             RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseWidget.SetOption", identifier, "tooltip", value);
+        }
+        public static void ExportTo(string identifier, string fileName, string format)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseWidget.exportTo_0", identifier, fileName, format);
+        }
+        public static object GetSizeEx(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseWidget.getSize_1", identifier);
+        }
+        public static void HideLoadingIndicator(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseWidget.hideLoadingIndicator_2", identifier);
+        }
+        public static void Print(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseWidget.print_3", identifier);
+        }
+        public static void Render(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseWidget.render_4", identifier);
+        }
+        public static void ShowLoadingIndicator(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseWidget.showLoadingIndicator_5", identifier);
+        }
+        public static string Svg(string identifier)
+        {
+            return RegisteredFunction.Invoke<string>("BlazorDevExtreme.BaseWidget.svg_6", identifier);
         }
     }
     public class DxChartInterop : BaseChartInterop
@@ -8653,6 +10577,10 @@ namespace DevExpress.Viz
         {
             RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxChart.SetOption", identifier, "zoomingMode", value);
         }
+        public static void ZoomArgument(string identifier, object startValue, object endValue)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxChart.zoomArgument_0", identifier, startValue, endValue);
+        }
     }
     public class DxPieChartInterop : BaseChartInterop
     {
@@ -8777,6 +10705,18 @@ namespace DevExpress.Viz
         public static void SetType(string identifier, string value)
         {
             RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPieChart.SetOption", identifier, "type", value);
+        }
+        public static object GetSeriesEx(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPieChart.getSeries_0", identifier);
+        }
+        public static object GetSeriesByName(string identifier, object seriesName)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPieChart.getSeriesByName_1", identifier, seriesName);
+        }
+        public static object GetSeriesByPos(string identifier, float seriesIndex)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPieChart.getSeriesByPos_2", identifier, seriesIndex);
         }
     }
     public class DxPolarChartInterop : BaseChartInterop
@@ -9089,6 +11029,38 @@ namespace DevExpress.Viz
         {
             RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseChart.SetOption", identifier, "tooltip", value);
         }
+        public static void ClearSelection(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseChart.clearSelection_0", identifier);
+        }
+        public static object GetAllSeries(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseChart.getAllSeries_1", identifier);
+        }
+        public static object GetDataSourceEx(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseChart.getDataSource_2", identifier);
+        }
+        public static object GetSeriesByName(string identifier, object seriesName)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseChart.getSeriesByName_3", identifier, seriesName);
+        }
+        public static object GetSeriesByPos(string identifier, float seriesIndex)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseChart.getSeriesByPos_4", identifier, seriesIndex);
+        }
+        public static void HideTooltip(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseChart.hideTooltip_5", identifier);
+        }
+        public static void Render(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseChart.render_6", identifier);
+        }
+        public static void Render(string identifier, object renderOptions)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseChart.render_7", identifier, renderOptions);
+        }
     }
     public class DxExporterInterop : ComponentInterop
     {
@@ -9144,6 +11116,14 @@ namespace DevExpress.Viz
         public static void SetSourceContainer(string identifier, string value)
         {
             RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxExporter.SetOption", identifier, "sourceContainer", value);
+        }
+        public static void ExportTo(string identifier, string fileName, string format)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxExporter.exportTo_0", identifier, fileName, format);
+        }
+        public static void Print(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxExporter.print_1", identifier);
         }
     }
     public class DxFunnelInterop : BaseWidgetInterop
@@ -9317,6 +11297,22 @@ namespace DevExpress.Viz
         {
             RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFunnel.SetOption", identifier, "valueField", value);
         }
+        public static void ClearSelection(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFunnel.clearSelection_0", identifier);
+        }
+        public static object GetAllItems(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFunnel.getAllItems_1", identifier);
+        }
+        public static object GetDataSourceEx(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFunnel.getDataSource_2", identifier);
+        }
+        public static void HideTooltip(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFunnel.hideTooltip_3", identifier);
+        }
     }
     public class BaseGaugeInterop : BaseWidgetInterop
     {
@@ -9406,6 +11402,22 @@ namespace DevExpress.Viz
         public static void SetValue(string identifier, float? value)
         {
             RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseGauge.SetOption", identifier, "value", value);
+        }
+        public static object SubvaluesEx(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseGauge.subvalues_0", identifier);
+        }
+        public static void SubvaluesEx(string identifier, object subvalues)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseGauge.subvalues_1", identifier, subvalues);
+        }
+        public static float ValueEx(string identifier)
+        {
+            return RegisteredFunction.Invoke<float>("BlazorDevExtreme.BaseGauge.value_2", identifier);
+        }
+        public static void ValueEx(string identifier, float value)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseGauge.value_3", identifier, value);
         }
     }
     public class DxCircularGaugeInterop : BaseGaugeInterop
@@ -9641,27 +11653,211 @@ namespace DevExpress.Viz
         {
             RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxBarGauge.SetOption", identifier, "values", value);
         }
+        public static object ValuesEx(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxBarGauge.values_0", identifier);
+        }
+        public static void ValuesEx(string identifier, object values)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxBarGauge.values_1", identifier, values);
+        }
     }
     public class BaseSeriesObjectInterop
     {
+        public static void ClearHover(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseSeriesObject.clearHover_0", identifier);
+        }
+        public static void ClearSelection(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseSeriesObject.clearSelection_1", identifier);
+        }
+        public static void DeselectPoint(string identifier, object point)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseSeriesObject.deselectPoint_2", identifier, point);
+        }
+        public static object GetAllPoints(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseSeriesObject.getAllPoints_3", identifier);
+        }
+        public static string GetColor(string identifier)
+        {
+            return RegisteredFunction.Invoke<string>("BlazorDevExtreme.BaseSeriesObject.getColor_4", identifier);
+        }
+        public static object GetPointByPos(string identifier, float positionIndex)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseSeriesObject.getPointByPos_5", identifier, positionIndex);
+        }
+        public static object GetPointsByArg(string identifier, object pointArg)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseSeriesObject.getPointsByArg_6", identifier, pointArg);
+        }
+        public static object GetVisiblePoints(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseSeriesObject.getVisiblePoints_7", identifier);
+        }
+        public static void Hide(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseSeriesObject.hide_8", identifier);
+        }
+        public static void Hover(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseSeriesObject.hover_9", identifier);
+        }
+        public static bool IsHovered(string identifier)
+        {
+            return RegisteredFunction.Invoke<bool>("BlazorDevExtreme.BaseSeriesObject.isHovered_10", identifier);
+        }
+        public static bool IsSelected(string identifier)
+        {
+            return RegisteredFunction.Invoke<bool>("BlazorDevExtreme.BaseSeriesObject.isSelected_11", identifier);
+        }
+        public static bool IsVisible(string identifier)
+        {
+            return RegisteredFunction.Invoke<bool>("BlazorDevExtreme.BaseSeriesObject.isVisible_12", identifier);
+        }
+        public static void Select(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseSeriesObject.select_13", identifier);
+        }
+        public static void SelectPoint(string identifier, object point)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseSeriesObject.selectPoint_14", identifier, point);
+        }
+        public static void Show(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseSeriesObject.show_15", identifier);
+        }
     }
     public class BasePointObjectInterop
     {
+        public static void ClearHover(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.BasePointObject.clearHover_0", identifier);
+        }
+        public static void ClearSelection(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.BasePointObject.clearSelection_1", identifier);
+        }
+        public static string GetColor(string identifier)
+        {
+            return RegisteredFunction.Invoke<string>("BlazorDevExtreme.BasePointObject.getColor_2", identifier);
+        }
+        public static object GetLabel(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.BasePointObject.getLabel_3", identifier);
+        }
+        public static void HideTooltip(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.BasePointObject.hideTooltip_4", identifier);
+        }
+        public static void Hover(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.BasePointObject.hover_5", identifier);
+        }
+        public static bool IsHovered(string identifier)
+        {
+            return RegisteredFunction.Invoke<bool>("BlazorDevExtreme.BasePointObject.isHovered_6", identifier);
+        }
+        public static bool IsSelected(string identifier)
+        {
+            return RegisteredFunction.Invoke<bool>("BlazorDevExtreme.BasePointObject.isSelected_7", identifier);
+        }
+        public static void Select(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.BasePointObject.select_8", identifier);
+        }
+        public static void ShowTooltip(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.BasePointObject.showTooltip_9", identifier);
+        }
     }
     public class BaseLabelObjectInterop
     {
+        public static object GetBoundingRect(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseLabelObject.getBoundingRect_0", identifier);
+        }
+        public static void Hide(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseLabelObject.hide_1", identifier);
+        }
+        public static void Hide(string identifier, bool holdInvisible)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseLabelObject.hide_2", identifier, holdInvisible);
+        }
+        public static bool IsVisible(string identifier)
+        {
+            return RegisteredFunction.Invoke<bool>("BlazorDevExtreme.BaseLabelObject.isVisible_3", identifier);
+        }
+        public static void Show(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseLabelObject.show_4", identifier);
+        }
+        public static void Show(string identifier, bool holdVisible)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseLabelObject.show_5", identifier, holdVisible);
+        }
     }
     public class ChartSeriesObjectInterop : BaseSeriesObjectInterop
     {
     }
     public class ChartPointObjectInterop : BasePointObjectInterop
     {
+        public static object GetBoundingRect(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.ChartPointObject.getBoundingRect_0", identifier);
+        }
     }
     public class DxFunnelItemInterop
     {
+        public static string GetColor(string identifier)
+        {
+            return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxFunnelItem.getColor_0", identifier);
+        }
+        public static void Hover(string identifier, bool state)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFunnelItem.hover_1", identifier, state);
+        }
+        public static bool IsHovered(string identifier)
+        {
+            return RegisteredFunction.Invoke<bool>("BlazorDevExtreme.DxFunnelItem.isHovered_2", identifier);
+        }
+        public static bool IsSelected(string identifier)
+        {
+            return RegisteredFunction.Invoke<bool>("BlazorDevExtreme.DxFunnelItem.isSelected_3", identifier);
+        }
+        public static void Select(string identifier, bool state)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFunnelItem.select_4", identifier, state);
+        }
+        public static void ShowTooltip(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFunnelItem.showTooltip_5", identifier);
+        }
     }
     public class PiePointObjectInterop : BasePointObjectInterop
     {
+        public static void Hide(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.PiePointObject.hide_0", identifier);
+        }
+        public static void HideTooltip(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.PiePointObject.hideTooltip_1", identifier);
+        }
+        public static bool IsVisible(string identifier)
+        {
+            return RegisteredFunction.Invoke<bool>("BlazorDevExtreme.PiePointObject.isVisible_2", identifier);
+        }
+        public static void Show(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.PiePointObject.show_3", identifier);
+        }
+        public static void ShowTooltip(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.PiePointObject.showTooltip_4", identifier);
+        }
     }
     public class PieChartSeriesObjectInterop : BaseSeriesObjectInterop
     {
@@ -9674,18 +11870,158 @@ namespace DevExpress.Viz
     }
     public class DxTreeMapNodeInterop
     {
+        public static void Customize(string identifier, object options)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeMapNode.customize_0", identifier, options);
+        }
+        public static void DrillDown(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeMapNode.drillDown_1", identifier);
+        }
+        public static object GetAllChildren(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeMapNode.getAllChildren_2", identifier);
+        }
+        public static object GetAllNodes(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeMapNode.getAllNodes_3", identifier);
+        }
+        public static object GetChild(string identifier, float index)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeMapNode.getChild_4", identifier, index);
+        }
+        public static float GetChildrenCount(string identifier)
+        {
+            return RegisteredFunction.Invoke<float>("BlazorDevExtreme.DxTreeMapNode.getChildrenCount_5", identifier);
+        }
+        public static object GetParent(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeMapNode.getParent_6", identifier);
+        }
+        public static bool IsActive(string identifier)
+        {
+            return RegisteredFunction.Invoke<bool>("BlazorDevExtreme.DxTreeMapNode.isActive_7", identifier);
+        }
+        public static bool IsHovered(string identifier)
+        {
+            return RegisteredFunction.Invoke<bool>("BlazorDevExtreme.DxTreeMapNode.isHovered_8", identifier);
+        }
+        public static bool IsLeaf(string identifier)
+        {
+            return RegisteredFunction.Invoke<bool>("BlazorDevExtreme.DxTreeMapNode.isLeaf_9", identifier);
+        }
+        public static bool IsSelected(string identifier)
+        {
+            return RegisteredFunction.Invoke<bool>("BlazorDevExtreme.DxTreeMapNode.isSelected_10", identifier);
+        }
+        public static string Label(string identifier)
+        {
+            return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxTreeMapNode.label_11", identifier);
+        }
+        public static void Label(string identifier, string label)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeMapNode.label_12", identifier, label);
+        }
+        public static void ResetCustomization(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeMapNode.resetCustomization_13", identifier);
+        }
+        public static void Select(string identifier, bool state)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeMapNode.select_14", identifier, state);
+        }
+        public static void ShowTooltip(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeMapNode.showTooltip_15", identifier);
+        }
+        public static float ValueEx(string identifier)
+        {
+            return RegisteredFunction.Invoke<float>("BlazorDevExtreme.DxTreeMapNode.value_16", identifier);
+        }
     }
     public class MapLayerInterop
     {
+        public static void ClearSelection(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.MapLayer.clearSelection_0", identifier);
+        }
+        public static object GetDataSourceEx(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.MapLayer.getDataSource_1", identifier);
+        }
+        public static object GetElements(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.MapLayer.getElements_2", identifier);
+        }
     }
     public class MapLayerElementInterop
     {
+        public static void ApplySettings(string identifier, object settings)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.MapLayerElement.applySettings_0", identifier, settings);
+        }
+        public static object Attribute(string identifier, string name)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.MapLayerElement.attribute_1", identifier, name);
+        }
+        public static void Attribute(string identifier, string name, object value)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.MapLayerElement.attribute_2", identifier, name, value);
+        }
+        public static object Coordinates(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.MapLayerElement.coordinates_3", identifier);
+        }
+        public static bool Selected(string identifier)
+        {
+            return RegisteredFunction.Invoke<bool>("BlazorDevExtreme.MapLayerElement.selected_4", identifier);
+        }
+        public static void Selected(string identifier, bool state)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.MapLayerElement.selected_5", identifier, state);
+        }
     }
     public class AreaObjectsInterop
     {
+        public static void ApplySettings(string identifier, object settings)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.AreaObjects.applySettings_0", identifier, settings);
+        }
+        public static object Attribute(string identifier, string name)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.AreaObjects.attribute_1", identifier, name);
+        }
+        public static bool Selected(string identifier)
+        {
+            return RegisteredFunction.Invoke<bool>("BlazorDevExtreme.AreaObjects.selected_2", identifier);
+        }
+        public static void Selected(string identifier, bool state)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.AreaObjects.selected_3", identifier, state);
+        }
     }
     public class MarkerObjectsInterop
     {
+        public static void ApplySettings(string identifier, object settings)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.MarkerObjects.applySettings_0", identifier, settings);
+        }
+        public static object Attribute(string identifier, string name)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.MarkerObjects.attribute_1", identifier, name);
+        }
+        public static object Coordinates(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.MarkerObjects.coordinates_2", identifier);
+        }
+        public static bool Selected(string identifier)
+        {
+            return RegisteredFunction.Invoke<bool>("BlazorDevExtreme.MarkerObjects.selected_3", identifier);
+        }
+        public static void Selected(string identifier, bool state)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.MarkerObjects.selected_4", identifier, state);
+        }
     }
     public class DxRangeSelectorInterop : BaseWidgetInterop
     {
@@ -9815,6 +12151,34 @@ namespace DevExpress.Viz
         public static void SetValue(string identifier, object value)
         {
             RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxRangeSelector.SetOption", identifier, "value", value);
+        }
+        public static object GetDataSourceEx(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxRangeSelector.getDataSource_0", identifier);
+        }
+        public static object GetSelectedRangeEx(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxRangeSelector.getSelectedRange_1", identifier);
+        }
+        public static object GetValueEx(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxRangeSelector.getValue_2", identifier);
+        }
+        public static void Render(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxRangeSelector.render_3", identifier);
+        }
+        public static void Render(string identifier, bool skipChartAnimation)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxRangeSelector.render_4", identifier, skipChartAnimation);
+        }
+        public static void SetSelectedRangeEx(string identifier, object selectedRange)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxRangeSelector.setSelectedRange_5", identifier, selectedRange);
+        }
+        public static void SetValueEx(string identifier, object value)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxRangeSelector.setValue_6", identifier, value);
         }
     }
     public class BaseSparklineInterop : BaseWidgetInterop
@@ -10025,6 +12389,10 @@ namespace DevExpress.Viz
         public static void SetWinlossThreshold(string identifier, float? value)
         {
             RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSparkline.SetOption", identifier, "winlossThreshold", value);
+        }
+        public static object GetDataSourceEx(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSparkline.getDataSource_0", identifier);
         }
     }
     public class DxBulletInterop : BaseSparklineInterop
@@ -10288,6 +12656,34 @@ namespace DevExpress.Viz
         {
             RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeMap.SetOption", identifier, "valueField", value);
         }
+        public static void ClearSelection(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeMap.clearSelection_0", identifier);
+        }
+        public static void DrillUp(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeMap.drillUp_1", identifier);
+        }
+        public static object GetCurrentNode(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeMap.getCurrentNode_2", identifier);
+        }
+        public static object GetDataSourceEx(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeMap.getDataSource_3", identifier);
+        }
+        public static object GetRootNode(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeMap.getRootNode_4", identifier);
+        }
+        public static void HideTooltip(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeMap.hideTooltip_5", identifier);
+        }
+        public static void ResetDrillDown(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeMap.resetDrillDown_6", identifier);
+        }
     }
     public class DxVectorMapInterop : BaseWidgetInterop
     {
@@ -10490,50 +12886,92 @@ namespace DevExpress.Viz
         {
             RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxVectorMap.SetOption", identifier, "zoomingEnabled", value);
         }
+        public static object CenterEx(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxVectorMap.center_0", identifier);
+        }
+        public static void CenterEx(string identifier, object centerCoordinates)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxVectorMap.center_1", identifier, centerCoordinates);
+        }
+        public static void ClearAreaSelection(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxVectorMap.clearAreaSelection_2", identifier);
+        }
+        public static void ClearMarkerSelection(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxVectorMap.clearMarkerSelection_3", identifier);
+        }
+        public static void ClearSelection(string identifier)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxVectorMap.clearSelection_4", identifier);
+        }
+        public static object ConvertCoordinates(string identifier, float x, float y)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxVectorMap.convertCoordinates_5", identifier, x, y);
+        }
+        public static object GetAreas(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxVectorMap.getAreas_6", identifier);
+        }
+        public static object GetLayerByIndex(string identifier, float index)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxVectorMap.getLayerByIndex_7", identifier, index);
+        }
+        public static object GetLayerByName(string identifier, string name)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxVectorMap.getLayerByName_8", identifier, name);
+        }
+        public static object GetLayersEx(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxVectorMap.getLayers_9", identifier);
+        }
+        public static object GetMarkersEx(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxVectorMap.getMarkers_10", identifier);
+        }
+        public static object Viewport(string identifier)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxVectorMap.viewport_11", identifier);
+        }
+        public static void Viewport(string identifier, object viewportCoordinates)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxVectorMap.viewport_12", identifier, viewportCoordinates);
+        }
+        public static float ZoomFactorEx(string identifier)
+        {
+            return RegisteredFunction.Invoke<float>("BlazorDevExtreme.DxVectorMap.zoomFactor_13", identifier);
+        }
+        public static void ZoomFactorEx(string identifier, float zoomFactor)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxVectorMap.zoomFactor_14", identifier, zoomFactor);
+        }
     }
     public class CoreInterop
     {
+        public static void CurrentPalette(string paletteName)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.Core.currentPalette_0", paletteName);
+        }
+        public static void CurrentTheme(string platform, string colorScheme)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.Core.currentTheme_1", platform, colorScheme);
+        }
+        public static void CurrentTheme(string theme)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.Core.currentTheme_2", theme);
+        }
+        public static object GetPalette(string paletteName)
+        {
+            return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Core.getPalette_3", paletteName);
+        }
+        public static void RegisterPalette(string paletteName, object palette)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.Core.registerPalette_4", paletteName, palette);
+        }
+        public static void RegisterTheme(object customTheme, string baseTheme)
+        {
+            RegisteredFunction.Invoke<object>("BlazorDevExtreme.Core.registerTheme_5", customTheme, baseTheme);
+        }
     }
-}
-namespace DevExpress.Events
-{
-}
-namespace DevExpress.Data.Utils
-{
-}
-namespace DevExpress.Data.Utils.Odata
-{
-}
-namespace DevExpress.Utils
-{
-}
-namespace DevExpress.Fx
-{
-}
-namespace DevExpress.Ui.DxOverlay
-{
-}
-namespace DevExpress.Viz.Charts
-{
-}
-namespace DevExpress.Viz.Funnel
-{
-}
-namespace DevExpress.Viz.Gauges
-{
-}
-namespace DevExpress.Viz.RangeSelector
-{
-}
-namespace DevExpress.Viz.Sparklines
-{
-}
-namespace DevExpress.Viz.Map
-{
-}
-namespace DevExpress.Viz.Map.Projection
-{
-}
-namespace DevExpress.Viz.TreeMap
-{
 }

@@ -149,6 +149,15 @@
 			MenuItemRendered?.Invoke();
 		}
 	}
+	public object HideMenu() {
+		return DevExpress.Ui.DxSlideOutInterop.HideMenu(Id);
+	}
+	public object ShowMenu() {
+		return DevExpress.Ui.DxSlideOutInterop.ShowMenu(Id);
+	}
+	public object ToggleMenuVisibility(bool showing) {
+		return DevExpress.Ui.DxSlideOutInterop.ToggleMenuVisibility(Id, showing);
+	}
 	public void Dispose() {
 		DevExpress.Ui.DxSlideOutInterop.MenuGroupRendered -= DxSlideOut_MenuGroupRendered;
 		DevExpress.Ui.DxSlideOutInterop.MenuItemRendered -= DxSlideOut_MenuItemRendered;

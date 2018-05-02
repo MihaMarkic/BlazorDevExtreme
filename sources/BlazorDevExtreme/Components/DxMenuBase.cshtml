@@ -99,6 +99,12 @@
 	protected override async Task OnInitAsync() {
 		await base.OnInitAsync();
 	}
+	public void SelectItem(object itemElement) {
+		DevExpress.Ui.DxMenuBaseInterop.SelectItem(Id, itemElement);
+	}
+	public void UnselectItem(object itemElement) {
+		DevExpress.Ui.DxMenuBaseInterop.UnselectItem(Id, itemElement);
+	}
 	public void Dispose() {
 	}
 }

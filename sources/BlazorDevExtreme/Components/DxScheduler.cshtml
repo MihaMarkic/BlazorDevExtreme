@@ -700,6 +700,42 @@
 			CellContextMenu?.Invoke();
 		}
 	}
+	public void AddAppointment(object appointment) {
+		DevExpress.Ui.DxSchedulerInterop.AddAppointment(Id, appointment);
+	}
+	public void DeleteAppointment(object appointment) {
+		DevExpress.Ui.DxSchedulerInterop.DeleteAppointment(Id, appointment);
+	}
+	public object GetDataSourceEx() {
+		return DevExpress.Ui.DxSchedulerInterop.GetDataSourceEx(Id);
+	}
+	public object GetEndViewDate() {
+		return DevExpress.Ui.DxSchedulerInterop.GetEndViewDate(Id);
+	}
+	public object GetStartViewDate() {
+		return DevExpress.Ui.DxSchedulerInterop.GetStartViewDate(Id);
+	}
+	public void HideAppointmentPopup(bool saveChanges) {
+		DevExpress.Ui.DxSchedulerInterop.HideAppointmentPopup(Id, saveChanges);
+	}
+	public void HideAppointmentTooltip() {
+		DevExpress.Ui.DxSchedulerInterop.HideAppointmentTooltip(Id);
+	}
+	public void RegisterKeyHandler() {
+		DevExpress.Ui.DxSchedulerInterop.RegisterKeyHandler(Id);
+	}
+	public void ScrollToTime(float hours, float minutes, object date) {
+		DevExpress.Ui.DxSchedulerInterop.ScrollToTime(Id, hours, minutes, date);
+	}
+	public void ShowAppointmentPopup(object appointmentData, bool createNewAppointment, object currentAppointmentData) {
+		DevExpress.Ui.DxSchedulerInterop.ShowAppointmentPopup(Id, appointmentData, createNewAppointment, currentAppointmentData);
+	}
+	public void ShowAppointmentTooltip(object appointmentData, object target, object currentAppointmentData) {
+		DevExpress.Ui.DxSchedulerInterop.ShowAppointmentTooltip(Id, appointmentData, target, currentAppointmentData);
+	}
+	public void UpdateAppointment(object target, object appointment) {
+		DevExpress.Ui.DxSchedulerInterop.UpdateAppointment(Id, target, appointment);
+	}
 	public void Dispose() {
 		DevExpress.Ui.DxSchedulerInterop.AppointmentAdded -= DxScheduler_AppointmentAdded;
 		DevExpress.Ui.DxSchedulerInterop.AppointmentAdding -= DxScheduler_AppointmentAdding;

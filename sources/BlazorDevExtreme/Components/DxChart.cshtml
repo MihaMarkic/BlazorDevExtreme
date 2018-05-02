@@ -466,6 +466,9 @@
 			ZoomStart?.Invoke();
 		}
 	}
+	public void ZoomArgument(object startValue, object endValue) {
+		DevExpress.Viz.DxChartInterop.ZoomArgument(Id, startValue, endValue);
+	}
 	public void Dispose() {
 		DevExpress.Viz.DxChartInterop.ArgumentAxisClick -= DxChart_ArgumentAxisClick;
 		DevExpress.Viz.DxChartInterop.LegendClick -= DxChart_LegendClick;

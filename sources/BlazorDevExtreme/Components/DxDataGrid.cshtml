@@ -1,9 +1,12 @@
+@using Microsoft.AspNetCore.Blazor.Components
+@using Microsoft.AspNetCore.Blazor
 @implements IDisposable
 @inherits DxBlazorCompoment<DevExpress.Ui.DxDataGridOptions>
 
-<div id="@Id"></div>
+<div id="@Id" ref="dxTarget"></div>
 
 @functions {
+	ElementRef dxTarget;
 	public DxDataGrid() : base("DxDataGrid") { }
 	protected override DevExpress.Ui.DxDataGridOptions CreateOptions() {
 		return new DevExpress.Ui.DxDataGridOptions {
@@ -38,241 +41,269 @@
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxDataGridOptions options) {
-		DevExpress.Ui.DxDataGridInterop.Init(Id, options);
+		DevExpress.Ui.DxDataGridInterop.Init(dxTarget, options);
 	}
 	object columns;
-	public object Columns {
-		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetColumns(Id) : columns;
+	[Parameter]
+	object Columns {
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetColumns(dxTarget) : columns;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetColumns(Id, value);
+				DevExpress.Ui.DxDataGridInterop.SetColumns(dxTarget, value);
 			} else {
 				this.columns = value;
 			}
 		}
 	}
 	object customizeColumns;
-	public object CustomizeColumns {
-		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetCustomizeColumns(Id) : customizeColumns;
+	[Parameter]
+	object CustomizeColumns {
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetCustomizeColumns(dxTarget) : customizeColumns;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetCustomizeColumns(Id, value);
+				DevExpress.Ui.DxDataGridInterop.SetCustomizeColumns(dxTarget, value);
 			} else {
 				this.customizeColumns = value;
 			}
 		}
 	}
 	object customizeExportData;
-	public object CustomizeExportData {
-		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetCustomizeExportData(Id) : customizeExportData;
+	[Parameter]
+	object CustomizeExportData {
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetCustomizeExportData(dxTarget) : customizeExportData;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetCustomizeExportData(Id, value);
+				DevExpress.Ui.DxDataGridInterop.SetCustomizeExportData(dxTarget, value);
 			} else {
 				this.customizeExportData = value;
 			}
 		}
 	}
 	object editing;
-	public object Editing {
-		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetEditing(Id) : editing;
+	[Parameter]
+	object Editing {
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetEditing(dxTarget) : editing;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetEditing(Id, value);
+				DevExpress.Ui.DxDataGridInterop.SetEditing(dxTarget, value);
 			} else {
 				this.editing = value;
 			}
 		}
 	}
 	object export;
-	public object Export {
-		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetExport(Id) : export;
+	[Parameter]
+	object Export {
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetExport(dxTarget) : export;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetExport(Id, value);
+				DevExpress.Ui.DxDataGridInterop.SetExport(dxTarget, value);
 			} else {
 				this.export = value;
 			}
 		}
 	}
 	object grouping;
-	public object Grouping {
-		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetGrouping(Id) : grouping;
+	[Parameter]
+	object Grouping {
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetGrouping(dxTarget) : grouping;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetGrouping(Id, value);
+				DevExpress.Ui.DxDataGridInterop.SetGrouping(dxTarget, value);
 			} else {
 				this.grouping = value;
 			}
 		}
 	}
 	object groupPanel;
-	public object GroupPanel {
-		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetGroupPanel(Id) : groupPanel;
+	[Parameter]
+	object GroupPanel {
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetGroupPanel(dxTarget) : groupPanel;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetGroupPanel(Id, value);
+				DevExpress.Ui.DxDataGridInterop.SetGroupPanel(dxTarget, value);
 			} else {
 				this.groupPanel = value;
 			}
 		}
 	}
 	object keyExpr;
-	public object KeyExpr {
-		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetKeyExpr(Id) : keyExpr;
+	[Parameter]
+	object KeyExpr {
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetKeyExpr(dxTarget) : keyExpr;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetKeyExpr(Id, value);
+				DevExpress.Ui.DxDataGridInterop.SetKeyExpr(dxTarget, value);
 			} else {
 				this.keyExpr = value;
 			}
 		}
 	}
 	object masterDetail;
-	public object MasterDetail {
-		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetMasterDetail(Id) : masterDetail;
+	[Parameter]
+	object MasterDetail {
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetMasterDetail(dxTarget) : masterDetail;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetMasterDetail(Id, value);
+				DevExpress.Ui.DxDataGridInterop.SetMasterDetail(dxTarget, value);
 			} else {
 				this.masterDetail = value;
 			}
 		}
 	}
 	object remoteOperations;
-	public object RemoteOperations {
-		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetRemoteOperations(Id) : remoteOperations;
+	[Parameter]
+	object RemoteOperations {
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetRemoteOperations(dxTarget) : remoteOperations;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetRemoteOperations(Id, value);
+				DevExpress.Ui.DxDataGridInterop.SetRemoteOperations(dxTarget, value);
 			} else {
 				this.remoteOperations = value;
 			}
 		}
 	}
 	object rowTemplate;
-	public object RowTemplate {
-		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetRowTemplate(Id) : rowTemplate;
+	[Parameter]
+	object RowTemplate {
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetRowTemplate(dxTarget) : rowTemplate;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetRowTemplate(Id, value);
+				DevExpress.Ui.DxDataGridInterop.SetRowTemplate(dxTarget, value);
 			} else {
 				this.rowTemplate = value;
 			}
 		}
 	}
 	object scrolling;
-	public object Scrolling {
-		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetScrolling(Id) : scrolling;
+	[Parameter]
+	object Scrolling {
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetScrolling(dxTarget) : scrolling;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetScrolling(Id, value);
+				DevExpress.Ui.DxDataGridInterop.SetScrolling(dxTarget, value);
 			} else {
 				this.scrolling = value;
 			}
 		}
 	}
 	object selection;
-	public object Selection {
-		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetSelection(Id) : selection;
+	[Parameter]
+	object Selection {
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetSelection(dxTarget) : selection;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetSelection(Id, value);
+				DevExpress.Ui.DxDataGridInterop.SetSelection(dxTarget, value);
 			} else {
 				this.selection = value;
 			}
 		}
 	}
 	object selectionFilter;
-	public object SelectionFilter {
-		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetSelectionFilter(Id) : selectionFilter;
+	[Parameter]
+	object SelectionFilter {
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetSelectionFilter(dxTarget) : selectionFilter;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetSelectionFilter(Id, value);
+				DevExpress.Ui.DxDataGridInterop.SetSelectionFilter(dxTarget, value);
 			} else {
 				this.selectionFilter = value;
 			}
 		}
 	}
 	object sortByGroupSummaryInfo;
-	public object SortByGroupSummaryInfo {
-		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetSortByGroupSummaryInfo(Id) : sortByGroupSummaryInfo;
+	[Parameter]
+	object SortByGroupSummaryInfo {
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetSortByGroupSummaryInfo(dxTarget) : sortByGroupSummaryInfo;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetSortByGroupSummaryInfo(Id, value);
+				DevExpress.Ui.DxDataGridInterop.SetSortByGroupSummaryInfo(dxTarget, value);
 			} else {
 				this.sortByGroupSummaryInfo = value;
 			}
 		}
 	}
 	object summary;
-	public object Summary {
-		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetSummary(Id) : summary;
+	[Parameter]
+	object Summary {
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetSummary(dxTarget) : summary;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetSummary(Id, value);
+				DevExpress.Ui.DxDataGridInterop.SetSummary(dxTarget, value);
 			} else {
 				this.summary = value;
 			}
 		}
 	}
 	bool? onCellClickEnabled;
-	public bool? OnCellClickEnabled {
+	[Parameter]
+	bool? OnCellClickEnabled {
 		get => onCellClickEnabled;
 		set => this.onCellClickEnabled = value;
 	}
 	bool? onCellHoverChangedEnabled;
-	public bool? OnCellHoverChangedEnabled {
+	[Parameter]
+	bool? OnCellHoverChangedEnabled {
 		get => onCellHoverChangedEnabled;
 		set => this.onCellHoverChangedEnabled = value;
 	}
 	bool? onCellPreparedEnabled;
-	public bool? OnCellPreparedEnabled {
+	[Parameter]
+	bool? OnCellPreparedEnabled {
 		get => onCellPreparedEnabled;
 		set => this.onCellPreparedEnabled = value;
 	}
 	bool? onContextMenuPreparingEnabled;
-	public bool? OnContextMenuPreparingEnabled {
+	[Parameter]
+	bool? OnContextMenuPreparingEnabled {
 		get => onContextMenuPreparingEnabled;
 		set => this.onContextMenuPreparingEnabled = value;
 	}
 	bool? onEditingStartEnabled;
-	public bool? OnEditingStartEnabled {
+	[Parameter]
+	bool? OnEditingStartEnabled {
 		get => onEditingStartEnabled;
 		set => this.onEditingStartEnabled = value;
 	}
 	bool? onEditorPreparedEnabled;
-	public bool? OnEditorPreparedEnabled {
+	[Parameter]
+	bool? OnEditorPreparedEnabled {
 		get => onEditorPreparedEnabled;
 		set => this.onEditorPreparedEnabled = value;
 	}
 	bool? onEditorPreparingEnabled;
-	public bool? OnEditorPreparingEnabled {
+	[Parameter]
+	bool? OnEditorPreparingEnabled {
 		get => onEditorPreparingEnabled;
 		set => this.onEditorPreparingEnabled = value;
 	}
 	bool? onExportedEnabled;
-	public bool? OnExportedEnabled {
+	[Parameter]
+	bool? OnExportedEnabled {
 		get => onExportedEnabled;
 		set => this.onExportedEnabled = value;
 	}
 	bool? onExportingEnabled;
-	public bool? OnExportingEnabled {
+	[Parameter]
+	bool? OnExportingEnabled {
 		get => onExportingEnabled;
 		set => this.onExportingEnabled = value;
 	}
 	bool? onFileSavingEnabled;
-	public bool? OnFileSavingEnabled {
+	[Parameter]
+	bool? OnFileSavingEnabled {
 		get => onFileSavingEnabled;
 		set => this.onFileSavingEnabled = value;
 	}
 	bool? onRowClickEnabled;
-	public bool? OnRowClickEnabled {
+	[Parameter]
+	bool? OnRowClickEnabled {
 		get => onRowClickEnabled;
 		set => this.onRowClickEnabled = value;
 	}
 	bool? onRowPreparedEnabled;
-	public bool? OnRowPreparedEnabled {
+	[Parameter]
+	bool? OnRowPreparedEnabled {
 		get => onRowPreparedEnabled;
 		set => this.onRowPreparedEnabled = value;
 	}
@@ -291,134 +322,146 @@
 		DevExpress.Ui.DxDataGridInterop.RowClick += DxDataGrid_RowClick;
 		DevExpress.Ui.DxDataGridInterop.RowPrepared += DxDataGrid_RowPrepared;
 	}
-	public Action CellClick { get; set; }
+	[Parameter]
+	Action CellClick { get; set; }
 	void DxDataGrid_CellClick(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			CellClick?.Invoke();
 		}
 	}
-	public Action CellHoverChanged { get; set; }
+	[Parameter]
+	Action CellHoverChanged { get; set; }
 	void DxDataGrid_CellHoverChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			CellHoverChanged?.Invoke();
 		}
 	}
-	public Action CellPrepared { get; set; }
+	[Parameter]
+	Action CellPrepared { get; set; }
 	void DxDataGrid_CellPrepared(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			CellPrepared?.Invoke();
 		}
 	}
-	public Action ContextMenuPreparing { get; set; }
+	[Parameter]
+	Action ContextMenuPreparing { get; set; }
 	void DxDataGrid_ContextMenuPreparing(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ContextMenuPreparing?.Invoke();
 		}
 	}
-	public Action EditingStart { get; set; }
+	[Parameter]
+	Action EditingStart { get; set; }
 	void DxDataGrid_EditingStart(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			EditingStart?.Invoke();
 		}
 	}
-	public Action EditorPrepared { get; set; }
+	[Parameter]
+	Action EditorPrepared { get; set; }
 	void DxDataGrid_EditorPrepared(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			EditorPrepared?.Invoke();
 		}
 	}
-	public Action EditorPreparing { get; set; }
+	[Parameter]
+	Action EditorPreparing { get; set; }
 	void DxDataGrid_EditorPreparing(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			EditorPreparing?.Invoke();
 		}
 	}
-	public Action Exported { get; set; }
+	[Parameter]
+	Action Exported { get; set; }
 	void DxDataGrid_Exported(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Exported?.Invoke();
 		}
 	}
-	public Action Exporting { get; set; }
+	[Parameter]
+	Action Exporting { get; set; }
 	void DxDataGrid_Exporting(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Exporting?.Invoke();
 		}
 	}
-	public Action FileSaving { get; set; }
+	[Parameter]
+	Action FileSaving { get; set; }
 	void DxDataGrid_FileSaving(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			FileSaving?.Invoke();
 		}
 	}
-	public Action RowClick { get; set; }
+	[Parameter]
+	Action RowClick { get; set; }
 	void DxDataGrid_RowClick(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			RowClick?.Invoke();
 		}
 	}
-	public Action RowPrepared { get; set; }
+	[Parameter]
+	Action RowPrepared { get; set; }
 	void DxDataGrid_RowPrepared(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			RowPrepared?.Invoke();
 		}
 	}
 	public void AddColumn(object columnOptions) {
-		DevExpress.Ui.DxDataGridInterop.AddColumn(Id, columnOptions);
+		DevExpress.Ui.DxDataGridInterop.AddColumn(dxTarget, columnOptions);
 	}
 	public void AddRow() {
-		DevExpress.Ui.DxDataGridInterop.AddRow(Id);
+		DevExpress.Ui.DxDataGridInterop.AddRow(dxTarget);
 	}
 	public void ClearGrouping() {
-		DevExpress.Ui.DxDataGridInterop.ClearGrouping(Id);
+		DevExpress.Ui.DxDataGridInterop.ClearGrouping(dxTarget);
 	}
 	public void CollapseAll(float groupIndex) {
-		DevExpress.Ui.DxDataGridInterop.CollapseAll(Id, groupIndex);
+		DevExpress.Ui.DxDataGridInterop.CollapseAll(dxTarget, groupIndex);
 	}
 	public object CollapseRow(object key) {
-		return DevExpress.Ui.DxDataGridInterop.CollapseRow(Id, key);
+		return DevExpress.Ui.DxDataGridInterop.CollapseRow(dxTarget, key);
 	}
 	public void ExpandAll(float groupIndex) {
-		DevExpress.Ui.DxDataGridInterop.ExpandAll(Id, groupIndex);
+		DevExpress.Ui.DxDataGridInterop.ExpandAll(dxTarget, groupIndex);
 	}
 	public object ExpandRow(object key) {
-		return DevExpress.Ui.DxDataGridInterop.ExpandRow(Id, key);
+		return DevExpress.Ui.DxDataGridInterop.ExpandRow(dxTarget, key);
 	}
 	public void ExportToExcel(bool selectionOnly) {
-		DevExpress.Ui.DxDataGridInterop.ExportToExcel(Id, selectionOnly);
+		DevExpress.Ui.DxDataGridInterop.ExportToExcel(dxTarget, selectionOnly);
 	}
 	public object GetSelectedRowKeys() {
-		return DevExpress.Ui.DxDataGridInterop.GetSelectedRowKeys(Id);
+		return DevExpress.Ui.DxDataGridInterop.GetSelectedRowKeys(dxTarget);
 	}
 	public object GetSelectedRowsData() {
-		return DevExpress.Ui.DxDataGridInterop.GetSelectedRowsData(Id);
+		return DevExpress.Ui.DxDataGridInterop.GetSelectedRowsData(dxTarget);
 	}
 	public object GetTotalSummaryValue(string summaryItemName) {
-		return DevExpress.Ui.DxDataGridInterop.GetTotalSummaryValue(Id, summaryItemName);
+		return DevExpress.Ui.DxDataGridInterop.GetTotalSummaryValue(dxTarget, summaryItemName);
 	}
 	public object GetVisibleColumns() {
-		return DevExpress.Ui.DxDataGridInterop.GetVisibleColumns(Id);
+		return DevExpress.Ui.DxDataGridInterop.GetVisibleColumns(dxTarget);
 	}
 	public object GetVisibleColumns(float headerLevel) {
-		return DevExpress.Ui.DxDataGridInterop.GetVisibleColumns(Id, headerLevel);
+		return DevExpress.Ui.DxDataGridInterop.GetVisibleColumns(dxTarget, headerLevel);
 	}
 	public object GetVisibleRows() {
-		return DevExpress.Ui.DxDataGridInterop.GetVisibleRows(Id);
+		return DevExpress.Ui.DxDataGridInterop.GetVisibleRows(dxTarget);
 	}
 	public void InsertRow() {
-		DevExpress.Ui.DxDataGridInterop.InsertRow(Id);
+		DevExpress.Ui.DxDataGridInterop.InsertRow(dxTarget);
 	}
 	public bool IsRowExpanded(object key) {
-		return DevExpress.Ui.DxDataGridInterop.IsRowExpanded(Id, key);
+		return DevExpress.Ui.DxDataGridInterop.IsRowExpanded(dxTarget, key);
 	}
 	public bool IsRowSelected(object data) {
-		return DevExpress.Ui.DxDataGridInterop.IsRowSelected(Id, data);
+		return DevExpress.Ui.DxDataGridInterop.IsRowSelected(dxTarget, data);
 	}
 	public void RemoveRow(float rowIndex) {
-		DevExpress.Ui.DxDataGridInterop.RemoveRow(Id, rowIndex);
+		DevExpress.Ui.DxDataGridInterop.RemoveRow(dxTarget, rowIndex);
 	}
 	public float TotalCount() {
-		return DevExpress.Ui.DxDataGridInterop.TotalCount(Id);
+		return DevExpress.Ui.DxDataGridInterop.TotalCount(dxTarget);
 	}
 	public void Dispose() {
 		DevExpress.Ui.DxDataGridInterop.CellClick -= DxDataGrid_CellClick;

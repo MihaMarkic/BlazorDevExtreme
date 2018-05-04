@@ -1,9 +1,12 @@
+@using Microsoft.AspNetCore.Blazor.Components
+@using Microsoft.AspNetCore.Blazor
 @implements IDisposable
 @inherits DxBlazorCompoment<DevExpress.Ui.DxSchedulerOptions>
 
-<div id="@Id"></div>
+<div id="@Id" ref="dxTarget"></div>
 
 @functions {
+	ElementRef dxTarget;
 	public DxScheduler() : base("DxScheduler") { }
 	protected override DevExpress.Ui.DxSchedulerOptions CreateOptions() {
 		return new DevExpress.Ui.DxSchedulerOptions {
@@ -66,543 +69,599 @@
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxSchedulerOptions options) {
-		DevExpress.Ui.DxSchedulerInterop.Init(Id, options);
+		DevExpress.Ui.DxSchedulerInterop.Init(dxTarget, options);
 	}
 	string allDayExpr;
-	public string AllDayExpr {
-		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetAllDayExpr(Id) : allDayExpr;
+	[Parameter]
+	string AllDayExpr {
+		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetAllDayExpr(dxTarget) : allDayExpr;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSchedulerInterop.SetAllDayExpr(Id, value);
+				DevExpress.Ui.DxSchedulerInterop.SetAllDayExpr(dxTarget, value);
 			} else {
 				this.allDayExpr = value;
 			}
 		}
 	}
 	object appointmentTemplate;
-	public object AppointmentTemplate {
-		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetAppointmentTemplate(Id) : appointmentTemplate;
+	[Parameter]
+	object AppointmentTemplate {
+		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetAppointmentTemplate(dxTarget) : appointmentTemplate;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSchedulerInterop.SetAppointmentTemplate(Id, value);
+				DevExpress.Ui.DxSchedulerInterop.SetAppointmentTemplate(dxTarget, value);
 			} else {
 				this.appointmentTemplate = value;
 			}
 		}
 	}
 	object appointmentTooltipTemplate;
-	public object AppointmentTooltipTemplate {
-		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetAppointmentTooltipTemplate(Id) : appointmentTooltipTemplate;
+	[Parameter]
+	object AppointmentTooltipTemplate {
+		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetAppointmentTooltipTemplate(dxTarget) : appointmentTooltipTemplate;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSchedulerInterop.SetAppointmentTooltipTemplate(Id, value);
+				DevExpress.Ui.DxSchedulerInterop.SetAppointmentTooltipTemplate(dxTarget, value);
 			} else {
 				this.appointmentTooltipTemplate = value;
 			}
 		}
 	}
 	float? cellDuration;
-	public float? CellDuration {
-		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetCellDuration(Id) : cellDuration;
+	[Parameter]
+	float? CellDuration {
+		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetCellDuration(dxTarget) : cellDuration;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSchedulerInterop.SetCellDuration(Id, value);
+				DevExpress.Ui.DxSchedulerInterop.SetCellDuration(dxTarget, value);
 			} else {
 				this.cellDuration = value;
 			}
 		}
 	}
 	bool? crossScrollingEnabled;
-	public bool? CrossScrollingEnabled {
-		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetCrossScrollingEnabled(Id) : crossScrollingEnabled;
+	[Parameter]
+	bool? CrossScrollingEnabled {
+		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetCrossScrollingEnabled(dxTarget) : crossScrollingEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSchedulerInterop.SetCrossScrollingEnabled(Id, value);
+				DevExpress.Ui.DxSchedulerInterop.SetCrossScrollingEnabled(dxTarget, value);
 			} else {
 				this.crossScrollingEnabled = value;
 			}
 		}
 	}
 	object currentDate;
-	public object CurrentDate {
-		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetCurrentDate(Id) : currentDate;
+	[Parameter]
+	object CurrentDate {
+		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetCurrentDate(dxTarget) : currentDate;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSchedulerInterop.SetCurrentDate(Id, value);
+				DevExpress.Ui.DxSchedulerInterop.SetCurrentDate(dxTarget, value);
 			} else {
 				this.currentDate = value;
 			}
 		}
 	}
 	string currentView;
-	public string CurrentView {
-		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetCurrentView(Id) : currentView;
+	[Parameter]
+	string CurrentView {
+		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetCurrentView(dxTarget) : currentView;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSchedulerInterop.SetCurrentView(Id, value);
+				DevExpress.Ui.DxSchedulerInterop.SetCurrentView(dxTarget, value);
 			} else {
 				this.currentView = value;
 			}
 		}
 	}
 	object dataCellTemplate;
-	public object DataCellTemplate {
-		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetDataCellTemplate(Id) : dataCellTemplate;
+	[Parameter]
+	object DataCellTemplate {
+		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetDataCellTemplate(dxTarget) : dataCellTemplate;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSchedulerInterop.SetDataCellTemplate(Id, value);
+				DevExpress.Ui.DxSchedulerInterop.SetDataCellTemplate(dxTarget, value);
 			} else {
 				this.dataCellTemplate = value;
 			}
 		}
 	}
 	object dataSource;
-	public object DataSource {
-		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetDataSource(Id) : dataSource;
+	[Parameter]
+	object DataSource {
+		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetDataSource(dxTarget) : dataSource;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSchedulerInterop.SetDataSource(Id, value);
+				DevExpress.Ui.DxSchedulerInterop.SetDataSource(dxTarget, value);
 			} else {
 				this.dataSource = value;
 			}
 		}
 	}
 	object dateCellTemplate;
-	public object DateCellTemplate {
-		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetDateCellTemplate(Id) : dateCellTemplate;
+	[Parameter]
+	object DateCellTemplate {
+		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetDateCellTemplate(dxTarget) : dateCellTemplate;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSchedulerInterop.SetDateCellTemplate(Id, value);
+				DevExpress.Ui.DxSchedulerInterop.SetDateCellTemplate(dxTarget, value);
 			} else {
 				this.dateCellTemplate = value;
 			}
 		}
 	}
 	string dateSerializationFormat;
-	public string DateSerializationFormat {
-		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetDateSerializationFormat(Id) : dateSerializationFormat;
+	[Parameter]
+	string DateSerializationFormat {
+		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetDateSerializationFormat(dxTarget) : dateSerializationFormat;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSchedulerInterop.SetDateSerializationFormat(Id, value);
+				DevExpress.Ui.DxSchedulerInterop.SetDateSerializationFormat(dxTarget, value);
 			} else {
 				this.dateSerializationFormat = value;
 			}
 		}
 	}
 	string descriptionExpr;
-	public string DescriptionExpr {
-		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetDescriptionExpr(Id) : descriptionExpr;
+	[Parameter]
+	string DescriptionExpr {
+		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetDescriptionExpr(dxTarget) : descriptionExpr;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSchedulerInterop.SetDescriptionExpr(Id, value);
+				DevExpress.Ui.DxSchedulerInterop.SetDescriptionExpr(dxTarget, value);
 			} else {
 				this.descriptionExpr = value;
 			}
 		}
 	}
 	object dropDownAppointmentTemplate;
-	public object DropDownAppointmentTemplate {
-		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetDropDownAppointmentTemplate(Id) : dropDownAppointmentTemplate;
+	[Parameter]
+	object DropDownAppointmentTemplate {
+		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetDropDownAppointmentTemplate(dxTarget) : dropDownAppointmentTemplate;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSchedulerInterop.SetDropDownAppointmentTemplate(Id, value);
+				DevExpress.Ui.DxSchedulerInterop.SetDropDownAppointmentTemplate(dxTarget, value);
 			} else {
 				this.dropDownAppointmentTemplate = value;
 			}
 		}
 	}
 	object editing;
-	public object Editing {
-		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetEditing(Id) : editing;
+	[Parameter]
+	object Editing {
+		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetEditing(dxTarget) : editing;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSchedulerInterop.SetEditing(Id, value);
+				DevExpress.Ui.DxSchedulerInterop.SetEditing(dxTarget, value);
 			} else {
 				this.editing = value;
 			}
 		}
 	}
 	string endDateExpr;
-	public string EndDateExpr {
-		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetEndDateExpr(Id) : endDateExpr;
+	[Parameter]
+	string EndDateExpr {
+		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetEndDateExpr(dxTarget) : endDateExpr;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSchedulerInterop.SetEndDateExpr(Id, value);
+				DevExpress.Ui.DxSchedulerInterop.SetEndDateExpr(dxTarget, value);
 			} else {
 				this.endDateExpr = value;
 			}
 		}
 	}
 	string endDateTimeZoneExpr;
-	public string EndDateTimeZoneExpr {
-		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetEndDateTimeZoneExpr(Id) : endDateTimeZoneExpr;
+	[Parameter]
+	string EndDateTimeZoneExpr {
+		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetEndDateTimeZoneExpr(dxTarget) : endDateTimeZoneExpr;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSchedulerInterop.SetEndDateTimeZoneExpr(Id, value);
+				DevExpress.Ui.DxSchedulerInterop.SetEndDateTimeZoneExpr(dxTarget, value);
 			} else {
 				this.endDateTimeZoneExpr = value;
 			}
 		}
 	}
 	float? endDayHour;
-	public float? EndDayHour {
-		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetEndDayHour(Id) : endDayHour;
+	[Parameter]
+	float? EndDayHour {
+		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetEndDayHour(dxTarget) : endDayHour;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSchedulerInterop.SetEndDayHour(Id, value);
+				DevExpress.Ui.DxSchedulerInterop.SetEndDayHour(dxTarget, value);
 			} else {
 				this.endDayHour = value;
 			}
 		}
 	}
 	object firstDayOfWeek;
-	public object FirstDayOfWeek {
-		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetFirstDayOfWeek(Id) : firstDayOfWeek;
+	[Parameter]
+	object FirstDayOfWeek {
+		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetFirstDayOfWeek(dxTarget) : firstDayOfWeek;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSchedulerInterop.SetFirstDayOfWeek(Id, value);
+				DevExpress.Ui.DxSchedulerInterop.SetFirstDayOfWeek(dxTarget, value);
 			} else {
 				this.firstDayOfWeek = value;
 			}
 		}
 	}
 	bool? focusStateEnabled;
-	public bool? FocusStateEnabled {
-		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetFocusStateEnabled(Id) : focusStateEnabled;
+	[Parameter]
+	bool? FocusStateEnabled {
+		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetFocusStateEnabled(dxTarget) : focusStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSchedulerInterop.SetFocusStateEnabled(Id, value);
+				DevExpress.Ui.DxSchedulerInterop.SetFocusStateEnabled(dxTarget, value);
 			} else {
 				this.focusStateEnabled = value;
 			}
 		}
 	}
 	object groups;
-	public object Groups {
-		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetGroups(Id) : groups;
+	[Parameter]
+	object Groups {
+		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetGroups(dxTarget) : groups;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSchedulerInterop.SetGroups(Id, value);
+				DevExpress.Ui.DxSchedulerInterop.SetGroups(dxTarget, value);
 			} else {
 				this.groups = value;
 			}
 		}
 	}
 	float? indicatorUpdateInterval;
-	public float? IndicatorUpdateInterval {
-		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetIndicatorUpdateInterval(Id) : indicatorUpdateInterval;
+	[Parameter]
+	float? IndicatorUpdateInterval {
+		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetIndicatorUpdateInterval(dxTarget) : indicatorUpdateInterval;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSchedulerInterop.SetIndicatorUpdateInterval(Id, value);
+				DevExpress.Ui.DxSchedulerInterop.SetIndicatorUpdateInterval(dxTarget, value);
 			} else {
 				this.indicatorUpdateInterval = value;
 			}
 		}
 	}
 	object max;
-	public object Max {
-		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetMax(Id) : max;
+	[Parameter]
+	object Max {
+		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetMax(dxTarget) : max;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSchedulerInterop.SetMax(Id, value);
+				DevExpress.Ui.DxSchedulerInterop.SetMax(dxTarget, value);
 			} else {
 				this.max = value;
 			}
 		}
 	}
 	object maxAppointmentsPerCell;
-	public object MaxAppointmentsPerCell {
-		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetMaxAppointmentsPerCell(Id) : maxAppointmentsPerCell;
+	[Parameter]
+	object MaxAppointmentsPerCell {
+		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetMaxAppointmentsPerCell(dxTarget) : maxAppointmentsPerCell;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSchedulerInterop.SetMaxAppointmentsPerCell(Id, value);
+				DevExpress.Ui.DxSchedulerInterop.SetMaxAppointmentsPerCell(dxTarget, value);
 			} else {
 				this.maxAppointmentsPerCell = value;
 			}
 		}
 	}
 	object min;
-	public object Min {
-		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetMin(Id) : min;
+	[Parameter]
+	object Min {
+		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetMin(dxTarget) : min;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSchedulerInterop.SetMin(Id, value);
+				DevExpress.Ui.DxSchedulerInterop.SetMin(dxTarget, value);
 			} else {
 				this.min = value;
 			}
 		}
 	}
 	string noDataText;
-	public string NoDataText {
-		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetNoDataText(Id) : noDataText;
+	[Parameter]
+	string NoDataText {
+		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetNoDataText(dxTarget) : noDataText;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSchedulerInterop.SetNoDataText(Id, value);
+				DevExpress.Ui.DxSchedulerInterop.SetNoDataText(dxTarget, value);
 			} else {
 				this.noDataText = value;
 			}
 		}
 	}
 	string recurrenceEditMode;
-	public string RecurrenceEditMode {
-		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetRecurrenceEditMode(Id) : recurrenceEditMode;
+	[Parameter]
+	string RecurrenceEditMode {
+		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetRecurrenceEditMode(dxTarget) : recurrenceEditMode;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSchedulerInterop.SetRecurrenceEditMode(Id, value);
+				DevExpress.Ui.DxSchedulerInterop.SetRecurrenceEditMode(dxTarget, value);
 			} else {
 				this.recurrenceEditMode = value;
 			}
 		}
 	}
 	string recurrenceExceptionExpr;
-	public string RecurrenceExceptionExpr {
-		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetRecurrenceExceptionExpr(Id) : recurrenceExceptionExpr;
+	[Parameter]
+	string RecurrenceExceptionExpr {
+		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetRecurrenceExceptionExpr(dxTarget) : recurrenceExceptionExpr;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSchedulerInterop.SetRecurrenceExceptionExpr(Id, value);
+				DevExpress.Ui.DxSchedulerInterop.SetRecurrenceExceptionExpr(dxTarget, value);
 			} else {
 				this.recurrenceExceptionExpr = value;
 			}
 		}
 	}
 	string recurrenceRuleExpr;
-	public string RecurrenceRuleExpr {
-		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetRecurrenceRuleExpr(Id) : recurrenceRuleExpr;
+	[Parameter]
+	string RecurrenceRuleExpr {
+		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetRecurrenceRuleExpr(dxTarget) : recurrenceRuleExpr;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSchedulerInterop.SetRecurrenceRuleExpr(Id, value);
+				DevExpress.Ui.DxSchedulerInterop.SetRecurrenceRuleExpr(dxTarget, value);
 			} else {
 				this.recurrenceRuleExpr = value;
 			}
 		}
 	}
 	bool? remoteFiltering;
-	public bool? RemoteFiltering {
-		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetRemoteFiltering(Id) : remoteFiltering;
+	[Parameter]
+	bool? RemoteFiltering {
+		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetRemoteFiltering(dxTarget) : remoteFiltering;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSchedulerInterop.SetRemoteFiltering(Id, value);
+				DevExpress.Ui.DxSchedulerInterop.SetRemoteFiltering(dxTarget, value);
 			} else {
 				this.remoteFiltering = value;
 			}
 		}
 	}
 	object resourceCellTemplate;
-	public object ResourceCellTemplate {
-		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetResourceCellTemplate(Id) : resourceCellTemplate;
+	[Parameter]
+	object ResourceCellTemplate {
+		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetResourceCellTemplate(dxTarget) : resourceCellTemplate;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSchedulerInterop.SetResourceCellTemplate(Id, value);
+				DevExpress.Ui.DxSchedulerInterop.SetResourceCellTemplate(dxTarget, value);
 			} else {
 				this.resourceCellTemplate = value;
 			}
 		}
 	}
 	object resources;
-	public object Resources {
-		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetResources(Id) : resources;
+	[Parameter]
+	object Resources {
+		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetResources(dxTarget) : resources;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSchedulerInterop.SetResources(Id, value);
+				DevExpress.Ui.DxSchedulerInterop.SetResources(dxTarget, value);
 			} else {
 				this.resources = value;
 			}
 		}
 	}
 	object selectedCellData;
-	public object SelectedCellData {
-		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetSelectedCellData(Id) : selectedCellData;
+	[Parameter]
+	object SelectedCellData {
+		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetSelectedCellData(dxTarget) : selectedCellData;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSchedulerInterop.SetSelectedCellData(Id, value);
+				DevExpress.Ui.DxSchedulerInterop.SetSelectedCellData(dxTarget, value);
 			} else {
 				this.selectedCellData = value;
 			}
 		}
 	}
 	bool? shadeUntilCurrentTime;
-	public bool? ShadeUntilCurrentTime {
-		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetShadeUntilCurrentTime(Id) : shadeUntilCurrentTime;
+	[Parameter]
+	bool? ShadeUntilCurrentTime {
+		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetShadeUntilCurrentTime(dxTarget) : shadeUntilCurrentTime;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSchedulerInterop.SetShadeUntilCurrentTime(Id, value);
+				DevExpress.Ui.DxSchedulerInterop.SetShadeUntilCurrentTime(dxTarget, value);
 			} else {
 				this.shadeUntilCurrentTime = value;
 			}
 		}
 	}
 	bool? showAllDayPanel;
-	public bool? ShowAllDayPanel {
-		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetShowAllDayPanel(Id) : showAllDayPanel;
+	[Parameter]
+	bool? ShowAllDayPanel {
+		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetShowAllDayPanel(dxTarget) : showAllDayPanel;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSchedulerInterop.SetShowAllDayPanel(Id, value);
+				DevExpress.Ui.DxSchedulerInterop.SetShowAllDayPanel(dxTarget, value);
 			} else {
 				this.showAllDayPanel = value;
 			}
 		}
 	}
 	bool? showCurrentTimeIndicator;
-	public bool? ShowCurrentTimeIndicator {
-		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetShowCurrentTimeIndicator(Id) : showCurrentTimeIndicator;
+	[Parameter]
+	bool? ShowCurrentTimeIndicator {
+		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetShowCurrentTimeIndicator(dxTarget) : showCurrentTimeIndicator;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSchedulerInterop.SetShowCurrentTimeIndicator(Id, value);
+				DevExpress.Ui.DxSchedulerInterop.SetShowCurrentTimeIndicator(dxTarget, value);
 			} else {
 				this.showCurrentTimeIndicator = value;
 			}
 		}
 	}
 	string startDateExpr;
-	public string StartDateExpr {
-		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetStartDateExpr(Id) : startDateExpr;
+	[Parameter]
+	string StartDateExpr {
+		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetStartDateExpr(dxTarget) : startDateExpr;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSchedulerInterop.SetStartDateExpr(Id, value);
+				DevExpress.Ui.DxSchedulerInterop.SetStartDateExpr(dxTarget, value);
 			} else {
 				this.startDateExpr = value;
 			}
 		}
 	}
 	string startDateTimeZoneExpr;
-	public string StartDateTimeZoneExpr {
-		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetStartDateTimeZoneExpr(Id) : startDateTimeZoneExpr;
+	[Parameter]
+	string StartDateTimeZoneExpr {
+		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetStartDateTimeZoneExpr(dxTarget) : startDateTimeZoneExpr;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSchedulerInterop.SetStartDateTimeZoneExpr(Id, value);
+				DevExpress.Ui.DxSchedulerInterop.SetStartDateTimeZoneExpr(dxTarget, value);
 			} else {
 				this.startDateTimeZoneExpr = value;
 			}
 		}
 	}
 	float? startDayHour;
-	public float? StartDayHour {
-		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetStartDayHour(Id) : startDayHour;
+	[Parameter]
+	float? StartDayHour {
+		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetStartDayHour(dxTarget) : startDayHour;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSchedulerInterop.SetStartDayHour(Id, value);
+				DevExpress.Ui.DxSchedulerInterop.SetStartDayHour(dxTarget, value);
 			} else {
 				this.startDayHour = value;
 			}
 		}
 	}
 	string textExpr;
-	public string TextExpr {
-		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetTextExpr(Id) : textExpr;
+	[Parameter]
+	string TextExpr {
+		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetTextExpr(dxTarget) : textExpr;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSchedulerInterop.SetTextExpr(Id, value);
+				DevExpress.Ui.DxSchedulerInterop.SetTextExpr(dxTarget, value);
 			} else {
 				this.textExpr = value;
 			}
 		}
 	}
 	object timeCellTemplate;
-	public object TimeCellTemplate {
-		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetTimeCellTemplate(Id) : timeCellTemplate;
+	[Parameter]
+	object TimeCellTemplate {
+		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetTimeCellTemplate(dxTarget) : timeCellTemplate;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSchedulerInterop.SetTimeCellTemplate(Id, value);
+				DevExpress.Ui.DxSchedulerInterop.SetTimeCellTemplate(dxTarget, value);
 			} else {
 				this.timeCellTemplate = value;
 			}
 		}
 	}
 	string timeZone;
-	public string TimeZone {
-		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetTimeZone(Id) : timeZone;
+	[Parameter]
+	string TimeZone {
+		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetTimeZone(dxTarget) : timeZone;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSchedulerInterop.SetTimeZone(Id, value);
+				DevExpress.Ui.DxSchedulerInterop.SetTimeZone(dxTarget, value);
 			} else {
 				this.timeZone = value;
 			}
 		}
 	}
 	bool? useDropDownViewSwitcher;
-	public bool? UseDropDownViewSwitcher {
-		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetUseDropDownViewSwitcher(Id) : useDropDownViewSwitcher;
+	[Parameter]
+	bool? UseDropDownViewSwitcher {
+		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetUseDropDownViewSwitcher(dxTarget) : useDropDownViewSwitcher;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSchedulerInterop.SetUseDropDownViewSwitcher(Id, value);
+				DevExpress.Ui.DxSchedulerInterop.SetUseDropDownViewSwitcher(dxTarget, value);
 			} else {
 				this.useDropDownViewSwitcher = value;
 			}
 		}
 	}
 	object views;
-	public object Views {
-		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetViews(Id) : views;
+	[Parameter]
+	object Views {
+		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetViews(dxTarget) : views;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSchedulerInterop.SetViews(Id, value);
+				DevExpress.Ui.DxSchedulerInterop.SetViews(dxTarget, value);
 			} else {
 				this.views = value;
 			}
 		}
 	}
 	bool? onAppointmentAddedEnabled;
-	public bool? OnAppointmentAddedEnabled {
+	[Parameter]
+	bool? OnAppointmentAddedEnabled {
 		get => onAppointmentAddedEnabled;
 		set => this.onAppointmentAddedEnabled = value;
 	}
 	bool? onAppointmentAddingEnabled;
-	public bool? OnAppointmentAddingEnabled {
+	[Parameter]
+	bool? OnAppointmentAddingEnabled {
 		get => onAppointmentAddingEnabled;
 		set => this.onAppointmentAddingEnabled = value;
 	}
 	bool? onAppointmentClickEnabled;
-	public bool? OnAppointmentClickEnabled {
+	[Parameter]
+	bool? OnAppointmentClickEnabled {
 		get => onAppointmentClickEnabled;
 		set => this.onAppointmentClickEnabled = value;
 	}
 	bool? onAppointmentContextMenuEnabled;
-	public bool? OnAppointmentContextMenuEnabled {
+	[Parameter]
+	bool? OnAppointmentContextMenuEnabled {
 		get => onAppointmentContextMenuEnabled;
 		set => this.onAppointmentContextMenuEnabled = value;
 	}
 	bool? onAppointmentDblClickEnabled;
-	public bool? OnAppointmentDblClickEnabled {
+	[Parameter]
+	bool? OnAppointmentDblClickEnabled {
 		get => onAppointmentDblClickEnabled;
 		set => this.onAppointmentDblClickEnabled = value;
 	}
 	bool? onAppointmentDeletedEnabled;
-	public bool? OnAppointmentDeletedEnabled {
+	[Parameter]
+	bool? OnAppointmentDeletedEnabled {
 		get => onAppointmentDeletedEnabled;
 		set => this.onAppointmentDeletedEnabled = value;
 	}
 	bool? onAppointmentDeletingEnabled;
-	public bool? OnAppointmentDeletingEnabled {
+	[Parameter]
+	bool? OnAppointmentDeletingEnabled {
 		get => onAppointmentDeletingEnabled;
 		set => this.onAppointmentDeletingEnabled = value;
 	}
 	bool? onAppointmentFormCreatedEnabled;
-	public bool? OnAppointmentFormCreatedEnabled {
+	[Parameter]
+	bool? OnAppointmentFormCreatedEnabled {
 		get => onAppointmentFormCreatedEnabled;
 		set => this.onAppointmentFormCreatedEnabled = value;
 	}
 	bool? onAppointmentRenderedEnabled;
-	public bool? OnAppointmentRenderedEnabled {
+	[Parameter]
+	bool? OnAppointmentRenderedEnabled {
 		get => onAppointmentRenderedEnabled;
 		set => this.onAppointmentRenderedEnabled = value;
 	}
 	bool? onAppointmentUpdatedEnabled;
-	public bool? OnAppointmentUpdatedEnabled {
+	[Parameter]
+	bool? OnAppointmentUpdatedEnabled {
 		get => onAppointmentUpdatedEnabled;
 		set => this.onAppointmentUpdatedEnabled = value;
 	}
 	bool? onAppointmentUpdatingEnabled;
-	public bool? OnAppointmentUpdatingEnabled {
+	[Parameter]
+	bool? OnAppointmentUpdatingEnabled {
 		get => onAppointmentUpdatingEnabled;
 		set => this.onAppointmentUpdatingEnabled = value;
 	}
 	bool? onCellClickEnabled;
-	public bool? OnCellClickEnabled {
+	[Parameter]
+	bool? OnCellClickEnabled {
 		get => onCellClickEnabled;
 		set => this.onCellClickEnabled = value;
 	}
 	bool? onCellContextMenuEnabled;
-	public bool? OnCellContextMenuEnabled {
+	[Parameter]
+	bool? OnCellContextMenuEnabled {
 		get => onCellContextMenuEnabled;
 		set => this.onCellContextMenuEnabled = value;
 	}
@@ -622,119 +681,132 @@
 		DevExpress.Ui.DxSchedulerInterop.CellClick += DxScheduler_CellClick;
 		DevExpress.Ui.DxSchedulerInterop.CellContextMenu += DxScheduler_CellContextMenu;
 	}
-	public Action AppointmentAdded { get; set; }
+	[Parameter]
+	Action AppointmentAdded { get; set; }
 	void DxScheduler_AppointmentAdded(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			AppointmentAdded?.Invoke();
 		}
 	}
-	public Action AppointmentAdding { get; set; }
+	[Parameter]
+	Action AppointmentAdding { get; set; }
 	void DxScheduler_AppointmentAdding(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			AppointmentAdding?.Invoke();
 		}
 	}
-	public Action AppointmentClick { get; set; }
+	[Parameter]
+	Action AppointmentClick { get; set; }
 	void DxScheduler_AppointmentClick(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			AppointmentClick?.Invoke();
 		}
 	}
-	public Action AppointmentContextMenu { get; set; }
+	[Parameter]
+	Action AppointmentContextMenu { get; set; }
 	void DxScheduler_AppointmentContextMenu(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			AppointmentContextMenu?.Invoke();
 		}
 	}
-	public Action AppointmentDblClick { get; set; }
+	[Parameter]
+	Action AppointmentDblClick { get; set; }
 	void DxScheduler_AppointmentDblClick(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			AppointmentDblClick?.Invoke();
 		}
 	}
-	public Action AppointmentDeleted { get; set; }
+	[Parameter]
+	Action AppointmentDeleted { get; set; }
 	void DxScheduler_AppointmentDeleted(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			AppointmentDeleted?.Invoke();
 		}
 	}
-	public Action AppointmentDeleting { get; set; }
+	[Parameter]
+	Action AppointmentDeleting { get; set; }
 	void DxScheduler_AppointmentDeleting(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			AppointmentDeleting?.Invoke();
 		}
 	}
-	public Action AppointmentFormCreated { get; set; }
+	[Parameter]
+	Action AppointmentFormCreated { get; set; }
 	void DxScheduler_AppointmentFormCreated(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			AppointmentFormCreated?.Invoke();
 		}
 	}
-	public Action AppointmentRendered { get; set; }
+	[Parameter]
+	Action AppointmentRendered { get; set; }
 	void DxScheduler_AppointmentRendered(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			AppointmentRendered?.Invoke();
 		}
 	}
-	public Action AppointmentUpdated { get; set; }
+	[Parameter]
+	Action AppointmentUpdated { get; set; }
 	void DxScheduler_AppointmentUpdated(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			AppointmentUpdated?.Invoke();
 		}
 	}
-	public Action AppointmentUpdating { get; set; }
+	[Parameter]
+	Action AppointmentUpdating { get; set; }
 	void DxScheduler_AppointmentUpdating(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			AppointmentUpdating?.Invoke();
 		}
 	}
-	public Action CellClick { get; set; }
+	[Parameter]
+	Action CellClick { get; set; }
 	void DxScheduler_CellClick(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			CellClick?.Invoke();
 		}
 	}
-	public Action CellContextMenu { get; set; }
+	[Parameter]
+	Action CellContextMenu { get; set; }
 	void DxScheduler_CellContextMenu(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			CellContextMenu?.Invoke();
 		}
 	}
 	public void AddAppointment(object appointment) {
-		DevExpress.Ui.DxSchedulerInterop.AddAppointment(Id, appointment);
+		DevExpress.Ui.DxSchedulerInterop.AddAppointment(dxTarget, appointment);
 	}
 	public void DeleteAppointment(object appointment) {
-		DevExpress.Ui.DxSchedulerInterop.DeleteAppointment(Id, appointment);
+		DevExpress.Ui.DxSchedulerInterop.DeleteAppointment(dxTarget, appointment);
 	}
 	public object GetDataSourceEx() {
-		return DevExpress.Ui.DxSchedulerInterop.GetDataSourceEx(Id);
+		return DevExpress.Ui.DxSchedulerInterop.GetDataSourceEx(dxTarget);
 	}
 	public object GetEndViewDate() {
-		return DevExpress.Ui.DxSchedulerInterop.GetEndViewDate(Id);
+		return DevExpress.Ui.DxSchedulerInterop.GetEndViewDate(dxTarget);
 	}
 	public object GetStartViewDate() {
-		return DevExpress.Ui.DxSchedulerInterop.GetStartViewDate(Id);
+		return DevExpress.Ui.DxSchedulerInterop.GetStartViewDate(dxTarget);
 	}
 	public void HideAppointmentPopup(bool saveChanges) {
-		DevExpress.Ui.DxSchedulerInterop.HideAppointmentPopup(Id, saveChanges);
+		DevExpress.Ui.DxSchedulerInterop.HideAppointmentPopup(dxTarget, saveChanges);
 	}
 	public void HideAppointmentTooltip() {
-		DevExpress.Ui.DxSchedulerInterop.HideAppointmentTooltip(Id);
+		DevExpress.Ui.DxSchedulerInterop.HideAppointmentTooltip(dxTarget);
 	}
 	public void RegisterKeyHandler() {
-		DevExpress.Ui.DxSchedulerInterop.RegisterKeyHandler(Id);
+		DevExpress.Ui.DxSchedulerInterop.RegisterKeyHandler(dxTarget);
 	}
 	public void ScrollToTime(float hours, float minutes, object date) {
-		DevExpress.Ui.DxSchedulerInterop.ScrollToTime(Id, hours, minutes, date);
+		DevExpress.Ui.DxSchedulerInterop.ScrollToTime(dxTarget, hours, minutes, date);
 	}
 	public void ShowAppointmentPopup(object appointmentData, bool createNewAppointment, object currentAppointmentData) {
-		DevExpress.Ui.DxSchedulerInterop.ShowAppointmentPopup(Id, appointmentData, createNewAppointment, currentAppointmentData);
+		DevExpress.Ui.DxSchedulerInterop.ShowAppointmentPopup(dxTarget, appointmentData, createNewAppointment, currentAppointmentData);
 	}
 	public void ShowAppointmentTooltip(object appointmentData, object target, object currentAppointmentData) {
-		DevExpress.Ui.DxSchedulerInterop.ShowAppointmentTooltip(Id, appointmentData, target, currentAppointmentData);
+		DevExpress.Ui.DxSchedulerInterop.ShowAppointmentTooltip(dxTarget, appointmentData, target, currentAppointmentData);
 	}
 	public void UpdateAppointment(object target, object appointment) {
-		DevExpress.Ui.DxSchedulerInterop.UpdateAppointment(Id, target, appointment);
+		DevExpress.Ui.DxSchedulerInterop.UpdateAppointment(dxTarget, target, appointment);
 	}
 	public void Dispose() {
 		DevExpress.Ui.DxSchedulerInterop.AppointmentAdded -= DxScheduler_AppointmentAdded;

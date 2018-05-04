@@ -1,16 +1,19 @@
+@using Microsoft.AspNetCore.Blazor.Components
+@using Microsoft.AspNetCore.Blazor
 @implements IDisposable
 @inherits DxBlazorCompoment<DevExpress.Ui.DxTooltipOptions>
 
-<div id="@Id"></div>
+<div id="@Id" ref="dxTarget"></div>
 
 @functions {
+	ElementRef dxTarget;
 	public DxTooltip() : base("DxTooltip") { }
 	protected override DevExpress.Ui.DxTooltipOptions CreateOptions() {
 		return new DevExpress.Ui.DxTooltipOptions {
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxTooltipOptions options) {
-		DevExpress.Ui.DxTooltipInterop.Init(Id, options);
+		DevExpress.Ui.DxTooltipInterop.Init(dxTarget, options);
 	}
 	protected override async Task OnInitAsync() {
 		await base.OnInitAsync();

@@ -1,9 +1,12 @@
+@using Microsoft.AspNetCore.Blazor.Components
+@using Microsoft.AspNetCore.Blazor
 @implements IDisposable
 @inherits DxBlazorCompoment<DevExpress.Ui.EditorOptions>
 
-<div id="@Id"></div>
+<div id="@Id" ref="dxTarget"></div>
 
 @functions {
+	ElementRef dxTarget;
 	public Editor() : base("Editor") { }
 	protected override DevExpress.Ui.EditorOptions CreateOptions() {
 		return new DevExpress.Ui.EditorOptions {
@@ -16,65 +19,71 @@
 		};
 	}
 	protected override void Init(DevExpress.Ui.EditorOptions options) {
-		DevExpress.Ui.EditorInterop.Init(Id, options);
+		DevExpress.Ui.EditorInterop.Init(dxTarget, options);
 	}
 	bool? isValid;
-	public bool? IsValid {
-		get => isInitialized ? DevExpress.Ui.EditorInterop.GetIsValid(Id) : isValid;
+	[Parameter]
+	bool? IsValid {
+		get => isInitialized ? DevExpress.Ui.EditorInterop.GetIsValid(dxTarget) : isValid;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.EditorInterop.SetIsValid(Id, value);
+				DevExpress.Ui.EditorInterop.SetIsValid(dxTarget, value);
 			} else {
 				this.isValid = value;
 			}
 		}
 	}
 	bool? readOnly;
-	public bool? ReadOnly {
-		get => isInitialized ? DevExpress.Ui.EditorInterop.GetReadOnly(Id) : readOnly;
+	[Parameter]
+	bool? ReadOnly {
+		get => isInitialized ? DevExpress.Ui.EditorInterop.GetReadOnly(dxTarget) : readOnly;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.EditorInterop.SetReadOnly(Id, value);
+				DevExpress.Ui.EditorInterop.SetReadOnly(dxTarget, value);
 			} else {
 				this.readOnly = value;
 			}
 		}
 	}
 	object validationError;
-	public object ValidationError {
-		get => isInitialized ? DevExpress.Ui.EditorInterop.GetValidationError(Id) : validationError;
+	[Parameter]
+	object ValidationError {
+		get => isInitialized ? DevExpress.Ui.EditorInterop.GetValidationError(dxTarget) : validationError;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.EditorInterop.SetValidationError(Id, value);
+				DevExpress.Ui.EditorInterop.SetValidationError(dxTarget, value);
 			} else {
 				this.validationError = value;
 			}
 		}
 	}
 	string validationMessageMode;
-	public string ValidationMessageMode {
-		get => isInitialized ? DevExpress.Ui.EditorInterop.GetValidationMessageMode(Id) : validationMessageMode;
+	[Parameter]
+	string ValidationMessageMode {
+		get => isInitialized ? DevExpress.Ui.EditorInterop.GetValidationMessageMode(dxTarget) : validationMessageMode;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.EditorInterop.SetValidationMessageMode(Id, value);
+				DevExpress.Ui.EditorInterop.SetValidationMessageMode(dxTarget, value);
 			} else {
 				this.validationMessageMode = value;
 			}
 		}
 	}
 	object value;
-	public object Value {
-		get => isInitialized ? DevExpress.Ui.EditorInterop.GetValue(Id) : value;
+	[Parameter]
+	object Value {
+		get => isInitialized ? DevExpress.Ui.EditorInterop.GetValue(dxTarget) : value;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.EditorInterop.SetValue(Id, value);
+				DevExpress.Ui.EditorInterop.SetValue(dxTarget, value);
 			} else {
 				this.value = value;
 			}
 		}
 	}
 	bool? onValueChangedEnabled;
-	public bool? OnValueChangedEnabled {
+	[Parameter]
+	bool? OnValueChangedEnabled {
 		get => onValueChangedEnabled;
 		set => this.onValueChangedEnabled = value;
 	}
@@ -82,14 +91,15 @@
 		await base.OnInitAsync();
 		DevExpress.Ui.EditorInterop.ValueChanged += Editor_ValueChanged;
 	}
-	public Action ValueChanged { get; set; }
+	[Parameter]
+	Action ValueChanged { get; set; }
 	void Editor_ValueChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ValueChanged?.Invoke();
 		}
 	}
 	public void Reset() {
-		DevExpress.Ui.EditorInterop.Reset(Id);
+		DevExpress.Ui.EditorInterop.Reset(dxTarget);
 	}
 	public void Dispose() {
 		DevExpress.Ui.EditorInterop.ValueChanged -= Editor_ValueChanged;

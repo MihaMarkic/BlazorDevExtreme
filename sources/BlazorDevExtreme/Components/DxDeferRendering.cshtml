@@ -1,9 +1,12 @@
+@using Microsoft.AspNetCore.Blazor.Components
+@using Microsoft.AspNetCore.Blazor
 @implements IDisposable
 @inherits DxBlazorCompoment<DevExpress.Ui.DxDeferRenderingOptions>
 
-<div id="@Id"></div>
+<div id="@Id" ref="dxTarget"></div>
 
 @functions {
+	ElementRef dxTarget;
 	public DxDeferRendering() : base("DxDeferRendering") { }
 	protected override DevExpress.Ui.DxDeferRenderingOptions CreateOptions() {
 		return new DevExpress.Ui.DxDeferRenderingOptions {
@@ -16,59 +19,65 @@
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxDeferRenderingOptions options) {
-		DevExpress.Ui.DxDeferRenderingInterop.Init(Id, options);
+		DevExpress.Ui.DxDeferRenderingInterop.Init(dxTarget, options);
 	}
 	object animation;
-	public object Animation {
-		get => isInitialized ? DevExpress.Ui.DxDeferRenderingInterop.GetAnimation(Id) : animation;
+	[Parameter]
+	object Animation {
+		get => isInitialized ? DevExpress.Ui.DxDeferRenderingInterop.GetAnimation(dxTarget) : animation;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDeferRenderingInterop.SetAnimation(Id, value);
+				DevExpress.Ui.DxDeferRenderingInterop.SetAnimation(dxTarget, value);
 			} else {
 				this.animation = value;
 			}
 		}
 	}
 	object renderWhen;
-	public object RenderWhen {
-		get => isInitialized ? DevExpress.Ui.DxDeferRenderingInterop.GetRenderWhen(Id) : renderWhen;
+	[Parameter]
+	object RenderWhen {
+		get => isInitialized ? DevExpress.Ui.DxDeferRenderingInterop.GetRenderWhen(dxTarget) : renderWhen;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDeferRenderingInterop.SetRenderWhen(Id, value);
+				DevExpress.Ui.DxDeferRenderingInterop.SetRenderWhen(dxTarget, value);
 			} else {
 				this.renderWhen = value;
 			}
 		}
 	}
 	bool? showLoadIndicator;
-	public bool? ShowLoadIndicator {
-		get => isInitialized ? DevExpress.Ui.DxDeferRenderingInterop.GetShowLoadIndicator(Id) : showLoadIndicator;
+	[Parameter]
+	bool? ShowLoadIndicator {
+		get => isInitialized ? DevExpress.Ui.DxDeferRenderingInterop.GetShowLoadIndicator(dxTarget) : showLoadIndicator;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDeferRenderingInterop.SetShowLoadIndicator(Id, value);
+				DevExpress.Ui.DxDeferRenderingInterop.SetShowLoadIndicator(dxTarget, value);
 			} else {
 				this.showLoadIndicator = value;
 			}
 		}
 	}
 	string staggerItemSelector;
-	public string StaggerItemSelector {
-		get => isInitialized ? DevExpress.Ui.DxDeferRenderingInterop.GetStaggerItemSelector(Id) : staggerItemSelector;
+	[Parameter]
+	string StaggerItemSelector {
+		get => isInitialized ? DevExpress.Ui.DxDeferRenderingInterop.GetStaggerItemSelector(dxTarget) : staggerItemSelector;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDeferRenderingInterop.SetStaggerItemSelector(Id, value);
+				DevExpress.Ui.DxDeferRenderingInterop.SetStaggerItemSelector(dxTarget, value);
 			} else {
 				this.staggerItemSelector = value;
 			}
 		}
 	}
 	bool? onRenderedEnabled;
-	public bool? OnRenderedEnabled {
+	[Parameter]
+	bool? OnRenderedEnabled {
 		get => onRenderedEnabled;
 		set => this.onRenderedEnabled = value;
 	}
 	bool? onShownEnabled;
-	public bool? OnShownEnabled {
+	[Parameter]
+	bool? OnShownEnabled {
 		get => onShownEnabled;
 		set => this.onShownEnabled = value;
 	}
@@ -77,13 +86,15 @@
 		DevExpress.Ui.DxDeferRenderingInterop.Rendered += DxDeferRendering_Rendered;
 		DevExpress.Ui.DxDeferRenderingInterop.Shown += DxDeferRendering_Shown;
 	}
-	public Action Rendered { get; set; }
+	[Parameter]
+	Action Rendered { get; set; }
 	void DxDeferRendering_Rendered(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Rendered?.Invoke();
 		}
 	}
-	public Action Shown { get; set; }
+	[Parameter]
+	Action Shown { get; set; }
 	void DxDeferRendering_Shown(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Shown?.Invoke();

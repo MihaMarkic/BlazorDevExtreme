@@ -1,9 +1,12 @@
+@using Microsoft.AspNetCore.Blazor.Components
+@using Microsoft.AspNetCore.Blazor
 @implements IDisposable
 @inherits DxBlazorCompoment<DevExpress.Ui.DxResponsiveBoxOptions>
 
-<div id="@Id"></div>
+<div id="@Id" ref="dxTarget"></div>
 
 @functions {
+	ElementRef dxTarget;
 	public DxResponsiveBox() : base("DxResponsiveBox") { }
 	protected override DevExpress.Ui.DxResponsiveBoxOptions CreateOptions() {
 		return new DevExpress.Ui.DxResponsiveBoxOptions {
@@ -16,69 +19,75 @@
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxResponsiveBoxOptions options) {
-		DevExpress.Ui.DxResponsiveBoxInterop.Init(Id, options);
+		DevExpress.Ui.DxResponsiveBoxInterop.Init(dxTarget, options);
 	}
 	object cols;
-	public object Cols {
-		get => isInitialized ? DevExpress.Ui.DxResponsiveBoxInterop.GetCols(Id) : cols;
+	[Parameter]
+	object Cols {
+		get => isInitialized ? DevExpress.Ui.DxResponsiveBoxInterop.GetCols(dxTarget) : cols;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxResponsiveBoxInterop.SetCols(Id, value);
+				DevExpress.Ui.DxResponsiveBoxInterop.SetCols(dxTarget, value);
 			} else {
 				this.cols = value;
 			}
 		}
 	}
 	object height;
-	public object Height {
-		get => isInitialized ? DevExpress.Ui.DxResponsiveBoxInterop.GetHeight(Id) : height;
+	[Parameter]
+	object Height {
+		get => isInitialized ? DevExpress.Ui.DxResponsiveBoxInterop.GetHeight(dxTarget) : height;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxResponsiveBoxInterop.SetHeight(Id, value);
+				DevExpress.Ui.DxResponsiveBoxInterop.SetHeight(dxTarget, value);
 			} else {
 				this.height = value;
 			}
 		}
 	}
 	object rows;
-	public object Rows {
-		get => isInitialized ? DevExpress.Ui.DxResponsiveBoxInterop.GetRows(Id) : rows;
+	[Parameter]
+	object Rows {
+		get => isInitialized ? DevExpress.Ui.DxResponsiveBoxInterop.GetRows(dxTarget) : rows;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxResponsiveBoxInterop.SetRows(Id, value);
+				DevExpress.Ui.DxResponsiveBoxInterop.SetRows(dxTarget, value);
 			} else {
 				this.rows = value;
 			}
 		}
 	}
 	object screenByWidth;
-	public object ScreenByWidth {
-		get => isInitialized ? DevExpress.Ui.DxResponsiveBoxInterop.GetScreenByWidth(Id) : screenByWidth;
+	[Parameter]
+	object ScreenByWidth {
+		get => isInitialized ? DevExpress.Ui.DxResponsiveBoxInterop.GetScreenByWidth(dxTarget) : screenByWidth;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxResponsiveBoxInterop.SetScreenByWidth(Id, value);
+				DevExpress.Ui.DxResponsiveBoxInterop.SetScreenByWidth(dxTarget, value);
 			} else {
 				this.screenByWidth = value;
 			}
 		}
 	}
 	string singleColumnScreen;
-	public string SingleColumnScreen {
-		get => isInitialized ? DevExpress.Ui.DxResponsiveBoxInterop.GetSingleColumnScreen(Id) : singleColumnScreen;
+	[Parameter]
+	string SingleColumnScreen {
+		get => isInitialized ? DevExpress.Ui.DxResponsiveBoxInterop.GetSingleColumnScreen(dxTarget) : singleColumnScreen;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxResponsiveBoxInterop.SetSingleColumnScreen(Id, value);
+				DevExpress.Ui.DxResponsiveBoxInterop.SetSingleColumnScreen(dxTarget, value);
 			} else {
 				this.singleColumnScreen = value;
 			}
 		}
 	}
 	object width;
-	public object Width {
-		get => isInitialized ? DevExpress.Ui.DxResponsiveBoxInterop.GetWidth(Id) : width;
+	[Parameter]
+	object Width {
+		get => isInitialized ? DevExpress.Ui.DxResponsiveBoxInterop.GetWidth(dxTarget) : width;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxResponsiveBoxInterop.SetWidth(Id, value);
+				DevExpress.Ui.DxResponsiveBoxInterop.SetWidth(dxTarget, value);
 			} else {
 				this.width = value;
 			}

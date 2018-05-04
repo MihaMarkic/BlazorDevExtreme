@@ -1,9 +1,12 @@
+@using Microsoft.AspNetCore.Blazor.Components
+@using Microsoft.AspNetCore.Blazor
 @implements IDisposable
 @inherits DxBlazorCompoment<DevExpress.Ui.DxTrackBarOptions>
 
-<div id="@Id"></div>
+<div id="@Id" ref="dxTarget"></div>
 
 @functions {
+	ElementRef dxTarget;
 	public DxTrackBar() : base("DxTrackBar") { }
 	protected override DevExpress.Ui.DxTrackBarOptions CreateOptions() {
 		return new DevExpress.Ui.DxTrackBarOptions {
@@ -12,25 +15,27 @@
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxTrackBarOptions options) {
-		DevExpress.Ui.DxTrackBarInterop.Init(Id, options);
+		DevExpress.Ui.DxTrackBarInterop.Init(dxTarget, options);
 	}
 	float? max;
-	public float? Max {
-		get => isInitialized ? DevExpress.Ui.DxTrackBarInterop.GetMax(Id) : max;
+	[Parameter]
+	float? Max {
+		get => isInitialized ? DevExpress.Ui.DxTrackBarInterop.GetMax(dxTarget) : max;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTrackBarInterop.SetMax(Id, value);
+				DevExpress.Ui.DxTrackBarInterop.SetMax(dxTarget, value);
 			} else {
 				this.max = value;
 			}
 		}
 	}
 	float? min;
-	public float? Min {
-		get => isInitialized ? DevExpress.Ui.DxTrackBarInterop.GetMin(Id) : min;
+	[Parameter]
+	float? Min {
+		get => isInitialized ? DevExpress.Ui.DxTrackBarInterop.GetMin(dxTarget) : min;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTrackBarInterop.SetMin(Id, value);
+				DevExpress.Ui.DxTrackBarInterop.SetMin(dxTarget, value);
 			} else {
 				this.min = value;
 			}

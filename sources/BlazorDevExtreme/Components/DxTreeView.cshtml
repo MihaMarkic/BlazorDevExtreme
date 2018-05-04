@@ -1,9 +1,12 @@
+@using Microsoft.AspNetCore.Blazor.Components
+@using Microsoft.AspNetCore.Blazor
 @implements IDisposable
 @inherits DxBlazorCompoment<DevExpress.Ui.DxTreeViewOptions>
 
-<div id="@Id"></div>
+<div id="@Id" ref="dxTarget"></div>
 
 @functions {
+	ElementRef dxTarget;
 	public DxTreeView() : base("DxTreeView") { }
 	protected override DevExpress.Ui.DxTreeViewOptions CreateOptions() {
 		return new DevExpress.Ui.DxTreeViewOptions {
@@ -35,232 +38,257 @@
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxTreeViewOptions options) {
-		DevExpress.Ui.DxTreeViewInterop.Init(Id, options);
+		DevExpress.Ui.DxTreeViewInterop.Init(dxTarget, options);
 	}
 	bool? animationEnabled;
-	public bool? AnimationEnabled {
-		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetAnimationEnabled(Id) : animationEnabled;
+	[Parameter]
+	bool? AnimationEnabled {
+		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetAnimationEnabled(dxTarget) : animationEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTreeViewInterop.SetAnimationEnabled(Id, value);
+				DevExpress.Ui.DxTreeViewInterop.SetAnimationEnabled(dxTarget, value);
 			} else {
 				this.animationEnabled = value;
 			}
 		}
 	}
 	object createChildren;
-	public object CreateChildren {
-		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetCreateChildren(Id) : createChildren;
+	[Parameter]
+	object CreateChildren {
+		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetCreateChildren(dxTarget) : createChildren;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTreeViewInterop.SetCreateChildren(Id, value);
+				DevExpress.Ui.DxTreeViewInterop.SetCreateChildren(dxTarget, value);
 			} else {
 				this.createChildren = value;
 			}
 		}
 	}
 	string dataStructure;
-	public string DataStructure {
-		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetDataStructure(Id) : dataStructure;
+	[Parameter]
+	string DataStructure {
+		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetDataStructure(dxTarget) : dataStructure;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTreeViewInterop.SetDataStructure(Id, value);
+				DevExpress.Ui.DxTreeViewInterop.SetDataStructure(dxTarget, value);
 			} else {
 				this.dataStructure = value;
 			}
 		}
 	}
 	bool? expandAllEnabled;
-	public bool? ExpandAllEnabled {
-		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetExpandAllEnabled(Id) : expandAllEnabled;
+	[Parameter]
+	bool? ExpandAllEnabled {
+		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetExpandAllEnabled(dxTarget) : expandAllEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTreeViewInterop.SetExpandAllEnabled(Id, value);
+				DevExpress.Ui.DxTreeViewInterop.SetExpandAllEnabled(dxTarget, value);
 			} else {
 				this.expandAllEnabled = value;
 			}
 		}
 	}
 	object expandedExpr;
-	public object ExpandedExpr {
-		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetExpandedExpr(Id) : expandedExpr;
+	[Parameter]
+	object ExpandedExpr {
+		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetExpandedExpr(dxTarget) : expandedExpr;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTreeViewInterop.SetExpandedExpr(Id, value);
+				DevExpress.Ui.DxTreeViewInterop.SetExpandedExpr(dxTarget, value);
 			} else {
 				this.expandedExpr = value;
 			}
 		}
 	}
 	bool? expandNodesRecursive;
-	public bool? ExpandNodesRecursive {
-		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetExpandNodesRecursive(Id) : expandNodesRecursive;
+	[Parameter]
+	bool? ExpandNodesRecursive {
+		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetExpandNodesRecursive(dxTarget) : expandNodesRecursive;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTreeViewInterop.SetExpandNodesRecursive(Id, value);
+				DevExpress.Ui.DxTreeViewInterop.SetExpandNodesRecursive(dxTarget, value);
 			} else {
 				this.expandNodesRecursive = value;
 			}
 		}
 	}
 	object hasItemsExpr;
-	public object HasItemsExpr {
-		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetHasItemsExpr(Id) : hasItemsExpr;
+	[Parameter]
+	object HasItemsExpr {
+		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetHasItemsExpr(dxTarget) : hasItemsExpr;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTreeViewInterop.SetHasItemsExpr(Id, value);
+				DevExpress.Ui.DxTreeViewInterop.SetHasItemsExpr(dxTarget, value);
 			} else {
 				this.hasItemsExpr = value;
 			}
 		}
 	}
 	object items;
-	public object Items {
-		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetItems(Id) : items;
+	[Parameter]
+	object Items {
+		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetItems(dxTarget) : items;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTreeViewInterop.SetItems(Id, value);
+				DevExpress.Ui.DxTreeViewInterop.SetItems(dxTarget, value);
 			} else {
 				this.items = value;
 			}
 		}
 	}
 	object parentIdExpr;
-	public object ParentIdExpr {
-		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetParentIdExpr(Id) : parentIdExpr;
+	[Parameter]
+	object ParentIdExpr {
+		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetParentIdExpr(dxTarget) : parentIdExpr;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTreeViewInterop.SetParentIdExpr(Id, value);
+				DevExpress.Ui.DxTreeViewInterop.SetParentIdExpr(dxTarget, value);
 			} else {
 				this.parentIdExpr = value;
 			}
 		}
 	}
 	object rootValue;
-	public object RootValue {
-		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetRootValue(Id) : rootValue;
+	[Parameter]
+	object RootValue {
+		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetRootValue(dxTarget) : rootValue;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTreeViewInterop.SetRootValue(Id, value);
+				DevExpress.Ui.DxTreeViewInterop.SetRootValue(dxTarget, value);
 			} else {
 				this.rootValue = value;
 			}
 		}
 	}
 	string scrollDirection;
-	public string ScrollDirection {
-		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetScrollDirection(Id) : scrollDirection;
+	[Parameter]
+	string ScrollDirection {
+		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetScrollDirection(dxTarget) : scrollDirection;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTreeViewInterop.SetScrollDirection(Id, value);
+				DevExpress.Ui.DxTreeViewInterop.SetScrollDirection(dxTarget, value);
 			} else {
 				this.scrollDirection = value;
 			}
 		}
 	}
 	string selectAllText;
-	public string SelectAllText {
-		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetSelectAllText(Id) : selectAllText;
+	[Parameter]
+	string SelectAllText {
+		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetSelectAllText(dxTarget) : selectAllText;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTreeViewInterop.SetSelectAllText(Id, value);
+				DevExpress.Ui.DxTreeViewInterop.SetSelectAllText(dxTarget, value);
 			} else {
 				this.selectAllText = value;
 			}
 		}
 	}
 	bool? selectByClick;
-	public bool? SelectByClick {
-		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetSelectByClick(Id) : selectByClick;
+	[Parameter]
+	bool? SelectByClick {
+		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetSelectByClick(dxTarget) : selectByClick;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTreeViewInterop.SetSelectByClick(Id, value);
+				DevExpress.Ui.DxTreeViewInterop.SetSelectByClick(dxTarget, value);
 			} else {
 				this.selectByClick = value;
 			}
 		}
 	}
 	string selectionMode;
-	public string SelectionMode {
-		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetSelectionMode(Id) : selectionMode;
+	[Parameter]
+	string SelectionMode {
+		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetSelectionMode(dxTarget) : selectionMode;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTreeViewInterop.SetSelectionMode(Id, value);
+				DevExpress.Ui.DxTreeViewInterop.SetSelectionMode(dxTarget, value);
 			} else {
 				this.selectionMode = value;
 			}
 		}
 	}
 	bool? selectNodesRecursive;
-	public bool? SelectNodesRecursive {
-		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetSelectNodesRecursive(Id) : selectNodesRecursive;
+	[Parameter]
+	bool? SelectNodesRecursive {
+		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetSelectNodesRecursive(dxTarget) : selectNodesRecursive;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTreeViewInterop.SetSelectNodesRecursive(Id, value);
+				DevExpress.Ui.DxTreeViewInterop.SetSelectNodesRecursive(dxTarget, value);
 			} else {
 				this.selectNodesRecursive = value;
 			}
 		}
 	}
 	string showCheckBoxesMode;
-	public string ShowCheckBoxesMode {
-		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetShowCheckBoxesMode(Id) : showCheckBoxesMode;
+	[Parameter]
+	string ShowCheckBoxesMode {
+		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetShowCheckBoxesMode(dxTarget) : showCheckBoxesMode;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTreeViewInterop.SetShowCheckBoxesMode(Id, value);
+				DevExpress.Ui.DxTreeViewInterop.SetShowCheckBoxesMode(dxTarget, value);
 			} else {
 				this.showCheckBoxesMode = value;
 			}
 		}
 	}
 	bool? virtualModeEnabled;
-	public bool? VirtualModeEnabled {
-		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetVirtualModeEnabled(Id) : virtualModeEnabled;
+	[Parameter]
+	bool? VirtualModeEnabled {
+		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetVirtualModeEnabled(dxTarget) : virtualModeEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTreeViewInterop.SetVirtualModeEnabled(Id, value);
+				DevExpress.Ui.DxTreeViewInterop.SetVirtualModeEnabled(dxTarget, value);
 			} else {
 				this.virtualModeEnabled = value;
 			}
 		}
 	}
 	bool? onItemClickEnabled;
-	public bool? OnItemClickEnabled {
+	[Parameter]
+	bool? OnItemClickEnabled {
 		get => onItemClickEnabled;
 		set => this.onItemClickEnabled = value;
 	}
 	bool? onItemCollapsedEnabled;
-	public bool? OnItemCollapsedEnabled {
+	[Parameter]
+	bool? OnItemCollapsedEnabled {
 		get => onItemCollapsedEnabled;
 		set => this.onItemCollapsedEnabled = value;
 	}
 	bool? onItemContextMenuEnabled;
-	public bool? OnItemContextMenuEnabled {
+	[Parameter]
+	bool? OnItemContextMenuEnabled {
 		get => onItemContextMenuEnabled;
 		set => this.onItemContextMenuEnabled = value;
 	}
 	bool? onItemExpandedEnabled;
-	public bool? OnItemExpandedEnabled {
+	[Parameter]
+	bool? OnItemExpandedEnabled {
 		get => onItemExpandedEnabled;
 		set => this.onItemExpandedEnabled = value;
 	}
 	bool? onItemHoldEnabled;
-	public bool? OnItemHoldEnabled {
+	[Parameter]
+	bool? OnItemHoldEnabled {
 		get => onItemHoldEnabled;
 		set => this.onItemHoldEnabled = value;
 	}
 	bool? onItemRenderedEnabled;
-	public bool? OnItemRenderedEnabled {
+	[Parameter]
+	bool? OnItemRenderedEnabled {
 		get => onItemRenderedEnabled;
 		set => this.onItemRenderedEnabled = value;
 	}
 	bool? onItemSelectionChangedEnabled;
-	public bool? OnItemSelectionChangedEnabled {
+	[Parameter]
+	bool? OnItemSelectionChangedEnabled {
 		get => onItemSelectionChangedEnabled;
 		set => this.onItemSelectionChangedEnabled = value;
 	}
 	bool? onSelectionChangedEnabled;
-	public bool? OnSelectionChangedEnabled {
+	[Parameter]
+	bool? OnSelectionChangedEnabled {
 		get => onSelectionChangedEnabled;
 		set => this.onSelectionChangedEnabled = value;
 	}
@@ -275,77 +303,85 @@
 		DevExpress.Ui.DxTreeViewInterop.ItemSelectionChanged += DxTreeView_ItemSelectionChanged;
 		DevExpress.Ui.DxTreeViewInterop.SelectionChanged += DxTreeView_SelectionChanged;
 	}
-	public Action ItemClick { get; set; }
+	[Parameter]
+	Action ItemClick { get; set; }
 	void DxTreeView_ItemClick(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ItemClick?.Invoke();
 		}
 	}
-	public Action ItemCollapsed { get; set; }
+	[Parameter]
+	Action ItemCollapsed { get; set; }
 	void DxTreeView_ItemCollapsed(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ItemCollapsed?.Invoke();
 		}
 	}
-	public Action ItemContextMenu { get; set; }
+	[Parameter]
+	Action ItemContextMenu { get; set; }
 	void DxTreeView_ItemContextMenu(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ItemContextMenu?.Invoke();
 		}
 	}
-	public Action ItemExpanded { get; set; }
+	[Parameter]
+	Action ItemExpanded { get; set; }
 	void DxTreeView_ItemExpanded(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ItemExpanded?.Invoke();
 		}
 	}
-	public Action ItemHold { get; set; }
+	[Parameter]
+	Action ItemHold { get; set; }
 	void DxTreeView_ItemHold(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ItemHold?.Invoke();
 		}
 	}
-	public Action ItemRendered { get; set; }
+	[Parameter]
+	Action ItemRendered { get; set; }
 	void DxTreeView_ItemRendered(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ItemRendered?.Invoke();
 		}
 	}
-	public Action ItemSelectionChanged { get; set; }
+	[Parameter]
+	Action ItemSelectionChanged { get; set; }
 	void DxTreeView_ItemSelectionChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ItemSelectionChanged?.Invoke();
 		}
 	}
-	public Action SelectionChanged { get; set; }
+	[Parameter]
+	Action SelectionChanged { get; set; }
 	void DxTreeView_SelectionChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			SelectionChanged?.Invoke();
 		}
 	}
 	public void CollapseItem(object itemData) {
-		DevExpress.Ui.DxTreeViewInterop.CollapseItem(Id, itemData);
+		DevExpress.Ui.DxTreeViewInterop.CollapseItem(dxTarget, itemData);
 	}
 	public void ExpandItem(object itemData) {
-		DevExpress.Ui.DxTreeViewInterop.ExpandItem(Id, itemData);
+		DevExpress.Ui.DxTreeViewInterop.ExpandItem(dxTarget, itemData);
 	}
 	public object GetNodes() {
-		return DevExpress.Ui.DxTreeViewInterop.GetNodes(Id);
+		return DevExpress.Ui.DxTreeViewInterop.GetNodes(dxTarget);
 	}
 	public void SelectAll() {
-		DevExpress.Ui.DxTreeViewInterop.SelectAll(Id);
+		DevExpress.Ui.DxTreeViewInterop.SelectAll(dxTarget);
 	}
 	public void SelectItem(object itemData) {
-		DevExpress.Ui.DxTreeViewInterop.SelectItem(Id, itemData);
+		DevExpress.Ui.DxTreeViewInterop.SelectItem(dxTarget, itemData);
 	}
 	public void UnselectAll() {
-		DevExpress.Ui.DxTreeViewInterop.UnselectAll(Id);
+		DevExpress.Ui.DxTreeViewInterop.UnselectAll(dxTarget);
 	}
 	public void UnselectItem(object itemData) {
-		DevExpress.Ui.DxTreeViewInterop.UnselectItem(Id, itemData);
+		DevExpress.Ui.DxTreeViewInterop.UnselectItem(dxTarget, itemData);
 	}
 	public object UpdateDimensions() {
-		return DevExpress.Ui.DxTreeViewInterop.UpdateDimensions(Id);
+		return DevExpress.Ui.DxTreeViewInterop.UpdateDimensions(dxTarget);
 	}
 	public void Dispose() {
 		DevExpress.Ui.DxTreeViewInterop.ItemClick -= DxTreeView_ItemClick;

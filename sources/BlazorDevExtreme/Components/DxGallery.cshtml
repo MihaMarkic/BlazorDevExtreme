@@ -1,9 +1,12 @@
+@using Microsoft.AspNetCore.Blazor.Components
+@using Microsoft.AspNetCore.Blazor
 @implements IDisposable
 @inherits DxBlazorCompoment<DevExpress.Ui.DxGalleryOptions>
 
-<div id="@Id"></div>
+<div id="@Id" ref="dxTarget"></div>
 
 @functions {
+	ElementRef dxTarget;
 	public DxGallery() : base("DxGallery") { }
 	protected override DevExpress.Ui.DxGalleryOptions CreateOptions() {
 		return new DevExpress.Ui.DxGalleryOptions {
@@ -23,146 +26,159 @@
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxGalleryOptions options) {
-		DevExpress.Ui.DxGalleryInterop.Init(Id, options);
+		DevExpress.Ui.DxGalleryInterop.Init(dxTarget, options);
 	}
 	float? animationDuration;
-	public float? AnimationDuration {
-		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetAnimationDuration(Id) : animationDuration;
+	[Parameter]
+	float? AnimationDuration {
+		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetAnimationDuration(dxTarget) : animationDuration;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxGalleryInterop.SetAnimationDuration(Id, value);
+				DevExpress.Ui.DxGalleryInterop.SetAnimationDuration(dxTarget, value);
 			} else {
 				this.animationDuration = value;
 			}
 		}
 	}
 	bool? animationEnabled;
-	public bool? AnimationEnabled {
-		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetAnimationEnabled(Id) : animationEnabled;
+	[Parameter]
+	bool? AnimationEnabled {
+		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetAnimationEnabled(dxTarget) : animationEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxGalleryInterop.SetAnimationEnabled(Id, value);
+				DevExpress.Ui.DxGalleryInterop.SetAnimationEnabled(dxTarget, value);
 			} else {
 				this.animationEnabled = value;
 			}
 		}
 	}
 	bool? focusStateEnabled;
-	public bool? FocusStateEnabled {
-		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetFocusStateEnabled(Id) : focusStateEnabled;
+	[Parameter]
+	bool? FocusStateEnabled {
+		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetFocusStateEnabled(dxTarget) : focusStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxGalleryInterop.SetFocusStateEnabled(Id, value);
+				DevExpress.Ui.DxGalleryInterop.SetFocusStateEnabled(dxTarget, value);
 			} else {
 				this.focusStateEnabled = value;
 			}
 		}
 	}
 	bool? indicatorEnabled;
-	public bool? IndicatorEnabled {
-		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetIndicatorEnabled(Id) : indicatorEnabled;
+	[Parameter]
+	bool? IndicatorEnabled {
+		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetIndicatorEnabled(dxTarget) : indicatorEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxGalleryInterop.SetIndicatorEnabled(Id, value);
+				DevExpress.Ui.DxGalleryInterop.SetIndicatorEnabled(dxTarget, value);
 			} else {
 				this.indicatorEnabled = value;
 			}
 		}
 	}
 	float? initialItemWidth;
-	public float? InitialItemWidth {
-		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetInitialItemWidth(Id) : initialItemWidth;
+	[Parameter]
+	float? InitialItemWidth {
+		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetInitialItemWidth(dxTarget) : initialItemWidth;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxGalleryInterop.SetInitialItemWidth(Id, value);
+				DevExpress.Ui.DxGalleryInterop.SetInitialItemWidth(dxTarget, value);
 			} else {
 				this.initialItemWidth = value;
 			}
 		}
 	}
 	bool? loop;
-	public bool? Loop {
-		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetLoop(Id) : loop;
+	[Parameter]
+	bool? Loop {
+		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetLoop(dxTarget) : loop;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxGalleryInterop.SetLoop(Id, value);
+				DevExpress.Ui.DxGalleryInterop.SetLoop(dxTarget, value);
 			} else {
 				this.loop = value;
 			}
 		}
 	}
 	float? selectedIndex;
-	public float? SelectedIndex {
-		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetSelectedIndex(Id) : selectedIndex;
+	[Parameter]
+	float? SelectedIndex {
+		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetSelectedIndex(dxTarget) : selectedIndex;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxGalleryInterop.SetSelectedIndex(Id, value);
+				DevExpress.Ui.DxGalleryInterop.SetSelectedIndex(dxTarget, value);
 			} else {
 				this.selectedIndex = value;
 			}
 		}
 	}
 	bool? showIndicator;
-	public bool? ShowIndicator {
-		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetShowIndicator(Id) : showIndicator;
+	[Parameter]
+	bool? ShowIndicator {
+		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetShowIndicator(dxTarget) : showIndicator;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxGalleryInterop.SetShowIndicator(Id, value);
+				DevExpress.Ui.DxGalleryInterop.SetShowIndicator(dxTarget, value);
 			} else {
 				this.showIndicator = value;
 			}
 		}
 	}
 	bool? showNavButtons;
-	public bool? ShowNavButtons {
-		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetShowNavButtons(Id) : showNavButtons;
+	[Parameter]
+	bool? ShowNavButtons {
+		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetShowNavButtons(dxTarget) : showNavButtons;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxGalleryInterop.SetShowNavButtons(Id, value);
+				DevExpress.Ui.DxGalleryInterop.SetShowNavButtons(dxTarget, value);
 			} else {
 				this.showNavButtons = value;
 			}
 		}
 	}
 	float? slideshowDelay;
-	public float? SlideshowDelay {
-		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetSlideshowDelay(Id) : slideshowDelay;
+	[Parameter]
+	float? SlideshowDelay {
+		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetSlideshowDelay(dxTarget) : slideshowDelay;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxGalleryInterop.SetSlideshowDelay(Id, value);
+				DevExpress.Ui.DxGalleryInterop.SetSlideshowDelay(dxTarget, value);
 			} else {
 				this.slideshowDelay = value;
 			}
 		}
 	}
 	bool? stretchImages;
-	public bool? StretchImages {
-		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetStretchImages(Id) : stretchImages;
+	[Parameter]
+	bool? StretchImages {
+		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetStretchImages(dxTarget) : stretchImages;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxGalleryInterop.SetStretchImages(Id, value);
+				DevExpress.Ui.DxGalleryInterop.SetStretchImages(dxTarget, value);
 			} else {
 				this.stretchImages = value;
 			}
 		}
 	}
 	bool? swipeEnabled;
-	public bool? SwipeEnabled {
-		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetSwipeEnabled(Id) : swipeEnabled;
+	[Parameter]
+	bool? SwipeEnabled {
+		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetSwipeEnabled(dxTarget) : swipeEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxGalleryInterop.SetSwipeEnabled(Id, value);
+				DevExpress.Ui.DxGalleryInterop.SetSwipeEnabled(dxTarget, value);
 			} else {
 				this.swipeEnabled = value;
 			}
 		}
 	}
 	bool? wrapAround;
-	public bool? WrapAround {
-		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetWrapAround(Id) : wrapAround;
+	[Parameter]
+	bool? WrapAround {
+		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetWrapAround(dxTarget) : wrapAround;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxGalleryInterop.SetWrapAround(Id, value);
+				DevExpress.Ui.DxGalleryInterop.SetWrapAround(dxTarget, value);
 			} else {
 				this.wrapAround = value;
 			}
@@ -172,13 +188,13 @@
 		await base.OnInitAsync();
 	}
 	public object GoToItem(float itemIndex, bool animation) {
-		return DevExpress.Ui.DxGalleryInterop.GoToItem(Id, itemIndex, animation);
+		return DevExpress.Ui.DxGalleryInterop.GoToItem(dxTarget, itemIndex, animation);
 	}
 	public object NextItem(bool animation) {
-		return DevExpress.Ui.DxGalleryInterop.NextItem(Id, animation);
+		return DevExpress.Ui.DxGalleryInterop.NextItem(dxTarget, animation);
 	}
 	public object PrevItem(bool animation) {
-		return DevExpress.Ui.DxGalleryInterop.PrevItem(Id, animation);
+		return DevExpress.Ui.DxGalleryInterop.PrevItem(dxTarget, animation);
 	}
 	public void Dispose() {
 	}

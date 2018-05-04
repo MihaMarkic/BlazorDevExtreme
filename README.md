@@ -109,7 +109,7 @@ And init a dxButton with code like this.
 
 <h1>Hello, world!</h1>
 
-<div id="@ButtonId"></div>
+<div id="@ButtonId" ref="target"></div>
 
 <button onclick="@InitDevExtreme">Init DevExtreme</button>
 <div></div>
@@ -117,11 +117,12 @@ And init a dxButton with code like this.
 <div>@ClickedCount</div>
 
 @functions {
+	ElementRef target;
     public const string ButtonId = "buttonContainer";
     public int ClickedCount { get; set; } = 0;
     public void InitDevExtreme()
     {
-        DxButton.Init($"#{ButtonId}", new DevExpress.Ui.DxButtonOptions { text = "DevExtreme Button", onClickEnabled = true });
+        DxButton.Init(target, new DevExpress.Ui.DxButtonOptions { text = "DevExtreme Button", onClickEnabled = true });
     }
     protected override void OnInit()
     {

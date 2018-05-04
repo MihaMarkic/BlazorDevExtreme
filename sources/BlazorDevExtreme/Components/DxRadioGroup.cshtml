@@ -1,9 +1,12 @@
+@using Microsoft.AspNetCore.Blazor.Components
+@using Microsoft.AspNetCore.Blazor
 @implements IDisposable
 @inherits DxBlazorCompoment<DevExpress.Ui.DxRadioGroupOptions>
 
-<div id="@Id"></div>
+<div id="@Id" ref="dxTarget"></div>
 
 @functions {
+	ElementRef dxTarget;
 	public DxRadioGroup() : base("DxRadioGroup") { }
 	protected override DevExpress.Ui.DxRadioGroupOptions CreateOptions() {
 		return new DevExpress.Ui.DxRadioGroupOptions {
@@ -16,69 +19,75 @@
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxRadioGroupOptions options) {
-		DevExpress.Ui.DxRadioGroupInterop.Init(Id, options);
+		DevExpress.Ui.DxRadioGroupInterop.Init(dxTarget, options);
 	}
 	bool? activeStateEnabled;
-	public bool? ActiveStateEnabled {
-		get => isInitialized ? DevExpress.Ui.DxRadioGroupInterop.GetActiveStateEnabled(Id) : activeStateEnabled;
+	[Parameter]
+	bool? ActiveStateEnabled {
+		get => isInitialized ? DevExpress.Ui.DxRadioGroupInterop.GetActiveStateEnabled(dxTarget) : activeStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxRadioGroupInterop.SetActiveStateEnabled(Id, value);
+				DevExpress.Ui.DxRadioGroupInterop.SetActiveStateEnabled(dxTarget, value);
 			} else {
 				this.activeStateEnabled = value;
 			}
 		}
 	}
 	bool? focusStateEnabled;
-	public bool? FocusStateEnabled {
-		get => isInitialized ? DevExpress.Ui.DxRadioGroupInterop.GetFocusStateEnabled(Id) : focusStateEnabled;
+	[Parameter]
+	bool? FocusStateEnabled {
+		get => isInitialized ? DevExpress.Ui.DxRadioGroupInterop.GetFocusStateEnabled(dxTarget) : focusStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxRadioGroupInterop.SetFocusStateEnabled(Id, value);
+				DevExpress.Ui.DxRadioGroupInterop.SetFocusStateEnabled(dxTarget, value);
 			} else {
 				this.focusStateEnabled = value;
 			}
 		}
 	}
 	bool? hoverStateEnabled;
-	public bool? HoverStateEnabled {
-		get => isInitialized ? DevExpress.Ui.DxRadioGroupInterop.GetHoverStateEnabled(Id) : hoverStateEnabled;
+	[Parameter]
+	bool? HoverStateEnabled {
+		get => isInitialized ? DevExpress.Ui.DxRadioGroupInterop.GetHoverStateEnabled(dxTarget) : hoverStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxRadioGroupInterop.SetHoverStateEnabled(Id, value);
+				DevExpress.Ui.DxRadioGroupInterop.SetHoverStateEnabled(dxTarget, value);
 			} else {
 				this.hoverStateEnabled = value;
 			}
 		}
 	}
 	string layout;
-	public string Layout {
-		get => isInitialized ? DevExpress.Ui.DxRadioGroupInterop.GetLayout(Id) : layout;
+	[Parameter]
+	string Layout {
+		get => isInitialized ? DevExpress.Ui.DxRadioGroupInterop.GetLayout(dxTarget) : layout;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxRadioGroupInterop.SetLayout(Id, value);
+				DevExpress.Ui.DxRadioGroupInterop.SetLayout(dxTarget, value);
 			} else {
 				this.layout = value;
 			}
 		}
 	}
 	string name;
-	public string Name {
-		get => isInitialized ? DevExpress.Ui.DxRadioGroupInterop.GetName(Id) : name;
+	[Parameter]
+	string Name {
+		get => isInitialized ? DevExpress.Ui.DxRadioGroupInterop.GetName(dxTarget) : name;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxRadioGroupInterop.SetName(Id, value);
+				DevExpress.Ui.DxRadioGroupInterop.SetName(dxTarget, value);
 			} else {
 				this.name = value;
 			}
 		}
 	}
 	object value;
-	public object Value {
-		get => isInitialized ? DevExpress.Ui.DxRadioGroupInterop.GetValue(Id) : value;
+	[Parameter]
+	object Value {
+		get => isInitialized ? DevExpress.Ui.DxRadioGroupInterop.GetValue(dxTarget) : value;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxRadioGroupInterop.SetValue(Id, value);
+				DevExpress.Ui.DxRadioGroupInterop.SetValue(dxTarget, value);
 			} else {
 				this.value = value;
 			}
@@ -88,7 +97,7 @@
 		await base.OnInitAsync();
 	}
 	public object GetDataSourceEx() {
-		return DevExpress.Ui.DxRadioGroupInterop.GetDataSourceEx(Id);
+		return DevExpress.Ui.DxRadioGroupInterop.GetDataSourceEx(dxTarget);
 	}
 	public void Dispose() {
 	}

@@ -1,9 +1,12 @@
+@using Microsoft.AspNetCore.Blazor.Components
+@using Microsoft.AspNetCore.Blazor
 @implements IDisposable
 @inherits DxBlazorCompoment<DevExpress.Ui.HierarchicalCollectionWidgetOptions>
 
-<div id="@Id"></div>
+<div id="@Id" ref="dxTarget"></div>
 
 @functions {
+	ElementRef dxTarget;
 	public HierarchicalCollectionWidget() : base("HierarchicalCollectionWidget") { }
 	protected override DevExpress.Ui.HierarchicalCollectionWidgetOptions CreateOptions() {
 		return new DevExpress.Ui.HierarchicalCollectionWidgetOptions {
@@ -17,80 +20,87 @@
 		};
 	}
 	protected override void Init(DevExpress.Ui.HierarchicalCollectionWidgetOptions options) {
-		DevExpress.Ui.HierarchicalCollectionWidgetInterop.Init(Id, options);
+		DevExpress.Ui.HierarchicalCollectionWidgetInterop.Init(dxTarget, options);
 	}
 	object disabledExpr;
-	public object DisabledExpr {
-		get => isInitialized ? DevExpress.Ui.HierarchicalCollectionWidgetInterop.GetDisabledExpr(Id) : disabledExpr;
+	[Parameter]
+	object DisabledExpr {
+		get => isInitialized ? DevExpress.Ui.HierarchicalCollectionWidgetInterop.GetDisabledExpr(dxTarget) : disabledExpr;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.HierarchicalCollectionWidgetInterop.SetDisabledExpr(Id, value);
+				DevExpress.Ui.HierarchicalCollectionWidgetInterop.SetDisabledExpr(dxTarget, value);
 			} else {
 				this.disabledExpr = value;
 			}
 		}
 	}
 	object displayExpr;
-	public object DisplayExpr {
-		get => isInitialized ? DevExpress.Ui.HierarchicalCollectionWidgetInterop.GetDisplayExpr(Id) : displayExpr;
+	[Parameter]
+	object DisplayExpr {
+		get => isInitialized ? DevExpress.Ui.HierarchicalCollectionWidgetInterop.GetDisplayExpr(dxTarget) : displayExpr;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.HierarchicalCollectionWidgetInterop.SetDisplayExpr(Id, value);
+				DevExpress.Ui.HierarchicalCollectionWidgetInterop.SetDisplayExpr(dxTarget, value);
 			} else {
 				this.displayExpr = value;
 			}
 		}
 	}
 	bool? focusStateEnabled;
-	public bool? FocusStateEnabled {
-		get => isInitialized ? DevExpress.Ui.HierarchicalCollectionWidgetInterop.GetFocusStateEnabled(Id) : focusStateEnabled;
+	[Parameter]
+	bool? FocusStateEnabled {
+		get => isInitialized ? DevExpress.Ui.HierarchicalCollectionWidgetInterop.GetFocusStateEnabled(dxTarget) : focusStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.HierarchicalCollectionWidgetInterop.SetFocusStateEnabled(Id, value);
+				DevExpress.Ui.HierarchicalCollectionWidgetInterop.SetFocusStateEnabled(dxTarget, value);
 			} else {
 				this.focusStateEnabled = value;
 			}
 		}
 	}
 	bool? hoverStateEnabled;
-	public bool? HoverStateEnabled {
-		get => isInitialized ? DevExpress.Ui.HierarchicalCollectionWidgetInterop.GetHoverStateEnabled(Id) : hoverStateEnabled;
+	[Parameter]
+	bool? HoverStateEnabled {
+		get => isInitialized ? DevExpress.Ui.HierarchicalCollectionWidgetInterop.GetHoverStateEnabled(dxTarget) : hoverStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.HierarchicalCollectionWidgetInterop.SetHoverStateEnabled(Id, value);
+				DevExpress.Ui.HierarchicalCollectionWidgetInterop.SetHoverStateEnabled(dxTarget, value);
 			} else {
 				this.hoverStateEnabled = value;
 			}
 		}
 	}
 	object itemsExpr;
-	public object ItemsExpr {
-		get => isInitialized ? DevExpress.Ui.HierarchicalCollectionWidgetInterop.GetItemsExpr(Id) : itemsExpr;
+	[Parameter]
+	object ItemsExpr {
+		get => isInitialized ? DevExpress.Ui.HierarchicalCollectionWidgetInterop.GetItemsExpr(dxTarget) : itemsExpr;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.HierarchicalCollectionWidgetInterop.SetItemsExpr(Id, value);
+				DevExpress.Ui.HierarchicalCollectionWidgetInterop.SetItemsExpr(dxTarget, value);
 			} else {
 				this.itemsExpr = value;
 			}
 		}
 	}
 	object keyExpr;
-	public object KeyExpr {
-		get => isInitialized ? DevExpress.Ui.HierarchicalCollectionWidgetInterop.GetKeyExpr(Id) : keyExpr;
+	[Parameter]
+	object KeyExpr {
+		get => isInitialized ? DevExpress.Ui.HierarchicalCollectionWidgetInterop.GetKeyExpr(dxTarget) : keyExpr;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.HierarchicalCollectionWidgetInterop.SetKeyExpr(Id, value);
+				DevExpress.Ui.HierarchicalCollectionWidgetInterop.SetKeyExpr(dxTarget, value);
 			} else {
 				this.keyExpr = value;
 			}
 		}
 	}
 	object selectedExpr;
-	public object SelectedExpr {
-		get => isInitialized ? DevExpress.Ui.HierarchicalCollectionWidgetInterop.GetSelectedExpr(Id) : selectedExpr;
+	[Parameter]
+	object SelectedExpr {
+		get => isInitialized ? DevExpress.Ui.HierarchicalCollectionWidgetInterop.GetSelectedExpr(dxTarget) : selectedExpr;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.HierarchicalCollectionWidgetInterop.SetSelectedExpr(Id, value);
+				DevExpress.Ui.HierarchicalCollectionWidgetInterop.SetSelectedExpr(dxTarget, value);
 			} else {
 				this.selectedExpr = value;
 			}

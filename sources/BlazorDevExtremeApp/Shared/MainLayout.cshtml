@@ -1,4 +1,4 @@
-@implements ILayoutComponent
+@inherits BlazorLayoutComponent
 
 <div class="container-fluid">
     <div class="row">
@@ -12,5 +12,5 @@
 </div>
 
 @functions {
-    public RenderFragment Body { get; set; }
+public RenderFragment Body { get; set; }
 }

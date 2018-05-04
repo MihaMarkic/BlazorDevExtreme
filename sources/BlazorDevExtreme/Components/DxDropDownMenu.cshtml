@@ -1,9 +1,12 @@
+@using Microsoft.AspNetCore.Blazor.Components
+@using Microsoft.AspNetCore.Blazor
 @implements IDisposable
 @inherits DxBlazorCompoment<DevExpress.Ui.DxDropDownMenuOptions>
 
-<div id="@Id"></div>
+<div id="@Id" ref="dxTarget"></div>
 
 @functions {
+	ElementRef dxTarget;
 	public DxDropDownMenu() : base("DxDropDownMenu") { }
 	protected override DevExpress.Ui.DxDropDownMenuOptions CreateOptions() {
 		return new DevExpress.Ui.DxDropDownMenuOptions {
@@ -23,136 +26,149 @@
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxDropDownMenuOptions options) {
-		DevExpress.Ui.DxDropDownMenuInterop.Init(Id, options);
+		DevExpress.Ui.DxDropDownMenuInterop.Init(dxTarget, options);
 	}
 	bool? activeStateEnabled;
-	public bool? ActiveStateEnabled {
-		get => isInitialized ? DevExpress.Ui.DxDropDownMenuInterop.GetActiveStateEnabled(Id) : activeStateEnabled;
+	[Parameter]
+	bool? ActiveStateEnabled {
+		get => isInitialized ? DevExpress.Ui.DxDropDownMenuInterop.GetActiveStateEnabled(dxTarget) : activeStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDropDownMenuInterop.SetActiveStateEnabled(Id, value);
+				DevExpress.Ui.DxDropDownMenuInterop.SetActiveStateEnabled(dxTarget, value);
 			} else {
 				this.activeStateEnabled = value;
 			}
 		}
 	}
 	string buttonIcon;
-	public string ButtonIcon {
-		get => isInitialized ? DevExpress.Ui.DxDropDownMenuInterop.GetButtonIcon(Id) : buttonIcon;
+	[Parameter]
+	string ButtonIcon {
+		get => isInitialized ? DevExpress.Ui.DxDropDownMenuInterop.GetButtonIcon(dxTarget) : buttonIcon;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDropDownMenuInterop.SetButtonIcon(Id, value);
+				DevExpress.Ui.DxDropDownMenuInterop.SetButtonIcon(dxTarget, value);
 			} else {
 				this.buttonIcon = value;
 			}
 		}
 	}
 	string buttonText;
-	public string ButtonText {
-		get => isInitialized ? DevExpress.Ui.DxDropDownMenuInterop.GetButtonText(Id) : buttonText;
+	[Parameter]
+	string ButtonText {
+		get => isInitialized ? DevExpress.Ui.DxDropDownMenuInterop.GetButtonText(dxTarget) : buttonText;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDropDownMenuInterop.SetButtonText(Id, value);
+				DevExpress.Ui.DxDropDownMenuInterop.SetButtonText(dxTarget, value);
 			} else {
 				this.buttonText = value;
 			}
 		}
 	}
 	object dataSource;
-	public object DataSource {
-		get => isInitialized ? DevExpress.Ui.DxDropDownMenuInterop.GetDataSource(Id) : dataSource;
+	[Parameter]
+	object DataSource {
+		get => isInitialized ? DevExpress.Ui.DxDropDownMenuInterop.GetDataSource(dxTarget) : dataSource;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDropDownMenuInterop.SetDataSource(Id, value);
+				DevExpress.Ui.DxDropDownMenuInterop.SetDataSource(dxTarget, value);
 			} else {
 				this.dataSource = value;
 			}
 		}
 	}
 	bool? hoverStateEnabled;
-	public bool? HoverStateEnabled {
-		get => isInitialized ? DevExpress.Ui.DxDropDownMenuInterop.GetHoverStateEnabled(Id) : hoverStateEnabled;
+	[Parameter]
+	bool? HoverStateEnabled {
+		get => isInitialized ? DevExpress.Ui.DxDropDownMenuInterop.GetHoverStateEnabled(dxTarget) : hoverStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDropDownMenuInterop.SetHoverStateEnabled(Id, value);
+				DevExpress.Ui.DxDropDownMenuInterop.SetHoverStateEnabled(dxTarget, value);
 			} else {
 				this.hoverStateEnabled = value;
 			}
 		}
 	}
 	object items;
-	public object Items {
-		get => isInitialized ? DevExpress.Ui.DxDropDownMenuInterop.GetItems(Id) : items;
+	[Parameter]
+	object Items {
+		get => isInitialized ? DevExpress.Ui.DxDropDownMenuInterop.GetItems(dxTarget) : items;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDropDownMenuInterop.SetItems(Id, value);
+				DevExpress.Ui.DxDropDownMenuInterop.SetItems(dxTarget, value);
 			} else {
 				this.items = value;
 			}
 		}
 	}
 	object itemTemplate;
-	public object ItemTemplate {
-		get => isInitialized ? DevExpress.Ui.DxDropDownMenuInterop.GetItemTemplate(Id) : itemTemplate;
+	[Parameter]
+	object ItemTemplate {
+		get => isInitialized ? DevExpress.Ui.DxDropDownMenuInterop.GetItemTemplate(dxTarget) : itemTemplate;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDropDownMenuInterop.SetItemTemplate(Id, value);
+				DevExpress.Ui.DxDropDownMenuInterop.SetItemTemplate(dxTarget, value);
 			} else {
 				this.itemTemplate = value;
 			}
 		}
 	}
 	bool? isOpened;
-	public bool? IsOpened {
-		get => isInitialized ? DevExpress.Ui.DxDropDownMenuInterop.GetOpened(Id) : isOpened;
+	[Parameter]
+	bool? IsOpened {
+		get => isInitialized ? DevExpress.Ui.DxDropDownMenuInterop.GetOpened(dxTarget) : isOpened;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDropDownMenuInterop.SetOpened(Id, value);
+				DevExpress.Ui.DxDropDownMenuInterop.SetOpened(dxTarget, value);
 			} else {
 				this.isOpened = value;
 			}
 		}
 	}
 	object popupHeight;
-	public object PopupHeight {
-		get => isInitialized ? DevExpress.Ui.DxDropDownMenuInterop.GetPopupHeight(Id) : popupHeight;
+	[Parameter]
+	object PopupHeight {
+		get => isInitialized ? DevExpress.Ui.DxDropDownMenuInterop.GetPopupHeight(dxTarget) : popupHeight;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDropDownMenuInterop.SetPopupHeight(Id, value);
+				DevExpress.Ui.DxDropDownMenuInterop.SetPopupHeight(dxTarget, value);
 			} else {
 				this.popupHeight = value;
 			}
 		}
 	}
 	object popupWidth;
-	public object PopupWidth {
-		get => isInitialized ? DevExpress.Ui.DxDropDownMenuInterop.GetPopupWidth(Id) : popupWidth;
+	[Parameter]
+	object PopupWidth {
+		get => isInitialized ? DevExpress.Ui.DxDropDownMenuInterop.GetPopupWidth(dxTarget) : popupWidth;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDropDownMenuInterop.SetPopupWidth(Id, value);
+				DevExpress.Ui.DxDropDownMenuInterop.SetPopupWidth(dxTarget, value);
 			} else {
 				this.popupWidth = value;
 			}
 		}
 	}
 	bool? usePopover;
-	public bool? UsePopover {
-		get => isInitialized ? DevExpress.Ui.DxDropDownMenuInterop.GetUsePopover(Id) : usePopover;
+	[Parameter]
+	bool? UsePopover {
+		get => isInitialized ? DevExpress.Ui.DxDropDownMenuInterop.GetUsePopover(dxTarget) : usePopover;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDropDownMenuInterop.SetUsePopover(Id, value);
+				DevExpress.Ui.DxDropDownMenuInterop.SetUsePopover(dxTarget, value);
 			} else {
 				this.usePopover = value;
 			}
 		}
 	}
 	bool? onButtonClickEnabled;
-	public bool? OnButtonClickEnabled {
+	[Parameter]
+	bool? OnButtonClickEnabled {
 		get => onButtonClickEnabled;
 		set => this.onButtonClickEnabled = value;
 	}
 	bool? onItemClickEnabled;
-	public bool? OnItemClickEnabled {
+	[Parameter]
+	bool? OnItemClickEnabled {
 		get => onItemClickEnabled;
 		set => this.onItemClickEnabled = value;
 	}
@@ -161,23 +177,25 @@
 		DevExpress.Ui.DxDropDownMenuInterop.ButtonClick += DxDropDownMenu_ButtonClick;
 		DevExpress.Ui.DxDropDownMenuInterop.ItemClick += DxDropDownMenu_ItemClick;
 	}
-	public Action ButtonClick { get; set; }
+	[Parameter]
+	Action ButtonClick { get; set; }
 	void DxDropDownMenu_ButtonClick(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ButtonClick?.Invoke();
 		}
 	}
-	public Action ItemClick { get; set; }
+	[Parameter]
+	Action ItemClick { get; set; }
 	void DxDropDownMenu_ItemClick(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ItemClick?.Invoke();
 		}
 	}
 	public void Close() {
-		DevExpress.Ui.DxDropDownMenuInterop.Close(Id);
+		DevExpress.Ui.DxDropDownMenuInterop.Close(dxTarget);
 	}
 	public void Open() {
-		DevExpress.Ui.DxDropDownMenuInterop.Open(Id);
+		DevExpress.Ui.DxDropDownMenuInterop.Open(dxTarget);
 	}
 	public void Dispose() {
 		DevExpress.Ui.DxDropDownMenuInterop.ButtonClick -= DxDropDownMenu_ButtonClick;

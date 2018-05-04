@@ -1,25 +1,28 @@
+@using Microsoft.AspNetCore.Blazor.Components
+@using Microsoft.AspNetCore.Blazor
 @implements IDisposable
 @inherits DxBlazorCompoment<DevExpress.Ui.DxValidationGroupOptions>
 
-<div id="@Id"></div>
+<div id="@Id" ref="dxTarget"></div>
 
 @functions {
+	ElementRef dxTarget;
 	public DxValidationGroup() : base("DxValidationGroup") { }
 	protected override DevExpress.Ui.DxValidationGroupOptions CreateOptions() {
 		return new DevExpress.Ui.DxValidationGroupOptions {
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxValidationGroupOptions options) {
-		DevExpress.Ui.DxValidationGroupInterop.Init(Id, options);
+		DevExpress.Ui.DxValidationGroupInterop.Init(dxTarget, options);
 	}
 	protected override async Task OnInitAsync() {
 		await base.OnInitAsync();
 	}
 	public void Reset() {
-		DevExpress.Ui.DxValidationGroupInterop.Reset(Id);
+		DevExpress.Ui.DxValidationGroupInterop.Reset(dxTarget);
 	}
 	public object Validate() {
-		return DevExpress.Ui.DxValidationGroupInterop.Validate(Id);
+		return DevExpress.Ui.DxValidationGroupInterop.Validate(dxTarget);
 	}
 	public void Dispose() {
 	}

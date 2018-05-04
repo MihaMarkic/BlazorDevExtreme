@@ -1,9 +1,12 @@
+@using Microsoft.AspNetCore.Blazor.Components
+@using Microsoft.AspNetCore.Blazor
 @implements IDisposable
 @inherits DxBlazorCompoment<DevExpress.Ui.DxSelectBoxOptions>
 
-<div id="@Id"></div>
+<div id="@Id" ref="dxTarget"></div>
 
 @functions {
+	ElementRef dxTarget;
 	public DxSelectBox() : base("DxSelectBox") { }
 	protected override DevExpress.Ui.DxSelectBoxOptions CreateOptions() {
 		return new DevExpress.Ui.DxSelectBoxOptions {
@@ -16,65 +19,71 @@
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxSelectBoxOptions options) {
-		DevExpress.Ui.DxSelectBoxInterop.Init(Id, options);
+		DevExpress.Ui.DxSelectBoxInterop.Init(dxTarget, options);
 	}
 	bool? acceptCustomValue;
-	public bool? AcceptCustomValue {
-		get => isInitialized ? DevExpress.Ui.DxSelectBoxInterop.GetAcceptCustomValue(Id) : acceptCustomValue;
+	[Parameter]
+	bool? AcceptCustomValue {
+		get => isInitialized ? DevExpress.Ui.DxSelectBoxInterop.GetAcceptCustomValue(dxTarget) : acceptCustomValue;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSelectBoxInterop.SetAcceptCustomValue(Id, value);
+				DevExpress.Ui.DxSelectBoxInterop.SetAcceptCustomValue(dxTarget, value);
 			} else {
 				this.acceptCustomValue = value;
 			}
 		}
 	}
 	object fieldTemplate;
-	public object FieldTemplate {
-		get => isInitialized ? DevExpress.Ui.DxSelectBoxInterop.GetFieldTemplate(Id) : fieldTemplate;
+	[Parameter]
+	object FieldTemplate {
+		get => isInitialized ? DevExpress.Ui.DxSelectBoxInterop.GetFieldTemplate(dxTarget) : fieldTemplate;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSelectBoxInterop.SetFieldTemplate(Id, value);
+				DevExpress.Ui.DxSelectBoxInterop.SetFieldTemplate(dxTarget, value);
 			} else {
 				this.fieldTemplate = value;
 			}
 		}
 	}
 	string placeholder;
-	public string Placeholder {
-		get => isInitialized ? DevExpress.Ui.DxSelectBoxInterop.GetPlaceholder(Id) : placeholder;
+	[Parameter]
+	string Placeholder {
+		get => isInitialized ? DevExpress.Ui.DxSelectBoxInterop.GetPlaceholder(dxTarget) : placeholder;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSelectBoxInterop.SetPlaceholder(Id, value);
+				DevExpress.Ui.DxSelectBoxInterop.SetPlaceholder(dxTarget, value);
 			} else {
 				this.placeholder = value;
 			}
 		}
 	}
 	bool? showSelectionControls;
-	public bool? ShowSelectionControls {
-		get => isInitialized ? DevExpress.Ui.DxSelectBoxInterop.GetShowSelectionControls(Id) : showSelectionControls;
+	[Parameter]
+	bool? ShowSelectionControls {
+		get => isInitialized ? DevExpress.Ui.DxSelectBoxInterop.GetShowSelectionControls(dxTarget) : showSelectionControls;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSelectBoxInterop.SetShowSelectionControls(Id, value);
+				DevExpress.Ui.DxSelectBoxInterop.SetShowSelectionControls(dxTarget, value);
 			} else {
 				this.showSelectionControls = value;
 			}
 		}
 	}
 	string valueChangeEvent;
-	public string ValueChangeEvent {
-		get => isInitialized ? DevExpress.Ui.DxSelectBoxInterop.GetValueChangeEvent(Id) : valueChangeEvent;
+	[Parameter]
+	string ValueChangeEvent {
+		get => isInitialized ? DevExpress.Ui.DxSelectBoxInterop.GetValueChangeEvent(dxTarget) : valueChangeEvent;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSelectBoxInterop.SetValueChangeEvent(Id, value);
+				DevExpress.Ui.DxSelectBoxInterop.SetValueChangeEvent(dxTarget, value);
 			} else {
 				this.valueChangeEvent = value;
 			}
 		}
 	}
 	bool? onCustomItemCreatingEnabled;
-	public bool? OnCustomItemCreatingEnabled {
+	[Parameter]
+	bool? OnCustomItemCreatingEnabled {
 		get => onCustomItemCreatingEnabled;
 		set => this.onCustomItemCreatingEnabled = value;
 	}
@@ -82,7 +91,8 @@
 		await base.OnInitAsync();
 		DevExpress.Ui.DxSelectBoxInterop.CustomItemCreating += DxSelectBox_CustomItemCreating;
 	}
-	public Action CustomItemCreating { get; set; }
+	[Parameter]
+	Action CustomItemCreating { get; set; }
 	void DxSelectBox_CustomItemCreating(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			CustomItemCreating?.Invoke();

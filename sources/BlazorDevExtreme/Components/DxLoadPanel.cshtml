@@ -1,9 +1,12 @@
+@using Microsoft.AspNetCore.Blazor.Components
+@using Microsoft.AspNetCore.Blazor
 @implements IDisposable
 @inherits DxBlazorCompoment<DevExpress.Ui.DxLoadPanelOptions>
 
-<div id="@Id"></div>
+<div id="@Id" ref="dxTarget"></div>
 
 @functions {
+	ElementRef dxTarget;
 	public DxLoadPanel() : base("DxLoadPanel") { }
 	protected override DevExpress.Ui.DxLoadPanelOptions CreateOptions() {
 		return new DevExpress.Ui.DxLoadPanelOptions {
@@ -21,124 +24,135 @@
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxLoadPanelOptions options) {
-		DevExpress.Ui.DxLoadPanelInterop.Init(Id, options);
+		DevExpress.Ui.DxLoadPanelInterop.Init(dxTarget, options);
 	}
 	object animation;
-	public object Animation {
-		get => isInitialized ? DevExpress.Ui.DxLoadPanelInterop.GetAnimation(Id) : animation;
+	[Parameter]
+	object Animation {
+		get => isInitialized ? DevExpress.Ui.DxLoadPanelInterop.GetAnimation(dxTarget) : animation;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxLoadPanelInterop.SetAnimation(Id, value);
+				DevExpress.Ui.DxLoadPanelInterop.SetAnimation(dxTarget, value);
 			} else {
 				this.animation = value;
 			}
 		}
 	}
 	float? delay;
-	public float? Delay {
-		get => isInitialized ? DevExpress.Ui.DxLoadPanelInterop.GetDelay(Id) : delay;
+	[Parameter]
+	float? Delay {
+		get => isInitialized ? DevExpress.Ui.DxLoadPanelInterop.GetDelay(dxTarget) : delay;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxLoadPanelInterop.SetDelay(Id, value);
+				DevExpress.Ui.DxLoadPanelInterop.SetDelay(dxTarget, value);
 			} else {
 				this.delay = value;
 			}
 		}
 	}
 	bool? focusStateEnabled;
-	public bool? FocusStateEnabled {
-		get => isInitialized ? DevExpress.Ui.DxLoadPanelInterop.GetFocusStateEnabled(Id) : focusStateEnabled;
+	[Parameter]
+	bool? FocusStateEnabled {
+		get => isInitialized ? DevExpress.Ui.DxLoadPanelInterop.GetFocusStateEnabled(dxTarget) : focusStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxLoadPanelInterop.SetFocusStateEnabled(Id, value);
+				DevExpress.Ui.DxLoadPanelInterop.SetFocusStateEnabled(dxTarget, value);
 			} else {
 				this.focusStateEnabled = value;
 			}
 		}
 	}
 	float? height;
-	public float? Height {
-		get => isInitialized ? DevExpress.Ui.DxLoadPanelInterop.GetHeight(Id) : height;
+	[Parameter]
+	float? Height {
+		get => isInitialized ? DevExpress.Ui.DxLoadPanelInterop.GetHeight(dxTarget) : height;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxLoadPanelInterop.SetHeight(Id, value);
+				DevExpress.Ui.DxLoadPanelInterop.SetHeight(dxTarget, value);
 			} else {
 				this.height = value;
 			}
 		}
 	}
 	string indicatorSrc;
-	public string IndicatorSrc {
-		get => isInitialized ? DevExpress.Ui.DxLoadPanelInterop.GetIndicatorSrc(Id) : indicatorSrc;
+	[Parameter]
+	string IndicatorSrc {
+		get => isInitialized ? DevExpress.Ui.DxLoadPanelInterop.GetIndicatorSrc(dxTarget) : indicatorSrc;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxLoadPanelInterop.SetIndicatorSrc(Id, value);
+				DevExpress.Ui.DxLoadPanelInterop.SetIndicatorSrc(dxTarget, value);
 			} else {
 				this.indicatorSrc = value;
 			}
 		}
 	}
 	string message;
-	public string Message {
-		get => isInitialized ? DevExpress.Ui.DxLoadPanelInterop.GetMessage(Id) : message;
+	[Parameter]
+	string Message {
+		get => isInitialized ? DevExpress.Ui.DxLoadPanelInterop.GetMessage(dxTarget) : message;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxLoadPanelInterop.SetMessage(Id, value);
+				DevExpress.Ui.DxLoadPanelInterop.SetMessage(dxTarget, value);
 			} else {
 				this.message = value;
 			}
 		}
 	}
 	object position;
-	public object Position {
-		get => isInitialized ? DevExpress.Ui.DxLoadPanelInterop.GetPosition(Id) : position;
+	[Parameter]
+	object Position {
+		get => isInitialized ? DevExpress.Ui.DxLoadPanelInterop.GetPosition(dxTarget) : position;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxLoadPanelInterop.SetPosition(Id, value);
+				DevExpress.Ui.DxLoadPanelInterop.SetPosition(dxTarget, value);
 			} else {
 				this.position = value;
 			}
 		}
 	}
 	string shadingColor;
-	public string ShadingColor {
-		get => isInitialized ? DevExpress.Ui.DxLoadPanelInterop.GetShadingColor(Id) : shadingColor;
+	[Parameter]
+	string ShadingColor {
+		get => isInitialized ? DevExpress.Ui.DxLoadPanelInterop.GetShadingColor(dxTarget) : shadingColor;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxLoadPanelInterop.SetShadingColor(Id, value);
+				DevExpress.Ui.DxLoadPanelInterop.SetShadingColor(dxTarget, value);
 			} else {
 				this.shadingColor = value;
 			}
 		}
 	}
 	bool? showIndicator;
-	public bool? ShowIndicator {
-		get => isInitialized ? DevExpress.Ui.DxLoadPanelInterop.GetShowIndicator(Id) : showIndicator;
+	[Parameter]
+	bool? ShowIndicator {
+		get => isInitialized ? DevExpress.Ui.DxLoadPanelInterop.GetShowIndicator(dxTarget) : showIndicator;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxLoadPanelInterop.SetShowIndicator(Id, value);
+				DevExpress.Ui.DxLoadPanelInterop.SetShowIndicator(dxTarget, value);
 			} else {
 				this.showIndicator = value;
 			}
 		}
 	}
 	bool? showPane;
-	public bool? ShowPane {
-		get => isInitialized ? DevExpress.Ui.DxLoadPanelInterop.GetShowPane(Id) : showPane;
+	[Parameter]
+	bool? ShowPane {
+		get => isInitialized ? DevExpress.Ui.DxLoadPanelInterop.GetShowPane(dxTarget) : showPane;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxLoadPanelInterop.SetShowPane(Id, value);
+				DevExpress.Ui.DxLoadPanelInterop.SetShowPane(dxTarget, value);
 			} else {
 				this.showPane = value;
 			}
 		}
 	}
 	float? width;
-	public float? Width {
-		get => isInitialized ? DevExpress.Ui.DxLoadPanelInterop.GetWidth(Id) : width;
+	[Parameter]
+	float? Width {
+		get => isInitialized ? DevExpress.Ui.DxLoadPanelInterop.GetWidth(dxTarget) : width;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxLoadPanelInterop.SetWidth(Id, value);
+				DevExpress.Ui.DxLoadPanelInterop.SetWidth(dxTarget, value);
 			} else {
 				this.width = value;
 			}

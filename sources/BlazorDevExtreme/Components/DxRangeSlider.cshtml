@@ -1,9 +1,12 @@
+@using Microsoft.AspNetCore.Blazor.Components
+@using Microsoft.AspNetCore.Blazor
 @implements IDisposable
 @inherits DxBlazorCompoment<DevExpress.Ui.DxRangeSliderOptions>
 
-<div id="@Id"></div>
+<div id="@Id" ref="dxTarget"></div>
 
 @functions {
+	ElementRef dxTarget;
 	public DxRangeSlider() : base("DxRangeSlider") { }
 	protected override DevExpress.Ui.DxRangeSliderOptions CreateOptions() {
 		return new DevExpress.Ui.DxRangeSliderOptions {
@@ -16,65 +19,71 @@
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxRangeSliderOptions options) {
-		DevExpress.Ui.DxRangeSliderInterop.Init(Id, options);
+		DevExpress.Ui.DxRangeSliderInterop.Init(dxTarget, options);
 	}
 	float? end;
-	public float? End {
-		get => isInitialized ? DevExpress.Ui.DxRangeSliderInterop.GetEnd(Id) : end;
+	[Parameter]
+	float? End {
+		get => isInitialized ? DevExpress.Ui.DxRangeSliderInterop.GetEnd(dxTarget) : end;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxRangeSliderInterop.SetEnd(Id, value);
+				DevExpress.Ui.DxRangeSliderInterop.SetEnd(dxTarget, value);
 			} else {
 				this.end = value;
 			}
 		}
 	}
 	string endName;
-	public string EndName {
-		get => isInitialized ? DevExpress.Ui.DxRangeSliderInterop.GetEndName(Id) : endName;
+	[Parameter]
+	string EndName {
+		get => isInitialized ? DevExpress.Ui.DxRangeSliderInterop.GetEndName(dxTarget) : endName;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxRangeSliderInterop.SetEndName(Id, value);
+				DevExpress.Ui.DxRangeSliderInterop.SetEndName(dxTarget, value);
 			} else {
 				this.endName = value;
 			}
 		}
 	}
 	float? start;
-	public float? Start {
-		get => isInitialized ? DevExpress.Ui.DxRangeSliderInterop.GetStart(Id) : start;
+	[Parameter]
+	float? Start {
+		get => isInitialized ? DevExpress.Ui.DxRangeSliderInterop.GetStart(dxTarget) : start;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxRangeSliderInterop.SetStart(Id, value);
+				DevExpress.Ui.DxRangeSliderInterop.SetStart(dxTarget, value);
 			} else {
 				this.start = value;
 			}
 		}
 	}
 	string startName;
-	public string StartName {
-		get => isInitialized ? DevExpress.Ui.DxRangeSliderInterop.GetStartName(Id) : startName;
+	[Parameter]
+	string StartName {
+		get => isInitialized ? DevExpress.Ui.DxRangeSliderInterop.GetStartName(dxTarget) : startName;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxRangeSliderInterop.SetStartName(Id, value);
+				DevExpress.Ui.DxRangeSliderInterop.SetStartName(dxTarget, value);
 			} else {
 				this.startName = value;
 			}
 		}
 	}
 	object value;
-	public object Value {
-		get => isInitialized ? DevExpress.Ui.DxRangeSliderInterop.GetValue(Id) : value;
+	[Parameter]
+	object Value {
+		get => isInitialized ? DevExpress.Ui.DxRangeSliderInterop.GetValue(dxTarget) : value;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxRangeSliderInterop.SetValue(Id, value);
+				DevExpress.Ui.DxRangeSliderInterop.SetValue(dxTarget, value);
 			} else {
 				this.value = value;
 			}
 		}
 	}
 	bool? onValueChangedEnabled;
-	public bool? OnValueChangedEnabled {
+	[Parameter]
+	bool? OnValueChangedEnabled {
 		get => onValueChangedEnabled;
 		set => this.onValueChangedEnabled = value;
 	}
@@ -82,14 +91,15 @@
 		await base.OnInitAsync();
 		DevExpress.Ui.DxRangeSliderInterop.ValueChanged += DxRangeSlider_ValueChanged;
 	}
-	public Action ValueChanged { get; set; }
+	[Parameter]
+	Action ValueChanged { get; set; }
 	void DxRangeSlider_ValueChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ValueChanged?.Invoke();
 		}
 	}
 	public void Reset() {
-		DevExpress.Ui.DxRangeSliderInterop.Reset(Id);
+		DevExpress.Ui.DxRangeSliderInterop.Reset(dxTarget);
 	}
 	public void Dispose() {
 		DevExpress.Ui.DxRangeSliderInterop.ValueChanged -= DxRangeSlider_ValueChanged;

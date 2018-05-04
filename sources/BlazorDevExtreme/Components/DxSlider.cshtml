@@ -1,9 +1,12 @@
+@using Microsoft.AspNetCore.Blazor.Components
+@using Microsoft.AspNetCore.Blazor
 @implements IDisposable
 @inherits DxBlazorCompoment<DevExpress.Ui.DxSliderOptions>
 
-<div id="@Id"></div>
+<div id="@Id" ref="dxTarget"></div>
 
 @functions {
+	ElementRef dxTarget;
 	public DxSlider() : base("DxSlider") { }
 	protected override DevExpress.Ui.DxSliderOptions CreateOptions() {
 		return new DevExpress.Ui.DxSliderOptions {
@@ -11,14 +14,15 @@
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxSliderOptions options) {
-		DevExpress.Ui.DxSliderInterop.Init(Id, options);
+		DevExpress.Ui.DxSliderInterop.Init(dxTarget, options);
 	}
 	float? value;
-	public float? Value {
-		get => isInitialized ? DevExpress.Ui.DxSliderInterop.GetValue(Id) : value;
+	[Parameter]
+	float? Value {
+		get => isInitialized ? DevExpress.Ui.DxSliderInterop.GetValue(dxTarget) : value;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSliderInterop.SetValue(Id, value);
+				DevExpress.Ui.DxSliderInterop.SetValue(dxTarget, value);
 			} else {
 				this.value = value;
 			}

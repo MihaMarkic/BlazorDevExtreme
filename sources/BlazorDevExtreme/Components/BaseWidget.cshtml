@@ -1,9 +1,12 @@
+@using Microsoft.AspNetCore.Blazor.Components
+@using Microsoft.AspNetCore.Blazor
 @implements IDisposable
 @inherits DxBlazorCompoment<DevExpress.Viz.BaseWidgetOptions>
 
-<div id="@Id"></div>
+<div id="@Id" ref="dxTarget"></div>
 
 @functions {
+	ElementRef dxTarget;
 	public BaseWidget() : base("BaseWidget") { }
 	protected override DevExpress.Viz.BaseWidgetOptions CreateOptions() {
 		return new DevExpress.Viz.BaseWidgetOptions {
@@ -25,140 +28,155 @@
 		};
 	}
 	protected override void Init(DevExpress.Viz.BaseWidgetOptions options) {
-		DevExpress.Viz.BaseWidgetInterop.Init(Id, options);
+		DevExpress.Viz.BaseWidgetInterop.Init(dxTarget, options);
 	}
 	object export;
-	public object Export {
-		get => isInitialized ? DevExpress.Viz.BaseWidgetInterop.GetExport(Id) : export;
+	[Parameter]
+	object Export {
+		get => isInitialized ? DevExpress.Viz.BaseWidgetInterop.GetExport(dxTarget) : export;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.BaseWidgetInterop.SetExport(Id, value);
+				DevExpress.Viz.BaseWidgetInterop.SetExport(dxTarget, value);
 			} else {
 				this.export = value;
 			}
 		}
 	}
 	object loadingIndicator;
-	public object LoadingIndicator {
-		get => isInitialized ? DevExpress.Viz.BaseWidgetInterop.GetLoadingIndicator(Id) : loadingIndicator;
+	[Parameter]
+	object LoadingIndicator {
+		get => isInitialized ? DevExpress.Viz.BaseWidgetInterop.GetLoadingIndicator(dxTarget) : loadingIndicator;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.BaseWidgetInterop.SetLoadingIndicator(Id, value);
+				DevExpress.Viz.BaseWidgetInterop.SetLoadingIndicator(dxTarget, value);
 			} else {
 				this.loadingIndicator = value;
 			}
 		}
 	}
 	object margin;
-	public object Margin {
-		get => isInitialized ? DevExpress.Viz.BaseWidgetInterop.GetMargin(Id) : margin;
+	[Parameter]
+	object Margin {
+		get => isInitialized ? DevExpress.Viz.BaseWidgetInterop.GetMargin(dxTarget) : margin;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.BaseWidgetInterop.SetMargin(Id, value);
+				DevExpress.Viz.BaseWidgetInterop.SetMargin(dxTarget, value);
 			} else {
 				this.margin = value;
 			}
 		}
 	}
 	bool? pathModified;
-	public bool? PathModified {
-		get => isInitialized ? DevExpress.Viz.BaseWidgetInterop.GetPathModified(Id) : pathModified;
+	[Parameter]
+	bool? PathModified {
+		get => isInitialized ? DevExpress.Viz.BaseWidgetInterop.GetPathModified(dxTarget) : pathModified;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.BaseWidgetInterop.SetPathModified(Id, value);
+				DevExpress.Viz.BaseWidgetInterop.SetPathModified(dxTarget, value);
 			} else {
 				this.pathModified = value;
 			}
 		}
 	}
 	bool? redrawOnResize;
-	public bool? RedrawOnResize {
-		get => isInitialized ? DevExpress.Viz.BaseWidgetInterop.GetRedrawOnResize(Id) : redrawOnResize;
+	[Parameter]
+	bool? RedrawOnResize {
+		get => isInitialized ? DevExpress.Viz.BaseWidgetInterop.GetRedrawOnResize(dxTarget) : redrawOnResize;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.BaseWidgetInterop.SetRedrawOnResize(Id, value);
+				DevExpress.Viz.BaseWidgetInterop.SetRedrawOnResize(dxTarget, value);
 			} else {
 				this.redrawOnResize = value;
 			}
 		}
 	}
 	bool? rtlEnabled;
-	public bool? RtlEnabled {
-		get => isInitialized ? DevExpress.Viz.BaseWidgetInterop.GetRtlEnabled(Id) : rtlEnabled;
+	[Parameter]
+	bool? RtlEnabled {
+		get => isInitialized ? DevExpress.Viz.BaseWidgetInterop.GetRtlEnabled(dxTarget) : rtlEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.BaseWidgetInterop.SetRtlEnabled(Id, value);
+				DevExpress.Viz.BaseWidgetInterop.SetRtlEnabled(dxTarget, value);
 			} else {
 				this.rtlEnabled = value;
 			}
 		}
 	}
 	object size;
-	public object Size {
-		get => isInitialized ? DevExpress.Viz.BaseWidgetInterop.GetSize(Id) : size;
+	[Parameter]
+	object Size {
+		get => isInitialized ? DevExpress.Viz.BaseWidgetInterop.GetSize(dxTarget) : size;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.BaseWidgetInterop.SetSize(Id, value);
+				DevExpress.Viz.BaseWidgetInterop.SetSize(dxTarget, value);
 			} else {
 				this.size = value;
 			}
 		}
 	}
 	string theme;
-	public string Theme {
-		get => isInitialized ? DevExpress.Viz.BaseWidgetInterop.GetTheme(Id) : theme;
+	[Parameter]
+	string Theme {
+		get => isInitialized ? DevExpress.Viz.BaseWidgetInterop.GetTheme(dxTarget) : theme;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.BaseWidgetInterop.SetTheme(Id, value);
+				DevExpress.Viz.BaseWidgetInterop.SetTheme(dxTarget, value);
 			} else {
 				this.theme = value;
 			}
 		}
 	}
 	object title;
-	public object Title {
-		get => isInitialized ? DevExpress.Viz.BaseWidgetInterop.GetTitle(Id) : title;
+	[Parameter]
+	object Title {
+		get => isInitialized ? DevExpress.Viz.BaseWidgetInterop.GetTitle(dxTarget) : title;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.BaseWidgetInterop.SetTitle(Id, value);
+				DevExpress.Viz.BaseWidgetInterop.SetTitle(dxTarget, value);
 			} else {
 				this.title = value;
 			}
 		}
 	}
 	object tooltip;
-	public object Tooltip {
-		get => isInitialized ? DevExpress.Viz.BaseWidgetInterop.GetTooltip(Id) : tooltip;
+	[Parameter]
+	object Tooltip {
+		get => isInitialized ? DevExpress.Viz.BaseWidgetInterop.GetTooltip(dxTarget) : tooltip;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.BaseWidgetInterop.SetTooltip(Id, value);
+				DevExpress.Viz.BaseWidgetInterop.SetTooltip(dxTarget, value);
 			} else {
 				this.tooltip = value;
 			}
 		}
 	}
 	bool? onDrawnEnabled;
-	public bool? OnDrawnEnabled {
+	[Parameter]
+	bool? OnDrawnEnabled {
 		get => onDrawnEnabled;
 		set => this.onDrawnEnabled = value;
 	}
 	bool? onExportedEnabled;
-	public bool? OnExportedEnabled {
+	[Parameter]
+	bool? OnExportedEnabled {
 		get => onExportedEnabled;
 		set => this.onExportedEnabled = value;
 	}
 	bool? onExportingEnabled;
-	public bool? OnExportingEnabled {
+	[Parameter]
+	bool? OnExportingEnabled {
 		get => onExportingEnabled;
 		set => this.onExportingEnabled = value;
 	}
 	bool? onFileSavingEnabled;
-	public bool? OnFileSavingEnabled {
+	[Parameter]
+	bool? OnFileSavingEnabled {
 		get => onFileSavingEnabled;
 		set => this.onFileSavingEnabled = value;
 	}
 	bool? onIncidentOccurredEnabled;
-	public bool? OnIncidentOccurredEnabled {
+	[Parameter]
+	bool? OnIncidentOccurredEnabled {
 		get => onIncidentOccurredEnabled;
 		set => this.onIncidentOccurredEnabled = value;
 	}
@@ -170,56 +188,61 @@
 		DevExpress.Viz.BaseWidgetInterop.FileSaving += BaseWidget_FileSaving;
 		DevExpress.Viz.BaseWidgetInterop.IncidentOccurred += BaseWidget_IncidentOccurred;
 	}
-	public Action Drawn { get; set; }
+	[Parameter]
+	Action Drawn { get; set; }
 	void BaseWidget_Drawn(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Drawn?.Invoke();
 		}
 	}
-	public Action Exported { get; set; }
+	[Parameter]
+	Action Exported { get; set; }
 	void BaseWidget_Exported(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Exported?.Invoke();
 		}
 	}
-	public Action Exporting { get; set; }
+	[Parameter]
+	Action Exporting { get; set; }
 	void BaseWidget_Exporting(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Exporting?.Invoke();
 		}
 	}
-	public Action FileSaving { get; set; }
+	[Parameter]
+	Action FileSaving { get; set; }
 	void BaseWidget_FileSaving(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			FileSaving?.Invoke();
 		}
 	}
-	public Action IncidentOccurred { get; set; }
+	[Parameter]
+	Action IncidentOccurred { get; set; }
 	void BaseWidget_IncidentOccurred(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			IncidentOccurred?.Invoke();
 		}
 	}
 	public void ExportTo(string fileName, string format) {
-		DevExpress.Viz.BaseWidgetInterop.ExportTo(Id, fileName, format);
+		DevExpress.Viz.BaseWidgetInterop.ExportTo(dxTarget, fileName, format);
 	}
 	public object GetSizeEx() {
-		return DevExpress.Viz.BaseWidgetInterop.GetSizeEx(Id);
+		return DevExpress.Viz.BaseWidgetInterop.GetSizeEx(dxTarget);
 	}
 	public void HideLoadingIndicator() {
-		DevExpress.Viz.BaseWidgetInterop.HideLoadingIndicator(Id);
+		DevExpress.Viz.BaseWidgetInterop.HideLoadingIndicator(dxTarget);
 	}
 	public void Print() {
-		DevExpress.Viz.BaseWidgetInterop.Print(Id);
+		DevExpress.Viz.BaseWidgetInterop.Print(dxTarget);
 	}
 	public void Render() {
-		DevExpress.Viz.BaseWidgetInterop.Render(Id);
+		DevExpress.Viz.BaseWidgetInterop.Render(dxTarget);
 	}
 	public void ShowLoadingIndicator() {
-		DevExpress.Viz.BaseWidgetInterop.ShowLoadingIndicator(Id);
+		DevExpress.Viz.BaseWidgetInterop.ShowLoadingIndicator(dxTarget);
 	}
 	public string Svg() {
-		return DevExpress.Viz.BaseWidgetInterop.Svg(Id);
+		return DevExpress.Viz.BaseWidgetInterop.Svg(dxTarget);
 	}
 	public void Dispose() {
 		DevExpress.Viz.BaseWidgetInterop.Drawn -= BaseWidget_Drawn;

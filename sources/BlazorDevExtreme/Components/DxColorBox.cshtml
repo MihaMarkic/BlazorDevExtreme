@@ -1,9 +1,12 @@
+@using Microsoft.AspNetCore.Blazor.Components
+@using Microsoft.AspNetCore.Blazor
 @implements IDisposable
 @inherits DxBlazorCompoment<DevExpress.Ui.DxColorBoxOptions>
 
-<div id="@Id"></div>
+<div id="@Id" ref="dxTarget"></div>
 
 @functions {
+	ElementRef dxTarget;
 	public DxColorBox() : base("DxColorBox") { }
 	protected override DevExpress.Ui.DxColorBoxOptions CreateOptions() {
 		return new DevExpress.Ui.DxColorBoxOptions {
@@ -17,80 +20,87 @@
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxColorBoxOptions options) {
-		DevExpress.Ui.DxColorBoxInterop.Init(Id, options);
+		DevExpress.Ui.DxColorBoxInterop.Init(dxTarget, options);
 	}
 	string applyButtonText;
-	public string ApplyButtonText {
-		get => isInitialized ? DevExpress.Ui.DxColorBoxInterop.GetApplyButtonText(Id) : applyButtonText;
+	[Parameter]
+	string ApplyButtonText {
+		get => isInitialized ? DevExpress.Ui.DxColorBoxInterop.GetApplyButtonText(dxTarget) : applyButtonText;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxColorBoxInterop.SetApplyButtonText(Id, value);
+				DevExpress.Ui.DxColorBoxInterop.SetApplyButtonText(dxTarget, value);
 			} else {
 				this.applyButtonText = value;
 			}
 		}
 	}
 	string applyValueMode;
-	public string ApplyValueMode {
-		get => isInitialized ? DevExpress.Ui.DxColorBoxInterop.GetApplyValueMode(Id) : applyValueMode;
+	[Parameter]
+	string ApplyValueMode {
+		get => isInitialized ? DevExpress.Ui.DxColorBoxInterop.GetApplyValueMode(dxTarget) : applyValueMode;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxColorBoxInterop.SetApplyValueMode(Id, value);
+				DevExpress.Ui.DxColorBoxInterop.SetApplyValueMode(dxTarget, value);
 			} else {
 				this.applyValueMode = value;
 			}
 		}
 	}
 	string cancelButtonText;
-	public string CancelButtonText {
-		get => isInitialized ? DevExpress.Ui.DxColorBoxInterop.GetCancelButtonText(Id) : cancelButtonText;
+	[Parameter]
+	string CancelButtonText {
+		get => isInitialized ? DevExpress.Ui.DxColorBoxInterop.GetCancelButtonText(dxTarget) : cancelButtonText;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxColorBoxInterop.SetCancelButtonText(Id, value);
+				DevExpress.Ui.DxColorBoxInterop.SetCancelButtonText(dxTarget, value);
 			} else {
 				this.cancelButtonText = value;
 			}
 		}
 	}
 	bool? editAlphaChannel;
-	public bool? EditAlphaChannel {
-		get => isInitialized ? DevExpress.Ui.DxColorBoxInterop.GetEditAlphaChannel(Id) : editAlphaChannel;
+	[Parameter]
+	bool? EditAlphaChannel {
+		get => isInitialized ? DevExpress.Ui.DxColorBoxInterop.GetEditAlphaChannel(dxTarget) : editAlphaChannel;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxColorBoxInterop.SetEditAlphaChannel(Id, value);
+				DevExpress.Ui.DxColorBoxInterop.SetEditAlphaChannel(dxTarget, value);
 			} else {
 				this.editAlphaChannel = value;
 			}
 		}
 	}
 	object fieldTemplate;
-	public object FieldTemplate {
-		get => isInitialized ? DevExpress.Ui.DxColorBoxInterop.GetFieldTemplate(Id) : fieldTemplate;
+	[Parameter]
+	object FieldTemplate {
+		get => isInitialized ? DevExpress.Ui.DxColorBoxInterop.GetFieldTemplate(dxTarget) : fieldTemplate;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxColorBoxInterop.SetFieldTemplate(Id, value);
+				DevExpress.Ui.DxColorBoxInterop.SetFieldTemplate(dxTarget, value);
 			} else {
 				this.fieldTemplate = value;
 			}
 		}
 	}
 	float? keyStep;
-	public float? KeyStep {
-		get => isInitialized ? DevExpress.Ui.DxColorBoxInterop.GetKeyStep(Id) : keyStep;
+	[Parameter]
+	float? KeyStep {
+		get => isInitialized ? DevExpress.Ui.DxColorBoxInterop.GetKeyStep(dxTarget) : keyStep;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxColorBoxInterop.SetKeyStep(Id, value);
+				DevExpress.Ui.DxColorBoxInterop.SetKeyStep(dxTarget, value);
 			} else {
 				this.keyStep = value;
 			}
 		}
 	}
 	string value;
-	public string Value {
-		get => isInitialized ? DevExpress.Ui.DxColorBoxInterop.GetValue(Id) : value;
+	[Parameter]
+	string Value {
+		get => isInitialized ? DevExpress.Ui.DxColorBoxInterop.GetValue(dxTarget) : value;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxColorBoxInterop.SetValue(Id, value);
+				DevExpress.Ui.DxColorBoxInterop.SetValue(dxTarget, value);
 			} else {
 				this.value = value;
 			}

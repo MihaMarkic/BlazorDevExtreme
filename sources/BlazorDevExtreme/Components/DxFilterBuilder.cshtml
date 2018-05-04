@@ -1,9 +1,12 @@
+@using Microsoft.AspNetCore.Blazor.Components
+@using Microsoft.AspNetCore.Blazor
 @implements IDisposable
 @inherits DxBlazorCompoment<DevExpress.Ui.DxFilterBuilderOptions>
 
-<div id="@Id"></div>
+<div id="@Id" ref="dxTarget"></div>
 
 @functions {
+	ElementRef dxTarget;
 	public DxFilterBuilder() : base("DxFilterBuilder") { }
 	protected override DevExpress.Ui.DxFilterBuilderOptions CreateOptions() {
 		return new DevExpress.Ui.DxFilterBuilderOptions {
@@ -19,86 +22,95 @@
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxFilterBuilderOptions options) {
-		DevExpress.Ui.DxFilterBuilderInterop.Init(Id, options);
+		DevExpress.Ui.DxFilterBuilderInterop.Init(dxTarget, options);
 	}
 	bool? allowHierarchicalFields;
-	public bool? AllowHierarchicalFields {
-		get => isInitialized ? DevExpress.Ui.DxFilterBuilderInterop.GetAllowHierarchicalFields(Id) : allowHierarchicalFields;
+	[Parameter]
+	bool? AllowHierarchicalFields {
+		get => isInitialized ? DevExpress.Ui.DxFilterBuilderInterop.GetAllowHierarchicalFields(dxTarget) : allowHierarchicalFields;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFilterBuilderInterop.SetAllowHierarchicalFields(Id, value);
+				DevExpress.Ui.DxFilterBuilderInterop.SetAllowHierarchicalFields(dxTarget, value);
 			} else {
 				this.allowHierarchicalFields = value;
 			}
 		}
 	}
 	object customOperations;
-	public object CustomOperations {
-		get => isInitialized ? DevExpress.Ui.DxFilterBuilderInterop.GetCustomOperations(Id) : customOperations;
+	[Parameter]
+	object CustomOperations {
+		get => isInitialized ? DevExpress.Ui.DxFilterBuilderInterop.GetCustomOperations(dxTarget) : customOperations;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFilterBuilderInterop.SetCustomOperations(Id, value);
+				DevExpress.Ui.DxFilterBuilderInterop.SetCustomOperations(dxTarget, value);
 			} else {
 				this.customOperations = value;
 			}
 		}
 	}
 	object fields;
-	public object Fields {
-		get => isInitialized ? DevExpress.Ui.DxFilterBuilderInterop.GetFields(Id) : fields;
+	[Parameter]
+	object Fields {
+		get => isInitialized ? DevExpress.Ui.DxFilterBuilderInterop.GetFields(dxTarget) : fields;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFilterBuilderInterop.SetFields(Id, value);
+				DevExpress.Ui.DxFilterBuilderInterop.SetFields(dxTarget, value);
 			} else {
 				this.fields = value;
 			}
 		}
 	}
 	object filterOperationDescriptions;
-	public object FilterOperationDescriptions {
-		get => isInitialized ? DevExpress.Ui.DxFilterBuilderInterop.GetFilterOperationDescriptions(Id) : filterOperationDescriptions;
+	[Parameter]
+	object FilterOperationDescriptions {
+		get => isInitialized ? DevExpress.Ui.DxFilterBuilderInterop.GetFilterOperationDescriptions(dxTarget) : filterOperationDescriptions;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFilterBuilderInterop.SetFilterOperationDescriptions(Id, value);
+				DevExpress.Ui.DxFilterBuilderInterop.SetFilterOperationDescriptions(dxTarget, value);
 			} else {
 				this.filterOperationDescriptions = value;
 			}
 		}
 	}
 	object groupOperationDescriptions;
-	public object GroupOperationDescriptions {
-		get => isInitialized ? DevExpress.Ui.DxFilterBuilderInterop.GetGroupOperationDescriptions(Id) : groupOperationDescriptions;
+	[Parameter]
+	object GroupOperationDescriptions {
+		get => isInitialized ? DevExpress.Ui.DxFilterBuilderInterop.GetGroupOperationDescriptions(dxTarget) : groupOperationDescriptions;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFilterBuilderInterop.SetGroupOperationDescriptions(Id, value);
+				DevExpress.Ui.DxFilterBuilderInterop.SetGroupOperationDescriptions(dxTarget, value);
 			} else {
 				this.groupOperationDescriptions = value;
 			}
 		}
 	}
 	object value;
-	public object Value {
-		get => isInitialized ? DevExpress.Ui.DxFilterBuilderInterop.GetValue(Id) : value;
+	[Parameter]
+	object Value {
+		get => isInitialized ? DevExpress.Ui.DxFilterBuilderInterop.GetValue(dxTarget) : value;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFilterBuilderInterop.SetValue(Id, value);
+				DevExpress.Ui.DxFilterBuilderInterop.SetValue(dxTarget, value);
 			} else {
 				this.value = value;
 			}
 		}
 	}
 	bool? onEditorPreparedEnabled;
-	public bool? OnEditorPreparedEnabled {
+	[Parameter]
+	bool? OnEditorPreparedEnabled {
 		get => onEditorPreparedEnabled;
 		set => this.onEditorPreparedEnabled = value;
 	}
 	bool? onEditorPreparingEnabled;
-	public bool? OnEditorPreparingEnabled {
+	[Parameter]
+	bool? OnEditorPreparingEnabled {
 		get => onEditorPreparingEnabled;
 		set => this.onEditorPreparingEnabled = value;
 	}
 	bool? onValueChangedEnabled;
-	public bool? OnValueChangedEnabled {
+	[Parameter]
+	bool? OnValueChangedEnabled {
 		get => onValueChangedEnabled;
 		set => this.onValueChangedEnabled = value;
 	}
@@ -108,26 +120,29 @@
 		DevExpress.Ui.DxFilterBuilderInterop.EditorPreparing += DxFilterBuilder_EditorPreparing;
 		DevExpress.Ui.DxFilterBuilderInterop.ValueChanged += DxFilterBuilder_ValueChanged;
 	}
-	public Action EditorPrepared { get; set; }
+	[Parameter]
+	Action EditorPrepared { get; set; }
 	void DxFilterBuilder_EditorPrepared(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			EditorPrepared?.Invoke();
 		}
 	}
-	public Action EditorPreparing { get; set; }
+	[Parameter]
+	Action EditorPreparing { get; set; }
 	void DxFilterBuilder_EditorPreparing(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			EditorPreparing?.Invoke();
 		}
 	}
-	public Action ValueChanged { get; set; }
+	[Parameter]
+	Action ValueChanged { get; set; }
 	void DxFilterBuilder_ValueChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ValueChanged?.Invoke();
 		}
 	}
 	public object GetFilterExpression() {
-		return DevExpress.Ui.DxFilterBuilderInterop.GetFilterExpression(Id);
+		return DevExpress.Ui.DxFilterBuilderInterop.GetFilterExpression(dxTarget);
 	}
 	public void Dispose() {
 		DevExpress.Ui.DxFilterBuilderInterop.EditorPrepared -= DxFilterBuilder_EditorPrepared;

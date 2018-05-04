@@ -1,9 +1,12 @@
+@using Microsoft.AspNetCore.Blazor.Components
+@using Microsoft.AspNetCore.Blazor
 @implements IDisposable
 @inherits DxBlazorCompoment<DevExpress.Ui.DxTextAreaOptions>
 
-<div id="@Id"></div>
+<div id="@Id" ref="dxTarget"></div>
 
 @functions {
+	ElementRef dxTarget;
 	public DxTextArea() : base("DxTextArea") { }
 	protected override DevExpress.Ui.DxTextAreaOptions CreateOptions() {
 		return new DevExpress.Ui.DxTextAreaOptions {
@@ -14,47 +17,51 @@
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxTextAreaOptions options) {
-		DevExpress.Ui.DxTextAreaInterop.Init(Id, options);
+		DevExpress.Ui.DxTextAreaInterop.Init(dxTarget, options);
 	}
 	bool? autoResizeEnabled;
-	public bool? AutoResizeEnabled {
-		get => isInitialized ? DevExpress.Ui.DxTextAreaInterop.GetAutoResizeEnabled(Id) : autoResizeEnabled;
+	[Parameter]
+	bool? AutoResizeEnabled {
+		get => isInitialized ? DevExpress.Ui.DxTextAreaInterop.GetAutoResizeEnabled(dxTarget) : autoResizeEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTextAreaInterop.SetAutoResizeEnabled(Id, value);
+				DevExpress.Ui.DxTextAreaInterop.SetAutoResizeEnabled(dxTarget, value);
 			} else {
 				this.autoResizeEnabled = value;
 			}
 		}
 	}
 	object maxHeight;
-	public object MaxHeight {
-		get => isInitialized ? DevExpress.Ui.DxTextAreaInterop.GetMaxHeight(Id) : maxHeight;
+	[Parameter]
+	object MaxHeight {
+		get => isInitialized ? DevExpress.Ui.DxTextAreaInterop.GetMaxHeight(dxTarget) : maxHeight;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTextAreaInterop.SetMaxHeight(Id, value);
+				DevExpress.Ui.DxTextAreaInterop.SetMaxHeight(dxTarget, value);
 			} else {
 				this.maxHeight = value;
 			}
 		}
 	}
 	object minHeight;
-	public object MinHeight {
-		get => isInitialized ? DevExpress.Ui.DxTextAreaInterop.GetMinHeight(Id) : minHeight;
+	[Parameter]
+	object MinHeight {
+		get => isInitialized ? DevExpress.Ui.DxTextAreaInterop.GetMinHeight(dxTarget) : minHeight;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTextAreaInterop.SetMinHeight(Id, value);
+				DevExpress.Ui.DxTextAreaInterop.SetMinHeight(dxTarget, value);
 			} else {
 				this.minHeight = value;
 			}
 		}
 	}
 	bool? spellcheck;
-	public bool? Spellcheck {
-		get => isInitialized ? DevExpress.Ui.DxTextAreaInterop.GetSpellcheck(Id) : spellcheck;
+	[Parameter]
+	bool? Spellcheck {
+		get => isInitialized ? DevExpress.Ui.DxTextAreaInterop.GetSpellcheck(dxTarget) : spellcheck;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTextAreaInterop.SetSpellcheck(Id, value);
+				DevExpress.Ui.DxTextAreaInterop.SetSpellcheck(dxTarget, value);
 			} else {
 				this.spellcheck = value;
 			}

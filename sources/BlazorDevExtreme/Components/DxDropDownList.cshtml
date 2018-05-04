@@ -1,9 +1,12 @@
+@using Microsoft.AspNetCore.Blazor.Components
+@using Microsoft.AspNetCore.Blazor
 @implements IDisposable
 @inherits DxBlazorCompoment<DevExpress.Ui.DxDropDownListOptions>
 
-<div id="@Id"></div>
+<div id="@Id" ref="dxTarget"></div>
 
 @functions {
+	ElementRef dxTarget;
 	public DxDropDownList() : base("DxDropDownList") { }
 	protected override DevExpress.Ui.DxDropDownListOptions CreateOptions() {
 		return new DevExpress.Ui.DxDropDownListOptions {
@@ -26,163 +29,179 @@
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxDropDownListOptions options) {
-		DevExpress.Ui.DxDropDownListInterop.Init(Id, options);
+		DevExpress.Ui.DxDropDownListInterop.Init(dxTarget, options);
 	}
 	string displayValue;
-	public string DisplayValue {
-		get => isInitialized ? DevExpress.Ui.DxDropDownListInterop.GetDisplayValue(Id) : displayValue;
+	[Parameter]
+	string DisplayValue {
+		get => isInitialized ? DevExpress.Ui.DxDropDownListInterop.GetDisplayValue(dxTarget) : displayValue;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDropDownListInterop.SetDisplayValue(Id, value);
+				DevExpress.Ui.DxDropDownListInterop.SetDisplayValue(dxTarget, value);
 			} else {
 				this.displayValue = value;
 			}
 		}
 	}
 	bool? grouped;
-	public bool? Grouped {
-		get => isInitialized ? DevExpress.Ui.DxDropDownListInterop.GetGrouped(Id) : grouped;
+	[Parameter]
+	bool? Grouped {
+		get => isInitialized ? DevExpress.Ui.DxDropDownListInterop.GetGrouped(dxTarget) : grouped;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDropDownListInterop.SetGrouped(Id, value);
+				DevExpress.Ui.DxDropDownListInterop.SetGrouped(dxTarget, value);
 			} else {
 				this.grouped = value;
 			}
 		}
 	}
 	object groupTemplate;
-	public object GroupTemplate {
-		get => isInitialized ? DevExpress.Ui.DxDropDownListInterop.GetGroupTemplate(Id) : groupTemplate;
+	[Parameter]
+	object GroupTemplate {
+		get => isInitialized ? DevExpress.Ui.DxDropDownListInterop.GetGroupTemplate(dxTarget) : groupTemplate;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDropDownListInterop.SetGroupTemplate(Id, value);
+				DevExpress.Ui.DxDropDownListInterop.SetGroupTemplate(dxTarget, value);
 			} else {
 				this.groupTemplate = value;
 			}
 		}
 	}
 	float? minSearchLength;
-	public float? MinSearchLength {
-		get => isInitialized ? DevExpress.Ui.DxDropDownListInterop.GetMinSearchLength(Id) : minSearchLength;
+	[Parameter]
+	float? MinSearchLength {
+		get => isInitialized ? DevExpress.Ui.DxDropDownListInterop.GetMinSearchLength(dxTarget) : minSearchLength;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDropDownListInterop.SetMinSearchLength(Id, value);
+				DevExpress.Ui.DxDropDownListInterop.SetMinSearchLength(dxTarget, value);
 			} else {
 				this.minSearchLength = value;
 			}
 		}
 	}
 	string noDataText;
-	public string NoDataText {
-		get => isInitialized ? DevExpress.Ui.DxDropDownListInterop.GetNoDataText(Id) : noDataText;
+	[Parameter]
+	string NoDataText {
+		get => isInitialized ? DevExpress.Ui.DxDropDownListInterop.GetNoDataText(dxTarget) : noDataText;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDropDownListInterop.SetNoDataText(Id, value);
+				DevExpress.Ui.DxDropDownListInterop.SetNoDataText(dxTarget, value);
 			} else {
 				this.noDataText = value;
 			}
 		}
 	}
 	bool? searchEnabled;
-	public bool? SearchEnabled {
-		get => isInitialized ? DevExpress.Ui.DxDropDownListInterop.GetSearchEnabled(Id) : searchEnabled;
+	[Parameter]
+	bool? SearchEnabled {
+		get => isInitialized ? DevExpress.Ui.DxDropDownListInterop.GetSearchEnabled(dxTarget) : searchEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDropDownListInterop.SetSearchEnabled(Id, value);
+				DevExpress.Ui.DxDropDownListInterop.SetSearchEnabled(dxTarget, value);
 			} else {
 				this.searchEnabled = value;
 			}
 		}
 	}
 	object searchExpr;
-	public object SearchExpr {
-		get => isInitialized ? DevExpress.Ui.DxDropDownListInterop.GetSearchExpr(Id) : searchExpr;
+	[Parameter]
+	object SearchExpr {
+		get => isInitialized ? DevExpress.Ui.DxDropDownListInterop.GetSearchExpr(dxTarget) : searchExpr;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDropDownListInterop.SetSearchExpr(Id, value);
+				DevExpress.Ui.DxDropDownListInterop.SetSearchExpr(dxTarget, value);
 			} else {
 				this.searchExpr = value;
 			}
 		}
 	}
 	string searchMode;
-	public string SearchMode {
-		get => isInitialized ? DevExpress.Ui.DxDropDownListInterop.GetSearchMode(Id) : searchMode;
+	[Parameter]
+	string SearchMode {
+		get => isInitialized ? DevExpress.Ui.DxDropDownListInterop.GetSearchMode(dxTarget) : searchMode;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDropDownListInterop.SetSearchMode(Id, value);
+				DevExpress.Ui.DxDropDownListInterop.SetSearchMode(dxTarget, value);
 			} else {
 				this.searchMode = value;
 			}
 		}
 	}
 	float? searchTimeout;
-	public float? SearchTimeout {
-		get => isInitialized ? DevExpress.Ui.DxDropDownListInterop.GetSearchTimeout(Id) : searchTimeout;
+	[Parameter]
+	float? SearchTimeout {
+		get => isInitialized ? DevExpress.Ui.DxDropDownListInterop.GetSearchTimeout(dxTarget) : searchTimeout;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDropDownListInterop.SetSearchTimeout(Id, value);
+				DevExpress.Ui.DxDropDownListInterop.SetSearchTimeout(dxTarget, value);
 			} else {
 				this.searchTimeout = value;
 			}
 		}
 	}
 	object selectedItem;
-	public object SelectedItem {
-		get => isInitialized ? DevExpress.Ui.DxDropDownListInterop.GetSelectedItem(Id) : selectedItem;
+	[Parameter]
+	object SelectedItem {
+		get => isInitialized ? DevExpress.Ui.DxDropDownListInterop.GetSelectedItem(dxTarget) : selectedItem;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDropDownListInterop.SetSelectedItem(Id, value);
+				DevExpress.Ui.DxDropDownListInterop.SetSelectedItem(dxTarget, value);
 			} else {
 				this.selectedItem = value;
 			}
 		}
 	}
 	bool? showDataBeforeSearch;
-	public bool? ShowDataBeforeSearch {
-		get => isInitialized ? DevExpress.Ui.DxDropDownListInterop.GetShowDataBeforeSearch(Id) : showDataBeforeSearch;
+	[Parameter]
+	bool? ShowDataBeforeSearch {
+		get => isInitialized ? DevExpress.Ui.DxDropDownListInterop.GetShowDataBeforeSearch(dxTarget) : showDataBeforeSearch;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDropDownListInterop.SetShowDataBeforeSearch(Id, value);
+				DevExpress.Ui.DxDropDownListInterop.SetShowDataBeforeSearch(dxTarget, value);
 			} else {
 				this.showDataBeforeSearch = value;
 			}
 		}
 	}
 	object value;
-	public object Value {
-		get => isInitialized ? DevExpress.Ui.DxDropDownListInterop.GetValue(Id) : value;
+	[Parameter]
+	object Value {
+		get => isInitialized ? DevExpress.Ui.DxDropDownListInterop.GetValue(dxTarget) : value;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDropDownListInterop.SetValue(Id, value);
+				DevExpress.Ui.DxDropDownListInterop.SetValue(dxTarget, value);
 			} else {
 				this.value = value;
 			}
 		}
 	}
 	string valueChangeEvent;
-	public string ValueChangeEvent {
-		get => isInitialized ? DevExpress.Ui.DxDropDownListInterop.GetValueChangeEvent(Id) : valueChangeEvent;
+	[Parameter]
+	string ValueChangeEvent {
+		get => isInitialized ? DevExpress.Ui.DxDropDownListInterop.GetValueChangeEvent(dxTarget) : valueChangeEvent;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDropDownListInterop.SetValueChangeEvent(Id, value);
+				DevExpress.Ui.DxDropDownListInterop.SetValueChangeEvent(dxTarget, value);
 			} else {
 				this.valueChangeEvent = value;
 			}
 		}
 	}
 	bool? onItemClickEnabled;
-	public bool? OnItemClickEnabled {
+	[Parameter]
+	bool? OnItemClickEnabled {
 		get => onItemClickEnabled;
 		set => this.onItemClickEnabled = value;
 	}
 	bool? onSelectionChangedEnabled;
-	public bool? OnSelectionChangedEnabled {
+	[Parameter]
+	bool? OnSelectionChangedEnabled {
 		get => onSelectionChangedEnabled;
 		set => this.onSelectionChangedEnabled = value;
 	}
 	bool? onValueChangedEnabled;
-	public bool? OnValueChangedEnabled {
+	[Parameter]
+	bool? OnValueChangedEnabled {
 		get => onValueChangedEnabled;
 		set => this.onValueChangedEnabled = value;
 	}
@@ -192,26 +211,29 @@
 		DevExpress.Ui.DxDropDownListInterop.SelectionChanged += DxDropDownList_SelectionChanged;
 		DevExpress.Ui.DxDropDownListInterop.ValueChanged += DxDropDownList_ValueChanged;
 	}
-	public Action ItemClick { get; set; }
+	[Parameter]
+	Action ItemClick { get; set; }
 	void DxDropDownList_ItemClick(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ItemClick?.Invoke();
 		}
 	}
-	public Action SelectionChanged { get; set; }
+	[Parameter]
+	Action SelectionChanged { get; set; }
 	void DxDropDownList_SelectionChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			SelectionChanged?.Invoke();
 		}
 	}
-	public Action ValueChanged { get; set; }
+	[Parameter]
+	Action ValueChanged { get; set; }
 	void DxDropDownList_ValueChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ValueChanged?.Invoke();
 		}
 	}
 	public object GetDataSourceEx() {
-		return DevExpress.Ui.DxDropDownListInterop.GetDataSourceEx(Id);
+		return DevExpress.Ui.DxDropDownListInterop.GetDataSourceEx(dxTarget);
 	}
 	public void Dispose() {
 		DevExpress.Ui.DxDropDownListInterop.ItemClick -= DxDropDownList_ItemClick;

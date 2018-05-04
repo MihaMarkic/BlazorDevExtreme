@@ -1,9 +1,12 @@
+@using Microsoft.AspNetCore.Blazor.Components
+@using Microsoft.AspNetCore.Blazor
 @implements IDisposable
 @inherits DxBlazorCompoment<DevExpress.Ui.DxSlideOutOptions>
 
-<div id="@Id"></div>
+<div id="@Id" ref="dxTarget"></div>
 
 @functions {
+	ElementRef dxTarget;
 	public DxSlideOut() : base("DxSlideOut") { }
 	protected override DevExpress.Ui.DxSlideOutOptions CreateOptions() {
 		return new DevExpress.Ui.DxSlideOutOptions {
@@ -21,114 +24,125 @@
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxSlideOutOptions options) {
-		DevExpress.Ui.DxSlideOutInterop.Init(Id, options);
+		DevExpress.Ui.DxSlideOutInterop.Init(dxTarget, options);
 	}
 	bool? activeStateEnabled;
-	public bool? ActiveStateEnabled {
-		get => isInitialized ? DevExpress.Ui.DxSlideOutInterop.GetActiveStateEnabled(Id) : activeStateEnabled;
+	[Parameter]
+	bool? ActiveStateEnabled {
+		get => isInitialized ? DevExpress.Ui.DxSlideOutInterop.GetActiveStateEnabled(dxTarget) : activeStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSlideOutInterop.SetActiveStateEnabled(Id, value);
+				DevExpress.Ui.DxSlideOutInterop.SetActiveStateEnabled(dxTarget, value);
 			} else {
 				this.activeStateEnabled = value;
 			}
 		}
 	}
 	object contentTemplate;
-	public object ContentTemplate {
-		get => isInitialized ? DevExpress.Ui.DxSlideOutInterop.GetContentTemplate(Id) : contentTemplate;
+	[Parameter]
+	object ContentTemplate {
+		get => isInitialized ? DevExpress.Ui.DxSlideOutInterop.GetContentTemplate(dxTarget) : contentTemplate;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSlideOutInterop.SetContentTemplate(Id, value);
+				DevExpress.Ui.DxSlideOutInterop.SetContentTemplate(dxTarget, value);
 			} else {
 				this.contentTemplate = value;
 			}
 		}
 	}
 	bool? menuGrouped;
-	public bool? MenuGrouped {
-		get => isInitialized ? DevExpress.Ui.DxSlideOutInterop.GetMenuGrouped(Id) : menuGrouped;
+	[Parameter]
+	bool? MenuGrouped {
+		get => isInitialized ? DevExpress.Ui.DxSlideOutInterop.GetMenuGrouped(dxTarget) : menuGrouped;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSlideOutInterop.SetMenuGrouped(Id, value);
+				DevExpress.Ui.DxSlideOutInterop.SetMenuGrouped(dxTarget, value);
 			} else {
 				this.menuGrouped = value;
 			}
 		}
 	}
 	object menuGroupTemplate;
-	public object MenuGroupTemplate {
-		get => isInitialized ? DevExpress.Ui.DxSlideOutInterop.GetMenuGroupTemplate(Id) : menuGroupTemplate;
+	[Parameter]
+	object MenuGroupTemplate {
+		get => isInitialized ? DevExpress.Ui.DxSlideOutInterop.GetMenuGroupTemplate(dxTarget) : menuGroupTemplate;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSlideOutInterop.SetMenuGroupTemplate(Id, value);
+				DevExpress.Ui.DxSlideOutInterop.SetMenuGroupTemplate(dxTarget, value);
 			} else {
 				this.menuGroupTemplate = value;
 			}
 		}
 	}
 	object menuItemTemplate;
-	public object MenuItemTemplate {
-		get => isInitialized ? DevExpress.Ui.DxSlideOutInterop.GetMenuItemTemplate(Id) : menuItemTemplate;
+	[Parameter]
+	object MenuItemTemplate {
+		get => isInitialized ? DevExpress.Ui.DxSlideOutInterop.GetMenuItemTemplate(dxTarget) : menuItemTemplate;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSlideOutInterop.SetMenuItemTemplate(Id, value);
+				DevExpress.Ui.DxSlideOutInterop.SetMenuItemTemplate(dxTarget, value);
 			} else {
 				this.menuItemTemplate = value;
 			}
 		}
 	}
 	string menuPosition;
-	public string MenuPosition {
-		get => isInitialized ? DevExpress.Ui.DxSlideOutInterop.GetMenuPosition(Id) : menuPosition;
+	[Parameter]
+	string MenuPosition {
+		get => isInitialized ? DevExpress.Ui.DxSlideOutInterop.GetMenuPosition(dxTarget) : menuPosition;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSlideOutInterop.SetMenuPosition(Id, value);
+				DevExpress.Ui.DxSlideOutInterop.SetMenuPosition(dxTarget, value);
 			} else {
 				this.menuPosition = value;
 			}
 		}
 	}
 	bool? menuVisible;
-	public bool? MenuVisible {
-		get => isInitialized ? DevExpress.Ui.DxSlideOutInterop.GetMenuVisible(Id) : menuVisible;
+	[Parameter]
+	bool? MenuVisible {
+		get => isInitialized ? DevExpress.Ui.DxSlideOutInterop.GetMenuVisible(dxTarget) : menuVisible;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSlideOutInterop.SetMenuVisible(Id, value);
+				DevExpress.Ui.DxSlideOutInterop.SetMenuVisible(dxTarget, value);
 			} else {
 				this.menuVisible = value;
 			}
 		}
 	}
 	float? selectedIndex;
-	public float? SelectedIndex {
-		get => isInitialized ? DevExpress.Ui.DxSlideOutInterop.GetSelectedIndex(Id) : selectedIndex;
+	[Parameter]
+	float? SelectedIndex {
+		get => isInitialized ? DevExpress.Ui.DxSlideOutInterop.GetSelectedIndex(dxTarget) : selectedIndex;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSlideOutInterop.SetSelectedIndex(Id, value);
+				DevExpress.Ui.DxSlideOutInterop.SetSelectedIndex(dxTarget, value);
 			} else {
 				this.selectedIndex = value;
 			}
 		}
 	}
 	bool? swipeEnabled;
-	public bool? SwipeEnabled {
-		get => isInitialized ? DevExpress.Ui.DxSlideOutInterop.GetSwipeEnabled(Id) : swipeEnabled;
+	[Parameter]
+	bool? SwipeEnabled {
+		get => isInitialized ? DevExpress.Ui.DxSlideOutInterop.GetSwipeEnabled(dxTarget) : swipeEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSlideOutInterop.SetSwipeEnabled(Id, value);
+				DevExpress.Ui.DxSlideOutInterop.SetSwipeEnabled(dxTarget, value);
 			} else {
 				this.swipeEnabled = value;
 			}
 		}
 	}
 	bool? onMenuGroupRenderedEnabled;
-	public bool? OnMenuGroupRenderedEnabled {
+	[Parameter]
+	bool? OnMenuGroupRenderedEnabled {
 		get => onMenuGroupRenderedEnabled;
 		set => this.onMenuGroupRenderedEnabled = value;
 	}
 	bool? onMenuItemRenderedEnabled;
-	public bool? OnMenuItemRenderedEnabled {
+	[Parameter]
+	bool? OnMenuItemRenderedEnabled {
 		get => onMenuItemRenderedEnabled;
 		set => this.onMenuItemRenderedEnabled = value;
 	}
@@ -137,26 +151,28 @@
 		DevExpress.Ui.DxSlideOutInterop.MenuGroupRendered += DxSlideOut_MenuGroupRendered;
 		DevExpress.Ui.DxSlideOutInterop.MenuItemRendered += DxSlideOut_MenuItemRendered;
 	}
-	public Action MenuGroupRendered { get; set; }
+	[Parameter]
+	Action MenuGroupRendered { get; set; }
 	void DxSlideOut_MenuGroupRendered(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			MenuGroupRendered?.Invoke();
 		}
 	}
-	public Action MenuItemRendered { get; set; }
+	[Parameter]
+	Action MenuItemRendered { get; set; }
 	void DxSlideOut_MenuItemRendered(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			MenuItemRendered?.Invoke();
 		}
 	}
 	public object HideMenu() {
-		return DevExpress.Ui.DxSlideOutInterop.HideMenu(Id);
+		return DevExpress.Ui.DxSlideOutInterop.HideMenu(dxTarget);
 	}
 	public object ShowMenu() {
-		return DevExpress.Ui.DxSlideOutInterop.ShowMenu(Id);
+		return DevExpress.Ui.DxSlideOutInterop.ShowMenu(dxTarget);
 	}
 	public object ToggleMenuVisibility(bool showing) {
-		return DevExpress.Ui.DxSlideOutInterop.ToggleMenuVisibility(Id, showing);
+		return DevExpress.Ui.DxSlideOutInterop.ToggleMenuVisibility(dxTarget, showing);
 	}
 	public void Dispose() {
 		DevExpress.Ui.DxSlideOutInterop.MenuGroupRendered -= DxSlideOut_MenuGroupRendered;

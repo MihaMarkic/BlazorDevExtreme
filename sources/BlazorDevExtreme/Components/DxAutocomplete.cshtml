@@ -1,9 +1,12 @@
+@using Microsoft.AspNetCore.Blazor.Components
+@using Microsoft.AspNetCore.Blazor
 @implements IDisposable
 @inherits DxBlazorCompoment<DevExpress.Ui.DxAutocompleteOptions>
 
-<div id="@Id"></div>
+<div id="@Id" ref="dxTarget"></div>
 
 @functions {
+	ElementRef dxTarget;
 	public DxAutocomplete() : base("DxAutocomplete") { }
 	protected override DevExpress.Ui.DxAutocompleteOptions CreateOptions() {
 		return new DevExpress.Ui.DxAutocompleteOptions {
@@ -13,36 +16,39 @@
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxAutocompleteOptions options) {
-		DevExpress.Ui.DxAutocompleteInterop.Init(Id, options);
+		DevExpress.Ui.DxAutocompleteInterop.Init(dxTarget, options);
 	}
 	float? maxItemCount;
-	public float? MaxItemCount {
-		get => isInitialized ? DevExpress.Ui.DxAutocompleteInterop.GetMaxItemCount(Id) : maxItemCount;
+	[Parameter]
+	float? MaxItemCount {
+		get => isInitialized ? DevExpress.Ui.DxAutocompleteInterop.GetMaxItemCount(dxTarget) : maxItemCount;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxAutocompleteInterop.SetMaxItemCount(Id, value);
+				DevExpress.Ui.DxAutocompleteInterop.SetMaxItemCount(dxTarget, value);
 			} else {
 				this.maxItemCount = value;
 			}
 		}
 	}
 	float? minSearchLength;
-	public float? MinSearchLength {
-		get => isInitialized ? DevExpress.Ui.DxAutocompleteInterop.GetMinSearchLength(Id) : minSearchLength;
+	[Parameter]
+	float? MinSearchLength {
+		get => isInitialized ? DevExpress.Ui.DxAutocompleteInterop.GetMinSearchLength(dxTarget) : minSearchLength;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxAutocompleteInterop.SetMinSearchLength(Id, value);
+				DevExpress.Ui.DxAutocompleteInterop.SetMinSearchLength(dxTarget, value);
 			} else {
 				this.minSearchLength = value;
 			}
 		}
 	}
 	string value;
-	public string Value {
-		get => isInitialized ? DevExpress.Ui.DxAutocompleteInterop.GetValue(Id) : value;
+	[Parameter]
+	string Value {
+		get => isInitialized ? DevExpress.Ui.DxAutocompleteInterop.GetValue(dxTarget) : value;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxAutocompleteInterop.SetValue(Id, value);
+				DevExpress.Ui.DxAutocompleteInterop.SetValue(dxTarget, value);
 			} else {
 				this.value = value;
 			}

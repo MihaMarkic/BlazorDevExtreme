@@ -1,9 +1,12 @@
+@using Microsoft.AspNetCore.Blazor.Components
+@using Microsoft.AspNetCore.Blazor
 @implements IDisposable
 @inherits DxBlazorCompoment<DevExpress.Ui.DxMenuBaseOptions>
 
-<div id="@Id"></div>
+<div id="@Id" ref="dxTarget"></div>
 
 @functions {
+	ElementRef dxTarget;
 	public DxMenuBase() : base("DxMenuBase") { }
 	protected override DevExpress.Ui.DxMenuBaseOptions CreateOptions() {
 		return new DevExpress.Ui.DxMenuBaseOptions {
@@ -17,80 +20,87 @@
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxMenuBaseOptions options) {
-		DevExpress.Ui.DxMenuBaseInterop.Init(Id, options);
+		DevExpress.Ui.DxMenuBaseInterop.Init(dxTarget, options);
 	}
 	bool? activeStateEnabled;
-	public bool? ActiveStateEnabled {
-		get => isInitialized ? DevExpress.Ui.DxMenuBaseInterop.GetActiveStateEnabled(Id) : activeStateEnabled;
+	[Parameter]
+	bool? ActiveStateEnabled {
+		get => isInitialized ? DevExpress.Ui.DxMenuBaseInterop.GetActiveStateEnabled(dxTarget) : activeStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxMenuBaseInterop.SetActiveStateEnabled(Id, value);
+				DevExpress.Ui.DxMenuBaseInterop.SetActiveStateEnabled(dxTarget, value);
 			} else {
 				this.activeStateEnabled = value;
 			}
 		}
 	}
 	object animation;
-	public object Animation {
-		get => isInitialized ? DevExpress.Ui.DxMenuBaseInterop.GetAnimation(Id) : animation;
+	[Parameter]
+	object Animation {
+		get => isInitialized ? DevExpress.Ui.DxMenuBaseInterop.GetAnimation(dxTarget) : animation;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxMenuBaseInterop.SetAnimation(Id, value);
+				DevExpress.Ui.DxMenuBaseInterop.SetAnimation(dxTarget, value);
 			} else {
 				this.animation = value;
 			}
 		}
 	}
 	string cssClass;
-	public string CssClass {
-		get => isInitialized ? DevExpress.Ui.DxMenuBaseInterop.GetCssClass(Id) : cssClass;
+	[Parameter]
+	string CssClass {
+		get => isInitialized ? DevExpress.Ui.DxMenuBaseInterop.GetCssClass(dxTarget) : cssClass;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxMenuBaseInterop.SetCssClass(Id, value);
+				DevExpress.Ui.DxMenuBaseInterop.SetCssClass(dxTarget, value);
 			} else {
 				this.cssClass = value;
 			}
 		}
 	}
 	object items;
-	public object Items {
-		get => isInitialized ? DevExpress.Ui.DxMenuBaseInterop.GetItems(Id) : items;
+	[Parameter]
+	object Items {
+		get => isInitialized ? DevExpress.Ui.DxMenuBaseInterop.GetItems(dxTarget) : items;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxMenuBaseInterop.SetItems(Id, value);
+				DevExpress.Ui.DxMenuBaseInterop.SetItems(dxTarget, value);
 			} else {
 				this.items = value;
 			}
 		}
 	}
 	bool? selectByClick;
-	public bool? SelectByClick {
-		get => isInitialized ? DevExpress.Ui.DxMenuBaseInterop.GetSelectByClick(Id) : selectByClick;
+	[Parameter]
+	bool? SelectByClick {
+		get => isInitialized ? DevExpress.Ui.DxMenuBaseInterop.GetSelectByClick(dxTarget) : selectByClick;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxMenuBaseInterop.SetSelectByClick(Id, value);
+				DevExpress.Ui.DxMenuBaseInterop.SetSelectByClick(dxTarget, value);
 			} else {
 				this.selectByClick = value;
 			}
 		}
 	}
 	string selectionMode;
-	public string SelectionMode {
-		get => isInitialized ? DevExpress.Ui.DxMenuBaseInterop.GetSelectionMode(Id) : selectionMode;
+	[Parameter]
+	string SelectionMode {
+		get => isInitialized ? DevExpress.Ui.DxMenuBaseInterop.GetSelectionMode(dxTarget) : selectionMode;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxMenuBaseInterop.SetSelectionMode(Id, value);
+				DevExpress.Ui.DxMenuBaseInterop.SetSelectionMode(dxTarget, value);
 			} else {
 				this.selectionMode = value;
 			}
 		}
 	}
 	object showSubmenuMode;
-	public object ShowSubmenuMode {
-		get => isInitialized ? DevExpress.Ui.DxMenuBaseInterop.GetShowSubmenuMode(Id) : showSubmenuMode;
+	[Parameter]
+	object ShowSubmenuMode {
+		get => isInitialized ? DevExpress.Ui.DxMenuBaseInterop.GetShowSubmenuMode(dxTarget) : showSubmenuMode;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxMenuBaseInterop.SetShowSubmenuMode(Id, value);
+				DevExpress.Ui.DxMenuBaseInterop.SetShowSubmenuMode(dxTarget, value);
 			} else {
 				this.showSubmenuMode = value;
 			}
@@ -100,10 +110,10 @@
 		await base.OnInitAsync();
 	}
 	public void SelectItem(object itemElement) {
-		DevExpress.Ui.DxMenuBaseInterop.SelectItem(Id, itemElement);
+		DevExpress.Ui.DxMenuBaseInterop.SelectItem(dxTarget, itemElement);
 	}
 	public void UnselectItem(object itemElement) {
-		DevExpress.Ui.DxMenuBaseInterop.UnselectItem(Id, itemElement);
+		DevExpress.Ui.DxMenuBaseInterop.UnselectItem(dxTarget, itemElement);
 	}
 	public void Dispose() {
 	}

@@ -1,9 +1,12 @@
+@using Microsoft.AspNetCore.Blazor.Components
+@using Microsoft.AspNetCore.Blazor
 @implements IDisposable
 @inherits DxBlazorCompoment<DevExpress.Ui.DxSliderBaseOptions>
 
-<div id="@Id"></div>
+<div id="@Id" ref="dxTarget"></div>
 
 @functions {
+	ElementRef dxTarget;
 	public DxSliderBase() : base("DxSliderBase") { }
 	protected override DevExpress.Ui.DxSliderBaseOptions CreateOptions() {
 		return new DevExpress.Ui.DxSliderBaseOptions {
@@ -19,102 +22,111 @@
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxSliderBaseOptions options) {
-		DevExpress.Ui.DxSliderBaseInterop.Init(Id, options);
+		DevExpress.Ui.DxSliderBaseInterop.Init(dxTarget, options);
 	}
 	bool? activeStateEnabled;
-	public bool? ActiveStateEnabled {
-		get => isInitialized ? DevExpress.Ui.DxSliderBaseInterop.GetActiveStateEnabled(Id) : activeStateEnabled;
+	[Parameter]
+	bool? ActiveStateEnabled {
+		get => isInitialized ? DevExpress.Ui.DxSliderBaseInterop.GetActiveStateEnabled(dxTarget) : activeStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSliderBaseInterop.SetActiveStateEnabled(Id, value);
+				DevExpress.Ui.DxSliderBaseInterop.SetActiveStateEnabled(dxTarget, value);
 			} else {
 				this.activeStateEnabled = value;
 			}
 		}
 	}
 	bool? focusStateEnabled;
-	public bool? FocusStateEnabled {
-		get => isInitialized ? DevExpress.Ui.DxSliderBaseInterop.GetFocusStateEnabled(Id) : focusStateEnabled;
+	[Parameter]
+	bool? FocusStateEnabled {
+		get => isInitialized ? DevExpress.Ui.DxSliderBaseInterop.GetFocusStateEnabled(dxTarget) : focusStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSliderBaseInterop.SetFocusStateEnabled(Id, value);
+				DevExpress.Ui.DxSliderBaseInterop.SetFocusStateEnabled(dxTarget, value);
 			} else {
 				this.focusStateEnabled = value;
 			}
 		}
 	}
 	bool? hoverStateEnabled;
-	public bool? HoverStateEnabled {
-		get => isInitialized ? DevExpress.Ui.DxSliderBaseInterop.GetHoverStateEnabled(Id) : hoverStateEnabled;
+	[Parameter]
+	bool? HoverStateEnabled {
+		get => isInitialized ? DevExpress.Ui.DxSliderBaseInterop.GetHoverStateEnabled(dxTarget) : hoverStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSliderBaseInterop.SetHoverStateEnabled(Id, value);
+				DevExpress.Ui.DxSliderBaseInterop.SetHoverStateEnabled(dxTarget, value);
 			} else {
 				this.hoverStateEnabled = value;
 			}
 		}
 	}
 	float? keyStep;
-	public float? KeyStep {
-		get => isInitialized ? DevExpress.Ui.DxSliderBaseInterop.GetKeyStep(Id) : keyStep;
+	[Parameter]
+	float? KeyStep {
+		get => isInitialized ? DevExpress.Ui.DxSliderBaseInterop.GetKeyStep(dxTarget) : keyStep;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSliderBaseInterop.SetKeyStep(Id, value);
+				DevExpress.Ui.DxSliderBaseInterop.SetKeyStep(dxTarget, value);
 			} else {
 				this.keyStep = value;
 			}
 		}
 	}
 	object label;
-	public object Label {
-		get => isInitialized ? DevExpress.Ui.DxSliderBaseInterop.GetLabel(Id) : label;
+	[Parameter]
+	object Label {
+		get => isInitialized ? DevExpress.Ui.DxSliderBaseInterop.GetLabel(dxTarget) : label;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSliderBaseInterop.SetLabel(Id, value);
+				DevExpress.Ui.DxSliderBaseInterop.SetLabel(dxTarget, value);
 			} else {
 				this.label = value;
 			}
 		}
 	}
 	string name;
-	public string Name {
-		get => isInitialized ? DevExpress.Ui.DxSliderBaseInterop.GetName(Id) : name;
+	[Parameter]
+	string Name {
+		get => isInitialized ? DevExpress.Ui.DxSliderBaseInterop.GetName(dxTarget) : name;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSliderBaseInterop.SetName(Id, value);
+				DevExpress.Ui.DxSliderBaseInterop.SetName(dxTarget, value);
 			} else {
 				this.name = value;
 			}
 		}
 	}
 	bool? showRange;
-	public bool? ShowRange {
-		get => isInitialized ? DevExpress.Ui.DxSliderBaseInterop.GetShowRange(Id) : showRange;
+	[Parameter]
+	bool? ShowRange {
+		get => isInitialized ? DevExpress.Ui.DxSliderBaseInterop.GetShowRange(dxTarget) : showRange;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSliderBaseInterop.SetShowRange(Id, value);
+				DevExpress.Ui.DxSliderBaseInterop.SetShowRange(dxTarget, value);
 			} else {
 				this.showRange = value;
 			}
 		}
 	}
 	float? step;
-	public float? Step {
-		get => isInitialized ? DevExpress.Ui.DxSliderBaseInterop.GetStep(Id) : step;
+	[Parameter]
+	float? Step {
+		get => isInitialized ? DevExpress.Ui.DxSliderBaseInterop.GetStep(dxTarget) : step;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSliderBaseInterop.SetStep(Id, value);
+				DevExpress.Ui.DxSliderBaseInterop.SetStep(dxTarget, value);
 			} else {
 				this.step = value;
 			}
 		}
 	}
 	object tooltip;
-	public object Tooltip {
-		get => isInitialized ? DevExpress.Ui.DxSliderBaseInterop.GetTooltip(Id) : tooltip;
+	[Parameter]
+	object Tooltip {
+		get => isInitialized ? DevExpress.Ui.DxSliderBaseInterop.GetTooltip(dxTarget) : tooltip;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSliderBaseInterop.SetTooltip(Id, value);
+				DevExpress.Ui.DxSliderBaseInterop.SetTooltip(dxTarget, value);
 			} else {
 				this.tooltip = value;
 			}

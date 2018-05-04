@@ -1,9 +1,12 @@
+@using Microsoft.AspNetCore.Blazor.Components
+@using Microsoft.AspNetCore.Blazor
 @implements IDisposable
 @inherits DxBlazorCompoment<DevExpress.Ui.DxResizableOptions>
 
-<div id="@Id"></div>
+<div id="@Id" ref="dxTarget"></div>
 
 @functions {
+	ElementRef dxTarget;
 	public DxResizable() : base("DxResizable") { }
 	protected override DevExpress.Ui.DxResizableOptions CreateOptions() {
 		return new DevExpress.Ui.DxResizableOptions {
@@ -20,97 +23,107 @@
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxResizableOptions options) {
-		DevExpress.Ui.DxResizableInterop.Init(Id, options);
+		DevExpress.Ui.DxResizableInterop.Init(dxTarget, options);
 	}
 	string handles;
-	public string Handles {
-		get => isInitialized ? DevExpress.Ui.DxResizableInterop.GetHandles(Id) : handles;
+	[Parameter]
+	string Handles {
+		get => isInitialized ? DevExpress.Ui.DxResizableInterop.GetHandles(dxTarget) : handles;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxResizableInterop.SetHandles(Id, value);
+				DevExpress.Ui.DxResizableInterop.SetHandles(dxTarget, value);
 			} else {
 				this.handles = value;
 			}
 		}
 	}
 	object height;
-	public object Height {
-		get => isInitialized ? DevExpress.Ui.DxResizableInterop.GetHeight(Id) : height;
+	[Parameter]
+	object Height {
+		get => isInitialized ? DevExpress.Ui.DxResizableInterop.GetHeight(dxTarget) : height;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxResizableInterop.SetHeight(Id, value);
+				DevExpress.Ui.DxResizableInterop.SetHeight(dxTarget, value);
 			} else {
 				this.height = value;
 			}
 		}
 	}
 	float? maxHeight;
-	public float? MaxHeight {
-		get => isInitialized ? DevExpress.Ui.DxResizableInterop.GetMaxHeight(Id) : maxHeight;
+	[Parameter]
+	float? MaxHeight {
+		get => isInitialized ? DevExpress.Ui.DxResizableInterop.GetMaxHeight(dxTarget) : maxHeight;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxResizableInterop.SetMaxHeight(Id, value);
+				DevExpress.Ui.DxResizableInterop.SetMaxHeight(dxTarget, value);
 			} else {
 				this.maxHeight = value;
 			}
 		}
 	}
 	float? maxWidth;
-	public float? MaxWidth {
-		get => isInitialized ? DevExpress.Ui.DxResizableInterop.GetMaxWidth(Id) : maxWidth;
+	[Parameter]
+	float? MaxWidth {
+		get => isInitialized ? DevExpress.Ui.DxResizableInterop.GetMaxWidth(dxTarget) : maxWidth;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxResizableInterop.SetMaxWidth(Id, value);
+				DevExpress.Ui.DxResizableInterop.SetMaxWidth(dxTarget, value);
 			} else {
 				this.maxWidth = value;
 			}
 		}
 	}
 	float? minHeight;
-	public float? MinHeight {
-		get => isInitialized ? DevExpress.Ui.DxResizableInterop.GetMinHeight(Id) : minHeight;
+	[Parameter]
+	float? MinHeight {
+		get => isInitialized ? DevExpress.Ui.DxResizableInterop.GetMinHeight(dxTarget) : minHeight;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxResizableInterop.SetMinHeight(Id, value);
+				DevExpress.Ui.DxResizableInterop.SetMinHeight(dxTarget, value);
 			} else {
 				this.minHeight = value;
 			}
 		}
 	}
 	float? minWidth;
-	public float? MinWidth {
-		get => isInitialized ? DevExpress.Ui.DxResizableInterop.GetMinWidth(Id) : minWidth;
+	[Parameter]
+	float? MinWidth {
+		get => isInitialized ? DevExpress.Ui.DxResizableInterop.GetMinWidth(dxTarget) : minWidth;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxResizableInterop.SetMinWidth(Id, value);
+				DevExpress.Ui.DxResizableInterop.SetMinWidth(dxTarget, value);
 			} else {
 				this.minWidth = value;
 			}
 		}
 	}
 	object width;
-	public object Width {
-		get => isInitialized ? DevExpress.Ui.DxResizableInterop.GetWidth(Id) : width;
+	[Parameter]
+	object Width {
+		get => isInitialized ? DevExpress.Ui.DxResizableInterop.GetWidth(dxTarget) : width;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxResizableInterop.SetWidth(Id, value);
+				DevExpress.Ui.DxResizableInterop.SetWidth(dxTarget, value);
 			} else {
 				this.width = value;
 			}
 		}
 	}
 	bool? onResizeEnabled;
-	public bool? OnResizeEnabled {
+	[Parameter]
+	bool? OnResizeEnabled {
 		get => onResizeEnabled;
 		set => this.onResizeEnabled = value;
 	}
 	bool? onResizeEndEnabled;
-	public bool? OnResizeEndEnabled {
+	[Parameter]
+	bool? OnResizeEndEnabled {
 		get => onResizeEndEnabled;
 		set => this.onResizeEndEnabled = value;
 	}
 	bool? onResizeStartEnabled;
-	public bool? OnResizeStartEnabled {
+	[Parameter]
+	bool? OnResizeStartEnabled {
 		get => onResizeStartEnabled;
 		set => this.onResizeStartEnabled = value;
 	}
@@ -120,19 +133,22 @@
 		DevExpress.Ui.DxResizableInterop.ResizeEnd += DxResizable_ResizeEnd;
 		DevExpress.Ui.DxResizableInterop.ResizeStart += DxResizable_ResizeStart;
 	}
-	public Action Resize { get; set; }
+	[Parameter]
+	Action Resize { get; set; }
 	void DxResizable_Resize(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Resize?.Invoke();
 		}
 	}
-	public Action ResizeEnd { get; set; }
+	[Parameter]
+	Action ResizeEnd { get; set; }
 	void DxResizable_ResizeEnd(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ResizeEnd?.Invoke();
 		}
 	}
-	public Action ResizeStart { get; set; }
+	[Parameter]
+	Action ResizeStart { get; set; }
 	void DxResizable_ResizeStart(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ResizeStart?.Invoke();

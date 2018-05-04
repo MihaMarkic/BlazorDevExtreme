@@ -1,9 +1,12 @@
+@using Microsoft.AspNetCore.Blazor.Components
+@using Microsoft.AspNetCore.Blazor
 @implements IDisposable
 @inherits DxBlazorCompoment<DevExpress.Ui.DxTabsOptions>
 
-<div id="@Id"></div>
+<div id="@Id" ref="dxTarget"></div>
 
 @functions {
+	ElementRef dxTarget;
 	public DxTabs() : base("DxTabs") { }
 	protected override DevExpress.Ui.DxTabsOptions CreateOptions() {
 		return new DevExpress.Ui.DxTabsOptions {
@@ -17,80 +20,87 @@
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxTabsOptions options) {
-		DevExpress.Ui.DxTabsInterop.Init(Id, options);
+		DevExpress.Ui.DxTabsInterop.Init(dxTarget, options);
 	}
 	bool? focusStateEnabled;
-	public bool? FocusStateEnabled {
-		get => isInitialized ? DevExpress.Ui.DxTabsInterop.GetFocusStateEnabled(Id) : focusStateEnabled;
+	[Parameter]
+	bool? FocusStateEnabled {
+		get => isInitialized ? DevExpress.Ui.DxTabsInterop.GetFocusStateEnabled(dxTarget) : focusStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTabsInterop.SetFocusStateEnabled(Id, value);
+				DevExpress.Ui.DxTabsInterop.SetFocusStateEnabled(dxTarget, value);
 			} else {
 				this.focusStateEnabled = value;
 			}
 		}
 	}
 	bool? hoverStateEnabled;
-	public bool? HoverStateEnabled {
-		get => isInitialized ? DevExpress.Ui.DxTabsInterop.GetHoverStateEnabled(Id) : hoverStateEnabled;
+	[Parameter]
+	bool? HoverStateEnabled {
+		get => isInitialized ? DevExpress.Ui.DxTabsInterop.GetHoverStateEnabled(dxTarget) : hoverStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTabsInterop.SetHoverStateEnabled(Id, value);
+				DevExpress.Ui.DxTabsInterop.SetHoverStateEnabled(dxTarget, value);
 			} else {
 				this.hoverStateEnabled = value;
 			}
 		}
 	}
 	bool? scrollByContent;
-	public bool? ScrollByContent {
-		get => isInitialized ? DevExpress.Ui.DxTabsInterop.GetScrollByContent(Id) : scrollByContent;
+	[Parameter]
+	bool? ScrollByContent {
+		get => isInitialized ? DevExpress.Ui.DxTabsInterop.GetScrollByContent(dxTarget) : scrollByContent;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTabsInterop.SetScrollByContent(Id, value);
+				DevExpress.Ui.DxTabsInterop.SetScrollByContent(dxTarget, value);
 			} else {
 				this.scrollByContent = value;
 			}
 		}
 	}
 	bool? scrollingEnabled;
-	public bool? ScrollingEnabled {
-		get => isInitialized ? DevExpress.Ui.DxTabsInterop.GetScrollingEnabled(Id) : scrollingEnabled;
+	[Parameter]
+	bool? ScrollingEnabled {
+		get => isInitialized ? DevExpress.Ui.DxTabsInterop.GetScrollingEnabled(dxTarget) : scrollingEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTabsInterop.SetScrollingEnabled(Id, value);
+				DevExpress.Ui.DxTabsInterop.SetScrollingEnabled(dxTarget, value);
 			} else {
 				this.scrollingEnabled = value;
 			}
 		}
 	}
 	object selectedItems;
-	public object SelectedItems {
-		get => isInitialized ? DevExpress.Ui.DxTabsInterop.GetSelectedItems(Id) : selectedItems;
+	[Parameter]
+	object SelectedItems {
+		get => isInitialized ? DevExpress.Ui.DxTabsInterop.GetSelectedItems(dxTarget) : selectedItems;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTabsInterop.SetSelectedItems(Id, value);
+				DevExpress.Ui.DxTabsInterop.SetSelectedItems(dxTarget, value);
 			} else {
 				this.selectedItems = value;
 			}
 		}
 	}
 	string selectionMode;
-	public string SelectionMode {
-		get => isInitialized ? DevExpress.Ui.DxTabsInterop.GetSelectionMode(Id) : selectionMode;
+	[Parameter]
+	string SelectionMode {
+		get => isInitialized ? DevExpress.Ui.DxTabsInterop.GetSelectionMode(dxTarget) : selectionMode;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTabsInterop.SetSelectionMode(Id, value);
+				DevExpress.Ui.DxTabsInterop.SetSelectionMode(dxTarget, value);
 			} else {
 				this.selectionMode = value;
 			}
 		}
 	}
 	bool? showNavButtons;
-	public bool? ShowNavButtons {
-		get => isInitialized ? DevExpress.Ui.DxTabsInterop.GetShowNavButtons(Id) : showNavButtons;
+	[Parameter]
+	bool? ShowNavButtons {
+		get => isInitialized ? DevExpress.Ui.DxTabsInterop.GetShowNavButtons(dxTarget) : showNavButtons;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTabsInterop.SetShowNavButtons(Id, value);
+				DevExpress.Ui.DxTabsInterop.SetShowNavButtons(dxTarget, value);
 			} else {
 				this.showNavButtons = value;
 			}

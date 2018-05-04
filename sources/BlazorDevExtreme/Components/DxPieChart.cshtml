@@ -1,9 +1,12 @@
+@using Microsoft.AspNetCore.Blazor.Components
+@using Microsoft.AspNetCore.Blazor
 @implements IDisposable
 @inherits DxBlazorCompoment<DevExpress.Viz.Charts.DxPieChartOptions>
 
-<div id="@Id"></div>
+<div id="@Id" ref="dxTarget"></div>
 
 @functions {
+	ElementRef dxTarget;
 	public DxPieChart() : base("DxPieChart") { }
 	protected override DevExpress.Viz.Charts.DxPieChartOptions CreateOptions() {
 		return new DevExpress.Viz.Charts.DxPieChartOptions {
@@ -25,164 +28,179 @@
 		};
 	}
 	protected override void Init(DevExpress.Viz.Charts.DxPieChartOptions options) {
-		DevExpress.Viz.DxPieChartInterop.Init(Id, options);
+		DevExpress.Viz.DxPieChartInterop.Init(dxTarget, options);
 	}
 	object adaptiveLayout;
-	public object AdaptiveLayout {
-		get => isInitialized ? DevExpress.Viz.DxPieChartInterop.GetAdaptiveLayout(Id) : adaptiveLayout;
+	[Parameter]
+	object AdaptiveLayout {
+		get => isInitialized ? DevExpress.Viz.DxPieChartInterop.GetAdaptiveLayout(dxTarget) : adaptiveLayout;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxPieChartInterop.SetAdaptiveLayout(Id, value);
+				DevExpress.Viz.DxPieChartInterop.SetAdaptiveLayout(dxTarget, value);
 			} else {
 				this.adaptiveLayout = value;
 			}
 		}
 	}
 	object commonSeriesSettings;
-	public object CommonSeriesSettings {
-		get => isInitialized ? DevExpress.Viz.DxPieChartInterop.GetCommonSeriesSettings(Id) : commonSeriesSettings;
+	[Parameter]
+	object CommonSeriesSettings {
+		get => isInitialized ? DevExpress.Viz.DxPieChartInterop.GetCommonSeriesSettings(dxTarget) : commonSeriesSettings;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxPieChartInterop.SetCommonSeriesSettings(Id, value);
+				DevExpress.Viz.DxPieChartInterop.SetCommonSeriesSettings(dxTarget, value);
 			} else {
 				this.commonSeriesSettings = value;
 			}
 		}
 	}
 	float? diameter;
-	public float? Diameter {
-		get => isInitialized ? DevExpress.Viz.DxPieChartInterop.GetDiameter(Id) : diameter;
+	[Parameter]
+	float? Diameter {
+		get => isInitialized ? DevExpress.Viz.DxPieChartInterop.GetDiameter(dxTarget) : diameter;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxPieChartInterop.SetDiameter(Id, value);
+				DevExpress.Viz.DxPieChartInterop.SetDiameter(dxTarget, value);
 			} else {
 				this.diameter = value;
 			}
 		}
 	}
 	float? innerRadius;
-	public float? InnerRadius {
-		get => isInitialized ? DevExpress.Viz.DxPieChartInterop.GetInnerRadius(Id) : innerRadius;
+	[Parameter]
+	float? InnerRadius {
+		get => isInitialized ? DevExpress.Viz.DxPieChartInterop.GetInnerRadius(dxTarget) : innerRadius;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxPieChartInterop.SetInnerRadius(Id, value);
+				DevExpress.Viz.DxPieChartInterop.SetInnerRadius(dxTarget, value);
 			} else {
 				this.innerRadius = value;
 			}
 		}
 	}
 	object legend;
-	public object Legend {
-		get => isInitialized ? DevExpress.Viz.DxPieChartInterop.GetLegend(Id) : legend;
+	[Parameter]
+	object Legend {
+		get => isInitialized ? DevExpress.Viz.DxPieChartInterop.GetLegend(dxTarget) : legend;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxPieChartInterop.SetLegend(Id, value);
+				DevExpress.Viz.DxPieChartInterop.SetLegend(dxTarget, value);
 			} else {
 				this.legend = value;
 			}
 		}
 	}
 	float? minDiameter;
-	public float? MinDiameter {
-		get => isInitialized ? DevExpress.Viz.DxPieChartInterop.GetMinDiameter(Id) : minDiameter;
+	[Parameter]
+	float? MinDiameter {
+		get => isInitialized ? DevExpress.Viz.DxPieChartInterop.GetMinDiameter(dxTarget) : minDiameter;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxPieChartInterop.SetMinDiameter(Id, value);
+				DevExpress.Viz.DxPieChartInterop.SetMinDiameter(dxTarget, value);
 			} else {
 				this.minDiameter = value;
 			}
 		}
 	}
 	object palette;
-	public object Palette {
-		get => isInitialized ? DevExpress.Viz.DxPieChartInterop.GetPalette(Id) : palette;
+	[Parameter]
+	object Palette {
+		get => isInitialized ? DevExpress.Viz.DxPieChartInterop.GetPalette(dxTarget) : palette;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxPieChartInterop.SetPalette(Id, value);
+				DevExpress.Viz.DxPieChartInterop.SetPalette(dxTarget, value);
 			} else {
 				this.palette = value;
 			}
 		}
 	}
 	string resolveLabelOverlapping;
-	public string ResolveLabelOverlapping {
-		get => isInitialized ? DevExpress.Viz.DxPieChartInterop.GetResolveLabelOverlapping(Id) : resolveLabelOverlapping;
+	[Parameter]
+	string ResolveLabelOverlapping {
+		get => isInitialized ? DevExpress.Viz.DxPieChartInterop.GetResolveLabelOverlapping(dxTarget) : resolveLabelOverlapping;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxPieChartInterop.SetResolveLabelOverlapping(Id, value);
+				DevExpress.Viz.DxPieChartInterop.SetResolveLabelOverlapping(dxTarget, value);
 			} else {
 				this.resolveLabelOverlapping = value;
 			}
 		}
 	}
 	string segmentsDirection;
-	public string SegmentsDirection {
-		get => isInitialized ? DevExpress.Viz.DxPieChartInterop.GetSegmentsDirection(Id) : segmentsDirection;
+	[Parameter]
+	string SegmentsDirection {
+		get => isInitialized ? DevExpress.Viz.DxPieChartInterop.GetSegmentsDirection(dxTarget) : segmentsDirection;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxPieChartInterop.SetSegmentsDirection(Id, value);
+				DevExpress.Viz.DxPieChartInterop.SetSegmentsDirection(dxTarget, value);
 			} else {
 				this.segmentsDirection = value;
 			}
 		}
 	}
 	object series;
-	public object Series {
-		get => isInitialized ? DevExpress.Viz.DxPieChartInterop.GetSeries(Id) : series;
+	[Parameter]
+	object Series {
+		get => isInitialized ? DevExpress.Viz.DxPieChartInterop.GetSeries(dxTarget) : series;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxPieChartInterop.SetSeries(Id, value);
+				DevExpress.Viz.DxPieChartInterop.SetSeries(dxTarget, value);
 			} else {
 				this.series = value;
 			}
 		}
 	}
 	object seriesTemplate;
-	public object SeriesTemplate {
-		get => isInitialized ? DevExpress.Viz.DxPieChartInterop.GetSeriesTemplate(Id) : seriesTemplate;
+	[Parameter]
+	object SeriesTemplate {
+		get => isInitialized ? DevExpress.Viz.DxPieChartInterop.GetSeriesTemplate(dxTarget) : seriesTemplate;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxPieChartInterop.SetSeriesTemplate(Id, value);
+				DevExpress.Viz.DxPieChartInterop.SetSeriesTemplate(dxTarget, value);
 			} else {
 				this.seriesTemplate = value;
 			}
 		}
 	}
 	string sizeGroup;
-	public string SizeGroup {
-		get => isInitialized ? DevExpress.Viz.DxPieChartInterop.GetSizeGroup(Id) : sizeGroup;
+	[Parameter]
+	string SizeGroup {
+		get => isInitialized ? DevExpress.Viz.DxPieChartInterop.GetSizeGroup(dxTarget) : sizeGroup;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxPieChartInterop.SetSizeGroup(Id, value);
+				DevExpress.Viz.DxPieChartInterop.SetSizeGroup(dxTarget, value);
 			} else {
 				this.sizeGroup = value;
 			}
 		}
 	}
 	float? startAngle;
-	public float? StartAngle {
-		get => isInitialized ? DevExpress.Viz.DxPieChartInterop.GetStartAngle(Id) : startAngle;
+	[Parameter]
+	float? StartAngle {
+		get => isInitialized ? DevExpress.Viz.DxPieChartInterop.GetStartAngle(dxTarget) : startAngle;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxPieChartInterop.SetStartAngle(Id, value);
+				DevExpress.Viz.DxPieChartInterop.SetStartAngle(dxTarget, value);
 			} else {
 				this.startAngle = value;
 			}
 		}
 	}
 	string type;
-	public string Type {
-		get => isInitialized ? DevExpress.Viz.DxPieChartInterop.GetType(Id) : type;
+	[Parameter]
+	string Type {
+		get => isInitialized ? DevExpress.Viz.DxPieChartInterop.GetType(dxTarget) : type;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxPieChartInterop.SetType(Id, value);
+				DevExpress.Viz.DxPieChartInterop.SetType(dxTarget, value);
 			} else {
 				this.type = value;
 			}
 		}
 	}
 	bool? onLegendClickEnabled;
-	public bool? OnLegendClickEnabled {
+	[Parameter]
+	bool? OnLegendClickEnabled {
 		get => onLegendClickEnabled;
 		set => this.onLegendClickEnabled = value;
 	}
@@ -190,20 +208,21 @@
 		await base.OnInitAsync();
 		DevExpress.Viz.DxPieChartInterop.LegendClick += DxPieChart_LegendClick;
 	}
-	public Action LegendClick { get; set; }
+	[Parameter]
+	Action LegendClick { get; set; }
 	void DxPieChart_LegendClick(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			LegendClick?.Invoke();
 		}
 	}
 	public object GetSeriesEx() {
-		return DevExpress.Viz.DxPieChartInterop.GetSeriesEx(Id);
+		return DevExpress.Viz.DxPieChartInterop.GetSeriesEx(dxTarget);
 	}
 	public object GetSeriesByName(object seriesName) {
-		return DevExpress.Viz.DxPieChartInterop.GetSeriesByName(Id, seriesName);
+		return DevExpress.Viz.DxPieChartInterop.GetSeriesByName(dxTarget, seriesName);
 	}
 	public object GetSeriesByPos(float seriesIndex) {
-		return DevExpress.Viz.DxPieChartInterop.GetSeriesByPos(Id, seriesIndex);
+		return DevExpress.Viz.DxPieChartInterop.GetSeriesByPos(dxTarget, seriesIndex);
 	}
 	public void Dispose() {
 		DevExpress.Viz.DxPieChartInterop.LegendClick -= DxPieChart_LegendClick;

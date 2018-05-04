@@ -1,9 +1,12 @@
+@using Microsoft.AspNetCore.Blazor.Components
+@using Microsoft.AspNetCore.Blazor
 @implements IDisposable
 @inherits DxBlazorCompoment<DevExpress.Ui.DxAccordionOptions>
 
-<div id="@Id"></div>
+<div id="@Id" ref="dxTarget"></div>
 
 @functions {
+	ElementRef dxTarget;
 	public DxAccordion() : base("DxAccordion") { }
 	protected override DevExpress.Ui.DxAccordionOptions CreateOptions() {
 		return new DevExpress.Ui.DxAccordionOptions {
@@ -21,120 +24,131 @@
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxAccordionOptions options) {
-		DevExpress.Ui.DxAccordionInterop.Init(Id, options);
+		DevExpress.Ui.DxAccordionInterop.Init(dxTarget, options);
 	}
 	float? animationDuration;
-	public float? AnimationDuration {
-		get => isInitialized ? DevExpress.Ui.DxAccordionInterop.GetAnimationDuration(Id) : animationDuration;
+	[Parameter]
+	float? AnimationDuration {
+		get => isInitialized ? DevExpress.Ui.DxAccordionInterop.GetAnimationDuration(dxTarget) : animationDuration;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxAccordionInterop.SetAnimationDuration(Id, value);
+				DevExpress.Ui.DxAccordionInterop.SetAnimationDuration(dxTarget, value);
 			} else {
 				this.animationDuration = value;
 			}
 		}
 	}
 	bool? collapsible;
-	public bool? Collapsible {
-		get => isInitialized ? DevExpress.Ui.DxAccordionInterop.GetCollapsible(Id) : collapsible;
+	[Parameter]
+	bool? Collapsible {
+		get => isInitialized ? DevExpress.Ui.DxAccordionInterop.GetCollapsible(dxTarget) : collapsible;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxAccordionInterop.SetCollapsible(Id, value);
+				DevExpress.Ui.DxAccordionInterop.SetCollapsible(dxTarget, value);
 			} else {
 				this.collapsible = value;
 			}
 		}
 	}
 	bool? deferRendering;
-	public bool? DeferRendering {
-		get => isInitialized ? DevExpress.Ui.DxAccordionInterop.GetDeferRendering(Id) : deferRendering;
+	[Parameter]
+	bool? DeferRendering {
+		get => isInitialized ? DevExpress.Ui.DxAccordionInterop.GetDeferRendering(dxTarget) : deferRendering;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxAccordionInterop.SetDeferRendering(Id, value);
+				DevExpress.Ui.DxAccordionInterop.SetDeferRendering(dxTarget, value);
 			} else {
 				this.deferRendering = value;
 			}
 		}
 	}
 	bool? focusStateEnabled;
-	public bool? FocusStateEnabled {
-		get => isInitialized ? DevExpress.Ui.DxAccordionInterop.GetFocusStateEnabled(Id) : focusStateEnabled;
+	[Parameter]
+	bool? FocusStateEnabled {
+		get => isInitialized ? DevExpress.Ui.DxAccordionInterop.GetFocusStateEnabled(dxTarget) : focusStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxAccordionInterop.SetFocusStateEnabled(Id, value);
+				DevExpress.Ui.DxAccordionInterop.SetFocusStateEnabled(dxTarget, value);
 			} else {
 				this.focusStateEnabled = value;
 			}
 		}
 	}
 	object height;
-	public object Height {
-		get => isInitialized ? DevExpress.Ui.DxAccordionInterop.GetHeight(Id) : height;
+	[Parameter]
+	object Height {
+		get => isInitialized ? DevExpress.Ui.DxAccordionInterop.GetHeight(dxTarget) : height;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxAccordionInterop.SetHeight(Id, value);
+				DevExpress.Ui.DxAccordionInterop.SetHeight(dxTarget, value);
 			} else {
 				this.height = value;
 			}
 		}
 	}
 	bool? hoverStateEnabled;
-	public bool? HoverStateEnabled {
-		get => isInitialized ? DevExpress.Ui.DxAccordionInterop.GetHoverStateEnabled(Id) : hoverStateEnabled;
+	[Parameter]
+	bool? HoverStateEnabled {
+		get => isInitialized ? DevExpress.Ui.DxAccordionInterop.GetHoverStateEnabled(dxTarget) : hoverStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxAccordionInterop.SetHoverStateEnabled(Id, value);
+				DevExpress.Ui.DxAccordionInterop.SetHoverStateEnabled(dxTarget, value);
 			} else {
 				this.hoverStateEnabled = value;
 			}
 		}
 	}
 	object itemTemplate;
-	public object ItemTemplate {
-		get => isInitialized ? DevExpress.Ui.DxAccordionInterop.GetItemTemplate(Id) : itemTemplate;
+	[Parameter]
+	object ItemTemplate {
+		get => isInitialized ? DevExpress.Ui.DxAccordionInterop.GetItemTemplate(dxTarget) : itemTemplate;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxAccordionInterop.SetItemTemplate(Id, value);
+				DevExpress.Ui.DxAccordionInterop.SetItemTemplate(dxTarget, value);
 			} else {
 				this.itemTemplate = value;
 			}
 		}
 	}
 	object itemTitleTemplate;
-	public object ItemTitleTemplate {
-		get => isInitialized ? DevExpress.Ui.DxAccordionInterop.GetItemTitleTemplate(Id) : itemTitleTemplate;
+	[Parameter]
+	object ItemTitleTemplate {
+		get => isInitialized ? DevExpress.Ui.DxAccordionInterop.GetItemTitleTemplate(dxTarget) : itemTitleTemplate;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxAccordionInterop.SetItemTitleTemplate(Id, value);
+				DevExpress.Ui.DxAccordionInterop.SetItemTitleTemplate(dxTarget, value);
 			} else {
 				this.itemTitleTemplate = value;
 			}
 		}
 	}
 	bool? multiple;
-	public bool? Multiple {
-		get => isInitialized ? DevExpress.Ui.DxAccordionInterop.GetMultiple(Id) : multiple;
+	[Parameter]
+	bool? Multiple {
+		get => isInitialized ? DevExpress.Ui.DxAccordionInterop.GetMultiple(dxTarget) : multiple;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxAccordionInterop.SetMultiple(Id, value);
+				DevExpress.Ui.DxAccordionInterop.SetMultiple(dxTarget, value);
 			} else {
 				this.multiple = value;
 			}
 		}
 	}
 	float? selectedIndex;
-	public float? SelectedIndex {
-		get => isInitialized ? DevExpress.Ui.DxAccordionInterop.GetSelectedIndex(Id) : selectedIndex;
+	[Parameter]
+	float? SelectedIndex {
+		get => isInitialized ? DevExpress.Ui.DxAccordionInterop.GetSelectedIndex(dxTarget) : selectedIndex;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxAccordionInterop.SetSelectedIndex(Id, value);
+				DevExpress.Ui.DxAccordionInterop.SetSelectedIndex(dxTarget, value);
 			} else {
 				this.selectedIndex = value;
 			}
 		}
 	}
 	bool? onItemTitleClickEnabled;
-	public bool? OnItemTitleClickEnabled {
+	[Parameter]
+	bool? OnItemTitleClickEnabled {
 		get => onItemTitleClickEnabled;
 		set => this.onItemTitleClickEnabled = value;
 	}
@@ -142,20 +156,21 @@
 		await base.OnInitAsync();
 		DevExpress.Ui.DxAccordionInterop.ItemTitleClick += DxAccordion_ItemTitleClick;
 	}
-	public Action ItemTitleClick { get; set; }
+	[Parameter]
+	Action ItemTitleClick { get; set; }
 	void DxAccordion_ItemTitleClick(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ItemTitleClick?.Invoke();
 		}
 	}
 	public object CollapseItem(float index) {
-		return DevExpress.Ui.DxAccordionInterop.CollapseItem(Id, index);
+		return DevExpress.Ui.DxAccordionInterop.CollapseItem(dxTarget, index);
 	}
 	public object ExpandItem(float index) {
-		return DevExpress.Ui.DxAccordionInterop.ExpandItem(Id, index);
+		return DevExpress.Ui.DxAccordionInterop.ExpandItem(dxTarget, index);
 	}
 	public object UpdateDimensions() {
-		return DevExpress.Ui.DxAccordionInterop.UpdateDimensions(Id);
+		return DevExpress.Ui.DxAccordionInterop.UpdateDimensions(dxTarget);
 	}
 	public void Dispose() {
 		DevExpress.Ui.DxAccordionInterop.ItemTitleClick -= DxAccordion_ItemTitleClick;

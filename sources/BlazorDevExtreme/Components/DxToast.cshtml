@@ -1,9 +1,12 @@
+@using Microsoft.AspNetCore.Blazor.Components
+@using Microsoft.AspNetCore.Blazor
 @implements IDisposable
 @inherits DxBlazorCompoment<DevExpress.Ui.DxToastOptions>
 
-<div id="@Id"></div>
+<div id="@Id" ref="dxTarget"></div>
 
 @functions {
+	ElementRef dxTarget;
 	public DxToast() : base("DxToast") { }
 	protected override DevExpress.Ui.DxToastOptions CreateOptions() {
 		return new DevExpress.Ui.DxToastOptions {
@@ -24,157 +27,171 @@
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxToastOptions options) {
-		DevExpress.Ui.DxToastInterop.Init(Id, options);
+		DevExpress.Ui.DxToastInterop.Init(dxTarget, options);
 	}
 	object animation;
-	public object Animation {
-		get => isInitialized ? DevExpress.Ui.DxToastInterop.GetAnimation(Id) : animation;
+	[Parameter]
+	object Animation {
+		get => isInitialized ? DevExpress.Ui.DxToastInterop.GetAnimation(dxTarget) : animation;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxToastInterop.SetAnimation(Id, value);
+				DevExpress.Ui.DxToastInterop.SetAnimation(dxTarget, value);
 			} else {
 				this.animation = value;
 			}
 		}
 	}
 	bool? closeOnBackButton;
-	public bool? CloseOnBackButton {
-		get => isInitialized ? DevExpress.Ui.DxToastInterop.GetCloseOnBackButton(Id) : closeOnBackButton;
+	[Parameter]
+	bool? CloseOnBackButton {
+		get => isInitialized ? DevExpress.Ui.DxToastInterop.GetCloseOnBackButton(dxTarget) : closeOnBackButton;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxToastInterop.SetCloseOnBackButton(Id, value);
+				DevExpress.Ui.DxToastInterop.SetCloseOnBackButton(dxTarget, value);
 			} else {
 				this.closeOnBackButton = value;
 			}
 		}
 	}
 	bool? closeOnClick;
-	public bool? CloseOnClick {
-		get => isInitialized ? DevExpress.Ui.DxToastInterop.GetCloseOnClick(Id) : closeOnClick;
+	[Parameter]
+	bool? CloseOnClick {
+		get => isInitialized ? DevExpress.Ui.DxToastInterop.GetCloseOnClick(dxTarget) : closeOnClick;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxToastInterop.SetCloseOnClick(Id, value);
+				DevExpress.Ui.DxToastInterop.SetCloseOnClick(dxTarget, value);
 			} else {
 				this.closeOnClick = value;
 			}
 		}
 	}
 	object closeOnOutsideClick;
-	public object CloseOnOutsideClick {
-		get => isInitialized ? DevExpress.Ui.DxToastInterop.GetCloseOnOutsideClick(Id) : closeOnOutsideClick;
+	[Parameter]
+	object CloseOnOutsideClick {
+		get => isInitialized ? DevExpress.Ui.DxToastInterop.GetCloseOnOutsideClick(dxTarget) : closeOnOutsideClick;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxToastInterop.SetCloseOnOutsideClick(Id, value);
+				DevExpress.Ui.DxToastInterop.SetCloseOnOutsideClick(dxTarget, value);
 			} else {
 				this.closeOnOutsideClick = value;
 			}
 		}
 	}
 	bool? closeOnSwipe;
-	public bool? CloseOnSwipe {
-		get => isInitialized ? DevExpress.Ui.DxToastInterop.GetCloseOnSwipe(Id) : closeOnSwipe;
+	[Parameter]
+	bool? CloseOnSwipe {
+		get => isInitialized ? DevExpress.Ui.DxToastInterop.GetCloseOnSwipe(dxTarget) : closeOnSwipe;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxToastInterop.SetCloseOnSwipe(Id, value);
+				DevExpress.Ui.DxToastInterop.SetCloseOnSwipe(dxTarget, value);
 			} else {
 				this.closeOnSwipe = value;
 			}
 		}
 	}
 	float? displayTime;
-	public float? DisplayTime {
-		get => isInitialized ? DevExpress.Ui.DxToastInterop.GetDisplayTime(Id) : displayTime;
+	[Parameter]
+	float? DisplayTime {
+		get => isInitialized ? DevExpress.Ui.DxToastInterop.GetDisplayTime(dxTarget) : displayTime;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxToastInterop.SetDisplayTime(Id, value);
+				DevExpress.Ui.DxToastInterop.SetDisplayTime(dxTarget, value);
 			} else {
 				this.displayTime = value;
 			}
 		}
 	}
 	object height;
-	public object Height {
-		get => isInitialized ? DevExpress.Ui.DxToastInterop.GetHeight(Id) : height;
+	[Parameter]
+	object Height {
+		get => isInitialized ? DevExpress.Ui.DxToastInterop.GetHeight(dxTarget) : height;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxToastInterop.SetHeight(Id, value);
+				DevExpress.Ui.DxToastInterop.SetHeight(dxTarget, value);
 			} else {
 				this.height = value;
 			}
 		}
 	}
 	object maxWidth;
-	public object MaxWidth {
-		get => isInitialized ? DevExpress.Ui.DxToastInterop.GetMaxWidth(Id) : maxWidth;
+	[Parameter]
+	object MaxWidth {
+		get => isInitialized ? DevExpress.Ui.DxToastInterop.GetMaxWidth(dxTarget) : maxWidth;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxToastInterop.SetMaxWidth(Id, value);
+				DevExpress.Ui.DxToastInterop.SetMaxWidth(dxTarget, value);
 			} else {
 				this.maxWidth = value;
 			}
 		}
 	}
 	string message;
-	public string Message {
-		get => isInitialized ? DevExpress.Ui.DxToastInterop.GetMessage(Id) : message;
+	[Parameter]
+	string Message {
+		get => isInitialized ? DevExpress.Ui.DxToastInterop.GetMessage(dxTarget) : message;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxToastInterop.SetMessage(Id, value);
+				DevExpress.Ui.DxToastInterop.SetMessage(dxTarget, value);
 			} else {
 				this.message = value;
 			}
 		}
 	}
 	object minWidth;
-	public object MinWidth {
-		get => isInitialized ? DevExpress.Ui.DxToastInterop.GetMinWidth(Id) : minWidth;
+	[Parameter]
+	object MinWidth {
+		get => isInitialized ? DevExpress.Ui.DxToastInterop.GetMinWidth(dxTarget) : minWidth;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxToastInterop.SetMinWidth(Id, value);
+				DevExpress.Ui.DxToastInterop.SetMinWidth(dxTarget, value);
 			} else {
 				this.minWidth = value;
 			}
 		}
 	}
 	object position;
-	public object Position {
-		get => isInitialized ? DevExpress.Ui.DxToastInterop.GetPosition(Id) : position;
+	[Parameter]
+	object Position {
+		get => isInitialized ? DevExpress.Ui.DxToastInterop.GetPosition(dxTarget) : position;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxToastInterop.SetPosition(Id, value);
+				DevExpress.Ui.DxToastInterop.SetPosition(dxTarget, value);
 			} else {
 				this.position = value;
 			}
 		}
 	}
 	bool? shading;
-	public bool? Shading {
-		get => isInitialized ? DevExpress.Ui.DxToastInterop.GetShading(Id) : shading;
+	[Parameter]
+	bool? Shading {
+		get => isInitialized ? DevExpress.Ui.DxToastInterop.GetShading(dxTarget) : shading;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxToastInterop.SetShading(Id, value);
+				DevExpress.Ui.DxToastInterop.SetShading(dxTarget, value);
 			} else {
 				this.shading = value;
 			}
 		}
 	}
 	string type;
-	public string Type {
-		get => isInitialized ? DevExpress.Ui.DxToastInterop.GetType(Id) : type;
+	[Parameter]
+	string Type {
+		get => isInitialized ? DevExpress.Ui.DxToastInterop.GetType(dxTarget) : type;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxToastInterop.SetType(Id, value);
+				DevExpress.Ui.DxToastInterop.SetType(dxTarget, value);
 			} else {
 				this.type = value;
 			}
 		}
 	}
 	object width;
-	public object Width {
-		get => isInitialized ? DevExpress.Ui.DxToastInterop.GetWidth(Id) : width;
+	[Parameter]
+	object Width {
+		get => isInitialized ? DevExpress.Ui.DxToastInterop.GetWidth(dxTarget) : width;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxToastInterop.SetWidth(Id, value);
+				DevExpress.Ui.DxToastInterop.SetWidth(dxTarget, value);
 			} else {
 				this.width = value;
 			}

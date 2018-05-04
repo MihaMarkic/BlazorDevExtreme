@@ -1,9 +1,12 @@
+@using Microsoft.AspNetCore.Blazor.Components
+@using Microsoft.AspNetCore.Blazor
 @implements IDisposable
 @inherits DxBlazorCompoment<DevExpress.Viz.Sparklines.DxBulletOptions>
 
-<div id="@Id"></div>
+<div id="@Id" ref="dxTarget"></div>
 
 @functions {
+	ElementRef dxTarget;
 	public DxBullet() : base("DxBullet") { }
 	protected override DevExpress.Viz.Sparklines.DxBulletOptions CreateOptions() {
 		return new DevExpress.Viz.Sparklines.DxBulletOptions {
@@ -19,102 +22,111 @@
 		};
 	}
 	protected override void Init(DevExpress.Viz.Sparklines.DxBulletOptions options) {
-		DevExpress.Viz.DxBulletInterop.Init(Id, options);
+		DevExpress.Viz.DxBulletInterop.Init(dxTarget, options);
 	}
 	string color;
-	public string Color {
-		get => isInitialized ? DevExpress.Viz.DxBulletInterop.GetColor(Id) : color;
+	[Parameter]
+	string Color {
+		get => isInitialized ? DevExpress.Viz.DxBulletInterop.GetColor(dxTarget) : color;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxBulletInterop.SetColor(Id, value);
+				DevExpress.Viz.DxBulletInterop.SetColor(dxTarget, value);
 			} else {
 				this.color = value;
 			}
 		}
 	}
 	float? endScaleValue;
-	public float? EndScaleValue {
-		get => isInitialized ? DevExpress.Viz.DxBulletInterop.GetEndScaleValue(Id) : endScaleValue;
+	[Parameter]
+	float? EndScaleValue {
+		get => isInitialized ? DevExpress.Viz.DxBulletInterop.GetEndScaleValue(dxTarget) : endScaleValue;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxBulletInterop.SetEndScaleValue(Id, value);
+				DevExpress.Viz.DxBulletInterop.SetEndScaleValue(dxTarget, value);
 			} else {
 				this.endScaleValue = value;
 			}
 		}
 	}
 	bool? showTarget;
-	public bool? ShowTarget {
-		get => isInitialized ? DevExpress.Viz.DxBulletInterop.GetShowTarget(Id) : showTarget;
+	[Parameter]
+	bool? ShowTarget {
+		get => isInitialized ? DevExpress.Viz.DxBulletInterop.GetShowTarget(dxTarget) : showTarget;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxBulletInterop.SetShowTarget(Id, value);
+				DevExpress.Viz.DxBulletInterop.SetShowTarget(dxTarget, value);
 			} else {
 				this.showTarget = value;
 			}
 		}
 	}
 	bool? showZeroLevel;
-	public bool? ShowZeroLevel {
-		get => isInitialized ? DevExpress.Viz.DxBulletInterop.GetShowZeroLevel(Id) : showZeroLevel;
+	[Parameter]
+	bool? ShowZeroLevel {
+		get => isInitialized ? DevExpress.Viz.DxBulletInterop.GetShowZeroLevel(dxTarget) : showZeroLevel;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxBulletInterop.SetShowZeroLevel(Id, value);
+				DevExpress.Viz.DxBulletInterop.SetShowZeroLevel(dxTarget, value);
 			} else {
 				this.showZeroLevel = value;
 			}
 		}
 	}
 	float? startScaleValue;
-	public float? StartScaleValue {
-		get => isInitialized ? DevExpress.Viz.DxBulletInterop.GetStartScaleValue(Id) : startScaleValue;
+	[Parameter]
+	float? StartScaleValue {
+		get => isInitialized ? DevExpress.Viz.DxBulletInterop.GetStartScaleValue(dxTarget) : startScaleValue;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxBulletInterop.SetStartScaleValue(Id, value);
+				DevExpress.Viz.DxBulletInterop.SetStartScaleValue(dxTarget, value);
 			} else {
 				this.startScaleValue = value;
 			}
 		}
 	}
 	float? target;
-	public float? Target {
-		get => isInitialized ? DevExpress.Viz.DxBulletInterop.GetTarget(Id) : target;
+	[Parameter]
+	float? Target {
+		get => isInitialized ? DevExpress.Viz.DxBulletInterop.GetTarget(dxTarget) : target;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxBulletInterop.SetTarget(Id, value);
+				DevExpress.Viz.DxBulletInterop.SetTarget(dxTarget, value);
 			} else {
 				this.target = value;
 			}
 		}
 	}
 	string targetColor;
-	public string TargetColor {
-		get => isInitialized ? DevExpress.Viz.DxBulletInterop.GetTargetColor(Id) : targetColor;
+	[Parameter]
+	string TargetColor {
+		get => isInitialized ? DevExpress.Viz.DxBulletInterop.GetTargetColor(dxTarget) : targetColor;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxBulletInterop.SetTargetColor(Id, value);
+				DevExpress.Viz.DxBulletInterop.SetTargetColor(dxTarget, value);
 			} else {
 				this.targetColor = value;
 			}
 		}
 	}
 	float? targetWidth;
-	public float? TargetWidth {
-		get => isInitialized ? DevExpress.Viz.DxBulletInterop.GetTargetWidth(Id) : targetWidth;
+	[Parameter]
+	float? TargetWidth {
+		get => isInitialized ? DevExpress.Viz.DxBulletInterop.GetTargetWidth(dxTarget) : targetWidth;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxBulletInterop.SetTargetWidth(Id, value);
+				DevExpress.Viz.DxBulletInterop.SetTargetWidth(dxTarget, value);
 			} else {
 				this.targetWidth = value;
 			}
 		}
 	}
 	float? value;
-	public float? Value {
-		get => isInitialized ? DevExpress.Viz.DxBulletInterop.GetValue(Id) : value;
+	[Parameter]
+	float? Value {
+		get => isInitialized ? DevExpress.Viz.DxBulletInterop.GetValue(dxTarget) : value;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxBulletInterop.SetValue(Id, value);
+				DevExpress.Viz.DxBulletInterop.SetValue(dxTarget, value);
 			} else {
 				this.value = value;
 			}

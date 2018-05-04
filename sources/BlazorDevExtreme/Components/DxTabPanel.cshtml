@@ -1,9 +1,12 @@
+@using Microsoft.AspNetCore.Blazor.Components
+@using Microsoft.AspNetCore.Blazor
 @implements IDisposable
 @inherits DxBlazorCompoment<DevExpress.Ui.DxTabPanelOptions>
 
-<div id="@Id"></div>
+<div id="@Id" ref="dxTarget"></div>
 
 @functions {
+	ElementRef dxTarget;
 	public DxTabPanel() : base("DxTabPanel") { }
 	protected override DevExpress.Ui.DxTabPanelOptions CreateOptions() {
 		return new DevExpress.Ui.DxTabPanelOptions {
@@ -21,108 +24,119 @@
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxTabPanelOptions options) {
-		DevExpress.Ui.DxTabPanelInterop.Init(Id, options);
+		DevExpress.Ui.DxTabPanelInterop.Init(dxTarget, options);
 	}
 	bool? animationEnabled;
-	public bool? AnimationEnabled {
-		get => isInitialized ? DevExpress.Ui.DxTabPanelInterop.GetAnimationEnabled(Id) : animationEnabled;
+	[Parameter]
+	bool? AnimationEnabled {
+		get => isInitialized ? DevExpress.Ui.DxTabPanelInterop.GetAnimationEnabled(dxTarget) : animationEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTabPanelInterop.SetAnimationEnabled(Id, value);
+				DevExpress.Ui.DxTabPanelInterop.SetAnimationEnabled(dxTarget, value);
 			} else {
 				this.animationEnabled = value;
 			}
 		}
 	}
 	bool? focusStateEnabled;
-	public bool? FocusStateEnabled {
-		get => isInitialized ? DevExpress.Ui.DxTabPanelInterop.GetFocusStateEnabled(Id) : focusStateEnabled;
+	[Parameter]
+	bool? FocusStateEnabled {
+		get => isInitialized ? DevExpress.Ui.DxTabPanelInterop.GetFocusStateEnabled(dxTarget) : focusStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTabPanelInterop.SetFocusStateEnabled(Id, value);
+				DevExpress.Ui.DxTabPanelInterop.SetFocusStateEnabled(dxTarget, value);
 			} else {
 				this.focusStateEnabled = value;
 			}
 		}
 	}
 	bool? hoverStateEnabled;
-	public bool? HoverStateEnabled {
-		get => isInitialized ? DevExpress.Ui.DxTabPanelInterop.GetHoverStateEnabled(Id) : hoverStateEnabled;
+	[Parameter]
+	bool? HoverStateEnabled {
+		get => isInitialized ? DevExpress.Ui.DxTabPanelInterop.GetHoverStateEnabled(dxTarget) : hoverStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTabPanelInterop.SetHoverStateEnabled(Id, value);
+				DevExpress.Ui.DxTabPanelInterop.SetHoverStateEnabled(dxTarget, value);
 			} else {
 				this.hoverStateEnabled = value;
 			}
 		}
 	}
 	object itemTitleTemplate;
-	public object ItemTitleTemplate {
-		get => isInitialized ? DevExpress.Ui.DxTabPanelInterop.GetItemTitleTemplate(Id) : itemTitleTemplate;
+	[Parameter]
+	object ItemTitleTemplate {
+		get => isInitialized ? DevExpress.Ui.DxTabPanelInterop.GetItemTitleTemplate(dxTarget) : itemTitleTemplate;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTabPanelInterop.SetItemTitleTemplate(Id, value);
+				DevExpress.Ui.DxTabPanelInterop.SetItemTitleTemplate(dxTarget, value);
 			} else {
 				this.itemTitleTemplate = value;
 			}
 		}
 	}
 	bool? scrollByContent;
-	public bool? ScrollByContent {
-		get => isInitialized ? DevExpress.Ui.DxTabPanelInterop.GetScrollByContent(Id) : scrollByContent;
+	[Parameter]
+	bool? ScrollByContent {
+		get => isInitialized ? DevExpress.Ui.DxTabPanelInterop.GetScrollByContent(dxTarget) : scrollByContent;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTabPanelInterop.SetScrollByContent(Id, value);
+				DevExpress.Ui.DxTabPanelInterop.SetScrollByContent(dxTarget, value);
 			} else {
 				this.scrollByContent = value;
 			}
 		}
 	}
 	bool? scrollingEnabled;
-	public bool? ScrollingEnabled {
-		get => isInitialized ? DevExpress.Ui.DxTabPanelInterop.GetScrollingEnabled(Id) : scrollingEnabled;
+	[Parameter]
+	bool? ScrollingEnabled {
+		get => isInitialized ? DevExpress.Ui.DxTabPanelInterop.GetScrollingEnabled(dxTarget) : scrollingEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTabPanelInterop.SetScrollingEnabled(Id, value);
+				DevExpress.Ui.DxTabPanelInterop.SetScrollingEnabled(dxTarget, value);
 			} else {
 				this.scrollingEnabled = value;
 			}
 		}
 	}
 	bool? showNavButtons;
-	public bool? ShowNavButtons {
-		get => isInitialized ? DevExpress.Ui.DxTabPanelInterop.GetShowNavButtons(Id) : showNavButtons;
+	[Parameter]
+	bool? ShowNavButtons {
+		get => isInitialized ? DevExpress.Ui.DxTabPanelInterop.GetShowNavButtons(dxTarget) : showNavButtons;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTabPanelInterop.SetShowNavButtons(Id, value);
+				DevExpress.Ui.DxTabPanelInterop.SetShowNavButtons(dxTarget, value);
 			} else {
 				this.showNavButtons = value;
 			}
 		}
 	}
 	bool? swipeEnabled;
-	public bool? SwipeEnabled {
-		get => isInitialized ? DevExpress.Ui.DxTabPanelInterop.GetSwipeEnabled(Id) : swipeEnabled;
+	[Parameter]
+	bool? SwipeEnabled {
+		get => isInitialized ? DevExpress.Ui.DxTabPanelInterop.GetSwipeEnabled(dxTarget) : swipeEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTabPanelInterop.SetSwipeEnabled(Id, value);
+				DevExpress.Ui.DxTabPanelInterop.SetSwipeEnabled(dxTarget, value);
 			} else {
 				this.swipeEnabled = value;
 			}
 		}
 	}
 	bool? onTitleClickEnabled;
-	public bool? OnTitleClickEnabled {
+	[Parameter]
+	bool? OnTitleClickEnabled {
 		get => onTitleClickEnabled;
 		set => this.onTitleClickEnabled = value;
 	}
 	bool? onTitleHoldEnabled;
-	public bool? OnTitleHoldEnabled {
+	[Parameter]
+	bool? OnTitleHoldEnabled {
 		get => onTitleHoldEnabled;
 		set => this.onTitleHoldEnabled = value;
 	}
 	bool? onTitleRenderedEnabled;
-	public bool? OnTitleRenderedEnabled {
+	[Parameter]
+	bool? OnTitleRenderedEnabled {
 		get => onTitleRenderedEnabled;
 		set => this.onTitleRenderedEnabled = value;
 	}
@@ -132,19 +146,22 @@
 		DevExpress.Ui.DxTabPanelInterop.TitleHold += DxTabPanel_TitleHold;
 		DevExpress.Ui.DxTabPanelInterop.TitleRendered += DxTabPanel_TitleRendered;
 	}
-	public Action TitleClick { get; set; }
+	[Parameter]
+	Action TitleClick { get; set; }
 	void DxTabPanel_TitleClick(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			TitleClick?.Invoke();
 		}
 	}
-	public Action TitleHold { get; set; }
+	[Parameter]
+	Action TitleHold { get; set; }
 	void DxTabPanel_TitleHold(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			TitleHold?.Invoke();
 		}
 	}
-	public Action TitleRendered { get; set; }
+	[Parameter]
+	Action TitleRendered { get; set; }
 	void DxTabPanel_TitleRendered(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			TitleRendered?.Invoke();

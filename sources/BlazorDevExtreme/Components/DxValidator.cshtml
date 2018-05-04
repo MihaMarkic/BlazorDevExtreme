@@ -1,9 +1,12 @@
+@using Microsoft.AspNetCore.Blazor.Components
+@using Microsoft.AspNetCore.Blazor
 @implements IDisposable
 @inherits DxBlazorCompoment<DevExpress.Ui.DxValidatorOptions>
 
-<div id="@Id"></div>
+<div id="@Id" ref="dxTarget"></div>
 
 @functions {
+	ElementRef dxTarget;
 	public DxValidator() : base("DxValidator") { }
 	protected override DevExpress.Ui.DxValidatorOptions CreateOptions() {
 		return new DevExpress.Ui.DxValidatorOptions {
@@ -15,54 +18,59 @@
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxValidatorOptions options) {
-		DevExpress.Ui.DxValidatorInterop.Init(Id, options);
+		DevExpress.Ui.DxValidatorInterop.Init(dxTarget, options);
 	}
 	object adapter;
-	public object Adapter {
-		get => isInitialized ? DevExpress.Ui.DxValidatorInterop.GetAdapter(Id) : adapter;
+	[Parameter]
+	object Adapter {
+		get => isInitialized ? DevExpress.Ui.DxValidatorInterop.GetAdapter(dxTarget) : adapter;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxValidatorInterop.SetAdapter(Id, value);
+				DevExpress.Ui.DxValidatorInterop.SetAdapter(dxTarget, value);
 			} else {
 				this.adapter = value;
 			}
 		}
 	}
 	string name;
-	public string Name {
-		get => isInitialized ? DevExpress.Ui.DxValidatorInterop.GetName(Id) : name;
+	[Parameter]
+	string Name {
+		get => isInitialized ? DevExpress.Ui.DxValidatorInterop.GetName(dxTarget) : name;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxValidatorInterop.SetName(Id, value);
+				DevExpress.Ui.DxValidatorInterop.SetName(dxTarget, value);
 			} else {
 				this.name = value;
 			}
 		}
 	}
 	string validationGroup;
-	public string ValidationGroup {
-		get => isInitialized ? DevExpress.Ui.DxValidatorInterop.GetValidationGroup(Id) : validationGroup;
+	[Parameter]
+	string ValidationGroup {
+		get => isInitialized ? DevExpress.Ui.DxValidatorInterop.GetValidationGroup(dxTarget) : validationGroup;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxValidatorInterop.SetValidationGroup(Id, value);
+				DevExpress.Ui.DxValidatorInterop.SetValidationGroup(dxTarget, value);
 			} else {
 				this.validationGroup = value;
 			}
 		}
 	}
 	object validationRules;
-	public object ValidationRules {
-		get => isInitialized ? DevExpress.Ui.DxValidatorInterop.GetValidationRules(Id) : validationRules;
+	[Parameter]
+	object ValidationRules {
+		get => isInitialized ? DevExpress.Ui.DxValidatorInterop.GetValidationRules(dxTarget) : validationRules;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxValidatorInterop.SetValidationRules(Id, value);
+				DevExpress.Ui.DxValidatorInterop.SetValidationRules(dxTarget, value);
 			} else {
 				this.validationRules = value;
 			}
 		}
 	}
 	bool? onValidatedEnabled;
-	public bool? OnValidatedEnabled {
+	[Parameter]
+	bool? OnValidatedEnabled {
 		get => onValidatedEnabled;
 		set => this.onValidatedEnabled = value;
 	}
@@ -70,20 +78,21 @@
 		await base.OnInitAsync();
 		DevExpress.Ui.DxValidatorInterop.Validated += DxValidator_Validated;
 	}
-	public Action Validated { get; set; }
+	[Parameter]
+	Action Validated { get; set; }
 	void DxValidator_Validated(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Validated?.Invoke();
 		}
 	}
 	public void Focus() {
-		DevExpress.Ui.DxValidatorInterop.Focus(Id);
+		DevExpress.Ui.DxValidatorInterop.Focus(dxTarget);
 	}
 	public void Reset() {
-		DevExpress.Ui.DxValidatorInterop.Reset(Id);
+		DevExpress.Ui.DxValidatorInterop.Reset(dxTarget);
 	}
 	public object Validate() {
-		return DevExpress.Ui.DxValidatorInterop.Validate(Id);
+		return DevExpress.Ui.DxValidatorInterop.Validate(dxTarget);
 	}
 	public void Dispose() {
 		DevExpress.Ui.DxValidatorInterop.Validated -= DxValidator_Validated;

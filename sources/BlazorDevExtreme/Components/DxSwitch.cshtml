@@ -1,9 +1,12 @@
+@using Microsoft.AspNetCore.Blazor.Components
+@using Microsoft.AspNetCore.Blazor
 @implements IDisposable
 @inherits DxBlazorCompoment<DevExpress.Ui.DxSwitchOptions>
 
-<div id="@Id"></div>
+<div id="@Id" ref="dxTarget"></div>
 
 @functions {
+	ElementRef dxTarget;
 	public DxSwitch() : base("DxSwitch") { }
 	protected override DevExpress.Ui.DxSwitchOptions CreateOptions() {
 		return new DevExpress.Ui.DxSwitchOptions {
@@ -17,80 +20,87 @@
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxSwitchOptions options) {
-		DevExpress.Ui.DxSwitchInterop.Init(Id, options);
+		DevExpress.Ui.DxSwitchInterop.Init(dxTarget, options);
 	}
 	bool? activeStateEnabled;
-	public bool? ActiveStateEnabled {
-		get => isInitialized ? DevExpress.Ui.DxSwitchInterop.GetActiveStateEnabled(Id) : activeStateEnabled;
+	[Parameter]
+	bool? ActiveStateEnabled {
+		get => isInitialized ? DevExpress.Ui.DxSwitchInterop.GetActiveStateEnabled(dxTarget) : activeStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSwitchInterop.SetActiveStateEnabled(Id, value);
+				DevExpress.Ui.DxSwitchInterop.SetActiveStateEnabled(dxTarget, value);
 			} else {
 				this.activeStateEnabled = value;
 			}
 		}
 	}
 	bool? focusStateEnabled;
-	public bool? FocusStateEnabled {
-		get => isInitialized ? DevExpress.Ui.DxSwitchInterop.GetFocusStateEnabled(Id) : focusStateEnabled;
+	[Parameter]
+	bool? FocusStateEnabled {
+		get => isInitialized ? DevExpress.Ui.DxSwitchInterop.GetFocusStateEnabled(dxTarget) : focusStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSwitchInterop.SetFocusStateEnabled(Id, value);
+				DevExpress.Ui.DxSwitchInterop.SetFocusStateEnabled(dxTarget, value);
 			} else {
 				this.focusStateEnabled = value;
 			}
 		}
 	}
 	bool? hoverStateEnabled;
-	public bool? HoverStateEnabled {
-		get => isInitialized ? DevExpress.Ui.DxSwitchInterop.GetHoverStateEnabled(Id) : hoverStateEnabled;
+	[Parameter]
+	bool? HoverStateEnabled {
+		get => isInitialized ? DevExpress.Ui.DxSwitchInterop.GetHoverStateEnabled(dxTarget) : hoverStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSwitchInterop.SetHoverStateEnabled(Id, value);
+				DevExpress.Ui.DxSwitchInterop.SetHoverStateEnabled(dxTarget, value);
 			} else {
 				this.hoverStateEnabled = value;
 			}
 		}
 	}
 	string name;
-	public string Name {
-		get => isInitialized ? DevExpress.Ui.DxSwitchInterop.GetName(Id) : name;
+	[Parameter]
+	string Name {
+		get => isInitialized ? DevExpress.Ui.DxSwitchInterop.GetName(dxTarget) : name;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSwitchInterop.SetName(Id, value);
+				DevExpress.Ui.DxSwitchInterop.SetName(dxTarget, value);
 			} else {
 				this.name = value;
 			}
 		}
 	}
 	string offText;
-	public string OffText {
-		get => isInitialized ? DevExpress.Ui.DxSwitchInterop.GetOffText(Id) : offText;
+	[Parameter]
+	string OffText {
+		get => isInitialized ? DevExpress.Ui.DxSwitchInterop.GetOffText(dxTarget) : offText;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSwitchInterop.SetOffText(Id, value);
+				DevExpress.Ui.DxSwitchInterop.SetOffText(dxTarget, value);
 			} else {
 				this.offText = value;
 			}
 		}
 	}
 	string onText;
-	public string OnText {
-		get => isInitialized ? DevExpress.Ui.DxSwitchInterop.GetOnText(Id) : onText;
+	[Parameter]
+	string OnText {
+		get => isInitialized ? DevExpress.Ui.DxSwitchInterop.GetOnText(dxTarget) : onText;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSwitchInterop.SetOnText(Id, value);
+				DevExpress.Ui.DxSwitchInterop.SetOnText(dxTarget, value);
 			} else {
 				this.onText = value;
 			}
 		}
 	}
 	bool? value;
-	public bool? Value {
-		get => isInitialized ? DevExpress.Ui.DxSwitchInterop.GetValue(Id) : value;
+	[Parameter]
+	bool? Value {
+		get => isInitialized ? DevExpress.Ui.DxSwitchInterop.GetValue(dxTarget) : value;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSwitchInterop.SetValue(Id, value);
+				DevExpress.Ui.DxSwitchInterop.SetValue(dxTarget, value);
 			} else {
 				this.value = value;
 			}

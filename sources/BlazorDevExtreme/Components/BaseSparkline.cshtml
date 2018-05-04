@@ -1,9 +1,12 @@
+@using Microsoft.AspNetCore.Blazor.Components
+@using Microsoft.AspNetCore.Blazor
 @implements IDisposable
 @inherits DxBlazorCompoment<DevExpress.Viz.Sparklines.BaseSparklineOptions>
 
-<div id="@Id"></div>
+<div id="@Id" ref="dxTarget"></div>
 
 @functions {
+	ElementRef dxTarget;
 	public BaseSparkline() : base("BaseSparkline") { }
 	protected override DevExpress.Viz.Sparklines.BaseSparklineOptions CreateOptions() {
 		return new DevExpress.Viz.Sparklines.BaseSparklineOptions {
@@ -13,26 +16,29 @@
 		};
 	}
 	protected override void Init(DevExpress.Viz.Sparklines.BaseSparklineOptions options) {
-		DevExpress.Viz.BaseSparklineInterop.Init(Id, options);
+		DevExpress.Viz.BaseSparklineInterop.Init(dxTarget, options);
 	}
 	object tooltip;
-	public object Tooltip {
-		get => isInitialized ? DevExpress.Viz.BaseSparklineInterop.GetTooltip(Id) : tooltip;
+	[Parameter]
+	object Tooltip {
+		get => isInitialized ? DevExpress.Viz.BaseSparklineInterop.GetTooltip(dxTarget) : tooltip;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.BaseSparklineInterop.SetTooltip(Id, value);
+				DevExpress.Viz.BaseSparklineInterop.SetTooltip(dxTarget, value);
 			} else {
 				this.tooltip = value;
 			}
 		}
 	}
 	bool? onTooltipHiddenEnabled;
-	public bool? OnTooltipHiddenEnabled {
+	[Parameter]
+	bool? OnTooltipHiddenEnabled {
 		get => onTooltipHiddenEnabled;
 		set => this.onTooltipHiddenEnabled = value;
 	}
 	bool? onTooltipShownEnabled;
-	public bool? OnTooltipShownEnabled {
+	[Parameter]
+	bool? OnTooltipShownEnabled {
 		get => onTooltipShownEnabled;
 		set => this.onTooltipShownEnabled = value;
 	}
@@ -41,13 +47,15 @@
 		DevExpress.Viz.BaseSparklineInterop.TooltipHidden += BaseSparkline_TooltipHidden;
 		DevExpress.Viz.BaseSparklineInterop.TooltipShown += BaseSparkline_TooltipShown;
 	}
-	public Action TooltipHidden { get; set; }
+	[Parameter]
+	Action TooltipHidden { get; set; }
 	void BaseSparkline_TooltipHidden(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			TooltipHidden?.Invoke();
 		}
 	}
-	public Action TooltipShown { get; set; }
+	[Parameter]
+	Action TooltipShown { get; set; }
 	void BaseSparkline_TooltipShown(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			TooltipShown?.Invoke();

@@ -1,9 +1,12 @@
+@using Microsoft.AspNetCore.Blazor.Components
+@using Microsoft.AspNetCore.Blazor
 @implements IDisposable
 @inherits DxBlazorCompoment<DevExpress.Ui.GridBaseOptions>
 
-<div id="@Id"></div>
+<div id="@Id" ref="dxTarget"></div>
 
 @functions {
+	ElementRef dxTarget;
 	public GridBase() : base("GridBase") { }
 	protected override DevExpress.Ui.GridBaseOptions CreateOptions() {
 		return new DevExpress.Ui.GridBaseOptions {
@@ -67,530 +70,587 @@
 		};
 	}
 	protected override void Init(DevExpress.Ui.GridBaseOptions options) {
-		DevExpress.Ui.GridBaseInterop.Init(Id, options);
+		DevExpress.Ui.GridBaseInterop.Init(dxTarget, options);
 	}
 	bool? allowColumnReordering;
-	public bool? AllowColumnReordering {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetAllowColumnReordering(Id) : allowColumnReordering;
+	[Parameter]
+	bool? AllowColumnReordering {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetAllowColumnReordering(dxTarget) : allowColumnReordering;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.GridBaseInterop.SetAllowColumnReordering(Id, value);
+				DevExpress.Ui.GridBaseInterop.SetAllowColumnReordering(dxTarget, value);
 			} else {
 				this.allowColumnReordering = value;
 			}
 		}
 	}
 	bool? allowColumnResizing;
-	public bool? AllowColumnResizing {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetAllowColumnResizing(Id) : allowColumnResizing;
+	[Parameter]
+	bool? AllowColumnResizing {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetAllowColumnResizing(dxTarget) : allowColumnResizing;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.GridBaseInterop.SetAllowColumnResizing(Id, value);
+				DevExpress.Ui.GridBaseInterop.SetAllowColumnResizing(dxTarget, value);
 			} else {
 				this.allowColumnResizing = value;
 			}
 		}
 	}
 	bool? cacheEnabled;
-	public bool? CacheEnabled {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetCacheEnabled(Id) : cacheEnabled;
+	[Parameter]
+	bool? CacheEnabled {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetCacheEnabled(dxTarget) : cacheEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.GridBaseInterop.SetCacheEnabled(Id, value);
+				DevExpress.Ui.GridBaseInterop.SetCacheEnabled(dxTarget, value);
 			} else {
 				this.cacheEnabled = value;
 			}
 		}
 	}
 	bool? cellHintEnabled;
-	public bool? CellHintEnabled {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetCellHintEnabled(Id) : cellHintEnabled;
+	[Parameter]
+	bool? CellHintEnabled {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetCellHintEnabled(dxTarget) : cellHintEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.GridBaseInterop.SetCellHintEnabled(Id, value);
+				DevExpress.Ui.GridBaseInterop.SetCellHintEnabled(dxTarget, value);
 			} else {
 				this.cellHintEnabled = value;
 			}
 		}
 	}
 	bool? columnAutoWidth;
-	public bool? ColumnAutoWidth {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetColumnAutoWidth(Id) : columnAutoWidth;
+	[Parameter]
+	bool? ColumnAutoWidth {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetColumnAutoWidth(dxTarget) : columnAutoWidth;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.GridBaseInterop.SetColumnAutoWidth(Id, value);
+				DevExpress.Ui.GridBaseInterop.SetColumnAutoWidth(dxTarget, value);
 			} else {
 				this.columnAutoWidth = value;
 			}
 		}
 	}
 	object columnChooser;
-	public object ColumnChooser {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetColumnChooser(Id) : columnChooser;
+	[Parameter]
+	object ColumnChooser {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetColumnChooser(dxTarget) : columnChooser;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.GridBaseInterop.SetColumnChooser(Id, value);
+				DevExpress.Ui.GridBaseInterop.SetColumnChooser(dxTarget, value);
 			} else {
 				this.columnChooser = value;
 			}
 		}
 	}
 	object columnFixing;
-	public object ColumnFixing {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetColumnFixing(Id) : columnFixing;
+	[Parameter]
+	object ColumnFixing {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetColumnFixing(dxTarget) : columnFixing;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.GridBaseInterop.SetColumnFixing(Id, value);
+				DevExpress.Ui.GridBaseInterop.SetColumnFixing(dxTarget, value);
 			} else {
 				this.columnFixing = value;
 			}
 		}
 	}
 	bool? columnHidingEnabled;
-	public bool? ColumnHidingEnabled {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetColumnHidingEnabled(Id) : columnHidingEnabled;
+	[Parameter]
+	bool? ColumnHidingEnabled {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetColumnHidingEnabled(dxTarget) : columnHidingEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.GridBaseInterop.SetColumnHidingEnabled(Id, value);
+				DevExpress.Ui.GridBaseInterop.SetColumnHidingEnabled(dxTarget, value);
 			} else {
 				this.columnHidingEnabled = value;
 			}
 		}
 	}
 	float? columnMinWidth;
-	public float? ColumnMinWidth {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetColumnMinWidth(Id) : columnMinWidth;
+	[Parameter]
+	float? ColumnMinWidth {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetColumnMinWidth(dxTarget) : columnMinWidth;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.GridBaseInterop.SetColumnMinWidth(Id, value);
+				DevExpress.Ui.GridBaseInterop.SetColumnMinWidth(dxTarget, value);
 			} else {
 				this.columnMinWidth = value;
 			}
 		}
 	}
 	string columnResizingMode;
-	public string ColumnResizingMode {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetColumnResizingMode(Id) : columnResizingMode;
+	[Parameter]
+	string ColumnResizingMode {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetColumnResizingMode(dxTarget) : columnResizingMode;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.GridBaseInterop.SetColumnResizingMode(Id, value);
+				DevExpress.Ui.GridBaseInterop.SetColumnResizingMode(dxTarget, value);
 			} else {
 				this.columnResizingMode = value;
 			}
 		}
 	}
 	object columns;
-	public object Columns {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetColumns(Id) : columns;
+	[Parameter]
+	object Columns {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetColumns(dxTarget) : columns;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.GridBaseInterop.SetColumns(Id, value);
+				DevExpress.Ui.GridBaseInterop.SetColumns(dxTarget, value);
 			} else {
 				this.columns = value;
 			}
 		}
 	}
 	float? columnWidth;
-	public float? ColumnWidth {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetColumnWidth(Id) : columnWidth;
+	[Parameter]
+	float? ColumnWidth {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetColumnWidth(dxTarget) : columnWidth;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.GridBaseInterop.SetColumnWidth(Id, value);
+				DevExpress.Ui.GridBaseInterop.SetColumnWidth(dxTarget, value);
 			} else {
 				this.columnWidth = value;
 			}
 		}
 	}
 	object dataSource;
-	public object DataSource {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetDataSource(Id) : dataSource;
+	[Parameter]
+	object DataSource {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetDataSource(dxTarget) : dataSource;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.GridBaseInterop.SetDataSource(Id, value);
+				DevExpress.Ui.GridBaseInterop.SetDataSource(dxTarget, value);
 			} else {
 				this.dataSource = value;
 			}
 		}
 	}
 	string dateSerializationFormat;
-	public string DateSerializationFormat {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetDateSerializationFormat(Id) : dateSerializationFormat;
+	[Parameter]
+	string DateSerializationFormat {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetDateSerializationFormat(dxTarget) : dateSerializationFormat;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.GridBaseInterop.SetDateSerializationFormat(Id, value);
+				DevExpress.Ui.GridBaseInterop.SetDateSerializationFormat(dxTarget, value);
 			} else {
 				this.dateSerializationFormat = value;
 			}
 		}
 	}
 	object editing;
-	public object Editing {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetEditing(Id) : editing;
+	[Parameter]
+	object Editing {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetEditing(dxTarget) : editing;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.GridBaseInterop.SetEditing(Id, value);
+				DevExpress.Ui.GridBaseInterop.SetEditing(dxTarget, value);
 			} else {
 				this.editing = value;
 			}
 		}
 	}
 	bool? errorRowEnabled;
-	public bool? ErrorRowEnabled {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetErrorRowEnabled(Id) : errorRowEnabled;
+	[Parameter]
+	bool? ErrorRowEnabled {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetErrorRowEnabled(dxTarget) : errorRowEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.GridBaseInterop.SetErrorRowEnabled(Id, value);
+				DevExpress.Ui.GridBaseInterop.SetErrorRowEnabled(dxTarget, value);
 			} else {
 				this.errorRowEnabled = value;
 			}
 		}
 	}
 	object filterBuilder;
-	public object FilterBuilder {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetFilterBuilder(Id) : filterBuilder;
+	[Parameter]
+	object FilterBuilder {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetFilterBuilder(dxTarget) : filterBuilder;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.GridBaseInterop.SetFilterBuilder(Id, value);
+				DevExpress.Ui.GridBaseInterop.SetFilterBuilder(dxTarget, value);
 			} else {
 				this.filterBuilder = value;
 			}
 		}
 	}
 	object filterBuilderPopup;
-	public object FilterBuilderPopup {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetFilterBuilderPopup(Id) : filterBuilderPopup;
+	[Parameter]
+	object FilterBuilderPopup {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetFilterBuilderPopup(dxTarget) : filterBuilderPopup;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.GridBaseInterop.SetFilterBuilderPopup(Id, value);
+				DevExpress.Ui.GridBaseInterop.SetFilterBuilderPopup(dxTarget, value);
 			} else {
 				this.filterBuilderPopup = value;
 			}
 		}
 	}
 	object filterPanel;
-	public object FilterPanel {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetFilterPanel(Id) : filterPanel;
+	[Parameter]
+	object FilterPanel {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetFilterPanel(dxTarget) : filterPanel;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.GridBaseInterop.SetFilterPanel(Id, value);
+				DevExpress.Ui.GridBaseInterop.SetFilterPanel(dxTarget, value);
 			} else {
 				this.filterPanel = value;
 			}
 		}
 	}
 	object filterRow;
-	public object FilterRow {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetFilterRow(Id) : filterRow;
+	[Parameter]
+	object FilterRow {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetFilterRow(dxTarget) : filterRow;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.GridBaseInterop.SetFilterRow(Id, value);
+				DevExpress.Ui.GridBaseInterop.SetFilterRow(dxTarget, value);
 			} else {
 				this.filterRow = value;
 			}
 		}
 	}
 	object filterSyncEnabled;
-	public object FilterSyncEnabled {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetFilterSyncEnabled(Id) : filterSyncEnabled;
+	[Parameter]
+	object FilterSyncEnabled {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetFilterSyncEnabled(dxTarget) : filterSyncEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.GridBaseInterop.SetFilterSyncEnabled(Id, value);
+				DevExpress.Ui.GridBaseInterop.SetFilterSyncEnabled(dxTarget, value);
 			} else {
 				this.filterSyncEnabled = value;
 			}
 		}
 	}
 	object filterValue;
-	public object FilterValue {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetFilterValue(Id) : filterValue;
+	[Parameter]
+	object FilterValue {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetFilterValue(dxTarget) : filterValue;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.GridBaseInterop.SetFilterValue(Id, value);
+				DevExpress.Ui.GridBaseInterop.SetFilterValue(dxTarget, value);
 			} else {
 				this.filterValue = value;
 			}
 		}
 	}
 	object headerFilter;
-	public object HeaderFilter {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetHeaderFilter(Id) : headerFilter;
+	[Parameter]
+	object HeaderFilter {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetHeaderFilter(dxTarget) : headerFilter;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.GridBaseInterop.SetHeaderFilter(Id, value);
+				DevExpress.Ui.GridBaseInterop.SetHeaderFilter(dxTarget, value);
 			} else {
 				this.headerFilter = value;
 			}
 		}
 	}
 	object loadPanel;
-	public object LoadPanel {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetLoadPanel(Id) : loadPanel;
+	[Parameter]
+	object LoadPanel {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetLoadPanel(dxTarget) : loadPanel;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.GridBaseInterop.SetLoadPanel(Id, value);
+				DevExpress.Ui.GridBaseInterop.SetLoadPanel(dxTarget, value);
 			} else {
 				this.loadPanel = value;
 			}
 		}
 	}
 	string noDataText;
-	public string NoDataText {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetNoDataText(Id) : noDataText;
+	[Parameter]
+	string NoDataText {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetNoDataText(dxTarget) : noDataText;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.GridBaseInterop.SetNoDataText(Id, value);
+				DevExpress.Ui.GridBaseInterop.SetNoDataText(dxTarget, value);
 			} else {
 				this.noDataText = value;
 			}
 		}
 	}
 	object pager;
-	public object Pager {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetPager(Id) : pager;
+	[Parameter]
+	object Pager {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetPager(dxTarget) : pager;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.GridBaseInterop.SetPager(Id, value);
+				DevExpress.Ui.GridBaseInterop.SetPager(dxTarget, value);
 			} else {
 				this.pager = value;
 			}
 		}
 	}
 	object paging;
-	public object Paging {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetPaging(Id) : paging;
+	[Parameter]
+	object Paging {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetPaging(dxTarget) : paging;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.GridBaseInterop.SetPaging(Id, value);
+				DevExpress.Ui.GridBaseInterop.SetPaging(dxTarget, value);
 			} else {
 				this.paging = value;
 			}
 		}
 	}
 	bool? rowAlternationEnabled;
-	public bool? RowAlternationEnabled {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetRowAlternationEnabled(Id) : rowAlternationEnabled;
+	[Parameter]
+	bool? RowAlternationEnabled {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetRowAlternationEnabled(dxTarget) : rowAlternationEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.GridBaseInterop.SetRowAlternationEnabled(Id, value);
+				DevExpress.Ui.GridBaseInterop.SetRowAlternationEnabled(dxTarget, value);
 			} else {
 				this.rowAlternationEnabled = value;
 			}
 		}
 	}
 	object scrolling;
-	public object Scrolling {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetScrolling(Id) : scrolling;
+	[Parameter]
+	object Scrolling {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetScrolling(dxTarget) : scrolling;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.GridBaseInterop.SetScrolling(Id, value);
+				DevExpress.Ui.GridBaseInterop.SetScrolling(dxTarget, value);
 			} else {
 				this.scrolling = value;
 			}
 		}
 	}
 	object searchPanel;
-	public object SearchPanel {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetSearchPanel(Id) : searchPanel;
+	[Parameter]
+	object SearchPanel {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetSearchPanel(dxTarget) : searchPanel;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.GridBaseInterop.SetSearchPanel(Id, value);
+				DevExpress.Ui.GridBaseInterop.SetSearchPanel(dxTarget, value);
 			} else {
 				this.searchPanel = value;
 			}
 		}
 	}
 	object selectedRowKeys;
-	public object SelectedRowKeys {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetSelectedRowKeys(Id) : selectedRowKeys;
+	[Parameter]
+	object SelectedRowKeys {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetSelectedRowKeys(dxTarget) : selectedRowKeys;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.GridBaseInterop.SetSelectedRowKeys(Id, value);
+				DevExpress.Ui.GridBaseInterop.SetSelectedRowKeys(dxTarget, value);
 			} else {
 				this.selectedRowKeys = value;
 			}
 		}
 	}
 	object selection;
-	public object Selection {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetSelection(Id) : selection;
+	[Parameter]
+	object Selection {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetSelection(dxTarget) : selection;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.GridBaseInterop.SetSelection(Id, value);
+				DevExpress.Ui.GridBaseInterop.SetSelection(dxTarget, value);
 			} else {
 				this.selection = value;
 			}
 		}
 	}
 	bool? showBorders;
-	public bool? ShowBorders {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetShowBorders(Id) : showBorders;
+	[Parameter]
+	bool? ShowBorders {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetShowBorders(dxTarget) : showBorders;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.GridBaseInterop.SetShowBorders(Id, value);
+				DevExpress.Ui.GridBaseInterop.SetShowBorders(dxTarget, value);
 			} else {
 				this.showBorders = value;
 			}
 		}
 	}
 	bool? showColumnHeaders;
-	public bool? ShowColumnHeaders {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetShowColumnHeaders(Id) : showColumnHeaders;
+	[Parameter]
+	bool? ShowColumnHeaders {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetShowColumnHeaders(dxTarget) : showColumnHeaders;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.GridBaseInterop.SetShowColumnHeaders(Id, value);
+				DevExpress.Ui.GridBaseInterop.SetShowColumnHeaders(dxTarget, value);
 			} else {
 				this.showColumnHeaders = value;
 			}
 		}
 	}
 	bool? showColumnLines;
-	public bool? ShowColumnLines {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetShowColumnLines(Id) : showColumnLines;
+	[Parameter]
+	bool? ShowColumnLines {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetShowColumnLines(dxTarget) : showColumnLines;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.GridBaseInterop.SetShowColumnLines(Id, value);
+				DevExpress.Ui.GridBaseInterop.SetShowColumnLines(dxTarget, value);
 			} else {
 				this.showColumnLines = value;
 			}
 		}
 	}
 	bool? showRowLines;
-	public bool? ShowRowLines {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetShowRowLines(Id) : showRowLines;
+	[Parameter]
+	bool? ShowRowLines {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetShowRowLines(dxTarget) : showRowLines;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.GridBaseInterop.SetShowRowLines(Id, value);
+				DevExpress.Ui.GridBaseInterop.SetShowRowLines(dxTarget, value);
 			} else {
 				this.showRowLines = value;
 			}
 		}
 	}
 	object sorting;
-	public object Sorting {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetSorting(Id) : sorting;
+	[Parameter]
+	object Sorting {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetSorting(dxTarget) : sorting;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.GridBaseInterop.SetSorting(Id, value);
+				DevExpress.Ui.GridBaseInterop.SetSorting(dxTarget, value);
 			} else {
 				this.sorting = value;
 			}
 		}
 	}
 	object stateStoring;
-	public object StateStoring {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetStateStoring(Id) : stateStoring;
+	[Parameter]
+	object StateStoring {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetStateStoring(dxTarget) : stateStoring;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.GridBaseInterop.SetStateStoring(Id, value);
+				DevExpress.Ui.GridBaseInterop.SetStateStoring(dxTarget, value);
 			} else {
 				this.stateStoring = value;
 			}
 		}
 	}
 	bool? twoWayBindingEnabled;
-	public bool? TwoWayBindingEnabled {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetTwoWayBindingEnabled(Id) : twoWayBindingEnabled;
+	[Parameter]
+	bool? TwoWayBindingEnabled {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetTwoWayBindingEnabled(dxTarget) : twoWayBindingEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.GridBaseInterop.SetTwoWayBindingEnabled(Id, value);
+				DevExpress.Ui.GridBaseInterop.SetTwoWayBindingEnabled(dxTarget, value);
 			} else {
 				this.twoWayBindingEnabled = value;
 			}
 		}
 	}
 	bool? wordWrapEnabled;
-	public bool? WordWrapEnabled {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetWordWrapEnabled(Id) : wordWrapEnabled;
+	[Parameter]
+	bool? WordWrapEnabled {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetWordWrapEnabled(dxTarget) : wordWrapEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.GridBaseInterop.SetWordWrapEnabled(Id, value);
+				DevExpress.Ui.GridBaseInterop.SetWordWrapEnabled(dxTarget, value);
 			} else {
 				this.wordWrapEnabled = value;
 			}
 		}
 	}
 	bool? onAdaptiveDetailRowPreparingEnabled;
-	public bool? OnAdaptiveDetailRowPreparingEnabled {
+	[Parameter]
+	bool? OnAdaptiveDetailRowPreparingEnabled {
 		get => onAdaptiveDetailRowPreparingEnabled;
 		set => this.onAdaptiveDetailRowPreparingEnabled = value;
 	}
 	bool? onDataErrorOccurredEnabled;
-	public bool? OnDataErrorOccurredEnabled {
+	[Parameter]
+	bool? OnDataErrorOccurredEnabled {
 		get => onDataErrorOccurredEnabled;
 		set => this.onDataErrorOccurredEnabled = value;
 	}
 	bool? onInitNewRowEnabled;
-	public bool? OnInitNewRowEnabled {
+	[Parameter]
+	bool? OnInitNewRowEnabled {
 		get => onInitNewRowEnabled;
 		set => this.onInitNewRowEnabled = value;
 	}
 	bool? onKeyDownEnabled;
-	public bool? OnKeyDownEnabled {
+	[Parameter]
+	bool? OnKeyDownEnabled {
 		get => onKeyDownEnabled;
 		set => this.onKeyDownEnabled = value;
 	}
 	bool? onRowCollapsedEnabled;
-	public bool? OnRowCollapsedEnabled {
+	[Parameter]
+	bool? OnRowCollapsedEnabled {
 		get => onRowCollapsedEnabled;
 		set => this.onRowCollapsedEnabled = value;
 	}
 	bool? onRowCollapsingEnabled;
-	public bool? OnRowCollapsingEnabled {
+	[Parameter]
+	bool? OnRowCollapsingEnabled {
 		get => onRowCollapsingEnabled;
 		set => this.onRowCollapsingEnabled = value;
 	}
 	bool? onRowExpandedEnabled;
-	public bool? OnRowExpandedEnabled {
+	[Parameter]
+	bool? OnRowExpandedEnabled {
 		get => onRowExpandedEnabled;
 		set => this.onRowExpandedEnabled = value;
 	}
 	bool? onRowExpandingEnabled;
-	public bool? OnRowExpandingEnabled {
+	[Parameter]
+	bool? OnRowExpandingEnabled {
 		get => onRowExpandingEnabled;
 		set => this.onRowExpandingEnabled = value;
 	}
 	bool? onRowInsertedEnabled;
-	public bool? OnRowInsertedEnabled {
+	[Parameter]
+	bool? OnRowInsertedEnabled {
 		get => onRowInsertedEnabled;
 		set => this.onRowInsertedEnabled = value;
 	}
 	bool? onRowInsertingEnabled;
-	public bool? OnRowInsertingEnabled {
+	[Parameter]
+	bool? OnRowInsertingEnabled {
 		get => onRowInsertingEnabled;
 		set => this.onRowInsertingEnabled = value;
 	}
 	bool? onRowRemovedEnabled;
-	public bool? OnRowRemovedEnabled {
+	[Parameter]
+	bool? OnRowRemovedEnabled {
 		get => onRowRemovedEnabled;
 		set => this.onRowRemovedEnabled = value;
 	}
 	bool? onRowRemovingEnabled;
-	public bool? OnRowRemovingEnabled {
+	[Parameter]
+	bool? OnRowRemovingEnabled {
 		get => onRowRemovingEnabled;
 		set => this.onRowRemovingEnabled = value;
 	}
 	bool? onRowUpdatedEnabled;
-	public bool? OnRowUpdatedEnabled {
+	[Parameter]
+	bool? OnRowUpdatedEnabled {
 		get => onRowUpdatedEnabled;
 		set => this.onRowUpdatedEnabled = value;
 	}
 	bool? onRowUpdatingEnabled;
-	public bool? OnRowUpdatingEnabled {
+	[Parameter]
+	bool? OnRowUpdatingEnabled {
 		get => onRowUpdatingEnabled;
 		set => this.onRowUpdatingEnabled = value;
 	}
 	bool? onRowValidatingEnabled;
-	public bool? OnRowValidatingEnabled {
+	[Parameter]
+	bool? OnRowValidatingEnabled {
 		get => onRowValidatingEnabled;
 		set => this.onRowValidatingEnabled = value;
 	}
 	bool? onSelectionChangedEnabled;
-	public bool? OnSelectionChangedEnabled {
+	[Parameter]
+	bool? OnSelectionChangedEnabled {
 		get => onSelectionChangedEnabled;
 		set => this.onSelectionChangedEnabled = value;
 	}
 	bool? onToolbarPreparingEnabled;
-	public bool? OnToolbarPreparingEnabled {
+	[Parameter]
+	bool? OnToolbarPreparingEnabled {
 		get => onToolbarPreparingEnabled;
 		set => this.onToolbarPreparingEnabled = value;
 	}
@@ -614,293 +674,310 @@
 		DevExpress.Ui.GridBaseInterop.SelectionChanged += GridBase_SelectionChanged;
 		DevExpress.Ui.GridBaseInterop.ToolbarPreparing += GridBase_ToolbarPreparing;
 	}
-	public Action AdaptiveDetailRowPreparing { get; set; }
+	[Parameter]
+	Action AdaptiveDetailRowPreparing { get; set; }
 	void GridBase_AdaptiveDetailRowPreparing(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			AdaptiveDetailRowPreparing?.Invoke();
 		}
 	}
-	public Action DataErrorOccurred { get; set; }
+	[Parameter]
+	Action DataErrorOccurred { get; set; }
 	void GridBase_DataErrorOccurred(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			DataErrorOccurred?.Invoke();
 		}
 	}
-	public Action InitNewRow { get; set; }
+	[Parameter]
+	Action InitNewRow { get; set; }
 	void GridBase_InitNewRow(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			InitNewRow?.Invoke();
 		}
 	}
-	public Action KeyDown { get; set; }
+	[Parameter]
+	Action KeyDown { get; set; }
 	void GridBase_KeyDown(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			KeyDown?.Invoke();
 		}
 	}
-	public Action RowCollapsed { get; set; }
+	[Parameter]
+	Action RowCollapsed { get; set; }
 	void GridBase_RowCollapsed(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			RowCollapsed?.Invoke();
 		}
 	}
-	public Action RowCollapsing { get; set; }
+	[Parameter]
+	Action RowCollapsing { get; set; }
 	void GridBase_RowCollapsing(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			RowCollapsing?.Invoke();
 		}
 	}
-	public Action RowExpanded { get; set; }
+	[Parameter]
+	Action RowExpanded { get; set; }
 	void GridBase_RowExpanded(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			RowExpanded?.Invoke();
 		}
 	}
-	public Action RowExpanding { get; set; }
+	[Parameter]
+	Action RowExpanding { get; set; }
 	void GridBase_RowExpanding(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			RowExpanding?.Invoke();
 		}
 	}
-	public Action RowInserted { get; set; }
+	[Parameter]
+	Action RowInserted { get; set; }
 	void GridBase_RowInserted(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			RowInserted?.Invoke();
 		}
 	}
-	public Action RowInserting { get; set; }
+	[Parameter]
+	Action RowInserting { get; set; }
 	void GridBase_RowInserting(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			RowInserting?.Invoke();
 		}
 	}
-	public Action RowRemoved { get; set; }
+	[Parameter]
+	Action RowRemoved { get; set; }
 	void GridBase_RowRemoved(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			RowRemoved?.Invoke();
 		}
 	}
-	public Action RowRemoving { get; set; }
+	[Parameter]
+	Action RowRemoving { get; set; }
 	void GridBase_RowRemoving(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			RowRemoving?.Invoke();
 		}
 	}
-	public Action RowUpdated { get; set; }
+	[Parameter]
+	Action RowUpdated { get; set; }
 	void GridBase_RowUpdated(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			RowUpdated?.Invoke();
 		}
 	}
-	public Action RowUpdating { get; set; }
+	[Parameter]
+	Action RowUpdating { get; set; }
 	void GridBase_RowUpdating(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			RowUpdating?.Invoke();
 		}
 	}
-	public Action RowValidating { get; set; }
+	[Parameter]
+	Action RowValidating { get; set; }
 	void GridBase_RowValidating(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			RowValidating?.Invoke();
 		}
 	}
-	public Action SelectionChanged { get; set; }
+	[Parameter]
+	Action SelectionChanged { get; set; }
 	void GridBase_SelectionChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			SelectionChanged?.Invoke();
 		}
 	}
-	public Action ToolbarPreparing { get; set; }
+	[Parameter]
+	Action ToolbarPreparing { get; set; }
 	void GridBase_ToolbarPreparing(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ToolbarPreparing?.Invoke();
 		}
 	}
 	public void BeginCustomLoading(string messageText) {
-		DevExpress.Ui.GridBaseInterop.BeginCustomLoading(Id, messageText);
+		DevExpress.Ui.GridBaseInterop.BeginCustomLoading(dxTarget, messageText);
 	}
 	public object ByKey(object key) {
-		return DevExpress.Ui.GridBaseInterop.ByKey(Id, key);
+		return DevExpress.Ui.GridBaseInterop.ByKey(dxTarget, key);
 	}
 	public void CancelEditData() {
-		DevExpress.Ui.GridBaseInterop.CancelEditData(Id);
+		DevExpress.Ui.GridBaseInterop.CancelEditData(dxTarget);
 	}
 	public object CellValue(float rowIndex, string dataField) {
-		return DevExpress.Ui.GridBaseInterop.CellValue(Id, rowIndex, dataField);
+		return DevExpress.Ui.GridBaseInterop.CellValue(dxTarget, rowIndex, dataField);
 	}
 	public void CellValue(float rowIndex, string dataField, object value) {
-		DevExpress.Ui.GridBaseInterop.CellValue(Id, rowIndex, dataField, value);
+		DevExpress.Ui.GridBaseInterop.CellValue(dxTarget, rowIndex, dataField, value);
 	}
 	public object CellValue(float rowIndex, float visibleColumnIndex) {
-		return DevExpress.Ui.GridBaseInterop.CellValue(Id, rowIndex, visibleColumnIndex);
+		return DevExpress.Ui.GridBaseInterop.CellValue(dxTarget, rowIndex, visibleColumnIndex);
 	}
 	public void CellValue(float rowIndex, float visibleColumnIndex, object value) {
-		DevExpress.Ui.GridBaseInterop.CellValue(Id, rowIndex, visibleColumnIndex, value);
+		DevExpress.Ui.GridBaseInterop.CellValue(dxTarget, rowIndex, visibleColumnIndex, value);
 	}
 	public void ClearFilter() {
-		DevExpress.Ui.GridBaseInterop.ClearFilter(Id);
+		DevExpress.Ui.GridBaseInterop.ClearFilter(dxTarget);
 	}
 	public void ClearFilter(string filterName) {
-		DevExpress.Ui.GridBaseInterop.ClearFilter(Id, filterName);
+		DevExpress.Ui.GridBaseInterop.ClearFilter(dxTarget, filterName);
 	}
 	public void ClearSelection() {
-		DevExpress.Ui.GridBaseInterop.ClearSelection(Id);
+		DevExpress.Ui.GridBaseInterop.ClearSelection(dxTarget);
 	}
 	public void ClearSorting() {
-		DevExpress.Ui.GridBaseInterop.ClearSorting(Id);
+		DevExpress.Ui.GridBaseInterop.ClearSorting(dxTarget);
 	}
 	public void CloseEditCell() {
-		DevExpress.Ui.GridBaseInterop.CloseEditCell(Id);
+		DevExpress.Ui.GridBaseInterop.CloseEditCell(dxTarget);
 	}
 	public void CollapseAdaptiveDetailRow() {
-		DevExpress.Ui.GridBaseInterop.CollapseAdaptiveDetailRow(Id);
+		DevExpress.Ui.GridBaseInterop.CollapseAdaptiveDetailRow(dxTarget);
 	}
 	public float ColumnCount() {
-		return DevExpress.Ui.GridBaseInterop.ColumnCount(Id);
+		return DevExpress.Ui.GridBaseInterop.ColumnCount(dxTarget);
 	}
 	public object ColumnOption(object id) {
-		return DevExpress.Ui.GridBaseInterop.ColumnOption(Id, id);
+		return DevExpress.Ui.GridBaseInterop.ColumnOption(dxTarget, id);
 	}
 	public object ColumnOption(object id, string optionName) {
-		return DevExpress.Ui.GridBaseInterop.ColumnOption(Id, id, optionName);
+		return DevExpress.Ui.GridBaseInterop.ColumnOption(dxTarget, id, optionName);
 	}
 	public void ColumnOption(object id, string optionName, object optionValue) {
-		DevExpress.Ui.GridBaseInterop.ColumnOption(Id, id, optionName, optionValue);
+		DevExpress.Ui.GridBaseInterop.ColumnOption(dxTarget, id, optionName, optionValue);
 	}
 	public void ColumnOption(object id, object options) {
-		DevExpress.Ui.GridBaseInterop.ColumnOption(Id, id, options);
+		DevExpress.Ui.GridBaseInterop.ColumnOption(dxTarget, id, options);
 	}
 	public void DeleteColumn(object id) {
-		DevExpress.Ui.GridBaseInterop.DeleteColumn(Id, id);
+		DevExpress.Ui.GridBaseInterop.DeleteColumn(dxTarget, id);
 	}
 	public void DeleteRow(float rowIndex) {
-		DevExpress.Ui.GridBaseInterop.DeleteRow(Id, rowIndex);
+		DevExpress.Ui.GridBaseInterop.DeleteRow(dxTarget, rowIndex);
 	}
 	public object DeselectAll() {
-		return DevExpress.Ui.GridBaseInterop.DeselectAll(Id);
+		return DevExpress.Ui.GridBaseInterop.DeselectAll(dxTarget);
 	}
 	public object DeselectRows(object keys) {
-		return DevExpress.Ui.GridBaseInterop.DeselectRows(Id, keys);
+		return DevExpress.Ui.GridBaseInterop.DeselectRows(dxTarget, keys);
 	}
 	public void EditCell(float rowIndex, string dataField) {
-		DevExpress.Ui.GridBaseInterop.EditCell(Id, rowIndex, dataField);
+		DevExpress.Ui.GridBaseInterop.EditCell(dxTarget, rowIndex, dataField);
 	}
 	public void EditCell(float rowIndex, float visibleColumnIndex) {
-		DevExpress.Ui.GridBaseInterop.EditCell(Id, rowIndex, visibleColumnIndex);
+		DevExpress.Ui.GridBaseInterop.EditCell(dxTarget, rowIndex, visibleColumnIndex);
 	}
 	public void EditRow(float rowIndex) {
-		DevExpress.Ui.GridBaseInterop.EditRow(Id, rowIndex);
+		DevExpress.Ui.GridBaseInterop.EditRow(dxTarget, rowIndex);
 	}
 	public void EndCustomLoading() {
-		DevExpress.Ui.GridBaseInterop.EndCustomLoading(Id);
+		DevExpress.Ui.GridBaseInterop.EndCustomLoading(dxTarget);
 	}
 	public void ExpandAdaptiveDetailRow(object key) {
-		DevExpress.Ui.GridBaseInterop.ExpandAdaptiveDetailRow(Id, key);
+		DevExpress.Ui.GridBaseInterop.ExpandAdaptiveDetailRow(dxTarget, key);
 	}
 	public object Filter() {
-		return DevExpress.Ui.GridBaseInterop.Filter(Id);
+		return DevExpress.Ui.GridBaseInterop.Filter(dxTarget);
 	}
 	public void Filter(object filterExpr) {
-		DevExpress.Ui.GridBaseInterop.Filter(Id, filterExpr);
+		DevExpress.Ui.GridBaseInterop.Filter(dxTarget, filterExpr);
 	}
 	public void Focus() {
-		DevExpress.Ui.GridBaseInterop.Focus(Id);
+		DevExpress.Ui.GridBaseInterop.Focus(dxTarget);
 	}
 	public void Focus(object element) {
-		DevExpress.Ui.GridBaseInterop.Focus(Id, element);
+		DevExpress.Ui.GridBaseInterop.Focus(dxTarget, element);
 	}
 	public object GetCellElement(float rowIndex, string dataField) {
-		return DevExpress.Ui.GridBaseInterop.GetCellElement(Id, rowIndex, dataField);
+		return DevExpress.Ui.GridBaseInterop.GetCellElement(dxTarget, rowIndex, dataField);
 	}
 	public object GetCellElement(float rowIndex, float visibleColumnIndex) {
-		return DevExpress.Ui.GridBaseInterop.GetCellElement(Id, rowIndex, visibleColumnIndex);
+		return DevExpress.Ui.GridBaseInterop.GetCellElement(dxTarget, rowIndex, visibleColumnIndex);
 	}
 	public object GetCombinedFilter() {
-		return DevExpress.Ui.GridBaseInterop.GetCombinedFilter(Id);
+		return DevExpress.Ui.GridBaseInterop.GetCombinedFilter(dxTarget);
 	}
 	public object GetCombinedFilter(bool returnDataField) {
-		return DevExpress.Ui.GridBaseInterop.GetCombinedFilter(Id, returnDataField);
+		return DevExpress.Ui.GridBaseInterop.GetCombinedFilter(dxTarget, returnDataField);
 	}
 	public object GetDataSourceEx() {
-		return DevExpress.Ui.GridBaseInterop.GetDataSourceEx(Id);
+		return DevExpress.Ui.GridBaseInterop.GetDataSourceEx(dxTarget);
 	}
 	public object GetKeyByRowIndex(float rowIndex) {
-		return DevExpress.Ui.GridBaseInterop.GetKeyByRowIndex(Id, rowIndex);
+		return DevExpress.Ui.GridBaseInterop.GetKeyByRowIndex(dxTarget, rowIndex);
 	}
 	public object GetRowElement(float rowIndex) {
-		return DevExpress.Ui.GridBaseInterop.GetRowElement(Id, rowIndex);
+		return DevExpress.Ui.GridBaseInterop.GetRowElement(dxTarget, rowIndex);
 	}
 	public float GetRowIndexByKey(object key) {
-		return DevExpress.Ui.GridBaseInterop.GetRowIndexByKey(Id, key);
+		return DevExpress.Ui.GridBaseInterop.GetRowIndexByKey(dxTarget, key);
 	}
 	public object GetScrollable() {
-		return DevExpress.Ui.GridBaseInterop.GetScrollable(Id);
+		return DevExpress.Ui.GridBaseInterop.GetScrollable(dxTarget);
 	}
 	public bool HasEditData() {
-		return DevExpress.Ui.GridBaseInterop.HasEditData(Id);
+		return DevExpress.Ui.GridBaseInterop.HasEditData(dxTarget);
 	}
 	public void HideColumnChooser() {
-		DevExpress.Ui.GridBaseInterop.HideColumnChooser(Id);
+		DevExpress.Ui.GridBaseInterop.HideColumnChooser(dxTarget);
 	}
 	public void IsAdaptiveDetailRowExpanded(object key) {
-		DevExpress.Ui.GridBaseInterop.IsAdaptiveDetailRowExpanded(Id, key);
+		DevExpress.Ui.GridBaseInterop.IsAdaptiveDetailRowExpanded(dxTarget, key);
 	}
 	public bool IsRowSelected(object key) {
-		return DevExpress.Ui.GridBaseInterop.IsRowSelected(Id, key);
+		return DevExpress.Ui.GridBaseInterop.IsRowSelected(dxTarget, key);
 	}
 	public object KeyOf(object obj) {
-		return DevExpress.Ui.GridBaseInterop.KeyOf(Id, obj);
+		return DevExpress.Ui.GridBaseInterop.KeyOf(dxTarget, obj);
 	}
 	public float PageCount() {
-		return DevExpress.Ui.GridBaseInterop.PageCount(Id);
+		return DevExpress.Ui.GridBaseInterop.PageCount(dxTarget);
 	}
 	public float PageIndex() {
-		return DevExpress.Ui.GridBaseInterop.PageIndex(Id);
+		return DevExpress.Ui.GridBaseInterop.PageIndex(dxTarget);
 	}
 	public object PageIndex(float newIndex) {
-		return DevExpress.Ui.GridBaseInterop.PageIndex(Id, newIndex);
+		return DevExpress.Ui.GridBaseInterop.PageIndex(dxTarget, newIndex);
 	}
 	public float PageSize() {
-		return DevExpress.Ui.GridBaseInterop.PageSize(Id);
+		return DevExpress.Ui.GridBaseInterop.PageSize(dxTarget);
 	}
 	public void PageSize(float value) {
-		DevExpress.Ui.GridBaseInterop.PageSize(Id, value);
+		DevExpress.Ui.GridBaseInterop.PageSize(dxTarget, value);
 	}
 	public object Refresh() {
-		return DevExpress.Ui.GridBaseInterop.Refresh(Id);
+		return DevExpress.Ui.GridBaseInterop.Refresh(dxTarget);
 	}
 	public void RepaintRows(object rowIndexes) {
-		DevExpress.Ui.GridBaseInterop.RepaintRows(Id, rowIndexes);
+		DevExpress.Ui.GridBaseInterop.RepaintRows(dxTarget, rowIndexes);
 	}
 	public object SaveEditData() {
-		return DevExpress.Ui.GridBaseInterop.SaveEditData(Id);
+		return DevExpress.Ui.GridBaseInterop.SaveEditData(dxTarget);
 	}
 	public void SearchByText(string text) {
-		DevExpress.Ui.GridBaseInterop.SearchByText(Id, text);
+		DevExpress.Ui.GridBaseInterop.SearchByText(dxTarget, text);
 	}
 	public object SelectAll() {
-		return DevExpress.Ui.GridBaseInterop.SelectAll(Id);
+		return DevExpress.Ui.GridBaseInterop.SelectAll(dxTarget);
 	}
 	public object SelectRows(object keys, bool preserve) {
-		return DevExpress.Ui.GridBaseInterop.SelectRows(Id, keys, preserve);
+		return DevExpress.Ui.GridBaseInterop.SelectRows(dxTarget, keys, preserve);
 	}
 	public object SelectRowsByIndexes(object indexes) {
-		return DevExpress.Ui.GridBaseInterop.SelectRowsByIndexes(Id, indexes);
+		return DevExpress.Ui.GridBaseInterop.SelectRowsByIndexes(dxTarget, indexes);
 	}
 	public void ShowColumnChooser() {
-		DevExpress.Ui.GridBaseInterop.ShowColumnChooser(Id);
+		DevExpress.Ui.GridBaseInterop.ShowColumnChooser(dxTarget);
 	}
 	public object State() {
-		return DevExpress.Ui.GridBaseInterop.State(Id);
+		return DevExpress.Ui.GridBaseInterop.State(dxTarget);
 	}
 	public void State(object state) {
-		DevExpress.Ui.GridBaseInterop.State(Id, state);
+		DevExpress.Ui.GridBaseInterop.State(dxTarget, state);
 	}
 	public void UndeleteRow(float rowIndex) {
-		DevExpress.Ui.GridBaseInterop.UndeleteRow(Id, rowIndex);
+		DevExpress.Ui.GridBaseInterop.UndeleteRow(dxTarget, rowIndex);
 	}
 	public void UpdateDimensions() {
-		DevExpress.Ui.GridBaseInterop.UpdateDimensions(Id);
+		DevExpress.Ui.GridBaseInterop.UpdateDimensions(dxTarget);
 	}
 	public void Dispose() {
 		DevExpress.Ui.GridBaseInterop.AdaptiveDetailRowPreparing -= GridBase_AdaptiveDetailRowPreparing;

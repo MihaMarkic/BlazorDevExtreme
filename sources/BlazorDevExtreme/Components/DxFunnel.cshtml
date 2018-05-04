@@ -1,9 +1,12 @@
+@using Microsoft.AspNetCore.Blazor.Components
+@using Microsoft.AspNetCore.Blazor
 @implements IDisposable
 @inherits DxBlazorCompoment<DevExpress.Viz.Funnel.DxFunnelOptions>
 
-<div id="@Id"></div>
+<div id="@Id" ref="dxTarget"></div>
 
 @functions {
+	ElementRef dxTarget;
 	public DxFunnel() : base("DxFunnel") { }
 	protected override DevExpress.Viz.Funnel.DxFunnelOptions CreateOptions() {
 		return new DevExpress.Viz.Funnel.DxFunnelOptions {
@@ -32,223 +35,245 @@
 		};
 	}
 	protected override void Init(DevExpress.Viz.Funnel.DxFunnelOptions options) {
-		DevExpress.Viz.DxFunnelInterop.Init(Id, options);
+		DevExpress.Viz.DxFunnelInterop.Init(dxTarget, options);
 	}
 	object adaptiveLayout;
-	public object AdaptiveLayout {
-		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetAdaptiveLayout(Id) : adaptiveLayout;
+	[Parameter]
+	object AdaptiveLayout {
+		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetAdaptiveLayout(dxTarget) : adaptiveLayout;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxFunnelInterop.SetAdaptiveLayout(Id, value);
+				DevExpress.Viz.DxFunnelInterop.SetAdaptiveLayout(dxTarget, value);
 			} else {
 				this.adaptiveLayout = value;
 			}
 		}
 	}
 	string algorithm;
-	public string Algorithm {
-		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetAlgorithm(Id) : algorithm;
+	[Parameter]
+	string Algorithm {
+		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetAlgorithm(dxTarget) : algorithm;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxFunnelInterop.SetAlgorithm(Id, value);
+				DevExpress.Viz.DxFunnelInterop.SetAlgorithm(dxTarget, value);
 			} else {
 				this.algorithm = value;
 			}
 		}
 	}
 	string argumentField;
-	public string ArgumentField {
-		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetArgumentField(Id) : argumentField;
+	[Parameter]
+	string ArgumentField {
+		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetArgumentField(dxTarget) : argumentField;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxFunnelInterop.SetArgumentField(Id, value);
+				DevExpress.Viz.DxFunnelInterop.SetArgumentField(dxTarget, value);
 			} else {
 				this.argumentField = value;
 			}
 		}
 	}
 	string colorField;
-	public string ColorField {
-		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetColorField(Id) : colorField;
+	[Parameter]
+	string ColorField {
+		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetColorField(dxTarget) : colorField;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxFunnelInterop.SetColorField(Id, value);
+				DevExpress.Viz.DxFunnelInterop.SetColorField(dxTarget, value);
 			} else {
 				this.colorField = value;
 			}
 		}
 	}
 	object dataSource;
-	public object DataSource {
-		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetDataSource(Id) : dataSource;
+	[Parameter]
+	object DataSource {
+		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetDataSource(dxTarget) : dataSource;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxFunnelInterop.SetDataSource(Id, value);
+				DevExpress.Viz.DxFunnelInterop.SetDataSource(dxTarget, value);
 			} else {
 				this.dataSource = value;
 			}
 		}
 	}
 	bool? hoverEnabled;
-	public bool? HoverEnabled {
-		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetHoverEnabled(Id) : hoverEnabled;
+	[Parameter]
+	bool? HoverEnabled {
+		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetHoverEnabled(dxTarget) : hoverEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxFunnelInterop.SetHoverEnabled(Id, value);
+				DevExpress.Viz.DxFunnelInterop.SetHoverEnabled(dxTarget, value);
 			} else {
 				this.hoverEnabled = value;
 			}
 		}
 	}
 	bool? inverted;
-	public bool? Inverted {
-		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetInverted(Id) : inverted;
+	[Parameter]
+	bool? Inverted {
+		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetInverted(dxTarget) : inverted;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxFunnelInterop.SetInverted(Id, value);
+				DevExpress.Viz.DxFunnelInterop.SetInverted(dxTarget, value);
 			} else {
 				this.inverted = value;
 			}
 		}
 	}
 	object item;
-	public object Item {
-		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetItem(Id) : item;
+	[Parameter]
+	object Item {
+		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetItem(dxTarget) : item;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxFunnelInterop.SetItem(Id, value);
+				DevExpress.Viz.DxFunnelInterop.SetItem(dxTarget, value);
 			} else {
 				this.item = value;
 			}
 		}
 	}
 	object label;
-	public object Label {
-		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetLabel(Id) : label;
+	[Parameter]
+	object Label {
+		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetLabel(dxTarget) : label;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxFunnelInterop.SetLabel(Id, value);
+				DevExpress.Viz.DxFunnelInterop.SetLabel(dxTarget, value);
 			} else {
 				this.label = value;
 			}
 		}
 	}
 	object legend;
-	public object Legend {
-		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetLegend(Id) : legend;
+	[Parameter]
+	object Legend {
+		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetLegend(dxTarget) : legend;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxFunnelInterop.SetLegend(Id, value);
+				DevExpress.Viz.DxFunnelInterop.SetLegend(dxTarget, value);
 			} else {
 				this.legend = value;
 			}
 		}
 	}
 	float? neckHeight;
-	public float? NeckHeight {
-		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetNeckHeight(Id) : neckHeight;
+	[Parameter]
+	float? NeckHeight {
+		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetNeckHeight(dxTarget) : neckHeight;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxFunnelInterop.SetNeckHeight(Id, value);
+				DevExpress.Viz.DxFunnelInterop.SetNeckHeight(dxTarget, value);
 			} else {
 				this.neckHeight = value;
 			}
 		}
 	}
 	float? neckWidth;
-	public float? NeckWidth {
-		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetNeckWidth(Id) : neckWidth;
+	[Parameter]
+	float? NeckWidth {
+		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetNeckWidth(dxTarget) : neckWidth;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxFunnelInterop.SetNeckWidth(Id, value);
+				DevExpress.Viz.DxFunnelInterop.SetNeckWidth(dxTarget, value);
 			} else {
 				this.neckWidth = value;
 			}
 		}
 	}
 	object palette;
-	public object Palette {
-		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetPalette(Id) : palette;
+	[Parameter]
+	object Palette {
+		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetPalette(dxTarget) : palette;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxFunnelInterop.SetPalette(Id, value);
+				DevExpress.Viz.DxFunnelInterop.SetPalette(dxTarget, value);
 			} else {
 				this.palette = value;
 			}
 		}
 	}
 	string paletteExtensionMode;
-	public string PaletteExtensionMode {
-		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetPaletteExtensionMode(Id) : paletteExtensionMode;
+	[Parameter]
+	string PaletteExtensionMode {
+		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetPaletteExtensionMode(dxTarget) : paletteExtensionMode;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxFunnelInterop.SetPaletteExtensionMode(Id, value);
+				DevExpress.Viz.DxFunnelInterop.SetPaletteExtensionMode(dxTarget, value);
 			} else {
 				this.paletteExtensionMode = value;
 			}
 		}
 	}
 	string selectionMode;
-	public string SelectionMode {
-		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetSelectionMode(Id) : selectionMode;
+	[Parameter]
+	string SelectionMode {
+		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetSelectionMode(dxTarget) : selectionMode;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxFunnelInterop.SetSelectionMode(Id, value);
+				DevExpress.Viz.DxFunnelInterop.SetSelectionMode(dxTarget, value);
 			} else {
 				this.selectionMode = value;
 			}
 		}
 	}
 	bool? sortData;
-	public bool? SortData {
-		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetSortData(Id) : sortData;
+	[Parameter]
+	bool? SortData {
+		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetSortData(dxTarget) : sortData;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxFunnelInterop.SetSortData(Id, value);
+				DevExpress.Viz.DxFunnelInterop.SetSortData(dxTarget, value);
 			} else {
 				this.sortData = value;
 			}
 		}
 	}
 	object tooltip;
-	public object Tooltip {
-		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetTooltip(Id) : tooltip;
+	[Parameter]
+	object Tooltip {
+		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetTooltip(dxTarget) : tooltip;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxFunnelInterop.SetTooltip(Id, value);
+				DevExpress.Viz.DxFunnelInterop.SetTooltip(dxTarget, value);
 			} else {
 				this.tooltip = value;
 			}
 		}
 	}
 	string valueField;
-	public string ValueField {
-		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetValueField(Id) : valueField;
+	[Parameter]
+	string ValueField {
+		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetValueField(dxTarget) : valueField;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxFunnelInterop.SetValueField(Id, value);
+				DevExpress.Viz.DxFunnelInterop.SetValueField(dxTarget, value);
 			} else {
 				this.valueField = value;
 			}
 		}
 	}
 	bool? onHoverChangedEnabled;
-	public bool? OnHoverChangedEnabled {
+	[Parameter]
+	bool? OnHoverChangedEnabled {
 		get => onHoverChangedEnabled;
 		set => this.onHoverChangedEnabled = value;
 	}
 	bool? onItemClickEnabled;
-	public bool? OnItemClickEnabled {
+	[Parameter]
+	bool? OnItemClickEnabled {
 		get => onItemClickEnabled;
 		set => this.onItemClickEnabled = value;
 	}
 	bool? onLegendClickEnabled;
-	public bool? OnLegendClickEnabled {
+	[Parameter]
+	bool? OnLegendClickEnabled {
 		get => onLegendClickEnabled;
 		set => this.onLegendClickEnabled = value;
 	}
 	bool? onSelectionChangedEnabled;
-	public bool? OnSelectionChangedEnabled {
+	[Parameter]
+	bool? OnSelectionChangedEnabled {
 		get => onSelectionChangedEnabled;
 		set => this.onSelectionChangedEnabled = value;
 	}
@@ -259,41 +284,45 @@
 		DevExpress.Viz.DxFunnelInterop.LegendClick += DxFunnel_LegendClick;
 		DevExpress.Viz.DxFunnelInterop.SelectionChanged += DxFunnel_SelectionChanged;
 	}
-	public Action HoverChanged { get; set; }
+	[Parameter]
+	Action HoverChanged { get; set; }
 	void DxFunnel_HoverChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			HoverChanged?.Invoke();
 		}
 	}
-	public Action ItemClick { get; set; }
+	[Parameter]
+	Action ItemClick { get; set; }
 	void DxFunnel_ItemClick(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ItemClick?.Invoke();
 		}
 	}
-	public Action LegendClick { get; set; }
+	[Parameter]
+	Action LegendClick { get; set; }
 	void DxFunnel_LegendClick(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			LegendClick?.Invoke();
 		}
 	}
-	public Action SelectionChanged { get; set; }
+	[Parameter]
+	Action SelectionChanged { get; set; }
 	void DxFunnel_SelectionChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			SelectionChanged?.Invoke();
 		}
 	}
 	public void ClearSelection() {
-		DevExpress.Viz.DxFunnelInterop.ClearSelection(Id);
+		DevExpress.Viz.DxFunnelInterop.ClearSelection(dxTarget);
 	}
 	public object GetAllItems() {
-		return DevExpress.Viz.DxFunnelInterop.GetAllItems(Id);
+		return DevExpress.Viz.DxFunnelInterop.GetAllItems(dxTarget);
 	}
 	public object GetDataSourceEx() {
-		return DevExpress.Viz.DxFunnelInterop.GetDataSourceEx(Id);
+		return DevExpress.Viz.DxFunnelInterop.GetDataSourceEx(dxTarget);
 	}
 	public void HideTooltip() {
-		DevExpress.Viz.DxFunnelInterop.HideTooltip(Id);
+		DevExpress.Viz.DxFunnelInterop.HideTooltip(dxTarget);
 	}
 	public void Dispose() {
 		DevExpress.Viz.DxFunnelInterop.HoverChanged -= DxFunnel_HoverChanged;

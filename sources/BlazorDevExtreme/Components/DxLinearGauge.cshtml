@@ -1,9 +1,12 @@
+@using Microsoft.AspNetCore.Blazor.Components
+@using Microsoft.AspNetCore.Blazor
 @implements IDisposable
 @inherits DxBlazorCompoment<DevExpress.Viz.Gauges.DxLinearGaugeOptions>
 
-<div id="@Id"></div>
+<div id="@Id" ref="dxTarget"></div>
 
 @functions {
+	ElementRef dxTarget;
 	public DxLinearGauge() : base("DxLinearGauge") { }
 	protected override DevExpress.Viz.Gauges.DxLinearGaugeOptions CreateOptions() {
 		return new DevExpress.Viz.Gauges.DxLinearGaugeOptions {
@@ -15,58 +18,63 @@
 		};
 	}
 	protected override void Init(DevExpress.Viz.Gauges.DxLinearGaugeOptions options) {
-		DevExpress.Viz.DxLinearGaugeInterop.Init(Id, options);
+		DevExpress.Viz.DxLinearGaugeInterop.Init(dxTarget, options);
 	}
 	object geometry;
-	public object Geometry {
-		get => isInitialized ? DevExpress.Viz.DxLinearGaugeInterop.GetGeometry(Id) : geometry;
+	[Parameter]
+	object Geometry {
+		get => isInitialized ? DevExpress.Viz.DxLinearGaugeInterop.GetGeometry(dxTarget) : geometry;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxLinearGaugeInterop.SetGeometry(Id, value);
+				DevExpress.Viz.DxLinearGaugeInterop.SetGeometry(dxTarget, value);
 			} else {
 				this.geometry = value;
 			}
 		}
 	}
 	object rangeContainer;
-	public object RangeContainer {
-		get => isInitialized ? DevExpress.Viz.DxLinearGaugeInterop.GetRangeContainer(Id) : rangeContainer;
+	[Parameter]
+	object RangeContainer {
+		get => isInitialized ? DevExpress.Viz.DxLinearGaugeInterop.GetRangeContainer(dxTarget) : rangeContainer;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxLinearGaugeInterop.SetRangeContainer(Id, value);
+				DevExpress.Viz.DxLinearGaugeInterop.SetRangeContainer(dxTarget, value);
 			} else {
 				this.rangeContainer = value;
 			}
 		}
 	}
 	object scale;
-	public object Scale {
-		get => isInitialized ? DevExpress.Viz.DxLinearGaugeInterop.GetScale(Id) : scale;
+	[Parameter]
+	object Scale {
+		get => isInitialized ? DevExpress.Viz.DxLinearGaugeInterop.GetScale(dxTarget) : scale;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxLinearGaugeInterop.SetScale(Id, value);
+				DevExpress.Viz.DxLinearGaugeInterop.SetScale(dxTarget, value);
 			} else {
 				this.scale = value;
 			}
 		}
 	}
 	object subvalueIndicator;
-	public object SubvalueIndicator {
-		get => isInitialized ? DevExpress.Viz.DxLinearGaugeInterop.GetSubvalueIndicator(Id) : subvalueIndicator;
+	[Parameter]
+	object SubvalueIndicator {
+		get => isInitialized ? DevExpress.Viz.DxLinearGaugeInterop.GetSubvalueIndicator(dxTarget) : subvalueIndicator;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxLinearGaugeInterop.SetSubvalueIndicator(Id, value);
+				DevExpress.Viz.DxLinearGaugeInterop.SetSubvalueIndicator(dxTarget, value);
 			} else {
 				this.subvalueIndicator = value;
 			}
 		}
 	}
 	object valueIndicator;
-	public object ValueIndicator {
-		get => isInitialized ? DevExpress.Viz.DxLinearGaugeInterop.GetValueIndicator(Id) : valueIndicator;
+	[Parameter]
+	object ValueIndicator {
+		get => isInitialized ? DevExpress.Viz.DxLinearGaugeInterop.GetValueIndicator(dxTarget) : valueIndicator;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxLinearGaugeInterop.SetValueIndicator(Id, value);
+				DevExpress.Viz.DxLinearGaugeInterop.SetValueIndicator(dxTarget, value);
 			} else {
 				this.valueIndicator = value;
 			}

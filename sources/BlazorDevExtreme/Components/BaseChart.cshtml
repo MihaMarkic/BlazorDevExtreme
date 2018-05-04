@@ -1,9 +1,12 @@
+@using Microsoft.AspNetCore.Blazor.Components
+@using Microsoft.AspNetCore.Blazor
 @implements IDisposable
 @inherits DxBlazorCompoment<DevExpress.Viz.Charts.BaseChartOptions>
 
-<div id="@Id"></div>
+<div id="@Id" ref="dxTarget"></div>
 
 @functions {
+	ElementRef dxTarget;
 	public BaseChart() : base("BaseChart") { }
 	protected override DevExpress.Viz.Charts.BaseChartOptions CreateOptions() {
 		return new DevExpress.Viz.Charts.BaseChartOptions {
@@ -27,156 +30,173 @@
 		};
 	}
 	protected override void Init(DevExpress.Viz.Charts.BaseChartOptions options) {
-		DevExpress.Viz.BaseChartInterop.Init(Id, options);
+		DevExpress.Viz.BaseChartInterop.Init(dxTarget, options);
 	}
 	object adaptiveLayout;
-	public object AdaptiveLayout {
-		get => isInitialized ? DevExpress.Viz.BaseChartInterop.GetAdaptiveLayout(Id) : adaptiveLayout;
+	[Parameter]
+	object AdaptiveLayout {
+		get => isInitialized ? DevExpress.Viz.BaseChartInterop.GetAdaptiveLayout(dxTarget) : adaptiveLayout;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.BaseChartInterop.SetAdaptiveLayout(Id, value);
+				DevExpress.Viz.BaseChartInterop.SetAdaptiveLayout(dxTarget, value);
 			} else {
 				this.adaptiveLayout = value;
 			}
 		}
 	}
 	object animation;
-	public object Animation {
-		get => isInitialized ? DevExpress.Viz.BaseChartInterop.GetAnimation(Id) : animation;
+	[Parameter]
+	object Animation {
+		get => isInitialized ? DevExpress.Viz.BaseChartInterop.GetAnimation(dxTarget) : animation;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.BaseChartInterop.SetAnimation(Id, value);
+				DevExpress.Viz.BaseChartInterop.SetAnimation(dxTarget, value);
 			} else {
 				this.animation = value;
 			}
 		}
 	}
 	object customizeLabel;
-	public object CustomizeLabel {
-		get => isInitialized ? DevExpress.Viz.BaseChartInterop.GetCustomizeLabel(Id) : customizeLabel;
+	[Parameter]
+	object CustomizeLabel {
+		get => isInitialized ? DevExpress.Viz.BaseChartInterop.GetCustomizeLabel(dxTarget) : customizeLabel;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.BaseChartInterop.SetCustomizeLabel(Id, value);
+				DevExpress.Viz.BaseChartInterop.SetCustomizeLabel(dxTarget, value);
 			} else {
 				this.customizeLabel = value;
 			}
 		}
 	}
 	object customizePoint;
-	public object CustomizePoint {
-		get => isInitialized ? DevExpress.Viz.BaseChartInterop.GetCustomizePoint(Id) : customizePoint;
+	[Parameter]
+	object CustomizePoint {
+		get => isInitialized ? DevExpress.Viz.BaseChartInterop.GetCustomizePoint(dxTarget) : customizePoint;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.BaseChartInterop.SetCustomizePoint(Id, value);
+				DevExpress.Viz.BaseChartInterop.SetCustomizePoint(dxTarget, value);
 			} else {
 				this.customizePoint = value;
 			}
 		}
 	}
 	object dataSource;
-	public object DataSource {
-		get => isInitialized ? DevExpress.Viz.BaseChartInterop.GetDataSource(Id) : dataSource;
+	[Parameter]
+	object DataSource {
+		get => isInitialized ? DevExpress.Viz.BaseChartInterop.GetDataSource(dxTarget) : dataSource;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.BaseChartInterop.SetDataSource(Id, value);
+				DevExpress.Viz.BaseChartInterop.SetDataSource(dxTarget, value);
 			} else {
 				this.dataSource = value;
 			}
 		}
 	}
 	object legend;
-	public object Legend {
-		get => isInitialized ? DevExpress.Viz.BaseChartInterop.GetLegend(Id) : legend;
+	[Parameter]
+	object Legend {
+		get => isInitialized ? DevExpress.Viz.BaseChartInterop.GetLegend(dxTarget) : legend;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.BaseChartInterop.SetLegend(Id, value);
+				DevExpress.Viz.BaseChartInterop.SetLegend(dxTarget, value);
 			} else {
 				this.legend = value;
 			}
 		}
 	}
 	object palette;
-	public object Palette {
-		get => isInitialized ? DevExpress.Viz.BaseChartInterop.GetPalette(Id) : palette;
+	[Parameter]
+	object Palette {
+		get => isInitialized ? DevExpress.Viz.BaseChartInterop.GetPalette(dxTarget) : palette;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.BaseChartInterop.SetPalette(Id, value);
+				DevExpress.Viz.BaseChartInterop.SetPalette(dxTarget, value);
 			} else {
 				this.palette = value;
 			}
 		}
 	}
 	string paletteExtensionMode;
-	public string PaletteExtensionMode {
-		get => isInitialized ? DevExpress.Viz.BaseChartInterop.GetPaletteExtensionMode(Id) : paletteExtensionMode;
+	[Parameter]
+	string PaletteExtensionMode {
+		get => isInitialized ? DevExpress.Viz.BaseChartInterop.GetPaletteExtensionMode(dxTarget) : paletteExtensionMode;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.BaseChartInterop.SetPaletteExtensionMode(Id, value);
+				DevExpress.Viz.BaseChartInterop.SetPaletteExtensionMode(dxTarget, value);
 			} else {
 				this.paletteExtensionMode = value;
 			}
 		}
 	}
 	string pointSelectionMode;
-	public string PointSelectionMode {
-		get => isInitialized ? DevExpress.Viz.BaseChartInterop.GetPointSelectionMode(Id) : pointSelectionMode;
+	[Parameter]
+	string PointSelectionMode {
+		get => isInitialized ? DevExpress.Viz.BaseChartInterop.GetPointSelectionMode(dxTarget) : pointSelectionMode;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.BaseChartInterop.SetPointSelectionMode(Id, value);
+				DevExpress.Viz.BaseChartInterop.SetPointSelectionMode(dxTarget, value);
 			} else {
 				this.pointSelectionMode = value;
 			}
 		}
 	}
 	object series;
-	public object Series {
-		get => isInitialized ? DevExpress.Viz.BaseChartInterop.GetSeries(Id) : series;
+	[Parameter]
+	object Series {
+		get => isInitialized ? DevExpress.Viz.BaseChartInterop.GetSeries(dxTarget) : series;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.BaseChartInterop.SetSeries(Id, value);
+				DevExpress.Viz.BaseChartInterop.SetSeries(dxTarget, value);
 			} else {
 				this.series = value;
 			}
 		}
 	}
 	object tooltip;
-	public object Tooltip {
-		get => isInitialized ? DevExpress.Viz.BaseChartInterop.GetTooltip(Id) : tooltip;
+	[Parameter]
+	object Tooltip {
+		get => isInitialized ? DevExpress.Viz.BaseChartInterop.GetTooltip(dxTarget) : tooltip;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.BaseChartInterop.SetTooltip(Id, value);
+				DevExpress.Viz.BaseChartInterop.SetTooltip(dxTarget, value);
 			} else {
 				this.tooltip = value;
 			}
 		}
 	}
 	bool? onDoneEnabled;
-	public bool? OnDoneEnabled {
+	[Parameter]
+	bool? OnDoneEnabled {
 		get => onDoneEnabled;
 		set => this.onDoneEnabled = value;
 	}
 	bool? onPointClickEnabled;
-	public bool? OnPointClickEnabled {
+	[Parameter]
+	bool? OnPointClickEnabled {
 		get => onPointClickEnabled;
 		set => this.onPointClickEnabled = value;
 	}
 	bool? onPointHoverChangedEnabled;
-	public bool? OnPointHoverChangedEnabled {
+	[Parameter]
+	bool? OnPointHoverChangedEnabled {
 		get => onPointHoverChangedEnabled;
 		set => this.onPointHoverChangedEnabled = value;
 	}
 	bool? onPointSelectionChangedEnabled;
-	public bool? OnPointSelectionChangedEnabled {
+	[Parameter]
+	bool? OnPointSelectionChangedEnabled {
 		get => onPointSelectionChangedEnabled;
 		set => this.onPointSelectionChangedEnabled = value;
 	}
 	bool? onTooltipHiddenEnabled;
-	public bool? OnTooltipHiddenEnabled {
+	[Parameter]
+	bool? OnTooltipHiddenEnabled {
 		get => onTooltipHiddenEnabled;
 		set => this.onTooltipHiddenEnabled = value;
 	}
 	bool? onTooltipShownEnabled;
-	public bool? OnTooltipShownEnabled {
+	[Parameter]
+	bool? OnTooltipShownEnabled {
 		get => onTooltipShownEnabled;
 		set => this.onTooltipShownEnabled = value;
 	}
@@ -189,65 +209,71 @@
 		DevExpress.Viz.BaseChartInterop.TooltipHidden += BaseChart_TooltipHidden;
 		DevExpress.Viz.BaseChartInterop.TooltipShown += BaseChart_TooltipShown;
 	}
-	public Action Done { get; set; }
+	[Parameter]
+	Action Done { get; set; }
 	void BaseChart_Done(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Done?.Invoke();
 		}
 	}
-	public Action PointClick { get; set; }
+	[Parameter]
+	Action PointClick { get; set; }
 	void BaseChart_PointClick(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			PointClick?.Invoke();
 		}
 	}
-	public Action PointHoverChanged { get; set; }
+	[Parameter]
+	Action PointHoverChanged { get; set; }
 	void BaseChart_PointHoverChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			PointHoverChanged?.Invoke();
 		}
 	}
-	public Action PointSelectionChanged { get; set; }
+	[Parameter]
+	Action PointSelectionChanged { get; set; }
 	void BaseChart_PointSelectionChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			PointSelectionChanged?.Invoke();
 		}
 	}
-	public Action TooltipHidden { get; set; }
+	[Parameter]
+	Action TooltipHidden { get; set; }
 	void BaseChart_TooltipHidden(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			TooltipHidden?.Invoke();
 		}
 	}
-	public Action TooltipShown { get; set; }
+	[Parameter]
+	Action TooltipShown { get; set; }
 	void BaseChart_TooltipShown(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			TooltipShown?.Invoke();
 		}
 	}
 	public void ClearSelection() {
-		DevExpress.Viz.BaseChartInterop.ClearSelection(Id);
+		DevExpress.Viz.BaseChartInterop.ClearSelection(dxTarget);
 	}
 	public object GetAllSeries() {
-		return DevExpress.Viz.BaseChartInterop.GetAllSeries(Id);
+		return DevExpress.Viz.BaseChartInterop.GetAllSeries(dxTarget);
 	}
 	public object GetDataSourceEx() {
-		return DevExpress.Viz.BaseChartInterop.GetDataSourceEx(Id);
+		return DevExpress.Viz.BaseChartInterop.GetDataSourceEx(dxTarget);
 	}
 	public object GetSeriesByName(object seriesName) {
-		return DevExpress.Viz.BaseChartInterop.GetSeriesByName(Id, seriesName);
+		return DevExpress.Viz.BaseChartInterop.GetSeriesByName(dxTarget, seriesName);
 	}
 	public object GetSeriesByPos(float seriesIndex) {
-		return DevExpress.Viz.BaseChartInterop.GetSeriesByPos(Id, seriesIndex);
+		return DevExpress.Viz.BaseChartInterop.GetSeriesByPos(dxTarget, seriesIndex);
 	}
 	public void HideTooltip() {
-		DevExpress.Viz.BaseChartInterop.HideTooltip(Id);
+		DevExpress.Viz.BaseChartInterop.HideTooltip(dxTarget);
 	}
 	public void Render() {
-		DevExpress.Viz.BaseChartInterop.Render(Id);
+		DevExpress.Viz.BaseChartInterop.Render(dxTarget);
 	}
 	public void Render(object renderOptions) {
-		DevExpress.Viz.BaseChartInterop.Render(Id, renderOptions);
+		DevExpress.Viz.BaseChartInterop.Render(dxTarget, renderOptions);
 	}
 	public void Dispose() {
 		DevExpress.Viz.BaseChartInterop.Done -= BaseChart_Done;

@@ -1,9 +1,12 @@
+@using Microsoft.AspNetCore.Blazor.Components
+@using Microsoft.AspNetCore.Blazor
 @implements IDisposable
 @inherits DxBlazorCompoment<DevExpress.Ui.CollectionWidgetOptions>
 
-<div id="@Id"></div>
+<div id="@Id" ref="dxTarget"></div>
 
 @functions {
+	ElementRef dxTarget;
 	public CollectionWidget() : base("CollectionWidget") { }
 	protected override DevExpress.Ui.CollectionWidgetOptions CreateOptions() {
 		return new DevExpress.Ui.CollectionWidgetOptions {
@@ -25,140 +28,155 @@
 		};
 	}
 	protected override void Init(DevExpress.Ui.CollectionWidgetOptions options) {
-		DevExpress.Ui.CollectionWidgetInterop.Init(Id, options);
+		DevExpress.Ui.CollectionWidgetInterop.Init(dxTarget, options);
 	}
 	object dataSource;
-	public object DataSource {
-		get => isInitialized ? DevExpress.Ui.CollectionWidgetInterop.GetDataSource(Id) : dataSource;
+	[Parameter]
+	object DataSource {
+		get => isInitialized ? DevExpress.Ui.CollectionWidgetInterop.GetDataSource(dxTarget) : dataSource;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.CollectionWidgetInterop.SetDataSource(Id, value);
+				DevExpress.Ui.CollectionWidgetInterop.SetDataSource(dxTarget, value);
 			} else {
 				this.dataSource = value;
 			}
 		}
 	}
 	float? itemHoldTimeout;
-	public float? ItemHoldTimeout {
-		get => isInitialized ? DevExpress.Ui.CollectionWidgetInterop.GetItemHoldTimeout(Id) : itemHoldTimeout;
+	[Parameter]
+	float? ItemHoldTimeout {
+		get => isInitialized ? DevExpress.Ui.CollectionWidgetInterop.GetItemHoldTimeout(dxTarget) : itemHoldTimeout;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.CollectionWidgetInterop.SetItemHoldTimeout(Id, value);
+				DevExpress.Ui.CollectionWidgetInterop.SetItemHoldTimeout(dxTarget, value);
 			} else {
 				this.itemHoldTimeout = value;
 			}
 		}
 	}
 	object items;
-	public object Items {
-		get => isInitialized ? DevExpress.Ui.CollectionWidgetInterop.GetItems(Id) : items;
+	[Parameter]
+	object Items {
+		get => isInitialized ? DevExpress.Ui.CollectionWidgetInterop.GetItems(dxTarget) : items;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.CollectionWidgetInterop.SetItems(Id, value);
+				DevExpress.Ui.CollectionWidgetInterop.SetItems(dxTarget, value);
 			} else {
 				this.items = value;
 			}
 		}
 	}
 	object itemTemplate;
-	public object ItemTemplate {
-		get => isInitialized ? DevExpress.Ui.CollectionWidgetInterop.GetItemTemplate(Id) : itemTemplate;
+	[Parameter]
+	object ItemTemplate {
+		get => isInitialized ? DevExpress.Ui.CollectionWidgetInterop.GetItemTemplate(dxTarget) : itemTemplate;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.CollectionWidgetInterop.SetItemTemplate(Id, value);
+				DevExpress.Ui.CollectionWidgetInterop.SetItemTemplate(dxTarget, value);
 			} else {
 				this.itemTemplate = value;
 			}
 		}
 	}
 	object keyExpr;
-	public object KeyExpr {
-		get => isInitialized ? DevExpress.Ui.CollectionWidgetInterop.GetKeyExpr(Id) : keyExpr;
+	[Parameter]
+	object KeyExpr {
+		get => isInitialized ? DevExpress.Ui.CollectionWidgetInterop.GetKeyExpr(dxTarget) : keyExpr;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.CollectionWidgetInterop.SetKeyExpr(Id, value);
+				DevExpress.Ui.CollectionWidgetInterop.SetKeyExpr(dxTarget, value);
 			} else {
 				this.keyExpr = value;
 			}
 		}
 	}
 	string noDataText;
-	public string NoDataText {
-		get => isInitialized ? DevExpress.Ui.CollectionWidgetInterop.GetNoDataText(Id) : noDataText;
+	[Parameter]
+	string NoDataText {
+		get => isInitialized ? DevExpress.Ui.CollectionWidgetInterop.GetNoDataText(dxTarget) : noDataText;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.CollectionWidgetInterop.SetNoDataText(Id, value);
+				DevExpress.Ui.CollectionWidgetInterop.SetNoDataText(dxTarget, value);
 			} else {
 				this.noDataText = value;
 			}
 		}
 	}
 	float? selectedIndex;
-	public float? SelectedIndex {
-		get => isInitialized ? DevExpress.Ui.CollectionWidgetInterop.GetSelectedIndex(Id) : selectedIndex;
+	[Parameter]
+	float? SelectedIndex {
+		get => isInitialized ? DevExpress.Ui.CollectionWidgetInterop.GetSelectedIndex(dxTarget) : selectedIndex;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.CollectionWidgetInterop.SetSelectedIndex(Id, value);
+				DevExpress.Ui.CollectionWidgetInterop.SetSelectedIndex(dxTarget, value);
 			} else {
 				this.selectedIndex = value;
 			}
 		}
 	}
 	object selectedItem;
-	public object SelectedItem {
-		get => isInitialized ? DevExpress.Ui.CollectionWidgetInterop.GetSelectedItem(Id) : selectedItem;
+	[Parameter]
+	object SelectedItem {
+		get => isInitialized ? DevExpress.Ui.CollectionWidgetInterop.GetSelectedItem(dxTarget) : selectedItem;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.CollectionWidgetInterop.SetSelectedItem(Id, value);
+				DevExpress.Ui.CollectionWidgetInterop.SetSelectedItem(dxTarget, value);
 			} else {
 				this.selectedItem = value;
 			}
 		}
 	}
 	object selectedItemKeys;
-	public object SelectedItemKeys {
-		get => isInitialized ? DevExpress.Ui.CollectionWidgetInterop.GetSelectedItemKeys(Id) : selectedItemKeys;
+	[Parameter]
+	object SelectedItemKeys {
+		get => isInitialized ? DevExpress.Ui.CollectionWidgetInterop.GetSelectedItemKeys(dxTarget) : selectedItemKeys;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.CollectionWidgetInterop.SetSelectedItemKeys(Id, value);
+				DevExpress.Ui.CollectionWidgetInterop.SetSelectedItemKeys(dxTarget, value);
 			} else {
 				this.selectedItemKeys = value;
 			}
 		}
 	}
 	object selectedItems;
-	public object SelectedItems {
-		get => isInitialized ? DevExpress.Ui.CollectionWidgetInterop.GetSelectedItems(Id) : selectedItems;
+	[Parameter]
+	object SelectedItems {
+		get => isInitialized ? DevExpress.Ui.CollectionWidgetInterop.GetSelectedItems(dxTarget) : selectedItems;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.CollectionWidgetInterop.SetSelectedItems(Id, value);
+				DevExpress.Ui.CollectionWidgetInterop.SetSelectedItems(dxTarget, value);
 			} else {
 				this.selectedItems = value;
 			}
 		}
 	}
 	bool? onItemClickEnabled;
-	public bool? OnItemClickEnabled {
+	[Parameter]
+	bool? OnItemClickEnabled {
 		get => onItemClickEnabled;
 		set => this.onItemClickEnabled = value;
 	}
 	bool? onItemContextMenuEnabled;
-	public bool? OnItemContextMenuEnabled {
+	[Parameter]
+	bool? OnItemContextMenuEnabled {
 		get => onItemContextMenuEnabled;
 		set => this.onItemContextMenuEnabled = value;
 	}
 	bool? onItemHoldEnabled;
-	public bool? OnItemHoldEnabled {
+	[Parameter]
+	bool? OnItemHoldEnabled {
 		get => onItemHoldEnabled;
 		set => this.onItemHoldEnabled = value;
 	}
 	bool? onItemRenderedEnabled;
-	public bool? OnItemRenderedEnabled {
+	[Parameter]
+	bool? OnItemRenderedEnabled {
 		get => onItemRenderedEnabled;
 		set => this.onItemRenderedEnabled = value;
 	}
 	bool? onSelectionChangedEnabled;
-	public bool? OnSelectionChangedEnabled {
+	[Parameter]
+	bool? OnSelectionChangedEnabled {
 		get => onSelectionChangedEnabled;
 		set => this.onSelectionChangedEnabled = value;
 	}
@@ -170,38 +188,43 @@
 		DevExpress.Ui.CollectionWidgetInterop.ItemRendered += CollectionWidget_ItemRendered;
 		DevExpress.Ui.CollectionWidgetInterop.SelectionChanged += CollectionWidget_SelectionChanged;
 	}
-	public Action ItemClick { get; set; }
+	[Parameter]
+	Action ItemClick { get; set; }
 	void CollectionWidget_ItemClick(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ItemClick?.Invoke();
 		}
 	}
-	public Action ItemContextMenu { get; set; }
+	[Parameter]
+	Action ItemContextMenu { get; set; }
 	void CollectionWidget_ItemContextMenu(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ItemContextMenu?.Invoke();
 		}
 	}
-	public Action ItemHold { get; set; }
+	[Parameter]
+	Action ItemHold { get; set; }
 	void CollectionWidget_ItemHold(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ItemHold?.Invoke();
 		}
 	}
-	public Action ItemRendered { get; set; }
+	[Parameter]
+	Action ItemRendered { get; set; }
 	void CollectionWidget_ItemRendered(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ItemRendered?.Invoke();
 		}
 	}
-	public Action SelectionChanged { get; set; }
+	[Parameter]
+	Action SelectionChanged { get; set; }
 	void CollectionWidget_SelectionChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			SelectionChanged?.Invoke();
 		}
 	}
 	public object GetDataSourceEx() {
-		return DevExpress.Ui.CollectionWidgetInterop.GetDataSourceEx(Id);
+		return DevExpress.Ui.CollectionWidgetInterop.GetDataSourceEx(dxTarget);
 	}
 	public void Dispose() {
 		DevExpress.Ui.CollectionWidgetInterop.ItemClick -= CollectionWidget_ItemClick;

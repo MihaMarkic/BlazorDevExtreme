@@ -1,9 +1,12 @@
+@using Microsoft.AspNetCore.Blazor.Components
+@using Microsoft.AspNetCore.Blazor
 @implements IDisposable
 @inherits DxBlazorCompoment<DevExpress.Ui.DxProgressBarOptions>
 
-<div id="@Id"></div>
+<div id="@Id" ref="dxTarget"></div>
 
 @functions {
+	ElementRef dxTarget;
 	public DxProgressBar() : base("DxProgressBar") { }
 	protected override DevExpress.Ui.DxProgressBarOptions CreateOptions() {
 		return new DevExpress.Ui.DxProgressBarOptions {
@@ -14,43 +17,47 @@
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxProgressBarOptions options) {
-		DevExpress.Ui.DxProgressBarInterop.Init(Id, options);
+		DevExpress.Ui.DxProgressBarInterop.Init(dxTarget, options);
 	}
 	bool? showStatus;
-	public bool? ShowStatus {
-		get => isInitialized ? DevExpress.Ui.DxProgressBarInterop.GetShowStatus(Id) : showStatus;
+	[Parameter]
+	bool? ShowStatus {
+		get => isInitialized ? DevExpress.Ui.DxProgressBarInterop.GetShowStatus(dxTarget) : showStatus;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxProgressBarInterop.SetShowStatus(Id, value);
+				DevExpress.Ui.DxProgressBarInterop.SetShowStatus(dxTarget, value);
 			} else {
 				this.showStatus = value;
 			}
 		}
 	}
 	object statusFormat;
-	public object StatusFormat {
-		get => isInitialized ? DevExpress.Ui.DxProgressBarInterop.GetStatusFormat(Id) : statusFormat;
+	[Parameter]
+	object StatusFormat {
+		get => isInitialized ? DevExpress.Ui.DxProgressBarInterop.GetStatusFormat(dxTarget) : statusFormat;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxProgressBarInterop.SetStatusFormat(Id, value);
+				DevExpress.Ui.DxProgressBarInterop.SetStatusFormat(dxTarget, value);
 			} else {
 				this.statusFormat = value;
 			}
 		}
 	}
 	float? value;
-	public float? Value {
-		get => isInitialized ? DevExpress.Ui.DxProgressBarInterop.GetValue(Id) : value;
+	[Parameter]
+	float? Value {
+		get => isInitialized ? DevExpress.Ui.DxProgressBarInterop.GetValue(dxTarget) : value;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxProgressBarInterop.SetValue(Id, value);
+				DevExpress.Ui.DxProgressBarInterop.SetValue(dxTarget, value);
 			} else {
 				this.value = value;
 			}
 		}
 	}
 	bool? onCompleteEnabled;
-	public bool? OnCompleteEnabled {
+	[Parameter]
+	bool? OnCompleteEnabled {
 		get => onCompleteEnabled;
 		set => this.onCompleteEnabled = value;
 	}
@@ -58,7 +65,8 @@
 		await base.OnInitAsync();
 		DevExpress.Ui.DxProgressBarInterop.Complete += DxProgressBar_Complete;
 	}
-	public Action Complete { get; set; }
+	[Parameter]
+	Action Complete { get; set; }
 	void DxProgressBar_Complete(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Complete?.Invoke();

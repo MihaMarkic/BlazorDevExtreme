@@ -1,9 +1,12 @@
+@using Microsoft.AspNetCore.Blazor.Components
+@using Microsoft.AspNetCore.Blazor
 @implements IDisposable
 @inherits DxBlazorCompoment<DevExpress.Ui.DxContextMenuOptions>
 
-<div id="@Id"></div>
+<div id="@Id" ref="dxTarget"></div>
 
 @functions {
+	ElementRef dxTarget;
 	public DxContextMenu() : base("DxContextMenu") { }
 	protected override DevExpress.Ui.DxContextMenuOptions CreateOptions() {
 		return new DevExpress.Ui.DxContextMenuOptions {
@@ -22,107 +25,119 @@
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxContextMenuOptions options) {
-		DevExpress.Ui.DxContextMenuInterop.Init(Id, options);
+		DevExpress.Ui.DxContextMenuInterop.Init(dxTarget, options);
 	}
 	object closeOnOutsideClick;
-	public object CloseOnOutsideClick {
-		get => isInitialized ? DevExpress.Ui.DxContextMenuInterop.GetCloseOnOutsideClick(Id) : closeOnOutsideClick;
+	[Parameter]
+	object CloseOnOutsideClick {
+		get => isInitialized ? DevExpress.Ui.DxContextMenuInterop.GetCloseOnOutsideClick(dxTarget) : closeOnOutsideClick;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxContextMenuInterop.SetCloseOnOutsideClick(Id, value);
+				DevExpress.Ui.DxContextMenuInterop.SetCloseOnOutsideClick(dxTarget, value);
 			} else {
 				this.closeOnOutsideClick = value;
 			}
 		}
 	}
 	object items;
-	public object Items {
-		get => isInitialized ? DevExpress.Ui.DxContextMenuInterop.GetItems(Id) : items;
+	[Parameter]
+	object Items {
+		get => isInitialized ? DevExpress.Ui.DxContextMenuInterop.GetItems(dxTarget) : items;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxContextMenuInterop.SetItems(Id, value);
+				DevExpress.Ui.DxContextMenuInterop.SetItems(dxTarget, value);
 			} else {
 				this.items = value;
 			}
 		}
 	}
 	object position;
-	public object Position {
-		get => isInitialized ? DevExpress.Ui.DxContextMenuInterop.GetPosition(Id) : position;
+	[Parameter]
+	object Position {
+		get => isInitialized ? DevExpress.Ui.DxContextMenuInterop.GetPosition(dxTarget) : position;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxContextMenuInterop.SetPosition(Id, value);
+				DevExpress.Ui.DxContextMenuInterop.SetPosition(dxTarget, value);
 			} else {
 				this.position = value;
 			}
 		}
 	}
 	object showEvent;
-	public object ShowEvent {
-		get => isInitialized ? DevExpress.Ui.DxContextMenuInterop.GetShowEvent(Id) : showEvent;
+	[Parameter]
+	object ShowEvent {
+		get => isInitialized ? DevExpress.Ui.DxContextMenuInterop.GetShowEvent(dxTarget) : showEvent;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxContextMenuInterop.SetShowEvent(Id, value);
+				DevExpress.Ui.DxContextMenuInterop.SetShowEvent(dxTarget, value);
 			} else {
 				this.showEvent = value;
 			}
 		}
 	}
 	string submenuDirection;
-	public string SubmenuDirection {
-		get => isInitialized ? DevExpress.Ui.DxContextMenuInterop.GetSubmenuDirection(Id) : submenuDirection;
+	[Parameter]
+	string SubmenuDirection {
+		get => isInitialized ? DevExpress.Ui.DxContextMenuInterop.GetSubmenuDirection(dxTarget) : submenuDirection;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxContextMenuInterop.SetSubmenuDirection(Id, value);
+				DevExpress.Ui.DxContextMenuInterop.SetSubmenuDirection(dxTarget, value);
 			} else {
 				this.submenuDirection = value;
 			}
 		}
 	}
 	object target;
-	public object Target {
-		get => isInitialized ? DevExpress.Ui.DxContextMenuInterop.GetTarget(Id) : target;
+	[Parameter]
+	object Target {
+		get => isInitialized ? DevExpress.Ui.DxContextMenuInterop.GetTarget(dxTarget) : target;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxContextMenuInterop.SetTarget(Id, value);
+				DevExpress.Ui.DxContextMenuInterop.SetTarget(dxTarget, value);
 			} else {
 				this.target = value;
 			}
 		}
 	}
 	bool? visible;
-	public bool? Visible {
-		get => isInitialized ? DevExpress.Ui.DxContextMenuInterop.GetVisible(Id) : visible;
+	[Parameter]
+	bool? Visible {
+		get => isInitialized ? DevExpress.Ui.DxContextMenuInterop.GetVisible(dxTarget) : visible;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxContextMenuInterop.SetVisible(Id, value);
+				DevExpress.Ui.DxContextMenuInterop.SetVisible(dxTarget, value);
 			} else {
 				this.visible = value;
 			}
 		}
 	}
 	bool? onHiddenEnabled;
-	public bool? OnHiddenEnabled {
+	[Parameter]
+	bool? OnHiddenEnabled {
 		get => onHiddenEnabled;
 		set => this.onHiddenEnabled = value;
 	}
 	bool? onHidingEnabled;
-	public bool? OnHidingEnabled {
+	[Parameter]
+	bool? OnHidingEnabled {
 		get => onHidingEnabled;
 		set => this.onHidingEnabled = value;
 	}
 	bool? onPositioningEnabled;
-	public bool? OnPositioningEnabled {
+	[Parameter]
+	bool? OnPositioningEnabled {
 		get => onPositioningEnabled;
 		set => this.onPositioningEnabled = value;
 	}
 	bool? onShowingEnabled;
-	public bool? OnShowingEnabled {
+	[Parameter]
+	bool? OnShowingEnabled {
 		get => onShowingEnabled;
 		set => this.onShowingEnabled = value;
 	}
 	bool? onShownEnabled;
-	public bool? OnShownEnabled {
+	[Parameter]
+	bool? OnShownEnabled {
 		get => onShownEnabled;
 		set => this.onShownEnabled = value;
 	}
@@ -134,44 +149,49 @@
 		DevExpress.Ui.DxContextMenuInterop.Showing += DxContextMenu_Showing;
 		DevExpress.Ui.DxContextMenuInterop.Shown += DxContextMenu_Shown;
 	}
-	public Action Hidden { get; set; }
+	[Parameter]
+	Action Hidden { get; set; }
 	void DxContextMenu_Hidden(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Hidden?.Invoke();
 		}
 	}
-	public Action Hiding { get; set; }
+	[Parameter]
+	Action Hiding { get; set; }
 	void DxContextMenu_Hiding(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Hiding?.Invoke();
 		}
 	}
-	public Action Positioning { get; set; }
+	[Parameter]
+	Action Positioning { get; set; }
 	void DxContextMenu_Positioning(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Positioning?.Invoke();
 		}
 	}
-	public Action Showing { get; set; }
+	[Parameter]
+	Action Showing { get; set; }
 	void DxContextMenu_Showing(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Showing?.Invoke();
 		}
 	}
-	public Action Shown { get; set; }
+	[Parameter]
+	Action Shown { get; set; }
 	void DxContextMenu_Shown(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Shown?.Invoke();
 		}
 	}
 	public object Hide() {
-		return DevExpress.Ui.DxContextMenuInterop.Hide(Id);
+		return DevExpress.Ui.DxContextMenuInterop.Hide(dxTarget);
 	}
 	public object Show() {
-		return DevExpress.Ui.DxContextMenuInterop.Show(Id);
+		return DevExpress.Ui.DxContextMenuInterop.Show(dxTarget);
 	}
 	public object Toggle(bool showing) {
-		return DevExpress.Ui.DxContextMenuInterop.Toggle(Id, showing);
+		return DevExpress.Ui.DxContextMenuInterop.Toggle(dxTarget, showing);
 	}
 	public void Dispose() {
 		DevExpress.Ui.DxContextMenuInterop.Hidden -= DxContextMenu_Hidden;

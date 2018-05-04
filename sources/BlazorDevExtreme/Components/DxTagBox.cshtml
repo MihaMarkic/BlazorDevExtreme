@@ -1,9 +1,12 @@
+@using Microsoft.AspNetCore.Blazor.Components
+@using Microsoft.AspNetCore.Blazor
 @implements IDisposable
 @inherits DxBlazorCompoment<DevExpress.Ui.DxTagBoxOptions>
 
-<div id="@Id"></div>
+<div id="@Id" ref="dxTarget"></div>
 
 @functions {
+	ElementRef dxTarget;
 	public DxTagBox() : base("DxTagBox") { }
 	protected override DevExpress.Ui.DxTagBoxOptions CreateOptions() {
 		return new DevExpress.Ui.DxTagBoxOptions {
@@ -22,119 +25,131 @@
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxTagBoxOptions options) {
-		DevExpress.Ui.DxTagBoxInterop.Init(Id, options);
+		DevExpress.Ui.DxTagBoxInterop.Init(dxTarget, options);
 	}
 	string applyValueMode;
-	public string ApplyValueMode {
-		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetApplyValueMode(Id) : applyValueMode;
+	[Parameter]
+	string ApplyValueMode {
+		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetApplyValueMode(dxTarget) : applyValueMode;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetApplyValueMode(Id, value);
+				DevExpress.Ui.DxTagBoxInterop.SetApplyValueMode(dxTarget, value);
 			} else {
 				this.applyValueMode = value;
 			}
 		}
 	}
 	bool? hideSelectedItems;
-	public bool? HideSelectedItems {
-		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetHideSelectedItems(Id) : hideSelectedItems;
+	[Parameter]
+	bool? HideSelectedItems {
+		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetHideSelectedItems(dxTarget) : hideSelectedItems;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetHideSelectedItems(Id, value);
+				DevExpress.Ui.DxTagBoxInterop.SetHideSelectedItems(dxTarget, value);
 			} else {
 				this.hideSelectedItems = value;
 			}
 		}
 	}
 	float? maxDisplayedTags;
-	public float? MaxDisplayedTags {
-		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetMaxDisplayedTags(Id) : maxDisplayedTags;
+	[Parameter]
+	float? MaxDisplayedTags {
+		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetMaxDisplayedTags(dxTarget) : maxDisplayedTags;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetMaxDisplayedTags(Id, value);
+				DevExpress.Ui.DxTagBoxInterop.SetMaxDisplayedTags(dxTarget, value);
 			} else {
 				this.maxDisplayedTags = value;
 			}
 		}
 	}
 	bool? multiline;
-	public bool? Multiline {
-		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetMultiline(Id) : multiline;
+	[Parameter]
+	bool? Multiline {
+		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetMultiline(dxTarget) : multiline;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetMultiline(Id, value);
+				DevExpress.Ui.DxTagBoxInterop.SetMultiline(dxTarget, value);
 			} else {
 				this.multiline = value;
 			}
 		}
 	}
 	string selectAllMode;
-	public string SelectAllMode {
-		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetSelectAllMode(Id) : selectAllMode;
+	[Parameter]
+	string SelectAllMode {
+		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetSelectAllMode(dxTarget) : selectAllMode;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetSelectAllMode(Id, value);
+				DevExpress.Ui.DxTagBoxInterop.SetSelectAllMode(dxTarget, value);
 			} else {
 				this.selectAllMode = value;
 			}
 		}
 	}
 	object selectedItems;
-	public object SelectedItems {
-		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetSelectedItems(Id) : selectedItems;
+	[Parameter]
+	object SelectedItems {
+		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetSelectedItems(dxTarget) : selectedItems;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetSelectedItems(Id, value);
+				DevExpress.Ui.DxTagBoxInterop.SetSelectedItems(dxTarget, value);
 			} else {
 				this.selectedItems = value;
 			}
 		}
 	}
 	bool? showMultiTagOnly;
-	public bool? ShowMultiTagOnly {
-		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetShowMultiTagOnly(Id) : showMultiTagOnly;
+	[Parameter]
+	bool? ShowMultiTagOnly {
+		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetShowMultiTagOnly(dxTarget) : showMultiTagOnly;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetShowMultiTagOnly(Id, value);
+				DevExpress.Ui.DxTagBoxInterop.SetShowMultiTagOnly(dxTarget, value);
 			} else {
 				this.showMultiTagOnly = value;
 			}
 		}
 	}
 	object tagTemplate;
-	public object TagTemplate {
-		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetTagTemplate(Id) : tagTemplate;
+	[Parameter]
+	object TagTemplate {
+		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetTagTemplate(dxTarget) : tagTemplate;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetTagTemplate(Id, value);
+				DevExpress.Ui.DxTagBoxInterop.SetTagTemplate(dxTarget, value);
 			} else {
 				this.tagTemplate = value;
 			}
 		}
 	}
 	object value;
-	public object Value {
-		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetValue(Id) : value;
+	[Parameter]
+	object Value {
+		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetValue(dxTarget) : value;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetValue(Id, value);
+				DevExpress.Ui.DxTagBoxInterop.SetValue(dxTarget, value);
 			} else {
 				this.value = value;
 			}
 		}
 	}
 	bool? onMultiTagPreparingEnabled;
-	public bool? OnMultiTagPreparingEnabled {
+	[Parameter]
+	bool? OnMultiTagPreparingEnabled {
 		get => onMultiTagPreparingEnabled;
 		set => this.onMultiTagPreparingEnabled = value;
 	}
 	bool? onSelectAllValueChangedEnabled;
-	public bool? OnSelectAllValueChangedEnabled {
+	[Parameter]
+	bool? OnSelectAllValueChangedEnabled {
 		get => onSelectAllValueChangedEnabled;
 		set => this.onSelectAllValueChangedEnabled = value;
 	}
 	bool? onSelectionChangedEnabled;
-	public bool? OnSelectionChangedEnabled {
+	[Parameter]
+	bool? OnSelectionChangedEnabled {
 		get => onSelectionChangedEnabled;
 		set => this.onSelectionChangedEnabled = value;
 	}
@@ -144,19 +159,22 @@
 		DevExpress.Ui.DxTagBoxInterop.SelectAllValueChanged += DxTagBox_SelectAllValueChanged;
 		DevExpress.Ui.DxTagBoxInterop.SelectionChanged += DxTagBox_SelectionChanged;
 	}
-	public Action MultiTagPreparing { get; set; }
+	[Parameter]
+	Action MultiTagPreparing { get; set; }
 	void DxTagBox_MultiTagPreparing(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			MultiTagPreparing?.Invoke();
 		}
 	}
-	public Action SelectAllValueChanged { get; set; }
+	[Parameter]
+	Action SelectAllValueChanged { get; set; }
 	void DxTagBox_SelectAllValueChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			SelectAllValueChanged?.Invoke();
 		}
 	}
-	public Action SelectionChanged { get; set; }
+	[Parameter]
+	Action SelectionChanged { get; set; }
 	void DxTagBox_SelectionChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			SelectionChanged?.Invoke();

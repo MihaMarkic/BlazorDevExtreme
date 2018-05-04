@@ -1,9 +1,12 @@
+@using Microsoft.AspNetCore.Blazor.Components
+@using Microsoft.AspNetCore.Blazor
 @implements IDisposable
 @inherits DxBlazorCompoment<DevExpress.Ui.DxNavBarOptions>
 
-<div id="@Id"></div>
+<div id="@Id" ref="dxTarget"></div>
 
 @functions {
+	ElementRef dxTarget;
 	public DxNavBar() : base("DxNavBar") { }
 	protected override DevExpress.Ui.DxNavBarOptions CreateOptions() {
 		return new DevExpress.Ui.DxNavBarOptions {
@@ -11,14 +14,15 @@
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxNavBarOptions options) {
-		DevExpress.Ui.DxNavBarInterop.Init(Id, options);
+		DevExpress.Ui.DxNavBarInterop.Init(dxTarget, options);
 	}
 	bool? scrollByContent;
-	public bool? ScrollByContent {
-		get => isInitialized ? DevExpress.Ui.DxNavBarInterop.GetScrollByContent(Id) : scrollByContent;
+	[Parameter]
+	bool? ScrollByContent {
+		get => isInitialized ? DevExpress.Ui.DxNavBarInterop.GetScrollByContent(dxTarget) : scrollByContent;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxNavBarInterop.SetScrollByContent(Id, value);
+				DevExpress.Ui.DxNavBarInterop.SetScrollByContent(dxTarget, value);
 			} else {
 				this.scrollByContent = value;
 			}

@@ -1,9 +1,12 @@
+@using Microsoft.AspNetCore.Blazor.Components
+@using Microsoft.AspNetCore.Blazor
 @implements IDisposable
 @inherits DxBlazorCompoment<DevExpress.Ui.DxPanoramaOptions>
 
-<div id="@Id"></div>
+<div id="@Id" ref="dxTarget"></div>
 
 @functions {
+	ElementRef dxTarget;
 	public DxPanorama() : base("DxPanorama") { }
 	protected override DevExpress.Ui.DxPanoramaOptions CreateOptions() {
 		return new DevExpress.Ui.DxPanoramaOptions {
@@ -14,47 +17,51 @@
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxPanoramaOptions options) {
-		DevExpress.Ui.DxPanoramaInterop.Init(Id, options);
+		DevExpress.Ui.DxPanoramaInterop.Init(dxTarget, options);
 	}
 	object backgroundImage;
-	public object BackgroundImage {
-		get => isInitialized ? DevExpress.Ui.DxPanoramaInterop.GetBackgroundImage(Id) : backgroundImage;
+	[Parameter]
+	object BackgroundImage {
+		get => isInitialized ? DevExpress.Ui.DxPanoramaInterop.GetBackgroundImage(dxTarget) : backgroundImage;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxPanoramaInterop.SetBackgroundImage(Id, value);
+				DevExpress.Ui.DxPanoramaInterop.SetBackgroundImage(dxTarget, value);
 			} else {
 				this.backgroundImage = value;
 			}
 		}
 	}
 	bool? focusStateEnabled;
-	public bool? FocusStateEnabled {
-		get => isInitialized ? DevExpress.Ui.DxPanoramaInterop.GetFocusStateEnabled(Id) : focusStateEnabled;
+	[Parameter]
+	bool? FocusStateEnabled {
+		get => isInitialized ? DevExpress.Ui.DxPanoramaInterop.GetFocusStateEnabled(dxTarget) : focusStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxPanoramaInterop.SetFocusStateEnabled(Id, value);
+				DevExpress.Ui.DxPanoramaInterop.SetFocusStateEnabled(dxTarget, value);
 			} else {
 				this.focusStateEnabled = value;
 			}
 		}
 	}
 	float? selectedIndex;
-	public float? SelectedIndex {
-		get => isInitialized ? DevExpress.Ui.DxPanoramaInterop.GetSelectedIndex(Id) : selectedIndex;
+	[Parameter]
+	float? SelectedIndex {
+		get => isInitialized ? DevExpress.Ui.DxPanoramaInterop.GetSelectedIndex(dxTarget) : selectedIndex;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxPanoramaInterop.SetSelectedIndex(Id, value);
+				DevExpress.Ui.DxPanoramaInterop.SetSelectedIndex(dxTarget, value);
 			} else {
 				this.selectedIndex = value;
 			}
 		}
 	}
 	string title;
-	public string Title {
-		get => isInitialized ? DevExpress.Ui.DxPanoramaInterop.GetTitle(Id) : title;
+	[Parameter]
+	string Title {
+		get => isInitialized ? DevExpress.Ui.DxPanoramaInterop.GetTitle(dxTarget) : title;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxPanoramaInterop.SetTitle(Id, value);
+				DevExpress.Ui.DxPanoramaInterop.SetTitle(dxTarget, value);
 			} else {
 				this.title = value;
 			}

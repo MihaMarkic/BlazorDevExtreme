@@ -1,9 +1,12 @@
+@using Microsoft.AspNetCore.Blazor.Components
+@using Microsoft.AspNetCore.Blazor
 @implements IDisposable
 @inherits DxBlazorCompoment<DevExpress.Ui.DxFormOptions>
 
-<div id="@Id"></div>
+<div id="@Id" ref="dxTarget"></div>
 
 @functions {
+	ElementRef dxTarget;
 	public DxForm() : base("DxForm") { }
 	protected override DevExpress.Ui.DxFormOptions CreateOptions() {
 		return new DevExpress.Ui.DxFormOptions {
@@ -32,235 +35,257 @@
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxFormOptions options) {
-		DevExpress.Ui.DxFormInterop.Init(Id, options);
+		DevExpress.Ui.DxFormInterop.Init(dxTarget, options);
 	}
 	bool? alignItemLabels;
-	public bool? AlignItemLabels {
-		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetAlignItemLabels(Id) : alignItemLabels;
+	[Parameter]
+	bool? AlignItemLabels {
+		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetAlignItemLabels(dxTarget) : alignItemLabels;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFormInterop.SetAlignItemLabels(Id, value);
+				DevExpress.Ui.DxFormInterop.SetAlignItemLabels(dxTarget, value);
 			} else {
 				this.alignItemLabels = value;
 			}
 		}
 	}
 	bool? alignItemLabelsInAllGroups;
-	public bool? AlignItemLabelsInAllGroups {
-		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetAlignItemLabelsInAllGroups(Id) : alignItemLabelsInAllGroups;
+	[Parameter]
+	bool? AlignItemLabelsInAllGroups {
+		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetAlignItemLabelsInAllGroups(dxTarget) : alignItemLabelsInAllGroups;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFormInterop.SetAlignItemLabelsInAllGroups(Id, value);
+				DevExpress.Ui.DxFormInterop.SetAlignItemLabelsInAllGroups(dxTarget, value);
 			} else {
 				this.alignItemLabelsInAllGroups = value;
 			}
 		}
 	}
 	object colCount;
-	public object ColCount {
-		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetColCount(Id) : colCount;
+	[Parameter]
+	object ColCount {
+		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetColCount(dxTarget) : colCount;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFormInterop.SetColCount(Id, value);
+				DevExpress.Ui.DxFormInterop.SetColCount(dxTarget, value);
 			} else {
 				this.colCount = value;
 			}
 		}
 	}
 	object colCountByScreen;
-	public object ColCountByScreen {
-		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetColCountByScreen(Id) : colCountByScreen;
+	[Parameter]
+	object ColCountByScreen {
+		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetColCountByScreen(dxTarget) : colCountByScreen;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFormInterop.SetColCountByScreen(Id, value);
+				DevExpress.Ui.DxFormInterop.SetColCountByScreen(dxTarget, value);
 			} else {
 				this.colCountByScreen = value;
 			}
 		}
 	}
 	object customizeItem;
-	public object CustomizeItem {
-		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetCustomizeItem(Id) : customizeItem;
+	[Parameter]
+	object CustomizeItem {
+		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetCustomizeItem(dxTarget) : customizeItem;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFormInterop.SetCustomizeItem(Id, value);
+				DevExpress.Ui.DxFormInterop.SetCustomizeItem(dxTarget, value);
 			} else {
 				this.customizeItem = value;
 			}
 		}
 	}
 	object formData;
-	public object FormData {
-		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetFormData(Id) : formData;
+	[Parameter]
+	object FormData {
+		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetFormData(dxTarget) : formData;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFormInterop.SetFormData(Id, value);
+				DevExpress.Ui.DxFormInterop.SetFormData(dxTarget, value);
 			} else {
 				this.formData = value;
 			}
 		}
 	}
 	object items;
-	public object Items {
-		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetItems(Id) : items;
+	[Parameter]
+	object Items {
+		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetItems(dxTarget) : items;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFormInterop.SetItems(Id, value);
+				DevExpress.Ui.DxFormInterop.SetItems(dxTarget, value);
 			} else {
 				this.items = value;
 			}
 		}
 	}
 	string labelLocation;
-	public string LabelLocation {
-		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetLabelLocation(Id) : labelLocation;
+	[Parameter]
+	string LabelLocation {
+		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetLabelLocation(dxTarget) : labelLocation;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFormInterop.SetLabelLocation(Id, value);
+				DevExpress.Ui.DxFormInterop.SetLabelLocation(dxTarget, value);
 			} else {
 				this.labelLocation = value;
 			}
 		}
 	}
 	float? minColWidth;
-	public float? MinColWidth {
-		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetMinColWidth(Id) : minColWidth;
+	[Parameter]
+	float? MinColWidth {
+		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetMinColWidth(dxTarget) : minColWidth;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFormInterop.SetMinColWidth(Id, value);
+				DevExpress.Ui.DxFormInterop.SetMinColWidth(dxTarget, value);
 			} else {
 				this.minColWidth = value;
 			}
 		}
 	}
 	string optionalMark;
-	public string OptionalMark {
-		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetOptionalMark(Id) : optionalMark;
+	[Parameter]
+	string OptionalMark {
+		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetOptionalMark(dxTarget) : optionalMark;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFormInterop.SetOptionalMark(Id, value);
+				DevExpress.Ui.DxFormInterop.SetOptionalMark(dxTarget, value);
 			} else {
 				this.optionalMark = value;
 			}
 		}
 	}
 	bool? readOnly;
-	public bool? ReadOnly {
-		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetReadOnly(Id) : readOnly;
+	[Parameter]
+	bool? ReadOnly {
+		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetReadOnly(dxTarget) : readOnly;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFormInterop.SetReadOnly(Id, value);
+				DevExpress.Ui.DxFormInterop.SetReadOnly(dxTarget, value);
 			} else {
 				this.readOnly = value;
 			}
 		}
 	}
 	string requiredMark;
-	public string RequiredMark {
-		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetRequiredMark(Id) : requiredMark;
+	[Parameter]
+	string RequiredMark {
+		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetRequiredMark(dxTarget) : requiredMark;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFormInterop.SetRequiredMark(Id, value);
+				DevExpress.Ui.DxFormInterop.SetRequiredMark(dxTarget, value);
 			} else {
 				this.requiredMark = value;
 			}
 		}
 	}
 	string requiredMessage;
-	public string RequiredMessage {
-		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetRequiredMessage(Id) : requiredMessage;
+	[Parameter]
+	string RequiredMessage {
+		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetRequiredMessage(dxTarget) : requiredMessage;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFormInterop.SetRequiredMessage(Id, value);
+				DevExpress.Ui.DxFormInterop.SetRequiredMessage(dxTarget, value);
 			} else {
 				this.requiredMessage = value;
 			}
 		}
 	}
 	object screenByWidth;
-	public object ScreenByWidth {
-		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetScreenByWidth(Id) : screenByWidth;
+	[Parameter]
+	object ScreenByWidth {
+		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetScreenByWidth(dxTarget) : screenByWidth;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFormInterop.SetScreenByWidth(Id, value);
+				DevExpress.Ui.DxFormInterop.SetScreenByWidth(dxTarget, value);
 			} else {
 				this.screenByWidth = value;
 			}
 		}
 	}
 	bool? scrollingEnabled;
-	public bool? ScrollingEnabled {
-		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetScrollingEnabled(Id) : scrollingEnabled;
+	[Parameter]
+	bool? ScrollingEnabled {
+		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetScrollingEnabled(dxTarget) : scrollingEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFormInterop.SetScrollingEnabled(Id, value);
+				DevExpress.Ui.DxFormInterop.SetScrollingEnabled(dxTarget, value);
 			} else {
 				this.scrollingEnabled = value;
 			}
 		}
 	}
 	bool? showColonAfterLabel;
-	public bool? ShowColonAfterLabel {
-		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetShowColonAfterLabel(Id) : showColonAfterLabel;
+	[Parameter]
+	bool? ShowColonAfterLabel {
+		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetShowColonAfterLabel(dxTarget) : showColonAfterLabel;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFormInterop.SetShowColonAfterLabel(Id, value);
+				DevExpress.Ui.DxFormInterop.SetShowColonAfterLabel(dxTarget, value);
 			} else {
 				this.showColonAfterLabel = value;
 			}
 		}
 	}
 	bool? showOptionalMark;
-	public bool? ShowOptionalMark {
-		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetShowOptionalMark(Id) : showOptionalMark;
+	[Parameter]
+	bool? ShowOptionalMark {
+		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetShowOptionalMark(dxTarget) : showOptionalMark;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFormInterop.SetShowOptionalMark(Id, value);
+				DevExpress.Ui.DxFormInterop.SetShowOptionalMark(dxTarget, value);
 			} else {
 				this.showOptionalMark = value;
 			}
 		}
 	}
 	bool? showRequiredMark;
-	public bool? ShowRequiredMark {
-		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetShowRequiredMark(Id) : showRequiredMark;
+	[Parameter]
+	bool? ShowRequiredMark {
+		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetShowRequiredMark(dxTarget) : showRequiredMark;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFormInterop.SetShowRequiredMark(Id, value);
+				DevExpress.Ui.DxFormInterop.SetShowRequiredMark(dxTarget, value);
 			} else {
 				this.showRequiredMark = value;
 			}
 		}
 	}
 	bool? showValidationSummary;
-	public bool? ShowValidationSummary {
-		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetShowValidationSummary(Id) : showValidationSummary;
+	[Parameter]
+	bool? ShowValidationSummary {
+		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetShowValidationSummary(dxTarget) : showValidationSummary;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFormInterop.SetShowValidationSummary(Id, value);
+				DevExpress.Ui.DxFormInterop.SetShowValidationSummary(dxTarget, value);
 			} else {
 				this.showValidationSummary = value;
 			}
 		}
 	}
 	string validationGroup;
-	public string ValidationGroup {
-		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetValidationGroup(Id) : validationGroup;
+	[Parameter]
+	string ValidationGroup {
+		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetValidationGroup(dxTarget) : validationGroup;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFormInterop.SetValidationGroup(Id, value);
+				DevExpress.Ui.DxFormInterop.SetValidationGroup(dxTarget, value);
 			} else {
 				this.validationGroup = value;
 			}
 		}
 	}
 	bool? onEditorEnterKeyEnabled;
-	public bool? OnEditorEnterKeyEnabled {
+	[Parameter]
+	bool? OnEditorEnterKeyEnabled {
 		get => onEditorEnterKeyEnabled;
 		set => this.onEditorEnterKeyEnabled = value;
 	}
 	bool? onFieldDataChangedEnabled;
-	public bool? OnFieldDataChangedEnabled {
+	[Parameter]
+	bool? OnFieldDataChangedEnabled {
 		get => onFieldDataChangedEnabled;
 		set => this.onFieldDataChangedEnabled = value;
 	}
@@ -269,44 +294,46 @@
 		DevExpress.Ui.DxFormInterop.EditorEnterKey += DxForm_EditorEnterKey;
 		DevExpress.Ui.DxFormInterop.FieldDataChanged += DxForm_FieldDataChanged;
 	}
-	public Action EditorEnterKey { get; set; }
+	[Parameter]
+	Action EditorEnterKey { get; set; }
 	void DxForm_EditorEnterKey(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			EditorEnterKey?.Invoke();
 		}
 	}
-	public Action FieldDataChanged { get; set; }
+	[Parameter]
+	Action FieldDataChanged { get; set; }
 	void DxForm_FieldDataChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			FieldDataChanged?.Invoke();
 		}
 	}
 	public object GetEditor(string dataField) {
-		return DevExpress.Ui.DxFormInterop.GetEditor(Id, dataField);
+		return DevExpress.Ui.DxFormInterop.GetEditor(dxTarget, dataField);
 	}
 	public object ItemOption(string id) {
-		return DevExpress.Ui.DxFormInterop.ItemOption(Id, id);
+		return DevExpress.Ui.DxFormInterop.ItemOption(dxTarget, id);
 	}
 	public void ItemOption(string id, string option, object value) {
-		DevExpress.Ui.DxFormInterop.ItemOption(Id, id, option, value);
+		DevExpress.Ui.DxFormInterop.ItemOption(dxTarget, id, option, value);
 	}
 	public void ItemOption(string id, object options) {
-		DevExpress.Ui.DxFormInterop.ItemOption(Id, id, options);
+		DevExpress.Ui.DxFormInterop.ItemOption(dxTarget, id, options);
 	}
 	public void ResetValues() {
-		DevExpress.Ui.DxFormInterop.ResetValues(Id);
+		DevExpress.Ui.DxFormInterop.ResetValues(dxTarget);
 	}
 	public void UpdateData(object data) {
-		DevExpress.Ui.DxFormInterop.UpdateData(Id, data);
+		DevExpress.Ui.DxFormInterop.UpdateData(dxTarget, data);
 	}
 	public void UpdateData(string dataField, object value) {
-		DevExpress.Ui.DxFormInterop.UpdateData(Id, dataField, value);
+		DevExpress.Ui.DxFormInterop.UpdateData(dxTarget, dataField, value);
 	}
 	public object UpdateDimensions() {
-		return DevExpress.Ui.DxFormInterop.UpdateDimensions(Id);
+		return DevExpress.Ui.DxFormInterop.UpdateDimensions(dxTarget);
 	}
 	public object Validate() {
-		return DevExpress.Ui.DxFormInterop.Validate(Id);
+		return DevExpress.Ui.DxFormInterop.Validate(dxTarget);
 	}
 	public void Dispose() {
 		DevExpress.Ui.DxFormInterop.EditorEnterKey -= DxForm_EditorEnterKey;

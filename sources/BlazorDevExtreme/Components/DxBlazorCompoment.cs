@@ -26,7 +26,7 @@ namespace BlazorDevExtreme.Components
                     Init(options);
                     isInitialized = true;
                 }
-                catch
+                catch (Exception ex)
                 {
                     await Task.Delay(1000);
                 }

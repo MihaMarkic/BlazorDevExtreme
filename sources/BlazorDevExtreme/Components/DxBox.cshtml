@@ -1,9 +1,12 @@
+@using Microsoft.AspNetCore.Blazor.Components
+@using Microsoft.AspNetCore.Blazor
 @implements IDisposable
 @inherits DxBlazorCompoment<DevExpress.Ui.DxBoxOptions>
 
-<div id="@Id"></div>
+<div id="@Id" ref="dxTarget"></div>
 
 @functions {
+	ElementRef dxTarget;
 	public DxBox() : base("DxBox") { }
 	protected override DevExpress.Ui.DxBoxOptions CreateOptions() {
 		return new DevExpress.Ui.DxBoxOptions {
@@ -13,36 +16,39 @@
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxBoxOptions options) {
-		DevExpress.Ui.DxBoxInterop.Init(Id, options);
+		DevExpress.Ui.DxBoxInterop.Init(dxTarget, options);
 	}
 	string align;
-	public string Align {
-		get => isInitialized ? DevExpress.Ui.DxBoxInterop.GetAlign(Id) : align;
+	[Parameter]
+	string Align {
+		get => isInitialized ? DevExpress.Ui.DxBoxInterop.GetAlign(dxTarget) : align;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxBoxInterop.SetAlign(Id, value);
+				DevExpress.Ui.DxBoxInterop.SetAlign(dxTarget, value);
 			} else {
 				this.align = value;
 			}
 		}
 	}
 	string crossAlign;
-	public string CrossAlign {
-		get => isInitialized ? DevExpress.Ui.DxBoxInterop.GetCrossAlign(Id) : crossAlign;
+	[Parameter]
+	string CrossAlign {
+		get => isInitialized ? DevExpress.Ui.DxBoxInterop.GetCrossAlign(dxTarget) : crossAlign;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxBoxInterop.SetCrossAlign(Id, value);
+				DevExpress.Ui.DxBoxInterop.SetCrossAlign(dxTarget, value);
 			} else {
 				this.crossAlign = value;
 			}
 		}
 	}
 	string direction;
-	public string Direction {
-		get => isInitialized ? DevExpress.Ui.DxBoxInterop.GetDirection(Id) : direction;
+	[Parameter]
+	string Direction {
+		get => isInitialized ? DevExpress.Ui.DxBoxInterop.GetDirection(dxTarget) : direction;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxBoxInterop.SetDirection(Id, value);
+				DevExpress.Ui.DxBoxInterop.SetDirection(dxTarget, value);
 			} else {
 				this.direction = value;
 			}

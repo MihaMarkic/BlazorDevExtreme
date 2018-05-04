@@ -1,9 +1,12 @@
+@using Microsoft.AspNetCore.Blazor.Components
+@using Microsoft.AspNetCore.Blazor
 @implements IDisposable
 @inherits DxBlazorCompoment<DevExpress.Viz.Map.DxVectorMapOptions>
 
-<div id="@Id"></div>
+<div id="@Id" ref="dxTarget"></div>
 
 @functions {
+	ElementRef dxTarget;
 	public DxVectorMap() : base("DxVectorMap") { }
 	protected override DevExpress.Viz.Map.DxVectorMapOptions CreateOptions() {
 		return new DevExpress.Viz.Map.DxVectorMapOptions {
@@ -38,253 +41,281 @@
 		};
 	}
 	protected override void Init(DevExpress.Viz.Map.DxVectorMapOptions options) {
-		DevExpress.Viz.DxVectorMapInterop.Init(Id, options);
+		DevExpress.Viz.DxVectorMapInterop.Init(dxTarget, options);
 	}
 	object areaSettings;
-	public object AreaSettings {
-		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetAreaSettings(Id) : areaSettings;
+	[Parameter]
+	object AreaSettings {
+		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetAreaSettings(dxTarget) : areaSettings;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxVectorMapInterop.SetAreaSettings(Id, value);
+				DevExpress.Viz.DxVectorMapInterop.SetAreaSettings(dxTarget, value);
 			} else {
 				this.areaSettings = value;
 			}
 		}
 	}
 	object background;
-	public object Background {
-		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetBackground(Id) : background;
+	[Parameter]
+	object Background {
+		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetBackground(dxTarget) : background;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxVectorMapInterop.SetBackground(Id, value);
+				DevExpress.Viz.DxVectorMapInterop.SetBackground(dxTarget, value);
 			} else {
 				this.background = value;
 			}
 		}
 	}
 	object bounds;
-	public object Bounds {
-		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetBounds(Id) : bounds;
+	[Parameter]
+	object Bounds {
+		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetBounds(dxTarget) : bounds;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxVectorMapInterop.SetBounds(Id, value);
+				DevExpress.Viz.DxVectorMapInterop.SetBounds(dxTarget, value);
 			} else {
 				this.bounds = value;
 			}
 		}
 	}
 	object center;
-	public object Center {
-		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetCenter(Id) : center;
+	[Parameter]
+	object Center {
+		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetCenter(dxTarget) : center;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxVectorMapInterop.SetCenter(Id, value);
+				DevExpress.Viz.DxVectorMapInterop.SetCenter(dxTarget, value);
 			} else {
 				this.center = value;
 			}
 		}
 	}
 	object controlBar;
-	public object ControlBar {
-		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetControlBar(Id) : controlBar;
+	[Parameter]
+	object ControlBar {
+		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetControlBar(dxTarget) : controlBar;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxVectorMapInterop.SetControlBar(Id, value);
+				DevExpress.Viz.DxVectorMapInterop.SetControlBar(dxTarget, value);
 			} else {
 				this.controlBar = value;
 			}
 		}
 	}
 	object layers;
-	public object Layers {
-		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetLayers(Id) : layers;
+	[Parameter]
+	object Layers {
+		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetLayers(dxTarget) : layers;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxVectorMapInterop.SetLayers(Id, value);
+				DevExpress.Viz.DxVectorMapInterop.SetLayers(dxTarget, value);
 			} else {
 				this.layers = value;
 			}
 		}
 	}
 	object legends;
-	public object Legends {
-		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetLegends(Id) : legends;
+	[Parameter]
+	object Legends {
+		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetLegends(dxTarget) : legends;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxVectorMapInterop.SetLegends(Id, value);
+				DevExpress.Viz.DxVectorMapInterop.SetLegends(dxTarget, value);
 			} else {
 				this.legends = value;
 			}
 		}
 	}
 	object mapData;
-	public object MapData {
-		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetMapData(Id) : mapData;
+	[Parameter]
+	object MapData {
+		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetMapData(dxTarget) : mapData;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxVectorMapInterop.SetMapData(Id, value);
+				DevExpress.Viz.DxVectorMapInterop.SetMapData(dxTarget, value);
 			} else {
 				this.mapData = value;
 			}
 		}
 	}
 	object markers;
-	public object Markers {
-		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetMarkers(Id) : markers;
+	[Parameter]
+	object Markers {
+		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetMarkers(dxTarget) : markers;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxVectorMapInterop.SetMarkers(Id, value);
+				DevExpress.Viz.DxVectorMapInterop.SetMarkers(dxTarget, value);
 			} else {
 				this.markers = value;
 			}
 		}
 	}
 	object markerSettings;
-	public object MarkerSettings {
-		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetMarkerSettings(Id) : markerSettings;
+	[Parameter]
+	object MarkerSettings {
+		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetMarkerSettings(dxTarget) : markerSettings;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxVectorMapInterop.SetMarkerSettings(Id, value);
+				DevExpress.Viz.DxVectorMapInterop.SetMarkerSettings(dxTarget, value);
 			} else {
 				this.markerSettings = value;
 			}
 		}
 	}
 	float? maxZoomFactor;
-	public float? MaxZoomFactor {
-		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetMaxZoomFactor(Id) : maxZoomFactor;
+	[Parameter]
+	float? MaxZoomFactor {
+		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetMaxZoomFactor(dxTarget) : maxZoomFactor;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxVectorMapInterop.SetMaxZoomFactor(Id, value);
+				DevExpress.Viz.DxVectorMapInterop.SetMaxZoomFactor(dxTarget, value);
 			} else {
 				this.maxZoomFactor = value;
 			}
 		}
 	}
 	bool? panningEnabled;
-	public bool? PanningEnabled {
-		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetPanningEnabled(Id) : panningEnabled;
+	[Parameter]
+	bool? PanningEnabled {
+		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetPanningEnabled(dxTarget) : panningEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxVectorMapInterop.SetPanningEnabled(Id, value);
+				DevExpress.Viz.DxVectorMapInterop.SetPanningEnabled(dxTarget, value);
 			} else {
 				this.panningEnabled = value;
 			}
 		}
 	}
 	object projection;
-	public object Projection {
-		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetProjection(Id) : projection;
+	[Parameter]
+	object Projection {
+		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetProjection(dxTarget) : projection;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxVectorMapInterop.SetProjection(Id, value);
+				DevExpress.Viz.DxVectorMapInterop.SetProjection(dxTarget, value);
 			} else {
 				this.projection = value;
 			}
 		}
 	}
 	object tooltip;
-	public object Tooltip {
-		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetTooltip(Id) : tooltip;
+	[Parameter]
+	object Tooltip {
+		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetTooltip(dxTarget) : tooltip;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxVectorMapInterop.SetTooltip(Id, value);
+				DevExpress.Viz.DxVectorMapInterop.SetTooltip(dxTarget, value);
 			} else {
 				this.tooltip = value;
 			}
 		}
 	}
 	bool? touchEnabled;
-	public bool? TouchEnabled {
-		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetTouchEnabled(Id) : touchEnabled;
+	[Parameter]
+	bool? TouchEnabled {
+		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetTouchEnabled(dxTarget) : touchEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxVectorMapInterop.SetTouchEnabled(Id, value);
+				DevExpress.Viz.DxVectorMapInterop.SetTouchEnabled(dxTarget, value);
 			} else {
 				this.touchEnabled = value;
 			}
 		}
 	}
 	bool? wheelEnabled;
-	public bool? WheelEnabled {
-		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetWheelEnabled(Id) : wheelEnabled;
+	[Parameter]
+	bool? WheelEnabled {
+		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetWheelEnabled(dxTarget) : wheelEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxVectorMapInterop.SetWheelEnabled(Id, value);
+				DevExpress.Viz.DxVectorMapInterop.SetWheelEnabled(dxTarget, value);
 			} else {
 				this.wheelEnabled = value;
 			}
 		}
 	}
 	float? zoomFactor;
-	public float? ZoomFactor {
-		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetZoomFactor(Id) : zoomFactor;
+	[Parameter]
+	float? ZoomFactor {
+		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetZoomFactor(dxTarget) : zoomFactor;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxVectorMapInterop.SetZoomFactor(Id, value);
+				DevExpress.Viz.DxVectorMapInterop.SetZoomFactor(dxTarget, value);
 			} else {
 				this.zoomFactor = value;
 			}
 		}
 	}
 	bool? zoomingEnabled;
-	public bool? ZoomingEnabled {
-		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetZoomingEnabled(Id) : zoomingEnabled;
+	[Parameter]
+	bool? ZoomingEnabled {
+		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetZoomingEnabled(dxTarget) : zoomingEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxVectorMapInterop.SetZoomingEnabled(Id, value);
+				DevExpress.Viz.DxVectorMapInterop.SetZoomingEnabled(dxTarget, value);
 			} else {
 				this.zoomingEnabled = value;
 			}
 		}
 	}
 	bool? onAreaClickEnabled;
-	public bool? OnAreaClickEnabled {
+	[Parameter]
+	bool? OnAreaClickEnabled {
 		get => onAreaClickEnabled;
 		set => this.onAreaClickEnabled = value;
 	}
 	bool? onAreaSelectionChangedEnabled;
-	public bool? OnAreaSelectionChangedEnabled {
+	[Parameter]
+	bool? OnAreaSelectionChangedEnabled {
 		get => onAreaSelectionChangedEnabled;
 		set => this.onAreaSelectionChangedEnabled = value;
 	}
 	bool? onCenterChangedEnabled;
-	public bool? OnCenterChangedEnabled {
+	[Parameter]
+	bool? OnCenterChangedEnabled {
 		get => onCenterChangedEnabled;
 		set => this.onCenterChangedEnabled = value;
 	}
 	bool? onClickEnabled;
-	public bool? OnClickEnabled {
+	[Parameter]
+	bool? OnClickEnabled {
 		get => onClickEnabled;
 		set => this.onClickEnabled = value;
 	}
 	bool? onMarkerClickEnabled;
-	public bool? OnMarkerClickEnabled {
+	[Parameter]
+	bool? OnMarkerClickEnabled {
 		get => onMarkerClickEnabled;
 		set => this.onMarkerClickEnabled = value;
 	}
 	bool? onMarkerSelectionChangedEnabled;
-	public bool? OnMarkerSelectionChangedEnabled {
+	[Parameter]
+	bool? OnMarkerSelectionChangedEnabled {
 		get => onMarkerSelectionChangedEnabled;
 		set => this.onMarkerSelectionChangedEnabled = value;
 	}
 	bool? onSelectionChangedEnabled;
-	public bool? OnSelectionChangedEnabled {
+	[Parameter]
+	bool? OnSelectionChangedEnabled {
 		get => onSelectionChangedEnabled;
 		set => this.onSelectionChangedEnabled = value;
 	}
 	bool? onTooltipHiddenEnabled;
-	public bool? OnTooltipHiddenEnabled {
+	[Parameter]
+	bool? OnTooltipHiddenEnabled {
 		get => onTooltipHiddenEnabled;
 		set => this.onTooltipHiddenEnabled = value;
 	}
 	bool? onTooltipShownEnabled;
-	public bool? OnTooltipShownEnabled {
+	[Parameter]
+	bool? OnTooltipShownEnabled {
 		get => onTooltipShownEnabled;
 		set => this.onTooltipShownEnabled = value;
 	}
 	bool? onZoomFactorChangedEnabled;
-	public bool? OnZoomFactorChangedEnabled {
+	[Parameter]
+	bool? OnZoomFactorChangedEnabled {
 		get => onZoomFactorChangedEnabled;
 		set => this.onZoomFactorChangedEnabled = value;
 	}
@@ -301,110 +332,120 @@
 		DevExpress.Viz.DxVectorMapInterop.TooltipShown += DxVectorMap_TooltipShown;
 		DevExpress.Viz.DxVectorMapInterop.ZoomFactorChanged += DxVectorMap_ZoomFactorChanged;
 	}
-	public Action AreaClick { get; set; }
+	[Parameter]
+	Action AreaClick { get; set; }
 	void DxVectorMap_AreaClick(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			AreaClick?.Invoke();
 		}
 	}
-	public Action AreaSelectionChanged { get; set; }
+	[Parameter]
+	Action AreaSelectionChanged { get; set; }
 	void DxVectorMap_AreaSelectionChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			AreaSelectionChanged?.Invoke();
 		}
 	}
-	public Action CenterChanged { get; set; }
+	[Parameter]
+	Action CenterChanged { get; set; }
 	void DxVectorMap_CenterChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			CenterChanged?.Invoke();
 		}
 	}
-	public Action Click { get; set; }
+	[Parameter]
+	Action Click { get; set; }
 	void DxVectorMap_Click(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Click?.Invoke();
 		}
 	}
-	public Action MarkerClick { get; set; }
+	[Parameter]
+	Action MarkerClick { get; set; }
 	void DxVectorMap_MarkerClick(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			MarkerClick?.Invoke();
 		}
 	}
-	public Action MarkerSelectionChanged { get; set; }
+	[Parameter]
+	Action MarkerSelectionChanged { get; set; }
 	void DxVectorMap_MarkerSelectionChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			MarkerSelectionChanged?.Invoke();
 		}
 	}
-	public Action SelectionChanged { get; set; }
+	[Parameter]
+	Action SelectionChanged { get; set; }
 	void DxVectorMap_SelectionChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			SelectionChanged?.Invoke();
 		}
 	}
-	public Action TooltipHidden { get; set; }
+	[Parameter]
+	Action TooltipHidden { get; set; }
 	void DxVectorMap_TooltipHidden(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			TooltipHidden?.Invoke();
 		}
 	}
-	public Action TooltipShown { get; set; }
+	[Parameter]
+	Action TooltipShown { get; set; }
 	void DxVectorMap_TooltipShown(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			TooltipShown?.Invoke();
 		}
 	}
-	public Action ZoomFactorChanged { get; set; }
+	[Parameter]
+	Action ZoomFactorChanged { get; set; }
 	void DxVectorMap_ZoomFactorChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ZoomFactorChanged?.Invoke();
 		}
 	}
 	public object CenterEx() {
-		return DevExpress.Viz.DxVectorMapInterop.CenterEx(Id);
+		return DevExpress.Viz.DxVectorMapInterop.CenterEx(dxTarget);
 	}
 	public void CenterEx(object centerCoordinates) {
-		DevExpress.Viz.DxVectorMapInterop.CenterEx(Id, centerCoordinates);
+		DevExpress.Viz.DxVectorMapInterop.CenterEx(dxTarget, centerCoordinates);
 	}
 	public void ClearAreaSelection() {
-		DevExpress.Viz.DxVectorMapInterop.ClearAreaSelection(Id);
+		DevExpress.Viz.DxVectorMapInterop.ClearAreaSelection(dxTarget);
 	}
 	public void ClearMarkerSelection() {
-		DevExpress.Viz.DxVectorMapInterop.ClearMarkerSelection(Id);
+		DevExpress.Viz.DxVectorMapInterop.ClearMarkerSelection(dxTarget);
 	}
 	public void ClearSelection() {
-		DevExpress.Viz.DxVectorMapInterop.ClearSelection(Id);
+		DevExpress.Viz.DxVectorMapInterop.ClearSelection(dxTarget);
 	}
 	public object ConvertCoordinates(float x, float y) {
-		return DevExpress.Viz.DxVectorMapInterop.ConvertCoordinates(Id, x, y);
+		return DevExpress.Viz.DxVectorMapInterop.ConvertCoordinates(dxTarget, x, y);
 	}
 	public object GetAreas() {
-		return DevExpress.Viz.DxVectorMapInterop.GetAreas(Id);
+		return DevExpress.Viz.DxVectorMapInterop.GetAreas(dxTarget);
 	}
 	public object GetLayerByIndex(float index) {
-		return DevExpress.Viz.DxVectorMapInterop.GetLayerByIndex(Id, index);
+		return DevExpress.Viz.DxVectorMapInterop.GetLayerByIndex(dxTarget, index);
 	}
 	public object GetLayerByName(string name) {
-		return DevExpress.Viz.DxVectorMapInterop.GetLayerByName(Id, name);
+		return DevExpress.Viz.DxVectorMapInterop.GetLayerByName(dxTarget, name);
 	}
 	public object GetLayersEx() {
-		return DevExpress.Viz.DxVectorMapInterop.GetLayersEx(Id);
+		return DevExpress.Viz.DxVectorMapInterop.GetLayersEx(dxTarget);
 	}
 	public object GetMarkersEx() {
-		return DevExpress.Viz.DxVectorMapInterop.GetMarkersEx(Id);
+		return DevExpress.Viz.DxVectorMapInterop.GetMarkersEx(dxTarget);
 	}
 	public object Viewport() {
-		return DevExpress.Viz.DxVectorMapInterop.Viewport(Id);
+		return DevExpress.Viz.DxVectorMapInterop.Viewport(dxTarget);
 	}
 	public void Viewport(object viewportCoordinates) {
-		DevExpress.Viz.DxVectorMapInterop.Viewport(Id, viewportCoordinates);
+		DevExpress.Viz.DxVectorMapInterop.Viewport(dxTarget, viewportCoordinates);
 	}
 	public float ZoomFactorEx() {
-		return DevExpress.Viz.DxVectorMapInterop.ZoomFactorEx(Id);
+		return DevExpress.Viz.DxVectorMapInterop.ZoomFactorEx(dxTarget);
 	}
 	public void ZoomFactorEx(float zoomFactor) {
-		DevExpress.Viz.DxVectorMapInterop.ZoomFactorEx(Id, zoomFactor);
+		DevExpress.Viz.DxVectorMapInterop.ZoomFactorEx(dxTarget, zoomFactor);
 	}
 	public void Dispose() {
 		DevExpress.Viz.DxVectorMapInterop.AreaClick -= DxVectorMap_AreaClick;

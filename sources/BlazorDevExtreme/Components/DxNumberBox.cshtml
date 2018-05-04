@@ -1,9 +1,12 @@
+@using Microsoft.AspNetCore.Blazor.Components
+@using Microsoft.AspNetCore.Blazor
 @implements IDisposable
 @inherits DxBlazorCompoment<DevExpress.Ui.DxNumberBoxOptions>
 
-<div id="@Id"></div>
+<div id="@Id" ref="dxTarget"></div>
 
 @functions {
+	ElementRef dxTarget;
 	public DxNumberBox() : base("DxNumberBox") { }
 	protected override DevExpress.Ui.DxNumberBoxOptions CreateOptions() {
 		return new DevExpress.Ui.DxNumberBoxOptions {
@@ -19,102 +22,111 @@
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxNumberBoxOptions options) {
-		DevExpress.Ui.DxNumberBoxInterop.Init(Id, options);
+		DevExpress.Ui.DxNumberBoxInterop.Init(dxTarget, options);
 	}
 	object format;
-	public object Format {
-		get => isInitialized ? DevExpress.Ui.DxNumberBoxInterop.GetFormat(Id) : format;
+	[Parameter]
+	object Format {
+		get => isInitialized ? DevExpress.Ui.DxNumberBoxInterop.GetFormat(dxTarget) : format;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxNumberBoxInterop.SetFormat(Id, value);
+				DevExpress.Ui.DxNumberBoxInterop.SetFormat(dxTarget, value);
 			} else {
 				this.format = value;
 			}
 		}
 	}
 	string invalidValueMessage;
-	public string InvalidValueMessage {
-		get => isInitialized ? DevExpress.Ui.DxNumberBoxInterop.GetInvalidValueMessage(Id) : invalidValueMessage;
+	[Parameter]
+	string InvalidValueMessage {
+		get => isInitialized ? DevExpress.Ui.DxNumberBoxInterop.GetInvalidValueMessage(dxTarget) : invalidValueMessage;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxNumberBoxInterop.SetInvalidValueMessage(Id, value);
+				DevExpress.Ui.DxNumberBoxInterop.SetInvalidValueMessage(dxTarget, value);
 			} else {
 				this.invalidValueMessage = value;
 			}
 		}
 	}
 	float? max;
-	public float? Max {
-		get => isInitialized ? DevExpress.Ui.DxNumberBoxInterop.GetMax(Id) : max;
+	[Parameter]
+	float? Max {
+		get => isInitialized ? DevExpress.Ui.DxNumberBoxInterop.GetMax(dxTarget) : max;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxNumberBoxInterop.SetMax(Id, value);
+				DevExpress.Ui.DxNumberBoxInterop.SetMax(dxTarget, value);
 			} else {
 				this.max = value;
 			}
 		}
 	}
 	float? min;
-	public float? Min {
-		get => isInitialized ? DevExpress.Ui.DxNumberBoxInterop.GetMin(Id) : min;
+	[Parameter]
+	float? Min {
+		get => isInitialized ? DevExpress.Ui.DxNumberBoxInterop.GetMin(dxTarget) : min;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxNumberBoxInterop.SetMin(Id, value);
+				DevExpress.Ui.DxNumberBoxInterop.SetMin(dxTarget, value);
 			} else {
 				this.min = value;
 			}
 		}
 	}
 	string mode;
-	public string Mode {
-		get => isInitialized ? DevExpress.Ui.DxNumberBoxInterop.GetMode(Id) : mode;
+	[Parameter]
+	string Mode {
+		get => isInitialized ? DevExpress.Ui.DxNumberBoxInterop.GetMode(dxTarget) : mode;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxNumberBoxInterop.SetMode(Id, value);
+				DevExpress.Ui.DxNumberBoxInterop.SetMode(dxTarget, value);
 			} else {
 				this.mode = value;
 			}
 		}
 	}
 	bool? showSpinButtons;
-	public bool? ShowSpinButtons {
-		get => isInitialized ? DevExpress.Ui.DxNumberBoxInterop.GetShowSpinButtons(Id) : showSpinButtons;
+	[Parameter]
+	bool? ShowSpinButtons {
+		get => isInitialized ? DevExpress.Ui.DxNumberBoxInterop.GetShowSpinButtons(dxTarget) : showSpinButtons;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxNumberBoxInterop.SetShowSpinButtons(Id, value);
+				DevExpress.Ui.DxNumberBoxInterop.SetShowSpinButtons(dxTarget, value);
 			} else {
 				this.showSpinButtons = value;
 			}
 		}
 	}
 	float? step;
-	public float? Step {
-		get => isInitialized ? DevExpress.Ui.DxNumberBoxInterop.GetStep(Id) : step;
+	[Parameter]
+	float? Step {
+		get => isInitialized ? DevExpress.Ui.DxNumberBoxInterop.GetStep(dxTarget) : step;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxNumberBoxInterop.SetStep(Id, value);
+				DevExpress.Ui.DxNumberBoxInterop.SetStep(dxTarget, value);
 			} else {
 				this.step = value;
 			}
 		}
 	}
 	bool? useLargeSpinButtons;
-	public bool? UseLargeSpinButtons {
-		get => isInitialized ? DevExpress.Ui.DxNumberBoxInterop.GetUseLargeSpinButtons(Id) : useLargeSpinButtons;
+	[Parameter]
+	bool? UseLargeSpinButtons {
+		get => isInitialized ? DevExpress.Ui.DxNumberBoxInterop.GetUseLargeSpinButtons(dxTarget) : useLargeSpinButtons;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxNumberBoxInterop.SetUseLargeSpinButtons(Id, value);
+				DevExpress.Ui.DxNumberBoxInterop.SetUseLargeSpinButtons(dxTarget, value);
 			} else {
 				this.useLargeSpinButtons = value;
 			}
 		}
 	}
 	float? value;
-	public float? Value {
-		get => isInitialized ? DevExpress.Ui.DxNumberBoxInterop.GetValue(Id) : value;
+	[Parameter]
+	float? Value {
+		get => isInitialized ? DevExpress.Ui.DxNumberBoxInterop.GetValue(dxTarget) : value;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxNumberBoxInterop.SetValue(Id, value);
+				DevExpress.Ui.DxNumberBoxInterop.SetValue(dxTarget, value);
 			} else {
 				this.value = value;
 			}

@@ -1,9 +1,12 @@
+@using Microsoft.AspNetCore.Blazor.Components
+@using Microsoft.AspNetCore.Blazor
 @implements IDisposable
 @inherits DxBlazorCompoment<DevExpress.Ui.DxSlideOutViewOptions>
 
-<div id="@Id"></div>
+<div id="@Id" ref="dxTarget"></div>
 
 @functions {
+	ElementRef dxTarget;
 	public DxSlideOutView() : base("DxSlideOutView") { }
 	protected override DevExpress.Ui.DxSlideOutViewOptions CreateOptions() {
 		return new DevExpress.Ui.DxSlideOutViewOptions {
@@ -15,58 +18,63 @@
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxSlideOutViewOptions options) {
-		DevExpress.Ui.DxSlideOutViewInterop.Init(Id, options);
+		DevExpress.Ui.DxSlideOutViewInterop.Init(dxTarget, options);
 	}
 	object contentTemplate;
-	public object ContentTemplate {
-		get => isInitialized ? DevExpress.Ui.DxSlideOutViewInterop.GetContentTemplate(Id) : contentTemplate;
+	[Parameter]
+	object ContentTemplate {
+		get => isInitialized ? DevExpress.Ui.DxSlideOutViewInterop.GetContentTemplate(dxTarget) : contentTemplate;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSlideOutViewInterop.SetContentTemplate(Id, value);
+				DevExpress.Ui.DxSlideOutViewInterop.SetContentTemplate(dxTarget, value);
 			} else {
 				this.contentTemplate = value;
 			}
 		}
 	}
 	string menuPosition;
-	public string MenuPosition {
-		get => isInitialized ? DevExpress.Ui.DxSlideOutViewInterop.GetMenuPosition(Id) : menuPosition;
+	[Parameter]
+	string MenuPosition {
+		get => isInitialized ? DevExpress.Ui.DxSlideOutViewInterop.GetMenuPosition(dxTarget) : menuPosition;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSlideOutViewInterop.SetMenuPosition(Id, value);
+				DevExpress.Ui.DxSlideOutViewInterop.SetMenuPosition(dxTarget, value);
 			} else {
 				this.menuPosition = value;
 			}
 		}
 	}
 	object menuTemplate;
-	public object MenuTemplate {
-		get => isInitialized ? DevExpress.Ui.DxSlideOutViewInterop.GetMenuTemplate(Id) : menuTemplate;
+	[Parameter]
+	object MenuTemplate {
+		get => isInitialized ? DevExpress.Ui.DxSlideOutViewInterop.GetMenuTemplate(dxTarget) : menuTemplate;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSlideOutViewInterop.SetMenuTemplate(Id, value);
+				DevExpress.Ui.DxSlideOutViewInterop.SetMenuTemplate(dxTarget, value);
 			} else {
 				this.menuTemplate = value;
 			}
 		}
 	}
 	bool? menuVisible;
-	public bool? MenuVisible {
-		get => isInitialized ? DevExpress.Ui.DxSlideOutViewInterop.GetMenuVisible(Id) : menuVisible;
+	[Parameter]
+	bool? MenuVisible {
+		get => isInitialized ? DevExpress.Ui.DxSlideOutViewInterop.GetMenuVisible(dxTarget) : menuVisible;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSlideOutViewInterop.SetMenuVisible(Id, value);
+				DevExpress.Ui.DxSlideOutViewInterop.SetMenuVisible(dxTarget, value);
 			} else {
 				this.menuVisible = value;
 			}
 		}
 	}
 	bool? swipeEnabled;
-	public bool? SwipeEnabled {
-		get => isInitialized ? DevExpress.Ui.DxSlideOutViewInterop.GetSwipeEnabled(Id) : swipeEnabled;
+	[Parameter]
+	bool? SwipeEnabled {
+		get => isInitialized ? DevExpress.Ui.DxSlideOutViewInterop.GetSwipeEnabled(dxTarget) : swipeEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxSlideOutViewInterop.SetSwipeEnabled(Id, value);
+				DevExpress.Ui.DxSlideOutViewInterop.SetSwipeEnabled(dxTarget, value);
 			} else {
 				this.swipeEnabled = value;
 			}
@@ -76,19 +84,19 @@
 		await base.OnInitAsync();
 	}
 	public object Content() {
-		return DevExpress.Ui.DxSlideOutViewInterop.Content(Id);
+		return DevExpress.Ui.DxSlideOutViewInterop.Content(dxTarget);
 	}
 	public object HideMenu() {
-		return DevExpress.Ui.DxSlideOutViewInterop.HideMenu(Id);
+		return DevExpress.Ui.DxSlideOutViewInterop.HideMenu(dxTarget);
 	}
 	public object MenuContent() {
-		return DevExpress.Ui.DxSlideOutViewInterop.MenuContent(Id);
+		return DevExpress.Ui.DxSlideOutViewInterop.MenuContent(dxTarget);
 	}
 	public object ShowMenu() {
-		return DevExpress.Ui.DxSlideOutViewInterop.ShowMenu(Id);
+		return DevExpress.Ui.DxSlideOutViewInterop.ShowMenu(dxTarget);
 	}
 	public object ToggleMenuVisibility() {
-		return DevExpress.Ui.DxSlideOutViewInterop.ToggleMenuVisibility(Id);
+		return DevExpress.Ui.DxSlideOutViewInterop.ToggleMenuVisibility(dxTarget);
 	}
 	public void Dispose() {
 	}

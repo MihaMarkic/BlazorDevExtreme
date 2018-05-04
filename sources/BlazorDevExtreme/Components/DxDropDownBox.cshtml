@@ -1,9 +1,12 @@
+@using Microsoft.AspNetCore.Blazor.Components
+@using Microsoft.AspNetCore.Blazor
 @implements IDisposable
 @inherits DxBlazorCompoment<DevExpress.Ui.DxDropDownBoxOptions>
 
-<div id="@Id"></div>
+<div id="@Id" ref="dxTarget"></div>
 
 @functions {
+	ElementRef dxTarget;
 	public DxDropDownBox() : base("DxDropDownBox") { }
 	protected override DevExpress.Ui.DxDropDownBoxOptions CreateOptions() {
 		return new DevExpress.Ui.DxDropDownBoxOptions {
@@ -15,58 +18,63 @@
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxDropDownBoxOptions options) {
-		DevExpress.Ui.DxDropDownBoxInterop.Init(Id, options);
+		DevExpress.Ui.DxDropDownBoxInterop.Init(dxTarget, options);
 	}
 	bool? acceptCustomValue;
-	public bool? AcceptCustomValue {
-		get => isInitialized ? DevExpress.Ui.DxDropDownBoxInterop.GetAcceptCustomValue(Id) : acceptCustomValue;
+	[Parameter]
+	bool? AcceptCustomValue {
+		get => isInitialized ? DevExpress.Ui.DxDropDownBoxInterop.GetAcceptCustomValue(dxTarget) : acceptCustomValue;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDropDownBoxInterop.SetAcceptCustomValue(Id, value);
+				DevExpress.Ui.DxDropDownBoxInterop.SetAcceptCustomValue(dxTarget, value);
 			} else {
 				this.acceptCustomValue = value;
 			}
 		}
 	}
 	object contentTemplate;
-	public object ContentTemplate {
-		get => isInitialized ? DevExpress.Ui.DxDropDownBoxInterop.GetContentTemplate(Id) : contentTemplate;
+	[Parameter]
+	object ContentTemplate {
+		get => isInitialized ? DevExpress.Ui.DxDropDownBoxInterop.GetContentTemplate(dxTarget) : contentTemplate;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDropDownBoxInterop.SetContentTemplate(Id, value);
+				DevExpress.Ui.DxDropDownBoxInterop.SetContentTemplate(dxTarget, value);
 			} else {
 				this.contentTemplate = value;
 			}
 		}
 	}
 	object dropDownOptions;
-	public object DropDownOptions {
-		get => isInitialized ? DevExpress.Ui.DxDropDownBoxInterop.GetDropDownOptions(Id) : dropDownOptions;
+	[Parameter]
+	object DropDownOptions {
+		get => isInitialized ? DevExpress.Ui.DxDropDownBoxInterop.GetDropDownOptions(dxTarget) : dropDownOptions;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDropDownBoxInterop.SetDropDownOptions(Id, value);
+				DevExpress.Ui.DxDropDownBoxInterop.SetDropDownOptions(dxTarget, value);
 			} else {
 				this.dropDownOptions = value;
 			}
 		}
 	}
 	object fieldTemplate;
-	public object FieldTemplate {
-		get => isInitialized ? DevExpress.Ui.DxDropDownBoxInterop.GetFieldTemplate(Id) : fieldTemplate;
+	[Parameter]
+	object FieldTemplate {
+		get => isInitialized ? DevExpress.Ui.DxDropDownBoxInterop.GetFieldTemplate(dxTarget) : fieldTemplate;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDropDownBoxInterop.SetFieldTemplate(Id, value);
+				DevExpress.Ui.DxDropDownBoxInterop.SetFieldTemplate(dxTarget, value);
 			} else {
 				this.fieldTemplate = value;
 			}
 		}
 	}
 	string valueChangeEvent;
-	public string ValueChangeEvent {
-		get => isInitialized ? DevExpress.Ui.DxDropDownBoxInterop.GetValueChangeEvent(Id) : valueChangeEvent;
+	[Parameter]
+	string ValueChangeEvent {
+		get => isInitialized ? DevExpress.Ui.DxDropDownBoxInterop.GetValueChangeEvent(dxTarget) : valueChangeEvent;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDropDownBoxInterop.SetValueChangeEvent(Id, value);
+				DevExpress.Ui.DxDropDownBoxInterop.SetValueChangeEvent(dxTarget, value);
 			} else {
 				this.valueChangeEvent = value;
 			}
@@ -76,7 +84,7 @@
 		await base.OnInitAsync();
 	}
 	public object GetDataSourceEx() {
-		return DevExpress.Ui.DxDropDownBoxInterop.GetDataSourceEx(Id);
+		return DevExpress.Ui.DxDropDownBoxInterop.GetDataSourceEx(dxTarget);
 	}
 	public void Dispose() {
 	}

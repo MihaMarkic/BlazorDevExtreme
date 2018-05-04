@@ -1,9 +1,12 @@
+@using Microsoft.AspNetCore.Blazor.Components
+@using Microsoft.AspNetCore.Blazor
 @implements IDisposable
 @inherits DxBlazorCompoment<DevExpress.Ui.DxButtonOptions>
 
-<div id="@Id"></div>
+<div id="@Id" ref="dxTarget"></div>
 
 @functions {
+	ElementRef dxTarget;
 	public DxButton() : base("DxButton") { }
 	protected override DevExpress.Ui.DxButtonOptions CreateOptions() {
 		return new DevExpress.Ui.DxButtonOptions {
@@ -20,109 +23,119 @@
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxButtonOptions options) {
-		DevExpress.Ui.DxButtonInterop.Init(Id, options);
+		DevExpress.Ui.DxButtonInterop.Init(dxTarget, options);
 	}
 	bool? activeStateEnabled;
-	public bool? ActiveStateEnabled {
-		get => isInitialized ? DevExpress.Ui.DxButtonInterop.GetActiveStateEnabled(Id) : activeStateEnabled;
+	[Parameter]
+	bool? ActiveStateEnabled {
+		get => isInitialized ? DevExpress.Ui.DxButtonInterop.GetActiveStateEnabled(dxTarget) : activeStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxButtonInterop.SetActiveStateEnabled(Id, value);
+				DevExpress.Ui.DxButtonInterop.SetActiveStateEnabled(dxTarget, value);
 			} else {
 				this.activeStateEnabled = value;
 			}
 		}
 	}
 	bool? focusStateEnabled;
-	public bool? FocusStateEnabled {
-		get => isInitialized ? DevExpress.Ui.DxButtonInterop.GetFocusStateEnabled(Id) : focusStateEnabled;
+	[Parameter]
+	bool? FocusStateEnabled {
+		get => isInitialized ? DevExpress.Ui.DxButtonInterop.GetFocusStateEnabled(dxTarget) : focusStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxButtonInterop.SetFocusStateEnabled(Id, value);
+				DevExpress.Ui.DxButtonInterop.SetFocusStateEnabled(dxTarget, value);
 			} else {
 				this.focusStateEnabled = value;
 			}
 		}
 	}
 	bool? hoverStateEnabled;
-	public bool? HoverStateEnabled {
-		get => isInitialized ? DevExpress.Ui.DxButtonInterop.GetHoverStateEnabled(Id) : hoverStateEnabled;
+	[Parameter]
+	bool? HoverStateEnabled {
+		get => isInitialized ? DevExpress.Ui.DxButtonInterop.GetHoverStateEnabled(dxTarget) : hoverStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxButtonInterop.SetHoverStateEnabled(Id, value);
+				DevExpress.Ui.DxButtonInterop.SetHoverStateEnabled(dxTarget, value);
 			} else {
 				this.hoverStateEnabled = value;
 			}
 		}
 	}
 	string icon;
-	public string Icon {
-		get => isInitialized ? DevExpress.Ui.DxButtonInterop.GetIcon(Id) : icon;
+	[Parameter]
+	string Icon {
+		get => isInitialized ? DevExpress.Ui.DxButtonInterop.GetIcon(dxTarget) : icon;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxButtonInterop.SetIcon(Id, value);
+				DevExpress.Ui.DxButtonInterop.SetIcon(dxTarget, value);
 			} else {
 				this.icon = value;
 			}
 		}
 	}
 	object template;
-	public object Template {
-		get => isInitialized ? DevExpress.Ui.DxButtonInterop.GetTemplate(Id) : template;
+	[Parameter]
+	object Template {
+		get => isInitialized ? DevExpress.Ui.DxButtonInterop.GetTemplate(dxTarget) : template;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxButtonInterop.SetTemplate(Id, value);
+				DevExpress.Ui.DxButtonInterop.SetTemplate(dxTarget, value);
 			} else {
 				this.template = value;
 			}
 		}
 	}
 	string text;
-	public string Text {
-		get => isInitialized ? DevExpress.Ui.DxButtonInterop.GetText(Id) : text;
+	[Parameter]
+	string Text {
+		get => isInitialized ? DevExpress.Ui.DxButtonInterop.GetText(dxTarget) : text;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxButtonInterop.SetText(Id, value);
+				DevExpress.Ui.DxButtonInterop.SetText(dxTarget, value);
 			} else {
 				this.text = value;
 			}
 		}
 	}
 	string type;
-	public string Type {
-		get => isInitialized ? DevExpress.Ui.DxButtonInterop.GetType(Id) : type;
+	[Parameter]
+	string Type {
+		get => isInitialized ? DevExpress.Ui.DxButtonInterop.GetType(dxTarget) : type;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxButtonInterop.SetType(Id, value);
+				DevExpress.Ui.DxButtonInterop.SetType(dxTarget, value);
 			} else {
 				this.type = value;
 			}
 		}
 	}
 	bool? useSubmitBehavior;
-	public bool? UseSubmitBehavior {
-		get => isInitialized ? DevExpress.Ui.DxButtonInterop.GetUseSubmitBehavior(Id) : useSubmitBehavior;
+	[Parameter]
+	bool? UseSubmitBehavior {
+		get => isInitialized ? DevExpress.Ui.DxButtonInterop.GetUseSubmitBehavior(dxTarget) : useSubmitBehavior;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxButtonInterop.SetUseSubmitBehavior(Id, value);
+				DevExpress.Ui.DxButtonInterop.SetUseSubmitBehavior(dxTarget, value);
 			} else {
 				this.useSubmitBehavior = value;
 			}
 		}
 	}
 	string validationGroup;
-	public string ValidationGroup {
-		get => isInitialized ? DevExpress.Ui.DxButtonInterop.GetValidationGroup(Id) : validationGroup;
+	[Parameter]
+	string ValidationGroup {
+		get => isInitialized ? DevExpress.Ui.DxButtonInterop.GetValidationGroup(dxTarget) : validationGroup;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxButtonInterop.SetValidationGroup(Id, value);
+				DevExpress.Ui.DxButtonInterop.SetValidationGroup(dxTarget, value);
 			} else {
 				this.validationGroup = value;
 			}
 		}
 	}
 	bool? onClickEnabled;
-	public bool? OnClickEnabled {
+	[Parameter]
+	bool? OnClickEnabled {
 		get => onClickEnabled;
 		set => this.onClickEnabled = value;
 	}
@@ -130,7 +143,8 @@
 		await base.OnInitAsync();
 		DevExpress.Ui.DxButtonInterop.Click += DxButton_Click;
 	}
-	public Action Click { get; set; }
+	[Parameter]
+	Action Click { get; set; }
 	void DxButton_Click(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Click?.Invoke();

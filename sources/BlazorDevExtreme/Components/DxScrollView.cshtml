@@ -1,9 +1,12 @@
+@using Microsoft.AspNetCore.Blazor.Components
+@using Microsoft.AspNetCore.Blazor
 @implements IDisposable
 @inherits DxBlazorCompoment<DevExpress.Ui.DxScrollViewOptions>
 
-<div id="@Id"></div>
+<div id="@Id" ref="dxTarget"></div>
 
 @functions {
+	ElementRef dxTarget;
 	public DxScrollView() : base("DxScrollView") { }
 	protected override DevExpress.Ui.DxScrollViewOptions CreateOptions() {
 		return new DevExpress.Ui.DxScrollViewOptions {
@@ -16,59 +19,65 @@
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxScrollViewOptions options) {
-		DevExpress.Ui.DxScrollViewInterop.Init(Id, options);
+		DevExpress.Ui.DxScrollViewInterop.Init(dxTarget, options);
 	}
 	string pulledDownText;
-	public string PulledDownText {
-		get => isInitialized ? DevExpress.Ui.DxScrollViewInterop.GetPulledDownText(Id) : pulledDownText;
+	[Parameter]
+	string PulledDownText {
+		get => isInitialized ? DevExpress.Ui.DxScrollViewInterop.GetPulledDownText(dxTarget) : pulledDownText;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxScrollViewInterop.SetPulledDownText(Id, value);
+				DevExpress.Ui.DxScrollViewInterop.SetPulledDownText(dxTarget, value);
 			} else {
 				this.pulledDownText = value;
 			}
 		}
 	}
 	string pullingDownText;
-	public string PullingDownText {
-		get => isInitialized ? DevExpress.Ui.DxScrollViewInterop.GetPullingDownText(Id) : pullingDownText;
+	[Parameter]
+	string PullingDownText {
+		get => isInitialized ? DevExpress.Ui.DxScrollViewInterop.GetPullingDownText(dxTarget) : pullingDownText;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxScrollViewInterop.SetPullingDownText(Id, value);
+				DevExpress.Ui.DxScrollViewInterop.SetPullingDownText(dxTarget, value);
 			} else {
 				this.pullingDownText = value;
 			}
 		}
 	}
 	string reachBottomText;
-	public string ReachBottomText {
-		get => isInitialized ? DevExpress.Ui.DxScrollViewInterop.GetReachBottomText(Id) : reachBottomText;
+	[Parameter]
+	string ReachBottomText {
+		get => isInitialized ? DevExpress.Ui.DxScrollViewInterop.GetReachBottomText(dxTarget) : reachBottomText;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxScrollViewInterop.SetReachBottomText(Id, value);
+				DevExpress.Ui.DxScrollViewInterop.SetReachBottomText(dxTarget, value);
 			} else {
 				this.reachBottomText = value;
 			}
 		}
 	}
 	string refreshingText;
-	public string RefreshingText {
-		get => isInitialized ? DevExpress.Ui.DxScrollViewInterop.GetRefreshingText(Id) : refreshingText;
+	[Parameter]
+	string RefreshingText {
+		get => isInitialized ? DevExpress.Ui.DxScrollViewInterop.GetRefreshingText(dxTarget) : refreshingText;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxScrollViewInterop.SetRefreshingText(Id, value);
+				DevExpress.Ui.DxScrollViewInterop.SetRefreshingText(dxTarget, value);
 			} else {
 				this.refreshingText = value;
 			}
 		}
 	}
 	bool? onPullDownEnabled;
-	public bool? OnPullDownEnabled {
+	[Parameter]
+	bool? OnPullDownEnabled {
 		get => onPullDownEnabled;
 		set => this.onPullDownEnabled = value;
 	}
 	bool? onReachBottomEnabled;
-	public bool? OnReachBottomEnabled {
+	[Parameter]
+	bool? OnReachBottomEnabled {
 		get => onReachBottomEnabled;
 		set => this.onReachBottomEnabled = value;
 	}
@@ -77,23 +86,25 @@
 		DevExpress.Ui.DxScrollViewInterop.PullDown += DxScrollView_PullDown;
 		DevExpress.Ui.DxScrollViewInterop.ReachBottom += DxScrollView_ReachBottom;
 	}
-	public Action PullDown { get; set; }
+	[Parameter]
+	Action PullDown { get; set; }
 	void DxScrollView_PullDown(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			PullDown?.Invoke();
 		}
 	}
-	public Action ReachBottom { get; set; }
+	[Parameter]
+	Action ReachBottom { get; set; }
 	void DxScrollView_ReachBottom(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ReachBottom?.Invoke();
 		}
 	}
 	public void Refresh() {
-		DevExpress.Ui.DxScrollViewInterop.Refresh(Id);
+		DevExpress.Ui.DxScrollViewInterop.Refresh(dxTarget);
 	}
 	public object Release(bool preventScrollBottom) {
-		return DevExpress.Ui.DxScrollViewInterop.Release(Id, preventScrollBottom);
+		return DevExpress.Ui.DxScrollViewInterop.Release(dxTarget, preventScrollBottom);
 	}
 	public void Dispose() {
 		DevExpress.Ui.DxScrollViewInterop.PullDown -= DxScrollView_PullDown;

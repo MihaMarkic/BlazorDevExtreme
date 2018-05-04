@@ -1,9 +1,12 @@
+@using Microsoft.AspNetCore.Blazor.Components
+@using Microsoft.AspNetCore.Blazor
 @implements IDisposable
 @inherits DxBlazorCompoment<DevExpress.Viz.Gauges.BaseGaugeOptions>
 
-<div id="@Id"></div>
+<div id="@Id" ref="dxTarget"></div>
 
 @functions {
+	ElementRef dxTarget;
 	public BaseGauge() : base("BaseGauge") { }
 	protected override DevExpress.Viz.Gauges.BaseGaugeOptions CreateOptions() {
 		return new DevExpress.Viz.Gauges.BaseGaugeOptions {
@@ -21,114 +24,125 @@
 		};
 	}
 	protected override void Init(DevExpress.Viz.Gauges.BaseGaugeOptions options) {
-		DevExpress.Viz.BaseGaugeInterop.Init(Id, options);
+		DevExpress.Viz.BaseGaugeInterop.Init(dxTarget, options);
 	}
 	object animation;
-	public object Animation {
-		get => isInitialized ? DevExpress.Viz.BaseGaugeInterop.GetAnimation(Id) : animation;
+	[Parameter]
+	object Animation {
+		get => isInitialized ? DevExpress.Viz.BaseGaugeInterop.GetAnimation(dxTarget) : animation;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.BaseGaugeInterop.SetAnimation(Id, value);
+				DevExpress.Viz.BaseGaugeInterop.SetAnimation(dxTarget, value);
 			} else {
 				this.animation = value;
 			}
 		}
 	}
 	string containerBackgroundColor;
-	public string ContainerBackgroundColor {
-		get => isInitialized ? DevExpress.Viz.BaseGaugeInterop.GetContainerBackgroundColor(Id) : containerBackgroundColor;
+	[Parameter]
+	string ContainerBackgroundColor {
+		get => isInitialized ? DevExpress.Viz.BaseGaugeInterop.GetContainerBackgroundColor(dxTarget) : containerBackgroundColor;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.BaseGaugeInterop.SetContainerBackgroundColor(Id, value);
+				DevExpress.Viz.BaseGaugeInterop.SetContainerBackgroundColor(dxTarget, value);
 			} else {
 				this.containerBackgroundColor = value;
 			}
 		}
 	}
 	object rangeContainer;
-	public object RangeContainer {
-		get => isInitialized ? DevExpress.Viz.BaseGaugeInterop.GetRangeContainer(Id) : rangeContainer;
+	[Parameter]
+	object RangeContainer {
+		get => isInitialized ? DevExpress.Viz.BaseGaugeInterop.GetRangeContainer(dxTarget) : rangeContainer;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.BaseGaugeInterop.SetRangeContainer(Id, value);
+				DevExpress.Viz.BaseGaugeInterop.SetRangeContainer(dxTarget, value);
 			} else {
 				this.rangeContainer = value;
 			}
 		}
 	}
 	object scale;
-	public object Scale {
-		get => isInitialized ? DevExpress.Viz.BaseGaugeInterop.GetScale(Id) : scale;
+	[Parameter]
+	object Scale {
+		get => isInitialized ? DevExpress.Viz.BaseGaugeInterop.GetScale(dxTarget) : scale;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.BaseGaugeInterop.SetScale(Id, value);
+				DevExpress.Viz.BaseGaugeInterop.SetScale(dxTarget, value);
 			} else {
 				this.scale = value;
 			}
 		}
 	}
 	object subtitle;
-	public object Subtitle {
-		get => isInitialized ? DevExpress.Viz.BaseGaugeInterop.GetSubtitle(Id) : subtitle;
+	[Parameter]
+	object Subtitle {
+		get => isInitialized ? DevExpress.Viz.BaseGaugeInterop.GetSubtitle(dxTarget) : subtitle;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.BaseGaugeInterop.SetSubtitle(Id, value);
+				DevExpress.Viz.BaseGaugeInterop.SetSubtitle(dxTarget, value);
 			} else {
 				this.subtitle = value;
 			}
 		}
 	}
 	object subvalues;
-	public object Subvalues {
-		get => isInitialized ? DevExpress.Viz.BaseGaugeInterop.GetSubvalues(Id) : subvalues;
+	[Parameter]
+	object Subvalues {
+		get => isInitialized ? DevExpress.Viz.BaseGaugeInterop.GetSubvalues(dxTarget) : subvalues;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.BaseGaugeInterop.SetSubvalues(Id, value);
+				DevExpress.Viz.BaseGaugeInterop.SetSubvalues(dxTarget, value);
 			} else {
 				this.subvalues = value;
 			}
 		}
 	}
 	object title;
-	public object Title {
-		get => isInitialized ? DevExpress.Viz.BaseGaugeInterop.GetTitle(Id) : title;
+	[Parameter]
+	object Title {
+		get => isInitialized ? DevExpress.Viz.BaseGaugeInterop.GetTitle(dxTarget) : title;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.BaseGaugeInterop.SetTitle(Id, value);
+				DevExpress.Viz.BaseGaugeInterop.SetTitle(dxTarget, value);
 			} else {
 				this.title = value;
 			}
 		}
 	}
 	object tooltip;
-	public object Tooltip {
-		get => isInitialized ? DevExpress.Viz.BaseGaugeInterop.GetTooltip(Id) : tooltip;
+	[Parameter]
+	object Tooltip {
+		get => isInitialized ? DevExpress.Viz.BaseGaugeInterop.GetTooltip(dxTarget) : tooltip;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.BaseGaugeInterop.SetTooltip(Id, value);
+				DevExpress.Viz.BaseGaugeInterop.SetTooltip(dxTarget, value);
 			} else {
 				this.tooltip = value;
 			}
 		}
 	}
 	float? value;
-	public float? Value {
-		get => isInitialized ? DevExpress.Viz.BaseGaugeInterop.GetValue(Id) : value;
+	[Parameter]
+	float? Value {
+		get => isInitialized ? DevExpress.Viz.BaseGaugeInterop.GetValue(dxTarget) : value;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.BaseGaugeInterop.SetValue(Id, value);
+				DevExpress.Viz.BaseGaugeInterop.SetValue(dxTarget, value);
 			} else {
 				this.value = value;
 			}
 		}
 	}
 	bool? onTooltipHiddenEnabled;
-	public bool? OnTooltipHiddenEnabled {
+	[Parameter]
+	bool? OnTooltipHiddenEnabled {
 		get => onTooltipHiddenEnabled;
 		set => this.onTooltipHiddenEnabled = value;
 	}
 	bool? onTooltipShownEnabled;
-	public bool? OnTooltipShownEnabled {
+	[Parameter]
+	bool? OnTooltipShownEnabled {
 		get => onTooltipShownEnabled;
 		set => this.onTooltipShownEnabled = value;
 	}
@@ -137,29 +151,31 @@
 		DevExpress.Viz.BaseGaugeInterop.TooltipHidden += BaseGauge_TooltipHidden;
 		DevExpress.Viz.BaseGaugeInterop.TooltipShown += BaseGauge_TooltipShown;
 	}
-	public Action TooltipHidden { get; set; }
+	[Parameter]
+	Action TooltipHidden { get; set; }
 	void BaseGauge_TooltipHidden(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			TooltipHidden?.Invoke();
 		}
 	}
-	public Action TooltipShown { get; set; }
+	[Parameter]
+	Action TooltipShown { get; set; }
 	void BaseGauge_TooltipShown(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			TooltipShown?.Invoke();
 		}
 	}
 	public object SubvaluesEx() {
-		return DevExpress.Viz.BaseGaugeInterop.SubvaluesEx(Id);
+		return DevExpress.Viz.BaseGaugeInterop.SubvaluesEx(dxTarget);
 	}
 	public void SubvaluesEx(object subvalues) {
-		DevExpress.Viz.BaseGaugeInterop.SubvaluesEx(Id, subvalues);
+		DevExpress.Viz.BaseGaugeInterop.SubvaluesEx(dxTarget, subvalues);
 	}
 	public float ValueEx() {
-		return DevExpress.Viz.BaseGaugeInterop.ValueEx(Id);
+		return DevExpress.Viz.BaseGaugeInterop.ValueEx(dxTarget);
 	}
 	public void ValueEx(float value) {
-		DevExpress.Viz.BaseGaugeInterop.ValueEx(Id, value);
+		DevExpress.Viz.BaseGaugeInterop.ValueEx(dxTarget, value);
 	}
 	public void Dispose() {
 		DevExpress.Viz.BaseGaugeInterop.TooltipHidden -= BaseGauge_TooltipHidden;

@@ -1,9 +1,12 @@
+@using Microsoft.AspNetCore.Blazor.Components
+@using Microsoft.AspNetCore.Blazor
 @implements IDisposable
 @inherits DxBlazorCompoment<DevExpress.Ui.DxTileViewOptions>
 
-<div id="@Id"></div>
+<div id="@Id" ref="dxTarget"></div>
 
 @functions {
+	ElementRef dxTarget;
 	public DxTileView() : base("DxTileView") { }
 	protected override DevExpress.Ui.DxTileViewOptions CreateOptions() {
 		return new DevExpress.Ui.DxTileViewOptions {
@@ -19,102 +22,111 @@
 		};
 	}
 	protected override void Init(DevExpress.Ui.DxTileViewOptions options) {
-		DevExpress.Ui.DxTileViewInterop.Init(Id, options);
+		DevExpress.Ui.DxTileViewInterop.Init(dxTarget, options);
 	}
 	bool? activeStateEnabled;
-	public bool? ActiveStateEnabled {
-		get => isInitialized ? DevExpress.Ui.DxTileViewInterop.GetActiveStateEnabled(Id) : activeStateEnabled;
+	[Parameter]
+	bool? ActiveStateEnabled {
+		get => isInitialized ? DevExpress.Ui.DxTileViewInterop.GetActiveStateEnabled(dxTarget) : activeStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTileViewInterop.SetActiveStateEnabled(Id, value);
+				DevExpress.Ui.DxTileViewInterop.SetActiveStateEnabled(dxTarget, value);
 			} else {
 				this.activeStateEnabled = value;
 			}
 		}
 	}
 	float? baseItemHeight;
-	public float? BaseItemHeight {
-		get => isInitialized ? DevExpress.Ui.DxTileViewInterop.GetBaseItemHeight(Id) : baseItemHeight;
+	[Parameter]
+	float? BaseItemHeight {
+		get => isInitialized ? DevExpress.Ui.DxTileViewInterop.GetBaseItemHeight(dxTarget) : baseItemHeight;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTileViewInterop.SetBaseItemHeight(Id, value);
+				DevExpress.Ui.DxTileViewInterop.SetBaseItemHeight(dxTarget, value);
 			} else {
 				this.baseItemHeight = value;
 			}
 		}
 	}
 	float? baseItemWidth;
-	public float? BaseItemWidth {
-		get => isInitialized ? DevExpress.Ui.DxTileViewInterop.GetBaseItemWidth(Id) : baseItemWidth;
+	[Parameter]
+	float? BaseItemWidth {
+		get => isInitialized ? DevExpress.Ui.DxTileViewInterop.GetBaseItemWidth(dxTarget) : baseItemWidth;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTileViewInterop.SetBaseItemWidth(Id, value);
+				DevExpress.Ui.DxTileViewInterop.SetBaseItemWidth(dxTarget, value);
 			} else {
 				this.baseItemWidth = value;
 			}
 		}
 	}
 	string direction;
-	public string Direction {
-		get => isInitialized ? DevExpress.Ui.DxTileViewInterop.GetDirection(Id) : direction;
+	[Parameter]
+	string Direction {
+		get => isInitialized ? DevExpress.Ui.DxTileViewInterop.GetDirection(dxTarget) : direction;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTileViewInterop.SetDirection(Id, value);
+				DevExpress.Ui.DxTileViewInterop.SetDirection(dxTarget, value);
 			} else {
 				this.direction = value;
 			}
 		}
 	}
 	bool? focusStateEnabled;
-	public bool? FocusStateEnabled {
-		get => isInitialized ? DevExpress.Ui.DxTileViewInterop.GetFocusStateEnabled(Id) : focusStateEnabled;
+	[Parameter]
+	bool? FocusStateEnabled {
+		get => isInitialized ? DevExpress.Ui.DxTileViewInterop.GetFocusStateEnabled(dxTarget) : focusStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTileViewInterop.SetFocusStateEnabled(Id, value);
+				DevExpress.Ui.DxTileViewInterop.SetFocusStateEnabled(dxTarget, value);
 			} else {
 				this.focusStateEnabled = value;
 			}
 		}
 	}
 	object height;
-	public object Height {
-		get => isInitialized ? DevExpress.Ui.DxTileViewInterop.GetHeight(Id) : height;
+	[Parameter]
+	object Height {
+		get => isInitialized ? DevExpress.Ui.DxTileViewInterop.GetHeight(dxTarget) : height;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTileViewInterop.SetHeight(Id, value);
+				DevExpress.Ui.DxTileViewInterop.SetHeight(dxTarget, value);
 			} else {
 				this.height = value;
 			}
 		}
 	}
 	bool? hoverStateEnabled;
-	public bool? HoverStateEnabled {
-		get => isInitialized ? DevExpress.Ui.DxTileViewInterop.GetHoverStateEnabled(Id) : hoverStateEnabled;
+	[Parameter]
+	bool? HoverStateEnabled {
+		get => isInitialized ? DevExpress.Ui.DxTileViewInterop.GetHoverStateEnabled(dxTarget) : hoverStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTileViewInterop.SetHoverStateEnabled(Id, value);
+				DevExpress.Ui.DxTileViewInterop.SetHoverStateEnabled(dxTarget, value);
 			} else {
 				this.hoverStateEnabled = value;
 			}
 		}
 	}
 	float? itemMargin;
-	public float? ItemMargin {
-		get => isInitialized ? DevExpress.Ui.DxTileViewInterop.GetItemMargin(Id) : itemMargin;
+	[Parameter]
+	float? ItemMargin {
+		get => isInitialized ? DevExpress.Ui.DxTileViewInterop.GetItemMargin(dxTarget) : itemMargin;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTileViewInterop.SetItemMargin(Id, value);
+				DevExpress.Ui.DxTileViewInterop.SetItemMargin(dxTarget, value);
 			} else {
 				this.itemMargin = value;
 			}
 		}
 	}
 	bool? showScrollbar;
-	public bool? ShowScrollbar {
-		get => isInitialized ? DevExpress.Ui.DxTileViewInterop.GetShowScrollbar(Id) : showScrollbar;
+	[Parameter]
+	bool? ShowScrollbar {
+		get => isInitialized ? DevExpress.Ui.DxTileViewInterop.GetShowScrollbar(dxTarget) : showScrollbar;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTileViewInterop.SetShowScrollbar(Id, value);
+				DevExpress.Ui.DxTileViewInterop.SetShowScrollbar(dxTarget, value);
 			} else {
 				this.showScrollbar = value;
 			}
@@ -124,7 +136,7 @@
 		await base.OnInitAsync();
 	}
 	public float ScrollPosition() {
-		return DevExpress.Ui.DxTileViewInterop.ScrollPosition(Id);
+		return DevExpress.Ui.DxTileViewInterop.ScrollPosition(dxTarget);
 	}
 	public void Dispose() {
 	}

@@ -42,7 +42,7 @@ Javascript methods are postfixed with ordinal method number to avoid overloading
 
 ## System requirements
 
-Built against Blazor 0.2.1.
+Built against Blazor 0.4.
 
 ## Sample usage
 

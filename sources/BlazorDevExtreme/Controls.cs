@@ -1,7 +1,8 @@
-using Microsoft.AspNetCore.Blazor.Browser.Interop;
 using System;
-using BlazorDevExtreme;
+using System.Threading.Tasks;
+using Microsoft.JSInterop;
 using Microsoft.AspNetCore.Blazor;
+using BlazorDevExtreme;
 
 namespace DevExpress
 {
@@ -9,103 +10,103 @@ namespace DevExpress
 	{
 		public static object GetDataSourceEx(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataHelperMixin.getDataSource_0", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataHelperMixin_getDataSource_0", dxTarget);
 		}
 	}
 	public class DxEventInterop
 	{
 		public static bool IsDefaultPrevented(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool>("BlazorDevExtreme.DxEvent.isDefaultPrevented_0", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool>("BlazorDevExtreme_DxEvent_isDefaultPrevented_0", dxTarget);
 		}
 		public static bool IsImmediatePropagationStopped(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool>("BlazorDevExtreme.DxEvent.isImmediatePropagationStopped_1", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool>("BlazorDevExtreme_DxEvent_isImmediatePropagationStopped_1", dxTarget);
 		}
 		public static bool IsPropagationStopped(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool>("BlazorDevExtreme.DxEvent.isPropagationStopped_2", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool>("BlazorDevExtreme_DxEvent_isPropagationStopped_2", dxTarget);
 		}
 		public static void PreventDefault(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxEvent.preventDefault_3", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxEvent_preventDefault_3", dxTarget);
 		}
 		public static void StopImmediatePropagation(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxEvent.stopImmediatePropagation_4", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxEvent_stopImmediatePropagation_4", dxTarget);
 		}
 		public static void StopPropagation(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxEvent.stopPropagation_5", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxEvent_stopPropagation_5", dxTarget);
 		}
 	}
 	public class LocalizationInterop
 	{
 		public static void LoadMessages(object messages)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.Localization.loadMessages_0", messages);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Localization_loadMessages_0", messages);
 		}
 		public static string Locale()
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.Localization.locale_1");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_Localization_locale_1");
 		}
 		public static void Locale(string locale)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.Localization.locale_2", locale);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Localization_locale_2", locale);
 		}
 	}
 	public class AnimationPresetsInterop
 	{
 		public static void ApplyChanges(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.AnimationPresets.applyChanges_0", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_AnimationPresets_applyChanges_0", dxTarget);
 		}
 		public static void Clear(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.AnimationPresets.clear_1", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_AnimationPresets_clear_1", dxTarget);
 		}
 		public static void Clear(ElementRef dxTarget, string name)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.AnimationPresets.clear_2", dxTarget, name);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_AnimationPresets_clear_2", dxTarget, name);
 		}
 		public static object GetPreset(ElementRef dxTarget, string name)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.AnimationPresets.getPreset_3", dxTarget, name);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_AnimationPresets_getPreset_3", dxTarget, name);
 		}
 		public static void RegisterDefaultPresets(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.AnimationPresets.registerDefaultPresets_4", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_AnimationPresets_registerDefaultPresets_4", dxTarget);
 		}
 		public static void RegisterPreset(ElementRef dxTarget, string name, object config)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.AnimationPresets.registerPreset_5", dxTarget, name, config);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_AnimationPresets_registerPreset_5", dxTarget, name, config);
 		}
 		public static void ResetToDefaults(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.AnimationPresets.resetToDefaults_6", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_AnimationPresets_resetToDefaults_6", dxTarget);
 		}
 	}
 	public class TransitionExecutorInterop
 	{
 		public static void Enter(ElementRef dxTarget, object elements, object animation)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.TransitionExecutor.enter_0", dxTarget, elements, animation);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_TransitionExecutor_enter_0", dxTarget, elements, animation);
 		}
 		public static void Leave(ElementRef dxTarget, object elements, object animation)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.TransitionExecutor.leave_1", dxTarget, elements, animation);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_TransitionExecutor_leave_1", dxTarget, elements, animation);
 		}
 		public static void Reset(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.TransitionExecutor.reset_2", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_TransitionExecutor_reset_2", dxTarget);
 		}
 		public static object Start(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.TransitionExecutor.start_3", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_TransitionExecutor_start_3", dxTarget);
 		}
 		public static void Stop(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.TransitionExecutor.stop_4", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_TransitionExecutor_stop_4", dxTarget);
 		}
 	}
 	public class ComponentInterop
@@ -116,98 +117,101 @@ namespace DevExpress
 		public static void Init(ElementRef dxTarget, DevExpress.ComponentOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.Component.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Component_Init", dxTarget, json);
 		}
+		[JSInvokable("DevExpress.ComponentInterop.OnDisposing")]
 		public static void OnDisposing(string identifier)
 		{
 			Disposing?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.ComponentInterop.OnInitialized")]
 		public static void OnInitialized(string identifier)
 		{
 			Initialized?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.ComponentInterop.OnOptionChanged")]
 		public static void OnOptionChanged(string identifier)
 		{
 			OptionChanged?.Invoke(null, new JQueryEventArgs(identifier));
 		}
 		public static void BeginUpdate(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.Component.beginUpdate_0", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Component_beginUpdate_0", dxTarget);
 		}
 		public static void EndUpdate(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.Component.endUpdate_1", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Component_endUpdate_1", dxTarget);
 		}
 		public static object Instance(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Component.instance_2", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Component_instance_2", dxTarget);
 		}
 		public static object Off(ElementRef dxTarget, string eventName)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Component.off_3", dxTarget, eventName);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Component_off_3", dxTarget, eventName);
 		}
 		public static object Off(ElementRef dxTarget, string eventName, object eventHandler)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Component.off_4", dxTarget, eventName, eventHandler);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Component_off_4", dxTarget, eventName, eventHandler);
 		}
 		public static object On(ElementRef dxTarget, string eventName, object eventHandler)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Component.on_5", dxTarget, eventName, eventHandler);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Component_on_5", dxTarget, eventName, eventHandler);
 		}
 		public static object On(ElementRef dxTarget, object events)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Component.on_6", dxTarget, events);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Component_on_6", dxTarget, events);
 		}
 		public static object Option(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Component.option_7", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Component_option_7", dxTarget);
 		}
 		public static object Option(ElementRef dxTarget, string optionName)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Component.option_8", dxTarget, optionName);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Component_option_8", dxTarget, optionName);
 		}
 		public static void Option(ElementRef dxTarget, string optionName, object optionValue)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.Component.option_9", dxTarget, optionName, optionValue);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Component_option_9", dxTarget, optionName, optionValue);
 		}
 		public static void Option(ElementRef dxTarget, object options)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.Component.option_10", dxTarget, options);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Component_option_10", dxTarget, options);
 		}
 	}
 	public class DevicesObjectInterop
 	{
 		public static object Current(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DevicesObject.current_0", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DevicesObject_current_0", dxTarget);
 		}
 		public static void Current(ElementRef dxTarget, object deviceName)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DevicesObject.current_1", dxTarget, deviceName);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DevicesObject_current_1", dxTarget, deviceName);
 		}
 		public static object Off(ElementRef dxTarget, string eventName)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DevicesObject.off_2", dxTarget, eventName);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DevicesObject_off_2", dxTarget, eventName);
 		}
 		public static object Off(ElementRef dxTarget, string eventName, object eventHandler)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DevicesObject.off_3", dxTarget, eventName, eventHandler);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DevicesObject_off_3", dxTarget, eventName, eventHandler);
 		}
 		public static object On(ElementRef dxTarget, string eventName, object eventHandler)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DevicesObject.on_4", dxTarget, eventName, eventHandler);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DevicesObject_on_4", dxTarget, eventName, eventHandler);
 		}
 		public static object On(ElementRef dxTarget, object events)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DevicesObject.on_5", dxTarget, events);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DevicesObject_on_5", dxTarget, events);
 		}
 		public static string Orientation(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DevicesObject.orientation_6", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DevicesObject_orientation_6", dxTarget);
 		}
 		public static object Real(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DevicesObject.real_7", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DevicesObject_real_7", dxTarget);
 		}
 	}
 	public class DOMComponentInterop: ComponentInterop
@@ -217,187 +221,189 @@ namespace DevExpress
 		public static void Init(ElementRef dxTarget, DevExpress.DOMComponentOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DOMComponent.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DOMComponent_Init", dxTarget, json);
 		}
+		[JSInvokable("DevExpress.DOMComponentInterop.OnDisposing")]
 		public static void OnDisposing(string identifier)
 		{
 			Disposing?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.DOMComponentInterop.OnOptionChanged")]
 		public static void OnOptionChanged(string identifier)
 		{
 			OptionChanged?.Invoke(null, new JQueryEventArgs(identifier));
 		}
 		public static object GetBindingOptions(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DOMComponent.GetOption", dxTarget, "bindingOptions");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DOMComponent_GetOption", dxTarget, "bindingOptions");
 		}
 		public static void SetBindingOptions(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DOMComponent.SetOption", dxTarget, "bindingOptions", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DOMComponent_SetOption", dxTarget, "bindingOptions", value);
 		}
 		public static object GetElementAttr(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DOMComponent.GetOption", dxTarget, "elementAttr");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DOMComponent_GetOption", dxTarget, "elementAttr");
 		}
 		public static void SetElementAttr(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DOMComponent.SetOption", dxTarget, "elementAttr", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DOMComponent_SetOption", dxTarget, "elementAttr", value);
 		}
 		public static object GetHeight(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DOMComponent.GetOption", dxTarget, "height");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DOMComponent_GetOption", dxTarget, "height");
 		}
 		public static void SetHeight(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DOMComponent.SetOption", dxTarget, "height", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DOMComponent_SetOption", dxTarget, "height", value);
 		}
 		public static bool? GetRtlEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DOMComponent.GetOption", dxTarget, "rtlEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DOMComponent_GetOption", dxTarget, "rtlEnabled");
 		}
 		public static void SetRtlEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DOMComponent.SetOption", dxTarget, "rtlEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DOMComponent_SetOption", dxTarget, "rtlEnabled", value);
 		}
 		public static object GetWidth(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DOMComponent.GetOption", dxTarget, "width");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DOMComponent_GetOption", dxTarget, "width");
 		}
 		public static void SetWidth(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DOMComponent.SetOption", dxTarget, "width", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DOMComponent_SetOption", dxTarget, "width", value);
 		}
 		public static void DefaultOptions(object rule)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DOMComponent.defaultOptions_0", rule);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DOMComponent_defaultOptions_0", rule);
 		}
 		public static object GetInstance(object element)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DOMComponent.getInstance_1", element);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DOMComponent_getInstance_1", element);
 		}
 		public static void Dispose(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DOMComponent.dispose_0", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DOMComponent_dispose_0", dxTarget);
 		}
 		public static object Element(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DOMComponent.element_1", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DOMComponent_element_1", dxTarget);
 		}
 	}
 	public class EndpointSelectorInterop
 	{
 		public static string UrlFor(ElementRef dxTarget, string key)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.EndpointSelector.urlFor_0", dxTarget, key);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_EndpointSelector_urlFor_0", dxTarget, key);
 		}
 	}
 	public class ValidationEngineInterop
 	{
 		public static object GetGroupConfig()
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.ValidationEngine.getGroupConfig_0");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_ValidationEngine_getGroupConfig_0");
 		}
 		public static object GetGroupConfig(object group)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.ValidationEngine.getGroupConfig_1", group);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_ValidationEngine_getGroupConfig_1", group);
 		}
 		public static void RegisterModelForValidation(object model)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.ValidationEngine.registerModelForValidation_2", model);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_ValidationEngine_registerModelForValidation_2", model);
 		}
 		public static void ResetGroup()
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.ValidationEngine.resetGroup_3");
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_ValidationEngine_resetGroup_3");
 		}
 		public static void ResetGroup(object group)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.ValidationEngine.resetGroup_4", group);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_ValidationEngine_resetGroup_4", group);
 		}
 		public static void UnregisterModelForValidation(object model)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.ValidationEngine.unregisterModelForValidation_5", model);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_ValidationEngine_unregisterModelForValidation_5", model);
 		}
 		public static object ValidateGroup()
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.ValidationEngine.validateGroup_6");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_ValidationEngine_validateGroup_6");
 		}
 		public static object ValidateGroup(object group)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.ValidationEngine.validateGroup_7", group);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_ValidationEngine_validateGroup_7", group);
 		}
 		public static object ValidateModel(object model)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.ValidationEngine.validateModel_8", model);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_ValidationEngine_validateModel_8", model);
 		}
 	}
 	public class UiInterop
 	{
 		public static void Notify(string message, string type, float displayTime)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.Ui.notify_0", message, type, displayTime);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Ui_notify_0", message, type, displayTime);
 		}
 		public static void Notify(object options, string type, float displayTime)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.Ui.notify_1", options, type, displayTime);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Ui_notify_1", options, type, displayTime);
 		}
 		public static void SetTemplateEngine(string templateEngineName)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.Ui.setTemplateEngine_2", templateEngineName);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Ui_setTemplateEngine_2", templateEngineName);
 		}
 		public static void SetTemplateEngine(object templateEngineOptions)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.Ui.setTemplateEngine_3", templateEngineOptions);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Ui_setTemplateEngine_3", templateEngineOptions);
 		}
 	}
 	public class VizInterop
 	{
 		public static void CurrentPalette(string paletteName)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.Viz.currentPalette_0", paletteName);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Viz_currentPalette_0", paletteName);
 		}
 		public static string CurrentTheme()
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.Viz.currentTheme_1");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_Viz_currentTheme_1");
 		}
 		public static void CurrentTheme(string platform, string colorScheme)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.Viz.currentTheme_2", platform, colorScheme);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Viz_currentTheme_2", platform, colorScheme);
 		}
 		public static void CurrentTheme(string theme)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.Viz.currentTheme_3", theme);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Viz_currentTheme_3", theme);
 		}
 		public static void ExportFromMarkup(string markup, object options)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.Viz.exportFromMarkup_4", markup, options);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Viz_exportFromMarkup_4", markup, options);
 		}
 		public static string GetMarkup(object widgetInstances)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.Viz.getMarkup_5", widgetInstances);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_Viz_getMarkup_5", widgetInstances);
 		}
 		public static object GetPalette(string paletteName)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Viz.getPalette_6", paletteName);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Viz_getPalette_6", paletteName);
 		}
 		public static object GetTheme(string theme)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Viz.getTheme_7", theme);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Viz_getTheme_7", theme);
 		}
 		public static void RefreshPaths()
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.Viz.refreshPaths_8");
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Viz_refreshPaths_8");
 		}
 		public static void RefreshTheme()
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.Viz.refreshTheme_9");
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Viz_refreshTheme_9");
 		}
 		public static void RegisterPalette(string paletteName, object palette)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.Viz.registerPalette_10", paletteName, palette);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Viz_registerPalette_10", paletteName, palette);
 		}
 		public static void RegisterTheme(object customTheme, string baseTheme)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.Viz.registerTheme_11", customTheme, baseTheme);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Viz_registerTheme_11", customTheme, baseTheme);
 		}
 	}
 }
@@ -407,11 +413,11 @@ namespace DevExpress.Data
 	{
 		public static string ToString(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.Guid.toString_0", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_Guid_toString_0", dxTarget);
 		}
 		public static string ValueOf(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.Guid.valueOf_1", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_Guid_valueOf_1", dxTarget);
 		}
 	}
 	public class StoreInterop
@@ -429,115 +435,125 @@ namespace DevExpress.Data
 		public static void Init(ElementRef dxTarget, DevExpress.Data.StoreOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.Store.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Store_Init", dxTarget, json);
 		}
+		[JSInvokable("DevExpress.Data.StoreInterop.OnInserted")]
 		public static void OnInserted(string identifier)
 		{
 			Inserted?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Data.StoreInterop.OnInserting")]
 		public static void OnInserting(string identifier)
 		{
 			Inserting?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Data.StoreInterop.OnLoaded")]
 		public static void OnLoaded(string identifier)
 		{
 			Loaded?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Data.StoreInterop.OnLoading")]
 		public static void OnLoading(string identifier)
 		{
 			Loading?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Data.StoreInterop.OnModified")]
 		public static void OnModified(string identifier)
 		{
 			Modified?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Data.StoreInterop.OnModifying")]
 		public static void OnModifying(string identifier)
 		{
 			Modifying?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Data.StoreInterop.OnRemoved")]
 		public static void OnRemoved(string identifier)
 		{
 			Removed?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Data.StoreInterop.OnRemoving")]
 		public static void OnRemoving(string identifier)
 		{
 			Removing?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Data.StoreInterop.OnUpdated")]
 		public static void OnUpdated(string identifier)
 		{
 			Updated?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Data.StoreInterop.OnUpdating")]
 		public static void OnUpdating(string identifier)
 		{
 			Updating?.Invoke(null, new JQueryEventArgs(identifier));
 		}
 		public static object GetErrorHandler(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Store.GetOption", dxTarget, "errorHandler");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Store_GetOption", dxTarget, "errorHandler");
 		}
 		public static void SetErrorHandler(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.Store.SetOption", dxTarget, "errorHandler", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Store_SetOption", dxTarget, "errorHandler", value);
 		}
 		public static object GetKey(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Store.GetOption", dxTarget, "key");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Store_GetOption", dxTarget, "key");
 		}
 		public static void SetKey(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.Store.SetOption", dxTarget, "key", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Store_SetOption", dxTarget, "key", value);
 		}
 		public static object ByKey(ElementRef dxTarget, object key)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Store.byKey_0", dxTarget, key);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Store_byKey_0", dxTarget, key);
 		}
 		public static object Insert(ElementRef dxTarget, object values)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Store.insert_1", dxTarget, values);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Store_insert_1", dxTarget, values);
 		}
 		public static object Key(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Store.key_2", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Store_key_2", dxTarget);
 		}
 		public static object KeyOf(ElementRef dxTarget, object obj)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Store.keyOf_3", dxTarget, obj);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Store_keyOf_3", dxTarget, obj);
 		}
 		public static object Load(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Store.load_4", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Store_load_4", dxTarget);
 		}
 		public static object Load(ElementRef dxTarget, object options)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Store.load_5", dxTarget, options);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Store_load_5", dxTarget, options);
 		}
 		public static object Off(ElementRef dxTarget, string eventName)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Store.off_6", dxTarget, eventName);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Store_off_6", dxTarget, eventName);
 		}
 		public static object Off(ElementRef dxTarget, string eventName, object eventHandler)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Store.off_7", dxTarget, eventName, eventHandler);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Store_off_7", dxTarget, eventName, eventHandler);
 		}
 		public static object On(ElementRef dxTarget, string eventName, object eventHandler)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Store.on_8", dxTarget, eventName, eventHandler);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Store_on_8", dxTarget, eventName, eventHandler);
 		}
 		public static object On(ElementRef dxTarget, object events)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Store.on_9", dxTarget, events);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Store_on_9", dxTarget, events);
 		}
 		public static object Remove(ElementRef dxTarget, object key)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Store.remove_10", dxTarget, key);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Store_remove_10", dxTarget, key);
 		}
 		public static object TotalCount(ElementRef dxTarget, object obj)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Store.totalCount_11", dxTarget, obj);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Store_totalCount_11", dxTarget, obj);
 		}
 		public static object Update(ElementRef dxTarget, object key, object values)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Store.update_12", dxTarget, key, values);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Store_update_12", dxTarget, key, values);
 		}
 	}
 	public class ArrayStoreInterop: StoreInterop
@@ -545,23 +561,23 @@ namespace DevExpress.Data
 		public static void Init(ElementRef dxTarget, DevExpress.Data.ArrayStoreOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.ArrayStore.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_ArrayStore_Init", dxTarget, json);
 		}
 		public static object GetData(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.ArrayStore.GetOption", dxTarget, "data");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_ArrayStore_GetOption", dxTarget, "data");
 		}
 		public static void SetData(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.ArrayStore.SetOption", dxTarget, "data", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_ArrayStore_SetOption", dxTarget, "data", value);
 		}
 		public static void Clear(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.ArrayStore.clear_0", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_ArrayStore_clear_0", dxTarget);
 		}
 		public static object CreateQuery(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.ArrayStore.createQuery_1", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_ArrayStore_createQuery_1", dxTarget);
 		}
 	}
 	public class CustomStoreInterop: StoreInterop
@@ -569,83 +585,83 @@ namespace DevExpress.Data
 		public static void Init(ElementRef dxTarget, DevExpress.Data.CustomStoreOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.CustomStore.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_CustomStore_Init", dxTarget, json);
 		}
 		public static object GetByKey(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.CustomStore.GetOption", dxTarget, "byKey");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_CustomStore_GetOption", dxTarget, "byKey");
 		}
 		public static void SetByKey(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.CustomStore.SetOption", dxTarget, "byKey", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_CustomStore_SetOption", dxTarget, "byKey", value);
 		}
 		public static bool? GetCacheRawData(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.CustomStore.GetOption", dxTarget, "cacheRawData");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_CustomStore_GetOption", dxTarget, "cacheRawData");
 		}
 		public static void SetCacheRawData(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.CustomStore.SetOption", dxTarget, "cacheRawData", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_CustomStore_SetOption", dxTarget, "cacheRawData", value);
 		}
 		public static object GetInsert(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.CustomStore.GetOption", dxTarget, "insert");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_CustomStore_GetOption", dxTarget, "insert");
 		}
 		public static void SetInsert(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.CustomStore.SetOption", dxTarget, "insert", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_CustomStore_SetOption", dxTarget, "insert", value);
 		}
 		public static object GetLoad(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.CustomStore.GetOption", dxTarget, "load");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_CustomStore_GetOption", dxTarget, "load");
 		}
 		public static void SetLoad(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.CustomStore.SetOption", dxTarget, "load", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_CustomStore_SetOption", dxTarget, "load", value);
 		}
 		public static string GetLoadMode(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.CustomStore.GetOption", dxTarget, "loadMode");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_CustomStore_GetOption", dxTarget, "loadMode");
 		}
 		public static void SetLoadMode(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.CustomStore.SetOption", dxTarget, "loadMode", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_CustomStore_SetOption", dxTarget, "loadMode", value);
 		}
 		public static object GetRemove(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.CustomStore.GetOption", dxTarget, "remove");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_CustomStore_GetOption", dxTarget, "remove");
 		}
 		public static void SetRemove(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.CustomStore.SetOption", dxTarget, "remove", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_CustomStore_SetOption", dxTarget, "remove", value);
 		}
 		public static object GetTotalCount(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.CustomStore.GetOption", dxTarget, "totalCount");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_CustomStore_GetOption", dxTarget, "totalCount");
 		}
 		public static void SetTotalCount(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.CustomStore.SetOption", dxTarget, "totalCount", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_CustomStore_SetOption", dxTarget, "totalCount", value);
 		}
 		public static object GetUpdate(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.CustomStore.GetOption", dxTarget, "update");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_CustomStore_GetOption", dxTarget, "update");
 		}
 		public static void SetUpdate(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.CustomStore.SetOption", dxTarget, "update", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_CustomStore_SetOption", dxTarget, "update", value);
 		}
 		public static bool? GetUseDefaultSearch(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.CustomStore.GetOption", dxTarget, "useDefaultSearch");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_CustomStore_GetOption", dxTarget, "useDefaultSearch");
 		}
 		public static void SetUseDefaultSearch(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.CustomStore.SetOption", dxTarget, "useDefaultSearch", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_CustomStore_SetOption", dxTarget, "useDefaultSearch", value);
 		}
 		public static void ClearRawDataCache(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.CustomStore.clearRawDataCache_0", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_CustomStore_clearRawDataCache_0", dxTarget);
 		}
 	}
 	public class DataSourceInterop
@@ -656,291 +672,294 @@ namespace DevExpress.Data
 		public static void Init(ElementRef dxTarget, DevExpress.Data.DataSourceOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataSource_Init", dxTarget, json);
 		}
+		[JSInvokable("DevExpress.Data.DataSourceInterop.OnChanged")]
 		public static void OnChanged(string identifier)
 		{
 			Changed?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Data.DataSourceInterop.OnLoadError")]
 		public static void OnLoadError(string identifier)
 		{
 			LoadError?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Data.DataSourceInterop.OnLoadingChanged")]
 		public static void OnLoadingChanged(string identifier)
 		{
 			LoadingChanged?.Invoke(null, new JQueryEventArgs(identifier));
 		}
 		public static object GetCustomQueryParams(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.GetOption", dxTarget, "customQueryParams");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataSource_GetOption", dxTarget, "customQueryParams");
 		}
 		public static void SetCustomQueryParams(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.SetOption", dxTarget, "customQueryParams", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataSource_SetOption", dxTarget, "customQueryParams", value);
 		}
 		public static object GetExpand(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.GetOption", dxTarget, "expand");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataSource_GetOption", dxTarget, "expand");
 		}
 		public static void SetExpand(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.SetOption", dxTarget, "expand", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataSource_SetOption", dxTarget, "expand", value);
 		}
 		public static object GetFilter(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.GetOption", dxTarget, "filter");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataSource_GetOption", dxTarget, "filter");
 		}
 		public static void SetFilter(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.SetOption", dxTarget, "filter", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataSource_SetOption", dxTarget, "filter", value);
 		}
 		public static object GetGroup(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.GetOption", dxTarget, "group");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataSource_GetOption", dxTarget, "group");
 		}
 		public static void SetGroup(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.SetOption", dxTarget, "group", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataSource_SetOption", dxTarget, "group", value);
 		}
 		public static object GetMap(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.GetOption", dxTarget, "map");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataSource_GetOption", dxTarget, "map");
 		}
 		public static void SetMap(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.SetOption", dxTarget, "map", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataSource_SetOption", dxTarget, "map", value);
 		}
 		public static float? GetPageSize(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DataSource.GetOption", dxTarget, "pageSize");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DataSource_GetOption", dxTarget, "pageSize");
 		}
 		public static void SetPageSize(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.SetOption", dxTarget, "pageSize", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataSource_SetOption", dxTarget, "pageSize", value);
 		}
 		public static bool? GetPaginate(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DataSource.GetOption", dxTarget, "paginate");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DataSource_GetOption", dxTarget, "paginate");
 		}
 		public static void SetPaginate(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.SetOption", dxTarget, "paginate", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataSource_SetOption", dxTarget, "paginate", value);
 		}
 		public static object GetPostProcess(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.GetOption", dxTarget, "postProcess");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataSource_GetOption", dxTarget, "postProcess");
 		}
 		public static void SetPostProcess(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.SetOption", dxTarget, "postProcess", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataSource_SetOption", dxTarget, "postProcess", value);
 		}
 		public static bool? GetRequireTotalCount(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DataSource.GetOption", dxTarget, "requireTotalCount");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DataSource_GetOption", dxTarget, "requireTotalCount");
 		}
 		public static void SetRequireTotalCount(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.SetOption", dxTarget, "requireTotalCount", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataSource_SetOption", dxTarget, "requireTotalCount", value);
 		}
 		public static object GetSearchExpr(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.GetOption", dxTarget, "searchExpr");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataSource_GetOption", dxTarget, "searchExpr");
 		}
 		public static void SetSearchExpr(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.SetOption", dxTarget, "searchExpr", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataSource_SetOption", dxTarget, "searchExpr", value);
 		}
 		public static string GetSearchOperation(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DataSource.GetOption", dxTarget, "searchOperation");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DataSource_GetOption", dxTarget, "searchOperation");
 		}
 		public static void SetSearchOperation(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.SetOption", dxTarget, "searchOperation", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataSource_SetOption", dxTarget, "searchOperation", value);
 		}
 		public static object GetSearchValue(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.GetOption", dxTarget, "searchValue");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataSource_GetOption", dxTarget, "searchValue");
 		}
 		public static void SetSearchValue(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.SetOption", dxTarget, "searchValue", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataSource_SetOption", dxTarget, "searchValue", value);
 		}
 		public static object GetSelect(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.GetOption", dxTarget, "select");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataSource_GetOption", dxTarget, "select");
 		}
 		public static void SetSelect(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.SetOption", dxTarget, "select", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataSource_SetOption", dxTarget, "select", value);
 		}
 		public static object GetSort(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.GetOption", dxTarget, "sort");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataSource_GetOption", dxTarget, "sort");
 		}
 		public static void SetSort(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.SetOption", dxTarget, "sort", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataSource_SetOption", dxTarget, "sort", value);
 		}
 		public static object GetStore(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.GetOption", dxTarget, "store");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataSource_GetOption", dxTarget, "store");
 		}
 		public static void SetStore(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.SetOption", dxTarget, "store", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataSource_SetOption", dxTarget, "store", value);
 		}
 		public static bool Cancel(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool>("BlazorDevExtreme.DataSource.cancel_0", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool>("BlazorDevExtreme_DataSource_cancel_0", dxTarget);
 		}
 		public static void Dispose(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.dispose_1", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataSource_dispose_1", dxTarget);
 		}
 		public static object Filter(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.filter_2", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataSource_filter_2", dxTarget);
 		}
 		public static void Filter(ElementRef dxTarget, object filterExpr)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.filter_3", dxTarget, filterExpr);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataSource_filter_3", dxTarget, filterExpr);
 		}
 		public static object Group(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.group_4", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataSource_group_4", dxTarget);
 		}
 		public static void Group(ElementRef dxTarget, object groupExpr)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.group_5", dxTarget, groupExpr);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataSource_group_5", dxTarget, groupExpr);
 		}
 		public static bool IsLastPage(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool>("BlazorDevExtreme.DataSource.isLastPage_6", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool>("BlazorDevExtreme_DataSource_isLastPage_6", dxTarget);
 		}
 		public static bool IsLoaded(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool>("BlazorDevExtreme.DataSource.isLoaded_7", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool>("BlazorDevExtreme_DataSource_isLoaded_7", dxTarget);
 		}
 		public static bool IsLoading(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool>("BlazorDevExtreme.DataSource.isLoading_8", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool>("BlazorDevExtreme_DataSource_isLoading_8", dxTarget);
 		}
 		public static object Items(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.items_9", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataSource_items_9", dxTarget);
 		}
 		public static object Key(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.key_10", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataSource_key_10", dxTarget);
 		}
 		public static object Load(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.load_11", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataSource_load_11", dxTarget);
 		}
 		public static object LoadOptions(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.loadOptions_12", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataSource_loadOptions_12", dxTarget);
 		}
 		public static object Off(ElementRef dxTarget, string eventName)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.off_13", dxTarget, eventName);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataSource_off_13", dxTarget, eventName);
 		}
 		public static object Off(ElementRef dxTarget, string eventName, object eventHandler)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.off_14", dxTarget, eventName, eventHandler);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataSource_off_14", dxTarget, eventName, eventHandler);
 		}
 		public static object On(ElementRef dxTarget, string eventName, object eventHandler)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.on_15", dxTarget, eventName, eventHandler);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataSource_on_15", dxTarget, eventName, eventHandler);
 		}
 		public static object On(ElementRef dxTarget, object events)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.on_16", dxTarget, events);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataSource_on_16", dxTarget, events);
 		}
 		public static float PageIndex(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float>("BlazorDevExtreme.DataSource.pageIndex_17", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float>("BlazorDevExtreme_DataSource_pageIndex_17", dxTarget);
 		}
 		public static void PageIndex(ElementRef dxTarget, float newIndex)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.pageIndex_18", dxTarget, newIndex);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataSource_pageIndex_18", dxTarget, newIndex);
 		}
 		public static float PageSize(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float>("BlazorDevExtreme.DataSource.pageSize_19", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float>("BlazorDevExtreme_DataSource_pageSize_19", dxTarget);
 		}
 		public static void PageSize(ElementRef dxTarget, float value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.pageSize_20", dxTarget, value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataSource_pageSize_20", dxTarget, value);
 		}
 		public static bool Paginate(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool>("BlazorDevExtreme.DataSource.paginate_21", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool>("BlazorDevExtreme_DataSource_paginate_21", dxTarget);
 		}
 		public static void Paginate(ElementRef dxTarget, bool value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.paginate_22", dxTarget, value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataSource_paginate_22", dxTarget, value);
 		}
 		public static object Reload(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.reload_23", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataSource_reload_23", dxTarget);
 		}
 		public static bool RequireTotalCount(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool>("BlazorDevExtreme.DataSource.requireTotalCount_24", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool>("BlazorDevExtreme_DataSource_requireTotalCount_24", dxTarget);
 		}
 		public static void RequireTotalCount(ElementRef dxTarget, bool value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.requireTotalCount_25", dxTarget, value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataSource_requireTotalCount_25", dxTarget, value);
 		}
 		public static object SearchExpr(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.searchExpr_26", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataSource_searchExpr_26", dxTarget);
 		}
 		public static void SearchExpr(ElementRef dxTarget, object expr)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.searchExpr_27", dxTarget, expr);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataSource_searchExpr_27", dxTarget, expr);
 		}
 		public static string SearchOperation(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DataSource.searchOperation_28", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DataSource_searchOperation_28", dxTarget);
 		}
 		public static void SearchOperation(ElementRef dxTarget, string op)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.searchOperation_29", dxTarget, op);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataSource_searchOperation_29", dxTarget, op);
 		}
 		public static object SearchValue(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.searchValue_30", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataSource_searchValue_30", dxTarget);
 		}
 		public static void SearchValue(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.searchValue_31", dxTarget, value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataSource_searchValue_31", dxTarget, value);
 		}
 		public static object Select(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.select_32", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataSource_select_32", dxTarget);
 		}
 		public static void Select(ElementRef dxTarget, object expr)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.select_33", dxTarget, expr);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataSource_select_33", dxTarget, expr);
 		}
 		public static object Sort(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.sort_34", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataSource_sort_34", dxTarget);
 		}
 		public static void Sort(ElementRef dxTarget, object sortExpr)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.sort_35", dxTarget, sortExpr);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataSource_sort_35", dxTarget, sortExpr);
 		}
 		public static object Store(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataSource.store_36", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataSource_store_36", dxTarget);
 		}
 		public static float TotalCount(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float>("BlazorDevExtreme.DataSource.totalCount_37", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float>("BlazorDevExtreme_DataSource_totalCount_37", dxTarget);
 		}
 	}
 	public class LocalStoreInterop: ArrayStoreInterop
@@ -948,122 +967,122 @@ namespace DevExpress.Data
 		public static void Init(ElementRef dxTarget, DevExpress.Data.LocalStoreOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.LocalStore.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_LocalStore_Init", dxTarget, json);
 		}
 		public static float? GetFlushInterval(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.LocalStore.GetOption", dxTarget, "flushInterval");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_LocalStore_GetOption", dxTarget, "flushInterval");
 		}
 		public static void SetFlushInterval(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.LocalStore.SetOption", dxTarget, "flushInterval", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_LocalStore_SetOption", dxTarget, "flushInterval", value);
 		}
 		public static bool? GetImmediate(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.LocalStore.GetOption", dxTarget, "immediate");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_LocalStore_GetOption", dxTarget, "immediate");
 		}
 		public static void SetImmediate(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.LocalStore.SetOption", dxTarget, "immediate", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_LocalStore_SetOption", dxTarget, "immediate", value);
 		}
 		public static string GetName(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.LocalStore.GetOption", dxTarget, "name");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_LocalStore_GetOption", dxTarget, "name");
 		}
 		public static void SetName(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.LocalStore.SetOption", dxTarget, "name", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_LocalStore_SetOption", dxTarget, "name", value);
 		}
 		public static void Clear(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.LocalStore.clear_0", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_LocalStore_clear_0", dxTarget);
 		}
 	}
 	public class QueryInterop
 	{
 		public static object Aggregate(ElementRef dxTarget, object seed, object step, object finalize)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Query.aggregate_0", dxTarget, seed, step, finalize);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Query_aggregate_0", dxTarget, seed, step, finalize);
 		}
 		public static object Aggregate(ElementRef dxTarget, object step)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Query.aggregate_1", dxTarget, step);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Query_aggregate_1", dxTarget, step);
 		}
 		public static object Avg(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Query.avg_2", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Query_avg_2", dxTarget);
 		}
 		public static object Avg(ElementRef dxTarget, object getter)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Query.avg_3", dxTarget, getter);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Query_avg_3", dxTarget, getter);
 		}
 		public static object Count(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Query.count_4", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Query_count_4", dxTarget);
 		}
 		public static object Enumerate(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Query.enumerate_5", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Query_enumerate_5", dxTarget);
 		}
 		public static object Filter(ElementRef dxTarget, object criteria)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Query.filter_6", dxTarget, criteria);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Query_filter_6", dxTarget, criteria);
 		}
 		public static object GroupBy(ElementRef dxTarget, object getter)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Query.groupBy_8", dxTarget, getter);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Query_groupBy_8", dxTarget, getter);
 		}
 		public static object Max(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Query.max_9", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Query_max_9", dxTarget);
 		}
 		public static object Max(ElementRef dxTarget, object getter)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Query.max_10", dxTarget, getter);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Query_max_10", dxTarget, getter);
 		}
 		public static object Min(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Query.min_11", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Query_min_11", dxTarget);
 		}
 		public static object Min(ElementRef dxTarget, object getter)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Query.min_12", dxTarget, getter);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Query_min_12", dxTarget, getter);
 		}
 		public static object Select(ElementRef dxTarget, object getter)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Query.select_13", dxTarget, getter);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Query_select_13", dxTarget, getter);
 		}
 		public static object Slice(ElementRef dxTarget, float skip, float take)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Query.slice_14", dxTarget, skip, take);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Query_slice_14", dxTarget, skip, take);
 		}
 		public static object SortBy(ElementRef dxTarget, object getter)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Query.sortBy_15", dxTarget, getter);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Query_sortBy_15", dxTarget, getter);
 		}
 		public static object SortBy(ElementRef dxTarget, object getter, bool desc)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Query.sortBy_16", dxTarget, getter, desc);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Query_sortBy_16", dxTarget, getter, desc);
 		}
 		public static object Sum(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Query.sum_17", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Query_sum_17", dxTarget);
 		}
 		public static object Sum(ElementRef dxTarget, object getter)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Query.sum_18", dxTarget, getter);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Query_sum_18", dxTarget, getter);
 		}
 		public static object ThenBy(ElementRef dxTarget, object getter)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Query.thenBy_19", dxTarget, getter);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Query_thenBy_19", dxTarget, getter);
 		}
 		public static object ThenBy(ElementRef dxTarget, object getter, bool desc)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Query.thenBy_20", dxTarget, getter, desc);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Query_thenBy_20", dxTarget, getter, desc);
 		}
 		public static object ToArray(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Query.toArray_21", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Query_toArray_21", dxTarget);
 		}
 	}
 	public class ODataContextInterop
@@ -1071,83 +1090,83 @@ namespace DevExpress.Data
 		public static void Init(ElementRef dxTarget, DevExpress.Data.ODataContextOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.ODataContext.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_ODataContext_Init", dxTarget, json);
 		}
 		public static object GetBeforeSend(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.ODataContext.GetOption", dxTarget, "beforeSend");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_ODataContext_GetOption", dxTarget, "beforeSend");
 		}
 		public static void SetBeforeSend(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.ODataContext.SetOption", dxTarget, "beforeSend", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_ODataContext_SetOption", dxTarget, "beforeSend", value);
 		}
 		public static bool? GetDeserializeDates(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.ODataContext.GetOption", dxTarget, "deserializeDates");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_ODataContext_GetOption", dxTarget, "deserializeDates");
 		}
 		public static void SetDeserializeDates(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.ODataContext.SetOption", dxTarget, "deserializeDates", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_ODataContext_SetOption", dxTarget, "deserializeDates", value);
 		}
 		public static object GetEntities(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.ODataContext.GetOption", dxTarget, "entities");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_ODataContext_GetOption", dxTarget, "entities");
 		}
 		public static void SetEntities(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.ODataContext.SetOption", dxTarget, "entities", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_ODataContext_SetOption", dxTarget, "entities", value);
 		}
 		public static object GetErrorHandler(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.ODataContext.GetOption", dxTarget, "errorHandler");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_ODataContext_GetOption", dxTarget, "errorHandler");
 		}
 		public static void SetErrorHandler(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.ODataContext.SetOption", dxTarget, "errorHandler", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_ODataContext_SetOption", dxTarget, "errorHandler", value);
 		}
 		public static bool? GetJsonp(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.ODataContext.GetOption", dxTarget, "jsonp");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_ODataContext_GetOption", dxTarget, "jsonp");
 		}
 		public static void SetJsonp(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.ODataContext.SetOption", dxTarget, "jsonp", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_ODataContext_SetOption", dxTarget, "jsonp", value);
 		}
 		public static string GetUrl(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.ODataContext.GetOption", dxTarget, "url");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_ODataContext_GetOption", dxTarget, "url");
 		}
 		public static void SetUrl(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.ODataContext.SetOption", dxTarget, "url", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_ODataContext_SetOption", dxTarget, "url", value);
 		}
 		public static float? GetVersion(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.ODataContext.GetOption", dxTarget, "version");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_ODataContext_GetOption", dxTarget, "version");
 		}
 		public static void SetVersion(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.ODataContext.SetOption", dxTarget, "version", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_ODataContext_SetOption", dxTarget, "version", value);
 		}
 		public static bool? GetWithCredentials(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.ODataContext.GetOption", dxTarget, "withCredentials");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_ODataContext_GetOption", dxTarget, "withCredentials");
 		}
 		public static void SetWithCredentials(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.ODataContext.SetOption", dxTarget, "withCredentials", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_ODataContext_SetOption", dxTarget, "withCredentials", value);
 		}
 		public static object Get(ElementRef dxTarget, string operationName, object @params)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.ODataContext.get_0", dxTarget, operationName, @params);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_ODataContext_get_0", dxTarget, operationName, @params);
 		}
 		public static object Invoke(ElementRef dxTarget, string operationName, object @params, object httpMethod)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.ODataContext.invoke_1", dxTarget, operationName, @params, httpMethod);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_ODataContext_invoke_1", dxTarget, operationName, @params, httpMethod);
 		}
 		public static object ObjectLink(ElementRef dxTarget, string entityAlias, object key)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.ODataContext.objectLink_2", dxTarget, entityAlias, key);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_ODataContext_objectLink_2", dxTarget, entityAlias, key);
 		}
 	}
 	public class ODataStoreInterop: StoreInterop
@@ -1156,102 +1175,103 @@ namespace DevExpress.Data
 		public static void Init(ElementRef dxTarget, DevExpress.Data.ODataStoreOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.ODataStore.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_ODataStore_Init", dxTarget, json);
 		}
+		[JSInvokable("DevExpress.Data.ODataStoreInterop.OnLoading")]
 		public static void OnLoading(string identifier)
 		{
 			Loading?.Invoke(null, new JQueryEventArgs(identifier));
 		}
 		public static object GetBeforeSend(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.ODataStore.GetOption", dxTarget, "beforeSend");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_ODataStore_GetOption", dxTarget, "beforeSend");
 		}
 		public static void SetBeforeSend(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.ODataStore.SetOption", dxTarget, "beforeSend", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_ODataStore_SetOption", dxTarget, "beforeSend", value);
 		}
 		public static bool? GetDeserializeDates(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.ODataStore.GetOption", dxTarget, "deserializeDates");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_ODataStore_GetOption", dxTarget, "deserializeDates");
 		}
 		public static void SetDeserializeDates(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.ODataStore.SetOption", dxTarget, "deserializeDates", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_ODataStore_SetOption", dxTarget, "deserializeDates", value);
 		}
 		public static object GetFieldTypes(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.ODataStore.GetOption", dxTarget, "fieldTypes");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_ODataStore_GetOption", dxTarget, "fieldTypes");
 		}
 		public static void SetFieldTypes(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.ODataStore.SetOption", dxTarget, "fieldTypes", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_ODataStore_SetOption", dxTarget, "fieldTypes", value);
 		}
 		public static bool? GetJsonp(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.ODataStore.GetOption", dxTarget, "jsonp");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_ODataStore_GetOption", dxTarget, "jsonp");
 		}
 		public static void SetJsonp(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.ODataStore.SetOption", dxTarget, "jsonp", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_ODataStore_SetOption", dxTarget, "jsonp", value);
 		}
 		public static object GetKeyType(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.ODataStore.GetOption", dxTarget, "keyType");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_ODataStore_GetOption", dxTarget, "keyType");
 		}
 		public static void SetKeyType(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.ODataStore.SetOption", dxTarget, "keyType", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_ODataStore_SetOption", dxTarget, "keyType", value);
 		}
 		public static string GetUrl(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.ODataStore.GetOption", dxTarget, "url");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_ODataStore_GetOption", dxTarget, "url");
 		}
 		public static void SetUrl(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.ODataStore.SetOption", dxTarget, "url", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_ODataStore_SetOption", dxTarget, "url", value);
 		}
 		public static float? GetVersion(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.ODataStore.GetOption", dxTarget, "version");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_ODataStore_GetOption", dxTarget, "version");
 		}
 		public static void SetVersion(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.ODataStore.SetOption", dxTarget, "version", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_ODataStore_SetOption", dxTarget, "version", value);
 		}
 		public static bool? GetWithCredentials(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.ODataStore.GetOption", dxTarget, "withCredentials");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_ODataStore_GetOption", dxTarget, "withCredentials");
 		}
 		public static void SetWithCredentials(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.ODataStore.SetOption", dxTarget, "withCredentials", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_ODataStore_SetOption", dxTarget, "withCredentials", value);
 		}
 		public static object ByKey(ElementRef dxTarget, object key)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.ODataStore.byKey_0", dxTarget, key);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_ODataStore_byKey_0", dxTarget, key);
 		}
 		public static object ByKey(ElementRef dxTarget, object key, object extraOptions)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.ODataStore.byKey_1", dxTarget, key, extraOptions);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_ODataStore_byKey_1", dxTarget, key, extraOptions);
 		}
 		public static object CreateQuery(ElementRef dxTarget, object loadOptions)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.ODataStore.createQuery_2", dxTarget, loadOptions);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_ODataStore_createQuery_2", dxTarget, loadOptions);
 		}
 		public static object Load(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.ODataStore.load_3", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_ODataStore_load_3", dxTarget);
 		}
 		public static object Load(ElementRef dxTarget, object options)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.ODataStore.load_4", dxTarget, options);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_ODataStore_load_4", dxTarget, options);
 		}
 	}
 	public class EdmLiteralInterop
 	{
 		public static string ValueOf(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.EdmLiteral.valueOf_0", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_EdmLiteral_valueOf_0", dxTarget);
 		}
 	}
 	public class PivotGridDataSourceInterop
@@ -1263,155 +1283,159 @@ namespace DevExpress.Data
 		public static void Init(ElementRef dxTarget, DevExpress.Data.PivotGridDataSourceOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.PivotGridDataSource.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_PivotGridDataSource_Init", dxTarget, json);
 		}
+		[JSInvokable("DevExpress.Data.PivotGridDataSourceInterop.OnChanged")]
 		public static void OnChanged(string identifier)
 		{
 			Changed?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Data.PivotGridDataSourceInterop.OnFieldsPrepared")]
 		public static void OnFieldsPrepared(string identifier)
 		{
 			FieldsPrepared?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Data.PivotGridDataSourceInterop.OnLoadError")]
 		public static void OnLoadError(string identifier)
 		{
 			LoadError?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Data.PivotGridDataSourceInterop.OnLoadingChanged")]
 		public static void OnLoadingChanged(string identifier)
 		{
 			LoadingChanged?.Invoke(null, new JQueryEventArgs(identifier));
 		}
 		public static object GetFields(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.PivotGridDataSource.GetOption", dxTarget, "fields");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_PivotGridDataSource_GetOption", dxTarget, "fields");
 		}
 		public static void SetFields(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.PivotGridDataSource.SetOption", dxTarget, "fields", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_PivotGridDataSource_SetOption", dxTarget, "fields", value);
 		}
 		public static object GetFilter(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.PivotGridDataSource.GetOption", dxTarget, "filter");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_PivotGridDataSource_GetOption", dxTarget, "filter");
 		}
 		public static void SetFilter(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.PivotGridDataSource.SetOption", dxTarget, "filter", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_PivotGridDataSource_SetOption", dxTarget, "filter", value);
 		}
 		public static bool? GetRemoteOperations(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.PivotGridDataSource.GetOption", dxTarget, "remoteOperations");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_PivotGridDataSource_GetOption", dxTarget, "remoteOperations");
 		}
 		public static void SetRemoteOperations(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.PivotGridDataSource.SetOption", dxTarget, "remoteOperations", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_PivotGridDataSource_SetOption", dxTarget, "remoteOperations", value);
 		}
 		public static bool? GetRetrieveFields(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.PivotGridDataSource.GetOption", dxTarget, "retrieveFields");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_PivotGridDataSource_GetOption", dxTarget, "retrieveFields");
 		}
 		public static void SetRetrieveFields(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.PivotGridDataSource.SetOption", dxTarget, "retrieveFields", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_PivotGridDataSource_SetOption", dxTarget, "retrieveFields", value);
 		}
 		public static object GetStore(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.PivotGridDataSource.GetOption", dxTarget, "store");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_PivotGridDataSource_GetOption", dxTarget, "store");
 		}
 		public static void SetStore(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.PivotGridDataSource.SetOption", dxTarget, "store", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_PivotGridDataSource_SetOption", dxTarget, "store", value);
 		}
 		public static void CollapseAll(ElementRef dxTarget, object id)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.PivotGridDataSource.collapseAll_0", dxTarget, id);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_PivotGridDataSource_collapseAll_0", dxTarget, id);
 		}
 		public static void CollapseHeaderItem(ElementRef dxTarget, string area, object path)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.PivotGridDataSource.collapseHeaderItem_1", dxTarget, area, path);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_PivotGridDataSource_collapseHeaderItem_1", dxTarget, area, path);
 		}
 		public static object CreateDrillDownDataSource(ElementRef dxTarget, object options)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.PivotGridDataSource.createDrillDownDataSource_2", dxTarget, options);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_PivotGridDataSource_createDrillDownDataSource_2", dxTarget, options);
 		}
 		public static void Dispose(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.PivotGridDataSource.dispose_3", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_PivotGridDataSource_dispose_3", dxTarget);
 		}
 		public static void ExpandAll(ElementRef dxTarget, object id)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.PivotGridDataSource.expandAll_4", dxTarget, id);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_PivotGridDataSource_expandAll_4", dxTarget, id);
 		}
 		public static void ExpandHeaderItem(ElementRef dxTarget, string area, object path)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.PivotGridDataSource.expandHeaderItem_5", dxTarget, area, path);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_PivotGridDataSource_expandHeaderItem_5", dxTarget, area, path);
 		}
 		public static object Field(ElementRef dxTarget, object id)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.PivotGridDataSource.field_6", dxTarget, id);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_PivotGridDataSource_field_6", dxTarget, id);
 		}
 		public static void Field(ElementRef dxTarget, object id, object options)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.PivotGridDataSource.field_7", dxTarget, id, options);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_PivotGridDataSource_field_7", dxTarget, id, options);
 		}
 		public static object Fields(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.PivotGridDataSource.fields_8", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_PivotGridDataSource_fields_8", dxTarget);
 		}
 		public static void Fields(ElementRef dxTarget, object fields)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.PivotGridDataSource.fields_9", dxTarget, fields);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_PivotGridDataSource_fields_9", dxTarget, fields);
 		}
 		public static object Filter(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.PivotGridDataSource.filter_10", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_PivotGridDataSource_filter_10", dxTarget);
 		}
 		public static void Filter(ElementRef dxTarget, object filterExpr)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.PivotGridDataSource.filter_11", dxTarget, filterExpr);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_PivotGridDataSource_filter_11", dxTarget, filterExpr);
 		}
 		public static object GetAreaFields(ElementRef dxTarget, string area, bool collectGroups)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.PivotGridDataSource.getAreaFields_12", dxTarget, area, collectGroups);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_PivotGridDataSource_getAreaFields_12", dxTarget, area, collectGroups);
 		}
 		public static object GetData(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.PivotGridDataSource.getData_13", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_PivotGridDataSource_getData_13", dxTarget);
 		}
 		public static bool IsLoading(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool>("BlazorDevExtreme.PivotGridDataSource.isLoading_14", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool>("BlazorDevExtreme_PivotGridDataSource_isLoading_14", dxTarget);
 		}
 		public static object Load(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.PivotGridDataSource.load_15", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_PivotGridDataSource_load_15", dxTarget);
 		}
 		public static object Off(ElementRef dxTarget, string eventName)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.PivotGridDataSource.off_16", dxTarget, eventName);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_PivotGridDataSource_off_16", dxTarget, eventName);
 		}
 		public static object Off(ElementRef dxTarget, string eventName, object eventHandler)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.PivotGridDataSource.off_17", dxTarget, eventName, eventHandler);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_PivotGridDataSource_off_17", dxTarget, eventName, eventHandler);
 		}
 		public static object On(ElementRef dxTarget, string eventName, object eventHandler)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.PivotGridDataSource.on_18", dxTarget, eventName, eventHandler);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_PivotGridDataSource_on_18", dxTarget, eventName, eventHandler);
 		}
 		public static object On(ElementRef dxTarget, object events)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.PivotGridDataSource.on_19", dxTarget, events);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_PivotGridDataSource_on_19", dxTarget, events);
 		}
 		public static object Reload(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.PivotGridDataSource.reload_20", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_PivotGridDataSource_reload_20", dxTarget);
 		}
 		public static object State(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.PivotGridDataSource.state_21", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_PivotGridDataSource_state_21", dxTarget);
 		}
 		public static void State(ElementRef dxTarget, object state)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.PivotGridDataSource.state_22", dxTarget, state);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_PivotGridDataSource_state_22", dxTarget, state);
 		}
 	}
 	public class XmlaStoreInterop
@@ -1419,39 +1443,39 @@ namespace DevExpress.Data
 		public static void Init(ElementRef dxTarget, DevExpress.Data.XmlaStoreOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.XmlaStore.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_XmlaStore_Init", dxTarget, json);
 		}
 		public static object GetBeforeSend(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.XmlaStore.GetOption", dxTarget, "beforeSend");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_XmlaStore_GetOption", dxTarget, "beforeSend");
 		}
 		public static void SetBeforeSend(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.XmlaStore.SetOption", dxTarget, "beforeSend", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_XmlaStore_SetOption", dxTarget, "beforeSend", value);
 		}
 		public static string GetCatalog(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.XmlaStore.GetOption", dxTarget, "catalog");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_XmlaStore_GetOption", dxTarget, "catalog");
 		}
 		public static void SetCatalog(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.XmlaStore.SetOption", dxTarget, "catalog", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_XmlaStore_SetOption", dxTarget, "catalog", value);
 		}
 		public static string GetCube(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.XmlaStore.GetOption", dxTarget, "cube");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_XmlaStore_GetOption", dxTarget, "cube");
 		}
 		public static void SetCube(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.XmlaStore.SetOption", dxTarget, "cube", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_XmlaStore_SetOption", dxTarget, "cube", value);
 		}
 		public static string GetUrl(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.XmlaStore.GetOption", dxTarget, "url");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_XmlaStore_GetOption", dxTarget, "url");
 		}
 		public static void SetUrl(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.XmlaStore.SetOption", dxTarget, "url", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_XmlaStore_SetOption", dxTarget, "url", value);
 		}
 	}
 }
@@ -1461,19 +1485,19 @@ namespace DevExpress.Core
 	{
 		public static object Off(ElementRef dxTarget, string eventName)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.EventsMixin.off_0", dxTarget, eventName);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_EventsMixin_off_0", dxTarget, eventName);
 		}
 		public static object Off(ElementRef dxTarget, string eventName, object eventHandler)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.EventsMixin.off_1", dxTarget, eventName, eventHandler);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_EventsMixin_off_1", dxTarget, eventName, eventHandler);
 		}
 		public static object On(ElementRef dxTarget, string eventName, object eventHandler)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.EventsMixin.on_2", dxTarget, eventName, eventHandler);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_EventsMixin_on_2", dxTarget, eventName, eventHandler);
 		}
 		public static object On(ElementRef dxTarget, object events)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.EventsMixin.on_3", dxTarget, events);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_EventsMixin_on_3", dxTarget, events);
 		}
 	}
 }
@@ -1485,94 +1509,95 @@ namespace DevExpress.Framework
 		public static void Init(ElementRef dxTarget, DevExpress.Framework.DxCommandOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxCommand.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxCommand_Init", dxTarget, json);
 		}
+		[JSInvokable("DevExpress.Framework.DxCommandInterop.OnExecute")]
 		public static void OnExecute(string identifier)
 		{
 			Execute?.Invoke(null, new JQueryEventArgs(identifier));
 		}
 		public static bool? GetDisabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxCommand.GetOption", dxTarget, "disabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxCommand_GetOption", dxTarget, "disabled");
 		}
 		public static void SetDisabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxCommand.SetOption", dxTarget, "disabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxCommand_SetOption", dxTarget, "disabled", value);
 		}
 		public static string GetIcon(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxCommand.GetOption", dxTarget, "icon");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxCommand_GetOption", dxTarget, "icon");
 		}
 		public static void SetIcon(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxCommand.SetOption", dxTarget, "icon", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxCommand_SetOption", dxTarget, "icon", value);
 		}
 		public static object GetIconSrc(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxCommand.GetOption", dxTarget, "iconSrc");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxCommand_GetOption", dxTarget, "iconSrc");
 		}
 		public static void SetIconSrc(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxCommand.SetOption", dxTarget, "iconSrc", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxCommand_SetOption", dxTarget, "iconSrc", value);
 		}
 		public static string GetId(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxCommand.GetOption", dxTarget, "id");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxCommand_GetOption", dxTarget, "id");
 		}
 		public static void SetId(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxCommand.SetOption", dxTarget, "id", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxCommand_SetOption", dxTarget, "id", value);
 		}
 		public static string GetRenderStage(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxCommand.GetOption", dxTarget, "renderStage");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxCommand_GetOption", dxTarget, "renderStage");
 		}
 		public static void SetRenderStage(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxCommand.SetOption", dxTarget, "renderStage", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxCommand_SetOption", dxTarget, "renderStage", value);
 		}
 		public static string GetTitle(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxCommand.GetOption", dxTarget, "title");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxCommand_GetOption", dxTarget, "title");
 		}
 		public static void SetTitle(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxCommand.SetOption", dxTarget, "title", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxCommand_SetOption", dxTarget, "title", value);
 		}
 		public static string GetType(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxCommand.GetOption", dxTarget, "type");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxCommand_GetOption", dxTarget, "type");
 		}
 		public static void SetType(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxCommand.SetOption", dxTarget, "type", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxCommand_SetOption", dxTarget, "type", value);
 		}
 		public static bool? GetVisible(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxCommand.GetOption", dxTarget, "visible");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxCommand_GetOption", dxTarget, "visible");
 		}
 		public static void SetVisible(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxCommand.SetOption", dxTarget, "visible", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxCommand_SetOption", dxTarget, "visible", value);
 		}
 		public static void DoExecute(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxCommand.execute_0", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxCommand_execute_0", dxTarget);
 		}
 	}
 	public class RouterInterop
 	{
 		public static string Format(ElementRef dxTarget, object obj)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.Router.format_0", dxTarget, obj);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_Router_format_0", dxTarget, obj);
 		}
 		public static object Parse(ElementRef dxTarget, string uri)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Router.parse_1", dxTarget, uri);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Router_parse_1", dxTarget, uri);
 		}
 		public static void Register(ElementRef dxTarget, string pattern, object defaults, object constraints)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.Router.register_2", dxTarget, pattern, defaults, constraints);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Router_register_2", dxTarget, pattern, defaults, constraints);
 		}
 	}
 	public class StateManagerInterop
@@ -1580,74 +1605,74 @@ namespace DevExpress.Framework
 		public static void Init(ElementRef dxTarget, DevExpress.Framework.StateManagerOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.StateManager.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_StateManager_Init", dxTarget, json);
 		}
 		public static object GetStorage(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.StateManager.GetOption", dxTarget, "storage");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_StateManager_GetOption", dxTarget, "storage");
 		}
 		public static void SetStorage(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.StateManager.SetOption", dxTarget, "storage", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_StateManager_SetOption", dxTarget, "storage", value);
 		}
 		public static void AddStateSource(ElementRef dxTarget, object stateSource)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.StateManager.addStateSource_0", dxTarget, stateSource);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_StateManager_addStateSource_0", dxTarget, stateSource);
 		}
 		public static void ClearState(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.StateManager.clearState_1", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_StateManager_clearState_1", dxTarget);
 		}
 		public static void RemoveStateSource(ElementRef dxTarget, object stateSource)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.StateManager.removeStateSource_2", dxTarget, stateSource);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_StateManager_removeStateSource_2", dxTarget, stateSource);
 		}
 		public static void RestoreState(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.StateManager.restoreState_3", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_StateManager_restoreState_3", dxTarget);
 		}
 		public static void SaveState(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.StateManager.saveState_4", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_StateManager_saveState_4", dxTarget);
 		}
 	}
 	public class ViewCacheInterop
 	{
 		public static void Clear(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.ViewCache.clear_0", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_ViewCache_clear_0", dxTarget);
 		}
 		public static object GetView(ElementRef dxTarget, string key)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.ViewCache.getView_1", dxTarget, key);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_ViewCache_getView_1", dxTarget, key);
 		}
 		public static bool HasView(ElementRef dxTarget, string key)
 		{
-			return RegisteredFunction.Invoke<bool>("BlazorDevExtreme.ViewCache.hasView_2", dxTarget, key);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool>("BlazorDevExtreme_ViewCache_hasView_2", dxTarget, key);
 		}
 		public static object Off(ElementRef dxTarget, string eventName)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.ViewCache.off_3", dxTarget, eventName);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_ViewCache_off_3", dxTarget, eventName);
 		}
 		public static object Off(ElementRef dxTarget, string eventName, object eventHandler)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.ViewCache.off_4", dxTarget, eventName, eventHandler);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_ViewCache_off_4", dxTarget, eventName, eventHandler);
 		}
 		public static object On(ElementRef dxTarget, string eventName, object eventHandler)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.ViewCache.on_5", dxTarget, eventName, eventHandler);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_ViewCache_on_5", dxTarget, eventName, eventHandler);
 		}
 		public static object On(ElementRef dxTarget, object events)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.ViewCache.on_6", dxTarget, events);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_ViewCache_on_6", dxTarget, events);
 		}
 		public static object RemoveView(ElementRef dxTarget, string key)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.ViewCache.removeView_7", dxTarget, key);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_ViewCache_removeView_7", dxTarget, key);
 		}
 		public static void SetView(ElementRef dxTarget, string key, object viewInfo)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.ViewCache.setView_8", dxTarget, key, viewInfo);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_ViewCache_setView_8", dxTarget, key, viewInfo);
 		}
 	}
 	public class DxCommandContainerInterop
@@ -1655,15 +1680,15 @@ namespace DevExpress.Framework
 		public static void Init(ElementRef dxTarget, DevExpress.Framework.DxCommandContainerOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxCommandContainer.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxCommandContainer_Init", dxTarget, json);
 		}
 		public static string GetId(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxCommandContainer.GetOption", dxTarget, "id");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxCommandContainer_GetOption", dxTarget, "id");
 		}
 		public static void SetId(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxCommandContainer.SetOption", dxTarget, "id", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxCommandContainer_SetOption", dxTarget, "id", value);
 		}
 	}
 	public class DxViewInterop
@@ -1671,55 +1696,55 @@ namespace DevExpress.Framework
 		public static void Init(ElementRef dxTarget, DevExpress.Framework.DxViewOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxView.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxView_Init", dxTarget, json);
 		}
 		public static bool? GetDisableCache(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxView.GetOption", dxTarget, "disableCache");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxView_GetOption", dxTarget, "disableCache");
 		}
 		public static void SetDisableCache(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxView.SetOption", dxTarget, "disableCache", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxView_SetOption", dxTarget, "disableCache", value);
 		}
 		public static bool? GetModal(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxView.GetOption", dxTarget, "modal");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxView_GetOption", dxTarget, "modal");
 		}
 		public static void SetModal(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxView.SetOption", dxTarget, "modal", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxView_SetOption", dxTarget, "modal", value);
 		}
 		public static string GetName(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxView.GetOption", dxTarget, "name");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxView_GetOption", dxTarget, "name");
 		}
 		public static void SetName(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxView.SetOption", dxTarget, "name", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxView_SetOption", dxTarget, "name", value);
 		}
 		public static string GetOrientation(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxView.GetOption", dxTarget, "orientation");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxView_GetOption", dxTarget, "orientation");
 		}
 		public static void SetOrientation(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxView.SetOption", dxTarget, "orientation", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxView_SetOption", dxTarget, "orientation", value);
 		}
 		public static string GetPane(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxView.GetOption", dxTarget, "pane");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxView_GetOption", dxTarget, "pane");
 		}
 		public static void SetPane(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxView.SetOption", dxTarget, "pane", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxView_SetOption", dxTarget, "pane", value);
 		}
 		public static string GetTitle(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxView.GetOption", dxTarget, "title");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxView_GetOption", dxTarget, "title");
 		}
 		public static void SetTitle(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxView.SetOption", dxTarget, "title", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxView_SetOption", dxTarget, "title", value);
 		}
 	}
 	public class DxLayoutInterop
@@ -1727,15 +1752,15 @@ namespace DevExpress.Framework
 		public static void Init(ElementRef dxTarget, DevExpress.Framework.DxLayoutOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLayout.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLayout_Init", dxTarget, json);
 		}
 		public static string GetName(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxLayout.GetOption", dxTarget, "name");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxLayout_GetOption", dxTarget, "name");
 		}
 		public static void SetName(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLayout.SetOption", dxTarget, "name", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLayout_SetOption", dxTarget, "name", value);
 		}
 	}
 	public class DxViewPlaceholderInterop
@@ -1743,15 +1768,15 @@ namespace DevExpress.Framework
 		public static void Init(ElementRef dxTarget, DevExpress.Framework.DxViewPlaceholderOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxViewPlaceholder.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxViewPlaceholder_Init", dxTarget, json);
 		}
 		public static string GetViewName(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxViewPlaceholder.GetOption", dxTarget, "viewName");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxViewPlaceholder_GetOption", dxTarget, "viewName");
 		}
 		public static void SetViewName(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxViewPlaceholder.SetOption", dxTarget, "viewName", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxViewPlaceholder_SetOption", dxTarget, "viewName", value);
 		}
 	}
 	public class DxTransitionInterop
@@ -1759,31 +1784,31 @@ namespace DevExpress.Framework
 		public static void Init(ElementRef dxTarget, DevExpress.Framework.DxTransitionOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTransition.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTransition_Init", dxTarget, json);
 		}
 		public static string GetAnimation(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxTransition.GetOption", dxTarget, "animation");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxTransition_GetOption", dxTarget, "animation");
 		}
 		public static void SetAnimation(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTransition.SetOption", dxTarget, "animation", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTransition_SetOption", dxTarget, "animation", value);
 		}
 		public static string GetName(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxTransition.GetOption", dxTarget, "name");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxTransition_GetOption", dxTarget, "name");
 		}
 		public static void SetName(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTransition.SetOption", dxTarget, "name", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTransition_SetOption", dxTarget, "name", value);
 		}
 		public static string GetType(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxTransition.GetOption", dxTarget, "type");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxTransition_GetOption", dxTarget, "type");
 		}
 		public static void SetType(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTransition.SetOption", dxTarget, "type", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTransition_SetOption", dxTarget, "type", value);
 		}
 	}
 	public class DxContentPlaceholderInterop
@@ -1791,39 +1816,39 @@ namespace DevExpress.Framework
 		public static void Init(ElementRef dxTarget, DevExpress.Framework.DxContentPlaceholderOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxContentPlaceholder.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxContentPlaceholder_Init", dxTarget, json);
 		}
 		public static string GetAnimation(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxContentPlaceholder.GetOption", dxTarget, "animation");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxContentPlaceholder_GetOption", dxTarget, "animation");
 		}
 		public static void SetAnimation(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxContentPlaceholder.SetOption", dxTarget, "animation", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxContentPlaceholder_SetOption", dxTarget, "animation", value);
 		}
 		public static string GetContentCssPosition(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxContentPlaceholder.GetOption", dxTarget, "contentCssPosition");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxContentPlaceholder_GetOption", dxTarget, "contentCssPosition");
 		}
 		public static void SetContentCssPosition(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxContentPlaceholder.SetOption", dxTarget, "contentCssPosition", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxContentPlaceholder_SetOption", dxTarget, "contentCssPosition", value);
 		}
 		public static string GetName(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxContentPlaceholder.GetOption", dxTarget, "name");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxContentPlaceholder_GetOption", dxTarget, "name");
 		}
 		public static void SetName(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxContentPlaceholder.SetOption", dxTarget, "name", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxContentPlaceholder_SetOption", dxTarget, "name", value);
 		}
 		public static string GetTransition(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxContentPlaceholder.GetOption", dxTarget, "transition");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxContentPlaceholder_GetOption", dxTarget, "transition");
 		}
 		public static void SetTransition(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxContentPlaceholder.SetOption", dxTarget, "transition", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxContentPlaceholder_SetOption", dxTarget, "transition", value);
 		}
 	}
 	public class DxContentInterop
@@ -1831,15 +1856,15 @@ namespace DevExpress.Framework
 		public static void Init(ElementRef dxTarget, DevExpress.Framework.DxContentOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxContent.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxContent_Init", dxTarget, json);
 		}
 		public static string GetTargetPlaceholder(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxContent.GetOption", dxTarget, "targetPlaceholder");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxContent_GetOption", dxTarget, "targetPlaceholder");
 		}
 		public static void SetTargetPlaceholder(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxContent.SetOption", dxTarget, "targetPlaceholder", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxContent_SetOption", dxTarget, "targetPlaceholder", value);
 		}
 	}
 }
@@ -1850,203 +1875,203 @@ namespace DevExpress.Framework.Html
 		public static void Init(ElementRef dxTarget, DevExpress.Framework.Html.HtmlApplicationOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.HtmlApplication.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_HtmlApplication_Init", dxTarget, json);
 		}
 		public static object GetAnimationSet(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.HtmlApplication.GetOption", dxTarget, "animationSet");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_HtmlApplication_GetOption", dxTarget, "animationSet");
 		}
 		public static void SetAnimationSet(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.HtmlApplication.SetOption", dxTarget, "animationSet", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_HtmlApplication_SetOption", dxTarget, "animationSet", value);
 		}
 		public static object GetCommandMapping(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.HtmlApplication.GetOption", dxTarget, "commandMapping");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_HtmlApplication_GetOption", dxTarget, "commandMapping");
 		}
 		public static void SetCommandMapping(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.HtmlApplication.SetOption", dxTarget, "commandMapping", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_HtmlApplication_SetOption", dxTarget, "commandMapping", value);
 		}
 		public static bool? GetDisableViewCache(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.HtmlApplication.GetOption", dxTarget, "disableViewCache");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_HtmlApplication_GetOption", dxTarget, "disableViewCache");
 		}
 		public static void SetDisableViewCache(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.HtmlApplication.SetOption", dxTarget, "disableViewCache", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_HtmlApplication_SetOption", dxTarget, "disableViewCache", value);
 		}
 		public static object GetLayoutSet(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.HtmlApplication.GetOption", dxTarget, "layoutSet");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_HtmlApplication_GetOption", dxTarget, "layoutSet");
 		}
 		public static void SetLayoutSet(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.HtmlApplication.SetOption", dxTarget, "layoutSet", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_HtmlApplication_SetOption", dxTarget, "layoutSet", value);
 		}
 		public static string GetMode(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.HtmlApplication.GetOption", dxTarget, "mode");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_HtmlApplication_GetOption", dxTarget, "mode");
 		}
 		public static void SetMode(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.HtmlApplication.SetOption", dxTarget, "mode", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_HtmlApplication_SetOption", dxTarget, "mode", value);
 		}
 		public static object GetNamespace(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.HtmlApplication.GetOption", dxTarget, "namespace");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_HtmlApplication_GetOption", dxTarget, "namespace");
 		}
 		public static void SetNamespace(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.HtmlApplication.SetOption", dxTarget, "namespace", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_HtmlApplication_SetOption", dxTarget, "namespace", value);
 		}
 		public static string GetNavigateToRootViewMode(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.HtmlApplication.GetOption", dxTarget, "navigateToRootViewMode");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_HtmlApplication_GetOption", dxTarget, "navigateToRootViewMode");
 		}
 		public static void SetNavigateToRootViewMode(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.HtmlApplication.SetOption", dxTarget, "navigateToRootViewMode", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_HtmlApplication_SetOption", dxTarget, "navigateToRootViewMode", value);
 		}
 		public static object GetNavigation(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.HtmlApplication.GetOption", dxTarget, "navigation");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_HtmlApplication_GetOption", dxTarget, "navigation");
 		}
 		public static void SetNavigation(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.HtmlApplication.SetOption", dxTarget, "navigation", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_HtmlApplication_SetOption", dxTarget, "navigation", value);
 		}
 		public static object GetRouter(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.HtmlApplication.GetOption", dxTarget, "router");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_HtmlApplication_GetOption", dxTarget, "router");
 		}
 		public static void SetRouter(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.HtmlApplication.SetOption", dxTarget, "router", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_HtmlApplication_SetOption", dxTarget, "router", value);
 		}
 		public static object GetStateManager(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.HtmlApplication.GetOption", dxTarget, "stateManager");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_HtmlApplication_GetOption", dxTarget, "stateManager");
 		}
 		public static void SetStateManager(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.HtmlApplication.SetOption", dxTarget, "stateManager", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_HtmlApplication_SetOption", dxTarget, "stateManager", value);
 		}
 		public static object GetStateStorage(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.HtmlApplication.GetOption", dxTarget, "stateStorage");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_HtmlApplication_GetOption", dxTarget, "stateStorage");
 		}
 		public static void SetStateStorage(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.HtmlApplication.SetOption", dxTarget, "stateStorage", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_HtmlApplication_SetOption", dxTarget, "stateStorage", value);
 		}
 		public static string GetTemplatesVersion(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.HtmlApplication.GetOption", dxTarget, "templatesVersion");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_HtmlApplication_GetOption", dxTarget, "templatesVersion");
 		}
 		public static void SetTemplatesVersion(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.HtmlApplication.SetOption", dxTarget, "templatesVersion", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_HtmlApplication_SetOption", dxTarget, "templatesVersion", value);
 		}
 		public static bool? GetUseViewTitleAsBackText(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.HtmlApplication.GetOption", dxTarget, "useViewTitleAsBackText");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_HtmlApplication_GetOption", dxTarget, "useViewTitleAsBackText");
 		}
 		public static void SetUseViewTitleAsBackText(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.HtmlApplication.SetOption", dxTarget, "useViewTitleAsBackText", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_HtmlApplication_SetOption", dxTarget, "useViewTitleAsBackText", value);
 		}
 		public static object GetViewCache(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.HtmlApplication.GetOption", dxTarget, "viewCache");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_HtmlApplication_GetOption", dxTarget, "viewCache");
 		}
 		public static void SetViewCache(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.HtmlApplication.SetOption", dxTarget, "viewCache", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_HtmlApplication_SetOption", dxTarget, "viewCache", value);
 		}
 		public static float? GetViewCacheSize(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.HtmlApplication.GetOption", dxTarget, "viewCacheSize");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_HtmlApplication_GetOption", dxTarget, "viewCacheSize");
 		}
 		public static void SetViewCacheSize(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.HtmlApplication.SetOption", dxTarget, "viewCacheSize", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_HtmlApplication_SetOption", dxTarget, "viewCacheSize", value);
 		}
 		public static object GetViewPort(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.HtmlApplication.GetOption", dxTarget, "viewPort");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_HtmlApplication_GetOption", dxTarget, "viewPort");
 		}
 		public static void SetViewPort(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.HtmlApplication.SetOption", dxTarget, "viewPort", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_HtmlApplication_SetOption", dxTarget, "viewPort", value);
 		}
 		public static void Back(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.HtmlApplication.back_0", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_HtmlApplication_back_0", dxTarget);
 		}
 		public static bool CanBack(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool>("BlazorDevExtreme.HtmlApplication.canBack_1", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool>("BlazorDevExtreme_HtmlApplication_canBack_1", dxTarget);
 		}
 		public static void ClearState(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.HtmlApplication.clearState_2", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_HtmlApplication_clearState_2", dxTarget);
 		}
 		public static void CreateNavigation(ElementRef dxTarget, object navigationConfig)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.HtmlApplication.createNavigation_3", dxTarget, navigationConfig);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_HtmlApplication_createNavigation_3", dxTarget, navigationConfig);
 		}
 		public static object GetViewTemplate(ElementRef dxTarget, string viewName)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.HtmlApplication.getViewTemplate_4", dxTarget, viewName);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_HtmlApplication_getViewTemplate_4", dxTarget, viewName);
 		}
 		public static object GetViewTemplateInfo(ElementRef dxTarget, string viewName)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.HtmlApplication.getViewTemplateInfo_5", dxTarget, viewName);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_HtmlApplication_getViewTemplateInfo_5", dxTarget, viewName);
 		}
 		public static object LoadTemplates(ElementRef dxTarget, object source)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.HtmlApplication.loadTemplates_6", dxTarget, source);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_HtmlApplication_loadTemplates_6", dxTarget, source);
 		}
 		public static void Navigate(ElementRef dxTarget, object uri)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.HtmlApplication.navigate_7", dxTarget, uri);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_HtmlApplication_navigate_7", dxTarget, uri);
 		}
 		public static void Navigate(ElementRef dxTarget, object uri, object options)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.HtmlApplication.navigate_8", dxTarget, uri, options);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_HtmlApplication_navigate_8", dxTarget, uri, options);
 		}
 		public static object Off(ElementRef dxTarget, string eventName)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.HtmlApplication.off_9", dxTarget, eventName);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_HtmlApplication_off_9", dxTarget, eventName);
 		}
 		public static object Off(ElementRef dxTarget, string eventName, object eventHandler)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.HtmlApplication.off_10", dxTarget, eventName, eventHandler);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_HtmlApplication_off_10", dxTarget, eventName, eventHandler);
 		}
 		public static object On(ElementRef dxTarget, string eventName, object eventHandler)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.HtmlApplication.on_11", dxTarget, eventName, eventHandler);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_HtmlApplication_on_11", dxTarget, eventName, eventHandler);
 		}
 		public static object On(ElementRef dxTarget, object events)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.HtmlApplication.on_12", dxTarget, events);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_HtmlApplication_on_12", dxTarget, events);
 		}
 		public static void RenderNavigation(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.HtmlApplication.renderNavigation_13", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_HtmlApplication_renderNavigation_13", dxTarget);
 		}
 		public static void RestoreState(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.HtmlApplication.restoreState_14", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_HtmlApplication_restoreState_14", dxTarget);
 		}
 		public static void SaveState(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.HtmlApplication.saveState_15", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_HtmlApplication_saveState_15", dxTarget);
 		}
 		public static object TemplateContext(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.HtmlApplication.templateContext_16", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_HtmlApplication_templateContext_16", dxTarget);
 		}
 	}
 }
@@ -2058,103 +2083,104 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.DxAccordionOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxAccordion.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxAccordion_Init", dxTarget, json);
 		}
+		[JSInvokable("DevExpress.Ui.DxAccordionInterop.OnItemTitleClick")]
 		public static void OnItemTitleClick(string identifier)
 		{
 			ItemTitleClick?.Invoke(null, new JQueryEventArgs(identifier));
 		}
 		public static float? GetAnimationDuration(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxAccordion.GetOption", dxTarget, "animationDuration");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxAccordion_GetOption", dxTarget, "animationDuration");
 		}
 		public static void SetAnimationDuration(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxAccordion.SetOption", dxTarget, "animationDuration", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxAccordion_SetOption", dxTarget, "animationDuration", value);
 		}
 		public static bool? GetCollapsible(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxAccordion.GetOption", dxTarget, "collapsible");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxAccordion_GetOption", dxTarget, "collapsible");
 		}
 		public static void SetCollapsible(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxAccordion.SetOption", dxTarget, "collapsible", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxAccordion_SetOption", dxTarget, "collapsible", value);
 		}
 		public static bool? GetDeferRendering(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxAccordion.GetOption", dxTarget, "deferRendering");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxAccordion_GetOption", dxTarget, "deferRendering");
 		}
 		public static void SetDeferRendering(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxAccordion.SetOption", dxTarget, "deferRendering", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxAccordion_SetOption", dxTarget, "deferRendering", value);
 		}
 		public static new bool? GetFocusStateEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxAccordion.GetOption", dxTarget, "focusStateEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxAccordion_GetOption", dxTarget, "focusStateEnabled");
 		}
 		public static new void SetFocusStateEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxAccordion.SetOption", dxTarget, "focusStateEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxAccordion_SetOption", dxTarget, "focusStateEnabled", value);
 		}
 		public static new object GetHeight(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxAccordion.GetOption", dxTarget, "height");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxAccordion_GetOption", dxTarget, "height");
 		}
 		public static new void SetHeight(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxAccordion.SetOption", dxTarget, "height", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxAccordion_SetOption", dxTarget, "height", value);
 		}
 		public static new bool? GetHoverStateEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxAccordion.GetOption", dxTarget, "hoverStateEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxAccordion_GetOption", dxTarget, "hoverStateEnabled");
 		}
 		public static new void SetHoverStateEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxAccordion.SetOption", dxTarget, "hoverStateEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxAccordion_SetOption", dxTarget, "hoverStateEnabled", value);
 		}
 		public static new object GetItemTemplate(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxAccordion.GetOption", dxTarget, "itemTemplate");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxAccordion_GetOption", dxTarget, "itemTemplate");
 		}
 		public static new void SetItemTemplate(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxAccordion.SetOption", dxTarget, "itemTemplate", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxAccordion_SetOption", dxTarget, "itemTemplate", value);
 		}
 		public static object GetItemTitleTemplate(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxAccordion.GetOption", dxTarget, "itemTitleTemplate");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxAccordion_GetOption", dxTarget, "itemTitleTemplate");
 		}
 		public static void SetItemTitleTemplate(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxAccordion.SetOption", dxTarget, "itemTitleTemplate", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxAccordion_SetOption", dxTarget, "itemTitleTemplate", value);
 		}
 		public static bool? GetMultiple(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxAccordion.GetOption", dxTarget, "multiple");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxAccordion_GetOption", dxTarget, "multiple");
 		}
 		public static void SetMultiple(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxAccordion.SetOption", dxTarget, "multiple", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxAccordion_SetOption", dxTarget, "multiple", value);
 		}
 		public static new float? GetSelectedIndex(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxAccordion.GetOption", dxTarget, "selectedIndex");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxAccordion_GetOption", dxTarget, "selectedIndex");
 		}
 		public static new void SetSelectedIndex(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxAccordion.SetOption", dxTarget, "selectedIndex", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxAccordion_SetOption", dxTarget, "selectedIndex", value);
 		}
 		public static object CollapseItem(ElementRef dxTarget, float index)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxAccordion.collapseItem_0", dxTarget, index);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxAccordion_collapseItem_0", dxTarget, index);
 		}
 		public static object ExpandItem(ElementRef dxTarget, float index)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxAccordion.expandItem_1", dxTarget, index);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxAccordion_expandItem_1", dxTarget, index);
 		}
 		public static object UpdateDimensions(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxAccordion.updateDimensions_2", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxAccordion_updateDimensions_2", dxTarget);
 		}
 	}
 	public class DxActionSheetInterop: CollectionWidgetInterop
@@ -2163,79 +2189,80 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.DxActionSheetOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxActionSheet.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxActionSheet_Init", dxTarget, json);
 		}
+		[JSInvokable("DevExpress.Ui.DxActionSheetInterop.OnCancelClick")]
 		public static void OnCancelClick(string identifier)
 		{
 			CancelClick?.Invoke(null, new JQueryEventArgs(identifier));
 		}
 		public static string GetCancelText(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxActionSheet.GetOption", dxTarget, "cancelText");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxActionSheet_GetOption", dxTarget, "cancelText");
 		}
 		public static void SetCancelText(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxActionSheet.SetOption", dxTarget, "cancelText", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxActionSheet_SetOption", dxTarget, "cancelText", value);
 		}
 		public static bool? GetShowCancelButton(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxActionSheet.GetOption", dxTarget, "showCancelButton");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxActionSheet_GetOption", dxTarget, "showCancelButton");
 		}
 		public static void SetShowCancelButton(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxActionSheet.SetOption", dxTarget, "showCancelButton", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxActionSheet_SetOption", dxTarget, "showCancelButton", value);
 		}
 		public static bool? GetShowTitle(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxActionSheet.GetOption", dxTarget, "showTitle");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxActionSheet_GetOption", dxTarget, "showTitle");
 		}
 		public static void SetShowTitle(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxActionSheet.SetOption", dxTarget, "showTitle", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxActionSheet_SetOption", dxTarget, "showTitle", value);
 		}
 		public static object GetTarget(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxActionSheet.GetOption", dxTarget, "target");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxActionSheet_GetOption", dxTarget, "target");
 		}
 		public static void SetTarget(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxActionSheet.SetOption", dxTarget, "target", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxActionSheet_SetOption", dxTarget, "target", value);
 		}
 		public static string GetTitle(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxActionSheet.GetOption", dxTarget, "title");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxActionSheet_GetOption", dxTarget, "title");
 		}
 		public static void SetTitle(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxActionSheet.SetOption", dxTarget, "title", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxActionSheet_SetOption", dxTarget, "title", value);
 		}
 		public static bool? GetUsePopover(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxActionSheet.GetOption", dxTarget, "usePopover");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxActionSheet_GetOption", dxTarget, "usePopover");
 		}
 		public static void SetUsePopover(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxActionSheet.SetOption", dxTarget, "usePopover", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxActionSheet_SetOption", dxTarget, "usePopover", value);
 		}
 		public static new bool? GetVisible(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxActionSheet.GetOption", dxTarget, "visible");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxActionSheet_GetOption", dxTarget, "visible");
 		}
 		public static new void SetVisible(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxActionSheet.SetOption", dxTarget, "visible", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxActionSheet_SetOption", dxTarget, "visible", value);
 		}
 		public static object Hide(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxActionSheet.hide_0", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxActionSheet_hide_0", dxTarget);
 		}
 		public static object Show(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxActionSheet.show_1", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxActionSheet_show_1", dxTarget);
 		}
 		public static object Toggle(ElementRef dxTarget, bool showing)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxActionSheet.toggle_2", dxTarget, showing);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxActionSheet_toggle_2", dxTarget, showing);
 		}
 	}
 	public class DxAutocompleteInterop: DxDropDownListInterop
@@ -2243,31 +2270,31 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.DxAutocompleteOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxAutocomplete.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxAutocomplete_Init", dxTarget, json);
 		}
 		public static float? GetMaxItemCount(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxAutocomplete.GetOption", dxTarget, "maxItemCount");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxAutocomplete_GetOption", dxTarget, "maxItemCount");
 		}
 		public static void SetMaxItemCount(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxAutocomplete.SetOption", dxTarget, "maxItemCount", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxAutocomplete_SetOption", dxTarget, "maxItemCount", value);
 		}
 		public static new float? GetMinSearchLength(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxAutocomplete.GetOption", dxTarget, "minSearchLength");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxAutocomplete_GetOption", dxTarget, "minSearchLength");
 		}
 		public static new void SetMinSearchLength(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxAutocomplete.SetOption", dxTarget, "minSearchLength", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxAutocomplete_SetOption", dxTarget, "minSearchLength", value);
 		}
 		public static new string GetValue(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxAutocomplete.GetOption", dxTarget, "value");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxAutocomplete_GetOption", dxTarget, "value");
 		}
 		public static new void SetValue(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxAutocomplete.SetOption", dxTarget, "value", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxAutocomplete_SetOption", dxTarget, "value", value);
 		}
 	}
 	public class DxBoxInterop: CollectionWidgetInterop
@@ -2275,31 +2302,31 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.DxBoxOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxBox.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxBox_Init", dxTarget, json);
 		}
 		public static string GetAlign(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxBox.GetOption", dxTarget, "align");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxBox_GetOption", dxTarget, "align");
 		}
 		public static void SetAlign(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxBox.SetOption", dxTarget, "align", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxBox_SetOption", dxTarget, "align", value);
 		}
 		public static string GetCrossAlign(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxBox.GetOption", dxTarget, "crossAlign");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxBox_GetOption", dxTarget, "crossAlign");
 		}
 		public static void SetCrossAlign(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxBox.SetOption", dxTarget, "crossAlign", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxBox_SetOption", dxTarget, "crossAlign", value);
 		}
 		public static string GetDirection(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxBox.GetOption", dxTarget, "direction");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxBox_GetOption", dxTarget, "direction");
 		}
 		public static void SetDirection(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxBox.SetOption", dxTarget, "direction", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxBox_SetOption", dxTarget, "direction", value);
 		}
 	}
 	public class DxButtonInterop: WidgetInterop
@@ -2308,83 +2335,84 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.DxButtonOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxButton.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxButton_Init", dxTarget, json);
 		}
+		[JSInvokable("DevExpress.Ui.DxButtonInterop.OnClick")]
 		public static void OnClick(string identifier)
 		{
 			Click?.Invoke(null, new JQueryEventArgs(identifier));
 		}
 		public static new bool? GetActiveStateEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxButton.GetOption", dxTarget, "activeStateEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxButton_GetOption", dxTarget, "activeStateEnabled");
 		}
 		public static new void SetActiveStateEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxButton.SetOption", dxTarget, "activeStateEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxButton_SetOption", dxTarget, "activeStateEnabled", value);
 		}
 		public static new bool? GetFocusStateEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxButton.GetOption", dxTarget, "focusStateEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxButton_GetOption", dxTarget, "focusStateEnabled");
 		}
 		public static new void SetFocusStateEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxButton.SetOption", dxTarget, "focusStateEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxButton_SetOption", dxTarget, "focusStateEnabled", value);
 		}
 		public static new bool? GetHoverStateEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxButton.GetOption", dxTarget, "hoverStateEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxButton_GetOption", dxTarget, "hoverStateEnabled");
 		}
 		public static new void SetHoverStateEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxButton.SetOption", dxTarget, "hoverStateEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxButton_SetOption", dxTarget, "hoverStateEnabled", value);
 		}
 		public static string GetIcon(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxButton.GetOption", dxTarget, "icon");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxButton_GetOption", dxTarget, "icon");
 		}
 		public static void SetIcon(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxButton.SetOption", dxTarget, "icon", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxButton_SetOption", dxTarget, "icon", value);
 		}
 		public static object GetTemplate(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxButton.GetOption", dxTarget, "template");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxButton_GetOption", dxTarget, "template");
 		}
 		public static void SetTemplate(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxButton.SetOption", dxTarget, "template", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxButton_SetOption", dxTarget, "template", value);
 		}
 		public static string GetText(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxButton.GetOption", dxTarget, "text");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxButton_GetOption", dxTarget, "text");
 		}
 		public static void SetText(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxButton.SetOption", dxTarget, "text", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxButton_SetOption", dxTarget, "text", value);
 		}
 		public static string GetType(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxButton.GetOption", dxTarget, "type");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxButton_GetOption", dxTarget, "type");
 		}
 		public static void SetType(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxButton.SetOption", dxTarget, "type", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxButton_SetOption", dxTarget, "type", value);
 		}
 		public static bool? GetUseSubmitBehavior(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxButton.GetOption", dxTarget, "useSubmitBehavior");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxButton_GetOption", dxTarget, "useSubmitBehavior");
 		}
 		public static void SetUseSubmitBehavior(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxButton.SetOption", dxTarget, "useSubmitBehavior", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxButton_SetOption", dxTarget, "useSubmitBehavior", value);
 		}
 		public static string GetValidationGroup(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxButton.GetOption", dxTarget, "validationGroup");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxButton_GetOption", dxTarget, "validationGroup");
 		}
 		public static void SetValidationGroup(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxButton.SetOption", dxTarget, "validationGroup", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxButton_SetOption", dxTarget, "validationGroup", value);
 		}
 	}
 	public class DxCalendarInterop: EditorInterop
@@ -2392,127 +2420,127 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.DxCalendarOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxCalendar.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxCalendar_Init", dxTarget, json);
 		}
 		public static new bool? GetActiveStateEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxCalendar.GetOption", dxTarget, "activeStateEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxCalendar_GetOption", dxTarget, "activeStateEnabled");
 		}
 		public static new void SetActiveStateEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxCalendar.SetOption", dxTarget, "activeStateEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxCalendar_SetOption", dxTarget, "activeStateEnabled", value);
 		}
 		public static object GetCellTemplate(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxCalendar.GetOption", dxTarget, "cellTemplate");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxCalendar_GetOption", dxTarget, "cellTemplate");
 		}
 		public static void SetCellTemplate(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxCalendar.SetOption", dxTarget, "cellTemplate", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxCalendar_SetOption", dxTarget, "cellTemplate", value);
 		}
 		public static string GetDateSerializationFormat(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxCalendar.GetOption", dxTarget, "dateSerializationFormat");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxCalendar_GetOption", dxTarget, "dateSerializationFormat");
 		}
 		public static void SetDateSerializationFormat(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxCalendar.SetOption", dxTarget, "dateSerializationFormat", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxCalendar_SetOption", dxTarget, "dateSerializationFormat", value);
 		}
 		public static object GetDisabledDates(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxCalendar.GetOption", dxTarget, "disabledDates");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxCalendar_GetOption", dxTarget, "disabledDates");
 		}
 		public static void SetDisabledDates(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxCalendar.SetOption", dxTarget, "disabledDates", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxCalendar_SetOption", dxTarget, "disabledDates", value);
 		}
 		public static object GetFirstDayOfWeek(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxCalendar.GetOption", dxTarget, "firstDayOfWeek");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxCalendar_GetOption", dxTarget, "firstDayOfWeek");
 		}
 		public static void SetFirstDayOfWeek(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxCalendar.SetOption", dxTarget, "firstDayOfWeek", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxCalendar_SetOption", dxTarget, "firstDayOfWeek", value);
 		}
 		public static new bool? GetFocusStateEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxCalendar.GetOption", dxTarget, "focusStateEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxCalendar_GetOption", dxTarget, "focusStateEnabled");
 		}
 		public static new void SetFocusStateEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxCalendar.SetOption", dxTarget, "focusStateEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxCalendar_SetOption", dxTarget, "focusStateEnabled", value);
 		}
 		public static new bool? GetHoverStateEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxCalendar.GetOption", dxTarget, "hoverStateEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxCalendar_GetOption", dxTarget, "hoverStateEnabled");
 		}
 		public static new void SetHoverStateEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxCalendar.SetOption", dxTarget, "hoverStateEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxCalendar_SetOption", dxTarget, "hoverStateEnabled", value);
 		}
 		public static object GetMax(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxCalendar.GetOption", dxTarget, "max");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxCalendar_GetOption", dxTarget, "max");
 		}
 		public static void SetMax(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxCalendar.SetOption", dxTarget, "max", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxCalendar_SetOption", dxTarget, "max", value);
 		}
 		public static string GetMaxZoomLevel(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxCalendar.GetOption", dxTarget, "maxZoomLevel");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxCalendar_GetOption", dxTarget, "maxZoomLevel");
 		}
 		public static void SetMaxZoomLevel(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxCalendar.SetOption", dxTarget, "maxZoomLevel", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxCalendar_SetOption", dxTarget, "maxZoomLevel", value);
 		}
 		public static object GetMin(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxCalendar.GetOption", dxTarget, "min");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxCalendar_GetOption", dxTarget, "min");
 		}
 		public static void SetMin(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxCalendar.SetOption", dxTarget, "min", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxCalendar_SetOption", dxTarget, "min", value);
 		}
 		public static string GetMinZoomLevel(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxCalendar.GetOption", dxTarget, "minZoomLevel");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxCalendar_GetOption", dxTarget, "minZoomLevel");
 		}
 		public static void SetMinZoomLevel(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxCalendar.SetOption", dxTarget, "minZoomLevel", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxCalendar_SetOption", dxTarget, "minZoomLevel", value);
 		}
 		public static string GetName(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxCalendar.GetOption", dxTarget, "name");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxCalendar_GetOption", dxTarget, "name");
 		}
 		public static void SetName(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxCalendar.SetOption", dxTarget, "name", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxCalendar_SetOption", dxTarget, "name", value);
 		}
 		public static bool? GetShowTodayButton(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxCalendar.GetOption", dxTarget, "showTodayButton");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxCalendar_GetOption", dxTarget, "showTodayButton");
 		}
 		public static void SetShowTodayButton(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxCalendar.SetOption", dxTarget, "showTodayButton", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxCalendar_SetOption", dxTarget, "showTodayButton", value);
 		}
 		public static new object GetValue(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxCalendar.GetOption", dxTarget, "value");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxCalendar_GetOption", dxTarget, "value");
 		}
 		public static new void SetValue(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxCalendar.SetOption", dxTarget, "value", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxCalendar_SetOption", dxTarget, "value", value);
 		}
 		public static string GetZoomLevel(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxCalendar.GetOption", dxTarget, "zoomLevel");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxCalendar_GetOption", dxTarget, "zoomLevel");
 		}
 		public static void SetZoomLevel(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxCalendar.SetOption", dxTarget, "zoomLevel", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxCalendar_SetOption", dxTarget, "zoomLevel", value);
 		}
 	}
 	public class DxCheckBoxInterop: EditorInterop
@@ -2520,55 +2548,55 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.DxCheckBoxOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxCheckBox.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxCheckBox_Init", dxTarget, json);
 		}
 		public static new bool? GetActiveStateEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxCheckBox.GetOption", dxTarget, "activeStateEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxCheckBox_GetOption", dxTarget, "activeStateEnabled");
 		}
 		public static new void SetActiveStateEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxCheckBox.SetOption", dxTarget, "activeStateEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxCheckBox_SetOption", dxTarget, "activeStateEnabled", value);
 		}
 		public static new bool? GetFocusStateEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxCheckBox.GetOption", dxTarget, "focusStateEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxCheckBox_GetOption", dxTarget, "focusStateEnabled");
 		}
 		public static new void SetFocusStateEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxCheckBox.SetOption", dxTarget, "focusStateEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxCheckBox_SetOption", dxTarget, "focusStateEnabled", value);
 		}
 		public static new bool? GetHoverStateEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxCheckBox.GetOption", dxTarget, "hoverStateEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxCheckBox_GetOption", dxTarget, "hoverStateEnabled");
 		}
 		public static new void SetHoverStateEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxCheckBox.SetOption", dxTarget, "hoverStateEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxCheckBox_SetOption", dxTarget, "hoverStateEnabled", value);
 		}
 		public static string GetName(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxCheckBox.GetOption", dxTarget, "name");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxCheckBox_GetOption", dxTarget, "name");
 		}
 		public static void SetName(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxCheckBox.SetOption", dxTarget, "name", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxCheckBox_SetOption", dxTarget, "name", value);
 		}
 		public static string GetText(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxCheckBox.GetOption", dxTarget, "text");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxCheckBox_GetOption", dxTarget, "text");
 		}
 		public static void SetText(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxCheckBox.SetOption", dxTarget, "text", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxCheckBox_SetOption", dxTarget, "text", value);
 		}
 		public static new bool? GetValue(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxCheckBox.GetOption", dxTarget, "value");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxCheckBox_GetOption", dxTarget, "value");
 		}
 		public static new void SetValue(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxCheckBox.SetOption", dxTarget, "value", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxCheckBox_SetOption", dxTarget, "value", value);
 		}
 	}
 	public class DxColorBoxInterop: DxDropDownEditorInterop
@@ -2576,63 +2604,63 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.DxColorBoxOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxColorBox.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxColorBox_Init", dxTarget, json);
 		}
 		public static string GetApplyButtonText(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxColorBox.GetOption", dxTarget, "applyButtonText");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxColorBox_GetOption", dxTarget, "applyButtonText");
 		}
 		public static void SetApplyButtonText(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxColorBox.SetOption", dxTarget, "applyButtonText", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxColorBox_SetOption", dxTarget, "applyButtonText", value);
 		}
 		public static new string GetApplyValueMode(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxColorBox.GetOption", dxTarget, "applyValueMode");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxColorBox_GetOption", dxTarget, "applyValueMode");
 		}
 		public static new void SetApplyValueMode(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxColorBox.SetOption", dxTarget, "applyValueMode", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxColorBox_SetOption", dxTarget, "applyValueMode", value);
 		}
 		public static string GetCancelButtonText(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxColorBox.GetOption", dxTarget, "cancelButtonText");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxColorBox_GetOption", dxTarget, "cancelButtonText");
 		}
 		public static void SetCancelButtonText(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxColorBox.SetOption", dxTarget, "cancelButtonText", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxColorBox_SetOption", dxTarget, "cancelButtonText", value);
 		}
 		public static bool? GetEditAlphaChannel(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxColorBox.GetOption", dxTarget, "editAlphaChannel");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxColorBox_GetOption", dxTarget, "editAlphaChannel");
 		}
 		public static void SetEditAlphaChannel(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxColorBox.SetOption", dxTarget, "editAlphaChannel", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxColorBox_SetOption", dxTarget, "editAlphaChannel", value);
 		}
 		public static object GetFieldTemplate(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxColorBox.GetOption", dxTarget, "fieldTemplate");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxColorBox_GetOption", dxTarget, "fieldTemplate");
 		}
 		public static void SetFieldTemplate(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxColorBox.SetOption", dxTarget, "fieldTemplate", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxColorBox_SetOption", dxTarget, "fieldTemplate", value);
 		}
 		public static float? GetKeyStep(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxColorBox.GetOption", dxTarget, "keyStep");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxColorBox_GetOption", dxTarget, "keyStep");
 		}
 		public static void SetKeyStep(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxColorBox.SetOption", dxTarget, "keyStep", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxColorBox_SetOption", dxTarget, "keyStep", value);
 		}
 		public static new string GetValue(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxColorBox.GetOption", dxTarget, "value");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxColorBox_GetOption", dxTarget, "value");
 		}
 		public static new void SetValue(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxColorBox.SetOption", dxTarget, "value", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxColorBox_SetOption", dxTarget, "value", value);
 		}
 	}
 	public class DxContextMenuInterop: DxMenuBaseInterop
@@ -2645,95 +2673,100 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.DxContextMenuOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxContextMenu.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxContextMenu_Init", dxTarget, json);
 		}
+		[JSInvokable("DevExpress.Ui.DxContextMenuInterop.OnHidden")]
 		public static void OnHidden(string identifier)
 		{
 			Hidden?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxContextMenuInterop.OnHiding")]
 		public static void OnHiding(string identifier)
 		{
 			Hiding?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxContextMenuInterop.OnPositioning")]
 		public static void OnPositioning(string identifier)
 		{
 			Positioning?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxContextMenuInterop.OnShowing")]
 		public static void OnShowing(string identifier)
 		{
 			Showing?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxContextMenuInterop.OnShown")]
 		public static void OnShown(string identifier)
 		{
 			Shown?.Invoke(null, new JQueryEventArgs(identifier));
 		}
 		public static object GetCloseOnOutsideClick(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxContextMenu.GetOption", dxTarget, "closeOnOutsideClick");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxContextMenu_GetOption", dxTarget, "closeOnOutsideClick");
 		}
 		public static void SetCloseOnOutsideClick(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxContextMenu.SetOption", dxTarget, "closeOnOutsideClick", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxContextMenu_SetOption", dxTarget, "closeOnOutsideClick", value);
 		}
 		public static new object GetItems(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxContextMenu.GetOption", dxTarget, "items");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxContextMenu_GetOption", dxTarget, "items");
 		}
 		public static new void SetItems(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxContextMenu.SetOption", dxTarget, "items", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxContextMenu_SetOption", dxTarget, "items", value);
 		}
 		public static object GetPosition(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxContextMenu.GetOption", dxTarget, "position");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxContextMenu_GetOption", dxTarget, "position");
 		}
 		public static void SetPosition(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxContextMenu.SetOption", dxTarget, "position", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxContextMenu_SetOption", dxTarget, "position", value);
 		}
 		public static object GetShowEvent(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxContextMenu.GetOption", dxTarget, "showEvent");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxContextMenu_GetOption", dxTarget, "showEvent");
 		}
 		public static void SetShowEvent(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxContextMenu.SetOption", dxTarget, "showEvent", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxContextMenu_SetOption", dxTarget, "showEvent", value);
 		}
 		public static string GetSubmenuDirection(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxContextMenu.GetOption", dxTarget, "submenuDirection");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxContextMenu_GetOption", dxTarget, "submenuDirection");
 		}
 		public static void SetSubmenuDirection(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxContextMenu.SetOption", dxTarget, "submenuDirection", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxContextMenu_SetOption", dxTarget, "submenuDirection", value);
 		}
 		public static object GetTarget(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxContextMenu.GetOption", dxTarget, "target");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxContextMenu_GetOption", dxTarget, "target");
 		}
 		public static void SetTarget(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxContextMenu.SetOption", dxTarget, "target", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxContextMenu_SetOption", dxTarget, "target", value);
 		}
 		public static new bool? GetVisible(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxContextMenu.GetOption", dxTarget, "visible");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxContextMenu_GetOption", dxTarget, "visible");
 		}
 		public static new void SetVisible(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxContextMenu.SetOption", dxTarget, "visible", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxContextMenu_SetOption", dxTarget, "visible", value);
 		}
 		public static object Hide(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxContextMenu.hide_0", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxContextMenu_hide_0", dxTarget);
 		}
 		public static object Show(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxContextMenu.show_1", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxContextMenu_show_1", dxTarget);
 		}
 		public static object Toggle(ElementRef dxTarget, bool showing)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxContextMenu.toggle_2", dxTarget, showing);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxContextMenu_toggle_2", dxTarget, showing);
 		}
 	}
 	public class GridBaseInterop: WidgetInterop
@@ -2758,643 +2791,660 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.GridBaseOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_Init", dxTarget, json);
 		}
+		[JSInvokable("DevExpress.Ui.GridBaseInterop.OnAdaptiveDetailRowPreparing")]
 		public static void OnAdaptiveDetailRowPreparing(string identifier)
 		{
 			AdaptiveDetailRowPreparing?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.GridBaseInterop.OnDataErrorOccurred")]
 		public static void OnDataErrorOccurred(string identifier)
 		{
 			DataErrorOccurred?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.GridBaseInterop.OnInitNewRow")]
 		public static void OnInitNewRow(string identifier)
 		{
 			InitNewRow?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.GridBaseInterop.OnKeyDown")]
 		public static void OnKeyDown(string identifier)
 		{
 			KeyDown?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.GridBaseInterop.OnRowCollapsed")]
 		public static void OnRowCollapsed(string identifier)
 		{
 			RowCollapsed?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.GridBaseInterop.OnRowCollapsing")]
 		public static void OnRowCollapsing(string identifier)
 		{
 			RowCollapsing?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.GridBaseInterop.OnRowExpanded")]
 		public static void OnRowExpanded(string identifier)
 		{
 			RowExpanded?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.GridBaseInterop.OnRowExpanding")]
 		public static void OnRowExpanding(string identifier)
 		{
 			RowExpanding?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.GridBaseInterop.OnRowInserted")]
 		public static void OnRowInserted(string identifier)
 		{
 			RowInserted?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.GridBaseInterop.OnRowInserting")]
 		public static void OnRowInserting(string identifier)
 		{
 			RowInserting?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.GridBaseInterop.OnRowRemoved")]
 		public static void OnRowRemoved(string identifier)
 		{
 			RowRemoved?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.GridBaseInterop.OnRowRemoving")]
 		public static void OnRowRemoving(string identifier)
 		{
 			RowRemoving?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.GridBaseInterop.OnRowUpdated")]
 		public static void OnRowUpdated(string identifier)
 		{
 			RowUpdated?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.GridBaseInterop.OnRowUpdating")]
 		public static void OnRowUpdating(string identifier)
 		{
 			RowUpdating?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.GridBaseInterop.OnRowValidating")]
 		public static void OnRowValidating(string identifier)
 		{
 			RowValidating?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.GridBaseInterop.OnSelectionChanged")]
 		public static void OnSelectionChanged(string identifier)
 		{
 			SelectionChanged?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.GridBaseInterop.OnToolbarPreparing")]
 		public static void OnToolbarPreparing(string identifier)
 		{
 			ToolbarPreparing?.Invoke(null, new JQueryEventArgs(identifier));
 		}
 		public static bool? GetAllowColumnReordering(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.GridBase.GetOption", dxTarget, "allowColumnReordering");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "allowColumnReordering");
 		}
 		public static void SetAllowColumnReordering(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.SetOption", dxTarget, "allowColumnReordering", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "allowColumnReordering", value);
 		}
 		public static bool? GetAllowColumnResizing(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.GridBase.GetOption", dxTarget, "allowColumnResizing");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "allowColumnResizing");
 		}
 		public static void SetAllowColumnResizing(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.SetOption", dxTarget, "allowColumnResizing", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "allowColumnResizing", value);
 		}
 		public static bool? GetCacheEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.GridBase.GetOption", dxTarget, "cacheEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "cacheEnabled");
 		}
 		public static void SetCacheEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.SetOption", dxTarget, "cacheEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "cacheEnabled", value);
 		}
 		public static bool? GetCellHintEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.GridBase.GetOption", dxTarget, "cellHintEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "cellHintEnabled");
 		}
 		public static void SetCellHintEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.SetOption", dxTarget, "cellHintEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "cellHintEnabled", value);
 		}
 		public static bool? GetColumnAutoWidth(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.GridBase.GetOption", dxTarget, "columnAutoWidth");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "columnAutoWidth");
 		}
 		public static void SetColumnAutoWidth(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.SetOption", dxTarget, "columnAutoWidth", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "columnAutoWidth", value);
 		}
 		public static object GetColumnChooser(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.GetOption", dxTarget, "columnChooser");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "columnChooser");
 		}
 		public static void SetColumnChooser(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.SetOption", dxTarget, "columnChooser", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "columnChooser", value);
 		}
 		public static object GetColumnFixing(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.GetOption", dxTarget, "columnFixing");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "columnFixing");
 		}
 		public static void SetColumnFixing(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.SetOption", dxTarget, "columnFixing", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "columnFixing", value);
 		}
 		public static bool? GetColumnHidingEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.GridBase.GetOption", dxTarget, "columnHidingEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "columnHidingEnabled");
 		}
 		public static void SetColumnHidingEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.SetOption", dxTarget, "columnHidingEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "columnHidingEnabled", value);
 		}
 		public static float? GetColumnMinWidth(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.GridBase.GetOption", dxTarget, "columnMinWidth");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "columnMinWidth");
 		}
 		public static void SetColumnMinWidth(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.SetOption", dxTarget, "columnMinWidth", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "columnMinWidth", value);
 		}
 		public static string GetColumnResizingMode(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.GridBase.GetOption", dxTarget, "columnResizingMode");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "columnResizingMode");
 		}
 		public static void SetColumnResizingMode(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.SetOption", dxTarget, "columnResizingMode", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "columnResizingMode", value);
 		}
 		public static object GetColumns(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.GetOption", dxTarget, "columns");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "columns");
 		}
 		public static void SetColumns(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.SetOption", dxTarget, "columns", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "columns", value);
 		}
 		public static float? GetColumnWidth(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.GridBase.GetOption", dxTarget, "columnWidth");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "columnWidth");
 		}
 		public static void SetColumnWidth(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.SetOption", dxTarget, "columnWidth", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "columnWidth", value);
 		}
 		public static object GetDataSource(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.GetOption", dxTarget, "dataSource");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "dataSource");
 		}
 		public static void SetDataSource(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.SetOption", dxTarget, "dataSource", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "dataSource", value);
 		}
 		public static string GetDateSerializationFormat(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.GridBase.GetOption", dxTarget, "dateSerializationFormat");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "dateSerializationFormat");
 		}
 		public static void SetDateSerializationFormat(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.SetOption", dxTarget, "dateSerializationFormat", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "dateSerializationFormat", value);
 		}
 		public static object GetEditing(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.GetOption", dxTarget, "editing");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "editing");
 		}
 		public static void SetEditing(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.SetOption", dxTarget, "editing", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "editing", value);
 		}
 		public static bool? GetErrorRowEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.GridBase.GetOption", dxTarget, "errorRowEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "errorRowEnabled");
 		}
 		public static void SetErrorRowEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.SetOption", dxTarget, "errorRowEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "errorRowEnabled", value);
 		}
 		public static object GetFilterBuilder(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.GetOption", dxTarget, "filterBuilder");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "filterBuilder");
 		}
 		public static void SetFilterBuilder(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.SetOption", dxTarget, "filterBuilder", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "filterBuilder", value);
 		}
 		public static object GetFilterBuilderPopup(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.GetOption", dxTarget, "filterBuilderPopup");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "filterBuilderPopup");
 		}
 		public static void SetFilterBuilderPopup(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.SetOption", dxTarget, "filterBuilderPopup", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "filterBuilderPopup", value);
 		}
 		public static object GetFilterPanel(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.GetOption", dxTarget, "filterPanel");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "filterPanel");
 		}
 		public static void SetFilterPanel(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.SetOption", dxTarget, "filterPanel", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "filterPanel", value);
 		}
 		public static object GetFilterRow(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.GetOption", dxTarget, "filterRow");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "filterRow");
 		}
 		public static void SetFilterRow(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.SetOption", dxTarget, "filterRow", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "filterRow", value);
 		}
 		public static object GetFilterSyncEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.GetOption", dxTarget, "filterSyncEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "filterSyncEnabled");
 		}
 		public static void SetFilterSyncEnabled(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.SetOption", dxTarget, "filterSyncEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "filterSyncEnabled", value);
 		}
 		public static object GetFilterValue(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.GetOption", dxTarget, "filterValue");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "filterValue");
 		}
 		public static void SetFilterValue(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.SetOption", dxTarget, "filterValue", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "filterValue", value);
 		}
 		public static object GetHeaderFilter(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.GetOption", dxTarget, "headerFilter");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "headerFilter");
 		}
 		public static void SetHeaderFilter(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.SetOption", dxTarget, "headerFilter", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "headerFilter", value);
 		}
 		public static object GetLoadPanel(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.GetOption", dxTarget, "loadPanel");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "loadPanel");
 		}
 		public static void SetLoadPanel(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.SetOption", dxTarget, "loadPanel", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "loadPanel", value);
 		}
 		public static string GetNoDataText(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.GridBase.GetOption", dxTarget, "noDataText");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "noDataText");
 		}
 		public static void SetNoDataText(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.SetOption", dxTarget, "noDataText", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "noDataText", value);
 		}
 		public static object GetPager(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.GetOption", dxTarget, "pager");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "pager");
 		}
 		public static void SetPager(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.SetOption", dxTarget, "pager", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "pager", value);
 		}
 		public static object GetPaging(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.GetOption", dxTarget, "paging");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "paging");
 		}
 		public static void SetPaging(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.SetOption", dxTarget, "paging", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "paging", value);
 		}
 		public static bool? GetRowAlternationEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.GridBase.GetOption", dxTarget, "rowAlternationEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "rowAlternationEnabled");
 		}
 		public static void SetRowAlternationEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.SetOption", dxTarget, "rowAlternationEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "rowAlternationEnabled", value);
 		}
 		public static object GetScrolling(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.GetOption", dxTarget, "scrolling");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "scrolling");
 		}
 		public static void SetScrolling(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.SetOption", dxTarget, "scrolling", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "scrolling", value);
 		}
 		public static object GetSearchPanel(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.GetOption", dxTarget, "searchPanel");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "searchPanel");
 		}
 		public static void SetSearchPanel(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.SetOption", dxTarget, "searchPanel", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "searchPanel", value);
 		}
 		public static object GetSelectedRowKeys(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.GetOption", dxTarget, "selectedRowKeys");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "selectedRowKeys");
 		}
 		public static void SetSelectedRowKeys(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.SetOption", dxTarget, "selectedRowKeys", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "selectedRowKeys", value);
 		}
 		public static object GetSelection(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.GetOption", dxTarget, "selection");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "selection");
 		}
 		public static void SetSelection(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.SetOption", dxTarget, "selection", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "selection", value);
 		}
 		public static bool? GetShowBorders(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.GridBase.GetOption", dxTarget, "showBorders");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "showBorders");
 		}
 		public static void SetShowBorders(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.SetOption", dxTarget, "showBorders", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "showBorders", value);
 		}
 		public static bool? GetShowColumnHeaders(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.GridBase.GetOption", dxTarget, "showColumnHeaders");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "showColumnHeaders");
 		}
 		public static void SetShowColumnHeaders(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.SetOption", dxTarget, "showColumnHeaders", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "showColumnHeaders", value);
 		}
 		public static bool? GetShowColumnLines(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.GridBase.GetOption", dxTarget, "showColumnLines");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "showColumnLines");
 		}
 		public static void SetShowColumnLines(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.SetOption", dxTarget, "showColumnLines", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "showColumnLines", value);
 		}
 		public static bool? GetShowRowLines(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.GridBase.GetOption", dxTarget, "showRowLines");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "showRowLines");
 		}
 		public static void SetShowRowLines(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.SetOption", dxTarget, "showRowLines", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "showRowLines", value);
 		}
 		public static object GetSorting(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.GetOption", dxTarget, "sorting");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "sorting");
 		}
 		public static void SetSorting(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.SetOption", dxTarget, "sorting", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "sorting", value);
 		}
 		public static object GetStateStoring(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.GetOption", dxTarget, "stateStoring");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "stateStoring");
 		}
 		public static void SetStateStoring(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.SetOption", dxTarget, "stateStoring", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "stateStoring", value);
 		}
 		public static bool? GetTwoWayBindingEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.GridBase.GetOption", dxTarget, "twoWayBindingEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "twoWayBindingEnabled");
 		}
 		public static void SetTwoWayBindingEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.SetOption", dxTarget, "twoWayBindingEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "twoWayBindingEnabled", value);
 		}
 		public static bool? GetWordWrapEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.GridBase.GetOption", dxTarget, "wordWrapEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "wordWrapEnabled");
 		}
 		public static void SetWordWrapEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.SetOption", dxTarget, "wordWrapEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "wordWrapEnabled", value);
 		}
 		public static void BeginCustomLoading(ElementRef dxTarget, string messageText)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.beginCustomLoading_0", dxTarget, messageText);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_beginCustomLoading_0", dxTarget, messageText);
 		}
 		public static object ByKey(ElementRef dxTarget, object key)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.byKey_1", dxTarget, key);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_byKey_1", dxTarget, key);
 		}
 		public static void CancelEditData(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.cancelEditData_2", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_cancelEditData_2", dxTarget);
 		}
 		public static object CellValue(ElementRef dxTarget, float rowIndex, string dataField)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.cellValue_3", dxTarget, rowIndex, dataField);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_cellValue_3", dxTarget, rowIndex, dataField);
 		}
 		public static void CellValue(ElementRef dxTarget, float rowIndex, string dataField, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.cellValue_4", dxTarget, rowIndex, dataField, value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_cellValue_4", dxTarget, rowIndex, dataField, value);
 		}
 		public static object CellValue(ElementRef dxTarget, float rowIndex, float visibleColumnIndex)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.cellValue_5", dxTarget, rowIndex, visibleColumnIndex);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_cellValue_5", dxTarget, rowIndex, visibleColumnIndex);
 		}
 		public static void CellValue(ElementRef dxTarget, float rowIndex, float visibleColumnIndex, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.cellValue_6", dxTarget, rowIndex, visibleColumnIndex, value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_cellValue_6", dxTarget, rowIndex, visibleColumnIndex, value);
 		}
 		public static void ClearFilter(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.clearFilter_7", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_clearFilter_7", dxTarget);
 		}
 		public static void ClearFilter(ElementRef dxTarget, string filterName)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.clearFilter_8", dxTarget, filterName);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_clearFilter_8", dxTarget, filterName);
 		}
 		public static void ClearSelection(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.clearSelection_9", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_clearSelection_9", dxTarget);
 		}
 		public static void ClearSorting(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.clearSorting_10", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_clearSorting_10", dxTarget);
 		}
 		public static void CloseEditCell(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.closeEditCell_11", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_closeEditCell_11", dxTarget);
 		}
 		public static void CollapseAdaptiveDetailRow(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.collapseAdaptiveDetailRow_12", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_collapseAdaptiveDetailRow_12", dxTarget);
 		}
 		public static float ColumnCount(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float>("BlazorDevExtreme.GridBase.columnCount_13", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float>("BlazorDevExtreme_GridBase_columnCount_13", dxTarget);
 		}
 		public static object ColumnOption(ElementRef dxTarget, object id)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.columnOption_14", dxTarget, id);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_columnOption_14", dxTarget, id);
 		}
 		public static object ColumnOption(ElementRef dxTarget, object id, string optionName)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.columnOption_15", dxTarget, id, optionName);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_columnOption_15", dxTarget, id, optionName);
 		}
 		public static void ColumnOption(ElementRef dxTarget, object id, string optionName, object optionValue)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.columnOption_16", dxTarget, id, optionName, optionValue);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_columnOption_16", dxTarget, id, optionName, optionValue);
 		}
 		public static void ColumnOption(ElementRef dxTarget, object id, object options)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.columnOption_17", dxTarget, id, options);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_columnOption_17", dxTarget, id, options);
 		}
 		public static void DeleteColumn(ElementRef dxTarget, object id)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.deleteColumn_18", dxTarget, id);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_deleteColumn_18", dxTarget, id);
 		}
 		public static void DeleteRow(ElementRef dxTarget, float rowIndex)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.deleteRow_19", dxTarget, rowIndex);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_deleteRow_19", dxTarget, rowIndex);
 		}
 		public static object DeselectAll(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.deselectAll_20", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_deselectAll_20", dxTarget);
 		}
 		public static object DeselectRows(ElementRef dxTarget, object keys)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.deselectRows_21", dxTarget, keys);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_deselectRows_21", dxTarget, keys);
 		}
 		public static void EditCell(ElementRef dxTarget, float rowIndex, string dataField)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.editCell_22", dxTarget, rowIndex, dataField);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_editCell_22", dxTarget, rowIndex, dataField);
 		}
 		public static void EditCell(ElementRef dxTarget, float rowIndex, float visibleColumnIndex)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.editCell_23", dxTarget, rowIndex, visibleColumnIndex);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_editCell_23", dxTarget, rowIndex, visibleColumnIndex);
 		}
 		public static void EditRow(ElementRef dxTarget, float rowIndex)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.editRow_24", dxTarget, rowIndex);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_editRow_24", dxTarget, rowIndex);
 		}
 		public static void EndCustomLoading(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.endCustomLoading_25", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_endCustomLoading_25", dxTarget);
 		}
 		public static void ExpandAdaptiveDetailRow(ElementRef dxTarget, object key)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.expandAdaptiveDetailRow_26", dxTarget, key);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_expandAdaptiveDetailRow_26", dxTarget, key);
 		}
 		public static object Filter(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.filter_27", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_filter_27", dxTarget);
 		}
 		public static void Filter(ElementRef dxTarget, object filterExpr)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.filter_28", dxTarget, filterExpr);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_filter_28", dxTarget, filterExpr);
 		}
 		public static void Focus(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.focus_29", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_focus_29", dxTarget);
 		}
 		public static void Focus(ElementRef dxTarget, object element)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.focus_30", dxTarget, element);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_focus_30", dxTarget, element);
 		}
 		public static object GetCellElement(ElementRef dxTarget, float rowIndex, string dataField)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.getCellElement_31", dxTarget, rowIndex, dataField);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_getCellElement_31", dxTarget, rowIndex, dataField);
 		}
 		public static object GetCellElement(ElementRef dxTarget, float rowIndex, float visibleColumnIndex)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.getCellElement_32", dxTarget, rowIndex, visibleColumnIndex);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_getCellElement_32", dxTarget, rowIndex, visibleColumnIndex);
 		}
 		public static object GetCombinedFilter(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.getCombinedFilter_33", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_getCombinedFilter_33", dxTarget);
 		}
 		public static object GetCombinedFilter(ElementRef dxTarget, bool returnDataField)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.getCombinedFilter_34", dxTarget, returnDataField);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_getCombinedFilter_34", dxTarget, returnDataField);
 		}
 		public static object GetDataSourceEx(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.getDataSource_35", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_getDataSource_35", dxTarget);
 		}
 		public static object GetKeyByRowIndex(ElementRef dxTarget, float rowIndex)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.getKeyByRowIndex_36", dxTarget, rowIndex);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_getKeyByRowIndex_36", dxTarget, rowIndex);
 		}
 		public static object GetRowElement(ElementRef dxTarget, float rowIndex)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.getRowElement_37", dxTarget, rowIndex);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_getRowElement_37", dxTarget, rowIndex);
 		}
 		public static float GetRowIndexByKey(ElementRef dxTarget, object key)
 		{
-			return RegisteredFunction.Invoke<float>("BlazorDevExtreme.GridBase.getRowIndexByKey_38", dxTarget, key);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float>("BlazorDevExtreme_GridBase_getRowIndexByKey_38", dxTarget, key);
 		}
 		public static object GetScrollable(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.getScrollable_39", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_getScrollable_39", dxTarget);
 		}
 		public static bool HasEditData(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool>("BlazorDevExtreme.GridBase.hasEditData_40", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool>("BlazorDevExtreme_GridBase_hasEditData_40", dxTarget);
 		}
 		public static void HideColumnChooser(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.hideColumnChooser_41", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_hideColumnChooser_41", dxTarget);
 		}
 		public static void IsAdaptiveDetailRowExpanded(ElementRef dxTarget, object key)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.isAdaptiveDetailRowExpanded_42", dxTarget, key);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_isAdaptiveDetailRowExpanded_42", dxTarget, key);
 		}
 		public static bool IsRowSelected(ElementRef dxTarget, object key)
 		{
-			return RegisteredFunction.Invoke<bool>("BlazorDevExtreme.GridBase.isRowSelected_43", dxTarget, key);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool>("BlazorDevExtreme_GridBase_isRowSelected_43", dxTarget, key);
 		}
 		public static object KeyOf(ElementRef dxTarget, object obj)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.keyOf_44", dxTarget, obj);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_keyOf_44", dxTarget, obj);
 		}
 		public static float PageCount(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float>("BlazorDevExtreme.GridBase.pageCount_45", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float>("BlazorDevExtreme_GridBase_pageCount_45", dxTarget);
 		}
 		public static float PageIndex(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float>("BlazorDevExtreme.GridBase.pageIndex_46", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float>("BlazorDevExtreme_GridBase_pageIndex_46", dxTarget);
 		}
 		public static object PageIndex(ElementRef dxTarget, float newIndex)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.pageIndex_47", dxTarget, newIndex);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_pageIndex_47", dxTarget, newIndex);
 		}
 		public static float PageSize(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float>("BlazorDevExtreme.GridBase.pageSize_48", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float>("BlazorDevExtreme_GridBase_pageSize_48", dxTarget);
 		}
 		public static void PageSize(ElementRef dxTarget, float value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.pageSize_49", dxTarget, value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_pageSize_49", dxTarget, value);
 		}
 		public static object Refresh(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.refresh_50", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_refresh_50", dxTarget);
 		}
 		public static void RepaintRows(ElementRef dxTarget, object rowIndexes)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.repaintRows_51", dxTarget, rowIndexes);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_repaintRows_51", dxTarget, rowIndexes);
 		}
 		public static object SaveEditData(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.saveEditData_52", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_saveEditData_52", dxTarget);
 		}
 		public static void SearchByText(ElementRef dxTarget, string text)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.searchByText_53", dxTarget, text);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_searchByText_53", dxTarget, text);
 		}
 		public static object SelectAll(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.selectAll_54", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_selectAll_54", dxTarget);
 		}
 		public static object SelectRows(ElementRef dxTarget, object keys, bool preserve)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.selectRows_55", dxTarget, keys, preserve);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_selectRows_55", dxTarget, keys, preserve);
 		}
 		public static object SelectRowsByIndexes(ElementRef dxTarget, object indexes)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.selectRowsByIndexes_56", dxTarget, indexes);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_selectRowsByIndexes_56", dxTarget, indexes);
 		}
 		public static void ShowColumnChooser(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.showColumnChooser_57", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_showColumnChooser_57", dxTarget);
 		}
 		public static object State(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.state_58", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_state_58", dxTarget);
 		}
 		public static void State(ElementRef dxTarget, object state)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.state_59", dxTarget, state);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_state_59", dxTarget, state);
 		}
 		public static void UndeleteRow(ElementRef dxTarget, float rowIndex)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.undeleteRow_60", dxTarget, rowIndex);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_undeleteRow_60", dxTarget, rowIndex);
 		}
 		public static void UpdateDimensions(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.GridBase.updateDimensions_61", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_GridBase_updateDimensions_61", dxTarget);
 		}
 	}
 	public class DxDataGridInterop: GridBaseInterop
@@ -3414,259 +3464,271 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.DxDataGridOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDataGrid.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDataGrid_Init", dxTarget, json);
 		}
+		[JSInvokable("DevExpress.Ui.DxDataGridInterop.OnCellClick")]
 		public static void OnCellClick(string identifier)
 		{
 			CellClick?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxDataGridInterop.OnCellHoverChanged")]
 		public static void OnCellHoverChanged(string identifier)
 		{
 			CellHoverChanged?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxDataGridInterop.OnCellPrepared")]
 		public static void OnCellPrepared(string identifier)
 		{
 			CellPrepared?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxDataGridInterop.OnContextMenuPreparing")]
 		public static void OnContextMenuPreparing(string identifier)
 		{
 			ContextMenuPreparing?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxDataGridInterop.OnEditingStart")]
 		public static void OnEditingStart(string identifier)
 		{
 			EditingStart?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxDataGridInterop.OnEditorPrepared")]
 		public static void OnEditorPrepared(string identifier)
 		{
 			EditorPrepared?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxDataGridInterop.OnEditorPreparing")]
 		public static void OnEditorPreparing(string identifier)
 		{
 			EditorPreparing?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxDataGridInterop.OnExported")]
 		public static void OnExported(string identifier)
 		{
 			Exported?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxDataGridInterop.OnExporting")]
 		public static void OnExporting(string identifier)
 		{
 			Exporting?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxDataGridInterop.OnFileSaving")]
 		public static void OnFileSaving(string identifier)
 		{
 			FileSaving?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxDataGridInterop.OnRowClick")]
 		public static void OnRowClick(string identifier)
 		{
 			RowClick?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxDataGridInterop.OnRowPrepared")]
 		public static void OnRowPrepared(string identifier)
 		{
 			RowPrepared?.Invoke(null, new JQueryEventArgs(identifier));
 		}
 		public static new object GetColumns(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDataGrid.GetOption", dxTarget, "columns");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDataGrid_GetOption", dxTarget, "columns");
 		}
 		public static new void SetColumns(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDataGrid.SetOption", dxTarget, "columns", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDataGrid_SetOption", dxTarget, "columns", value);
 		}
 		public static object GetCustomizeColumns(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDataGrid.GetOption", dxTarget, "customizeColumns");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDataGrid_GetOption", dxTarget, "customizeColumns");
 		}
 		public static void SetCustomizeColumns(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDataGrid.SetOption", dxTarget, "customizeColumns", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDataGrid_SetOption", dxTarget, "customizeColumns", value);
 		}
 		public static object GetCustomizeExportData(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDataGrid.GetOption", dxTarget, "customizeExportData");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDataGrid_GetOption", dxTarget, "customizeExportData");
 		}
 		public static void SetCustomizeExportData(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDataGrid.SetOption", dxTarget, "customizeExportData", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDataGrid_SetOption", dxTarget, "customizeExportData", value);
 		}
 		public static new object GetEditing(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDataGrid.GetOption", dxTarget, "editing");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDataGrid_GetOption", dxTarget, "editing");
 		}
 		public static new void SetEditing(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDataGrid.SetOption", dxTarget, "editing", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDataGrid_SetOption", dxTarget, "editing", value);
 		}
 		public static object GetExport(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDataGrid.GetOption", dxTarget, "export");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDataGrid_GetOption", dxTarget, "export");
 		}
 		public static void SetExport(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDataGrid.SetOption", dxTarget, "export", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDataGrid_SetOption", dxTarget, "export", value);
 		}
 		public static object GetGrouping(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDataGrid.GetOption", dxTarget, "grouping");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDataGrid_GetOption", dxTarget, "grouping");
 		}
 		public static void SetGrouping(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDataGrid.SetOption", dxTarget, "grouping", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDataGrid_SetOption", dxTarget, "grouping", value);
 		}
 		public static object GetGroupPanel(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDataGrid.GetOption", dxTarget, "groupPanel");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDataGrid_GetOption", dxTarget, "groupPanel");
 		}
 		public static void SetGroupPanel(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDataGrid.SetOption", dxTarget, "groupPanel", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDataGrid_SetOption", dxTarget, "groupPanel", value);
 		}
 		public static object GetKeyExpr(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDataGrid.GetOption", dxTarget, "keyExpr");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDataGrid_GetOption", dxTarget, "keyExpr");
 		}
 		public static void SetKeyExpr(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDataGrid.SetOption", dxTarget, "keyExpr", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDataGrid_SetOption", dxTarget, "keyExpr", value);
 		}
 		public static object GetMasterDetail(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDataGrid.GetOption", dxTarget, "masterDetail");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDataGrid_GetOption", dxTarget, "masterDetail");
 		}
 		public static void SetMasterDetail(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDataGrid.SetOption", dxTarget, "masterDetail", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDataGrid_SetOption", dxTarget, "masterDetail", value);
 		}
 		public static object GetRemoteOperations(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDataGrid.GetOption", dxTarget, "remoteOperations");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDataGrid_GetOption", dxTarget, "remoteOperations");
 		}
 		public static void SetRemoteOperations(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDataGrid.SetOption", dxTarget, "remoteOperations", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDataGrid_SetOption", dxTarget, "remoteOperations", value);
 		}
 		public static object GetRowTemplate(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDataGrid.GetOption", dxTarget, "rowTemplate");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDataGrid_GetOption", dxTarget, "rowTemplate");
 		}
 		public static void SetRowTemplate(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDataGrid.SetOption", dxTarget, "rowTemplate", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDataGrid_SetOption", dxTarget, "rowTemplate", value);
 		}
 		public static new object GetScrolling(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDataGrid.GetOption", dxTarget, "scrolling");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDataGrid_GetOption", dxTarget, "scrolling");
 		}
 		public static new void SetScrolling(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDataGrid.SetOption", dxTarget, "scrolling", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDataGrid_SetOption", dxTarget, "scrolling", value);
 		}
 		public static new object GetSelection(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDataGrid.GetOption", dxTarget, "selection");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDataGrid_GetOption", dxTarget, "selection");
 		}
 		public static new void SetSelection(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDataGrid.SetOption", dxTarget, "selection", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDataGrid_SetOption", dxTarget, "selection", value);
 		}
 		public static object GetSelectionFilter(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDataGrid.GetOption", dxTarget, "selectionFilter");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDataGrid_GetOption", dxTarget, "selectionFilter");
 		}
 		public static void SetSelectionFilter(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDataGrid.SetOption", dxTarget, "selectionFilter", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDataGrid_SetOption", dxTarget, "selectionFilter", value);
 		}
 		public static object GetSortByGroupSummaryInfo(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDataGrid.GetOption", dxTarget, "sortByGroupSummaryInfo");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDataGrid_GetOption", dxTarget, "sortByGroupSummaryInfo");
 		}
 		public static void SetSortByGroupSummaryInfo(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDataGrid.SetOption", dxTarget, "sortByGroupSummaryInfo", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDataGrid_SetOption", dxTarget, "sortByGroupSummaryInfo", value);
 		}
 		public static object GetSummary(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDataGrid.GetOption", dxTarget, "summary");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDataGrid_GetOption", dxTarget, "summary");
 		}
 		public static void SetSummary(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDataGrid.SetOption", dxTarget, "summary", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDataGrid_SetOption", dxTarget, "summary", value);
 		}
 		public static void AddColumn(ElementRef dxTarget, object columnOptions)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDataGrid.addColumn_0", dxTarget, columnOptions);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDataGrid_addColumn_0", dxTarget, columnOptions);
 		}
 		public static void AddRow(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDataGrid.addRow_1", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDataGrid_addRow_1", dxTarget);
 		}
 		public static void ClearGrouping(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDataGrid.clearGrouping_2", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDataGrid_clearGrouping_2", dxTarget);
 		}
 		public static void CollapseAll(ElementRef dxTarget, float groupIndex)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDataGrid.collapseAll_3", dxTarget, groupIndex);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDataGrid_collapseAll_3", dxTarget, groupIndex);
 		}
 		public static object CollapseRow(ElementRef dxTarget, object key)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDataGrid.collapseRow_4", dxTarget, key);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDataGrid_collapseRow_4", dxTarget, key);
 		}
 		public static void ExpandAll(ElementRef dxTarget, float groupIndex)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDataGrid.expandAll_5", dxTarget, groupIndex);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDataGrid_expandAll_5", dxTarget, groupIndex);
 		}
 		public static object ExpandRow(ElementRef dxTarget, object key)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDataGrid.expandRow_6", dxTarget, key);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDataGrid_expandRow_6", dxTarget, key);
 		}
 		public static void ExportToExcel(ElementRef dxTarget, bool selectionOnly)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDataGrid.exportToExcel_7", dxTarget, selectionOnly);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDataGrid_exportToExcel_7", dxTarget, selectionOnly);
 		}
 		public static object GetSelectedRowKeys(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDataGrid.getSelectedRowKeys_8", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDataGrid_getSelectedRowKeys_8", dxTarget);
 		}
 		public static object GetSelectedRowsData(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDataGrid.getSelectedRowsData_9", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDataGrid_getSelectedRowsData_9", dxTarget);
 		}
 		public static object GetTotalSummaryValue(ElementRef dxTarget, string summaryItemName)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDataGrid.getTotalSummaryValue_10", dxTarget, summaryItemName);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDataGrid_getTotalSummaryValue_10", dxTarget, summaryItemName);
 		}
 		public static object GetVisibleColumns(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDataGrid.getVisibleColumns_11", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDataGrid_getVisibleColumns_11", dxTarget);
 		}
 		public static object GetVisibleColumns(ElementRef dxTarget, float headerLevel)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDataGrid.getVisibleColumns_12", dxTarget, headerLevel);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDataGrid_getVisibleColumns_12", dxTarget, headerLevel);
 		}
 		public static object GetVisibleRows(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDataGrid.getVisibleRows_13", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDataGrid_getVisibleRows_13", dxTarget);
 		}
 		public static void InsertRow(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDataGrid.insertRow_14", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDataGrid_insertRow_14", dxTarget);
 		}
 		public static bool IsRowExpanded(ElementRef dxTarget, object key)
 		{
-			return RegisteredFunction.Invoke<bool>("BlazorDevExtreme.DxDataGrid.isRowExpanded_15", dxTarget, key);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool>("BlazorDevExtreme_DxDataGrid_isRowExpanded_15", dxTarget, key);
 		}
 		public static bool IsRowSelected(ElementRef dxTarget, object data)
 		{
-			return RegisteredFunction.Invoke<bool>("BlazorDevExtreme.DxDataGrid.isRowSelected_16", dxTarget, data);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool>("BlazorDevExtreme_DxDataGrid_isRowSelected_16", dxTarget, data);
 		}
 		public static void RemoveRow(ElementRef dxTarget, float rowIndex)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDataGrid.removeRow_18", dxTarget, rowIndex);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDataGrid_removeRow_18", dxTarget, rowIndex);
 		}
 		public static float TotalCount(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float>("BlazorDevExtreme.DxDataGrid.totalCount_19", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float>("BlazorDevExtreme_DxDataGrid_totalCount_19", dxTarget);
 		}
 	}
 	public class DxDateBoxInterop: DxDropDownEditorInterop
@@ -3674,167 +3736,167 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.DxDateBoxOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDateBox.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDateBox_Init", dxTarget, json);
 		}
 		public static bool? GetAdaptivityEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxDateBox.GetOption", dxTarget, "adaptivityEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxDateBox_GetOption", dxTarget, "adaptivityEnabled");
 		}
 		public static void SetAdaptivityEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDateBox.SetOption", dxTarget, "adaptivityEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDateBox_SetOption", dxTarget, "adaptivityEnabled", value);
 		}
 		public static string GetApplyButtonText(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxDateBox.GetOption", dxTarget, "applyButtonText");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxDateBox_GetOption", dxTarget, "applyButtonText");
 		}
 		public static void SetApplyButtonText(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDateBox.SetOption", dxTarget, "applyButtonText", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDateBox_SetOption", dxTarget, "applyButtonText", value);
 		}
 		public static object GetCalendarOptions(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDateBox.GetOption", dxTarget, "calendarOptions");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDateBox_GetOption", dxTarget, "calendarOptions");
 		}
 		public static void SetCalendarOptions(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDateBox.SetOption", dxTarget, "calendarOptions", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDateBox_SetOption", dxTarget, "calendarOptions", value);
 		}
 		public static string GetCancelButtonText(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxDateBox.GetOption", dxTarget, "cancelButtonText");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxDateBox_GetOption", dxTarget, "cancelButtonText");
 		}
 		public static void SetCancelButtonText(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDateBox.SetOption", dxTarget, "cancelButtonText", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDateBox_SetOption", dxTarget, "cancelButtonText", value);
 		}
 		public static string GetDateOutOfRangeMessage(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxDateBox.GetOption", dxTarget, "dateOutOfRangeMessage");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxDateBox_GetOption", dxTarget, "dateOutOfRangeMessage");
 		}
 		public static void SetDateOutOfRangeMessage(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDateBox.SetOption", dxTarget, "dateOutOfRangeMessage", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDateBox_SetOption", dxTarget, "dateOutOfRangeMessage", value);
 		}
 		public static string GetDateSerializationFormat(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxDateBox.GetOption", dxTarget, "dateSerializationFormat");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxDateBox_GetOption", dxTarget, "dateSerializationFormat");
 		}
 		public static void SetDateSerializationFormat(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDateBox.SetOption", dxTarget, "dateSerializationFormat", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDateBox_SetOption", dxTarget, "dateSerializationFormat", value);
 		}
 		public static object GetDisabledDates(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDateBox.GetOption", dxTarget, "disabledDates");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDateBox_GetOption", dxTarget, "disabledDates");
 		}
 		public static void SetDisabledDates(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDateBox.SetOption", dxTarget, "disabledDates", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDateBox_SetOption", dxTarget, "disabledDates", value);
 		}
 		public static object GetDisplayFormat(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDateBox.GetOption", dxTarget, "displayFormat");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDateBox_GetOption", dxTarget, "displayFormat");
 		}
 		public static void SetDisplayFormat(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDateBox.SetOption", dxTarget, "displayFormat", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDateBox_SetOption", dxTarget, "displayFormat", value);
 		}
 		public static float? GetInterval(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxDateBox.GetOption", dxTarget, "interval");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxDateBox_GetOption", dxTarget, "interval");
 		}
 		public static void SetInterval(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDateBox.SetOption", dxTarget, "interval", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDateBox_SetOption", dxTarget, "interval", value);
 		}
 		public static string GetInvalidDateMessage(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxDateBox.GetOption", dxTarget, "invalidDateMessage");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxDateBox_GetOption", dxTarget, "invalidDateMessage");
 		}
 		public static void SetInvalidDateMessage(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDateBox.SetOption", dxTarget, "invalidDateMessage", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDateBox_SetOption", dxTarget, "invalidDateMessage", value);
 		}
 		public static object GetMax(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDateBox.GetOption", dxTarget, "max");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDateBox_GetOption", dxTarget, "max");
 		}
 		public static void SetMax(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDateBox.SetOption", dxTarget, "max", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDateBox_SetOption", dxTarget, "max", value);
 		}
 		public static string GetMaxZoomLevel(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxDateBox.GetOption", dxTarget, "maxZoomLevel");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxDateBox_GetOption", dxTarget, "maxZoomLevel");
 		}
 		public static void SetMaxZoomLevel(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDateBox.SetOption", dxTarget, "maxZoomLevel", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDateBox_SetOption", dxTarget, "maxZoomLevel", value);
 		}
 		public static object GetMin(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDateBox.GetOption", dxTarget, "min");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDateBox_GetOption", dxTarget, "min");
 		}
 		public static void SetMin(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDateBox.SetOption", dxTarget, "min", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDateBox_SetOption", dxTarget, "min", value);
 		}
 		public static string GetMinZoomLevel(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxDateBox.GetOption", dxTarget, "minZoomLevel");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxDateBox_GetOption", dxTarget, "minZoomLevel");
 		}
 		public static void SetMinZoomLevel(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDateBox.SetOption", dxTarget, "minZoomLevel", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDateBox_SetOption", dxTarget, "minZoomLevel", value);
 		}
 		public static string GetPickerType(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxDateBox.GetOption", dxTarget, "pickerType");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxDateBox_GetOption", dxTarget, "pickerType");
 		}
 		public static void SetPickerType(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDateBox.SetOption", dxTarget, "pickerType", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDateBox_SetOption", dxTarget, "pickerType", value);
 		}
 		public static new string GetPlaceholder(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxDateBox.GetOption", dxTarget, "placeholder");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxDateBox_GetOption", dxTarget, "placeholder");
 		}
 		public static new void SetPlaceholder(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDateBox.SetOption", dxTarget, "placeholder", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDateBox_SetOption", dxTarget, "placeholder", value);
 		}
 		public static bool? GetShowAnalogClock(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxDateBox.GetOption", dxTarget, "showAnalogClock");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxDateBox_GetOption", dxTarget, "showAnalogClock");
 		}
 		public static void SetShowAnalogClock(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDateBox.SetOption", dxTarget, "showAnalogClock", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDateBox_SetOption", dxTarget, "showAnalogClock", value);
 		}
 		public static string GetType(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxDateBox.GetOption", dxTarget, "type");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxDateBox_GetOption", dxTarget, "type");
 		}
 		public static void SetType(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDateBox.SetOption", dxTarget, "type", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDateBox_SetOption", dxTarget, "type", value);
 		}
 		public static new object GetValue(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDateBox.GetOption", dxTarget, "value");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDateBox_GetOption", dxTarget, "value");
 		}
 		public static new void SetValue(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDateBox.SetOption", dxTarget, "value", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDateBox_SetOption", dxTarget, "value", value);
 		}
 		public static void Close(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDateBox.close_0", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDateBox_close_0", dxTarget);
 		}
 		public static void Open(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDateBox.open_1", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDateBox_open_1", dxTarget);
 		}
 	}
 	public class DxDeferRenderingInterop: WidgetInterop
@@ -3844,47 +3906,49 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.DxDeferRenderingOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDeferRendering.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDeferRendering_Init", dxTarget, json);
 		}
+		[JSInvokable("DevExpress.Ui.DxDeferRenderingInterop.OnRendered")]
 		public static void OnRendered(string identifier)
 		{
 			Rendered?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxDeferRenderingInterop.OnShown")]
 		public static void OnShown(string identifier)
 		{
 			Shown?.Invoke(null, new JQueryEventArgs(identifier));
 		}
 		public static object GetAnimation(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDeferRendering.GetOption", dxTarget, "animation");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDeferRendering_GetOption", dxTarget, "animation");
 		}
 		public static void SetAnimation(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDeferRendering.SetOption", dxTarget, "animation", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDeferRendering_SetOption", dxTarget, "animation", value);
 		}
 		public static object GetRenderWhen(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDeferRendering.GetOption", dxTarget, "renderWhen");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDeferRendering_GetOption", dxTarget, "renderWhen");
 		}
 		public static void SetRenderWhen(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDeferRendering.SetOption", dxTarget, "renderWhen", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDeferRendering_SetOption", dxTarget, "renderWhen", value);
 		}
 		public static bool? GetShowLoadIndicator(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxDeferRendering.GetOption", dxTarget, "showLoadIndicator");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxDeferRendering_GetOption", dxTarget, "showLoadIndicator");
 		}
 		public static void SetShowLoadIndicator(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDeferRendering.SetOption", dxTarget, "showLoadIndicator", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDeferRendering_SetOption", dxTarget, "showLoadIndicator", value);
 		}
 		public static string GetStaggerItemSelector(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxDeferRendering.GetOption", dxTarget, "staggerItemSelector");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxDeferRendering_GetOption", dxTarget, "staggerItemSelector");
 		}
 		public static void SetStaggerItemSelector(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDeferRendering.SetOption", dxTarget, "staggerItemSelector", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDeferRendering_SetOption", dxTarget, "staggerItemSelector", value);
 		}
 	}
 	public class DxDropDownBoxInterop: DxDropDownEditorInterop
@@ -3892,51 +3956,51 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.DxDropDownBoxOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownBox.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDropDownBox_Init", dxTarget, json);
 		}
 		public static new bool? GetAcceptCustomValue(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxDropDownBox.GetOption", dxTarget, "acceptCustomValue");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxDropDownBox_GetOption", dxTarget, "acceptCustomValue");
 		}
 		public static new void SetAcceptCustomValue(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownBox.SetOption", dxTarget, "acceptCustomValue", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDropDownBox_SetOption", dxTarget, "acceptCustomValue", value);
 		}
 		public static object GetContentTemplate(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownBox.GetOption", dxTarget, "contentTemplate");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDropDownBox_GetOption", dxTarget, "contentTemplate");
 		}
 		public static void SetContentTemplate(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownBox.SetOption", dxTarget, "contentTemplate", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDropDownBox_SetOption", dxTarget, "contentTemplate", value);
 		}
 		public static object GetDropDownOptions(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownBox.GetOption", dxTarget, "dropDownOptions");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDropDownBox_GetOption", dxTarget, "dropDownOptions");
 		}
 		public static void SetDropDownOptions(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownBox.SetOption", dxTarget, "dropDownOptions", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDropDownBox_SetOption", dxTarget, "dropDownOptions", value);
 		}
 		public static object GetFieldTemplate(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownBox.GetOption", dxTarget, "fieldTemplate");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDropDownBox_GetOption", dxTarget, "fieldTemplate");
 		}
 		public static void SetFieldTemplate(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownBox.SetOption", dxTarget, "fieldTemplate", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDropDownBox_SetOption", dxTarget, "fieldTemplate", value);
 		}
 		public static new string GetValueChangeEvent(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxDropDownBox.GetOption", dxTarget, "valueChangeEvent");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxDropDownBox_GetOption", dxTarget, "valueChangeEvent");
 		}
 		public static new void SetValueChangeEvent(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownBox.SetOption", dxTarget, "valueChangeEvent", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDropDownBox_SetOption", dxTarget, "valueChangeEvent", value);
 		}
 		public static object GetDataSourceEx(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownBox.getDataSource_0", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDropDownBox_getDataSource_0", dxTarget);
 		}
 	}
 	public class DxDropDownMenuInterop: WidgetInterop
@@ -3946,111 +4010,113 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.DxDropDownMenuOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownMenu.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDropDownMenu_Init", dxTarget, json);
 		}
+		[JSInvokable("DevExpress.Ui.DxDropDownMenuInterop.OnButtonClick")]
 		public static void OnButtonClick(string identifier)
 		{
 			ButtonClick?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxDropDownMenuInterop.OnItemClick")]
 		public static void OnItemClick(string identifier)
 		{
 			ItemClick?.Invoke(null, new JQueryEventArgs(identifier));
 		}
 		public static new bool? GetActiveStateEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxDropDownMenu.GetOption", dxTarget, "activeStateEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxDropDownMenu_GetOption", dxTarget, "activeStateEnabled");
 		}
 		public static new void SetActiveStateEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownMenu.SetOption", dxTarget, "activeStateEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDropDownMenu_SetOption", dxTarget, "activeStateEnabled", value);
 		}
 		public static string GetButtonIcon(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxDropDownMenu.GetOption", dxTarget, "buttonIcon");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxDropDownMenu_GetOption", dxTarget, "buttonIcon");
 		}
 		public static void SetButtonIcon(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownMenu.SetOption", dxTarget, "buttonIcon", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDropDownMenu_SetOption", dxTarget, "buttonIcon", value);
 		}
 		public static string GetButtonText(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxDropDownMenu.GetOption", dxTarget, "buttonText");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxDropDownMenu_GetOption", dxTarget, "buttonText");
 		}
 		public static void SetButtonText(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownMenu.SetOption", dxTarget, "buttonText", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDropDownMenu_SetOption", dxTarget, "buttonText", value);
 		}
 		public static object GetDataSource(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownMenu.GetOption", dxTarget, "dataSource");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDropDownMenu_GetOption", dxTarget, "dataSource");
 		}
 		public static void SetDataSource(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownMenu.SetOption", dxTarget, "dataSource", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDropDownMenu_SetOption", dxTarget, "dataSource", value);
 		}
 		public static new bool? GetHoverStateEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxDropDownMenu.GetOption", dxTarget, "hoverStateEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxDropDownMenu_GetOption", dxTarget, "hoverStateEnabled");
 		}
 		public static new void SetHoverStateEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownMenu.SetOption", dxTarget, "hoverStateEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDropDownMenu_SetOption", dxTarget, "hoverStateEnabled", value);
 		}
 		public static object GetItems(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownMenu.GetOption", dxTarget, "items");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDropDownMenu_GetOption", dxTarget, "items");
 		}
 		public static void SetItems(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownMenu.SetOption", dxTarget, "items", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDropDownMenu_SetOption", dxTarget, "items", value);
 		}
 		public static object GetItemTemplate(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownMenu.GetOption", dxTarget, "itemTemplate");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDropDownMenu_GetOption", dxTarget, "itemTemplate");
 		}
 		public static void SetItemTemplate(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownMenu.SetOption", dxTarget, "itemTemplate", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDropDownMenu_SetOption", dxTarget, "itemTemplate", value);
 		}
 		public static bool? GetOpened(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxDropDownMenu.GetOption", dxTarget, "opened");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxDropDownMenu_GetOption", dxTarget, "opened");
 		}
 		public static void SetOpened(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownMenu.SetOption", dxTarget, "opened", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDropDownMenu_SetOption", dxTarget, "opened", value);
 		}
 		public static object GetPopupHeight(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownMenu.GetOption", dxTarget, "popupHeight");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDropDownMenu_GetOption", dxTarget, "popupHeight");
 		}
 		public static void SetPopupHeight(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownMenu.SetOption", dxTarget, "popupHeight", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDropDownMenu_SetOption", dxTarget, "popupHeight", value);
 		}
 		public static object GetPopupWidth(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownMenu.GetOption", dxTarget, "popupWidth");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDropDownMenu_GetOption", dxTarget, "popupWidth");
 		}
 		public static void SetPopupWidth(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownMenu.SetOption", dxTarget, "popupWidth", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDropDownMenu_SetOption", dxTarget, "popupWidth", value);
 		}
 		public static bool? GetUsePopover(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxDropDownMenu.GetOption", dxTarget, "usePopover");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxDropDownMenu_GetOption", dxTarget, "usePopover");
 		}
 		public static void SetUsePopover(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownMenu.SetOption", dxTarget, "usePopover", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDropDownMenu_SetOption", dxTarget, "usePopover", value);
 		}
 		public static void Close(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownMenu.close_0", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDropDownMenu_close_0", dxTarget);
 		}
 		public static void Open(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownMenu.open_1", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDropDownMenu_open_1", dxTarget);
 		}
 	}
 	public class DxFileUploaderInterop: EditorInterop
@@ -4064,175 +4130,181 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.DxFileUploaderOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFileUploader.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxFileUploader_Init", dxTarget, json);
 		}
+		[JSInvokable("DevExpress.Ui.DxFileUploaderInterop.OnProgress")]
 		public static void OnProgress(string identifier)
 		{
 			Progress?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxFileUploaderInterop.OnUploadAborted")]
 		public static void OnUploadAborted(string identifier)
 		{
 			UploadAborted?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxFileUploaderInterop.OnUploaded")]
 		public static void OnUploaded(string identifier)
 		{
 			Uploaded?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxFileUploaderInterop.OnUploadError")]
 		public static void OnUploadError(string identifier)
 		{
 			UploadError?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxFileUploaderInterop.OnUploadStarted")]
 		public static void OnUploadStarted(string identifier)
 		{
 			UploadStarted?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxFileUploaderInterop.OnValueChanged")]
 		public static void OnValueChanged(string identifier)
 		{
 			ValueChanged?.Invoke(null, new JQueryEventArgs(identifier));
 		}
 		public static string GetAccept(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxFileUploader.GetOption", dxTarget, "accept");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxFileUploader_GetOption", dxTarget, "accept");
 		}
 		public static void SetAccept(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFileUploader.SetOption", dxTarget, "accept", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxFileUploader_SetOption", dxTarget, "accept", value);
 		}
 		public static bool? GetAllowCanceling(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxFileUploader.GetOption", dxTarget, "allowCanceling");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxFileUploader_GetOption", dxTarget, "allowCanceling");
 		}
 		public static void SetAllowCanceling(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFileUploader.SetOption", dxTarget, "allowCanceling", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxFileUploader_SetOption", dxTarget, "allowCanceling", value);
 		}
 		public static new bool? GetFocusStateEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxFileUploader.GetOption", dxTarget, "focusStateEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxFileUploader_GetOption", dxTarget, "focusStateEnabled");
 		}
 		public static new void SetFocusStateEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFileUploader.SetOption", dxTarget, "focusStateEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxFileUploader_SetOption", dxTarget, "focusStateEnabled", value);
 		}
 		public static string GetLabelText(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxFileUploader.GetOption", dxTarget, "labelText");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxFileUploader_GetOption", dxTarget, "labelText");
 		}
 		public static void SetLabelText(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFileUploader.SetOption", dxTarget, "labelText", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxFileUploader_SetOption", dxTarget, "labelText", value);
 		}
 		public static bool? GetMultiple(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxFileUploader.GetOption", dxTarget, "multiple");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxFileUploader_GetOption", dxTarget, "multiple");
 		}
 		public static void SetMultiple(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFileUploader.SetOption", dxTarget, "multiple", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxFileUploader_SetOption", dxTarget, "multiple", value);
 		}
 		public static string GetName(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxFileUploader.GetOption", dxTarget, "name");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxFileUploader_GetOption", dxTarget, "name");
 		}
 		public static void SetName(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFileUploader.SetOption", dxTarget, "name", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxFileUploader_SetOption", dxTarget, "name", value);
 		}
 		public static float? GetProgress(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxFileUploader.GetOption", dxTarget, "progress");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxFileUploader_GetOption", dxTarget, "progress");
 		}
 		public static void SetProgress(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFileUploader.SetOption", dxTarget, "progress", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxFileUploader_SetOption", dxTarget, "progress", value);
 		}
 		public static string GetReadyToUploadMessage(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxFileUploader.GetOption", dxTarget, "readyToUploadMessage");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxFileUploader_GetOption", dxTarget, "readyToUploadMessage");
 		}
 		public static void SetReadyToUploadMessage(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFileUploader.SetOption", dxTarget, "readyToUploadMessage", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxFileUploader_SetOption", dxTarget, "readyToUploadMessage", value);
 		}
 		public static string GetSelectButtonText(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxFileUploader.GetOption", dxTarget, "selectButtonText");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxFileUploader_GetOption", dxTarget, "selectButtonText");
 		}
 		public static void SetSelectButtonText(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFileUploader.SetOption", dxTarget, "selectButtonText", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxFileUploader_SetOption", dxTarget, "selectButtonText", value);
 		}
 		public static bool? GetShowFileList(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxFileUploader.GetOption", dxTarget, "showFileList");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxFileUploader_GetOption", dxTarget, "showFileList");
 		}
 		public static void SetShowFileList(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFileUploader.SetOption", dxTarget, "showFileList", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxFileUploader_SetOption", dxTarget, "showFileList", value);
 		}
 		public static string GetUploadButtonText(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxFileUploader.GetOption", dxTarget, "uploadButtonText");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxFileUploader_GetOption", dxTarget, "uploadButtonText");
 		}
 		public static void SetUploadButtonText(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFileUploader.SetOption", dxTarget, "uploadButtonText", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxFileUploader_SetOption", dxTarget, "uploadButtonText", value);
 		}
 		public static string GetUploadedMessage(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxFileUploader.GetOption", dxTarget, "uploadedMessage");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxFileUploader_GetOption", dxTarget, "uploadedMessage");
 		}
 		public static void SetUploadedMessage(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFileUploader.SetOption", dxTarget, "uploadedMessage", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxFileUploader_SetOption", dxTarget, "uploadedMessage", value);
 		}
 		public static string GetUploadFailedMessage(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxFileUploader.GetOption", dxTarget, "uploadFailedMessage");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxFileUploader_GetOption", dxTarget, "uploadFailedMessage");
 		}
 		public static void SetUploadFailedMessage(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFileUploader.SetOption", dxTarget, "uploadFailedMessage", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxFileUploader_SetOption", dxTarget, "uploadFailedMessage", value);
 		}
 		public static object GetUploadHeaders(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFileUploader.GetOption", dxTarget, "uploadHeaders");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxFileUploader_GetOption", dxTarget, "uploadHeaders");
 		}
 		public static void SetUploadHeaders(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFileUploader.SetOption", dxTarget, "uploadHeaders", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxFileUploader_SetOption", dxTarget, "uploadHeaders", value);
 		}
 		public static string GetUploadMethod(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxFileUploader.GetOption", dxTarget, "uploadMethod");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxFileUploader_GetOption", dxTarget, "uploadMethod");
 		}
 		public static void SetUploadMethod(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFileUploader.SetOption", dxTarget, "uploadMethod", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxFileUploader_SetOption", dxTarget, "uploadMethod", value);
 		}
 		public static string GetUploadMode(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxFileUploader.GetOption", dxTarget, "uploadMode");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxFileUploader_GetOption", dxTarget, "uploadMode");
 		}
 		public static void SetUploadMode(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFileUploader.SetOption", dxTarget, "uploadMode", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxFileUploader_SetOption", dxTarget, "uploadMode", value);
 		}
 		public static string GetUploadUrl(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxFileUploader.GetOption", dxTarget, "uploadUrl");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxFileUploader_GetOption", dxTarget, "uploadUrl");
 		}
 		public static void SetUploadUrl(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFileUploader.SetOption", dxTarget, "uploadUrl", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxFileUploader_SetOption", dxTarget, "uploadUrl", value);
 		}
 		public static new object GetValue(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFileUploader.GetOption", dxTarget, "value");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxFileUploader_GetOption", dxTarget, "value");
 		}
 		public static new void SetValue(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFileUploader.SetOption", dxTarget, "value", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxFileUploader_SetOption", dxTarget, "value", value);
 		}
 	}
 	public class DxFilterBuilderInterop: WidgetInterop
@@ -4243,71 +4315,74 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.DxFilterBuilderOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFilterBuilder.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxFilterBuilder_Init", dxTarget, json);
 		}
+		[JSInvokable("DevExpress.Ui.DxFilterBuilderInterop.OnEditorPrepared")]
 		public static void OnEditorPrepared(string identifier)
 		{
 			EditorPrepared?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxFilterBuilderInterop.OnEditorPreparing")]
 		public static void OnEditorPreparing(string identifier)
 		{
 			EditorPreparing?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxFilterBuilderInterop.OnValueChanged")]
 		public static void OnValueChanged(string identifier)
 		{
 			ValueChanged?.Invoke(null, new JQueryEventArgs(identifier));
 		}
 		public static bool? GetAllowHierarchicalFields(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxFilterBuilder.GetOption", dxTarget, "allowHierarchicalFields");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxFilterBuilder_GetOption", dxTarget, "allowHierarchicalFields");
 		}
 		public static void SetAllowHierarchicalFields(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFilterBuilder.SetOption", dxTarget, "allowHierarchicalFields", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxFilterBuilder_SetOption", dxTarget, "allowHierarchicalFields", value);
 		}
 		public static object GetCustomOperations(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFilterBuilder.GetOption", dxTarget, "customOperations");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxFilterBuilder_GetOption", dxTarget, "customOperations");
 		}
 		public static void SetCustomOperations(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFilterBuilder.SetOption", dxTarget, "customOperations", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxFilterBuilder_SetOption", dxTarget, "customOperations", value);
 		}
 		public static object GetFields(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFilterBuilder.GetOption", dxTarget, "fields");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxFilterBuilder_GetOption", dxTarget, "fields");
 		}
 		public static void SetFields(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFilterBuilder.SetOption", dxTarget, "fields", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxFilterBuilder_SetOption", dxTarget, "fields", value);
 		}
 		public static object GetFilterOperationDescriptions(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFilterBuilder.GetOption", dxTarget, "filterOperationDescriptions");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxFilterBuilder_GetOption", dxTarget, "filterOperationDescriptions");
 		}
 		public static void SetFilterOperationDescriptions(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFilterBuilder.SetOption", dxTarget, "filterOperationDescriptions", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxFilterBuilder_SetOption", dxTarget, "filterOperationDescriptions", value);
 		}
 		public static object GetGroupOperationDescriptions(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFilterBuilder.GetOption", dxTarget, "groupOperationDescriptions");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxFilterBuilder_GetOption", dxTarget, "groupOperationDescriptions");
 		}
 		public static void SetGroupOperationDescriptions(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFilterBuilder.SetOption", dxTarget, "groupOperationDescriptions", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxFilterBuilder_SetOption", dxTarget, "groupOperationDescriptions", value);
 		}
 		public static object GetValue(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFilterBuilder.GetOption", dxTarget, "value");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxFilterBuilder_GetOption", dxTarget, "value");
 		}
 		public static void SetValue(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFilterBuilder.SetOption", dxTarget, "value", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxFilterBuilder_SetOption", dxTarget, "value", value);
 		}
 		public static object GetFilterExpression(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFilterBuilder.getFilterExpression_0", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxFilterBuilder_getFilterExpression_0", dxTarget);
 		}
 	}
 	public class DxFormInterop: WidgetInterop
@@ -4317,211 +4392,213 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.DxFormOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxForm.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxForm_Init", dxTarget, json);
 		}
+		[JSInvokable("DevExpress.Ui.DxFormInterop.OnEditorEnterKey")]
 		public static void OnEditorEnterKey(string identifier)
 		{
 			EditorEnterKey?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxFormInterop.OnFieldDataChanged")]
 		public static void OnFieldDataChanged(string identifier)
 		{
 			FieldDataChanged?.Invoke(null, new JQueryEventArgs(identifier));
 		}
 		public static bool? GetAlignItemLabels(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxForm.GetOption", dxTarget, "alignItemLabels");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxForm_GetOption", dxTarget, "alignItemLabels");
 		}
 		public static void SetAlignItemLabels(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxForm.SetOption", dxTarget, "alignItemLabels", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxForm_SetOption", dxTarget, "alignItemLabels", value);
 		}
 		public static bool? GetAlignItemLabelsInAllGroups(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxForm.GetOption", dxTarget, "alignItemLabelsInAllGroups");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxForm_GetOption", dxTarget, "alignItemLabelsInAllGroups");
 		}
 		public static void SetAlignItemLabelsInAllGroups(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxForm.SetOption", dxTarget, "alignItemLabelsInAllGroups", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxForm_SetOption", dxTarget, "alignItemLabelsInAllGroups", value);
 		}
 		public static object GetColCount(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxForm.GetOption", dxTarget, "colCount");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxForm_GetOption", dxTarget, "colCount");
 		}
 		public static void SetColCount(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxForm.SetOption", dxTarget, "colCount", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxForm_SetOption", dxTarget, "colCount", value);
 		}
 		public static object GetColCountByScreen(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxForm.GetOption", dxTarget, "colCountByScreen");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxForm_GetOption", dxTarget, "colCountByScreen");
 		}
 		public static void SetColCountByScreen(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxForm.SetOption", dxTarget, "colCountByScreen", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxForm_SetOption", dxTarget, "colCountByScreen", value);
 		}
 		public static object GetCustomizeItem(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxForm.GetOption", dxTarget, "customizeItem");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxForm_GetOption", dxTarget, "customizeItem");
 		}
 		public static void SetCustomizeItem(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxForm.SetOption", dxTarget, "customizeItem", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxForm_SetOption", dxTarget, "customizeItem", value);
 		}
 		public static object GetFormData(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxForm.GetOption", dxTarget, "formData");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxForm_GetOption", dxTarget, "formData");
 		}
 		public static void SetFormData(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxForm.SetOption", dxTarget, "formData", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxForm_SetOption", dxTarget, "formData", value);
 		}
 		public static object GetItems(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxForm.GetOption", dxTarget, "items");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxForm_GetOption", dxTarget, "items");
 		}
 		public static void SetItems(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxForm.SetOption", dxTarget, "items", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxForm_SetOption", dxTarget, "items", value);
 		}
 		public static string GetLabelLocation(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxForm.GetOption", dxTarget, "labelLocation");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxForm_GetOption", dxTarget, "labelLocation");
 		}
 		public static void SetLabelLocation(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxForm.SetOption", dxTarget, "labelLocation", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxForm_SetOption", dxTarget, "labelLocation", value);
 		}
 		public static float? GetMinColWidth(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxForm.GetOption", dxTarget, "minColWidth");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxForm_GetOption", dxTarget, "minColWidth");
 		}
 		public static void SetMinColWidth(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxForm.SetOption", dxTarget, "minColWidth", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxForm_SetOption", dxTarget, "minColWidth", value);
 		}
 		public static string GetOptionalMark(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxForm.GetOption", dxTarget, "optionalMark");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxForm_GetOption", dxTarget, "optionalMark");
 		}
 		public static void SetOptionalMark(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxForm.SetOption", dxTarget, "optionalMark", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxForm_SetOption", dxTarget, "optionalMark", value);
 		}
 		public static bool? GetReadOnly(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxForm.GetOption", dxTarget, "readOnly");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxForm_GetOption", dxTarget, "readOnly");
 		}
 		public static void SetReadOnly(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxForm.SetOption", dxTarget, "readOnly", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxForm_SetOption", dxTarget, "readOnly", value);
 		}
 		public static string GetRequiredMark(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxForm.GetOption", dxTarget, "requiredMark");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxForm_GetOption", dxTarget, "requiredMark");
 		}
 		public static void SetRequiredMark(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxForm.SetOption", dxTarget, "requiredMark", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxForm_SetOption", dxTarget, "requiredMark", value);
 		}
 		public static string GetRequiredMessage(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxForm.GetOption", dxTarget, "requiredMessage");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxForm_GetOption", dxTarget, "requiredMessage");
 		}
 		public static void SetRequiredMessage(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxForm.SetOption", dxTarget, "requiredMessage", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxForm_SetOption", dxTarget, "requiredMessage", value);
 		}
 		public static object GetScreenByWidth(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxForm.GetOption", dxTarget, "screenByWidth");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxForm_GetOption", dxTarget, "screenByWidth");
 		}
 		public static void SetScreenByWidth(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxForm.SetOption", dxTarget, "screenByWidth", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxForm_SetOption", dxTarget, "screenByWidth", value);
 		}
 		public static bool? GetScrollingEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxForm.GetOption", dxTarget, "scrollingEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxForm_GetOption", dxTarget, "scrollingEnabled");
 		}
 		public static void SetScrollingEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxForm.SetOption", dxTarget, "scrollingEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxForm_SetOption", dxTarget, "scrollingEnabled", value);
 		}
 		public static bool? GetShowColonAfterLabel(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxForm.GetOption", dxTarget, "showColonAfterLabel");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxForm_GetOption", dxTarget, "showColonAfterLabel");
 		}
 		public static void SetShowColonAfterLabel(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxForm.SetOption", dxTarget, "showColonAfterLabel", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxForm_SetOption", dxTarget, "showColonAfterLabel", value);
 		}
 		public static bool? GetShowOptionalMark(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxForm.GetOption", dxTarget, "showOptionalMark");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxForm_GetOption", dxTarget, "showOptionalMark");
 		}
 		public static void SetShowOptionalMark(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxForm.SetOption", dxTarget, "showOptionalMark", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxForm_SetOption", dxTarget, "showOptionalMark", value);
 		}
 		public static bool? GetShowRequiredMark(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxForm.GetOption", dxTarget, "showRequiredMark");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxForm_GetOption", dxTarget, "showRequiredMark");
 		}
 		public static void SetShowRequiredMark(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxForm.SetOption", dxTarget, "showRequiredMark", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxForm_SetOption", dxTarget, "showRequiredMark", value);
 		}
 		public static bool? GetShowValidationSummary(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxForm.GetOption", dxTarget, "showValidationSummary");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxForm_GetOption", dxTarget, "showValidationSummary");
 		}
 		public static void SetShowValidationSummary(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxForm.SetOption", dxTarget, "showValidationSummary", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxForm_SetOption", dxTarget, "showValidationSummary", value);
 		}
 		public static string GetValidationGroup(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxForm.GetOption", dxTarget, "validationGroup");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxForm_GetOption", dxTarget, "validationGroup");
 		}
 		public static void SetValidationGroup(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxForm.SetOption", dxTarget, "validationGroup", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxForm_SetOption", dxTarget, "validationGroup", value);
 		}
 		public static object GetEditor(ElementRef dxTarget, string dataField)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxForm.getEditor_0", dxTarget, dataField);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxForm_getEditor_0", dxTarget, dataField);
 		}
 		public static object ItemOption(ElementRef dxTarget, string id)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxForm.itemOption_1", dxTarget, id);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxForm_itemOption_1", dxTarget, id);
 		}
 		public static void ItemOption(ElementRef dxTarget, string id, string option, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxForm.itemOption_2", dxTarget, id, option, value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxForm_itemOption_2", dxTarget, id, option, value);
 		}
 		public static void ItemOption(ElementRef dxTarget, string id, object options)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxForm.itemOption_3", dxTarget, id, options);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxForm_itemOption_3", dxTarget, id, options);
 		}
 		public static void ResetValues(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxForm.resetValues_4", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxForm_resetValues_4", dxTarget);
 		}
 		public static void UpdateData(ElementRef dxTarget, object data)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxForm.updateData_5", dxTarget, data);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxForm_updateData_5", dxTarget, data);
 		}
 		public static void UpdateData(ElementRef dxTarget, string dataField, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxForm.updateData_6", dxTarget, dataField, value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxForm_updateData_6", dxTarget, dataField, value);
 		}
 		public static object UpdateDimensions(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxForm.updateDimensions_7", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxForm_updateDimensions_7", dxTarget);
 		}
 		public static object Validate(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxForm.validate_8", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxForm_validate_8", dxTarget);
 		}
 	}
 	public class DxGalleryInterop: CollectionWidgetInterop
@@ -4529,123 +4606,123 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.DxGalleryOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxGallery.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxGallery_Init", dxTarget, json);
 		}
 		public static float? GetAnimationDuration(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxGallery.GetOption", dxTarget, "animationDuration");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxGallery_GetOption", dxTarget, "animationDuration");
 		}
 		public static void SetAnimationDuration(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxGallery.SetOption", dxTarget, "animationDuration", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxGallery_SetOption", dxTarget, "animationDuration", value);
 		}
 		public static bool? GetAnimationEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxGallery.GetOption", dxTarget, "animationEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxGallery_GetOption", dxTarget, "animationEnabled");
 		}
 		public static void SetAnimationEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxGallery.SetOption", dxTarget, "animationEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxGallery_SetOption", dxTarget, "animationEnabled", value);
 		}
 		public static new bool? GetFocusStateEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxGallery.GetOption", dxTarget, "focusStateEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxGallery_GetOption", dxTarget, "focusStateEnabled");
 		}
 		public static new void SetFocusStateEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxGallery.SetOption", dxTarget, "focusStateEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxGallery_SetOption", dxTarget, "focusStateEnabled", value);
 		}
 		public static bool? GetIndicatorEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxGallery.GetOption", dxTarget, "indicatorEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxGallery_GetOption", dxTarget, "indicatorEnabled");
 		}
 		public static void SetIndicatorEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxGallery.SetOption", dxTarget, "indicatorEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxGallery_SetOption", dxTarget, "indicatorEnabled", value);
 		}
 		public static float? GetInitialItemWidth(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxGallery.GetOption", dxTarget, "initialItemWidth");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxGallery_GetOption", dxTarget, "initialItemWidth");
 		}
 		public static void SetInitialItemWidth(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxGallery.SetOption", dxTarget, "initialItemWidth", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxGallery_SetOption", dxTarget, "initialItemWidth", value);
 		}
 		public static bool? GetLoop(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxGallery.GetOption", dxTarget, "loop");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxGallery_GetOption", dxTarget, "loop");
 		}
 		public static void SetLoop(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxGallery.SetOption", dxTarget, "loop", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxGallery_SetOption", dxTarget, "loop", value);
 		}
 		public static new float? GetSelectedIndex(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxGallery.GetOption", dxTarget, "selectedIndex");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxGallery_GetOption", dxTarget, "selectedIndex");
 		}
 		public static new void SetSelectedIndex(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxGallery.SetOption", dxTarget, "selectedIndex", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxGallery_SetOption", dxTarget, "selectedIndex", value);
 		}
 		public static bool? GetShowIndicator(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxGallery.GetOption", dxTarget, "showIndicator");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxGallery_GetOption", dxTarget, "showIndicator");
 		}
 		public static void SetShowIndicator(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxGallery.SetOption", dxTarget, "showIndicator", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxGallery_SetOption", dxTarget, "showIndicator", value);
 		}
 		public static bool? GetShowNavButtons(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxGallery.GetOption", dxTarget, "showNavButtons");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxGallery_GetOption", dxTarget, "showNavButtons");
 		}
 		public static void SetShowNavButtons(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxGallery.SetOption", dxTarget, "showNavButtons", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxGallery_SetOption", dxTarget, "showNavButtons", value);
 		}
 		public static float? GetSlideshowDelay(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxGallery.GetOption", dxTarget, "slideshowDelay");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxGallery_GetOption", dxTarget, "slideshowDelay");
 		}
 		public static void SetSlideshowDelay(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxGallery.SetOption", dxTarget, "slideshowDelay", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxGallery_SetOption", dxTarget, "slideshowDelay", value);
 		}
 		public static bool? GetStretchImages(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxGallery.GetOption", dxTarget, "stretchImages");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxGallery_GetOption", dxTarget, "stretchImages");
 		}
 		public static void SetStretchImages(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxGallery.SetOption", dxTarget, "stretchImages", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxGallery_SetOption", dxTarget, "stretchImages", value);
 		}
 		public static bool? GetSwipeEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxGallery.GetOption", dxTarget, "swipeEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxGallery_GetOption", dxTarget, "swipeEnabled");
 		}
 		public static void SetSwipeEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxGallery.SetOption", dxTarget, "swipeEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxGallery_SetOption", dxTarget, "swipeEnabled", value);
 		}
 		public static bool? GetWrapAround(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxGallery.GetOption", dxTarget, "wrapAround");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxGallery_GetOption", dxTarget, "wrapAround");
 		}
 		public static void SetWrapAround(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxGallery.SetOption", dxTarget, "wrapAround", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxGallery_SetOption", dxTarget, "wrapAround", value);
 		}
 		public static object GoToItem(ElementRef dxTarget, float itemIndex, bool animation)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxGallery.goToItem_0", dxTarget, itemIndex, animation);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxGallery_goToItem_0", dxTarget, itemIndex, animation);
 		}
 		public static object NextItem(ElementRef dxTarget, bool animation)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxGallery.nextItem_1", dxTarget, animation);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxGallery_nextItem_1", dxTarget, animation);
 		}
 		public static object PrevItem(ElementRef dxTarget, bool animation)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxGallery.prevItem_2", dxTarget, animation);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxGallery_prevItem_2", dxTarget, animation);
 		}
 	}
 	public class DxListInterop: CollectionWidgetInterop
@@ -4665,347 +4742,359 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.DxListOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxList.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxList_Init", dxTarget, json);
 		}
+		[JSInvokable("DevExpress.Ui.DxListInterop.OnGroupRendered")]
 		public static void OnGroupRendered(string identifier)
 		{
 			GroupRendered?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxListInterop.OnItemClick")]
 		public static void OnItemClick(string identifier)
 		{
 			ItemClick?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxListInterop.OnItemContextMenu")]
 		public static void OnItemContextMenu(string identifier)
 		{
 			ItemContextMenu?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxListInterop.OnItemDeleted")]
 		public static void OnItemDeleted(string identifier)
 		{
 			ItemDeleted?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxListInterop.OnItemDeleting")]
 		public static void OnItemDeleting(string identifier)
 		{
 			ItemDeleting?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxListInterop.OnItemHold")]
 		public static void OnItemHold(string identifier)
 		{
 			ItemHold?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxListInterop.OnItemReordered")]
 		public static void OnItemReordered(string identifier)
 		{
 			ItemReordered?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxListInterop.OnItemSwipe")]
 		public static void OnItemSwipe(string identifier)
 		{
 			ItemSwipe?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxListInterop.OnPageLoading")]
 		public static void OnPageLoading(string identifier)
 		{
 			PageLoading?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxListInterop.OnPullRefresh")]
 		public static void OnPullRefresh(string identifier)
 		{
 			PullRefresh?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxListInterop.OnScroll")]
 		public static void OnScroll(string identifier)
 		{
 			Scroll?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxListInterop.OnSelectAllValueChanged")]
 		public static void OnSelectAllValueChanged(string identifier)
 		{
 			SelectAllValueChanged?.Invoke(null, new JQueryEventArgs(identifier));
 		}
 		public static new bool? GetActiveStateEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxList.GetOption", dxTarget, "activeStateEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxList_GetOption", dxTarget, "activeStateEnabled");
 		}
 		public static new void SetActiveStateEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxList.SetOption", dxTarget, "activeStateEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxList_SetOption", dxTarget, "activeStateEnabled", value);
 		}
 		public static bool? GetAllowItemDeleting(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxList.GetOption", dxTarget, "allowItemDeleting");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxList_GetOption", dxTarget, "allowItemDeleting");
 		}
 		public static void SetAllowItemDeleting(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxList.SetOption", dxTarget, "allowItemDeleting", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxList_SetOption", dxTarget, "allowItemDeleting", value);
 		}
 		public static bool? GetAllowItemReordering(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxList.GetOption", dxTarget, "allowItemReordering");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxList_GetOption", dxTarget, "allowItemReordering");
 		}
 		public static void SetAllowItemReordering(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxList.SetOption", dxTarget, "allowItemReordering", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxList_SetOption", dxTarget, "allowItemReordering", value);
 		}
 		public static bool? GetBounceEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxList.GetOption", dxTarget, "bounceEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxList_GetOption", dxTarget, "bounceEnabled");
 		}
 		public static void SetBounceEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxList.SetOption", dxTarget, "bounceEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxList_SetOption", dxTarget, "bounceEnabled", value);
 		}
 		public static bool? GetCollapsibleGroups(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxList.GetOption", dxTarget, "collapsibleGroups");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxList_GetOption", dxTarget, "collapsibleGroups");
 		}
 		public static void SetCollapsibleGroups(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxList.SetOption", dxTarget, "collapsibleGroups", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxList_SetOption", dxTarget, "collapsibleGroups", value);
 		}
 		public static new bool? GetFocusStateEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxList.GetOption", dxTarget, "focusStateEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxList_GetOption", dxTarget, "focusStateEnabled");
 		}
 		public static new void SetFocusStateEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxList.SetOption", dxTarget, "focusStateEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxList_SetOption", dxTarget, "focusStateEnabled", value);
 		}
 		public static bool? GetGrouped(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxList.GetOption", dxTarget, "grouped");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxList_GetOption", dxTarget, "grouped");
 		}
 		public static void SetGrouped(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxList.SetOption", dxTarget, "grouped", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxList_SetOption", dxTarget, "grouped", value);
 		}
 		public static object GetGroupTemplate(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxList.GetOption", dxTarget, "groupTemplate");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxList_GetOption", dxTarget, "groupTemplate");
 		}
 		public static void SetGroupTemplate(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxList.SetOption", dxTarget, "groupTemplate", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxList_SetOption", dxTarget, "groupTemplate", value);
 		}
 		public static new bool? GetHoverStateEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxList.GetOption", dxTarget, "hoverStateEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxList_GetOption", dxTarget, "hoverStateEnabled");
 		}
 		public static new void SetHoverStateEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxList.SetOption", dxTarget, "hoverStateEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxList_SetOption", dxTarget, "hoverStateEnabled", value);
 		}
 		public static bool? GetIndicateLoading(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxList.GetOption", dxTarget, "indicateLoading");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxList_GetOption", dxTarget, "indicateLoading");
 		}
 		public static void SetIndicateLoading(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxList.SetOption", dxTarget, "indicateLoading", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxList_SetOption", dxTarget, "indicateLoading", value);
 		}
 		public static string GetItemDeleteMode(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxList.GetOption", dxTarget, "itemDeleteMode");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxList_GetOption", dxTarget, "itemDeleteMode");
 		}
 		public static void SetItemDeleteMode(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxList.SetOption", dxTarget, "itemDeleteMode", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxList_SetOption", dxTarget, "itemDeleteMode", value);
 		}
 		public static object GetMenuItems(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxList.GetOption", dxTarget, "menuItems");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxList_GetOption", dxTarget, "menuItems");
 		}
 		public static void SetMenuItems(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxList.SetOption", dxTarget, "menuItems", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxList_SetOption", dxTarget, "menuItems", value);
 		}
 		public static string GetMenuMode(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxList.GetOption", dxTarget, "menuMode");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxList_GetOption", dxTarget, "menuMode");
 		}
 		public static void SetMenuMode(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxList.SetOption", dxTarget, "menuMode", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxList_SetOption", dxTarget, "menuMode", value);
 		}
 		public static string GetNextButtonText(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxList.GetOption", dxTarget, "nextButtonText");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxList_GetOption", dxTarget, "nextButtonText");
 		}
 		public static void SetNextButtonText(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxList.SetOption", dxTarget, "nextButtonText", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxList_SetOption", dxTarget, "nextButtonText", value);
 		}
 		public static string GetPageLoadingText(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxList.GetOption", dxTarget, "pageLoadingText");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxList_GetOption", dxTarget, "pageLoadingText");
 		}
 		public static void SetPageLoadingText(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxList.SetOption", dxTarget, "pageLoadingText", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxList_SetOption", dxTarget, "pageLoadingText", value);
 		}
 		public static string GetPageLoadMode(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxList.GetOption", dxTarget, "pageLoadMode");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxList_GetOption", dxTarget, "pageLoadMode");
 		}
 		public static void SetPageLoadMode(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxList.SetOption", dxTarget, "pageLoadMode", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxList_SetOption", dxTarget, "pageLoadMode", value);
 		}
 		public static string GetPulledDownText(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxList.GetOption", dxTarget, "pulledDownText");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxList_GetOption", dxTarget, "pulledDownText");
 		}
 		public static void SetPulledDownText(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxList.SetOption", dxTarget, "pulledDownText", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxList_SetOption", dxTarget, "pulledDownText", value);
 		}
 		public static string GetPullingDownText(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxList.GetOption", dxTarget, "pullingDownText");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxList_GetOption", dxTarget, "pullingDownText");
 		}
 		public static void SetPullingDownText(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxList.SetOption", dxTarget, "pullingDownText", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxList_SetOption", dxTarget, "pullingDownText", value);
 		}
 		public static bool? GetPullRefreshEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxList.GetOption", dxTarget, "pullRefreshEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxList_GetOption", dxTarget, "pullRefreshEnabled");
 		}
 		public static void SetPullRefreshEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxList.SetOption", dxTarget, "pullRefreshEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxList_SetOption", dxTarget, "pullRefreshEnabled", value);
 		}
 		public static string GetRefreshingText(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxList.GetOption", dxTarget, "refreshingText");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxList_GetOption", dxTarget, "refreshingText");
 		}
 		public static void SetRefreshingText(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxList.SetOption", dxTarget, "refreshingText", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxList_SetOption", dxTarget, "refreshingText", value);
 		}
 		public static bool? GetScrollByContent(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxList.GetOption", dxTarget, "scrollByContent");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxList_GetOption", dxTarget, "scrollByContent");
 		}
 		public static void SetScrollByContent(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxList.SetOption", dxTarget, "scrollByContent", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxList_SetOption", dxTarget, "scrollByContent", value);
 		}
 		public static bool? GetScrollByThumb(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxList.GetOption", dxTarget, "scrollByThumb");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxList_GetOption", dxTarget, "scrollByThumb");
 		}
 		public static void SetScrollByThumb(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxList.SetOption", dxTarget, "scrollByThumb", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxList_SetOption", dxTarget, "scrollByThumb", value);
 		}
 		public static bool? GetScrollingEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxList.GetOption", dxTarget, "scrollingEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxList_GetOption", dxTarget, "scrollingEnabled");
 		}
 		public static void SetScrollingEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxList.SetOption", dxTarget, "scrollingEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxList_SetOption", dxTarget, "scrollingEnabled", value);
 		}
 		public static string GetSelectAllMode(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxList.GetOption", dxTarget, "selectAllMode");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxList_GetOption", dxTarget, "selectAllMode");
 		}
 		public static void SetSelectAllMode(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxList.SetOption", dxTarget, "selectAllMode", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxList_SetOption", dxTarget, "selectAllMode", value);
 		}
 		public static string GetSelectionMode(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxList.GetOption", dxTarget, "selectionMode");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxList_GetOption", dxTarget, "selectionMode");
 		}
 		public static void SetSelectionMode(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxList.SetOption", dxTarget, "selectionMode", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxList_SetOption", dxTarget, "selectionMode", value);
 		}
 		public static string GetShowScrollbar(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxList.GetOption", dxTarget, "showScrollbar");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxList_GetOption", dxTarget, "showScrollbar");
 		}
 		public static void SetShowScrollbar(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxList.SetOption", dxTarget, "showScrollbar", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxList_SetOption", dxTarget, "showScrollbar", value);
 		}
 		public static bool? GetShowSelectionControls(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxList.GetOption", dxTarget, "showSelectionControls");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxList_GetOption", dxTarget, "showSelectionControls");
 		}
 		public static void SetShowSelectionControls(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxList.SetOption", dxTarget, "showSelectionControls", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxList_SetOption", dxTarget, "showSelectionControls", value);
 		}
 		public static bool? GetUseNativeScrolling(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxList.GetOption", dxTarget, "useNativeScrolling");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxList_GetOption", dxTarget, "useNativeScrolling");
 		}
 		public static void SetUseNativeScrolling(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxList.SetOption", dxTarget, "useNativeScrolling", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxList_SetOption", dxTarget, "useNativeScrolling", value);
 		}
 		public static float ClientHeight(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float>("BlazorDevExtreme.DxList.clientHeight_0", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float>("BlazorDevExtreme_DxList_clientHeight_0", dxTarget);
 		}
 		public static object CollapseGroup(ElementRef dxTarget, float groupIndex)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxList.collapseGroup_1", dxTarget, groupIndex);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxList_collapseGroup_1", dxTarget, groupIndex);
 		}
 		public static object DeleteItem(ElementRef dxTarget, object itemElement)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxList.deleteItem_2", dxTarget, itemElement);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxList_deleteItem_2", dxTarget, itemElement);
 		}
 		public static object ExpandGroup(ElementRef dxTarget, float groupIndex)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxList.expandGroup_4", dxTarget, groupIndex);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxList_expandGroup_4", dxTarget, groupIndex);
 		}
 		public static bool IsItemSelected(ElementRef dxTarget, object itemElement)
 		{
-			return RegisteredFunction.Invoke<bool>("BlazorDevExtreme.DxList.isItemSelected_5", dxTarget, itemElement);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool>("BlazorDevExtreme_DxList_isItemSelected_5", dxTarget, itemElement);
 		}
 		public static void Reload(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxList.reload_7", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxList_reload_7", dxTarget);
 		}
 		public static object ReorderItem(ElementRef dxTarget, object itemElement, object toItemElement)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxList.reorderItem_8", dxTarget, itemElement, toItemElement);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxList_reorderItem_8", dxTarget, itemElement, toItemElement);
 		}
 		public static void ScrollBy(ElementRef dxTarget, float distance)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxList.scrollBy_10", dxTarget, distance);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxList_scrollBy_10", dxTarget, distance);
 		}
 		public static float ScrollHeight(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float>("BlazorDevExtreme.DxList.scrollHeight_11", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float>("BlazorDevExtreme_DxList_scrollHeight_11", dxTarget);
 		}
 		public static void ScrollTo(ElementRef dxTarget, float location)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxList.scrollTo_12", dxTarget, location);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxList_scrollTo_12", dxTarget, location);
 		}
 		public static void ScrollToItem(ElementRef dxTarget, object itemElement)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxList.scrollToItem_13", dxTarget, itemElement);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxList_scrollToItem_13", dxTarget, itemElement);
 		}
 		public static float ScrollTop(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float>("BlazorDevExtreme.DxList.scrollTop_15", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float>("BlazorDevExtreme_DxList_scrollTop_15", dxTarget);
 		}
 		public static void SelectAll(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxList.selectAll_16", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxList_selectAll_16", dxTarget);
 		}
 		public static void SelectItem(ElementRef dxTarget, object itemElement)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxList.selectItem_17", dxTarget, itemElement);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxList_selectItem_17", dxTarget, itemElement);
 		}
 		public static void UnselectAll(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxList.unselectAll_19", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxList_unselectAll_19", dxTarget);
 		}
 		public static void UnselectItem(ElementRef dxTarget, object itemElement)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxList.unselectItem_20", dxTarget, itemElement);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxList_unselectItem_20", dxTarget, itemElement);
 		}
 		public static object UpdateDimensions(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxList.updateDimensions_22", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxList_updateDimensions_22", dxTarget);
 		}
 	}
 	public class DxLoadIndicatorInterop: WidgetInterop
@@ -5013,15 +5102,15 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.DxLoadIndicatorOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLoadIndicator.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLoadIndicator_Init", dxTarget, json);
 		}
 		public static string GetIndicatorSrc(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxLoadIndicator.GetOption", dxTarget, "indicatorSrc");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxLoadIndicator_GetOption", dxTarget, "indicatorSrc");
 		}
 		public static void SetIndicatorSrc(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLoadIndicator.SetOption", dxTarget, "indicatorSrc", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLoadIndicator_SetOption", dxTarget, "indicatorSrc", value);
 		}
 	}
 	public class DxLoadPanelInterop: DxOverlayInterop
@@ -5029,95 +5118,95 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.DxLoadPanelOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLoadPanel.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLoadPanel_Init", dxTarget, json);
 		}
 		public static new object GetAnimation(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLoadPanel.GetOption", dxTarget, "animation");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLoadPanel_GetOption", dxTarget, "animation");
 		}
 		public static new void SetAnimation(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLoadPanel.SetOption", dxTarget, "animation", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLoadPanel_SetOption", dxTarget, "animation", value);
 		}
 		public static float? GetDelay(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxLoadPanel.GetOption", dxTarget, "delay");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxLoadPanel_GetOption", dxTarget, "delay");
 		}
 		public static void SetDelay(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLoadPanel.SetOption", dxTarget, "delay", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLoadPanel_SetOption", dxTarget, "delay", value);
 		}
 		public static new bool? GetFocusStateEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxLoadPanel.GetOption", dxTarget, "focusStateEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxLoadPanel_GetOption", dxTarget, "focusStateEnabled");
 		}
 		public static new void SetFocusStateEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLoadPanel.SetOption", dxTarget, "focusStateEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLoadPanel_SetOption", dxTarget, "focusStateEnabled", value);
 		}
 		public static new float? GetHeight(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxLoadPanel.GetOption", dxTarget, "height");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxLoadPanel_GetOption", dxTarget, "height");
 		}
 		public static new void SetHeight(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLoadPanel.SetOption", dxTarget, "height", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLoadPanel_SetOption", dxTarget, "height", value);
 		}
 		public static string GetIndicatorSrc(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxLoadPanel.GetOption", dxTarget, "indicatorSrc");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxLoadPanel_GetOption", dxTarget, "indicatorSrc");
 		}
 		public static void SetIndicatorSrc(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLoadPanel.SetOption", dxTarget, "indicatorSrc", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLoadPanel_SetOption", dxTarget, "indicatorSrc", value);
 		}
 		public static string GetMessage(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxLoadPanel.GetOption", dxTarget, "message");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxLoadPanel_GetOption", dxTarget, "message");
 		}
 		public static void SetMessage(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLoadPanel.SetOption", dxTarget, "message", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLoadPanel_SetOption", dxTarget, "message", value);
 		}
 		public static new object GetPosition(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLoadPanel.GetOption", dxTarget, "position");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLoadPanel_GetOption", dxTarget, "position");
 		}
 		public static new void SetPosition(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLoadPanel.SetOption", dxTarget, "position", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLoadPanel_SetOption", dxTarget, "position", value);
 		}
 		public static new string GetShadingColor(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxLoadPanel.GetOption", dxTarget, "shadingColor");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxLoadPanel_GetOption", dxTarget, "shadingColor");
 		}
 		public static new void SetShadingColor(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLoadPanel.SetOption", dxTarget, "shadingColor", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLoadPanel_SetOption", dxTarget, "shadingColor", value);
 		}
 		public static bool? GetShowIndicator(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxLoadPanel.GetOption", dxTarget, "showIndicator");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxLoadPanel_GetOption", dxTarget, "showIndicator");
 		}
 		public static void SetShowIndicator(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLoadPanel.SetOption", dxTarget, "showIndicator", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLoadPanel_SetOption", dxTarget, "showIndicator", value);
 		}
 		public static bool? GetShowPane(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxLoadPanel.GetOption", dxTarget, "showPane");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxLoadPanel_GetOption", dxTarget, "showPane");
 		}
 		public static void SetShowPane(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLoadPanel.SetOption", dxTarget, "showPane", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLoadPanel_SetOption", dxTarget, "showPane", value);
 		}
 		public static new float? GetWidth(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxLoadPanel.GetOption", dxTarget, "width");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxLoadPanel_GetOption", dxTarget, "width");
 		}
 		public static new void SetWidth(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLoadPanel.SetOption", dxTarget, "width", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLoadPanel_SetOption", dxTarget, "width", value);
 		}
 	}
 	public class DxLookupInterop: DxDropDownListInterop
@@ -5130,291 +5219,296 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.DxLookupOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLookup.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLookup_Init", dxTarget, json);
 		}
+		[JSInvokable("DevExpress.Ui.DxLookupInterop.OnPageLoading")]
 		public static void OnPageLoading(string identifier)
 		{
 			PageLoading?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxLookupInterop.OnPullRefresh")]
 		public static void OnPullRefresh(string identifier)
 		{
 			PullRefresh?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxLookupInterop.OnScroll")]
 		public static void OnScroll(string identifier)
 		{
 			Scroll?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxLookupInterop.OnTitleRendered")]
 		public static void OnTitleRendered(string identifier)
 		{
 			TitleRendered?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxLookupInterop.OnValueChanged")]
 		public static void OnValueChanged(string identifier)
 		{
 			ValueChanged?.Invoke(null, new JQueryEventArgs(identifier));
 		}
 		public static object GetAnimation(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLookup.GetOption", dxTarget, "animation");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLookup_GetOption", dxTarget, "animation");
 		}
 		public static void SetAnimation(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLookup.SetOption", dxTarget, "animation", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLookup_SetOption", dxTarget, "animation", value);
 		}
 		public static string GetApplyButtonText(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxLookup.GetOption", dxTarget, "applyButtonText");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxLookup_GetOption", dxTarget, "applyButtonText");
 		}
 		public static void SetApplyButtonText(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLookup.SetOption", dxTarget, "applyButtonText", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLookup_SetOption", dxTarget, "applyButtonText", value);
 		}
 		public static new string GetApplyValueMode(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxLookup.GetOption", dxTarget, "applyValueMode");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxLookup_GetOption", dxTarget, "applyValueMode");
 		}
 		public static new void SetApplyValueMode(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLookup.SetOption", dxTarget, "applyValueMode", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLookup_SetOption", dxTarget, "applyValueMode", value);
 		}
 		public static string GetCancelButtonText(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxLookup.GetOption", dxTarget, "cancelButtonText");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxLookup_GetOption", dxTarget, "cancelButtonText");
 		}
 		public static void SetCancelButtonText(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLookup.SetOption", dxTarget, "cancelButtonText", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLookup_SetOption", dxTarget, "cancelButtonText", value);
 		}
 		public static bool? GetCleanSearchOnOpening(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxLookup.GetOption", dxTarget, "cleanSearchOnOpening");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxLookup_GetOption", dxTarget, "cleanSearchOnOpening");
 		}
 		public static void SetCleanSearchOnOpening(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLookup.SetOption", dxTarget, "cleanSearchOnOpening", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLookup_SetOption", dxTarget, "cleanSearchOnOpening", value);
 		}
 		public static string GetClearButtonText(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxLookup.GetOption", dxTarget, "clearButtonText");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxLookup_GetOption", dxTarget, "clearButtonText");
 		}
 		public static void SetClearButtonText(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLookup.SetOption", dxTarget, "clearButtonText", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLookup_SetOption", dxTarget, "clearButtonText", value);
 		}
 		public static object GetCloseOnOutsideClick(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLookup.GetOption", dxTarget, "closeOnOutsideClick");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLookup_GetOption", dxTarget, "closeOnOutsideClick");
 		}
 		public static void SetCloseOnOutsideClick(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLookup.SetOption", dxTarget, "closeOnOutsideClick", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLookup_SetOption", dxTarget, "closeOnOutsideClick", value);
 		}
 		public static object GetFieldTemplate(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLookup.GetOption", dxTarget, "fieldTemplate");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLookup_GetOption", dxTarget, "fieldTemplate");
 		}
 		public static void SetFieldTemplate(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLookup.SetOption", dxTarget, "fieldTemplate", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLookup_SetOption", dxTarget, "fieldTemplate", value);
 		}
 		public static new bool? GetFocusStateEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxLookup.GetOption", dxTarget, "focusStateEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxLookup_GetOption", dxTarget, "focusStateEnabled");
 		}
 		public static new void SetFocusStateEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLookup.SetOption", dxTarget, "focusStateEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLookup_SetOption", dxTarget, "focusStateEnabled", value);
 		}
 		public static bool? GetFullScreen(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxLookup.GetOption", dxTarget, "fullScreen");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxLookup_GetOption", dxTarget, "fullScreen");
 		}
 		public static void SetFullScreen(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLookup.SetOption", dxTarget, "fullScreen", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLookup_SetOption", dxTarget, "fullScreen", value);
 		}
 		public static new bool? GetGrouped(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxLookup.GetOption", dxTarget, "grouped");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxLookup_GetOption", dxTarget, "grouped");
 		}
 		public static new void SetGrouped(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLookup.SetOption", dxTarget, "grouped", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLookup_SetOption", dxTarget, "grouped", value);
 		}
 		public static new object GetGroupTemplate(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLookup.GetOption", dxTarget, "groupTemplate");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLookup_GetOption", dxTarget, "groupTemplate");
 		}
 		public static new void SetGroupTemplate(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLookup.SetOption", dxTarget, "groupTemplate", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLookup_SetOption", dxTarget, "groupTemplate", value);
 		}
 		public static string GetNextButtonText(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxLookup.GetOption", dxTarget, "nextButtonText");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxLookup_GetOption", dxTarget, "nextButtonText");
 		}
 		public static void SetNextButtonText(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLookup.SetOption", dxTarget, "nextButtonText", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLookup_SetOption", dxTarget, "nextButtonText", value);
 		}
 		public static string GetPageLoadingText(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxLookup.GetOption", dxTarget, "pageLoadingText");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxLookup_GetOption", dxTarget, "pageLoadingText");
 		}
 		public static void SetPageLoadingText(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLookup.SetOption", dxTarget, "pageLoadingText", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLookup_SetOption", dxTarget, "pageLoadingText", value);
 		}
 		public static string GetPageLoadMode(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxLookup.GetOption", dxTarget, "pageLoadMode");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxLookup_GetOption", dxTarget, "pageLoadMode");
 		}
 		public static void SetPageLoadMode(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLookup.SetOption", dxTarget, "pageLoadMode", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLookup_SetOption", dxTarget, "pageLoadMode", value);
 		}
 		public static new string GetPlaceholder(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxLookup.GetOption", dxTarget, "placeholder");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxLookup_GetOption", dxTarget, "placeholder");
 		}
 		public static new void SetPlaceholder(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLookup.SetOption", dxTarget, "placeholder", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLookup_SetOption", dxTarget, "placeholder", value);
 		}
 		public static object GetPopupHeight(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLookup.GetOption", dxTarget, "popupHeight");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLookup_GetOption", dxTarget, "popupHeight");
 		}
 		public static void SetPopupHeight(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLookup.SetOption", dxTarget, "popupHeight", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLookup_SetOption", dxTarget, "popupHeight", value);
 		}
 		public static object GetPopupWidth(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLookup.GetOption", dxTarget, "popupWidth");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLookup_GetOption", dxTarget, "popupWidth");
 		}
 		public static void SetPopupWidth(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLookup.SetOption", dxTarget, "popupWidth", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLookup_SetOption", dxTarget, "popupWidth", value);
 		}
 		public static object GetPosition(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLookup.GetOption", dxTarget, "position");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLookup_GetOption", dxTarget, "position");
 		}
 		public static void SetPosition(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLookup.SetOption", dxTarget, "position", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLookup_SetOption", dxTarget, "position", value);
 		}
 		public static string GetPulledDownText(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxLookup.GetOption", dxTarget, "pulledDownText");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxLookup_GetOption", dxTarget, "pulledDownText");
 		}
 		public static void SetPulledDownText(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLookup.SetOption", dxTarget, "pulledDownText", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLookup_SetOption", dxTarget, "pulledDownText", value);
 		}
 		public static string GetPullingDownText(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxLookup.GetOption", dxTarget, "pullingDownText");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxLookup_GetOption", dxTarget, "pullingDownText");
 		}
 		public static void SetPullingDownText(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLookup.SetOption", dxTarget, "pullingDownText", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLookup_SetOption", dxTarget, "pullingDownText", value);
 		}
 		public static bool? GetPullRefreshEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxLookup.GetOption", dxTarget, "pullRefreshEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxLookup_GetOption", dxTarget, "pullRefreshEnabled");
 		}
 		public static void SetPullRefreshEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLookup.SetOption", dxTarget, "pullRefreshEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLookup_SetOption", dxTarget, "pullRefreshEnabled", value);
 		}
 		public static string GetRefreshingText(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxLookup.GetOption", dxTarget, "refreshingText");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxLookup_GetOption", dxTarget, "refreshingText");
 		}
 		public static void SetRefreshingText(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLookup.SetOption", dxTarget, "refreshingText", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLookup_SetOption", dxTarget, "refreshingText", value);
 		}
 		public static new bool? GetSearchEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxLookup.GetOption", dxTarget, "searchEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxLookup_GetOption", dxTarget, "searchEnabled");
 		}
 		public static new void SetSearchEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLookup.SetOption", dxTarget, "searchEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLookup_SetOption", dxTarget, "searchEnabled", value);
 		}
 		public static string GetSearchPlaceholder(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxLookup.GetOption", dxTarget, "searchPlaceholder");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxLookup_GetOption", dxTarget, "searchPlaceholder");
 		}
 		public static void SetSearchPlaceholder(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLookup.SetOption", dxTarget, "searchPlaceholder", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLookup_SetOption", dxTarget, "searchPlaceholder", value);
 		}
 		public static bool? GetShading(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxLookup.GetOption", dxTarget, "shading");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxLookup_GetOption", dxTarget, "shading");
 		}
 		public static void SetShading(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLookup.SetOption", dxTarget, "shading", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLookup_SetOption", dxTarget, "shading", value);
 		}
 		public static bool? GetShowCancelButton(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxLookup.GetOption", dxTarget, "showCancelButton");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxLookup_GetOption", dxTarget, "showCancelButton");
 		}
 		public static void SetShowCancelButton(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLookup.SetOption", dxTarget, "showCancelButton", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLookup_SetOption", dxTarget, "showCancelButton", value);
 		}
 		public static new bool? GetShowClearButton(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxLookup.GetOption", dxTarget, "showClearButton");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxLookup_GetOption", dxTarget, "showClearButton");
 		}
 		public static new void SetShowClearButton(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLookup.SetOption", dxTarget, "showClearButton", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLookup_SetOption", dxTarget, "showClearButton", value);
 		}
 		public static bool? GetShowPopupTitle(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxLookup.GetOption", dxTarget, "showPopupTitle");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxLookup_GetOption", dxTarget, "showPopupTitle");
 		}
 		public static void SetShowPopupTitle(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLookup.SetOption", dxTarget, "showPopupTitle", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLookup_SetOption", dxTarget, "showPopupTitle", value);
 		}
 		public static string GetTitle(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxLookup.GetOption", dxTarget, "title");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxLookup_GetOption", dxTarget, "title");
 		}
 		public static void SetTitle(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLookup.SetOption", dxTarget, "title", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLookup_SetOption", dxTarget, "title", value);
 		}
 		public static object GetTitleTemplate(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLookup.GetOption", dxTarget, "titleTemplate");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLookup_GetOption", dxTarget, "titleTemplate");
 		}
 		public static void SetTitleTemplate(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLookup.SetOption", dxTarget, "titleTemplate", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLookup_SetOption", dxTarget, "titleTemplate", value);
 		}
 		public static bool? GetUseNativeScrolling(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxLookup.GetOption", dxTarget, "useNativeScrolling");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxLookup_GetOption", dxTarget, "useNativeScrolling");
 		}
 		public static void SetUseNativeScrolling(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLookup.SetOption", dxTarget, "useNativeScrolling", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLookup_SetOption", dxTarget, "useNativeScrolling", value);
 		}
 		public static bool? GetUsePopover(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxLookup.GetOption", dxTarget, "usePopover");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxLookup_GetOption", dxTarget, "usePopover");
 		}
 		public static void SetUsePopover(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLookup.SetOption", dxTarget, "usePopover", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLookup_SetOption", dxTarget, "usePopover", value);
 		}
 	}
 	public class DxMapInterop: WidgetInterop
@@ -5428,151 +5522,157 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.DxMapOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxMap.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxMap_Init", dxTarget, json);
 		}
+		[JSInvokable("DevExpress.Ui.DxMapInterop.OnClick")]
 		public static void OnClick(string identifier)
 		{
 			Click?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxMapInterop.OnMarkerAdded")]
 		public static void OnMarkerAdded(string identifier)
 		{
 			MarkerAdded?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxMapInterop.OnMarkerRemoved")]
 		public static void OnMarkerRemoved(string identifier)
 		{
 			MarkerRemoved?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxMapInterop.OnReady")]
 		public static void OnReady(string identifier)
 		{
 			Ready?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxMapInterop.OnRouteAdded")]
 		public static void OnRouteAdded(string identifier)
 		{
 			RouteAdded?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxMapInterop.OnRouteRemoved")]
 		public static void OnRouteRemoved(string identifier)
 		{
 			RouteRemoved?.Invoke(null, new JQueryEventArgs(identifier));
 		}
 		public static bool? GetAutoAdjust(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxMap.GetOption", dxTarget, "autoAdjust");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxMap_GetOption", dxTarget, "autoAdjust");
 		}
 		public static void SetAutoAdjust(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxMap.SetOption", dxTarget, "autoAdjust", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxMap_SetOption", dxTarget, "autoAdjust", value);
 		}
 		public static object GetCenter(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxMap.GetOption", dxTarget, "center");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxMap_GetOption", dxTarget, "center");
 		}
 		public static void SetCenter(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxMap.SetOption", dxTarget, "center", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxMap_SetOption", dxTarget, "center", value);
 		}
 		public static bool? GetControls(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxMap.GetOption", dxTarget, "controls");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxMap_GetOption", dxTarget, "controls");
 		}
 		public static void SetControls(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxMap.SetOption", dxTarget, "controls", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxMap_SetOption", dxTarget, "controls", value);
 		}
 		public static new bool? GetFocusStateEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxMap.GetOption", dxTarget, "focusStateEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxMap_GetOption", dxTarget, "focusStateEnabled");
 		}
 		public static new void SetFocusStateEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxMap.SetOption", dxTarget, "focusStateEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxMap_SetOption", dxTarget, "focusStateEnabled", value);
 		}
 		public static new object GetHeight(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxMap.GetOption", dxTarget, "height");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxMap_GetOption", dxTarget, "height");
 		}
 		public static new void SetHeight(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxMap.SetOption", dxTarget, "height", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxMap_SetOption", dxTarget, "height", value);
 		}
 		public static object GetKey(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxMap.GetOption", dxTarget, "key");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxMap_GetOption", dxTarget, "key");
 		}
 		public static void SetKey(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxMap.SetOption", dxTarget, "key", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxMap_SetOption", dxTarget, "key", value);
 		}
 		public static string GetMarkerIconSrc(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxMap.GetOption", dxTarget, "markerIconSrc");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxMap_GetOption", dxTarget, "markerIconSrc");
 		}
 		public static void SetMarkerIconSrc(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxMap.SetOption", dxTarget, "markerIconSrc", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxMap_SetOption", dxTarget, "markerIconSrc", value);
 		}
 		public static object GetMarkers(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxMap.GetOption", dxTarget, "markers");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxMap_GetOption", dxTarget, "markers");
 		}
 		public static void SetMarkers(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxMap.SetOption", dxTarget, "markers", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxMap_SetOption", dxTarget, "markers", value);
 		}
 		public static string GetProvider(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxMap.GetOption", dxTarget, "provider");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxMap_GetOption", dxTarget, "provider");
 		}
 		public static void SetProvider(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxMap.SetOption", dxTarget, "provider", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxMap_SetOption", dxTarget, "provider", value);
 		}
 		public static object GetRoutes(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxMap.GetOption", dxTarget, "routes");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxMap_GetOption", dxTarget, "routes");
 		}
 		public static void SetRoutes(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxMap.SetOption", dxTarget, "routes", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxMap_SetOption", dxTarget, "routes", value);
 		}
 		public static string GetType(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxMap.GetOption", dxTarget, "type");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxMap_GetOption", dxTarget, "type");
 		}
 		public static void SetType(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxMap.SetOption", dxTarget, "type", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxMap_SetOption", dxTarget, "type", value);
 		}
 		public static new object GetWidth(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxMap.GetOption", dxTarget, "width");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxMap_GetOption", dxTarget, "width");
 		}
 		public static new void SetWidth(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxMap.SetOption", dxTarget, "width", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxMap_SetOption", dxTarget, "width", value);
 		}
 		public static float? GetZoom(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxMap.GetOption", dxTarget, "zoom");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxMap_GetOption", dxTarget, "zoom");
 		}
 		public static void SetZoom(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxMap.SetOption", dxTarget, "zoom", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxMap_SetOption", dxTarget, "zoom", value);
 		}
 		public static object AddMarker(ElementRef dxTarget, object markerOptions)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxMap.addMarker_0", dxTarget, markerOptions);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxMap_addMarker_0", dxTarget, markerOptions);
 		}
 		public static object AddRoute(ElementRef dxTarget, object options)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxMap.addRoute_1", dxTarget, options);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxMap_addRoute_1", dxTarget, options);
 		}
 		public static object RemoveMarker(ElementRef dxTarget, object marker)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxMap.removeMarker_2", dxTarget, marker);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxMap_removeMarker_2", dxTarget, marker);
 		}
 		public static object RemoveRoute(ElementRef dxTarget, object route)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxMap.removeRoute_3", dxTarget, route);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxMap_removeRoute_3", dxTarget, route);
 		}
 	}
 	public class DxMenuInterop: DxMenuBaseInterop
@@ -5584,71 +5684,75 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.DxMenuOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxMenu.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxMenu_Init", dxTarget, json);
 		}
+		[JSInvokable("DevExpress.Ui.DxMenuInterop.OnSubmenuHidden")]
 		public static void OnSubmenuHidden(string identifier)
 		{
 			SubmenuHidden?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxMenuInterop.OnSubmenuHiding")]
 		public static void OnSubmenuHiding(string identifier)
 		{
 			SubmenuHiding?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxMenuInterop.OnSubmenuShowing")]
 		public static void OnSubmenuShowing(string identifier)
 		{
 			SubmenuShowing?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxMenuInterop.OnSubmenuShown")]
 		public static void OnSubmenuShown(string identifier)
 		{
 			SubmenuShown?.Invoke(null, new JQueryEventArgs(identifier));
 		}
 		public static bool? GetAdaptivityEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxMenu.GetOption", dxTarget, "adaptivityEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxMenu_GetOption", dxTarget, "adaptivityEnabled");
 		}
 		public static void SetAdaptivityEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxMenu.SetOption", dxTarget, "adaptivityEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxMenu_SetOption", dxTarget, "adaptivityEnabled", value);
 		}
 		public static bool? GetHideSubmenuOnMouseLeave(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxMenu.GetOption", dxTarget, "hideSubmenuOnMouseLeave");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxMenu_GetOption", dxTarget, "hideSubmenuOnMouseLeave");
 		}
 		public static void SetHideSubmenuOnMouseLeave(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxMenu.SetOption", dxTarget, "hideSubmenuOnMouseLeave", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxMenu_SetOption", dxTarget, "hideSubmenuOnMouseLeave", value);
 		}
 		public static new object GetItems(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxMenu.GetOption", dxTarget, "items");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxMenu_GetOption", dxTarget, "items");
 		}
 		public static new void SetItems(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxMenu.SetOption", dxTarget, "items", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxMenu_SetOption", dxTarget, "items", value);
 		}
 		public static string GetOrientation(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxMenu.GetOption", dxTarget, "orientation");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxMenu_GetOption", dxTarget, "orientation");
 		}
 		public static void SetOrientation(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxMenu.SetOption", dxTarget, "orientation", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxMenu_SetOption", dxTarget, "orientation", value);
 		}
 		public static object GetShowFirstSubmenuMode(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxMenu.GetOption", dxTarget, "showFirstSubmenuMode");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxMenu_GetOption", dxTarget, "showFirstSubmenuMode");
 		}
 		public static void SetShowFirstSubmenuMode(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxMenu.SetOption", dxTarget, "showFirstSubmenuMode", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxMenu_SetOption", dxTarget, "showFirstSubmenuMode", value);
 		}
 		public static string GetSubmenuDirection(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxMenu.GetOption", dxTarget, "submenuDirection");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxMenu_GetOption", dxTarget, "submenuDirection");
 		}
 		public static void SetSubmenuDirection(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxMenu.SetOption", dxTarget, "submenuDirection", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxMenu_SetOption", dxTarget, "submenuDirection", value);
 		}
 	}
 	public class DxMultiViewInterop: CollectionWidgetInterop
@@ -5656,55 +5760,55 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.DxMultiViewOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxMultiView.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxMultiView_Init", dxTarget, json);
 		}
 		public static bool? GetAnimationEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxMultiView.GetOption", dxTarget, "animationEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxMultiView_GetOption", dxTarget, "animationEnabled");
 		}
 		public static void SetAnimationEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxMultiView.SetOption", dxTarget, "animationEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxMultiView_SetOption", dxTarget, "animationEnabled", value);
 		}
 		public static bool? GetDeferRendering(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxMultiView.GetOption", dxTarget, "deferRendering");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxMultiView_GetOption", dxTarget, "deferRendering");
 		}
 		public static void SetDeferRendering(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxMultiView.SetOption", dxTarget, "deferRendering", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxMultiView_SetOption", dxTarget, "deferRendering", value);
 		}
 		public static new bool? GetFocusStateEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxMultiView.GetOption", dxTarget, "focusStateEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxMultiView_GetOption", dxTarget, "focusStateEnabled");
 		}
 		public static new void SetFocusStateEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxMultiView.SetOption", dxTarget, "focusStateEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxMultiView_SetOption", dxTarget, "focusStateEnabled", value);
 		}
 		public static bool? GetLoop(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxMultiView.GetOption", dxTarget, "loop");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxMultiView_GetOption", dxTarget, "loop");
 		}
 		public static void SetLoop(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxMultiView.SetOption", dxTarget, "loop", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxMultiView_SetOption", dxTarget, "loop", value);
 		}
 		public static new float? GetSelectedIndex(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxMultiView.GetOption", dxTarget, "selectedIndex");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxMultiView_GetOption", dxTarget, "selectedIndex");
 		}
 		public static new void SetSelectedIndex(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxMultiView.SetOption", dxTarget, "selectedIndex", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxMultiView_SetOption", dxTarget, "selectedIndex", value);
 		}
 		public static bool? GetSwipeEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxMultiView.GetOption", dxTarget, "swipeEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxMultiView_GetOption", dxTarget, "swipeEnabled");
 		}
 		public static void SetSwipeEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxMultiView.SetOption", dxTarget, "swipeEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxMultiView_SetOption", dxTarget, "swipeEnabled", value);
 		}
 	}
 	public class DxNavBarInterop: DxTabsInterop
@@ -5712,15 +5816,15 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.DxNavBarOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxNavBar.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxNavBar_Init", dxTarget, json);
 		}
 		public static new bool? GetScrollByContent(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxNavBar.GetOption", dxTarget, "scrollByContent");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxNavBar_GetOption", dxTarget, "scrollByContent");
 		}
 		public static new void SetScrollByContent(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxNavBar.SetOption", dxTarget, "scrollByContent", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxNavBar_SetOption", dxTarget, "scrollByContent", value);
 		}
 	}
 	public class DxNumberBoxInterop: DxTextEditorInterop
@@ -5728,79 +5832,79 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.DxNumberBoxOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxNumberBox.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxNumberBox_Init", dxTarget, json);
 		}
 		public static object GetFormat(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxNumberBox.GetOption", dxTarget, "format");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxNumberBox_GetOption", dxTarget, "format");
 		}
 		public static void SetFormat(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxNumberBox.SetOption", dxTarget, "format", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxNumberBox_SetOption", dxTarget, "format", value);
 		}
 		public static string GetInvalidValueMessage(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxNumberBox.GetOption", dxTarget, "invalidValueMessage");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxNumberBox_GetOption", dxTarget, "invalidValueMessage");
 		}
 		public static void SetInvalidValueMessage(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxNumberBox.SetOption", dxTarget, "invalidValueMessage", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxNumberBox_SetOption", dxTarget, "invalidValueMessage", value);
 		}
 		public static float? GetMax(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxNumberBox.GetOption", dxTarget, "max");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxNumberBox_GetOption", dxTarget, "max");
 		}
 		public static void SetMax(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxNumberBox.SetOption", dxTarget, "max", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxNumberBox_SetOption", dxTarget, "max", value);
 		}
 		public static float? GetMin(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxNumberBox.GetOption", dxTarget, "min");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxNumberBox_GetOption", dxTarget, "min");
 		}
 		public static void SetMin(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxNumberBox.SetOption", dxTarget, "min", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxNumberBox_SetOption", dxTarget, "min", value);
 		}
 		public static string GetMode(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxNumberBox.GetOption", dxTarget, "mode");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxNumberBox_GetOption", dxTarget, "mode");
 		}
 		public static void SetMode(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxNumberBox.SetOption", dxTarget, "mode", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxNumberBox_SetOption", dxTarget, "mode", value);
 		}
 		public static bool? GetShowSpinButtons(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxNumberBox.GetOption", dxTarget, "showSpinButtons");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxNumberBox_GetOption", dxTarget, "showSpinButtons");
 		}
 		public static void SetShowSpinButtons(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxNumberBox.SetOption", dxTarget, "showSpinButtons", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxNumberBox_SetOption", dxTarget, "showSpinButtons", value);
 		}
 		public static float? GetStep(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxNumberBox.GetOption", dxTarget, "step");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxNumberBox_GetOption", dxTarget, "step");
 		}
 		public static void SetStep(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxNumberBox.SetOption", dxTarget, "step", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxNumberBox_SetOption", dxTarget, "step", value);
 		}
 		public static bool? GetUseLargeSpinButtons(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxNumberBox.GetOption", dxTarget, "useLargeSpinButtons");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxNumberBox_GetOption", dxTarget, "useLargeSpinButtons");
 		}
 		public static void SetUseLargeSpinButtons(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxNumberBox.SetOption", dxTarget, "useLargeSpinButtons", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxNumberBox_SetOption", dxTarget, "useLargeSpinButtons", value);
 		}
 		public static new float? GetValue(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxNumberBox.GetOption", dxTarget, "value");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxNumberBox_GetOption", dxTarget, "value");
 		}
 		public static new void SetValue(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxNumberBox.SetOption", dxTarget, "value", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxNumberBox_SetOption", dxTarget, "value", value);
 		}
 	}
 	public class DxOverlayInterop: WidgetInterop
@@ -5812,171 +5916,175 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.DxOverlayOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxOverlay.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxOverlay_Init", dxTarget, json);
 		}
+		[JSInvokable("DevExpress.Ui.DxOverlayInterop.OnHidden")]
 		public static void OnHidden(string identifier)
 		{
 			Hidden?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxOverlayInterop.OnHiding")]
 		public static void OnHiding(string identifier)
 		{
 			Hiding?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxOverlayInterop.OnShowing")]
 		public static void OnShowing(string identifier)
 		{
 			Showing?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxOverlayInterop.OnShown")]
 		public static void OnShown(string identifier)
 		{
 			Shown?.Invoke(null, new JQueryEventArgs(identifier));
 		}
 		public static object GetAnimation(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxOverlay.GetOption", dxTarget, "animation");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxOverlay_GetOption", dxTarget, "animation");
 		}
 		public static void SetAnimation(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxOverlay.SetOption", dxTarget, "animation", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxOverlay_SetOption", dxTarget, "animation", value);
 		}
 		public static bool? GetCloseOnBackButton(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxOverlay.GetOption", dxTarget, "closeOnBackButton");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxOverlay_GetOption", dxTarget, "closeOnBackButton");
 		}
 		public static void SetCloseOnBackButton(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxOverlay.SetOption", dxTarget, "closeOnBackButton", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxOverlay_SetOption", dxTarget, "closeOnBackButton", value);
 		}
 		public static object GetCloseOnOutsideClick(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxOverlay.GetOption", dxTarget, "closeOnOutsideClick");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxOverlay_GetOption", dxTarget, "closeOnOutsideClick");
 		}
 		public static void SetCloseOnOutsideClick(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxOverlay.SetOption", dxTarget, "closeOnOutsideClick", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxOverlay_SetOption", dxTarget, "closeOnOutsideClick", value);
 		}
 		public static object GetContentTemplate(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxOverlay.GetOption", dxTarget, "contentTemplate");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxOverlay_GetOption", dxTarget, "contentTemplate");
 		}
 		public static void SetContentTemplate(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxOverlay.SetOption", dxTarget, "contentTemplate", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxOverlay_SetOption", dxTarget, "contentTemplate", value);
 		}
 		public static bool? GetDeferRendering(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxOverlay.GetOption", dxTarget, "deferRendering");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxOverlay_GetOption", dxTarget, "deferRendering");
 		}
 		public static void SetDeferRendering(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxOverlay.SetOption", dxTarget, "deferRendering", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxOverlay_SetOption", dxTarget, "deferRendering", value);
 		}
 		public static bool? GetDragEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxOverlay.GetOption", dxTarget, "dragEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxOverlay_GetOption", dxTarget, "dragEnabled");
 		}
 		public static void SetDragEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxOverlay.SetOption", dxTarget, "dragEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxOverlay_SetOption", dxTarget, "dragEnabled", value);
 		}
 		public static new object GetHeight(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxOverlay.GetOption", dxTarget, "height");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxOverlay_GetOption", dxTarget, "height");
 		}
 		public static new void SetHeight(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxOverlay.SetOption", dxTarget, "height", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxOverlay_SetOption", dxTarget, "height", value);
 		}
 		public static object GetMaxHeight(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxOverlay.GetOption", dxTarget, "maxHeight");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxOverlay_GetOption", dxTarget, "maxHeight");
 		}
 		public static void SetMaxHeight(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxOverlay.SetOption", dxTarget, "maxHeight", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxOverlay_SetOption", dxTarget, "maxHeight", value);
 		}
 		public static object GetMaxWidth(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxOverlay.GetOption", dxTarget, "maxWidth");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxOverlay_GetOption", dxTarget, "maxWidth");
 		}
 		public static void SetMaxWidth(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxOverlay.SetOption", dxTarget, "maxWidth", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxOverlay_SetOption", dxTarget, "maxWidth", value);
 		}
 		public static object GetMinHeight(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxOverlay.GetOption", dxTarget, "minHeight");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxOverlay_GetOption", dxTarget, "minHeight");
 		}
 		public static void SetMinHeight(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxOverlay.SetOption", dxTarget, "minHeight", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxOverlay_SetOption", dxTarget, "minHeight", value);
 		}
 		public static object GetMinWidth(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxOverlay.GetOption", dxTarget, "minWidth");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxOverlay_GetOption", dxTarget, "minWidth");
 		}
 		public static void SetMinWidth(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxOverlay.SetOption", dxTarget, "minWidth", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxOverlay_SetOption", dxTarget, "minWidth", value);
 		}
 		public static object GetPosition(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxOverlay.GetOption", dxTarget, "position");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxOverlay_GetOption", dxTarget, "position");
 		}
 		public static void SetPosition(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxOverlay.SetOption", dxTarget, "position", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxOverlay_SetOption", dxTarget, "position", value);
 		}
 		public static bool? GetShading(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxOverlay.GetOption", dxTarget, "shading");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxOverlay_GetOption", dxTarget, "shading");
 		}
 		public static void SetShading(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxOverlay.SetOption", dxTarget, "shading", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxOverlay_SetOption", dxTarget, "shading", value);
 		}
 		public static string GetShadingColor(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxOverlay.GetOption", dxTarget, "shadingColor");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxOverlay_GetOption", dxTarget, "shadingColor");
 		}
 		public static void SetShadingColor(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxOverlay.SetOption", dxTarget, "shadingColor", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxOverlay_SetOption", dxTarget, "shadingColor", value);
 		}
 		public static new bool? GetVisible(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxOverlay.GetOption", dxTarget, "visible");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxOverlay_GetOption", dxTarget, "visible");
 		}
 		public static new void SetVisible(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxOverlay.SetOption", dxTarget, "visible", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxOverlay_SetOption", dxTarget, "visible", value);
 		}
 		public static new object GetWidth(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxOverlay.GetOption", dxTarget, "width");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxOverlay_GetOption", dxTarget, "width");
 		}
 		public static new void SetWidth(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxOverlay.SetOption", dxTarget, "width", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxOverlay_SetOption", dxTarget, "width", value);
 		}
 		public static object Content(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxOverlay.content_0", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxOverlay_content_0", dxTarget);
 		}
 		public static object Hide(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxOverlay.hide_1", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxOverlay_hide_1", dxTarget);
 		}
 		public static void Repaint(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxOverlay.repaint_2", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxOverlay_repaint_2", dxTarget);
 		}
 		public static object Show(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxOverlay.show_3", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxOverlay_show_3", dxTarget);
 		}
 		public static object Toggle(ElementRef dxTarget, bool showing)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxOverlay.toggle_4", dxTarget, showing);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxOverlay_toggle_4", dxTarget, showing);
 		}
 	}
 	public class DxPanoramaInterop: CollectionWidgetInterop
@@ -5984,39 +6092,39 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.DxPanoramaOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPanorama.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPanorama_Init", dxTarget, json);
 		}
 		public static object GetBackgroundImage(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPanorama.GetOption", dxTarget, "backgroundImage");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPanorama_GetOption", dxTarget, "backgroundImage");
 		}
 		public static void SetBackgroundImage(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPanorama.SetOption", dxTarget, "backgroundImage", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPanorama_SetOption", dxTarget, "backgroundImage", value);
 		}
 		public static new bool? GetFocusStateEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxPanorama.GetOption", dxTarget, "focusStateEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxPanorama_GetOption", dxTarget, "focusStateEnabled");
 		}
 		public static new void SetFocusStateEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPanorama.SetOption", dxTarget, "focusStateEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPanorama_SetOption", dxTarget, "focusStateEnabled", value);
 		}
 		public static new float? GetSelectedIndex(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxPanorama.GetOption", dxTarget, "selectedIndex");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxPanorama_GetOption", dxTarget, "selectedIndex");
 		}
 		public static new void SetSelectedIndex(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPanorama.SetOption", dxTarget, "selectedIndex", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPanorama_SetOption", dxTarget, "selectedIndex", value);
 		}
 		public static string GetTitle(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxPanorama.GetOption", dxTarget, "title");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxPanorama_GetOption", dxTarget, "title");
 		}
 		public static void SetTitle(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPanorama.SetOption", dxTarget, "title", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPanorama_SetOption", dxTarget, "title", value);
 		}
 	}
 	public class DxPivotInterop: CollectionWidgetInterop
@@ -6024,39 +6132,39 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.DxPivotOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivot.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivot_Init", dxTarget, json);
 		}
 		public static object GetContentTemplate(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivot.GetOption", dxTarget, "contentTemplate");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivot_GetOption", dxTarget, "contentTemplate");
 		}
 		public static void SetContentTemplate(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivot.SetOption", dxTarget, "contentTemplate", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivot_SetOption", dxTarget, "contentTemplate", value);
 		}
 		public static object GetItemTitleTemplate(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivot.GetOption", dxTarget, "itemTitleTemplate");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivot_GetOption", dxTarget, "itemTitleTemplate");
 		}
 		public static void SetItemTitleTemplate(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivot.SetOption", dxTarget, "itemTitleTemplate", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivot_SetOption", dxTarget, "itemTitleTemplate", value);
 		}
 		public static new float? GetSelectedIndex(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxPivot.GetOption", dxTarget, "selectedIndex");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxPivot_GetOption", dxTarget, "selectedIndex");
 		}
 		public static new void SetSelectedIndex(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivot.SetOption", dxTarget, "selectedIndex", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivot_SetOption", dxTarget, "selectedIndex", value);
 		}
 		public static bool? GetSwipeEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxPivot.GetOption", dxTarget, "swipeEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxPivot_GetOption", dxTarget, "swipeEnabled");
 		}
 		public static void SetSwipeEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivot.SetOption", dxTarget, "swipeEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivot_SetOption", dxTarget, "swipeEnabled", value);
 		}
 	}
 	public class DxPivotGridInterop: WidgetInterop
@@ -6070,235 +6178,241 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.DxPivotGridOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGrid.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGrid_Init", dxTarget, json);
 		}
+		[JSInvokable("DevExpress.Ui.DxPivotGridInterop.OnCellClick")]
 		public static void OnCellClick(string identifier)
 		{
 			CellClick?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxPivotGridInterop.OnCellPrepared")]
 		public static void OnCellPrepared(string identifier)
 		{
 			CellPrepared?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxPivotGridInterop.OnContextMenuPreparing")]
 		public static void OnContextMenuPreparing(string identifier)
 		{
 			ContextMenuPreparing?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxPivotGridInterop.OnExported")]
 		public static void OnExported(string identifier)
 		{
 			Exported?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxPivotGridInterop.OnExporting")]
 		public static void OnExporting(string identifier)
 		{
 			Exporting?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxPivotGridInterop.OnFileSaving")]
 		public static void OnFileSaving(string identifier)
 		{
 			FileSaving?.Invoke(null, new JQueryEventArgs(identifier));
 		}
 		public static bool? GetAllowExpandAll(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxPivotGrid.GetOption", dxTarget, "allowExpandAll");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxPivotGrid_GetOption", dxTarget, "allowExpandAll");
 		}
 		public static void SetAllowExpandAll(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGrid.SetOption", dxTarget, "allowExpandAll", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGrid_SetOption", dxTarget, "allowExpandAll", value);
 		}
 		public static bool? GetAllowFiltering(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxPivotGrid.GetOption", dxTarget, "allowFiltering");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxPivotGrid_GetOption", dxTarget, "allowFiltering");
 		}
 		public static void SetAllowFiltering(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGrid.SetOption", dxTarget, "allowFiltering", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGrid_SetOption", dxTarget, "allowFiltering", value);
 		}
 		public static bool? GetAllowSorting(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxPivotGrid.GetOption", dxTarget, "allowSorting");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxPivotGrid_GetOption", dxTarget, "allowSorting");
 		}
 		public static void SetAllowSorting(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGrid.SetOption", dxTarget, "allowSorting", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGrid_SetOption", dxTarget, "allowSorting", value);
 		}
 		public static bool? GetAllowSortingBySummary(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxPivotGrid.GetOption", dxTarget, "allowSortingBySummary");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxPivotGrid_GetOption", dxTarget, "allowSortingBySummary");
 		}
 		public static void SetAllowSortingBySummary(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGrid.SetOption", dxTarget, "allowSortingBySummary", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGrid_SetOption", dxTarget, "allowSortingBySummary", value);
 		}
 		public static string GetDataFieldArea(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxPivotGrid.GetOption", dxTarget, "dataFieldArea");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxPivotGrid_GetOption", dxTarget, "dataFieldArea");
 		}
 		public static void SetDataFieldArea(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGrid.SetOption", dxTarget, "dataFieldArea", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGrid_SetOption", dxTarget, "dataFieldArea", value);
 		}
 		public static object GetDataSource(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGrid.GetOption", dxTarget, "dataSource");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGrid_GetOption", dxTarget, "dataSource");
 		}
 		public static void SetDataSource(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGrid.SetOption", dxTarget, "dataSource", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGrid_SetOption", dxTarget, "dataSource", value);
 		}
 		public static object GetExport(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGrid.GetOption", dxTarget, "export");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGrid_GetOption", dxTarget, "export");
 		}
 		public static void SetExport(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGrid.SetOption", dxTarget, "export", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGrid_SetOption", dxTarget, "export", value);
 		}
 		public static object GetFieldChooser(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGrid.GetOption", dxTarget, "fieldChooser");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGrid_GetOption", dxTarget, "fieldChooser");
 		}
 		public static void SetFieldChooser(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGrid.SetOption", dxTarget, "fieldChooser", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGrid_SetOption", dxTarget, "fieldChooser", value);
 		}
 		public static object GetFieldPanel(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGrid.GetOption", dxTarget, "fieldPanel");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGrid_GetOption", dxTarget, "fieldPanel");
 		}
 		public static void SetFieldPanel(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGrid.SetOption", dxTarget, "fieldPanel", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGrid_SetOption", dxTarget, "fieldPanel", value);
 		}
 		public static object GetHeaderFilter(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGrid.GetOption", dxTarget, "headerFilter");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGrid_GetOption", dxTarget, "headerFilter");
 		}
 		public static void SetHeaderFilter(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGrid.SetOption", dxTarget, "headerFilter", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGrid_SetOption", dxTarget, "headerFilter", value);
 		}
 		public static bool? GetHideEmptySummaryCells(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxPivotGrid.GetOption", dxTarget, "hideEmptySummaryCells");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxPivotGrid_GetOption", dxTarget, "hideEmptySummaryCells");
 		}
 		public static void SetHideEmptySummaryCells(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGrid.SetOption", dxTarget, "hideEmptySummaryCells", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGrid_SetOption", dxTarget, "hideEmptySummaryCells", value);
 		}
 		public static object GetLoadPanel(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGrid.GetOption", dxTarget, "loadPanel");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGrid_GetOption", dxTarget, "loadPanel");
 		}
 		public static void SetLoadPanel(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGrid.SetOption", dxTarget, "loadPanel", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGrid_SetOption", dxTarget, "loadPanel", value);
 		}
 		public static string GetRowHeaderLayout(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxPivotGrid.GetOption", dxTarget, "rowHeaderLayout");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxPivotGrid_GetOption", dxTarget, "rowHeaderLayout");
 		}
 		public static void SetRowHeaderLayout(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGrid.SetOption", dxTarget, "rowHeaderLayout", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGrid_SetOption", dxTarget, "rowHeaderLayout", value);
 		}
 		public static object GetScrolling(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGrid.GetOption", dxTarget, "scrolling");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGrid_GetOption", dxTarget, "scrolling");
 		}
 		public static void SetScrolling(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGrid.SetOption", dxTarget, "scrolling", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGrid_SetOption", dxTarget, "scrolling", value);
 		}
 		public static bool? GetShowBorders(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxPivotGrid.GetOption", dxTarget, "showBorders");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxPivotGrid_GetOption", dxTarget, "showBorders");
 		}
 		public static void SetShowBorders(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGrid.SetOption", dxTarget, "showBorders", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGrid_SetOption", dxTarget, "showBorders", value);
 		}
 		public static bool? GetShowColumnGrandTotals(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxPivotGrid.GetOption", dxTarget, "showColumnGrandTotals");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxPivotGrid_GetOption", dxTarget, "showColumnGrandTotals");
 		}
 		public static void SetShowColumnGrandTotals(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGrid.SetOption", dxTarget, "showColumnGrandTotals", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGrid_SetOption", dxTarget, "showColumnGrandTotals", value);
 		}
 		public static bool? GetShowColumnTotals(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxPivotGrid.GetOption", dxTarget, "showColumnTotals");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxPivotGrid_GetOption", dxTarget, "showColumnTotals");
 		}
 		public static void SetShowColumnTotals(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGrid.SetOption", dxTarget, "showColumnTotals", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGrid_SetOption", dxTarget, "showColumnTotals", value);
 		}
 		public static bool? GetShowRowGrandTotals(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxPivotGrid.GetOption", dxTarget, "showRowGrandTotals");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxPivotGrid_GetOption", dxTarget, "showRowGrandTotals");
 		}
 		public static void SetShowRowGrandTotals(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGrid.SetOption", dxTarget, "showRowGrandTotals", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGrid_SetOption", dxTarget, "showRowGrandTotals", value);
 		}
 		public static bool? GetShowRowTotals(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxPivotGrid.GetOption", dxTarget, "showRowTotals");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxPivotGrid_GetOption", dxTarget, "showRowTotals");
 		}
 		public static void SetShowRowTotals(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGrid.SetOption", dxTarget, "showRowTotals", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGrid_SetOption", dxTarget, "showRowTotals", value);
 		}
 		public static string GetShowTotalsPrior(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxPivotGrid.GetOption", dxTarget, "showTotalsPrior");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxPivotGrid_GetOption", dxTarget, "showTotalsPrior");
 		}
 		public static void SetShowTotalsPrior(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGrid.SetOption", dxTarget, "showTotalsPrior", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGrid_SetOption", dxTarget, "showTotalsPrior", value);
 		}
 		public static object GetStateStoring(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGrid.GetOption", dxTarget, "stateStoring");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGrid_GetOption", dxTarget, "stateStoring");
 		}
 		public static void SetStateStoring(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGrid.SetOption", dxTarget, "stateStoring", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGrid_SetOption", dxTarget, "stateStoring", value);
 		}
 		public static object GetTexts(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGrid.GetOption", dxTarget, "texts");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGrid_GetOption", dxTarget, "texts");
 		}
 		public static void SetTexts(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGrid.SetOption", dxTarget, "texts", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGrid_SetOption", dxTarget, "texts", value);
 		}
 		public static bool? GetWordWrapEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxPivotGrid.GetOption", dxTarget, "wordWrapEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxPivotGrid_GetOption", dxTarget, "wordWrapEnabled");
 		}
 		public static void SetWordWrapEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGrid.SetOption", dxTarget, "wordWrapEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGrid_SetOption", dxTarget, "wordWrapEnabled", value);
 		}
 		public static object BindChart(ElementRef dxTarget, object chart, object integrationOptions)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGrid.bindChart_0", dxTarget, chart, integrationOptions);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGrid_bindChart_0", dxTarget, chart, integrationOptions);
 		}
 		public static void ExportToExcel(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGrid.exportToExcel_1", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGrid_exportToExcel_1", dxTarget);
 		}
 		public static object GetDataSourceEx(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGrid.getDataSource_2", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGrid_getDataSource_2", dxTarget);
 		}
 		public static object GetFieldChooserPopup(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGrid.getFieldChooserPopup_3", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGrid_getFieldChooserPopup_3", dxTarget);
 		}
 		public static void UpdateDimensions(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGrid.updateDimensions_4", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGrid_updateDimensions_4", dxTarget);
 		}
 	}
 	public class DxPivotGridFieldChooserInterop: WidgetInterop
@@ -6307,91 +6421,92 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.DxPivotGridFieldChooserOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGridFieldChooser.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGridFieldChooser_Init", dxTarget, json);
 		}
+		[JSInvokable("DevExpress.Ui.DxPivotGridFieldChooserInterop.OnContextMenuPreparing")]
 		public static void OnContextMenuPreparing(string identifier)
 		{
 			ContextMenuPreparing?.Invoke(null, new JQueryEventArgs(identifier));
 		}
 		public static bool? GetAllowSearch(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxPivotGridFieldChooser.GetOption", dxTarget, "allowSearch");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxPivotGridFieldChooser_GetOption", dxTarget, "allowSearch");
 		}
 		public static void SetAllowSearch(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGridFieldChooser.SetOption", dxTarget, "allowSearch", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGridFieldChooser_SetOption", dxTarget, "allowSearch", value);
 		}
 		public static string GetApplyChangesMode(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxPivotGridFieldChooser.GetOption", dxTarget, "applyChangesMode");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxPivotGridFieldChooser_GetOption", dxTarget, "applyChangesMode");
 		}
 		public static void SetApplyChangesMode(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGridFieldChooser.SetOption", dxTarget, "applyChangesMode", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGridFieldChooser_SetOption", dxTarget, "applyChangesMode", value);
 		}
 		public static object GetDataSource(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGridFieldChooser.GetOption", dxTarget, "dataSource");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGridFieldChooser_GetOption", dxTarget, "dataSource");
 		}
 		public static void SetDataSource(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGridFieldChooser.SetOption", dxTarget, "dataSource", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGridFieldChooser_SetOption", dxTarget, "dataSource", value);
 		}
 		public static object GetHeaderFilter(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGridFieldChooser.GetOption", dxTarget, "headerFilter");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGridFieldChooser_GetOption", dxTarget, "headerFilter");
 		}
 		public static void SetHeaderFilter(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGridFieldChooser.SetOption", dxTarget, "headerFilter", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGridFieldChooser_SetOption", dxTarget, "headerFilter", value);
 		}
 		public static new object GetHeight(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGridFieldChooser.GetOption", dxTarget, "height");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGridFieldChooser_GetOption", dxTarget, "height");
 		}
 		public static new void SetHeight(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGridFieldChooser.SetOption", dxTarget, "height", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGridFieldChooser_SetOption", dxTarget, "height", value);
 		}
 		public static object GetLayout(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGridFieldChooser.GetOption", dxTarget, "layout");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGridFieldChooser_GetOption", dxTarget, "layout");
 		}
 		public static void SetLayout(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGridFieldChooser.SetOption", dxTarget, "layout", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGridFieldChooser_SetOption", dxTarget, "layout", value);
 		}
 		public static object GetState(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGridFieldChooser.GetOption", dxTarget, "state");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGridFieldChooser_GetOption", dxTarget, "state");
 		}
 		public static void SetState(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGridFieldChooser.SetOption", dxTarget, "state", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGridFieldChooser_SetOption", dxTarget, "state", value);
 		}
 		public static object GetTexts(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGridFieldChooser.GetOption", dxTarget, "texts");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGridFieldChooser_GetOption", dxTarget, "texts");
 		}
 		public static void SetTexts(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGridFieldChooser.SetOption", dxTarget, "texts", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGridFieldChooser_SetOption", dxTarget, "texts", value);
 		}
 		public static void ApplyChanges(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGridFieldChooser.applyChanges_0", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGridFieldChooser_applyChanges_0", dxTarget);
 		}
 		public static void CancelChanges(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGridFieldChooser.cancelChanges_1", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGridFieldChooser_cancelChanges_1", dxTarget);
 		}
 		public static object GetDataSourceEx(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGridFieldChooser.getDataSource_2", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGridFieldChooser_getDataSource_2", dxTarget);
 		}
 		public static void UpdateDimensions(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGridFieldChooser.updateDimensions_3", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGridFieldChooser_updateDimensions_3", dxTarget);
 		}
 	}
 	public class DxPopoverInterop: DxPopupInterop
@@ -6399,95 +6514,95 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.DxPopoverOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPopover.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPopover_Init", dxTarget, json);
 		}
 		public static new object GetAnimation(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPopover.GetOption", dxTarget, "animation");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPopover_GetOption", dxTarget, "animation");
 		}
 		public static new void SetAnimation(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPopover.SetOption", dxTarget, "animation", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPopover_SetOption", dxTarget, "animation", value);
 		}
 		public static new object GetCloseOnOutsideClick(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPopover.GetOption", dxTarget, "closeOnOutsideClick");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPopover_GetOption", dxTarget, "closeOnOutsideClick");
 		}
 		public static new void SetCloseOnOutsideClick(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPopover.SetOption", dxTarget, "closeOnOutsideClick", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPopover_SetOption", dxTarget, "closeOnOutsideClick", value);
 		}
 		public static new object GetHeight(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPopover.GetOption", dxTarget, "height");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPopover_GetOption", dxTarget, "height");
 		}
 		public static new void SetHeight(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPopover.SetOption", dxTarget, "height", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPopover_SetOption", dxTarget, "height", value);
 		}
 		public static object GetHideEvent(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPopover.GetOption", dxTarget, "hideEvent");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPopover_GetOption", dxTarget, "hideEvent");
 		}
 		public static void SetHideEvent(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPopover.SetOption", dxTarget, "hideEvent", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPopover_SetOption", dxTarget, "hideEvent", value);
 		}
 		public static new object GetPosition(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPopover.GetOption", dxTarget, "position");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPopover_GetOption", dxTarget, "position");
 		}
 		public static new void SetPosition(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPopover.SetOption", dxTarget, "position", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPopover_SetOption", dxTarget, "position", value);
 		}
 		public static new bool? GetShading(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxPopover.GetOption", dxTarget, "shading");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxPopover_GetOption", dxTarget, "shading");
 		}
 		public static new void SetShading(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPopover.SetOption", dxTarget, "shading", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPopover_SetOption", dxTarget, "shading", value);
 		}
 		public static object GetShowEvent(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPopover.GetOption", dxTarget, "showEvent");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPopover_GetOption", dxTarget, "showEvent");
 		}
 		public static void SetShowEvent(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPopover.SetOption", dxTarget, "showEvent", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPopover_SetOption", dxTarget, "showEvent", value);
 		}
 		public static new bool? GetShowTitle(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxPopover.GetOption", dxTarget, "showTitle");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxPopover_GetOption", dxTarget, "showTitle");
 		}
 		public static new void SetShowTitle(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPopover.SetOption", dxTarget, "showTitle", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPopover_SetOption", dxTarget, "showTitle", value);
 		}
 		public static object GetTarget(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPopover.GetOption", dxTarget, "target");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPopover_GetOption", dxTarget, "target");
 		}
 		public static void SetTarget(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPopover.SetOption", dxTarget, "target", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPopover_SetOption", dxTarget, "target", value);
 		}
 		public static new object GetWidth(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPopover.GetOption", dxTarget, "width");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPopover_GetOption", dxTarget, "width");
 		}
 		public static new void SetWidth(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPopover.SetOption", dxTarget, "width", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPopover_SetOption", dxTarget, "width", value);
 		}
 		public static object Show(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPopover.show_0", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPopover_show_0", dxTarget);
 		}
 		public static object Show(ElementRef dxTarget, object target)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPopover.show_1", dxTarget, target);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPopover_show_1", dxTarget, target);
 		}
 	}
 	public class DxPopupInterop: DxOverlayInterop
@@ -6499,135 +6614,139 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.DxPopupOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPopup.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPopup_Init", dxTarget, json);
 		}
+		[JSInvokable("DevExpress.Ui.DxPopupInterop.OnResize")]
 		public static void OnResize(string identifier)
 		{
 			Resize?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxPopupInterop.OnResizeEnd")]
 		public static void OnResizeEnd(string identifier)
 		{
 			ResizeEnd?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxPopupInterop.OnResizeStart")]
 		public static void OnResizeStart(string identifier)
 		{
 			ResizeStart?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxPopupInterop.OnTitleRendered")]
 		public static void OnTitleRendered(string identifier)
 		{
 			TitleRendered?.Invoke(null, new JQueryEventArgs(identifier));
 		}
 		public static new object GetAnimation(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPopup.GetOption", dxTarget, "animation");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPopup_GetOption", dxTarget, "animation");
 		}
 		public static new void SetAnimation(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPopup.SetOption", dxTarget, "animation", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPopup_SetOption", dxTarget, "animation", value);
 		}
 		public static object GetContainer(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPopup.GetOption", dxTarget, "container");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPopup_GetOption", dxTarget, "container");
 		}
 		public static void SetContainer(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPopup.SetOption", dxTarget, "container", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPopup_SetOption", dxTarget, "container", value);
 		}
 		public static new bool? GetDragEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxPopup.GetOption", dxTarget, "dragEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxPopup_GetOption", dxTarget, "dragEnabled");
 		}
 		public static new void SetDragEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPopup.SetOption", dxTarget, "dragEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPopup_SetOption", dxTarget, "dragEnabled", value);
 		}
 		public static new bool? GetFocusStateEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxPopup.GetOption", dxTarget, "focusStateEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxPopup_GetOption", dxTarget, "focusStateEnabled");
 		}
 		public static new void SetFocusStateEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPopup.SetOption", dxTarget, "focusStateEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPopup_SetOption", dxTarget, "focusStateEnabled", value);
 		}
 		public static bool? GetFullScreen(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxPopup.GetOption", dxTarget, "fullScreen");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxPopup_GetOption", dxTarget, "fullScreen");
 		}
 		public static void SetFullScreen(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPopup.SetOption", dxTarget, "fullScreen", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPopup_SetOption", dxTarget, "fullScreen", value);
 		}
 		public static new object GetHeight(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPopup.GetOption", dxTarget, "height");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPopup_GetOption", dxTarget, "height");
 		}
 		public static new void SetHeight(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPopup.SetOption", dxTarget, "height", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPopup_SetOption", dxTarget, "height", value);
 		}
 		public static new object GetPosition(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPopup.GetOption", dxTarget, "position");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPopup_GetOption", dxTarget, "position");
 		}
 		public static new void SetPosition(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPopup.SetOption", dxTarget, "position", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPopup_SetOption", dxTarget, "position", value);
 		}
 		public static bool? GetResizeEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxPopup.GetOption", dxTarget, "resizeEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxPopup_GetOption", dxTarget, "resizeEnabled");
 		}
 		public static void SetResizeEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPopup.SetOption", dxTarget, "resizeEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPopup_SetOption", dxTarget, "resizeEnabled", value);
 		}
 		public static bool? GetShowCloseButton(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxPopup.GetOption", dxTarget, "showCloseButton");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxPopup_GetOption", dxTarget, "showCloseButton");
 		}
 		public static void SetShowCloseButton(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPopup.SetOption", dxTarget, "showCloseButton", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPopup_SetOption", dxTarget, "showCloseButton", value);
 		}
 		public static bool? GetShowTitle(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxPopup.GetOption", dxTarget, "showTitle");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxPopup_GetOption", dxTarget, "showTitle");
 		}
 		public static void SetShowTitle(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPopup.SetOption", dxTarget, "showTitle", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPopup_SetOption", dxTarget, "showTitle", value);
 		}
 		public static string GetTitle(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxPopup.GetOption", dxTarget, "title");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxPopup_GetOption", dxTarget, "title");
 		}
 		public static void SetTitle(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPopup.SetOption", dxTarget, "title", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPopup_SetOption", dxTarget, "title", value);
 		}
 		public static object GetTitleTemplate(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPopup.GetOption", dxTarget, "titleTemplate");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPopup_GetOption", dxTarget, "titleTemplate");
 		}
 		public static void SetTitleTemplate(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPopup.SetOption", dxTarget, "titleTemplate", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPopup_SetOption", dxTarget, "titleTemplate", value);
 		}
 		public static object GetToolbarItems(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPopup.GetOption", dxTarget, "toolbarItems");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPopup_GetOption", dxTarget, "toolbarItems");
 		}
 		public static void SetToolbarItems(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPopup.SetOption", dxTarget, "toolbarItems", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPopup_SetOption", dxTarget, "toolbarItems", value);
 		}
 		public static new object GetWidth(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPopup.GetOption", dxTarget, "width");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPopup_GetOption", dxTarget, "width");
 		}
 		public static new void SetWidth(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPopup.SetOption", dxTarget, "width", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPopup_SetOption", dxTarget, "width", value);
 		}
 	}
 	public class DxProgressBarInterop: DxTrackBarInterop
@@ -6636,35 +6755,36 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.DxProgressBarOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxProgressBar.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxProgressBar_Init", dxTarget, json);
 		}
+		[JSInvokable("DevExpress.Ui.DxProgressBarInterop.OnComplete")]
 		public static void OnComplete(string identifier)
 		{
 			Complete?.Invoke(null, new JQueryEventArgs(identifier));
 		}
 		public static bool? GetShowStatus(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxProgressBar.GetOption", dxTarget, "showStatus");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxProgressBar_GetOption", dxTarget, "showStatus");
 		}
 		public static void SetShowStatus(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxProgressBar.SetOption", dxTarget, "showStatus", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxProgressBar_SetOption", dxTarget, "showStatus", value);
 		}
 		public static object GetStatusFormat(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxProgressBar.GetOption", dxTarget, "statusFormat");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxProgressBar_GetOption", dxTarget, "statusFormat");
 		}
 		public static void SetStatusFormat(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxProgressBar.SetOption", dxTarget, "statusFormat", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxProgressBar_SetOption", dxTarget, "statusFormat", value);
 		}
 		public static new float? GetValue(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxProgressBar.GetOption", dxTarget, "value");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxProgressBar_GetOption", dxTarget, "value");
 		}
 		public static new void SetValue(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxProgressBar.SetOption", dxTarget, "value", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxProgressBar_SetOption", dxTarget, "value", value);
 		}
 	}
 	public class DxRadioGroupInterop: EditorInterop
@@ -6672,59 +6792,59 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.DxRadioGroupOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxRadioGroup.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxRadioGroup_Init", dxTarget, json);
 		}
 		public static new bool? GetActiveStateEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxRadioGroup.GetOption", dxTarget, "activeStateEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxRadioGroup_GetOption", dxTarget, "activeStateEnabled");
 		}
 		public static new void SetActiveStateEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxRadioGroup.SetOption", dxTarget, "activeStateEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxRadioGroup_SetOption", dxTarget, "activeStateEnabled", value);
 		}
 		public static new bool? GetFocusStateEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxRadioGroup.GetOption", dxTarget, "focusStateEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxRadioGroup_GetOption", dxTarget, "focusStateEnabled");
 		}
 		public static new void SetFocusStateEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxRadioGroup.SetOption", dxTarget, "focusStateEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxRadioGroup_SetOption", dxTarget, "focusStateEnabled", value);
 		}
 		public static new bool? GetHoverStateEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxRadioGroup.GetOption", dxTarget, "hoverStateEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxRadioGroup_GetOption", dxTarget, "hoverStateEnabled");
 		}
 		public static new void SetHoverStateEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxRadioGroup.SetOption", dxTarget, "hoverStateEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxRadioGroup_SetOption", dxTarget, "hoverStateEnabled", value);
 		}
 		public static string GetLayout(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxRadioGroup.GetOption", dxTarget, "layout");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxRadioGroup_GetOption", dxTarget, "layout");
 		}
 		public static void SetLayout(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxRadioGroup.SetOption", dxTarget, "layout", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxRadioGroup_SetOption", dxTarget, "layout", value);
 		}
 		public static string GetName(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxRadioGroup.GetOption", dxTarget, "name");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxRadioGroup_GetOption", dxTarget, "name");
 		}
 		public static void SetName(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxRadioGroup.SetOption", dxTarget, "name", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxRadioGroup_SetOption", dxTarget, "name", value);
 		}
 		public static new object GetValue(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxRadioGroup.GetOption", dxTarget, "value");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxRadioGroup_GetOption", dxTarget, "value");
 		}
 		public static new void SetValue(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxRadioGroup.SetOption", dxTarget, "value", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxRadioGroup_SetOption", dxTarget, "value", value);
 		}
 		public static object GetDataSourceEx(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxRadioGroup.getDataSource_0", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxRadioGroup_getDataSource_0", dxTarget);
 		}
 	}
 	public class DxRangeSliderInterop: DxSliderBaseInterop
@@ -6733,55 +6853,56 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.DxRangeSliderOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxRangeSlider.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxRangeSlider_Init", dxTarget, json);
 		}
+		[JSInvokable("DevExpress.Ui.DxRangeSliderInterop.OnValueChanged")]
 		public static void OnValueChanged(string identifier)
 		{
 			ValueChanged?.Invoke(null, new JQueryEventArgs(identifier));
 		}
 		public static float? GetEnd(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxRangeSlider.GetOption", dxTarget, "end");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxRangeSlider_GetOption", dxTarget, "end");
 		}
 		public static void SetEnd(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxRangeSlider.SetOption", dxTarget, "end", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxRangeSlider_SetOption", dxTarget, "end", value);
 		}
 		public static string GetEndName(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxRangeSlider.GetOption", dxTarget, "endName");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxRangeSlider_GetOption", dxTarget, "endName");
 		}
 		public static void SetEndName(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxRangeSlider.SetOption", dxTarget, "endName", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxRangeSlider_SetOption", dxTarget, "endName", value);
 		}
 		public static float? GetStart(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxRangeSlider.GetOption", dxTarget, "start");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxRangeSlider_GetOption", dxTarget, "start");
 		}
 		public static void SetStart(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxRangeSlider.SetOption", dxTarget, "start", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxRangeSlider_SetOption", dxTarget, "start", value);
 		}
 		public static string GetStartName(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxRangeSlider.GetOption", dxTarget, "startName");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxRangeSlider_GetOption", dxTarget, "startName");
 		}
 		public static void SetStartName(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxRangeSlider.SetOption", dxTarget, "startName", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxRangeSlider_SetOption", dxTarget, "startName", value);
 		}
 		public static new object GetValue(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxRangeSlider.GetOption", dxTarget, "value");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxRangeSlider_GetOption", dxTarget, "value");
 		}
 		public static new void SetValue(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxRangeSlider.SetOption", dxTarget, "value", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxRangeSlider_SetOption", dxTarget, "value", value);
 		}
 		public static void Reset(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxRangeSlider.reset_0", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxRangeSlider_reset_0", dxTarget);
 		}
 	}
 	public class DxResizableInterop: DOMComponentInterop
@@ -6792,75 +6913,78 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.DxResizableOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxResizable.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxResizable_Init", dxTarget, json);
 		}
+		[JSInvokable("DevExpress.Ui.DxResizableInterop.OnResize")]
 		public static void OnResize(string identifier)
 		{
 			Resize?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxResizableInterop.OnResizeEnd")]
 		public static void OnResizeEnd(string identifier)
 		{
 			ResizeEnd?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxResizableInterop.OnResizeStart")]
 		public static void OnResizeStart(string identifier)
 		{
 			ResizeStart?.Invoke(null, new JQueryEventArgs(identifier));
 		}
 		public static string GetHandles(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxResizable.GetOption", dxTarget, "handles");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxResizable_GetOption", dxTarget, "handles");
 		}
 		public static void SetHandles(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxResizable.SetOption", dxTarget, "handles", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxResizable_SetOption", dxTarget, "handles", value);
 		}
 		public static new object GetHeight(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxResizable.GetOption", dxTarget, "height");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxResizable_GetOption", dxTarget, "height");
 		}
 		public static new void SetHeight(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxResizable.SetOption", dxTarget, "height", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxResizable_SetOption", dxTarget, "height", value);
 		}
 		public static float? GetMaxHeight(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxResizable.GetOption", dxTarget, "maxHeight");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxResizable_GetOption", dxTarget, "maxHeight");
 		}
 		public static void SetMaxHeight(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxResizable.SetOption", dxTarget, "maxHeight", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxResizable_SetOption", dxTarget, "maxHeight", value);
 		}
 		public static float? GetMaxWidth(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxResizable.GetOption", dxTarget, "maxWidth");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxResizable_GetOption", dxTarget, "maxWidth");
 		}
 		public static void SetMaxWidth(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxResizable.SetOption", dxTarget, "maxWidth", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxResizable_SetOption", dxTarget, "maxWidth", value);
 		}
 		public static float? GetMinHeight(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxResizable.GetOption", dxTarget, "minHeight");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxResizable_GetOption", dxTarget, "minHeight");
 		}
 		public static void SetMinHeight(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxResizable.SetOption", dxTarget, "minHeight", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxResizable_SetOption", dxTarget, "minHeight", value);
 		}
 		public static float? GetMinWidth(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxResizable.GetOption", dxTarget, "minWidth");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxResizable_GetOption", dxTarget, "minWidth");
 		}
 		public static void SetMinWidth(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxResizable.SetOption", dxTarget, "minWidth", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxResizable_SetOption", dxTarget, "minWidth", value);
 		}
 		public static new object GetWidth(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxResizable.GetOption", dxTarget, "width");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxResizable_GetOption", dxTarget, "width");
 		}
 		public static new void SetWidth(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxResizable.SetOption", dxTarget, "width", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxResizable_SetOption", dxTarget, "width", value);
 		}
 	}
 	public class DxResponsiveBoxInterop: CollectionWidgetInterop
@@ -6868,55 +6992,55 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.DxResponsiveBoxOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxResponsiveBox.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxResponsiveBox_Init", dxTarget, json);
 		}
 		public static object GetCols(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxResponsiveBox.GetOption", dxTarget, "cols");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxResponsiveBox_GetOption", dxTarget, "cols");
 		}
 		public static void SetCols(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxResponsiveBox.SetOption", dxTarget, "cols", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxResponsiveBox_SetOption", dxTarget, "cols", value);
 		}
 		public static new object GetHeight(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxResponsiveBox.GetOption", dxTarget, "height");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxResponsiveBox_GetOption", dxTarget, "height");
 		}
 		public static new void SetHeight(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxResponsiveBox.SetOption", dxTarget, "height", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxResponsiveBox_SetOption", dxTarget, "height", value);
 		}
 		public static object GetRows(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxResponsiveBox.GetOption", dxTarget, "rows");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxResponsiveBox_GetOption", dxTarget, "rows");
 		}
 		public static void SetRows(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxResponsiveBox.SetOption", dxTarget, "rows", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxResponsiveBox_SetOption", dxTarget, "rows", value);
 		}
 		public static object GetScreenByWidth(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxResponsiveBox.GetOption", dxTarget, "screenByWidth");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxResponsiveBox_GetOption", dxTarget, "screenByWidth");
 		}
 		public static void SetScreenByWidth(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxResponsiveBox.SetOption", dxTarget, "screenByWidth", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxResponsiveBox_SetOption", dxTarget, "screenByWidth", value);
 		}
 		public static string GetSingleColumnScreen(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxResponsiveBox.GetOption", dxTarget, "singleColumnScreen");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxResponsiveBox_GetOption", dxTarget, "singleColumnScreen");
 		}
 		public static void SetSingleColumnScreen(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxResponsiveBox.SetOption", dxTarget, "singleColumnScreen", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxResponsiveBox_SetOption", dxTarget, "singleColumnScreen", value);
 		}
 		public static new object GetWidth(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxResponsiveBox.GetOption", dxTarget, "width");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxResponsiveBox_GetOption", dxTarget, "width");
 		}
 		public static new void SetWidth(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxResponsiveBox.SetOption", dxTarget, "width", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxResponsiveBox_SetOption", dxTarget, "width", value);
 		}
 	}
 	public class DxSchedulerInterop: WidgetInterop
@@ -6937,451 +7061,464 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.DxSchedulerOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_Init", dxTarget, json);
 		}
+		[JSInvokable("DevExpress.Ui.DxSchedulerInterop.OnAppointmentAdded")]
 		public static void OnAppointmentAdded(string identifier)
 		{
 			AppointmentAdded?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxSchedulerInterop.OnAppointmentAdding")]
 		public static void OnAppointmentAdding(string identifier)
 		{
 			AppointmentAdding?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxSchedulerInterop.OnAppointmentClick")]
 		public static void OnAppointmentClick(string identifier)
 		{
 			AppointmentClick?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxSchedulerInterop.OnAppointmentContextMenu")]
 		public static void OnAppointmentContextMenu(string identifier)
 		{
 			AppointmentContextMenu?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxSchedulerInterop.OnAppointmentDblClick")]
 		public static void OnAppointmentDblClick(string identifier)
 		{
 			AppointmentDblClick?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxSchedulerInterop.OnAppointmentDeleted")]
 		public static void OnAppointmentDeleted(string identifier)
 		{
 			AppointmentDeleted?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxSchedulerInterop.OnAppointmentDeleting")]
 		public static void OnAppointmentDeleting(string identifier)
 		{
 			AppointmentDeleting?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxSchedulerInterop.OnAppointmentFormCreated")]
 		public static void OnAppointmentFormCreated(string identifier)
 		{
 			AppointmentFormCreated?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxSchedulerInterop.OnAppointmentRendered")]
 		public static void OnAppointmentRendered(string identifier)
 		{
 			AppointmentRendered?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxSchedulerInterop.OnAppointmentUpdated")]
 		public static void OnAppointmentUpdated(string identifier)
 		{
 			AppointmentUpdated?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxSchedulerInterop.OnAppointmentUpdating")]
 		public static void OnAppointmentUpdating(string identifier)
 		{
 			AppointmentUpdating?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxSchedulerInterop.OnCellClick")]
 		public static void OnCellClick(string identifier)
 		{
 			CellClick?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxSchedulerInterop.OnCellContextMenu")]
 		public static void OnCellContextMenu(string identifier)
 		{
 			CellContextMenu?.Invoke(null, new JQueryEventArgs(identifier));
 		}
 		public static string GetAllDayExpr(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxScheduler.GetOption", dxTarget, "allDayExpr");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "allDayExpr");
 		}
 		public static void SetAllDayExpr(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.SetOption", dxTarget, "allDayExpr", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "allDayExpr", value);
 		}
 		public static object GetAppointmentTemplate(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.GetOption", dxTarget, "appointmentTemplate");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "appointmentTemplate");
 		}
 		public static void SetAppointmentTemplate(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.SetOption", dxTarget, "appointmentTemplate", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "appointmentTemplate", value);
 		}
 		public static object GetAppointmentTooltipTemplate(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.GetOption", dxTarget, "appointmentTooltipTemplate");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "appointmentTooltipTemplate");
 		}
 		public static void SetAppointmentTooltipTemplate(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.SetOption", dxTarget, "appointmentTooltipTemplate", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "appointmentTooltipTemplate", value);
 		}
 		public static float? GetCellDuration(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxScheduler.GetOption", dxTarget, "cellDuration");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "cellDuration");
 		}
 		public static void SetCellDuration(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.SetOption", dxTarget, "cellDuration", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "cellDuration", value);
 		}
 		public static bool? GetCrossScrollingEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxScheduler.GetOption", dxTarget, "crossScrollingEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "crossScrollingEnabled");
 		}
 		public static void SetCrossScrollingEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.SetOption", dxTarget, "crossScrollingEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "crossScrollingEnabled", value);
 		}
 		public static object GetCurrentDate(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.GetOption", dxTarget, "currentDate");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "currentDate");
 		}
 		public static void SetCurrentDate(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.SetOption", dxTarget, "currentDate", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "currentDate", value);
 		}
 		public static string GetCurrentView(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxScheduler.GetOption", dxTarget, "currentView");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "currentView");
 		}
 		public static void SetCurrentView(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.SetOption", dxTarget, "currentView", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "currentView", value);
 		}
 		public static object GetDataCellTemplate(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.GetOption", dxTarget, "dataCellTemplate");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "dataCellTemplate");
 		}
 		public static void SetDataCellTemplate(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.SetOption", dxTarget, "dataCellTemplate", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "dataCellTemplate", value);
 		}
 		public static object GetDataSource(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.GetOption", dxTarget, "dataSource");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "dataSource");
 		}
 		public static void SetDataSource(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.SetOption", dxTarget, "dataSource", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "dataSource", value);
 		}
 		public static object GetDateCellTemplate(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.GetOption", dxTarget, "dateCellTemplate");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "dateCellTemplate");
 		}
 		public static void SetDateCellTemplate(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.SetOption", dxTarget, "dateCellTemplate", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "dateCellTemplate", value);
 		}
 		public static string GetDateSerializationFormat(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxScheduler.GetOption", dxTarget, "dateSerializationFormat");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "dateSerializationFormat");
 		}
 		public static void SetDateSerializationFormat(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.SetOption", dxTarget, "dateSerializationFormat", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "dateSerializationFormat", value);
 		}
 		public static string GetDescriptionExpr(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxScheduler.GetOption", dxTarget, "descriptionExpr");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "descriptionExpr");
 		}
 		public static void SetDescriptionExpr(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.SetOption", dxTarget, "descriptionExpr", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "descriptionExpr", value);
 		}
 		public static object GetDropDownAppointmentTemplate(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.GetOption", dxTarget, "dropDownAppointmentTemplate");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "dropDownAppointmentTemplate");
 		}
 		public static void SetDropDownAppointmentTemplate(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.SetOption", dxTarget, "dropDownAppointmentTemplate", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "dropDownAppointmentTemplate", value);
 		}
 		public static object GetEditing(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.GetOption", dxTarget, "editing");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "editing");
 		}
 		public static void SetEditing(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.SetOption", dxTarget, "editing", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "editing", value);
 		}
 		public static string GetEndDateExpr(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxScheduler.GetOption", dxTarget, "endDateExpr");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "endDateExpr");
 		}
 		public static void SetEndDateExpr(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.SetOption", dxTarget, "endDateExpr", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "endDateExpr", value);
 		}
 		public static string GetEndDateTimeZoneExpr(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxScheduler.GetOption", dxTarget, "endDateTimeZoneExpr");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "endDateTimeZoneExpr");
 		}
 		public static void SetEndDateTimeZoneExpr(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.SetOption", dxTarget, "endDateTimeZoneExpr", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "endDateTimeZoneExpr", value);
 		}
 		public static float? GetEndDayHour(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxScheduler.GetOption", dxTarget, "endDayHour");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "endDayHour");
 		}
 		public static void SetEndDayHour(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.SetOption", dxTarget, "endDayHour", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "endDayHour", value);
 		}
 		public static object GetFirstDayOfWeek(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.GetOption", dxTarget, "firstDayOfWeek");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "firstDayOfWeek");
 		}
 		public static void SetFirstDayOfWeek(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.SetOption", dxTarget, "firstDayOfWeek", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "firstDayOfWeek", value);
 		}
 		public static new bool? GetFocusStateEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxScheduler.GetOption", dxTarget, "focusStateEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "focusStateEnabled");
 		}
 		public static new void SetFocusStateEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.SetOption", dxTarget, "focusStateEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "focusStateEnabled", value);
 		}
 		public static object GetGroups(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.GetOption", dxTarget, "groups");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "groups");
 		}
 		public static void SetGroups(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.SetOption", dxTarget, "groups", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "groups", value);
 		}
 		public static float? GetIndicatorUpdateInterval(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxScheduler.GetOption", dxTarget, "indicatorUpdateInterval");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "indicatorUpdateInterval");
 		}
 		public static void SetIndicatorUpdateInterval(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.SetOption", dxTarget, "indicatorUpdateInterval", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "indicatorUpdateInterval", value);
 		}
 		public static object GetMax(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.GetOption", dxTarget, "max");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "max");
 		}
 		public static void SetMax(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.SetOption", dxTarget, "max", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "max", value);
 		}
 		public static object GetMaxAppointmentsPerCell(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.GetOption", dxTarget, "maxAppointmentsPerCell");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "maxAppointmentsPerCell");
 		}
 		public static void SetMaxAppointmentsPerCell(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.SetOption", dxTarget, "maxAppointmentsPerCell", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "maxAppointmentsPerCell", value);
 		}
 		public static object GetMin(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.GetOption", dxTarget, "min");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "min");
 		}
 		public static void SetMin(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.SetOption", dxTarget, "min", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "min", value);
 		}
 		public static string GetNoDataText(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxScheduler.GetOption", dxTarget, "noDataText");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "noDataText");
 		}
 		public static void SetNoDataText(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.SetOption", dxTarget, "noDataText", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "noDataText", value);
 		}
 		public static string GetRecurrenceEditMode(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxScheduler.GetOption", dxTarget, "recurrenceEditMode");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "recurrenceEditMode");
 		}
 		public static void SetRecurrenceEditMode(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.SetOption", dxTarget, "recurrenceEditMode", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "recurrenceEditMode", value);
 		}
 		public static string GetRecurrenceExceptionExpr(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxScheduler.GetOption", dxTarget, "recurrenceExceptionExpr");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "recurrenceExceptionExpr");
 		}
 		public static void SetRecurrenceExceptionExpr(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.SetOption", dxTarget, "recurrenceExceptionExpr", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "recurrenceExceptionExpr", value);
 		}
 		public static string GetRecurrenceRuleExpr(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxScheduler.GetOption", dxTarget, "recurrenceRuleExpr");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "recurrenceRuleExpr");
 		}
 		public static void SetRecurrenceRuleExpr(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.SetOption", dxTarget, "recurrenceRuleExpr", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "recurrenceRuleExpr", value);
 		}
 		public static bool? GetRemoteFiltering(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxScheduler.GetOption", dxTarget, "remoteFiltering");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "remoteFiltering");
 		}
 		public static void SetRemoteFiltering(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.SetOption", dxTarget, "remoteFiltering", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "remoteFiltering", value);
 		}
 		public static object GetResourceCellTemplate(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.GetOption", dxTarget, "resourceCellTemplate");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "resourceCellTemplate");
 		}
 		public static void SetResourceCellTemplate(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.SetOption", dxTarget, "resourceCellTemplate", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "resourceCellTemplate", value);
 		}
 		public static object GetResources(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.GetOption", dxTarget, "resources");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "resources");
 		}
 		public static void SetResources(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.SetOption", dxTarget, "resources", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "resources", value);
 		}
 		public static object GetSelectedCellData(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.GetOption", dxTarget, "selectedCellData");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "selectedCellData");
 		}
 		public static void SetSelectedCellData(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.SetOption", dxTarget, "selectedCellData", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "selectedCellData", value);
 		}
 		public static bool? GetShadeUntilCurrentTime(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxScheduler.GetOption", dxTarget, "shadeUntilCurrentTime");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "shadeUntilCurrentTime");
 		}
 		public static void SetShadeUntilCurrentTime(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.SetOption", dxTarget, "shadeUntilCurrentTime", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "shadeUntilCurrentTime", value);
 		}
 		public static bool? GetShowAllDayPanel(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxScheduler.GetOption", dxTarget, "showAllDayPanel");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "showAllDayPanel");
 		}
 		public static void SetShowAllDayPanel(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.SetOption", dxTarget, "showAllDayPanel", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "showAllDayPanel", value);
 		}
 		public static bool? GetShowCurrentTimeIndicator(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxScheduler.GetOption", dxTarget, "showCurrentTimeIndicator");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "showCurrentTimeIndicator");
 		}
 		public static void SetShowCurrentTimeIndicator(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.SetOption", dxTarget, "showCurrentTimeIndicator", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "showCurrentTimeIndicator", value);
 		}
 		public static string GetStartDateExpr(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxScheduler.GetOption", dxTarget, "startDateExpr");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "startDateExpr");
 		}
 		public static void SetStartDateExpr(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.SetOption", dxTarget, "startDateExpr", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "startDateExpr", value);
 		}
 		public static string GetStartDateTimeZoneExpr(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxScheduler.GetOption", dxTarget, "startDateTimeZoneExpr");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "startDateTimeZoneExpr");
 		}
 		public static void SetStartDateTimeZoneExpr(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.SetOption", dxTarget, "startDateTimeZoneExpr", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "startDateTimeZoneExpr", value);
 		}
 		public static float? GetStartDayHour(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxScheduler.GetOption", dxTarget, "startDayHour");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "startDayHour");
 		}
 		public static void SetStartDayHour(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.SetOption", dxTarget, "startDayHour", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "startDayHour", value);
 		}
 		public static string GetTextExpr(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxScheduler.GetOption", dxTarget, "textExpr");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "textExpr");
 		}
 		public static void SetTextExpr(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.SetOption", dxTarget, "textExpr", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "textExpr", value);
 		}
 		public static object GetTimeCellTemplate(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.GetOption", dxTarget, "timeCellTemplate");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "timeCellTemplate");
 		}
 		public static void SetTimeCellTemplate(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.SetOption", dxTarget, "timeCellTemplate", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "timeCellTemplate", value);
 		}
 		public static string GetTimeZone(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxScheduler.GetOption", dxTarget, "timeZone");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "timeZone");
 		}
 		public static void SetTimeZone(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.SetOption", dxTarget, "timeZone", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "timeZone", value);
 		}
 		public static bool? GetUseDropDownViewSwitcher(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxScheduler.GetOption", dxTarget, "useDropDownViewSwitcher");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "useDropDownViewSwitcher");
 		}
 		public static void SetUseDropDownViewSwitcher(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.SetOption", dxTarget, "useDropDownViewSwitcher", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "useDropDownViewSwitcher", value);
 		}
 		public static object GetViews(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.GetOption", dxTarget, "views");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "views");
 		}
 		public static void SetViews(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.SetOption", dxTarget, "views", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "views", value);
 		}
 		public static void AddAppointment(ElementRef dxTarget, object appointment)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.addAppointment_0", dxTarget, appointment);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_addAppointment_0", dxTarget, appointment);
 		}
 		public static void DeleteAppointment(ElementRef dxTarget, object appointment)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.deleteAppointment_1", dxTarget, appointment);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_deleteAppointment_1", dxTarget, appointment);
 		}
 		public static object GetDataSourceEx(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.getDataSource_2", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_getDataSource_2", dxTarget);
 		}
 		public static object GetEndViewDate(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.getEndViewDate_3", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_getEndViewDate_3", dxTarget);
 		}
 		public static object GetStartViewDate(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.getStartViewDate_4", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_getStartViewDate_4", dxTarget);
 		}
 		public static void HideAppointmentPopup(ElementRef dxTarget, bool saveChanges)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.hideAppointmentPopup_5", dxTarget, saveChanges);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_hideAppointmentPopup_5", dxTarget, saveChanges);
 		}
 		public static void HideAppointmentTooltip(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.hideAppointmentTooltip_6", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_hideAppointmentTooltip_6", dxTarget);
 		}
 		public static void RegisterKeyHandler(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.registerKeyHandler_7", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_registerKeyHandler_7", dxTarget);
 		}
 		public static void ScrollToTime(ElementRef dxTarget, float hours, float minutes, object date)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.scrollToTime_8", dxTarget, hours, minutes, date);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_scrollToTime_8", dxTarget, hours, minutes, date);
 		}
 		public static void ShowAppointmentPopup(ElementRef dxTarget, object appointmentData, bool createNewAppointment, object currentAppointmentData)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.showAppointmentPopup_9", dxTarget, appointmentData, createNewAppointment, currentAppointmentData);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_showAppointmentPopup_9", dxTarget, appointmentData, createNewAppointment, currentAppointmentData);
 		}
 		public static void ShowAppointmentTooltip(ElementRef dxTarget, object appointmentData, object target, object currentAppointmentData)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.showAppointmentTooltip_10", dxTarget, appointmentData, target, currentAppointmentData);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_showAppointmentTooltip_10", dxTarget, appointmentData, target, currentAppointmentData);
 		}
 		public static void UpdateAppointment(ElementRef dxTarget, object target, object appointment)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScheduler.updateAppointment_11", dxTarget, target, appointment);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScheduler_updateAppointment_11", dxTarget, target, appointment);
 		}
 	}
 	public class DxScrollViewInterop: DxScrollableInterop
@@ -7391,55 +7528,57 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.DxScrollViewOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScrollView.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScrollView_Init", dxTarget, json);
 		}
+		[JSInvokable("DevExpress.Ui.DxScrollViewInterop.OnPullDown")]
 		public static void OnPullDown(string identifier)
 		{
 			PullDown?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxScrollViewInterop.OnReachBottom")]
 		public static void OnReachBottom(string identifier)
 		{
 			ReachBottom?.Invoke(null, new JQueryEventArgs(identifier));
 		}
 		public static string GetPulledDownText(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxScrollView.GetOption", dxTarget, "pulledDownText");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxScrollView_GetOption", dxTarget, "pulledDownText");
 		}
 		public static void SetPulledDownText(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScrollView.SetOption", dxTarget, "pulledDownText", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScrollView_SetOption", dxTarget, "pulledDownText", value);
 		}
 		public static string GetPullingDownText(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxScrollView.GetOption", dxTarget, "pullingDownText");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxScrollView_GetOption", dxTarget, "pullingDownText");
 		}
 		public static void SetPullingDownText(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScrollView.SetOption", dxTarget, "pullingDownText", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScrollView_SetOption", dxTarget, "pullingDownText", value);
 		}
 		public static string GetReachBottomText(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxScrollView.GetOption", dxTarget, "reachBottomText");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxScrollView_GetOption", dxTarget, "reachBottomText");
 		}
 		public static void SetReachBottomText(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScrollView.SetOption", dxTarget, "reachBottomText", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScrollView_SetOption", dxTarget, "reachBottomText", value);
 		}
 		public static string GetRefreshingText(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxScrollView.GetOption", dxTarget, "refreshingText");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxScrollView_GetOption", dxTarget, "refreshingText");
 		}
 		public static void SetRefreshingText(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScrollView.SetOption", dxTarget, "refreshingText", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScrollView_SetOption", dxTarget, "refreshingText", value);
 		}
 		public static void Refresh(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScrollView.refresh_0", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScrollView_refresh_0", dxTarget);
 		}
 		public static object Release(ElementRef dxTarget, bool preventScrollBottom)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScrollView.release_1", dxTarget, preventScrollBottom);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScrollView_release_1", dxTarget, preventScrollBottom);
 		}
 	}
 	public class DxSelectBoxInterop: DxDropDownListInterop
@@ -7448,51 +7587,52 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.DxSelectBoxOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSelectBox.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSelectBox_Init", dxTarget, json);
 		}
+		[JSInvokable("DevExpress.Ui.DxSelectBoxInterop.OnCustomItemCreating")]
 		public static void OnCustomItemCreating(string identifier)
 		{
 			CustomItemCreating?.Invoke(null, new JQueryEventArgs(identifier));
 		}
 		public static new bool? GetAcceptCustomValue(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxSelectBox.GetOption", dxTarget, "acceptCustomValue");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxSelectBox_GetOption", dxTarget, "acceptCustomValue");
 		}
 		public static new void SetAcceptCustomValue(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSelectBox.SetOption", dxTarget, "acceptCustomValue", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSelectBox_SetOption", dxTarget, "acceptCustomValue", value);
 		}
 		public static object GetFieldTemplate(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSelectBox.GetOption", dxTarget, "fieldTemplate");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSelectBox_GetOption", dxTarget, "fieldTemplate");
 		}
 		public static void SetFieldTemplate(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSelectBox.SetOption", dxTarget, "fieldTemplate", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSelectBox_SetOption", dxTarget, "fieldTemplate", value);
 		}
 		public static new string GetPlaceholder(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxSelectBox.GetOption", dxTarget, "placeholder");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxSelectBox_GetOption", dxTarget, "placeholder");
 		}
 		public static new void SetPlaceholder(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSelectBox.SetOption", dxTarget, "placeholder", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSelectBox_SetOption", dxTarget, "placeholder", value);
 		}
 		public static bool? GetShowSelectionControls(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxSelectBox.GetOption", dxTarget, "showSelectionControls");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxSelectBox_GetOption", dxTarget, "showSelectionControls");
 		}
 		public static void SetShowSelectionControls(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSelectBox.SetOption", dxTarget, "showSelectionControls", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSelectBox_SetOption", dxTarget, "showSelectionControls", value);
 		}
 		public static new string GetValueChangeEvent(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxSelectBox.GetOption", dxTarget, "valueChangeEvent");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxSelectBox_GetOption", dxTarget, "valueChangeEvent");
 		}
 		public static new void SetValueChangeEvent(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSelectBox.SetOption", dxTarget, "valueChangeEvent", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSelectBox_SetOption", dxTarget, "valueChangeEvent", value);
 		}
 	}
 	public class DxSliderInterop: DxSliderBaseInterop
@@ -7500,15 +7640,15 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.DxSliderOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSlider.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSlider_Init", dxTarget, json);
 		}
 		public static new float? GetValue(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxSlider.GetOption", dxTarget, "value");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxSlider_GetOption", dxTarget, "value");
 		}
 		public static new void SetValue(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSlider.SetOption", dxTarget, "value", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSlider_SetOption", dxTarget, "value", value);
 		}
 	}
 	public class DxSlideOutInterop: CollectionWidgetInterop
@@ -7518,99 +7658,101 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.DxSlideOutOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSlideOut.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSlideOut_Init", dxTarget, json);
 		}
+		[JSInvokable("DevExpress.Ui.DxSlideOutInterop.OnMenuGroupRendered")]
 		public static void OnMenuGroupRendered(string identifier)
 		{
 			MenuGroupRendered?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxSlideOutInterop.OnMenuItemRendered")]
 		public static void OnMenuItemRendered(string identifier)
 		{
 			MenuItemRendered?.Invoke(null, new JQueryEventArgs(identifier));
 		}
 		public static new bool? GetActiveStateEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxSlideOut.GetOption", dxTarget, "activeStateEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxSlideOut_GetOption", dxTarget, "activeStateEnabled");
 		}
 		public static new void SetActiveStateEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSlideOut.SetOption", dxTarget, "activeStateEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSlideOut_SetOption", dxTarget, "activeStateEnabled", value);
 		}
 		public static object GetContentTemplate(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSlideOut.GetOption", dxTarget, "contentTemplate");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSlideOut_GetOption", dxTarget, "contentTemplate");
 		}
 		public static void SetContentTemplate(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSlideOut.SetOption", dxTarget, "contentTemplate", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSlideOut_SetOption", dxTarget, "contentTemplate", value);
 		}
 		public static bool? GetMenuGrouped(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxSlideOut.GetOption", dxTarget, "menuGrouped");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxSlideOut_GetOption", dxTarget, "menuGrouped");
 		}
 		public static void SetMenuGrouped(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSlideOut.SetOption", dxTarget, "menuGrouped", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSlideOut_SetOption", dxTarget, "menuGrouped", value);
 		}
 		public static object GetMenuGroupTemplate(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSlideOut.GetOption", dxTarget, "menuGroupTemplate");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSlideOut_GetOption", dxTarget, "menuGroupTemplate");
 		}
 		public static void SetMenuGroupTemplate(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSlideOut.SetOption", dxTarget, "menuGroupTemplate", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSlideOut_SetOption", dxTarget, "menuGroupTemplate", value);
 		}
 		public static object GetMenuItemTemplate(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSlideOut.GetOption", dxTarget, "menuItemTemplate");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSlideOut_GetOption", dxTarget, "menuItemTemplate");
 		}
 		public static void SetMenuItemTemplate(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSlideOut.SetOption", dxTarget, "menuItemTemplate", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSlideOut_SetOption", dxTarget, "menuItemTemplate", value);
 		}
 		public static string GetMenuPosition(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxSlideOut.GetOption", dxTarget, "menuPosition");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxSlideOut_GetOption", dxTarget, "menuPosition");
 		}
 		public static void SetMenuPosition(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSlideOut.SetOption", dxTarget, "menuPosition", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSlideOut_SetOption", dxTarget, "menuPosition", value);
 		}
 		public static bool? GetMenuVisible(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxSlideOut.GetOption", dxTarget, "menuVisible");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxSlideOut_GetOption", dxTarget, "menuVisible");
 		}
 		public static void SetMenuVisible(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSlideOut.SetOption", dxTarget, "menuVisible", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSlideOut_SetOption", dxTarget, "menuVisible", value);
 		}
 		public static new float? GetSelectedIndex(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxSlideOut.GetOption", dxTarget, "selectedIndex");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxSlideOut_GetOption", dxTarget, "selectedIndex");
 		}
 		public static new void SetSelectedIndex(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSlideOut.SetOption", dxTarget, "selectedIndex", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSlideOut_SetOption", dxTarget, "selectedIndex", value);
 		}
 		public static bool? GetSwipeEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxSlideOut.GetOption", dxTarget, "swipeEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxSlideOut_GetOption", dxTarget, "swipeEnabled");
 		}
 		public static void SetSwipeEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSlideOut.SetOption", dxTarget, "swipeEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSlideOut_SetOption", dxTarget, "swipeEnabled", value);
 		}
 		public static object HideMenu(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSlideOut.hideMenu_0", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSlideOut_hideMenu_0", dxTarget);
 		}
 		public static object ShowMenu(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSlideOut.showMenu_1", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSlideOut_showMenu_1", dxTarget);
 		}
 		public static object ToggleMenuVisibility(ElementRef dxTarget, bool showing)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSlideOut.toggleMenuVisibility_2", dxTarget, showing);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSlideOut_toggleMenuVisibility_2", dxTarget, showing);
 		}
 	}
 	public class DxSlideOutViewInterop: WidgetInterop
@@ -7618,67 +7760,67 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.DxSlideOutViewOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSlideOutView.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSlideOutView_Init", dxTarget, json);
 		}
 		public static object GetContentTemplate(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSlideOutView.GetOption", dxTarget, "contentTemplate");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSlideOutView_GetOption", dxTarget, "contentTemplate");
 		}
 		public static void SetContentTemplate(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSlideOutView.SetOption", dxTarget, "contentTemplate", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSlideOutView_SetOption", dxTarget, "contentTemplate", value);
 		}
 		public static string GetMenuPosition(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxSlideOutView.GetOption", dxTarget, "menuPosition");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxSlideOutView_GetOption", dxTarget, "menuPosition");
 		}
 		public static void SetMenuPosition(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSlideOutView.SetOption", dxTarget, "menuPosition", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSlideOutView_SetOption", dxTarget, "menuPosition", value);
 		}
 		public static object GetMenuTemplate(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSlideOutView.GetOption", dxTarget, "menuTemplate");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSlideOutView_GetOption", dxTarget, "menuTemplate");
 		}
 		public static void SetMenuTemplate(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSlideOutView.SetOption", dxTarget, "menuTemplate", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSlideOutView_SetOption", dxTarget, "menuTemplate", value);
 		}
 		public static bool? GetMenuVisible(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxSlideOutView.GetOption", dxTarget, "menuVisible");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxSlideOutView_GetOption", dxTarget, "menuVisible");
 		}
 		public static void SetMenuVisible(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSlideOutView.SetOption", dxTarget, "menuVisible", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSlideOutView_SetOption", dxTarget, "menuVisible", value);
 		}
 		public static bool? GetSwipeEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxSlideOutView.GetOption", dxTarget, "swipeEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxSlideOutView_GetOption", dxTarget, "swipeEnabled");
 		}
 		public static void SetSwipeEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSlideOutView.SetOption", dxTarget, "swipeEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSlideOutView_SetOption", dxTarget, "swipeEnabled", value);
 		}
 		public static object Content(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSlideOutView.content_0", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSlideOutView_content_0", dxTarget);
 		}
 		public static object HideMenu(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSlideOutView.hideMenu_1", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSlideOutView_hideMenu_1", dxTarget);
 		}
 		public static object MenuContent(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSlideOutView.menuContent_2", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSlideOutView_menuContent_2", dxTarget);
 		}
 		public static object ShowMenu(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSlideOutView.showMenu_3", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSlideOutView_showMenu_3", dxTarget);
 		}
 		public static object ToggleMenuVisibility(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSlideOutView.toggleMenuVisibility_4", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSlideOutView_toggleMenuVisibility_4", dxTarget);
 		}
 	}
 	public class DxSwitchInterop: EditorInterop
@@ -7686,63 +7828,63 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.DxSwitchOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSwitch.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSwitch_Init", dxTarget, json);
 		}
 		public static new bool? GetActiveStateEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxSwitch.GetOption", dxTarget, "activeStateEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxSwitch_GetOption", dxTarget, "activeStateEnabled");
 		}
 		public static new void SetActiveStateEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSwitch.SetOption", dxTarget, "activeStateEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSwitch_SetOption", dxTarget, "activeStateEnabled", value);
 		}
 		public static new bool? GetFocusStateEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxSwitch.GetOption", dxTarget, "focusStateEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxSwitch_GetOption", dxTarget, "focusStateEnabled");
 		}
 		public static new void SetFocusStateEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSwitch.SetOption", dxTarget, "focusStateEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSwitch_SetOption", dxTarget, "focusStateEnabled", value);
 		}
 		public static new bool? GetHoverStateEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxSwitch.GetOption", dxTarget, "hoverStateEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxSwitch_GetOption", dxTarget, "hoverStateEnabled");
 		}
 		public static new void SetHoverStateEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSwitch.SetOption", dxTarget, "hoverStateEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSwitch_SetOption", dxTarget, "hoverStateEnabled", value);
 		}
 		public static string GetName(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxSwitch.GetOption", dxTarget, "name");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxSwitch_GetOption", dxTarget, "name");
 		}
 		public static void SetName(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSwitch.SetOption", dxTarget, "name", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSwitch_SetOption", dxTarget, "name", value);
 		}
 		public static string GetOffText(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxSwitch.GetOption", dxTarget, "offText");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxSwitch_GetOption", dxTarget, "offText");
 		}
 		public static void SetOffText(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSwitch.SetOption", dxTarget, "offText", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSwitch_SetOption", dxTarget, "offText", value);
 		}
 		public static string GetOnText(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxSwitch.GetOption", dxTarget, "onText");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxSwitch_GetOption", dxTarget, "onText");
 		}
 		public static void SetOnText(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSwitch.SetOption", dxTarget, "onText", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSwitch_SetOption", dxTarget, "onText", value);
 		}
 		public static new bool? GetValue(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxSwitch.GetOption", dxTarget, "value");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxSwitch_GetOption", dxTarget, "value");
 		}
 		public static new void SetValue(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSwitch.SetOption", dxTarget, "value", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSwitch_SetOption", dxTarget, "value", value);
 		}
 	}
 	public class DxTabsInterop: CollectionWidgetInterop
@@ -7750,63 +7892,63 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.DxTabsOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTabs.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTabs_Init", dxTarget, json);
 		}
 		public static new bool? GetFocusStateEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxTabs.GetOption", dxTarget, "focusStateEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxTabs_GetOption", dxTarget, "focusStateEnabled");
 		}
 		public static new void SetFocusStateEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTabs.SetOption", dxTarget, "focusStateEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTabs_SetOption", dxTarget, "focusStateEnabled", value);
 		}
 		public static new bool? GetHoverStateEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxTabs.GetOption", dxTarget, "hoverStateEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxTabs_GetOption", dxTarget, "hoverStateEnabled");
 		}
 		public static new void SetHoverStateEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTabs.SetOption", dxTarget, "hoverStateEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTabs_SetOption", dxTarget, "hoverStateEnabled", value);
 		}
 		public static bool? GetScrollByContent(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxTabs.GetOption", dxTarget, "scrollByContent");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxTabs_GetOption", dxTarget, "scrollByContent");
 		}
 		public static void SetScrollByContent(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTabs.SetOption", dxTarget, "scrollByContent", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTabs_SetOption", dxTarget, "scrollByContent", value);
 		}
 		public static bool? GetScrollingEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxTabs.GetOption", dxTarget, "scrollingEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxTabs_GetOption", dxTarget, "scrollingEnabled");
 		}
 		public static void SetScrollingEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTabs.SetOption", dxTarget, "scrollingEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTabs_SetOption", dxTarget, "scrollingEnabled", value);
 		}
 		public static new object GetSelectedItems(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTabs.GetOption", dxTarget, "selectedItems");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTabs_GetOption", dxTarget, "selectedItems");
 		}
 		public static new void SetSelectedItems(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTabs.SetOption", dxTarget, "selectedItems", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTabs_SetOption", dxTarget, "selectedItems", value);
 		}
 		public static string GetSelectionMode(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxTabs.GetOption", dxTarget, "selectionMode");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxTabs_GetOption", dxTarget, "selectionMode");
 		}
 		public static void SetSelectionMode(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTabs.SetOption", dxTarget, "selectionMode", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTabs_SetOption", dxTarget, "selectionMode", value);
 		}
 		public static bool? GetShowNavButtons(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxTabs.GetOption", dxTarget, "showNavButtons");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxTabs_GetOption", dxTarget, "showNavButtons");
 		}
 		public static void SetShowNavButtons(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTabs.SetOption", dxTarget, "showNavButtons", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTabs_SetOption", dxTarget, "showNavButtons", value);
 		}
 	}
 	public class DxTabPanelInterop: DxMultiViewInterop
@@ -7817,83 +7959,86 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.DxTabPanelOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTabPanel.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTabPanel_Init", dxTarget, json);
 		}
+		[JSInvokable("DevExpress.Ui.DxTabPanelInterop.OnTitleClick")]
 		public static void OnTitleClick(string identifier)
 		{
 			TitleClick?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxTabPanelInterop.OnTitleHold")]
 		public static void OnTitleHold(string identifier)
 		{
 			TitleHold?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxTabPanelInterop.OnTitleRendered")]
 		public static void OnTitleRendered(string identifier)
 		{
 			TitleRendered?.Invoke(null, new JQueryEventArgs(identifier));
 		}
 		public static new bool? GetAnimationEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxTabPanel.GetOption", dxTarget, "animationEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxTabPanel_GetOption", dxTarget, "animationEnabled");
 		}
 		public static new void SetAnimationEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTabPanel.SetOption", dxTarget, "animationEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTabPanel_SetOption", dxTarget, "animationEnabled", value);
 		}
 		public static new bool? GetFocusStateEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxTabPanel.GetOption", dxTarget, "focusStateEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxTabPanel_GetOption", dxTarget, "focusStateEnabled");
 		}
 		public static new void SetFocusStateEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTabPanel.SetOption", dxTarget, "focusStateEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTabPanel_SetOption", dxTarget, "focusStateEnabled", value);
 		}
 		public static new bool? GetHoverStateEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxTabPanel.GetOption", dxTarget, "hoverStateEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxTabPanel_GetOption", dxTarget, "hoverStateEnabled");
 		}
 		public static new void SetHoverStateEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTabPanel.SetOption", dxTarget, "hoverStateEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTabPanel_SetOption", dxTarget, "hoverStateEnabled", value);
 		}
 		public static object GetItemTitleTemplate(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTabPanel.GetOption", dxTarget, "itemTitleTemplate");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTabPanel_GetOption", dxTarget, "itemTitleTemplate");
 		}
 		public static void SetItemTitleTemplate(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTabPanel.SetOption", dxTarget, "itemTitleTemplate", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTabPanel_SetOption", dxTarget, "itemTitleTemplate", value);
 		}
 		public static bool? GetScrollByContent(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxTabPanel.GetOption", dxTarget, "scrollByContent");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxTabPanel_GetOption", dxTarget, "scrollByContent");
 		}
 		public static void SetScrollByContent(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTabPanel.SetOption", dxTarget, "scrollByContent", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTabPanel_SetOption", dxTarget, "scrollByContent", value);
 		}
 		public static bool? GetScrollingEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxTabPanel.GetOption", dxTarget, "scrollingEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxTabPanel_GetOption", dxTarget, "scrollingEnabled");
 		}
 		public static void SetScrollingEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTabPanel.SetOption", dxTarget, "scrollingEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTabPanel_SetOption", dxTarget, "scrollingEnabled", value);
 		}
 		public static bool? GetShowNavButtons(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxTabPanel.GetOption", dxTarget, "showNavButtons");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxTabPanel_GetOption", dxTarget, "showNavButtons");
 		}
 		public static void SetShowNavButtons(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTabPanel.SetOption", dxTarget, "showNavButtons", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTabPanel_SetOption", dxTarget, "showNavButtons", value);
 		}
 		public static new bool? GetSwipeEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxTabPanel.GetOption", dxTarget, "swipeEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxTabPanel_GetOption", dxTarget, "swipeEnabled");
 		}
 		public static new void SetSwipeEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTabPanel.SetOption", dxTarget, "swipeEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTabPanel_SetOption", dxTarget, "swipeEnabled", value);
 		}
 	}
 	public class DxTagBoxInterop: DxSelectBoxInterop
@@ -7904,91 +8049,94 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.DxTagBoxOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTagBox.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTagBox_Init", dxTarget, json);
 		}
+		[JSInvokable("DevExpress.Ui.DxTagBoxInterop.OnMultiTagPreparing")]
 		public static void OnMultiTagPreparing(string identifier)
 		{
 			MultiTagPreparing?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxTagBoxInterop.OnSelectAllValueChanged")]
 		public static void OnSelectAllValueChanged(string identifier)
 		{
 			SelectAllValueChanged?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxTagBoxInterop.OnSelectionChanged")]
 		public static void OnSelectionChanged(string identifier)
 		{
 			SelectionChanged?.Invoke(null, new JQueryEventArgs(identifier));
 		}
 		public static new string GetApplyValueMode(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxTagBox.GetOption", dxTarget, "applyValueMode");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxTagBox_GetOption", dxTarget, "applyValueMode");
 		}
 		public static new void SetApplyValueMode(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTagBox.SetOption", dxTarget, "applyValueMode", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTagBox_SetOption", dxTarget, "applyValueMode", value);
 		}
 		public static bool? GetHideSelectedItems(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxTagBox.GetOption", dxTarget, "hideSelectedItems");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxTagBox_GetOption", dxTarget, "hideSelectedItems");
 		}
 		public static void SetHideSelectedItems(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTagBox.SetOption", dxTarget, "hideSelectedItems", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTagBox_SetOption", dxTarget, "hideSelectedItems", value);
 		}
 		public static float? GetMaxDisplayedTags(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxTagBox.GetOption", dxTarget, "maxDisplayedTags");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxTagBox_GetOption", dxTarget, "maxDisplayedTags");
 		}
 		public static void SetMaxDisplayedTags(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTagBox.SetOption", dxTarget, "maxDisplayedTags", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTagBox_SetOption", dxTarget, "maxDisplayedTags", value);
 		}
 		public static bool? GetMultiline(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxTagBox.GetOption", dxTarget, "multiline");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxTagBox_GetOption", dxTarget, "multiline");
 		}
 		public static void SetMultiline(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTagBox.SetOption", dxTarget, "multiline", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTagBox_SetOption", dxTarget, "multiline", value);
 		}
 		public static string GetSelectAllMode(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxTagBox.GetOption", dxTarget, "selectAllMode");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxTagBox_GetOption", dxTarget, "selectAllMode");
 		}
 		public static void SetSelectAllMode(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTagBox.SetOption", dxTarget, "selectAllMode", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTagBox_SetOption", dxTarget, "selectAllMode", value);
 		}
 		public static object GetSelectedItems(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTagBox.GetOption", dxTarget, "selectedItems");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTagBox_GetOption", dxTarget, "selectedItems");
 		}
 		public static void SetSelectedItems(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTagBox.SetOption", dxTarget, "selectedItems", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTagBox_SetOption", dxTarget, "selectedItems", value);
 		}
 		public static bool? GetShowMultiTagOnly(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxTagBox.GetOption", dxTarget, "showMultiTagOnly");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxTagBox_GetOption", dxTarget, "showMultiTagOnly");
 		}
 		public static void SetShowMultiTagOnly(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTagBox.SetOption", dxTarget, "showMultiTagOnly", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTagBox_SetOption", dxTarget, "showMultiTagOnly", value);
 		}
 		public static object GetTagTemplate(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTagBox.GetOption", dxTarget, "tagTemplate");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTagBox_GetOption", dxTarget, "tagTemplate");
 		}
 		public static void SetTagTemplate(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTagBox.SetOption", dxTarget, "tagTemplate", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTagBox_SetOption", dxTarget, "tagTemplate", value);
 		}
 		public static new object GetValue(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTagBox.GetOption", dxTarget, "value");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTagBox_GetOption", dxTarget, "value");
 		}
 		public static new void SetValue(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTagBox.SetOption", dxTarget, "value", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTagBox_SetOption", dxTarget, "value", value);
 		}
 	}
 	public class DxTextAreaInterop: DxTextBoxInterop
@@ -7996,39 +8144,39 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.DxTextAreaOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTextArea.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTextArea_Init", dxTarget, json);
 		}
 		public static bool? GetAutoResizeEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxTextArea.GetOption", dxTarget, "autoResizeEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxTextArea_GetOption", dxTarget, "autoResizeEnabled");
 		}
 		public static void SetAutoResizeEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTextArea.SetOption", dxTarget, "autoResizeEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTextArea_SetOption", dxTarget, "autoResizeEnabled", value);
 		}
 		public static object GetMaxHeight(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTextArea.GetOption", dxTarget, "maxHeight");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTextArea_GetOption", dxTarget, "maxHeight");
 		}
 		public static void SetMaxHeight(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTextArea.SetOption", dxTarget, "maxHeight", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTextArea_SetOption", dxTarget, "maxHeight", value);
 		}
 		public static object GetMinHeight(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTextArea.GetOption", dxTarget, "minHeight");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTextArea_GetOption", dxTarget, "minHeight");
 		}
 		public static void SetMinHeight(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTextArea.SetOption", dxTarget, "minHeight", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTextArea_SetOption", dxTarget, "minHeight", value);
 		}
 		public static new bool? GetSpellcheck(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxTextArea.GetOption", dxTarget, "spellcheck");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxTextArea_GetOption", dxTarget, "spellcheck");
 		}
 		public static new void SetSpellcheck(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTextArea.SetOption", dxTarget, "spellcheck", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTextArea_SetOption", dxTarget, "spellcheck", value);
 		}
 	}
 	public class DxTextBoxInterop: DxTextEditorInterop
@@ -8036,31 +8184,31 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.DxTextBoxOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTextBox.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTextBox_Init", dxTarget, json);
 		}
 		public static object GetMaxLength(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTextBox.GetOption", dxTarget, "maxLength");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTextBox_GetOption", dxTarget, "maxLength");
 		}
 		public static void SetMaxLength(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTextBox.SetOption", dxTarget, "maxLength", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTextBox_SetOption", dxTarget, "maxLength", value);
 		}
 		public static string GetMode(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxTextBox.GetOption", dxTarget, "mode");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxTextBox_GetOption", dxTarget, "mode");
 		}
 		public static void SetMode(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTextBox.SetOption", dxTarget, "mode", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTextBox_SetOption", dxTarget, "mode", value);
 		}
 		public static new string GetValue(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxTextBox.GetOption", dxTarget, "value");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxTextBox_GetOption", dxTarget, "value");
 		}
 		public static new void SetValue(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTextBox.SetOption", dxTarget, "value", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTextBox_SetOption", dxTarget, "value", value);
 		}
 	}
 	public class DxTileViewInterop: CollectionWidgetInterop
@@ -8068,83 +8216,83 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.DxTileViewOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTileView.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTileView_Init", dxTarget, json);
 		}
 		public static new bool? GetActiveStateEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxTileView.GetOption", dxTarget, "activeStateEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxTileView_GetOption", dxTarget, "activeStateEnabled");
 		}
 		public static new void SetActiveStateEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTileView.SetOption", dxTarget, "activeStateEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTileView_SetOption", dxTarget, "activeStateEnabled", value);
 		}
 		public static float? GetBaseItemHeight(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxTileView.GetOption", dxTarget, "baseItemHeight");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxTileView_GetOption", dxTarget, "baseItemHeight");
 		}
 		public static void SetBaseItemHeight(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTileView.SetOption", dxTarget, "baseItemHeight", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTileView_SetOption", dxTarget, "baseItemHeight", value);
 		}
 		public static float? GetBaseItemWidth(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxTileView.GetOption", dxTarget, "baseItemWidth");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxTileView_GetOption", dxTarget, "baseItemWidth");
 		}
 		public static void SetBaseItemWidth(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTileView.SetOption", dxTarget, "baseItemWidth", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTileView_SetOption", dxTarget, "baseItemWidth", value);
 		}
 		public static string GetDirection(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxTileView.GetOption", dxTarget, "direction");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxTileView_GetOption", dxTarget, "direction");
 		}
 		public static void SetDirection(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTileView.SetOption", dxTarget, "direction", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTileView_SetOption", dxTarget, "direction", value);
 		}
 		public static new bool? GetFocusStateEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxTileView.GetOption", dxTarget, "focusStateEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxTileView_GetOption", dxTarget, "focusStateEnabled");
 		}
 		public static new void SetFocusStateEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTileView.SetOption", dxTarget, "focusStateEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTileView_SetOption", dxTarget, "focusStateEnabled", value);
 		}
 		public static new object GetHeight(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTileView.GetOption", dxTarget, "height");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTileView_GetOption", dxTarget, "height");
 		}
 		public static new void SetHeight(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTileView.SetOption", dxTarget, "height", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTileView_SetOption", dxTarget, "height", value);
 		}
 		public static new bool? GetHoverStateEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxTileView.GetOption", dxTarget, "hoverStateEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxTileView_GetOption", dxTarget, "hoverStateEnabled");
 		}
 		public static new void SetHoverStateEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTileView.SetOption", dxTarget, "hoverStateEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTileView_SetOption", dxTarget, "hoverStateEnabled", value);
 		}
 		public static float? GetItemMargin(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxTileView.GetOption", dxTarget, "itemMargin");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxTileView_GetOption", dxTarget, "itemMargin");
 		}
 		public static void SetItemMargin(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTileView.SetOption", dxTarget, "itemMargin", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTileView_SetOption", dxTarget, "itemMargin", value);
 		}
 		public static bool? GetShowScrollbar(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxTileView.GetOption", dxTarget, "showScrollbar");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxTileView_GetOption", dxTarget, "showScrollbar");
 		}
 		public static void SetShowScrollbar(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTileView.SetOption", dxTarget, "showScrollbar", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTileView_SetOption", dxTarget, "showScrollbar", value);
 		}
 		public static float ScrollPosition(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float>("BlazorDevExtreme.DxTileView.scrollPosition_0", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float>("BlazorDevExtreme_DxTileView_scrollPosition_0", dxTarget);
 		}
 	}
 	public class DxToastInterop: DxOverlayInterop
@@ -8152,119 +8300,119 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.DxToastOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxToast.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxToast_Init", dxTarget, json);
 		}
 		public static new object GetAnimation(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxToast.GetOption", dxTarget, "animation");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxToast_GetOption", dxTarget, "animation");
 		}
 		public static new void SetAnimation(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxToast.SetOption", dxTarget, "animation", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxToast_SetOption", dxTarget, "animation", value);
 		}
 		public static new bool? GetCloseOnBackButton(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxToast.GetOption", dxTarget, "closeOnBackButton");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxToast_GetOption", dxTarget, "closeOnBackButton");
 		}
 		public static new void SetCloseOnBackButton(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxToast.SetOption", dxTarget, "closeOnBackButton", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxToast_SetOption", dxTarget, "closeOnBackButton", value);
 		}
 		public static bool? GetCloseOnClick(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxToast.GetOption", dxTarget, "closeOnClick");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxToast_GetOption", dxTarget, "closeOnClick");
 		}
 		public static void SetCloseOnClick(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxToast.SetOption", dxTarget, "closeOnClick", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxToast_SetOption", dxTarget, "closeOnClick", value);
 		}
 		public static new object GetCloseOnOutsideClick(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxToast.GetOption", dxTarget, "closeOnOutsideClick");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxToast_GetOption", dxTarget, "closeOnOutsideClick");
 		}
 		public static new void SetCloseOnOutsideClick(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxToast.SetOption", dxTarget, "closeOnOutsideClick", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxToast_SetOption", dxTarget, "closeOnOutsideClick", value);
 		}
 		public static bool? GetCloseOnSwipe(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxToast.GetOption", dxTarget, "closeOnSwipe");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxToast_GetOption", dxTarget, "closeOnSwipe");
 		}
 		public static void SetCloseOnSwipe(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxToast.SetOption", dxTarget, "closeOnSwipe", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxToast_SetOption", dxTarget, "closeOnSwipe", value);
 		}
 		public static float? GetDisplayTime(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxToast.GetOption", dxTarget, "displayTime");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxToast_GetOption", dxTarget, "displayTime");
 		}
 		public static void SetDisplayTime(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxToast.SetOption", dxTarget, "displayTime", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxToast_SetOption", dxTarget, "displayTime", value);
 		}
 		public static new object GetHeight(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxToast.GetOption", dxTarget, "height");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxToast_GetOption", dxTarget, "height");
 		}
 		public static new void SetHeight(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxToast.SetOption", dxTarget, "height", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxToast_SetOption", dxTarget, "height", value);
 		}
 		public static new object GetMaxWidth(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxToast.GetOption", dxTarget, "maxWidth");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxToast_GetOption", dxTarget, "maxWidth");
 		}
 		public static new void SetMaxWidth(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxToast.SetOption", dxTarget, "maxWidth", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxToast_SetOption", dxTarget, "maxWidth", value);
 		}
 		public static string GetMessage(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxToast.GetOption", dxTarget, "message");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxToast_GetOption", dxTarget, "message");
 		}
 		public static void SetMessage(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxToast.SetOption", dxTarget, "message", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxToast_SetOption", dxTarget, "message", value);
 		}
 		public static new object GetMinWidth(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxToast.GetOption", dxTarget, "minWidth");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxToast_GetOption", dxTarget, "minWidth");
 		}
 		public static new void SetMinWidth(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxToast.SetOption", dxTarget, "minWidth", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxToast_SetOption", dxTarget, "minWidth", value);
 		}
 		public static new object GetPosition(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxToast.GetOption", dxTarget, "position");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxToast_GetOption", dxTarget, "position");
 		}
 		public static new void SetPosition(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxToast.SetOption", dxTarget, "position", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxToast_SetOption", dxTarget, "position", value);
 		}
 		public static new bool? GetShading(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxToast.GetOption", dxTarget, "shading");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxToast_GetOption", dxTarget, "shading");
 		}
 		public static new void SetShading(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxToast.SetOption", dxTarget, "shading", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxToast_SetOption", dxTarget, "shading", value);
 		}
 		public static string GetType(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxToast.GetOption", dxTarget, "type");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxToast_GetOption", dxTarget, "type");
 		}
 		public static void SetType(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxToast.SetOption", dxTarget, "type", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxToast_SetOption", dxTarget, "type", value);
 		}
 		public static new object GetWidth(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxToast.GetOption", dxTarget, "width");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxToast_GetOption", dxTarget, "width");
 		}
 		public static new void SetWidth(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxToast.SetOption", dxTarget, "width", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxToast_SetOption", dxTarget, "width", value);
 		}
 	}
 	public class DxToolbarInterop: CollectionWidgetInterop
@@ -8272,23 +8420,23 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.DxToolbarOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxToolbar.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxToolbar_Init", dxTarget, json);
 		}
 		public static object GetMenuItemTemplate(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxToolbar.GetOption", dxTarget, "menuItemTemplate");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxToolbar_GetOption", dxTarget, "menuItemTemplate");
 		}
 		public static void SetMenuItemTemplate(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxToolbar.SetOption", dxTarget, "menuItemTemplate", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxToolbar_SetOption", dxTarget, "menuItemTemplate", value);
 		}
 		public static string GetRenderAs(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxToolbar.GetOption", dxTarget, "renderAs");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxToolbar_GetOption", dxTarget, "renderAs");
 		}
 		public static void SetRenderAs(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxToolbar.SetOption", dxTarget, "renderAs", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxToolbar_SetOption", dxTarget, "renderAs", value);
 		}
 	}
 	public class DxTooltipInterop: DxPopoverInterop
@@ -8296,7 +8444,7 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.DxTooltipOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTooltip.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTooltip_Init", dxTarget, json);
 		}
 	}
 	public class DxTrackBarInterop: EditorInterop
@@ -8304,23 +8452,23 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.DxTrackBarOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTrackBar.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTrackBar_Init", dxTarget, json);
 		}
 		public static float? GetMax(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxTrackBar.GetOption", dxTarget, "max");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxTrackBar_GetOption", dxTarget, "max");
 		}
 		public static void SetMax(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTrackBar.SetOption", dxTarget, "max", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTrackBar_SetOption", dxTarget, "max", value);
 		}
 		public static float? GetMin(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxTrackBar.GetOption", dxTarget, "min");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxTrackBar_GetOption", dxTarget, "min");
 		}
 		public static void SetMin(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTrackBar.SetOption", dxTarget, "min", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTrackBar_SetOption", dxTarget, "min", value);
 		}
 	}
 	public class DxTreeListInterop: GridBaseInterop
@@ -8338,255 +8486,265 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.DxTreeListOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeList.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeList_Init", dxTarget, json);
 		}
+		[JSInvokable("DevExpress.Ui.DxTreeListInterop.OnCellClick")]
 		public static void OnCellClick(string identifier)
 		{
 			CellClick?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxTreeListInterop.OnCellHoverChanged")]
 		public static void OnCellHoverChanged(string identifier)
 		{
 			CellHoverChanged?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxTreeListInterop.OnCellPrepared")]
 		public static void OnCellPrepared(string identifier)
 		{
 			CellPrepared?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxTreeListInterop.OnContextMenuPreparing")]
 		public static void OnContextMenuPreparing(string identifier)
 		{
 			ContextMenuPreparing?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxTreeListInterop.OnEditingStart")]
 		public static void OnEditingStart(string identifier)
 		{
 			EditingStart?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxTreeListInterop.OnEditorPrepared")]
 		public static void OnEditorPrepared(string identifier)
 		{
 			EditorPrepared?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxTreeListInterop.OnEditorPreparing")]
 		public static void OnEditorPreparing(string identifier)
 		{
 			EditorPreparing?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxTreeListInterop.OnNodesInitialized")]
 		public static void OnNodesInitialized(string identifier)
 		{
 			NodesInitialized?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxTreeListInterop.OnRowClick")]
 		public static void OnRowClick(string identifier)
 		{
 			RowClick?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxTreeListInterop.OnRowPrepared")]
 		public static void OnRowPrepared(string identifier)
 		{
 			RowPrepared?.Invoke(null, new JQueryEventArgs(identifier));
 		}
 		public static bool? GetAutoExpandAll(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxTreeList.GetOption", dxTarget, "autoExpandAll");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxTreeList_GetOption", dxTarget, "autoExpandAll");
 		}
 		public static void SetAutoExpandAll(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeList.SetOption", dxTarget, "autoExpandAll", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeList_SetOption", dxTarget, "autoExpandAll", value);
 		}
 		public static new object GetColumns(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeList.GetOption", dxTarget, "columns");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeList_GetOption", dxTarget, "columns");
 		}
 		public static new void SetColumns(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeList.SetOption", dxTarget, "columns", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeList_SetOption", dxTarget, "columns", value);
 		}
 		public static object GetCustomizeColumns(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeList.GetOption", dxTarget, "customizeColumns");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeList_GetOption", dxTarget, "customizeColumns");
 		}
 		public static void SetCustomizeColumns(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeList.SetOption", dxTarget, "customizeColumns", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeList_SetOption", dxTarget, "customizeColumns", value);
 		}
 		public static string GetDataStructure(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxTreeList.GetOption", dxTarget, "dataStructure");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxTreeList_GetOption", dxTarget, "dataStructure");
 		}
 		public static void SetDataStructure(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeList.SetOption", dxTarget, "dataStructure", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeList_SetOption", dxTarget, "dataStructure", value);
 		}
 		public static new object GetEditing(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeList.GetOption", dxTarget, "editing");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeList_GetOption", dxTarget, "editing");
 		}
 		public static new void SetEditing(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeList.SetOption", dxTarget, "editing", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeList_SetOption", dxTarget, "editing", value);
 		}
 		public static object GetExpandedRowKeys(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeList.GetOption", dxTarget, "expandedRowKeys");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeList_GetOption", dxTarget, "expandedRowKeys");
 		}
 		public static void SetExpandedRowKeys(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeList.SetOption", dxTarget, "expandedRowKeys", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeList_SetOption", dxTarget, "expandedRowKeys", value);
 		}
 		public static bool? GetExpandNodesOnFiltering(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxTreeList.GetOption", dxTarget, "expandNodesOnFiltering");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxTreeList_GetOption", dxTarget, "expandNodesOnFiltering");
 		}
 		public static void SetExpandNodesOnFiltering(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeList.SetOption", dxTarget, "expandNodesOnFiltering", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeList_SetOption", dxTarget, "expandNodesOnFiltering", value);
 		}
 		public static object GetHasItemsExpr(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeList.GetOption", dxTarget, "hasItemsExpr");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeList_GetOption", dxTarget, "hasItemsExpr");
 		}
 		public static void SetHasItemsExpr(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeList.SetOption", dxTarget, "hasItemsExpr", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeList_SetOption", dxTarget, "hasItemsExpr", value);
 		}
 		public static object GetItemsExpr(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeList.GetOption", dxTarget, "itemsExpr");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeList_GetOption", dxTarget, "itemsExpr");
 		}
 		public static void SetItemsExpr(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeList.SetOption", dxTarget, "itemsExpr", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeList_SetOption", dxTarget, "itemsExpr", value);
 		}
 		public static object GetKeyExpr(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeList.GetOption", dxTarget, "keyExpr");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeList_GetOption", dxTarget, "keyExpr");
 		}
 		public static void SetKeyExpr(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeList.SetOption", dxTarget, "keyExpr", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeList_SetOption", dxTarget, "keyExpr", value);
 		}
 		public static new object GetPaging(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeList.GetOption", dxTarget, "paging");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeList_GetOption", dxTarget, "paging");
 		}
 		public static new void SetPaging(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeList.SetOption", dxTarget, "paging", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeList_SetOption", dxTarget, "paging", value);
 		}
 		public static object GetParentIdExpr(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeList.GetOption", dxTarget, "parentIdExpr");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeList_GetOption", dxTarget, "parentIdExpr");
 		}
 		public static void SetParentIdExpr(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeList.SetOption", dxTarget, "parentIdExpr", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeList_SetOption", dxTarget, "parentIdExpr", value);
 		}
 		public static object GetRemoteOperations(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeList.GetOption", dxTarget, "remoteOperations");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeList_GetOption", dxTarget, "remoteOperations");
 		}
 		public static void SetRemoteOperations(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeList.SetOption", dxTarget, "remoteOperations", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeList_SetOption", dxTarget, "remoteOperations", value);
 		}
 		public static object GetRootValue(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeList.GetOption", dxTarget, "rootValue");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeList_GetOption", dxTarget, "rootValue");
 		}
 		public static void SetRootValue(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeList.SetOption", dxTarget, "rootValue", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeList_SetOption", dxTarget, "rootValue", value);
 		}
 		public static new object GetScrolling(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeList.GetOption", dxTarget, "scrolling");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeList_GetOption", dxTarget, "scrolling");
 		}
 		public static new void SetScrolling(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeList.SetOption", dxTarget, "scrolling", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeList_SetOption", dxTarget, "scrolling", value);
 		}
 		public static new object GetSelection(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeList.GetOption", dxTarget, "selection");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeList_GetOption", dxTarget, "selection");
 		}
 		public static new void SetSelection(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeList.SetOption", dxTarget, "selection", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeList_SetOption", dxTarget, "selection", value);
 		}
 		public static void AddColumn(ElementRef dxTarget, object columnOptions)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeList.addColumn_0", dxTarget, columnOptions);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeList_addColumn_0", dxTarget, columnOptions);
 		}
 		public static void AddRow(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeList.addRow_1", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeList_addRow_1", dxTarget);
 		}
 		public static void AddRow(ElementRef dxTarget, object parentId)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeList.addRow_2", dxTarget, parentId);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeList_addRow_2", dxTarget, parentId);
 		}
 		public static object CollapseRow(ElementRef dxTarget, object key)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeList.collapseRow_3", dxTarget, key);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeList_collapseRow_3", dxTarget, key);
 		}
 		public static object ExpandRow(ElementRef dxTarget, object key)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeList.expandRow_4", dxTarget, key);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeList_expandRow_4", dxTarget, key);
 		}
 		public static void ForEachNode(ElementRef dxTarget, object callback)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeList.forEachNode_5", dxTarget, callback);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeList_forEachNode_5", dxTarget, callback);
 		}
 		public static void ForEachNode(ElementRef dxTarget, object nodes, object callback)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeList.forEachNode_6", dxTarget, nodes, callback);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeList_forEachNode_6", dxTarget, nodes, callback);
 		}
 		public static object GetNodeByKey(ElementRef dxTarget, object key)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeList.getNodeByKey_7", dxTarget, key);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeList_getNodeByKey_7", dxTarget, key);
 		}
 		public static object GetRootNode(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeList.getRootNode_8", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeList_getRootNode_8", dxTarget);
 		}
 		public static object GetSelectedRowKeys(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeList.getSelectedRowKeys_9", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeList_getSelectedRowKeys_9", dxTarget);
 		}
 		public static object GetSelectedRowKeys(ElementRef dxTarget, bool leavesOnly)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeList.getSelectedRowKeys_10", dxTarget, leavesOnly);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeList_getSelectedRowKeys_10", dxTarget, leavesOnly);
 		}
 		public static object GetSelectedRowKeys(ElementRef dxTarget, string mode)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeList.getSelectedRowKeys_11", dxTarget, mode);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeList_getSelectedRowKeys_11", dxTarget, mode);
 		}
 		public static object GetSelectedRowsData(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeList.getSelectedRowsData_12", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeList_getSelectedRowsData_12", dxTarget);
 		}
 		public static object GetVisibleColumns(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeList.getVisibleColumns_13", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeList_getVisibleColumns_13", dxTarget);
 		}
 		public static object GetVisibleColumns(ElementRef dxTarget, float headerLevel)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeList.getVisibleColumns_14", dxTarget, headerLevel);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeList_getVisibleColumns_14", dxTarget, headerLevel);
 		}
 		public static object GetVisibleRows(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeList.getVisibleRows_15", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeList_getVisibleRows_15", dxTarget);
 		}
 		public static bool IsRowExpanded(ElementRef dxTarget, object key)
 		{
-			return RegisteredFunction.Invoke<bool>("BlazorDevExtreme.DxTreeList.isRowExpanded_16", dxTarget, key);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool>("BlazorDevExtreme_DxTreeList_isRowExpanded_16", dxTarget, key);
 		}
 		public static object LoadDescendants(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeList.loadDescendants_17", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeList_loadDescendants_17", dxTarget);
 		}
 		public static object LoadDescendants(ElementRef dxTarget, object keys)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeList.loadDescendants_18", dxTarget, keys);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeList_loadDescendants_18", dxTarget, keys);
 		}
 		public static object LoadDescendants(ElementRef dxTarget, object keys, bool childrenOnly)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeList.loadDescendants_19", dxTarget, keys, childrenOnly);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeList_loadDescendants_19", dxTarget, keys, childrenOnly);
 		}
 	}
 	public class DxTreeViewInterop: HierarchicalCollectionWidgetInterop
@@ -8602,207 +8760,215 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.DxTreeViewOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeView.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeView_Init", dxTarget, json);
 		}
+		[JSInvokable("DevExpress.Ui.DxTreeViewInterop.OnItemClick")]
 		public static void OnItemClick(string identifier)
 		{
 			ItemClick?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxTreeViewInterop.OnItemCollapsed")]
 		public static void OnItemCollapsed(string identifier)
 		{
 			ItemCollapsed?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxTreeViewInterop.OnItemContextMenu")]
 		public static void OnItemContextMenu(string identifier)
 		{
 			ItemContextMenu?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxTreeViewInterop.OnItemExpanded")]
 		public static void OnItemExpanded(string identifier)
 		{
 			ItemExpanded?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxTreeViewInterop.OnItemHold")]
 		public static void OnItemHold(string identifier)
 		{
 			ItemHold?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxTreeViewInterop.OnItemRendered")]
 		public static void OnItemRendered(string identifier)
 		{
 			ItemRendered?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxTreeViewInterop.OnItemSelectionChanged")]
 		public static void OnItemSelectionChanged(string identifier)
 		{
 			ItemSelectionChanged?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxTreeViewInterop.OnSelectionChanged")]
 		public static void OnSelectionChanged(string identifier)
 		{
 			SelectionChanged?.Invoke(null, new JQueryEventArgs(identifier));
 		}
 		public static bool? GetAnimationEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxTreeView.GetOption", dxTarget, "animationEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxTreeView_GetOption", dxTarget, "animationEnabled");
 		}
 		public static void SetAnimationEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeView.SetOption", dxTarget, "animationEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeView_SetOption", dxTarget, "animationEnabled", value);
 		}
 		public static object GetCreateChildren(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeView.GetOption", dxTarget, "createChildren");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeView_GetOption", dxTarget, "createChildren");
 		}
 		public static void SetCreateChildren(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeView.SetOption", dxTarget, "createChildren", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeView_SetOption", dxTarget, "createChildren", value);
 		}
 		public static string GetDataStructure(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxTreeView.GetOption", dxTarget, "dataStructure");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxTreeView_GetOption", dxTarget, "dataStructure");
 		}
 		public static void SetDataStructure(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeView.SetOption", dxTarget, "dataStructure", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeView_SetOption", dxTarget, "dataStructure", value);
 		}
 		public static bool? GetExpandAllEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxTreeView.GetOption", dxTarget, "expandAllEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxTreeView_GetOption", dxTarget, "expandAllEnabled");
 		}
 		public static void SetExpandAllEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeView.SetOption", dxTarget, "expandAllEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeView_SetOption", dxTarget, "expandAllEnabled", value);
 		}
 		public static object GetExpandedExpr(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeView.GetOption", dxTarget, "expandedExpr");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeView_GetOption", dxTarget, "expandedExpr");
 		}
 		public static void SetExpandedExpr(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeView.SetOption", dxTarget, "expandedExpr", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeView_SetOption", dxTarget, "expandedExpr", value);
 		}
 		public static bool? GetExpandNodesRecursive(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxTreeView.GetOption", dxTarget, "expandNodesRecursive");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxTreeView_GetOption", dxTarget, "expandNodesRecursive");
 		}
 		public static void SetExpandNodesRecursive(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeView.SetOption", dxTarget, "expandNodesRecursive", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeView_SetOption", dxTarget, "expandNodesRecursive", value);
 		}
 		public static object GetHasItemsExpr(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeView.GetOption", dxTarget, "hasItemsExpr");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeView_GetOption", dxTarget, "hasItemsExpr");
 		}
 		public static void SetHasItemsExpr(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeView.SetOption", dxTarget, "hasItemsExpr", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeView_SetOption", dxTarget, "hasItemsExpr", value);
 		}
 		public static new object GetItems(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeView.GetOption", dxTarget, "items");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeView_GetOption", dxTarget, "items");
 		}
 		public static new void SetItems(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeView.SetOption", dxTarget, "items", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeView_SetOption", dxTarget, "items", value);
 		}
 		public static object GetParentIdExpr(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeView.GetOption", dxTarget, "parentIdExpr");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeView_GetOption", dxTarget, "parentIdExpr");
 		}
 		public static void SetParentIdExpr(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeView.SetOption", dxTarget, "parentIdExpr", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeView_SetOption", dxTarget, "parentIdExpr", value);
 		}
 		public static object GetRootValue(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeView.GetOption", dxTarget, "rootValue");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeView_GetOption", dxTarget, "rootValue");
 		}
 		public static void SetRootValue(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeView.SetOption", dxTarget, "rootValue", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeView_SetOption", dxTarget, "rootValue", value);
 		}
 		public static string GetScrollDirection(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxTreeView.GetOption", dxTarget, "scrollDirection");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxTreeView_GetOption", dxTarget, "scrollDirection");
 		}
 		public static void SetScrollDirection(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeView.SetOption", dxTarget, "scrollDirection", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeView_SetOption", dxTarget, "scrollDirection", value);
 		}
 		public static string GetSelectAllText(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxTreeView.GetOption", dxTarget, "selectAllText");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxTreeView_GetOption", dxTarget, "selectAllText");
 		}
 		public static void SetSelectAllText(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeView.SetOption", dxTarget, "selectAllText", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeView_SetOption", dxTarget, "selectAllText", value);
 		}
 		public static bool? GetSelectByClick(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxTreeView.GetOption", dxTarget, "selectByClick");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxTreeView_GetOption", dxTarget, "selectByClick");
 		}
 		public static void SetSelectByClick(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeView.SetOption", dxTarget, "selectByClick", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeView_SetOption", dxTarget, "selectByClick", value);
 		}
 		public static string GetSelectionMode(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxTreeView.GetOption", dxTarget, "selectionMode");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxTreeView_GetOption", dxTarget, "selectionMode");
 		}
 		public static void SetSelectionMode(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeView.SetOption", dxTarget, "selectionMode", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeView_SetOption", dxTarget, "selectionMode", value);
 		}
 		public static bool? GetSelectNodesRecursive(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxTreeView.GetOption", dxTarget, "selectNodesRecursive");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxTreeView_GetOption", dxTarget, "selectNodesRecursive");
 		}
 		public static void SetSelectNodesRecursive(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeView.SetOption", dxTarget, "selectNodesRecursive", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeView_SetOption", dxTarget, "selectNodesRecursive", value);
 		}
 		public static string GetShowCheckBoxesMode(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxTreeView.GetOption", dxTarget, "showCheckBoxesMode");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxTreeView_GetOption", dxTarget, "showCheckBoxesMode");
 		}
 		public static void SetShowCheckBoxesMode(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeView.SetOption", dxTarget, "showCheckBoxesMode", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeView_SetOption", dxTarget, "showCheckBoxesMode", value);
 		}
 		public static bool? GetVirtualModeEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxTreeView.GetOption", dxTarget, "virtualModeEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxTreeView_GetOption", dxTarget, "virtualModeEnabled");
 		}
 		public static void SetVirtualModeEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeView.SetOption", dxTarget, "virtualModeEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeView_SetOption", dxTarget, "virtualModeEnabled", value);
 		}
 		public static void CollapseItem(ElementRef dxTarget, object itemData)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeView.collapseItem_0", dxTarget, itemData);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeView_collapseItem_0", dxTarget, itemData);
 		}
 		public static void ExpandItem(ElementRef dxTarget, object itemData)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeView.expandItem_3", dxTarget, itemData);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeView_expandItem_3", dxTarget, itemData);
 		}
 		public static object GetNodes(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeView.getNodes_6", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeView_getNodes_6", dxTarget);
 		}
 		public static void SelectAll(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeView.selectAll_7", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeView_selectAll_7", dxTarget);
 		}
 		public static void SelectItem(ElementRef dxTarget, object itemData)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeView.selectItem_8", dxTarget, itemData);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeView_selectItem_8", dxTarget, itemData);
 		}
 		public static void UnselectAll(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeView.unselectAll_11", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeView_unselectAll_11", dxTarget);
 		}
 		public static void UnselectItem(ElementRef dxTarget, object itemData)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeView.unselectItem_12", dxTarget, itemData);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeView_unselectItem_12", dxTarget, itemData);
 		}
 		public static object UpdateDimensions(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeView.updateDimensions_15", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeView_updateDimensions_15", dxTarget);
 		}
 	}
 	public class DxValidationGroupInterop: DOMComponentInterop
@@ -8810,15 +8976,15 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.DxValidationGroupOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxValidationGroup.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxValidationGroup_Init", dxTarget, json);
 		}
 		public static void Reset(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxValidationGroup.reset_0", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxValidationGroup_reset_0", dxTarget);
 		}
 		public static object Validate(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxValidationGroup.validate_1", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxValidationGroup_validate_1", dxTarget);
 		}
 	}
 	public class DxValidationSummaryInterop: CollectionWidgetInterop
@@ -8826,15 +8992,15 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.DxValidationSummaryOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxValidationSummary.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxValidationSummary_Init", dxTarget, json);
 		}
 		public static string GetValidationGroup(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxValidationSummary.GetOption", dxTarget, "validationGroup");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxValidationSummary_GetOption", dxTarget, "validationGroup");
 		}
 		public static void SetValidationGroup(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxValidationSummary.SetOption", dxTarget, "validationGroup", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxValidationSummary_SetOption", dxTarget, "validationGroup", value);
 		}
 	}
 	public class DxValidatorInterop: DOMComponentInterop
@@ -8843,55 +9009,56 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.DxValidatorOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxValidator.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxValidator_Init", dxTarget, json);
 		}
+		[JSInvokable("DevExpress.Ui.DxValidatorInterop.OnValidated")]
 		public static void OnValidated(string identifier)
 		{
 			Validated?.Invoke(null, new JQueryEventArgs(identifier));
 		}
 		public static object GetAdapter(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxValidator.GetOption", dxTarget, "adapter");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxValidator_GetOption", dxTarget, "adapter");
 		}
 		public static void SetAdapter(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxValidator.SetOption", dxTarget, "adapter", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxValidator_SetOption", dxTarget, "adapter", value);
 		}
 		public static string GetName(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxValidator.GetOption", dxTarget, "name");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxValidator_GetOption", dxTarget, "name");
 		}
 		public static void SetName(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxValidator.SetOption", dxTarget, "name", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxValidator_SetOption", dxTarget, "name", value);
 		}
 		public static string GetValidationGroup(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxValidator.GetOption", dxTarget, "validationGroup");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxValidator_GetOption", dxTarget, "validationGroup");
 		}
 		public static void SetValidationGroup(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxValidator.SetOption", dxTarget, "validationGroup", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxValidator_SetOption", dxTarget, "validationGroup", value);
 		}
 		public static object GetValidationRules(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxValidator.GetOption", dxTarget, "validationRules");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxValidator_GetOption", dxTarget, "validationRules");
 		}
 		public static void SetValidationRules(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxValidator.SetOption", dxTarget, "validationRules", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxValidator_SetOption", dxTarget, "validationRules", value);
 		}
 		public static void Focus(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxValidator.focus_0", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxValidator_focus_0", dxTarget);
 		}
 		public static void Reset(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxValidator.reset_1", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxValidator_reset_1", dxTarget);
 		}
 		public static object Validate(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxValidator.validate_2", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxValidator_validate_2", dxTarget);
 		}
 	}
 	public class CollectionWidgetInterop: WidgetInterop
@@ -8904,111 +9071,116 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.CollectionWidgetOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.CollectionWidget.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_CollectionWidget_Init", dxTarget, json);
 		}
+		[JSInvokable("DevExpress.Ui.CollectionWidgetInterop.OnItemClick")]
 		public static void OnItemClick(string identifier)
 		{
 			ItemClick?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.CollectionWidgetInterop.OnItemContextMenu")]
 		public static void OnItemContextMenu(string identifier)
 		{
 			ItemContextMenu?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.CollectionWidgetInterop.OnItemHold")]
 		public static void OnItemHold(string identifier)
 		{
 			ItemHold?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.CollectionWidgetInterop.OnItemRendered")]
 		public static void OnItemRendered(string identifier)
 		{
 			ItemRendered?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.CollectionWidgetInterop.OnSelectionChanged")]
 		public static void OnSelectionChanged(string identifier)
 		{
 			SelectionChanged?.Invoke(null, new JQueryEventArgs(identifier));
 		}
 		public static object GetDataSource(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.CollectionWidget.GetOption", dxTarget, "dataSource");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_CollectionWidget_GetOption", dxTarget, "dataSource");
 		}
 		public static void SetDataSource(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.CollectionWidget.SetOption", dxTarget, "dataSource", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_CollectionWidget_SetOption", dxTarget, "dataSource", value);
 		}
 		public static float? GetItemHoldTimeout(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.CollectionWidget.GetOption", dxTarget, "itemHoldTimeout");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_CollectionWidget_GetOption", dxTarget, "itemHoldTimeout");
 		}
 		public static void SetItemHoldTimeout(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.CollectionWidget.SetOption", dxTarget, "itemHoldTimeout", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_CollectionWidget_SetOption", dxTarget, "itemHoldTimeout", value);
 		}
 		public static object GetItems(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.CollectionWidget.GetOption", dxTarget, "items");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_CollectionWidget_GetOption", dxTarget, "items");
 		}
 		public static void SetItems(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.CollectionWidget.SetOption", dxTarget, "items", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_CollectionWidget_SetOption", dxTarget, "items", value);
 		}
 		public static object GetItemTemplate(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.CollectionWidget.GetOption", dxTarget, "itemTemplate");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_CollectionWidget_GetOption", dxTarget, "itemTemplate");
 		}
 		public static void SetItemTemplate(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.CollectionWidget.SetOption", dxTarget, "itemTemplate", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_CollectionWidget_SetOption", dxTarget, "itemTemplate", value);
 		}
 		public static object GetKeyExpr(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.CollectionWidget.GetOption", dxTarget, "keyExpr");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_CollectionWidget_GetOption", dxTarget, "keyExpr");
 		}
 		public static void SetKeyExpr(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.CollectionWidget.SetOption", dxTarget, "keyExpr", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_CollectionWidget_SetOption", dxTarget, "keyExpr", value);
 		}
 		public static string GetNoDataText(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.CollectionWidget.GetOption", dxTarget, "noDataText");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_CollectionWidget_GetOption", dxTarget, "noDataText");
 		}
 		public static void SetNoDataText(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.CollectionWidget.SetOption", dxTarget, "noDataText", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_CollectionWidget_SetOption", dxTarget, "noDataText", value);
 		}
 		public static float? GetSelectedIndex(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.CollectionWidget.GetOption", dxTarget, "selectedIndex");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_CollectionWidget_GetOption", dxTarget, "selectedIndex");
 		}
 		public static void SetSelectedIndex(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.CollectionWidget.SetOption", dxTarget, "selectedIndex", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_CollectionWidget_SetOption", dxTarget, "selectedIndex", value);
 		}
 		public static object GetSelectedItem(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.CollectionWidget.GetOption", dxTarget, "selectedItem");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_CollectionWidget_GetOption", dxTarget, "selectedItem");
 		}
 		public static void SetSelectedItem(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.CollectionWidget.SetOption", dxTarget, "selectedItem", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_CollectionWidget_SetOption", dxTarget, "selectedItem", value);
 		}
 		public static object GetSelectedItemKeys(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.CollectionWidget.GetOption", dxTarget, "selectedItemKeys");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_CollectionWidget_GetOption", dxTarget, "selectedItemKeys");
 		}
 		public static void SetSelectedItemKeys(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.CollectionWidget.SetOption", dxTarget, "selectedItemKeys", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_CollectionWidget_SetOption", dxTarget, "selectedItemKeys", value);
 		}
 		public static object GetSelectedItems(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.CollectionWidget.GetOption", dxTarget, "selectedItems");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_CollectionWidget_GetOption", dxTarget, "selectedItems");
 		}
 		public static void SetSelectedItems(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.CollectionWidget.SetOption", dxTarget, "selectedItems", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_CollectionWidget_SetOption", dxTarget, "selectedItems", value);
 		}
 		public static object GetDataSourceEx(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.CollectionWidget.getDataSource_0", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_CollectionWidget_getDataSource_0", dxTarget);
 		}
 	}
 	public class DxMenuBaseInterop: HierarchicalCollectionWidgetInterop
@@ -9016,71 +9188,71 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.DxMenuBaseOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxMenuBase.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxMenuBase_Init", dxTarget, json);
 		}
 		public static new bool? GetActiveStateEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxMenuBase.GetOption", dxTarget, "activeStateEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxMenuBase_GetOption", dxTarget, "activeStateEnabled");
 		}
 		public static new void SetActiveStateEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxMenuBase.SetOption", dxTarget, "activeStateEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxMenuBase_SetOption", dxTarget, "activeStateEnabled", value);
 		}
 		public static object GetAnimation(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxMenuBase.GetOption", dxTarget, "animation");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxMenuBase_GetOption", dxTarget, "animation");
 		}
 		public static void SetAnimation(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxMenuBase.SetOption", dxTarget, "animation", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxMenuBase_SetOption", dxTarget, "animation", value);
 		}
 		public static string GetCssClass(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxMenuBase.GetOption", dxTarget, "cssClass");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxMenuBase_GetOption", dxTarget, "cssClass");
 		}
 		public static void SetCssClass(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxMenuBase.SetOption", dxTarget, "cssClass", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxMenuBase_SetOption", dxTarget, "cssClass", value);
 		}
 		public static new object GetItems(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxMenuBase.GetOption", dxTarget, "items");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxMenuBase_GetOption", dxTarget, "items");
 		}
 		public static new void SetItems(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxMenuBase.SetOption", dxTarget, "items", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxMenuBase_SetOption", dxTarget, "items", value);
 		}
 		public static bool? GetSelectByClick(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxMenuBase.GetOption", dxTarget, "selectByClick");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxMenuBase_GetOption", dxTarget, "selectByClick");
 		}
 		public static void SetSelectByClick(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxMenuBase.SetOption", dxTarget, "selectByClick", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxMenuBase_SetOption", dxTarget, "selectByClick", value);
 		}
 		public static string GetSelectionMode(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxMenuBase.GetOption", dxTarget, "selectionMode");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxMenuBase_GetOption", dxTarget, "selectionMode");
 		}
 		public static void SetSelectionMode(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxMenuBase.SetOption", dxTarget, "selectionMode", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxMenuBase_SetOption", dxTarget, "selectionMode", value);
 		}
 		public static object GetShowSubmenuMode(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxMenuBase.GetOption", dxTarget, "showSubmenuMode");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxMenuBase_GetOption", dxTarget, "showSubmenuMode");
 		}
 		public static void SetShowSubmenuMode(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxMenuBase.SetOption", dxTarget, "showSubmenuMode", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxMenuBase_SetOption", dxTarget, "showSubmenuMode", value);
 		}
 		public static void SelectItem(ElementRef dxTarget, object itemElement)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxMenuBase.selectItem_0", dxTarget, itemElement);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxMenuBase_selectItem_0", dxTarget, itemElement);
 		}
 		public static void UnselectItem(ElementRef dxTarget, object itemElement)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxMenuBase.unselectItem_1", dxTarget, itemElement);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxMenuBase_unselectItem_1", dxTarget, itemElement);
 		}
 	}
 	public class DxDropDownEditorInterop: DxTextBoxInterop
@@ -9090,91 +9262,93 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.DxDropDownEditorOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownEditor.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDropDownEditor_Init", dxTarget, json);
 		}
+		[JSInvokable("DevExpress.Ui.DxDropDownEditorInterop.OnClosed")]
 		public static void OnClosed(string identifier)
 		{
 			Closed?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxDropDownEditorInterop.OnOpened")]
 		public static void OnOpened(string identifier)
 		{
 			Opened?.Invoke(null, new JQueryEventArgs(identifier));
 		}
 		public static bool? GetAcceptCustomValue(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxDropDownEditor.GetOption", dxTarget, "acceptCustomValue");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxDropDownEditor_GetOption", dxTarget, "acceptCustomValue");
 		}
 		public static void SetAcceptCustomValue(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownEditor.SetOption", dxTarget, "acceptCustomValue", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDropDownEditor_SetOption", dxTarget, "acceptCustomValue", value);
 		}
 		public static new bool? GetActiveStateEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxDropDownEditor.GetOption", dxTarget, "activeStateEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxDropDownEditor_GetOption", dxTarget, "activeStateEnabled");
 		}
 		public static new void SetActiveStateEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownEditor.SetOption", dxTarget, "activeStateEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDropDownEditor_SetOption", dxTarget, "activeStateEnabled", value);
 		}
 		public static string GetApplyValueMode(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxDropDownEditor.GetOption", dxTarget, "applyValueMode");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxDropDownEditor_GetOption", dxTarget, "applyValueMode");
 		}
 		public static void SetApplyValueMode(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownEditor.SetOption", dxTarget, "applyValueMode", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDropDownEditor_SetOption", dxTarget, "applyValueMode", value);
 		}
 		public static bool? GetDeferRendering(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxDropDownEditor.GetOption", dxTarget, "deferRendering");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxDropDownEditor_GetOption", dxTarget, "deferRendering");
 		}
 		public static void SetDeferRendering(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownEditor.SetOption", dxTarget, "deferRendering", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDropDownEditor_SetOption", dxTarget, "deferRendering", value);
 		}
 		public static object GetDropDownButtonTemplate(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownEditor.GetOption", dxTarget, "dropDownButtonTemplate");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDropDownEditor_GetOption", dxTarget, "dropDownButtonTemplate");
 		}
 		public static void SetDropDownButtonTemplate(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownEditor.SetOption", dxTarget, "dropDownButtonTemplate", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDropDownEditor_SetOption", dxTarget, "dropDownButtonTemplate", value);
 		}
 		public static bool? GetOpened(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxDropDownEditor.GetOption", dxTarget, "opened");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxDropDownEditor_GetOption", dxTarget, "opened");
 		}
 		public static void SetOpened(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownEditor.SetOption", dxTarget, "opened", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDropDownEditor_SetOption", dxTarget, "opened", value);
 		}
 		public static new object GetValue(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownEditor.GetOption", dxTarget, "value");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDropDownEditor_GetOption", dxTarget, "value");
 		}
 		public static new void SetValue(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownEditor.SetOption", dxTarget, "value", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDropDownEditor_SetOption", dxTarget, "value", value);
 		}
 		public static void Close(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownEditor.close_0", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDropDownEditor_close_0", dxTarget);
 		}
 		public static object Content(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownEditor.content_1", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDropDownEditor_content_1", dxTarget);
 		}
 		public static object Field(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownEditor.field_2", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDropDownEditor_field_2", dxTarget);
 		}
 		public static void Open(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownEditor.open_3", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDropDownEditor_open_3", dxTarget);
 		}
 		public static void Reset(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownEditor.reset_4", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDropDownEditor_reset_4", dxTarget);
 		}
 	}
 	public class DxDropDownListInterop: DxDropDownEditorInterop
@@ -9185,127 +9359,130 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.DxDropDownListOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownList.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDropDownList_Init", dxTarget, json);
 		}
+		[JSInvokable("DevExpress.Ui.DxDropDownListInterop.OnItemClick")]
 		public static void OnItemClick(string identifier)
 		{
 			ItemClick?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxDropDownListInterop.OnSelectionChanged")]
 		public static void OnSelectionChanged(string identifier)
 		{
 			SelectionChanged?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxDropDownListInterop.OnValueChanged")]
 		public static void OnValueChanged(string identifier)
 		{
 			ValueChanged?.Invoke(null, new JQueryEventArgs(identifier));
 		}
 		public static string GetDisplayValue(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxDropDownList.GetOption", dxTarget, "displayValue");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxDropDownList_GetOption", dxTarget, "displayValue");
 		}
 		public static void SetDisplayValue(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownList.SetOption", dxTarget, "displayValue", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDropDownList_SetOption", dxTarget, "displayValue", value);
 		}
 		public static bool? GetGrouped(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxDropDownList.GetOption", dxTarget, "grouped");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxDropDownList_GetOption", dxTarget, "grouped");
 		}
 		public static void SetGrouped(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownList.SetOption", dxTarget, "grouped", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDropDownList_SetOption", dxTarget, "grouped", value);
 		}
 		public static object GetGroupTemplate(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownList.GetOption", dxTarget, "groupTemplate");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDropDownList_GetOption", dxTarget, "groupTemplate");
 		}
 		public static void SetGroupTemplate(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownList.SetOption", dxTarget, "groupTemplate", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDropDownList_SetOption", dxTarget, "groupTemplate", value);
 		}
 		public static float? GetMinSearchLength(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxDropDownList.GetOption", dxTarget, "minSearchLength");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxDropDownList_GetOption", dxTarget, "minSearchLength");
 		}
 		public static void SetMinSearchLength(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownList.SetOption", dxTarget, "minSearchLength", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDropDownList_SetOption", dxTarget, "minSearchLength", value);
 		}
 		public static string GetNoDataText(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxDropDownList.GetOption", dxTarget, "noDataText");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxDropDownList_GetOption", dxTarget, "noDataText");
 		}
 		public static void SetNoDataText(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownList.SetOption", dxTarget, "noDataText", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDropDownList_SetOption", dxTarget, "noDataText", value);
 		}
 		public static bool? GetSearchEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxDropDownList.GetOption", dxTarget, "searchEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxDropDownList_GetOption", dxTarget, "searchEnabled");
 		}
 		public static void SetSearchEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownList.SetOption", dxTarget, "searchEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDropDownList_SetOption", dxTarget, "searchEnabled", value);
 		}
 		public static object GetSearchExpr(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownList.GetOption", dxTarget, "searchExpr");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDropDownList_GetOption", dxTarget, "searchExpr");
 		}
 		public static void SetSearchExpr(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownList.SetOption", dxTarget, "searchExpr", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDropDownList_SetOption", dxTarget, "searchExpr", value);
 		}
 		public static string GetSearchMode(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxDropDownList.GetOption", dxTarget, "searchMode");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxDropDownList_GetOption", dxTarget, "searchMode");
 		}
 		public static void SetSearchMode(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownList.SetOption", dxTarget, "searchMode", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDropDownList_SetOption", dxTarget, "searchMode", value);
 		}
 		public static float? GetSearchTimeout(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxDropDownList.GetOption", dxTarget, "searchTimeout");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxDropDownList_GetOption", dxTarget, "searchTimeout");
 		}
 		public static void SetSearchTimeout(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownList.SetOption", dxTarget, "searchTimeout", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDropDownList_SetOption", dxTarget, "searchTimeout", value);
 		}
 		public static object GetSelectedItem(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownList.GetOption", dxTarget, "selectedItem");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDropDownList_GetOption", dxTarget, "selectedItem");
 		}
 		public static void SetSelectedItem(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownList.SetOption", dxTarget, "selectedItem", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDropDownList_SetOption", dxTarget, "selectedItem", value);
 		}
 		public static bool? GetShowDataBeforeSearch(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxDropDownList.GetOption", dxTarget, "showDataBeforeSearch");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxDropDownList_GetOption", dxTarget, "showDataBeforeSearch");
 		}
 		public static void SetShowDataBeforeSearch(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownList.SetOption", dxTarget, "showDataBeforeSearch", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDropDownList_SetOption", dxTarget, "showDataBeforeSearch", value);
 		}
 		public static new object GetValue(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownList.GetOption", dxTarget, "value");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDropDownList_GetOption", dxTarget, "value");
 		}
 		public static new void SetValue(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownList.SetOption", dxTarget, "value", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDropDownList_SetOption", dxTarget, "value", value);
 		}
 		public static new string GetValueChangeEvent(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxDropDownList.GetOption", dxTarget, "valueChangeEvent");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxDropDownList_GetOption", dxTarget, "valueChangeEvent");
 		}
 		public static new void SetValueChangeEvent(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownList.SetOption", dxTarget, "valueChangeEvent", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDropDownList_SetOption", dxTarget, "valueChangeEvent", value);
 		}
 		public static object GetDataSourceEx(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxDropDownList.getDataSource_0", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxDropDownList_getDataSource_0", dxTarget);
 		}
 	}
 	public class EditorInterop: WidgetInterop
@@ -9314,55 +9491,56 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.EditorOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.Editor.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Editor_Init", dxTarget, json);
 		}
+		[JSInvokable("DevExpress.Ui.EditorInterop.OnValueChanged")]
 		public static void OnValueChanged(string identifier)
 		{
 			ValueChanged?.Invoke(null, new JQueryEventArgs(identifier));
 		}
 		public static bool? GetIsValid(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.Editor.GetOption", dxTarget, "isValid");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_Editor_GetOption", dxTarget, "isValid");
 		}
 		public static void SetIsValid(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.Editor.SetOption", dxTarget, "isValid", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Editor_SetOption", dxTarget, "isValid", value);
 		}
 		public static bool? GetReadOnly(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.Editor.GetOption", dxTarget, "readOnly");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_Editor_GetOption", dxTarget, "readOnly");
 		}
 		public static void SetReadOnly(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.Editor.SetOption", dxTarget, "readOnly", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Editor_SetOption", dxTarget, "readOnly", value);
 		}
 		public static object GetValidationError(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Editor.GetOption", dxTarget, "validationError");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Editor_GetOption", dxTarget, "validationError");
 		}
 		public static void SetValidationError(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.Editor.SetOption", dxTarget, "validationError", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Editor_SetOption", dxTarget, "validationError", value);
 		}
 		public static string GetValidationMessageMode(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.Editor.GetOption", dxTarget, "validationMessageMode");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_Editor_GetOption", dxTarget, "validationMessageMode");
 		}
 		public static void SetValidationMessageMode(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.Editor.SetOption", dxTarget, "validationMessageMode", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Editor_SetOption", dxTarget, "validationMessageMode", value);
 		}
 		public static object GetValue(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Editor.GetOption", dxTarget, "value");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Editor_GetOption", dxTarget, "value");
 		}
 		public static void SetValue(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.Editor.SetOption", dxTarget, "value", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Editor_SetOption", dxTarget, "value", value);
 		}
 		public static void Reset(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.Editor.reset_0", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Editor_reset_0", dxTarget);
 		}
 	}
 	public class DataExpressionMixinInterop
@@ -9370,59 +9548,59 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.DataExpressionMixinOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataExpressionMixin.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataExpressionMixin_Init", dxTarget, json);
 		}
 		public static object GetDataSource(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataExpressionMixin.GetOption", dxTarget, "dataSource");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataExpressionMixin_GetOption", dxTarget, "dataSource");
 		}
 		public static void SetDataSource(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataExpressionMixin.SetOption", dxTarget, "dataSource", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataExpressionMixin_SetOption", dxTarget, "dataSource", value);
 		}
 		public static object GetDisplayExpr(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataExpressionMixin.GetOption", dxTarget, "displayExpr");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataExpressionMixin_GetOption", dxTarget, "displayExpr");
 		}
 		public static void SetDisplayExpr(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataExpressionMixin.SetOption", dxTarget, "displayExpr", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataExpressionMixin_SetOption", dxTarget, "displayExpr", value);
 		}
 		public static object GetItems(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataExpressionMixin.GetOption", dxTarget, "items");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataExpressionMixin_GetOption", dxTarget, "items");
 		}
 		public static void SetItems(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataExpressionMixin.SetOption", dxTarget, "items", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataExpressionMixin_SetOption", dxTarget, "items", value);
 		}
 		public static object GetItemTemplate(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataExpressionMixin.GetOption", dxTarget, "itemTemplate");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataExpressionMixin_GetOption", dxTarget, "itemTemplate");
 		}
 		public static void SetItemTemplate(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataExpressionMixin.SetOption", dxTarget, "itemTemplate", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataExpressionMixin_SetOption", dxTarget, "itemTemplate", value);
 		}
 		public static object GetValue(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataExpressionMixin.GetOption", dxTarget, "value");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataExpressionMixin_GetOption", dxTarget, "value");
 		}
 		public static void SetValue(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataExpressionMixin.SetOption", dxTarget, "value", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataExpressionMixin_SetOption", dxTarget, "value", value);
 		}
 		public static object GetValueExpr(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataExpressionMixin.GetOption", dxTarget, "valueExpr");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataExpressionMixin_GetOption", dxTarget, "valueExpr");
 		}
 		public static void SetValueExpr(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataExpressionMixin.SetOption", dxTarget, "valueExpr", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataExpressionMixin_SetOption", dxTarget, "valueExpr", value);
 		}
 		public static object GetDataSourceEx(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DataExpressionMixin.getDataSource_0", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DataExpressionMixin_getDataSource_0", dxTarget);
 		}
 	}
 	public class HierarchicalCollectionWidgetInterop: CollectionWidgetInterop
@@ -9430,126 +9608,126 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.HierarchicalCollectionWidgetOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.HierarchicalCollectionWidget.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_HierarchicalCollectionWidget_Init", dxTarget, json);
 		}
 		public static object GetDisabledExpr(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.HierarchicalCollectionWidget.GetOption", dxTarget, "disabledExpr");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_HierarchicalCollectionWidget_GetOption", dxTarget, "disabledExpr");
 		}
 		public static void SetDisabledExpr(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.HierarchicalCollectionWidget.SetOption", dxTarget, "disabledExpr", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_HierarchicalCollectionWidget_SetOption", dxTarget, "disabledExpr", value);
 		}
 		public static object GetDisplayExpr(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.HierarchicalCollectionWidget.GetOption", dxTarget, "displayExpr");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_HierarchicalCollectionWidget_GetOption", dxTarget, "displayExpr");
 		}
 		public static void SetDisplayExpr(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.HierarchicalCollectionWidget.SetOption", dxTarget, "displayExpr", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_HierarchicalCollectionWidget_SetOption", dxTarget, "displayExpr", value);
 		}
 		public static new bool? GetFocusStateEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.HierarchicalCollectionWidget.GetOption", dxTarget, "focusStateEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_HierarchicalCollectionWidget_GetOption", dxTarget, "focusStateEnabled");
 		}
 		public static new void SetFocusStateEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.HierarchicalCollectionWidget.SetOption", dxTarget, "focusStateEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_HierarchicalCollectionWidget_SetOption", dxTarget, "focusStateEnabled", value);
 		}
 		public static new bool? GetHoverStateEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.HierarchicalCollectionWidget.GetOption", dxTarget, "hoverStateEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_HierarchicalCollectionWidget_GetOption", dxTarget, "hoverStateEnabled");
 		}
 		public static new void SetHoverStateEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.HierarchicalCollectionWidget.SetOption", dxTarget, "hoverStateEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_HierarchicalCollectionWidget_SetOption", dxTarget, "hoverStateEnabled", value);
 		}
 		public static object GetItemsExpr(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.HierarchicalCollectionWidget.GetOption", dxTarget, "itemsExpr");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_HierarchicalCollectionWidget_GetOption", dxTarget, "itemsExpr");
 		}
 		public static void SetItemsExpr(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.HierarchicalCollectionWidget.SetOption", dxTarget, "itemsExpr", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_HierarchicalCollectionWidget_SetOption", dxTarget, "itemsExpr", value);
 		}
 		public static new object GetKeyExpr(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.HierarchicalCollectionWidget.GetOption", dxTarget, "keyExpr");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_HierarchicalCollectionWidget_GetOption", dxTarget, "keyExpr");
 		}
 		public static new void SetKeyExpr(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.HierarchicalCollectionWidget.SetOption", dxTarget, "keyExpr", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_HierarchicalCollectionWidget_SetOption", dxTarget, "keyExpr", value);
 		}
 		public static object GetSelectedExpr(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.HierarchicalCollectionWidget.GetOption", dxTarget, "selectedExpr");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_HierarchicalCollectionWidget_GetOption", dxTarget, "selectedExpr");
 		}
 		public static void SetSelectedExpr(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.HierarchicalCollectionWidget.SetOption", dxTarget, "selectedExpr", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_HierarchicalCollectionWidget_SetOption", dxTarget, "selectedExpr", value);
 		}
 	}
 	public class DxPivotGridSummaryCellInterop
 	{
 		public static object Child(ElementRef dxTarget, string direction, object fieldValue)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGridSummaryCell.child_0", dxTarget, direction, fieldValue);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGridSummaryCell_child_0", dxTarget, direction, fieldValue);
 		}
 		public static object Children(ElementRef dxTarget, string direction)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGridSummaryCell.children_1", dxTarget, direction);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGridSummaryCell_children_1", dxTarget, direction);
 		}
 		public static object Field(ElementRef dxTarget, string area)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGridSummaryCell.field_2", dxTarget, area);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGridSummaryCell_field_2", dxTarget, area);
 		}
 		public static object GrandTotal(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGridSummaryCell.grandTotal_3", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGridSummaryCell_grandTotal_3", dxTarget);
 		}
 		public static object GrandTotal(ElementRef dxTarget, string direction)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGridSummaryCell.grandTotal_4", dxTarget, direction);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGridSummaryCell_grandTotal_4", dxTarget, direction);
 		}
 		public static object Next(ElementRef dxTarget, string direction)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGridSummaryCell.next_5", dxTarget, direction);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGridSummaryCell_next_5", dxTarget, direction);
 		}
 		public static object Next(ElementRef dxTarget, string direction, bool allowCrossGroup)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGridSummaryCell.next_6", dxTarget, direction, allowCrossGroup);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGridSummaryCell_next_6", dxTarget, direction, allowCrossGroup);
 		}
 		public static object Parent(ElementRef dxTarget, string direction)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGridSummaryCell.parent_7", dxTarget, direction);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGridSummaryCell_parent_7", dxTarget, direction);
 		}
 		public static object Prev(ElementRef dxTarget, string direction)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGridSummaryCell.prev_8", dxTarget, direction);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGridSummaryCell_prev_8", dxTarget, direction);
 		}
 		public static object Prev(ElementRef dxTarget, string direction, bool allowCrossGroup)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGridSummaryCell.prev_9", dxTarget, direction, allowCrossGroup);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGridSummaryCell_prev_9", dxTarget, direction, allowCrossGroup);
 		}
 		public static object Slice(ElementRef dxTarget, object field, object value)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGridSummaryCell.slice_10", dxTarget, field, value);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGridSummaryCell_slice_10", dxTarget, field, value);
 		}
 		public static object ValueEx(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGridSummaryCell.value_11", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGridSummaryCell_value_11", dxTarget);
 		}
 		public static object ValueEx(ElementRef dxTarget, object field)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGridSummaryCell.value_12", dxTarget, field);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGridSummaryCell_value_12", dxTarget, field);
 		}
 		public static object ValueEx(ElementRef dxTarget, object field, bool isCalculatedValue)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGridSummaryCell.value_13", dxTarget, field, isCalculatedValue);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGridSummaryCell_value_13", dxTarget, field, isCalculatedValue);
 		}
 		public static object ValueEx(ElementRef dxTarget, bool isCalculatedValue)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPivotGridSummaryCell.value_14", dxTarget, isCalculatedValue);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPivotGridSummaryCell_value_14", dxTarget, isCalculatedValue);
 		}
 	}
 	public class DxScrollableInterop: DOMComponentInterop
@@ -9559,127 +9737,129 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.DxScrollableOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScrollable.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScrollable_Init", dxTarget, json);
 		}
+		[JSInvokable("DevExpress.Ui.DxScrollableInterop.OnScroll")]
 		public static void OnScroll(string identifier)
 		{
 			Scroll?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxScrollableInterop.OnUpdated")]
 		public static void OnUpdated(string identifier)
 		{
 			Updated?.Invoke(null, new JQueryEventArgs(identifier));
 		}
 		public static bool? GetBounceEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxScrollable.GetOption", dxTarget, "bounceEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxScrollable_GetOption", dxTarget, "bounceEnabled");
 		}
 		public static void SetBounceEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScrollable.SetOption", dxTarget, "bounceEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScrollable_SetOption", dxTarget, "bounceEnabled", value);
 		}
 		public static string GetDirection(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxScrollable.GetOption", dxTarget, "direction");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxScrollable_GetOption", dxTarget, "direction");
 		}
 		public static void SetDirection(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScrollable.SetOption", dxTarget, "direction", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScrollable_SetOption", dxTarget, "direction", value);
 		}
 		public static bool? GetDisabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxScrollable.GetOption", dxTarget, "disabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxScrollable_GetOption", dxTarget, "disabled");
 		}
 		public static void SetDisabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScrollable.SetOption", dxTarget, "disabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScrollable_SetOption", dxTarget, "disabled", value);
 		}
 		public static bool? GetScrollByContent(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxScrollable.GetOption", dxTarget, "scrollByContent");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxScrollable_GetOption", dxTarget, "scrollByContent");
 		}
 		public static void SetScrollByContent(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScrollable.SetOption", dxTarget, "scrollByContent", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScrollable_SetOption", dxTarget, "scrollByContent", value);
 		}
 		public static bool? GetScrollByThumb(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxScrollable.GetOption", dxTarget, "scrollByThumb");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxScrollable_GetOption", dxTarget, "scrollByThumb");
 		}
 		public static void SetScrollByThumb(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScrollable.SetOption", dxTarget, "scrollByThumb", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScrollable_SetOption", dxTarget, "scrollByThumb", value);
 		}
 		public static string GetShowScrollbar(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxScrollable.GetOption", dxTarget, "showScrollbar");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxScrollable_GetOption", dxTarget, "showScrollbar");
 		}
 		public static void SetShowScrollbar(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScrollable.SetOption", dxTarget, "showScrollbar", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScrollable_SetOption", dxTarget, "showScrollbar", value);
 		}
 		public static bool? GetUseNative(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxScrollable.GetOption", dxTarget, "useNative");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxScrollable_GetOption", dxTarget, "useNative");
 		}
 		public static void SetUseNative(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScrollable.SetOption", dxTarget, "useNative", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScrollable_SetOption", dxTarget, "useNative", value);
 		}
 		public static float ClientHeight(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float>("BlazorDevExtreme.DxScrollable.clientHeight_0", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float>("BlazorDevExtreme_DxScrollable_clientHeight_0", dxTarget);
 		}
 		public static float ClientWidth(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float>("BlazorDevExtreme.DxScrollable.clientWidth_1", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float>("BlazorDevExtreme_DxScrollable_clientWidth_1", dxTarget);
 		}
 		public static object Content(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScrollable.content_2", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScrollable_content_2", dxTarget);
 		}
 		public static void ScrollBy(ElementRef dxTarget, float distance)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScrollable.scrollBy_3", dxTarget, distance);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScrollable_scrollBy_3", dxTarget, distance);
 		}
 		public static void ScrollBy(ElementRef dxTarget, object distanceObject)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScrollable.scrollBy_4", dxTarget, distanceObject);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScrollable_scrollBy_4", dxTarget, distanceObject);
 		}
 		public static float ScrollHeight(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float>("BlazorDevExtreme.DxScrollable.scrollHeight_5", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float>("BlazorDevExtreme_DxScrollable_scrollHeight_5", dxTarget);
 		}
 		public static float ScrollLeft(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float>("BlazorDevExtreme.DxScrollable.scrollLeft_6", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float>("BlazorDevExtreme_DxScrollable_scrollLeft_6", dxTarget);
 		}
 		public static object ScrollOffset(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScrollable.scrollOffset_7", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScrollable_scrollOffset_7", dxTarget);
 		}
 		public static void ScrollTo(ElementRef dxTarget, float targetLocation)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScrollable.scrollTo_8", dxTarget, targetLocation);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScrollable_scrollTo_8", dxTarget, targetLocation);
 		}
 		public static void ScrollTo(ElementRef dxTarget, object targetLocation)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScrollable.scrollTo_9", dxTarget, targetLocation);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScrollable_scrollTo_9", dxTarget, targetLocation);
 		}
 		public static void ScrollToElement(ElementRef dxTarget, object element)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScrollable.scrollToElement_10", dxTarget, element);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScrollable_scrollToElement_10", dxTarget, element);
 		}
 		public static float ScrollTop(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float>("BlazorDevExtreme.DxScrollable.scrollTop_11", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float>("BlazorDevExtreme_DxScrollable_scrollTop_11", dxTarget);
 		}
 		public static float ScrollWidth(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float>("BlazorDevExtreme.DxScrollable.scrollWidth_12", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float>("BlazorDevExtreme_DxScrollable_scrollWidth_12", dxTarget);
 		}
 		public static object Update(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxScrollable.update_13", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxScrollable_update_13", dxTarget);
 		}
 	}
 	public class DxSliderBaseInterop: DxTrackBarInterop
@@ -9687,79 +9867,79 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.DxSliderBaseOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSliderBase.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSliderBase_Init", dxTarget, json);
 		}
 		public static new bool? GetActiveStateEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxSliderBase.GetOption", dxTarget, "activeStateEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxSliderBase_GetOption", dxTarget, "activeStateEnabled");
 		}
 		public static new void SetActiveStateEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSliderBase.SetOption", dxTarget, "activeStateEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSliderBase_SetOption", dxTarget, "activeStateEnabled", value);
 		}
 		public static new bool? GetFocusStateEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxSliderBase.GetOption", dxTarget, "focusStateEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxSliderBase_GetOption", dxTarget, "focusStateEnabled");
 		}
 		public static new void SetFocusStateEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSliderBase.SetOption", dxTarget, "focusStateEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSliderBase_SetOption", dxTarget, "focusStateEnabled", value);
 		}
 		public static new bool? GetHoverStateEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxSliderBase.GetOption", dxTarget, "hoverStateEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxSliderBase_GetOption", dxTarget, "hoverStateEnabled");
 		}
 		public static new void SetHoverStateEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSliderBase.SetOption", dxTarget, "hoverStateEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSliderBase_SetOption", dxTarget, "hoverStateEnabled", value);
 		}
 		public static float? GetKeyStep(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxSliderBase.GetOption", dxTarget, "keyStep");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxSliderBase_GetOption", dxTarget, "keyStep");
 		}
 		public static void SetKeyStep(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSliderBase.SetOption", dxTarget, "keyStep", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSliderBase_SetOption", dxTarget, "keyStep", value);
 		}
 		public static object GetLabel(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSliderBase.GetOption", dxTarget, "label");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSliderBase_GetOption", dxTarget, "label");
 		}
 		public static void SetLabel(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSliderBase.SetOption", dxTarget, "label", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSliderBase_SetOption", dxTarget, "label", value);
 		}
 		public static string GetName(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxSliderBase.GetOption", dxTarget, "name");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxSliderBase_GetOption", dxTarget, "name");
 		}
 		public static void SetName(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSliderBase.SetOption", dxTarget, "name", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSliderBase_SetOption", dxTarget, "name", value);
 		}
 		public static bool? GetShowRange(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxSliderBase.GetOption", dxTarget, "showRange");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxSliderBase_GetOption", dxTarget, "showRange");
 		}
 		public static void SetShowRange(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSliderBase.SetOption", dxTarget, "showRange", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSliderBase_SetOption", dxTarget, "showRange", value);
 		}
 		public static float? GetStep(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxSliderBase.GetOption", dxTarget, "step");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxSliderBase_GetOption", dxTarget, "step");
 		}
 		public static void SetStep(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSliderBase.SetOption", dxTarget, "step", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSliderBase_SetOption", dxTarget, "step", value);
 		}
 		public static object GetTooltip(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSliderBase.GetOption", dxTarget, "tooltip");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSliderBase_GetOption", dxTarget, "tooltip");
 		}
 		public static void SetTooltip(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSliderBase.SetOption", dxTarget, "tooltip", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSliderBase_SetOption", dxTarget, "tooltip", value);
 		}
 	}
 	public class DxTextEditorInterop: EditorInterop
@@ -9778,187 +9958,198 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.DxTextEditorOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTextEditor.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTextEditor_Init", dxTarget, json);
 		}
+		[JSInvokable("DevExpress.Ui.DxTextEditorInterop.OnChange")]
 		public static void OnChange(string identifier)
 		{
 			Change?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxTextEditorInterop.OnCopy")]
 		public static void OnCopy(string identifier)
 		{
 			Copy?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxTextEditorInterop.OnCut")]
 		public static void OnCut(string identifier)
 		{
 			Cut?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxTextEditorInterop.OnEnterKey")]
 		public static void OnEnterKey(string identifier)
 		{
 			EnterKey?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxTextEditorInterop.OnFocusIn")]
 		public static void OnFocusIn(string identifier)
 		{
 			FocusIn?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxTextEditorInterop.OnFocusOut")]
 		public static void OnFocusOut(string identifier)
 		{
 			FocusOut?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxTextEditorInterop.OnInput")]
 		public static void OnInput(string identifier)
 		{
 			Input?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxTextEditorInterop.OnKeyDown")]
 		public static void OnKeyDown(string identifier)
 		{
 			KeyDown?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxTextEditorInterop.OnKeyPress")]
 		public static void OnKeyPress(string identifier)
 		{
 			KeyPress?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxTextEditorInterop.OnKeyUp")]
 		public static void OnKeyUp(string identifier)
 		{
 			KeyUp?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Ui.DxTextEditorInterop.OnPaste")]
 		public static void OnPaste(string identifier)
 		{
 			Paste?.Invoke(null, new JQueryEventArgs(identifier));
 		}
 		public static new bool? GetFocusStateEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxTextEditor.GetOption", dxTarget, "focusStateEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxTextEditor_GetOption", dxTarget, "focusStateEnabled");
 		}
 		public static new void SetFocusStateEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTextEditor.SetOption", dxTarget, "focusStateEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTextEditor_SetOption", dxTarget, "focusStateEnabled", value);
 		}
 		public static new bool? GetHoverStateEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxTextEditor.GetOption", dxTarget, "hoverStateEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxTextEditor_GetOption", dxTarget, "hoverStateEnabled");
 		}
 		public static new void SetHoverStateEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTextEditor.SetOption", dxTarget, "hoverStateEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTextEditor_SetOption", dxTarget, "hoverStateEnabled", value);
 		}
 		public static object GetInputAttr(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTextEditor.GetOption", dxTarget, "inputAttr");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTextEditor_GetOption", dxTarget, "inputAttr");
 		}
 		public static void SetInputAttr(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTextEditor.SetOption", dxTarget, "inputAttr", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTextEditor_SetOption", dxTarget, "inputAttr", value);
 		}
 		public static string GetMask(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxTextEditor.GetOption", dxTarget, "mask");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxTextEditor_GetOption", dxTarget, "mask");
 		}
 		public static void SetMask(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTextEditor.SetOption", dxTarget, "mask", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTextEditor_SetOption", dxTarget, "mask", value);
 		}
 		public static string GetMaskChar(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxTextEditor.GetOption", dxTarget, "maskChar");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxTextEditor_GetOption", dxTarget, "maskChar");
 		}
 		public static void SetMaskChar(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTextEditor.SetOption", dxTarget, "maskChar", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTextEditor_SetOption", dxTarget, "maskChar", value);
 		}
 		public static string GetMaskInvalidMessage(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxTextEditor.GetOption", dxTarget, "maskInvalidMessage");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxTextEditor_GetOption", dxTarget, "maskInvalidMessage");
 		}
 		public static void SetMaskInvalidMessage(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTextEditor.SetOption", dxTarget, "maskInvalidMessage", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTextEditor_SetOption", dxTarget, "maskInvalidMessage", value);
 		}
 		public static object GetMaskRules(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTextEditor.GetOption", dxTarget, "maskRules");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTextEditor_GetOption", dxTarget, "maskRules");
 		}
 		public static void SetMaskRules(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTextEditor.SetOption", dxTarget, "maskRules", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTextEditor_SetOption", dxTarget, "maskRules", value);
 		}
 		public static string GetName(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxTextEditor.GetOption", dxTarget, "name");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxTextEditor_GetOption", dxTarget, "name");
 		}
 		public static void SetName(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTextEditor.SetOption", dxTarget, "name", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTextEditor_SetOption", dxTarget, "name", value);
 		}
 		public static string GetPlaceholder(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxTextEditor.GetOption", dxTarget, "placeholder");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxTextEditor_GetOption", dxTarget, "placeholder");
 		}
 		public static void SetPlaceholder(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTextEditor.SetOption", dxTarget, "placeholder", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTextEditor_SetOption", dxTarget, "placeholder", value);
 		}
 		public static bool? GetShowClearButton(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxTextEditor.GetOption", dxTarget, "showClearButton");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxTextEditor_GetOption", dxTarget, "showClearButton");
 		}
 		public static void SetShowClearButton(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTextEditor.SetOption", dxTarget, "showClearButton", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTextEditor_SetOption", dxTarget, "showClearButton", value);
 		}
 		public static string GetShowMaskMode(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxTextEditor.GetOption", dxTarget, "showMaskMode");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxTextEditor_GetOption", dxTarget, "showMaskMode");
 		}
 		public static void SetShowMaskMode(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTextEditor.SetOption", dxTarget, "showMaskMode", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTextEditor_SetOption", dxTarget, "showMaskMode", value);
 		}
 		public static bool? GetSpellcheck(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxTextEditor.GetOption", dxTarget, "spellcheck");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxTextEditor_GetOption", dxTarget, "spellcheck");
 		}
 		public static void SetSpellcheck(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTextEditor.SetOption", dxTarget, "spellcheck", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTextEditor_SetOption", dxTarget, "spellcheck", value);
 		}
 		public static string GetText(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxTextEditor.GetOption", dxTarget, "text");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxTextEditor_GetOption", dxTarget, "text");
 		}
 		public static void SetText(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTextEditor.SetOption", dxTarget, "text", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTextEditor_SetOption", dxTarget, "text", value);
 		}
 		public static bool? GetUseMaskedValue(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxTextEditor.GetOption", dxTarget, "useMaskedValue");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxTextEditor_GetOption", dxTarget, "useMaskedValue");
 		}
 		public static void SetUseMaskedValue(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTextEditor.SetOption", dxTarget, "useMaskedValue", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTextEditor_SetOption", dxTarget, "useMaskedValue", value);
 		}
 		public static new object GetValue(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTextEditor.GetOption", dxTarget, "value");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTextEditor_GetOption", dxTarget, "value");
 		}
 		public static new void SetValue(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTextEditor.SetOption", dxTarget, "value", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTextEditor_SetOption", dxTarget, "value", value);
 		}
 		public static string GetValueChangeEvent(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxTextEditor.GetOption", dxTarget, "valueChangeEvent");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxTextEditor_GetOption", dxTarget, "valueChangeEvent");
 		}
 		public static void SetValueChangeEvent(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTextEditor.SetOption", dxTarget, "valueChangeEvent", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTextEditor_SetOption", dxTarget, "valueChangeEvent", value);
 		}
 		public static void Blur(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTextEditor.blur_0", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTextEditor_blur_0", dxTarget);
 		}
 		public static void Focus(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTextEditor.focus_1", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTextEditor_focus_1", dxTarget);
 		}
 	}
 	public class SearchBoxMixinInterop
@@ -9966,55 +10157,55 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.SearchBoxMixinOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.SearchBoxMixin.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_SearchBoxMixin_Init", dxTarget, json);
 		}
 		public static object GetSearchEditorOptions(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.SearchBoxMixin.GetOption", dxTarget, "searchEditorOptions");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_SearchBoxMixin_GetOption", dxTarget, "searchEditorOptions");
 		}
 		public static void SetSearchEditorOptions(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.SearchBoxMixin.SetOption", dxTarget, "searchEditorOptions", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_SearchBoxMixin_SetOption", dxTarget, "searchEditorOptions", value);
 		}
 		public static bool? GetSearchEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.SearchBoxMixin.GetOption", dxTarget, "searchEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_SearchBoxMixin_GetOption", dxTarget, "searchEnabled");
 		}
 		public static void SetSearchEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.SearchBoxMixin.SetOption", dxTarget, "searchEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_SearchBoxMixin_SetOption", dxTarget, "searchEnabled", value);
 		}
 		public static object GetSearchExpr(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.SearchBoxMixin.GetOption", dxTarget, "searchExpr");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_SearchBoxMixin_GetOption", dxTarget, "searchExpr");
 		}
 		public static void SetSearchExpr(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.SearchBoxMixin.SetOption", dxTarget, "searchExpr", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_SearchBoxMixin_SetOption", dxTarget, "searchExpr", value);
 		}
 		public static string GetSearchMode(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.SearchBoxMixin.GetOption", dxTarget, "searchMode");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_SearchBoxMixin_GetOption", dxTarget, "searchMode");
 		}
 		public static void SetSearchMode(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.SearchBoxMixin.SetOption", dxTarget, "searchMode", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_SearchBoxMixin_SetOption", dxTarget, "searchMode", value);
 		}
 		public static float? GetSearchTimeout(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.SearchBoxMixin.GetOption", dxTarget, "searchTimeout");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_SearchBoxMixin_GetOption", dxTarget, "searchTimeout");
 		}
 		public static void SetSearchTimeout(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.SearchBoxMixin.SetOption", dxTarget, "searchTimeout", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_SearchBoxMixin_SetOption", dxTarget, "searchTimeout", value);
 		}
 		public static string GetSearchValue(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.SearchBoxMixin.GetOption", dxTarget, "searchValue");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_SearchBoxMixin_GetOption", dxTarget, "searchValue");
 		}
 		public static void SetSearchValue(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.SearchBoxMixin.SetOption", dxTarget, "searchValue", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_SearchBoxMixin_SetOption", dxTarget, "searchValue", value);
 		}
 	}
 	public class DxTemplateInterop
@@ -10022,15 +10213,15 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.DxTemplateOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTemplate.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTemplate_Init", dxTarget, json);
 		}
 		public static string GetName(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxTemplate.GetOption", dxTarget, "name");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxTemplate_GetOption", dxTarget, "name");
 		}
 		public static void SetName(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTemplate.SetOption", dxTarget, "name", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTemplate_SetOption", dxTarget, "name", value);
 		}
 	}
 	public class WidgetInterop: DOMComponentInterop
@@ -10039,117 +10230,118 @@ namespace DevExpress.Ui
 		public static void Init(ElementRef dxTarget, DevExpress.Ui.WidgetOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.Widget.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Widget_Init", dxTarget, json);
 		}
+		[JSInvokable("DevExpress.Ui.WidgetInterop.OnContentReady")]
 		public static void OnContentReady(string identifier)
 		{
 			ContentReady?.Invoke(null, new JQueryEventArgs(identifier));
 		}
 		public static string GetAccessKey(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.Widget.GetOption", dxTarget, "accessKey");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_Widget_GetOption", dxTarget, "accessKey");
 		}
 		public static void SetAccessKey(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.Widget.SetOption", dxTarget, "accessKey", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Widget_SetOption", dxTarget, "accessKey", value);
 		}
 		public static bool? GetActiveStateEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.Widget.GetOption", dxTarget, "activeStateEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_Widget_GetOption", dxTarget, "activeStateEnabled");
 		}
 		public static void SetActiveStateEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.Widget.SetOption", dxTarget, "activeStateEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Widget_SetOption", dxTarget, "activeStateEnabled", value);
 		}
 		public static bool? GetDisabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.Widget.GetOption", dxTarget, "disabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_Widget_GetOption", dxTarget, "disabled");
 		}
 		public static void SetDisabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.Widget.SetOption", dxTarget, "disabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Widget_SetOption", dxTarget, "disabled", value);
 		}
 		public static bool? GetFocusStateEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.Widget.GetOption", dxTarget, "focusStateEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_Widget_GetOption", dxTarget, "focusStateEnabled");
 		}
 		public static void SetFocusStateEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.Widget.SetOption", dxTarget, "focusStateEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Widget_SetOption", dxTarget, "focusStateEnabled", value);
 		}
 		public static string GetHint(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.Widget.GetOption", dxTarget, "hint");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_Widget_GetOption", dxTarget, "hint");
 		}
 		public static void SetHint(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.Widget.SetOption", dxTarget, "hint", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Widget_SetOption", dxTarget, "hint", value);
 		}
 		public static bool? GetHoverStateEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.Widget.GetOption", dxTarget, "hoverStateEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_Widget_GetOption", dxTarget, "hoverStateEnabled");
 		}
 		public static void SetHoverStateEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.Widget.SetOption", dxTarget, "hoverStateEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Widget_SetOption", dxTarget, "hoverStateEnabled", value);
 		}
 		public static float? GetTabIndex(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.Widget.GetOption", dxTarget, "tabIndex");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_Widget_GetOption", dxTarget, "tabIndex");
 		}
 		public static void SetTabIndex(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.Widget.SetOption", dxTarget, "tabIndex", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Widget_SetOption", dxTarget, "tabIndex", value);
 		}
 		public static bool? GetVisible(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.Widget.GetOption", dxTarget, "visible");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_Widget_GetOption", dxTarget, "visible");
 		}
 		public static void SetVisible(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.Widget.SetOption", dxTarget, "visible", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Widget_SetOption", dxTarget, "visible", value);
 		}
 		public static void Focus(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.Widget.focus_0", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Widget_focus_0", dxTarget);
 		}
 		public static void RegisterKeyHandler(ElementRef dxTarget, string key, object handler)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.Widget.registerKeyHandler_1", dxTarget, key, handler);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Widget_registerKeyHandler_1", dxTarget, key, handler);
 		}
 		public static void Repaint(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.Widget.repaint_2", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Widget_repaint_2", dxTarget);
 		}
 	}
 	public class DialogInterop
 	{
 		public static object Alert(string message, string title)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Dialog.alert_0", message, title);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Dialog_alert_0", message, title);
 		}
 		public static object Confirm(string message, string title)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Dialog.confirm_1", message, title);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Dialog_confirm_1", message, title);
 		}
 		public static object Custom(object options)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Dialog.custom_2", options);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Dialog_custom_2", options);
 		}
 	}
 	public class ThemesInterop
 	{
 		public static string Current()
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.Themes.current_0");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_Themes_current_0");
 		}
 		public static void Current(string themeName)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.Themes.current_1", themeName);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Themes_current_1", themeName);
 		}
 		public static void Ready(object callback)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.Themes.ready_2", callback);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Themes_ready_2", callback);
 		}
 	}
 }
@@ -10165,135 +10357,140 @@ namespace DevExpress.Viz
 		public static void Init(ElementRef dxTarget, DevExpress.Viz.BaseWidgetOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseWidget.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseWidget_Init", dxTarget, json);
 		}
+		[JSInvokable("DevExpress.Viz.BaseWidgetInterop.OnDrawn")]
 		public static void OnDrawn(string identifier)
 		{
 			Drawn?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Viz.BaseWidgetInterop.OnExported")]
 		public static void OnExported(string identifier)
 		{
 			Exported?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Viz.BaseWidgetInterop.OnExporting")]
 		public static void OnExporting(string identifier)
 		{
 			Exporting?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Viz.BaseWidgetInterop.OnFileSaving")]
 		public static void OnFileSaving(string identifier)
 		{
 			FileSaving?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Viz.BaseWidgetInterop.OnIncidentOccurred")]
 		public static void OnIncidentOccurred(string identifier)
 		{
 			IncidentOccurred?.Invoke(null, new JQueryEventArgs(identifier));
 		}
 		public static object GetExport(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseWidget.GetOption", dxTarget, "export");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseWidget_GetOption", dxTarget, "export");
 		}
 		public static void SetExport(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseWidget.SetOption", dxTarget, "export", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseWidget_SetOption", dxTarget, "export", value);
 		}
 		public static object GetLoadingIndicator(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseWidget.GetOption", dxTarget, "loadingIndicator");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseWidget_GetOption", dxTarget, "loadingIndicator");
 		}
 		public static void SetLoadingIndicator(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseWidget.SetOption", dxTarget, "loadingIndicator", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseWidget_SetOption", dxTarget, "loadingIndicator", value);
 		}
 		public static object GetMargin(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseWidget.GetOption", dxTarget, "margin");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseWidget_GetOption", dxTarget, "margin");
 		}
 		public static void SetMargin(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseWidget.SetOption", dxTarget, "margin", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseWidget_SetOption", dxTarget, "margin", value);
 		}
 		public static bool? GetPathModified(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.BaseWidget.GetOption", dxTarget, "pathModified");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_BaseWidget_GetOption", dxTarget, "pathModified");
 		}
 		public static void SetPathModified(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseWidget.SetOption", dxTarget, "pathModified", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseWidget_SetOption", dxTarget, "pathModified", value);
 		}
 		public static bool? GetRedrawOnResize(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.BaseWidget.GetOption", dxTarget, "redrawOnResize");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_BaseWidget_GetOption", dxTarget, "redrawOnResize");
 		}
 		public static void SetRedrawOnResize(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseWidget.SetOption", dxTarget, "redrawOnResize", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseWidget_SetOption", dxTarget, "redrawOnResize", value);
 		}
 		public static new bool? GetRtlEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.BaseWidget.GetOption", dxTarget, "rtlEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_BaseWidget_GetOption", dxTarget, "rtlEnabled");
 		}
 		public static new void SetRtlEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseWidget.SetOption", dxTarget, "rtlEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseWidget_SetOption", dxTarget, "rtlEnabled", value);
 		}
 		public static object GetSize(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseWidget.GetOption", dxTarget, "size");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseWidget_GetOption", dxTarget, "size");
 		}
 		public static void SetSize(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseWidget.SetOption", dxTarget, "size", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseWidget_SetOption", dxTarget, "size", value);
 		}
 		public static string GetTheme(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.BaseWidget.GetOption", dxTarget, "theme");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_BaseWidget_GetOption", dxTarget, "theme");
 		}
 		public static void SetTheme(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseWidget.SetOption", dxTarget, "theme", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseWidget_SetOption", dxTarget, "theme", value);
 		}
 		public static object GetTitle(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseWidget.GetOption", dxTarget, "title");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseWidget_GetOption", dxTarget, "title");
 		}
 		public static void SetTitle(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseWidget.SetOption", dxTarget, "title", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseWidget_SetOption", dxTarget, "title", value);
 		}
 		public static object GetTooltip(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseWidget.GetOption", dxTarget, "tooltip");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseWidget_GetOption", dxTarget, "tooltip");
 		}
 		public static void SetTooltip(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseWidget.SetOption", dxTarget, "tooltip", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseWidget_SetOption", dxTarget, "tooltip", value);
 		}
 		public static void ExportTo(ElementRef dxTarget, string fileName, string format)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseWidget.exportTo_0", dxTarget, fileName, format);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseWidget_exportTo_0", dxTarget, fileName, format);
 		}
 		public static object GetSizeEx(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseWidget.getSize_1", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseWidget_getSize_1", dxTarget);
 		}
 		public static void HideLoadingIndicator(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseWidget.hideLoadingIndicator_2", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseWidget_hideLoadingIndicator_2", dxTarget);
 		}
 		public static void Print(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseWidget.print_3", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseWidget_print_3", dxTarget);
 		}
 		public static void Render(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseWidget.render_4", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseWidget_render_4", dxTarget);
 		}
 		public static void ShowLoadingIndicator(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseWidget.showLoadingIndicator_5", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseWidget_showLoadingIndicator_5", dxTarget);
 		}
 		public static string Svg(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.BaseWidget.svg_6", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_BaseWidget_svg_6", dxTarget);
 		}
 	}
 	public class DxChartInterop: BaseChartInterop
@@ -10308,279 +10505,286 @@ namespace DevExpress.Viz
 		public static void Init(ElementRef dxTarget, DevExpress.Viz.Charts.DxChartOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxChart.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxChart_Init", dxTarget, json);
 		}
+		[JSInvokable("DevExpress.Viz.DxChartInterop.OnArgumentAxisClick")]
 		public static void OnArgumentAxisClick(string identifier)
 		{
 			ArgumentAxisClick?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Viz.DxChartInterop.OnLegendClick")]
 		public static void OnLegendClick(string identifier)
 		{
 			LegendClick?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Viz.DxChartInterop.OnSeriesClick")]
 		public static void OnSeriesClick(string identifier)
 		{
 			SeriesClick?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Viz.DxChartInterop.OnSeriesHoverChanged")]
 		public static void OnSeriesHoverChanged(string identifier)
 		{
 			SeriesHoverChanged?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Viz.DxChartInterop.OnSeriesSelectionChanged")]
 		public static void OnSeriesSelectionChanged(string identifier)
 		{
 			SeriesSelectionChanged?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Viz.DxChartInterop.OnZoomEnd")]
 		public static void OnZoomEnd(string identifier)
 		{
 			ZoomEnd?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Viz.DxChartInterop.OnZoomStart")]
 		public static void OnZoomStart(string identifier)
 		{
 			ZoomStart?.Invoke(null, new JQueryEventArgs(identifier));
 		}
 		public static bool? GetAdjustOnZoom(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxChart.GetOption", dxTarget, "adjustOnZoom");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxChart_GetOption", dxTarget, "adjustOnZoom");
 		}
 		public static void SetAdjustOnZoom(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxChart.SetOption", dxTarget, "adjustOnZoom", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxChart_SetOption", dxTarget, "adjustOnZoom", value);
 		}
 		public static object GetArgumentAxis(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxChart.GetOption", dxTarget, "argumentAxis");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxChart_GetOption", dxTarget, "argumentAxis");
 		}
 		public static void SetArgumentAxis(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxChart.SetOption", dxTarget, "argumentAxis", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxChart_SetOption", dxTarget, "argumentAxis", value);
 		}
 		public static float? GetBarGroupPadding(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxChart.GetOption", dxTarget, "barGroupPadding");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxChart_GetOption", dxTarget, "barGroupPadding");
 		}
 		public static void SetBarGroupPadding(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxChart.SetOption", dxTarget, "barGroupPadding", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxChart_SetOption", dxTarget, "barGroupPadding", value);
 		}
 		public static float? GetBarGroupWidth(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxChart.GetOption", dxTarget, "barGroupWidth");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxChart_GetOption", dxTarget, "barGroupWidth");
 		}
 		public static void SetBarGroupWidth(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxChart.SetOption", dxTarget, "barGroupWidth", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxChart_SetOption", dxTarget, "barGroupWidth", value);
 		}
 		public static float? GetBarWidth(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxChart.GetOption", dxTarget, "barWidth");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxChart_GetOption", dxTarget, "barWidth");
 		}
 		public static void SetBarWidth(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxChart.SetOption", dxTarget, "barWidth", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxChart_SetOption", dxTarget, "barWidth", value);
 		}
 		public static object GetCommonAxisSettings(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxChart.GetOption", dxTarget, "commonAxisSettings");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxChart_GetOption", dxTarget, "commonAxisSettings");
 		}
 		public static void SetCommonAxisSettings(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxChart.SetOption", dxTarget, "commonAxisSettings", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxChart_SetOption", dxTarget, "commonAxisSettings", value);
 		}
 		public static object GetCommonPaneSettings(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxChart.GetOption", dxTarget, "commonPaneSettings");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxChart_GetOption", dxTarget, "commonPaneSettings");
 		}
 		public static void SetCommonPaneSettings(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxChart.SetOption", dxTarget, "commonPaneSettings", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxChart_SetOption", dxTarget, "commonPaneSettings", value);
 		}
 		public static object GetCommonSeriesSettings(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxChart.GetOption", dxTarget, "commonSeriesSettings");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxChart_GetOption", dxTarget, "commonSeriesSettings");
 		}
 		public static void SetCommonSeriesSettings(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxChart.SetOption", dxTarget, "commonSeriesSettings", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxChart_SetOption", dxTarget, "commonSeriesSettings", value);
 		}
 		public static string GetContainerBackgroundColor(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxChart.GetOption", dxTarget, "containerBackgroundColor");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxChart_GetOption", dxTarget, "containerBackgroundColor");
 		}
 		public static void SetContainerBackgroundColor(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxChart.SetOption", dxTarget, "containerBackgroundColor", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxChart_SetOption", dxTarget, "containerBackgroundColor", value);
 		}
 		public static object GetCrosshair(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxChart.GetOption", dxTarget, "crosshair");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxChart_GetOption", dxTarget, "crosshair");
 		}
 		public static void SetCrosshair(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxChart.SetOption", dxTarget, "crosshair", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxChart_SetOption", dxTarget, "crosshair", value);
 		}
 		public static object GetDataPrepareSettings(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxChart.GetOption", dxTarget, "dataPrepareSettings");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxChart_GetOption", dxTarget, "dataPrepareSettings");
 		}
 		public static void SetDataPrepareSettings(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxChart.SetOption", dxTarget, "dataPrepareSettings", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxChart_SetOption", dxTarget, "dataPrepareSettings", value);
 		}
 		public static string GetDefaultPane(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxChart.GetOption", dxTarget, "defaultPane");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxChart_GetOption", dxTarget, "defaultPane");
 		}
 		public static void SetDefaultPane(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxChart.SetOption", dxTarget, "defaultPane", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxChart_SetOption", dxTarget, "defaultPane", value);
 		}
 		public static bool? GetEqualBarWidth(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxChart.GetOption", dxTarget, "equalBarWidth");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxChart_GetOption", dxTarget, "equalBarWidth");
 		}
 		public static void SetEqualBarWidth(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxChart.SetOption", dxTarget, "equalBarWidth", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxChart_SetOption", dxTarget, "equalBarWidth", value);
 		}
 		public static new object GetLegend(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxChart.GetOption", dxTarget, "legend");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxChart_GetOption", dxTarget, "legend");
 		}
 		public static new void SetLegend(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxChart.SetOption", dxTarget, "legend", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxChart_SetOption", dxTarget, "legend", value);
 		}
 		public static float? GetMaxBubbleSize(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxChart.GetOption", dxTarget, "maxBubbleSize");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxChart_GetOption", dxTarget, "maxBubbleSize");
 		}
 		public static void SetMaxBubbleSize(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxChart.SetOption", dxTarget, "maxBubbleSize", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxChart_SetOption", dxTarget, "maxBubbleSize", value);
 		}
 		public static float? GetMinBubbleSize(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxChart.GetOption", dxTarget, "minBubbleSize");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxChart_GetOption", dxTarget, "minBubbleSize");
 		}
 		public static void SetMinBubbleSize(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxChart.SetOption", dxTarget, "minBubbleSize", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxChart_SetOption", dxTarget, "minBubbleSize", value);
 		}
 		public static bool? GetNegativesAsZeroes(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxChart.GetOption", dxTarget, "negativesAsZeroes");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxChart_GetOption", dxTarget, "negativesAsZeroes");
 		}
 		public static void SetNegativesAsZeroes(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxChart.SetOption", dxTarget, "negativesAsZeroes", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxChart_SetOption", dxTarget, "negativesAsZeroes", value);
 		}
 		public static object GetPanes(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxChart.GetOption", dxTarget, "panes");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxChart_GetOption", dxTarget, "panes");
 		}
 		public static void SetPanes(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxChart.SetOption", dxTarget, "panes", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxChart_SetOption", dxTarget, "panes", value);
 		}
 		public static string GetResolveLabelOverlapping(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxChart.GetOption", dxTarget, "resolveLabelOverlapping");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxChart_GetOption", dxTarget, "resolveLabelOverlapping");
 		}
 		public static void SetResolveLabelOverlapping(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxChart.SetOption", dxTarget, "resolveLabelOverlapping", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxChart_SetOption", dxTarget, "resolveLabelOverlapping", value);
 		}
 		public static bool? GetRotated(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxChart.GetOption", dxTarget, "rotated");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxChart_GetOption", dxTarget, "rotated");
 		}
 		public static void SetRotated(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxChart.SetOption", dxTarget, "rotated", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxChart_SetOption", dxTarget, "rotated", value);
 		}
 		public static object GetScrollBar(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxChart.GetOption", dxTarget, "scrollBar");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxChart_GetOption", dxTarget, "scrollBar");
 		}
 		public static void SetScrollBar(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxChart.SetOption", dxTarget, "scrollBar", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxChart_SetOption", dxTarget, "scrollBar", value);
 		}
 		public static string GetScrollingMode(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxChart.GetOption", dxTarget, "scrollingMode");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxChart_GetOption", dxTarget, "scrollingMode");
 		}
 		public static void SetScrollingMode(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxChart.SetOption", dxTarget, "scrollingMode", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxChart_SetOption", dxTarget, "scrollingMode", value);
 		}
 		public static new object GetSeries(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxChart.GetOption", dxTarget, "series");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxChart_GetOption", dxTarget, "series");
 		}
 		public static new void SetSeries(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxChart.SetOption", dxTarget, "series", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxChart_SetOption", dxTarget, "series", value);
 		}
 		public static string GetSeriesSelectionMode(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxChart.GetOption", dxTarget, "seriesSelectionMode");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxChart_GetOption", dxTarget, "seriesSelectionMode");
 		}
 		public static void SetSeriesSelectionMode(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxChart.SetOption", dxTarget, "seriesSelectionMode", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxChart_SetOption", dxTarget, "seriesSelectionMode", value);
 		}
 		public static object GetSeriesTemplate(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxChart.GetOption", dxTarget, "seriesTemplate");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxChart_GetOption", dxTarget, "seriesTemplate");
 		}
 		public static void SetSeriesTemplate(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxChart.SetOption", dxTarget, "seriesTemplate", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxChart_SetOption", dxTarget, "seriesTemplate", value);
 		}
 		public static bool? GetSynchronizeMultiAxes(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxChart.GetOption", dxTarget, "synchronizeMultiAxes");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxChart_GetOption", dxTarget, "synchronizeMultiAxes");
 		}
 		public static void SetSynchronizeMultiAxes(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxChart.SetOption", dxTarget, "synchronizeMultiAxes", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxChart_SetOption", dxTarget, "synchronizeMultiAxes", value);
 		}
 		public static new object GetTooltip(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxChart.GetOption", dxTarget, "tooltip");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxChart_GetOption", dxTarget, "tooltip");
 		}
 		public static new void SetTooltip(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxChart.SetOption", dxTarget, "tooltip", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxChart_SetOption", dxTarget, "tooltip", value);
 		}
 		public static bool? GetUseAggregation(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxChart.GetOption", dxTarget, "useAggregation");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxChart_GetOption", dxTarget, "useAggregation");
 		}
 		public static void SetUseAggregation(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxChart.SetOption", dxTarget, "useAggregation", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxChart_SetOption", dxTarget, "useAggregation", value);
 		}
 		public static object GetValueAxis(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxChart.GetOption", dxTarget, "valueAxis");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxChart_GetOption", dxTarget, "valueAxis");
 		}
 		public static void SetValueAxis(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxChart.SetOption", dxTarget, "valueAxis", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxChart_SetOption", dxTarget, "valueAxis", value);
 		}
 		public static string GetZoomingMode(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxChart.GetOption", dxTarget, "zoomingMode");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxChart_GetOption", dxTarget, "zoomingMode");
 		}
 		public static void SetZoomingMode(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxChart.SetOption", dxTarget, "zoomingMode", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxChart_SetOption", dxTarget, "zoomingMode", value);
 		}
 		public static void ZoomArgument(ElementRef dxTarget, object startValue, object endValue)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxChart.zoomArgument_0", dxTarget, startValue, endValue);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxChart_zoomArgument_0", dxTarget, startValue, endValue);
 		}
 	}
 	public class DxPieChartInterop: BaseChartInterop
@@ -10589,135 +10793,136 @@ namespace DevExpress.Viz
 		public static void Init(ElementRef dxTarget, DevExpress.Viz.Charts.DxPieChartOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPieChart.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPieChart_Init", dxTarget, json);
 		}
+		[JSInvokable("DevExpress.Viz.DxPieChartInterop.OnLegendClick")]
 		public static void OnLegendClick(string identifier)
 		{
 			LegendClick?.Invoke(null, new JQueryEventArgs(identifier));
 		}
 		public static new object GetAdaptiveLayout(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPieChart.GetOption", dxTarget, "adaptiveLayout");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPieChart_GetOption", dxTarget, "adaptiveLayout");
 		}
 		public static new void SetAdaptiveLayout(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPieChart.SetOption", dxTarget, "adaptiveLayout", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPieChart_SetOption", dxTarget, "adaptiveLayout", value);
 		}
 		public static object GetCommonSeriesSettings(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPieChart.GetOption", dxTarget, "commonSeriesSettings");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPieChart_GetOption", dxTarget, "commonSeriesSettings");
 		}
 		public static void SetCommonSeriesSettings(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPieChart.SetOption", dxTarget, "commonSeriesSettings", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPieChart_SetOption", dxTarget, "commonSeriesSettings", value);
 		}
 		public static float? GetDiameter(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxPieChart.GetOption", dxTarget, "diameter");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxPieChart_GetOption", dxTarget, "diameter");
 		}
 		public static void SetDiameter(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPieChart.SetOption", dxTarget, "diameter", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPieChart_SetOption", dxTarget, "diameter", value);
 		}
 		public static float? GetInnerRadius(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxPieChart.GetOption", dxTarget, "innerRadius");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxPieChart_GetOption", dxTarget, "innerRadius");
 		}
 		public static void SetInnerRadius(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPieChart.SetOption", dxTarget, "innerRadius", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPieChart_SetOption", dxTarget, "innerRadius", value);
 		}
 		public static new object GetLegend(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPieChart.GetOption", dxTarget, "legend");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPieChart_GetOption", dxTarget, "legend");
 		}
 		public static new void SetLegend(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPieChart.SetOption", dxTarget, "legend", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPieChart_SetOption", dxTarget, "legend", value);
 		}
 		public static float? GetMinDiameter(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxPieChart.GetOption", dxTarget, "minDiameter");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxPieChart_GetOption", dxTarget, "minDiameter");
 		}
 		public static void SetMinDiameter(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPieChart.SetOption", dxTarget, "minDiameter", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPieChart_SetOption", dxTarget, "minDiameter", value);
 		}
 		public static new object GetPalette(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPieChart.GetOption", dxTarget, "palette");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPieChart_GetOption", dxTarget, "palette");
 		}
 		public static new void SetPalette(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPieChart.SetOption", dxTarget, "palette", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPieChart_SetOption", dxTarget, "palette", value);
 		}
 		public static string GetResolveLabelOverlapping(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxPieChart.GetOption", dxTarget, "resolveLabelOverlapping");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxPieChart_GetOption", dxTarget, "resolveLabelOverlapping");
 		}
 		public static void SetResolveLabelOverlapping(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPieChart.SetOption", dxTarget, "resolveLabelOverlapping", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPieChart_SetOption", dxTarget, "resolveLabelOverlapping", value);
 		}
 		public static string GetSegmentsDirection(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxPieChart.GetOption", dxTarget, "segmentsDirection");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxPieChart_GetOption", dxTarget, "segmentsDirection");
 		}
 		public static void SetSegmentsDirection(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPieChart.SetOption", dxTarget, "segmentsDirection", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPieChart_SetOption", dxTarget, "segmentsDirection", value);
 		}
 		public static new object GetSeries(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPieChart.GetOption", dxTarget, "series");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPieChart_GetOption", dxTarget, "series");
 		}
 		public static new void SetSeries(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPieChart.SetOption", dxTarget, "series", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPieChart_SetOption", dxTarget, "series", value);
 		}
 		public static object GetSeriesTemplate(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPieChart.GetOption", dxTarget, "seriesTemplate");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPieChart_GetOption", dxTarget, "seriesTemplate");
 		}
 		public static void SetSeriesTemplate(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPieChart.SetOption", dxTarget, "seriesTemplate", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPieChart_SetOption", dxTarget, "seriesTemplate", value);
 		}
 		public static string GetSizeGroup(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxPieChart.GetOption", dxTarget, "sizeGroup");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxPieChart_GetOption", dxTarget, "sizeGroup");
 		}
 		public static void SetSizeGroup(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPieChart.SetOption", dxTarget, "sizeGroup", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPieChart_SetOption", dxTarget, "sizeGroup", value);
 		}
 		public static float? GetStartAngle(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxPieChart.GetOption", dxTarget, "startAngle");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxPieChart_GetOption", dxTarget, "startAngle");
 		}
 		public static void SetStartAngle(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPieChart.SetOption", dxTarget, "startAngle", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPieChart_SetOption", dxTarget, "startAngle", value);
 		}
 		public static string GetType(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxPieChart.GetOption", dxTarget, "type");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxPieChart_GetOption", dxTarget, "type");
 		}
 		public static void SetType(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPieChart.SetOption", dxTarget, "type", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPieChart_SetOption", dxTarget, "type", value);
 		}
 		public static object GetSeriesEx(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPieChart.getSeries_0", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPieChart_getSeries_0", dxTarget);
 		}
 		public static object GetSeriesByName(ElementRef dxTarget, object seriesName)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPieChart.getSeriesByName_1", dxTarget, seriesName);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPieChart_getSeriesByName_1", dxTarget, seriesName);
 		}
 		public static object GetSeriesByPos(ElementRef dxTarget, float seriesIndex)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPieChart.getSeriesByPos_2", dxTarget, seriesIndex);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPieChart_getSeriesByPos_2", dxTarget, seriesIndex);
 		}
 	}
 	public class DxPolarChartInterop: BaseChartInterop
@@ -10730,179 +10935,184 @@ namespace DevExpress.Viz
 		public static void Init(ElementRef dxTarget, DevExpress.Viz.Charts.DxPolarChartOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPolarChart.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPolarChart_Init", dxTarget, json);
 		}
+		[JSInvokable("DevExpress.Viz.DxPolarChartInterop.OnArgumentAxisClick")]
 		public static void OnArgumentAxisClick(string identifier)
 		{
 			ArgumentAxisClick?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Viz.DxPolarChartInterop.OnLegendClick")]
 		public static void OnLegendClick(string identifier)
 		{
 			LegendClick?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Viz.DxPolarChartInterop.OnSeriesClick")]
 		public static void OnSeriesClick(string identifier)
 		{
 			SeriesClick?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Viz.DxPolarChartInterop.OnSeriesHoverChanged")]
 		public static void OnSeriesHoverChanged(string identifier)
 		{
 			SeriesHoverChanged?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Viz.DxPolarChartInterop.OnSeriesSelectionChanged")]
 		public static void OnSeriesSelectionChanged(string identifier)
 		{
 			SeriesSelectionChanged?.Invoke(null, new JQueryEventArgs(identifier));
 		}
 		public static new object GetAdaptiveLayout(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPolarChart.GetOption", dxTarget, "adaptiveLayout");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPolarChart_GetOption", dxTarget, "adaptiveLayout");
 		}
 		public static new void SetAdaptiveLayout(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPolarChart.SetOption", dxTarget, "adaptiveLayout", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPolarChart_SetOption", dxTarget, "adaptiveLayout", value);
 		}
 		public static object GetArgumentAxis(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPolarChart.GetOption", dxTarget, "argumentAxis");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPolarChart_GetOption", dxTarget, "argumentAxis");
 		}
 		public static void SetArgumentAxis(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPolarChart.SetOption", dxTarget, "argumentAxis", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPolarChart_SetOption", dxTarget, "argumentAxis", value);
 		}
 		public static float? GetBarGroupPadding(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxPolarChart.GetOption", dxTarget, "barGroupPadding");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxPolarChart_GetOption", dxTarget, "barGroupPadding");
 		}
 		public static void SetBarGroupPadding(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPolarChart.SetOption", dxTarget, "barGroupPadding", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPolarChart_SetOption", dxTarget, "barGroupPadding", value);
 		}
 		public static float? GetBarGroupWidth(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxPolarChart.GetOption", dxTarget, "barGroupWidth");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxPolarChart_GetOption", dxTarget, "barGroupWidth");
 		}
 		public static void SetBarGroupWidth(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPolarChart.SetOption", dxTarget, "barGroupWidth", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPolarChart_SetOption", dxTarget, "barGroupWidth", value);
 		}
 		public static float? GetBarWidth(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxPolarChart.GetOption", dxTarget, "barWidth");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxPolarChart_GetOption", dxTarget, "barWidth");
 		}
 		public static void SetBarWidth(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPolarChart.SetOption", dxTarget, "barWidth", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPolarChart_SetOption", dxTarget, "barWidth", value);
 		}
 		public static object GetCommonAxisSettings(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPolarChart.GetOption", dxTarget, "commonAxisSettings");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPolarChart_GetOption", dxTarget, "commonAxisSettings");
 		}
 		public static void SetCommonAxisSettings(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPolarChart.SetOption", dxTarget, "commonAxisSettings", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPolarChart_SetOption", dxTarget, "commonAxisSettings", value);
 		}
 		public static object GetCommonSeriesSettings(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPolarChart.GetOption", dxTarget, "commonSeriesSettings");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPolarChart_GetOption", dxTarget, "commonSeriesSettings");
 		}
 		public static void SetCommonSeriesSettings(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPolarChart.SetOption", dxTarget, "commonSeriesSettings", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPolarChart_SetOption", dxTarget, "commonSeriesSettings", value);
 		}
 		public static string GetContainerBackgroundColor(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxPolarChart.GetOption", dxTarget, "containerBackgroundColor");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxPolarChart_GetOption", dxTarget, "containerBackgroundColor");
 		}
 		public static void SetContainerBackgroundColor(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPolarChart.SetOption", dxTarget, "containerBackgroundColor", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPolarChart_SetOption", dxTarget, "containerBackgroundColor", value);
 		}
 		public static object GetDataPrepareSettings(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPolarChart.GetOption", dxTarget, "dataPrepareSettings");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPolarChart_GetOption", dxTarget, "dataPrepareSettings");
 		}
 		public static void SetDataPrepareSettings(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPolarChart.SetOption", dxTarget, "dataPrepareSettings", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPolarChart_SetOption", dxTarget, "dataPrepareSettings", value);
 		}
 		public static bool? GetEqualBarWidth(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxPolarChart.GetOption", dxTarget, "equalBarWidth");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxPolarChart_GetOption", dxTarget, "equalBarWidth");
 		}
 		public static void SetEqualBarWidth(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPolarChart.SetOption", dxTarget, "equalBarWidth", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPolarChart_SetOption", dxTarget, "equalBarWidth", value);
 		}
 		public static new object GetLegend(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPolarChart.GetOption", dxTarget, "legend");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPolarChart_GetOption", dxTarget, "legend");
 		}
 		public static new void SetLegend(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPolarChart.SetOption", dxTarget, "legend", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPolarChart_SetOption", dxTarget, "legend", value);
 		}
 		public static bool? GetNegativesAsZeroes(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxPolarChart.GetOption", dxTarget, "negativesAsZeroes");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxPolarChart_GetOption", dxTarget, "negativesAsZeroes");
 		}
 		public static void SetNegativesAsZeroes(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPolarChart.SetOption", dxTarget, "negativesAsZeroes", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPolarChart_SetOption", dxTarget, "negativesAsZeroes", value);
 		}
 		public static string GetResolveLabelOverlapping(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxPolarChart.GetOption", dxTarget, "resolveLabelOverlapping");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxPolarChart_GetOption", dxTarget, "resolveLabelOverlapping");
 		}
 		public static void SetResolveLabelOverlapping(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPolarChart.SetOption", dxTarget, "resolveLabelOverlapping", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPolarChart_SetOption", dxTarget, "resolveLabelOverlapping", value);
 		}
 		public static new object GetSeries(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPolarChart.GetOption", dxTarget, "series");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPolarChart_GetOption", dxTarget, "series");
 		}
 		public static new void SetSeries(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPolarChart.SetOption", dxTarget, "series", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPolarChart_SetOption", dxTarget, "series", value);
 		}
 		public static string GetSeriesSelectionMode(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxPolarChart.GetOption", dxTarget, "seriesSelectionMode");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxPolarChart_GetOption", dxTarget, "seriesSelectionMode");
 		}
 		public static void SetSeriesSelectionMode(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPolarChart.SetOption", dxTarget, "seriesSelectionMode", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPolarChart_SetOption", dxTarget, "seriesSelectionMode", value);
 		}
 		public static object GetSeriesTemplate(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPolarChart.GetOption", dxTarget, "seriesTemplate");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPolarChart_GetOption", dxTarget, "seriesTemplate");
 		}
 		public static void SetSeriesTemplate(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPolarChart.SetOption", dxTarget, "seriesTemplate", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPolarChart_SetOption", dxTarget, "seriesTemplate", value);
 		}
 		public static new object GetTooltip(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPolarChart.GetOption", dxTarget, "tooltip");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPolarChart_GetOption", dxTarget, "tooltip");
 		}
 		public static new void SetTooltip(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPolarChart.SetOption", dxTarget, "tooltip", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPolarChart_SetOption", dxTarget, "tooltip", value);
 		}
 		public static bool? GetUseSpiderWeb(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxPolarChart.GetOption", dxTarget, "useSpiderWeb");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxPolarChart_GetOption", dxTarget, "useSpiderWeb");
 		}
 		public static void SetUseSpiderWeb(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPolarChart.SetOption", dxTarget, "useSpiderWeb", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPolarChart_SetOption", dxTarget, "useSpiderWeb", value);
 		}
 		public static object GetValueAxis(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPolarChart.GetOption", dxTarget, "valueAxis");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPolarChart_GetOption", dxTarget, "valueAxis");
 		}
 		public static void SetValueAxis(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxPolarChart.SetOption", dxTarget, "valueAxis", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxPolarChart_SetOption", dxTarget, "valueAxis", value);
 		}
 	}
 	public class BaseChartInterop: BaseWidgetInterop
@@ -10916,151 +11126,157 @@ namespace DevExpress.Viz
 		public static void Init(ElementRef dxTarget, DevExpress.Viz.Charts.BaseChartOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseChart.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseChart_Init", dxTarget, json);
 		}
+		[JSInvokable("DevExpress.Viz.BaseChartInterop.OnDone")]
 		public static void OnDone(string identifier)
 		{
 			Done?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Viz.BaseChartInterop.OnPointClick")]
 		public static void OnPointClick(string identifier)
 		{
 			PointClick?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Viz.BaseChartInterop.OnPointHoverChanged")]
 		public static void OnPointHoverChanged(string identifier)
 		{
 			PointHoverChanged?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Viz.BaseChartInterop.OnPointSelectionChanged")]
 		public static void OnPointSelectionChanged(string identifier)
 		{
 			PointSelectionChanged?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Viz.BaseChartInterop.OnTooltipHidden")]
 		public static void OnTooltipHidden(string identifier)
 		{
 			TooltipHidden?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Viz.BaseChartInterop.OnTooltipShown")]
 		public static void OnTooltipShown(string identifier)
 		{
 			TooltipShown?.Invoke(null, new JQueryEventArgs(identifier));
 		}
 		public static object GetAdaptiveLayout(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseChart.GetOption", dxTarget, "adaptiveLayout");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseChart_GetOption", dxTarget, "adaptiveLayout");
 		}
 		public static void SetAdaptiveLayout(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseChart.SetOption", dxTarget, "adaptiveLayout", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseChart_SetOption", dxTarget, "adaptiveLayout", value);
 		}
 		public static object GetAnimation(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseChart.GetOption", dxTarget, "animation");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseChart_GetOption", dxTarget, "animation");
 		}
 		public static void SetAnimation(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseChart.SetOption", dxTarget, "animation", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseChart_SetOption", dxTarget, "animation", value);
 		}
 		public static object GetCustomizeLabel(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseChart.GetOption", dxTarget, "customizeLabel");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseChart_GetOption", dxTarget, "customizeLabel");
 		}
 		public static void SetCustomizeLabel(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseChart.SetOption", dxTarget, "customizeLabel", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseChart_SetOption", dxTarget, "customizeLabel", value);
 		}
 		public static object GetCustomizePoint(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseChart.GetOption", dxTarget, "customizePoint");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseChart_GetOption", dxTarget, "customizePoint");
 		}
 		public static void SetCustomizePoint(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseChart.SetOption", dxTarget, "customizePoint", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseChart_SetOption", dxTarget, "customizePoint", value);
 		}
 		public static object GetDataSource(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseChart.GetOption", dxTarget, "dataSource");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseChart_GetOption", dxTarget, "dataSource");
 		}
 		public static void SetDataSource(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseChart.SetOption", dxTarget, "dataSource", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseChart_SetOption", dxTarget, "dataSource", value);
 		}
 		public static object GetLegend(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseChart.GetOption", dxTarget, "legend");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseChart_GetOption", dxTarget, "legend");
 		}
 		public static void SetLegend(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseChart.SetOption", dxTarget, "legend", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseChart_SetOption", dxTarget, "legend", value);
 		}
 		public static object GetPalette(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseChart.GetOption", dxTarget, "palette");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseChart_GetOption", dxTarget, "palette");
 		}
 		public static void SetPalette(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseChart.SetOption", dxTarget, "palette", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseChart_SetOption", dxTarget, "palette", value);
 		}
 		public static string GetPaletteExtensionMode(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.BaseChart.GetOption", dxTarget, "paletteExtensionMode");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_BaseChart_GetOption", dxTarget, "paletteExtensionMode");
 		}
 		public static void SetPaletteExtensionMode(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseChart.SetOption", dxTarget, "paletteExtensionMode", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseChart_SetOption", dxTarget, "paletteExtensionMode", value);
 		}
 		public static string GetPointSelectionMode(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.BaseChart.GetOption", dxTarget, "pointSelectionMode");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_BaseChart_GetOption", dxTarget, "pointSelectionMode");
 		}
 		public static void SetPointSelectionMode(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseChart.SetOption", dxTarget, "pointSelectionMode", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseChart_SetOption", dxTarget, "pointSelectionMode", value);
 		}
 		public static object GetSeries(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseChart.GetOption", dxTarget, "series");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseChart_GetOption", dxTarget, "series");
 		}
 		public static void SetSeries(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseChart.SetOption", dxTarget, "series", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseChart_SetOption", dxTarget, "series", value);
 		}
 		public static new object GetTooltip(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseChart.GetOption", dxTarget, "tooltip");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseChart_GetOption", dxTarget, "tooltip");
 		}
 		public static new void SetTooltip(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseChart.SetOption", dxTarget, "tooltip", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseChart_SetOption", dxTarget, "tooltip", value);
 		}
 		public static void ClearSelection(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseChart.clearSelection_0", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseChart_clearSelection_0", dxTarget);
 		}
 		public static object GetAllSeries(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseChart.getAllSeries_1", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseChart_getAllSeries_1", dxTarget);
 		}
 		public static object GetDataSourceEx(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseChart.getDataSource_2", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseChart_getDataSource_2", dxTarget);
 		}
 		public static object GetSeriesByName(ElementRef dxTarget, object seriesName)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseChart.getSeriesByName_3", dxTarget, seriesName);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseChart_getSeriesByName_3", dxTarget, seriesName);
 		}
 		public static object GetSeriesByPos(ElementRef dxTarget, float seriesIndex)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseChart.getSeriesByPos_4", dxTarget, seriesIndex);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseChart_getSeriesByPos_4", dxTarget, seriesIndex);
 		}
 		public static void HideTooltip(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseChart.hideTooltip_5", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseChart_hideTooltip_5", dxTarget);
 		}
 		public static void Render(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseChart.render_6", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseChart_render_6", dxTarget);
 		}
 		public static void Render(ElementRef dxTarget, object renderOptions)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseChart.render_7", dxTarget, renderOptions);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseChart_render_7", dxTarget, renderOptions);
 		}
 	}
 	public class DxExporterInterop: ComponentInterop
@@ -11068,63 +11284,63 @@ namespace DevExpress.Viz
 		public static void Init(ElementRef dxTarget, DevExpress.Viz.DxExporterOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxExporter.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxExporter_Init", dxTarget, json);
 		}
 		public static object GetExportFormat(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxExporter.GetOption", dxTarget, "exportFormat");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxExporter_GetOption", dxTarget, "exportFormat");
 		}
 		public static void SetExportFormat(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxExporter.SetOption", dxTarget, "exportFormat", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxExporter_SetOption", dxTarget, "exportFormat", value);
 		}
 		public static string GetFileName(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxExporter.GetOption", dxTarget, "fileName");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxExporter_GetOption", dxTarget, "fileName");
 		}
 		public static void SetFileName(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxExporter.SetOption", dxTarget, "fileName", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxExporter_SetOption", dxTarget, "fileName", value);
 		}
 		public static bool? GetPrintingEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxExporter.GetOption", dxTarget, "printingEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxExporter_GetOption", dxTarget, "printingEnabled");
 		}
 		public static void SetPrintingEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxExporter.SetOption", dxTarget, "printingEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxExporter_SetOption", dxTarget, "printingEnabled", value);
 		}
 		public static string GetServerUrl(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxExporter.GetOption", dxTarget, "serverUrl");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxExporter_GetOption", dxTarget, "serverUrl");
 		}
 		public static void SetServerUrl(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxExporter.SetOption", dxTarget, "serverUrl", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxExporter_SetOption", dxTarget, "serverUrl", value);
 		}
 		public static bool? GetShowMenu(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxExporter.GetOption", dxTarget, "showMenu");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxExporter_GetOption", dxTarget, "showMenu");
 		}
 		public static void SetShowMenu(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxExporter.SetOption", dxTarget, "showMenu", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxExporter_SetOption", dxTarget, "showMenu", value);
 		}
 		public static string GetSourceContainer(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxExporter.GetOption", dxTarget, "sourceContainer");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxExporter_GetOption", dxTarget, "sourceContainer");
 		}
 		public static void SetSourceContainer(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxExporter.SetOption", dxTarget, "sourceContainer", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxExporter_SetOption", dxTarget, "sourceContainer", value);
 		}
 		public static void ExportTo(ElementRef dxTarget, string fileName, string format)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxExporter.exportTo_0", dxTarget, fileName, format);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxExporter_exportTo_0", dxTarget, fileName, format);
 		}
 		public static void Print(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxExporter.print_1", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxExporter_print_1", dxTarget);
 		}
 	}
 	public class DxFunnelInterop: BaseWidgetInterop
@@ -11136,183 +11352,187 @@ namespace DevExpress.Viz
 		public static void Init(ElementRef dxTarget, DevExpress.Viz.Funnel.DxFunnelOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFunnel.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxFunnel_Init", dxTarget, json);
 		}
+		[JSInvokable("DevExpress.Viz.DxFunnelInterop.OnHoverChanged")]
 		public static void OnHoverChanged(string identifier)
 		{
 			HoverChanged?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Viz.DxFunnelInterop.OnItemClick")]
 		public static void OnItemClick(string identifier)
 		{
 			ItemClick?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Viz.DxFunnelInterop.OnLegendClick")]
 		public static void OnLegendClick(string identifier)
 		{
 			LegendClick?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Viz.DxFunnelInterop.OnSelectionChanged")]
 		public static void OnSelectionChanged(string identifier)
 		{
 			SelectionChanged?.Invoke(null, new JQueryEventArgs(identifier));
 		}
 		public static object GetAdaptiveLayout(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFunnel.GetOption", dxTarget, "adaptiveLayout");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxFunnel_GetOption", dxTarget, "adaptiveLayout");
 		}
 		public static void SetAdaptiveLayout(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFunnel.SetOption", dxTarget, "adaptiveLayout", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxFunnel_SetOption", dxTarget, "adaptiveLayout", value);
 		}
 		public static string GetAlgorithm(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxFunnel.GetOption", dxTarget, "algorithm");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxFunnel_GetOption", dxTarget, "algorithm");
 		}
 		public static void SetAlgorithm(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFunnel.SetOption", dxTarget, "algorithm", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxFunnel_SetOption", dxTarget, "algorithm", value);
 		}
 		public static string GetArgumentField(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxFunnel.GetOption", dxTarget, "argumentField");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxFunnel_GetOption", dxTarget, "argumentField");
 		}
 		public static void SetArgumentField(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFunnel.SetOption", dxTarget, "argumentField", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxFunnel_SetOption", dxTarget, "argumentField", value);
 		}
 		public static string GetColorField(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxFunnel.GetOption", dxTarget, "colorField");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxFunnel_GetOption", dxTarget, "colorField");
 		}
 		public static void SetColorField(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFunnel.SetOption", dxTarget, "colorField", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxFunnel_SetOption", dxTarget, "colorField", value);
 		}
 		public static object GetDataSource(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFunnel.GetOption", dxTarget, "dataSource");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxFunnel_GetOption", dxTarget, "dataSource");
 		}
 		public static void SetDataSource(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFunnel.SetOption", dxTarget, "dataSource", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxFunnel_SetOption", dxTarget, "dataSource", value);
 		}
 		public static bool? GetHoverEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxFunnel.GetOption", dxTarget, "hoverEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxFunnel_GetOption", dxTarget, "hoverEnabled");
 		}
 		public static void SetHoverEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFunnel.SetOption", dxTarget, "hoverEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxFunnel_SetOption", dxTarget, "hoverEnabled", value);
 		}
 		public static bool? GetInverted(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxFunnel.GetOption", dxTarget, "inverted");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxFunnel_GetOption", dxTarget, "inverted");
 		}
 		public static void SetInverted(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFunnel.SetOption", dxTarget, "inverted", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxFunnel_SetOption", dxTarget, "inverted", value);
 		}
 		public static object GetItem(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFunnel.GetOption", dxTarget, "item");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxFunnel_GetOption", dxTarget, "item");
 		}
 		public static void SetItem(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFunnel.SetOption", dxTarget, "item", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxFunnel_SetOption", dxTarget, "item", value);
 		}
 		public static object GetLabel(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFunnel.GetOption", dxTarget, "label");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxFunnel_GetOption", dxTarget, "label");
 		}
 		public static void SetLabel(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFunnel.SetOption", dxTarget, "label", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxFunnel_SetOption", dxTarget, "label", value);
 		}
 		public static object GetLegend(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFunnel.GetOption", dxTarget, "legend");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxFunnel_GetOption", dxTarget, "legend");
 		}
 		public static void SetLegend(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFunnel.SetOption", dxTarget, "legend", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxFunnel_SetOption", dxTarget, "legend", value);
 		}
 		public static float? GetNeckHeight(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxFunnel.GetOption", dxTarget, "neckHeight");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxFunnel_GetOption", dxTarget, "neckHeight");
 		}
 		public static void SetNeckHeight(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFunnel.SetOption", dxTarget, "neckHeight", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxFunnel_SetOption", dxTarget, "neckHeight", value);
 		}
 		public static float? GetNeckWidth(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxFunnel.GetOption", dxTarget, "neckWidth");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxFunnel_GetOption", dxTarget, "neckWidth");
 		}
 		public static void SetNeckWidth(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFunnel.SetOption", dxTarget, "neckWidth", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxFunnel_SetOption", dxTarget, "neckWidth", value);
 		}
 		public static object GetPalette(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFunnel.GetOption", dxTarget, "palette");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxFunnel_GetOption", dxTarget, "palette");
 		}
 		public static void SetPalette(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFunnel.SetOption", dxTarget, "palette", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxFunnel_SetOption", dxTarget, "palette", value);
 		}
 		public static string GetPaletteExtensionMode(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxFunnel.GetOption", dxTarget, "paletteExtensionMode");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxFunnel_GetOption", dxTarget, "paletteExtensionMode");
 		}
 		public static void SetPaletteExtensionMode(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFunnel.SetOption", dxTarget, "paletteExtensionMode", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxFunnel_SetOption", dxTarget, "paletteExtensionMode", value);
 		}
 		public static string GetSelectionMode(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxFunnel.GetOption", dxTarget, "selectionMode");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxFunnel_GetOption", dxTarget, "selectionMode");
 		}
 		public static void SetSelectionMode(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFunnel.SetOption", dxTarget, "selectionMode", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxFunnel_SetOption", dxTarget, "selectionMode", value);
 		}
 		public static bool? GetSortData(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxFunnel.GetOption", dxTarget, "sortData");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxFunnel_GetOption", dxTarget, "sortData");
 		}
 		public static void SetSortData(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFunnel.SetOption", dxTarget, "sortData", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxFunnel_SetOption", dxTarget, "sortData", value);
 		}
 		public static new object GetTooltip(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFunnel.GetOption", dxTarget, "tooltip");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxFunnel_GetOption", dxTarget, "tooltip");
 		}
 		public static new void SetTooltip(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFunnel.SetOption", dxTarget, "tooltip", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxFunnel_SetOption", dxTarget, "tooltip", value);
 		}
 		public static string GetValueField(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxFunnel.GetOption", dxTarget, "valueField");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxFunnel_GetOption", dxTarget, "valueField");
 		}
 		public static void SetValueField(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFunnel.SetOption", dxTarget, "valueField", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxFunnel_SetOption", dxTarget, "valueField", value);
 		}
 		public static void ClearSelection(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFunnel.clearSelection_0", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxFunnel_clearSelection_0", dxTarget);
 		}
 		public static object GetAllItems(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFunnel.getAllItems_1", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxFunnel_getAllItems_1", dxTarget);
 		}
 		public static object GetDataSourceEx(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFunnel.getDataSource_2", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxFunnel_getDataSource_2", dxTarget);
 		}
 		public static void HideTooltip(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFunnel.hideTooltip_3", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxFunnel_hideTooltip_3", dxTarget);
 		}
 	}
 	public class BaseGaugeInterop: BaseWidgetInterop
@@ -11322,103 +11542,105 @@ namespace DevExpress.Viz
 		public static void Init(ElementRef dxTarget, DevExpress.Viz.Gauges.BaseGaugeOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseGauge.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseGauge_Init", dxTarget, json);
 		}
+		[JSInvokable("DevExpress.Viz.BaseGaugeInterop.OnTooltipHidden")]
 		public static void OnTooltipHidden(string identifier)
 		{
 			TooltipHidden?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Viz.BaseGaugeInterop.OnTooltipShown")]
 		public static void OnTooltipShown(string identifier)
 		{
 			TooltipShown?.Invoke(null, new JQueryEventArgs(identifier));
 		}
 		public static object GetAnimation(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseGauge.GetOption", dxTarget, "animation");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseGauge_GetOption", dxTarget, "animation");
 		}
 		public static void SetAnimation(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseGauge.SetOption", dxTarget, "animation", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseGauge_SetOption", dxTarget, "animation", value);
 		}
 		public static string GetContainerBackgroundColor(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.BaseGauge.GetOption", dxTarget, "containerBackgroundColor");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_BaseGauge_GetOption", dxTarget, "containerBackgroundColor");
 		}
 		public static void SetContainerBackgroundColor(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseGauge.SetOption", dxTarget, "containerBackgroundColor", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseGauge_SetOption", dxTarget, "containerBackgroundColor", value);
 		}
 		public static object GetRangeContainer(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseGauge.GetOption", dxTarget, "rangeContainer");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseGauge_GetOption", dxTarget, "rangeContainer");
 		}
 		public static void SetRangeContainer(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseGauge.SetOption", dxTarget, "rangeContainer", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseGauge_SetOption", dxTarget, "rangeContainer", value);
 		}
 		public static object GetScale(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseGauge.GetOption", dxTarget, "scale");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseGauge_GetOption", dxTarget, "scale");
 		}
 		public static void SetScale(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseGauge.SetOption", dxTarget, "scale", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseGauge_SetOption", dxTarget, "scale", value);
 		}
 		public static object GetSubtitle(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseGauge.GetOption", dxTarget, "subtitle");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseGauge_GetOption", dxTarget, "subtitle");
 		}
 		public static void SetSubtitle(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseGauge.SetOption", dxTarget, "subtitle", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseGauge_SetOption", dxTarget, "subtitle", value);
 		}
 		public static object GetSubvalues(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseGauge.GetOption", dxTarget, "subvalues");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseGauge_GetOption", dxTarget, "subvalues");
 		}
 		public static void SetSubvalues(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseGauge.SetOption", dxTarget, "subvalues", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseGauge_SetOption", dxTarget, "subvalues", value);
 		}
 		public static new object GetTitle(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseGauge.GetOption", dxTarget, "title");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseGauge_GetOption", dxTarget, "title");
 		}
 		public static new void SetTitle(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseGauge.SetOption", dxTarget, "title", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseGauge_SetOption", dxTarget, "title", value);
 		}
 		public static new object GetTooltip(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseGauge.GetOption", dxTarget, "tooltip");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseGauge_GetOption", dxTarget, "tooltip");
 		}
 		public static new void SetTooltip(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseGauge.SetOption", dxTarget, "tooltip", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseGauge_SetOption", dxTarget, "tooltip", value);
 		}
 		public static float? GetValue(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.BaseGauge.GetOption", dxTarget, "value");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_BaseGauge_GetOption", dxTarget, "value");
 		}
 		public static void SetValue(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseGauge.SetOption", dxTarget, "value", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseGauge_SetOption", dxTarget, "value", value);
 		}
 		public static object SubvaluesEx(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseGauge.subvalues_0", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseGauge_subvalues_0", dxTarget);
 		}
 		public static void SubvaluesEx(ElementRef dxTarget, object subvalues)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseGauge.subvalues_1", dxTarget, subvalues);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseGauge_subvalues_1", dxTarget, subvalues);
 		}
 		public static float ValueEx(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float>("BlazorDevExtreme.BaseGauge.value_2", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float>("BlazorDevExtreme_BaseGauge_value_2", dxTarget);
 		}
 		public static void ValueEx(ElementRef dxTarget, float value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseGauge.value_3", dxTarget, value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseGauge_value_3", dxTarget, value);
 		}
 	}
 	public class DxCircularGaugeInterop: BaseGaugeInterop
@@ -11426,47 +11648,47 @@ namespace DevExpress.Viz
 		public static void Init(ElementRef dxTarget, DevExpress.Viz.Gauges.DxCircularGaugeOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxCircularGauge.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxCircularGauge_Init", dxTarget, json);
 		}
 		public static object GetGeometry(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxCircularGauge.GetOption", dxTarget, "geometry");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxCircularGauge_GetOption", dxTarget, "geometry");
 		}
 		public static void SetGeometry(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxCircularGauge.SetOption", dxTarget, "geometry", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxCircularGauge_SetOption", dxTarget, "geometry", value);
 		}
 		public static new object GetRangeContainer(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxCircularGauge.GetOption", dxTarget, "rangeContainer");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxCircularGauge_GetOption", dxTarget, "rangeContainer");
 		}
 		public static new void SetRangeContainer(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxCircularGauge.SetOption", dxTarget, "rangeContainer", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxCircularGauge_SetOption", dxTarget, "rangeContainer", value);
 		}
 		public static new object GetScale(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxCircularGauge.GetOption", dxTarget, "scale");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxCircularGauge_GetOption", dxTarget, "scale");
 		}
 		public static new void SetScale(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxCircularGauge.SetOption", dxTarget, "scale", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxCircularGauge_SetOption", dxTarget, "scale", value);
 		}
 		public static object GetSubvalueIndicator(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxCircularGauge.GetOption", dxTarget, "subvalueIndicator");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxCircularGauge_GetOption", dxTarget, "subvalueIndicator");
 		}
 		public static void SetSubvalueIndicator(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxCircularGauge.SetOption", dxTarget, "subvalueIndicator", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxCircularGauge_SetOption", dxTarget, "subvalueIndicator", value);
 		}
 		public static object GetValueIndicator(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxCircularGauge.GetOption", dxTarget, "valueIndicator");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxCircularGauge_GetOption", dxTarget, "valueIndicator");
 		}
 		public static void SetValueIndicator(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxCircularGauge.SetOption", dxTarget, "valueIndicator", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxCircularGauge_SetOption", dxTarget, "valueIndicator", value);
 		}
 	}
 	public class DxLinearGaugeInterop: BaseGaugeInterop
@@ -11474,47 +11696,47 @@ namespace DevExpress.Viz
 		public static void Init(ElementRef dxTarget, DevExpress.Viz.Gauges.DxLinearGaugeOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLinearGauge.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLinearGauge_Init", dxTarget, json);
 		}
 		public static object GetGeometry(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLinearGauge.GetOption", dxTarget, "geometry");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLinearGauge_GetOption", dxTarget, "geometry");
 		}
 		public static void SetGeometry(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLinearGauge.SetOption", dxTarget, "geometry", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLinearGauge_SetOption", dxTarget, "geometry", value);
 		}
 		public static new object GetRangeContainer(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLinearGauge.GetOption", dxTarget, "rangeContainer");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLinearGauge_GetOption", dxTarget, "rangeContainer");
 		}
 		public static new void SetRangeContainer(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLinearGauge.SetOption", dxTarget, "rangeContainer", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLinearGauge_SetOption", dxTarget, "rangeContainer", value);
 		}
 		public static new object GetScale(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLinearGauge.GetOption", dxTarget, "scale");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLinearGauge_GetOption", dxTarget, "scale");
 		}
 		public static new void SetScale(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLinearGauge.SetOption", dxTarget, "scale", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLinearGauge_SetOption", dxTarget, "scale", value);
 		}
 		public static object GetSubvalueIndicator(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLinearGauge.GetOption", dxTarget, "subvalueIndicator");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLinearGauge_GetOption", dxTarget, "subvalueIndicator");
 		}
 		public static void SetSubvalueIndicator(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLinearGauge.SetOption", dxTarget, "subvalueIndicator", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLinearGauge_SetOption", dxTarget, "subvalueIndicator", value);
 		}
 		public static object GetValueIndicator(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLinearGauge.GetOption", dxTarget, "valueIndicator");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLinearGauge_GetOption", dxTarget, "valueIndicator");
 		}
 		public static void SetValueIndicator(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxLinearGauge.SetOption", dxTarget, "valueIndicator", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxLinearGauge_SetOption", dxTarget, "valueIndicator", value);
 		}
 	}
 	public class DxBarGaugeInterop: BaseWidgetInterop
@@ -11524,280 +11746,282 @@ namespace DevExpress.Viz
 		public static void Init(ElementRef dxTarget, DevExpress.Viz.Gauges.DxBarGaugeOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxBarGauge.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxBarGauge_Init", dxTarget, json);
 		}
+		[JSInvokable("DevExpress.Viz.DxBarGaugeInterop.OnTooltipHidden")]
 		public static void OnTooltipHidden(string identifier)
 		{
 			TooltipHidden?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Viz.DxBarGaugeInterop.OnTooltipShown")]
 		public static void OnTooltipShown(string identifier)
 		{
 			TooltipShown?.Invoke(null, new JQueryEventArgs(identifier));
 		}
 		public static object GetAnimation(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxBarGauge.GetOption", dxTarget, "animation");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxBarGauge_GetOption", dxTarget, "animation");
 		}
 		public static void SetAnimation(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxBarGauge.SetOption", dxTarget, "animation", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxBarGauge_SetOption", dxTarget, "animation", value);
 		}
 		public static string GetBackgroundColor(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxBarGauge.GetOption", dxTarget, "backgroundColor");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxBarGauge_GetOption", dxTarget, "backgroundColor");
 		}
 		public static void SetBackgroundColor(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxBarGauge.SetOption", dxTarget, "backgroundColor", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxBarGauge_SetOption", dxTarget, "backgroundColor", value);
 		}
 		public static float? GetBarSpacing(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxBarGauge.GetOption", dxTarget, "barSpacing");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxBarGauge_GetOption", dxTarget, "barSpacing");
 		}
 		public static void SetBarSpacing(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxBarGauge.SetOption", dxTarget, "barSpacing", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxBarGauge_SetOption", dxTarget, "barSpacing", value);
 		}
 		public static float? GetBaseValue(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxBarGauge.GetOption", dxTarget, "baseValue");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxBarGauge_GetOption", dxTarget, "baseValue");
 		}
 		public static void SetBaseValue(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxBarGauge.SetOption", dxTarget, "baseValue", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxBarGauge_SetOption", dxTarget, "baseValue", value);
 		}
 		public static float? GetEndValue(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxBarGauge.GetOption", dxTarget, "endValue");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxBarGauge_GetOption", dxTarget, "endValue");
 		}
 		public static void SetEndValue(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxBarGauge.SetOption", dxTarget, "endValue", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxBarGauge_SetOption", dxTarget, "endValue", value);
 		}
 		public static object GetGeometry(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxBarGauge.GetOption", dxTarget, "geometry");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxBarGauge_GetOption", dxTarget, "geometry");
 		}
 		public static void SetGeometry(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxBarGauge.SetOption", dxTarget, "geometry", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxBarGauge_SetOption", dxTarget, "geometry", value);
 		}
 		public static object GetLabel(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxBarGauge.GetOption", dxTarget, "label");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxBarGauge_GetOption", dxTarget, "label");
 		}
 		public static void SetLabel(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxBarGauge.SetOption", dxTarget, "label", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxBarGauge_SetOption", dxTarget, "label", value);
 		}
 		public static object GetPalette(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxBarGauge.GetOption", dxTarget, "palette");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxBarGauge_GetOption", dxTarget, "palette");
 		}
 		public static void SetPalette(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxBarGauge.SetOption", dxTarget, "palette", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxBarGauge_SetOption", dxTarget, "palette", value);
 		}
 		public static string GetPaletteExtensionMode(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxBarGauge.GetOption", dxTarget, "paletteExtensionMode");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxBarGauge_GetOption", dxTarget, "paletteExtensionMode");
 		}
 		public static void SetPaletteExtensionMode(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxBarGauge.SetOption", dxTarget, "paletteExtensionMode", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxBarGauge_SetOption", dxTarget, "paletteExtensionMode", value);
 		}
 		public static float? GetRelativeInnerRadius(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxBarGauge.GetOption", dxTarget, "relativeInnerRadius");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxBarGauge_GetOption", dxTarget, "relativeInnerRadius");
 		}
 		public static void SetRelativeInnerRadius(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxBarGauge.SetOption", dxTarget, "relativeInnerRadius", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxBarGauge_SetOption", dxTarget, "relativeInnerRadius", value);
 		}
 		public static float? GetStartValue(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxBarGauge.GetOption", dxTarget, "startValue");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxBarGauge_GetOption", dxTarget, "startValue");
 		}
 		public static void SetStartValue(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxBarGauge.SetOption", dxTarget, "startValue", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxBarGauge_SetOption", dxTarget, "startValue", value);
 		}
 		public static object GetSubtitle(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxBarGauge.GetOption", dxTarget, "subtitle");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxBarGauge_GetOption", dxTarget, "subtitle");
 		}
 		public static void SetSubtitle(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxBarGauge.SetOption", dxTarget, "subtitle", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxBarGauge_SetOption", dxTarget, "subtitle", value);
 		}
 		public static new object GetTitle(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxBarGauge.GetOption", dxTarget, "title");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxBarGauge_GetOption", dxTarget, "title");
 		}
 		public static new void SetTitle(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxBarGauge.SetOption", dxTarget, "title", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxBarGauge_SetOption", dxTarget, "title", value);
 		}
 		public static new object GetTooltip(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxBarGauge.GetOption", dxTarget, "tooltip");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxBarGauge_GetOption", dxTarget, "tooltip");
 		}
 		public static new void SetTooltip(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxBarGauge.SetOption", dxTarget, "tooltip", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxBarGauge_SetOption", dxTarget, "tooltip", value);
 		}
 		public static object GetValues(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxBarGauge.GetOption", dxTarget, "values");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxBarGauge_GetOption", dxTarget, "values");
 		}
 		public static void SetValues(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxBarGauge.SetOption", dxTarget, "values", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxBarGauge_SetOption", dxTarget, "values", value);
 		}
 		public static object ValuesEx(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxBarGauge.values_0", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxBarGauge_values_0", dxTarget);
 		}
 		public static void ValuesEx(ElementRef dxTarget, object values)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxBarGauge.values_1", dxTarget, values);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxBarGauge_values_1", dxTarget, values);
 		}
 	}
 	public class BaseSeriesObjectInterop
 	{
 		public static void ClearHover(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseSeriesObject.clearHover_0", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseSeriesObject_clearHover_0", dxTarget);
 		}
 		public static void ClearSelection(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseSeriesObject.clearSelection_1", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseSeriesObject_clearSelection_1", dxTarget);
 		}
 		public static void DeselectPoint(ElementRef dxTarget, object point)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseSeriesObject.deselectPoint_2", dxTarget, point);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseSeriesObject_deselectPoint_2", dxTarget, point);
 		}
 		public static object GetAllPoints(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseSeriesObject.getAllPoints_3", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseSeriesObject_getAllPoints_3", dxTarget);
 		}
 		public static string GetColor(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.BaseSeriesObject.getColor_4", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_BaseSeriesObject_getColor_4", dxTarget);
 		}
 		public static object GetPointByPos(ElementRef dxTarget, float positionIndex)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseSeriesObject.getPointByPos_5", dxTarget, positionIndex);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseSeriesObject_getPointByPos_5", dxTarget, positionIndex);
 		}
 		public static object GetPointsByArg(ElementRef dxTarget, object pointArg)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseSeriesObject.getPointsByArg_6", dxTarget, pointArg);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseSeriesObject_getPointsByArg_6", dxTarget, pointArg);
 		}
 		public static object GetVisiblePoints(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseSeriesObject.getVisiblePoints_7", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseSeriesObject_getVisiblePoints_7", dxTarget);
 		}
 		public static void Hide(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseSeriesObject.hide_8", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseSeriesObject_hide_8", dxTarget);
 		}
 		public static void Hover(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseSeriesObject.hover_9", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseSeriesObject_hover_9", dxTarget);
 		}
 		public static bool IsHovered(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool>("BlazorDevExtreme.BaseSeriesObject.isHovered_10", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool>("BlazorDevExtreme_BaseSeriesObject_isHovered_10", dxTarget);
 		}
 		public static bool IsSelected(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool>("BlazorDevExtreme.BaseSeriesObject.isSelected_11", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool>("BlazorDevExtreme_BaseSeriesObject_isSelected_11", dxTarget);
 		}
 		public static bool IsVisible(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool>("BlazorDevExtreme.BaseSeriesObject.isVisible_12", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool>("BlazorDevExtreme_BaseSeriesObject_isVisible_12", dxTarget);
 		}
 		public static void Select(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseSeriesObject.select_13", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseSeriesObject_select_13", dxTarget);
 		}
 		public static void SelectPoint(ElementRef dxTarget, object point)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseSeriesObject.selectPoint_14", dxTarget, point);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseSeriesObject_selectPoint_14", dxTarget, point);
 		}
 		public static void Show(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseSeriesObject.show_15", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseSeriesObject_show_15", dxTarget);
 		}
 	}
 	public class BasePointObjectInterop
 	{
 		public static void ClearHover(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.BasePointObject.clearHover_0", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BasePointObject_clearHover_0", dxTarget);
 		}
 		public static void ClearSelection(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.BasePointObject.clearSelection_1", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BasePointObject_clearSelection_1", dxTarget);
 		}
 		public static string GetColor(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.BasePointObject.getColor_2", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_BasePointObject_getColor_2", dxTarget);
 		}
 		public static object GetLabel(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.BasePointObject.getLabel_3", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BasePointObject_getLabel_3", dxTarget);
 		}
 		public static void HideTooltip(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.BasePointObject.hideTooltip_4", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BasePointObject_hideTooltip_4", dxTarget);
 		}
 		public static void Hover(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.BasePointObject.hover_5", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BasePointObject_hover_5", dxTarget);
 		}
 		public static bool IsHovered(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool>("BlazorDevExtreme.BasePointObject.isHovered_6", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool>("BlazorDevExtreme_BasePointObject_isHovered_6", dxTarget);
 		}
 		public static bool IsSelected(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool>("BlazorDevExtreme.BasePointObject.isSelected_7", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool>("BlazorDevExtreme_BasePointObject_isSelected_7", dxTarget);
 		}
 		public static void Select(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.BasePointObject.select_8", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BasePointObject_select_8", dxTarget);
 		}
 		public static void ShowTooltip(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.BasePointObject.showTooltip_9", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BasePointObject_showTooltip_9", dxTarget);
 		}
 	}
 	public class BaseLabelObjectInterop
 	{
 		public static object GetBoundingRect(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseLabelObject.getBoundingRect_0", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseLabelObject_getBoundingRect_0", dxTarget);
 		}
 		public static void Hide(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseLabelObject.hide_1", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseLabelObject_hide_1", dxTarget);
 		}
 		public static void Hide(ElementRef dxTarget, bool holdInvisible)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseLabelObject.hide_2", dxTarget, holdInvisible);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseLabelObject_hide_2", dxTarget, holdInvisible);
 		}
 		public static bool IsVisible(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool>("BlazorDevExtreme.BaseLabelObject.isVisible_3", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool>("BlazorDevExtreme_BaseLabelObject_isVisible_3", dxTarget);
 		}
 		public static void Show(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseLabelObject.show_4", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseLabelObject_show_4", dxTarget);
 		}
 		public static void Show(ElementRef dxTarget, bool holdVisible)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseLabelObject.show_5", dxTarget, holdVisible);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseLabelObject_show_5", dxTarget, holdVisible);
 		}
 	}
 	public class ChartSeriesObjectInterop: BaseSeriesObjectInterop
@@ -11807,57 +12031,57 @@ namespace DevExpress.Viz
 	{
 		public static object GetBoundingRect(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.ChartPointObject.getBoundingRect_0", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_ChartPointObject_getBoundingRect_0", dxTarget);
 		}
 	}
 	public class DxFunnelItemInterop
 	{
 		public static string GetColor(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxFunnelItem.getColor_0", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxFunnelItem_getColor_0", dxTarget);
 		}
 		public static void Hover(ElementRef dxTarget, bool state)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFunnelItem.hover_1", dxTarget, state);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxFunnelItem_hover_1", dxTarget, state);
 		}
 		public static bool IsHovered(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool>("BlazorDevExtreme.DxFunnelItem.isHovered_2", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool>("BlazorDevExtreme_DxFunnelItem_isHovered_2", dxTarget);
 		}
 		public static bool IsSelected(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool>("BlazorDevExtreme.DxFunnelItem.isSelected_3", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool>("BlazorDevExtreme_DxFunnelItem_isSelected_3", dxTarget);
 		}
 		public static void Select(ElementRef dxTarget, bool state)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFunnelItem.select_4", dxTarget, state);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxFunnelItem_select_4", dxTarget, state);
 		}
 		public static void ShowTooltip(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxFunnelItem.showTooltip_5", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxFunnelItem_showTooltip_5", dxTarget);
 		}
 	}
 	public class PiePointObjectInterop: BasePointObjectInterop
 	{
 		public static void Hide(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.PiePointObject.hide_0", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_PiePointObject_hide_0", dxTarget);
 		}
 		public static void HideTooltip(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.PiePointObject.hideTooltip_1", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_PiePointObject_hideTooltip_1", dxTarget);
 		}
 		public static bool IsVisible(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool>("BlazorDevExtreme.PiePointObject.isVisible_2", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool>("BlazorDevExtreme_PiePointObject_isVisible_2", dxTarget);
 		}
 		public static void Show(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.PiePointObject.show_3", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_PiePointObject_show_3", dxTarget);
 		}
 		public static void ShowTooltip(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.PiePointObject.showTooltip_4", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_PiePointObject_showTooltip_4", dxTarget);
 		}
 	}
 	public class PieChartSeriesObjectInterop: BaseSeriesObjectInterop
@@ -11873,155 +12097,155 @@ namespace DevExpress.Viz
 	{
 		public static void Customize(ElementRef dxTarget, object options)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeMapNode.customize_0", dxTarget, options);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeMapNode_customize_0", dxTarget, options);
 		}
 		public static void DrillDown(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeMapNode.drillDown_1", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeMapNode_drillDown_1", dxTarget);
 		}
 		public static object GetAllChildren(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeMapNode.getAllChildren_2", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeMapNode_getAllChildren_2", dxTarget);
 		}
 		public static object GetAllNodes(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeMapNode.getAllNodes_3", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeMapNode_getAllNodes_3", dxTarget);
 		}
 		public static object GetChild(ElementRef dxTarget, float index)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeMapNode.getChild_4", dxTarget, index);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeMapNode_getChild_4", dxTarget, index);
 		}
 		public static float GetChildrenCount(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float>("BlazorDevExtreme.DxTreeMapNode.getChildrenCount_5", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float>("BlazorDevExtreme_DxTreeMapNode_getChildrenCount_5", dxTarget);
 		}
 		public static object GetParent(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeMapNode.getParent_6", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeMapNode_getParent_6", dxTarget);
 		}
 		public static bool IsActive(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool>("BlazorDevExtreme.DxTreeMapNode.isActive_7", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool>("BlazorDevExtreme_DxTreeMapNode_isActive_7", dxTarget);
 		}
 		public static bool IsHovered(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool>("BlazorDevExtreme.DxTreeMapNode.isHovered_8", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool>("BlazorDevExtreme_DxTreeMapNode_isHovered_8", dxTarget);
 		}
 		public static bool IsLeaf(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool>("BlazorDevExtreme.DxTreeMapNode.isLeaf_9", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool>("BlazorDevExtreme_DxTreeMapNode_isLeaf_9", dxTarget);
 		}
 		public static bool IsSelected(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool>("BlazorDevExtreme.DxTreeMapNode.isSelected_10", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool>("BlazorDevExtreme_DxTreeMapNode_isSelected_10", dxTarget);
 		}
 		public static string Label(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxTreeMapNode.label_11", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxTreeMapNode_label_11", dxTarget);
 		}
 		public static void Label(ElementRef dxTarget, string label)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeMapNode.label_12", dxTarget, label);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeMapNode_label_12", dxTarget, label);
 		}
 		public static void ResetCustomization(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeMapNode.resetCustomization_13", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeMapNode_resetCustomization_13", dxTarget);
 		}
 		public static void Select(ElementRef dxTarget, bool state)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeMapNode.select_14", dxTarget, state);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeMapNode_select_14", dxTarget, state);
 		}
 		public static void ShowTooltip(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeMapNode.showTooltip_15", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeMapNode_showTooltip_15", dxTarget);
 		}
 		public static float ValueEx(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float>("BlazorDevExtreme.DxTreeMapNode.value_16", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float>("BlazorDevExtreme_DxTreeMapNode_value_16", dxTarget);
 		}
 	}
 	public class MapLayerInterop
 	{
 		public static void ClearSelection(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.MapLayer.clearSelection_0", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_MapLayer_clearSelection_0", dxTarget);
 		}
 		public static object GetDataSourceEx(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.MapLayer.getDataSource_1", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_MapLayer_getDataSource_1", dxTarget);
 		}
 		public static object GetElements(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.MapLayer.getElements_2", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_MapLayer_getElements_2", dxTarget);
 		}
 	}
 	public class MapLayerElementInterop
 	{
 		public static void ApplySettings(ElementRef dxTarget, object settings)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.MapLayerElement.applySettings_0", dxTarget, settings);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_MapLayerElement_applySettings_0", dxTarget, settings);
 		}
 		public static object Attribute(ElementRef dxTarget, string name)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.MapLayerElement.attribute_1", dxTarget, name);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_MapLayerElement_attribute_1", dxTarget, name);
 		}
 		public static void Attribute(ElementRef dxTarget, string name, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.MapLayerElement.attribute_2", dxTarget, name, value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_MapLayerElement_attribute_2", dxTarget, name, value);
 		}
 		public static object Coordinates(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.MapLayerElement.coordinates_3", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_MapLayerElement_coordinates_3", dxTarget);
 		}
 		public static bool Selected(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool>("BlazorDevExtreme.MapLayerElement.selected_4", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool>("BlazorDevExtreme_MapLayerElement_selected_4", dxTarget);
 		}
 		public static void Selected(ElementRef dxTarget, bool state)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.MapLayerElement.selected_5", dxTarget, state);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_MapLayerElement_selected_5", dxTarget, state);
 		}
 	}
 	public class AreaObjectsInterop
 	{
 		public static void ApplySettings(ElementRef dxTarget, object settings)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.AreaObjects.applySettings_0", dxTarget, settings);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_AreaObjects_applySettings_0", dxTarget, settings);
 		}
 		public static object Attribute(ElementRef dxTarget, string name)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.AreaObjects.attribute_1", dxTarget, name);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_AreaObjects_attribute_1", dxTarget, name);
 		}
 		public static bool Selected(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool>("BlazorDevExtreme.AreaObjects.selected_2", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool>("BlazorDevExtreme_AreaObjects_selected_2", dxTarget);
 		}
 		public static void Selected(ElementRef dxTarget, bool state)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.AreaObjects.selected_3", dxTarget, state);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_AreaObjects_selected_3", dxTarget, state);
 		}
 	}
 	public class MarkerObjectsInterop
 	{
 		public static void ApplySettings(ElementRef dxTarget, object settings)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.MarkerObjects.applySettings_0", dxTarget, settings);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_MarkerObjects_applySettings_0", dxTarget, settings);
 		}
 		public static object Attribute(ElementRef dxTarget, string name)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.MarkerObjects.attribute_1", dxTarget, name);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_MarkerObjects_attribute_1", dxTarget, name);
 		}
 		public static object Coordinates(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.MarkerObjects.coordinates_2", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_MarkerObjects_coordinates_2", dxTarget);
 		}
 		public static bool Selected(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool>("BlazorDevExtreme.MarkerObjects.selected_3", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool>("BlazorDevExtreme_MarkerObjects_selected_3", dxTarget);
 		}
 		public static void Selected(ElementRef dxTarget, bool state)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.MarkerObjects.selected_4", dxTarget, state);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_MarkerObjects_selected_4", dxTarget, state);
 		}
 	}
 	public class DxRangeSelectorInterop: BaseWidgetInterop
@@ -12031,155 +12255,157 @@ namespace DevExpress.Viz
 		public static void Init(ElementRef dxTarget, DevExpress.Viz.RangeSelector.DxRangeSelectorOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxRangeSelector.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxRangeSelector_Init", dxTarget, json);
 		}
+		[JSInvokable("DevExpress.Viz.DxRangeSelectorInterop.OnSelectedRangeChanged")]
 		public static void OnSelectedRangeChanged(string identifier)
 		{
 			SelectedRangeChanged?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Viz.DxRangeSelectorInterop.OnValueChanged")]
 		public static void OnValueChanged(string identifier)
 		{
 			ValueChanged?.Invoke(null, new JQueryEventArgs(identifier));
 		}
 		public static object GetBackground(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxRangeSelector.GetOption", dxTarget, "background");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxRangeSelector_GetOption", dxTarget, "background");
 		}
 		public static void SetBackground(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxRangeSelector.SetOption", dxTarget, "background", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxRangeSelector_SetOption", dxTarget, "background", value);
 		}
 		public static object GetBehavior(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxRangeSelector.GetOption", dxTarget, "behavior");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxRangeSelector_GetOption", dxTarget, "behavior");
 		}
 		public static void SetBehavior(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxRangeSelector.SetOption", dxTarget, "behavior", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxRangeSelector_SetOption", dxTarget, "behavior", value);
 		}
 		public static object GetChart(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxRangeSelector.GetOption", dxTarget, "chart");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxRangeSelector_GetOption", dxTarget, "chart");
 		}
 		public static void SetChart(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxRangeSelector.SetOption", dxTarget, "chart", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxRangeSelector_SetOption", dxTarget, "chart", value);
 		}
 		public static string GetContainerBackgroundColor(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxRangeSelector.GetOption", dxTarget, "containerBackgroundColor");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxRangeSelector_GetOption", dxTarget, "containerBackgroundColor");
 		}
 		public static void SetContainerBackgroundColor(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxRangeSelector.SetOption", dxTarget, "containerBackgroundColor", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxRangeSelector_SetOption", dxTarget, "containerBackgroundColor", value);
 		}
 		public static object GetDataSource(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxRangeSelector.GetOption", dxTarget, "dataSource");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxRangeSelector_GetOption", dxTarget, "dataSource");
 		}
 		public static void SetDataSource(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxRangeSelector.SetOption", dxTarget, "dataSource", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxRangeSelector_SetOption", dxTarget, "dataSource", value);
 		}
 		public static string GetDataSourceField(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxRangeSelector.GetOption", dxTarget, "dataSourceField");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxRangeSelector_GetOption", dxTarget, "dataSourceField");
 		}
 		public static void SetDataSourceField(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxRangeSelector.SetOption", dxTarget, "dataSourceField", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxRangeSelector_SetOption", dxTarget, "dataSourceField", value);
 		}
 		public static object GetIndent(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxRangeSelector.GetOption", dxTarget, "indent");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxRangeSelector_GetOption", dxTarget, "indent");
 		}
 		public static void SetIndent(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxRangeSelector.SetOption", dxTarget, "indent", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxRangeSelector_SetOption", dxTarget, "indent", value);
 		}
 		public static object GetScale(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxRangeSelector.GetOption", dxTarget, "scale");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxRangeSelector_GetOption", dxTarget, "scale");
 		}
 		public static void SetScale(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxRangeSelector.SetOption", dxTarget, "scale", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxRangeSelector_SetOption", dxTarget, "scale", value);
 		}
 		public static object GetSelectedRange(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxRangeSelector.GetOption", dxTarget, "selectedRange");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxRangeSelector_GetOption", dxTarget, "selectedRange");
 		}
 		public static void SetSelectedRange(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxRangeSelector.SetOption", dxTarget, "selectedRange", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxRangeSelector_SetOption", dxTarget, "selectedRange", value);
 		}
 		public static string GetSelectedRangeColor(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxRangeSelector.GetOption", dxTarget, "selectedRangeColor");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxRangeSelector_GetOption", dxTarget, "selectedRangeColor");
 		}
 		public static void SetSelectedRangeColor(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxRangeSelector.SetOption", dxTarget, "selectedRangeColor", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxRangeSelector_SetOption", dxTarget, "selectedRangeColor", value);
 		}
 		public static object GetShutter(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxRangeSelector.GetOption", dxTarget, "shutter");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxRangeSelector_GetOption", dxTarget, "shutter");
 		}
 		public static void SetShutter(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxRangeSelector.SetOption", dxTarget, "shutter", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxRangeSelector_SetOption", dxTarget, "shutter", value);
 		}
 		public static object GetSliderHandle(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxRangeSelector.GetOption", dxTarget, "sliderHandle");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxRangeSelector_GetOption", dxTarget, "sliderHandle");
 		}
 		public static void SetSliderHandle(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxRangeSelector.SetOption", dxTarget, "sliderHandle", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxRangeSelector_SetOption", dxTarget, "sliderHandle", value);
 		}
 		public static object GetSliderMarker(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxRangeSelector.GetOption", dxTarget, "sliderMarker");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxRangeSelector_GetOption", dxTarget, "sliderMarker");
 		}
 		public static void SetSliderMarker(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxRangeSelector.SetOption", dxTarget, "sliderMarker", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxRangeSelector_SetOption", dxTarget, "sliderMarker", value);
 		}
 		public static object GetValue(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxRangeSelector.GetOption", dxTarget, "value");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxRangeSelector_GetOption", dxTarget, "value");
 		}
 		public static void SetValue(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxRangeSelector.SetOption", dxTarget, "value", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxRangeSelector_SetOption", dxTarget, "value", value);
 		}
 		public static object GetDataSourceEx(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxRangeSelector.getDataSource_0", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxRangeSelector_getDataSource_0", dxTarget);
 		}
 		public static object GetSelectedRangeEx(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxRangeSelector.getSelectedRange_1", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxRangeSelector_getSelectedRange_1", dxTarget);
 		}
 		public static object GetValueEx(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxRangeSelector.getValue_2", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxRangeSelector_getValue_2", dxTarget);
 		}
 		public static void Render(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxRangeSelector.render_3", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxRangeSelector_render_3", dxTarget);
 		}
 		public static void Render(ElementRef dxTarget, bool skipChartAnimation)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxRangeSelector.render_4", dxTarget, skipChartAnimation);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxRangeSelector_render_4", dxTarget, skipChartAnimation);
 		}
 		public static void SetSelectedRangeEx(ElementRef dxTarget, object selectedRange)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxRangeSelector.setSelectedRange_5", dxTarget, selectedRange);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxRangeSelector_setSelectedRange_5", dxTarget, selectedRange);
 		}
 		public static void SetValueEx(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxRangeSelector.setValue_6", dxTarget, value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxRangeSelector_setValue_6", dxTarget, value);
 		}
 	}
 	public class BaseSparklineInterop: BaseWidgetInterop
@@ -12189,23 +12415,25 @@ namespace DevExpress.Viz
 		public static void Init(ElementRef dxTarget, DevExpress.Viz.Sparklines.BaseSparklineOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseSparkline.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseSparkline_Init", dxTarget, json);
 		}
+		[JSInvokable("DevExpress.Viz.BaseSparklineInterop.OnTooltipHidden")]
 		public static void OnTooltipHidden(string identifier)
 		{
 			TooltipHidden?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Viz.BaseSparklineInterop.OnTooltipShown")]
 		public static void OnTooltipShown(string identifier)
 		{
 			TooltipShown?.Invoke(null, new JQueryEventArgs(identifier));
 		}
 		public static new object GetTooltip(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseSparkline.GetOption", dxTarget, "tooltip");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseSparkline_GetOption", dxTarget, "tooltip");
 		}
 		public static new void SetTooltip(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.BaseSparkline.SetOption", dxTarget, "tooltip", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_BaseSparkline_SetOption", dxTarget, "tooltip", value);
 		}
 	}
 	public class DxSparklineInterop: BaseSparklineInterop
@@ -12213,187 +12441,187 @@ namespace DevExpress.Viz
 		public static void Init(ElementRef dxTarget, DevExpress.Viz.Sparklines.DxSparklineOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSparkline.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSparkline_Init", dxTarget, json);
 		}
 		public static string GetArgumentField(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxSparkline.GetOption", dxTarget, "argumentField");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxSparkline_GetOption", dxTarget, "argumentField");
 		}
 		public static void SetArgumentField(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSparkline.SetOption", dxTarget, "argumentField", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSparkline_SetOption", dxTarget, "argumentField", value);
 		}
 		public static string GetBarNegativeColor(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxSparkline.GetOption", dxTarget, "barNegativeColor");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxSparkline_GetOption", dxTarget, "barNegativeColor");
 		}
 		public static void SetBarNegativeColor(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSparkline.SetOption", dxTarget, "barNegativeColor", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSparkline_SetOption", dxTarget, "barNegativeColor", value);
 		}
 		public static string GetBarPositiveColor(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxSparkline.GetOption", dxTarget, "barPositiveColor");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxSparkline_GetOption", dxTarget, "barPositiveColor");
 		}
 		public static void SetBarPositiveColor(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSparkline.SetOption", dxTarget, "barPositiveColor", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSparkline_SetOption", dxTarget, "barPositiveColor", value);
 		}
 		public static object GetDataSource(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSparkline.GetOption", dxTarget, "dataSource");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSparkline_GetOption", dxTarget, "dataSource");
 		}
 		public static void SetDataSource(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSparkline.SetOption", dxTarget, "dataSource", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSparkline_SetOption", dxTarget, "dataSource", value);
 		}
 		public static string GetFirstLastColor(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxSparkline.GetOption", dxTarget, "firstLastColor");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxSparkline_GetOption", dxTarget, "firstLastColor");
 		}
 		public static void SetFirstLastColor(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSparkline.SetOption", dxTarget, "firstLastColor", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSparkline_SetOption", dxTarget, "firstLastColor", value);
 		}
 		public static bool? GetIgnoreEmptyPoints(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxSparkline.GetOption", dxTarget, "ignoreEmptyPoints");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxSparkline_GetOption", dxTarget, "ignoreEmptyPoints");
 		}
 		public static void SetIgnoreEmptyPoints(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSparkline.SetOption", dxTarget, "ignoreEmptyPoints", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSparkline_SetOption", dxTarget, "ignoreEmptyPoints", value);
 		}
 		public static string GetLineColor(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxSparkline.GetOption", dxTarget, "lineColor");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxSparkline_GetOption", dxTarget, "lineColor");
 		}
 		public static void SetLineColor(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSparkline.SetOption", dxTarget, "lineColor", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSparkline_SetOption", dxTarget, "lineColor", value);
 		}
 		public static float? GetLineWidth(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxSparkline.GetOption", dxTarget, "lineWidth");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxSparkline_GetOption", dxTarget, "lineWidth");
 		}
 		public static void SetLineWidth(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSparkline.SetOption", dxTarget, "lineWidth", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSparkline_SetOption", dxTarget, "lineWidth", value);
 		}
 		public static string GetLossColor(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxSparkline.GetOption", dxTarget, "lossColor");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxSparkline_GetOption", dxTarget, "lossColor");
 		}
 		public static void SetLossColor(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSparkline.SetOption", dxTarget, "lossColor", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSparkline_SetOption", dxTarget, "lossColor", value);
 		}
 		public static string GetMaxColor(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxSparkline.GetOption", dxTarget, "maxColor");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxSparkline_GetOption", dxTarget, "maxColor");
 		}
 		public static void SetMaxColor(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSparkline.SetOption", dxTarget, "maxColor", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSparkline_SetOption", dxTarget, "maxColor", value);
 		}
 		public static float? GetMaxValue(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxSparkline.GetOption", dxTarget, "maxValue");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxSparkline_GetOption", dxTarget, "maxValue");
 		}
 		public static void SetMaxValue(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSparkline.SetOption", dxTarget, "maxValue", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSparkline_SetOption", dxTarget, "maxValue", value);
 		}
 		public static string GetMinColor(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxSparkline.GetOption", dxTarget, "minColor");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxSparkline_GetOption", dxTarget, "minColor");
 		}
 		public static void SetMinColor(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSparkline.SetOption", dxTarget, "minColor", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSparkline_SetOption", dxTarget, "minColor", value);
 		}
 		public static float? GetMinValue(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxSparkline.GetOption", dxTarget, "minValue");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxSparkline_GetOption", dxTarget, "minValue");
 		}
 		public static void SetMinValue(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSparkline.SetOption", dxTarget, "minValue", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSparkline_SetOption", dxTarget, "minValue", value);
 		}
 		public static string GetPointColor(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxSparkline.GetOption", dxTarget, "pointColor");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxSparkline_GetOption", dxTarget, "pointColor");
 		}
 		public static void SetPointColor(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSparkline.SetOption", dxTarget, "pointColor", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSparkline_SetOption", dxTarget, "pointColor", value);
 		}
 		public static float? GetPointSize(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxSparkline.GetOption", dxTarget, "pointSize");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxSparkline_GetOption", dxTarget, "pointSize");
 		}
 		public static void SetPointSize(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSparkline.SetOption", dxTarget, "pointSize", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSparkline_SetOption", dxTarget, "pointSize", value);
 		}
 		public static string GetPointSymbol(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxSparkline.GetOption", dxTarget, "pointSymbol");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxSparkline_GetOption", dxTarget, "pointSymbol");
 		}
 		public static void SetPointSymbol(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSparkline.SetOption", dxTarget, "pointSymbol", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSparkline_SetOption", dxTarget, "pointSymbol", value);
 		}
 		public static bool? GetShowFirstLast(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxSparkline.GetOption", dxTarget, "showFirstLast");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxSparkline_GetOption", dxTarget, "showFirstLast");
 		}
 		public static void SetShowFirstLast(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSparkline.SetOption", dxTarget, "showFirstLast", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSparkline_SetOption", dxTarget, "showFirstLast", value);
 		}
 		public static bool? GetShowMinMax(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxSparkline.GetOption", dxTarget, "showMinMax");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxSparkline_GetOption", dxTarget, "showMinMax");
 		}
 		public static void SetShowMinMax(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSparkline.SetOption", dxTarget, "showMinMax", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSparkline_SetOption", dxTarget, "showMinMax", value);
 		}
 		public static string GetType(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxSparkline.GetOption", dxTarget, "type");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxSparkline_GetOption", dxTarget, "type");
 		}
 		public static void SetType(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSparkline.SetOption", dxTarget, "type", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSparkline_SetOption", dxTarget, "type", value);
 		}
 		public static string GetValueField(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxSparkline.GetOption", dxTarget, "valueField");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxSparkline_GetOption", dxTarget, "valueField");
 		}
 		public static void SetValueField(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSparkline.SetOption", dxTarget, "valueField", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSparkline_SetOption", dxTarget, "valueField", value);
 		}
 		public static string GetWinColor(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxSparkline.GetOption", dxTarget, "winColor");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxSparkline_GetOption", dxTarget, "winColor");
 		}
 		public static void SetWinColor(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSparkline.SetOption", dxTarget, "winColor", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSparkline_SetOption", dxTarget, "winColor", value);
 		}
 		public static float? GetWinlossThreshold(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxSparkline.GetOption", dxTarget, "winlossThreshold");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxSparkline_GetOption", dxTarget, "winlossThreshold");
 		}
 		public static void SetWinlossThreshold(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSparkline.SetOption", dxTarget, "winlossThreshold", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSparkline_SetOption", dxTarget, "winlossThreshold", value);
 		}
 		public static object GetDataSourceEx(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxSparkline.getDataSource_0", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxSparkline_getDataSource_0", dxTarget);
 		}
 	}
 	public class DxBulletInterop: BaseSparklineInterop
@@ -12401,79 +12629,79 @@ namespace DevExpress.Viz
 		public static void Init(ElementRef dxTarget, DevExpress.Viz.Sparklines.DxBulletOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxBullet.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxBullet_Init", dxTarget, json);
 		}
 		public static string GetColor(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxBullet.GetOption", dxTarget, "color");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxBullet_GetOption", dxTarget, "color");
 		}
 		public static void SetColor(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxBullet.SetOption", dxTarget, "color", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxBullet_SetOption", dxTarget, "color", value);
 		}
 		public static float? GetEndScaleValue(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxBullet.GetOption", dxTarget, "endScaleValue");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxBullet_GetOption", dxTarget, "endScaleValue");
 		}
 		public static void SetEndScaleValue(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxBullet.SetOption", dxTarget, "endScaleValue", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxBullet_SetOption", dxTarget, "endScaleValue", value);
 		}
 		public static bool? GetShowTarget(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxBullet.GetOption", dxTarget, "showTarget");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxBullet_GetOption", dxTarget, "showTarget");
 		}
 		public static void SetShowTarget(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxBullet.SetOption", dxTarget, "showTarget", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxBullet_SetOption", dxTarget, "showTarget", value);
 		}
 		public static bool? GetShowZeroLevel(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxBullet.GetOption", dxTarget, "showZeroLevel");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxBullet_GetOption", dxTarget, "showZeroLevel");
 		}
 		public static void SetShowZeroLevel(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxBullet.SetOption", dxTarget, "showZeroLevel", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxBullet_SetOption", dxTarget, "showZeroLevel", value);
 		}
 		public static float? GetStartScaleValue(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxBullet.GetOption", dxTarget, "startScaleValue");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxBullet_GetOption", dxTarget, "startScaleValue");
 		}
 		public static void SetStartScaleValue(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxBullet.SetOption", dxTarget, "startScaleValue", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxBullet_SetOption", dxTarget, "startScaleValue", value);
 		}
 		public static float? GetTarget(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxBullet.GetOption", dxTarget, "target");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxBullet_GetOption", dxTarget, "target");
 		}
 		public static void SetTarget(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxBullet.SetOption", dxTarget, "target", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxBullet_SetOption", dxTarget, "target", value);
 		}
 		public static string GetTargetColor(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxBullet.GetOption", dxTarget, "targetColor");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxBullet_GetOption", dxTarget, "targetColor");
 		}
 		public static void SetTargetColor(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxBullet.SetOption", dxTarget, "targetColor", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxBullet_SetOption", dxTarget, "targetColor", value);
 		}
 		public static float? GetTargetWidth(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxBullet.GetOption", dxTarget, "targetWidth");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxBullet_GetOption", dxTarget, "targetWidth");
 		}
 		public static void SetTargetWidth(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxBullet.SetOption", dxTarget, "targetWidth", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxBullet_SetOption", dxTarget, "targetWidth", value);
 		}
 		public static float? GetValue(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxBullet.GetOption", dxTarget, "value");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxBullet_GetOption", dxTarget, "value");
 		}
 		public static void SetValue(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxBullet.SetOption", dxTarget, "value", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxBullet_SetOption", dxTarget, "value", value);
 		}
 	}
 	public class DxTreeMapInterop: BaseWidgetInterop
@@ -12487,203 +12715,209 @@ namespace DevExpress.Viz
 		public static void Init(ElementRef dxTarget, DevExpress.Viz.TreeMap.DxTreeMapOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeMap.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeMap_Init", dxTarget, json);
 		}
+		[JSInvokable("DevExpress.Viz.DxTreeMapInterop.OnClick")]
 		public static void OnClick(string identifier)
 		{
 			Click?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Viz.DxTreeMapInterop.OnDrill")]
 		public static void OnDrill(string identifier)
 		{
 			Drill?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Viz.DxTreeMapInterop.OnHoverChanged")]
 		public static void OnHoverChanged(string identifier)
 		{
 			HoverChanged?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Viz.DxTreeMapInterop.OnNodesInitialized")]
 		public static void OnNodesInitialized(string identifier)
 		{
 			NodesInitialized?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Viz.DxTreeMapInterop.OnNodesRendering")]
 		public static void OnNodesRendering(string identifier)
 		{
 			NodesRendering?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Viz.DxTreeMapInterop.OnSelectionChanged")]
 		public static void OnSelectionChanged(string identifier)
 		{
 			SelectionChanged?.Invoke(null, new JQueryEventArgs(identifier));
 		}
 		public static string GetChildrenField(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxTreeMap.GetOption", dxTarget, "childrenField");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxTreeMap_GetOption", dxTarget, "childrenField");
 		}
 		public static void SetChildrenField(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeMap.SetOption", dxTarget, "childrenField", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeMap_SetOption", dxTarget, "childrenField", value);
 		}
 		public static string GetColorField(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxTreeMap.GetOption", dxTarget, "colorField");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxTreeMap_GetOption", dxTarget, "colorField");
 		}
 		public static void SetColorField(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeMap.SetOption", dxTarget, "colorField", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeMap_SetOption", dxTarget, "colorField", value);
 		}
 		public static object GetColorizer(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeMap.GetOption", dxTarget, "colorizer");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeMap_GetOption", dxTarget, "colorizer");
 		}
 		public static void SetColorizer(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeMap.SetOption", dxTarget, "colorizer", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeMap_SetOption", dxTarget, "colorizer", value);
 		}
 		public static object GetDataSource(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeMap.GetOption", dxTarget, "dataSource");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeMap_GetOption", dxTarget, "dataSource");
 		}
 		public static void SetDataSource(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeMap.SetOption", dxTarget, "dataSource", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeMap_SetOption", dxTarget, "dataSource", value);
 		}
 		public static object GetGroup(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeMap.GetOption", dxTarget, "group");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeMap_GetOption", dxTarget, "group");
 		}
 		public static void SetGroup(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeMap.SetOption", dxTarget, "group", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeMap_SetOption", dxTarget, "group", value);
 		}
 		public static bool? GetHoverEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxTreeMap.GetOption", dxTarget, "hoverEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxTreeMap_GetOption", dxTarget, "hoverEnabled");
 		}
 		public static void SetHoverEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeMap.SetOption", dxTarget, "hoverEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeMap_SetOption", dxTarget, "hoverEnabled", value);
 		}
 		public static string GetIdField(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxTreeMap.GetOption", dxTarget, "idField");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxTreeMap_GetOption", dxTarget, "idField");
 		}
 		public static void SetIdField(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeMap.SetOption", dxTarget, "idField", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeMap_SetOption", dxTarget, "idField", value);
 		}
 		public static bool? GetInteractWithGroup(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxTreeMap.GetOption", dxTarget, "interactWithGroup");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxTreeMap_GetOption", dxTarget, "interactWithGroup");
 		}
 		public static void SetInteractWithGroup(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeMap.SetOption", dxTarget, "interactWithGroup", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeMap_SetOption", dxTarget, "interactWithGroup", value);
 		}
 		public static string GetLabelField(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxTreeMap.GetOption", dxTarget, "labelField");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxTreeMap_GetOption", dxTarget, "labelField");
 		}
 		public static void SetLabelField(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeMap.SetOption", dxTarget, "labelField", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeMap_SetOption", dxTarget, "labelField", value);
 		}
 		public static object GetLayoutAlgorithm(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeMap.GetOption", dxTarget, "layoutAlgorithm");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeMap_GetOption", dxTarget, "layoutAlgorithm");
 		}
 		public static void SetLayoutAlgorithm(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeMap.SetOption", dxTarget, "layoutAlgorithm", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeMap_SetOption", dxTarget, "layoutAlgorithm", value);
 		}
 		public static string GetLayoutDirection(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxTreeMap.GetOption", dxTarget, "layoutDirection");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxTreeMap_GetOption", dxTarget, "layoutDirection");
 		}
 		public static void SetLayoutDirection(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeMap.SetOption", dxTarget, "layoutDirection", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeMap_SetOption", dxTarget, "layoutDirection", value);
 		}
 		public static float? GetMaxDepth(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxTreeMap.GetOption", dxTarget, "maxDepth");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxTreeMap_GetOption", dxTarget, "maxDepth");
 		}
 		public static void SetMaxDepth(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeMap.SetOption", dxTarget, "maxDepth", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeMap_SetOption", dxTarget, "maxDepth", value);
 		}
 		public static string GetParentField(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxTreeMap.GetOption", dxTarget, "parentField");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxTreeMap_GetOption", dxTarget, "parentField");
 		}
 		public static void SetParentField(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeMap.SetOption", dxTarget, "parentField", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeMap_SetOption", dxTarget, "parentField", value);
 		}
 		public static string GetResolveLabelOverflow(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxTreeMap.GetOption", dxTarget, "resolveLabelOverflow");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxTreeMap_GetOption", dxTarget, "resolveLabelOverflow");
 		}
 		public static void SetResolveLabelOverflow(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeMap.SetOption", dxTarget, "resolveLabelOverflow", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeMap_SetOption", dxTarget, "resolveLabelOverflow", value);
 		}
 		public static string GetSelectionMode(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxTreeMap.GetOption", dxTarget, "selectionMode");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxTreeMap_GetOption", dxTarget, "selectionMode");
 		}
 		public static void SetSelectionMode(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeMap.SetOption", dxTarget, "selectionMode", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeMap_SetOption", dxTarget, "selectionMode", value);
 		}
 		public static object GetTile(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeMap.GetOption", dxTarget, "tile");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeMap_GetOption", dxTarget, "tile");
 		}
 		public static void SetTile(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeMap.SetOption", dxTarget, "tile", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeMap_SetOption", dxTarget, "tile", value);
 		}
 		public static new object GetTooltip(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeMap.GetOption", dxTarget, "tooltip");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeMap_GetOption", dxTarget, "tooltip");
 		}
 		public static new void SetTooltip(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeMap.SetOption", dxTarget, "tooltip", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeMap_SetOption", dxTarget, "tooltip", value);
 		}
 		public static string GetValueField(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<string>("BlazorDevExtreme.DxTreeMap.GetOption", dxTarget, "valueField");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("BlazorDevExtreme_DxTreeMap_GetOption", dxTarget, "valueField");
 		}
 		public static void SetValueField(ElementRef dxTarget, string value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeMap.SetOption", dxTarget, "valueField", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeMap_SetOption", dxTarget, "valueField", value);
 		}
 		public static void ClearSelection(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeMap.clearSelection_0", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeMap_clearSelection_0", dxTarget);
 		}
 		public static void DrillUp(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeMap.drillUp_1", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeMap_drillUp_1", dxTarget);
 		}
 		public static object GetCurrentNode(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeMap.getCurrentNode_2", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeMap_getCurrentNode_2", dxTarget);
 		}
 		public static object GetDataSourceEx(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeMap.getDataSource_3", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeMap_getDataSource_3", dxTarget);
 		}
 		public static object GetRootNode(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeMap.getRootNode_4", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeMap_getRootNode_4", dxTarget);
 		}
 		public static void HideTooltip(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeMap.hideTooltip_5", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeMap_hideTooltip_5", dxTarget);
 		}
 		public static void ResetDrillDown(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxTreeMap.resetDrillDown_6", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxTreeMap_resetDrillDown_6", dxTarget);
 		}
 	}
 	public class DxVectorMapInterop: BaseWidgetInterop
@@ -12701,278 +12935,288 @@ namespace DevExpress.Viz
 		public static void Init(ElementRef dxTarget, DevExpress.Viz.Map.DxVectorMapOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxVectorMap.Init", dxTarget, json);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxVectorMap_Init", dxTarget, json);
 		}
+		[JSInvokable("DevExpress.Viz.DxVectorMapInterop.OnAreaClick")]
 		public static void OnAreaClick(string identifier)
 		{
 			AreaClick?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Viz.DxVectorMapInterop.OnAreaSelectionChanged")]
 		public static void OnAreaSelectionChanged(string identifier)
 		{
 			AreaSelectionChanged?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Viz.DxVectorMapInterop.OnCenterChanged")]
 		public static void OnCenterChanged(string identifier)
 		{
 			CenterChanged?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Viz.DxVectorMapInterop.OnClick")]
 		public static void OnClick(string identifier)
 		{
 			Click?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Viz.DxVectorMapInterop.OnMarkerClick")]
 		public static void OnMarkerClick(string identifier)
 		{
 			MarkerClick?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Viz.DxVectorMapInterop.OnMarkerSelectionChanged")]
 		public static void OnMarkerSelectionChanged(string identifier)
 		{
 			MarkerSelectionChanged?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Viz.DxVectorMapInterop.OnSelectionChanged")]
 		public static void OnSelectionChanged(string identifier)
 		{
 			SelectionChanged?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Viz.DxVectorMapInterop.OnTooltipHidden")]
 		public static void OnTooltipHidden(string identifier)
 		{
 			TooltipHidden?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Viz.DxVectorMapInterop.OnTooltipShown")]
 		public static void OnTooltipShown(string identifier)
 		{
 			TooltipShown?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+		[JSInvokable("DevExpress.Viz.DxVectorMapInterop.OnZoomFactorChanged")]
 		public static void OnZoomFactorChanged(string identifier)
 		{
 			ZoomFactorChanged?.Invoke(null, new JQueryEventArgs(identifier));
 		}
 		public static object GetAreaSettings(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxVectorMap.GetOption", dxTarget, "areaSettings");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxVectorMap_GetOption", dxTarget, "areaSettings");
 		}
 		public static void SetAreaSettings(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxVectorMap.SetOption", dxTarget, "areaSettings", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxVectorMap_SetOption", dxTarget, "areaSettings", value);
 		}
 		public static object GetBackground(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxVectorMap.GetOption", dxTarget, "background");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxVectorMap_GetOption", dxTarget, "background");
 		}
 		public static void SetBackground(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxVectorMap.SetOption", dxTarget, "background", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxVectorMap_SetOption", dxTarget, "background", value);
 		}
 		public static object GetBounds(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxVectorMap.GetOption", dxTarget, "bounds");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxVectorMap_GetOption", dxTarget, "bounds");
 		}
 		public static void SetBounds(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxVectorMap.SetOption", dxTarget, "bounds", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxVectorMap_SetOption", dxTarget, "bounds", value);
 		}
 		public static object GetCenter(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxVectorMap.GetOption", dxTarget, "center");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxVectorMap_GetOption", dxTarget, "center");
 		}
 		public static void SetCenter(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxVectorMap.SetOption", dxTarget, "center", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxVectorMap_SetOption", dxTarget, "center", value);
 		}
 		public static object GetControlBar(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxVectorMap.GetOption", dxTarget, "controlBar");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxVectorMap_GetOption", dxTarget, "controlBar");
 		}
 		public static void SetControlBar(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxVectorMap.SetOption", dxTarget, "controlBar", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxVectorMap_SetOption", dxTarget, "controlBar", value);
 		}
 		public static object GetLayers(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxVectorMap.GetOption", dxTarget, "layers");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxVectorMap_GetOption", dxTarget, "layers");
 		}
 		public static void SetLayers(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxVectorMap.SetOption", dxTarget, "layers", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxVectorMap_SetOption", dxTarget, "layers", value);
 		}
 		public static object GetLegends(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxVectorMap.GetOption", dxTarget, "legends");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxVectorMap_GetOption", dxTarget, "legends");
 		}
 		public static void SetLegends(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxVectorMap.SetOption", dxTarget, "legends", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxVectorMap_SetOption", dxTarget, "legends", value);
 		}
 		public static object GetMapData(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxVectorMap.GetOption", dxTarget, "mapData");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxVectorMap_GetOption", dxTarget, "mapData");
 		}
 		public static void SetMapData(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxVectorMap.SetOption", dxTarget, "mapData", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxVectorMap_SetOption", dxTarget, "mapData", value);
 		}
 		public static object GetMarkers(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxVectorMap.GetOption", dxTarget, "markers");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxVectorMap_GetOption", dxTarget, "markers");
 		}
 		public static void SetMarkers(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxVectorMap.SetOption", dxTarget, "markers", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxVectorMap_SetOption", dxTarget, "markers", value);
 		}
 		public static object GetMarkerSettings(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxVectorMap.GetOption", dxTarget, "markerSettings");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxVectorMap_GetOption", dxTarget, "markerSettings");
 		}
 		public static void SetMarkerSettings(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxVectorMap.SetOption", dxTarget, "markerSettings", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxVectorMap_SetOption", dxTarget, "markerSettings", value);
 		}
 		public static float? GetMaxZoomFactor(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxVectorMap.GetOption", dxTarget, "maxZoomFactor");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxVectorMap_GetOption", dxTarget, "maxZoomFactor");
 		}
 		public static void SetMaxZoomFactor(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxVectorMap.SetOption", dxTarget, "maxZoomFactor", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxVectorMap_SetOption", dxTarget, "maxZoomFactor", value);
 		}
 		public static bool? GetPanningEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxVectorMap.GetOption", dxTarget, "panningEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxVectorMap_GetOption", dxTarget, "panningEnabled");
 		}
 		public static void SetPanningEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxVectorMap.SetOption", dxTarget, "panningEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxVectorMap_SetOption", dxTarget, "panningEnabled", value);
 		}
 		public static object GetProjection(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxVectorMap.GetOption", dxTarget, "projection");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxVectorMap_GetOption", dxTarget, "projection");
 		}
 		public static void SetProjection(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxVectorMap.SetOption", dxTarget, "projection", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxVectorMap_SetOption", dxTarget, "projection", value);
 		}
 		public static new object GetTooltip(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxVectorMap.GetOption", dxTarget, "tooltip");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxVectorMap_GetOption", dxTarget, "tooltip");
 		}
 		public static new void SetTooltip(ElementRef dxTarget, object value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxVectorMap.SetOption", dxTarget, "tooltip", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxVectorMap_SetOption", dxTarget, "tooltip", value);
 		}
 		public static bool? GetTouchEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxVectorMap.GetOption", dxTarget, "touchEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxVectorMap_GetOption", dxTarget, "touchEnabled");
 		}
 		public static void SetTouchEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxVectorMap.SetOption", dxTarget, "touchEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxVectorMap_SetOption", dxTarget, "touchEnabled", value);
 		}
 		public static bool? GetWheelEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxVectorMap.GetOption", dxTarget, "wheelEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxVectorMap_GetOption", dxTarget, "wheelEnabled");
 		}
 		public static void SetWheelEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxVectorMap.SetOption", dxTarget, "wheelEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxVectorMap_SetOption", dxTarget, "wheelEnabled", value);
 		}
 		public static float? GetZoomFactor(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float?>("BlazorDevExtreme.DxVectorMap.GetOption", dxTarget, "zoomFactor");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float?>("BlazorDevExtreme_DxVectorMap_GetOption", dxTarget, "zoomFactor");
 		}
 		public static void SetZoomFactor(ElementRef dxTarget, float? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxVectorMap.SetOption", dxTarget, "zoomFactor", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxVectorMap_SetOption", dxTarget, "zoomFactor", value);
 		}
 		public static bool? GetZoomingEnabled(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<bool?>("BlazorDevExtreme.DxVectorMap.GetOption", dxTarget, "zoomingEnabled");
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<bool?>("BlazorDevExtreme_DxVectorMap_GetOption", dxTarget, "zoomingEnabled");
 		}
 		public static void SetZoomingEnabled(ElementRef dxTarget, bool? value)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxVectorMap.SetOption", dxTarget, "zoomingEnabled", value);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxVectorMap_SetOption", dxTarget, "zoomingEnabled", value);
 		}
 		public static object CenterEx(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxVectorMap.center_0", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxVectorMap_center_0", dxTarget);
 		}
 		public static void CenterEx(ElementRef dxTarget, object centerCoordinates)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxVectorMap.center_1", dxTarget, centerCoordinates);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxVectorMap_center_1", dxTarget, centerCoordinates);
 		}
 		public static void ClearAreaSelection(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxVectorMap.clearAreaSelection_2", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxVectorMap_clearAreaSelection_2", dxTarget);
 		}
 		public static void ClearMarkerSelection(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxVectorMap.clearMarkerSelection_3", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxVectorMap_clearMarkerSelection_3", dxTarget);
 		}
 		public static void ClearSelection(ElementRef dxTarget)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxVectorMap.clearSelection_4", dxTarget);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxVectorMap_clearSelection_4", dxTarget);
 		}
 		public static object ConvertCoordinates(ElementRef dxTarget, float x, float y)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxVectorMap.convertCoordinates_5", dxTarget, x, y);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxVectorMap_convertCoordinates_5", dxTarget, x, y);
 		}
 		public static object GetAreas(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxVectorMap.getAreas_6", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxVectorMap_getAreas_6", dxTarget);
 		}
 		public static object GetLayerByIndex(ElementRef dxTarget, float index)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxVectorMap.getLayerByIndex_7", dxTarget, index);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxVectorMap_getLayerByIndex_7", dxTarget, index);
 		}
 		public static object GetLayerByName(ElementRef dxTarget, string name)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxVectorMap.getLayerByName_8", dxTarget, name);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxVectorMap_getLayerByName_8", dxTarget, name);
 		}
 		public static object GetLayersEx(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxVectorMap.getLayers_9", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxVectorMap_getLayers_9", dxTarget);
 		}
 		public static object GetMarkersEx(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxVectorMap.getMarkers_10", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxVectorMap_getMarkers_10", dxTarget);
 		}
 		public static object Viewport(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxVectorMap.viewport_11", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxVectorMap_viewport_11", dxTarget);
 		}
 		public static void Viewport(ElementRef dxTarget, object viewportCoordinates)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxVectorMap.viewport_12", dxTarget, viewportCoordinates);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxVectorMap_viewport_12", dxTarget, viewportCoordinates);
 		}
 		public static float ZoomFactorEx(ElementRef dxTarget)
 		{
-			return RegisteredFunction.Invoke<float>("BlazorDevExtreme.DxVectorMap.zoomFactor_13", dxTarget);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<float>("BlazorDevExtreme_DxVectorMap_zoomFactor_13", dxTarget);
 		}
 		public static void ZoomFactorEx(ElementRef dxTarget, float zoomFactor)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.DxVectorMap.zoomFactor_14", dxTarget, zoomFactor);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_DxVectorMap_zoomFactor_14", dxTarget, zoomFactor);
 		}
 	}
 	public class CoreInterop
 	{
 		public static void CurrentPalette(string paletteName)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.Core.currentPalette_0", paletteName);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Core_currentPalette_0", paletteName);
 		}
 		public static void CurrentTheme(string platform, string colorScheme)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.Core.currentTheme_1", platform, colorScheme);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Core_currentTheme_1", platform, colorScheme);
 		}
 		public static void CurrentTheme(string theme)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.Core.currentTheme_2", theme);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Core_currentTheme_2", theme);
 		}
 		public static object GetPalette(string paletteName)
 		{
-			return RegisteredFunction.Invoke<object>("BlazorDevExtreme.Core.getPalette_3", paletteName);
+			return ((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Core_getPalette_3", paletteName);
 		}
 		public static void RegisterPalette(string paletteName, object palette)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.Core.registerPalette_4", paletteName, palette);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Core_registerPalette_4", paletteName, palette);
 		}
 		public static void RegisterTheme(object customTheme, string baseTheme)
 		{
-			RegisteredFunction.Invoke<object>("BlazorDevExtreme.Core.registerTheme_5", customTheme, baseTheme);
+			((IJSInProcessRuntime)JSRuntime.Current).Invoke<object>("BlazorDevExtreme_Core_registerTheme_5", customTheme, baseTheme);
 		}
 	}
 }

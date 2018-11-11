@@ -8,6 +8,8 @@ Per version 0.2 initialization with options is implemented., no instance functio
 
 Instance and static methods implemented in 0.4.
 
+Support for server side has been added in 0.6.1.
+
 ### Callbacks
 
 Callbacks are implemented in a simple way (no arguments except for jQuery identifier are passed).
@@ -122,7 +124,8 @@ And init a dxButton with code like this.
     public int ClickedCount { get; set; } = 0;
     public void InitDevExtreme()
     {
-        DxButton.Init(target, new DevExpress.Ui.DxButtonOptions { text = "DevExtreme Button", onClickEnabled = true });
+    	// Init methods are async, but here is no need to await for
+    	DxButton.Init(target, new DevExpress.Ui.DxButtonOptions { text = "DevExtreme Button", onClickEnabled = true });
     }
     protected override void OnInit()
     {

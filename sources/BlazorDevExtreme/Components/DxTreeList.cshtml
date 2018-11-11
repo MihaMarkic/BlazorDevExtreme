@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Ui.DxTreeListOptions>
+@inherits DxBlazorComponent<DevExpress.Ui.DxTreeListOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -38,13 +38,13 @@
 			onRowPreparedEnabled = onRowPreparedEnabled,
 		};
 	}
-	protected override void Init(DevExpress.Ui.DxTreeListOptions options) {
-		DevExpress.Ui.DxTreeListInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Ui.DxTreeListOptions options) {
+return 		DevExpress.Ui.DxTreeListInterop.Init(dxTarget, options);
 	}
 	bool? autoExpandAll;
 	[Parameter]
 	bool? AutoExpandAll {
-		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetAutoExpandAll(dxTarget) : autoExpandAll;
+		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetAutoExpandAll(dxTarget).Result : autoExpandAll;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTreeListInterop.SetAutoExpandAll(dxTarget, value);
@@ -56,7 +56,7 @@
 	object columns;
 	[Parameter]
 	object Columns {
-		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetColumns(dxTarget) : columns;
+		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetColumns(dxTarget).Result : columns;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTreeListInterop.SetColumns(dxTarget, value);
@@ -68,7 +68,7 @@
 	object customizeColumns;
 	[Parameter]
 	object CustomizeColumns {
-		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetCustomizeColumns(dxTarget) : customizeColumns;
+		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetCustomizeColumns(dxTarget).Result : customizeColumns;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTreeListInterop.SetCustomizeColumns(dxTarget, value);
@@ -80,7 +80,7 @@
 	string dataStructure;
 	[Parameter]
 	string DataStructure {
-		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetDataStructure(dxTarget) : dataStructure;
+		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetDataStructure(dxTarget).Result : dataStructure;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTreeListInterop.SetDataStructure(dxTarget, value);
@@ -92,7 +92,7 @@
 	object editing;
 	[Parameter]
 	object Editing {
-		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetEditing(dxTarget) : editing;
+		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetEditing(dxTarget).Result : editing;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTreeListInterop.SetEditing(dxTarget, value);
@@ -104,7 +104,7 @@
 	object expandedRowKeys;
 	[Parameter]
 	object ExpandedRowKeys {
-		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetExpandedRowKeys(dxTarget) : expandedRowKeys;
+		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetExpandedRowKeys(dxTarget).Result : expandedRowKeys;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTreeListInterop.SetExpandedRowKeys(dxTarget, value);
@@ -116,7 +116,7 @@
 	bool? expandNodesOnFiltering;
 	[Parameter]
 	bool? ExpandNodesOnFiltering {
-		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetExpandNodesOnFiltering(dxTarget) : expandNodesOnFiltering;
+		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetExpandNodesOnFiltering(dxTarget).Result : expandNodesOnFiltering;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTreeListInterop.SetExpandNodesOnFiltering(dxTarget, value);
@@ -128,7 +128,7 @@
 	object hasItemsExpr;
 	[Parameter]
 	object HasItemsExpr {
-		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetHasItemsExpr(dxTarget) : hasItemsExpr;
+		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetHasItemsExpr(dxTarget).Result : hasItemsExpr;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTreeListInterop.SetHasItemsExpr(dxTarget, value);
@@ -140,7 +140,7 @@
 	object itemsExpr;
 	[Parameter]
 	object ItemsExpr {
-		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetItemsExpr(dxTarget) : itemsExpr;
+		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetItemsExpr(dxTarget).Result : itemsExpr;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTreeListInterop.SetItemsExpr(dxTarget, value);
@@ -152,7 +152,7 @@
 	object keyExpr;
 	[Parameter]
 	object KeyExpr {
-		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetKeyExpr(dxTarget) : keyExpr;
+		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetKeyExpr(dxTarget).Result : keyExpr;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTreeListInterop.SetKeyExpr(dxTarget, value);
@@ -164,7 +164,7 @@
 	object paging;
 	[Parameter]
 	object Paging {
-		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetPaging(dxTarget) : paging;
+		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetPaging(dxTarget).Result : paging;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTreeListInterop.SetPaging(dxTarget, value);
@@ -176,7 +176,7 @@
 	object parentIdExpr;
 	[Parameter]
 	object ParentIdExpr {
-		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetParentIdExpr(dxTarget) : parentIdExpr;
+		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetParentIdExpr(dxTarget).Result : parentIdExpr;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTreeListInterop.SetParentIdExpr(dxTarget, value);
@@ -188,7 +188,7 @@
 	object remoteOperations;
 	[Parameter]
 	object RemoteOperations {
-		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetRemoteOperations(dxTarget) : remoteOperations;
+		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetRemoteOperations(dxTarget).Result : remoteOperations;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTreeListInterop.SetRemoteOperations(dxTarget, value);
@@ -200,7 +200,7 @@
 	object rootValue;
 	[Parameter]
 	object RootValue {
-		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetRootValue(dxTarget) : rootValue;
+		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetRootValue(dxTarget).Result : rootValue;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTreeListInterop.SetRootValue(dxTarget, value);
@@ -212,7 +212,7 @@
 	object scrolling;
 	[Parameter]
 	object Scrolling {
-		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetScrolling(dxTarget) : scrolling;
+		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetScrolling(dxTarget).Result : scrolling;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTreeListInterop.SetScrolling(dxTarget, value);
@@ -224,7 +224,7 @@
 	object selection;
 	[Parameter]
 	object Selection {
-		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetSelection(dxTarget) : selection;
+		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetSelection(dxTarget).Result : selection;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTreeListInterop.SetSelection(dxTarget, value);
@@ -386,10 +386,10 @@
 		DevExpress.Ui.DxTreeListInterop.AddRow(dxTarget, parentId);
 	}
 	public object CollapseRow(object key) {
-		return DevExpress.Ui.DxTreeListInterop.CollapseRow(dxTarget, key);
+		return DevExpress.Ui.DxTreeListInterop.CollapseRow(dxTarget, key).Result;
 	}
 	public object ExpandRow(object key) {
-		return DevExpress.Ui.DxTreeListInterop.ExpandRow(dxTarget, key);
+		return DevExpress.Ui.DxTreeListInterop.ExpandRow(dxTarget, key).Result;
 	}
 	public void ForEachNode(object callback) {
 		DevExpress.Ui.DxTreeListInterop.ForEachNode(dxTarget, callback);
@@ -398,43 +398,43 @@
 		DevExpress.Ui.DxTreeListInterop.ForEachNode(dxTarget, nodes, callback);
 	}
 	public object GetNodeByKey(object key) {
-		return DevExpress.Ui.DxTreeListInterop.GetNodeByKey(dxTarget, key);
+		return DevExpress.Ui.DxTreeListInterop.GetNodeByKey(dxTarget, key).Result;
 	}
 	public object GetRootNode() {
-		return DevExpress.Ui.DxTreeListInterop.GetRootNode(dxTarget);
+		return DevExpress.Ui.DxTreeListInterop.GetRootNode(dxTarget).Result;
 	}
 	public object GetSelectedRowKeys() {
-		return DevExpress.Ui.DxTreeListInterop.GetSelectedRowKeys(dxTarget);
+		return DevExpress.Ui.DxTreeListInterop.GetSelectedRowKeys(dxTarget).Result;
 	}
 	public object GetSelectedRowKeys(bool leavesOnly) {
-		return DevExpress.Ui.DxTreeListInterop.GetSelectedRowKeys(dxTarget, leavesOnly);
+		return DevExpress.Ui.DxTreeListInterop.GetSelectedRowKeys(dxTarget, leavesOnly).Result;
 	}
 	public object GetSelectedRowKeys(string mode) {
-		return DevExpress.Ui.DxTreeListInterop.GetSelectedRowKeys(dxTarget, mode);
+		return DevExpress.Ui.DxTreeListInterop.GetSelectedRowKeys(dxTarget, mode).Result;
 	}
 	public object GetSelectedRowsData() {
-		return DevExpress.Ui.DxTreeListInterop.GetSelectedRowsData(dxTarget);
+		return DevExpress.Ui.DxTreeListInterop.GetSelectedRowsData(dxTarget).Result;
 	}
 	public object GetVisibleColumns() {
-		return DevExpress.Ui.DxTreeListInterop.GetVisibleColumns(dxTarget);
+		return DevExpress.Ui.DxTreeListInterop.GetVisibleColumns(dxTarget).Result;
 	}
 	public object GetVisibleColumns(float headerLevel) {
-		return DevExpress.Ui.DxTreeListInterop.GetVisibleColumns(dxTarget, headerLevel);
+		return DevExpress.Ui.DxTreeListInterop.GetVisibleColumns(dxTarget, headerLevel).Result;
 	}
 	public object GetVisibleRows() {
-		return DevExpress.Ui.DxTreeListInterop.GetVisibleRows(dxTarget);
+		return DevExpress.Ui.DxTreeListInterop.GetVisibleRows(dxTarget).Result;
 	}
 	public bool IsRowExpanded(object key) {
-		return DevExpress.Ui.DxTreeListInterop.IsRowExpanded(dxTarget, key);
+		return DevExpress.Ui.DxTreeListInterop.IsRowExpanded(dxTarget, key).Result;
 	}
 	public object LoadDescendants() {
-		return DevExpress.Ui.DxTreeListInterop.LoadDescendants(dxTarget);
+		return DevExpress.Ui.DxTreeListInterop.LoadDescendants(dxTarget).Result;
 	}
 	public object LoadDescendants(object keys) {
-		return DevExpress.Ui.DxTreeListInterop.LoadDescendants(dxTarget, keys);
+		return DevExpress.Ui.DxTreeListInterop.LoadDescendants(dxTarget, keys).Result;
 	}
 	public object LoadDescendants(object keys, bool childrenOnly) {
-		return DevExpress.Ui.DxTreeListInterop.LoadDescendants(dxTarget, keys, childrenOnly);
+		return DevExpress.Ui.DxTreeListInterop.LoadDescendants(dxTarget, keys, childrenOnly).Result;
 	}
 	public void Dispose() {
 		DevExpress.Ui.DxTreeListInterop.CellClick -= DxTreeList_CellClick;

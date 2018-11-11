@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Ui.DxTextEditorOptions>
+@inherits DxBlazorComponent<DevExpress.Ui.DxTextEditorOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -39,13 +39,13 @@
 			onPasteEnabled = onPasteEnabled,
 		};
 	}
-	protected override void Init(DevExpress.Ui.DxTextEditorOptions options) {
-		DevExpress.Ui.DxTextEditorInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Ui.DxTextEditorOptions options) {
+return 		DevExpress.Ui.DxTextEditorInterop.Init(dxTarget, options);
 	}
 	bool? focusStateEnabled;
 	[Parameter]
 	bool? FocusStateEnabled {
-		get => isInitialized ? DevExpress.Ui.DxTextEditorInterop.GetFocusStateEnabled(dxTarget) : focusStateEnabled;
+		get => isInitialized ? DevExpress.Ui.DxTextEditorInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTextEditorInterop.SetFocusStateEnabled(dxTarget, value);
@@ -57,7 +57,7 @@
 	bool? hoverStateEnabled;
 	[Parameter]
 	bool? HoverStateEnabled {
-		get => isInitialized ? DevExpress.Ui.DxTextEditorInterop.GetHoverStateEnabled(dxTarget) : hoverStateEnabled;
+		get => isInitialized ? DevExpress.Ui.DxTextEditorInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTextEditorInterop.SetHoverStateEnabled(dxTarget, value);
@@ -69,7 +69,7 @@
 	object inputAttr;
 	[Parameter]
 	object InputAttr {
-		get => isInitialized ? DevExpress.Ui.DxTextEditorInterop.GetInputAttr(dxTarget) : inputAttr;
+		get => isInitialized ? DevExpress.Ui.DxTextEditorInterop.GetInputAttr(dxTarget).Result : inputAttr;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTextEditorInterop.SetInputAttr(dxTarget, value);
@@ -81,7 +81,7 @@
 	string mask;
 	[Parameter]
 	string Mask {
-		get => isInitialized ? DevExpress.Ui.DxTextEditorInterop.GetMask(dxTarget) : mask;
+		get => isInitialized ? DevExpress.Ui.DxTextEditorInterop.GetMask(dxTarget).Result : mask;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTextEditorInterop.SetMask(dxTarget, value);
@@ -93,7 +93,7 @@
 	string maskChar;
 	[Parameter]
 	string MaskChar {
-		get => isInitialized ? DevExpress.Ui.DxTextEditorInterop.GetMaskChar(dxTarget) : maskChar;
+		get => isInitialized ? DevExpress.Ui.DxTextEditorInterop.GetMaskChar(dxTarget).Result : maskChar;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTextEditorInterop.SetMaskChar(dxTarget, value);
@@ -105,7 +105,7 @@
 	string maskInvalidMessage;
 	[Parameter]
 	string MaskInvalidMessage {
-		get => isInitialized ? DevExpress.Ui.DxTextEditorInterop.GetMaskInvalidMessage(dxTarget) : maskInvalidMessage;
+		get => isInitialized ? DevExpress.Ui.DxTextEditorInterop.GetMaskInvalidMessage(dxTarget).Result : maskInvalidMessage;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTextEditorInterop.SetMaskInvalidMessage(dxTarget, value);
@@ -117,7 +117,7 @@
 	object maskRules;
 	[Parameter]
 	object MaskRules {
-		get => isInitialized ? DevExpress.Ui.DxTextEditorInterop.GetMaskRules(dxTarget) : maskRules;
+		get => isInitialized ? DevExpress.Ui.DxTextEditorInterop.GetMaskRules(dxTarget).Result : maskRules;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTextEditorInterop.SetMaskRules(dxTarget, value);
@@ -129,7 +129,7 @@
 	string name;
 	[Parameter]
 	string Name {
-		get => isInitialized ? DevExpress.Ui.DxTextEditorInterop.GetName(dxTarget) : name;
+		get => isInitialized ? DevExpress.Ui.DxTextEditorInterop.GetName(dxTarget).Result : name;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTextEditorInterop.SetName(dxTarget, value);
@@ -141,7 +141,7 @@
 	string placeholder;
 	[Parameter]
 	string Placeholder {
-		get => isInitialized ? DevExpress.Ui.DxTextEditorInterop.GetPlaceholder(dxTarget) : placeholder;
+		get => isInitialized ? DevExpress.Ui.DxTextEditorInterop.GetPlaceholder(dxTarget).Result : placeholder;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTextEditorInterop.SetPlaceholder(dxTarget, value);
@@ -153,7 +153,7 @@
 	bool? showClearButton;
 	[Parameter]
 	bool? ShowClearButton {
-		get => isInitialized ? DevExpress.Ui.DxTextEditorInterop.GetShowClearButton(dxTarget) : showClearButton;
+		get => isInitialized ? DevExpress.Ui.DxTextEditorInterop.GetShowClearButton(dxTarget).Result : showClearButton;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTextEditorInterop.SetShowClearButton(dxTarget, value);
@@ -165,7 +165,7 @@
 	string showMaskMode;
 	[Parameter]
 	string ShowMaskMode {
-		get => isInitialized ? DevExpress.Ui.DxTextEditorInterop.GetShowMaskMode(dxTarget) : showMaskMode;
+		get => isInitialized ? DevExpress.Ui.DxTextEditorInterop.GetShowMaskMode(dxTarget).Result : showMaskMode;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTextEditorInterop.SetShowMaskMode(dxTarget, value);
@@ -177,7 +177,7 @@
 	bool? spellcheck;
 	[Parameter]
 	bool? Spellcheck {
-		get => isInitialized ? DevExpress.Ui.DxTextEditorInterop.GetSpellcheck(dxTarget) : spellcheck;
+		get => isInitialized ? DevExpress.Ui.DxTextEditorInterop.GetSpellcheck(dxTarget).Result : spellcheck;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTextEditorInterop.SetSpellcheck(dxTarget, value);
@@ -189,7 +189,7 @@
 	string text;
 	[Parameter]
 	string Text {
-		get => isInitialized ? DevExpress.Ui.DxTextEditorInterop.GetText(dxTarget) : text;
+		get => isInitialized ? DevExpress.Ui.DxTextEditorInterop.GetText(dxTarget).Result : text;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTextEditorInterop.SetText(dxTarget, value);
@@ -201,7 +201,7 @@
 	bool? useMaskedValue;
 	[Parameter]
 	bool? UseMaskedValue {
-		get => isInitialized ? DevExpress.Ui.DxTextEditorInterop.GetUseMaskedValue(dxTarget) : useMaskedValue;
+		get => isInitialized ? DevExpress.Ui.DxTextEditorInterop.GetUseMaskedValue(dxTarget).Result : useMaskedValue;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTextEditorInterop.SetUseMaskedValue(dxTarget, value);
@@ -213,7 +213,7 @@
 	object value;
 	[Parameter]
 	object Value {
-		get => isInitialized ? DevExpress.Ui.DxTextEditorInterop.GetValue(dxTarget) : value;
+		get => isInitialized ? DevExpress.Ui.DxTextEditorInterop.GetValue(dxTarget).Result : value;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTextEditorInterop.SetValue(dxTarget, value);
@@ -225,7 +225,7 @@
 	string valueChangeEvent;
 	[Parameter]
 	string ValueChangeEvent {
-		get => isInitialized ? DevExpress.Ui.DxTextEditorInterop.GetValueChangeEvent(dxTarget) : valueChangeEvent;
+		get => isInitialized ? DevExpress.Ui.DxTextEditorInterop.GetValueChangeEvent(dxTarget).Result : valueChangeEvent;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTextEditorInterop.SetValueChangeEvent(dxTarget, value);

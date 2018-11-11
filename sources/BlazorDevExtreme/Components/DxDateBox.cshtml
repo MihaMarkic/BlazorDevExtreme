@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Ui.DxDateBoxOptions>
+@inherits DxBlazorComponent<DevExpress.Ui.DxDateBoxOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -31,13 +31,13 @@
 			value = value,
 		};
 	}
-	protected override void Init(DevExpress.Ui.DxDateBoxOptions options) {
-		DevExpress.Ui.DxDateBoxInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Ui.DxDateBoxOptions options) {
+return 		DevExpress.Ui.DxDateBoxInterop.Init(dxTarget, options);
 	}
 	bool? adaptivityEnabled;
 	[Parameter]
 	bool? AdaptivityEnabled {
-		get => isInitialized ? DevExpress.Ui.DxDateBoxInterop.GetAdaptivityEnabled(dxTarget) : adaptivityEnabled;
+		get => isInitialized ? DevExpress.Ui.DxDateBoxInterop.GetAdaptivityEnabled(dxTarget).Result : adaptivityEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDateBoxInterop.SetAdaptivityEnabled(dxTarget, value);
@@ -49,7 +49,7 @@
 	string applyButtonText;
 	[Parameter]
 	string ApplyButtonText {
-		get => isInitialized ? DevExpress.Ui.DxDateBoxInterop.GetApplyButtonText(dxTarget) : applyButtonText;
+		get => isInitialized ? DevExpress.Ui.DxDateBoxInterop.GetApplyButtonText(dxTarget).Result : applyButtonText;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDateBoxInterop.SetApplyButtonText(dxTarget, value);
@@ -61,7 +61,7 @@
 	object calendarOptions;
 	[Parameter]
 	object CalendarOptions {
-		get => isInitialized ? DevExpress.Ui.DxDateBoxInterop.GetCalendarOptions(dxTarget) : calendarOptions;
+		get => isInitialized ? DevExpress.Ui.DxDateBoxInterop.GetCalendarOptions(dxTarget).Result : calendarOptions;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDateBoxInterop.SetCalendarOptions(dxTarget, value);
@@ -73,7 +73,7 @@
 	string cancelButtonText;
 	[Parameter]
 	string CancelButtonText {
-		get => isInitialized ? DevExpress.Ui.DxDateBoxInterop.GetCancelButtonText(dxTarget) : cancelButtonText;
+		get => isInitialized ? DevExpress.Ui.DxDateBoxInterop.GetCancelButtonText(dxTarget).Result : cancelButtonText;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDateBoxInterop.SetCancelButtonText(dxTarget, value);
@@ -85,7 +85,7 @@
 	string dateOutOfRangeMessage;
 	[Parameter]
 	string DateOutOfRangeMessage {
-		get => isInitialized ? DevExpress.Ui.DxDateBoxInterop.GetDateOutOfRangeMessage(dxTarget) : dateOutOfRangeMessage;
+		get => isInitialized ? DevExpress.Ui.DxDateBoxInterop.GetDateOutOfRangeMessage(dxTarget).Result : dateOutOfRangeMessage;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDateBoxInterop.SetDateOutOfRangeMessage(dxTarget, value);
@@ -97,7 +97,7 @@
 	string dateSerializationFormat;
 	[Parameter]
 	string DateSerializationFormat {
-		get => isInitialized ? DevExpress.Ui.DxDateBoxInterop.GetDateSerializationFormat(dxTarget) : dateSerializationFormat;
+		get => isInitialized ? DevExpress.Ui.DxDateBoxInterop.GetDateSerializationFormat(dxTarget).Result : dateSerializationFormat;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDateBoxInterop.SetDateSerializationFormat(dxTarget, value);
@@ -109,7 +109,7 @@
 	object disabledDates;
 	[Parameter]
 	object DisabledDates {
-		get => isInitialized ? DevExpress.Ui.DxDateBoxInterop.GetDisabledDates(dxTarget) : disabledDates;
+		get => isInitialized ? DevExpress.Ui.DxDateBoxInterop.GetDisabledDates(dxTarget).Result : disabledDates;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDateBoxInterop.SetDisabledDates(dxTarget, value);
@@ -121,7 +121,7 @@
 	object displayFormat;
 	[Parameter]
 	object DisplayFormat {
-		get => isInitialized ? DevExpress.Ui.DxDateBoxInterop.GetDisplayFormat(dxTarget) : displayFormat;
+		get => isInitialized ? DevExpress.Ui.DxDateBoxInterop.GetDisplayFormat(dxTarget).Result : displayFormat;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDateBoxInterop.SetDisplayFormat(dxTarget, value);
@@ -133,7 +133,7 @@
 	float? interval;
 	[Parameter]
 	float? Interval {
-		get => isInitialized ? DevExpress.Ui.DxDateBoxInterop.GetInterval(dxTarget) : interval;
+		get => isInitialized ? DevExpress.Ui.DxDateBoxInterop.GetInterval(dxTarget).Result : interval;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDateBoxInterop.SetInterval(dxTarget, value);
@@ -145,7 +145,7 @@
 	string invalidDateMessage;
 	[Parameter]
 	string InvalidDateMessage {
-		get => isInitialized ? DevExpress.Ui.DxDateBoxInterop.GetInvalidDateMessage(dxTarget) : invalidDateMessage;
+		get => isInitialized ? DevExpress.Ui.DxDateBoxInterop.GetInvalidDateMessage(dxTarget).Result : invalidDateMessage;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDateBoxInterop.SetInvalidDateMessage(dxTarget, value);
@@ -157,7 +157,7 @@
 	object max;
 	[Parameter]
 	object Max {
-		get => isInitialized ? DevExpress.Ui.DxDateBoxInterop.GetMax(dxTarget) : max;
+		get => isInitialized ? DevExpress.Ui.DxDateBoxInterop.GetMax(dxTarget).Result : max;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDateBoxInterop.SetMax(dxTarget, value);
@@ -169,7 +169,7 @@
 	string maxZoomLevel;
 	[Parameter]
 	string MaxZoomLevel {
-		get => isInitialized ? DevExpress.Ui.DxDateBoxInterop.GetMaxZoomLevel(dxTarget) : maxZoomLevel;
+		get => isInitialized ? DevExpress.Ui.DxDateBoxInterop.GetMaxZoomLevel(dxTarget).Result : maxZoomLevel;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDateBoxInterop.SetMaxZoomLevel(dxTarget, value);
@@ -181,7 +181,7 @@
 	object min;
 	[Parameter]
 	object Min {
-		get => isInitialized ? DevExpress.Ui.DxDateBoxInterop.GetMin(dxTarget) : min;
+		get => isInitialized ? DevExpress.Ui.DxDateBoxInterop.GetMin(dxTarget).Result : min;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDateBoxInterop.SetMin(dxTarget, value);
@@ -193,7 +193,7 @@
 	string minZoomLevel;
 	[Parameter]
 	string MinZoomLevel {
-		get => isInitialized ? DevExpress.Ui.DxDateBoxInterop.GetMinZoomLevel(dxTarget) : minZoomLevel;
+		get => isInitialized ? DevExpress.Ui.DxDateBoxInterop.GetMinZoomLevel(dxTarget).Result : minZoomLevel;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDateBoxInterop.SetMinZoomLevel(dxTarget, value);
@@ -205,7 +205,7 @@
 	string pickerType;
 	[Parameter]
 	string PickerType {
-		get => isInitialized ? DevExpress.Ui.DxDateBoxInterop.GetPickerType(dxTarget) : pickerType;
+		get => isInitialized ? DevExpress.Ui.DxDateBoxInterop.GetPickerType(dxTarget).Result : pickerType;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDateBoxInterop.SetPickerType(dxTarget, value);
@@ -217,7 +217,7 @@
 	string placeholder;
 	[Parameter]
 	string Placeholder {
-		get => isInitialized ? DevExpress.Ui.DxDateBoxInterop.GetPlaceholder(dxTarget) : placeholder;
+		get => isInitialized ? DevExpress.Ui.DxDateBoxInterop.GetPlaceholder(dxTarget).Result : placeholder;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDateBoxInterop.SetPlaceholder(dxTarget, value);
@@ -229,7 +229,7 @@
 	bool? showAnalogClock;
 	[Parameter]
 	bool? ShowAnalogClock {
-		get => isInitialized ? DevExpress.Ui.DxDateBoxInterop.GetShowAnalogClock(dxTarget) : showAnalogClock;
+		get => isInitialized ? DevExpress.Ui.DxDateBoxInterop.GetShowAnalogClock(dxTarget).Result : showAnalogClock;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDateBoxInterop.SetShowAnalogClock(dxTarget, value);
@@ -241,7 +241,7 @@
 	string type;
 	[Parameter]
 	string Type {
-		get => isInitialized ? DevExpress.Ui.DxDateBoxInterop.GetType(dxTarget) : type;
+		get => isInitialized ? DevExpress.Ui.DxDateBoxInterop.GetType(dxTarget).Result : type;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDateBoxInterop.SetType(dxTarget, value);
@@ -253,7 +253,7 @@
 	object value;
 	[Parameter]
 	object Value {
-		get => isInitialized ? DevExpress.Ui.DxDateBoxInterop.GetValue(dxTarget) : value;
+		get => isInitialized ? DevExpress.Ui.DxDateBoxInterop.GetValue(dxTarget).Result : value;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDateBoxInterop.SetValue(dxTarget, value);

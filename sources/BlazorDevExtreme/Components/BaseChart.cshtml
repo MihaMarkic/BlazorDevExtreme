@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Viz.Charts.BaseChartOptions>
+@inherits DxBlazorComponent<DevExpress.Viz.Charts.BaseChartOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -29,13 +29,13 @@
 			onTooltipShownEnabled = onTooltipShownEnabled,
 		};
 	}
-	protected override void Init(DevExpress.Viz.Charts.BaseChartOptions options) {
-		DevExpress.Viz.BaseChartInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Viz.Charts.BaseChartOptions options) {
+return 		DevExpress.Viz.BaseChartInterop.Init(dxTarget, options);
 	}
 	object adaptiveLayout;
 	[Parameter]
 	object AdaptiveLayout {
-		get => isInitialized ? DevExpress.Viz.BaseChartInterop.GetAdaptiveLayout(dxTarget) : adaptiveLayout;
+		get => isInitialized ? DevExpress.Viz.BaseChartInterop.GetAdaptiveLayout(dxTarget).Result : adaptiveLayout;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.BaseChartInterop.SetAdaptiveLayout(dxTarget, value);
@@ -47,7 +47,7 @@
 	object animation;
 	[Parameter]
 	object Animation {
-		get => isInitialized ? DevExpress.Viz.BaseChartInterop.GetAnimation(dxTarget) : animation;
+		get => isInitialized ? DevExpress.Viz.BaseChartInterop.GetAnimation(dxTarget).Result : animation;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.BaseChartInterop.SetAnimation(dxTarget, value);
@@ -59,7 +59,7 @@
 	object customizeLabel;
 	[Parameter]
 	object CustomizeLabel {
-		get => isInitialized ? DevExpress.Viz.BaseChartInterop.GetCustomizeLabel(dxTarget) : customizeLabel;
+		get => isInitialized ? DevExpress.Viz.BaseChartInterop.GetCustomizeLabel(dxTarget).Result : customizeLabel;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.BaseChartInterop.SetCustomizeLabel(dxTarget, value);
@@ -71,7 +71,7 @@
 	object customizePoint;
 	[Parameter]
 	object CustomizePoint {
-		get => isInitialized ? DevExpress.Viz.BaseChartInterop.GetCustomizePoint(dxTarget) : customizePoint;
+		get => isInitialized ? DevExpress.Viz.BaseChartInterop.GetCustomizePoint(dxTarget).Result : customizePoint;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.BaseChartInterop.SetCustomizePoint(dxTarget, value);
@@ -83,7 +83,7 @@
 	object dataSource;
 	[Parameter]
 	object DataSource {
-		get => isInitialized ? DevExpress.Viz.BaseChartInterop.GetDataSource(dxTarget) : dataSource;
+		get => isInitialized ? DevExpress.Viz.BaseChartInterop.GetDataSource(dxTarget).Result : dataSource;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.BaseChartInterop.SetDataSource(dxTarget, value);
@@ -95,7 +95,7 @@
 	object legend;
 	[Parameter]
 	object Legend {
-		get => isInitialized ? DevExpress.Viz.BaseChartInterop.GetLegend(dxTarget) : legend;
+		get => isInitialized ? DevExpress.Viz.BaseChartInterop.GetLegend(dxTarget).Result : legend;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.BaseChartInterop.SetLegend(dxTarget, value);
@@ -107,7 +107,7 @@
 	object palette;
 	[Parameter]
 	object Palette {
-		get => isInitialized ? DevExpress.Viz.BaseChartInterop.GetPalette(dxTarget) : palette;
+		get => isInitialized ? DevExpress.Viz.BaseChartInterop.GetPalette(dxTarget).Result : palette;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.BaseChartInterop.SetPalette(dxTarget, value);
@@ -119,7 +119,7 @@
 	string paletteExtensionMode;
 	[Parameter]
 	string PaletteExtensionMode {
-		get => isInitialized ? DevExpress.Viz.BaseChartInterop.GetPaletteExtensionMode(dxTarget) : paletteExtensionMode;
+		get => isInitialized ? DevExpress.Viz.BaseChartInterop.GetPaletteExtensionMode(dxTarget).Result : paletteExtensionMode;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.BaseChartInterop.SetPaletteExtensionMode(dxTarget, value);
@@ -131,7 +131,7 @@
 	string pointSelectionMode;
 	[Parameter]
 	string PointSelectionMode {
-		get => isInitialized ? DevExpress.Viz.BaseChartInterop.GetPointSelectionMode(dxTarget) : pointSelectionMode;
+		get => isInitialized ? DevExpress.Viz.BaseChartInterop.GetPointSelectionMode(dxTarget).Result : pointSelectionMode;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.BaseChartInterop.SetPointSelectionMode(dxTarget, value);
@@ -143,7 +143,7 @@
 	object series;
 	[Parameter]
 	object Series {
-		get => isInitialized ? DevExpress.Viz.BaseChartInterop.GetSeries(dxTarget) : series;
+		get => isInitialized ? DevExpress.Viz.BaseChartInterop.GetSeries(dxTarget).Result : series;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.BaseChartInterop.SetSeries(dxTarget, value);
@@ -155,7 +155,7 @@
 	object tooltip;
 	[Parameter]
 	object Tooltip {
-		get => isInitialized ? DevExpress.Viz.BaseChartInterop.GetTooltip(dxTarget) : tooltip;
+		get => isInitialized ? DevExpress.Viz.BaseChartInterop.GetTooltip(dxTarget).Result : tooltip;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.BaseChartInterop.SetTooltip(dxTarget, value);
@@ -255,16 +255,16 @@
 		DevExpress.Viz.BaseChartInterop.ClearSelection(dxTarget);
 	}
 	public object GetAllSeries() {
-		return DevExpress.Viz.BaseChartInterop.GetAllSeries(dxTarget);
+		return DevExpress.Viz.BaseChartInterop.GetAllSeries(dxTarget).Result;
 	}
 	public object GetDataSourceEx() {
-		return DevExpress.Viz.BaseChartInterop.GetDataSourceEx(dxTarget);
+		return DevExpress.Viz.BaseChartInterop.GetDataSourceEx(dxTarget).Result;
 	}
 	public object GetSeriesByName(object seriesName) {
-		return DevExpress.Viz.BaseChartInterop.GetSeriesByName(dxTarget, seriesName);
+		return DevExpress.Viz.BaseChartInterop.GetSeriesByName(dxTarget, seriesName).Result;
 	}
 	public object GetSeriesByPos(float seriesIndex) {
-		return DevExpress.Viz.BaseChartInterop.GetSeriesByPos(dxTarget, seriesIndex);
+		return DevExpress.Viz.BaseChartInterop.GetSeriesByPos(dxTarget, seriesIndex).Result;
 	}
 	public void HideTooltip() {
 		DevExpress.Viz.BaseChartInterop.HideTooltip(dxTarget);

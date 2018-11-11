@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Ui.DxDropDownMenuOptions>
+@inherits DxBlazorComponent<DevExpress.Ui.DxDropDownMenuOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -25,13 +25,13 @@
 			onItemClickEnabled = onItemClickEnabled,
 		};
 	}
-	protected override void Init(DevExpress.Ui.DxDropDownMenuOptions options) {
-		DevExpress.Ui.DxDropDownMenuInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Ui.DxDropDownMenuOptions options) {
+return 		DevExpress.Ui.DxDropDownMenuInterop.Init(dxTarget, options);
 	}
 	bool? activeStateEnabled;
 	[Parameter]
 	bool? ActiveStateEnabled {
-		get => isInitialized ? DevExpress.Ui.DxDropDownMenuInterop.GetActiveStateEnabled(dxTarget) : activeStateEnabled;
+		get => isInitialized ? DevExpress.Ui.DxDropDownMenuInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDropDownMenuInterop.SetActiveStateEnabled(dxTarget, value);
@@ -43,7 +43,7 @@
 	string buttonIcon;
 	[Parameter]
 	string ButtonIcon {
-		get => isInitialized ? DevExpress.Ui.DxDropDownMenuInterop.GetButtonIcon(dxTarget) : buttonIcon;
+		get => isInitialized ? DevExpress.Ui.DxDropDownMenuInterop.GetButtonIcon(dxTarget).Result : buttonIcon;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDropDownMenuInterop.SetButtonIcon(dxTarget, value);
@@ -55,7 +55,7 @@
 	string buttonText;
 	[Parameter]
 	string ButtonText {
-		get => isInitialized ? DevExpress.Ui.DxDropDownMenuInterop.GetButtonText(dxTarget) : buttonText;
+		get => isInitialized ? DevExpress.Ui.DxDropDownMenuInterop.GetButtonText(dxTarget).Result : buttonText;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDropDownMenuInterop.SetButtonText(dxTarget, value);
@@ -67,7 +67,7 @@
 	object dataSource;
 	[Parameter]
 	object DataSource {
-		get => isInitialized ? DevExpress.Ui.DxDropDownMenuInterop.GetDataSource(dxTarget) : dataSource;
+		get => isInitialized ? DevExpress.Ui.DxDropDownMenuInterop.GetDataSource(dxTarget).Result : dataSource;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDropDownMenuInterop.SetDataSource(dxTarget, value);
@@ -79,7 +79,7 @@
 	bool? hoverStateEnabled;
 	[Parameter]
 	bool? HoverStateEnabled {
-		get => isInitialized ? DevExpress.Ui.DxDropDownMenuInterop.GetHoverStateEnabled(dxTarget) : hoverStateEnabled;
+		get => isInitialized ? DevExpress.Ui.DxDropDownMenuInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDropDownMenuInterop.SetHoverStateEnabled(dxTarget, value);
@@ -91,7 +91,7 @@
 	object items;
 	[Parameter]
 	object Items {
-		get => isInitialized ? DevExpress.Ui.DxDropDownMenuInterop.GetItems(dxTarget) : items;
+		get => isInitialized ? DevExpress.Ui.DxDropDownMenuInterop.GetItems(dxTarget).Result : items;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDropDownMenuInterop.SetItems(dxTarget, value);
@@ -103,7 +103,7 @@
 	object itemTemplate;
 	[Parameter]
 	object ItemTemplate {
-		get => isInitialized ? DevExpress.Ui.DxDropDownMenuInterop.GetItemTemplate(dxTarget) : itemTemplate;
+		get => isInitialized ? DevExpress.Ui.DxDropDownMenuInterop.GetItemTemplate(dxTarget).Result : itemTemplate;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDropDownMenuInterop.SetItemTemplate(dxTarget, value);
@@ -115,7 +115,7 @@
 	bool? isOpened;
 	[Parameter]
 	bool? IsOpened {
-		get => isInitialized ? DevExpress.Ui.DxDropDownMenuInterop.GetOpened(dxTarget) : isOpened;
+		get => isInitialized ? DevExpress.Ui.DxDropDownMenuInterop.GetOpened(dxTarget).Result : isOpened;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDropDownMenuInterop.SetOpened(dxTarget, value);
@@ -127,7 +127,7 @@
 	object popupHeight;
 	[Parameter]
 	object PopupHeight {
-		get => isInitialized ? DevExpress.Ui.DxDropDownMenuInterop.GetPopupHeight(dxTarget) : popupHeight;
+		get => isInitialized ? DevExpress.Ui.DxDropDownMenuInterop.GetPopupHeight(dxTarget).Result : popupHeight;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDropDownMenuInterop.SetPopupHeight(dxTarget, value);
@@ -139,7 +139,7 @@
 	object popupWidth;
 	[Parameter]
 	object PopupWidth {
-		get => isInitialized ? DevExpress.Ui.DxDropDownMenuInterop.GetPopupWidth(dxTarget) : popupWidth;
+		get => isInitialized ? DevExpress.Ui.DxDropDownMenuInterop.GetPopupWidth(dxTarget).Result : popupWidth;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDropDownMenuInterop.SetPopupWidth(dxTarget, value);
@@ -151,7 +151,7 @@
 	bool? usePopover;
 	[Parameter]
 	bool? UsePopover {
-		get => isInitialized ? DevExpress.Ui.DxDropDownMenuInterop.GetUsePopover(dxTarget) : usePopover;
+		get => isInitialized ? DevExpress.Ui.DxDropDownMenuInterop.GetUsePopover(dxTarget).Result : usePopover;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDropDownMenuInterop.SetUsePopover(dxTarget, value);

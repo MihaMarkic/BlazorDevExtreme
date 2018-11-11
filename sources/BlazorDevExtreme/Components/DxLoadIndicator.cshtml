@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Ui.DxLoadIndicatorOptions>
+@inherits DxBlazorComponent<DevExpress.Ui.DxLoadIndicatorOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -13,13 +13,13 @@
 			indicatorSrc = indicatorSrc,
 		};
 	}
-	protected override void Init(DevExpress.Ui.DxLoadIndicatorOptions options) {
-		DevExpress.Ui.DxLoadIndicatorInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Ui.DxLoadIndicatorOptions options) {
+return 		DevExpress.Ui.DxLoadIndicatorInterop.Init(dxTarget, options);
 	}
 	string indicatorSrc;
 	[Parameter]
 	string IndicatorSrc {
-		get => isInitialized ? DevExpress.Ui.DxLoadIndicatorInterop.GetIndicatorSrc(dxTarget) : indicatorSrc;
+		get => isInitialized ? DevExpress.Ui.DxLoadIndicatorInterop.GetIndicatorSrc(dxTarget).Result : indicatorSrc;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxLoadIndicatorInterop.SetIndicatorSrc(dxTarget, value);

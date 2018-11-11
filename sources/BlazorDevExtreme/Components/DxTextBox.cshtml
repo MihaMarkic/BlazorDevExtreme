@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Ui.DxTextBoxOptions>
+@inherits DxBlazorComponent<DevExpress.Ui.DxTextBoxOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -15,13 +15,13 @@
 			value = value,
 		};
 	}
-	protected override void Init(DevExpress.Ui.DxTextBoxOptions options) {
-		DevExpress.Ui.DxTextBoxInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Ui.DxTextBoxOptions options) {
+return 		DevExpress.Ui.DxTextBoxInterop.Init(dxTarget, options);
 	}
 	object maxLength;
 	[Parameter]
 	object MaxLength {
-		get => isInitialized ? DevExpress.Ui.DxTextBoxInterop.GetMaxLength(dxTarget) : maxLength;
+		get => isInitialized ? DevExpress.Ui.DxTextBoxInterop.GetMaxLength(dxTarget).Result : maxLength;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTextBoxInterop.SetMaxLength(dxTarget, value);
@@ -33,7 +33,7 @@
 	string mode;
 	[Parameter]
 	string Mode {
-		get => isInitialized ? DevExpress.Ui.DxTextBoxInterop.GetMode(dxTarget) : mode;
+		get => isInitialized ? DevExpress.Ui.DxTextBoxInterop.GetMode(dxTarget).Result : mode;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTextBoxInterop.SetMode(dxTarget, value);
@@ -45,7 +45,7 @@
 	string value;
 	[Parameter]
 	string Value {
-		get => isInitialized ? DevExpress.Ui.DxTextBoxInterop.GetValue(dxTarget) : value;
+		get => isInitialized ? DevExpress.Ui.DxTextBoxInterop.GetValue(dxTarget).Result : value;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTextBoxInterop.SetValue(dxTarget, value);

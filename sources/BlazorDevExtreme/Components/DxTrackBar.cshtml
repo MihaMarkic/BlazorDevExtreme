@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Ui.DxTrackBarOptions>
+@inherits DxBlazorComponent<DevExpress.Ui.DxTrackBarOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -14,13 +14,13 @@
 			min = min,
 		};
 	}
-	protected override void Init(DevExpress.Ui.DxTrackBarOptions options) {
-		DevExpress.Ui.DxTrackBarInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Ui.DxTrackBarOptions options) {
+return 		DevExpress.Ui.DxTrackBarInterop.Init(dxTarget, options);
 	}
 	float? max;
 	[Parameter]
 	float? Max {
-		get => isInitialized ? DevExpress.Ui.DxTrackBarInterop.GetMax(dxTarget) : max;
+		get => isInitialized ? DevExpress.Ui.DxTrackBarInterop.GetMax(dxTarget).Result : max;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTrackBarInterop.SetMax(dxTarget, value);
@@ -32,7 +32,7 @@
 	float? min;
 	[Parameter]
 	float? Min {
-		get => isInitialized ? DevExpress.Ui.DxTrackBarInterop.GetMin(dxTarget) : min;
+		get => isInitialized ? DevExpress.Ui.DxTrackBarInterop.GetMin(dxTarget).Result : min;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTrackBarInterop.SetMin(dxTarget, value);

@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Ui.DxMultiViewOptions>
+@inherits DxBlazorComponent<DevExpress.Ui.DxMultiViewOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -18,13 +18,13 @@
 			swipeEnabled = swipeEnabled,
 		};
 	}
-	protected override void Init(DevExpress.Ui.DxMultiViewOptions options) {
-		DevExpress.Ui.DxMultiViewInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Ui.DxMultiViewOptions options) {
+return 		DevExpress.Ui.DxMultiViewInterop.Init(dxTarget, options);
 	}
 	bool? animationEnabled;
 	[Parameter]
 	bool? AnimationEnabled {
-		get => isInitialized ? DevExpress.Ui.DxMultiViewInterop.GetAnimationEnabled(dxTarget) : animationEnabled;
+		get => isInitialized ? DevExpress.Ui.DxMultiViewInterop.GetAnimationEnabled(dxTarget).Result : animationEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxMultiViewInterop.SetAnimationEnabled(dxTarget, value);
@@ -36,7 +36,7 @@
 	bool? deferRendering;
 	[Parameter]
 	bool? DeferRendering {
-		get => isInitialized ? DevExpress.Ui.DxMultiViewInterop.GetDeferRendering(dxTarget) : deferRendering;
+		get => isInitialized ? DevExpress.Ui.DxMultiViewInterop.GetDeferRendering(dxTarget).Result : deferRendering;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxMultiViewInterop.SetDeferRendering(dxTarget, value);
@@ -48,7 +48,7 @@
 	bool? focusStateEnabled;
 	[Parameter]
 	bool? FocusStateEnabled {
-		get => isInitialized ? DevExpress.Ui.DxMultiViewInterop.GetFocusStateEnabled(dxTarget) : focusStateEnabled;
+		get => isInitialized ? DevExpress.Ui.DxMultiViewInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxMultiViewInterop.SetFocusStateEnabled(dxTarget, value);
@@ -60,7 +60,7 @@
 	bool? loop;
 	[Parameter]
 	bool? Loop {
-		get => isInitialized ? DevExpress.Ui.DxMultiViewInterop.GetLoop(dxTarget) : loop;
+		get => isInitialized ? DevExpress.Ui.DxMultiViewInterop.GetLoop(dxTarget).Result : loop;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxMultiViewInterop.SetLoop(dxTarget, value);
@@ -72,7 +72,7 @@
 	float? selectedIndex;
 	[Parameter]
 	float? SelectedIndex {
-		get => isInitialized ? DevExpress.Ui.DxMultiViewInterop.GetSelectedIndex(dxTarget) : selectedIndex;
+		get => isInitialized ? DevExpress.Ui.DxMultiViewInterop.GetSelectedIndex(dxTarget).Result : selectedIndex;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxMultiViewInterop.SetSelectedIndex(dxTarget, value);
@@ -84,7 +84,7 @@
 	bool? swipeEnabled;
 	[Parameter]
 	bool? SwipeEnabled {
-		get => isInitialized ? DevExpress.Ui.DxMultiViewInterop.GetSwipeEnabled(dxTarget) : swipeEnabled;
+		get => isInitialized ? DevExpress.Ui.DxMultiViewInterop.GetSwipeEnabled(dxTarget).Result : swipeEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxMultiViewInterop.SetSwipeEnabled(dxTarget, value);

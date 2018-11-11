@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Viz.BaseWidgetOptions>
+@inherits DxBlazorComponent<DevExpress.Viz.BaseWidgetOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -27,13 +27,13 @@
 			onIncidentOccurredEnabled = onIncidentOccurredEnabled,
 		};
 	}
-	protected override void Init(DevExpress.Viz.BaseWidgetOptions options) {
-		DevExpress.Viz.BaseWidgetInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Viz.BaseWidgetOptions options) {
+return 		DevExpress.Viz.BaseWidgetInterop.Init(dxTarget, options);
 	}
 	object export;
 	[Parameter]
 	object Export {
-		get => isInitialized ? DevExpress.Viz.BaseWidgetInterop.GetExport(dxTarget) : export;
+		get => isInitialized ? DevExpress.Viz.BaseWidgetInterop.GetExport(dxTarget).Result : export;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.BaseWidgetInterop.SetExport(dxTarget, value);
@@ -45,7 +45,7 @@
 	object loadingIndicator;
 	[Parameter]
 	object LoadingIndicator {
-		get => isInitialized ? DevExpress.Viz.BaseWidgetInterop.GetLoadingIndicator(dxTarget) : loadingIndicator;
+		get => isInitialized ? DevExpress.Viz.BaseWidgetInterop.GetLoadingIndicator(dxTarget).Result : loadingIndicator;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.BaseWidgetInterop.SetLoadingIndicator(dxTarget, value);
@@ -57,7 +57,7 @@
 	object margin;
 	[Parameter]
 	object Margin {
-		get => isInitialized ? DevExpress.Viz.BaseWidgetInterop.GetMargin(dxTarget) : margin;
+		get => isInitialized ? DevExpress.Viz.BaseWidgetInterop.GetMargin(dxTarget).Result : margin;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.BaseWidgetInterop.SetMargin(dxTarget, value);
@@ -69,7 +69,7 @@
 	bool? pathModified;
 	[Parameter]
 	bool? PathModified {
-		get => isInitialized ? DevExpress.Viz.BaseWidgetInterop.GetPathModified(dxTarget) : pathModified;
+		get => isInitialized ? DevExpress.Viz.BaseWidgetInterop.GetPathModified(dxTarget).Result : pathModified;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.BaseWidgetInterop.SetPathModified(dxTarget, value);
@@ -81,7 +81,7 @@
 	bool? redrawOnResize;
 	[Parameter]
 	bool? RedrawOnResize {
-		get => isInitialized ? DevExpress.Viz.BaseWidgetInterop.GetRedrawOnResize(dxTarget) : redrawOnResize;
+		get => isInitialized ? DevExpress.Viz.BaseWidgetInterop.GetRedrawOnResize(dxTarget).Result : redrawOnResize;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.BaseWidgetInterop.SetRedrawOnResize(dxTarget, value);
@@ -93,7 +93,7 @@
 	bool? rtlEnabled;
 	[Parameter]
 	bool? RtlEnabled {
-		get => isInitialized ? DevExpress.Viz.BaseWidgetInterop.GetRtlEnabled(dxTarget) : rtlEnabled;
+		get => isInitialized ? DevExpress.Viz.BaseWidgetInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.BaseWidgetInterop.SetRtlEnabled(dxTarget, value);
@@ -105,7 +105,7 @@
 	object size;
 	[Parameter]
 	object Size {
-		get => isInitialized ? DevExpress.Viz.BaseWidgetInterop.GetSize(dxTarget) : size;
+		get => isInitialized ? DevExpress.Viz.BaseWidgetInterop.GetSize(dxTarget).Result : size;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.BaseWidgetInterop.SetSize(dxTarget, value);
@@ -117,7 +117,7 @@
 	string theme;
 	[Parameter]
 	string Theme {
-		get => isInitialized ? DevExpress.Viz.BaseWidgetInterop.GetTheme(dxTarget) : theme;
+		get => isInitialized ? DevExpress.Viz.BaseWidgetInterop.GetTheme(dxTarget).Result : theme;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.BaseWidgetInterop.SetTheme(dxTarget, value);
@@ -129,7 +129,7 @@
 	object title;
 	[Parameter]
 	object Title {
-		get => isInitialized ? DevExpress.Viz.BaseWidgetInterop.GetTitle(dxTarget) : title;
+		get => isInitialized ? DevExpress.Viz.BaseWidgetInterop.GetTitle(dxTarget).Result : title;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.BaseWidgetInterop.SetTitle(dxTarget, value);
@@ -141,7 +141,7 @@
 	object tooltip;
 	[Parameter]
 	object Tooltip {
-		get => isInitialized ? DevExpress.Viz.BaseWidgetInterop.GetTooltip(dxTarget) : tooltip;
+		get => isInitialized ? DevExpress.Viz.BaseWidgetInterop.GetTooltip(dxTarget).Result : tooltip;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.BaseWidgetInterop.SetTooltip(dxTarget, value);
@@ -227,7 +227,7 @@
 		DevExpress.Viz.BaseWidgetInterop.ExportTo(dxTarget, fileName, format);
 	}
 	public object GetSizeEx() {
-		return DevExpress.Viz.BaseWidgetInterop.GetSizeEx(dxTarget);
+		return DevExpress.Viz.BaseWidgetInterop.GetSizeEx(dxTarget).Result;
 	}
 	public void HideLoadingIndicator() {
 		DevExpress.Viz.BaseWidgetInterop.HideLoadingIndicator(dxTarget);
@@ -242,7 +242,7 @@
 		DevExpress.Viz.BaseWidgetInterop.ShowLoadingIndicator(dxTarget);
 	}
 	public string Svg() {
-		return DevExpress.Viz.BaseWidgetInterop.Svg(dxTarget);
+		return DevExpress.Viz.BaseWidgetInterop.Svg(dxTarget).Result;
 	}
 	public void Dispose() {
 		DevExpress.Viz.BaseWidgetInterop.Drawn -= BaseWidget_Drawn;

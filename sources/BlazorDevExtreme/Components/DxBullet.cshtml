@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Viz.Sparklines.DxBulletOptions>
+@inherits DxBlazorComponent<DevExpress.Viz.Sparklines.DxBulletOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -21,13 +21,13 @@
 			value = value,
 		};
 	}
-	protected override void Init(DevExpress.Viz.Sparklines.DxBulletOptions options) {
-		DevExpress.Viz.DxBulletInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Viz.Sparklines.DxBulletOptions options) {
+return 		DevExpress.Viz.DxBulletInterop.Init(dxTarget, options);
 	}
 	string color;
 	[Parameter]
 	string Color {
-		get => isInitialized ? DevExpress.Viz.DxBulletInterop.GetColor(dxTarget) : color;
+		get => isInitialized ? DevExpress.Viz.DxBulletInterop.GetColor(dxTarget).Result : color;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxBulletInterop.SetColor(dxTarget, value);
@@ -39,7 +39,7 @@
 	float? endScaleValue;
 	[Parameter]
 	float? EndScaleValue {
-		get => isInitialized ? DevExpress.Viz.DxBulletInterop.GetEndScaleValue(dxTarget) : endScaleValue;
+		get => isInitialized ? DevExpress.Viz.DxBulletInterop.GetEndScaleValue(dxTarget).Result : endScaleValue;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxBulletInterop.SetEndScaleValue(dxTarget, value);
@@ -51,7 +51,7 @@
 	bool? showTarget;
 	[Parameter]
 	bool? ShowTarget {
-		get => isInitialized ? DevExpress.Viz.DxBulletInterop.GetShowTarget(dxTarget) : showTarget;
+		get => isInitialized ? DevExpress.Viz.DxBulletInterop.GetShowTarget(dxTarget).Result : showTarget;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxBulletInterop.SetShowTarget(dxTarget, value);
@@ -63,7 +63,7 @@
 	bool? showZeroLevel;
 	[Parameter]
 	bool? ShowZeroLevel {
-		get => isInitialized ? DevExpress.Viz.DxBulletInterop.GetShowZeroLevel(dxTarget) : showZeroLevel;
+		get => isInitialized ? DevExpress.Viz.DxBulletInterop.GetShowZeroLevel(dxTarget).Result : showZeroLevel;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxBulletInterop.SetShowZeroLevel(dxTarget, value);
@@ -75,7 +75,7 @@
 	float? startScaleValue;
 	[Parameter]
 	float? StartScaleValue {
-		get => isInitialized ? DevExpress.Viz.DxBulletInterop.GetStartScaleValue(dxTarget) : startScaleValue;
+		get => isInitialized ? DevExpress.Viz.DxBulletInterop.GetStartScaleValue(dxTarget).Result : startScaleValue;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxBulletInterop.SetStartScaleValue(dxTarget, value);
@@ -87,7 +87,7 @@
 	float? target;
 	[Parameter]
 	float? Target {
-		get => isInitialized ? DevExpress.Viz.DxBulletInterop.GetTarget(dxTarget) : target;
+		get => isInitialized ? DevExpress.Viz.DxBulletInterop.GetTarget(dxTarget).Result : target;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxBulletInterop.SetTarget(dxTarget, value);
@@ -99,7 +99,7 @@
 	string targetColor;
 	[Parameter]
 	string TargetColor {
-		get => isInitialized ? DevExpress.Viz.DxBulletInterop.GetTargetColor(dxTarget) : targetColor;
+		get => isInitialized ? DevExpress.Viz.DxBulletInterop.GetTargetColor(dxTarget).Result : targetColor;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxBulletInterop.SetTargetColor(dxTarget, value);
@@ -111,7 +111,7 @@
 	float? targetWidth;
 	[Parameter]
 	float? TargetWidth {
-		get => isInitialized ? DevExpress.Viz.DxBulletInterop.GetTargetWidth(dxTarget) : targetWidth;
+		get => isInitialized ? DevExpress.Viz.DxBulletInterop.GetTargetWidth(dxTarget).Result : targetWidth;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxBulletInterop.SetTargetWidth(dxTarget, value);
@@ -123,7 +123,7 @@
 	float? value;
 	[Parameter]
 	float? Value {
-		get => isInitialized ? DevExpress.Viz.DxBulletInterop.GetValue(dxTarget) : value;
+		get => isInitialized ? DevExpress.Viz.DxBulletInterop.GetValue(dxTarget).Result : value;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxBulletInterop.SetValue(dxTarget, value);

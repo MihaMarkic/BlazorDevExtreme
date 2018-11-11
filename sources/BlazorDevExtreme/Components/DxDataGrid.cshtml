@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Ui.DxDataGridOptions>
+@inherits DxBlazorComponent<DevExpress.Ui.DxDataGridOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -40,13 +40,13 @@
 			onRowPreparedEnabled = onRowPreparedEnabled,
 		};
 	}
-	protected override void Init(DevExpress.Ui.DxDataGridOptions options) {
-		DevExpress.Ui.DxDataGridInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Ui.DxDataGridOptions options) {
+return 		DevExpress.Ui.DxDataGridInterop.Init(dxTarget, options);
 	}
 	object columns;
 	[Parameter]
 	object Columns {
-		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetColumns(dxTarget) : columns;
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetColumns(dxTarget).Result : columns;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDataGridInterop.SetColumns(dxTarget, value);
@@ -58,7 +58,7 @@
 	object customizeColumns;
 	[Parameter]
 	object CustomizeColumns {
-		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetCustomizeColumns(dxTarget) : customizeColumns;
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetCustomizeColumns(dxTarget).Result : customizeColumns;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDataGridInterop.SetCustomizeColumns(dxTarget, value);
@@ -70,7 +70,7 @@
 	object customizeExportData;
 	[Parameter]
 	object CustomizeExportData {
-		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetCustomizeExportData(dxTarget) : customizeExportData;
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetCustomizeExportData(dxTarget).Result : customizeExportData;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDataGridInterop.SetCustomizeExportData(dxTarget, value);
@@ -82,7 +82,7 @@
 	object editing;
 	[Parameter]
 	object Editing {
-		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetEditing(dxTarget) : editing;
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetEditing(dxTarget).Result : editing;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDataGridInterop.SetEditing(dxTarget, value);
@@ -94,7 +94,7 @@
 	object export;
 	[Parameter]
 	object Export {
-		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetExport(dxTarget) : export;
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetExport(dxTarget).Result : export;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDataGridInterop.SetExport(dxTarget, value);
@@ -106,7 +106,7 @@
 	object grouping;
 	[Parameter]
 	object Grouping {
-		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetGrouping(dxTarget) : grouping;
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetGrouping(dxTarget).Result : grouping;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDataGridInterop.SetGrouping(dxTarget, value);
@@ -118,7 +118,7 @@
 	object groupPanel;
 	[Parameter]
 	object GroupPanel {
-		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetGroupPanel(dxTarget) : groupPanel;
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetGroupPanel(dxTarget).Result : groupPanel;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDataGridInterop.SetGroupPanel(dxTarget, value);
@@ -130,7 +130,7 @@
 	object keyExpr;
 	[Parameter]
 	object KeyExpr {
-		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetKeyExpr(dxTarget) : keyExpr;
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetKeyExpr(dxTarget).Result : keyExpr;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDataGridInterop.SetKeyExpr(dxTarget, value);
@@ -142,7 +142,7 @@
 	object masterDetail;
 	[Parameter]
 	object MasterDetail {
-		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetMasterDetail(dxTarget) : masterDetail;
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetMasterDetail(dxTarget).Result : masterDetail;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDataGridInterop.SetMasterDetail(dxTarget, value);
@@ -154,7 +154,7 @@
 	object remoteOperations;
 	[Parameter]
 	object RemoteOperations {
-		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetRemoteOperations(dxTarget) : remoteOperations;
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetRemoteOperations(dxTarget).Result : remoteOperations;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDataGridInterop.SetRemoteOperations(dxTarget, value);
@@ -166,7 +166,7 @@
 	object rowTemplate;
 	[Parameter]
 	object RowTemplate {
-		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetRowTemplate(dxTarget) : rowTemplate;
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetRowTemplate(dxTarget).Result : rowTemplate;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDataGridInterop.SetRowTemplate(dxTarget, value);
@@ -178,7 +178,7 @@
 	object scrolling;
 	[Parameter]
 	object Scrolling {
-		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetScrolling(dxTarget) : scrolling;
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetScrolling(dxTarget).Result : scrolling;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDataGridInterop.SetScrolling(dxTarget, value);
@@ -190,7 +190,7 @@
 	object selection;
 	[Parameter]
 	object Selection {
-		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetSelection(dxTarget) : selection;
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetSelection(dxTarget).Result : selection;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDataGridInterop.SetSelection(dxTarget, value);
@@ -202,7 +202,7 @@
 	object selectionFilter;
 	[Parameter]
 	object SelectionFilter {
-		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetSelectionFilter(dxTarget) : selectionFilter;
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetSelectionFilter(dxTarget).Result : selectionFilter;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDataGridInterop.SetSelectionFilter(dxTarget, value);
@@ -214,7 +214,7 @@
 	object sortByGroupSummaryInfo;
 	[Parameter]
 	object SortByGroupSummaryInfo {
-		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetSortByGroupSummaryInfo(dxTarget) : sortByGroupSummaryInfo;
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetSortByGroupSummaryInfo(dxTarget).Result : sortByGroupSummaryInfo;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDataGridInterop.SetSortByGroupSummaryInfo(dxTarget, value);
@@ -226,7 +226,7 @@
 	object summary;
 	[Parameter]
 	object Summary {
-		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetSummary(dxTarget) : summary;
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetSummary(dxTarget).Result : summary;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDataGridInterop.SetSummary(dxTarget, value);
@@ -419,49 +419,49 @@
 		DevExpress.Ui.DxDataGridInterop.CollapseAll(dxTarget, groupIndex);
 	}
 	public object CollapseRow(object key) {
-		return DevExpress.Ui.DxDataGridInterop.CollapseRow(dxTarget, key);
+		return DevExpress.Ui.DxDataGridInterop.CollapseRow(dxTarget, key).Result;
 	}
 	public void ExpandAll(float groupIndex) {
 		DevExpress.Ui.DxDataGridInterop.ExpandAll(dxTarget, groupIndex);
 	}
 	public object ExpandRow(object key) {
-		return DevExpress.Ui.DxDataGridInterop.ExpandRow(dxTarget, key);
+		return DevExpress.Ui.DxDataGridInterop.ExpandRow(dxTarget, key).Result;
 	}
 	public void ExportToExcel(bool selectionOnly) {
 		DevExpress.Ui.DxDataGridInterop.ExportToExcel(dxTarget, selectionOnly);
 	}
 	public object GetSelectedRowKeys() {
-		return DevExpress.Ui.DxDataGridInterop.GetSelectedRowKeys(dxTarget);
+		return DevExpress.Ui.DxDataGridInterop.GetSelectedRowKeys(dxTarget).Result;
 	}
 	public object GetSelectedRowsData() {
-		return DevExpress.Ui.DxDataGridInterop.GetSelectedRowsData(dxTarget);
+		return DevExpress.Ui.DxDataGridInterop.GetSelectedRowsData(dxTarget).Result;
 	}
 	public object GetTotalSummaryValue(string summaryItemName) {
-		return DevExpress.Ui.DxDataGridInterop.GetTotalSummaryValue(dxTarget, summaryItemName);
+		return DevExpress.Ui.DxDataGridInterop.GetTotalSummaryValue(dxTarget, summaryItemName).Result;
 	}
 	public object GetVisibleColumns() {
-		return DevExpress.Ui.DxDataGridInterop.GetVisibleColumns(dxTarget);
+		return DevExpress.Ui.DxDataGridInterop.GetVisibleColumns(dxTarget).Result;
 	}
 	public object GetVisibleColumns(float headerLevel) {
-		return DevExpress.Ui.DxDataGridInterop.GetVisibleColumns(dxTarget, headerLevel);
+		return DevExpress.Ui.DxDataGridInterop.GetVisibleColumns(dxTarget, headerLevel).Result;
 	}
 	public object GetVisibleRows() {
-		return DevExpress.Ui.DxDataGridInterop.GetVisibleRows(dxTarget);
+		return DevExpress.Ui.DxDataGridInterop.GetVisibleRows(dxTarget).Result;
 	}
 	public void InsertRow() {
 		DevExpress.Ui.DxDataGridInterop.InsertRow(dxTarget);
 	}
 	public bool IsRowExpanded(object key) {
-		return DevExpress.Ui.DxDataGridInterop.IsRowExpanded(dxTarget, key);
+		return DevExpress.Ui.DxDataGridInterop.IsRowExpanded(dxTarget, key).Result;
 	}
 	public bool IsRowSelected(object data) {
-		return DevExpress.Ui.DxDataGridInterop.IsRowSelected(dxTarget, data);
+		return DevExpress.Ui.DxDataGridInterop.IsRowSelected(dxTarget, data).Result;
 	}
 	public void RemoveRow(float rowIndex) {
 		DevExpress.Ui.DxDataGridInterop.RemoveRow(dxTarget, rowIndex);
 	}
 	public float TotalCount() {
-		return DevExpress.Ui.DxDataGridInterop.TotalCount(dxTarget);
+		return DevExpress.Ui.DxDataGridInterop.TotalCount(dxTarget).Result;
 	}
 	public void Dispose() {
 		DevExpress.Ui.DxDataGridInterop.CellClick -= DxDataGrid_CellClick;

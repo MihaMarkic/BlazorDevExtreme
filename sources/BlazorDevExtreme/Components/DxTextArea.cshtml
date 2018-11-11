@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Ui.DxTextAreaOptions>
+@inherits DxBlazorComponent<DevExpress.Ui.DxTextAreaOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -16,13 +16,13 @@
 			spellcheck = spellcheck,
 		};
 	}
-	protected override void Init(DevExpress.Ui.DxTextAreaOptions options) {
-		DevExpress.Ui.DxTextAreaInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Ui.DxTextAreaOptions options) {
+return 		DevExpress.Ui.DxTextAreaInterop.Init(dxTarget, options);
 	}
 	bool? autoResizeEnabled;
 	[Parameter]
 	bool? AutoResizeEnabled {
-		get => isInitialized ? DevExpress.Ui.DxTextAreaInterop.GetAutoResizeEnabled(dxTarget) : autoResizeEnabled;
+		get => isInitialized ? DevExpress.Ui.DxTextAreaInterop.GetAutoResizeEnabled(dxTarget).Result : autoResizeEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTextAreaInterop.SetAutoResizeEnabled(dxTarget, value);
@@ -34,7 +34,7 @@
 	object maxHeight;
 	[Parameter]
 	object MaxHeight {
-		get => isInitialized ? DevExpress.Ui.DxTextAreaInterop.GetMaxHeight(dxTarget) : maxHeight;
+		get => isInitialized ? DevExpress.Ui.DxTextAreaInterop.GetMaxHeight(dxTarget).Result : maxHeight;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTextAreaInterop.SetMaxHeight(dxTarget, value);
@@ -46,7 +46,7 @@
 	object minHeight;
 	[Parameter]
 	object MinHeight {
-		get => isInitialized ? DevExpress.Ui.DxTextAreaInterop.GetMinHeight(dxTarget) : minHeight;
+		get => isInitialized ? DevExpress.Ui.DxTextAreaInterop.GetMinHeight(dxTarget).Result : minHeight;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTextAreaInterop.SetMinHeight(dxTarget, value);
@@ -58,7 +58,7 @@
 	bool? spellcheck;
 	[Parameter]
 	bool? Spellcheck {
-		get => isInitialized ? DevExpress.Ui.DxTextAreaInterop.GetSpellcheck(dxTarget) : spellcheck;
+		get => isInitialized ? DevExpress.Ui.DxTextAreaInterop.GetSpellcheck(dxTarget).Result : spellcheck;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTextAreaInterop.SetSpellcheck(dxTarget, value);

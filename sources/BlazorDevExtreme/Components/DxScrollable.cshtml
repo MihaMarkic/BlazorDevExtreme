@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Ui.DxScrollableOptions>
+@inherits DxBlazorComponent<DevExpress.Ui.DxScrollableOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -21,13 +21,13 @@
 			onUpdatedEnabled = onUpdatedEnabled,
 		};
 	}
-	protected override void Init(DevExpress.Ui.DxScrollableOptions options) {
-		DevExpress.Ui.DxScrollableInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Ui.DxScrollableOptions options) {
+return 		DevExpress.Ui.DxScrollableInterop.Init(dxTarget, options);
 	}
 	bool? bounceEnabled;
 	[Parameter]
 	bool? BounceEnabled {
-		get => isInitialized ? DevExpress.Ui.DxScrollableInterop.GetBounceEnabled(dxTarget) : bounceEnabled;
+		get => isInitialized ? DevExpress.Ui.DxScrollableInterop.GetBounceEnabled(dxTarget).Result : bounceEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxScrollableInterop.SetBounceEnabled(dxTarget, value);
@@ -39,7 +39,7 @@
 	string direction;
 	[Parameter]
 	string Direction {
-		get => isInitialized ? DevExpress.Ui.DxScrollableInterop.GetDirection(dxTarget) : direction;
+		get => isInitialized ? DevExpress.Ui.DxScrollableInterop.GetDirection(dxTarget).Result : direction;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxScrollableInterop.SetDirection(dxTarget, value);
@@ -51,7 +51,7 @@
 	bool? disabled;
 	[Parameter]
 	bool? Disabled {
-		get => isInitialized ? DevExpress.Ui.DxScrollableInterop.GetDisabled(dxTarget) : disabled;
+		get => isInitialized ? DevExpress.Ui.DxScrollableInterop.GetDisabled(dxTarget).Result : disabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxScrollableInterop.SetDisabled(dxTarget, value);
@@ -63,7 +63,7 @@
 	bool? scrollByContent;
 	[Parameter]
 	bool? ScrollByContent {
-		get => isInitialized ? DevExpress.Ui.DxScrollableInterop.GetScrollByContent(dxTarget) : scrollByContent;
+		get => isInitialized ? DevExpress.Ui.DxScrollableInterop.GetScrollByContent(dxTarget).Result : scrollByContent;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxScrollableInterop.SetScrollByContent(dxTarget, value);
@@ -75,7 +75,7 @@
 	bool? scrollByThumb;
 	[Parameter]
 	bool? ScrollByThumb {
-		get => isInitialized ? DevExpress.Ui.DxScrollableInterop.GetScrollByThumb(dxTarget) : scrollByThumb;
+		get => isInitialized ? DevExpress.Ui.DxScrollableInterop.GetScrollByThumb(dxTarget).Result : scrollByThumb;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxScrollableInterop.SetScrollByThumb(dxTarget, value);
@@ -87,7 +87,7 @@
 	string showScrollbar;
 	[Parameter]
 	string ShowScrollbar {
-		get => isInitialized ? DevExpress.Ui.DxScrollableInterop.GetShowScrollbar(dxTarget) : showScrollbar;
+		get => isInitialized ? DevExpress.Ui.DxScrollableInterop.GetShowScrollbar(dxTarget).Result : showScrollbar;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxScrollableInterop.SetShowScrollbar(dxTarget, value);
@@ -99,7 +99,7 @@
 	bool? useNative;
 	[Parameter]
 	bool? UseNative {
-		get => isInitialized ? DevExpress.Ui.DxScrollableInterop.GetUseNative(dxTarget) : useNative;
+		get => isInitialized ? DevExpress.Ui.DxScrollableInterop.GetUseNative(dxTarget).Result : useNative;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxScrollableInterop.SetUseNative(dxTarget, value);
@@ -140,13 +140,13 @@
 		}
 	}
 	public float ClientHeight() {
-		return DevExpress.Ui.DxScrollableInterop.ClientHeight(dxTarget);
+		return DevExpress.Ui.DxScrollableInterop.ClientHeight(dxTarget).Result;
 	}
 	public float ClientWidth() {
-		return DevExpress.Ui.DxScrollableInterop.ClientWidth(dxTarget);
+		return DevExpress.Ui.DxScrollableInterop.ClientWidth(dxTarget).Result;
 	}
 	public object Content() {
-		return DevExpress.Ui.DxScrollableInterop.Content(dxTarget);
+		return DevExpress.Ui.DxScrollableInterop.Content(dxTarget).Result;
 	}
 	public void ScrollBy(float distance) {
 		DevExpress.Ui.DxScrollableInterop.ScrollBy(dxTarget, distance);
@@ -155,13 +155,13 @@
 		DevExpress.Ui.DxScrollableInterop.ScrollBy(dxTarget, distanceObject);
 	}
 	public float ScrollHeight() {
-		return DevExpress.Ui.DxScrollableInterop.ScrollHeight(dxTarget);
+		return DevExpress.Ui.DxScrollableInterop.ScrollHeight(dxTarget).Result;
 	}
 	public float ScrollLeft() {
-		return DevExpress.Ui.DxScrollableInterop.ScrollLeft(dxTarget);
+		return DevExpress.Ui.DxScrollableInterop.ScrollLeft(dxTarget).Result;
 	}
 	public object ScrollOffset() {
-		return DevExpress.Ui.DxScrollableInterop.ScrollOffset(dxTarget);
+		return DevExpress.Ui.DxScrollableInterop.ScrollOffset(dxTarget).Result;
 	}
 	public void ScrollTo(float targetLocation) {
 		DevExpress.Ui.DxScrollableInterop.ScrollTo(dxTarget, targetLocation);
@@ -173,13 +173,13 @@
 		DevExpress.Ui.DxScrollableInterop.ScrollToElement(dxTarget, element);
 	}
 	public float ScrollTop() {
-		return DevExpress.Ui.DxScrollableInterop.ScrollTop(dxTarget);
+		return DevExpress.Ui.DxScrollableInterop.ScrollTop(dxTarget).Result;
 	}
 	public float ScrollWidth() {
-		return DevExpress.Ui.DxScrollableInterop.ScrollWidth(dxTarget);
+		return DevExpress.Ui.DxScrollableInterop.ScrollWidth(dxTarget).Result;
 	}
 	public object Update() {
-		return DevExpress.Ui.DxScrollableInterop.Update(dxTarget);
+		return DevExpress.Ui.DxScrollableInterop.Update(dxTarget).Result;
 	}
 	public void Dispose() {
 		DevExpress.Ui.DxScrollableInterop.Scroll -= DxScrollable_Scroll;

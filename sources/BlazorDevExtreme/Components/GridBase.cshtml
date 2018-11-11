@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Ui.GridBaseOptions>
+@inherits DxBlazorComponent<DevExpress.Ui.GridBaseOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -69,13 +69,13 @@
 			onToolbarPreparingEnabled = onToolbarPreparingEnabled,
 		};
 	}
-	protected override void Init(DevExpress.Ui.GridBaseOptions options) {
-		DevExpress.Ui.GridBaseInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Ui.GridBaseOptions options) {
+return 		DevExpress.Ui.GridBaseInterop.Init(dxTarget, options);
 	}
 	bool? allowColumnReordering;
 	[Parameter]
 	bool? AllowColumnReordering {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetAllowColumnReordering(dxTarget) : allowColumnReordering;
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetAllowColumnReordering(dxTarget).Result : allowColumnReordering;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.GridBaseInterop.SetAllowColumnReordering(dxTarget, value);
@@ -87,7 +87,7 @@
 	bool? allowColumnResizing;
 	[Parameter]
 	bool? AllowColumnResizing {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetAllowColumnResizing(dxTarget) : allowColumnResizing;
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetAllowColumnResizing(dxTarget).Result : allowColumnResizing;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.GridBaseInterop.SetAllowColumnResizing(dxTarget, value);
@@ -99,7 +99,7 @@
 	bool? cacheEnabled;
 	[Parameter]
 	bool? CacheEnabled {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetCacheEnabled(dxTarget) : cacheEnabled;
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetCacheEnabled(dxTarget).Result : cacheEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.GridBaseInterop.SetCacheEnabled(dxTarget, value);
@@ -111,7 +111,7 @@
 	bool? cellHintEnabled;
 	[Parameter]
 	bool? CellHintEnabled {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetCellHintEnabled(dxTarget) : cellHintEnabled;
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetCellHintEnabled(dxTarget).Result : cellHintEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.GridBaseInterop.SetCellHintEnabled(dxTarget, value);
@@ -123,7 +123,7 @@
 	bool? columnAutoWidth;
 	[Parameter]
 	bool? ColumnAutoWidth {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetColumnAutoWidth(dxTarget) : columnAutoWidth;
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetColumnAutoWidth(dxTarget).Result : columnAutoWidth;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.GridBaseInterop.SetColumnAutoWidth(dxTarget, value);
@@ -135,7 +135,7 @@
 	object columnChooser;
 	[Parameter]
 	object ColumnChooser {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetColumnChooser(dxTarget) : columnChooser;
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetColumnChooser(dxTarget).Result : columnChooser;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.GridBaseInterop.SetColumnChooser(dxTarget, value);
@@ -147,7 +147,7 @@
 	object columnFixing;
 	[Parameter]
 	object ColumnFixing {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetColumnFixing(dxTarget) : columnFixing;
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetColumnFixing(dxTarget).Result : columnFixing;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.GridBaseInterop.SetColumnFixing(dxTarget, value);
@@ -159,7 +159,7 @@
 	bool? columnHidingEnabled;
 	[Parameter]
 	bool? ColumnHidingEnabled {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetColumnHidingEnabled(dxTarget) : columnHidingEnabled;
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetColumnHidingEnabled(dxTarget).Result : columnHidingEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.GridBaseInterop.SetColumnHidingEnabled(dxTarget, value);
@@ -171,7 +171,7 @@
 	float? columnMinWidth;
 	[Parameter]
 	float? ColumnMinWidth {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetColumnMinWidth(dxTarget) : columnMinWidth;
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetColumnMinWidth(dxTarget).Result : columnMinWidth;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.GridBaseInterop.SetColumnMinWidth(dxTarget, value);
@@ -183,7 +183,7 @@
 	string columnResizingMode;
 	[Parameter]
 	string ColumnResizingMode {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetColumnResizingMode(dxTarget) : columnResizingMode;
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetColumnResizingMode(dxTarget).Result : columnResizingMode;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.GridBaseInterop.SetColumnResizingMode(dxTarget, value);
@@ -195,7 +195,7 @@
 	object columns;
 	[Parameter]
 	object Columns {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetColumns(dxTarget) : columns;
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetColumns(dxTarget).Result : columns;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.GridBaseInterop.SetColumns(dxTarget, value);
@@ -207,7 +207,7 @@
 	float? columnWidth;
 	[Parameter]
 	float? ColumnWidth {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetColumnWidth(dxTarget) : columnWidth;
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetColumnWidth(dxTarget).Result : columnWidth;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.GridBaseInterop.SetColumnWidth(dxTarget, value);
@@ -219,7 +219,7 @@
 	object dataSource;
 	[Parameter]
 	object DataSource {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetDataSource(dxTarget) : dataSource;
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetDataSource(dxTarget).Result : dataSource;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.GridBaseInterop.SetDataSource(dxTarget, value);
@@ -231,7 +231,7 @@
 	string dateSerializationFormat;
 	[Parameter]
 	string DateSerializationFormat {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetDateSerializationFormat(dxTarget) : dateSerializationFormat;
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetDateSerializationFormat(dxTarget).Result : dateSerializationFormat;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.GridBaseInterop.SetDateSerializationFormat(dxTarget, value);
@@ -243,7 +243,7 @@
 	object editing;
 	[Parameter]
 	object Editing {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetEditing(dxTarget) : editing;
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetEditing(dxTarget).Result : editing;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.GridBaseInterop.SetEditing(dxTarget, value);
@@ -255,7 +255,7 @@
 	bool? errorRowEnabled;
 	[Parameter]
 	bool? ErrorRowEnabled {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetErrorRowEnabled(dxTarget) : errorRowEnabled;
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetErrorRowEnabled(dxTarget).Result : errorRowEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.GridBaseInterop.SetErrorRowEnabled(dxTarget, value);
@@ -267,7 +267,7 @@
 	object filterBuilder;
 	[Parameter]
 	object FilterBuilder {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetFilterBuilder(dxTarget) : filterBuilder;
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetFilterBuilder(dxTarget).Result : filterBuilder;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.GridBaseInterop.SetFilterBuilder(dxTarget, value);
@@ -279,7 +279,7 @@
 	object filterBuilderPopup;
 	[Parameter]
 	object FilterBuilderPopup {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetFilterBuilderPopup(dxTarget) : filterBuilderPopup;
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetFilterBuilderPopup(dxTarget).Result : filterBuilderPopup;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.GridBaseInterop.SetFilterBuilderPopup(dxTarget, value);
@@ -291,7 +291,7 @@
 	object filterPanel;
 	[Parameter]
 	object FilterPanel {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetFilterPanel(dxTarget) : filterPanel;
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetFilterPanel(dxTarget).Result : filterPanel;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.GridBaseInterop.SetFilterPanel(dxTarget, value);
@@ -303,7 +303,7 @@
 	object filterRow;
 	[Parameter]
 	object FilterRow {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetFilterRow(dxTarget) : filterRow;
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetFilterRow(dxTarget).Result : filterRow;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.GridBaseInterop.SetFilterRow(dxTarget, value);
@@ -315,7 +315,7 @@
 	object filterSyncEnabled;
 	[Parameter]
 	object FilterSyncEnabled {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetFilterSyncEnabled(dxTarget) : filterSyncEnabled;
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetFilterSyncEnabled(dxTarget).Result : filterSyncEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.GridBaseInterop.SetFilterSyncEnabled(dxTarget, value);
@@ -327,7 +327,7 @@
 	object filterValue;
 	[Parameter]
 	object FilterValue {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetFilterValue(dxTarget) : filterValue;
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetFilterValue(dxTarget).Result : filterValue;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.GridBaseInterop.SetFilterValue(dxTarget, value);
@@ -339,7 +339,7 @@
 	object headerFilter;
 	[Parameter]
 	object HeaderFilter {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetHeaderFilter(dxTarget) : headerFilter;
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetHeaderFilter(dxTarget).Result : headerFilter;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.GridBaseInterop.SetHeaderFilter(dxTarget, value);
@@ -351,7 +351,7 @@
 	object loadPanel;
 	[Parameter]
 	object LoadPanel {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetLoadPanel(dxTarget) : loadPanel;
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetLoadPanel(dxTarget).Result : loadPanel;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.GridBaseInterop.SetLoadPanel(dxTarget, value);
@@ -363,7 +363,7 @@
 	string noDataText;
 	[Parameter]
 	string NoDataText {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetNoDataText(dxTarget) : noDataText;
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetNoDataText(dxTarget).Result : noDataText;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.GridBaseInterop.SetNoDataText(dxTarget, value);
@@ -375,7 +375,7 @@
 	object pager;
 	[Parameter]
 	object Pager {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetPager(dxTarget) : pager;
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetPager(dxTarget).Result : pager;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.GridBaseInterop.SetPager(dxTarget, value);
@@ -387,7 +387,7 @@
 	object paging;
 	[Parameter]
 	object Paging {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetPaging(dxTarget) : paging;
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetPaging(dxTarget).Result : paging;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.GridBaseInterop.SetPaging(dxTarget, value);
@@ -399,7 +399,7 @@
 	bool? rowAlternationEnabled;
 	[Parameter]
 	bool? RowAlternationEnabled {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetRowAlternationEnabled(dxTarget) : rowAlternationEnabled;
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetRowAlternationEnabled(dxTarget).Result : rowAlternationEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.GridBaseInterop.SetRowAlternationEnabled(dxTarget, value);
@@ -411,7 +411,7 @@
 	object scrolling;
 	[Parameter]
 	object Scrolling {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetScrolling(dxTarget) : scrolling;
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetScrolling(dxTarget).Result : scrolling;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.GridBaseInterop.SetScrolling(dxTarget, value);
@@ -423,7 +423,7 @@
 	object searchPanel;
 	[Parameter]
 	object SearchPanel {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetSearchPanel(dxTarget) : searchPanel;
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetSearchPanel(dxTarget).Result : searchPanel;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.GridBaseInterop.SetSearchPanel(dxTarget, value);
@@ -435,7 +435,7 @@
 	object selectedRowKeys;
 	[Parameter]
 	object SelectedRowKeys {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetSelectedRowKeys(dxTarget) : selectedRowKeys;
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetSelectedRowKeys(dxTarget).Result : selectedRowKeys;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.GridBaseInterop.SetSelectedRowKeys(dxTarget, value);
@@ -447,7 +447,7 @@
 	object selection;
 	[Parameter]
 	object Selection {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetSelection(dxTarget) : selection;
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetSelection(dxTarget).Result : selection;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.GridBaseInterop.SetSelection(dxTarget, value);
@@ -459,7 +459,7 @@
 	bool? showBorders;
 	[Parameter]
 	bool? ShowBorders {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetShowBorders(dxTarget) : showBorders;
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetShowBorders(dxTarget).Result : showBorders;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.GridBaseInterop.SetShowBorders(dxTarget, value);
@@ -471,7 +471,7 @@
 	bool? showColumnHeaders;
 	[Parameter]
 	bool? ShowColumnHeaders {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetShowColumnHeaders(dxTarget) : showColumnHeaders;
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetShowColumnHeaders(dxTarget).Result : showColumnHeaders;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.GridBaseInterop.SetShowColumnHeaders(dxTarget, value);
@@ -483,7 +483,7 @@
 	bool? showColumnLines;
 	[Parameter]
 	bool? ShowColumnLines {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetShowColumnLines(dxTarget) : showColumnLines;
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetShowColumnLines(dxTarget).Result : showColumnLines;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.GridBaseInterop.SetShowColumnLines(dxTarget, value);
@@ -495,7 +495,7 @@
 	bool? showRowLines;
 	[Parameter]
 	bool? ShowRowLines {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetShowRowLines(dxTarget) : showRowLines;
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetShowRowLines(dxTarget).Result : showRowLines;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.GridBaseInterop.SetShowRowLines(dxTarget, value);
@@ -507,7 +507,7 @@
 	object sorting;
 	[Parameter]
 	object Sorting {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetSorting(dxTarget) : sorting;
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetSorting(dxTarget).Result : sorting;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.GridBaseInterop.SetSorting(dxTarget, value);
@@ -519,7 +519,7 @@
 	object stateStoring;
 	[Parameter]
 	object StateStoring {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetStateStoring(dxTarget) : stateStoring;
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetStateStoring(dxTarget).Result : stateStoring;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.GridBaseInterop.SetStateStoring(dxTarget, value);
@@ -531,7 +531,7 @@
 	bool? twoWayBindingEnabled;
 	[Parameter]
 	bool? TwoWayBindingEnabled {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetTwoWayBindingEnabled(dxTarget) : twoWayBindingEnabled;
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetTwoWayBindingEnabled(dxTarget).Result : twoWayBindingEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.GridBaseInterop.SetTwoWayBindingEnabled(dxTarget, value);
@@ -543,7 +543,7 @@
 	bool? wordWrapEnabled;
 	[Parameter]
 	bool? WordWrapEnabled {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetWordWrapEnabled(dxTarget) : wordWrapEnabled;
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetWordWrapEnabled(dxTarget).Result : wordWrapEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.GridBaseInterop.SetWordWrapEnabled(dxTarget, value);
@@ -797,19 +797,19 @@
 		DevExpress.Ui.GridBaseInterop.BeginCustomLoading(dxTarget, messageText);
 	}
 	public object ByKey(object key) {
-		return DevExpress.Ui.GridBaseInterop.ByKey(dxTarget, key);
+		return DevExpress.Ui.GridBaseInterop.ByKey(dxTarget, key).Result;
 	}
 	public void CancelEditData() {
 		DevExpress.Ui.GridBaseInterop.CancelEditData(dxTarget);
 	}
 	public object CellValue(float rowIndex, string dataField) {
-		return DevExpress.Ui.GridBaseInterop.CellValue(dxTarget, rowIndex, dataField);
+		return DevExpress.Ui.GridBaseInterop.CellValue(dxTarget, rowIndex, dataField).Result;
 	}
 	public void CellValue(float rowIndex, string dataField, object value) {
 		DevExpress.Ui.GridBaseInterop.CellValue(dxTarget, rowIndex, dataField, value);
 	}
 	public object CellValue(float rowIndex, float visibleColumnIndex) {
-		return DevExpress.Ui.GridBaseInterop.CellValue(dxTarget, rowIndex, visibleColumnIndex);
+		return DevExpress.Ui.GridBaseInterop.CellValue(dxTarget, rowIndex, visibleColumnIndex).Result;
 	}
 	public void CellValue(float rowIndex, float visibleColumnIndex, object value) {
 		DevExpress.Ui.GridBaseInterop.CellValue(dxTarget, rowIndex, visibleColumnIndex, value);
@@ -833,13 +833,13 @@
 		DevExpress.Ui.GridBaseInterop.CollapseAdaptiveDetailRow(dxTarget);
 	}
 	public float ColumnCount() {
-		return DevExpress.Ui.GridBaseInterop.ColumnCount(dxTarget);
+		return DevExpress.Ui.GridBaseInterop.ColumnCount(dxTarget).Result;
 	}
 	public object ColumnOption(object id) {
-		return DevExpress.Ui.GridBaseInterop.ColumnOption(dxTarget, id);
+		return DevExpress.Ui.GridBaseInterop.ColumnOption(dxTarget, id).Result;
 	}
 	public object ColumnOption(object id, string optionName) {
-		return DevExpress.Ui.GridBaseInterop.ColumnOption(dxTarget, id, optionName);
+		return DevExpress.Ui.GridBaseInterop.ColumnOption(dxTarget, id, optionName).Result;
 	}
 	public void ColumnOption(object id, string optionName, object optionValue) {
 		DevExpress.Ui.GridBaseInterop.ColumnOption(dxTarget, id, optionName, optionValue);
@@ -854,10 +854,10 @@
 		DevExpress.Ui.GridBaseInterop.DeleteRow(dxTarget, rowIndex);
 	}
 	public object DeselectAll() {
-		return DevExpress.Ui.GridBaseInterop.DeselectAll(dxTarget);
+		return DevExpress.Ui.GridBaseInterop.DeselectAll(dxTarget).Result;
 	}
 	public object DeselectRows(object keys) {
-		return DevExpress.Ui.GridBaseInterop.DeselectRows(dxTarget, keys);
+		return DevExpress.Ui.GridBaseInterop.DeselectRows(dxTarget, keys).Result;
 	}
 	public void EditCell(float rowIndex, string dataField) {
 		DevExpress.Ui.GridBaseInterop.EditCell(dxTarget, rowIndex, dataField);
@@ -875,7 +875,7 @@
 		DevExpress.Ui.GridBaseInterop.ExpandAdaptiveDetailRow(dxTarget, key);
 	}
 	public object Filter() {
-		return DevExpress.Ui.GridBaseInterop.Filter(dxTarget);
+		return DevExpress.Ui.GridBaseInterop.Filter(dxTarget).Result;
 	}
 	public void Filter(object filterExpr) {
 		DevExpress.Ui.GridBaseInterop.Filter(dxTarget, filterExpr);
@@ -887,34 +887,34 @@
 		DevExpress.Ui.GridBaseInterop.Focus(dxTarget, element);
 	}
 	public object GetCellElement(float rowIndex, string dataField) {
-		return DevExpress.Ui.GridBaseInterop.GetCellElement(dxTarget, rowIndex, dataField);
+		return DevExpress.Ui.GridBaseInterop.GetCellElement(dxTarget, rowIndex, dataField).Result;
 	}
 	public object GetCellElement(float rowIndex, float visibleColumnIndex) {
-		return DevExpress.Ui.GridBaseInterop.GetCellElement(dxTarget, rowIndex, visibleColumnIndex);
+		return DevExpress.Ui.GridBaseInterop.GetCellElement(dxTarget, rowIndex, visibleColumnIndex).Result;
 	}
 	public object GetCombinedFilter() {
-		return DevExpress.Ui.GridBaseInterop.GetCombinedFilter(dxTarget);
+		return DevExpress.Ui.GridBaseInterop.GetCombinedFilter(dxTarget).Result;
 	}
 	public object GetCombinedFilter(bool returnDataField) {
-		return DevExpress.Ui.GridBaseInterop.GetCombinedFilter(dxTarget, returnDataField);
+		return DevExpress.Ui.GridBaseInterop.GetCombinedFilter(dxTarget, returnDataField).Result;
 	}
 	public object GetDataSourceEx() {
-		return DevExpress.Ui.GridBaseInterop.GetDataSourceEx(dxTarget);
+		return DevExpress.Ui.GridBaseInterop.GetDataSourceEx(dxTarget).Result;
 	}
 	public object GetKeyByRowIndex(float rowIndex) {
-		return DevExpress.Ui.GridBaseInterop.GetKeyByRowIndex(dxTarget, rowIndex);
+		return DevExpress.Ui.GridBaseInterop.GetKeyByRowIndex(dxTarget, rowIndex).Result;
 	}
 	public object GetRowElement(float rowIndex) {
-		return DevExpress.Ui.GridBaseInterop.GetRowElement(dxTarget, rowIndex);
+		return DevExpress.Ui.GridBaseInterop.GetRowElement(dxTarget, rowIndex).Result;
 	}
 	public float GetRowIndexByKey(object key) {
-		return DevExpress.Ui.GridBaseInterop.GetRowIndexByKey(dxTarget, key);
+		return DevExpress.Ui.GridBaseInterop.GetRowIndexByKey(dxTarget, key).Result;
 	}
 	public object GetScrollable() {
-		return DevExpress.Ui.GridBaseInterop.GetScrollable(dxTarget);
+		return DevExpress.Ui.GridBaseInterop.GetScrollable(dxTarget).Result;
 	}
 	public bool HasEditData() {
-		return DevExpress.Ui.GridBaseInterop.HasEditData(dxTarget);
+		return DevExpress.Ui.GridBaseInterop.HasEditData(dxTarget).Result;
 	}
 	public void HideColumnChooser() {
 		DevExpress.Ui.GridBaseInterop.HideColumnChooser(dxTarget);
@@ -923,52 +923,52 @@
 		DevExpress.Ui.GridBaseInterop.IsAdaptiveDetailRowExpanded(dxTarget, key);
 	}
 	public bool IsRowSelected(object key) {
-		return DevExpress.Ui.GridBaseInterop.IsRowSelected(dxTarget, key);
+		return DevExpress.Ui.GridBaseInterop.IsRowSelected(dxTarget, key).Result;
 	}
 	public object KeyOf(object obj) {
-		return DevExpress.Ui.GridBaseInterop.KeyOf(dxTarget, obj);
+		return DevExpress.Ui.GridBaseInterop.KeyOf(dxTarget, obj).Result;
 	}
 	public float PageCount() {
-		return DevExpress.Ui.GridBaseInterop.PageCount(dxTarget);
+		return DevExpress.Ui.GridBaseInterop.PageCount(dxTarget).Result;
 	}
 	public float PageIndex() {
-		return DevExpress.Ui.GridBaseInterop.PageIndex(dxTarget);
+		return DevExpress.Ui.GridBaseInterop.PageIndex(dxTarget).Result;
 	}
 	public object PageIndex(float newIndex) {
-		return DevExpress.Ui.GridBaseInterop.PageIndex(dxTarget, newIndex);
+		return DevExpress.Ui.GridBaseInterop.PageIndex(dxTarget, newIndex).Result;
 	}
 	public float PageSize() {
-		return DevExpress.Ui.GridBaseInterop.PageSize(dxTarget);
+		return DevExpress.Ui.GridBaseInterop.PageSize(dxTarget).Result;
 	}
 	public void PageSize(float value) {
 		DevExpress.Ui.GridBaseInterop.PageSize(dxTarget, value);
 	}
 	public object Refresh() {
-		return DevExpress.Ui.GridBaseInterop.Refresh(dxTarget);
+		return DevExpress.Ui.GridBaseInterop.Refresh(dxTarget).Result;
 	}
 	public void RepaintRows(object rowIndexes) {
 		DevExpress.Ui.GridBaseInterop.RepaintRows(dxTarget, rowIndexes);
 	}
 	public object SaveEditData() {
-		return DevExpress.Ui.GridBaseInterop.SaveEditData(dxTarget);
+		return DevExpress.Ui.GridBaseInterop.SaveEditData(dxTarget).Result;
 	}
 	public void SearchByText(string text) {
 		DevExpress.Ui.GridBaseInterop.SearchByText(dxTarget, text);
 	}
 	public object SelectAll() {
-		return DevExpress.Ui.GridBaseInterop.SelectAll(dxTarget);
+		return DevExpress.Ui.GridBaseInterop.SelectAll(dxTarget).Result;
 	}
 	public object SelectRows(object keys, bool preserve) {
-		return DevExpress.Ui.GridBaseInterop.SelectRows(dxTarget, keys, preserve);
+		return DevExpress.Ui.GridBaseInterop.SelectRows(dxTarget, keys, preserve).Result;
 	}
 	public object SelectRowsByIndexes(object indexes) {
-		return DevExpress.Ui.GridBaseInterop.SelectRowsByIndexes(dxTarget, indexes);
+		return DevExpress.Ui.GridBaseInterop.SelectRowsByIndexes(dxTarget, indexes).Result;
 	}
 	public void ShowColumnChooser() {
 		DevExpress.Ui.GridBaseInterop.ShowColumnChooser(dxTarget);
 	}
 	public object State() {
-		return DevExpress.Ui.GridBaseInterop.State(dxTarget);
+		return DevExpress.Ui.GridBaseInterop.State(dxTarget).Result;
 	}
 	public void State(object state) {
 		DevExpress.Ui.GridBaseInterop.State(dxTarget, state);

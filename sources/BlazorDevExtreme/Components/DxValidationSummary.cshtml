@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Ui.DxValidationSummaryOptions>
+@inherits DxBlazorComponent<DevExpress.Ui.DxValidationSummaryOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -13,13 +13,13 @@
 			validationGroup = validationGroup,
 		};
 	}
-	protected override void Init(DevExpress.Ui.DxValidationSummaryOptions options) {
-		DevExpress.Ui.DxValidationSummaryInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Ui.DxValidationSummaryOptions options) {
+return 		DevExpress.Ui.DxValidationSummaryInterop.Init(dxTarget, options);
 	}
 	string validationGroup;
 	[Parameter]
 	string ValidationGroup {
-		get => isInitialized ? DevExpress.Ui.DxValidationSummaryInterop.GetValidationGroup(dxTarget) : validationGroup;
+		get => isInitialized ? DevExpress.Ui.DxValidationSummaryInterop.GetValidationGroup(dxTarget).Result : validationGroup;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxValidationSummaryInterop.SetValidationGroup(dxTarget, value);

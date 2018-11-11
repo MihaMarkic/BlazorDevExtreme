@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Ui.DxResizableOptions>
+@inherits DxBlazorComponent<DevExpress.Ui.DxResizableOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -22,13 +22,13 @@
 			onResizeStartEnabled = onResizeStartEnabled,
 		};
 	}
-	protected override void Init(DevExpress.Ui.DxResizableOptions options) {
-		DevExpress.Ui.DxResizableInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Ui.DxResizableOptions options) {
+return 		DevExpress.Ui.DxResizableInterop.Init(dxTarget, options);
 	}
 	string handles;
 	[Parameter]
 	string Handles {
-		get => isInitialized ? DevExpress.Ui.DxResizableInterop.GetHandles(dxTarget) : handles;
+		get => isInitialized ? DevExpress.Ui.DxResizableInterop.GetHandles(dxTarget).Result : handles;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxResizableInterop.SetHandles(dxTarget, value);
@@ -40,7 +40,7 @@
 	object height;
 	[Parameter]
 	object Height {
-		get => isInitialized ? DevExpress.Ui.DxResizableInterop.GetHeight(dxTarget) : height;
+		get => isInitialized ? DevExpress.Ui.DxResizableInterop.GetHeight(dxTarget).Result : height;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxResizableInterop.SetHeight(dxTarget, value);
@@ -52,7 +52,7 @@
 	float? maxHeight;
 	[Parameter]
 	float? MaxHeight {
-		get => isInitialized ? DevExpress.Ui.DxResizableInterop.GetMaxHeight(dxTarget) : maxHeight;
+		get => isInitialized ? DevExpress.Ui.DxResizableInterop.GetMaxHeight(dxTarget).Result : maxHeight;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxResizableInterop.SetMaxHeight(dxTarget, value);
@@ -64,7 +64,7 @@
 	float? maxWidth;
 	[Parameter]
 	float? MaxWidth {
-		get => isInitialized ? DevExpress.Ui.DxResizableInterop.GetMaxWidth(dxTarget) : maxWidth;
+		get => isInitialized ? DevExpress.Ui.DxResizableInterop.GetMaxWidth(dxTarget).Result : maxWidth;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxResizableInterop.SetMaxWidth(dxTarget, value);
@@ -76,7 +76,7 @@
 	float? minHeight;
 	[Parameter]
 	float? MinHeight {
-		get => isInitialized ? DevExpress.Ui.DxResizableInterop.GetMinHeight(dxTarget) : minHeight;
+		get => isInitialized ? DevExpress.Ui.DxResizableInterop.GetMinHeight(dxTarget).Result : minHeight;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxResizableInterop.SetMinHeight(dxTarget, value);
@@ -88,7 +88,7 @@
 	float? minWidth;
 	[Parameter]
 	float? MinWidth {
-		get => isInitialized ? DevExpress.Ui.DxResizableInterop.GetMinWidth(dxTarget) : minWidth;
+		get => isInitialized ? DevExpress.Ui.DxResizableInterop.GetMinWidth(dxTarget).Result : minWidth;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxResizableInterop.SetMinWidth(dxTarget, value);
@@ -100,7 +100,7 @@
 	object width;
 	[Parameter]
 	object Width {
-		get => isInitialized ? DevExpress.Ui.DxResizableInterop.GetWidth(dxTarget) : width;
+		get => isInitialized ? DevExpress.Ui.DxResizableInterop.GetWidth(dxTarget).Result : width;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxResizableInterop.SetWidth(dxTarget, value);

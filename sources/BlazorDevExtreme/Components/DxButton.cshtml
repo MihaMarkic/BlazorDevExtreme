@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Ui.DxButtonOptions>
+@inherits DxBlazorComponent<DevExpress.Ui.DxButtonOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -22,13 +22,13 @@
 			onClickEnabled = onClickEnabled,
 		};
 	}
-	protected override void Init(DevExpress.Ui.DxButtonOptions options) {
-		DevExpress.Ui.DxButtonInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Ui.DxButtonOptions options) {
+return 		DevExpress.Ui.DxButtonInterop.Init(dxTarget, options);
 	}
 	bool? activeStateEnabled;
 	[Parameter]
 	bool? ActiveStateEnabled {
-		get => isInitialized ? DevExpress.Ui.DxButtonInterop.GetActiveStateEnabled(dxTarget) : activeStateEnabled;
+		get => isInitialized ? DevExpress.Ui.DxButtonInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxButtonInterop.SetActiveStateEnabled(dxTarget, value);
@@ -40,7 +40,7 @@
 	bool? focusStateEnabled;
 	[Parameter]
 	bool? FocusStateEnabled {
-		get => isInitialized ? DevExpress.Ui.DxButtonInterop.GetFocusStateEnabled(dxTarget) : focusStateEnabled;
+		get => isInitialized ? DevExpress.Ui.DxButtonInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxButtonInterop.SetFocusStateEnabled(dxTarget, value);
@@ -52,7 +52,7 @@
 	bool? hoverStateEnabled;
 	[Parameter]
 	bool? HoverStateEnabled {
-		get => isInitialized ? DevExpress.Ui.DxButtonInterop.GetHoverStateEnabled(dxTarget) : hoverStateEnabled;
+		get => isInitialized ? DevExpress.Ui.DxButtonInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxButtonInterop.SetHoverStateEnabled(dxTarget, value);
@@ -64,7 +64,7 @@
 	string icon;
 	[Parameter]
 	string Icon {
-		get => isInitialized ? DevExpress.Ui.DxButtonInterop.GetIcon(dxTarget) : icon;
+		get => isInitialized ? DevExpress.Ui.DxButtonInterop.GetIcon(dxTarget).Result : icon;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxButtonInterop.SetIcon(dxTarget, value);
@@ -76,7 +76,7 @@
 	object template;
 	[Parameter]
 	object Template {
-		get => isInitialized ? DevExpress.Ui.DxButtonInterop.GetTemplate(dxTarget) : template;
+		get => isInitialized ? DevExpress.Ui.DxButtonInterop.GetTemplate(dxTarget).Result : template;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxButtonInterop.SetTemplate(dxTarget, value);
@@ -88,7 +88,7 @@
 	string text;
 	[Parameter]
 	string Text {
-		get => isInitialized ? DevExpress.Ui.DxButtonInterop.GetText(dxTarget) : text;
+		get => isInitialized ? DevExpress.Ui.DxButtonInterop.GetText(dxTarget).Result : text;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxButtonInterop.SetText(dxTarget, value);
@@ -100,7 +100,7 @@
 	string type;
 	[Parameter]
 	string Type {
-		get => isInitialized ? DevExpress.Ui.DxButtonInterop.GetType(dxTarget) : type;
+		get => isInitialized ? DevExpress.Ui.DxButtonInterop.GetType(dxTarget).Result : type;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxButtonInterop.SetType(dxTarget, value);
@@ -112,7 +112,7 @@
 	bool? useSubmitBehavior;
 	[Parameter]
 	bool? UseSubmitBehavior {
-		get => isInitialized ? DevExpress.Ui.DxButtonInterop.GetUseSubmitBehavior(dxTarget) : useSubmitBehavior;
+		get => isInitialized ? DevExpress.Ui.DxButtonInterop.GetUseSubmitBehavior(dxTarget).Result : useSubmitBehavior;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxButtonInterop.SetUseSubmitBehavior(dxTarget, value);
@@ -124,7 +124,7 @@
 	string validationGroup;
 	[Parameter]
 	string ValidationGroup {
-		get => isInitialized ? DevExpress.Ui.DxButtonInterop.GetValidationGroup(dxTarget) : validationGroup;
+		get => isInitialized ? DevExpress.Ui.DxButtonInterop.GetValidationGroup(dxTarget).Result : validationGroup;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxButtonInterop.SetValidationGroup(dxTarget, value);

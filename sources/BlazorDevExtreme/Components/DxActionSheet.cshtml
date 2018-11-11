@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Ui.DxActionSheetOptions>
+@inherits DxBlazorComponent<DevExpress.Ui.DxActionSheetOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -20,13 +20,13 @@
 			onCancelClickEnabled = onCancelClickEnabled,
 		};
 	}
-	protected override void Init(DevExpress.Ui.DxActionSheetOptions options) {
-		DevExpress.Ui.DxActionSheetInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Ui.DxActionSheetOptions options) {
+return 		DevExpress.Ui.DxActionSheetInterop.Init(dxTarget, options);
 	}
 	string cancelText;
 	[Parameter]
 	string CancelText {
-		get => isInitialized ? DevExpress.Ui.DxActionSheetInterop.GetCancelText(dxTarget) : cancelText;
+		get => isInitialized ? DevExpress.Ui.DxActionSheetInterop.GetCancelText(dxTarget).Result : cancelText;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxActionSheetInterop.SetCancelText(dxTarget, value);
@@ -38,7 +38,7 @@
 	bool? showCancelButton;
 	[Parameter]
 	bool? ShowCancelButton {
-		get => isInitialized ? DevExpress.Ui.DxActionSheetInterop.GetShowCancelButton(dxTarget) : showCancelButton;
+		get => isInitialized ? DevExpress.Ui.DxActionSheetInterop.GetShowCancelButton(dxTarget).Result : showCancelButton;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxActionSheetInterop.SetShowCancelButton(dxTarget, value);
@@ -50,7 +50,7 @@
 	bool? showTitle;
 	[Parameter]
 	bool? ShowTitle {
-		get => isInitialized ? DevExpress.Ui.DxActionSheetInterop.GetShowTitle(dxTarget) : showTitle;
+		get => isInitialized ? DevExpress.Ui.DxActionSheetInterop.GetShowTitle(dxTarget).Result : showTitle;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxActionSheetInterop.SetShowTitle(dxTarget, value);
@@ -62,7 +62,7 @@
 	object target;
 	[Parameter]
 	object Target {
-		get => isInitialized ? DevExpress.Ui.DxActionSheetInterop.GetTarget(dxTarget) : target;
+		get => isInitialized ? DevExpress.Ui.DxActionSheetInterop.GetTarget(dxTarget).Result : target;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxActionSheetInterop.SetTarget(dxTarget, value);
@@ -74,7 +74,7 @@
 	string title;
 	[Parameter]
 	string Title {
-		get => isInitialized ? DevExpress.Ui.DxActionSheetInterop.GetTitle(dxTarget) : title;
+		get => isInitialized ? DevExpress.Ui.DxActionSheetInterop.GetTitle(dxTarget).Result : title;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxActionSheetInterop.SetTitle(dxTarget, value);
@@ -86,7 +86,7 @@
 	bool? usePopover;
 	[Parameter]
 	bool? UsePopover {
-		get => isInitialized ? DevExpress.Ui.DxActionSheetInterop.GetUsePopover(dxTarget) : usePopover;
+		get => isInitialized ? DevExpress.Ui.DxActionSheetInterop.GetUsePopover(dxTarget).Result : usePopover;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxActionSheetInterop.SetUsePopover(dxTarget, value);
@@ -98,7 +98,7 @@
 	bool? visible;
 	[Parameter]
 	bool? Visible {
-		get => isInitialized ? DevExpress.Ui.DxActionSheetInterop.GetVisible(dxTarget) : visible;
+		get => isInitialized ? DevExpress.Ui.DxActionSheetInterop.GetVisible(dxTarget).Result : visible;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxActionSheetInterop.SetVisible(dxTarget, value);
@@ -125,13 +125,13 @@
 		}
 	}
 	public object Hide() {
-		return DevExpress.Ui.DxActionSheetInterop.Hide(dxTarget);
+		return DevExpress.Ui.DxActionSheetInterop.Hide(dxTarget).Result;
 	}
 	public object Show() {
-		return DevExpress.Ui.DxActionSheetInterop.Show(dxTarget);
+		return DevExpress.Ui.DxActionSheetInterop.Show(dxTarget).Result;
 	}
 	public object Toggle(bool showing) {
-		return DevExpress.Ui.DxActionSheetInterop.Toggle(dxTarget, showing);
+		return DevExpress.Ui.DxActionSheetInterop.Toggle(dxTarget, showing).Result;
 	}
 	public void Dispose() {
 		DevExpress.Ui.DxActionSheetInterop.CancelClick -= DxActionSheet_CancelClick;

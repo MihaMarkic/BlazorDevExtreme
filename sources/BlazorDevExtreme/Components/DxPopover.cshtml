@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Ui.DxPopoverOptions>
+@inherits DxBlazorComponent<DevExpress.Ui.DxPopoverOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -22,13 +22,13 @@
 			width = width,
 		};
 	}
-	protected override void Init(DevExpress.Ui.DxPopoverOptions options) {
-		DevExpress.Ui.DxPopoverInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Ui.DxPopoverOptions options) {
+return 		DevExpress.Ui.DxPopoverInterop.Init(dxTarget, options);
 	}
 	object animation;
 	[Parameter]
 	object Animation {
-		get => isInitialized ? DevExpress.Ui.DxPopoverInterop.GetAnimation(dxTarget) : animation;
+		get => isInitialized ? DevExpress.Ui.DxPopoverInterop.GetAnimation(dxTarget).Result : animation;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxPopoverInterop.SetAnimation(dxTarget, value);
@@ -40,7 +40,7 @@
 	object closeOnOutsideClick;
 	[Parameter]
 	object CloseOnOutsideClick {
-		get => isInitialized ? DevExpress.Ui.DxPopoverInterop.GetCloseOnOutsideClick(dxTarget) : closeOnOutsideClick;
+		get => isInitialized ? DevExpress.Ui.DxPopoverInterop.GetCloseOnOutsideClick(dxTarget).Result : closeOnOutsideClick;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxPopoverInterop.SetCloseOnOutsideClick(dxTarget, value);
@@ -52,7 +52,7 @@
 	object height;
 	[Parameter]
 	object Height {
-		get => isInitialized ? DevExpress.Ui.DxPopoverInterop.GetHeight(dxTarget) : height;
+		get => isInitialized ? DevExpress.Ui.DxPopoverInterop.GetHeight(dxTarget).Result : height;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxPopoverInterop.SetHeight(dxTarget, value);
@@ -64,7 +64,7 @@
 	object hideEvent;
 	[Parameter]
 	object HideEvent {
-		get => isInitialized ? DevExpress.Ui.DxPopoverInterop.GetHideEvent(dxTarget) : hideEvent;
+		get => isInitialized ? DevExpress.Ui.DxPopoverInterop.GetHideEvent(dxTarget).Result : hideEvent;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxPopoverInterop.SetHideEvent(dxTarget, value);
@@ -76,7 +76,7 @@
 	object position;
 	[Parameter]
 	object Position {
-		get => isInitialized ? DevExpress.Ui.DxPopoverInterop.GetPosition(dxTarget) : position;
+		get => isInitialized ? DevExpress.Ui.DxPopoverInterop.GetPosition(dxTarget).Result : position;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxPopoverInterop.SetPosition(dxTarget, value);
@@ -88,7 +88,7 @@
 	bool? shading;
 	[Parameter]
 	bool? Shading {
-		get => isInitialized ? DevExpress.Ui.DxPopoverInterop.GetShading(dxTarget) : shading;
+		get => isInitialized ? DevExpress.Ui.DxPopoverInterop.GetShading(dxTarget).Result : shading;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxPopoverInterop.SetShading(dxTarget, value);
@@ -100,7 +100,7 @@
 	object showEvent;
 	[Parameter]
 	object ShowEvent {
-		get => isInitialized ? DevExpress.Ui.DxPopoverInterop.GetShowEvent(dxTarget) : showEvent;
+		get => isInitialized ? DevExpress.Ui.DxPopoverInterop.GetShowEvent(dxTarget).Result : showEvent;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxPopoverInterop.SetShowEvent(dxTarget, value);
@@ -112,7 +112,7 @@
 	bool? showTitle;
 	[Parameter]
 	bool? ShowTitle {
-		get => isInitialized ? DevExpress.Ui.DxPopoverInterop.GetShowTitle(dxTarget) : showTitle;
+		get => isInitialized ? DevExpress.Ui.DxPopoverInterop.GetShowTitle(dxTarget).Result : showTitle;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxPopoverInterop.SetShowTitle(dxTarget, value);
@@ -124,7 +124,7 @@
 	object target;
 	[Parameter]
 	object Target {
-		get => isInitialized ? DevExpress.Ui.DxPopoverInterop.GetTarget(dxTarget) : target;
+		get => isInitialized ? DevExpress.Ui.DxPopoverInterop.GetTarget(dxTarget).Result : target;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxPopoverInterop.SetTarget(dxTarget, value);
@@ -136,7 +136,7 @@
 	object width;
 	[Parameter]
 	object Width {
-		get => isInitialized ? DevExpress.Ui.DxPopoverInterop.GetWidth(dxTarget) : width;
+		get => isInitialized ? DevExpress.Ui.DxPopoverInterop.GetWidth(dxTarget).Result : width;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxPopoverInterop.SetWidth(dxTarget, value);
@@ -149,10 +149,10 @@
 		await base.OnInitAsync();
 	}
 	public object Show() {
-		return DevExpress.Ui.DxPopoverInterop.Show(dxTarget);
+		return DevExpress.Ui.DxPopoverInterop.Show(dxTarget).Result;
 	}
 	public object Show(object target) {
-		return DevExpress.Ui.DxPopoverInterop.Show(dxTarget, target);
+		return DevExpress.Ui.DxPopoverInterop.Show(dxTarget, target).Result;
 	}
 	public void Dispose() {
 	}

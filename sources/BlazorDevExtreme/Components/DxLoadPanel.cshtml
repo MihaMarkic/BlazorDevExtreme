@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Ui.DxLoadPanelOptions>
+@inherits DxBlazorComponent<DevExpress.Ui.DxLoadPanelOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -23,13 +23,13 @@
 			width = width,
 		};
 	}
-	protected override void Init(DevExpress.Ui.DxLoadPanelOptions options) {
-		DevExpress.Ui.DxLoadPanelInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Ui.DxLoadPanelOptions options) {
+return 		DevExpress.Ui.DxLoadPanelInterop.Init(dxTarget, options);
 	}
 	object animation;
 	[Parameter]
 	object Animation {
-		get => isInitialized ? DevExpress.Ui.DxLoadPanelInterop.GetAnimation(dxTarget) : animation;
+		get => isInitialized ? DevExpress.Ui.DxLoadPanelInterop.GetAnimation(dxTarget).Result : animation;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxLoadPanelInterop.SetAnimation(dxTarget, value);
@@ -41,7 +41,7 @@
 	float? delay;
 	[Parameter]
 	float? Delay {
-		get => isInitialized ? DevExpress.Ui.DxLoadPanelInterop.GetDelay(dxTarget) : delay;
+		get => isInitialized ? DevExpress.Ui.DxLoadPanelInterop.GetDelay(dxTarget).Result : delay;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxLoadPanelInterop.SetDelay(dxTarget, value);
@@ -53,7 +53,7 @@
 	bool? focusStateEnabled;
 	[Parameter]
 	bool? FocusStateEnabled {
-		get => isInitialized ? DevExpress.Ui.DxLoadPanelInterop.GetFocusStateEnabled(dxTarget) : focusStateEnabled;
+		get => isInitialized ? DevExpress.Ui.DxLoadPanelInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxLoadPanelInterop.SetFocusStateEnabled(dxTarget, value);
@@ -65,7 +65,7 @@
 	float? height;
 	[Parameter]
 	float? Height {
-		get => isInitialized ? DevExpress.Ui.DxLoadPanelInterop.GetHeight(dxTarget) : height;
+		get => isInitialized ? DevExpress.Ui.DxLoadPanelInterop.GetHeight(dxTarget).Result : height;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxLoadPanelInterop.SetHeight(dxTarget, value);
@@ -77,7 +77,7 @@
 	string indicatorSrc;
 	[Parameter]
 	string IndicatorSrc {
-		get => isInitialized ? DevExpress.Ui.DxLoadPanelInterop.GetIndicatorSrc(dxTarget) : indicatorSrc;
+		get => isInitialized ? DevExpress.Ui.DxLoadPanelInterop.GetIndicatorSrc(dxTarget).Result : indicatorSrc;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxLoadPanelInterop.SetIndicatorSrc(dxTarget, value);
@@ -89,7 +89,7 @@
 	string message;
 	[Parameter]
 	string Message {
-		get => isInitialized ? DevExpress.Ui.DxLoadPanelInterop.GetMessage(dxTarget) : message;
+		get => isInitialized ? DevExpress.Ui.DxLoadPanelInterop.GetMessage(dxTarget).Result : message;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxLoadPanelInterop.SetMessage(dxTarget, value);
@@ -101,7 +101,7 @@
 	object position;
 	[Parameter]
 	object Position {
-		get => isInitialized ? DevExpress.Ui.DxLoadPanelInterop.GetPosition(dxTarget) : position;
+		get => isInitialized ? DevExpress.Ui.DxLoadPanelInterop.GetPosition(dxTarget).Result : position;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxLoadPanelInterop.SetPosition(dxTarget, value);
@@ -113,7 +113,7 @@
 	string shadingColor;
 	[Parameter]
 	string ShadingColor {
-		get => isInitialized ? DevExpress.Ui.DxLoadPanelInterop.GetShadingColor(dxTarget) : shadingColor;
+		get => isInitialized ? DevExpress.Ui.DxLoadPanelInterop.GetShadingColor(dxTarget).Result : shadingColor;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxLoadPanelInterop.SetShadingColor(dxTarget, value);
@@ -125,7 +125,7 @@
 	bool? showIndicator;
 	[Parameter]
 	bool? ShowIndicator {
-		get => isInitialized ? DevExpress.Ui.DxLoadPanelInterop.GetShowIndicator(dxTarget) : showIndicator;
+		get => isInitialized ? DevExpress.Ui.DxLoadPanelInterop.GetShowIndicator(dxTarget).Result : showIndicator;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxLoadPanelInterop.SetShowIndicator(dxTarget, value);
@@ -137,7 +137,7 @@
 	bool? showPane;
 	[Parameter]
 	bool? ShowPane {
-		get => isInitialized ? DevExpress.Ui.DxLoadPanelInterop.GetShowPane(dxTarget) : showPane;
+		get => isInitialized ? DevExpress.Ui.DxLoadPanelInterop.GetShowPane(dxTarget).Result : showPane;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxLoadPanelInterop.SetShowPane(dxTarget, value);
@@ -149,7 +149,7 @@
 	float? width;
 	[Parameter]
 	float? Width {
-		get => isInitialized ? DevExpress.Ui.DxLoadPanelInterop.GetWidth(dxTarget) : width;
+		get => isInitialized ? DevExpress.Ui.DxLoadPanelInterop.GetWidth(dxTarget).Result : width;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxLoadPanelInterop.SetWidth(dxTarget, value);

@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Ui.DxDropDownBoxOptions>
+@inherits DxBlazorComponent<DevExpress.Ui.DxDropDownBoxOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -17,13 +17,13 @@
 			valueChangeEvent = valueChangeEvent,
 		};
 	}
-	protected override void Init(DevExpress.Ui.DxDropDownBoxOptions options) {
-		DevExpress.Ui.DxDropDownBoxInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Ui.DxDropDownBoxOptions options) {
+return 		DevExpress.Ui.DxDropDownBoxInterop.Init(dxTarget, options);
 	}
 	bool? acceptCustomValue;
 	[Parameter]
 	bool? AcceptCustomValue {
-		get => isInitialized ? DevExpress.Ui.DxDropDownBoxInterop.GetAcceptCustomValue(dxTarget) : acceptCustomValue;
+		get => isInitialized ? DevExpress.Ui.DxDropDownBoxInterop.GetAcceptCustomValue(dxTarget).Result : acceptCustomValue;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDropDownBoxInterop.SetAcceptCustomValue(dxTarget, value);
@@ -35,7 +35,7 @@
 	object contentTemplate;
 	[Parameter]
 	object ContentTemplate {
-		get => isInitialized ? DevExpress.Ui.DxDropDownBoxInterop.GetContentTemplate(dxTarget) : contentTemplate;
+		get => isInitialized ? DevExpress.Ui.DxDropDownBoxInterop.GetContentTemplate(dxTarget).Result : contentTemplate;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDropDownBoxInterop.SetContentTemplate(dxTarget, value);
@@ -47,7 +47,7 @@
 	object dropDownOptions;
 	[Parameter]
 	object DropDownOptions {
-		get => isInitialized ? DevExpress.Ui.DxDropDownBoxInterop.GetDropDownOptions(dxTarget) : dropDownOptions;
+		get => isInitialized ? DevExpress.Ui.DxDropDownBoxInterop.GetDropDownOptions(dxTarget).Result : dropDownOptions;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDropDownBoxInterop.SetDropDownOptions(dxTarget, value);
@@ -59,7 +59,7 @@
 	object fieldTemplate;
 	[Parameter]
 	object FieldTemplate {
-		get => isInitialized ? DevExpress.Ui.DxDropDownBoxInterop.GetFieldTemplate(dxTarget) : fieldTemplate;
+		get => isInitialized ? DevExpress.Ui.DxDropDownBoxInterop.GetFieldTemplate(dxTarget).Result : fieldTemplate;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDropDownBoxInterop.SetFieldTemplate(dxTarget, value);
@@ -71,7 +71,7 @@
 	string valueChangeEvent;
 	[Parameter]
 	string ValueChangeEvent {
-		get => isInitialized ? DevExpress.Ui.DxDropDownBoxInterop.GetValueChangeEvent(dxTarget) : valueChangeEvent;
+		get => isInitialized ? DevExpress.Ui.DxDropDownBoxInterop.GetValueChangeEvent(dxTarget).Result : valueChangeEvent;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDropDownBoxInterop.SetValueChangeEvent(dxTarget, value);
@@ -84,7 +84,7 @@
 		await base.OnInitAsync();
 	}
 	public object GetDataSourceEx() {
-		return DevExpress.Ui.DxDropDownBoxInterop.GetDataSourceEx(dxTarget);
+		return DevExpress.Ui.DxDropDownBoxInterop.GetDataSourceEx(dxTarget).Result;
 	}
 	public void Dispose() {
 	}

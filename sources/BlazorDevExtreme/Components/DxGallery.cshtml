@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Ui.DxGalleryOptions>
+@inherits DxBlazorComponent<DevExpress.Ui.DxGalleryOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -25,13 +25,13 @@
 			wrapAround = wrapAround,
 		};
 	}
-	protected override void Init(DevExpress.Ui.DxGalleryOptions options) {
-		DevExpress.Ui.DxGalleryInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Ui.DxGalleryOptions options) {
+return 		DevExpress.Ui.DxGalleryInterop.Init(dxTarget, options);
 	}
 	float? animationDuration;
 	[Parameter]
 	float? AnimationDuration {
-		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetAnimationDuration(dxTarget) : animationDuration;
+		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetAnimationDuration(dxTarget).Result : animationDuration;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxGalleryInterop.SetAnimationDuration(dxTarget, value);
@@ -43,7 +43,7 @@
 	bool? animationEnabled;
 	[Parameter]
 	bool? AnimationEnabled {
-		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetAnimationEnabled(dxTarget) : animationEnabled;
+		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetAnimationEnabled(dxTarget).Result : animationEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxGalleryInterop.SetAnimationEnabled(dxTarget, value);
@@ -55,7 +55,7 @@
 	bool? focusStateEnabled;
 	[Parameter]
 	bool? FocusStateEnabled {
-		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetFocusStateEnabled(dxTarget) : focusStateEnabled;
+		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxGalleryInterop.SetFocusStateEnabled(dxTarget, value);
@@ -67,7 +67,7 @@
 	bool? indicatorEnabled;
 	[Parameter]
 	bool? IndicatorEnabled {
-		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetIndicatorEnabled(dxTarget) : indicatorEnabled;
+		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetIndicatorEnabled(dxTarget).Result : indicatorEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxGalleryInterop.SetIndicatorEnabled(dxTarget, value);
@@ -79,7 +79,7 @@
 	float? initialItemWidth;
 	[Parameter]
 	float? InitialItemWidth {
-		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetInitialItemWidth(dxTarget) : initialItemWidth;
+		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetInitialItemWidth(dxTarget).Result : initialItemWidth;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxGalleryInterop.SetInitialItemWidth(dxTarget, value);
@@ -91,7 +91,7 @@
 	bool? loop;
 	[Parameter]
 	bool? Loop {
-		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetLoop(dxTarget) : loop;
+		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetLoop(dxTarget).Result : loop;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxGalleryInterop.SetLoop(dxTarget, value);
@@ -103,7 +103,7 @@
 	float? selectedIndex;
 	[Parameter]
 	float? SelectedIndex {
-		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetSelectedIndex(dxTarget) : selectedIndex;
+		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetSelectedIndex(dxTarget).Result : selectedIndex;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxGalleryInterop.SetSelectedIndex(dxTarget, value);
@@ -115,7 +115,7 @@
 	bool? showIndicator;
 	[Parameter]
 	bool? ShowIndicator {
-		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetShowIndicator(dxTarget) : showIndicator;
+		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetShowIndicator(dxTarget).Result : showIndicator;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxGalleryInterop.SetShowIndicator(dxTarget, value);
@@ -127,7 +127,7 @@
 	bool? showNavButtons;
 	[Parameter]
 	bool? ShowNavButtons {
-		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetShowNavButtons(dxTarget) : showNavButtons;
+		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetShowNavButtons(dxTarget).Result : showNavButtons;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxGalleryInterop.SetShowNavButtons(dxTarget, value);
@@ -139,7 +139,7 @@
 	float? slideshowDelay;
 	[Parameter]
 	float? SlideshowDelay {
-		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetSlideshowDelay(dxTarget) : slideshowDelay;
+		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetSlideshowDelay(dxTarget).Result : slideshowDelay;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxGalleryInterop.SetSlideshowDelay(dxTarget, value);
@@ -151,7 +151,7 @@
 	bool? stretchImages;
 	[Parameter]
 	bool? StretchImages {
-		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetStretchImages(dxTarget) : stretchImages;
+		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetStretchImages(dxTarget).Result : stretchImages;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxGalleryInterop.SetStretchImages(dxTarget, value);
@@ -163,7 +163,7 @@
 	bool? swipeEnabled;
 	[Parameter]
 	bool? SwipeEnabled {
-		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetSwipeEnabled(dxTarget) : swipeEnabled;
+		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetSwipeEnabled(dxTarget).Result : swipeEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxGalleryInterop.SetSwipeEnabled(dxTarget, value);
@@ -175,7 +175,7 @@
 	bool? wrapAround;
 	[Parameter]
 	bool? WrapAround {
-		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetWrapAround(dxTarget) : wrapAround;
+		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetWrapAround(dxTarget).Result : wrapAround;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxGalleryInterop.SetWrapAround(dxTarget, value);
@@ -188,13 +188,13 @@
 		await base.OnInitAsync();
 	}
 	public object GoToItem(float itemIndex, bool animation) {
-		return DevExpress.Ui.DxGalleryInterop.GoToItem(dxTarget, itemIndex, animation);
+		return DevExpress.Ui.DxGalleryInterop.GoToItem(dxTarget, itemIndex, animation).Result;
 	}
 	public object NextItem(bool animation) {
-		return DevExpress.Ui.DxGalleryInterop.NextItem(dxTarget, animation);
+		return DevExpress.Ui.DxGalleryInterop.NextItem(dxTarget, animation).Result;
 	}
 	public object PrevItem(bool animation) {
-		return DevExpress.Ui.DxGalleryInterop.PrevItem(dxTarget, animation);
+		return DevExpress.Ui.DxGalleryInterop.PrevItem(dxTarget, animation).Result;
 	}
 	public void Dispose() {
 	}

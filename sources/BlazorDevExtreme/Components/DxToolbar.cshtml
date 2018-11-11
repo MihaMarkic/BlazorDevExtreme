@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Ui.DxToolbarOptions>
+@inherits DxBlazorComponent<DevExpress.Ui.DxToolbarOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -14,13 +14,13 @@
 			renderAs = renderAs,
 		};
 	}
-	protected override void Init(DevExpress.Ui.DxToolbarOptions options) {
-		DevExpress.Ui.DxToolbarInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Ui.DxToolbarOptions options) {
+return 		DevExpress.Ui.DxToolbarInterop.Init(dxTarget, options);
 	}
 	object menuItemTemplate;
 	[Parameter]
 	object MenuItemTemplate {
-		get => isInitialized ? DevExpress.Ui.DxToolbarInterop.GetMenuItemTemplate(dxTarget) : menuItemTemplate;
+		get => isInitialized ? DevExpress.Ui.DxToolbarInterop.GetMenuItemTemplate(dxTarget).Result : menuItemTemplate;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxToolbarInterop.SetMenuItemTemplate(dxTarget, value);
@@ -32,7 +32,7 @@
 	string renderAs;
 	[Parameter]
 	string RenderAs {
-		get => isInitialized ? DevExpress.Ui.DxToolbarInterop.GetRenderAs(dxTarget) : renderAs;
+		get => isInitialized ? DevExpress.Ui.DxToolbarInterop.GetRenderAs(dxTarget).Result : renderAs;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxToolbarInterop.SetRenderAs(dxTarget, value);

@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Ui.DxBoxOptions>
+@inherits DxBlazorComponent<DevExpress.Ui.DxBoxOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -15,13 +15,13 @@
 			direction = direction,
 		};
 	}
-	protected override void Init(DevExpress.Ui.DxBoxOptions options) {
-		DevExpress.Ui.DxBoxInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Ui.DxBoxOptions options) {
+return 		DevExpress.Ui.DxBoxInterop.Init(dxTarget, options);
 	}
 	string align;
 	[Parameter]
 	string Align {
-		get => isInitialized ? DevExpress.Ui.DxBoxInterop.GetAlign(dxTarget) : align;
+		get => isInitialized ? DevExpress.Ui.DxBoxInterop.GetAlign(dxTarget).Result : align;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxBoxInterop.SetAlign(dxTarget, value);
@@ -33,7 +33,7 @@
 	string crossAlign;
 	[Parameter]
 	string CrossAlign {
-		get => isInitialized ? DevExpress.Ui.DxBoxInterop.GetCrossAlign(dxTarget) : crossAlign;
+		get => isInitialized ? DevExpress.Ui.DxBoxInterop.GetCrossAlign(dxTarget).Result : crossAlign;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxBoxInterop.SetCrossAlign(dxTarget, value);
@@ -45,7 +45,7 @@
 	string direction;
 	[Parameter]
 	string Direction {
-		get => isInitialized ? DevExpress.Ui.DxBoxInterop.GetDirection(dxTarget) : direction;
+		get => isInitialized ? DevExpress.Ui.DxBoxInterop.GetDirection(dxTarget).Result : direction;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxBoxInterop.SetDirection(dxTarget, value);

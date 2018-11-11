@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Ui.DxValidatorOptions>
+@inherits DxBlazorComponent<DevExpress.Ui.DxValidatorOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -17,13 +17,13 @@
 			onValidatedEnabled = onValidatedEnabled,
 		};
 	}
-	protected override void Init(DevExpress.Ui.DxValidatorOptions options) {
-		DevExpress.Ui.DxValidatorInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Ui.DxValidatorOptions options) {
+return 		DevExpress.Ui.DxValidatorInterop.Init(dxTarget, options);
 	}
 	object adapter;
 	[Parameter]
 	object Adapter {
-		get => isInitialized ? DevExpress.Ui.DxValidatorInterop.GetAdapter(dxTarget) : adapter;
+		get => isInitialized ? DevExpress.Ui.DxValidatorInterop.GetAdapter(dxTarget).Result : adapter;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxValidatorInterop.SetAdapter(dxTarget, value);
@@ -35,7 +35,7 @@
 	string name;
 	[Parameter]
 	string Name {
-		get => isInitialized ? DevExpress.Ui.DxValidatorInterop.GetName(dxTarget) : name;
+		get => isInitialized ? DevExpress.Ui.DxValidatorInterop.GetName(dxTarget).Result : name;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxValidatorInterop.SetName(dxTarget, value);
@@ -47,7 +47,7 @@
 	string validationGroup;
 	[Parameter]
 	string ValidationGroup {
-		get => isInitialized ? DevExpress.Ui.DxValidatorInterop.GetValidationGroup(dxTarget) : validationGroup;
+		get => isInitialized ? DevExpress.Ui.DxValidatorInterop.GetValidationGroup(dxTarget).Result : validationGroup;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxValidatorInterop.SetValidationGroup(dxTarget, value);
@@ -59,7 +59,7 @@
 	object validationRules;
 	[Parameter]
 	object ValidationRules {
-		get => isInitialized ? DevExpress.Ui.DxValidatorInterop.GetValidationRules(dxTarget) : validationRules;
+		get => isInitialized ? DevExpress.Ui.DxValidatorInterop.GetValidationRules(dxTarget).Result : validationRules;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxValidatorInterop.SetValidationRules(dxTarget, value);
@@ -92,7 +92,7 @@
 		DevExpress.Ui.DxValidatorInterop.Reset(dxTarget);
 	}
 	public object Validate() {
-		return DevExpress.Ui.DxValidatorInterop.Validate(dxTarget);
+		return DevExpress.Ui.DxValidatorInterop.Validate(dxTarget).Result;
 	}
 	public void Dispose() {
 		DevExpress.Ui.DxValidatorInterop.Validated -= DxValidator_Validated;

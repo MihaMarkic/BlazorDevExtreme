@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Ui.WidgetOptions>
+@inherits DxBlazorComponent<DevExpress.Ui.WidgetOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -21,13 +21,13 @@
 			onContentReadyEnabled = onContentReadyEnabled,
 		};
 	}
-	protected override void Init(DevExpress.Ui.WidgetOptions options) {
-		DevExpress.Ui.WidgetInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Ui.WidgetOptions options) {
+return 		DevExpress.Ui.WidgetInterop.Init(dxTarget, options);
 	}
 	string accessKey;
 	[Parameter]
 	string AccessKey {
-		get => isInitialized ? DevExpress.Ui.WidgetInterop.GetAccessKey(dxTarget) : accessKey;
+		get => isInitialized ? DevExpress.Ui.WidgetInterop.GetAccessKey(dxTarget).Result : accessKey;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.WidgetInterop.SetAccessKey(dxTarget, value);
@@ -39,7 +39,7 @@
 	bool? activeStateEnabled;
 	[Parameter]
 	bool? ActiveStateEnabled {
-		get => isInitialized ? DevExpress.Ui.WidgetInterop.GetActiveStateEnabled(dxTarget) : activeStateEnabled;
+		get => isInitialized ? DevExpress.Ui.WidgetInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.WidgetInterop.SetActiveStateEnabled(dxTarget, value);
@@ -51,7 +51,7 @@
 	bool? disabled;
 	[Parameter]
 	bool? Disabled {
-		get => isInitialized ? DevExpress.Ui.WidgetInterop.GetDisabled(dxTarget) : disabled;
+		get => isInitialized ? DevExpress.Ui.WidgetInterop.GetDisabled(dxTarget).Result : disabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.WidgetInterop.SetDisabled(dxTarget, value);
@@ -63,7 +63,7 @@
 	bool? focusStateEnabled;
 	[Parameter]
 	bool? FocusStateEnabled {
-		get => isInitialized ? DevExpress.Ui.WidgetInterop.GetFocusStateEnabled(dxTarget) : focusStateEnabled;
+		get => isInitialized ? DevExpress.Ui.WidgetInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.WidgetInterop.SetFocusStateEnabled(dxTarget, value);
@@ -75,7 +75,7 @@
 	string hint;
 	[Parameter]
 	string Hint {
-		get => isInitialized ? DevExpress.Ui.WidgetInterop.GetHint(dxTarget) : hint;
+		get => isInitialized ? DevExpress.Ui.WidgetInterop.GetHint(dxTarget).Result : hint;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.WidgetInterop.SetHint(dxTarget, value);
@@ -87,7 +87,7 @@
 	bool? hoverStateEnabled;
 	[Parameter]
 	bool? HoverStateEnabled {
-		get => isInitialized ? DevExpress.Ui.WidgetInterop.GetHoverStateEnabled(dxTarget) : hoverStateEnabled;
+		get => isInitialized ? DevExpress.Ui.WidgetInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.WidgetInterop.SetHoverStateEnabled(dxTarget, value);
@@ -99,7 +99,7 @@
 	float? tabIndex;
 	[Parameter]
 	float? TabIndex {
-		get => isInitialized ? DevExpress.Ui.WidgetInterop.GetTabIndex(dxTarget) : tabIndex;
+		get => isInitialized ? DevExpress.Ui.WidgetInterop.GetTabIndex(dxTarget).Result : tabIndex;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.WidgetInterop.SetTabIndex(dxTarget, value);
@@ -111,7 +111,7 @@
 	bool? visible;
 	[Parameter]
 	bool? Visible {
-		get => isInitialized ? DevExpress.Ui.WidgetInterop.GetVisible(dxTarget) : visible;
+		get => isInitialized ? DevExpress.Ui.WidgetInterop.GetVisible(dxTarget).Result : visible;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.WidgetInterop.SetVisible(dxTarget, value);

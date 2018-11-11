@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Ui.DxColorBoxOptions>
+@inherits DxBlazorComponent<DevExpress.Ui.DxColorBoxOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -19,13 +19,13 @@
 			value = value,
 		};
 	}
-	protected override void Init(DevExpress.Ui.DxColorBoxOptions options) {
-		DevExpress.Ui.DxColorBoxInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Ui.DxColorBoxOptions options) {
+return 		DevExpress.Ui.DxColorBoxInterop.Init(dxTarget, options);
 	}
 	string applyButtonText;
 	[Parameter]
 	string ApplyButtonText {
-		get => isInitialized ? DevExpress.Ui.DxColorBoxInterop.GetApplyButtonText(dxTarget) : applyButtonText;
+		get => isInitialized ? DevExpress.Ui.DxColorBoxInterop.GetApplyButtonText(dxTarget).Result : applyButtonText;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxColorBoxInterop.SetApplyButtonText(dxTarget, value);
@@ -37,7 +37,7 @@
 	string applyValueMode;
 	[Parameter]
 	string ApplyValueMode {
-		get => isInitialized ? DevExpress.Ui.DxColorBoxInterop.GetApplyValueMode(dxTarget) : applyValueMode;
+		get => isInitialized ? DevExpress.Ui.DxColorBoxInterop.GetApplyValueMode(dxTarget).Result : applyValueMode;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxColorBoxInterop.SetApplyValueMode(dxTarget, value);
@@ -49,7 +49,7 @@
 	string cancelButtonText;
 	[Parameter]
 	string CancelButtonText {
-		get => isInitialized ? DevExpress.Ui.DxColorBoxInterop.GetCancelButtonText(dxTarget) : cancelButtonText;
+		get => isInitialized ? DevExpress.Ui.DxColorBoxInterop.GetCancelButtonText(dxTarget).Result : cancelButtonText;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxColorBoxInterop.SetCancelButtonText(dxTarget, value);
@@ -61,7 +61,7 @@
 	bool? editAlphaChannel;
 	[Parameter]
 	bool? EditAlphaChannel {
-		get => isInitialized ? DevExpress.Ui.DxColorBoxInterop.GetEditAlphaChannel(dxTarget) : editAlphaChannel;
+		get => isInitialized ? DevExpress.Ui.DxColorBoxInterop.GetEditAlphaChannel(dxTarget).Result : editAlphaChannel;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxColorBoxInterop.SetEditAlphaChannel(dxTarget, value);
@@ -73,7 +73,7 @@
 	object fieldTemplate;
 	[Parameter]
 	object FieldTemplate {
-		get => isInitialized ? DevExpress.Ui.DxColorBoxInterop.GetFieldTemplate(dxTarget) : fieldTemplate;
+		get => isInitialized ? DevExpress.Ui.DxColorBoxInterop.GetFieldTemplate(dxTarget).Result : fieldTemplate;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxColorBoxInterop.SetFieldTemplate(dxTarget, value);
@@ -85,7 +85,7 @@
 	float? keyStep;
 	[Parameter]
 	float? KeyStep {
-		get => isInitialized ? DevExpress.Ui.DxColorBoxInterop.GetKeyStep(dxTarget) : keyStep;
+		get => isInitialized ? DevExpress.Ui.DxColorBoxInterop.GetKeyStep(dxTarget).Result : keyStep;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxColorBoxInterop.SetKeyStep(dxTarget, value);
@@ -97,7 +97,7 @@
 	string value;
 	[Parameter]
 	string Value {
-		get => isInitialized ? DevExpress.Ui.DxColorBoxInterop.GetValue(dxTarget) : value;
+		get => isInitialized ? DevExpress.Ui.DxColorBoxInterop.GetValue(dxTarget).Result : value;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxColorBoxInterop.SetValue(dxTarget, value);

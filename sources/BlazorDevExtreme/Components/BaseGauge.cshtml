@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Viz.Gauges.BaseGaugeOptions>
+@inherits DxBlazorComponent<DevExpress.Viz.Gauges.BaseGaugeOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -23,13 +23,13 @@
 			onTooltipShownEnabled = onTooltipShownEnabled,
 		};
 	}
-	protected override void Init(DevExpress.Viz.Gauges.BaseGaugeOptions options) {
-		DevExpress.Viz.BaseGaugeInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Viz.Gauges.BaseGaugeOptions options) {
+return 		DevExpress.Viz.BaseGaugeInterop.Init(dxTarget, options);
 	}
 	object animation;
 	[Parameter]
 	object Animation {
-		get => isInitialized ? DevExpress.Viz.BaseGaugeInterop.GetAnimation(dxTarget) : animation;
+		get => isInitialized ? DevExpress.Viz.BaseGaugeInterop.GetAnimation(dxTarget).Result : animation;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.BaseGaugeInterop.SetAnimation(dxTarget, value);
@@ -41,7 +41,7 @@
 	string containerBackgroundColor;
 	[Parameter]
 	string ContainerBackgroundColor {
-		get => isInitialized ? DevExpress.Viz.BaseGaugeInterop.GetContainerBackgroundColor(dxTarget) : containerBackgroundColor;
+		get => isInitialized ? DevExpress.Viz.BaseGaugeInterop.GetContainerBackgroundColor(dxTarget).Result : containerBackgroundColor;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.BaseGaugeInterop.SetContainerBackgroundColor(dxTarget, value);
@@ -53,7 +53,7 @@
 	object rangeContainer;
 	[Parameter]
 	object RangeContainer {
-		get => isInitialized ? DevExpress.Viz.BaseGaugeInterop.GetRangeContainer(dxTarget) : rangeContainer;
+		get => isInitialized ? DevExpress.Viz.BaseGaugeInterop.GetRangeContainer(dxTarget).Result : rangeContainer;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.BaseGaugeInterop.SetRangeContainer(dxTarget, value);
@@ -65,7 +65,7 @@
 	object scale;
 	[Parameter]
 	object Scale {
-		get => isInitialized ? DevExpress.Viz.BaseGaugeInterop.GetScale(dxTarget) : scale;
+		get => isInitialized ? DevExpress.Viz.BaseGaugeInterop.GetScale(dxTarget).Result : scale;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.BaseGaugeInterop.SetScale(dxTarget, value);
@@ -77,7 +77,7 @@
 	object subtitle;
 	[Parameter]
 	object Subtitle {
-		get => isInitialized ? DevExpress.Viz.BaseGaugeInterop.GetSubtitle(dxTarget) : subtitle;
+		get => isInitialized ? DevExpress.Viz.BaseGaugeInterop.GetSubtitle(dxTarget).Result : subtitle;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.BaseGaugeInterop.SetSubtitle(dxTarget, value);
@@ -89,7 +89,7 @@
 	object subvalues;
 	[Parameter]
 	object Subvalues {
-		get => isInitialized ? DevExpress.Viz.BaseGaugeInterop.GetSubvalues(dxTarget) : subvalues;
+		get => isInitialized ? DevExpress.Viz.BaseGaugeInterop.GetSubvalues(dxTarget).Result : subvalues;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.BaseGaugeInterop.SetSubvalues(dxTarget, value);
@@ -101,7 +101,7 @@
 	object title;
 	[Parameter]
 	object Title {
-		get => isInitialized ? DevExpress.Viz.BaseGaugeInterop.GetTitle(dxTarget) : title;
+		get => isInitialized ? DevExpress.Viz.BaseGaugeInterop.GetTitle(dxTarget).Result : title;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.BaseGaugeInterop.SetTitle(dxTarget, value);
@@ -113,7 +113,7 @@
 	object tooltip;
 	[Parameter]
 	object Tooltip {
-		get => isInitialized ? DevExpress.Viz.BaseGaugeInterop.GetTooltip(dxTarget) : tooltip;
+		get => isInitialized ? DevExpress.Viz.BaseGaugeInterop.GetTooltip(dxTarget).Result : tooltip;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.BaseGaugeInterop.SetTooltip(dxTarget, value);
@@ -125,7 +125,7 @@
 	float? value;
 	[Parameter]
 	float? Value {
-		get => isInitialized ? DevExpress.Viz.BaseGaugeInterop.GetValue(dxTarget) : value;
+		get => isInitialized ? DevExpress.Viz.BaseGaugeInterop.GetValue(dxTarget).Result : value;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.BaseGaugeInterop.SetValue(dxTarget, value);
@@ -166,13 +166,13 @@
 		}
 	}
 	public object SubvaluesEx() {
-		return DevExpress.Viz.BaseGaugeInterop.SubvaluesEx(dxTarget);
+		return DevExpress.Viz.BaseGaugeInterop.SubvaluesEx(dxTarget).Result;
 	}
 	public void SubvaluesEx(object subvalues) {
 		DevExpress.Viz.BaseGaugeInterop.SubvaluesEx(dxTarget, subvalues);
 	}
 	public float ValueEx() {
-		return DevExpress.Viz.BaseGaugeInterop.ValueEx(dxTarget);
+		return DevExpress.Viz.BaseGaugeInterop.ValueEx(dxTarget).Result;
 	}
 	public void ValueEx(float value) {
 		DevExpress.Viz.BaseGaugeInterop.ValueEx(dxTarget, value);

@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Ui.DxCheckBoxOptions>
+@inherits DxBlazorComponent<DevExpress.Ui.DxCheckBoxOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -18,13 +18,13 @@
 			value = value,
 		};
 	}
-	protected override void Init(DevExpress.Ui.DxCheckBoxOptions options) {
-		DevExpress.Ui.DxCheckBoxInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Ui.DxCheckBoxOptions options) {
+return 		DevExpress.Ui.DxCheckBoxInterop.Init(dxTarget, options);
 	}
 	bool? activeStateEnabled;
 	[Parameter]
 	bool? ActiveStateEnabled {
-		get => isInitialized ? DevExpress.Ui.DxCheckBoxInterop.GetActiveStateEnabled(dxTarget) : activeStateEnabled;
+		get => isInitialized ? DevExpress.Ui.DxCheckBoxInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxCheckBoxInterop.SetActiveStateEnabled(dxTarget, value);
@@ -36,7 +36,7 @@
 	bool? focusStateEnabled;
 	[Parameter]
 	bool? FocusStateEnabled {
-		get => isInitialized ? DevExpress.Ui.DxCheckBoxInterop.GetFocusStateEnabled(dxTarget) : focusStateEnabled;
+		get => isInitialized ? DevExpress.Ui.DxCheckBoxInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxCheckBoxInterop.SetFocusStateEnabled(dxTarget, value);
@@ -48,7 +48,7 @@
 	bool? hoverStateEnabled;
 	[Parameter]
 	bool? HoverStateEnabled {
-		get => isInitialized ? DevExpress.Ui.DxCheckBoxInterop.GetHoverStateEnabled(dxTarget) : hoverStateEnabled;
+		get => isInitialized ? DevExpress.Ui.DxCheckBoxInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxCheckBoxInterop.SetHoverStateEnabled(dxTarget, value);
@@ -60,7 +60,7 @@
 	string name;
 	[Parameter]
 	string Name {
-		get => isInitialized ? DevExpress.Ui.DxCheckBoxInterop.GetName(dxTarget) : name;
+		get => isInitialized ? DevExpress.Ui.DxCheckBoxInterop.GetName(dxTarget).Result : name;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxCheckBoxInterop.SetName(dxTarget, value);
@@ -72,7 +72,7 @@
 	string text;
 	[Parameter]
 	string Text {
-		get => isInitialized ? DevExpress.Ui.DxCheckBoxInterop.GetText(dxTarget) : text;
+		get => isInitialized ? DevExpress.Ui.DxCheckBoxInterop.GetText(dxTarget).Result : text;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxCheckBoxInterop.SetText(dxTarget, value);
@@ -84,7 +84,7 @@
 	bool? value;
 	[Parameter]
 	bool? Value {
-		get => isInitialized ? DevExpress.Ui.DxCheckBoxInterop.GetValue(dxTarget) : value;
+		get => isInitialized ? DevExpress.Ui.DxCheckBoxInterop.GetValue(dxTarget).Result : value;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxCheckBoxInterop.SetValue(dxTarget, value);

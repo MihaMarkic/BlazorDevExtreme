@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Viz.Gauges.DxCircularGaugeOptions>
+@inherits DxBlazorComponent<DevExpress.Viz.Gauges.DxCircularGaugeOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -17,13 +17,13 @@
 			valueIndicator = valueIndicator,
 		};
 	}
-	protected override void Init(DevExpress.Viz.Gauges.DxCircularGaugeOptions options) {
-		DevExpress.Viz.DxCircularGaugeInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Viz.Gauges.DxCircularGaugeOptions options) {
+return 		DevExpress.Viz.DxCircularGaugeInterop.Init(dxTarget, options);
 	}
 	object geometry;
 	[Parameter]
 	object Geometry {
-		get => isInitialized ? DevExpress.Viz.DxCircularGaugeInterop.GetGeometry(dxTarget) : geometry;
+		get => isInitialized ? DevExpress.Viz.DxCircularGaugeInterop.GetGeometry(dxTarget).Result : geometry;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxCircularGaugeInterop.SetGeometry(dxTarget, value);
@@ -35,7 +35,7 @@
 	object rangeContainer;
 	[Parameter]
 	object RangeContainer {
-		get => isInitialized ? DevExpress.Viz.DxCircularGaugeInterop.GetRangeContainer(dxTarget) : rangeContainer;
+		get => isInitialized ? DevExpress.Viz.DxCircularGaugeInterop.GetRangeContainer(dxTarget).Result : rangeContainer;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxCircularGaugeInterop.SetRangeContainer(dxTarget, value);
@@ -47,7 +47,7 @@
 	object scale;
 	[Parameter]
 	object Scale {
-		get => isInitialized ? DevExpress.Viz.DxCircularGaugeInterop.GetScale(dxTarget) : scale;
+		get => isInitialized ? DevExpress.Viz.DxCircularGaugeInterop.GetScale(dxTarget).Result : scale;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxCircularGaugeInterop.SetScale(dxTarget, value);
@@ -59,7 +59,7 @@
 	object subvalueIndicator;
 	[Parameter]
 	object SubvalueIndicator {
-		get => isInitialized ? DevExpress.Viz.DxCircularGaugeInterop.GetSubvalueIndicator(dxTarget) : subvalueIndicator;
+		get => isInitialized ? DevExpress.Viz.DxCircularGaugeInterop.GetSubvalueIndicator(dxTarget).Result : subvalueIndicator;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxCircularGaugeInterop.SetSubvalueIndicator(dxTarget, value);
@@ -71,7 +71,7 @@
 	object valueIndicator;
 	[Parameter]
 	object ValueIndicator {
-		get => isInitialized ? DevExpress.Viz.DxCircularGaugeInterop.GetValueIndicator(dxTarget) : valueIndicator;
+		get => isInitialized ? DevExpress.Viz.DxCircularGaugeInterop.GetValueIndicator(dxTarget).Result : valueIndicator;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxCircularGaugeInterop.SetValueIndicator(dxTarget, value);

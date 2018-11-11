@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Ui.DxPanoramaOptions>
+@inherits DxBlazorComponent<DevExpress.Ui.DxPanoramaOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -16,13 +16,13 @@
 			title = title,
 		};
 	}
-	protected override void Init(DevExpress.Ui.DxPanoramaOptions options) {
-		DevExpress.Ui.DxPanoramaInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Ui.DxPanoramaOptions options) {
+return 		DevExpress.Ui.DxPanoramaInterop.Init(dxTarget, options);
 	}
 	object backgroundImage;
 	[Parameter]
 	object BackgroundImage {
-		get => isInitialized ? DevExpress.Ui.DxPanoramaInterop.GetBackgroundImage(dxTarget) : backgroundImage;
+		get => isInitialized ? DevExpress.Ui.DxPanoramaInterop.GetBackgroundImage(dxTarget).Result : backgroundImage;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxPanoramaInterop.SetBackgroundImage(dxTarget, value);
@@ -34,7 +34,7 @@
 	bool? focusStateEnabled;
 	[Parameter]
 	bool? FocusStateEnabled {
-		get => isInitialized ? DevExpress.Ui.DxPanoramaInterop.GetFocusStateEnabled(dxTarget) : focusStateEnabled;
+		get => isInitialized ? DevExpress.Ui.DxPanoramaInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxPanoramaInterop.SetFocusStateEnabled(dxTarget, value);
@@ -46,7 +46,7 @@
 	float? selectedIndex;
 	[Parameter]
 	float? SelectedIndex {
-		get => isInitialized ? DevExpress.Ui.DxPanoramaInterop.GetSelectedIndex(dxTarget) : selectedIndex;
+		get => isInitialized ? DevExpress.Ui.DxPanoramaInterop.GetSelectedIndex(dxTarget).Result : selectedIndex;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxPanoramaInterop.SetSelectedIndex(dxTarget, value);
@@ -58,7 +58,7 @@
 	string title;
 	[Parameter]
 	string Title {
-		get => isInitialized ? DevExpress.Ui.DxPanoramaInterop.GetTitle(dxTarget) : title;
+		get => isInitialized ? DevExpress.Ui.DxPanoramaInterop.GetTitle(dxTarget).Result : title;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxPanoramaInterop.SetTitle(dxTarget, value);

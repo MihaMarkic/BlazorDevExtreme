@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Ui.DxTagBoxOptions>
+@inherits DxBlazorComponent<DevExpress.Ui.DxTagBoxOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -24,13 +24,13 @@
 			onSelectionChangedEnabled = onSelectionChangedEnabled,
 		};
 	}
-	protected override void Init(DevExpress.Ui.DxTagBoxOptions options) {
-		DevExpress.Ui.DxTagBoxInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Ui.DxTagBoxOptions options) {
+return 		DevExpress.Ui.DxTagBoxInterop.Init(dxTarget, options);
 	}
 	string applyValueMode;
 	[Parameter]
 	string ApplyValueMode {
-		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetApplyValueMode(dxTarget) : applyValueMode;
+		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetApplyValueMode(dxTarget).Result : applyValueMode;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTagBoxInterop.SetApplyValueMode(dxTarget, value);
@@ -42,7 +42,7 @@
 	bool? hideSelectedItems;
 	[Parameter]
 	bool? HideSelectedItems {
-		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetHideSelectedItems(dxTarget) : hideSelectedItems;
+		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetHideSelectedItems(dxTarget).Result : hideSelectedItems;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTagBoxInterop.SetHideSelectedItems(dxTarget, value);
@@ -54,7 +54,7 @@
 	float? maxDisplayedTags;
 	[Parameter]
 	float? MaxDisplayedTags {
-		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetMaxDisplayedTags(dxTarget) : maxDisplayedTags;
+		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetMaxDisplayedTags(dxTarget).Result : maxDisplayedTags;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTagBoxInterop.SetMaxDisplayedTags(dxTarget, value);
@@ -66,7 +66,7 @@
 	bool? multiline;
 	[Parameter]
 	bool? Multiline {
-		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetMultiline(dxTarget) : multiline;
+		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetMultiline(dxTarget).Result : multiline;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTagBoxInterop.SetMultiline(dxTarget, value);
@@ -78,7 +78,7 @@
 	string selectAllMode;
 	[Parameter]
 	string SelectAllMode {
-		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetSelectAllMode(dxTarget) : selectAllMode;
+		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetSelectAllMode(dxTarget).Result : selectAllMode;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTagBoxInterop.SetSelectAllMode(dxTarget, value);
@@ -90,7 +90,7 @@
 	object selectedItems;
 	[Parameter]
 	object SelectedItems {
-		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetSelectedItems(dxTarget) : selectedItems;
+		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetSelectedItems(dxTarget).Result : selectedItems;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTagBoxInterop.SetSelectedItems(dxTarget, value);
@@ -102,7 +102,7 @@
 	bool? showMultiTagOnly;
 	[Parameter]
 	bool? ShowMultiTagOnly {
-		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetShowMultiTagOnly(dxTarget) : showMultiTagOnly;
+		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetShowMultiTagOnly(dxTarget).Result : showMultiTagOnly;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTagBoxInterop.SetShowMultiTagOnly(dxTarget, value);
@@ -114,7 +114,7 @@
 	object tagTemplate;
 	[Parameter]
 	object TagTemplate {
-		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetTagTemplate(dxTarget) : tagTemplate;
+		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetTagTemplate(dxTarget).Result : tagTemplate;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTagBoxInterop.SetTagTemplate(dxTarget, value);
@@ -126,7 +126,7 @@
 	object value;
 	[Parameter]
 	object Value {
-		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetValue(dxTarget) : value;
+		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetValue(dxTarget).Result : value;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTagBoxInterop.SetValue(dxTarget, value);

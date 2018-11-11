@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Ui.DxListOptions>
+@inherits DxBlazorComponent<DevExpress.Ui.DxListOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -52,13 +52,13 @@
 			onSelectAllValueChangedEnabled = onSelectAllValueChangedEnabled,
 		};
 	}
-	protected override void Init(DevExpress.Ui.DxListOptions options) {
-		DevExpress.Ui.DxListInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Ui.DxListOptions options) {
+return 		DevExpress.Ui.DxListInterop.Init(dxTarget, options);
 	}
 	bool? activeStateEnabled;
 	[Parameter]
 	bool? ActiveStateEnabled {
-		get => isInitialized ? DevExpress.Ui.DxListInterop.GetActiveStateEnabled(dxTarget) : activeStateEnabled;
+		get => isInitialized ? DevExpress.Ui.DxListInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxListInterop.SetActiveStateEnabled(dxTarget, value);
@@ -70,7 +70,7 @@
 	bool? allowItemDeleting;
 	[Parameter]
 	bool? AllowItemDeleting {
-		get => isInitialized ? DevExpress.Ui.DxListInterop.GetAllowItemDeleting(dxTarget) : allowItemDeleting;
+		get => isInitialized ? DevExpress.Ui.DxListInterop.GetAllowItemDeleting(dxTarget).Result : allowItemDeleting;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxListInterop.SetAllowItemDeleting(dxTarget, value);
@@ -82,7 +82,7 @@
 	bool? allowItemReordering;
 	[Parameter]
 	bool? AllowItemReordering {
-		get => isInitialized ? DevExpress.Ui.DxListInterop.GetAllowItemReordering(dxTarget) : allowItemReordering;
+		get => isInitialized ? DevExpress.Ui.DxListInterop.GetAllowItemReordering(dxTarget).Result : allowItemReordering;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxListInterop.SetAllowItemReordering(dxTarget, value);
@@ -94,7 +94,7 @@
 	bool? bounceEnabled;
 	[Parameter]
 	bool? BounceEnabled {
-		get => isInitialized ? DevExpress.Ui.DxListInterop.GetBounceEnabled(dxTarget) : bounceEnabled;
+		get => isInitialized ? DevExpress.Ui.DxListInterop.GetBounceEnabled(dxTarget).Result : bounceEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxListInterop.SetBounceEnabled(dxTarget, value);
@@ -106,7 +106,7 @@
 	bool? collapsibleGroups;
 	[Parameter]
 	bool? CollapsibleGroups {
-		get => isInitialized ? DevExpress.Ui.DxListInterop.GetCollapsibleGroups(dxTarget) : collapsibleGroups;
+		get => isInitialized ? DevExpress.Ui.DxListInterop.GetCollapsibleGroups(dxTarget).Result : collapsibleGroups;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxListInterop.SetCollapsibleGroups(dxTarget, value);
@@ -118,7 +118,7 @@
 	bool? focusStateEnabled;
 	[Parameter]
 	bool? FocusStateEnabled {
-		get => isInitialized ? DevExpress.Ui.DxListInterop.GetFocusStateEnabled(dxTarget) : focusStateEnabled;
+		get => isInitialized ? DevExpress.Ui.DxListInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxListInterop.SetFocusStateEnabled(dxTarget, value);
@@ -130,7 +130,7 @@
 	bool? grouped;
 	[Parameter]
 	bool? Grouped {
-		get => isInitialized ? DevExpress.Ui.DxListInterop.GetGrouped(dxTarget) : grouped;
+		get => isInitialized ? DevExpress.Ui.DxListInterop.GetGrouped(dxTarget).Result : grouped;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxListInterop.SetGrouped(dxTarget, value);
@@ -142,7 +142,7 @@
 	object groupTemplate;
 	[Parameter]
 	object GroupTemplate {
-		get => isInitialized ? DevExpress.Ui.DxListInterop.GetGroupTemplate(dxTarget) : groupTemplate;
+		get => isInitialized ? DevExpress.Ui.DxListInterop.GetGroupTemplate(dxTarget).Result : groupTemplate;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxListInterop.SetGroupTemplate(dxTarget, value);
@@ -154,7 +154,7 @@
 	bool? hoverStateEnabled;
 	[Parameter]
 	bool? HoverStateEnabled {
-		get => isInitialized ? DevExpress.Ui.DxListInterop.GetHoverStateEnabled(dxTarget) : hoverStateEnabled;
+		get => isInitialized ? DevExpress.Ui.DxListInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxListInterop.SetHoverStateEnabled(dxTarget, value);
@@ -166,7 +166,7 @@
 	bool? indicateLoading;
 	[Parameter]
 	bool? IndicateLoading {
-		get => isInitialized ? DevExpress.Ui.DxListInterop.GetIndicateLoading(dxTarget) : indicateLoading;
+		get => isInitialized ? DevExpress.Ui.DxListInterop.GetIndicateLoading(dxTarget).Result : indicateLoading;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxListInterop.SetIndicateLoading(dxTarget, value);
@@ -178,7 +178,7 @@
 	string itemDeleteMode;
 	[Parameter]
 	string ItemDeleteMode {
-		get => isInitialized ? DevExpress.Ui.DxListInterop.GetItemDeleteMode(dxTarget) : itemDeleteMode;
+		get => isInitialized ? DevExpress.Ui.DxListInterop.GetItemDeleteMode(dxTarget).Result : itemDeleteMode;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxListInterop.SetItemDeleteMode(dxTarget, value);
@@ -190,7 +190,7 @@
 	object menuItems;
 	[Parameter]
 	object MenuItems {
-		get => isInitialized ? DevExpress.Ui.DxListInterop.GetMenuItems(dxTarget) : menuItems;
+		get => isInitialized ? DevExpress.Ui.DxListInterop.GetMenuItems(dxTarget).Result : menuItems;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxListInterop.SetMenuItems(dxTarget, value);
@@ -202,7 +202,7 @@
 	string menuMode;
 	[Parameter]
 	string MenuMode {
-		get => isInitialized ? DevExpress.Ui.DxListInterop.GetMenuMode(dxTarget) : menuMode;
+		get => isInitialized ? DevExpress.Ui.DxListInterop.GetMenuMode(dxTarget).Result : menuMode;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxListInterop.SetMenuMode(dxTarget, value);
@@ -214,7 +214,7 @@
 	string nextButtonText;
 	[Parameter]
 	string NextButtonText {
-		get => isInitialized ? DevExpress.Ui.DxListInterop.GetNextButtonText(dxTarget) : nextButtonText;
+		get => isInitialized ? DevExpress.Ui.DxListInterop.GetNextButtonText(dxTarget).Result : nextButtonText;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxListInterop.SetNextButtonText(dxTarget, value);
@@ -226,7 +226,7 @@
 	string pageLoadingText;
 	[Parameter]
 	string PageLoadingText {
-		get => isInitialized ? DevExpress.Ui.DxListInterop.GetPageLoadingText(dxTarget) : pageLoadingText;
+		get => isInitialized ? DevExpress.Ui.DxListInterop.GetPageLoadingText(dxTarget).Result : pageLoadingText;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxListInterop.SetPageLoadingText(dxTarget, value);
@@ -238,7 +238,7 @@
 	string pageLoadMode;
 	[Parameter]
 	string PageLoadMode {
-		get => isInitialized ? DevExpress.Ui.DxListInterop.GetPageLoadMode(dxTarget) : pageLoadMode;
+		get => isInitialized ? DevExpress.Ui.DxListInterop.GetPageLoadMode(dxTarget).Result : pageLoadMode;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxListInterop.SetPageLoadMode(dxTarget, value);
@@ -250,7 +250,7 @@
 	string pulledDownText;
 	[Parameter]
 	string PulledDownText {
-		get => isInitialized ? DevExpress.Ui.DxListInterop.GetPulledDownText(dxTarget) : pulledDownText;
+		get => isInitialized ? DevExpress.Ui.DxListInterop.GetPulledDownText(dxTarget).Result : pulledDownText;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxListInterop.SetPulledDownText(dxTarget, value);
@@ -262,7 +262,7 @@
 	string pullingDownText;
 	[Parameter]
 	string PullingDownText {
-		get => isInitialized ? DevExpress.Ui.DxListInterop.GetPullingDownText(dxTarget) : pullingDownText;
+		get => isInitialized ? DevExpress.Ui.DxListInterop.GetPullingDownText(dxTarget).Result : pullingDownText;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxListInterop.SetPullingDownText(dxTarget, value);
@@ -274,7 +274,7 @@
 	bool? pullRefreshEnabled;
 	[Parameter]
 	bool? PullRefreshEnabled {
-		get => isInitialized ? DevExpress.Ui.DxListInterop.GetPullRefreshEnabled(dxTarget) : pullRefreshEnabled;
+		get => isInitialized ? DevExpress.Ui.DxListInterop.GetPullRefreshEnabled(dxTarget).Result : pullRefreshEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxListInterop.SetPullRefreshEnabled(dxTarget, value);
@@ -286,7 +286,7 @@
 	string refreshingText;
 	[Parameter]
 	string RefreshingText {
-		get => isInitialized ? DevExpress.Ui.DxListInterop.GetRefreshingText(dxTarget) : refreshingText;
+		get => isInitialized ? DevExpress.Ui.DxListInterop.GetRefreshingText(dxTarget).Result : refreshingText;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxListInterop.SetRefreshingText(dxTarget, value);
@@ -298,7 +298,7 @@
 	bool? scrollByContent;
 	[Parameter]
 	bool? ScrollByContent {
-		get => isInitialized ? DevExpress.Ui.DxListInterop.GetScrollByContent(dxTarget) : scrollByContent;
+		get => isInitialized ? DevExpress.Ui.DxListInterop.GetScrollByContent(dxTarget).Result : scrollByContent;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxListInterop.SetScrollByContent(dxTarget, value);
@@ -310,7 +310,7 @@
 	bool? scrollByThumb;
 	[Parameter]
 	bool? ScrollByThumb {
-		get => isInitialized ? DevExpress.Ui.DxListInterop.GetScrollByThumb(dxTarget) : scrollByThumb;
+		get => isInitialized ? DevExpress.Ui.DxListInterop.GetScrollByThumb(dxTarget).Result : scrollByThumb;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxListInterop.SetScrollByThumb(dxTarget, value);
@@ -322,7 +322,7 @@
 	bool? scrollingEnabled;
 	[Parameter]
 	bool? ScrollingEnabled {
-		get => isInitialized ? DevExpress.Ui.DxListInterop.GetScrollingEnabled(dxTarget) : scrollingEnabled;
+		get => isInitialized ? DevExpress.Ui.DxListInterop.GetScrollingEnabled(dxTarget).Result : scrollingEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxListInterop.SetScrollingEnabled(dxTarget, value);
@@ -334,7 +334,7 @@
 	string selectAllMode;
 	[Parameter]
 	string SelectAllMode {
-		get => isInitialized ? DevExpress.Ui.DxListInterop.GetSelectAllMode(dxTarget) : selectAllMode;
+		get => isInitialized ? DevExpress.Ui.DxListInterop.GetSelectAllMode(dxTarget).Result : selectAllMode;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxListInterop.SetSelectAllMode(dxTarget, value);
@@ -346,7 +346,7 @@
 	string selectionMode;
 	[Parameter]
 	string SelectionMode {
-		get => isInitialized ? DevExpress.Ui.DxListInterop.GetSelectionMode(dxTarget) : selectionMode;
+		get => isInitialized ? DevExpress.Ui.DxListInterop.GetSelectionMode(dxTarget).Result : selectionMode;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxListInterop.SetSelectionMode(dxTarget, value);
@@ -358,7 +358,7 @@
 	string showScrollbar;
 	[Parameter]
 	string ShowScrollbar {
-		get => isInitialized ? DevExpress.Ui.DxListInterop.GetShowScrollbar(dxTarget) : showScrollbar;
+		get => isInitialized ? DevExpress.Ui.DxListInterop.GetShowScrollbar(dxTarget).Result : showScrollbar;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxListInterop.SetShowScrollbar(dxTarget, value);
@@ -370,7 +370,7 @@
 	bool? showSelectionControls;
 	[Parameter]
 	bool? ShowSelectionControls {
-		get => isInitialized ? DevExpress.Ui.DxListInterop.GetShowSelectionControls(dxTarget) : showSelectionControls;
+		get => isInitialized ? DevExpress.Ui.DxListInterop.GetShowSelectionControls(dxTarget).Result : showSelectionControls;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxListInterop.SetShowSelectionControls(dxTarget, value);
@@ -382,7 +382,7 @@
 	bool? useNativeScrolling;
 	[Parameter]
 	bool? UseNativeScrolling {
-		get => isInitialized ? DevExpress.Ui.DxListInterop.GetUseNativeScrolling(dxTarget) : useNativeScrolling;
+		get => isInitialized ? DevExpress.Ui.DxListInterop.GetUseNativeScrolling(dxTarget).Result : useNativeScrolling;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxListInterop.SetUseNativeScrolling(dxTarget, value);
@@ -563,31 +563,31 @@
 		}
 	}
 	public float ClientHeight() {
-		return DevExpress.Ui.DxListInterop.ClientHeight(dxTarget);
+		return DevExpress.Ui.DxListInterop.ClientHeight(dxTarget).Result;
 	}
 	public object CollapseGroup(float groupIndex) {
-		return DevExpress.Ui.DxListInterop.CollapseGroup(dxTarget, groupIndex);
+		return DevExpress.Ui.DxListInterop.CollapseGroup(dxTarget, groupIndex).Result;
 	}
 	public object DeleteItem(object itemElement) {
-		return DevExpress.Ui.DxListInterop.DeleteItem(dxTarget, itemElement);
+		return DevExpress.Ui.DxListInterop.DeleteItem(dxTarget, itemElement).Result;
 	}
 	public object ExpandGroup(float groupIndex) {
-		return DevExpress.Ui.DxListInterop.ExpandGroup(dxTarget, groupIndex);
+		return DevExpress.Ui.DxListInterop.ExpandGroup(dxTarget, groupIndex).Result;
 	}
 	public bool IsItemSelected(object itemElement) {
-		return DevExpress.Ui.DxListInterop.IsItemSelected(dxTarget, itemElement);
+		return DevExpress.Ui.DxListInterop.IsItemSelected(dxTarget, itemElement).Result;
 	}
 	public void Reload() {
 		DevExpress.Ui.DxListInterop.Reload(dxTarget);
 	}
 	public object ReorderItem(object itemElement, object toItemElement) {
-		return DevExpress.Ui.DxListInterop.ReorderItem(dxTarget, itemElement, toItemElement);
+		return DevExpress.Ui.DxListInterop.ReorderItem(dxTarget, itemElement, toItemElement).Result;
 	}
 	public void ScrollBy(float distance) {
 		DevExpress.Ui.DxListInterop.ScrollBy(dxTarget, distance);
 	}
 	public float ScrollHeight() {
-		return DevExpress.Ui.DxListInterop.ScrollHeight(dxTarget);
+		return DevExpress.Ui.DxListInterop.ScrollHeight(dxTarget).Result;
 	}
 	public void ScrollTo(float location) {
 		DevExpress.Ui.DxListInterop.ScrollTo(dxTarget, location);
@@ -596,7 +596,7 @@
 		DevExpress.Ui.DxListInterop.ScrollToItem(dxTarget, itemElement);
 	}
 	public float ScrollTop() {
-		return DevExpress.Ui.DxListInterop.ScrollTop(dxTarget);
+		return DevExpress.Ui.DxListInterop.ScrollTop(dxTarget).Result;
 	}
 	public void SelectAll() {
 		DevExpress.Ui.DxListInterop.SelectAll(dxTarget);
@@ -611,7 +611,7 @@
 		DevExpress.Ui.DxListInterop.UnselectItem(dxTarget, itemElement);
 	}
 	public object UpdateDimensions() {
-		return DevExpress.Ui.DxListInterop.UpdateDimensions(dxTarget);
+		return DevExpress.Ui.DxListInterop.UpdateDimensions(dxTarget).Result;
 	}
 	public void Dispose() {
 		DevExpress.Ui.DxListInterop.GroupRendered -= DxList_GroupRendered;

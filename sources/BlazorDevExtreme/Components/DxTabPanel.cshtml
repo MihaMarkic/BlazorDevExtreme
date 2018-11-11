@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Ui.DxTabPanelOptions>
+@inherits DxBlazorComponent<DevExpress.Ui.DxTabPanelOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -23,13 +23,13 @@
 			onTitleRenderedEnabled = onTitleRenderedEnabled,
 		};
 	}
-	protected override void Init(DevExpress.Ui.DxTabPanelOptions options) {
-		DevExpress.Ui.DxTabPanelInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Ui.DxTabPanelOptions options) {
+return 		DevExpress.Ui.DxTabPanelInterop.Init(dxTarget, options);
 	}
 	bool? animationEnabled;
 	[Parameter]
 	bool? AnimationEnabled {
-		get => isInitialized ? DevExpress.Ui.DxTabPanelInterop.GetAnimationEnabled(dxTarget) : animationEnabled;
+		get => isInitialized ? DevExpress.Ui.DxTabPanelInterop.GetAnimationEnabled(dxTarget).Result : animationEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTabPanelInterop.SetAnimationEnabled(dxTarget, value);
@@ -41,7 +41,7 @@
 	bool? focusStateEnabled;
 	[Parameter]
 	bool? FocusStateEnabled {
-		get => isInitialized ? DevExpress.Ui.DxTabPanelInterop.GetFocusStateEnabled(dxTarget) : focusStateEnabled;
+		get => isInitialized ? DevExpress.Ui.DxTabPanelInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTabPanelInterop.SetFocusStateEnabled(dxTarget, value);
@@ -53,7 +53,7 @@
 	bool? hoverStateEnabled;
 	[Parameter]
 	bool? HoverStateEnabled {
-		get => isInitialized ? DevExpress.Ui.DxTabPanelInterop.GetHoverStateEnabled(dxTarget) : hoverStateEnabled;
+		get => isInitialized ? DevExpress.Ui.DxTabPanelInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTabPanelInterop.SetHoverStateEnabled(dxTarget, value);
@@ -65,7 +65,7 @@
 	object itemTitleTemplate;
 	[Parameter]
 	object ItemTitleTemplate {
-		get => isInitialized ? DevExpress.Ui.DxTabPanelInterop.GetItemTitleTemplate(dxTarget) : itemTitleTemplate;
+		get => isInitialized ? DevExpress.Ui.DxTabPanelInterop.GetItemTitleTemplate(dxTarget).Result : itemTitleTemplate;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTabPanelInterop.SetItemTitleTemplate(dxTarget, value);
@@ -77,7 +77,7 @@
 	bool? scrollByContent;
 	[Parameter]
 	bool? ScrollByContent {
-		get => isInitialized ? DevExpress.Ui.DxTabPanelInterop.GetScrollByContent(dxTarget) : scrollByContent;
+		get => isInitialized ? DevExpress.Ui.DxTabPanelInterop.GetScrollByContent(dxTarget).Result : scrollByContent;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTabPanelInterop.SetScrollByContent(dxTarget, value);
@@ -89,7 +89,7 @@
 	bool? scrollingEnabled;
 	[Parameter]
 	bool? ScrollingEnabled {
-		get => isInitialized ? DevExpress.Ui.DxTabPanelInterop.GetScrollingEnabled(dxTarget) : scrollingEnabled;
+		get => isInitialized ? DevExpress.Ui.DxTabPanelInterop.GetScrollingEnabled(dxTarget).Result : scrollingEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTabPanelInterop.SetScrollingEnabled(dxTarget, value);
@@ -101,7 +101,7 @@
 	bool? showNavButtons;
 	[Parameter]
 	bool? ShowNavButtons {
-		get => isInitialized ? DevExpress.Ui.DxTabPanelInterop.GetShowNavButtons(dxTarget) : showNavButtons;
+		get => isInitialized ? DevExpress.Ui.DxTabPanelInterop.GetShowNavButtons(dxTarget).Result : showNavButtons;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTabPanelInterop.SetShowNavButtons(dxTarget, value);
@@ -113,7 +113,7 @@
 	bool? swipeEnabled;
 	[Parameter]
 	bool? SwipeEnabled {
-		get => isInitialized ? DevExpress.Ui.DxTabPanelInterop.GetSwipeEnabled(dxTarget) : swipeEnabled;
+		get => isInitialized ? DevExpress.Ui.DxTabPanelInterop.GetSwipeEnabled(dxTarget).Result : swipeEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTabPanelInterop.SetSwipeEnabled(dxTarget, value);

@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Viz.RangeSelector.DxRangeSelectorOptions>
+@inherits DxBlazorComponent<DevExpress.Viz.RangeSelector.DxRangeSelectorOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -28,13 +28,13 @@
 			onValueChangedEnabled = onValueChangedEnabled,
 		};
 	}
-	protected override void Init(DevExpress.Viz.RangeSelector.DxRangeSelectorOptions options) {
-		DevExpress.Viz.DxRangeSelectorInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Viz.RangeSelector.DxRangeSelectorOptions options) {
+return 		DevExpress.Viz.DxRangeSelectorInterop.Init(dxTarget, options);
 	}
 	object background;
 	[Parameter]
 	object Background {
-		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetBackground(dxTarget) : background;
+		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetBackground(dxTarget).Result : background;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxRangeSelectorInterop.SetBackground(dxTarget, value);
@@ -46,7 +46,7 @@
 	object behavior;
 	[Parameter]
 	object Behavior {
-		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetBehavior(dxTarget) : behavior;
+		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetBehavior(dxTarget).Result : behavior;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxRangeSelectorInterop.SetBehavior(dxTarget, value);
@@ -58,7 +58,7 @@
 	object chart;
 	[Parameter]
 	object Chart {
-		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetChart(dxTarget) : chart;
+		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetChart(dxTarget).Result : chart;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxRangeSelectorInterop.SetChart(dxTarget, value);
@@ -70,7 +70,7 @@
 	string containerBackgroundColor;
 	[Parameter]
 	string ContainerBackgroundColor {
-		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetContainerBackgroundColor(dxTarget) : containerBackgroundColor;
+		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetContainerBackgroundColor(dxTarget).Result : containerBackgroundColor;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxRangeSelectorInterop.SetContainerBackgroundColor(dxTarget, value);
@@ -82,7 +82,7 @@
 	object dataSource;
 	[Parameter]
 	object DataSource {
-		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetDataSource(dxTarget) : dataSource;
+		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetDataSource(dxTarget).Result : dataSource;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxRangeSelectorInterop.SetDataSource(dxTarget, value);
@@ -94,7 +94,7 @@
 	string dataSourceField;
 	[Parameter]
 	string DataSourceField {
-		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetDataSourceField(dxTarget) : dataSourceField;
+		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetDataSourceField(dxTarget).Result : dataSourceField;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxRangeSelectorInterop.SetDataSourceField(dxTarget, value);
@@ -106,7 +106,7 @@
 	object indent;
 	[Parameter]
 	object Indent {
-		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetIndent(dxTarget) : indent;
+		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetIndent(dxTarget).Result : indent;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxRangeSelectorInterop.SetIndent(dxTarget, value);
@@ -118,7 +118,7 @@
 	object scale;
 	[Parameter]
 	object Scale {
-		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetScale(dxTarget) : scale;
+		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetScale(dxTarget).Result : scale;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxRangeSelectorInterop.SetScale(dxTarget, value);
@@ -130,7 +130,7 @@
 	object selectedRange;
 	[Parameter]
 	object SelectedRange {
-		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetSelectedRange(dxTarget) : selectedRange;
+		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetSelectedRange(dxTarget).Result : selectedRange;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxRangeSelectorInterop.SetSelectedRange(dxTarget, value);
@@ -142,7 +142,7 @@
 	string selectedRangeColor;
 	[Parameter]
 	string SelectedRangeColor {
-		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetSelectedRangeColor(dxTarget) : selectedRangeColor;
+		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetSelectedRangeColor(dxTarget).Result : selectedRangeColor;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxRangeSelectorInterop.SetSelectedRangeColor(dxTarget, value);
@@ -154,7 +154,7 @@
 	object shutter;
 	[Parameter]
 	object Shutter {
-		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetShutter(dxTarget) : shutter;
+		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetShutter(dxTarget).Result : shutter;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxRangeSelectorInterop.SetShutter(dxTarget, value);
@@ -166,7 +166,7 @@
 	object sliderHandle;
 	[Parameter]
 	object SliderHandle {
-		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetSliderHandle(dxTarget) : sliderHandle;
+		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetSliderHandle(dxTarget).Result : sliderHandle;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxRangeSelectorInterop.SetSliderHandle(dxTarget, value);
@@ -178,7 +178,7 @@
 	object sliderMarker;
 	[Parameter]
 	object SliderMarker {
-		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetSliderMarker(dxTarget) : sliderMarker;
+		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetSliderMarker(dxTarget).Result : sliderMarker;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxRangeSelectorInterop.SetSliderMarker(dxTarget, value);
@@ -190,7 +190,7 @@
 	object value;
 	[Parameter]
 	object Value {
-		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetValue(dxTarget) : value;
+		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetValue(dxTarget).Result : value;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxRangeSelectorInterop.SetValue(dxTarget, value);
@@ -231,13 +231,13 @@
 		}
 	}
 	public object GetDataSourceEx() {
-		return DevExpress.Viz.DxRangeSelectorInterop.GetDataSourceEx(dxTarget);
+		return DevExpress.Viz.DxRangeSelectorInterop.GetDataSourceEx(dxTarget).Result;
 	}
 	public object GetSelectedRangeEx() {
-		return DevExpress.Viz.DxRangeSelectorInterop.GetSelectedRangeEx(dxTarget);
+		return DevExpress.Viz.DxRangeSelectorInterop.GetSelectedRangeEx(dxTarget).Result;
 	}
 	public object GetValueEx() {
-		return DevExpress.Viz.DxRangeSelectorInterop.GetValueEx(dxTarget);
+		return DevExpress.Viz.DxRangeSelectorInterop.GetValueEx(dxTarget).Result;
 	}
 	public void Render() {
 		DevExpress.Viz.DxRangeSelectorInterop.Render(dxTarget);

@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Ui.DxLookupOptions>
+@inherits DxBlazorComponent<DevExpress.Ui.DxLookupOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -50,13 +50,13 @@
 			onValueChangedEnabled = onValueChangedEnabled,
 		};
 	}
-	protected override void Init(DevExpress.Ui.DxLookupOptions options) {
-		DevExpress.Ui.DxLookupInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Ui.DxLookupOptions options) {
+return 		DevExpress.Ui.DxLookupInterop.Init(dxTarget, options);
 	}
 	object animation;
 	[Parameter]
 	object Animation {
-		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetAnimation(dxTarget) : animation;
+		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetAnimation(dxTarget).Result : animation;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxLookupInterop.SetAnimation(dxTarget, value);
@@ -68,7 +68,7 @@
 	string applyButtonText;
 	[Parameter]
 	string ApplyButtonText {
-		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetApplyButtonText(dxTarget) : applyButtonText;
+		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetApplyButtonText(dxTarget).Result : applyButtonText;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxLookupInterop.SetApplyButtonText(dxTarget, value);
@@ -80,7 +80,7 @@
 	string applyValueMode;
 	[Parameter]
 	string ApplyValueMode {
-		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetApplyValueMode(dxTarget) : applyValueMode;
+		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetApplyValueMode(dxTarget).Result : applyValueMode;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxLookupInterop.SetApplyValueMode(dxTarget, value);
@@ -92,7 +92,7 @@
 	string cancelButtonText;
 	[Parameter]
 	string CancelButtonText {
-		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetCancelButtonText(dxTarget) : cancelButtonText;
+		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetCancelButtonText(dxTarget).Result : cancelButtonText;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxLookupInterop.SetCancelButtonText(dxTarget, value);
@@ -104,7 +104,7 @@
 	bool? cleanSearchOnOpening;
 	[Parameter]
 	bool? CleanSearchOnOpening {
-		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetCleanSearchOnOpening(dxTarget) : cleanSearchOnOpening;
+		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetCleanSearchOnOpening(dxTarget).Result : cleanSearchOnOpening;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxLookupInterop.SetCleanSearchOnOpening(dxTarget, value);
@@ -116,7 +116,7 @@
 	string clearButtonText;
 	[Parameter]
 	string ClearButtonText {
-		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetClearButtonText(dxTarget) : clearButtonText;
+		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetClearButtonText(dxTarget).Result : clearButtonText;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxLookupInterop.SetClearButtonText(dxTarget, value);
@@ -128,7 +128,7 @@
 	object closeOnOutsideClick;
 	[Parameter]
 	object CloseOnOutsideClick {
-		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetCloseOnOutsideClick(dxTarget) : closeOnOutsideClick;
+		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetCloseOnOutsideClick(dxTarget).Result : closeOnOutsideClick;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxLookupInterop.SetCloseOnOutsideClick(dxTarget, value);
@@ -140,7 +140,7 @@
 	object fieldTemplate;
 	[Parameter]
 	object FieldTemplate {
-		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetFieldTemplate(dxTarget) : fieldTemplate;
+		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetFieldTemplate(dxTarget).Result : fieldTemplate;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxLookupInterop.SetFieldTemplate(dxTarget, value);
@@ -152,7 +152,7 @@
 	bool? focusStateEnabled;
 	[Parameter]
 	bool? FocusStateEnabled {
-		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetFocusStateEnabled(dxTarget) : focusStateEnabled;
+		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxLookupInterop.SetFocusStateEnabled(dxTarget, value);
@@ -164,7 +164,7 @@
 	bool? fullScreen;
 	[Parameter]
 	bool? FullScreen {
-		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetFullScreen(dxTarget) : fullScreen;
+		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetFullScreen(dxTarget).Result : fullScreen;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxLookupInterop.SetFullScreen(dxTarget, value);
@@ -176,7 +176,7 @@
 	bool? grouped;
 	[Parameter]
 	bool? Grouped {
-		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetGrouped(dxTarget) : grouped;
+		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetGrouped(dxTarget).Result : grouped;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxLookupInterop.SetGrouped(dxTarget, value);
@@ -188,7 +188,7 @@
 	object groupTemplate;
 	[Parameter]
 	object GroupTemplate {
-		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetGroupTemplate(dxTarget) : groupTemplate;
+		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetGroupTemplate(dxTarget).Result : groupTemplate;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxLookupInterop.SetGroupTemplate(dxTarget, value);
@@ -200,7 +200,7 @@
 	string nextButtonText;
 	[Parameter]
 	string NextButtonText {
-		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetNextButtonText(dxTarget) : nextButtonText;
+		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetNextButtonText(dxTarget).Result : nextButtonText;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxLookupInterop.SetNextButtonText(dxTarget, value);
@@ -212,7 +212,7 @@
 	string pageLoadingText;
 	[Parameter]
 	string PageLoadingText {
-		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetPageLoadingText(dxTarget) : pageLoadingText;
+		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetPageLoadingText(dxTarget).Result : pageLoadingText;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxLookupInterop.SetPageLoadingText(dxTarget, value);
@@ -224,7 +224,7 @@
 	string pageLoadMode;
 	[Parameter]
 	string PageLoadMode {
-		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetPageLoadMode(dxTarget) : pageLoadMode;
+		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetPageLoadMode(dxTarget).Result : pageLoadMode;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxLookupInterop.SetPageLoadMode(dxTarget, value);
@@ -236,7 +236,7 @@
 	string placeholder;
 	[Parameter]
 	string Placeholder {
-		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetPlaceholder(dxTarget) : placeholder;
+		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetPlaceholder(dxTarget).Result : placeholder;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxLookupInterop.SetPlaceholder(dxTarget, value);
@@ -248,7 +248,7 @@
 	object popupHeight;
 	[Parameter]
 	object PopupHeight {
-		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetPopupHeight(dxTarget) : popupHeight;
+		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetPopupHeight(dxTarget).Result : popupHeight;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxLookupInterop.SetPopupHeight(dxTarget, value);
@@ -260,7 +260,7 @@
 	object popupWidth;
 	[Parameter]
 	object PopupWidth {
-		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetPopupWidth(dxTarget) : popupWidth;
+		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetPopupWidth(dxTarget).Result : popupWidth;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxLookupInterop.SetPopupWidth(dxTarget, value);
@@ -272,7 +272,7 @@
 	object position;
 	[Parameter]
 	object Position {
-		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetPosition(dxTarget) : position;
+		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetPosition(dxTarget).Result : position;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxLookupInterop.SetPosition(dxTarget, value);
@@ -284,7 +284,7 @@
 	string pulledDownText;
 	[Parameter]
 	string PulledDownText {
-		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetPulledDownText(dxTarget) : pulledDownText;
+		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetPulledDownText(dxTarget).Result : pulledDownText;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxLookupInterop.SetPulledDownText(dxTarget, value);
@@ -296,7 +296,7 @@
 	string pullingDownText;
 	[Parameter]
 	string PullingDownText {
-		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetPullingDownText(dxTarget) : pullingDownText;
+		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetPullingDownText(dxTarget).Result : pullingDownText;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxLookupInterop.SetPullingDownText(dxTarget, value);
@@ -308,7 +308,7 @@
 	bool? pullRefreshEnabled;
 	[Parameter]
 	bool? PullRefreshEnabled {
-		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetPullRefreshEnabled(dxTarget) : pullRefreshEnabled;
+		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetPullRefreshEnabled(dxTarget).Result : pullRefreshEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxLookupInterop.SetPullRefreshEnabled(dxTarget, value);
@@ -320,7 +320,7 @@
 	string refreshingText;
 	[Parameter]
 	string RefreshingText {
-		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetRefreshingText(dxTarget) : refreshingText;
+		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetRefreshingText(dxTarget).Result : refreshingText;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxLookupInterop.SetRefreshingText(dxTarget, value);
@@ -332,7 +332,7 @@
 	bool? searchEnabled;
 	[Parameter]
 	bool? SearchEnabled {
-		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetSearchEnabled(dxTarget) : searchEnabled;
+		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetSearchEnabled(dxTarget).Result : searchEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxLookupInterop.SetSearchEnabled(dxTarget, value);
@@ -344,7 +344,7 @@
 	string searchPlaceholder;
 	[Parameter]
 	string SearchPlaceholder {
-		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetSearchPlaceholder(dxTarget) : searchPlaceholder;
+		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetSearchPlaceholder(dxTarget).Result : searchPlaceholder;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxLookupInterop.SetSearchPlaceholder(dxTarget, value);
@@ -356,7 +356,7 @@
 	bool? shading;
 	[Parameter]
 	bool? Shading {
-		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetShading(dxTarget) : shading;
+		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetShading(dxTarget).Result : shading;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxLookupInterop.SetShading(dxTarget, value);
@@ -368,7 +368,7 @@
 	bool? showCancelButton;
 	[Parameter]
 	bool? ShowCancelButton {
-		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetShowCancelButton(dxTarget) : showCancelButton;
+		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetShowCancelButton(dxTarget).Result : showCancelButton;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxLookupInterop.SetShowCancelButton(dxTarget, value);
@@ -380,7 +380,7 @@
 	bool? showClearButton;
 	[Parameter]
 	bool? ShowClearButton {
-		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetShowClearButton(dxTarget) : showClearButton;
+		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetShowClearButton(dxTarget).Result : showClearButton;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxLookupInterop.SetShowClearButton(dxTarget, value);
@@ -392,7 +392,7 @@
 	bool? showPopupTitle;
 	[Parameter]
 	bool? ShowPopupTitle {
-		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetShowPopupTitle(dxTarget) : showPopupTitle;
+		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetShowPopupTitle(dxTarget).Result : showPopupTitle;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxLookupInterop.SetShowPopupTitle(dxTarget, value);
@@ -404,7 +404,7 @@
 	string title;
 	[Parameter]
 	string Title {
-		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetTitle(dxTarget) : title;
+		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetTitle(dxTarget).Result : title;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxLookupInterop.SetTitle(dxTarget, value);
@@ -416,7 +416,7 @@
 	object titleTemplate;
 	[Parameter]
 	object TitleTemplate {
-		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetTitleTemplate(dxTarget) : titleTemplate;
+		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetTitleTemplate(dxTarget).Result : titleTemplate;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxLookupInterop.SetTitleTemplate(dxTarget, value);
@@ -428,7 +428,7 @@
 	bool? useNativeScrolling;
 	[Parameter]
 	bool? UseNativeScrolling {
-		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetUseNativeScrolling(dxTarget) : useNativeScrolling;
+		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetUseNativeScrolling(dxTarget).Result : useNativeScrolling;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxLookupInterop.SetUseNativeScrolling(dxTarget, value);
@@ -440,7 +440,7 @@
 	bool? usePopover;
 	[Parameter]
 	bool? UsePopover {
-		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetUsePopover(dxTarget) : usePopover;
+		get => isInitialized ? DevExpress.Ui.DxLookupInterop.GetUsePopover(dxTarget).Result : usePopover;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxLookupInterop.SetUsePopover(dxTarget, value);

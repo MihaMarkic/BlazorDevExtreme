@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Ui.HierarchicalCollectionWidgetOptions>
+@inherits DxBlazorComponent<DevExpress.Ui.HierarchicalCollectionWidgetOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -19,13 +19,13 @@
 			selectedExpr = selectedExpr,
 		};
 	}
-	protected override void Init(DevExpress.Ui.HierarchicalCollectionWidgetOptions options) {
-		DevExpress.Ui.HierarchicalCollectionWidgetInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Ui.HierarchicalCollectionWidgetOptions options) {
+return 		DevExpress.Ui.HierarchicalCollectionWidgetInterop.Init(dxTarget, options);
 	}
 	object disabledExpr;
 	[Parameter]
 	object DisabledExpr {
-		get => isInitialized ? DevExpress.Ui.HierarchicalCollectionWidgetInterop.GetDisabledExpr(dxTarget) : disabledExpr;
+		get => isInitialized ? DevExpress.Ui.HierarchicalCollectionWidgetInterop.GetDisabledExpr(dxTarget).Result : disabledExpr;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.HierarchicalCollectionWidgetInterop.SetDisabledExpr(dxTarget, value);
@@ -37,7 +37,7 @@
 	object displayExpr;
 	[Parameter]
 	object DisplayExpr {
-		get => isInitialized ? DevExpress.Ui.HierarchicalCollectionWidgetInterop.GetDisplayExpr(dxTarget) : displayExpr;
+		get => isInitialized ? DevExpress.Ui.HierarchicalCollectionWidgetInterop.GetDisplayExpr(dxTarget).Result : displayExpr;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.HierarchicalCollectionWidgetInterop.SetDisplayExpr(dxTarget, value);
@@ -49,7 +49,7 @@
 	bool? focusStateEnabled;
 	[Parameter]
 	bool? FocusStateEnabled {
-		get => isInitialized ? DevExpress.Ui.HierarchicalCollectionWidgetInterop.GetFocusStateEnabled(dxTarget) : focusStateEnabled;
+		get => isInitialized ? DevExpress.Ui.HierarchicalCollectionWidgetInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.HierarchicalCollectionWidgetInterop.SetFocusStateEnabled(dxTarget, value);
@@ -61,7 +61,7 @@
 	bool? hoverStateEnabled;
 	[Parameter]
 	bool? HoverStateEnabled {
-		get => isInitialized ? DevExpress.Ui.HierarchicalCollectionWidgetInterop.GetHoverStateEnabled(dxTarget) : hoverStateEnabled;
+		get => isInitialized ? DevExpress.Ui.HierarchicalCollectionWidgetInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.HierarchicalCollectionWidgetInterop.SetHoverStateEnabled(dxTarget, value);
@@ -73,7 +73,7 @@
 	object itemsExpr;
 	[Parameter]
 	object ItemsExpr {
-		get => isInitialized ? DevExpress.Ui.HierarchicalCollectionWidgetInterop.GetItemsExpr(dxTarget) : itemsExpr;
+		get => isInitialized ? DevExpress.Ui.HierarchicalCollectionWidgetInterop.GetItemsExpr(dxTarget).Result : itemsExpr;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.HierarchicalCollectionWidgetInterop.SetItemsExpr(dxTarget, value);
@@ -85,7 +85,7 @@
 	object keyExpr;
 	[Parameter]
 	object KeyExpr {
-		get => isInitialized ? DevExpress.Ui.HierarchicalCollectionWidgetInterop.GetKeyExpr(dxTarget) : keyExpr;
+		get => isInitialized ? DevExpress.Ui.HierarchicalCollectionWidgetInterop.GetKeyExpr(dxTarget).Result : keyExpr;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.HierarchicalCollectionWidgetInterop.SetKeyExpr(dxTarget, value);
@@ -97,7 +97,7 @@
 	object selectedExpr;
 	[Parameter]
 	object SelectedExpr {
-		get => isInitialized ? DevExpress.Ui.HierarchicalCollectionWidgetInterop.GetSelectedExpr(dxTarget) : selectedExpr;
+		get => isInitialized ? DevExpress.Ui.HierarchicalCollectionWidgetInterop.GetSelectedExpr(dxTarget).Result : selectedExpr;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.HierarchicalCollectionWidgetInterop.SetSelectedExpr(dxTarget, value);

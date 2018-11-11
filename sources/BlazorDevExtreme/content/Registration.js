@@ -107,19 +107,19 @@ function BlazorDevExtreme_Component_Init (element, optionsText) {
 
 	if (options.onDisposingEnabled) {
 		options.onDisposing = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.ComponentInterop.OnDisposing', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.ComponentInterop.OnDisposing', element.id);
 			
 		}
 	}
 	if (options.onInitializedEnabled) {
 		options.onInitialized = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.ComponentInterop.OnInitialized', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.ComponentInterop.OnInitialized', element.id);
 			
 		}
 	}
 	if (options.onOptionChangedEnabled) {
 		options.onOptionChanged = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.ComponentInterop.OnOptionChanged', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.ComponentInterop.OnOptionChanged', element.id);
 			
 		}
 	}
@@ -201,13 +201,13 @@ function BlazorDevExtreme_DOMComponent_Init (element, optionsText) {
 
 	if (options.onDisposingEnabled) {
 		options.onDisposing = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.DOMComponentInterop.OnDisposing', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.DOMComponentInterop.OnDisposing', element.id);
 			
 		}
 	}
 	if (options.onOptionChangedEnabled) {
 		options.onOptionChanged = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.DOMComponentInterop.OnOptionChanged', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.DOMComponentInterop.OnOptionChanged', element.id);
 			
 		}
 	}
@@ -356,61 +356,61 @@ function BlazorDevExtreme_Store_Init (element, optionsText) {
 
 	if (options.onInsertedEnabled) {
 		options.onInserted = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Data.StoreInterop.OnInserted', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Data.StoreInterop.OnInserted', element.id);
 			
 		}
 	}
 	if (options.onInsertingEnabled) {
-        options.onInserting = function () {
-            DotNet.invokeMethod(assemblyName, 'DevExpress.Data.StoreInterop.OnInserting', element.id);
-
-        };
+		options.onInserting = function () {
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Data.StoreInterop.OnInserting', element.id);
+			
+		}
 	}
 	if (options.onLoadedEnabled) {
 		options.onLoaded = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Data.StoreInterop.OnLoaded', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Data.StoreInterop.OnLoaded', element.id);
 			
 		}
 	}
 	if (options.onLoadingEnabled) {
 		options.onLoading = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Data.StoreInterop.OnLoading', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Data.StoreInterop.OnLoading', element.id);
 			
 		}
 	}
 	if (options.onModifiedEnabled) {
 		options.onModified = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Data.StoreInterop.OnModified', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Data.StoreInterop.OnModified', element.id);
 			
 		}
 	}
 	if (options.onModifyingEnabled) {
 		options.onModifying = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Data.StoreInterop.OnModifying', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Data.StoreInterop.OnModifying', element.id);
 			
 		}
 	}
 	if (options.onRemovedEnabled) {
 		options.onRemoved = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Data.StoreInterop.OnRemoved', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Data.StoreInterop.OnRemoved', element.id);
 			
 		}
 	}
 	if (options.onRemovingEnabled) {
 		options.onRemoving = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Data.StoreInterop.OnRemoving', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Data.StoreInterop.OnRemoving', element.id);
 			
 		}
 	}
 	if (options.onUpdatedEnabled) {
 		options.onUpdated = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Data.StoreInterop.OnUpdated', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Data.StoreInterop.OnUpdated', element.id);
 			
 		}
 	}
 	if (options.onUpdatingEnabled) {
 		options.onUpdating = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Data.StoreInterop.OnUpdating', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Data.StoreInterop.OnUpdating', element.id);
 			
 		}
 	}
@@ -500,19 +500,19 @@ function BlazorDevExtreme_DataSource_Init (element, optionsText) {
 
 	if (options.onChangedEnabled) {
 		options.onChanged = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Data.DataSourceInterop.OnChanged', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Data.DataSourceInterop.OnChanged', element.id);
 			
 		}
 	}
 	if (options.onLoadErrorEnabled) {
 		options.onLoadError = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Data.DataSourceInterop.OnLoadError', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Data.DataSourceInterop.OnLoadError', element.id);
 			
 		}
 	}
 	if (options.onLoadingChangedEnabled) {
 		options.onLoadingChanged = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Data.DataSourceInterop.OnLoadingChanged', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Data.DataSourceInterop.OnLoadingChanged', element.id);
 			
 		}
 	}
@@ -753,7 +753,7 @@ function BlazorDevExtreme_ODataStore_Init (element, optionsText) {
 
 	if (options.onLoadingEnabled) {
 		options.onLoading = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Data.ODataStoreInterop.OnLoading', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Data.ODataStoreInterop.OnLoading', element.id);
 			
 		}
 	}
@@ -796,25 +796,25 @@ function BlazorDevExtreme_PivotGridDataSource_Init (element, optionsText) {
 
 	if (options.onChangedEnabled) {
 		options.onChanged = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Data.PivotGridDataSourceInterop.OnChanged', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Data.PivotGridDataSourceInterop.OnChanged', element.id);
 			
 		}
 	}
 	if (options.onFieldsPreparedEnabled) {
 		options.onFieldsPrepared = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Data.PivotGridDataSourceInterop.OnFieldsPrepared', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Data.PivotGridDataSourceInterop.OnFieldsPrepared', element.id);
 			
 		}
 	}
 	if (options.onLoadErrorEnabled) {
 		options.onLoadError = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Data.PivotGridDataSourceInterop.OnLoadError', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Data.PivotGridDataSourceInterop.OnLoadError', element.id);
 			
 		}
 	}
 	if (options.onLoadingChangedEnabled) {
 		options.onLoadingChanged = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Data.PivotGridDataSourceInterop.OnLoadingChanged', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Data.PivotGridDataSourceInterop.OnLoadingChanged', element.id);
 			
 		}
 	}
@@ -932,7 +932,7 @@ function BlazorDevExtreme_DxCommand_Init (element, optionsText) {
 
 	if (options.onExecuteEnabled) {
 		options.onExecute = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Framework.DxCommandInterop.OnExecute', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Framework.DxCommandInterop.OnExecute', element.id);
 			
 		}
 	}
@@ -1177,7 +1177,7 @@ function BlazorDevExtreme_DxAccordion_Init (element, optionsText) {
 
 	if (options.onItemTitleClickEnabled) {
 		options.onItemTitleClick = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxAccordionInterop.OnItemTitleClick', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxAccordionInterop.OnItemTitleClick', element.id);
 			
 		}
 	}
@@ -1204,7 +1204,7 @@ function BlazorDevExtreme_DxActionSheet_Init (element, optionsText) {
 
 	if (options.onCancelClickEnabled) {
 		options.onCancelClick = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxActionSheetInterop.OnCancelClick', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxActionSheetInterop.OnCancelClick', element.id);
 			
 		}
 	}
@@ -1255,7 +1255,7 @@ function BlazorDevExtreme_DxButton_Init (element, optionsText) {
 
 	if (options.onClickEnabled) {
 		options.onClick = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxButtonInterop.OnClick', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxButtonInterop.OnClick', element.id);
 			
 		}
 	}
@@ -1309,31 +1309,31 @@ function BlazorDevExtreme_DxContextMenu_Init (element, optionsText) {
 
 	if (options.onHiddenEnabled) {
 		options.onHidden = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxContextMenuInterop.OnHidden', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxContextMenuInterop.OnHidden', element.id);
 			
 		}
 	}
 	if (options.onHidingEnabled) {
 		options.onHiding = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxContextMenuInterop.OnHiding', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxContextMenuInterop.OnHiding', element.id);
 			
 		}
 	}
 	if (options.onPositioningEnabled) {
 		options.onPositioning = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxContextMenuInterop.OnPositioning', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxContextMenuInterop.OnPositioning', element.id);
 			
 		}
 	}
 	if (options.onShowingEnabled) {
 		options.onShowing = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxContextMenuInterop.OnShowing', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxContextMenuInterop.OnShowing', element.id);
 			
 		}
 	}
 	if (options.onShownEnabled) {
 		options.onShown = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxContextMenuInterop.OnShown', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxContextMenuInterop.OnShown', element.id);
 			
 		}
 	}
@@ -1360,103 +1360,103 @@ function BlazorDevExtreme_GridBase_Init (element, optionsText) {
 
 	if (options.onAdaptiveDetailRowPreparingEnabled) {
 		options.onAdaptiveDetailRowPreparing = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.GridBaseInterop.OnAdaptiveDetailRowPreparing', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.GridBaseInterop.OnAdaptiveDetailRowPreparing', element.id);
 			
 		}
 	}
 	if (options.onDataErrorOccurredEnabled) {
 		options.onDataErrorOccurred = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.GridBaseInterop.OnDataErrorOccurred', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.GridBaseInterop.OnDataErrorOccurred', element.id);
 			
 		}
 	}
 	if (options.onInitNewRowEnabled) {
 		options.onInitNewRow = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.GridBaseInterop.OnInitNewRow', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.GridBaseInterop.OnInitNewRow', element.id);
 			
 		}
 	}
 	if (options.onKeyDownEnabled) {
 		options.onKeyDown = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.GridBaseInterop.OnKeyDown', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.GridBaseInterop.OnKeyDown', element.id);
 			
 		}
 	}
 	if (options.onRowCollapsedEnabled) {
 		options.onRowCollapsed = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.GridBaseInterop.OnRowCollapsed', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.GridBaseInterop.OnRowCollapsed', element.id);
 			
 		}
 	}
 	if (options.onRowCollapsingEnabled) {
 		options.onRowCollapsing = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.GridBaseInterop.OnRowCollapsing', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.GridBaseInterop.OnRowCollapsing', element.id);
 			
 		}
 	}
 	if (options.onRowExpandedEnabled) {
 		options.onRowExpanded = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.GridBaseInterop.OnRowExpanded', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.GridBaseInterop.OnRowExpanded', element.id);
 			
 		}
 	}
 	if (options.onRowExpandingEnabled) {
 		options.onRowExpanding = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.GridBaseInterop.OnRowExpanding', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.GridBaseInterop.OnRowExpanding', element.id);
 			
 		}
 	}
 	if (options.onRowInsertedEnabled) {
 		options.onRowInserted = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.GridBaseInterop.OnRowInserted', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.GridBaseInterop.OnRowInserted', element.id);
 			
 		}
 	}
 	if (options.onRowInsertingEnabled) {
 		options.onRowInserting = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.GridBaseInterop.OnRowInserting', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.GridBaseInterop.OnRowInserting', element.id);
 			
 		}
 	}
 	if (options.onRowRemovedEnabled) {
 		options.onRowRemoved = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.GridBaseInterop.OnRowRemoved', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.GridBaseInterop.OnRowRemoved', element.id);
 			
 		}
 	}
 	if (options.onRowRemovingEnabled) {
 		options.onRowRemoving = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.GridBaseInterop.OnRowRemoving', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.GridBaseInterop.OnRowRemoving', element.id);
 			
 		}
 	}
 	if (options.onRowUpdatedEnabled) {
 		options.onRowUpdated = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.GridBaseInterop.OnRowUpdated', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.GridBaseInterop.OnRowUpdated', element.id);
 			
 		}
 	}
 	if (options.onRowUpdatingEnabled) {
 		options.onRowUpdating = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.GridBaseInterop.OnRowUpdating', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.GridBaseInterop.OnRowUpdating', element.id);
 			
 		}
 	}
 	if (options.onRowValidatingEnabled) {
 		options.onRowValidating = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.GridBaseInterop.OnRowValidating', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.GridBaseInterop.OnRowValidating', element.id);
 			
 		}
 	}
 	if (options.onSelectionChangedEnabled) {
 		options.onSelectionChanged = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.GridBaseInterop.OnSelectionChanged', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.GridBaseInterop.OnSelectionChanged', element.id);
 			
 		}
 	}
 	if (options.onToolbarPreparingEnabled) {
 		options.onToolbarPreparing = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.GridBaseInterop.OnToolbarPreparing', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.GridBaseInterop.OnToolbarPreparing', element.id);
 			
 		}
 	}
@@ -1660,73 +1660,73 @@ function BlazorDevExtreme_DxDataGrid_Init (element, optionsText) {
 
 	if (options.onCellClickEnabled) {
 		options.onCellClick = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxDataGridInterop.OnCellClick', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxDataGridInterop.OnCellClick', element.id);
 			
 		}
 	}
 	if (options.onCellHoverChangedEnabled) {
 		options.onCellHoverChanged = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxDataGridInterop.OnCellHoverChanged', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxDataGridInterop.OnCellHoverChanged', element.id);
 			
 		}
 	}
 	if (options.onCellPreparedEnabled) {
 		options.onCellPrepared = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxDataGridInterop.OnCellPrepared', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxDataGridInterop.OnCellPrepared', element.id);
 			
 		}
 	}
 	if (options.onContextMenuPreparingEnabled) {
 		options.onContextMenuPreparing = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxDataGridInterop.OnContextMenuPreparing', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxDataGridInterop.OnContextMenuPreparing', element.id);
 			
 		}
 	}
 	if (options.onEditingStartEnabled) {
 		options.onEditingStart = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxDataGridInterop.OnEditingStart', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxDataGridInterop.OnEditingStart', element.id);
 			
 		}
 	}
 	if (options.onEditorPreparedEnabled) {
 		options.onEditorPrepared = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxDataGridInterop.OnEditorPrepared', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxDataGridInterop.OnEditorPrepared', element.id);
 			
 		}
 	}
 	if (options.onEditorPreparingEnabled) {
 		options.onEditorPreparing = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxDataGridInterop.OnEditorPreparing', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxDataGridInterop.OnEditorPreparing', element.id);
 			
 		}
 	}
 	if (options.onExportedEnabled) {
 		options.onExported = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxDataGridInterop.OnExported', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxDataGridInterop.OnExported', element.id);
 			
 		}
 	}
 	if (options.onExportingEnabled) {
 		options.onExporting = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxDataGridInterop.OnExporting', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxDataGridInterop.OnExporting', element.id);
 			
 		}
 	}
 	if (options.onFileSavingEnabled) {
 		options.onFileSaving = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxDataGridInterop.OnFileSaving', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxDataGridInterop.OnFileSaving', element.id);
 			
 		}
 	}
 	if (options.onRowClickEnabled) {
 		options.onRowClick = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxDataGridInterop.OnRowClick', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxDataGridInterop.OnRowClick', element.id);
 			
 		}
 	}
 	if (options.onRowPreparedEnabled) {
 		options.onRowPrepared = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxDataGridInterop.OnRowPrepared', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxDataGridInterop.OnRowPrepared', element.id);
 			
 		}
 	}
@@ -1822,13 +1822,13 @@ function BlazorDevExtreme_DxDeferRendering_Init (element, optionsText) {
 
 	if (options.onRenderedEnabled) {
 		options.onRendered = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxDeferRenderingInterop.OnRendered', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxDeferRenderingInterop.OnRendered', element.id);
 			
 		}
 	}
 	if (options.onShownEnabled) {
 		options.onShown = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxDeferRenderingInterop.OnShown', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxDeferRenderingInterop.OnShown', element.id);
 			
 		}
 	}
@@ -1861,13 +1861,13 @@ function BlazorDevExtreme_DxDropDownMenu_Init (element, optionsText) {
 
 	if (options.onButtonClickEnabled) {
 		options.onButtonClick = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxDropDownMenuInterop.OnButtonClick', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxDropDownMenuInterop.OnButtonClick', element.id);
 			
 		}
 	}
 	if (options.onItemClickEnabled) {
 		options.onItemClick = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxDropDownMenuInterop.OnItemClick', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxDropDownMenuInterop.OnItemClick', element.id);
 			
 		}
 	}
@@ -1891,37 +1891,37 @@ function BlazorDevExtreme_DxFileUploader_Init (element, optionsText) {
 
 	if (options.onProgressEnabled) {
 		options.onProgress = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxFileUploaderInterop.OnProgress', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxFileUploaderInterop.OnProgress', element.id);
 			
 		}
 	}
 	if (options.onUploadAbortedEnabled) {
 		options.onUploadAborted = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxFileUploaderInterop.OnUploadAborted', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxFileUploaderInterop.OnUploadAborted', element.id);
 			
 		}
 	}
 	if (options.onUploadedEnabled) {
 		options.onUploaded = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxFileUploaderInterop.OnUploaded', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxFileUploaderInterop.OnUploaded', element.id);
 			
 		}
 	}
 	if (options.onUploadErrorEnabled) {
 		options.onUploadError = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxFileUploaderInterop.OnUploadError', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxFileUploaderInterop.OnUploadError', element.id);
 			
 		}
 	}
 	if (options.onUploadStartedEnabled) {
 		options.onUploadStarted = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxFileUploaderInterop.OnUploadStarted', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxFileUploaderInterop.OnUploadStarted', element.id);
 			
 		}
 	}
 	if (options.onValueChangedEnabled) {
 		options.onValueChanged = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxFileUploaderInterop.OnValueChanged', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxFileUploaderInterop.OnValueChanged', element.id);
 			
 		}
 	}
@@ -1939,19 +1939,19 @@ function BlazorDevExtreme_DxFilterBuilder_Init (element, optionsText) {
 
 	if (options.onEditorPreparedEnabled) {
 		options.onEditorPrepared = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxFilterBuilderInterop.OnEditorPrepared', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxFilterBuilderInterop.OnEditorPrepared', element.id);
 			
 		}
 	}
 	if (options.onEditorPreparingEnabled) {
 		options.onEditorPreparing = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxFilterBuilderInterop.OnEditorPreparing', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxFilterBuilderInterop.OnEditorPreparing', element.id);
 			
 		}
 	}
 	if (options.onValueChangedEnabled) {
 		options.onValueChanged = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxFilterBuilderInterop.OnValueChanged', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxFilterBuilderInterop.OnValueChanged', element.id);
 			
 		}
 	}
@@ -1972,13 +1972,13 @@ function BlazorDevExtreme_DxForm_Init (element, optionsText) {
 
 	if (options.onEditorEnterKeyEnabled) {
 		options.onEditorEnterKey = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxFormInterop.OnEditorEnterKey', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxFormInterop.OnEditorEnterKey', element.id);
 			
 		}
 	}
 	if (options.onFieldDataChangedEnabled) {
 		options.onFieldDataChanged = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxFormInterop.OnFieldDataChanged', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxFormInterop.OnFieldDataChanged', element.id);
 			
 		}
 	}
@@ -2044,73 +2044,73 @@ function BlazorDevExtreme_DxList_Init (element, optionsText) {
 
 	if (options.onGroupRenderedEnabled) {
 		options.onGroupRendered = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxListInterop.OnGroupRendered', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxListInterop.OnGroupRendered', element.id);
 			
 		}
 	}
 	if (options.onItemClickEnabled) {
 		options.onItemClick = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxListInterop.OnItemClick', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxListInterop.OnItemClick', element.id);
 			
 		}
 	}
 	if (options.onItemContextMenuEnabled) {
 		options.onItemContextMenu = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxListInterop.OnItemContextMenu', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxListInterop.OnItemContextMenu', element.id);
 			
 		}
 	}
 	if (options.onItemDeletedEnabled) {
 		options.onItemDeleted = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxListInterop.OnItemDeleted', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxListInterop.OnItemDeleted', element.id);
 			
 		}
 	}
 	if (options.onItemDeletingEnabled) {
 		options.onItemDeleting = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxListInterop.OnItemDeleting', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxListInterop.OnItemDeleting', element.id);
 			
 		}
 	}
 	if (options.onItemHoldEnabled) {
 		options.onItemHold = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxListInterop.OnItemHold', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxListInterop.OnItemHold', element.id);
 			
 		}
 	}
 	if (options.onItemReorderedEnabled) {
 		options.onItemReordered = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxListInterop.OnItemReordered', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxListInterop.OnItemReordered', element.id);
 			
 		}
 	}
 	if (options.onItemSwipeEnabled) {
 		options.onItemSwipe = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxListInterop.OnItemSwipe', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxListInterop.OnItemSwipe', element.id);
 			
 		}
 	}
 	if (options.onPageLoadingEnabled) {
 		options.onPageLoading = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxListInterop.OnPageLoading', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxListInterop.OnPageLoading', element.id);
 			
 		}
 	}
 	if (options.onPullRefreshEnabled) {
 		options.onPullRefresh = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxListInterop.OnPullRefresh', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxListInterop.OnPullRefresh', element.id);
 			
 		}
 	}
 	if (options.onScrollEnabled) {
 		options.onScroll = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxListInterop.OnScroll', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxListInterop.OnScroll', element.id);
 			
 		}
 	}
 	if (options.onSelectAllValueChangedEnabled) {
 		options.onSelectAllValueChanged = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxListInterop.OnSelectAllValueChanged', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxListInterop.OnSelectAllValueChanged', element.id);
 			
 		}
 	}
@@ -2221,31 +2221,31 @@ function BlazorDevExtreme_DxLookup_Init (element, optionsText) {
 
 	if (options.onPageLoadingEnabled) {
 		options.onPageLoading = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxLookupInterop.OnPageLoading', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxLookupInterop.OnPageLoading', element.id);
 			
 		}
 	}
 	if (options.onPullRefreshEnabled) {
 		options.onPullRefresh = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxLookupInterop.OnPullRefresh', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxLookupInterop.OnPullRefresh', element.id);
 			
 		}
 	}
 	if (options.onScrollEnabled) {
 		options.onScroll = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxLookupInterop.OnScroll', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxLookupInterop.OnScroll', element.id);
 			
 		}
 	}
 	if (options.onTitleRenderedEnabled) {
 		options.onTitleRendered = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxLookupInterop.OnTitleRendered', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxLookupInterop.OnTitleRendered', element.id);
 			
 		}
 	}
 	if (options.onValueChangedEnabled) {
 		options.onValueChanged = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxLookupInterop.OnValueChanged', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxLookupInterop.OnValueChanged', element.id);
 			
 		}
 	}
@@ -2263,37 +2263,37 @@ function BlazorDevExtreme_DxMap_Init (element, optionsText) {
 
 	if (options.onClickEnabled) {
 		options.onClick = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxMapInterop.OnClick', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxMapInterop.OnClick', element.id);
 			
 		}
 	}
 	if (options.onMarkerAddedEnabled) {
 		options.onMarkerAdded = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxMapInterop.OnMarkerAdded', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxMapInterop.OnMarkerAdded', element.id);
 			
 		}
 	}
 	if (options.onMarkerRemovedEnabled) {
 		options.onMarkerRemoved = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxMapInterop.OnMarkerRemoved', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxMapInterop.OnMarkerRemoved', element.id);
 			
 		}
 	}
 	if (options.onReadyEnabled) {
 		options.onReady = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxMapInterop.OnReady', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxMapInterop.OnReady', element.id);
 			
 		}
 	}
 	if (options.onRouteAddedEnabled) {
 		options.onRouteAdded = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxMapInterop.OnRouteAdded', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxMapInterop.OnRouteAdded', element.id);
 			
 		}
 	}
 	if (options.onRouteRemovedEnabled) {
 		options.onRouteRemoved = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxMapInterop.OnRouteRemoved', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxMapInterop.OnRouteRemoved', element.id);
 			
 		}
 	}
@@ -2323,25 +2323,25 @@ function BlazorDevExtreme_DxMenu_Init (element, optionsText) {
 
 	if (options.onSubmenuHiddenEnabled) {
 		options.onSubmenuHidden = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxMenuInterop.OnSubmenuHidden', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxMenuInterop.OnSubmenuHidden', element.id);
 			
 		}
 	}
 	if (options.onSubmenuHidingEnabled) {
 		options.onSubmenuHiding = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxMenuInterop.OnSubmenuHiding', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxMenuInterop.OnSubmenuHiding', element.id);
 			
 		}
 	}
 	if (options.onSubmenuShowingEnabled) {
 		options.onSubmenuShowing = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxMenuInterop.OnSubmenuShowing', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxMenuInterop.OnSubmenuShowing', element.id);
 			
 		}
 	}
 	if (options.onSubmenuShownEnabled) {
 		options.onSubmenuShown = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxMenuInterop.OnSubmenuShown', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxMenuInterop.OnSubmenuShown', element.id);
 			
 		}
 	}
@@ -2395,25 +2395,25 @@ function BlazorDevExtreme_DxOverlay_Init (element, optionsText) {
 
 	if (options.onHiddenEnabled) {
 		options.onHidden = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxOverlayInterop.OnHidden', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxOverlayInterop.OnHidden', element.id);
 			
 		}
 	}
 	if (options.onHidingEnabled) {
 		options.onHiding = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxOverlayInterop.OnHiding', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxOverlayInterop.OnHiding', element.id);
 			
 		}
 	}
 	if (options.onShowingEnabled) {
 		options.onShowing = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxOverlayInterop.OnShowing', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxOverlayInterop.OnShowing', element.id);
 			
 		}
 	}
 	if (options.onShownEnabled) {
 		options.onShown = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxOverlayInterop.OnShown', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxOverlayInterop.OnShown', element.id);
 			
 		}
 	}
@@ -2470,37 +2470,37 @@ function BlazorDevExtreme_DxPivotGrid_Init (element, optionsText) {
 
 	if (options.onCellClickEnabled) {
 		options.onCellClick = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxPivotGridInterop.OnCellClick', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxPivotGridInterop.OnCellClick', element.id);
 			
 		}
 	}
 	if (options.onCellPreparedEnabled) {
 		options.onCellPrepared = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxPivotGridInterop.OnCellPrepared', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxPivotGridInterop.OnCellPrepared', element.id);
 			
 		}
 	}
 	if (options.onContextMenuPreparingEnabled) {
 		options.onContextMenuPreparing = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxPivotGridInterop.OnContextMenuPreparing', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxPivotGridInterop.OnContextMenuPreparing', element.id);
 			
 		}
 	}
 	if (options.onExportedEnabled) {
 		options.onExported = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxPivotGridInterop.OnExported', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxPivotGridInterop.OnExported', element.id);
 			
 		}
 	}
 	if (options.onExportingEnabled) {
 		options.onExporting = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxPivotGridInterop.OnExporting', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxPivotGridInterop.OnExporting', element.id);
 			
 		}
 	}
 	if (options.onFileSavingEnabled) {
 		options.onFileSaving = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxPivotGridInterop.OnFileSaving', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxPivotGridInterop.OnFileSaving', element.id);
 			
 		}
 	}
@@ -2533,7 +2533,7 @@ function BlazorDevExtreme_DxPivotGridFieldChooser_Init (element, optionsText) {
 
 	if (options.onContextMenuPreparingEnabled) {
 		options.onContextMenuPreparing = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxPivotGridFieldChooserInterop.OnContextMenuPreparing', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxPivotGridFieldChooserInterop.OnContextMenuPreparing', element.id);
 			
 		}
 	}
@@ -2581,25 +2581,25 @@ function BlazorDevExtreme_DxPopup_Init (element, optionsText) {
 
 	if (options.onResizeEnabled) {
 		options.onResize = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxPopupInterop.OnResize', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxPopupInterop.OnResize', element.id);
 			
 		}
 	}
 	if (options.onResizeEndEnabled) {
 		options.onResizeEnd = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxPopupInterop.OnResizeEnd', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxPopupInterop.OnResizeEnd', element.id);
 			
 		}
 	}
 	if (options.onResizeStartEnabled) {
 		options.onResizeStart = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxPopupInterop.OnResizeStart', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxPopupInterop.OnResizeStart', element.id);
 			
 		}
 	}
 	if (options.onTitleRenderedEnabled) {
 		options.onTitleRendered = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxPopupInterop.OnTitleRendered', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxPopupInterop.OnTitleRendered', element.id);
 			
 		}
 	}
@@ -2617,7 +2617,7 @@ function BlazorDevExtreme_DxProgressBar_Init (element, optionsText) {
 
 	if (options.onCompleteEnabled) {
 		options.onComplete = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxProgressBarInterop.OnComplete', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxProgressBarInterop.OnComplete', element.id);
 			
 		}
 	}
@@ -2650,7 +2650,7 @@ function BlazorDevExtreme_DxRangeSlider_Init (element, optionsText) {
 
 	if (options.onValueChangedEnabled) {
 		options.onValueChanged = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxRangeSliderInterop.OnValueChanged', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxRangeSliderInterop.OnValueChanged', element.id);
 			
 		}
 	}
@@ -2671,19 +2671,19 @@ function BlazorDevExtreme_DxResizable_Init (element, optionsText) {
 
 	if (options.onResizeEnabled) {
 		options.onResize = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxResizableInterop.OnResize', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxResizableInterop.OnResize', element.id);
 			
 		}
 	}
 	if (options.onResizeEndEnabled) {
 		options.onResizeEnd = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxResizableInterop.OnResizeEnd', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxResizableInterop.OnResizeEnd', element.id);
 			
 		}
 	}
 	if (options.onResizeStartEnabled) {
 		options.onResizeStart = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxResizableInterop.OnResizeStart', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxResizableInterop.OnResizeStart', element.id);
 			
 		}
 	}
@@ -2713,79 +2713,79 @@ function BlazorDevExtreme_DxScheduler_Init (element, optionsText) {
 
 	if (options.onAppointmentAddedEnabled) {
 		options.onAppointmentAdded = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxSchedulerInterop.OnAppointmentAdded', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxSchedulerInterop.OnAppointmentAdded', element.id);
 			
 		}
 	}
 	if (options.onAppointmentAddingEnabled) {
 		options.onAppointmentAdding = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxSchedulerInterop.OnAppointmentAdding', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxSchedulerInterop.OnAppointmentAdding', element.id);
 			
 		}
 	}
 	if (options.onAppointmentClickEnabled) {
 		options.onAppointmentClick = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxSchedulerInterop.OnAppointmentClick', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxSchedulerInterop.OnAppointmentClick', element.id);
 			
 		}
 	}
 	if (options.onAppointmentContextMenuEnabled) {
 		options.onAppointmentContextMenu = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxSchedulerInterop.OnAppointmentContextMenu', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxSchedulerInterop.OnAppointmentContextMenu', element.id);
 			
 		}
 	}
 	if (options.onAppointmentDblClickEnabled) {
 		options.onAppointmentDblClick = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxSchedulerInterop.OnAppointmentDblClick', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxSchedulerInterop.OnAppointmentDblClick', element.id);
 			
 		}
 	}
 	if (options.onAppointmentDeletedEnabled) {
 		options.onAppointmentDeleted = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxSchedulerInterop.OnAppointmentDeleted', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxSchedulerInterop.OnAppointmentDeleted', element.id);
 			
 		}
 	}
 	if (options.onAppointmentDeletingEnabled) {
 		options.onAppointmentDeleting = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxSchedulerInterop.OnAppointmentDeleting', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxSchedulerInterop.OnAppointmentDeleting', element.id);
 			
 		}
 	}
 	if (options.onAppointmentFormCreatedEnabled) {
 		options.onAppointmentFormCreated = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxSchedulerInterop.OnAppointmentFormCreated', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxSchedulerInterop.OnAppointmentFormCreated', element.id);
 			
 		}
 	}
 	if (options.onAppointmentRenderedEnabled) {
 		options.onAppointmentRendered = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxSchedulerInterop.OnAppointmentRendered', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxSchedulerInterop.OnAppointmentRendered', element.id);
 			
 		}
 	}
 	if (options.onAppointmentUpdatedEnabled) {
 		options.onAppointmentUpdated = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxSchedulerInterop.OnAppointmentUpdated', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxSchedulerInterop.OnAppointmentUpdated', element.id);
 			
 		}
 	}
 	if (options.onAppointmentUpdatingEnabled) {
 		options.onAppointmentUpdating = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxSchedulerInterop.OnAppointmentUpdating', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxSchedulerInterop.OnAppointmentUpdating', element.id);
 			
 		}
 	}
 	if (options.onCellClickEnabled) {
 		options.onCellClick = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxSchedulerInterop.OnCellClick', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxSchedulerInterop.OnCellClick', element.id);
 			
 		}
 	}
 	if (options.onCellContextMenuEnabled) {
 		options.onCellContextMenu = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxSchedulerInterop.OnCellContextMenu', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxSchedulerInterop.OnCellContextMenu', element.id);
 			
 		}
 	}
@@ -2839,13 +2839,13 @@ function BlazorDevExtreme_DxScrollView_Init (element, optionsText) {
 
 	if (options.onPullDownEnabled) {
 		options.onPullDown = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxScrollViewInterop.OnPullDown', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxScrollViewInterop.OnPullDown', element.id);
 			
 		}
 	}
 	if (options.onReachBottomEnabled) {
 		options.onReachBottom = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxScrollViewInterop.OnReachBottom', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxScrollViewInterop.OnReachBottom', element.id);
 			
 		}
 	}
@@ -2869,7 +2869,7 @@ function BlazorDevExtreme_DxSelectBox_Init (element, optionsText) {
 
 	if (options.onCustomItemCreatingEnabled) {
 		options.onCustomItemCreating = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxSelectBoxInterop.OnCustomItemCreating', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxSelectBoxInterop.OnCustomItemCreating', element.id);
 			
 		}
 	}
@@ -2899,13 +2899,13 @@ function BlazorDevExtreme_DxSlideOut_Init (element, optionsText) {
 
 	if (options.onMenuGroupRenderedEnabled) {
 		options.onMenuGroupRendered = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxSlideOutInterop.OnMenuGroupRendered', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxSlideOutInterop.OnMenuGroupRendered', element.id);
 			
 		}
 	}
 	if (options.onMenuItemRenderedEnabled) {
 		options.onMenuItemRendered = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxSlideOutInterop.OnMenuItemRendered', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxSlideOutInterop.OnMenuItemRendered', element.id);
 			
 		}
 	}
@@ -2983,19 +2983,19 @@ function BlazorDevExtreme_DxTabPanel_Init (element, optionsText) {
 
 	if (options.onTitleClickEnabled) {
 		options.onTitleClick = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxTabPanelInterop.OnTitleClick', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTabPanelInterop.OnTitleClick', element.id);
 			
 		}
 	}
 	if (options.onTitleHoldEnabled) {
 		options.onTitleHold = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxTabPanelInterop.OnTitleHold', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTabPanelInterop.OnTitleHold', element.id);
 			
 		}
 	}
 	if (options.onTitleRenderedEnabled) {
 		options.onTitleRendered = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxTabPanelInterop.OnTitleRendered', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTabPanelInterop.OnTitleRendered', element.id);
 			
 		}
 	}
@@ -3013,19 +3013,19 @@ function BlazorDevExtreme_DxTagBox_Init (element, optionsText) {
 
 	if (options.onMultiTagPreparingEnabled) {
 		options.onMultiTagPreparing = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxTagBoxInterop.OnMultiTagPreparing', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTagBoxInterop.OnMultiTagPreparing', element.id);
 			
 		}
 	}
 	if (options.onSelectAllValueChangedEnabled) {
 		options.onSelectAllValueChanged = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxTagBoxInterop.OnSelectAllValueChanged', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTagBoxInterop.OnSelectAllValueChanged', element.id);
 			
 		}
 	}
 	if (options.onSelectionChangedEnabled) {
 		options.onSelectionChanged = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxTagBoxInterop.OnSelectionChanged', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTagBoxInterop.OnSelectionChanged', element.id);
 			
 		}
 	}
@@ -3130,61 +3130,61 @@ function BlazorDevExtreme_DxTreeList_Init (element, optionsText) {
 
 	if (options.onCellClickEnabled) {
 		options.onCellClick = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxTreeListInterop.OnCellClick', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTreeListInterop.OnCellClick', element.id);
 			
 		}
 	}
 	if (options.onCellHoverChangedEnabled) {
 		options.onCellHoverChanged = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxTreeListInterop.OnCellHoverChanged', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTreeListInterop.OnCellHoverChanged', element.id);
 			
 		}
 	}
 	if (options.onCellPreparedEnabled) {
 		options.onCellPrepared = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxTreeListInterop.OnCellPrepared', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTreeListInterop.OnCellPrepared', element.id);
 			
 		}
 	}
 	if (options.onContextMenuPreparingEnabled) {
 		options.onContextMenuPreparing = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxTreeListInterop.OnContextMenuPreparing', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTreeListInterop.OnContextMenuPreparing', element.id);
 			
 		}
 	}
 	if (options.onEditingStartEnabled) {
 		options.onEditingStart = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxTreeListInterop.OnEditingStart', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTreeListInterop.OnEditingStart', element.id);
 			
 		}
 	}
 	if (options.onEditorPreparedEnabled) {
 		options.onEditorPrepared = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxTreeListInterop.OnEditorPrepared', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTreeListInterop.OnEditorPrepared', element.id);
 			
 		}
 	}
 	if (options.onEditorPreparingEnabled) {
 		options.onEditorPreparing = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxTreeListInterop.OnEditorPreparing', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTreeListInterop.OnEditorPreparing', element.id);
 			
 		}
 	}
 	if (options.onNodesInitializedEnabled) {
 		options.onNodesInitialized = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxTreeListInterop.OnNodesInitialized', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTreeListInterop.OnNodesInitialized', element.id);
 			
 		}
 	}
 	if (options.onRowClickEnabled) {
 		options.onRowClick = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxTreeListInterop.OnRowClick', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTreeListInterop.OnRowClick', element.id);
 			
 		}
 	}
 	if (options.onRowPreparedEnabled) {
 		options.onRowPrepared = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxTreeListInterop.OnRowPrepared', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTreeListInterop.OnRowPrepared', element.id);
 			
 		}
 	}
@@ -3262,49 +3262,49 @@ function BlazorDevExtreme_DxTreeView_Init (element, optionsText) {
 
 	if (options.onItemClickEnabled) {
 		options.onItemClick = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxTreeViewInterop.OnItemClick', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTreeViewInterop.OnItemClick', element.id);
 			
 		}
 	}
 	if (options.onItemCollapsedEnabled) {
 		options.onItemCollapsed = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxTreeViewInterop.OnItemCollapsed', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTreeViewInterop.OnItemCollapsed', element.id);
 			
 		}
 	}
 	if (options.onItemContextMenuEnabled) {
 		options.onItemContextMenu = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxTreeViewInterop.OnItemContextMenu', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTreeViewInterop.OnItemContextMenu', element.id);
 			
 		}
 	}
 	if (options.onItemExpandedEnabled) {
 		options.onItemExpanded = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxTreeViewInterop.OnItemExpanded', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTreeViewInterop.OnItemExpanded', element.id);
 			
 		}
 	}
 	if (options.onItemHoldEnabled) {
 		options.onItemHold = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxTreeViewInterop.OnItemHold', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTreeViewInterop.OnItemHold', element.id);
 			
 		}
 	}
 	if (options.onItemRenderedEnabled) {
 		options.onItemRendered = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxTreeViewInterop.OnItemRendered', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTreeViewInterop.OnItemRendered', element.id);
 			
 		}
 	}
 	if (options.onItemSelectionChangedEnabled) {
 		options.onItemSelectionChanged = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxTreeViewInterop.OnItemSelectionChanged', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTreeViewInterop.OnItemSelectionChanged', element.id);
 			
 		}
 	}
 	if (options.onSelectionChangedEnabled) {
 		options.onSelectionChanged = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxTreeViewInterop.OnSelectionChanged', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTreeViewInterop.OnSelectionChanged', element.id);
 			
 		}
 	}
@@ -3400,7 +3400,7 @@ function BlazorDevExtreme_DxValidator_Init (element, optionsText) {
 
 	if (options.onValidatedEnabled) {
 		options.onValidated = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxValidatorInterop.OnValidated', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxValidatorInterop.OnValidated', element.id);
 			
 		}
 	}
@@ -3427,31 +3427,31 @@ function BlazorDevExtreme_CollectionWidget_Init (element, optionsText) {
 
 	if (options.onItemClickEnabled) {
 		options.onItemClick = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.CollectionWidgetInterop.OnItemClick', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.CollectionWidgetInterop.OnItemClick', element.id);
 			
 		}
 	}
 	if (options.onItemContextMenuEnabled) {
 		options.onItemContextMenu = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.CollectionWidgetInterop.OnItemContextMenu', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.CollectionWidgetInterop.OnItemContextMenu', element.id);
 			
 		}
 	}
 	if (options.onItemHoldEnabled) {
 		options.onItemHold = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.CollectionWidgetInterop.OnItemHold', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.CollectionWidgetInterop.OnItemHold', element.id);
 			
 		}
 	}
 	if (options.onItemRenderedEnabled) {
 		options.onItemRendered = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.CollectionWidgetInterop.OnItemRendered', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.CollectionWidgetInterop.OnItemRendered', element.id);
 			
 		}
 	}
 	if (options.onSelectionChangedEnabled) {
 		options.onSelectionChanged = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.CollectionWidgetInterop.OnSelectionChanged', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.CollectionWidgetInterop.OnSelectionChanged', element.id);
 			
 		}
 	}
@@ -3490,13 +3490,13 @@ function BlazorDevExtreme_DxDropDownEditor_Init (element, optionsText) {
 
 	if (options.onClosedEnabled) {
 		options.onClosed = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxDropDownEditorInterop.OnClosed', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxDropDownEditorInterop.OnClosed', element.id);
 			
 		}
 	}
 	if (options.onOpenedEnabled) {
 		options.onOpened = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxDropDownEditorInterop.OnOpened', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxDropDownEditorInterop.OnOpened', element.id);
 			
 		}
 	}
@@ -3529,19 +3529,19 @@ function BlazorDevExtreme_DxDropDownList_Init (element, optionsText) {
 
 	if (options.onItemClickEnabled) {
 		options.onItemClick = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxDropDownListInterop.OnItemClick', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxDropDownListInterop.OnItemClick', element.id);
 			
 		}
 	}
 	if (options.onSelectionChangedEnabled) {
 		options.onSelectionChanged = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxDropDownListInterop.OnSelectionChanged', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxDropDownListInterop.OnSelectionChanged', element.id);
 			
 		}
 	}
 	if (options.onValueChangedEnabled) {
 		options.onValueChanged = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxDropDownListInterop.OnValueChanged', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxDropDownListInterop.OnValueChanged', element.id);
 			
 		}
 	}
@@ -3562,7 +3562,7 @@ function BlazorDevExtreme_Editor_Init (element, optionsText) {
 
 	if (options.onValueChangedEnabled) {
 		options.onValueChanged = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.EditorInterop.OnValueChanged', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.EditorInterop.OnValueChanged', element.id);
 			
 		}
 	}
@@ -3662,13 +3662,13 @@ function BlazorDevExtreme_DxScrollable_Init (element, optionsText) {
 
 	if (options.onScrollEnabled) {
 		options.onScroll = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxScrollableInterop.OnScroll', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxScrollableInterop.OnScroll', element.id);
 			
 		}
 	}
 	if (options.onUpdatedEnabled) {
 		options.onUpdated = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxScrollableInterop.OnUpdated', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxScrollableInterop.OnUpdated', element.id);
 			
 		}
 	}
@@ -3740,67 +3740,67 @@ function BlazorDevExtreme_DxTextEditor_Init (element, optionsText) {
 
 	if (options.onChangeEnabled) {
 		options.onChange = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxTextEditorInterop.OnChange', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTextEditorInterop.OnChange', element.id);
 			
 		}
 	}
 	if (options.onCopyEnabled) {
 		options.onCopy = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxTextEditorInterop.OnCopy', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTextEditorInterop.OnCopy', element.id);
 			
 		}
 	}
 	if (options.onCutEnabled) {
 		options.onCut = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxTextEditorInterop.OnCut', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTextEditorInterop.OnCut', element.id);
 			
 		}
 	}
 	if (options.onEnterKeyEnabled) {
 		options.onEnterKey = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxTextEditorInterop.OnEnterKey', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTextEditorInterop.OnEnterKey', element.id);
 			
 		}
 	}
 	if (options.onFocusInEnabled) {
 		options.onFocusIn = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxTextEditorInterop.OnFocusIn', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTextEditorInterop.OnFocusIn', element.id);
 			
 		}
 	}
 	if (options.onFocusOutEnabled) {
 		options.onFocusOut = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxTextEditorInterop.OnFocusOut', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTextEditorInterop.OnFocusOut', element.id);
 			
 		}
 	}
 	if (options.onInputEnabled) {
 		options.onInput = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxTextEditorInterop.OnInput', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTextEditorInterop.OnInput', element.id);
 			
 		}
 	}
 	if (options.onKeyDownEnabled) {
 		options.onKeyDown = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxTextEditorInterop.OnKeyDown', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTextEditorInterop.OnKeyDown', element.id);
 			
 		}
 	}
 	if (options.onKeyPressEnabled) {
 		options.onKeyPress = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxTextEditorInterop.OnKeyPress', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTextEditorInterop.OnKeyPress', element.id);
 			
 		}
 	}
 	if (options.onKeyUpEnabled) {
 		options.onKeyUp = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxTextEditorInterop.OnKeyUp', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTextEditorInterop.OnKeyUp', element.id);
 			
 		}
 	}
 	if (options.onPasteEnabled) {
 		options.onPaste = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.DxTextEditorInterop.OnPaste', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTextEditorInterop.OnPaste', element.id);
 			
 		}
 	}
@@ -3848,7 +3848,7 @@ function BlazorDevExtreme_Widget_Init (element, optionsText) {
 
 	if (options.onContentReadyEnabled) {
 		options.onContentReady = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Ui.WidgetInterop.OnContentReady', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.WidgetInterop.OnContentReady', element.id);
 			
 		}
 	}
@@ -3907,31 +3907,31 @@ function BlazorDevExtreme_BaseWidget_Init (element, optionsText) {
 
 	if (options.onDrawnEnabled) {
 		options.onDrawn = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Viz.BaseWidgetInterop.OnDrawn', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.BaseWidgetInterop.OnDrawn', element.id);
 			
 		}
 	}
 	if (options.onExportedEnabled) {
 		options.onExported = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Viz.BaseWidgetInterop.OnExported', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.BaseWidgetInterop.OnExported', element.id);
 			
 		}
 	}
 	if (options.onExportingEnabled) {
 		options.onExporting = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Viz.BaseWidgetInterop.OnExporting', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.BaseWidgetInterop.OnExporting', element.id);
 			
 		}
 	}
 	if (options.onFileSavingEnabled) {
 		options.onFileSaving = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Viz.BaseWidgetInterop.OnFileSaving', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.BaseWidgetInterop.OnFileSaving', element.id);
 			
 		}
 	}
 	if (options.onIncidentOccurredEnabled) {
 		options.onIncidentOccurred = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Viz.BaseWidgetInterop.OnIncidentOccurred', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.BaseWidgetInterop.OnIncidentOccurred', element.id);
 			
 		}
 	}
@@ -3970,43 +3970,43 @@ function BlazorDevExtreme_DxChart_Init (element, optionsText) {
 
 	if (options.onArgumentAxisClickEnabled) {
 		options.onArgumentAxisClick = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Viz.DxChartInterop.OnArgumentAxisClick', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxChartInterop.OnArgumentAxisClick', element.id);
 			
 		}
 	}
 	if (options.onLegendClickEnabled) {
 		options.onLegendClick = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Viz.DxChartInterop.OnLegendClick', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxChartInterop.OnLegendClick', element.id);
 			
 		}
 	}
 	if (options.onSeriesClickEnabled) {
 		options.onSeriesClick = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Viz.DxChartInterop.OnSeriesClick', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxChartInterop.OnSeriesClick', element.id);
 			
 		}
 	}
 	if (options.onSeriesHoverChangedEnabled) {
 		options.onSeriesHoverChanged = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Viz.DxChartInterop.OnSeriesHoverChanged', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxChartInterop.OnSeriesHoverChanged', element.id);
 			
 		}
 	}
 	if (options.onSeriesSelectionChangedEnabled) {
 		options.onSeriesSelectionChanged = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Viz.DxChartInterop.OnSeriesSelectionChanged', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxChartInterop.OnSeriesSelectionChanged', element.id);
 			
 		}
 	}
 	if (options.onZoomEndEnabled) {
 		options.onZoomEnd = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Viz.DxChartInterop.OnZoomEnd', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxChartInterop.OnZoomEnd', element.id);
 			
 		}
 	}
 	if (options.onZoomStartEnabled) {
 		options.onZoomStart = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Viz.DxChartInterop.OnZoomStart', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxChartInterop.OnZoomStart', element.id);
 			
 		}
 	}
@@ -4027,7 +4027,7 @@ function BlazorDevExtreme_DxPieChart_Init (element, optionsText) {
 
 	if (options.onLegendClickEnabled) {
 		options.onLegendClick = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Viz.DxPieChartInterop.OnLegendClick', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxPieChartInterop.OnLegendClick', element.id);
 			
 		}
 	}
@@ -4054,31 +4054,31 @@ function BlazorDevExtreme_DxPolarChart_Init (element, optionsText) {
 
 	if (options.onArgumentAxisClickEnabled) {
 		options.onArgumentAxisClick = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Viz.DxPolarChartInterop.OnArgumentAxisClick', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxPolarChartInterop.OnArgumentAxisClick', element.id);
 			
 		}
 	}
 	if (options.onLegendClickEnabled) {
 		options.onLegendClick = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Viz.DxPolarChartInterop.OnLegendClick', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxPolarChartInterop.OnLegendClick', element.id);
 			
 		}
 	}
 	if (options.onSeriesClickEnabled) {
 		options.onSeriesClick = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Viz.DxPolarChartInterop.OnSeriesClick', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxPolarChartInterop.OnSeriesClick', element.id);
 			
 		}
 	}
 	if (options.onSeriesHoverChangedEnabled) {
 		options.onSeriesHoverChanged = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Viz.DxPolarChartInterop.OnSeriesHoverChanged', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxPolarChartInterop.OnSeriesHoverChanged', element.id);
 			
 		}
 	}
 	if (options.onSeriesSelectionChangedEnabled) {
 		options.onSeriesSelectionChanged = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Viz.DxPolarChartInterop.OnSeriesSelectionChanged', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxPolarChartInterop.OnSeriesSelectionChanged', element.id);
 			
 		}
 	}
@@ -4096,37 +4096,37 @@ function BlazorDevExtreme_BaseChart_Init (element, optionsText) {
 
 	if (options.onDoneEnabled) {
 		options.onDone = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Viz.BaseChartInterop.OnDone', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.BaseChartInterop.OnDone', element.id);
 			
 		}
 	}
 	if (options.onPointClickEnabled) {
 		options.onPointClick = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Viz.BaseChartInterop.OnPointClick', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.BaseChartInterop.OnPointClick', element.id);
 			
 		}
 	}
 	if (options.onPointHoverChangedEnabled) {
 		options.onPointHoverChanged = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Viz.BaseChartInterop.OnPointHoverChanged', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.BaseChartInterop.OnPointHoverChanged', element.id);
 			
 		}
 	}
 	if (options.onPointSelectionChangedEnabled) {
 		options.onPointSelectionChanged = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Viz.BaseChartInterop.OnPointSelectionChanged', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.BaseChartInterop.OnPointSelectionChanged', element.id);
 			
 		}
 	}
 	if (options.onTooltipHiddenEnabled) {
 		options.onTooltipHidden = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Viz.BaseChartInterop.OnTooltipHidden', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.BaseChartInterop.OnTooltipHidden', element.id);
 			
 		}
 	}
 	if (options.onTooltipShownEnabled) {
 		options.onTooltipShown = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Viz.BaseChartInterop.OnTooltipShown', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.BaseChartInterop.OnTooltipShown', element.id);
 			
 		}
 	}
@@ -4186,25 +4186,25 @@ function BlazorDevExtreme_DxFunnel_Init (element, optionsText) {
 
 	if (options.onHoverChangedEnabled) {
 		options.onHoverChanged = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Viz.DxFunnelInterop.OnHoverChanged', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxFunnelInterop.OnHoverChanged', element.id);
 			
 		}
 	}
 	if (options.onItemClickEnabled) {
 		options.onItemClick = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Viz.DxFunnelInterop.OnItemClick', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxFunnelInterop.OnItemClick', element.id);
 			
 		}
 	}
 	if (options.onLegendClickEnabled) {
 		options.onLegendClick = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Viz.DxFunnelInterop.OnLegendClick', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxFunnelInterop.OnLegendClick', element.id);
 			
 		}
 	}
 	if (options.onSelectionChangedEnabled) {
 		options.onSelectionChanged = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Viz.DxFunnelInterop.OnSelectionChanged', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxFunnelInterop.OnSelectionChanged', element.id);
 			
 		}
 	}
@@ -4234,13 +4234,13 @@ function BlazorDevExtreme_BaseGauge_Init (element, optionsText) {
 
 	if (options.onTooltipHiddenEnabled) {
 		options.onTooltipHidden = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Viz.BaseGaugeInterop.OnTooltipHidden', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.BaseGaugeInterop.OnTooltipHidden', element.id);
 			
 		}
 	}
 	if (options.onTooltipShownEnabled) {
 		options.onTooltipShown = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Viz.BaseGaugeInterop.OnTooltipShown', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.BaseGaugeInterop.OnTooltipShown', element.id);
 			
 		}
 	}
@@ -4294,13 +4294,13 @@ function BlazorDevExtreme_DxBarGauge_Init (element, optionsText) {
 
 	if (options.onTooltipHiddenEnabled) {
 		options.onTooltipHidden = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Viz.DxBarGaugeInterop.OnTooltipHidden', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxBarGaugeInterop.OnTooltipHidden', element.id);
 			
 		}
 	}
 	if (options.onTooltipShownEnabled) {
 		options.onTooltipShown = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Viz.DxBarGaugeInterop.OnTooltipShown', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxBarGaugeInterop.OnTooltipShown', element.id);
 			
 		}
 	}
@@ -4666,13 +4666,13 @@ function BlazorDevExtreme_DxRangeSelector_Init (element, optionsText) {
 
 	if (options.onSelectedRangeChangedEnabled) {
 		options.onSelectedRangeChanged = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Viz.DxRangeSelectorInterop.OnSelectedRangeChanged', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxRangeSelectorInterop.OnSelectedRangeChanged', element.id);
 			
 		}
 	}
 	if (options.onValueChangedEnabled) {
 		options.onValueChanged = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Viz.DxRangeSelectorInterop.OnValueChanged', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxRangeSelectorInterop.OnValueChanged', element.id);
 			
 		}
 	}
@@ -4711,13 +4711,13 @@ function BlazorDevExtreme_BaseSparkline_Init (element, optionsText) {
 
 	if (options.onTooltipHiddenEnabled) {
 		options.onTooltipHidden = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Viz.BaseSparklineInterop.OnTooltipHidden', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.BaseSparklineInterop.OnTooltipHidden', element.id);
 			
 		}
 	}
 	if (options.onTooltipShownEnabled) {
 		options.onTooltipShown = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Viz.BaseSparklineInterop.OnTooltipShown', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.BaseSparklineInterop.OnTooltipShown', element.id);
 			
 		}
 	}
@@ -4762,37 +4762,37 @@ function BlazorDevExtreme_DxTreeMap_Init (element, optionsText) {
 
 	if (options.onClickEnabled) {
 		options.onClick = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Viz.DxTreeMapInterop.OnClick', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxTreeMapInterop.OnClick', element.id);
 			
 		}
 	}
 	if (options.onDrillEnabled) {
 		options.onDrill = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Viz.DxTreeMapInterop.OnDrill', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxTreeMapInterop.OnDrill', element.id);
 			
 		}
 	}
 	if (options.onHoverChangedEnabled) {
 		options.onHoverChanged = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Viz.DxTreeMapInterop.OnHoverChanged', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxTreeMapInterop.OnHoverChanged', element.id);
 			
 		}
 	}
 	if (options.onNodesInitializedEnabled) {
 		options.onNodesInitialized = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Viz.DxTreeMapInterop.OnNodesInitialized', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxTreeMapInterop.OnNodesInitialized', element.id);
 			
 		}
 	}
 	if (options.onNodesRenderingEnabled) {
 		options.onNodesRendering = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Viz.DxTreeMapInterop.OnNodesRendering', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxTreeMapInterop.OnNodesRendering', element.id);
 			
 		}
 	}
 	if (options.onSelectionChangedEnabled) {
 		options.onSelectionChanged = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Viz.DxTreeMapInterop.OnSelectionChanged', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxTreeMapInterop.OnSelectionChanged', element.id);
 			
 		}
 	}
@@ -4831,61 +4831,61 @@ function BlazorDevExtreme_DxVectorMap_Init (element, optionsText) {
 
 	if (options.onAreaClickEnabled) {
 		options.onAreaClick = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Viz.DxVectorMapInterop.OnAreaClick', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxVectorMapInterop.OnAreaClick', element.id);
 			
 		}
 	}
 	if (options.onAreaSelectionChangedEnabled) {
 		options.onAreaSelectionChanged = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Viz.DxVectorMapInterop.OnAreaSelectionChanged', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxVectorMapInterop.OnAreaSelectionChanged', element.id);
 			
 		}
 	}
 	if (options.onCenterChangedEnabled) {
 		options.onCenterChanged = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Viz.DxVectorMapInterop.OnCenterChanged', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxVectorMapInterop.OnCenterChanged', element.id);
 			
 		}
 	}
 	if (options.onClickEnabled) {
 		options.onClick = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Viz.DxVectorMapInterop.OnClick', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxVectorMapInterop.OnClick', element.id);
 			
 		}
 	}
 	if (options.onMarkerClickEnabled) {
 		options.onMarkerClick = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Viz.DxVectorMapInterop.OnMarkerClick', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxVectorMapInterop.OnMarkerClick', element.id);
 			
 		}
 	}
 	if (options.onMarkerSelectionChangedEnabled) {
 		options.onMarkerSelectionChanged = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Viz.DxVectorMapInterop.OnMarkerSelectionChanged', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxVectorMapInterop.OnMarkerSelectionChanged', element.id);
 			
 		}
 	}
 	if (options.onSelectionChangedEnabled) {
 		options.onSelectionChanged = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Viz.DxVectorMapInterop.OnSelectionChanged', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxVectorMapInterop.OnSelectionChanged', element.id);
 			
 		}
 	}
 	if (options.onTooltipHiddenEnabled) {
 		options.onTooltipHidden = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Viz.DxVectorMapInterop.OnTooltipHidden', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxVectorMapInterop.OnTooltipHidden', element.id);
 			
 		}
 	}
 	if (options.onTooltipShownEnabled) {
 		options.onTooltipShown = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Viz.DxVectorMapInterop.OnTooltipShown', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxVectorMapInterop.OnTooltipShown', element.id);
 			
 		}
 	}
 	if (options.onZoomFactorChangedEnabled) {
 		options.onZoomFactorChanged = function () {
-			DotNet.invokeMethod(assemblyName, 'DevExpress.Viz.DxVectorMapInterop.OnZoomFactorChanged', element.id);
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxVectorMapInterop.OnZoomFactorChanged', element.id);
 			
 		}
 	}

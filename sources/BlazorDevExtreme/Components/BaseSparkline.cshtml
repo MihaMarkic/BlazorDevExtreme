@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Viz.Sparklines.BaseSparklineOptions>
+@inherits DxBlazorComponent<DevExpress.Viz.Sparklines.BaseSparklineOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -15,13 +15,13 @@
 			onTooltipShownEnabled = onTooltipShownEnabled,
 		};
 	}
-	protected override void Init(DevExpress.Viz.Sparklines.BaseSparklineOptions options) {
-		DevExpress.Viz.BaseSparklineInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Viz.Sparklines.BaseSparklineOptions options) {
+return 		DevExpress.Viz.BaseSparklineInterop.Init(dxTarget, options);
 	}
 	object tooltip;
 	[Parameter]
 	object Tooltip {
-		get => isInitialized ? DevExpress.Viz.BaseSparklineInterop.GetTooltip(dxTarget) : tooltip;
+		get => isInitialized ? DevExpress.Viz.BaseSparklineInterop.GetTooltip(dxTarget).Result : tooltip;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.BaseSparklineInterop.SetTooltip(dxTarget, value);

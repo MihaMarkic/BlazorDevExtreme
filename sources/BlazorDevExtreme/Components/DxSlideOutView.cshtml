@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Ui.DxSlideOutViewOptions>
+@inherits DxBlazorComponent<DevExpress.Ui.DxSlideOutViewOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -17,13 +17,13 @@
 			swipeEnabled = swipeEnabled,
 		};
 	}
-	protected override void Init(DevExpress.Ui.DxSlideOutViewOptions options) {
-		DevExpress.Ui.DxSlideOutViewInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Ui.DxSlideOutViewOptions options) {
+return 		DevExpress.Ui.DxSlideOutViewInterop.Init(dxTarget, options);
 	}
 	object contentTemplate;
 	[Parameter]
 	object ContentTemplate {
-		get => isInitialized ? DevExpress.Ui.DxSlideOutViewInterop.GetContentTemplate(dxTarget) : contentTemplate;
+		get => isInitialized ? DevExpress.Ui.DxSlideOutViewInterop.GetContentTemplate(dxTarget).Result : contentTemplate;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxSlideOutViewInterop.SetContentTemplate(dxTarget, value);
@@ -35,7 +35,7 @@
 	string menuPosition;
 	[Parameter]
 	string MenuPosition {
-		get => isInitialized ? DevExpress.Ui.DxSlideOutViewInterop.GetMenuPosition(dxTarget) : menuPosition;
+		get => isInitialized ? DevExpress.Ui.DxSlideOutViewInterop.GetMenuPosition(dxTarget).Result : menuPosition;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxSlideOutViewInterop.SetMenuPosition(dxTarget, value);
@@ -47,7 +47,7 @@
 	object menuTemplate;
 	[Parameter]
 	object MenuTemplate {
-		get => isInitialized ? DevExpress.Ui.DxSlideOutViewInterop.GetMenuTemplate(dxTarget) : menuTemplate;
+		get => isInitialized ? DevExpress.Ui.DxSlideOutViewInterop.GetMenuTemplate(dxTarget).Result : menuTemplate;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxSlideOutViewInterop.SetMenuTemplate(dxTarget, value);
@@ -59,7 +59,7 @@
 	bool? menuVisible;
 	[Parameter]
 	bool? MenuVisible {
-		get => isInitialized ? DevExpress.Ui.DxSlideOutViewInterop.GetMenuVisible(dxTarget) : menuVisible;
+		get => isInitialized ? DevExpress.Ui.DxSlideOutViewInterop.GetMenuVisible(dxTarget).Result : menuVisible;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxSlideOutViewInterop.SetMenuVisible(dxTarget, value);
@@ -71,7 +71,7 @@
 	bool? swipeEnabled;
 	[Parameter]
 	bool? SwipeEnabled {
-		get => isInitialized ? DevExpress.Ui.DxSlideOutViewInterop.GetSwipeEnabled(dxTarget) : swipeEnabled;
+		get => isInitialized ? DevExpress.Ui.DxSlideOutViewInterop.GetSwipeEnabled(dxTarget).Result : swipeEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxSlideOutViewInterop.SetSwipeEnabled(dxTarget, value);
@@ -84,19 +84,19 @@
 		await base.OnInitAsync();
 	}
 	public object Content() {
-		return DevExpress.Ui.DxSlideOutViewInterop.Content(dxTarget);
+		return DevExpress.Ui.DxSlideOutViewInterop.Content(dxTarget).Result;
 	}
 	public object HideMenu() {
-		return DevExpress.Ui.DxSlideOutViewInterop.HideMenu(dxTarget);
+		return DevExpress.Ui.DxSlideOutViewInterop.HideMenu(dxTarget).Result;
 	}
 	public object MenuContent() {
-		return DevExpress.Ui.DxSlideOutViewInterop.MenuContent(dxTarget);
+		return DevExpress.Ui.DxSlideOutViewInterop.MenuContent(dxTarget).Result;
 	}
 	public object ShowMenu() {
-		return DevExpress.Ui.DxSlideOutViewInterop.ShowMenu(dxTarget);
+		return DevExpress.Ui.DxSlideOutViewInterop.ShowMenu(dxTarget).Result;
 	}
 	public object ToggleMenuVisibility() {
-		return DevExpress.Ui.DxSlideOutViewInterop.ToggleMenuVisibility(dxTarget);
+		return DevExpress.Ui.DxSlideOutViewInterop.ToggleMenuVisibility(dxTarget).Result;
 	}
 	public void Dispose() {
 	}

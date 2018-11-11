@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Ui.DxContextMenuOptions>
+@inherits DxBlazorComponent<DevExpress.Ui.DxContextMenuOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -24,13 +24,13 @@
 			onShownEnabled = onShownEnabled,
 		};
 	}
-	protected override void Init(DevExpress.Ui.DxContextMenuOptions options) {
-		DevExpress.Ui.DxContextMenuInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Ui.DxContextMenuOptions options) {
+return 		DevExpress.Ui.DxContextMenuInterop.Init(dxTarget, options);
 	}
 	object closeOnOutsideClick;
 	[Parameter]
 	object CloseOnOutsideClick {
-		get => isInitialized ? DevExpress.Ui.DxContextMenuInterop.GetCloseOnOutsideClick(dxTarget) : closeOnOutsideClick;
+		get => isInitialized ? DevExpress.Ui.DxContextMenuInterop.GetCloseOnOutsideClick(dxTarget).Result : closeOnOutsideClick;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxContextMenuInterop.SetCloseOnOutsideClick(dxTarget, value);
@@ -42,7 +42,7 @@
 	object items;
 	[Parameter]
 	object Items {
-		get => isInitialized ? DevExpress.Ui.DxContextMenuInterop.GetItems(dxTarget) : items;
+		get => isInitialized ? DevExpress.Ui.DxContextMenuInterop.GetItems(dxTarget).Result : items;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxContextMenuInterop.SetItems(dxTarget, value);
@@ -54,7 +54,7 @@
 	object position;
 	[Parameter]
 	object Position {
-		get => isInitialized ? DevExpress.Ui.DxContextMenuInterop.GetPosition(dxTarget) : position;
+		get => isInitialized ? DevExpress.Ui.DxContextMenuInterop.GetPosition(dxTarget).Result : position;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxContextMenuInterop.SetPosition(dxTarget, value);
@@ -66,7 +66,7 @@
 	object showEvent;
 	[Parameter]
 	object ShowEvent {
-		get => isInitialized ? DevExpress.Ui.DxContextMenuInterop.GetShowEvent(dxTarget) : showEvent;
+		get => isInitialized ? DevExpress.Ui.DxContextMenuInterop.GetShowEvent(dxTarget).Result : showEvent;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxContextMenuInterop.SetShowEvent(dxTarget, value);
@@ -78,7 +78,7 @@
 	string submenuDirection;
 	[Parameter]
 	string SubmenuDirection {
-		get => isInitialized ? DevExpress.Ui.DxContextMenuInterop.GetSubmenuDirection(dxTarget) : submenuDirection;
+		get => isInitialized ? DevExpress.Ui.DxContextMenuInterop.GetSubmenuDirection(dxTarget).Result : submenuDirection;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxContextMenuInterop.SetSubmenuDirection(dxTarget, value);
@@ -90,7 +90,7 @@
 	object target;
 	[Parameter]
 	object Target {
-		get => isInitialized ? DevExpress.Ui.DxContextMenuInterop.GetTarget(dxTarget) : target;
+		get => isInitialized ? DevExpress.Ui.DxContextMenuInterop.GetTarget(dxTarget).Result : target;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxContextMenuInterop.SetTarget(dxTarget, value);
@@ -102,7 +102,7 @@
 	bool? visible;
 	[Parameter]
 	bool? Visible {
-		get => isInitialized ? DevExpress.Ui.DxContextMenuInterop.GetVisible(dxTarget) : visible;
+		get => isInitialized ? DevExpress.Ui.DxContextMenuInterop.GetVisible(dxTarget).Result : visible;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxContextMenuInterop.SetVisible(dxTarget, value);
@@ -185,13 +185,13 @@
 		}
 	}
 	public object Hide() {
-		return DevExpress.Ui.DxContextMenuInterop.Hide(dxTarget);
+		return DevExpress.Ui.DxContextMenuInterop.Hide(dxTarget).Result;
 	}
 	public object Show() {
-		return DevExpress.Ui.DxContextMenuInterop.Show(dxTarget);
+		return DevExpress.Ui.DxContextMenuInterop.Show(dxTarget).Result;
 	}
 	public object Toggle(bool showing) {
-		return DevExpress.Ui.DxContextMenuInterop.Toggle(dxTarget, showing);
+		return DevExpress.Ui.DxContextMenuInterop.Toggle(dxTarget, showing).Result;
 	}
 	public void Dispose() {
 		DevExpress.Ui.DxContextMenuInterop.Hidden -= DxContextMenu_Hidden;

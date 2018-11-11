@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Ui.DxTileViewOptions>
+@inherits DxBlazorComponent<DevExpress.Ui.DxTileViewOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -21,13 +21,13 @@
 			showScrollbar = showScrollbar,
 		};
 	}
-	protected override void Init(DevExpress.Ui.DxTileViewOptions options) {
-		DevExpress.Ui.DxTileViewInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Ui.DxTileViewOptions options) {
+return 		DevExpress.Ui.DxTileViewInterop.Init(dxTarget, options);
 	}
 	bool? activeStateEnabled;
 	[Parameter]
 	bool? ActiveStateEnabled {
-		get => isInitialized ? DevExpress.Ui.DxTileViewInterop.GetActiveStateEnabled(dxTarget) : activeStateEnabled;
+		get => isInitialized ? DevExpress.Ui.DxTileViewInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTileViewInterop.SetActiveStateEnabled(dxTarget, value);
@@ -39,7 +39,7 @@
 	float? baseItemHeight;
 	[Parameter]
 	float? BaseItemHeight {
-		get => isInitialized ? DevExpress.Ui.DxTileViewInterop.GetBaseItemHeight(dxTarget) : baseItemHeight;
+		get => isInitialized ? DevExpress.Ui.DxTileViewInterop.GetBaseItemHeight(dxTarget).Result : baseItemHeight;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTileViewInterop.SetBaseItemHeight(dxTarget, value);
@@ -51,7 +51,7 @@
 	float? baseItemWidth;
 	[Parameter]
 	float? BaseItemWidth {
-		get => isInitialized ? DevExpress.Ui.DxTileViewInterop.GetBaseItemWidth(dxTarget) : baseItemWidth;
+		get => isInitialized ? DevExpress.Ui.DxTileViewInterop.GetBaseItemWidth(dxTarget).Result : baseItemWidth;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTileViewInterop.SetBaseItemWidth(dxTarget, value);
@@ -63,7 +63,7 @@
 	string direction;
 	[Parameter]
 	string Direction {
-		get => isInitialized ? DevExpress.Ui.DxTileViewInterop.GetDirection(dxTarget) : direction;
+		get => isInitialized ? DevExpress.Ui.DxTileViewInterop.GetDirection(dxTarget).Result : direction;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTileViewInterop.SetDirection(dxTarget, value);
@@ -75,7 +75,7 @@
 	bool? focusStateEnabled;
 	[Parameter]
 	bool? FocusStateEnabled {
-		get => isInitialized ? DevExpress.Ui.DxTileViewInterop.GetFocusStateEnabled(dxTarget) : focusStateEnabled;
+		get => isInitialized ? DevExpress.Ui.DxTileViewInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTileViewInterop.SetFocusStateEnabled(dxTarget, value);
@@ -87,7 +87,7 @@
 	object height;
 	[Parameter]
 	object Height {
-		get => isInitialized ? DevExpress.Ui.DxTileViewInterop.GetHeight(dxTarget) : height;
+		get => isInitialized ? DevExpress.Ui.DxTileViewInterop.GetHeight(dxTarget).Result : height;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTileViewInterop.SetHeight(dxTarget, value);
@@ -99,7 +99,7 @@
 	bool? hoverStateEnabled;
 	[Parameter]
 	bool? HoverStateEnabled {
-		get => isInitialized ? DevExpress.Ui.DxTileViewInterop.GetHoverStateEnabled(dxTarget) : hoverStateEnabled;
+		get => isInitialized ? DevExpress.Ui.DxTileViewInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTileViewInterop.SetHoverStateEnabled(dxTarget, value);
@@ -111,7 +111,7 @@
 	float? itemMargin;
 	[Parameter]
 	float? ItemMargin {
-		get => isInitialized ? DevExpress.Ui.DxTileViewInterop.GetItemMargin(dxTarget) : itemMargin;
+		get => isInitialized ? DevExpress.Ui.DxTileViewInterop.GetItemMargin(dxTarget).Result : itemMargin;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTileViewInterop.SetItemMargin(dxTarget, value);
@@ -123,7 +123,7 @@
 	bool? showScrollbar;
 	[Parameter]
 	bool? ShowScrollbar {
-		get => isInitialized ? DevExpress.Ui.DxTileViewInterop.GetShowScrollbar(dxTarget) : showScrollbar;
+		get => isInitialized ? DevExpress.Ui.DxTileViewInterop.GetShowScrollbar(dxTarget).Result : showScrollbar;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTileViewInterop.SetShowScrollbar(dxTarget, value);
@@ -136,7 +136,7 @@
 		await base.OnInitAsync();
 	}
 	public float ScrollPosition() {
-		return DevExpress.Ui.DxTileViewInterop.ScrollPosition(dxTarget);
+		return DevExpress.Ui.DxTileViewInterop.ScrollPosition(dxTarget).Result;
 	}
 	public void Dispose() {
 	}

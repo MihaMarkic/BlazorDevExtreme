@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Ui.DxSliderBaseOptions>
+@inherits DxBlazorComponent<DevExpress.Ui.DxSliderBaseOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -21,13 +21,13 @@
 			tooltip = tooltip,
 		};
 	}
-	protected override void Init(DevExpress.Ui.DxSliderBaseOptions options) {
-		DevExpress.Ui.DxSliderBaseInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Ui.DxSliderBaseOptions options) {
+return 		DevExpress.Ui.DxSliderBaseInterop.Init(dxTarget, options);
 	}
 	bool? activeStateEnabled;
 	[Parameter]
 	bool? ActiveStateEnabled {
-		get => isInitialized ? DevExpress.Ui.DxSliderBaseInterop.GetActiveStateEnabled(dxTarget) : activeStateEnabled;
+		get => isInitialized ? DevExpress.Ui.DxSliderBaseInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxSliderBaseInterop.SetActiveStateEnabled(dxTarget, value);
@@ -39,7 +39,7 @@
 	bool? focusStateEnabled;
 	[Parameter]
 	bool? FocusStateEnabled {
-		get => isInitialized ? DevExpress.Ui.DxSliderBaseInterop.GetFocusStateEnabled(dxTarget) : focusStateEnabled;
+		get => isInitialized ? DevExpress.Ui.DxSliderBaseInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxSliderBaseInterop.SetFocusStateEnabled(dxTarget, value);
@@ -51,7 +51,7 @@
 	bool? hoverStateEnabled;
 	[Parameter]
 	bool? HoverStateEnabled {
-		get => isInitialized ? DevExpress.Ui.DxSliderBaseInterop.GetHoverStateEnabled(dxTarget) : hoverStateEnabled;
+		get => isInitialized ? DevExpress.Ui.DxSliderBaseInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxSliderBaseInterop.SetHoverStateEnabled(dxTarget, value);
@@ -63,7 +63,7 @@
 	float? keyStep;
 	[Parameter]
 	float? KeyStep {
-		get => isInitialized ? DevExpress.Ui.DxSliderBaseInterop.GetKeyStep(dxTarget) : keyStep;
+		get => isInitialized ? DevExpress.Ui.DxSliderBaseInterop.GetKeyStep(dxTarget).Result : keyStep;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxSliderBaseInterop.SetKeyStep(dxTarget, value);
@@ -75,7 +75,7 @@
 	object label;
 	[Parameter]
 	object Label {
-		get => isInitialized ? DevExpress.Ui.DxSliderBaseInterop.GetLabel(dxTarget) : label;
+		get => isInitialized ? DevExpress.Ui.DxSliderBaseInterop.GetLabel(dxTarget).Result : label;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxSliderBaseInterop.SetLabel(dxTarget, value);
@@ -87,7 +87,7 @@
 	string name;
 	[Parameter]
 	string Name {
-		get => isInitialized ? DevExpress.Ui.DxSliderBaseInterop.GetName(dxTarget) : name;
+		get => isInitialized ? DevExpress.Ui.DxSliderBaseInterop.GetName(dxTarget).Result : name;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxSliderBaseInterop.SetName(dxTarget, value);
@@ -99,7 +99,7 @@
 	bool? showRange;
 	[Parameter]
 	bool? ShowRange {
-		get => isInitialized ? DevExpress.Ui.DxSliderBaseInterop.GetShowRange(dxTarget) : showRange;
+		get => isInitialized ? DevExpress.Ui.DxSliderBaseInterop.GetShowRange(dxTarget).Result : showRange;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxSliderBaseInterop.SetShowRange(dxTarget, value);
@@ -111,7 +111,7 @@
 	float? step;
 	[Parameter]
 	float? Step {
-		get => isInitialized ? DevExpress.Ui.DxSliderBaseInterop.GetStep(dxTarget) : step;
+		get => isInitialized ? DevExpress.Ui.DxSliderBaseInterop.GetStep(dxTarget).Result : step;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxSliderBaseInterop.SetStep(dxTarget, value);
@@ -123,7 +123,7 @@
 	object tooltip;
 	[Parameter]
 	object Tooltip {
-		get => isInitialized ? DevExpress.Ui.DxSliderBaseInterop.GetTooltip(dxTarget) : tooltip;
+		get => isInitialized ? DevExpress.Ui.DxSliderBaseInterop.GetTooltip(dxTarget).Result : tooltip;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxSliderBaseInterop.SetTooltip(dxTarget, value);

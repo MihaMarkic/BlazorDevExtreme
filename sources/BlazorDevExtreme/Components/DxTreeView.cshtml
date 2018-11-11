@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Ui.DxTreeViewOptions>
+@inherits DxBlazorComponent<DevExpress.Ui.DxTreeViewOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -37,13 +37,13 @@
 			onSelectionChangedEnabled = onSelectionChangedEnabled,
 		};
 	}
-	protected override void Init(DevExpress.Ui.DxTreeViewOptions options) {
-		DevExpress.Ui.DxTreeViewInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Ui.DxTreeViewOptions options) {
+return 		DevExpress.Ui.DxTreeViewInterop.Init(dxTarget, options);
 	}
 	bool? animationEnabled;
 	[Parameter]
 	bool? AnimationEnabled {
-		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetAnimationEnabled(dxTarget) : animationEnabled;
+		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetAnimationEnabled(dxTarget).Result : animationEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTreeViewInterop.SetAnimationEnabled(dxTarget, value);
@@ -55,7 +55,7 @@
 	object createChildren;
 	[Parameter]
 	object CreateChildren {
-		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetCreateChildren(dxTarget) : createChildren;
+		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetCreateChildren(dxTarget).Result : createChildren;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTreeViewInterop.SetCreateChildren(dxTarget, value);
@@ -67,7 +67,7 @@
 	string dataStructure;
 	[Parameter]
 	string DataStructure {
-		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetDataStructure(dxTarget) : dataStructure;
+		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetDataStructure(dxTarget).Result : dataStructure;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTreeViewInterop.SetDataStructure(dxTarget, value);
@@ -79,7 +79,7 @@
 	bool? expandAllEnabled;
 	[Parameter]
 	bool? ExpandAllEnabled {
-		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetExpandAllEnabled(dxTarget) : expandAllEnabled;
+		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetExpandAllEnabled(dxTarget).Result : expandAllEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTreeViewInterop.SetExpandAllEnabled(dxTarget, value);
@@ -91,7 +91,7 @@
 	object expandedExpr;
 	[Parameter]
 	object ExpandedExpr {
-		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetExpandedExpr(dxTarget) : expandedExpr;
+		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetExpandedExpr(dxTarget).Result : expandedExpr;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTreeViewInterop.SetExpandedExpr(dxTarget, value);
@@ -103,7 +103,7 @@
 	bool? expandNodesRecursive;
 	[Parameter]
 	bool? ExpandNodesRecursive {
-		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetExpandNodesRecursive(dxTarget) : expandNodesRecursive;
+		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetExpandNodesRecursive(dxTarget).Result : expandNodesRecursive;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTreeViewInterop.SetExpandNodesRecursive(dxTarget, value);
@@ -115,7 +115,7 @@
 	object hasItemsExpr;
 	[Parameter]
 	object HasItemsExpr {
-		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetHasItemsExpr(dxTarget) : hasItemsExpr;
+		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetHasItemsExpr(dxTarget).Result : hasItemsExpr;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTreeViewInterop.SetHasItemsExpr(dxTarget, value);
@@ -127,7 +127,7 @@
 	object items;
 	[Parameter]
 	object Items {
-		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetItems(dxTarget) : items;
+		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetItems(dxTarget).Result : items;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTreeViewInterop.SetItems(dxTarget, value);
@@ -139,7 +139,7 @@
 	object parentIdExpr;
 	[Parameter]
 	object ParentIdExpr {
-		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetParentIdExpr(dxTarget) : parentIdExpr;
+		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetParentIdExpr(dxTarget).Result : parentIdExpr;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTreeViewInterop.SetParentIdExpr(dxTarget, value);
@@ -151,7 +151,7 @@
 	object rootValue;
 	[Parameter]
 	object RootValue {
-		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetRootValue(dxTarget) : rootValue;
+		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetRootValue(dxTarget).Result : rootValue;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTreeViewInterop.SetRootValue(dxTarget, value);
@@ -163,7 +163,7 @@
 	string scrollDirection;
 	[Parameter]
 	string ScrollDirection {
-		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetScrollDirection(dxTarget) : scrollDirection;
+		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetScrollDirection(dxTarget).Result : scrollDirection;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTreeViewInterop.SetScrollDirection(dxTarget, value);
@@ -175,7 +175,7 @@
 	string selectAllText;
 	[Parameter]
 	string SelectAllText {
-		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetSelectAllText(dxTarget) : selectAllText;
+		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetSelectAllText(dxTarget).Result : selectAllText;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTreeViewInterop.SetSelectAllText(dxTarget, value);
@@ -187,7 +187,7 @@
 	bool? selectByClick;
 	[Parameter]
 	bool? SelectByClick {
-		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetSelectByClick(dxTarget) : selectByClick;
+		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetSelectByClick(dxTarget).Result : selectByClick;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTreeViewInterop.SetSelectByClick(dxTarget, value);
@@ -199,7 +199,7 @@
 	string selectionMode;
 	[Parameter]
 	string SelectionMode {
-		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetSelectionMode(dxTarget) : selectionMode;
+		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetSelectionMode(dxTarget).Result : selectionMode;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTreeViewInterop.SetSelectionMode(dxTarget, value);
@@ -211,7 +211,7 @@
 	bool? selectNodesRecursive;
 	[Parameter]
 	bool? SelectNodesRecursive {
-		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetSelectNodesRecursive(dxTarget) : selectNodesRecursive;
+		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetSelectNodesRecursive(dxTarget).Result : selectNodesRecursive;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTreeViewInterop.SetSelectNodesRecursive(dxTarget, value);
@@ -223,7 +223,7 @@
 	string showCheckBoxesMode;
 	[Parameter]
 	string ShowCheckBoxesMode {
-		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetShowCheckBoxesMode(dxTarget) : showCheckBoxesMode;
+		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetShowCheckBoxesMode(dxTarget).Result : showCheckBoxesMode;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTreeViewInterop.SetShowCheckBoxesMode(dxTarget, value);
@@ -235,7 +235,7 @@
 	bool? virtualModeEnabled;
 	[Parameter]
 	bool? VirtualModeEnabled {
-		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetVirtualModeEnabled(dxTarget) : virtualModeEnabled;
+		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetVirtualModeEnabled(dxTarget).Result : virtualModeEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTreeViewInterop.SetVirtualModeEnabled(dxTarget, value);
@@ -366,7 +366,7 @@
 		DevExpress.Ui.DxTreeViewInterop.ExpandItem(dxTarget, itemData);
 	}
 	public object GetNodes() {
-		return DevExpress.Ui.DxTreeViewInterop.GetNodes(dxTarget);
+		return DevExpress.Ui.DxTreeViewInterop.GetNodes(dxTarget).Result;
 	}
 	public void SelectAll() {
 		DevExpress.Ui.DxTreeViewInterop.SelectAll(dxTarget);
@@ -381,7 +381,7 @@
 		DevExpress.Ui.DxTreeViewInterop.UnselectItem(dxTarget, itemData);
 	}
 	public object UpdateDimensions() {
-		return DevExpress.Ui.DxTreeViewInterop.UpdateDimensions(dxTarget);
+		return DevExpress.Ui.DxTreeViewInterop.UpdateDimensions(dxTarget).Result;
 	}
 	public void Dispose() {
 		DevExpress.Ui.DxTreeViewInterop.ItemClick -= DxTreeView_ItemClick;

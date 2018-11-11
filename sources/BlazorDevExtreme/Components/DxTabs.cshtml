@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Ui.DxTabsOptions>
+@inherits DxBlazorComponent<DevExpress.Ui.DxTabsOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -19,13 +19,13 @@
 			showNavButtons = showNavButtons,
 		};
 	}
-	protected override void Init(DevExpress.Ui.DxTabsOptions options) {
-		DevExpress.Ui.DxTabsInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Ui.DxTabsOptions options) {
+return 		DevExpress.Ui.DxTabsInterop.Init(dxTarget, options);
 	}
 	bool? focusStateEnabled;
 	[Parameter]
 	bool? FocusStateEnabled {
-		get => isInitialized ? DevExpress.Ui.DxTabsInterop.GetFocusStateEnabled(dxTarget) : focusStateEnabled;
+		get => isInitialized ? DevExpress.Ui.DxTabsInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTabsInterop.SetFocusStateEnabled(dxTarget, value);
@@ -37,7 +37,7 @@
 	bool? hoverStateEnabled;
 	[Parameter]
 	bool? HoverStateEnabled {
-		get => isInitialized ? DevExpress.Ui.DxTabsInterop.GetHoverStateEnabled(dxTarget) : hoverStateEnabled;
+		get => isInitialized ? DevExpress.Ui.DxTabsInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTabsInterop.SetHoverStateEnabled(dxTarget, value);
@@ -49,7 +49,7 @@
 	bool? scrollByContent;
 	[Parameter]
 	bool? ScrollByContent {
-		get => isInitialized ? DevExpress.Ui.DxTabsInterop.GetScrollByContent(dxTarget) : scrollByContent;
+		get => isInitialized ? DevExpress.Ui.DxTabsInterop.GetScrollByContent(dxTarget).Result : scrollByContent;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTabsInterop.SetScrollByContent(dxTarget, value);
@@ -61,7 +61,7 @@
 	bool? scrollingEnabled;
 	[Parameter]
 	bool? ScrollingEnabled {
-		get => isInitialized ? DevExpress.Ui.DxTabsInterop.GetScrollingEnabled(dxTarget) : scrollingEnabled;
+		get => isInitialized ? DevExpress.Ui.DxTabsInterop.GetScrollingEnabled(dxTarget).Result : scrollingEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTabsInterop.SetScrollingEnabled(dxTarget, value);
@@ -73,7 +73,7 @@
 	object selectedItems;
 	[Parameter]
 	object SelectedItems {
-		get => isInitialized ? DevExpress.Ui.DxTabsInterop.GetSelectedItems(dxTarget) : selectedItems;
+		get => isInitialized ? DevExpress.Ui.DxTabsInterop.GetSelectedItems(dxTarget).Result : selectedItems;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTabsInterop.SetSelectedItems(dxTarget, value);
@@ -85,7 +85,7 @@
 	string selectionMode;
 	[Parameter]
 	string SelectionMode {
-		get => isInitialized ? DevExpress.Ui.DxTabsInterop.GetSelectionMode(dxTarget) : selectionMode;
+		get => isInitialized ? DevExpress.Ui.DxTabsInterop.GetSelectionMode(dxTarget).Result : selectionMode;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTabsInterop.SetSelectionMode(dxTarget, value);
@@ -97,7 +97,7 @@
 	bool? showNavButtons;
 	[Parameter]
 	bool? ShowNavButtons {
-		get => isInitialized ? DevExpress.Ui.DxTabsInterop.GetShowNavButtons(dxTarget) : showNavButtons;
+		get => isInitialized ? DevExpress.Ui.DxTabsInterop.GetShowNavButtons(dxTarget).Result : showNavButtons;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTabsInterop.SetShowNavButtons(dxTarget, value);

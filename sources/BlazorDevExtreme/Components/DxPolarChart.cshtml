@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Viz.Charts.DxPolarChartOptions>
+@inherits DxBlazorComponent<DevExpress.Viz.Charts.DxPolarChartOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -36,13 +36,13 @@
 			onSeriesSelectionChangedEnabled = onSeriesSelectionChangedEnabled,
 		};
 	}
-	protected override void Init(DevExpress.Viz.Charts.DxPolarChartOptions options) {
-		DevExpress.Viz.DxPolarChartInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Viz.Charts.DxPolarChartOptions options) {
+return 		DevExpress.Viz.DxPolarChartInterop.Init(dxTarget, options);
 	}
 	object adaptiveLayout;
 	[Parameter]
 	object AdaptiveLayout {
-		get => isInitialized ? DevExpress.Viz.DxPolarChartInterop.GetAdaptiveLayout(dxTarget) : adaptiveLayout;
+		get => isInitialized ? DevExpress.Viz.DxPolarChartInterop.GetAdaptiveLayout(dxTarget).Result : adaptiveLayout;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxPolarChartInterop.SetAdaptiveLayout(dxTarget, value);
@@ -54,7 +54,7 @@
 	object argumentAxis;
 	[Parameter]
 	object ArgumentAxis {
-		get => isInitialized ? DevExpress.Viz.DxPolarChartInterop.GetArgumentAxis(dxTarget) : argumentAxis;
+		get => isInitialized ? DevExpress.Viz.DxPolarChartInterop.GetArgumentAxis(dxTarget).Result : argumentAxis;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxPolarChartInterop.SetArgumentAxis(dxTarget, value);
@@ -66,7 +66,7 @@
 	float? barGroupPadding;
 	[Parameter]
 	float? BarGroupPadding {
-		get => isInitialized ? DevExpress.Viz.DxPolarChartInterop.GetBarGroupPadding(dxTarget) : barGroupPadding;
+		get => isInitialized ? DevExpress.Viz.DxPolarChartInterop.GetBarGroupPadding(dxTarget).Result : barGroupPadding;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxPolarChartInterop.SetBarGroupPadding(dxTarget, value);
@@ -78,7 +78,7 @@
 	float? barGroupWidth;
 	[Parameter]
 	float? BarGroupWidth {
-		get => isInitialized ? DevExpress.Viz.DxPolarChartInterop.GetBarGroupWidth(dxTarget) : barGroupWidth;
+		get => isInitialized ? DevExpress.Viz.DxPolarChartInterop.GetBarGroupWidth(dxTarget).Result : barGroupWidth;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxPolarChartInterop.SetBarGroupWidth(dxTarget, value);
@@ -90,7 +90,7 @@
 	float? barWidth;
 	[Parameter]
 	float? BarWidth {
-		get => isInitialized ? DevExpress.Viz.DxPolarChartInterop.GetBarWidth(dxTarget) : barWidth;
+		get => isInitialized ? DevExpress.Viz.DxPolarChartInterop.GetBarWidth(dxTarget).Result : barWidth;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxPolarChartInterop.SetBarWidth(dxTarget, value);
@@ -102,7 +102,7 @@
 	object commonAxisSettings;
 	[Parameter]
 	object CommonAxisSettings {
-		get => isInitialized ? DevExpress.Viz.DxPolarChartInterop.GetCommonAxisSettings(dxTarget) : commonAxisSettings;
+		get => isInitialized ? DevExpress.Viz.DxPolarChartInterop.GetCommonAxisSettings(dxTarget).Result : commonAxisSettings;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxPolarChartInterop.SetCommonAxisSettings(dxTarget, value);
@@ -114,7 +114,7 @@
 	object commonSeriesSettings;
 	[Parameter]
 	object CommonSeriesSettings {
-		get => isInitialized ? DevExpress.Viz.DxPolarChartInterop.GetCommonSeriesSettings(dxTarget) : commonSeriesSettings;
+		get => isInitialized ? DevExpress.Viz.DxPolarChartInterop.GetCommonSeriesSettings(dxTarget).Result : commonSeriesSettings;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxPolarChartInterop.SetCommonSeriesSettings(dxTarget, value);
@@ -126,7 +126,7 @@
 	string containerBackgroundColor;
 	[Parameter]
 	string ContainerBackgroundColor {
-		get => isInitialized ? DevExpress.Viz.DxPolarChartInterop.GetContainerBackgroundColor(dxTarget) : containerBackgroundColor;
+		get => isInitialized ? DevExpress.Viz.DxPolarChartInterop.GetContainerBackgroundColor(dxTarget).Result : containerBackgroundColor;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxPolarChartInterop.SetContainerBackgroundColor(dxTarget, value);
@@ -138,7 +138,7 @@
 	object dataPrepareSettings;
 	[Parameter]
 	object DataPrepareSettings {
-		get => isInitialized ? DevExpress.Viz.DxPolarChartInterop.GetDataPrepareSettings(dxTarget) : dataPrepareSettings;
+		get => isInitialized ? DevExpress.Viz.DxPolarChartInterop.GetDataPrepareSettings(dxTarget).Result : dataPrepareSettings;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxPolarChartInterop.SetDataPrepareSettings(dxTarget, value);
@@ -150,7 +150,7 @@
 	bool? equalBarWidth;
 	[Parameter]
 	bool? EqualBarWidth {
-		get => isInitialized ? DevExpress.Viz.DxPolarChartInterop.GetEqualBarWidth(dxTarget) : equalBarWidth;
+		get => isInitialized ? DevExpress.Viz.DxPolarChartInterop.GetEqualBarWidth(dxTarget).Result : equalBarWidth;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxPolarChartInterop.SetEqualBarWidth(dxTarget, value);
@@ -162,7 +162,7 @@
 	object legend;
 	[Parameter]
 	object Legend {
-		get => isInitialized ? DevExpress.Viz.DxPolarChartInterop.GetLegend(dxTarget) : legend;
+		get => isInitialized ? DevExpress.Viz.DxPolarChartInterop.GetLegend(dxTarget).Result : legend;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxPolarChartInterop.SetLegend(dxTarget, value);
@@ -174,7 +174,7 @@
 	bool? negativesAsZeroes;
 	[Parameter]
 	bool? NegativesAsZeroes {
-		get => isInitialized ? DevExpress.Viz.DxPolarChartInterop.GetNegativesAsZeroes(dxTarget) : negativesAsZeroes;
+		get => isInitialized ? DevExpress.Viz.DxPolarChartInterop.GetNegativesAsZeroes(dxTarget).Result : negativesAsZeroes;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxPolarChartInterop.SetNegativesAsZeroes(dxTarget, value);
@@ -186,7 +186,7 @@
 	string resolveLabelOverlapping;
 	[Parameter]
 	string ResolveLabelOverlapping {
-		get => isInitialized ? DevExpress.Viz.DxPolarChartInterop.GetResolveLabelOverlapping(dxTarget) : resolveLabelOverlapping;
+		get => isInitialized ? DevExpress.Viz.DxPolarChartInterop.GetResolveLabelOverlapping(dxTarget).Result : resolveLabelOverlapping;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxPolarChartInterop.SetResolveLabelOverlapping(dxTarget, value);
@@ -198,7 +198,7 @@
 	object series;
 	[Parameter]
 	object Series {
-		get => isInitialized ? DevExpress.Viz.DxPolarChartInterop.GetSeries(dxTarget) : series;
+		get => isInitialized ? DevExpress.Viz.DxPolarChartInterop.GetSeries(dxTarget).Result : series;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxPolarChartInterop.SetSeries(dxTarget, value);
@@ -210,7 +210,7 @@
 	string seriesSelectionMode;
 	[Parameter]
 	string SeriesSelectionMode {
-		get => isInitialized ? DevExpress.Viz.DxPolarChartInterop.GetSeriesSelectionMode(dxTarget) : seriesSelectionMode;
+		get => isInitialized ? DevExpress.Viz.DxPolarChartInterop.GetSeriesSelectionMode(dxTarget).Result : seriesSelectionMode;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxPolarChartInterop.SetSeriesSelectionMode(dxTarget, value);
@@ -222,7 +222,7 @@
 	object seriesTemplate;
 	[Parameter]
 	object SeriesTemplate {
-		get => isInitialized ? DevExpress.Viz.DxPolarChartInterop.GetSeriesTemplate(dxTarget) : seriesTemplate;
+		get => isInitialized ? DevExpress.Viz.DxPolarChartInterop.GetSeriesTemplate(dxTarget).Result : seriesTemplate;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxPolarChartInterop.SetSeriesTemplate(dxTarget, value);
@@ -234,7 +234,7 @@
 	object tooltip;
 	[Parameter]
 	object Tooltip {
-		get => isInitialized ? DevExpress.Viz.DxPolarChartInterop.GetTooltip(dxTarget) : tooltip;
+		get => isInitialized ? DevExpress.Viz.DxPolarChartInterop.GetTooltip(dxTarget).Result : tooltip;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxPolarChartInterop.SetTooltip(dxTarget, value);
@@ -246,7 +246,7 @@
 	bool? useSpiderWeb;
 	[Parameter]
 	bool? UseSpiderWeb {
-		get => isInitialized ? DevExpress.Viz.DxPolarChartInterop.GetUseSpiderWeb(dxTarget) : useSpiderWeb;
+		get => isInitialized ? DevExpress.Viz.DxPolarChartInterop.GetUseSpiderWeb(dxTarget).Result : useSpiderWeb;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxPolarChartInterop.SetUseSpiderWeb(dxTarget, value);
@@ -258,7 +258,7 @@
 	object valueAxis;
 	[Parameter]
 	object ValueAxis {
-		get => isInitialized ? DevExpress.Viz.DxPolarChartInterop.GetValueAxis(dxTarget) : valueAxis;
+		get => isInitialized ? DevExpress.Viz.DxPolarChartInterop.GetValueAxis(dxTarget).Result : valueAxis;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxPolarChartInterop.SetValueAxis(dxTarget, value);

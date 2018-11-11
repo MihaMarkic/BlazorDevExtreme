@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Ui.DxScrollViewOptions>
+@inherits DxBlazorComponent<DevExpress.Ui.DxScrollViewOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -18,13 +18,13 @@
 			onReachBottomEnabled = onReachBottomEnabled,
 		};
 	}
-	protected override void Init(DevExpress.Ui.DxScrollViewOptions options) {
-		DevExpress.Ui.DxScrollViewInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Ui.DxScrollViewOptions options) {
+return 		DevExpress.Ui.DxScrollViewInterop.Init(dxTarget, options);
 	}
 	string pulledDownText;
 	[Parameter]
 	string PulledDownText {
-		get => isInitialized ? DevExpress.Ui.DxScrollViewInterop.GetPulledDownText(dxTarget) : pulledDownText;
+		get => isInitialized ? DevExpress.Ui.DxScrollViewInterop.GetPulledDownText(dxTarget).Result : pulledDownText;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxScrollViewInterop.SetPulledDownText(dxTarget, value);
@@ -36,7 +36,7 @@
 	string pullingDownText;
 	[Parameter]
 	string PullingDownText {
-		get => isInitialized ? DevExpress.Ui.DxScrollViewInterop.GetPullingDownText(dxTarget) : pullingDownText;
+		get => isInitialized ? DevExpress.Ui.DxScrollViewInterop.GetPullingDownText(dxTarget).Result : pullingDownText;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxScrollViewInterop.SetPullingDownText(dxTarget, value);
@@ -48,7 +48,7 @@
 	string reachBottomText;
 	[Parameter]
 	string ReachBottomText {
-		get => isInitialized ? DevExpress.Ui.DxScrollViewInterop.GetReachBottomText(dxTarget) : reachBottomText;
+		get => isInitialized ? DevExpress.Ui.DxScrollViewInterop.GetReachBottomText(dxTarget).Result : reachBottomText;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxScrollViewInterop.SetReachBottomText(dxTarget, value);
@@ -60,7 +60,7 @@
 	string refreshingText;
 	[Parameter]
 	string RefreshingText {
-		get => isInitialized ? DevExpress.Ui.DxScrollViewInterop.GetRefreshingText(dxTarget) : refreshingText;
+		get => isInitialized ? DevExpress.Ui.DxScrollViewInterop.GetRefreshingText(dxTarget).Result : refreshingText;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxScrollViewInterop.SetRefreshingText(dxTarget, value);
@@ -104,7 +104,7 @@
 		DevExpress.Ui.DxScrollViewInterop.Refresh(dxTarget);
 	}
 	public object Release(bool preventScrollBottom) {
-		return DevExpress.Ui.DxScrollViewInterop.Release(dxTarget, preventScrollBottom);
+		return DevExpress.Ui.DxScrollViewInterop.Release(dxTarget, preventScrollBottom).Result;
 	}
 	public void Dispose() {
 		DevExpress.Ui.DxScrollViewInterop.PullDown -= DxScrollView_PullDown;

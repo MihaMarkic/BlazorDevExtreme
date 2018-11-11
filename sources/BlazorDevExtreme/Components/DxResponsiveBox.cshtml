@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Ui.DxResponsiveBoxOptions>
+@inherits DxBlazorComponent<DevExpress.Ui.DxResponsiveBoxOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -18,13 +18,13 @@
 			width = width,
 		};
 	}
-	protected override void Init(DevExpress.Ui.DxResponsiveBoxOptions options) {
-		DevExpress.Ui.DxResponsiveBoxInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Ui.DxResponsiveBoxOptions options) {
+return 		DevExpress.Ui.DxResponsiveBoxInterop.Init(dxTarget, options);
 	}
 	object cols;
 	[Parameter]
 	object Cols {
-		get => isInitialized ? DevExpress.Ui.DxResponsiveBoxInterop.GetCols(dxTarget) : cols;
+		get => isInitialized ? DevExpress.Ui.DxResponsiveBoxInterop.GetCols(dxTarget).Result : cols;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxResponsiveBoxInterop.SetCols(dxTarget, value);
@@ -36,7 +36,7 @@
 	object height;
 	[Parameter]
 	object Height {
-		get => isInitialized ? DevExpress.Ui.DxResponsiveBoxInterop.GetHeight(dxTarget) : height;
+		get => isInitialized ? DevExpress.Ui.DxResponsiveBoxInterop.GetHeight(dxTarget).Result : height;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxResponsiveBoxInterop.SetHeight(dxTarget, value);
@@ -48,7 +48,7 @@
 	object rows;
 	[Parameter]
 	object Rows {
-		get => isInitialized ? DevExpress.Ui.DxResponsiveBoxInterop.GetRows(dxTarget) : rows;
+		get => isInitialized ? DevExpress.Ui.DxResponsiveBoxInterop.GetRows(dxTarget).Result : rows;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxResponsiveBoxInterop.SetRows(dxTarget, value);
@@ -60,7 +60,7 @@
 	object screenByWidth;
 	[Parameter]
 	object ScreenByWidth {
-		get => isInitialized ? DevExpress.Ui.DxResponsiveBoxInterop.GetScreenByWidth(dxTarget) : screenByWidth;
+		get => isInitialized ? DevExpress.Ui.DxResponsiveBoxInterop.GetScreenByWidth(dxTarget).Result : screenByWidth;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxResponsiveBoxInterop.SetScreenByWidth(dxTarget, value);
@@ -72,7 +72,7 @@
 	string singleColumnScreen;
 	[Parameter]
 	string SingleColumnScreen {
-		get => isInitialized ? DevExpress.Ui.DxResponsiveBoxInterop.GetSingleColumnScreen(dxTarget) : singleColumnScreen;
+		get => isInitialized ? DevExpress.Ui.DxResponsiveBoxInterop.GetSingleColumnScreen(dxTarget).Result : singleColumnScreen;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxResponsiveBoxInterop.SetSingleColumnScreen(dxTarget, value);
@@ -84,7 +84,7 @@
 	object width;
 	[Parameter]
 	object Width {
-		get => isInitialized ? DevExpress.Ui.DxResponsiveBoxInterop.GetWidth(dxTarget) : width;
+		get => isInitialized ? DevExpress.Ui.DxResponsiveBoxInterop.GetWidth(dxTarget).Result : width;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxResponsiveBoxInterop.SetWidth(dxTarget, value);

@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Ui.DxCalendarOptions>
+@inherits DxBlazorComponent<DevExpress.Ui.DxCalendarOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -27,13 +27,13 @@
 			zoomLevel = zoomLevel,
 		};
 	}
-	protected override void Init(DevExpress.Ui.DxCalendarOptions options) {
-		DevExpress.Ui.DxCalendarInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Ui.DxCalendarOptions options) {
+return 		DevExpress.Ui.DxCalendarInterop.Init(dxTarget, options);
 	}
 	bool? activeStateEnabled;
 	[Parameter]
 	bool? ActiveStateEnabled {
-		get => isInitialized ? DevExpress.Ui.DxCalendarInterop.GetActiveStateEnabled(dxTarget) : activeStateEnabled;
+		get => isInitialized ? DevExpress.Ui.DxCalendarInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxCalendarInterop.SetActiveStateEnabled(dxTarget, value);
@@ -45,7 +45,7 @@
 	object cellTemplate;
 	[Parameter]
 	object CellTemplate {
-		get => isInitialized ? DevExpress.Ui.DxCalendarInterop.GetCellTemplate(dxTarget) : cellTemplate;
+		get => isInitialized ? DevExpress.Ui.DxCalendarInterop.GetCellTemplate(dxTarget).Result : cellTemplate;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxCalendarInterop.SetCellTemplate(dxTarget, value);
@@ -57,7 +57,7 @@
 	string dateSerializationFormat;
 	[Parameter]
 	string DateSerializationFormat {
-		get => isInitialized ? DevExpress.Ui.DxCalendarInterop.GetDateSerializationFormat(dxTarget) : dateSerializationFormat;
+		get => isInitialized ? DevExpress.Ui.DxCalendarInterop.GetDateSerializationFormat(dxTarget).Result : dateSerializationFormat;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxCalendarInterop.SetDateSerializationFormat(dxTarget, value);
@@ -69,7 +69,7 @@
 	object disabledDates;
 	[Parameter]
 	object DisabledDates {
-		get => isInitialized ? DevExpress.Ui.DxCalendarInterop.GetDisabledDates(dxTarget) : disabledDates;
+		get => isInitialized ? DevExpress.Ui.DxCalendarInterop.GetDisabledDates(dxTarget).Result : disabledDates;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxCalendarInterop.SetDisabledDates(dxTarget, value);
@@ -81,7 +81,7 @@
 	object firstDayOfWeek;
 	[Parameter]
 	object FirstDayOfWeek {
-		get => isInitialized ? DevExpress.Ui.DxCalendarInterop.GetFirstDayOfWeek(dxTarget) : firstDayOfWeek;
+		get => isInitialized ? DevExpress.Ui.DxCalendarInterop.GetFirstDayOfWeek(dxTarget).Result : firstDayOfWeek;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxCalendarInterop.SetFirstDayOfWeek(dxTarget, value);
@@ -93,7 +93,7 @@
 	bool? focusStateEnabled;
 	[Parameter]
 	bool? FocusStateEnabled {
-		get => isInitialized ? DevExpress.Ui.DxCalendarInterop.GetFocusStateEnabled(dxTarget) : focusStateEnabled;
+		get => isInitialized ? DevExpress.Ui.DxCalendarInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxCalendarInterop.SetFocusStateEnabled(dxTarget, value);
@@ -105,7 +105,7 @@
 	bool? hoverStateEnabled;
 	[Parameter]
 	bool? HoverStateEnabled {
-		get => isInitialized ? DevExpress.Ui.DxCalendarInterop.GetHoverStateEnabled(dxTarget) : hoverStateEnabled;
+		get => isInitialized ? DevExpress.Ui.DxCalendarInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxCalendarInterop.SetHoverStateEnabled(dxTarget, value);
@@ -117,7 +117,7 @@
 	object max;
 	[Parameter]
 	object Max {
-		get => isInitialized ? DevExpress.Ui.DxCalendarInterop.GetMax(dxTarget) : max;
+		get => isInitialized ? DevExpress.Ui.DxCalendarInterop.GetMax(dxTarget).Result : max;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxCalendarInterop.SetMax(dxTarget, value);
@@ -129,7 +129,7 @@
 	string maxZoomLevel;
 	[Parameter]
 	string MaxZoomLevel {
-		get => isInitialized ? DevExpress.Ui.DxCalendarInterop.GetMaxZoomLevel(dxTarget) : maxZoomLevel;
+		get => isInitialized ? DevExpress.Ui.DxCalendarInterop.GetMaxZoomLevel(dxTarget).Result : maxZoomLevel;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxCalendarInterop.SetMaxZoomLevel(dxTarget, value);
@@ -141,7 +141,7 @@
 	object min;
 	[Parameter]
 	object Min {
-		get => isInitialized ? DevExpress.Ui.DxCalendarInterop.GetMin(dxTarget) : min;
+		get => isInitialized ? DevExpress.Ui.DxCalendarInterop.GetMin(dxTarget).Result : min;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxCalendarInterop.SetMin(dxTarget, value);
@@ -153,7 +153,7 @@
 	string minZoomLevel;
 	[Parameter]
 	string MinZoomLevel {
-		get => isInitialized ? DevExpress.Ui.DxCalendarInterop.GetMinZoomLevel(dxTarget) : minZoomLevel;
+		get => isInitialized ? DevExpress.Ui.DxCalendarInterop.GetMinZoomLevel(dxTarget).Result : minZoomLevel;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxCalendarInterop.SetMinZoomLevel(dxTarget, value);
@@ -165,7 +165,7 @@
 	string name;
 	[Parameter]
 	string Name {
-		get => isInitialized ? DevExpress.Ui.DxCalendarInterop.GetName(dxTarget) : name;
+		get => isInitialized ? DevExpress.Ui.DxCalendarInterop.GetName(dxTarget).Result : name;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxCalendarInterop.SetName(dxTarget, value);
@@ -177,7 +177,7 @@
 	bool? showTodayButton;
 	[Parameter]
 	bool? ShowTodayButton {
-		get => isInitialized ? DevExpress.Ui.DxCalendarInterop.GetShowTodayButton(dxTarget) : showTodayButton;
+		get => isInitialized ? DevExpress.Ui.DxCalendarInterop.GetShowTodayButton(dxTarget).Result : showTodayButton;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxCalendarInterop.SetShowTodayButton(dxTarget, value);
@@ -189,7 +189,7 @@
 	object value;
 	[Parameter]
 	object Value {
-		get => isInitialized ? DevExpress.Ui.DxCalendarInterop.GetValue(dxTarget) : value;
+		get => isInitialized ? DevExpress.Ui.DxCalendarInterop.GetValue(dxTarget).Result : value;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxCalendarInterop.SetValue(dxTarget, value);
@@ -201,7 +201,7 @@
 	string zoomLevel;
 	[Parameter]
 	string ZoomLevel {
-		get => isInitialized ? DevExpress.Ui.DxCalendarInterop.GetZoomLevel(dxTarget) : zoomLevel;
+		get => isInitialized ? DevExpress.Ui.DxCalendarInterop.GetZoomLevel(dxTarget).Result : zoomLevel;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxCalendarInterop.SetZoomLevel(dxTarget, value);

@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Ui.DxPivotOptions>
+@inherits DxBlazorComponent<DevExpress.Ui.DxPivotOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -16,13 +16,13 @@
 			swipeEnabled = swipeEnabled,
 		};
 	}
-	protected override void Init(DevExpress.Ui.DxPivotOptions options) {
-		DevExpress.Ui.DxPivotInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Ui.DxPivotOptions options) {
+return 		DevExpress.Ui.DxPivotInterop.Init(dxTarget, options);
 	}
 	object contentTemplate;
 	[Parameter]
 	object ContentTemplate {
-		get => isInitialized ? DevExpress.Ui.DxPivotInterop.GetContentTemplate(dxTarget) : contentTemplate;
+		get => isInitialized ? DevExpress.Ui.DxPivotInterop.GetContentTemplate(dxTarget).Result : contentTemplate;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxPivotInterop.SetContentTemplate(dxTarget, value);
@@ -34,7 +34,7 @@
 	object itemTitleTemplate;
 	[Parameter]
 	object ItemTitleTemplate {
-		get => isInitialized ? DevExpress.Ui.DxPivotInterop.GetItemTitleTemplate(dxTarget) : itemTitleTemplate;
+		get => isInitialized ? DevExpress.Ui.DxPivotInterop.GetItemTitleTemplate(dxTarget).Result : itemTitleTemplate;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxPivotInterop.SetItemTitleTemplate(dxTarget, value);
@@ -46,7 +46,7 @@
 	float? selectedIndex;
 	[Parameter]
 	float? SelectedIndex {
-		get => isInitialized ? DevExpress.Ui.DxPivotInterop.GetSelectedIndex(dxTarget) : selectedIndex;
+		get => isInitialized ? DevExpress.Ui.DxPivotInterop.GetSelectedIndex(dxTarget).Result : selectedIndex;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxPivotInterop.SetSelectedIndex(dxTarget, value);
@@ -58,7 +58,7 @@
 	bool? swipeEnabled;
 	[Parameter]
 	bool? SwipeEnabled {
-		get => isInitialized ? DevExpress.Ui.DxPivotInterop.GetSwipeEnabled(dxTarget) : swipeEnabled;
+		get => isInitialized ? DevExpress.Ui.DxPivotInterop.GetSwipeEnabled(dxTarget).Result : swipeEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxPivotInterop.SetSwipeEnabled(dxTarget, value);

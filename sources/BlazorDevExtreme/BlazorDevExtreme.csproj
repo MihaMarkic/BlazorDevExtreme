@@ -18,7 +18,7 @@
     <PackageTags>blazor devextreme interop</PackageTags>
     <IncludeSymbols>false</IncludeSymbols>
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
-    <Version>0.6.0</Version>
+    <Version>0.6.1</Version>
   </PropertyGroup>
   <ItemGroup>
     <!-- .js/.css files will be referenced via <script>/<link> tags; other content files will just be included in the app's 'dist' directory without any tags referencing them -->

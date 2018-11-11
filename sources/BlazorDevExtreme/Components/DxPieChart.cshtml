@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Viz.Charts.DxPieChartOptions>
+@inherits DxBlazorComponent<DevExpress.Viz.Charts.DxPieChartOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -27,13 +27,13 @@
 			onLegendClickEnabled = onLegendClickEnabled,
 		};
 	}
-	protected override void Init(DevExpress.Viz.Charts.DxPieChartOptions options) {
-		DevExpress.Viz.DxPieChartInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Viz.Charts.DxPieChartOptions options) {
+return 		DevExpress.Viz.DxPieChartInterop.Init(dxTarget, options);
 	}
 	object adaptiveLayout;
 	[Parameter]
 	object AdaptiveLayout {
-		get => isInitialized ? DevExpress.Viz.DxPieChartInterop.GetAdaptiveLayout(dxTarget) : adaptiveLayout;
+		get => isInitialized ? DevExpress.Viz.DxPieChartInterop.GetAdaptiveLayout(dxTarget).Result : adaptiveLayout;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxPieChartInterop.SetAdaptiveLayout(dxTarget, value);
@@ -45,7 +45,7 @@
 	object commonSeriesSettings;
 	[Parameter]
 	object CommonSeriesSettings {
-		get => isInitialized ? DevExpress.Viz.DxPieChartInterop.GetCommonSeriesSettings(dxTarget) : commonSeriesSettings;
+		get => isInitialized ? DevExpress.Viz.DxPieChartInterop.GetCommonSeriesSettings(dxTarget).Result : commonSeriesSettings;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxPieChartInterop.SetCommonSeriesSettings(dxTarget, value);
@@ -57,7 +57,7 @@
 	float? diameter;
 	[Parameter]
 	float? Diameter {
-		get => isInitialized ? DevExpress.Viz.DxPieChartInterop.GetDiameter(dxTarget) : diameter;
+		get => isInitialized ? DevExpress.Viz.DxPieChartInterop.GetDiameter(dxTarget).Result : diameter;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxPieChartInterop.SetDiameter(dxTarget, value);
@@ -69,7 +69,7 @@
 	float? innerRadius;
 	[Parameter]
 	float? InnerRadius {
-		get => isInitialized ? DevExpress.Viz.DxPieChartInterop.GetInnerRadius(dxTarget) : innerRadius;
+		get => isInitialized ? DevExpress.Viz.DxPieChartInterop.GetInnerRadius(dxTarget).Result : innerRadius;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxPieChartInterop.SetInnerRadius(dxTarget, value);
@@ -81,7 +81,7 @@
 	object legend;
 	[Parameter]
 	object Legend {
-		get => isInitialized ? DevExpress.Viz.DxPieChartInterop.GetLegend(dxTarget) : legend;
+		get => isInitialized ? DevExpress.Viz.DxPieChartInterop.GetLegend(dxTarget).Result : legend;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxPieChartInterop.SetLegend(dxTarget, value);
@@ -93,7 +93,7 @@
 	float? minDiameter;
 	[Parameter]
 	float? MinDiameter {
-		get => isInitialized ? DevExpress.Viz.DxPieChartInterop.GetMinDiameter(dxTarget) : minDiameter;
+		get => isInitialized ? DevExpress.Viz.DxPieChartInterop.GetMinDiameter(dxTarget).Result : minDiameter;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxPieChartInterop.SetMinDiameter(dxTarget, value);
@@ -105,7 +105,7 @@
 	object palette;
 	[Parameter]
 	object Palette {
-		get => isInitialized ? DevExpress.Viz.DxPieChartInterop.GetPalette(dxTarget) : palette;
+		get => isInitialized ? DevExpress.Viz.DxPieChartInterop.GetPalette(dxTarget).Result : palette;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxPieChartInterop.SetPalette(dxTarget, value);
@@ -117,7 +117,7 @@
 	string resolveLabelOverlapping;
 	[Parameter]
 	string ResolveLabelOverlapping {
-		get => isInitialized ? DevExpress.Viz.DxPieChartInterop.GetResolveLabelOverlapping(dxTarget) : resolveLabelOverlapping;
+		get => isInitialized ? DevExpress.Viz.DxPieChartInterop.GetResolveLabelOverlapping(dxTarget).Result : resolveLabelOverlapping;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxPieChartInterop.SetResolveLabelOverlapping(dxTarget, value);
@@ -129,7 +129,7 @@
 	string segmentsDirection;
 	[Parameter]
 	string SegmentsDirection {
-		get => isInitialized ? DevExpress.Viz.DxPieChartInterop.GetSegmentsDirection(dxTarget) : segmentsDirection;
+		get => isInitialized ? DevExpress.Viz.DxPieChartInterop.GetSegmentsDirection(dxTarget).Result : segmentsDirection;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxPieChartInterop.SetSegmentsDirection(dxTarget, value);
@@ -141,7 +141,7 @@
 	object series;
 	[Parameter]
 	object Series {
-		get => isInitialized ? DevExpress.Viz.DxPieChartInterop.GetSeries(dxTarget) : series;
+		get => isInitialized ? DevExpress.Viz.DxPieChartInterop.GetSeries(dxTarget).Result : series;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxPieChartInterop.SetSeries(dxTarget, value);
@@ -153,7 +153,7 @@
 	object seriesTemplate;
 	[Parameter]
 	object SeriesTemplate {
-		get => isInitialized ? DevExpress.Viz.DxPieChartInterop.GetSeriesTemplate(dxTarget) : seriesTemplate;
+		get => isInitialized ? DevExpress.Viz.DxPieChartInterop.GetSeriesTemplate(dxTarget).Result : seriesTemplate;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxPieChartInterop.SetSeriesTemplate(dxTarget, value);
@@ -165,7 +165,7 @@
 	string sizeGroup;
 	[Parameter]
 	string SizeGroup {
-		get => isInitialized ? DevExpress.Viz.DxPieChartInterop.GetSizeGroup(dxTarget) : sizeGroup;
+		get => isInitialized ? DevExpress.Viz.DxPieChartInterop.GetSizeGroup(dxTarget).Result : sizeGroup;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxPieChartInterop.SetSizeGroup(dxTarget, value);
@@ -177,7 +177,7 @@
 	float? startAngle;
 	[Parameter]
 	float? StartAngle {
-		get => isInitialized ? DevExpress.Viz.DxPieChartInterop.GetStartAngle(dxTarget) : startAngle;
+		get => isInitialized ? DevExpress.Viz.DxPieChartInterop.GetStartAngle(dxTarget).Result : startAngle;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxPieChartInterop.SetStartAngle(dxTarget, value);
@@ -189,7 +189,7 @@
 	string type;
 	[Parameter]
 	string Type {
-		get => isInitialized ? DevExpress.Viz.DxPieChartInterop.GetType(dxTarget) : type;
+		get => isInitialized ? DevExpress.Viz.DxPieChartInterop.GetType(dxTarget).Result : type;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxPieChartInterop.SetType(dxTarget, value);
@@ -216,13 +216,13 @@
 		}
 	}
 	public object GetSeriesEx() {
-		return DevExpress.Viz.DxPieChartInterop.GetSeriesEx(dxTarget);
+		return DevExpress.Viz.DxPieChartInterop.GetSeriesEx(dxTarget).Result;
 	}
 	public object GetSeriesByName(object seriesName) {
-		return DevExpress.Viz.DxPieChartInterop.GetSeriesByName(dxTarget, seriesName);
+		return DevExpress.Viz.DxPieChartInterop.GetSeriesByName(dxTarget, seriesName).Result;
 	}
 	public object GetSeriesByPos(float seriesIndex) {
-		return DevExpress.Viz.DxPieChartInterop.GetSeriesByPos(dxTarget, seriesIndex);
+		return DevExpress.Viz.DxPieChartInterop.GetSeriesByPos(dxTarget, seriesIndex).Result;
 	}
 	public void Dispose() {
 		DevExpress.Viz.DxPieChartInterop.LegendClick -= DxPieChart_LegendClick;

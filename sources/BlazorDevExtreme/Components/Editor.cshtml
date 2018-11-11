@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Ui.EditorOptions>
+@inherits DxBlazorComponent<DevExpress.Ui.EditorOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -18,13 +18,13 @@
 			onValueChangedEnabled = onValueChangedEnabled,
 		};
 	}
-	protected override void Init(DevExpress.Ui.EditorOptions options) {
-		DevExpress.Ui.EditorInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Ui.EditorOptions options) {
+return 		DevExpress.Ui.EditorInterop.Init(dxTarget, options);
 	}
 	bool? isValid;
 	[Parameter]
 	bool? IsValid {
-		get => isInitialized ? DevExpress.Ui.EditorInterop.GetIsValid(dxTarget) : isValid;
+		get => isInitialized ? DevExpress.Ui.EditorInterop.GetIsValid(dxTarget).Result : isValid;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.EditorInterop.SetIsValid(dxTarget, value);
@@ -36,7 +36,7 @@
 	bool? readOnly;
 	[Parameter]
 	bool? ReadOnly {
-		get => isInitialized ? DevExpress.Ui.EditorInterop.GetReadOnly(dxTarget) : readOnly;
+		get => isInitialized ? DevExpress.Ui.EditorInterop.GetReadOnly(dxTarget).Result : readOnly;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.EditorInterop.SetReadOnly(dxTarget, value);
@@ -48,7 +48,7 @@
 	object validationError;
 	[Parameter]
 	object ValidationError {
-		get => isInitialized ? DevExpress.Ui.EditorInterop.GetValidationError(dxTarget) : validationError;
+		get => isInitialized ? DevExpress.Ui.EditorInterop.GetValidationError(dxTarget).Result : validationError;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.EditorInterop.SetValidationError(dxTarget, value);
@@ -60,7 +60,7 @@
 	string validationMessageMode;
 	[Parameter]
 	string ValidationMessageMode {
-		get => isInitialized ? DevExpress.Ui.EditorInterop.GetValidationMessageMode(dxTarget) : validationMessageMode;
+		get => isInitialized ? DevExpress.Ui.EditorInterop.GetValidationMessageMode(dxTarget).Result : validationMessageMode;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.EditorInterop.SetValidationMessageMode(dxTarget, value);
@@ -72,7 +72,7 @@
 	object value;
 	[Parameter]
 	object Value {
-		get => isInitialized ? DevExpress.Ui.EditorInterop.GetValue(dxTarget) : value;
+		get => isInitialized ? DevExpress.Ui.EditorInterop.GetValue(dxTarget).Result : value;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.EditorInterop.SetValue(dxTarget, value);

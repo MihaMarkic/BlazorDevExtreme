@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Ui.DxSelectBoxOptions>
+@inherits DxBlazorComponent<DevExpress.Ui.DxSelectBoxOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -18,13 +18,13 @@
 			onCustomItemCreatingEnabled = onCustomItemCreatingEnabled,
 		};
 	}
-	protected override void Init(DevExpress.Ui.DxSelectBoxOptions options) {
-		DevExpress.Ui.DxSelectBoxInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Ui.DxSelectBoxOptions options) {
+return 		DevExpress.Ui.DxSelectBoxInterop.Init(dxTarget, options);
 	}
 	bool? acceptCustomValue;
 	[Parameter]
 	bool? AcceptCustomValue {
-		get => isInitialized ? DevExpress.Ui.DxSelectBoxInterop.GetAcceptCustomValue(dxTarget) : acceptCustomValue;
+		get => isInitialized ? DevExpress.Ui.DxSelectBoxInterop.GetAcceptCustomValue(dxTarget).Result : acceptCustomValue;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxSelectBoxInterop.SetAcceptCustomValue(dxTarget, value);
@@ -36,7 +36,7 @@
 	object fieldTemplate;
 	[Parameter]
 	object FieldTemplate {
-		get => isInitialized ? DevExpress.Ui.DxSelectBoxInterop.GetFieldTemplate(dxTarget) : fieldTemplate;
+		get => isInitialized ? DevExpress.Ui.DxSelectBoxInterop.GetFieldTemplate(dxTarget).Result : fieldTemplate;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxSelectBoxInterop.SetFieldTemplate(dxTarget, value);
@@ -48,7 +48,7 @@
 	string placeholder;
 	[Parameter]
 	string Placeholder {
-		get => isInitialized ? DevExpress.Ui.DxSelectBoxInterop.GetPlaceholder(dxTarget) : placeholder;
+		get => isInitialized ? DevExpress.Ui.DxSelectBoxInterop.GetPlaceholder(dxTarget).Result : placeholder;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxSelectBoxInterop.SetPlaceholder(dxTarget, value);
@@ -60,7 +60,7 @@
 	bool? showSelectionControls;
 	[Parameter]
 	bool? ShowSelectionControls {
-		get => isInitialized ? DevExpress.Ui.DxSelectBoxInterop.GetShowSelectionControls(dxTarget) : showSelectionControls;
+		get => isInitialized ? DevExpress.Ui.DxSelectBoxInterop.GetShowSelectionControls(dxTarget).Result : showSelectionControls;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxSelectBoxInterop.SetShowSelectionControls(dxTarget, value);
@@ -72,7 +72,7 @@
 	string valueChangeEvent;
 	[Parameter]
 	string ValueChangeEvent {
-		get => isInitialized ? DevExpress.Ui.DxSelectBoxInterop.GetValueChangeEvent(dxTarget) : valueChangeEvent;
+		get => isInitialized ? DevExpress.Ui.DxSelectBoxInterop.GetValueChangeEvent(dxTarget).Result : valueChangeEvent;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxSelectBoxInterop.SetValueChangeEvent(dxTarget, value);

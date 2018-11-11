@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Viz.Charts.DxChartOptions>
+@inherits DxBlazorComponent<DevExpress.Viz.Charts.DxChartOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -49,13 +49,13 @@
 			onZoomStartEnabled = onZoomStartEnabled,
 		};
 	}
-	protected override void Init(DevExpress.Viz.Charts.DxChartOptions options) {
-		DevExpress.Viz.DxChartInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Viz.Charts.DxChartOptions options) {
+return 		DevExpress.Viz.DxChartInterop.Init(dxTarget, options);
 	}
 	bool? adjustOnZoom;
 	[Parameter]
 	bool? AdjustOnZoom {
-		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetAdjustOnZoom(dxTarget) : adjustOnZoom;
+		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetAdjustOnZoom(dxTarget).Result : adjustOnZoom;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxChartInterop.SetAdjustOnZoom(dxTarget, value);
@@ -67,7 +67,7 @@
 	object argumentAxis;
 	[Parameter]
 	object ArgumentAxis {
-		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetArgumentAxis(dxTarget) : argumentAxis;
+		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetArgumentAxis(dxTarget).Result : argumentAxis;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxChartInterop.SetArgumentAxis(dxTarget, value);
@@ -79,7 +79,7 @@
 	float? barGroupPadding;
 	[Parameter]
 	float? BarGroupPadding {
-		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetBarGroupPadding(dxTarget) : barGroupPadding;
+		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetBarGroupPadding(dxTarget).Result : barGroupPadding;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxChartInterop.SetBarGroupPadding(dxTarget, value);
@@ -91,7 +91,7 @@
 	float? barGroupWidth;
 	[Parameter]
 	float? BarGroupWidth {
-		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetBarGroupWidth(dxTarget) : barGroupWidth;
+		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetBarGroupWidth(dxTarget).Result : barGroupWidth;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxChartInterop.SetBarGroupWidth(dxTarget, value);
@@ -103,7 +103,7 @@
 	float? barWidth;
 	[Parameter]
 	float? BarWidth {
-		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetBarWidth(dxTarget) : barWidth;
+		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetBarWidth(dxTarget).Result : barWidth;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxChartInterop.SetBarWidth(dxTarget, value);
@@ -115,7 +115,7 @@
 	object commonAxisSettings;
 	[Parameter]
 	object CommonAxisSettings {
-		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetCommonAxisSettings(dxTarget) : commonAxisSettings;
+		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetCommonAxisSettings(dxTarget).Result : commonAxisSettings;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxChartInterop.SetCommonAxisSettings(dxTarget, value);
@@ -127,7 +127,7 @@
 	object commonPaneSettings;
 	[Parameter]
 	object CommonPaneSettings {
-		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetCommonPaneSettings(dxTarget) : commonPaneSettings;
+		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetCommonPaneSettings(dxTarget).Result : commonPaneSettings;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxChartInterop.SetCommonPaneSettings(dxTarget, value);
@@ -139,7 +139,7 @@
 	object commonSeriesSettings;
 	[Parameter]
 	object CommonSeriesSettings {
-		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetCommonSeriesSettings(dxTarget) : commonSeriesSettings;
+		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetCommonSeriesSettings(dxTarget).Result : commonSeriesSettings;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxChartInterop.SetCommonSeriesSettings(dxTarget, value);
@@ -151,7 +151,7 @@
 	string containerBackgroundColor;
 	[Parameter]
 	string ContainerBackgroundColor {
-		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetContainerBackgroundColor(dxTarget) : containerBackgroundColor;
+		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetContainerBackgroundColor(dxTarget).Result : containerBackgroundColor;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxChartInterop.SetContainerBackgroundColor(dxTarget, value);
@@ -163,7 +163,7 @@
 	object crosshair;
 	[Parameter]
 	object Crosshair {
-		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetCrosshair(dxTarget) : crosshair;
+		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetCrosshair(dxTarget).Result : crosshair;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxChartInterop.SetCrosshair(dxTarget, value);
@@ -175,7 +175,7 @@
 	object dataPrepareSettings;
 	[Parameter]
 	object DataPrepareSettings {
-		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetDataPrepareSettings(dxTarget) : dataPrepareSettings;
+		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetDataPrepareSettings(dxTarget).Result : dataPrepareSettings;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxChartInterop.SetDataPrepareSettings(dxTarget, value);
@@ -187,7 +187,7 @@
 	string defaultPane;
 	[Parameter]
 	string DefaultPane {
-		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetDefaultPane(dxTarget) : defaultPane;
+		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetDefaultPane(dxTarget).Result : defaultPane;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxChartInterop.SetDefaultPane(dxTarget, value);
@@ -199,7 +199,7 @@
 	bool? equalBarWidth;
 	[Parameter]
 	bool? EqualBarWidth {
-		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetEqualBarWidth(dxTarget) : equalBarWidth;
+		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetEqualBarWidth(dxTarget).Result : equalBarWidth;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxChartInterop.SetEqualBarWidth(dxTarget, value);
@@ -211,7 +211,7 @@
 	object legend;
 	[Parameter]
 	object Legend {
-		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetLegend(dxTarget) : legend;
+		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetLegend(dxTarget).Result : legend;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxChartInterop.SetLegend(dxTarget, value);
@@ -223,7 +223,7 @@
 	float? maxBubbleSize;
 	[Parameter]
 	float? MaxBubbleSize {
-		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetMaxBubbleSize(dxTarget) : maxBubbleSize;
+		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetMaxBubbleSize(dxTarget).Result : maxBubbleSize;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxChartInterop.SetMaxBubbleSize(dxTarget, value);
@@ -235,7 +235,7 @@
 	float? minBubbleSize;
 	[Parameter]
 	float? MinBubbleSize {
-		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetMinBubbleSize(dxTarget) : minBubbleSize;
+		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetMinBubbleSize(dxTarget).Result : minBubbleSize;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxChartInterop.SetMinBubbleSize(dxTarget, value);
@@ -247,7 +247,7 @@
 	bool? negativesAsZeroes;
 	[Parameter]
 	bool? NegativesAsZeroes {
-		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetNegativesAsZeroes(dxTarget) : negativesAsZeroes;
+		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetNegativesAsZeroes(dxTarget).Result : negativesAsZeroes;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxChartInterop.SetNegativesAsZeroes(dxTarget, value);
@@ -259,7 +259,7 @@
 	object panes;
 	[Parameter]
 	object Panes {
-		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetPanes(dxTarget) : panes;
+		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetPanes(dxTarget).Result : panes;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxChartInterop.SetPanes(dxTarget, value);
@@ -271,7 +271,7 @@
 	string resolveLabelOverlapping;
 	[Parameter]
 	string ResolveLabelOverlapping {
-		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetResolveLabelOverlapping(dxTarget) : resolveLabelOverlapping;
+		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetResolveLabelOverlapping(dxTarget).Result : resolveLabelOverlapping;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxChartInterop.SetResolveLabelOverlapping(dxTarget, value);
@@ -283,7 +283,7 @@
 	bool? rotated;
 	[Parameter]
 	bool? Rotated {
-		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetRotated(dxTarget) : rotated;
+		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetRotated(dxTarget).Result : rotated;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxChartInterop.SetRotated(dxTarget, value);
@@ -295,7 +295,7 @@
 	object scrollBar;
 	[Parameter]
 	object ScrollBar {
-		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetScrollBar(dxTarget) : scrollBar;
+		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetScrollBar(dxTarget).Result : scrollBar;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxChartInterop.SetScrollBar(dxTarget, value);
@@ -307,7 +307,7 @@
 	string scrollingMode;
 	[Parameter]
 	string ScrollingMode {
-		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetScrollingMode(dxTarget) : scrollingMode;
+		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetScrollingMode(dxTarget).Result : scrollingMode;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxChartInterop.SetScrollingMode(dxTarget, value);
@@ -319,7 +319,7 @@
 	object series;
 	[Parameter]
 	object Series {
-		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetSeries(dxTarget) : series;
+		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetSeries(dxTarget).Result : series;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxChartInterop.SetSeries(dxTarget, value);
@@ -331,7 +331,7 @@
 	string seriesSelectionMode;
 	[Parameter]
 	string SeriesSelectionMode {
-		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetSeriesSelectionMode(dxTarget) : seriesSelectionMode;
+		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetSeriesSelectionMode(dxTarget).Result : seriesSelectionMode;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxChartInterop.SetSeriesSelectionMode(dxTarget, value);
@@ -343,7 +343,7 @@
 	object seriesTemplate;
 	[Parameter]
 	object SeriesTemplate {
-		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetSeriesTemplate(dxTarget) : seriesTemplate;
+		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetSeriesTemplate(dxTarget).Result : seriesTemplate;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxChartInterop.SetSeriesTemplate(dxTarget, value);
@@ -355,7 +355,7 @@
 	bool? synchronizeMultiAxes;
 	[Parameter]
 	bool? SynchronizeMultiAxes {
-		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetSynchronizeMultiAxes(dxTarget) : synchronizeMultiAxes;
+		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetSynchronizeMultiAxes(dxTarget).Result : synchronizeMultiAxes;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxChartInterop.SetSynchronizeMultiAxes(dxTarget, value);
@@ -367,7 +367,7 @@
 	object tooltip;
 	[Parameter]
 	object Tooltip {
-		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetTooltip(dxTarget) : tooltip;
+		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetTooltip(dxTarget).Result : tooltip;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxChartInterop.SetTooltip(dxTarget, value);
@@ -379,7 +379,7 @@
 	bool? useAggregation;
 	[Parameter]
 	bool? UseAggregation {
-		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetUseAggregation(dxTarget) : useAggregation;
+		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetUseAggregation(dxTarget).Result : useAggregation;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxChartInterop.SetUseAggregation(dxTarget, value);
@@ -391,7 +391,7 @@
 	object valueAxis;
 	[Parameter]
 	object ValueAxis {
-		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetValueAxis(dxTarget) : valueAxis;
+		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetValueAxis(dxTarget).Result : valueAxis;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxChartInterop.SetValueAxis(dxTarget, value);
@@ -403,7 +403,7 @@
 	string zoomingMode;
 	[Parameter]
 	string ZoomingMode {
-		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetZoomingMode(dxTarget) : zoomingMode;
+		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetZoomingMode(dxTarget).Result : zoomingMode;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxChartInterop.SetZoomingMode(dxTarget, value);

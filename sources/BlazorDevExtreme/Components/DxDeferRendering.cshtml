@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Ui.DxDeferRenderingOptions>
+@inherits DxBlazorComponent<DevExpress.Ui.DxDeferRenderingOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -18,13 +18,13 @@
 			onShownEnabled = onShownEnabled,
 		};
 	}
-	protected override void Init(DevExpress.Ui.DxDeferRenderingOptions options) {
-		DevExpress.Ui.DxDeferRenderingInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Ui.DxDeferRenderingOptions options) {
+return 		DevExpress.Ui.DxDeferRenderingInterop.Init(dxTarget, options);
 	}
 	object animation;
 	[Parameter]
 	object Animation {
-		get => isInitialized ? DevExpress.Ui.DxDeferRenderingInterop.GetAnimation(dxTarget) : animation;
+		get => isInitialized ? DevExpress.Ui.DxDeferRenderingInterop.GetAnimation(dxTarget).Result : animation;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDeferRenderingInterop.SetAnimation(dxTarget, value);
@@ -36,7 +36,7 @@
 	object renderWhen;
 	[Parameter]
 	object RenderWhen {
-		get => isInitialized ? DevExpress.Ui.DxDeferRenderingInterop.GetRenderWhen(dxTarget) : renderWhen;
+		get => isInitialized ? DevExpress.Ui.DxDeferRenderingInterop.GetRenderWhen(dxTarget).Result : renderWhen;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDeferRenderingInterop.SetRenderWhen(dxTarget, value);
@@ -48,7 +48,7 @@
 	bool? showLoadIndicator;
 	[Parameter]
 	bool? ShowLoadIndicator {
-		get => isInitialized ? DevExpress.Ui.DxDeferRenderingInterop.GetShowLoadIndicator(dxTarget) : showLoadIndicator;
+		get => isInitialized ? DevExpress.Ui.DxDeferRenderingInterop.GetShowLoadIndicator(dxTarget).Result : showLoadIndicator;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDeferRenderingInterop.SetShowLoadIndicator(dxTarget, value);
@@ -60,7 +60,7 @@
 	string staggerItemSelector;
 	[Parameter]
 	string StaggerItemSelector {
-		get => isInitialized ? DevExpress.Ui.DxDeferRenderingInterop.GetStaggerItemSelector(dxTarget) : staggerItemSelector;
+		get => isInitialized ? DevExpress.Ui.DxDeferRenderingInterop.GetStaggerItemSelector(dxTarget).Result : staggerItemSelector;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDeferRenderingInterop.SetStaggerItemSelector(dxTarget, value);

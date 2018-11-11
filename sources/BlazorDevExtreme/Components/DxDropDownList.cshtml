@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Ui.DxDropDownListOptions>
+@inherits DxBlazorComponent<DevExpress.Ui.DxDropDownListOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -28,13 +28,13 @@
 			onValueChangedEnabled = onValueChangedEnabled,
 		};
 	}
-	protected override void Init(DevExpress.Ui.DxDropDownListOptions options) {
-		DevExpress.Ui.DxDropDownListInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Ui.DxDropDownListOptions options) {
+return 		DevExpress.Ui.DxDropDownListInterop.Init(dxTarget, options);
 	}
 	string displayValue;
 	[Parameter]
 	string DisplayValue {
-		get => isInitialized ? DevExpress.Ui.DxDropDownListInterop.GetDisplayValue(dxTarget) : displayValue;
+		get => isInitialized ? DevExpress.Ui.DxDropDownListInterop.GetDisplayValue(dxTarget).Result : displayValue;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDropDownListInterop.SetDisplayValue(dxTarget, value);
@@ -46,7 +46,7 @@
 	bool? grouped;
 	[Parameter]
 	bool? Grouped {
-		get => isInitialized ? DevExpress.Ui.DxDropDownListInterop.GetGrouped(dxTarget) : grouped;
+		get => isInitialized ? DevExpress.Ui.DxDropDownListInterop.GetGrouped(dxTarget).Result : grouped;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDropDownListInterop.SetGrouped(dxTarget, value);
@@ -58,7 +58,7 @@
 	object groupTemplate;
 	[Parameter]
 	object GroupTemplate {
-		get => isInitialized ? DevExpress.Ui.DxDropDownListInterop.GetGroupTemplate(dxTarget) : groupTemplate;
+		get => isInitialized ? DevExpress.Ui.DxDropDownListInterop.GetGroupTemplate(dxTarget).Result : groupTemplate;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDropDownListInterop.SetGroupTemplate(dxTarget, value);
@@ -70,7 +70,7 @@
 	float? minSearchLength;
 	[Parameter]
 	float? MinSearchLength {
-		get => isInitialized ? DevExpress.Ui.DxDropDownListInterop.GetMinSearchLength(dxTarget) : minSearchLength;
+		get => isInitialized ? DevExpress.Ui.DxDropDownListInterop.GetMinSearchLength(dxTarget).Result : minSearchLength;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDropDownListInterop.SetMinSearchLength(dxTarget, value);
@@ -82,7 +82,7 @@
 	string noDataText;
 	[Parameter]
 	string NoDataText {
-		get => isInitialized ? DevExpress.Ui.DxDropDownListInterop.GetNoDataText(dxTarget) : noDataText;
+		get => isInitialized ? DevExpress.Ui.DxDropDownListInterop.GetNoDataText(dxTarget).Result : noDataText;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDropDownListInterop.SetNoDataText(dxTarget, value);
@@ -94,7 +94,7 @@
 	bool? searchEnabled;
 	[Parameter]
 	bool? SearchEnabled {
-		get => isInitialized ? DevExpress.Ui.DxDropDownListInterop.GetSearchEnabled(dxTarget) : searchEnabled;
+		get => isInitialized ? DevExpress.Ui.DxDropDownListInterop.GetSearchEnabled(dxTarget).Result : searchEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDropDownListInterop.SetSearchEnabled(dxTarget, value);
@@ -106,7 +106,7 @@
 	object searchExpr;
 	[Parameter]
 	object SearchExpr {
-		get => isInitialized ? DevExpress.Ui.DxDropDownListInterop.GetSearchExpr(dxTarget) : searchExpr;
+		get => isInitialized ? DevExpress.Ui.DxDropDownListInterop.GetSearchExpr(dxTarget).Result : searchExpr;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDropDownListInterop.SetSearchExpr(dxTarget, value);
@@ -118,7 +118,7 @@
 	string searchMode;
 	[Parameter]
 	string SearchMode {
-		get => isInitialized ? DevExpress.Ui.DxDropDownListInterop.GetSearchMode(dxTarget) : searchMode;
+		get => isInitialized ? DevExpress.Ui.DxDropDownListInterop.GetSearchMode(dxTarget).Result : searchMode;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDropDownListInterop.SetSearchMode(dxTarget, value);
@@ -130,7 +130,7 @@
 	float? searchTimeout;
 	[Parameter]
 	float? SearchTimeout {
-		get => isInitialized ? DevExpress.Ui.DxDropDownListInterop.GetSearchTimeout(dxTarget) : searchTimeout;
+		get => isInitialized ? DevExpress.Ui.DxDropDownListInterop.GetSearchTimeout(dxTarget).Result : searchTimeout;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDropDownListInterop.SetSearchTimeout(dxTarget, value);
@@ -142,7 +142,7 @@
 	object selectedItem;
 	[Parameter]
 	object SelectedItem {
-		get => isInitialized ? DevExpress.Ui.DxDropDownListInterop.GetSelectedItem(dxTarget) : selectedItem;
+		get => isInitialized ? DevExpress.Ui.DxDropDownListInterop.GetSelectedItem(dxTarget).Result : selectedItem;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDropDownListInterop.SetSelectedItem(dxTarget, value);
@@ -154,7 +154,7 @@
 	bool? showDataBeforeSearch;
 	[Parameter]
 	bool? ShowDataBeforeSearch {
-		get => isInitialized ? DevExpress.Ui.DxDropDownListInterop.GetShowDataBeforeSearch(dxTarget) : showDataBeforeSearch;
+		get => isInitialized ? DevExpress.Ui.DxDropDownListInterop.GetShowDataBeforeSearch(dxTarget).Result : showDataBeforeSearch;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDropDownListInterop.SetShowDataBeforeSearch(dxTarget, value);
@@ -166,7 +166,7 @@
 	object value;
 	[Parameter]
 	object Value {
-		get => isInitialized ? DevExpress.Ui.DxDropDownListInterop.GetValue(dxTarget) : value;
+		get => isInitialized ? DevExpress.Ui.DxDropDownListInterop.GetValue(dxTarget).Result : value;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDropDownListInterop.SetValue(dxTarget, value);
@@ -178,7 +178,7 @@
 	string valueChangeEvent;
 	[Parameter]
 	string ValueChangeEvent {
-		get => isInitialized ? DevExpress.Ui.DxDropDownListInterop.GetValueChangeEvent(dxTarget) : valueChangeEvent;
+		get => isInitialized ? DevExpress.Ui.DxDropDownListInterop.GetValueChangeEvent(dxTarget).Result : valueChangeEvent;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDropDownListInterop.SetValueChangeEvent(dxTarget, value);
@@ -233,7 +233,7 @@
 		}
 	}
 	public object GetDataSourceEx() {
-		return DevExpress.Ui.DxDropDownListInterop.GetDataSourceEx(dxTarget);
+		return DevExpress.Ui.DxDropDownListInterop.GetDataSourceEx(dxTarget).Result;
 	}
 	public void Dispose() {
 		DevExpress.Ui.DxDropDownListInterop.ItemClick -= DxDropDownList_ItemClick;

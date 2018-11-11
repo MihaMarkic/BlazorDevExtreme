@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Viz.Funnel.DxFunnelOptions>
+@inherits DxBlazorComponent<DevExpress.Viz.Funnel.DxFunnelOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -34,13 +34,13 @@
 			onSelectionChangedEnabled = onSelectionChangedEnabled,
 		};
 	}
-	protected override void Init(DevExpress.Viz.Funnel.DxFunnelOptions options) {
-		DevExpress.Viz.DxFunnelInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Viz.Funnel.DxFunnelOptions options) {
+return 		DevExpress.Viz.DxFunnelInterop.Init(dxTarget, options);
 	}
 	object adaptiveLayout;
 	[Parameter]
 	object AdaptiveLayout {
-		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetAdaptiveLayout(dxTarget) : adaptiveLayout;
+		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetAdaptiveLayout(dxTarget).Result : adaptiveLayout;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxFunnelInterop.SetAdaptiveLayout(dxTarget, value);
@@ -52,7 +52,7 @@
 	string algorithm;
 	[Parameter]
 	string Algorithm {
-		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetAlgorithm(dxTarget) : algorithm;
+		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetAlgorithm(dxTarget).Result : algorithm;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxFunnelInterop.SetAlgorithm(dxTarget, value);
@@ -64,7 +64,7 @@
 	string argumentField;
 	[Parameter]
 	string ArgumentField {
-		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetArgumentField(dxTarget) : argumentField;
+		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetArgumentField(dxTarget).Result : argumentField;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxFunnelInterop.SetArgumentField(dxTarget, value);
@@ -76,7 +76,7 @@
 	string colorField;
 	[Parameter]
 	string ColorField {
-		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetColorField(dxTarget) : colorField;
+		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetColorField(dxTarget).Result : colorField;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxFunnelInterop.SetColorField(dxTarget, value);
@@ -88,7 +88,7 @@
 	object dataSource;
 	[Parameter]
 	object DataSource {
-		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetDataSource(dxTarget) : dataSource;
+		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetDataSource(dxTarget).Result : dataSource;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxFunnelInterop.SetDataSource(dxTarget, value);
@@ -100,7 +100,7 @@
 	bool? hoverEnabled;
 	[Parameter]
 	bool? HoverEnabled {
-		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetHoverEnabled(dxTarget) : hoverEnabled;
+		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetHoverEnabled(dxTarget).Result : hoverEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxFunnelInterop.SetHoverEnabled(dxTarget, value);
@@ -112,7 +112,7 @@
 	bool? inverted;
 	[Parameter]
 	bool? Inverted {
-		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetInverted(dxTarget) : inverted;
+		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetInverted(dxTarget).Result : inverted;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxFunnelInterop.SetInverted(dxTarget, value);
@@ -124,7 +124,7 @@
 	object item;
 	[Parameter]
 	object Item {
-		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetItem(dxTarget) : item;
+		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetItem(dxTarget).Result : item;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxFunnelInterop.SetItem(dxTarget, value);
@@ -136,7 +136,7 @@
 	object label;
 	[Parameter]
 	object Label {
-		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetLabel(dxTarget) : label;
+		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetLabel(dxTarget).Result : label;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxFunnelInterop.SetLabel(dxTarget, value);
@@ -148,7 +148,7 @@
 	object legend;
 	[Parameter]
 	object Legend {
-		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetLegend(dxTarget) : legend;
+		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetLegend(dxTarget).Result : legend;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxFunnelInterop.SetLegend(dxTarget, value);
@@ -160,7 +160,7 @@
 	float? neckHeight;
 	[Parameter]
 	float? NeckHeight {
-		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetNeckHeight(dxTarget) : neckHeight;
+		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetNeckHeight(dxTarget).Result : neckHeight;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxFunnelInterop.SetNeckHeight(dxTarget, value);
@@ -172,7 +172,7 @@
 	float? neckWidth;
 	[Parameter]
 	float? NeckWidth {
-		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetNeckWidth(dxTarget) : neckWidth;
+		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetNeckWidth(dxTarget).Result : neckWidth;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxFunnelInterop.SetNeckWidth(dxTarget, value);
@@ -184,7 +184,7 @@
 	object palette;
 	[Parameter]
 	object Palette {
-		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetPalette(dxTarget) : palette;
+		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetPalette(dxTarget).Result : palette;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxFunnelInterop.SetPalette(dxTarget, value);
@@ -196,7 +196,7 @@
 	string paletteExtensionMode;
 	[Parameter]
 	string PaletteExtensionMode {
-		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetPaletteExtensionMode(dxTarget) : paletteExtensionMode;
+		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetPaletteExtensionMode(dxTarget).Result : paletteExtensionMode;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxFunnelInterop.SetPaletteExtensionMode(dxTarget, value);
@@ -208,7 +208,7 @@
 	string selectionMode;
 	[Parameter]
 	string SelectionMode {
-		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetSelectionMode(dxTarget) : selectionMode;
+		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetSelectionMode(dxTarget).Result : selectionMode;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxFunnelInterop.SetSelectionMode(dxTarget, value);
@@ -220,7 +220,7 @@
 	bool? sortData;
 	[Parameter]
 	bool? SortData {
-		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetSortData(dxTarget) : sortData;
+		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetSortData(dxTarget).Result : sortData;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxFunnelInterop.SetSortData(dxTarget, value);
@@ -232,7 +232,7 @@
 	object tooltip;
 	[Parameter]
 	object Tooltip {
-		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetTooltip(dxTarget) : tooltip;
+		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetTooltip(dxTarget).Result : tooltip;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxFunnelInterop.SetTooltip(dxTarget, value);
@@ -244,7 +244,7 @@
 	string valueField;
 	[Parameter]
 	string ValueField {
-		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetValueField(dxTarget) : valueField;
+		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetValueField(dxTarget).Result : valueField;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxFunnelInterop.SetValueField(dxTarget, value);
@@ -316,10 +316,10 @@
 		DevExpress.Viz.DxFunnelInterop.ClearSelection(dxTarget);
 	}
 	public object GetAllItems() {
-		return DevExpress.Viz.DxFunnelInterop.GetAllItems(dxTarget);
+		return DevExpress.Viz.DxFunnelInterop.GetAllItems(dxTarget).Result;
 	}
 	public object GetDataSourceEx() {
-		return DevExpress.Viz.DxFunnelInterop.GetDataSourceEx(dxTarget);
+		return DevExpress.Viz.DxFunnelInterop.GetDataSourceEx(dxTarget).Result;
 	}
 	public void HideTooltip() {
 		DevExpress.Viz.DxFunnelInterop.HideTooltip(dxTarget);

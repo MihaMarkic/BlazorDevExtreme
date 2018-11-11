@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Ui.CollectionWidgetOptions>
+@inherits DxBlazorComponent<DevExpress.Ui.CollectionWidgetOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -27,13 +27,13 @@
 			onSelectionChangedEnabled = onSelectionChangedEnabled,
 		};
 	}
-	protected override void Init(DevExpress.Ui.CollectionWidgetOptions options) {
-		DevExpress.Ui.CollectionWidgetInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Ui.CollectionWidgetOptions options) {
+return 		DevExpress.Ui.CollectionWidgetInterop.Init(dxTarget, options);
 	}
 	object dataSource;
 	[Parameter]
 	object DataSource {
-		get => isInitialized ? DevExpress.Ui.CollectionWidgetInterop.GetDataSource(dxTarget) : dataSource;
+		get => isInitialized ? DevExpress.Ui.CollectionWidgetInterop.GetDataSource(dxTarget).Result : dataSource;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.CollectionWidgetInterop.SetDataSource(dxTarget, value);
@@ -45,7 +45,7 @@
 	float? itemHoldTimeout;
 	[Parameter]
 	float? ItemHoldTimeout {
-		get => isInitialized ? DevExpress.Ui.CollectionWidgetInterop.GetItemHoldTimeout(dxTarget) : itemHoldTimeout;
+		get => isInitialized ? DevExpress.Ui.CollectionWidgetInterop.GetItemHoldTimeout(dxTarget).Result : itemHoldTimeout;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.CollectionWidgetInterop.SetItemHoldTimeout(dxTarget, value);
@@ -57,7 +57,7 @@
 	object items;
 	[Parameter]
 	object Items {
-		get => isInitialized ? DevExpress.Ui.CollectionWidgetInterop.GetItems(dxTarget) : items;
+		get => isInitialized ? DevExpress.Ui.CollectionWidgetInterop.GetItems(dxTarget).Result : items;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.CollectionWidgetInterop.SetItems(dxTarget, value);
@@ -69,7 +69,7 @@
 	object itemTemplate;
 	[Parameter]
 	object ItemTemplate {
-		get => isInitialized ? DevExpress.Ui.CollectionWidgetInterop.GetItemTemplate(dxTarget) : itemTemplate;
+		get => isInitialized ? DevExpress.Ui.CollectionWidgetInterop.GetItemTemplate(dxTarget).Result : itemTemplate;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.CollectionWidgetInterop.SetItemTemplate(dxTarget, value);
@@ -81,7 +81,7 @@
 	object keyExpr;
 	[Parameter]
 	object KeyExpr {
-		get => isInitialized ? DevExpress.Ui.CollectionWidgetInterop.GetKeyExpr(dxTarget) : keyExpr;
+		get => isInitialized ? DevExpress.Ui.CollectionWidgetInterop.GetKeyExpr(dxTarget).Result : keyExpr;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.CollectionWidgetInterop.SetKeyExpr(dxTarget, value);
@@ -93,7 +93,7 @@
 	string noDataText;
 	[Parameter]
 	string NoDataText {
-		get => isInitialized ? DevExpress.Ui.CollectionWidgetInterop.GetNoDataText(dxTarget) : noDataText;
+		get => isInitialized ? DevExpress.Ui.CollectionWidgetInterop.GetNoDataText(dxTarget).Result : noDataText;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.CollectionWidgetInterop.SetNoDataText(dxTarget, value);
@@ -105,7 +105,7 @@
 	float? selectedIndex;
 	[Parameter]
 	float? SelectedIndex {
-		get => isInitialized ? DevExpress.Ui.CollectionWidgetInterop.GetSelectedIndex(dxTarget) : selectedIndex;
+		get => isInitialized ? DevExpress.Ui.CollectionWidgetInterop.GetSelectedIndex(dxTarget).Result : selectedIndex;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.CollectionWidgetInterop.SetSelectedIndex(dxTarget, value);
@@ -117,7 +117,7 @@
 	object selectedItem;
 	[Parameter]
 	object SelectedItem {
-		get => isInitialized ? DevExpress.Ui.CollectionWidgetInterop.GetSelectedItem(dxTarget) : selectedItem;
+		get => isInitialized ? DevExpress.Ui.CollectionWidgetInterop.GetSelectedItem(dxTarget).Result : selectedItem;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.CollectionWidgetInterop.SetSelectedItem(dxTarget, value);
@@ -129,7 +129,7 @@
 	object selectedItemKeys;
 	[Parameter]
 	object SelectedItemKeys {
-		get => isInitialized ? DevExpress.Ui.CollectionWidgetInterop.GetSelectedItemKeys(dxTarget) : selectedItemKeys;
+		get => isInitialized ? DevExpress.Ui.CollectionWidgetInterop.GetSelectedItemKeys(dxTarget).Result : selectedItemKeys;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.CollectionWidgetInterop.SetSelectedItemKeys(dxTarget, value);
@@ -141,7 +141,7 @@
 	object selectedItems;
 	[Parameter]
 	object SelectedItems {
-		get => isInitialized ? DevExpress.Ui.CollectionWidgetInterop.GetSelectedItems(dxTarget) : selectedItems;
+		get => isInitialized ? DevExpress.Ui.CollectionWidgetInterop.GetSelectedItems(dxTarget).Result : selectedItems;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.CollectionWidgetInterop.SetSelectedItems(dxTarget, value);
@@ -224,7 +224,7 @@
 		}
 	}
 	public object GetDataSourceEx() {
-		return DevExpress.Ui.CollectionWidgetInterop.GetDataSourceEx(dxTarget);
+		return DevExpress.Ui.CollectionWidgetInterop.GetDataSourceEx(dxTarget).Result;
 	}
 	public void Dispose() {
 		DevExpress.Ui.CollectionWidgetInterop.ItemClick -= CollectionWidget_ItemClick;

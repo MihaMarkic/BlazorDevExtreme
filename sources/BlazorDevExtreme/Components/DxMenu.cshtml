@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Ui.DxMenuOptions>
+@inherits DxBlazorComponent<DevExpress.Ui.DxMenuOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -22,13 +22,13 @@
 			onSubmenuShownEnabled = onSubmenuShownEnabled,
 		};
 	}
-	protected override void Init(DevExpress.Ui.DxMenuOptions options) {
-		DevExpress.Ui.DxMenuInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Ui.DxMenuOptions options) {
+return 		DevExpress.Ui.DxMenuInterop.Init(dxTarget, options);
 	}
 	bool? adaptivityEnabled;
 	[Parameter]
 	bool? AdaptivityEnabled {
-		get => isInitialized ? DevExpress.Ui.DxMenuInterop.GetAdaptivityEnabled(dxTarget) : adaptivityEnabled;
+		get => isInitialized ? DevExpress.Ui.DxMenuInterop.GetAdaptivityEnabled(dxTarget).Result : adaptivityEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxMenuInterop.SetAdaptivityEnabled(dxTarget, value);
@@ -40,7 +40,7 @@
 	bool? hideSubmenuOnMouseLeave;
 	[Parameter]
 	bool? HideSubmenuOnMouseLeave {
-		get => isInitialized ? DevExpress.Ui.DxMenuInterop.GetHideSubmenuOnMouseLeave(dxTarget) : hideSubmenuOnMouseLeave;
+		get => isInitialized ? DevExpress.Ui.DxMenuInterop.GetHideSubmenuOnMouseLeave(dxTarget).Result : hideSubmenuOnMouseLeave;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxMenuInterop.SetHideSubmenuOnMouseLeave(dxTarget, value);
@@ -52,7 +52,7 @@
 	object items;
 	[Parameter]
 	object Items {
-		get => isInitialized ? DevExpress.Ui.DxMenuInterop.GetItems(dxTarget) : items;
+		get => isInitialized ? DevExpress.Ui.DxMenuInterop.GetItems(dxTarget).Result : items;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxMenuInterop.SetItems(dxTarget, value);
@@ -64,7 +64,7 @@
 	string orientation;
 	[Parameter]
 	string Orientation {
-		get => isInitialized ? DevExpress.Ui.DxMenuInterop.GetOrientation(dxTarget) : orientation;
+		get => isInitialized ? DevExpress.Ui.DxMenuInterop.GetOrientation(dxTarget).Result : orientation;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxMenuInterop.SetOrientation(dxTarget, value);
@@ -76,7 +76,7 @@
 	object showFirstSubmenuMode;
 	[Parameter]
 	object ShowFirstSubmenuMode {
-		get => isInitialized ? DevExpress.Ui.DxMenuInterop.GetShowFirstSubmenuMode(dxTarget) : showFirstSubmenuMode;
+		get => isInitialized ? DevExpress.Ui.DxMenuInterop.GetShowFirstSubmenuMode(dxTarget).Result : showFirstSubmenuMode;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxMenuInterop.SetShowFirstSubmenuMode(dxTarget, value);
@@ -88,7 +88,7 @@
 	string submenuDirection;
 	[Parameter]
 	string SubmenuDirection {
-		get => isInitialized ? DevExpress.Ui.DxMenuInterop.GetSubmenuDirection(dxTarget) : submenuDirection;
+		get => isInitialized ? DevExpress.Ui.DxMenuInterop.GetSubmenuDirection(dxTarget).Result : submenuDirection;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxMenuInterop.SetSubmenuDirection(dxTarget, value);

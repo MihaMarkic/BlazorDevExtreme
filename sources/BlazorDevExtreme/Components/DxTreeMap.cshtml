@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Viz.TreeMap.DxTreeMapOptions>
+@inherits DxBlazorComponent<DevExpress.Viz.TreeMap.DxTreeMapOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -36,13 +36,13 @@
 			onSelectionChangedEnabled = onSelectionChangedEnabled,
 		};
 	}
-	protected override void Init(DevExpress.Viz.TreeMap.DxTreeMapOptions options) {
-		DevExpress.Viz.DxTreeMapInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Viz.TreeMap.DxTreeMapOptions options) {
+return 		DevExpress.Viz.DxTreeMapInterop.Init(dxTarget, options);
 	}
 	string childrenField;
 	[Parameter]
 	string ChildrenField {
-		get => isInitialized ? DevExpress.Viz.DxTreeMapInterop.GetChildrenField(dxTarget) : childrenField;
+		get => isInitialized ? DevExpress.Viz.DxTreeMapInterop.GetChildrenField(dxTarget).Result : childrenField;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxTreeMapInterop.SetChildrenField(dxTarget, value);
@@ -54,7 +54,7 @@
 	string colorField;
 	[Parameter]
 	string ColorField {
-		get => isInitialized ? DevExpress.Viz.DxTreeMapInterop.GetColorField(dxTarget) : colorField;
+		get => isInitialized ? DevExpress.Viz.DxTreeMapInterop.GetColorField(dxTarget).Result : colorField;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxTreeMapInterop.SetColorField(dxTarget, value);
@@ -66,7 +66,7 @@
 	object colorizer;
 	[Parameter]
 	object Colorizer {
-		get => isInitialized ? DevExpress.Viz.DxTreeMapInterop.GetColorizer(dxTarget) : colorizer;
+		get => isInitialized ? DevExpress.Viz.DxTreeMapInterop.GetColorizer(dxTarget).Result : colorizer;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxTreeMapInterop.SetColorizer(dxTarget, value);
@@ -78,7 +78,7 @@
 	object dataSource;
 	[Parameter]
 	object DataSource {
-		get => isInitialized ? DevExpress.Viz.DxTreeMapInterop.GetDataSource(dxTarget) : dataSource;
+		get => isInitialized ? DevExpress.Viz.DxTreeMapInterop.GetDataSource(dxTarget).Result : dataSource;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxTreeMapInterop.SetDataSource(dxTarget, value);
@@ -90,7 +90,7 @@
 	object group;
 	[Parameter]
 	object Group {
-		get => isInitialized ? DevExpress.Viz.DxTreeMapInterop.GetGroup(dxTarget) : group;
+		get => isInitialized ? DevExpress.Viz.DxTreeMapInterop.GetGroup(dxTarget).Result : group;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxTreeMapInterop.SetGroup(dxTarget, value);
@@ -102,7 +102,7 @@
 	bool? hoverEnabled;
 	[Parameter]
 	bool? HoverEnabled {
-		get => isInitialized ? DevExpress.Viz.DxTreeMapInterop.GetHoverEnabled(dxTarget) : hoverEnabled;
+		get => isInitialized ? DevExpress.Viz.DxTreeMapInterop.GetHoverEnabled(dxTarget).Result : hoverEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxTreeMapInterop.SetHoverEnabled(dxTarget, value);
@@ -114,7 +114,7 @@
 	string idField;
 	[Parameter]
 	string IdField {
-		get => isInitialized ? DevExpress.Viz.DxTreeMapInterop.GetIdField(dxTarget) : idField;
+		get => isInitialized ? DevExpress.Viz.DxTreeMapInterop.GetIdField(dxTarget).Result : idField;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxTreeMapInterop.SetIdField(dxTarget, value);
@@ -126,7 +126,7 @@
 	bool? interactWithGroup;
 	[Parameter]
 	bool? InteractWithGroup {
-		get => isInitialized ? DevExpress.Viz.DxTreeMapInterop.GetInteractWithGroup(dxTarget) : interactWithGroup;
+		get => isInitialized ? DevExpress.Viz.DxTreeMapInterop.GetInteractWithGroup(dxTarget).Result : interactWithGroup;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxTreeMapInterop.SetInteractWithGroup(dxTarget, value);
@@ -138,7 +138,7 @@
 	string labelField;
 	[Parameter]
 	string LabelField {
-		get => isInitialized ? DevExpress.Viz.DxTreeMapInterop.GetLabelField(dxTarget) : labelField;
+		get => isInitialized ? DevExpress.Viz.DxTreeMapInterop.GetLabelField(dxTarget).Result : labelField;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxTreeMapInterop.SetLabelField(dxTarget, value);
@@ -150,7 +150,7 @@
 	object layoutAlgorithm;
 	[Parameter]
 	object LayoutAlgorithm {
-		get => isInitialized ? DevExpress.Viz.DxTreeMapInterop.GetLayoutAlgorithm(dxTarget) : layoutAlgorithm;
+		get => isInitialized ? DevExpress.Viz.DxTreeMapInterop.GetLayoutAlgorithm(dxTarget).Result : layoutAlgorithm;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxTreeMapInterop.SetLayoutAlgorithm(dxTarget, value);
@@ -162,7 +162,7 @@
 	string layoutDirection;
 	[Parameter]
 	string LayoutDirection {
-		get => isInitialized ? DevExpress.Viz.DxTreeMapInterop.GetLayoutDirection(dxTarget) : layoutDirection;
+		get => isInitialized ? DevExpress.Viz.DxTreeMapInterop.GetLayoutDirection(dxTarget).Result : layoutDirection;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxTreeMapInterop.SetLayoutDirection(dxTarget, value);
@@ -174,7 +174,7 @@
 	float? maxDepth;
 	[Parameter]
 	float? MaxDepth {
-		get => isInitialized ? DevExpress.Viz.DxTreeMapInterop.GetMaxDepth(dxTarget) : maxDepth;
+		get => isInitialized ? DevExpress.Viz.DxTreeMapInterop.GetMaxDepth(dxTarget).Result : maxDepth;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxTreeMapInterop.SetMaxDepth(dxTarget, value);
@@ -186,7 +186,7 @@
 	string parentField;
 	[Parameter]
 	string ParentField {
-		get => isInitialized ? DevExpress.Viz.DxTreeMapInterop.GetParentField(dxTarget) : parentField;
+		get => isInitialized ? DevExpress.Viz.DxTreeMapInterop.GetParentField(dxTarget).Result : parentField;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxTreeMapInterop.SetParentField(dxTarget, value);
@@ -198,7 +198,7 @@
 	string resolveLabelOverflow;
 	[Parameter]
 	string ResolveLabelOverflow {
-		get => isInitialized ? DevExpress.Viz.DxTreeMapInterop.GetResolveLabelOverflow(dxTarget) : resolveLabelOverflow;
+		get => isInitialized ? DevExpress.Viz.DxTreeMapInterop.GetResolveLabelOverflow(dxTarget).Result : resolveLabelOverflow;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxTreeMapInterop.SetResolveLabelOverflow(dxTarget, value);
@@ -210,7 +210,7 @@
 	string selectionMode;
 	[Parameter]
 	string SelectionMode {
-		get => isInitialized ? DevExpress.Viz.DxTreeMapInterop.GetSelectionMode(dxTarget) : selectionMode;
+		get => isInitialized ? DevExpress.Viz.DxTreeMapInterop.GetSelectionMode(dxTarget).Result : selectionMode;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxTreeMapInterop.SetSelectionMode(dxTarget, value);
@@ -222,7 +222,7 @@
 	object tile;
 	[Parameter]
 	object Tile {
-		get => isInitialized ? DevExpress.Viz.DxTreeMapInterop.GetTile(dxTarget) : tile;
+		get => isInitialized ? DevExpress.Viz.DxTreeMapInterop.GetTile(dxTarget).Result : tile;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxTreeMapInterop.SetTile(dxTarget, value);
@@ -234,7 +234,7 @@
 	object tooltip;
 	[Parameter]
 	object Tooltip {
-		get => isInitialized ? DevExpress.Viz.DxTreeMapInterop.GetTooltip(dxTarget) : tooltip;
+		get => isInitialized ? DevExpress.Viz.DxTreeMapInterop.GetTooltip(dxTarget).Result : tooltip;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxTreeMapInterop.SetTooltip(dxTarget, value);
@@ -246,7 +246,7 @@
 	string valueField;
 	[Parameter]
 	string ValueField {
-		get => isInitialized ? DevExpress.Viz.DxTreeMapInterop.GetValueField(dxTarget) : valueField;
+		get => isInitialized ? DevExpress.Viz.DxTreeMapInterop.GetValueField(dxTarget).Result : valueField;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxTreeMapInterop.SetValueField(dxTarget, value);
@@ -349,13 +349,13 @@
 		DevExpress.Viz.DxTreeMapInterop.DrillUp(dxTarget);
 	}
 	public object GetCurrentNode() {
-		return DevExpress.Viz.DxTreeMapInterop.GetCurrentNode(dxTarget);
+		return DevExpress.Viz.DxTreeMapInterop.GetCurrentNode(dxTarget).Result;
 	}
 	public object GetDataSourceEx() {
-		return DevExpress.Viz.DxTreeMapInterop.GetDataSourceEx(dxTarget);
+		return DevExpress.Viz.DxTreeMapInterop.GetDataSourceEx(dxTarget).Result;
 	}
 	public object GetRootNode() {
-		return DevExpress.Viz.DxTreeMapInterop.GetRootNode(dxTarget);
+		return DevExpress.Viz.DxTreeMapInterop.GetRootNode(dxTarget).Result;
 	}
 	public void HideTooltip() {
 		DevExpress.Viz.DxTreeMapInterop.HideTooltip(dxTarget);

@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Ui.DxPopupOptions>
+@inherits DxBlazorComponent<DevExpress.Ui.DxPopupOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -30,13 +30,13 @@
 			onTitleRenderedEnabled = onTitleRenderedEnabled,
 		};
 	}
-	protected override void Init(DevExpress.Ui.DxPopupOptions options) {
-		DevExpress.Ui.DxPopupInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Ui.DxPopupOptions options) {
+return 		DevExpress.Ui.DxPopupInterop.Init(dxTarget, options);
 	}
 	object animation;
 	[Parameter]
 	object Animation {
-		get => isInitialized ? DevExpress.Ui.DxPopupInterop.GetAnimation(dxTarget) : animation;
+		get => isInitialized ? DevExpress.Ui.DxPopupInterop.GetAnimation(dxTarget).Result : animation;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxPopupInterop.SetAnimation(dxTarget, value);
@@ -48,7 +48,7 @@
 	object container;
 	[Parameter]
 	object Container {
-		get => isInitialized ? DevExpress.Ui.DxPopupInterop.GetContainer(dxTarget) : container;
+		get => isInitialized ? DevExpress.Ui.DxPopupInterop.GetContainer(dxTarget).Result : container;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxPopupInterop.SetContainer(dxTarget, value);
@@ -60,7 +60,7 @@
 	bool? dragEnabled;
 	[Parameter]
 	bool? DragEnabled {
-		get => isInitialized ? DevExpress.Ui.DxPopupInterop.GetDragEnabled(dxTarget) : dragEnabled;
+		get => isInitialized ? DevExpress.Ui.DxPopupInterop.GetDragEnabled(dxTarget).Result : dragEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxPopupInterop.SetDragEnabled(dxTarget, value);
@@ -72,7 +72,7 @@
 	bool? focusStateEnabled;
 	[Parameter]
 	bool? FocusStateEnabled {
-		get => isInitialized ? DevExpress.Ui.DxPopupInterop.GetFocusStateEnabled(dxTarget) : focusStateEnabled;
+		get => isInitialized ? DevExpress.Ui.DxPopupInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxPopupInterop.SetFocusStateEnabled(dxTarget, value);
@@ -84,7 +84,7 @@
 	bool? fullScreen;
 	[Parameter]
 	bool? FullScreen {
-		get => isInitialized ? DevExpress.Ui.DxPopupInterop.GetFullScreen(dxTarget) : fullScreen;
+		get => isInitialized ? DevExpress.Ui.DxPopupInterop.GetFullScreen(dxTarget).Result : fullScreen;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxPopupInterop.SetFullScreen(dxTarget, value);
@@ -96,7 +96,7 @@
 	object height;
 	[Parameter]
 	object Height {
-		get => isInitialized ? DevExpress.Ui.DxPopupInterop.GetHeight(dxTarget) : height;
+		get => isInitialized ? DevExpress.Ui.DxPopupInterop.GetHeight(dxTarget).Result : height;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxPopupInterop.SetHeight(dxTarget, value);
@@ -108,7 +108,7 @@
 	object position;
 	[Parameter]
 	object Position {
-		get => isInitialized ? DevExpress.Ui.DxPopupInterop.GetPosition(dxTarget) : position;
+		get => isInitialized ? DevExpress.Ui.DxPopupInterop.GetPosition(dxTarget).Result : position;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxPopupInterop.SetPosition(dxTarget, value);
@@ -120,7 +120,7 @@
 	bool? resizeEnabled;
 	[Parameter]
 	bool? ResizeEnabled {
-		get => isInitialized ? DevExpress.Ui.DxPopupInterop.GetResizeEnabled(dxTarget) : resizeEnabled;
+		get => isInitialized ? DevExpress.Ui.DxPopupInterop.GetResizeEnabled(dxTarget).Result : resizeEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxPopupInterop.SetResizeEnabled(dxTarget, value);
@@ -132,7 +132,7 @@
 	bool? showCloseButton;
 	[Parameter]
 	bool? ShowCloseButton {
-		get => isInitialized ? DevExpress.Ui.DxPopupInterop.GetShowCloseButton(dxTarget) : showCloseButton;
+		get => isInitialized ? DevExpress.Ui.DxPopupInterop.GetShowCloseButton(dxTarget).Result : showCloseButton;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxPopupInterop.SetShowCloseButton(dxTarget, value);
@@ -144,7 +144,7 @@
 	bool? showTitle;
 	[Parameter]
 	bool? ShowTitle {
-		get => isInitialized ? DevExpress.Ui.DxPopupInterop.GetShowTitle(dxTarget) : showTitle;
+		get => isInitialized ? DevExpress.Ui.DxPopupInterop.GetShowTitle(dxTarget).Result : showTitle;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxPopupInterop.SetShowTitle(dxTarget, value);
@@ -156,7 +156,7 @@
 	string title;
 	[Parameter]
 	string Title {
-		get => isInitialized ? DevExpress.Ui.DxPopupInterop.GetTitle(dxTarget) : title;
+		get => isInitialized ? DevExpress.Ui.DxPopupInterop.GetTitle(dxTarget).Result : title;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxPopupInterop.SetTitle(dxTarget, value);
@@ -168,7 +168,7 @@
 	object titleTemplate;
 	[Parameter]
 	object TitleTemplate {
-		get => isInitialized ? DevExpress.Ui.DxPopupInterop.GetTitleTemplate(dxTarget) : titleTemplate;
+		get => isInitialized ? DevExpress.Ui.DxPopupInterop.GetTitleTemplate(dxTarget).Result : titleTemplate;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxPopupInterop.SetTitleTemplate(dxTarget, value);
@@ -180,7 +180,7 @@
 	object toolbarItems;
 	[Parameter]
 	object ToolbarItems {
-		get => isInitialized ? DevExpress.Ui.DxPopupInterop.GetToolbarItems(dxTarget) : toolbarItems;
+		get => isInitialized ? DevExpress.Ui.DxPopupInterop.GetToolbarItems(dxTarget).Result : toolbarItems;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxPopupInterop.SetToolbarItems(dxTarget, value);
@@ -192,7 +192,7 @@
 	object width;
 	[Parameter]
 	object Width {
-		get => isInitialized ? DevExpress.Ui.DxPopupInterop.GetWidth(dxTarget) : width;
+		get => isInitialized ? DevExpress.Ui.DxPopupInterop.GetWidth(dxTarget).Result : width;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxPopupInterop.SetWidth(dxTarget, value);

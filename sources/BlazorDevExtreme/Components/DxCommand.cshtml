@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Framework.DxCommandOptions>
+@inherits DxBlazorComponent<DevExpress.Framework.DxCommandOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -21,13 +21,13 @@
 			onExecuteEnabled = onExecuteEnabled,
 		};
 	}
-	protected override void Init(DevExpress.Framework.DxCommandOptions options) {
-		DevExpress.Framework.DxCommandInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Framework.DxCommandOptions options) {
+return 		DevExpress.Framework.DxCommandInterop.Init(dxTarget, options);
 	}
 	bool? disabled;
 	[Parameter]
 	bool? Disabled {
-		get => isInitialized ? DevExpress.Framework.DxCommandInterop.GetDisabled(dxTarget) : disabled;
+		get => isInitialized ? DevExpress.Framework.DxCommandInterop.GetDisabled(dxTarget).Result : disabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Framework.DxCommandInterop.SetDisabled(dxTarget, value);
@@ -39,7 +39,7 @@
 	string icon;
 	[Parameter]
 	string Icon {
-		get => isInitialized ? DevExpress.Framework.DxCommandInterop.GetIcon(dxTarget) : icon;
+		get => isInitialized ? DevExpress.Framework.DxCommandInterop.GetIcon(dxTarget).Result : icon;
 		set {
 			if (isInitialized) {
 				DevExpress.Framework.DxCommandInterop.SetIcon(dxTarget, value);
@@ -51,7 +51,7 @@
 	object iconSrc;
 	[Parameter]
 	object IconSrc {
-		get => isInitialized ? DevExpress.Framework.DxCommandInterop.GetIconSrc(dxTarget) : iconSrc;
+		get => isInitialized ? DevExpress.Framework.DxCommandInterop.GetIconSrc(dxTarget).Result : iconSrc;
 		set {
 			if (isInitialized) {
 				DevExpress.Framework.DxCommandInterop.SetIconSrc(dxTarget, value);
@@ -63,7 +63,7 @@
 	string id;
 	[Parameter]
 	string Id {
-		get => isInitialized ? DevExpress.Framework.DxCommandInterop.GetId(dxTarget) : id;
+		get => isInitialized ? DevExpress.Framework.DxCommandInterop.GetId(dxTarget).Result : id;
 		set {
 			if (isInitialized) {
 				DevExpress.Framework.DxCommandInterop.SetId(dxTarget, value);
@@ -75,7 +75,7 @@
 	string renderStage;
 	[Parameter]
 	string RenderStage {
-		get => isInitialized ? DevExpress.Framework.DxCommandInterop.GetRenderStage(dxTarget) : renderStage;
+		get => isInitialized ? DevExpress.Framework.DxCommandInterop.GetRenderStage(dxTarget).Result : renderStage;
 		set {
 			if (isInitialized) {
 				DevExpress.Framework.DxCommandInterop.SetRenderStage(dxTarget, value);
@@ -87,7 +87,7 @@
 	string title;
 	[Parameter]
 	string Title {
-		get => isInitialized ? DevExpress.Framework.DxCommandInterop.GetTitle(dxTarget) : title;
+		get => isInitialized ? DevExpress.Framework.DxCommandInterop.GetTitle(dxTarget).Result : title;
 		set {
 			if (isInitialized) {
 				DevExpress.Framework.DxCommandInterop.SetTitle(dxTarget, value);
@@ -99,7 +99,7 @@
 	string type;
 	[Parameter]
 	string Type {
-		get => isInitialized ? DevExpress.Framework.DxCommandInterop.GetType(dxTarget) : type;
+		get => isInitialized ? DevExpress.Framework.DxCommandInterop.GetType(dxTarget).Result : type;
 		set {
 			if (isInitialized) {
 				DevExpress.Framework.DxCommandInterop.SetType(dxTarget, value);
@@ -111,7 +111,7 @@
 	bool? visible;
 	[Parameter]
 	bool? Visible {
-		get => isInitialized ? DevExpress.Framework.DxCommandInterop.GetVisible(dxTarget) : visible;
+		get => isInitialized ? DevExpress.Framework.DxCommandInterop.GetVisible(dxTarget).Result : visible;
 		set {
 			if (isInitialized) {
 				DevExpress.Framework.DxCommandInterop.SetVisible(dxTarget, value);

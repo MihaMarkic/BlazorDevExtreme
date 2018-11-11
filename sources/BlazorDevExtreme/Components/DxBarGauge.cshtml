@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Viz.Gauges.DxBarGaugeOptions>
+@inherits DxBlazorComponent<DevExpress.Viz.Gauges.DxBarGaugeOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -29,13 +29,13 @@
 			onTooltipShownEnabled = onTooltipShownEnabled,
 		};
 	}
-	protected override void Init(DevExpress.Viz.Gauges.DxBarGaugeOptions options) {
-		DevExpress.Viz.DxBarGaugeInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Viz.Gauges.DxBarGaugeOptions options) {
+return 		DevExpress.Viz.DxBarGaugeInterop.Init(dxTarget, options);
 	}
 	object animation;
 	[Parameter]
 	object Animation {
-		get => isInitialized ? DevExpress.Viz.DxBarGaugeInterop.GetAnimation(dxTarget) : animation;
+		get => isInitialized ? DevExpress.Viz.DxBarGaugeInterop.GetAnimation(dxTarget).Result : animation;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxBarGaugeInterop.SetAnimation(dxTarget, value);
@@ -47,7 +47,7 @@
 	string backgroundColor;
 	[Parameter]
 	string BackgroundColor {
-		get => isInitialized ? DevExpress.Viz.DxBarGaugeInterop.GetBackgroundColor(dxTarget) : backgroundColor;
+		get => isInitialized ? DevExpress.Viz.DxBarGaugeInterop.GetBackgroundColor(dxTarget).Result : backgroundColor;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxBarGaugeInterop.SetBackgroundColor(dxTarget, value);
@@ -59,7 +59,7 @@
 	float? barSpacing;
 	[Parameter]
 	float? BarSpacing {
-		get => isInitialized ? DevExpress.Viz.DxBarGaugeInterop.GetBarSpacing(dxTarget) : barSpacing;
+		get => isInitialized ? DevExpress.Viz.DxBarGaugeInterop.GetBarSpacing(dxTarget).Result : barSpacing;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxBarGaugeInterop.SetBarSpacing(dxTarget, value);
@@ -71,7 +71,7 @@
 	float? baseValue;
 	[Parameter]
 	float? BaseValue {
-		get => isInitialized ? DevExpress.Viz.DxBarGaugeInterop.GetBaseValue(dxTarget) : baseValue;
+		get => isInitialized ? DevExpress.Viz.DxBarGaugeInterop.GetBaseValue(dxTarget).Result : baseValue;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxBarGaugeInterop.SetBaseValue(dxTarget, value);
@@ -83,7 +83,7 @@
 	float? endValue;
 	[Parameter]
 	float? EndValue {
-		get => isInitialized ? DevExpress.Viz.DxBarGaugeInterop.GetEndValue(dxTarget) : endValue;
+		get => isInitialized ? DevExpress.Viz.DxBarGaugeInterop.GetEndValue(dxTarget).Result : endValue;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxBarGaugeInterop.SetEndValue(dxTarget, value);
@@ -95,7 +95,7 @@
 	object geometry;
 	[Parameter]
 	object Geometry {
-		get => isInitialized ? DevExpress.Viz.DxBarGaugeInterop.GetGeometry(dxTarget) : geometry;
+		get => isInitialized ? DevExpress.Viz.DxBarGaugeInterop.GetGeometry(dxTarget).Result : geometry;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxBarGaugeInterop.SetGeometry(dxTarget, value);
@@ -107,7 +107,7 @@
 	object label;
 	[Parameter]
 	object Label {
-		get => isInitialized ? DevExpress.Viz.DxBarGaugeInterop.GetLabel(dxTarget) : label;
+		get => isInitialized ? DevExpress.Viz.DxBarGaugeInterop.GetLabel(dxTarget).Result : label;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxBarGaugeInterop.SetLabel(dxTarget, value);
@@ -119,7 +119,7 @@
 	object palette;
 	[Parameter]
 	object Palette {
-		get => isInitialized ? DevExpress.Viz.DxBarGaugeInterop.GetPalette(dxTarget) : palette;
+		get => isInitialized ? DevExpress.Viz.DxBarGaugeInterop.GetPalette(dxTarget).Result : palette;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxBarGaugeInterop.SetPalette(dxTarget, value);
@@ -131,7 +131,7 @@
 	string paletteExtensionMode;
 	[Parameter]
 	string PaletteExtensionMode {
-		get => isInitialized ? DevExpress.Viz.DxBarGaugeInterop.GetPaletteExtensionMode(dxTarget) : paletteExtensionMode;
+		get => isInitialized ? DevExpress.Viz.DxBarGaugeInterop.GetPaletteExtensionMode(dxTarget).Result : paletteExtensionMode;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxBarGaugeInterop.SetPaletteExtensionMode(dxTarget, value);
@@ -143,7 +143,7 @@
 	float? relativeInnerRadius;
 	[Parameter]
 	float? RelativeInnerRadius {
-		get => isInitialized ? DevExpress.Viz.DxBarGaugeInterop.GetRelativeInnerRadius(dxTarget) : relativeInnerRadius;
+		get => isInitialized ? DevExpress.Viz.DxBarGaugeInterop.GetRelativeInnerRadius(dxTarget).Result : relativeInnerRadius;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxBarGaugeInterop.SetRelativeInnerRadius(dxTarget, value);
@@ -155,7 +155,7 @@
 	float? startValue;
 	[Parameter]
 	float? StartValue {
-		get => isInitialized ? DevExpress.Viz.DxBarGaugeInterop.GetStartValue(dxTarget) : startValue;
+		get => isInitialized ? DevExpress.Viz.DxBarGaugeInterop.GetStartValue(dxTarget).Result : startValue;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxBarGaugeInterop.SetStartValue(dxTarget, value);
@@ -167,7 +167,7 @@
 	object subtitle;
 	[Parameter]
 	object Subtitle {
-		get => isInitialized ? DevExpress.Viz.DxBarGaugeInterop.GetSubtitle(dxTarget) : subtitle;
+		get => isInitialized ? DevExpress.Viz.DxBarGaugeInterop.GetSubtitle(dxTarget).Result : subtitle;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxBarGaugeInterop.SetSubtitle(dxTarget, value);
@@ -179,7 +179,7 @@
 	object title;
 	[Parameter]
 	object Title {
-		get => isInitialized ? DevExpress.Viz.DxBarGaugeInterop.GetTitle(dxTarget) : title;
+		get => isInitialized ? DevExpress.Viz.DxBarGaugeInterop.GetTitle(dxTarget).Result : title;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxBarGaugeInterop.SetTitle(dxTarget, value);
@@ -191,7 +191,7 @@
 	object tooltip;
 	[Parameter]
 	object Tooltip {
-		get => isInitialized ? DevExpress.Viz.DxBarGaugeInterop.GetTooltip(dxTarget) : tooltip;
+		get => isInitialized ? DevExpress.Viz.DxBarGaugeInterop.GetTooltip(dxTarget).Result : tooltip;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxBarGaugeInterop.SetTooltip(dxTarget, value);
@@ -203,7 +203,7 @@
 	object values;
 	[Parameter]
 	object Values {
-		get => isInitialized ? DevExpress.Viz.DxBarGaugeInterop.GetValues(dxTarget) : values;
+		get => isInitialized ? DevExpress.Viz.DxBarGaugeInterop.GetValues(dxTarget).Result : values;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxBarGaugeInterop.SetValues(dxTarget, value);
@@ -244,7 +244,7 @@
 		}
 	}
 	public object ValuesEx() {
-		return DevExpress.Viz.DxBarGaugeInterop.ValuesEx(dxTarget);
+		return DevExpress.Viz.DxBarGaugeInterop.ValuesEx(dxTarget).Result;
 	}
 	public void ValuesEx(object values) {
 		DevExpress.Viz.DxBarGaugeInterop.ValuesEx(dxTarget, values);

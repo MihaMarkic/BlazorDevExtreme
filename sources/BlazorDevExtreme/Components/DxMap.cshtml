@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Ui.DxMapOptions>
+@inherits DxBlazorComponent<DevExpress.Ui.DxMapOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -31,13 +31,13 @@
 			onRouteRemovedEnabled = onRouteRemovedEnabled,
 		};
 	}
-	protected override void Init(DevExpress.Ui.DxMapOptions options) {
-		DevExpress.Ui.DxMapInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Ui.DxMapOptions options) {
+return 		DevExpress.Ui.DxMapInterop.Init(dxTarget, options);
 	}
 	bool? autoAdjust;
 	[Parameter]
 	bool? AutoAdjust {
-		get => isInitialized ? DevExpress.Ui.DxMapInterop.GetAutoAdjust(dxTarget) : autoAdjust;
+		get => isInitialized ? DevExpress.Ui.DxMapInterop.GetAutoAdjust(dxTarget).Result : autoAdjust;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxMapInterop.SetAutoAdjust(dxTarget, value);
@@ -49,7 +49,7 @@
 	object center;
 	[Parameter]
 	object Center {
-		get => isInitialized ? DevExpress.Ui.DxMapInterop.GetCenter(dxTarget) : center;
+		get => isInitialized ? DevExpress.Ui.DxMapInterop.GetCenter(dxTarget).Result : center;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxMapInterop.SetCenter(dxTarget, value);
@@ -61,7 +61,7 @@
 	bool? controls;
 	[Parameter]
 	bool? Controls {
-		get => isInitialized ? DevExpress.Ui.DxMapInterop.GetControls(dxTarget) : controls;
+		get => isInitialized ? DevExpress.Ui.DxMapInterop.GetControls(dxTarget).Result : controls;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxMapInterop.SetControls(dxTarget, value);
@@ -73,7 +73,7 @@
 	bool? focusStateEnabled;
 	[Parameter]
 	bool? FocusStateEnabled {
-		get => isInitialized ? DevExpress.Ui.DxMapInterop.GetFocusStateEnabled(dxTarget) : focusStateEnabled;
+		get => isInitialized ? DevExpress.Ui.DxMapInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxMapInterop.SetFocusStateEnabled(dxTarget, value);
@@ -85,7 +85,7 @@
 	object height;
 	[Parameter]
 	object Height {
-		get => isInitialized ? DevExpress.Ui.DxMapInterop.GetHeight(dxTarget) : height;
+		get => isInitialized ? DevExpress.Ui.DxMapInterop.GetHeight(dxTarget).Result : height;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxMapInterop.SetHeight(dxTarget, value);
@@ -97,7 +97,7 @@
 	object key;
 	[Parameter]
 	object Key {
-		get => isInitialized ? DevExpress.Ui.DxMapInterop.GetKey(dxTarget) : key;
+		get => isInitialized ? DevExpress.Ui.DxMapInterop.GetKey(dxTarget).Result : key;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxMapInterop.SetKey(dxTarget, value);
@@ -109,7 +109,7 @@
 	string markerIconSrc;
 	[Parameter]
 	string MarkerIconSrc {
-		get => isInitialized ? DevExpress.Ui.DxMapInterop.GetMarkerIconSrc(dxTarget) : markerIconSrc;
+		get => isInitialized ? DevExpress.Ui.DxMapInterop.GetMarkerIconSrc(dxTarget).Result : markerIconSrc;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxMapInterop.SetMarkerIconSrc(dxTarget, value);
@@ -121,7 +121,7 @@
 	object markers;
 	[Parameter]
 	object Markers {
-		get => isInitialized ? DevExpress.Ui.DxMapInterop.GetMarkers(dxTarget) : markers;
+		get => isInitialized ? DevExpress.Ui.DxMapInterop.GetMarkers(dxTarget).Result : markers;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxMapInterop.SetMarkers(dxTarget, value);
@@ -133,7 +133,7 @@
 	string provider;
 	[Parameter]
 	string Provider {
-		get => isInitialized ? DevExpress.Ui.DxMapInterop.GetProvider(dxTarget) : provider;
+		get => isInitialized ? DevExpress.Ui.DxMapInterop.GetProvider(dxTarget).Result : provider;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxMapInterop.SetProvider(dxTarget, value);
@@ -145,7 +145,7 @@
 	object routes;
 	[Parameter]
 	object Routes {
-		get => isInitialized ? DevExpress.Ui.DxMapInterop.GetRoutes(dxTarget) : routes;
+		get => isInitialized ? DevExpress.Ui.DxMapInterop.GetRoutes(dxTarget).Result : routes;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxMapInterop.SetRoutes(dxTarget, value);
@@ -157,7 +157,7 @@
 	string type;
 	[Parameter]
 	string Type {
-		get => isInitialized ? DevExpress.Ui.DxMapInterop.GetType(dxTarget) : type;
+		get => isInitialized ? DevExpress.Ui.DxMapInterop.GetType(dxTarget).Result : type;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxMapInterop.SetType(dxTarget, value);
@@ -169,7 +169,7 @@
 	object width;
 	[Parameter]
 	object Width {
-		get => isInitialized ? DevExpress.Ui.DxMapInterop.GetWidth(dxTarget) : width;
+		get => isInitialized ? DevExpress.Ui.DxMapInterop.GetWidth(dxTarget).Result : width;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxMapInterop.SetWidth(dxTarget, value);
@@ -181,7 +181,7 @@
 	float? zoom;
 	[Parameter]
 	float? Zoom {
-		get => isInitialized ? DevExpress.Ui.DxMapInterop.GetZoom(dxTarget) : zoom;
+		get => isInitialized ? DevExpress.Ui.DxMapInterop.GetZoom(dxTarget).Result : zoom;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxMapInterop.SetZoom(dxTarget, value);
@@ -278,16 +278,16 @@
 		}
 	}
 	public object AddMarker(object markerOptions) {
-		return DevExpress.Ui.DxMapInterop.AddMarker(dxTarget, markerOptions);
+		return DevExpress.Ui.DxMapInterop.AddMarker(dxTarget, markerOptions).Result;
 	}
 	public object AddRoute(object options) {
-		return DevExpress.Ui.DxMapInterop.AddRoute(dxTarget, options);
+		return DevExpress.Ui.DxMapInterop.AddRoute(dxTarget, options).Result;
 	}
 	public object RemoveMarker(object marker) {
-		return DevExpress.Ui.DxMapInterop.RemoveMarker(dxTarget, marker);
+		return DevExpress.Ui.DxMapInterop.RemoveMarker(dxTarget, marker).Result;
 	}
 	public object RemoveRoute(object route) {
-		return DevExpress.Ui.DxMapInterop.RemoveRoute(dxTarget, route);
+		return DevExpress.Ui.DxMapInterop.RemoveRoute(dxTarget, route).Result;
 	}
 	public void Dispose() {
 		DevExpress.Ui.DxMapInterop.Click -= DxMap_Click;

@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Ui.DxFileUploaderOptions>
+@inherits DxBlazorComponent<DevExpress.Ui.DxFileUploaderOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -36,13 +36,13 @@
 			onValueChangedEnabled = onValueChangedEnabled,
 		};
 	}
-	protected override void Init(DevExpress.Ui.DxFileUploaderOptions options) {
-		DevExpress.Ui.DxFileUploaderInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Ui.DxFileUploaderOptions options) {
+return 		DevExpress.Ui.DxFileUploaderInterop.Init(dxTarget, options);
 	}
 	string accept;
 	[Parameter]
 	string Accept {
-		get => isInitialized ? DevExpress.Ui.DxFileUploaderInterop.GetAccept(dxTarget) : accept;
+		get => isInitialized ? DevExpress.Ui.DxFileUploaderInterop.GetAccept(dxTarget).Result : accept;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxFileUploaderInterop.SetAccept(dxTarget, value);
@@ -54,7 +54,7 @@
 	bool? allowCanceling;
 	[Parameter]
 	bool? AllowCanceling {
-		get => isInitialized ? DevExpress.Ui.DxFileUploaderInterop.GetAllowCanceling(dxTarget) : allowCanceling;
+		get => isInitialized ? DevExpress.Ui.DxFileUploaderInterop.GetAllowCanceling(dxTarget).Result : allowCanceling;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxFileUploaderInterop.SetAllowCanceling(dxTarget, value);
@@ -66,7 +66,7 @@
 	bool? focusStateEnabled;
 	[Parameter]
 	bool? FocusStateEnabled {
-		get => isInitialized ? DevExpress.Ui.DxFileUploaderInterop.GetFocusStateEnabled(dxTarget) : focusStateEnabled;
+		get => isInitialized ? DevExpress.Ui.DxFileUploaderInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxFileUploaderInterop.SetFocusStateEnabled(dxTarget, value);
@@ -78,7 +78,7 @@
 	string labelText;
 	[Parameter]
 	string LabelText {
-		get => isInitialized ? DevExpress.Ui.DxFileUploaderInterop.GetLabelText(dxTarget) : labelText;
+		get => isInitialized ? DevExpress.Ui.DxFileUploaderInterop.GetLabelText(dxTarget).Result : labelText;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxFileUploaderInterop.SetLabelText(dxTarget, value);
@@ -90,7 +90,7 @@
 	bool? multiple;
 	[Parameter]
 	bool? Multiple {
-		get => isInitialized ? DevExpress.Ui.DxFileUploaderInterop.GetMultiple(dxTarget) : multiple;
+		get => isInitialized ? DevExpress.Ui.DxFileUploaderInterop.GetMultiple(dxTarget).Result : multiple;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxFileUploaderInterop.SetMultiple(dxTarget, value);
@@ -102,7 +102,7 @@
 	string name;
 	[Parameter]
 	string Name {
-		get => isInitialized ? DevExpress.Ui.DxFileUploaderInterop.GetName(dxTarget) : name;
+		get => isInitialized ? DevExpress.Ui.DxFileUploaderInterop.GetName(dxTarget).Result : name;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxFileUploaderInterop.SetName(dxTarget, value);
@@ -114,7 +114,7 @@
 	float? progressValue;
 	[Parameter]
 	float? ProgressValue {
-		get => isInitialized ? DevExpress.Ui.DxFileUploaderInterop.GetProgress(dxTarget) : progressValue;
+		get => isInitialized ? DevExpress.Ui.DxFileUploaderInterop.GetProgress(dxTarget).Result : progressValue;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxFileUploaderInterop.SetProgress(dxTarget, value);
@@ -126,7 +126,7 @@
 	string readyToUploadMessage;
 	[Parameter]
 	string ReadyToUploadMessage {
-		get => isInitialized ? DevExpress.Ui.DxFileUploaderInterop.GetReadyToUploadMessage(dxTarget) : readyToUploadMessage;
+		get => isInitialized ? DevExpress.Ui.DxFileUploaderInterop.GetReadyToUploadMessage(dxTarget).Result : readyToUploadMessage;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxFileUploaderInterop.SetReadyToUploadMessage(dxTarget, value);
@@ -138,7 +138,7 @@
 	string selectButtonText;
 	[Parameter]
 	string SelectButtonText {
-		get => isInitialized ? DevExpress.Ui.DxFileUploaderInterop.GetSelectButtonText(dxTarget) : selectButtonText;
+		get => isInitialized ? DevExpress.Ui.DxFileUploaderInterop.GetSelectButtonText(dxTarget).Result : selectButtonText;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxFileUploaderInterop.SetSelectButtonText(dxTarget, value);
@@ -150,7 +150,7 @@
 	bool? showFileList;
 	[Parameter]
 	bool? ShowFileList {
-		get => isInitialized ? DevExpress.Ui.DxFileUploaderInterop.GetShowFileList(dxTarget) : showFileList;
+		get => isInitialized ? DevExpress.Ui.DxFileUploaderInterop.GetShowFileList(dxTarget).Result : showFileList;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxFileUploaderInterop.SetShowFileList(dxTarget, value);
@@ -162,7 +162,7 @@
 	string uploadButtonText;
 	[Parameter]
 	string UploadButtonText {
-		get => isInitialized ? DevExpress.Ui.DxFileUploaderInterop.GetUploadButtonText(dxTarget) : uploadButtonText;
+		get => isInitialized ? DevExpress.Ui.DxFileUploaderInterop.GetUploadButtonText(dxTarget).Result : uploadButtonText;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxFileUploaderInterop.SetUploadButtonText(dxTarget, value);
@@ -174,7 +174,7 @@
 	string uploadedMessage;
 	[Parameter]
 	string UploadedMessage {
-		get => isInitialized ? DevExpress.Ui.DxFileUploaderInterop.GetUploadedMessage(dxTarget) : uploadedMessage;
+		get => isInitialized ? DevExpress.Ui.DxFileUploaderInterop.GetUploadedMessage(dxTarget).Result : uploadedMessage;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxFileUploaderInterop.SetUploadedMessage(dxTarget, value);
@@ -186,7 +186,7 @@
 	string uploadFailedMessage;
 	[Parameter]
 	string UploadFailedMessage {
-		get => isInitialized ? DevExpress.Ui.DxFileUploaderInterop.GetUploadFailedMessage(dxTarget) : uploadFailedMessage;
+		get => isInitialized ? DevExpress.Ui.DxFileUploaderInterop.GetUploadFailedMessage(dxTarget).Result : uploadFailedMessage;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxFileUploaderInterop.SetUploadFailedMessage(dxTarget, value);
@@ -198,7 +198,7 @@
 	object uploadHeaders;
 	[Parameter]
 	object UploadHeaders {
-		get => isInitialized ? DevExpress.Ui.DxFileUploaderInterop.GetUploadHeaders(dxTarget) : uploadHeaders;
+		get => isInitialized ? DevExpress.Ui.DxFileUploaderInterop.GetUploadHeaders(dxTarget).Result : uploadHeaders;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxFileUploaderInterop.SetUploadHeaders(dxTarget, value);
@@ -210,7 +210,7 @@
 	string uploadMethod;
 	[Parameter]
 	string UploadMethod {
-		get => isInitialized ? DevExpress.Ui.DxFileUploaderInterop.GetUploadMethod(dxTarget) : uploadMethod;
+		get => isInitialized ? DevExpress.Ui.DxFileUploaderInterop.GetUploadMethod(dxTarget).Result : uploadMethod;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxFileUploaderInterop.SetUploadMethod(dxTarget, value);
@@ -222,7 +222,7 @@
 	string uploadMode;
 	[Parameter]
 	string UploadMode {
-		get => isInitialized ? DevExpress.Ui.DxFileUploaderInterop.GetUploadMode(dxTarget) : uploadMode;
+		get => isInitialized ? DevExpress.Ui.DxFileUploaderInterop.GetUploadMode(dxTarget).Result : uploadMode;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxFileUploaderInterop.SetUploadMode(dxTarget, value);
@@ -234,7 +234,7 @@
 	string uploadUrl;
 	[Parameter]
 	string UploadUrl {
-		get => isInitialized ? DevExpress.Ui.DxFileUploaderInterop.GetUploadUrl(dxTarget) : uploadUrl;
+		get => isInitialized ? DevExpress.Ui.DxFileUploaderInterop.GetUploadUrl(dxTarget).Result : uploadUrl;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxFileUploaderInterop.SetUploadUrl(dxTarget, value);
@@ -246,7 +246,7 @@
 	object value;
 	[Parameter]
 	object Value {
-		get => isInitialized ? DevExpress.Ui.DxFileUploaderInterop.GetValue(dxTarget) : value;
+		get => isInitialized ? DevExpress.Ui.DxFileUploaderInterop.GetValue(dxTarget).Result : value;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxFileUploaderInterop.SetValue(dxTarget, value);

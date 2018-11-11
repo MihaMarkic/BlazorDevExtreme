@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Ui.DxNumberBoxOptions>
+@inherits DxBlazorComponent<DevExpress.Ui.DxNumberBoxOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -21,13 +21,13 @@
 			value = value,
 		};
 	}
-	protected override void Init(DevExpress.Ui.DxNumberBoxOptions options) {
-		DevExpress.Ui.DxNumberBoxInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Ui.DxNumberBoxOptions options) {
+return 		DevExpress.Ui.DxNumberBoxInterop.Init(dxTarget, options);
 	}
 	object format;
 	[Parameter]
 	object Format {
-		get => isInitialized ? DevExpress.Ui.DxNumberBoxInterop.GetFormat(dxTarget) : format;
+		get => isInitialized ? DevExpress.Ui.DxNumberBoxInterop.GetFormat(dxTarget).Result : format;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxNumberBoxInterop.SetFormat(dxTarget, value);
@@ -39,7 +39,7 @@
 	string invalidValueMessage;
 	[Parameter]
 	string InvalidValueMessage {
-		get => isInitialized ? DevExpress.Ui.DxNumberBoxInterop.GetInvalidValueMessage(dxTarget) : invalidValueMessage;
+		get => isInitialized ? DevExpress.Ui.DxNumberBoxInterop.GetInvalidValueMessage(dxTarget).Result : invalidValueMessage;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxNumberBoxInterop.SetInvalidValueMessage(dxTarget, value);
@@ -51,7 +51,7 @@
 	float? max;
 	[Parameter]
 	float? Max {
-		get => isInitialized ? DevExpress.Ui.DxNumberBoxInterop.GetMax(dxTarget) : max;
+		get => isInitialized ? DevExpress.Ui.DxNumberBoxInterop.GetMax(dxTarget).Result : max;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxNumberBoxInterop.SetMax(dxTarget, value);
@@ -63,7 +63,7 @@
 	float? min;
 	[Parameter]
 	float? Min {
-		get => isInitialized ? DevExpress.Ui.DxNumberBoxInterop.GetMin(dxTarget) : min;
+		get => isInitialized ? DevExpress.Ui.DxNumberBoxInterop.GetMin(dxTarget).Result : min;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxNumberBoxInterop.SetMin(dxTarget, value);
@@ -75,7 +75,7 @@
 	string mode;
 	[Parameter]
 	string Mode {
-		get => isInitialized ? DevExpress.Ui.DxNumberBoxInterop.GetMode(dxTarget) : mode;
+		get => isInitialized ? DevExpress.Ui.DxNumberBoxInterop.GetMode(dxTarget).Result : mode;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxNumberBoxInterop.SetMode(dxTarget, value);
@@ -87,7 +87,7 @@
 	bool? showSpinButtons;
 	[Parameter]
 	bool? ShowSpinButtons {
-		get => isInitialized ? DevExpress.Ui.DxNumberBoxInterop.GetShowSpinButtons(dxTarget) : showSpinButtons;
+		get => isInitialized ? DevExpress.Ui.DxNumberBoxInterop.GetShowSpinButtons(dxTarget).Result : showSpinButtons;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxNumberBoxInterop.SetShowSpinButtons(dxTarget, value);
@@ -99,7 +99,7 @@
 	float? step;
 	[Parameter]
 	float? Step {
-		get => isInitialized ? DevExpress.Ui.DxNumberBoxInterop.GetStep(dxTarget) : step;
+		get => isInitialized ? DevExpress.Ui.DxNumberBoxInterop.GetStep(dxTarget).Result : step;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxNumberBoxInterop.SetStep(dxTarget, value);
@@ -111,7 +111,7 @@
 	bool? useLargeSpinButtons;
 	[Parameter]
 	bool? UseLargeSpinButtons {
-		get => isInitialized ? DevExpress.Ui.DxNumberBoxInterop.GetUseLargeSpinButtons(dxTarget) : useLargeSpinButtons;
+		get => isInitialized ? DevExpress.Ui.DxNumberBoxInterop.GetUseLargeSpinButtons(dxTarget).Result : useLargeSpinButtons;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxNumberBoxInterop.SetUseLargeSpinButtons(dxTarget, value);
@@ -123,7 +123,7 @@
 	float? value;
 	[Parameter]
 	float? Value {
-		get => isInitialized ? DevExpress.Ui.DxNumberBoxInterop.GetValue(dxTarget) : value;
+		get => isInitialized ? DevExpress.Ui.DxNumberBoxInterop.GetValue(dxTarget).Result : value;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxNumberBoxInterop.SetValue(dxTarget, value);

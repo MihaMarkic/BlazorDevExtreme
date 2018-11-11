@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Ui.DxOverlayOptions>
+@inherits DxBlazorComponent<DevExpress.Ui.DxOverlayOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -32,13 +32,13 @@
 			onShownEnabled = onShownEnabled,
 		};
 	}
-	protected override void Init(DevExpress.Ui.DxOverlayOptions options) {
-		DevExpress.Ui.DxOverlayInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Ui.DxOverlayOptions options) {
+return 		DevExpress.Ui.DxOverlayInterop.Init(dxTarget, options);
 	}
 	object animation;
 	[Parameter]
 	object Animation {
-		get => isInitialized ? DevExpress.Ui.DxOverlayInterop.GetAnimation(dxTarget) : animation;
+		get => isInitialized ? DevExpress.Ui.DxOverlayInterop.GetAnimation(dxTarget).Result : animation;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxOverlayInterop.SetAnimation(dxTarget, value);
@@ -50,7 +50,7 @@
 	bool? closeOnBackButton;
 	[Parameter]
 	bool? CloseOnBackButton {
-		get => isInitialized ? DevExpress.Ui.DxOverlayInterop.GetCloseOnBackButton(dxTarget) : closeOnBackButton;
+		get => isInitialized ? DevExpress.Ui.DxOverlayInterop.GetCloseOnBackButton(dxTarget).Result : closeOnBackButton;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxOverlayInterop.SetCloseOnBackButton(dxTarget, value);
@@ -62,7 +62,7 @@
 	object closeOnOutsideClick;
 	[Parameter]
 	object CloseOnOutsideClick {
-		get => isInitialized ? DevExpress.Ui.DxOverlayInterop.GetCloseOnOutsideClick(dxTarget) : closeOnOutsideClick;
+		get => isInitialized ? DevExpress.Ui.DxOverlayInterop.GetCloseOnOutsideClick(dxTarget).Result : closeOnOutsideClick;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxOverlayInterop.SetCloseOnOutsideClick(dxTarget, value);
@@ -74,7 +74,7 @@
 	object contentTemplate;
 	[Parameter]
 	object ContentTemplate {
-		get => isInitialized ? DevExpress.Ui.DxOverlayInterop.GetContentTemplate(dxTarget) : contentTemplate;
+		get => isInitialized ? DevExpress.Ui.DxOverlayInterop.GetContentTemplate(dxTarget).Result : contentTemplate;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxOverlayInterop.SetContentTemplate(dxTarget, value);
@@ -86,7 +86,7 @@
 	bool? deferRendering;
 	[Parameter]
 	bool? DeferRendering {
-		get => isInitialized ? DevExpress.Ui.DxOverlayInterop.GetDeferRendering(dxTarget) : deferRendering;
+		get => isInitialized ? DevExpress.Ui.DxOverlayInterop.GetDeferRendering(dxTarget).Result : deferRendering;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxOverlayInterop.SetDeferRendering(dxTarget, value);
@@ -98,7 +98,7 @@
 	bool? dragEnabled;
 	[Parameter]
 	bool? DragEnabled {
-		get => isInitialized ? DevExpress.Ui.DxOverlayInterop.GetDragEnabled(dxTarget) : dragEnabled;
+		get => isInitialized ? DevExpress.Ui.DxOverlayInterop.GetDragEnabled(dxTarget).Result : dragEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxOverlayInterop.SetDragEnabled(dxTarget, value);
@@ -110,7 +110,7 @@
 	object height;
 	[Parameter]
 	object Height {
-		get => isInitialized ? DevExpress.Ui.DxOverlayInterop.GetHeight(dxTarget) : height;
+		get => isInitialized ? DevExpress.Ui.DxOverlayInterop.GetHeight(dxTarget).Result : height;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxOverlayInterop.SetHeight(dxTarget, value);
@@ -122,7 +122,7 @@
 	object maxHeight;
 	[Parameter]
 	object MaxHeight {
-		get => isInitialized ? DevExpress.Ui.DxOverlayInterop.GetMaxHeight(dxTarget) : maxHeight;
+		get => isInitialized ? DevExpress.Ui.DxOverlayInterop.GetMaxHeight(dxTarget).Result : maxHeight;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxOverlayInterop.SetMaxHeight(dxTarget, value);
@@ -134,7 +134,7 @@
 	object maxWidth;
 	[Parameter]
 	object MaxWidth {
-		get => isInitialized ? DevExpress.Ui.DxOverlayInterop.GetMaxWidth(dxTarget) : maxWidth;
+		get => isInitialized ? DevExpress.Ui.DxOverlayInterop.GetMaxWidth(dxTarget).Result : maxWidth;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxOverlayInterop.SetMaxWidth(dxTarget, value);
@@ -146,7 +146,7 @@
 	object minHeight;
 	[Parameter]
 	object MinHeight {
-		get => isInitialized ? DevExpress.Ui.DxOverlayInterop.GetMinHeight(dxTarget) : minHeight;
+		get => isInitialized ? DevExpress.Ui.DxOverlayInterop.GetMinHeight(dxTarget).Result : minHeight;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxOverlayInterop.SetMinHeight(dxTarget, value);
@@ -158,7 +158,7 @@
 	object minWidth;
 	[Parameter]
 	object MinWidth {
-		get => isInitialized ? DevExpress.Ui.DxOverlayInterop.GetMinWidth(dxTarget) : minWidth;
+		get => isInitialized ? DevExpress.Ui.DxOverlayInterop.GetMinWidth(dxTarget).Result : minWidth;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxOverlayInterop.SetMinWidth(dxTarget, value);
@@ -170,7 +170,7 @@
 	object position;
 	[Parameter]
 	object Position {
-		get => isInitialized ? DevExpress.Ui.DxOverlayInterop.GetPosition(dxTarget) : position;
+		get => isInitialized ? DevExpress.Ui.DxOverlayInterop.GetPosition(dxTarget).Result : position;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxOverlayInterop.SetPosition(dxTarget, value);
@@ -182,7 +182,7 @@
 	bool? shading;
 	[Parameter]
 	bool? Shading {
-		get => isInitialized ? DevExpress.Ui.DxOverlayInterop.GetShading(dxTarget) : shading;
+		get => isInitialized ? DevExpress.Ui.DxOverlayInterop.GetShading(dxTarget).Result : shading;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxOverlayInterop.SetShading(dxTarget, value);
@@ -194,7 +194,7 @@
 	string shadingColor;
 	[Parameter]
 	string ShadingColor {
-		get => isInitialized ? DevExpress.Ui.DxOverlayInterop.GetShadingColor(dxTarget) : shadingColor;
+		get => isInitialized ? DevExpress.Ui.DxOverlayInterop.GetShadingColor(dxTarget).Result : shadingColor;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxOverlayInterop.SetShadingColor(dxTarget, value);
@@ -206,7 +206,7 @@
 	bool? visible;
 	[Parameter]
 	bool? Visible {
-		get => isInitialized ? DevExpress.Ui.DxOverlayInterop.GetVisible(dxTarget) : visible;
+		get => isInitialized ? DevExpress.Ui.DxOverlayInterop.GetVisible(dxTarget).Result : visible;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxOverlayInterop.SetVisible(dxTarget, value);
@@ -218,7 +218,7 @@
 	object width;
 	[Parameter]
 	object Width {
-		get => isInitialized ? DevExpress.Ui.DxOverlayInterop.GetWidth(dxTarget) : width;
+		get => isInitialized ? DevExpress.Ui.DxOverlayInterop.GetWidth(dxTarget).Result : width;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxOverlayInterop.SetWidth(dxTarget, value);
@@ -287,19 +287,19 @@
 		}
 	}
 	public object Content() {
-		return DevExpress.Ui.DxOverlayInterop.Content(dxTarget);
+		return DevExpress.Ui.DxOverlayInterop.Content(dxTarget).Result;
 	}
 	public object Hide() {
-		return DevExpress.Ui.DxOverlayInterop.Hide(dxTarget);
+		return DevExpress.Ui.DxOverlayInterop.Hide(dxTarget).Result;
 	}
 	public void Repaint() {
 		DevExpress.Ui.DxOverlayInterop.Repaint(dxTarget);
 	}
 	public object Show() {
-		return DevExpress.Ui.DxOverlayInterop.Show(dxTarget);
+		return DevExpress.Ui.DxOverlayInterop.Show(dxTarget).Result;
 	}
 	public object Toggle(bool showing) {
-		return DevExpress.Ui.DxOverlayInterop.Toggle(dxTarget, showing);
+		return DevExpress.Ui.DxOverlayInterop.Toggle(dxTarget, showing).Result;
 	}
 	public void Dispose() {
 		DevExpress.Ui.DxOverlayInterop.Hidden -= DxOverlay_Hidden;

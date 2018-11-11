@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Ui.DxPivotGridFieldChooserOptions>
+@inherits DxBlazorComponent<DevExpress.Ui.DxPivotGridFieldChooserOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -21,13 +21,13 @@
 			onContextMenuPreparingEnabled = onContextMenuPreparingEnabled,
 		};
 	}
-	protected override void Init(DevExpress.Ui.DxPivotGridFieldChooserOptions options) {
-		DevExpress.Ui.DxPivotGridFieldChooserInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Ui.DxPivotGridFieldChooserOptions options) {
+return 		DevExpress.Ui.DxPivotGridFieldChooserInterop.Init(dxTarget, options);
 	}
 	bool? allowSearch;
 	[Parameter]
 	bool? AllowSearch {
-		get => isInitialized ? DevExpress.Ui.DxPivotGridFieldChooserInterop.GetAllowSearch(dxTarget) : allowSearch;
+		get => isInitialized ? DevExpress.Ui.DxPivotGridFieldChooserInterop.GetAllowSearch(dxTarget).Result : allowSearch;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxPivotGridFieldChooserInterop.SetAllowSearch(dxTarget, value);
@@ -39,7 +39,7 @@
 	string applyChangesMode;
 	[Parameter]
 	string ApplyChangesMode {
-		get => isInitialized ? DevExpress.Ui.DxPivotGridFieldChooserInterop.GetApplyChangesMode(dxTarget) : applyChangesMode;
+		get => isInitialized ? DevExpress.Ui.DxPivotGridFieldChooserInterop.GetApplyChangesMode(dxTarget).Result : applyChangesMode;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxPivotGridFieldChooserInterop.SetApplyChangesMode(dxTarget, value);
@@ -51,7 +51,7 @@
 	object dataSource;
 	[Parameter]
 	object DataSource {
-		get => isInitialized ? DevExpress.Ui.DxPivotGridFieldChooserInterop.GetDataSource(dxTarget) : dataSource;
+		get => isInitialized ? DevExpress.Ui.DxPivotGridFieldChooserInterop.GetDataSource(dxTarget).Result : dataSource;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxPivotGridFieldChooserInterop.SetDataSource(dxTarget, value);
@@ -63,7 +63,7 @@
 	object headerFilter;
 	[Parameter]
 	object HeaderFilter {
-		get => isInitialized ? DevExpress.Ui.DxPivotGridFieldChooserInterop.GetHeaderFilter(dxTarget) : headerFilter;
+		get => isInitialized ? DevExpress.Ui.DxPivotGridFieldChooserInterop.GetHeaderFilter(dxTarget).Result : headerFilter;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxPivotGridFieldChooserInterop.SetHeaderFilter(dxTarget, value);
@@ -75,7 +75,7 @@
 	object height;
 	[Parameter]
 	object Height {
-		get => isInitialized ? DevExpress.Ui.DxPivotGridFieldChooserInterop.GetHeight(dxTarget) : height;
+		get => isInitialized ? DevExpress.Ui.DxPivotGridFieldChooserInterop.GetHeight(dxTarget).Result : height;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxPivotGridFieldChooserInterop.SetHeight(dxTarget, value);
@@ -87,7 +87,7 @@
 	object layout;
 	[Parameter]
 	object Layout {
-		get => isInitialized ? DevExpress.Ui.DxPivotGridFieldChooserInterop.GetLayout(dxTarget) : layout;
+		get => isInitialized ? DevExpress.Ui.DxPivotGridFieldChooserInterop.GetLayout(dxTarget).Result : layout;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxPivotGridFieldChooserInterop.SetLayout(dxTarget, value);
@@ -99,7 +99,7 @@
 	object state;
 	[Parameter]
 	object State {
-		get => isInitialized ? DevExpress.Ui.DxPivotGridFieldChooserInterop.GetState(dxTarget) : state;
+		get => isInitialized ? DevExpress.Ui.DxPivotGridFieldChooserInterop.GetState(dxTarget).Result : state;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxPivotGridFieldChooserInterop.SetState(dxTarget, value);
@@ -111,7 +111,7 @@
 	object texts;
 	[Parameter]
 	object Texts {
-		get => isInitialized ? DevExpress.Ui.DxPivotGridFieldChooserInterop.GetTexts(dxTarget) : texts;
+		get => isInitialized ? DevExpress.Ui.DxPivotGridFieldChooserInterop.GetTexts(dxTarget).Result : texts;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxPivotGridFieldChooserInterop.SetTexts(dxTarget, value);
@@ -144,7 +144,7 @@
 		DevExpress.Ui.DxPivotGridFieldChooserInterop.CancelChanges(dxTarget);
 	}
 	public object GetDataSourceEx() {
-		return DevExpress.Ui.DxPivotGridFieldChooserInterop.GetDataSourceEx(dxTarget);
+		return DevExpress.Ui.DxPivotGridFieldChooserInterop.GetDataSourceEx(dxTarget).Result;
 	}
 	public void UpdateDimensions() {
 		DevExpress.Ui.DxPivotGridFieldChooserInterop.UpdateDimensions(dxTarget);

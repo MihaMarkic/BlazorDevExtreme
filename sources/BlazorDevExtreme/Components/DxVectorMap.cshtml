@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Viz.Map.DxVectorMapOptions>
+@inherits DxBlazorComponent<DevExpress.Viz.Map.DxVectorMapOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -40,13 +40,13 @@
 			onZoomFactorChangedEnabled = onZoomFactorChangedEnabled,
 		};
 	}
-	protected override void Init(DevExpress.Viz.Map.DxVectorMapOptions options) {
-		DevExpress.Viz.DxVectorMapInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Viz.Map.DxVectorMapOptions options) {
+return 		DevExpress.Viz.DxVectorMapInterop.Init(dxTarget, options);
 	}
 	object areaSettings;
 	[Parameter]
 	object AreaSettings {
-		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetAreaSettings(dxTarget) : areaSettings;
+		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetAreaSettings(dxTarget).Result : areaSettings;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxVectorMapInterop.SetAreaSettings(dxTarget, value);
@@ -58,7 +58,7 @@
 	object background;
 	[Parameter]
 	object Background {
-		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetBackground(dxTarget) : background;
+		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetBackground(dxTarget).Result : background;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxVectorMapInterop.SetBackground(dxTarget, value);
@@ -70,7 +70,7 @@
 	object bounds;
 	[Parameter]
 	object Bounds {
-		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetBounds(dxTarget) : bounds;
+		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetBounds(dxTarget).Result : bounds;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxVectorMapInterop.SetBounds(dxTarget, value);
@@ -82,7 +82,7 @@
 	object center;
 	[Parameter]
 	object Center {
-		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetCenter(dxTarget) : center;
+		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetCenter(dxTarget).Result : center;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxVectorMapInterop.SetCenter(dxTarget, value);
@@ -94,7 +94,7 @@
 	object controlBar;
 	[Parameter]
 	object ControlBar {
-		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetControlBar(dxTarget) : controlBar;
+		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetControlBar(dxTarget).Result : controlBar;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxVectorMapInterop.SetControlBar(dxTarget, value);
@@ -106,7 +106,7 @@
 	object layers;
 	[Parameter]
 	object Layers {
-		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetLayers(dxTarget) : layers;
+		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetLayers(dxTarget).Result : layers;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxVectorMapInterop.SetLayers(dxTarget, value);
@@ -118,7 +118,7 @@
 	object legends;
 	[Parameter]
 	object Legends {
-		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetLegends(dxTarget) : legends;
+		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetLegends(dxTarget).Result : legends;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxVectorMapInterop.SetLegends(dxTarget, value);
@@ -130,7 +130,7 @@
 	object mapData;
 	[Parameter]
 	object MapData {
-		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetMapData(dxTarget) : mapData;
+		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetMapData(dxTarget).Result : mapData;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxVectorMapInterop.SetMapData(dxTarget, value);
@@ -142,7 +142,7 @@
 	object markers;
 	[Parameter]
 	object Markers {
-		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetMarkers(dxTarget) : markers;
+		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetMarkers(dxTarget).Result : markers;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxVectorMapInterop.SetMarkers(dxTarget, value);
@@ -154,7 +154,7 @@
 	object markerSettings;
 	[Parameter]
 	object MarkerSettings {
-		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetMarkerSettings(dxTarget) : markerSettings;
+		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetMarkerSettings(dxTarget).Result : markerSettings;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxVectorMapInterop.SetMarkerSettings(dxTarget, value);
@@ -166,7 +166,7 @@
 	float? maxZoomFactor;
 	[Parameter]
 	float? MaxZoomFactor {
-		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetMaxZoomFactor(dxTarget) : maxZoomFactor;
+		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetMaxZoomFactor(dxTarget).Result : maxZoomFactor;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxVectorMapInterop.SetMaxZoomFactor(dxTarget, value);
@@ -178,7 +178,7 @@
 	bool? panningEnabled;
 	[Parameter]
 	bool? PanningEnabled {
-		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetPanningEnabled(dxTarget) : panningEnabled;
+		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetPanningEnabled(dxTarget).Result : panningEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxVectorMapInterop.SetPanningEnabled(dxTarget, value);
@@ -190,7 +190,7 @@
 	object projection;
 	[Parameter]
 	object Projection {
-		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetProjection(dxTarget) : projection;
+		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetProjection(dxTarget).Result : projection;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxVectorMapInterop.SetProjection(dxTarget, value);
@@ -202,7 +202,7 @@
 	object tooltip;
 	[Parameter]
 	object Tooltip {
-		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetTooltip(dxTarget) : tooltip;
+		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetTooltip(dxTarget).Result : tooltip;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxVectorMapInterop.SetTooltip(dxTarget, value);
@@ -214,7 +214,7 @@
 	bool? touchEnabled;
 	[Parameter]
 	bool? TouchEnabled {
-		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetTouchEnabled(dxTarget) : touchEnabled;
+		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetTouchEnabled(dxTarget).Result : touchEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxVectorMapInterop.SetTouchEnabled(dxTarget, value);
@@ -226,7 +226,7 @@
 	bool? wheelEnabled;
 	[Parameter]
 	bool? WheelEnabled {
-		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetWheelEnabled(dxTarget) : wheelEnabled;
+		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetWheelEnabled(dxTarget).Result : wheelEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxVectorMapInterop.SetWheelEnabled(dxTarget, value);
@@ -238,7 +238,7 @@
 	float? zoomFactor;
 	[Parameter]
 	float? ZoomFactor {
-		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetZoomFactor(dxTarget) : zoomFactor;
+		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetZoomFactor(dxTarget).Result : zoomFactor;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxVectorMapInterop.SetZoomFactor(dxTarget, value);
@@ -250,7 +250,7 @@
 	bool? zoomingEnabled;
 	[Parameter]
 	bool? ZoomingEnabled {
-		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetZoomingEnabled(dxTarget) : zoomingEnabled;
+		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetZoomingEnabled(dxTarget).Result : zoomingEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.DxVectorMapInterop.SetZoomingEnabled(dxTarget, value);
@@ -403,7 +403,7 @@
 		}
 	}
 	public object CenterEx() {
-		return DevExpress.Viz.DxVectorMapInterop.CenterEx(dxTarget);
+		return DevExpress.Viz.DxVectorMapInterop.CenterEx(dxTarget).Result;
 	}
 	public void CenterEx(object centerCoordinates) {
 		DevExpress.Viz.DxVectorMapInterop.CenterEx(dxTarget, centerCoordinates);
@@ -418,31 +418,31 @@
 		DevExpress.Viz.DxVectorMapInterop.ClearSelection(dxTarget);
 	}
 	public object ConvertCoordinates(float x, float y) {
-		return DevExpress.Viz.DxVectorMapInterop.ConvertCoordinates(dxTarget, x, y);
+		return DevExpress.Viz.DxVectorMapInterop.ConvertCoordinates(dxTarget, x, y).Result;
 	}
 	public object GetAreas() {
-		return DevExpress.Viz.DxVectorMapInterop.GetAreas(dxTarget);
+		return DevExpress.Viz.DxVectorMapInterop.GetAreas(dxTarget).Result;
 	}
 	public object GetLayerByIndex(float index) {
-		return DevExpress.Viz.DxVectorMapInterop.GetLayerByIndex(dxTarget, index);
+		return DevExpress.Viz.DxVectorMapInterop.GetLayerByIndex(dxTarget, index).Result;
 	}
 	public object GetLayerByName(string name) {
-		return DevExpress.Viz.DxVectorMapInterop.GetLayerByName(dxTarget, name);
+		return DevExpress.Viz.DxVectorMapInterop.GetLayerByName(dxTarget, name).Result;
 	}
 	public object GetLayersEx() {
-		return DevExpress.Viz.DxVectorMapInterop.GetLayersEx(dxTarget);
+		return DevExpress.Viz.DxVectorMapInterop.GetLayersEx(dxTarget).Result;
 	}
 	public object GetMarkersEx() {
-		return DevExpress.Viz.DxVectorMapInterop.GetMarkersEx(dxTarget);
+		return DevExpress.Viz.DxVectorMapInterop.GetMarkersEx(dxTarget).Result;
 	}
 	public object Viewport() {
-		return DevExpress.Viz.DxVectorMapInterop.Viewport(dxTarget);
+		return DevExpress.Viz.DxVectorMapInterop.Viewport(dxTarget).Result;
 	}
 	public void Viewport(object viewportCoordinates) {
 		DevExpress.Viz.DxVectorMapInterop.Viewport(dxTarget, viewportCoordinates);
 	}
 	public float ZoomFactorEx() {
-		return DevExpress.Viz.DxVectorMapInterop.ZoomFactorEx(dxTarget);
+		return DevExpress.Viz.DxVectorMapInterop.ZoomFactorEx(dxTarget).Result;
 	}
 	public void ZoomFactorEx(float zoomFactor) {
 		DevExpress.Viz.DxVectorMapInterop.ZoomFactorEx(dxTarget, zoomFactor);

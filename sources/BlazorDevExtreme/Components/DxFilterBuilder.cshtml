@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorCompoment<DevExpress.Ui.DxFilterBuilderOptions>
+@inherits DxBlazorComponent<DevExpress.Ui.DxFilterBuilderOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
@@ -21,13 +21,13 @@
 			onValueChangedEnabled = onValueChangedEnabled,
 		};
 	}
-	protected override void Init(DevExpress.Ui.DxFilterBuilderOptions options) {
-		DevExpress.Ui.DxFilterBuilderInterop.Init(dxTarget, options);
+	protected override Task Init(DevExpress.Ui.DxFilterBuilderOptions options) {
+return 		DevExpress.Ui.DxFilterBuilderInterop.Init(dxTarget, options);
 	}
 	bool? allowHierarchicalFields;
 	[Parameter]
 	bool? AllowHierarchicalFields {
-		get => isInitialized ? DevExpress.Ui.DxFilterBuilderInterop.GetAllowHierarchicalFields(dxTarget) : allowHierarchicalFields;
+		get => isInitialized ? DevExpress.Ui.DxFilterBuilderInterop.GetAllowHierarchicalFields(dxTarget).Result : allowHierarchicalFields;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxFilterBuilderInterop.SetAllowHierarchicalFields(dxTarget, value);
@@ -39,7 +39,7 @@
 	object customOperations;
 	[Parameter]
 	object CustomOperations {
-		get => isInitialized ? DevExpress.Ui.DxFilterBuilderInterop.GetCustomOperations(dxTarget) : customOperations;
+		get => isInitialized ? DevExpress.Ui.DxFilterBuilderInterop.GetCustomOperations(dxTarget).Result : customOperations;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxFilterBuilderInterop.SetCustomOperations(dxTarget, value);
@@ -51,7 +51,7 @@
 	object fields;
 	[Parameter]
 	object Fields {
-		get => isInitialized ? DevExpress.Ui.DxFilterBuilderInterop.GetFields(dxTarget) : fields;
+		get => isInitialized ? DevExpress.Ui.DxFilterBuilderInterop.GetFields(dxTarget).Result : fields;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxFilterBuilderInterop.SetFields(dxTarget, value);
@@ -63,7 +63,7 @@
 	object filterOperationDescriptions;
 	[Parameter]
 	object FilterOperationDescriptions {
-		get => isInitialized ? DevExpress.Ui.DxFilterBuilderInterop.GetFilterOperationDescriptions(dxTarget) : filterOperationDescriptions;
+		get => isInitialized ? DevExpress.Ui.DxFilterBuilderInterop.GetFilterOperationDescriptions(dxTarget).Result : filterOperationDescriptions;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxFilterBuilderInterop.SetFilterOperationDescriptions(dxTarget, value);
@@ -75,7 +75,7 @@
 	object groupOperationDescriptions;
 	[Parameter]
 	object GroupOperationDescriptions {
-		get => isInitialized ? DevExpress.Ui.DxFilterBuilderInterop.GetGroupOperationDescriptions(dxTarget) : groupOperationDescriptions;
+		get => isInitialized ? DevExpress.Ui.DxFilterBuilderInterop.GetGroupOperationDescriptions(dxTarget).Result : groupOperationDescriptions;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxFilterBuilderInterop.SetGroupOperationDescriptions(dxTarget, value);
@@ -87,7 +87,7 @@
 	object value;
 	[Parameter]
 	object Value {
-		get => isInitialized ? DevExpress.Ui.DxFilterBuilderInterop.GetValue(dxTarget) : value;
+		get => isInitialized ? DevExpress.Ui.DxFilterBuilderInterop.GetValue(dxTarget).Result : value;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxFilterBuilderInterop.SetValue(dxTarget, value);
@@ -142,7 +142,7 @@
 		}
 	}
 	public object GetFilterExpression() {
-		return DevExpress.Ui.DxFilterBuilderInterop.GetFilterExpression(dxTarget);
+		return DevExpress.Ui.DxFilterBuilderInterop.GetFilterExpression(dxTarget).Result;
 	}
 	public void Dispose() {
 		DevExpress.Ui.DxFilterBuilderInterop.EditorPrepared -= DxFilterBuilder_EditorPrepared;

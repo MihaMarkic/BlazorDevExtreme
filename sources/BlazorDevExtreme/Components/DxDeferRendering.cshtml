@@ -14,12 +14,29 @@
 			renderWhen = renderWhen,
 			showLoadIndicator = showLoadIndicator,
 			staggerItemSelector = staggerItemSelector,
+			accessKey = accessKey,
+			activeStateEnabled = activeStateEnabled,
+			disabled = disabled,
+			focusStateEnabled = focusStateEnabled,
+			hint = hint,
+			hoverStateEnabled = hoverStateEnabled,
+			tabIndex = tabIndex,
+			visible = visible,
+			bindingOptions = bindingOptions,
+			elementAttr = elementAttr,
+			height = height,
+			rtlEnabled = rtlEnabled,
+			width = width,
 			onRenderedEnabled = onRenderedEnabled,
 			onShownEnabled = onShownEnabled,
+			onContentReadyEnabled = onContentReadyEnabled,
+			onDisposingEnabled = onDisposingEnabled,
+			onOptionChangedEnabled = onOptionChangedEnabled,
+			onInitializedEnabled = onInitializedEnabled,
 		};
 	}
 	protected override Task Init(DevExpress.Ui.DxDeferRenderingOptions options) {
-return 		DevExpress.Ui.DxDeferRenderingInterop.Init(dxTarget, options);
+		return DevExpress.Ui.DxDeferRenderingInterop.Init(dxTarget, options);
 	}
 	object animation;
 	[Parameter]
@@ -48,7 +65,7 @@ return 		DevExpress.Ui.DxDeferRenderingInterop.Init(dxTarget, options);
 	bool? showLoadIndicator;
 	[Parameter]
 	bool? ShowLoadIndicator {
-		get => isInitialized ? DevExpress.Ui.DxDeferRenderingInterop.GetShowLoadIndicator(dxTarget).Result : showLoadIndicator;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDeferRenderingInterop.GetShowLoadIndicator(dxTarget).Result : showLoadIndicator;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDeferRenderingInterop.SetShowLoadIndicator(dxTarget, value);
@@ -60,12 +77,168 @@ return 		DevExpress.Ui.DxDeferRenderingInterop.Init(dxTarget, options);
 	string staggerItemSelector;
 	[Parameter]
 	string StaggerItemSelector {
-		get => isInitialized ? DevExpress.Ui.DxDeferRenderingInterop.GetStaggerItemSelector(dxTarget).Result : staggerItemSelector;
+		get => isInitialized ? (string)DevExpress.Ui.DxDeferRenderingInterop.GetStaggerItemSelector(dxTarget).Result : staggerItemSelector;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxDeferRenderingInterop.SetStaggerItemSelector(dxTarget, value);
 			} else {
 				this.staggerItemSelector = value;
+			}
+		}
+	}
+	string accessKey;
+	[Parameter]
+	string AccessKey {
+		get => isInitialized ? (string)DevExpress.Ui.DxDeferRenderingInterop.GetAccessKey(dxTarget).Result : accessKey;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDeferRenderingInterop.SetAccessKey(dxTarget, value);
+			} else {
+				this.accessKey = value;
+			}
+		}
+	}
+	bool? activeStateEnabled;
+	[Parameter]
+	bool? ActiveStateEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDeferRenderingInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDeferRenderingInterop.SetActiveStateEnabled(dxTarget, value);
+			} else {
+				this.activeStateEnabled = value;
+			}
+		}
+	}
+	bool? disabled;
+	[Parameter]
+	bool? Disabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDeferRenderingInterop.GetDisabled(dxTarget).Result : disabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDeferRenderingInterop.SetDisabled(dxTarget, value);
+			} else {
+				this.disabled = value;
+			}
+		}
+	}
+	bool? focusStateEnabled;
+	[Parameter]
+	bool? FocusStateEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDeferRenderingInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDeferRenderingInterop.SetFocusStateEnabled(dxTarget, value);
+			} else {
+				this.focusStateEnabled = value;
+			}
+		}
+	}
+	string hint;
+	[Parameter]
+	string Hint {
+		get => isInitialized ? (string)DevExpress.Ui.DxDeferRenderingInterop.GetHint(dxTarget).Result : hint;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDeferRenderingInterop.SetHint(dxTarget, value);
+			} else {
+				this.hint = value;
+			}
+		}
+	}
+	bool? hoverStateEnabled;
+	[Parameter]
+	bool? HoverStateEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDeferRenderingInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDeferRenderingInterop.SetHoverStateEnabled(dxTarget, value);
+			} else {
+				this.hoverStateEnabled = value;
+			}
+		}
+	}
+	float? tabIndex;
+	[Parameter]
+	float? TabIndex {
+		get => isInitialized ? (float?)DevExpress.Ui.DxDeferRenderingInterop.GetTabIndex(dxTarget).Result : tabIndex;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDeferRenderingInterop.SetTabIndex(dxTarget, value);
+			} else {
+				this.tabIndex = value;
+			}
+		}
+	}
+	bool? visible;
+	[Parameter]
+	bool? Visible {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDeferRenderingInterop.GetVisible(dxTarget).Result : visible;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDeferRenderingInterop.SetVisible(dxTarget, value);
+			} else {
+				this.visible = value;
+			}
+		}
+	}
+	object bindingOptions;
+	[Parameter]
+	object BindingOptions {
+		get => isInitialized ? DevExpress.Ui.DxDeferRenderingInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDeferRenderingInterop.SetBindingOptions(dxTarget, value);
+			} else {
+				this.bindingOptions = value;
+			}
+		}
+	}
+	object elementAttr;
+	[Parameter]
+	object ElementAttr {
+		get => isInitialized ? DevExpress.Ui.DxDeferRenderingInterop.GetElementAttr(dxTarget).Result : elementAttr;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDeferRenderingInterop.SetElementAttr(dxTarget, value);
+			} else {
+				this.elementAttr = value;
+			}
+		}
+	}
+	object height;
+	[Parameter]
+	object Height {
+		get => isInitialized ? DevExpress.Ui.DxDeferRenderingInterop.GetHeight(dxTarget).Result : height;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDeferRenderingInterop.SetHeight(dxTarget, value);
+			} else {
+				this.height = value;
+			}
+		}
+	}
+	bool? rtlEnabled;
+	[Parameter]
+	bool? RtlEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDeferRenderingInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDeferRenderingInterop.SetRtlEnabled(dxTarget, value);
+			} else {
+				this.rtlEnabled = value;
+			}
+		}
+	}
+	object width;
+	[Parameter]
+	object Width {
+		get => isInitialized ? DevExpress.Ui.DxDeferRenderingInterop.GetWidth(dxTarget).Result : width;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDeferRenderingInterop.SetWidth(dxTarget, value);
+			} else {
+				this.width = value;
 			}
 		}
 	}
@@ -81,10 +254,38 @@ return 		DevExpress.Ui.DxDeferRenderingInterop.Init(dxTarget, options);
 		get => onShownEnabled;
 		set => this.onShownEnabled = value;
 	}
+	bool? onContentReadyEnabled;
+	[Parameter]
+	bool? OnContentReadyEnabled {
+		get => onContentReadyEnabled;
+		set => this.onContentReadyEnabled = value;
+	}
+	bool? onDisposingEnabled;
+	[Parameter]
+	bool? OnDisposingEnabled {
+		get => onDisposingEnabled;
+		set => this.onDisposingEnabled = value;
+	}
+	bool? onOptionChangedEnabled;
+	[Parameter]
+	bool? OnOptionChangedEnabled {
+		get => onOptionChangedEnabled;
+		set => this.onOptionChangedEnabled = value;
+	}
+	bool? onInitializedEnabled;
+	[Parameter]
+	bool? OnInitializedEnabled {
+		get => onInitializedEnabled;
+		set => this.onInitializedEnabled = value;
+	}
 	protected override async Task OnInitAsync() {
 		await base.OnInitAsync();
 		DevExpress.Ui.DxDeferRenderingInterop.Rendered += DxDeferRendering_Rendered;
 		DevExpress.Ui.DxDeferRenderingInterop.Shown += DxDeferRendering_Shown;
+		DevExpress.Ui.DxDeferRenderingInterop.ContentReady += DxDeferRendering_ContentReady;
+		DevExpress.Ui.DxDeferRenderingInterop.Disposing += DxDeferRendering_Disposing;
+		DevExpress.Ui.DxDeferRenderingInterop.OptionChanged += DxDeferRendering_OptionChanged;
+		DevExpress.Ui.DxDeferRenderingInterop.Initialized += DxDeferRendering_Initialized;
 	}
 	[Parameter]
 	Action Rendered { get; set; }
@@ -100,8 +301,40 @@ return 		DevExpress.Ui.DxDeferRenderingInterop.Init(dxTarget, options);
 			Shown?.Invoke();
 		}
 	}
+	[Parameter]
+	Action ContentReady { get; set; }
+	void DxDeferRendering_ContentReady(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			ContentReady?.Invoke();
+		}
+	}
+	[Parameter]
+	Action Disposing { get; set; }
+	void DxDeferRendering_Disposing(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Disposing?.Invoke();
+		}
+	}
+	[Parameter]
+	Action OptionChanged { get; set; }
+	void DxDeferRendering_OptionChanged(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			OptionChanged?.Invoke();
+		}
+	}
+	[Parameter]
+	Action Initialized { get; set; }
+	void DxDeferRendering_Initialized(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Initialized?.Invoke();
+		}
+	}
 	public void Dispose() {
 		DevExpress.Ui.DxDeferRenderingInterop.Rendered -= DxDeferRendering_Rendered;
 		DevExpress.Ui.DxDeferRenderingInterop.Shown -= DxDeferRendering_Shown;
+		DevExpress.Ui.DxDeferRenderingInterop.ContentReady -= DxDeferRendering_ContentReady;
+		DevExpress.Ui.DxDeferRenderingInterop.Disposing -= DxDeferRendering_Disposing;
+		DevExpress.Ui.DxDeferRenderingInterop.OptionChanged -= DxDeferRendering_OptionChanged;
+		DevExpress.Ui.DxDeferRenderingInterop.Initialized -= DxDeferRendering_Initialized;
 	}
 }

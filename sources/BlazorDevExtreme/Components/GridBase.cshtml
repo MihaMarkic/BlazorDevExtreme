@@ -50,6 +50,19 @@
 			stateStoring = stateStoring,
 			twoWayBindingEnabled = twoWayBindingEnabled,
 			wordWrapEnabled = wordWrapEnabled,
+			accessKey = accessKey,
+			activeStateEnabled = activeStateEnabled,
+			disabled = disabled,
+			focusStateEnabled = focusStateEnabled,
+			hint = hint,
+			hoverStateEnabled = hoverStateEnabled,
+			tabIndex = tabIndex,
+			visible = visible,
+			bindingOptions = bindingOptions,
+			elementAttr = elementAttr,
+			height = height,
+			rtlEnabled = rtlEnabled,
+			width = width,
 			onAdaptiveDetailRowPreparingEnabled = onAdaptiveDetailRowPreparingEnabled,
 			onDataErrorOccurredEnabled = onDataErrorOccurredEnabled,
 			onInitNewRowEnabled = onInitNewRowEnabled,
@@ -67,15 +80,19 @@
 			onRowValidatingEnabled = onRowValidatingEnabled,
 			onSelectionChangedEnabled = onSelectionChangedEnabled,
 			onToolbarPreparingEnabled = onToolbarPreparingEnabled,
+			onContentReadyEnabled = onContentReadyEnabled,
+			onDisposingEnabled = onDisposingEnabled,
+			onOptionChangedEnabled = onOptionChangedEnabled,
+			onInitializedEnabled = onInitializedEnabled,
 		};
 	}
 	protected override Task Init(DevExpress.Ui.GridBaseOptions options) {
-return 		DevExpress.Ui.GridBaseInterop.Init(dxTarget, options);
+		return DevExpress.Ui.GridBaseInterop.Init(dxTarget, options);
 	}
 	bool? allowColumnReordering;
 	[Parameter]
 	bool? AllowColumnReordering {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetAllowColumnReordering(dxTarget).Result : allowColumnReordering;
+		get => isInitialized ? (bool?)DevExpress.Ui.GridBaseInterop.GetAllowColumnReordering(dxTarget).Result : allowColumnReordering;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.GridBaseInterop.SetAllowColumnReordering(dxTarget, value);
@@ -87,7 +104,7 @@ return 		DevExpress.Ui.GridBaseInterop.Init(dxTarget, options);
 	bool? allowColumnResizing;
 	[Parameter]
 	bool? AllowColumnResizing {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetAllowColumnResizing(dxTarget).Result : allowColumnResizing;
+		get => isInitialized ? (bool?)DevExpress.Ui.GridBaseInterop.GetAllowColumnResizing(dxTarget).Result : allowColumnResizing;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.GridBaseInterop.SetAllowColumnResizing(dxTarget, value);
@@ -99,7 +116,7 @@ return 		DevExpress.Ui.GridBaseInterop.Init(dxTarget, options);
 	bool? cacheEnabled;
 	[Parameter]
 	bool? CacheEnabled {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetCacheEnabled(dxTarget).Result : cacheEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.GridBaseInterop.GetCacheEnabled(dxTarget).Result : cacheEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.GridBaseInterop.SetCacheEnabled(dxTarget, value);
@@ -111,7 +128,7 @@ return 		DevExpress.Ui.GridBaseInterop.Init(dxTarget, options);
 	bool? cellHintEnabled;
 	[Parameter]
 	bool? CellHintEnabled {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetCellHintEnabled(dxTarget).Result : cellHintEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.GridBaseInterop.GetCellHintEnabled(dxTarget).Result : cellHintEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.GridBaseInterop.SetCellHintEnabled(dxTarget, value);
@@ -123,7 +140,7 @@ return 		DevExpress.Ui.GridBaseInterop.Init(dxTarget, options);
 	bool? columnAutoWidth;
 	[Parameter]
 	bool? ColumnAutoWidth {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetColumnAutoWidth(dxTarget).Result : columnAutoWidth;
+		get => isInitialized ? (bool?)DevExpress.Ui.GridBaseInterop.GetColumnAutoWidth(dxTarget).Result : columnAutoWidth;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.GridBaseInterop.SetColumnAutoWidth(dxTarget, value);
@@ -159,7 +176,7 @@ return 		DevExpress.Ui.GridBaseInterop.Init(dxTarget, options);
 	bool? columnHidingEnabled;
 	[Parameter]
 	bool? ColumnHidingEnabled {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetColumnHidingEnabled(dxTarget).Result : columnHidingEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.GridBaseInterop.GetColumnHidingEnabled(dxTarget).Result : columnHidingEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.GridBaseInterop.SetColumnHidingEnabled(dxTarget, value);
@@ -171,7 +188,7 @@ return 		DevExpress.Ui.GridBaseInterop.Init(dxTarget, options);
 	float? columnMinWidth;
 	[Parameter]
 	float? ColumnMinWidth {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetColumnMinWidth(dxTarget).Result : columnMinWidth;
+		get => isInitialized ? (float?)DevExpress.Ui.GridBaseInterop.GetColumnMinWidth(dxTarget).Result : columnMinWidth;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.GridBaseInterop.SetColumnMinWidth(dxTarget, value);
@@ -183,7 +200,7 @@ return 		DevExpress.Ui.GridBaseInterop.Init(dxTarget, options);
 	string columnResizingMode;
 	[Parameter]
 	string ColumnResizingMode {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetColumnResizingMode(dxTarget).Result : columnResizingMode;
+		get => isInitialized ? (string)DevExpress.Ui.GridBaseInterop.GetColumnResizingMode(dxTarget).Result : columnResizingMode;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.GridBaseInterop.SetColumnResizingMode(dxTarget, value);
@@ -207,7 +224,7 @@ return 		DevExpress.Ui.GridBaseInterop.Init(dxTarget, options);
 	float? columnWidth;
 	[Parameter]
 	float? ColumnWidth {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetColumnWidth(dxTarget).Result : columnWidth;
+		get => isInitialized ? (float?)DevExpress.Ui.GridBaseInterop.GetColumnWidth(dxTarget).Result : columnWidth;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.GridBaseInterop.SetColumnWidth(dxTarget, value);
@@ -231,7 +248,7 @@ return 		DevExpress.Ui.GridBaseInterop.Init(dxTarget, options);
 	string dateSerializationFormat;
 	[Parameter]
 	string DateSerializationFormat {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetDateSerializationFormat(dxTarget).Result : dateSerializationFormat;
+		get => isInitialized ? (string)DevExpress.Ui.GridBaseInterop.GetDateSerializationFormat(dxTarget).Result : dateSerializationFormat;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.GridBaseInterop.SetDateSerializationFormat(dxTarget, value);
@@ -255,7 +272,7 @@ return 		DevExpress.Ui.GridBaseInterop.Init(dxTarget, options);
 	bool? errorRowEnabled;
 	[Parameter]
 	bool? ErrorRowEnabled {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetErrorRowEnabled(dxTarget).Result : errorRowEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.GridBaseInterop.GetErrorRowEnabled(dxTarget).Result : errorRowEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.GridBaseInterop.SetErrorRowEnabled(dxTarget, value);
@@ -363,7 +380,7 @@ return 		DevExpress.Ui.GridBaseInterop.Init(dxTarget, options);
 	string noDataText;
 	[Parameter]
 	string NoDataText {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetNoDataText(dxTarget).Result : noDataText;
+		get => isInitialized ? (string)DevExpress.Ui.GridBaseInterop.GetNoDataText(dxTarget).Result : noDataText;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.GridBaseInterop.SetNoDataText(dxTarget, value);
@@ -399,7 +416,7 @@ return 		DevExpress.Ui.GridBaseInterop.Init(dxTarget, options);
 	bool? rowAlternationEnabled;
 	[Parameter]
 	bool? RowAlternationEnabled {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetRowAlternationEnabled(dxTarget).Result : rowAlternationEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.GridBaseInterop.GetRowAlternationEnabled(dxTarget).Result : rowAlternationEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.GridBaseInterop.SetRowAlternationEnabled(dxTarget, value);
@@ -459,7 +476,7 @@ return 		DevExpress.Ui.GridBaseInterop.Init(dxTarget, options);
 	bool? showBorders;
 	[Parameter]
 	bool? ShowBorders {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetShowBorders(dxTarget).Result : showBorders;
+		get => isInitialized ? (bool?)DevExpress.Ui.GridBaseInterop.GetShowBorders(dxTarget).Result : showBorders;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.GridBaseInterop.SetShowBorders(dxTarget, value);
@@ -471,7 +488,7 @@ return 		DevExpress.Ui.GridBaseInterop.Init(dxTarget, options);
 	bool? showColumnHeaders;
 	[Parameter]
 	bool? ShowColumnHeaders {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetShowColumnHeaders(dxTarget).Result : showColumnHeaders;
+		get => isInitialized ? (bool?)DevExpress.Ui.GridBaseInterop.GetShowColumnHeaders(dxTarget).Result : showColumnHeaders;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.GridBaseInterop.SetShowColumnHeaders(dxTarget, value);
@@ -483,7 +500,7 @@ return 		DevExpress.Ui.GridBaseInterop.Init(dxTarget, options);
 	bool? showColumnLines;
 	[Parameter]
 	bool? ShowColumnLines {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetShowColumnLines(dxTarget).Result : showColumnLines;
+		get => isInitialized ? (bool?)DevExpress.Ui.GridBaseInterop.GetShowColumnLines(dxTarget).Result : showColumnLines;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.GridBaseInterop.SetShowColumnLines(dxTarget, value);
@@ -495,7 +512,7 @@ return 		DevExpress.Ui.GridBaseInterop.Init(dxTarget, options);
 	bool? showRowLines;
 	[Parameter]
 	bool? ShowRowLines {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetShowRowLines(dxTarget).Result : showRowLines;
+		get => isInitialized ? (bool?)DevExpress.Ui.GridBaseInterop.GetShowRowLines(dxTarget).Result : showRowLines;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.GridBaseInterop.SetShowRowLines(dxTarget, value);
@@ -531,7 +548,7 @@ return 		DevExpress.Ui.GridBaseInterop.Init(dxTarget, options);
 	bool? twoWayBindingEnabled;
 	[Parameter]
 	bool? TwoWayBindingEnabled {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetTwoWayBindingEnabled(dxTarget).Result : twoWayBindingEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.GridBaseInterop.GetTwoWayBindingEnabled(dxTarget).Result : twoWayBindingEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.GridBaseInterop.SetTwoWayBindingEnabled(dxTarget, value);
@@ -543,12 +560,168 @@ return 		DevExpress.Ui.GridBaseInterop.Init(dxTarget, options);
 	bool? wordWrapEnabled;
 	[Parameter]
 	bool? WordWrapEnabled {
-		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetWordWrapEnabled(dxTarget).Result : wordWrapEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.GridBaseInterop.GetWordWrapEnabled(dxTarget).Result : wordWrapEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.GridBaseInterop.SetWordWrapEnabled(dxTarget, value);
 			} else {
 				this.wordWrapEnabled = value;
+			}
+		}
+	}
+	string accessKey;
+	[Parameter]
+	string AccessKey {
+		get => isInitialized ? (string)DevExpress.Ui.GridBaseInterop.GetAccessKey(dxTarget).Result : accessKey;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.GridBaseInterop.SetAccessKey(dxTarget, value);
+			} else {
+				this.accessKey = value;
+			}
+		}
+	}
+	bool? activeStateEnabled;
+	[Parameter]
+	bool? ActiveStateEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.GridBaseInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.GridBaseInterop.SetActiveStateEnabled(dxTarget, value);
+			} else {
+				this.activeStateEnabled = value;
+			}
+		}
+	}
+	bool? disabled;
+	[Parameter]
+	bool? Disabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.GridBaseInterop.GetDisabled(dxTarget).Result : disabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.GridBaseInterop.SetDisabled(dxTarget, value);
+			} else {
+				this.disabled = value;
+			}
+		}
+	}
+	bool? focusStateEnabled;
+	[Parameter]
+	bool? FocusStateEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.GridBaseInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.GridBaseInterop.SetFocusStateEnabled(dxTarget, value);
+			} else {
+				this.focusStateEnabled = value;
+			}
+		}
+	}
+	string hint;
+	[Parameter]
+	string Hint {
+		get => isInitialized ? (string)DevExpress.Ui.GridBaseInterop.GetHint(dxTarget).Result : hint;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.GridBaseInterop.SetHint(dxTarget, value);
+			} else {
+				this.hint = value;
+			}
+		}
+	}
+	bool? hoverStateEnabled;
+	[Parameter]
+	bool? HoverStateEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.GridBaseInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.GridBaseInterop.SetHoverStateEnabled(dxTarget, value);
+			} else {
+				this.hoverStateEnabled = value;
+			}
+		}
+	}
+	float? tabIndex;
+	[Parameter]
+	float? TabIndex {
+		get => isInitialized ? (float?)DevExpress.Ui.GridBaseInterop.GetTabIndex(dxTarget).Result : tabIndex;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.GridBaseInterop.SetTabIndex(dxTarget, value);
+			} else {
+				this.tabIndex = value;
+			}
+		}
+	}
+	bool? visible;
+	[Parameter]
+	bool? Visible {
+		get => isInitialized ? (bool?)DevExpress.Ui.GridBaseInterop.GetVisible(dxTarget).Result : visible;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.GridBaseInterop.SetVisible(dxTarget, value);
+			} else {
+				this.visible = value;
+			}
+		}
+	}
+	object bindingOptions;
+	[Parameter]
+	object BindingOptions {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.GridBaseInterop.SetBindingOptions(dxTarget, value);
+			} else {
+				this.bindingOptions = value;
+			}
+		}
+	}
+	object elementAttr;
+	[Parameter]
+	object ElementAttr {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetElementAttr(dxTarget).Result : elementAttr;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.GridBaseInterop.SetElementAttr(dxTarget, value);
+			} else {
+				this.elementAttr = value;
+			}
+		}
+	}
+	object height;
+	[Parameter]
+	object Height {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetHeight(dxTarget).Result : height;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.GridBaseInterop.SetHeight(dxTarget, value);
+			} else {
+				this.height = value;
+			}
+		}
+	}
+	bool? rtlEnabled;
+	[Parameter]
+	bool? RtlEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.GridBaseInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.GridBaseInterop.SetRtlEnabled(dxTarget, value);
+			} else {
+				this.rtlEnabled = value;
+			}
+		}
+	}
+	object width;
+	[Parameter]
+	object Width {
+		get => isInitialized ? DevExpress.Ui.GridBaseInterop.GetWidth(dxTarget).Result : width;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.GridBaseInterop.SetWidth(dxTarget, value);
+			} else {
+				this.width = value;
 			}
 		}
 	}
@@ -654,6 +827,30 @@ return 		DevExpress.Ui.GridBaseInterop.Init(dxTarget, options);
 		get => onToolbarPreparingEnabled;
 		set => this.onToolbarPreparingEnabled = value;
 	}
+	bool? onContentReadyEnabled;
+	[Parameter]
+	bool? OnContentReadyEnabled {
+		get => onContentReadyEnabled;
+		set => this.onContentReadyEnabled = value;
+	}
+	bool? onDisposingEnabled;
+	[Parameter]
+	bool? OnDisposingEnabled {
+		get => onDisposingEnabled;
+		set => this.onDisposingEnabled = value;
+	}
+	bool? onOptionChangedEnabled;
+	[Parameter]
+	bool? OnOptionChangedEnabled {
+		get => onOptionChangedEnabled;
+		set => this.onOptionChangedEnabled = value;
+	}
+	bool? onInitializedEnabled;
+	[Parameter]
+	bool? OnInitializedEnabled {
+		get => onInitializedEnabled;
+		set => this.onInitializedEnabled = value;
+	}
 	protected override async Task OnInitAsync() {
 		await base.OnInitAsync();
 		DevExpress.Ui.GridBaseInterop.AdaptiveDetailRowPreparing += GridBase_AdaptiveDetailRowPreparing;
@@ -673,6 +870,10 @@ return 		DevExpress.Ui.GridBaseInterop.Init(dxTarget, options);
 		DevExpress.Ui.GridBaseInterop.RowValidating += GridBase_RowValidating;
 		DevExpress.Ui.GridBaseInterop.SelectionChanged += GridBase_SelectionChanged;
 		DevExpress.Ui.GridBaseInterop.ToolbarPreparing += GridBase_ToolbarPreparing;
+		DevExpress.Ui.GridBaseInterop.ContentReady += GridBase_ContentReady;
+		DevExpress.Ui.GridBaseInterop.Disposing += GridBase_Disposing;
+		DevExpress.Ui.GridBaseInterop.OptionChanged += GridBase_OptionChanged;
+		DevExpress.Ui.GridBaseInterop.Initialized += GridBase_Initialized;
 	}
 	[Parameter]
 	Action AdaptiveDetailRowPreparing { get; set; }
@@ -791,6 +992,34 @@ return 		DevExpress.Ui.GridBaseInterop.Init(dxTarget, options);
 	void GridBase_ToolbarPreparing(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ToolbarPreparing?.Invoke();
+		}
+	}
+	[Parameter]
+	Action ContentReady { get; set; }
+	void GridBase_ContentReady(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			ContentReady?.Invoke();
+		}
+	}
+	[Parameter]
+	Action Disposing { get; set; }
+	void GridBase_Disposing(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Disposing?.Invoke();
+		}
+	}
+	[Parameter]
+	Action OptionChanged { get; set; }
+	void GridBase_OptionChanged(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			OptionChanged?.Invoke();
+		}
+	}
+	[Parameter]
+	Action Initialized { get; set; }
+	void GridBase_Initialized(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Initialized?.Invoke();
 		}
 	}
 	public void BeginCustomLoading(string messageText) {
@@ -997,5 +1226,9 @@ return 		DevExpress.Ui.GridBaseInterop.Init(dxTarget, options);
 		DevExpress.Ui.GridBaseInterop.RowValidating -= GridBase_RowValidating;
 		DevExpress.Ui.GridBaseInterop.SelectionChanged -= GridBase_SelectionChanged;
 		DevExpress.Ui.GridBaseInterop.ToolbarPreparing -= GridBase_ToolbarPreparing;
+		DevExpress.Ui.GridBaseInterop.ContentReady -= GridBase_ContentReady;
+		DevExpress.Ui.GridBaseInterop.Disposing -= GridBase_Disposing;
+		DevExpress.Ui.GridBaseInterop.OptionChanged -= GridBase_OptionChanged;
+		DevExpress.Ui.GridBaseInterop.Initialized -= GridBase_Initialized;
 	}
 }

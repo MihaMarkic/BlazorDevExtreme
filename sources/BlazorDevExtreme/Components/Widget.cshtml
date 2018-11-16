@@ -18,16 +18,24 @@
 			hoverStateEnabled = hoverStateEnabled,
 			tabIndex = tabIndex,
 			visible = visible,
+			bindingOptions = bindingOptions,
+			elementAttr = elementAttr,
+			height = height,
+			rtlEnabled = rtlEnabled,
+			width = width,
 			onContentReadyEnabled = onContentReadyEnabled,
+			onDisposingEnabled = onDisposingEnabled,
+			onOptionChangedEnabled = onOptionChangedEnabled,
+			onInitializedEnabled = onInitializedEnabled,
 		};
 	}
 	protected override Task Init(DevExpress.Ui.WidgetOptions options) {
-return 		DevExpress.Ui.WidgetInterop.Init(dxTarget, options);
+		return DevExpress.Ui.WidgetInterop.Init(dxTarget, options);
 	}
 	string accessKey;
 	[Parameter]
 	string AccessKey {
-		get => isInitialized ? DevExpress.Ui.WidgetInterop.GetAccessKey(dxTarget).Result : accessKey;
+		get => isInitialized ? (string)DevExpress.Ui.WidgetInterop.GetAccessKey(dxTarget).Result : accessKey;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.WidgetInterop.SetAccessKey(dxTarget, value);
@@ -39,7 +47,7 @@ return 		DevExpress.Ui.WidgetInterop.Init(dxTarget, options);
 	bool? activeStateEnabled;
 	[Parameter]
 	bool? ActiveStateEnabled {
-		get => isInitialized ? DevExpress.Ui.WidgetInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.WidgetInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.WidgetInterop.SetActiveStateEnabled(dxTarget, value);
@@ -51,7 +59,7 @@ return 		DevExpress.Ui.WidgetInterop.Init(dxTarget, options);
 	bool? disabled;
 	[Parameter]
 	bool? Disabled {
-		get => isInitialized ? DevExpress.Ui.WidgetInterop.GetDisabled(dxTarget).Result : disabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.WidgetInterop.GetDisabled(dxTarget).Result : disabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.WidgetInterop.SetDisabled(dxTarget, value);
@@ -63,7 +71,7 @@ return 		DevExpress.Ui.WidgetInterop.Init(dxTarget, options);
 	bool? focusStateEnabled;
 	[Parameter]
 	bool? FocusStateEnabled {
-		get => isInitialized ? DevExpress.Ui.WidgetInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.WidgetInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.WidgetInterop.SetFocusStateEnabled(dxTarget, value);
@@ -75,7 +83,7 @@ return 		DevExpress.Ui.WidgetInterop.Init(dxTarget, options);
 	string hint;
 	[Parameter]
 	string Hint {
-		get => isInitialized ? DevExpress.Ui.WidgetInterop.GetHint(dxTarget).Result : hint;
+		get => isInitialized ? (string)DevExpress.Ui.WidgetInterop.GetHint(dxTarget).Result : hint;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.WidgetInterop.SetHint(dxTarget, value);
@@ -87,7 +95,7 @@ return 		DevExpress.Ui.WidgetInterop.Init(dxTarget, options);
 	bool? hoverStateEnabled;
 	[Parameter]
 	bool? HoverStateEnabled {
-		get => isInitialized ? DevExpress.Ui.WidgetInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.WidgetInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.WidgetInterop.SetHoverStateEnabled(dxTarget, value);
@@ -99,7 +107,7 @@ return 		DevExpress.Ui.WidgetInterop.Init(dxTarget, options);
 	float? tabIndex;
 	[Parameter]
 	float? TabIndex {
-		get => isInitialized ? DevExpress.Ui.WidgetInterop.GetTabIndex(dxTarget).Result : tabIndex;
+		get => isInitialized ? (float?)DevExpress.Ui.WidgetInterop.GetTabIndex(dxTarget).Result : tabIndex;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.WidgetInterop.SetTabIndex(dxTarget, value);
@@ -111,12 +119,72 @@ return 		DevExpress.Ui.WidgetInterop.Init(dxTarget, options);
 	bool? visible;
 	[Parameter]
 	bool? Visible {
-		get => isInitialized ? DevExpress.Ui.WidgetInterop.GetVisible(dxTarget).Result : visible;
+		get => isInitialized ? (bool?)DevExpress.Ui.WidgetInterop.GetVisible(dxTarget).Result : visible;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.WidgetInterop.SetVisible(dxTarget, value);
 			} else {
 				this.visible = value;
+			}
+		}
+	}
+	object bindingOptions;
+	[Parameter]
+	object BindingOptions {
+		get => isInitialized ? DevExpress.Ui.WidgetInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.WidgetInterop.SetBindingOptions(dxTarget, value);
+			} else {
+				this.bindingOptions = value;
+			}
+		}
+	}
+	object elementAttr;
+	[Parameter]
+	object ElementAttr {
+		get => isInitialized ? DevExpress.Ui.WidgetInterop.GetElementAttr(dxTarget).Result : elementAttr;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.WidgetInterop.SetElementAttr(dxTarget, value);
+			} else {
+				this.elementAttr = value;
+			}
+		}
+	}
+	object height;
+	[Parameter]
+	object Height {
+		get => isInitialized ? DevExpress.Ui.WidgetInterop.GetHeight(dxTarget).Result : height;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.WidgetInterop.SetHeight(dxTarget, value);
+			} else {
+				this.height = value;
+			}
+		}
+	}
+	bool? rtlEnabled;
+	[Parameter]
+	bool? RtlEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.WidgetInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.WidgetInterop.SetRtlEnabled(dxTarget, value);
+			} else {
+				this.rtlEnabled = value;
+			}
+		}
+	}
+	object width;
+	[Parameter]
+	object Width {
+		get => isInitialized ? DevExpress.Ui.WidgetInterop.GetWidth(dxTarget).Result : width;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.WidgetInterop.SetWidth(dxTarget, value);
+			} else {
+				this.width = value;
 			}
 		}
 	}
@@ -126,15 +194,57 @@ return 		DevExpress.Ui.WidgetInterop.Init(dxTarget, options);
 		get => onContentReadyEnabled;
 		set => this.onContentReadyEnabled = value;
 	}
+	bool? onDisposingEnabled;
+	[Parameter]
+	bool? OnDisposingEnabled {
+		get => onDisposingEnabled;
+		set => this.onDisposingEnabled = value;
+	}
+	bool? onOptionChangedEnabled;
+	[Parameter]
+	bool? OnOptionChangedEnabled {
+		get => onOptionChangedEnabled;
+		set => this.onOptionChangedEnabled = value;
+	}
+	bool? onInitializedEnabled;
+	[Parameter]
+	bool? OnInitializedEnabled {
+		get => onInitializedEnabled;
+		set => this.onInitializedEnabled = value;
+	}
 	protected override async Task OnInitAsync() {
 		await base.OnInitAsync();
 		DevExpress.Ui.WidgetInterop.ContentReady += Widget_ContentReady;
+		DevExpress.Ui.WidgetInterop.Disposing += Widget_Disposing;
+		DevExpress.Ui.WidgetInterop.OptionChanged += Widget_OptionChanged;
+		DevExpress.Ui.WidgetInterop.Initialized += Widget_Initialized;
 	}
 	[Parameter]
 	Action ContentReady { get; set; }
 	void Widget_ContentReady(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ContentReady?.Invoke();
+		}
+	}
+	[Parameter]
+	Action Disposing { get; set; }
+	void Widget_Disposing(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Disposing?.Invoke();
+		}
+	}
+	[Parameter]
+	Action OptionChanged { get; set; }
+	void Widget_OptionChanged(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			OptionChanged?.Invoke();
+		}
+	}
+	[Parameter]
+	Action Initialized { get; set; }
+	void Widget_Initialized(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Initialized?.Invoke();
 		}
 	}
 	public void Focus() {
@@ -148,5 +258,8 @@ return 		DevExpress.Ui.WidgetInterop.Init(dxTarget, options);
 	}
 	public void Dispose() {
 		DevExpress.Ui.WidgetInterop.ContentReady -= Widget_ContentReady;
+		DevExpress.Ui.WidgetInterop.Disposing -= Widget_Disposing;
+		DevExpress.Ui.WidgetInterop.OptionChanged -= Widget_OptionChanged;
+		DevExpress.Ui.WidgetInterop.Initialized -= Widget_Initialized;
 	}
 }

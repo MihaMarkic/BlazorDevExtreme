@@ -16,18 +16,35 @@
 			filterOperationDescriptions = filterOperationDescriptions,
 			groupOperationDescriptions = groupOperationDescriptions,
 			value = value,
+			accessKey = accessKey,
+			activeStateEnabled = activeStateEnabled,
+			disabled = disabled,
+			focusStateEnabled = focusStateEnabled,
+			hint = hint,
+			hoverStateEnabled = hoverStateEnabled,
+			tabIndex = tabIndex,
+			visible = visible,
+			bindingOptions = bindingOptions,
+			elementAttr = elementAttr,
+			height = height,
+			rtlEnabled = rtlEnabled,
+			width = width,
 			onEditorPreparedEnabled = onEditorPreparedEnabled,
 			onEditorPreparingEnabled = onEditorPreparingEnabled,
 			onValueChangedEnabled = onValueChangedEnabled,
+			onContentReadyEnabled = onContentReadyEnabled,
+			onDisposingEnabled = onDisposingEnabled,
+			onOptionChangedEnabled = onOptionChangedEnabled,
+			onInitializedEnabled = onInitializedEnabled,
 		};
 	}
 	protected override Task Init(DevExpress.Ui.DxFilterBuilderOptions options) {
-return 		DevExpress.Ui.DxFilterBuilderInterop.Init(dxTarget, options);
+		return DevExpress.Ui.DxFilterBuilderInterop.Init(dxTarget, options);
 	}
 	bool? allowHierarchicalFields;
 	[Parameter]
 	bool? AllowHierarchicalFields {
-		get => isInitialized ? DevExpress.Ui.DxFilterBuilderInterop.GetAllowHierarchicalFields(dxTarget).Result : allowHierarchicalFields;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxFilterBuilderInterop.GetAllowHierarchicalFields(dxTarget).Result : allowHierarchicalFields;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxFilterBuilderInterop.SetAllowHierarchicalFields(dxTarget, value);
@@ -96,6 +113,162 @@ return 		DevExpress.Ui.DxFilterBuilderInterop.Init(dxTarget, options);
 			}
 		}
 	}
+	string accessKey;
+	[Parameter]
+	string AccessKey {
+		get => isInitialized ? (string)DevExpress.Ui.DxFilterBuilderInterop.GetAccessKey(dxTarget).Result : accessKey;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxFilterBuilderInterop.SetAccessKey(dxTarget, value);
+			} else {
+				this.accessKey = value;
+			}
+		}
+	}
+	bool? activeStateEnabled;
+	[Parameter]
+	bool? ActiveStateEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxFilterBuilderInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxFilterBuilderInterop.SetActiveStateEnabled(dxTarget, value);
+			} else {
+				this.activeStateEnabled = value;
+			}
+		}
+	}
+	bool? disabled;
+	[Parameter]
+	bool? Disabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxFilterBuilderInterop.GetDisabled(dxTarget).Result : disabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxFilterBuilderInterop.SetDisabled(dxTarget, value);
+			} else {
+				this.disabled = value;
+			}
+		}
+	}
+	bool? focusStateEnabled;
+	[Parameter]
+	bool? FocusStateEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxFilterBuilderInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxFilterBuilderInterop.SetFocusStateEnabled(dxTarget, value);
+			} else {
+				this.focusStateEnabled = value;
+			}
+		}
+	}
+	string hint;
+	[Parameter]
+	string Hint {
+		get => isInitialized ? (string)DevExpress.Ui.DxFilterBuilderInterop.GetHint(dxTarget).Result : hint;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxFilterBuilderInterop.SetHint(dxTarget, value);
+			} else {
+				this.hint = value;
+			}
+		}
+	}
+	bool? hoverStateEnabled;
+	[Parameter]
+	bool? HoverStateEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxFilterBuilderInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxFilterBuilderInterop.SetHoverStateEnabled(dxTarget, value);
+			} else {
+				this.hoverStateEnabled = value;
+			}
+		}
+	}
+	float? tabIndex;
+	[Parameter]
+	float? TabIndex {
+		get => isInitialized ? (float?)DevExpress.Ui.DxFilterBuilderInterop.GetTabIndex(dxTarget).Result : tabIndex;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxFilterBuilderInterop.SetTabIndex(dxTarget, value);
+			} else {
+				this.tabIndex = value;
+			}
+		}
+	}
+	bool? visible;
+	[Parameter]
+	bool? Visible {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxFilterBuilderInterop.GetVisible(dxTarget).Result : visible;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxFilterBuilderInterop.SetVisible(dxTarget, value);
+			} else {
+				this.visible = value;
+			}
+		}
+	}
+	object bindingOptions;
+	[Parameter]
+	object BindingOptions {
+		get => isInitialized ? DevExpress.Ui.DxFilterBuilderInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxFilterBuilderInterop.SetBindingOptions(dxTarget, value);
+			} else {
+				this.bindingOptions = value;
+			}
+		}
+	}
+	object elementAttr;
+	[Parameter]
+	object ElementAttr {
+		get => isInitialized ? DevExpress.Ui.DxFilterBuilderInterop.GetElementAttr(dxTarget).Result : elementAttr;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxFilterBuilderInterop.SetElementAttr(dxTarget, value);
+			} else {
+				this.elementAttr = value;
+			}
+		}
+	}
+	object height;
+	[Parameter]
+	object Height {
+		get => isInitialized ? DevExpress.Ui.DxFilterBuilderInterop.GetHeight(dxTarget).Result : height;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxFilterBuilderInterop.SetHeight(dxTarget, value);
+			} else {
+				this.height = value;
+			}
+		}
+	}
+	bool? rtlEnabled;
+	[Parameter]
+	bool? RtlEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxFilterBuilderInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxFilterBuilderInterop.SetRtlEnabled(dxTarget, value);
+			} else {
+				this.rtlEnabled = value;
+			}
+		}
+	}
+	object width;
+	[Parameter]
+	object Width {
+		get => isInitialized ? DevExpress.Ui.DxFilterBuilderInterop.GetWidth(dxTarget).Result : width;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxFilterBuilderInterop.SetWidth(dxTarget, value);
+			} else {
+				this.width = value;
+			}
+		}
+	}
 	bool? onEditorPreparedEnabled;
 	[Parameter]
 	bool? OnEditorPreparedEnabled {
@@ -114,11 +287,39 @@ return 		DevExpress.Ui.DxFilterBuilderInterop.Init(dxTarget, options);
 		get => onValueChangedEnabled;
 		set => this.onValueChangedEnabled = value;
 	}
+	bool? onContentReadyEnabled;
+	[Parameter]
+	bool? OnContentReadyEnabled {
+		get => onContentReadyEnabled;
+		set => this.onContentReadyEnabled = value;
+	}
+	bool? onDisposingEnabled;
+	[Parameter]
+	bool? OnDisposingEnabled {
+		get => onDisposingEnabled;
+		set => this.onDisposingEnabled = value;
+	}
+	bool? onOptionChangedEnabled;
+	[Parameter]
+	bool? OnOptionChangedEnabled {
+		get => onOptionChangedEnabled;
+		set => this.onOptionChangedEnabled = value;
+	}
+	bool? onInitializedEnabled;
+	[Parameter]
+	bool? OnInitializedEnabled {
+		get => onInitializedEnabled;
+		set => this.onInitializedEnabled = value;
+	}
 	protected override async Task OnInitAsync() {
 		await base.OnInitAsync();
 		DevExpress.Ui.DxFilterBuilderInterop.EditorPrepared += DxFilterBuilder_EditorPrepared;
 		DevExpress.Ui.DxFilterBuilderInterop.EditorPreparing += DxFilterBuilder_EditorPreparing;
 		DevExpress.Ui.DxFilterBuilderInterop.ValueChanged += DxFilterBuilder_ValueChanged;
+		DevExpress.Ui.DxFilterBuilderInterop.ContentReady += DxFilterBuilder_ContentReady;
+		DevExpress.Ui.DxFilterBuilderInterop.Disposing += DxFilterBuilder_Disposing;
+		DevExpress.Ui.DxFilterBuilderInterop.OptionChanged += DxFilterBuilder_OptionChanged;
+		DevExpress.Ui.DxFilterBuilderInterop.Initialized += DxFilterBuilder_Initialized;
 	}
 	[Parameter]
 	Action EditorPrepared { get; set; }
@@ -141,6 +342,34 @@ return 		DevExpress.Ui.DxFilterBuilderInterop.Init(dxTarget, options);
 			ValueChanged?.Invoke();
 		}
 	}
+	[Parameter]
+	Action ContentReady { get; set; }
+	void DxFilterBuilder_ContentReady(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			ContentReady?.Invoke();
+		}
+	}
+	[Parameter]
+	Action Disposing { get; set; }
+	void DxFilterBuilder_Disposing(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Disposing?.Invoke();
+		}
+	}
+	[Parameter]
+	Action OptionChanged { get; set; }
+	void DxFilterBuilder_OptionChanged(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			OptionChanged?.Invoke();
+		}
+	}
+	[Parameter]
+	Action Initialized { get; set; }
+	void DxFilterBuilder_Initialized(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Initialized?.Invoke();
+		}
+	}
 	public object GetFilterExpression() {
 		return DevExpress.Ui.DxFilterBuilderInterop.GetFilterExpression(dxTarget).Result;
 	}
@@ -148,5 +377,9 @@ return 		DevExpress.Ui.DxFilterBuilderInterop.Init(dxTarget, options);
 		DevExpress.Ui.DxFilterBuilderInterop.EditorPrepared -= DxFilterBuilder_EditorPrepared;
 		DevExpress.Ui.DxFilterBuilderInterop.EditorPreparing -= DxFilterBuilder_EditorPreparing;
 		DevExpress.Ui.DxFilterBuilderInterop.ValueChanged -= DxFilterBuilder_ValueChanged;
+		DevExpress.Ui.DxFilterBuilderInterop.ContentReady -= DxFilterBuilder_ContentReady;
+		DevExpress.Ui.DxFilterBuilderInterop.Disposing -= DxFilterBuilder_Disposing;
+		DevExpress.Ui.DxFilterBuilderInterop.OptionChanged -= DxFilterBuilder_OptionChanged;
+		DevExpress.Ui.DxFilterBuilderInterop.Initialized -= DxFilterBuilder_Initialized;
 	}
 }

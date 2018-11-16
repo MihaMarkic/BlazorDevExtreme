@@ -17,18 +17,24 @@
 			minHeight = minHeight,
 			minWidth = minWidth,
 			width = width,
+			bindingOptions = bindingOptions,
+			elementAttr = elementAttr,
+			rtlEnabled = rtlEnabled,
 			onResizeEnabled = onResizeEnabled,
 			onResizeEndEnabled = onResizeEndEnabled,
 			onResizeStartEnabled = onResizeStartEnabled,
+			onDisposingEnabled = onDisposingEnabled,
+			onOptionChangedEnabled = onOptionChangedEnabled,
+			onInitializedEnabled = onInitializedEnabled,
 		};
 	}
 	protected override Task Init(DevExpress.Ui.DxResizableOptions options) {
-return 		DevExpress.Ui.DxResizableInterop.Init(dxTarget, options);
+		return DevExpress.Ui.DxResizableInterop.Init(dxTarget, options);
 	}
 	string handles;
 	[Parameter]
 	string Handles {
-		get => isInitialized ? DevExpress.Ui.DxResizableInterop.GetHandles(dxTarget).Result : handles;
+		get => isInitialized ? (string)DevExpress.Ui.DxResizableInterop.GetHandles(dxTarget).Result : handles;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxResizableInterop.SetHandles(dxTarget, value);
@@ -52,7 +58,7 @@ return 		DevExpress.Ui.DxResizableInterop.Init(dxTarget, options);
 	float? maxHeight;
 	[Parameter]
 	float? MaxHeight {
-		get => isInitialized ? DevExpress.Ui.DxResizableInterop.GetMaxHeight(dxTarget).Result : maxHeight;
+		get => isInitialized ? (float?)DevExpress.Ui.DxResizableInterop.GetMaxHeight(dxTarget).Result : maxHeight;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxResizableInterop.SetMaxHeight(dxTarget, value);
@@ -64,7 +70,7 @@ return 		DevExpress.Ui.DxResizableInterop.Init(dxTarget, options);
 	float? maxWidth;
 	[Parameter]
 	float? MaxWidth {
-		get => isInitialized ? DevExpress.Ui.DxResizableInterop.GetMaxWidth(dxTarget).Result : maxWidth;
+		get => isInitialized ? (float?)DevExpress.Ui.DxResizableInterop.GetMaxWidth(dxTarget).Result : maxWidth;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxResizableInterop.SetMaxWidth(dxTarget, value);
@@ -76,7 +82,7 @@ return 		DevExpress.Ui.DxResizableInterop.Init(dxTarget, options);
 	float? minHeight;
 	[Parameter]
 	float? MinHeight {
-		get => isInitialized ? DevExpress.Ui.DxResizableInterop.GetMinHeight(dxTarget).Result : minHeight;
+		get => isInitialized ? (float?)DevExpress.Ui.DxResizableInterop.GetMinHeight(dxTarget).Result : minHeight;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxResizableInterop.SetMinHeight(dxTarget, value);
@@ -88,7 +94,7 @@ return 		DevExpress.Ui.DxResizableInterop.Init(dxTarget, options);
 	float? minWidth;
 	[Parameter]
 	float? MinWidth {
-		get => isInitialized ? DevExpress.Ui.DxResizableInterop.GetMinWidth(dxTarget).Result : minWidth;
+		get => isInitialized ? (float?)DevExpress.Ui.DxResizableInterop.GetMinWidth(dxTarget).Result : minWidth;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxResizableInterop.SetMinWidth(dxTarget, value);
@@ -106,6 +112,42 @@ return 		DevExpress.Ui.DxResizableInterop.Init(dxTarget, options);
 				DevExpress.Ui.DxResizableInterop.SetWidth(dxTarget, value);
 			} else {
 				this.width = value;
+			}
+		}
+	}
+	object bindingOptions;
+	[Parameter]
+	object BindingOptions {
+		get => isInitialized ? DevExpress.Ui.DxResizableInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxResizableInterop.SetBindingOptions(dxTarget, value);
+			} else {
+				this.bindingOptions = value;
+			}
+		}
+	}
+	object elementAttr;
+	[Parameter]
+	object ElementAttr {
+		get => isInitialized ? DevExpress.Ui.DxResizableInterop.GetElementAttr(dxTarget).Result : elementAttr;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxResizableInterop.SetElementAttr(dxTarget, value);
+			} else {
+				this.elementAttr = value;
+			}
+		}
+	}
+	bool? rtlEnabled;
+	[Parameter]
+	bool? RtlEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxResizableInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxResizableInterop.SetRtlEnabled(dxTarget, value);
+			} else {
+				this.rtlEnabled = value;
 			}
 		}
 	}
@@ -127,11 +169,32 @@ return 		DevExpress.Ui.DxResizableInterop.Init(dxTarget, options);
 		get => onResizeStartEnabled;
 		set => this.onResizeStartEnabled = value;
 	}
+	bool? onDisposingEnabled;
+	[Parameter]
+	bool? OnDisposingEnabled {
+		get => onDisposingEnabled;
+		set => this.onDisposingEnabled = value;
+	}
+	bool? onOptionChangedEnabled;
+	[Parameter]
+	bool? OnOptionChangedEnabled {
+		get => onOptionChangedEnabled;
+		set => this.onOptionChangedEnabled = value;
+	}
+	bool? onInitializedEnabled;
+	[Parameter]
+	bool? OnInitializedEnabled {
+		get => onInitializedEnabled;
+		set => this.onInitializedEnabled = value;
+	}
 	protected override async Task OnInitAsync() {
 		await base.OnInitAsync();
 		DevExpress.Ui.DxResizableInterop.Resize += DxResizable_Resize;
 		DevExpress.Ui.DxResizableInterop.ResizeEnd += DxResizable_ResizeEnd;
 		DevExpress.Ui.DxResizableInterop.ResizeStart += DxResizable_ResizeStart;
+		DevExpress.Ui.DxResizableInterop.Disposing += DxResizable_Disposing;
+		DevExpress.Ui.DxResizableInterop.OptionChanged += DxResizable_OptionChanged;
+		DevExpress.Ui.DxResizableInterop.Initialized += DxResizable_Initialized;
 	}
 	[Parameter]
 	Action Resize { get; set; }
@@ -154,9 +217,33 @@ return 		DevExpress.Ui.DxResizableInterop.Init(dxTarget, options);
 			ResizeStart?.Invoke();
 		}
 	}
+	[Parameter]
+	Action Disposing { get; set; }
+	void DxResizable_Disposing(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Disposing?.Invoke();
+		}
+	}
+	[Parameter]
+	Action OptionChanged { get; set; }
+	void DxResizable_OptionChanged(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			OptionChanged?.Invoke();
+		}
+	}
+	[Parameter]
+	Action Initialized { get; set; }
+	void DxResizable_Initialized(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Initialized?.Invoke();
+		}
+	}
 	public void Dispose() {
 		DevExpress.Ui.DxResizableInterop.Resize -= DxResizable_Resize;
 		DevExpress.Ui.DxResizableInterop.ResizeEnd -= DxResizable_ResizeEnd;
 		DevExpress.Ui.DxResizableInterop.ResizeStart -= DxResizable_ResizeStart;
+		DevExpress.Ui.DxResizableInterop.Disposing -= DxResizable_Disposing;
+		DevExpress.Ui.DxResizableInterop.OptionChanged -= DxResizable_OptionChanged;
+		DevExpress.Ui.DxResizableInterop.Initialized -= DxResizable_Initialized;
 	}
 }

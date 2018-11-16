@@ -18,16 +18,24 @@
 			title = title,
 			type = type,
 			visible = visible,
+			bindingOptions = bindingOptions,
+			elementAttr = elementAttr,
+			height = height,
+			rtlEnabled = rtlEnabled,
+			width = width,
 			onExecuteEnabled = onExecuteEnabled,
+			onDisposingEnabled = onDisposingEnabled,
+			onOptionChangedEnabled = onOptionChangedEnabled,
+			onInitializedEnabled = onInitializedEnabled,
 		};
 	}
 	protected override Task Init(DevExpress.Framework.DxCommandOptions options) {
-return 		DevExpress.Framework.DxCommandInterop.Init(dxTarget, options);
+		return DevExpress.Framework.DxCommandInterop.Init(dxTarget, options);
 	}
 	bool? disabled;
 	[Parameter]
 	bool? Disabled {
-		get => isInitialized ? DevExpress.Framework.DxCommandInterop.GetDisabled(dxTarget).Result : disabled;
+		get => isInitialized ? (bool?)DevExpress.Framework.DxCommandInterop.GetDisabled(dxTarget).Result : disabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Framework.DxCommandInterop.SetDisabled(dxTarget, value);
@@ -39,7 +47,7 @@ return 		DevExpress.Framework.DxCommandInterop.Init(dxTarget, options);
 	string icon;
 	[Parameter]
 	string Icon {
-		get => isInitialized ? DevExpress.Framework.DxCommandInterop.GetIcon(dxTarget).Result : icon;
+		get => isInitialized ? (string)DevExpress.Framework.DxCommandInterop.GetIcon(dxTarget).Result : icon;
 		set {
 			if (isInitialized) {
 				DevExpress.Framework.DxCommandInterop.SetIcon(dxTarget, value);
@@ -63,7 +71,7 @@ return 		DevExpress.Framework.DxCommandInterop.Init(dxTarget, options);
 	string id;
 	[Parameter]
 	string Id {
-		get => isInitialized ? DevExpress.Framework.DxCommandInterop.GetId(dxTarget).Result : id;
+		get => isInitialized ? (string)DevExpress.Framework.DxCommandInterop.GetId(dxTarget).Result : id;
 		set {
 			if (isInitialized) {
 				DevExpress.Framework.DxCommandInterop.SetId(dxTarget, value);
@@ -75,7 +83,7 @@ return 		DevExpress.Framework.DxCommandInterop.Init(dxTarget, options);
 	string renderStage;
 	[Parameter]
 	string RenderStage {
-		get => isInitialized ? DevExpress.Framework.DxCommandInterop.GetRenderStage(dxTarget).Result : renderStage;
+		get => isInitialized ? (string)DevExpress.Framework.DxCommandInterop.GetRenderStage(dxTarget).Result : renderStage;
 		set {
 			if (isInitialized) {
 				DevExpress.Framework.DxCommandInterop.SetRenderStage(dxTarget, value);
@@ -87,7 +95,7 @@ return 		DevExpress.Framework.DxCommandInterop.Init(dxTarget, options);
 	string title;
 	[Parameter]
 	string Title {
-		get => isInitialized ? DevExpress.Framework.DxCommandInterop.GetTitle(dxTarget).Result : title;
+		get => isInitialized ? (string)DevExpress.Framework.DxCommandInterop.GetTitle(dxTarget).Result : title;
 		set {
 			if (isInitialized) {
 				DevExpress.Framework.DxCommandInterop.SetTitle(dxTarget, value);
@@ -99,7 +107,7 @@ return 		DevExpress.Framework.DxCommandInterop.Init(dxTarget, options);
 	string type;
 	[Parameter]
 	string Type {
-		get => isInitialized ? DevExpress.Framework.DxCommandInterop.GetType(dxTarget).Result : type;
+		get => isInitialized ? (string)DevExpress.Framework.DxCommandInterop.GetType(dxTarget).Result : type;
 		set {
 			if (isInitialized) {
 				DevExpress.Framework.DxCommandInterop.SetType(dxTarget, value);
@@ -111,12 +119,72 @@ return 		DevExpress.Framework.DxCommandInterop.Init(dxTarget, options);
 	bool? visible;
 	[Parameter]
 	bool? Visible {
-		get => isInitialized ? DevExpress.Framework.DxCommandInterop.GetVisible(dxTarget).Result : visible;
+		get => isInitialized ? (bool?)DevExpress.Framework.DxCommandInterop.GetVisible(dxTarget).Result : visible;
 		set {
 			if (isInitialized) {
 				DevExpress.Framework.DxCommandInterop.SetVisible(dxTarget, value);
 			} else {
 				this.visible = value;
+			}
+		}
+	}
+	object bindingOptions;
+	[Parameter]
+	object BindingOptions {
+		get => isInitialized ? DevExpress.Framework.DxCommandInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
+		set {
+			if (isInitialized) {
+				DevExpress.Framework.DxCommandInterop.SetBindingOptions(dxTarget, value);
+			} else {
+				this.bindingOptions = value;
+			}
+		}
+	}
+	object elementAttr;
+	[Parameter]
+	object ElementAttr {
+		get => isInitialized ? DevExpress.Framework.DxCommandInterop.GetElementAttr(dxTarget).Result : elementAttr;
+		set {
+			if (isInitialized) {
+				DevExpress.Framework.DxCommandInterop.SetElementAttr(dxTarget, value);
+			} else {
+				this.elementAttr = value;
+			}
+		}
+	}
+	object height;
+	[Parameter]
+	object Height {
+		get => isInitialized ? DevExpress.Framework.DxCommandInterop.GetHeight(dxTarget).Result : height;
+		set {
+			if (isInitialized) {
+				DevExpress.Framework.DxCommandInterop.SetHeight(dxTarget, value);
+			} else {
+				this.height = value;
+			}
+		}
+	}
+	bool? rtlEnabled;
+	[Parameter]
+	bool? RtlEnabled {
+		get => isInitialized ? (bool?)DevExpress.Framework.DxCommandInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Framework.DxCommandInterop.SetRtlEnabled(dxTarget, value);
+			} else {
+				this.rtlEnabled = value;
+			}
+		}
+	}
+	object width;
+	[Parameter]
+	object Width {
+		get => isInitialized ? DevExpress.Framework.DxCommandInterop.GetWidth(dxTarget).Result : width;
+		set {
+			if (isInitialized) {
+				DevExpress.Framework.DxCommandInterop.SetWidth(dxTarget, value);
+			} else {
+				this.width = value;
 			}
 		}
 	}
@@ -126,9 +194,30 @@ return 		DevExpress.Framework.DxCommandInterop.Init(dxTarget, options);
 		get => onExecuteEnabled;
 		set => this.onExecuteEnabled = value;
 	}
+	bool? onDisposingEnabled;
+	[Parameter]
+	bool? OnDisposingEnabled {
+		get => onDisposingEnabled;
+		set => this.onDisposingEnabled = value;
+	}
+	bool? onOptionChangedEnabled;
+	[Parameter]
+	bool? OnOptionChangedEnabled {
+		get => onOptionChangedEnabled;
+		set => this.onOptionChangedEnabled = value;
+	}
+	bool? onInitializedEnabled;
+	[Parameter]
+	bool? OnInitializedEnabled {
+		get => onInitializedEnabled;
+		set => this.onInitializedEnabled = value;
+	}
 	protected override async Task OnInitAsync() {
 		await base.OnInitAsync();
 		DevExpress.Framework.DxCommandInterop.Execute += DxCommand_Execute;
+		DevExpress.Framework.DxCommandInterop.Disposing += DxCommand_Disposing;
+		DevExpress.Framework.DxCommandInterop.OptionChanged += DxCommand_OptionChanged;
+		DevExpress.Framework.DxCommandInterop.Initialized += DxCommand_Initialized;
 	}
 	[Parameter]
 	Action Execute { get; set; }
@@ -137,10 +226,34 @@ return 		DevExpress.Framework.DxCommandInterop.Init(dxTarget, options);
 			Execute?.Invoke();
 		}
 	}
+	[Parameter]
+	Action Disposing { get; set; }
+	void DxCommand_Disposing(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Disposing?.Invoke();
+		}
+	}
+	[Parameter]
+	Action OptionChanged { get; set; }
+	void DxCommand_OptionChanged(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			OptionChanged?.Invoke();
+		}
+	}
+	[Parameter]
+	Action Initialized { get; set; }
+	void DxCommand_Initialized(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Initialized?.Invoke();
+		}
+	}
 	public void DoExecute() {
 		DevExpress.Framework.DxCommandInterop.DoExecute(dxTarget);
 	}
 	public void Dispose() {
 		DevExpress.Framework.DxCommandInterop.Execute -= DxCommand_Execute;
+		DevExpress.Framework.DxCommandInterop.Disposing -= DxCommand_Disposing;
+		DevExpress.Framework.DxCommandInterop.OptionChanged -= DxCommand_OptionChanged;
+		DevExpress.Framework.DxCommandInterop.Initialized -= DxCommand_Initialized;
 	}
 }

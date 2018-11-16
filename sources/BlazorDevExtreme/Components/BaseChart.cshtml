@@ -21,16 +21,37 @@
 			pointSelectionMode = pointSelectionMode,
 			series = series,
 			tooltip = tooltip,
+			export = export,
+			loadingIndicator = loadingIndicator,
+			margin = margin,
+			pathModified = pathModified,
+			redrawOnResize = redrawOnResize,
+			rtlEnabled = rtlEnabled,
+			size = size,
+			theme = theme,
+			title = title,
+			bindingOptions = bindingOptions,
+			elementAttr = elementAttr,
+			height = height,
+			width = width,
 			onDoneEnabled = onDoneEnabled,
 			onPointClickEnabled = onPointClickEnabled,
 			onPointHoverChangedEnabled = onPointHoverChangedEnabled,
 			onPointSelectionChangedEnabled = onPointSelectionChangedEnabled,
 			onTooltipHiddenEnabled = onTooltipHiddenEnabled,
 			onTooltipShownEnabled = onTooltipShownEnabled,
+			onDrawnEnabled = onDrawnEnabled,
+			onExportedEnabled = onExportedEnabled,
+			onExportingEnabled = onExportingEnabled,
+			onFileSavingEnabled = onFileSavingEnabled,
+			onIncidentOccurredEnabled = onIncidentOccurredEnabled,
+			onDisposingEnabled = onDisposingEnabled,
+			onOptionChangedEnabled = onOptionChangedEnabled,
+			onInitializedEnabled = onInitializedEnabled,
 		};
 	}
 	protected override Task Init(DevExpress.Viz.Charts.BaseChartOptions options) {
-return 		DevExpress.Viz.BaseChartInterop.Init(dxTarget, options);
+		return DevExpress.Viz.BaseChartInterop.Init(dxTarget, options);
 	}
 	object adaptiveLayout;
 	[Parameter]
@@ -119,7 +140,7 @@ return 		DevExpress.Viz.BaseChartInterop.Init(dxTarget, options);
 	string paletteExtensionMode;
 	[Parameter]
 	string PaletteExtensionMode {
-		get => isInitialized ? DevExpress.Viz.BaseChartInterop.GetPaletteExtensionMode(dxTarget).Result : paletteExtensionMode;
+		get => isInitialized ? (string)DevExpress.Viz.BaseChartInterop.GetPaletteExtensionMode(dxTarget).Result : paletteExtensionMode;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.BaseChartInterop.SetPaletteExtensionMode(dxTarget, value);
@@ -131,7 +152,7 @@ return 		DevExpress.Viz.BaseChartInterop.Init(dxTarget, options);
 	string pointSelectionMode;
 	[Parameter]
 	string PointSelectionMode {
-		get => isInitialized ? DevExpress.Viz.BaseChartInterop.GetPointSelectionMode(dxTarget).Result : pointSelectionMode;
+		get => isInitialized ? (string)DevExpress.Viz.BaseChartInterop.GetPointSelectionMode(dxTarget).Result : pointSelectionMode;
 		set {
 			if (isInitialized) {
 				DevExpress.Viz.BaseChartInterop.SetPointSelectionMode(dxTarget, value);
@@ -161,6 +182,162 @@ return 		DevExpress.Viz.BaseChartInterop.Init(dxTarget, options);
 				DevExpress.Viz.BaseChartInterop.SetTooltip(dxTarget, value);
 			} else {
 				this.tooltip = value;
+			}
+		}
+	}
+	object export;
+	[Parameter]
+	object Export {
+		get => isInitialized ? DevExpress.Viz.BaseChartInterop.GetExport(dxTarget).Result : export;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.BaseChartInterop.SetExport(dxTarget, value);
+			} else {
+				this.export = value;
+			}
+		}
+	}
+	object loadingIndicator;
+	[Parameter]
+	object LoadingIndicator {
+		get => isInitialized ? DevExpress.Viz.BaseChartInterop.GetLoadingIndicator(dxTarget).Result : loadingIndicator;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.BaseChartInterop.SetLoadingIndicator(dxTarget, value);
+			} else {
+				this.loadingIndicator = value;
+			}
+		}
+	}
+	object margin;
+	[Parameter]
+	object Margin {
+		get => isInitialized ? DevExpress.Viz.BaseChartInterop.GetMargin(dxTarget).Result : margin;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.BaseChartInterop.SetMargin(dxTarget, value);
+			} else {
+				this.margin = value;
+			}
+		}
+	}
+	bool? pathModified;
+	[Parameter]
+	bool? PathModified {
+		get => isInitialized ? (bool?)DevExpress.Viz.BaseChartInterop.GetPathModified(dxTarget).Result : pathModified;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.BaseChartInterop.SetPathModified(dxTarget, value);
+			} else {
+				this.pathModified = value;
+			}
+		}
+	}
+	bool? redrawOnResize;
+	[Parameter]
+	bool? RedrawOnResize {
+		get => isInitialized ? (bool?)DevExpress.Viz.BaseChartInterop.GetRedrawOnResize(dxTarget).Result : redrawOnResize;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.BaseChartInterop.SetRedrawOnResize(dxTarget, value);
+			} else {
+				this.redrawOnResize = value;
+			}
+		}
+	}
+	bool? rtlEnabled;
+	[Parameter]
+	bool? RtlEnabled {
+		get => isInitialized ? (bool?)DevExpress.Viz.BaseChartInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.BaseChartInterop.SetRtlEnabled(dxTarget, value);
+			} else {
+				this.rtlEnabled = value;
+			}
+		}
+	}
+	object size;
+	[Parameter]
+	object Size {
+		get => isInitialized ? DevExpress.Viz.BaseChartInterop.GetSize(dxTarget).Result : size;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.BaseChartInterop.SetSize(dxTarget, value);
+			} else {
+				this.size = value;
+			}
+		}
+	}
+	string theme;
+	[Parameter]
+	string Theme {
+		get => isInitialized ? (string)DevExpress.Viz.BaseChartInterop.GetTheme(dxTarget).Result : theme;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.BaseChartInterop.SetTheme(dxTarget, value);
+			} else {
+				this.theme = value;
+			}
+		}
+	}
+	object title;
+	[Parameter]
+	object Title {
+		get => isInitialized ? DevExpress.Viz.BaseChartInterop.GetTitle(dxTarget).Result : title;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.BaseChartInterop.SetTitle(dxTarget, value);
+			} else {
+				this.title = value;
+			}
+		}
+	}
+	object bindingOptions;
+	[Parameter]
+	object BindingOptions {
+		get => isInitialized ? DevExpress.Viz.BaseChartInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.BaseChartInterop.SetBindingOptions(dxTarget, value);
+			} else {
+				this.bindingOptions = value;
+			}
+		}
+	}
+	object elementAttr;
+	[Parameter]
+	object ElementAttr {
+		get => isInitialized ? DevExpress.Viz.BaseChartInterop.GetElementAttr(dxTarget).Result : elementAttr;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.BaseChartInterop.SetElementAttr(dxTarget, value);
+			} else {
+				this.elementAttr = value;
+			}
+		}
+	}
+	object height;
+	[Parameter]
+	object Height {
+		get => isInitialized ? DevExpress.Viz.BaseChartInterop.GetHeight(dxTarget).Result : height;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.BaseChartInterop.SetHeight(dxTarget, value);
+			} else {
+				this.height = value;
+			}
+		}
+	}
+	object width;
+	[Parameter]
+	object Width {
+		get => isInitialized ? DevExpress.Viz.BaseChartInterop.GetWidth(dxTarget).Result : width;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.BaseChartInterop.SetWidth(dxTarget, value);
+			} else {
+				this.width = value;
 			}
 		}
 	}
@@ -200,6 +377,54 @@ return 		DevExpress.Viz.BaseChartInterop.Init(dxTarget, options);
 		get => onTooltipShownEnabled;
 		set => this.onTooltipShownEnabled = value;
 	}
+	bool? onDrawnEnabled;
+	[Parameter]
+	bool? OnDrawnEnabled {
+		get => onDrawnEnabled;
+		set => this.onDrawnEnabled = value;
+	}
+	bool? onExportedEnabled;
+	[Parameter]
+	bool? OnExportedEnabled {
+		get => onExportedEnabled;
+		set => this.onExportedEnabled = value;
+	}
+	bool? onExportingEnabled;
+	[Parameter]
+	bool? OnExportingEnabled {
+		get => onExportingEnabled;
+		set => this.onExportingEnabled = value;
+	}
+	bool? onFileSavingEnabled;
+	[Parameter]
+	bool? OnFileSavingEnabled {
+		get => onFileSavingEnabled;
+		set => this.onFileSavingEnabled = value;
+	}
+	bool? onIncidentOccurredEnabled;
+	[Parameter]
+	bool? OnIncidentOccurredEnabled {
+		get => onIncidentOccurredEnabled;
+		set => this.onIncidentOccurredEnabled = value;
+	}
+	bool? onDisposingEnabled;
+	[Parameter]
+	bool? OnDisposingEnabled {
+		get => onDisposingEnabled;
+		set => this.onDisposingEnabled = value;
+	}
+	bool? onOptionChangedEnabled;
+	[Parameter]
+	bool? OnOptionChangedEnabled {
+		get => onOptionChangedEnabled;
+		set => this.onOptionChangedEnabled = value;
+	}
+	bool? onInitializedEnabled;
+	[Parameter]
+	bool? OnInitializedEnabled {
+		get => onInitializedEnabled;
+		set => this.onInitializedEnabled = value;
+	}
 	protected override async Task OnInitAsync() {
 		await base.OnInitAsync();
 		DevExpress.Viz.BaseChartInterop.Done += BaseChart_Done;
@@ -208,6 +433,14 @@ return 		DevExpress.Viz.BaseChartInterop.Init(dxTarget, options);
 		DevExpress.Viz.BaseChartInterop.PointSelectionChanged += BaseChart_PointSelectionChanged;
 		DevExpress.Viz.BaseChartInterop.TooltipHidden += BaseChart_TooltipHidden;
 		DevExpress.Viz.BaseChartInterop.TooltipShown += BaseChart_TooltipShown;
+		DevExpress.Viz.BaseChartInterop.Drawn += BaseChart_Drawn;
+		DevExpress.Viz.BaseChartInterop.Exported += BaseChart_Exported;
+		DevExpress.Viz.BaseChartInterop.Exporting += BaseChart_Exporting;
+		DevExpress.Viz.BaseChartInterop.FileSaving += BaseChart_FileSaving;
+		DevExpress.Viz.BaseChartInterop.IncidentOccurred += BaseChart_IncidentOccurred;
+		DevExpress.Viz.BaseChartInterop.Disposing += BaseChart_Disposing;
+		DevExpress.Viz.BaseChartInterop.OptionChanged += BaseChart_OptionChanged;
+		DevExpress.Viz.BaseChartInterop.Initialized += BaseChart_Initialized;
 	}
 	[Parameter]
 	Action Done { get; set; }
@@ -251,6 +484,62 @@ return 		DevExpress.Viz.BaseChartInterop.Init(dxTarget, options);
 			TooltipShown?.Invoke();
 		}
 	}
+	[Parameter]
+	Action Drawn { get; set; }
+	void BaseChart_Drawn(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Drawn?.Invoke();
+		}
+	}
+	[Parameter]
+	Action Exported { get; set; }
+	void BaseChart_Exported(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Exported?.Invoke();
+		}
+	}
+	[Parameter]
+	Action Exporting { get; set; }
+	void BaseChart_Exporting(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Exporting?.Invoke();
+		}
+	}
+	[Parameter]
+	Action FileSaving { get; set; }
+	void BaseChart_FileSaving(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			FileSaving?.Invoke();
+		}
+	}
+	[Parameter]
+	Action IncidentOccurred { get; set; }
+	void BaseChart_IncidentOccurred(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			IncidentOccurred?.Invoke();
+		}
+	}
+	[Parameter]
+	Action Disposing { get; set; }
+	void BaseChart_Disposing(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Disposing?.Invoke();
+		}
+	}
+	[Parameter]
+	Action OptionChanged { get; set; }
+	void BaseChart_OptionChanged(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			OptionChanged?.Invoke();
+		}
+	}
+	[Parameter]
+	Action Initialized { get; set; }
+	void BaseChart_Initialized(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Initialized?.Invoke();
+		}
+	}
 	public void ClearSelection() {
 		DevExpress.Viz.BaseChartInterop.ClearSelection(dxTarget);
 	}
@@ -282,5 +571,13 @@ return 		DevExpress.Viz.BaseChartInterop.Init(dxTarget, options);
 		DevExpress.Viz.BaseChartInterop.PointSelectionChanged -= BaseChart_PointSelectionChanged;
 		DevExpress.Viz.BaseChartInterop.TooltipHidden -= BaseChart_TooltipHidden;
 		DevExpress.Viz.BaseChartInterop.TooltipShown -= BaseChart_TooltipShown;
+		DevExpress.Viz.BaseChartInterop.Drawn -= BaseChart_Drawn;
+		DevExpress.Viz.BaseChartInterop.Exported -= BaseChart_Exported;
+		DevExpress.Viz.BaseChartInterop.Exporting -= BaseChart_Exporting;
+		DevExpress.Viz.BaseChartInterop.FileSaving -= BaseChart_FileSaving;
+		DevExpress.Viz.BaseChartInterop.IncidentOccurred -= BaseChart_IncidentOccurred;
+		DevExpress.Viz.BaseChartInterop.Disposing -= BaseChart_Disposing;
+		DevExpress.Viz.BaseChartInterop.OptionChanged -= BaseChart_OptionChanged;
+		DevExpress.Viz.BaseChartInterop.Initialized -= BaseChart_Initialized;
 	}
 }

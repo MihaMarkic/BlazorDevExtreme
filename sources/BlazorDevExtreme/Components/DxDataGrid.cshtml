@@ -26,6 +26,55 @@
 			selectionFilter = selectionFilter,
 			sortByGroupSummaryInfo = sortByGroupSummaryInfo,
 			summary = summary,
+			allowColumnReordering = allowColumnReordering,
+			allowColumnResizing = allowColumnResizing,
+			cacheEnabled = cacheEnabled,
+			cellHintEnabled = cellHintEnabled,
+			columnAutoWidth = columnAutoWidth,
+			columnChooser = columnChooser,
+			columnFixing = columnFixing,
+			columnHidingEnabled = columnHidingEnabled,
+			columnMinWidth = columnMinWidth,
+			columnResizingMode = columnResizingMode,
+			columnWidth = columnWidth,
+			dataSource = dataSource,
+			dateSerializationFormat = dateSerializationFormat,
+			errorRowEnabled = errorRowEnabled,
+			filterBuilder = filterBuilder,
+			filterBuilderPopup = filterBuilderPopup,
+			filterPanel = filterPanel,
+			filterRow = filterRow,
+			filterSyncEnabled = filterSyncEnabled,
+			filterValue = filterValue,
+			headerFilter = headerFilter,
+			loadPanel = loadPanel,
+			noDataText = noDataText,
+			pager = pager,
+			paging = paging,
+			rowAlternationEnabled = rowAlternationEnabled,
+			searchPanel = searchPanel,
+			selectedRowKeys = selectedRowKeys,
+			showBorders = showBorders,
+			showColumnHeaders = showColumnHeaders,
+			showColumnLines = showColumnLines,
+			showRowLines = showRowLines,
+			sorting = sorting,
+			stateStoring = stateStoring,
+			twoWayBindingEnabled = twoWayBindingEnabled,
+			wordWrapEnabled = wordWrapEnabled,
+			accessKey = accessKey,
+			activeStateEnabled = activeStateEnabled,
+			disabled = disabled,
+			focusStateEnabled = focusStateEnabled,
+			hint = hint,
+			hoverStateEnabled = hoverStateEnabled,
+			tabIndex = tabIndex,
+			visible = visible,
+			bindingOptions = bindingOptions,
+			elementAttr = elementAttr,
+			height = height,
+			rtlEnabled = rtlEnabled,
+			width = width,
 			onCellClickEnabled = onCellClickEnabled,
 			onCellHoverChangedEnabled = onCellHoverChangedEnabled,
 			onCellPreparedEnabled = onCellPreparedEnabled,
@@ -38,10 +87,31 @@
 			onFileSavingEnabled = onFileSavingEnabled,
 			onRowClickEnabled = onRowClickEnabled,
 			onRowPreparedEnabled = onRowPreparedEnabled,
+			onAdaptiveDetailRowPreparingEnabled = onAdaptiveDetailRowPreparingEnabled,
+			onDataErrorOccurredEnabled = onDataErrorOccurredEnabled,
+			onInitNewRowEnabled = onInitNewRowEnabled,
+			onKeyDownEnabled = onKeyDownEnabled,
+			onRowCollapsedEnabled = onRowCollapsedEnabled,
+			onRowCollapsingEnabled = onRowCollapsingEnabled,
+			onRowExpandedEnabled = onRowExpandedEnabled,
+			onRowExpandingEnabled = onRowExpandingEnabled,
+			onRowInsertedEnabled = onRowInsertedEnabled,
+			onRowInsertingEnabled = onRowInsertingEnabled,
+			onRowRemovedEnabled = onRowRemovedEnabled,
+			onRowRemovingEnabled = onRowRemovingEnabled,
+			onRowUpdatedEnabled = onRowUpdatedEnabled,
+			onRowUpdatingEnabled = onRowUpdatingEnabled,
+			onRowValidatingEnabled = onRowValidatingEnabled,
+			onSelectionChangedEnabled = onSelectionChangedEnabled,
+			onToolbarPreparingEnabled = onToolbarPreparingEnabled,
+			onContentReadyEnabled = onContentReadyEnabled,
+			onDisposingEnabled = onDisposingEnabled,
+			onOptionChangedEnabled = onOptionChangedEnabled,
+			onInitializedEnabled = onInitializedEnabled,
 		};
 	}
 	protected override Task Init(DevExpress.Ui.DxDataGridOptions options) {
-return 		DevExpress.Ui.DxDataGridInterop.Init(dxTarget, options);
+		return DevExpress.Ui.DxDataGridInterop.Init(dxTarget, options);
 	}
 	object columns;
 	[Parameter]
@@ -235,6 +305,594 @@ return 		DevExpress.Ui.DxDataGridInterop.Init(dxTarget, options);
 			}
 		}
 	}
+	bool? allowColumnReordering;
+	[Parameter]
+	bool? AllowColumnReordering {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetAllowColumnReordering(dxTarget).Result : allowColumnReordering;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetAllowColumnReordering(dxTarget, value);
+			} else {
+				this.allowColumnReordering = value;
+			}
+		}
+	}
+	bool? allowColumnResizing;
+	[Parameter]
+	bool? AllowColumnResizing {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetAllowColumnResizing(dxTarget).Result : allowColumnResizing;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetAllowColumnResizing(dxTarget, value);
+			} else {
+				this.allowColumnResizing = value;
+			}
+		}
+	}
+	bool? cacheEnabled;
+	[Parameter]
+	bool? CacheEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetCacheEnabled(dxTarget).Result : cacheEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetCacheEnabled(dxTarget, value);
+			} else {
+				this.cacheEnabled = value;
+			}
+		}
+	}
+	bool? cellHintEnabled;
+	[Parameter]
+	bool? CellHintEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetCellHintEnabled(dxTarget).Result : cellHintEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetCellHintEnabled(dxTarget, value);
+			} else {
+				this.cellHintEnabled = value;
+			}
+		}
+	}
+	bool? columnAutoWidth;
+	[Parameter]
+	bool? ColumnAutoWidth {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetColumnAutoWidth(dxTarget).Result : columnAutoWidth;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetColumnAutoWidth(dxTarget, value);
+			} else {
+				this.columnAutoWidth = value;
+			}
+		}
+	}
+	object columnChooser;
+	[Parameter]
+	object ColumnChooser {
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetColumnChooser(dxTarget).Result : columnChooser;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetColumnChooser(dxTarget, value);
+			} else {
+				this.columnChooser = value;
+			}
+		}
+	}
+	object columnFixing;
+	[Parameter]
+	object ColumnFixing {
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetColumnFixing(dxTarget).Result : columnFixing;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetColumnFixing(dxTarget, value);
+			} else {
+				this.columnFixing = value;
+			}
+		}
+	}
+	bool? columnHidingEnabled;
+	[Parameter]
+	bool? ColumnHidingEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetColumnHidingEnabled(dxTarget).Result : columnHidingEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetColumnHidingEnabled(dxTarget, value);
+			} else {
+				this.columnHidingEnabled = value;
+			}
+		}
+	}
+	float? columnMinWidth;
+	[Parameter]
+	float? ColumnMinWidth {
+		get => isInitialized ? (float?)DevExpress.Ui.DxDataGridInterop.GetColumnMinWidth(dxTarget).Result : columnMinWidth;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetColumnMinWidth(dxTarget, value);
+			} else {
+				this.columnMinWidth = value;
+			}
+		}
+	}
+	string columnResizingMode;
+	[Parameter]
+	string ColumnResizingMode {
+		get => isInitialized ? (string)DevExpress.Ui.DxDataGridInterop.GetColumnResizingMode(dxTarget).Result : columnResizingMode;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetColumnResizingMode(dxTarget, value);
+			} else {
+				this.columnResizingMode = value;
+			}
+		}
+	}
+	float? columnWidth;
+	[Parameter]
+	float? ColumnWidth {
+		get => isInitialized ? (float?)DevExpress.Ui.DxDataGridInterop.GetColumnWidth(dxTarget).Result : columnWidth;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetColumnWidth(dxTarget, value);
+			} else {
+				this.columnWidth = value;
+			}
+		}
+	}
+	object dataSource;
+	[Parameter]
+	object DataSource {
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetDataSource(dxTarget).Result : dataSource;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetDataSource(dxTarget, value);
+			} else {
+				this.dataSource = value;
+			}
+		}
+	}
+	string dateSerializationFormat;
+	[Parameter]
+	string DateSerializationFormat {
+		get => isInitialized ? (string)DevExpress.Ui.DxDataGridInterop.GetDateSerializationFormat(dxTarget).Result : dateSerializationFormat;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetDateSerializationFormat(dxTarget, value);
+			} else {
+				this.dateSerializationFormat = value;
+			}
+		}
+	}
+	bool? errorRowEnabled;
+	[Parameter]
+	bool? ErrorRowEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetErrorRowEnabled(dxTarget).Result : errorRowEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetErrorRowEnabled(dxTarget, value);
+			} else {
+				this.errorRowEnabled = value;
+			}
+		}
+	}
+	object filterBuilder;
+	[Parameter]
+	object FilterBuilder {
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetFilterBuilder(dxTarget).Result : filterBuilder;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetFilterBuilder(dxTarget, value);
+			} else {
+				this.filterBuilder = value;
+			}
+		}
+	}
+	object filterBuilderPopup;
+	[Parameter]
+	object FilterBuilderPopup {
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetFilterBuilderPopup(dxTarget).Result : filterBuilderPopup;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetFilterBuilderPopup(dxTarget, value);
+			} else {
+				this.filterBuilderPopup = value;
+			}
+		}
+	}
+	object filterPanel;
+	[Parameter]
+	object FilterPanel {
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetFilterPanel(dxTarget).Result : filterPanel;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetFilterPanel(dxTarget, value);
+			} else {
+				this.filterPanel = value;
+			}
+		}
+	}
+	object filterRow;
+	[Parameter]
+	object FilterRow {
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetFilterRow(dxTarget).Result : filterRow;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetFilterRow(dxTarget, value);
+			} else {
+				this.filterRow = value;
+			}
+		}
+	}
+	object filterSyncEnabled;
+	[Parameter]
+	object FilterSyncEnabled {
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetFilterSyncEnabled(dxTarget).Result : filterSyncEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetFilterSyncEnabled(dxTarget, value);
+			} else {
+				this.filterSyncEnabled = value;
+			}
+		}
+	}
+	object filterValue;
+	[Parameter]
+	object FilterValue {
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetFilterValue(dxTarget).Result : filterValue;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetFilterValue(dxTarget, value);
+			} else {
+				this.filterValue = value;
+			}
+		}
+	}
+	object headerFilter;
+	[Parameter]
+	object HeaderFilter {
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetHeaderFilter(dxTarget).Result : headerFilter;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetHeaderFilter(dxTarget, value);
+			} else {
+				this.headerFilter = value;
+			}
+		}
+	}
+	object loadPanel;
+	[Parameter]
+	object LoadPanel {
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetLoadPanel(dxTarget).Result : loadPanel;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetLoadPanel(dxTarget, value);
+			} else {
+				this.loadPanel = value;
+			}
+		}
+	}
+	string noDataText;
+	[Parameter]
+	string NoDataText {
+		get => isInitialized ? (string)DevExpress.Ui.DxDataGridInterop.GetNoDataText(dxTarget).Result : noDataText;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetNoDataText(dxTarget, value);
+			} else {
+				this.noDataText = value;
+			}
+		}
+	}
+	object pager;
+	[Parameter]
+	object Pager {
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetPager(dxTarget).Result : pager;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetPager(dxTarget, value);
+			} else {
+				this.pager = value;
+			}
+		}
+	}
+	object paging;
+	[Parameter]
+	object Paging {
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetPaging(dxTarget).Result : paging;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetPaging(dxTarget, value);
+			} else {
+				this.paging = value;
+			}
+		}
+	}
+	bool? rowAlternationEnabled;
+	[Parameter]
+	bool? RowAlternationEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetRowAlternationEnabled(dxTarget).Result : rowAlternationEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetRowAlternationEnabled(dxTarget, value);
+			} else {
+				this.rowAlternationEnabled = value;
+			}
+		}
+	}
+	object searchPanel;
+	[Parameter]
+	object SearchPanel {
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetSearchPanel(dxTarget).Result : searchPanel;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetSearchPanel(dxTarget, value);
+			} else {
+				this.searchPanel = value;
+			}
+		}
+	}
+	object selectedRowKeys;
+	[Parameter]
+	object SelectedRowKeys {
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetSelectedRowKeys(dxTarget).Result : selectedRowKeys;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetSelectedRowKeys(dxTarget, value);
+			} else {
+				this.selectedRowKeys = value;
+			}
+		}
+	}
+	bool? showBorders;
+	[Parameter]
+	bool? ShowBorders {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetShowBorders(dxTarget).Result : showBorders;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetShowBorders(dxTarget, value);
+			} else {
+				this.showBorders = value;
+			}
+		}
+	}
+	bool? showColumnHeaders;
+	[Parameter]
+	bool? ShowColumnHeaders {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetShowColumnHeaders(dxTarget).Result : showColumnHeaders;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetShowColumnHeaders(dxTarget, value);
+			} else {
+				this.showColumnHeaders = value;
+			}
+		}
+	}
+	bool? showColumnLines;
+	[Parameter]
+	bool? ShowColumnLines {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetShowColumnLines(dxTarget).Result : showColumnLines;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetShowColumnLines(dxTarget, value);
+			} else {
+				this.showColumnLines = value;
+			}
+		}
+	}
+	bool? showRowLines;
+	[Parameter]
+	bool? ShowRowLines {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetShowRowLines(dxTarget).Result : showRowLines;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetShowRowLines(dxTarget, value);
+			} else {
+				this.showRowLines = value;
+			}
+		}
+	}
+	object sorting;
+	[Parameter]
+	object Sorting {
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetSorting(dxTarget).Result : sorting;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetSorting(dxTarget, value);
+			} else {
+				this.sorting = value;
+			}
+		}
+	}
+	object stateStoring;
+	[Parameter]
+	object StateStoring {
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetStateStoring(dxTarget).Result : stateStoring;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetStateStoring(dxTarget, value);
+			} else {
+				this.stateStoring = value;
+			}
+		}
+	}
+	bool? twoWayBindingEnabled;
+	[Parameter]
+	bool? TwoWayBindingEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetTwoWayBindingEnabled(dxTarget).Result : twoWayBindingEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetTwoWayBindingEnabled(dxTarget, value);
+			} else {
+				this.twoWayBindingEnabled = value;
+			}
+		}
+	}
+	bool? wordWrapEnabled;
+	[Parameter]
+	bool? WordWrapEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetWordWrapEnabled(dxTarget).Result : wordWrapEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetWordWrapEnabled(dxTarget, value);
+			} else {
+				this.wordWrapEnabled = value;
+			}
+		}
+	}
+	string accessKey;
+	[Parameter]
+	string AccessKey {
+		get => isInitialized ? (string)DevExpress.Ui.DxDataGridInterop.GetAccessKey(dxTarget).Result : accessKey;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetAccessKey(dxTarget, value);
+			} else {
+				this.accessKey = value;
+			}
+		}
+	}
+	bool? activeStateEnabled;
+	[Parameter]
+	bool? ActiveStateEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetActiveStateEnabled(dxTarget, value);
+			} else {
+				this.activeStateEnabled = value;
+			}
+		}
+	}
+	bool? disabled;
+	[Parameter]
+	bool? Disabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetDisabled(dxTarget).Result : disabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetDisabled(dxTarget, value);
+			} else {
+				this.disabled = value;
+			}
+		}
+	}
+	bool? focusStateEnabled;
+	[Parameter]
+	bool? FocusStateEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetFocusStateEnabled(dxTarget, value);
+			} else {
+				this.focusStateEnabled = value;
+			}
+		}
+	}
+	string hint;
+	[Parameter]
+	string Hint {
+		get => isInitialized ? (string)DevExpress.Ui.DxDataGridInterop.GetHint(dxTarget).Result : hint;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetHint(dxTarget, value);
+			} else {
+				this.hint = value;
+			}
+		}
+	}
+	bool? hoverStateEnabled;
+	[Parameter]
+	bool? HoverStateEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetHoverStateEnabled(dxTarget, value);
+			} else {
+				this.hoverStateEnabled = value;
+			}
+		}
+	}
+	float? tabIndex;
+	[Parameter]
+	float? TabIndex {
+		get => isInitialized ? (float?)DevExpress.Ui.DxDataGridInterop.GetTabIndex(dxTarget).Result : tabIndex;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetTabIndex(dxTarget, value);
+			} else {
+				this.tabIndex = value;
+			}
+		}
+	}
+	bool? visible;
+	[Parameter]
+	bool? Visible {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetVisible(dxTarget).Result : visible;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetVisible(dxTarget, value);
+			} else {
+				this.visible = value;
+			}
+		}
+	}
+	object bindingOptions;
+	[Parameter]
+	object BindingOptions {
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetBindingOptions(dxTarget, value);
+			} else {
+				this.bindingOptions = value;
+			}
+		}
+	}
+	object elementAttr;
+	[Parameter]
+	object ElementAttr {
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetElementAttr(dxTarget).Result : elementAttr;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetElementAttr(dxTarget, value);
+			} else {
+				this.elementAttr = value;
+			}
+		}
+	}
+	object height;
+	[Parameter]
+	object Height {
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetHeight(dxTarget).Result : height;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetHeight(dxTarget, value);
+			} else {
+				this.height = value;
+			}
+		}
+	}
+	bool? rtlEnabled;
+	[Parameter]
+	bool? RtlEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetRtlEnabled(dxTarget, value);
+			} else {
+				this.rtlEnabled = value;
+			}
+		}
+	}
+	object width;
+	[Parameter]
+	object Width {
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetWidth(dxTarget).Result : width;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetWidth(dxTarget, value);
+			} else {
+				this.width = value;
+			}
+		}
+	}
 	bool? onCellClickEnabled;
 	[Parameter]
 	bool? OnCellClickEnabled {
@@ -307,6 +965,132 @@ return 		DevExpress.Ui.DxDataGridInterop.Init(dxTarget, options);
 		get => onRowPreparedEnabled;
 		set => this.onRowPreparedEnabled = value;
 	}
+	bool? onAdaptiveDetailRowPreparingEnabled;
+	[Parameter]
+	bool? OnAdaptiveDetailRowPreparingEnabled {
+		get => onAdaptiveDetailRowPreparingEnabled;
+		set => this.onAdaptiveDetailRowPreparingEnabled = value;
+	}
+	bool? onDataErrorOccurredEnabled;
+	[Parameter]
+	bool? OnDataErrorOccurredEnabled {
+		get => onDataErrorOccurredEnabled;
+		set => this.onDataErrorOccurredEnabled = value;
+	}
+	bool? onInitNewRowEnabled;
+	[Parameter]
+	bool? OnInitNewRowEnabled {
+		get => onInitNewRowEnabled;
+		set => this.onInitNewRowEnabled = value;
+	}
+	bool? onKeyDownEnabled;
+	[Parameter]
+	bool? OnKeyDownEnabled {
+		get => onKeyDownEnabled;
+		set => this.onKeyDownEnabled = value;
+	}
+	bool? onRowCollapsedEnabled;
+	[Parameter]
+	bool? OnRowCollapsedEnabled {
+		get => onRowCollapsedEnabled;
+		set => this.onRowCollapsedEnabled = value;
+	}
+	bool? onRowCollapsingEnabled;
+	[Parameter]
+	bool? OnRowCollapsingEnabled {
+		get => onRowCollapsingEnabled;
+		set => this.onRowCollapsingEnabled = value;
+	}
+	bool? onRowExpandedEnabled;
+	[Parameter]
+	bool? OnRowExpandedEnabled {
+		get => onRowExpandedEnabled;
+		set => this.onRowExpandedEnabled = value;
+	}
+	bool? onRowExpandingEnabled;
+	[Parameter]
+	bool? OnRowExpandingEnabled {
+		get => onRowExpandingEnabled;
+		set => this.onRowExpandingEnabled = value;
+	}
+	bool? onRowInsertedEnabled;
+	[Parameter]
+	bool? OnRowInsertedEnabled {
+		get => onRowInsertedEnabled;
+		set => this.onRowInsertedEnabled = value;
+	}
+	bool? onRowInsertingEnabled;
+	[Parameter]
+	bool? OnRowInsertingEnabled {
+		get => onRowInsertingEnabled;
+		set => this.onRowInsertingEnabled = value;
+	}
+	bool? onRowRemovedEnabled;
+	[Parameter]
+	bool? OnRowRemovedEnabled {
+		get => onRowRemovedEnabled;
+		set => this.onRowRemovedEnabled = value;
+	}
+	bool? onRowRemovingEnabled;
+	[Parameter]
+	bool? OnRowRemovingEnabled {
+		get => onRowRemovingEnabled;
+		set => this.onRowRemovingEnabled = value;
+	}
+	bool? onRowUpdatedEnabled;
+	[Parameter]
+	bool? OnRowUpdatedEnabled {
+		get => onRowUpdatedEnabled;
+		set => this.onRowUpdatedEnabled = value;
+	}
+	bool? onRowUpdatingEnabled;
+	[Parameter]
+	bool? OnRowUpdatingEnabled {
+		get => onRowUpdatingEnabled;
+		set => this.onRowUpdatingEnabled = value;
+	}
+	bool? onRowValidatingEnabled;
+	[Parameter]
+	bool? OnRowValidatingEnabled {
+		get => onRowValidatingEnabled;
+		set => this.onRowValidatingEnabled = value;
+	}
+	bool? onSelectionChangedEnabled;
+	[Parameter]
+	bool? OnSelectionChangedEnabled {
+		get => onSelectionChangedEnabled;
+		set => this.onSelectionChangedEnabled = value;
+	}
+	bool? onToolbarPreparingEnabled;
+	[Parameter]
+	bool? OnToolbarPreparingEnabled {
+		get => onToolbarPreparingEnabled;
+		set => this.onToolbarPreparingEnabled = value;
+	}
+	bool? onContentReadyEnabled;
+	[Parameter]
+	bool? OnContentReadyEnabled {
+		get => onContentReadyEnabled;
+		set => this.onContentReadyEnabled = value;
+	}
+	bool? onDisposingEnabled;
+	[Parameter]
+	bool? OnDisposingEnabled {
+		get => onDisposingEnabled;
+		set => this.onDisposingEnabled = value;
+	}
+	bool? onOptionChangedEnabled;
+	[Parameter]
+	bool? OnOptionChangedEnabled {
+		get => onOptionChangedEnabled;
+		set => this.onOptionChangedEnabled = value;
+	}
+	bool? onInitializedEnabled;
+	[Parameter]
+	bool? OnInitializedEnabled {
+		get => onInitializedEnabled;
+		set => this.onInitializedEnabled = value;
+	}
 	protected override async Task OnInitAsync() {
 		await base.OnInitAsync();
 		DevExpress.Ui.DxDataGridInterop.CellClick += DxDataGrid_CellClick;
@@ -321,6 +1105,27 @@ return 		DevExpress.Ui.DxDataGridInterop.Init(dxTarget, options);
 		DevExpress.Ui.DxDataGridInterop.FileSaving += DxDataGrid_FileSaving;
 		DevExpress.Ui.DxDataGridInterop.RowClick += DxDataGrid_RowClick;
 		DevExpress.Ui.DxDataGridInterop.RowPrepared += DxDataGrid_RowPrepared;
+		DevExpress.Ui.DxDataGridInterop.AdaptiveDetailRowPreparing += DxDataGrid_AdaptiveDetailRowPreparing;
+		DevExpress.Ui.DxDataGridInterop.DataErrorOccurred += DxDataGrid_DataErrorOccurred;
+		DevExpress.Ui.DxDataGridInterop.InitNewRow += DxDataGrid_InitNewRow;
+		DevExpress.Ui.DxDataGridInterop.KeyDown += DxDataGrid_KeyDown;
+		DevExpress.Ui.DxDataGridInterop.RowCollapsed += DxDataGrid_RowCollapsed;
+		DevExpress.Ui.DxDataGridInterop.RowCollapsing += DxDataGrid_RowCollapsing;
+		DevExpress.Ui.DxDataGridInterop.RowExpanded += DxDataGrid_RowExpanded;
+		DevExpress.Ui.DxDataGridInterop.RowExpanding += DxDataGrid_RowExpanding;
+		DevExpress.Ui.DxDataGridInterop.RowInserted += DxDataGrid_RowInserted;
+		DevExpress.Ui.DxDataGridInterop.RowInserting += DxDataGrid_RowInserting;
+		DevExpress.Ui.DxDataGridInterop.RowRemoved += DxDataGrid_RowRemoved;
+		DevExpress.Ui.DxDataGridInterop.RowRemoving += DxDataGrid_RowRemoving;
+		DevExpress.Ui.DxDataGridInterop.RowUpdated += DxDataGrid_RowUpdated;
+		DevExpress.Ui.DxDataGridInterop.RowUpdating += DxDataGrid_RowUpdating;
+		DevExpress.Ui.DxDataGridInterop.RowValidating += DxDataGrid_RowValidating;
+		DevExpress.Ui.DxDataGridInterop.SelectionChanged += DxDataGrid_SelectionChanged;
+		DevExpress.Ui.DxDataGridInterop.ToolbarPreparing += DxDataGrid_ToolbarPreparing;
+		DevExpress.Ui.DxDataGridInterop.ContentReady += DxDataGrid_ContentReady;
+		DevExpress.Ui.DxDataGridInterop.Disposing += DxDataGrid_Disposing;
+		DevExpress.Ui.DxDataGridInterop.OptionChanged += DxDataGrid_OptionChanged;
+		DevExpress.Ui.DxDataGridInterop.Initialized += DxDataGrid_Initialized;
 	}
 	[Parameter]
 	Action CellClick { get; set; }
@@ -406,6 +1211,153 @@ return 		DevExpress.Ui.DxDataGridInterop.Init(dxTarget, options);
 			RowPrepared?.Invoke();
 		}
 	}
+	[Parameter]
+	Action AdaptiveDetailRowPreparing { get; set; }
+	void DxDataGrid_AdaptiveDetailRowPreparing(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			AdaptiveDetailRowPreparing?.Invoke();
+		}
+	}
+	[Parameter]
+	Action DataErrorOccurred { get; set; }
+	void DxDataGrid_DataErrorOccurred(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			DataErrorOccurred?.Invoke();
+		}
+	}
+	[Parameter]
+	Action InitNewRow { get; set; }
+	void DxDataGrid_InitNewRow(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			InitNewRow?.Invoke();
+		}
+	}
+	[Parameter]
+	Action KeyDown { get; set; }
+	void DxDataGrid_KeyDown(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			KeyDown?.Invoke();
+		}
+	}
+	[Parameter]
+	Action RowCollapsed { get; set; }
+	void DxDataGrid_RowCollapsed(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			RowCollapsed?.Invoke();
+		}
+	}
+	[Parameter]
+	Action RowCollapsing { get; set; }
+	void DxDataGrid_RowCollapsing(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			RowCollapsing?.Invoke();
+		}
+	}
+	[Parameter]
+	Action RowExpanded { get; set; }
+	void DxDataGrid_RowExpanded(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			RowExpanded?.Invoke();
+		}
+	}
+	[Parameter]
+	Action RowExpanding { get; set; }
+	void DxDataGrid_RowExpanding(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			RowExpanding?.Invoke();
+		}
+	}
+	[Parameter]
+	Action RowInserted { get; set; }
+	void DxDataGrid_RowInserted(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			RowInserted?.Invoke();
+		}
+	}
+	[Parameter]
+	Action RowInserting { get; set; }
+	void DxDataGrid_RowInserting(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			RowInserting?.Invoke();
+		}
+	}
+	[Parameter]
+	Action RowRemoved { get; set; }
+	void DxDataGrid_RowRemoved(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			RowRemoved?.Invoke();
+		}
+	}
+	[Parameter]
+	Action RowRemoving { get; set; }
+	void DxDataGrid_RowRemoving(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			RowRemoving?.Invoke();
+		}
+	}
+	[Parameter]
+	Action RowUpdated { get; set; }
+	void DxDataGrid_RowUpdated(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			RowUpdated?.Invoke();
+		}
+	}
+	[Parameter]
+	Action RowUpdating { get; set; }
+	void DxDataGrid_RowUpdating(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			RowUpdating?.Invoke();
+		}
+	}
+	[Parameter]
+	Action RowValidating { get; set; }
+	void DxDataGrid_RowValidating(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			RowValidating?.Invoke();
+		}
+	}
+	[Parameter]
+	Action SelectionChanged { get; set; }
+	void DxDataGrid_SelectionChanged(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			SelectionChanged?.Invoke();
+		}
+	}
+	[Parameter]
+	Action ToolbarPreparing { get; set; }
+	void DxDataGrid_ToolbarPreparing(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			ToolbarPreparing?.Invoke();
+		}
+	}
+	[Parameter]
+	Action ContentReady { get; set; }
+	void DxDataGrid_ContentReady(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			ContentReady?.Invoke();
+		}
+	}
+	[Parameter]
+	Action Disposing { get; set; }
+	void DxDataGrid_Disposing(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Disposing?.Invoke();
+		}
+	}
+	[Parameter]
+	Action OptionChanged { get; set; }
+	void DxDataGrid_OptionChanged(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			OptionChanged?.Invoke();
+		}
+	}
+	[Parameter]
+	Action Initialized { get; set; }
+	void DxDataGrid_Initialized(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Initialized?.Invoke();
+		}
+	}
 	public void AddColumn(object columnOptions) {
 		DevExpress.Ui.DxDataGridInterop.AddColumn(dxTarget, columnOptions);
 	}
@@ -476,5 +1428,26 @@ return 		DevExpress.Ui.DxDataGridInterop.Init(dxTarget, options);
 		DevExpress.Ui.DxDataGridInterop.FileSaving -= DxDataGrid_FileSaving;
 		DevExpress.Ui.DxDataGridInterop.RowClick -= DxDataGrid_RowClick;
 		DevExpress.Ui.DxDataGridInterop.RowPrepared -= DxDataGrid_RowPrepared;
+		DevExpress.Ui.DxDataGridInterop.AdaptiveDetailRowPreparing -= DxDataGrid_AdaptiveDetailRowPreparing;
+		DevExpress.Ui.DxDataGridInterop.DataErrorOccurred -= DxDataGrid_DataErrorOccurred;
+		DevExpress.Ui.DxDataGridInterop.InitNewRow -= DxDataGrid_InitNewRow;
+		DevExpress.Ui.DxDataGridInterop.KeyDown -= DxDataGrid_KeyDown;
+		DevExpress.Ui.DxDataGridInterop.RowCollapsed -= DxDataGrid_RowCollapsed;
+		DevExpress.Ui.DxDataGridInterop.RowCollapsing -= DxDataGrid_RowCollapsing;
+		DevExpress.Ui.DxDataGridInterop.RowExpanded -= DxDataGrid_RowExpanded;
+		DevExpress.Ui.DxDataGridInterop.RowExpanding -= DxDataGrid_RowExpanding;
+		DevExpress.Ui.DxDataGridInterop.RowInserted -= DxDataGrid_RowInserted;
+		DevExpress.Ui.DxDataGridInterop.RowInserting -= DxDataGrid_RowInserting;
+		DevExpress.Ui.DxDataGridInterop.RowRemoved -= DxDataGrid_RowRemoved;
+		DevExpress.Ui.DxDataGridInterop.RowRemoving -= DxDataGrid_RowRemoving;
+		DevExpress.Ui.DxDataGridInterop.RowUpdated -= DxDataGrid_RowUpdated;
+		DevExpress.Ui.DxDataGridInterop.RowUpdating -= DxDataGrid_RowUpdating;
+		DevExpress.Ui.DxDataGridInterop.RowValidating -= DxDataGrid_RowValidating;
+		DevExpress.Ui.DxDataGridInterop.SelectionChanged -= DxDataGrid_SelectionChanged;
+		DevExpress.Ui.DxDataGridInterop.ToolbarPreparing -= DxDataGrid_ToolbarPreparing;
+		DevExpress.Ui.DxDataGridInterop.ContentReady -= DxDataGrid_ContentReady;
+		DevExpress.Ui.DxDataGridInterop.Disposing -= DxDataGrid_Disposing;
+		DevExpress.Ui.DxDataGridInterop.OptionChanged -= DxDataGrid_OptionChanged;
+		DevExpress.Ui.DxDataGridInterop.Initialized -= DxDataGrid_Initialized;
 	}
 }

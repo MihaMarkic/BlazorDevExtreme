@@ -17,15 +17,34 @@
 			offText = offText,
 			onText = onText,
 			value = value,
+			isValid = isValid,
+			readOnly = readOnly,
+			validationError = validationError,
+			validationMessageMode = validationMessageMode,
+			accessKey = accessKey,
+			disabled = disabled,
+			hint = hint,
+			tabIndex = tabIndex,
+			visible = visible,
+			bindingOptions = bindingOptions,
+			elementAttr = elementAttr,
+			height = height,
+			rtlEnabled = rtlEnabled,
+			width = width,
+			onValueChangedEnabled = onValueChangedEnabled,
+			onContentReadyEnabled = onContentReadyEnabled,
+			onDisposingEnabled = onDisposingEnabled,
+			onOptionChangedEnabled = onOptionChangedEnabled,
+			onInitializedEnabled = onInitializedEnabled,
 		};
 	}
 	protected override Task Init(DevExpress.Ui.DxSwitchOptions options) {
-return 		DevExpress.Ui.DxSwitchInterop.Init(dxTarget, options);
+		return DevExpress.Ui.DxSwitchInterop.Init(dxTarget, options);
 	}
 	bool? activeStateEnabled;
 	[Parameter]
 	bool? ActiveStateEnabled {
-		get => isInitialized ? DevExpress.Ui.DxSwitchInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxSwitchInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxSwitchInterop.SetActiveStateEnabled(dxTarget, value);
@@ -37,7 +56,7 @@ return 		DevExpress.Ui.DxSwitchInterop.Init(dxTarget, options);
 	bool? focusStateEnabled;
 	[Parameter]
 	bool? FocusStateEnabled {
-		get => isInitialized ? DevExpress.Ui.DxSwitchInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxSwitchInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxSwitchInterop.SetFocusStateEnabled(dxTarget, value);
@@ -49,7 +68,7 @@ return 		DevExpress.Ui.DxSwitchInterop.Init(dxTarget, options);
 	bool? hoverStateEnabled;
 	[Parameter]
 	bool? HoverStateEnabled {
-		get => isInitialized ? DevExpress.Ui.DxSwitchInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxSwitchInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxSwitchInterop.SetHoverStateEnabled(dxTarget, value);
@@ -61,7 +80,7 @@ return 		DevExpress.Ui.DxSwitchInterop.Init(dxTarget, options);
 	string name;
 	[Parameter]
 	string Name {
-		get => isInitialized ? DevExpress.Ui.DxSwitchInterop.GetName(dxTarget).Result : name;
+		get => isInitialized ? (string)DevExpress.Ui.DxSwitchInterop.GetName(dxTarget).Result : name;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxSwitchInterop.SetName(dxTarget, value);
@@ -73,7 +92,7 @@ return 		DevExpress.Ui.DxSwitchInterop.Init(dxTarget, options);
 	string offText;
 	[Parameter]
 	string OffText {
-		get => isInitialized ? DevExpress.Ui.DxSwitchInterop.GetOffText(dxTarget).Result : offText;
+		get => isInitialized ? (string)DevExpress.Ui.DxSwitchInterop.GetOffText(dxTarget).Result : offText;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxSwitchInterop.SetOffText(dxTarget, value);
@@ -85,7 +104,7 @@ return 		DevExpress.Ui.DxSwitchInterop.Init(dxTarget, options);
 	string onText;
 	[Parameter]
 	string OnText {
-		get => isInitialized ? DevExpress.Ui.DxSwitchInterop.GetOnText(dxTarget).Result : onText;
+		get => isInitialized ? (string)DevExpress.Ui.DxSwitchInterop.GetOnText(dxTarget).Result : onText;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxSwitchInterop.SetOnText(dxTarget, value);
@@ -97,7 +116,7 @@ return 		DevExpress.Ui.DxSwitchInterop.Init(dxTarget, options);
 	bool? value;
 	[Parameter]
 	bool? Value {
-		get => isInitialized ? DevExpress.Ui.DxSwitchInterop.GetValue(dxTarget).Result : value;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxSwitchInterop.GetValue(dxTarget).Result : value;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxSwitchInterop.SetValue(dxTarget, value);
@@ -106,9 +125,252 @@ return 		DevExpress.Ui.DxSwitchInterop.Init(dxTarget, options);
 			}
 		}
 	}
+	bool? isValid;
+	[Parameter]
+	bool? IsValid {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxSwitchInterop.GetIsValid(dxTarget).Result : isValid;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxSwitchInterop.SetIsValid(dxTarget, value);
+			} else {
+				this.isValid = value;
+			}
+		}
+	}
+	bool? readOnly;
+	[Parameter]
+	bool? ReadOnly {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxSwitchInterop.GetReadOnly(dxTarget).Result : readOnly;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxSwitchInterop.SetReadOnly(dxTarget, value);
+			} else {
+				this.readOnly = value;
+			}
+		}
+	}
+	object validationError;
+	[Parameter]
+	object ValidationError {
+		get => isInitialized ? DevExpress.Ui.DxSwitchInterop.GetValidationError(dxTarget).Result : validationError;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxSwitchInterop.SetValidationError(dxTarget, value);
+			} else {
+				this.validationError = value;
+			}
+		}
+	}
+	string validationMessageMode;
+	[Parameter]
+	string ValidationMessageMode {
+		get => isInitialized ? (string)DevExpress.Ui.DxSwitchInterop.GetValidationMessageMode(dxTarget).Result : validationMessageMode;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxSwitchInterop.SetValidationMessageMode(dxTarget, value);
+			} else {
+				this.validationMessageMode = value;
+			}
+		}
+	}
+	string accessKey;
+	[Parameter]
+	string AccessKey {
+		get => isInitialized ? (string)DevExpress.Ui.DxSwitchInterop.GetAccessKey(dxTarget).Result : accessKey;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxSwitchInterop.SetAccessKey(dxTarget, value);
+			} else {
+				this.accessKey = value;
+			}
+		}
+	}
+	bool? disabled;
+	[Parameter]
+	bool? Disabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxSwitchInterop.GetDisabled(dxTarget).Result : disabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxSwitchInterop.SetDisabled(dxTarget, value);
+			} else {
+				this.disabled = value;
+			}
+		}
+	}
+	string hint;
+	[Parameter]
+	string Hint {
+		get => isInitialized ? (string)DevExpress.Ui.DxSwitchInterop.GetHint(dxTarget).Result : hint;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxSwitchInterop.SetHint(dxTarget, value);
+			} else {
+				this.hint = value;
+			}
+		}
+	}
+	float? tabIndex;
+	[Parameter]
+	float? TabIndex {
+		get => isInitialized ? (float?)DevExpress.Ui.DxSwitchInterop.GetTabIndex(dxTarget).Result : tabIndex;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxSwitchInterop.SetTabIndex(dxTarget, value);
+			} else {
+				this.tabIndex = value;
+			}
+		}
+	}
+	bool? visible;
+	[Parameter]
+	bool? Visible {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxSwitchInterop.GetVisible(dxTarget).Result : visible;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxSwitchInterop.SetVisible(dxTarget, value);
+			} else {
+				this.visible = value;
+			}
+		}
+	}
+	object bindingOptions;
+	[Parameter]
+	object BindingOptions {
+		get => isInitialized ? DevExpress.Ui.DxSwitchInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxSwitchInterop.SetBindingOptions(dxTarget, value);
+			} else {
+				this.bindingOptions = value;
+			}
+		}
+	}
+	object elementAttr;
+	[Parameter]
+	object ElementAttr {
+		get => isInitialized ? DevExpress.Ui.DxSwitchInterop.GetElementAttr(dxTarget).Result : elementAttr;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxSwitchInterop.SetElementAttr(dxTarget, value);
+			} else {
+				this.elementAttr = value;
+			}
+		}
+	}
+	object height;
+	[Parameter]
+	object Height {
+		get => isInitialized ? DevExpress.Ui.DxSwitchInterop.GetHeight(dxTarget).Result : height;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxSwitchInterop.SetHeight(dxTarget, value);
+			} else {
+				this.height = value;
+			}
+		}
+	}
+	bool? rtlEnabled;
+	[Parameter]
+	bool? RtlEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxSwitchInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxSwitchInterop.SetRtlEnabled(dxTarget, value);
+			} else {
+				this.rtlEnabled = value;
+			}
+		}
+	}
+	object width;
+	[Parameter]
+	object Width {
+		get => isInitialized ? DevExpress.Ui.DxSwitchInterop.GetWidth(dxTarget).Result : width;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxSwitchInterop.SetWidth(dxTarget, value);
+			} else {
+				this.width = value;
+			}
+		}
+	}
+	bool? onValueChangedEnabled;
+	[Parameter]
+	bool? OnValueChangedEnabled {
+		get => onValueChangedEnabled;
+		set => this.onValueChangedEnabled = value;
+	}
+	bool? onContentReadyEnabled;
+	[Parameter]
+	bool? OnContentReadyEnabled {
+		get => onContentReadyEnabled;
+		set => this.onContentReadyEnabled = value;
+	}
+	bool? onDisposingEnabled;
+	[Parameter]
+	bool? OnDisposingEnabled {
+		get => onDisposingEnabled;
+		set => this.onDisposingEnabled = value;
+	}
+	bool? onOptionChangedEnabled;
+	[Parameter]
+	bool? OnOptionChangedEnabled {
+		get => onOptionChangedEnabled;
+		set => this.onOptionChangedEnabled = value;
+	}
+	bool? onInitializedEnabled;
+	[Parameter]
+	bool? OnInitializedEnabled {
+		get => onInitializedEnabled;
+		set => this.onInitializedEnabled = value;
+	}
 	protected override async Task OnInitAsync() {
 		await base.OnInitAsync();
+		DevExpress.Ui.DxSwitchInterop.ValueChanged += DxSwitch_ValueChanged;
+		DevExpress.Ui.DxSwitchInterop.ContentReady += DxSwitch_ContentReady;
+		DevExpress.Ui.DxSwitchInterop.Disposing += DxSwitch_Disposing;
+		DevExpress.Ui.DxSwitchInterop.OptionChanged += DxSwitch_OptionChanged;
+		DevExpress.Ui.DxSwitchInterop.Initialized += DxSwitch_Initialized;
+	}
+	[Parameter]
+	Action ValueChanged { get; set; }
+	void DxSwitch_ValueChanged(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			ValueChanged?.Invoke();
+		}
+	}
+	[Parameter]
+	Action ContentReady { get; set; }
+	void DxSwitch_ContentReady(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			ContentReady?.Invoke();
+		}
+	}
+	[Parameter]
+	Action Disposing { get; set; }
+	void DxSwitch_Disposing(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Disposing?.Invoke();
+		}
+	}
+	[Parameter]
+	Action OptionChanged { get; set; }
+	void DxSwitch_OptionChanged(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			OptionChanged?.Invoke();
+		}
+	}
+	[Parameter]
+	Action Initialized { get; set; }
+	void DxSwitch_Initialized(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Initialized?.Invoke();
+		}
 	}
 	public void Dispose() {
+		DevExpress.Ui.DxSwitchInterop.ValueChanged -= DxSwitch_ValueChanged;
+		DevExpress.Ui.DxSwitchInterop.ContentReady -= DxSwitch_ContentReady;
+		DevExpress.Ui.DxSwitchInterop.Disposing -= DxSwitch_Disposing;
+		DevExpress.Ui.DxSwitchInterop.OptionChanged -= DxSwitch_OptionChanged;
+		DevExpress.Ui.DxSwitchInterop.Initialized -= DxSwitch_Initialized;
 	}
 }

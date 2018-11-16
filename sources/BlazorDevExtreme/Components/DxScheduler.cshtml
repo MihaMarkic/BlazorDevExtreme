@@ -53,6 +53,18 @@
 			timeZone = timeZone,
 			useDropDownViewSwitcher = useDropDownViewSwitcher,
 			views = views,
+			accessKey = accessKey,
+			activeStateEnabled = activeStateEnabled,
+			disabled = disabled,
+			hint = hint,
+			hoverStateEnabled = hoverStateEnabled,
+			tabIndex = tabIndex,
+			visible = visible,
+			bindingOptions = bindingOptions,
+			elementAttr = elementAttr,
+			height = height,
+			rtlEnabled = rtlEnabled,
+			width = width,
 			onAppointmentAddedEnabled = onAppointmentAddedEnabled,
 			onAppointmentAddingEnabled = onAppointmentAddingEnabled,
 			onAppointmentClickEnabled = onAppointmentClickEnabled,
@@ -66,15 +78,19 @@
 			onAppointmentUpdatingEnabled = onAppointmentUpdatingEnabled,
 			onCellClickEnabled = onCellClickEnabled,
 			onCellContextMenuEnabled = onCellContextMenuEnabled,
+			onContentReadyEnabled = onContentReadyEnabled,
+			onDisposingEnabled = onDisposingEnabled,
+			onOptionChangedEnabled = onOptionChangedEnabled,
+			onInitializedEnabled = onInitializedEnabled,
 		};
 	}
 	protected override Task Init(DevExpress.Ui.DxSchedulerOptions options) {
-return 		DevExpress.Ui.DxSchedulerInterop.Init(dxTarget, options);
+		return DevExpress.Ui.DxSchedulerInterop.Init(dxTarget, options);
 	}
 	string allDayExpr;
 	[Parameter]
 	string AllDayExpr {
-		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetAllDayExpr(dxTarget).Result : allDayExpr;
+		get => isInitialized ? (string)DevExpress.Ui.DxSchedulerInterop.GetAllDayExpr(dxTarget).Result : allDayExpr;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxSchedulerInterop.SetAllDayExpr(dxTarget, value);
@@ -110,7 +126,7 @@ return 		DevExpress.Ui.DxSchedulerInterop.Init(dxTarget, options);
 	float? cellDuration;
 	[Parameter]
 	float? CellDuration {
-		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetCellDuration(dxTarget).Result : cellDuration;
+		get => isInitialized ? (float?)DevExpress.Ui.DxSchedulerInterop.GetCellDuration(dxTarget).Result : cellDuration;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxSchedulerInterop.SetCellDuration(dxTarget, value);
@@ -122,7 +138,7 @@ return 		DevExpress.Ui.DxSchedulerInterop.Init(dxTarget, options);
 	bool? crossScrollingEnabled;
 	[Parameter]
 	bool? CrossScrollingEnabled {
-		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetCrossScrollingEnabled(dxTarget).Result : crossScrollingEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxSchedulerInterop.GetCrossScrollingEnabled(dxTarget).Result : crossScrollingEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxSchedulerInterop.SetCrossScrollingEnabled(dxTarget, value);
@@ -146,7 +162,7 @@ return 		DevExpress.Ui.DxSchedulerInterop.Init(dxTarget, options);
 	string currentView;
 	[Parameter]
 	string CurrentView {
-		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetCurrentView(dxTarget).Result : currentView;
+		get => isInitialized ? (string)DevExpress.Ui.DxSchedulerInterop.GetCurrentView(dxTarget).Result : currentView;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxSchedulerInterop.SetCurrentView(dxTarget, value);
@@ -194,7 +210,7 @@ return 		DevExpress.Ui.DxSchedulerInterop.Init(dxTarget, options);
 	string dateSerializationFormat;
 	[Parameter]
 	string DateSerializationFormat {
-		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetDateSerializationFormat(dxTarget).Result : dateSerializationFormat;
+		get => isInitialized ? (string)DevExpress.Ui.DxSchedulerInterop.GetDateSerializationFormat(dxTarget).Result : dateSerializationFormat;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxSchedulerInterop.SetDateSerializationFormat(dxTarget, value);
@@ -206,7 +222,7 @@ return 		DevExpress.Ui.DxSchedulerInterop.Init(dxTarget, options);
 	string descriptionExpr;
 	[Parameter]
 	string DescriptionExpr {
-		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetDescriptionExpr(dxTarget).Result : descriptionExpr;
+		get => isInitialized ? (string)DevExpress.Ui.DxSchedulerInterop.GetDescriptionExpr(dxTarget).Result : descriptionExpr;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxSchedulerInterop.SetDescriptionExpr(dxTarget, value);
@@ -242,7 +258,7 @@ return 		DevExpress.Ui.DxSchedulerInterop.Init(dxTarget, options);
 	string endDateExpr;
 	[Parameter]
 	string EndDateExpr {
-		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetEndDateExpr(dxTarget).Result : endDateExpr;
+		get => isInitialized ? (string)DevExpress.Ui.DxSchedulerInterop.GetEndDateExpr(dxTarget).Result : endDateExpr;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxSchedulerInterop.SetEndDateExpr(dxTarget, value);
@@ -254,7 +270,7 @@ return 		DevExpress.Ui.DxSchedulerInterop.Init(dxTarget, options);
 	string endDateTimeZoneExpr;
 	[Parameter]
 	string EndDateTimeZoneExpr {
-		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetEndDateTimeZoneExpr(dxTarget).Result : endDateTimeZoneExpr;
+		get => isInitialized ? (string)DevExpress.Ui.DxSchedulerInterop.GetEndDateTimeZoneExpr(dxTarget).Result : endDateTimeZoneExpr;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxSchedulerInterop.SetEndDateTimeZoneExpr(dxTarget, value);
@@ -266,7 +282,7 @@ return 		DevExpress.Ui.DxSchedulerInterop.Init(dxTarget, options);
 	float? endDayHour;
 	[Parameter]
 	float? EndDayHour {
-		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetEndDayHour(dxTarget).Result : endDayHour;
+		get => isInitialized ? (float?)DevExpress.Ui.DxSchedulerInterop.GetEndDayHour(dxTarget).Result : endDayHour;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxSchedulerInterop.SetEndDayHour(dxTarget, value);
@@ -290,7 +306,7 @@ return 		DevExpress.Ui.DxSchedulerInterop.Init(dxTarget, options);
 	bool? focusStateEnabled;
 	[Parameter]
 	bool? FocusStateEnabled {
-		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxSchedulerInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxSchedulerInterop.SetFocusStateEnabled(dxTarget, value);
@@ -314,7 +330,7 @@ return 		DevExpress.Ui.DxSchedulerInterop.Init(dxTarget, options);
 	float? indicatorUpdateInterval;
 	[Parameter]
 	float? IndicatorUpdateInterval {
-		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetIndicatorUpdateInterval(dxTarget).Result : indicatorUpdateInterval;
+		get => isInitialized ? (float?)DevExpress.Ui.DxSchedulerInterop.GetIndicatorUpdateInterval(dxTarget).Result : indicatorUpdateInterval;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxSchedulerInterop.SetIndicatorUpdateInterval(dxTarget, value);
@@ -362,7 +378,7 @@ return 		DevExpress.Ui.DxSchedulerInterop.Init(dxTarget, options);
 	string noDataText;
 	[Parameter]
 	string NoDataText {
-		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetNoDataText(dxTarget).Result : noDataText;
+		get => isInitialized ? (string)DevExpress.Ui.DxSchedulerInterop.GetNoDataText(dxTarget).Result : noDataText;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxSchedulerInterop.SetNoDataText(dxTarget, value);
@@ -374,7 +390,7 @@ return 		DevExpress.Ui.DxSchedulerInterop.Init(dxTarget, options);
 	string recurrenceEditMode;
 	[Parameter]
 	string RecurrenceEditMode {
-		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetRecurrenceEditMode(dxTarget).Result : recurrenceEditMode;
+		get => isInitialized ? (string)DevExpress.Ui.DxSchedulerInterop.GetRecurrenceEditMode(dxTarget).Result : recurrenceEditMode;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxSchedulerInterop.SetRecurrenceEditMode(dxTarget, value);
@@ -386,7 +402,7 @@ return 		DevExpress.Ui.DxSchedulerInterop.Init(dxTarget, options);
 	string recurrenceExceptionExpr;
 	[Parameter]
 	string RecurrenceExceptionExpr {
-		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetRecurrenceExceptionExpr(dxTarget).Result : recurrenceExceptionExpr;
+		get => isInitialized ? (string)DevExpress.Ui.DxSchedulerInterop.GetRecurrenceExceptionExpr(dxTarget).Result : recurrenceExceptionExpr;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxSchedulerInterop.SetRecurrenceExceptionExpr(dxTarget, value);
@@ -398,7 +414,7 @@ return 		DevExpress.Ui.DxSchedulerInterop.Init(dxTarget, options);
 	string recurrenceRuleExpr;
 	[Parameter]
 	string RecurrenceRuleExpr {
-		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetRecurrenceRuleExpr(dxTarget).Result : recurrenceRuleExpr;
+		get => isInitialized ? (string)DevExpress.Ui.DxSchedulerInterop.GetRecurrenceRuleExpr(dxTarget).Result : recurrenceRuleExpr;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxSchedulerInterop.SetRecurrenceRuleExpr(dxTarget, value);
@@ -410,7 +426,7 @@ return 		DevExpress.Ui.DxSchedulerInterop.Init(dxTarget, options);
 	bool? remoteFiltering;
 	[Parameter]
 	bool? RemoteFiltering {
-		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetRemoteFiltering(dxTarget).Result : remoteFiltering;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxSchedulerInterop.GetRemoteFiltering(dxTarget).Result : remoteFiltering;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxSchedulerInterop.SetRemoteFiltering(dxTarget, value);
@@ -458,7 +474,7 @@ return 		DevExpress.Ui.DxSchedulerInterop.Init(dxTarget, options);
 	bool? shadeUntilCurrentTime;
 	[Parameter]
 	bool? ShadeUntilCurrentTime {
-		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetShadeUntilCurrentTime(dxTarget).Result : shadeUntilCurrentTime;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxSchedulerInterop.GetShadeUntilCurrentTime(dxTarget).Result : shadeUntilCurrentTime;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxSchedulerInterop.SetShadeUntilCurrentTime(dxTarget, value);
@@ -470,7 +486,7 @@ return 		DevExpress.Ui.DxSchedulerInterop.Init(dxTarget, options);
 	bool? showAllDayPanel;
 	[Parameter]
 	bool? ShowAllDayPanel {
-		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetShowAllDayPanel(dxTarget).Result : showAllDayPanel;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxSchedulerInterop.GetShowAllDayPanel(dxTarget).Result : showAllDayPanel;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxSchedulerInterop.SetShowAllDayPanel(dxTarget, value);
@@ -482,7 +498,7 @@ return 		DevExpress.Ui.DxSchedulerInterop.Init(dxTarget, options);
 	bool? showCurrentTimeIndicator;
 	[Parameter]
 	bool? ShowCurrentTimeIndicator {
-		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetShowCurrentTimeIndicator(dxTarget).Result : showCurrentTimeIndicator;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxSchedulerInterop.GetShowCurrentTimeIndicator(dxTarget).Result : showCurrentTimeIndicator;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxSchedulerInterop.SetShowCurrentTimeIndicator(dxTarget, value);
@@ -494,7 +510,7 @@ return 		DevExpress.Ui.DxSchedulerInterop.Init(dxTarget, options);
 	string startDateExpr;
 	[Parameter]
 	string StartDateExpr {
-		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetStartDateExpr(dxTarget).Result : startDateExpr;
+		get => isInitialized ? (string)DevExpress.Ui.DxSchedulerInterop.GetStartDateExpr(dxTarget).Result : startDateExpr;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxSchedulerInterop.SetStartDateExpr(dxTarget, value);
@@ -506,7 +522,7 @@ return 		DevExpress.Ui.DxSchedulerInterop.Init(dxTarget, options);
 	string startDateTimeZoneExpr;
 	[Parameter]
 	string StartDateTimeZoneExpr {
-		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetStartDateTimeZoneExpr(dxTarget).Result : startDateTimeZoneExpr;
+		get => isInitialized ? (string)DevExpress.Ui.DxSchedulerInterop.GetStartDateTimeZoneExpr(dxTarget).Result : startDateTimeZoneExpr;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxSchedulerInterop.SetStartDateTimeZoneExpr(dxTarget, value);
@@ -518,7 +534,7 @@ return 		DevExpress.Ui.DxSchedulerInterop.Init(dxTarget, options);
 	float? startDayHour;
 	[Parameter]
 	float? StartDayHour {
-		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetStartDayHour(dxTarget).Result : startDayHour;
+		get => isInitialized ? (float?)DevExpress.Ui.DxSchedulerInterop.GetStartDayHour(dxTarget).Result : startDayHour;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxSchedulerInterop.SetStartDayHour(dxTarget, value);
@@ -530,7 +546,7 @@ return 		DevExpress.Ui.DxSchedulerInterop.Init(dxTarget, options);
 	string textExpr;
 	[Parameter]
 	string TextExpr {
-		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetTextExpr(dxTarget).Result : textExpr;
+		get => isInitialized ? (string)DevExpress.Ui.DxSchedulerInterop.GetTextExpr(dxTarget).Result : textExpr;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxSchedulerInterop.SetTextExpr(dxTarget, value);
@@ -554,7 +570,7 @@ return 		DevExpress.Ui.DxSchedulerInterop.Init(dxTarget, options);
 	string timeZone;
 	[Parameter]
 	string TimeZone {
-		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetTimeZone(dxTarget).Result : timeZone;
+		get => isInitialized ? (string)DevExpress.Ui.DxSchedulerInterop.GetTimeZone(dxTarget).Result : timeZone;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxSchedulerInterop.SetTimeZone(dxTarget, value);
@@ -566,7 +582,7 @@ return 		DevExpress.Ui.DxSchedulerInterop.Init(dxTarget, options);
 	bool? useDropDownViewSwitcher;
 	[Parameter]
 	bool? UseDropDownViewSwitcher {
-		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetUseDropDownViewSwitcher(dxTarget).Result : useDropDownViewSwitcher;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxSchedulerInterop.GetUseDropDownViewSwitcher(dxTarget).Result : useDropDownViewSwitcher;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxSchedulerInterop.SetUseDropDownViewSwitcher(dxTarget, value);
@@ -584,6 +600,150 @@ return 		DevExpress.Ui.DxSchedulerInterop.Init(dxTarget, options);
 				DevExpress.Ui.DxSchedulerInterop.SetViews(dxTarget, value);
 			} else {
 				this.views = value;
+			}
+		}
+	}
+	string accessKey;
+	[Parameter]
+	string AccessKey {
+		get => isInitialized ? (string)DevExpress.Ui.DxSchedulerInterop.GetAccessKey(dxTarget).Result : accessKey;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxSchedulerInterop.SetAccessKey(dxTarget, value);
+			} else {
+				this.accessKey = value;
+			}
+		}
+	}
+	bool? activeStateEnabled;
+	[Parameter]
+	bool? ActiveStateEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxSchedulerInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxSchedulerInterop.SetActiveStateEnabled(dxTarget, value);
+			} else {
+				this.activeStateEnabled = value;
+			}
+		}
+	}
+	bool? disabled;
+	[Parameter]
+	bool? Disabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxSchedulerInterop.GetDisabled(dxTarget).Result : disabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxSchedulerInterop.SetDisabled(dxTarget, value);
+			} else {
+				this.disabled = value;
+			}
+		}
+	}
+	string hint;
+	[Parameter]
+	string Hint {
+		get => isInitialized ? (string)DevExpress.Ui.DxSchedulerInterop.GetHint(dxTarget).Result : hint;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxSchedulerInterop.SetHint(dxTarget, value);
+			} else {
+				this.hint = value;
+			}
+		}
+	}
+	bool? hoverStateEnabled;
+	[Parameter]
+	bool? HoverStateEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxSchedulerInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxSchedulerInterop.SetHoverStateEnabled(dxTarget, value);
+			} else {
+				this.hoverStateEnabled = value;
+			}
+		}
+	}
+	float? tabIndex;
+	[Parameter]
+	float? TabIndex {
+		get => isInitialized ? (float?)DevExpress.Ui.DxSchedulerInterop.GetTabIndex(dxTarget).Result : tabIndex;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxSchedulerInterop.SetTabIndex(dxTarget, value);
+			} else {
+				this.tabIndex = value;
+			}
+		}
+	}
+	bool? visible;
+	[Parameter]
+	bool? Visible {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxSchedulerInterop.GetVisible(dxTarget).Result : visible;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxSchedulerInterop.SetVisible(dxTarget, value);
+			} else {
+				this.visible = value;
+			}
+		}
+	}
+	object bindingOptions;
+	[Parameter]
+	object BindingOptions {
+		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxSchedulerInterop.SetBindingOptions(dxTarget, value);
+			} else {
+				this.bindingOptions = value;
+			}
+		}
+	}
+	object elementAttr;
+	[Parameter]
+	object ElementAttr {
+		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetElementAttr(dxTarget).Result : elementAttr;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxSchedulerInterop.SetElementAttr(dxTarget, value);
+			} else {
+				this.elementAttr = value;
+			}
+		}
+	}
+	object height;
+	[Parameter]
+	object Height {
+		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetHeight(dxTarget).Result : height;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxSchedulerInterop.SetHeight(dxTarget, value);
+			} else {
+				this.height = value;
+			}
+		}
+	}
+	bool? rtlEnabled;
+	[Parameter]
+	bool? RtlEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxSchedulerInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxSchedulerInterop.SetRtlEnabled(dxTarget, value);
+			} else {
+				this.rtlEnabled = value;
+			}
+		}
+	}
+	object width;
+	[Parameter]
+	object Width {
+		get => isInitialized ? DevExpress.Ui.DxSchedulerInterop.GetWidth(dxTarget).Result : width;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxSchedulerInterop.SetWidth(dxTarget, value);
+			} else {
+				this.width = value;
 			}
 		}
 	}
@@ -665,6 +825,30 @@ return 		DevExpress.Ui.DxSchedulerInterop.Init(dxTarget, options);
 		get => onCellContextMenuEnabled;
 		set => this.onCellContextMenuEnabled = value;
 	}
+	bool? onContentReadyEnabled;
+	[Parameter]
+	bool? OnContentReadyEnabled {
+		get => onContentReadyEnabled;
+		set => this.onContentReadyEnabled = value;
+	}
+	bool? onDisposingEnabled;
+	[Parameter]
+	bool? OnDisposingEnabled {
+		get => onDisposingEnabled;
+		set => this.onDisposingEnabled = value;
+	}
+	bool? onOptionChangedEnabled;
+	[Parameter]
+	bool? OnOptionChangedEnabled {
+		get => onOptionChangedEnabled;
+		set => this.onOptionChangedEnabled = value;
+	}
+	bool? onInitializedEnabled;
+	[Parameter]
+	bool? OnInitializedEnabled {
+		get => onInitializedEnabled;
+		set => this.onInitializedEnabled = value;
+	}
 	protected override async Task OnInitAsync() {
 		await base.OnInitAsync();
 		DevExpress.Ui.DxSchedulerInterop.AppointmentAdded += DxScheduler_AppointmentAdded;
@@ -680,6 +864,10 @@ return 		DevExpress.Ui.DxSchedulerInterop.Init(dxTarget, options);
 		DevExpress.Ui.DxSchedulerInterop.AppointmentUpdating += DxScheduler_AppointmentUpdating;
 		DevExpress.Ui.DxSchedulerInterop.CellClick += DxScheduler_CellClick;
 		DevExpress.Ui.DxSchedulerInterop.CellContextMenu += DxScheduler_CellContextMenu;
+		DevExpress.Ui.DxSchedulerInterop.ContentReady += DxScheduler_ContentReady;
+		DevExpress.Ui.DxSchedulerInterop.Disposing += DxScheduler_Disposing;
+		DevExpress.Ui.DxSchedulerInterop.OptionChanged += DxScheduler_OptionChanged;
+		DevExpress.Ui.DxSchedulerInterop.Initialized += DxScheduler_Initialized;
 	}
 	[Parameter]
 	Action AppointmentAdded { get; set; }
@@ -772,6 +960,34 @@ return 		DevExpress.Ui.DxSchedulerInterop.Init(dxTarget, options);
 			CellContextMenu?.Invoke();
 		}
 	}
+	[Parameter]
+	Action ContentReady { get; set; }
+	void DxScheduler_ContentReady(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			ContentReady?.Invoke();
+		}
+	}
+	[Parameter]
+	Action Disposing { get; set; }
+	void DxScheduler_Disposing(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Disposing?.Invoke();
+		}
+	}
+	[Parameter]
+	Action OptionChanged { get; set; }
+	void DxScheduler_OptionChanged(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			OptionChanged?.Invoke();
+		}
+	}
+	[Parameter]
+	Action Initialized { get; set; }
+	void DxScheduler_Initialized(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Initialized?.Invoke();
+		}
+	}
 	public void AddAppointment(object appointment) {
 		DevExpress.Ui.DxSchedulerInterop.AddAppointment(dxTarget, appointment);
 	}
@@ -822,5 +1038,9 @@ return 		DevExpress.Ui.DxSchedulerInterop.Init(dxTarget, options);
 		DevExpress.Ui.DxSchedulerInterop.AppointmentUpdating -= DxScheduler_AppointmentUpdating;
 		DevExpress.Ui.DxSchedulerInterop.CellClick -= DxScheduler_CellClick;
 		DevExpress.Ui.DxSchedulerInterop.CellContextMenu -= DxScheduler_CellContextMenu;
+		DevExpress.Ui.DxSchedulerInterop.ContentReady -= DxScheduler_ContentReady;
+		DevExpress.Ui.DxSchedulerInterop.Disposing -= DxScheduler_Disposing;
+		DevExpress.Ui.DxSchedulerInterop.OptionChanged -= DxScheduler_OptionChanged;
+		DevExpress.Ui.DxSchedulerInterop.Initialized -= DxScheduler_Initialized;
 	}
 }

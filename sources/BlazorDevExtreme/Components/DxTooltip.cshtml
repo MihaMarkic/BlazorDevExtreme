@@ -10,14 +10,687 @@
 	public DxTooltip() : base("DxTooltip") { }
 	protected override DevExpress.Ui.DxTooltipOptions CreateOptions() {
 		return new DevExpress.Ui.DxTooltipOptions {
+			animation = animation,
+			closeOnOutsideClick = closeOnOutsideClick,
+			height = height,
+			hideEvent = hideEvent,
+			position = position,
+			shading = shading,
+			showEvent = showEvent,
+			showTitle = showTitle,
+			target = target,
+			width = width,
+			container = container,
+			dragEnabled = dragEnabled,
+			focusStateEnabled = focusStateEnabled,
+			fullScreen = fullScreen,
+			resizeEnabled = resizeEnabled,
+			showCloseButton = showCloseButton,
+			title = title,
+			titleTemplate = titleTemplate,
+			toolbarItems = toolbarItems,
+			closeOnBackButton = closeOnBackButton,
+			contentTemplate = contentTemplate,
+			deferRendering = deferRendering,
+			maxHeight = maxHeight,
+			maxWidth = maxWidth,
+			minHeight = minHeight,
+			minWidth = minWidth,
+			shadingColor = shadingColor,
+			visible = visible,
+			accessKey = accessKey,
+			activeStateEnabled = activeStateEnabled,
+			disabled = disabled,
+			hint = hint,
+			hoverStateEnabled = hoverStateEnabled,
+			tabIndex = tabIndex,
+			bindingOptions = bindingOptions,
+			elementAttr = elementAttr,
+			rtlEnabled = rtlEnabled,
+			onResizeEnabled = onResizeEnabled,
+			onResizeEndEnabled = onResizeEndEnabled,
+			onResizeStartEnabled = onResizeStartEnabled,
+			onTitleRenderedEnabled = onTitleRenderedEnabled,
+			onHiddenEnabled = onHiddenEnabled,
+			onHidingEnabled = onHidingEnabled,
+			onShowingEnabled = onShowingEnabled,
+			onShownEnabled = onShownEnabled,
+			onContentReadyEnabled = onContentReadyEnabled,
+			onDisposingEnabled = onDisposingEnabled,
+			onOptionChangedEnabled = onOptionChangedEnabled,
+			onInitializedEnabled = onInitializedEnabled,
 		};
 	}
 	protected override Task Init(DevExpress.Ui.DxTooltipOptions options) {
-return 		DevExpress.Ui.DxTooltipInterop.Init(dxTarget, options);
+		return DevExpress.Ui.DxTooltipInterop.Init(dxTarget, options);
+	}
+	object animation;
+	[Parameter]
+	object Animation {
+		get => isInitialized ? DevExpress.Ui.DxTooltipInterop.GetAnimation(dxTarget).Result : animation;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTooltipInterop.SetAnimation(dxTarget, value);
+			} else {
+				this.animation = value;
+			}
+		}
+	}
+	object closeOnOutsideClick;
+	[Parameter]
+	object CloseOnOutsideClick {
+		get => isInitialized ? DevExpress.Ui.DxTooltipInterop.GetCloseOnOutsideClick(dxTarget).Result : closeOnOutsideClick;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTooltipInterop.SetCloseOnOutsideClick(dxTarget, value);
+			} else {
+				this.closeOnOutsideClick = value;
+			}
+		}
+	}
+	object height;
+	[Parameter]
+	object Height {
+		get => isInitialized ? DevExpress.Ui.DxTooltipInterop.GetHeight(dxTarget).Result : height;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTooltipInterop.SetHeight(dxTarget, value);
+			} else {
+				this.height = value;
+			}
+		}
+	}
+	object hideEvent;
+	[Parameter]
+	object HideEvent {
+		get => isInitialized ? DevExpress.Ui.DxTooltipInterop.GetHideEvent(dxTarget).Result : hideEvent;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTooltipInterop.SetHideEvent(dxTarget, value);
+			} else {
+				this.hideEvent = value;
+			}
+		}
+	}
+	object position;
+	[Parameter]
+	object Position {
+		get => isInitialized ? DevExpress.Ui.DxTooltipInterop.GetPosition(dxTarget).Result : position;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTooltipInterop.SetPosition(dxTarget, value);
+			} else {
+				this.position = value;
+			}
+		}
+	}
+	bool? shading;
+	[Parameter]
+	bool? Shading {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTooltipInterop.GetShading(dxTarget).Result : shading;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTooltipInterop.SetShading(dxTarget, value);
+			} else {
+				this.shading = value;
+			}
+		}
+	}
+	object showEvent;
+	[Parameter]
+	object ShowEvent {
+		get => isInitialized ? DevExpress.Ui.DxTooltipInterop.GetShowEvent(dxTarget).Result : showEvent;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTooltipInterop.SetShowEvent(dxTarget, value);
+			} else {
+				this.showEvent = value;
+			}
+		}
+	}
+	bool? showTitle;
+	[Parameter]
+	bool? ShowTitle {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTooltipInterop.GetShowTitle(dxTarget).Result : showTitle;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTooltipInterop.SetShowTitle(dxTarget, value);
+			} else {
+				this.showTitle = value;
+			}
+		}
+	}
+	object target;
+	[Parameter]
+	object Target {
+		get => isInitialized ? DevExpress.Ui.DxTooltipInterop.GetTarget(dxTarget).Result : target;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTooltipInterop.SetTarget(dxTarget, value);
+			} else {
+				this.target = value;
+			}
+		}
+	}
+	object width;
+	[Parameter]
+	object Width {
+		get => isInitialized ? DevExpress.Ui.DxTooltipInterop.GetWidth(dxTarget).Result : width;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTooltipInterop.SetWidth(dxTarget, value);
+			} else {
+				this.width = value;
+			}
+		}
+	}
+	object container;
+	[Parameter]
+	object Container {
+		get => isInitialized ? DevExpress.Ui.DxTooltipInterop.GetContainer(dxTarget).Result : container;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTooltipInterop.SetContainer(dxTarget, value);
+			} else {
+				this.container = value;
+			}
+		}
+	}
+	bool? dragEnabled;
+	[Parameter]
+	bool? DragEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTooltipInterop.GetDragEnabled(dxTarget).Result : dragEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTooltipInterop.SetDragEnabled(dxTarget, value);
+			} else {
+				this.dragEnabled = value;
+			}
+		}
+	}
+	bool? focusStateEnabled;
+	[Parameter]
+	bool? FocusStateEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTooltipInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTooltipInterop.SetFocusStateEnabled(dxTarget, value);
+			} else {
+				this.focusStateEnabled = value;
+			}
+		}
+	}
+	bool? fullScreen;
+	[Parameter]
+	bool? FullScreen {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTooltipInterop.GetFullScreen(dxTarget).Result : fullScreen;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTooltipInterop.SetFullScreen(dxTarget, value);
+			} else {
+				this.fullScreen = value;
+			}
+		}
+	}
+	bool? resizeEnabled;
+	[Parameter]
+	bool? ResizeEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTooltipInterop.GetResizeEnabled(dxTarget).Result : resizeEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTooltipInterop.SetResizeEnabled(dxTarget, value);
+			} else {
+				this.resizeEnabled = value;
+			}
+		}
+	}
+	bool? showCloseButton;
+	[Parameter]
+	bool? ShowCloseButton {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTooltipInterop.GetShowCloseButton(dxTarget).Result : showCloseButton;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTooltipInterop.SetShowCloseButton(dxTarget, value);
+			} else {
+				this.showCloseButton = value;
+			}
+		}
+	}
+	string title;
+	[Parameter]
+	string Title {
+		get => isInitialized ? (string)DevExpress.Ui.DxTooltipInterop.GetTitle(dxTarget).Result : title;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTooltipInterop.SetTitle(dxTarget, value);
+			} else {
+				this.title = value;
+			}
+		}
+	}
+	object titleTemplate;
+	[Parameter]
+	object TitleTemplate {
+		get => isInitialized ? DevExpress.Ui.DxTooltipInterop.GetTitleTemplate(dxTarget).Result : titleTemplate;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTooltipInterop.SetTitleTemplate(dxTarget, value);
+			} else {
+				this.titleTemplate = value;
+			}
+		}
+	}
+	object toolbarItems;
+	[Parameter]
+	object ToolbarItems {
+		get => isInitialized ? DevExpress.Ui.DxTooltipInterop.GetToolbarItems(dxTarget).Result : toolbarItems;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTooltipInterop.SetToolbarItems(dxTarget, value);
+			} else {
+				this.toolbarItems = value;
+			}
+		}
+	}
+	bool? closeOnBackButton;
+	[Parameter]
+	bool? CloseOnBackButton {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTooltipInterop.GetCloseOnBackButton(dxTarget).Result : closeOnBackButton;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTooltipInterop.SetCloseOnBackButton(dxTarget, value);
+			} else {
+				this.closeOnBackButton = value;
+			}
+		}
+	}
+	object contentTemplate;
+	[Parameter]
+	object ContentTemplate {
+		get => isInitialized ? DevExpress.Ui.DxTooltipInterop.GetContentTemplate(dxTarget).Result : contentTemplate;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTooltipInterop.SetContentTemplate(dxTarget, value);
+			} else {
+				this.contentTemplate = value;
+			}
+		}
+	}
+	bool? deferRendering;
+	[Parameter]
+	bool? DeferRendering {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTooltipInterop.GetDeferRendering(dxTarget).Result : deferRendering;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTooltipInterop.SetDeferRendering(dxTarget, value);
+			} else {
+				this.deferRendering = value;
+			}
+		}
+	}
+	object maxHeight;
+	[Parameter]
+	object MaxHeight {
+		get => isInitialized ? DevExpress.Ui.DxTooltipInterop.GetMaxHeight(dxTarget).Result : maxHeight;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTooltipInterop.SetMaxHeight(dxTarget, value);
+			} else {
+				this.maxHeight = value;
+			}
+		}
+	}
+	object maxWidth;
+	[Parameter]
+	object MaxWidth {
+		get => isInitialized ? DevExpress.Ui.DxTooltipInterop.GetMaxWidth(dxTarget).Result : maxWidth;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTooltipInterop.SetMaxWidth(dxTarget, value);
+			} else {
+				this.maxWidth = value;
+			}
+		}
+	}
+	object minHeight;
+	[Parameter]
+	object MinHeight {
+		get => isInitialized ? DevExpress.Ui.DxTooltipInterop.GetMinHeight(dxTarget).Result : minHeight;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTooltipInterop.SetMinHeight(dxTarget, value);
+			} else {
+				this.minHeight = value;
+			}
+		}
+	}
+	object minWidth;
+	[Parameter]
+	object MinWidth {
+		get => isInitialized ? DevExpress.Ui.DxTooltipInterop.GetMinWidth(dxTarget).Result : minWidth;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTooltipInterop.SetMinWidth(dxTarget, value);
+			} else {
+				this.minWidth = value;
+			}
+		}
+	}
+	string shadingColor;
+	[Parameter]
+	string ShadingColor {
+		get => isInitialized ? (string)DevExpress.Ui.DxTooltipInterop.GetShadingColor(dxTarget).Result : shadingColor;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTooltipInterop.SetShadingColor(dxTarget, value);
+			} else {
+				this.shadingColor = value;
+			}
+		}
+	}
+	bool? visible;
+	[Parameter]
+	bool? Visible {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTooltipInterop.GetVisible(dxTarget).Result : visible;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTooltipInterop.SetVisible(dxTarget, value);
+			} else {
+				this.visible = value;
+			}
+		}
+	}
+	string accessKey;
+	[Parameter]
+	string AccessKey {
+		get => isInitialized ? (string)DevExpress.Ui.DxTooltipInterop.GetAccessKey(dxTarget).Result : accessKey;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTooltipInterop.SetAccessKey(dxTarget, value);
+			} else {
+				this.accessKey = value;
+			}
+		}
+	}
+	bool? activeStateEnabled;
+	[Parameter]
+	bool? ActiveStateEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTooltipInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTooltipInterop.SetActiveStateEnabled(dxTarget, value);
+			} else {
+				this.activeStateEnabled = value;
+			}
+		}
+	}
+	bool? disabled;
+	[Parameter]
+	bool? Disabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTooltipInterop.GetDisabled(dxTarget).Result : disabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTooltipInterop.SetDisabled(dxTarget, value);
+			} else {
+				this.disabled = value;
+			}
+		}
+	}
+	string hint;
+	[Parameter]
+	string Hint {
+		get => isInitialized ? (string)DevExpress.Ui.DxTooltipInterop.GetHint(dxTarget).Result : hint;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTooltipInterop.SetHint(dxTarget, value);
+			} else {
+				this.hint = value;
+			}
+		}
+	}
+	bool? hoverStateEnabled;
+	[Parameter]
+	bool? HoverStateEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTooltipInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTooltipInterop.SetHoverStateEnabled(dxTarget, value);
+			} else {
+				this.hoverStateEnabled = value;
+			}
+		}
+	}
+	float? tabIndex;
+	[Parameter]
+	float? TabIndex {
+		get => isInitialized ? (float?)DevExpress.Ui.DxTooltipInterop.GetTabIndex(dxTarget).Result : tabIndex;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTooltipInterop.SetTabIndex(dxTarget, value);
+			} else {
+				this.tabIndex = value;
+			}
+		}
+	}
+	object bindingOptions;
+	[Parameter]
+	object BindingOptions {
+		get => isInitialized ? DevExpress.Ui.DxTooltipInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTooltipInterop.SetBindingOptions(dxTarget, value);
+			} else {
+				this.bindingOptions = value;
+			}
+		}
+	}
+	object elementAttr;
+	[Parameter]
+	object ElementAttr {
+		get => isInitialized ? DevExpress.Ui.DxTooltipInterop.GetElementAttr(dxTarget).Result : elementAttr;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTooltipInterop.SetElementAttr(dxTarget, value);
+			} else {
+				this.elementAttr = value;
+			}
+		}
+	}
+	bool? rtlEnabled;
+	[Parameter]
+	bool? RtlEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTooltipInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTooltipInterop.SetRtlEnabled(dxTarget, value);
+			} else {
+				this.rtlEnabled = value;
+			}
+		}
+	}
+	bool? onResizeEnabled;
+	[Parameter]
+	bool? OnResizeEnabled {
+		get => onResizeEnabled;
+		set => this.onResizeEnabled = value;
+	}
+	bool? onResizeEndEnabled;
+	[Parameter]
+	bool? OnResizeEndEnabled {
+		get => onResizeEndEnabled;
+		set => this.onResizeEndEnabled = value;
+	}
+	bool? onResizeStartEnabled;
+	[Parameter]
+	bool? OnResizeStartEnabled {
+		get => onResizeStartEnabled;
+		set => this.onResizeStartEnabled = value;
+	}
+	bool? onTitleRenderedEnabled;
+	[Parameter]
+	bool? OnTitleRenderedEnabled {
+		get => onTitleRenderedEnabled;
+		set => this.onTitleRenderedEnabled = value;
+	}
+	bool? onHiddenEnabled;
+	[Parameter]
+	bool? OnHiddenEnabled {
+		get => onHiddenEnabled;
+		set => this.onHiddenEnabled = value;
+	}
+	bool? onHidingEnabled;
+	[Parameter]
+	bool? OnHidingEnabled {
+		get => onHidingEnabled;
+		set => this.onHidingEnabled = value;
+	}
+	bool? onShowingEnabled;
+	[Parameter]
+	bool? OnShowingEnabled {
+		get => onShowingEnabled;
+		set => this.onShowingEnabled = value;
+	}
+	bool? onShownEnabled;
+	[Parameter]
+	bool? OnShownEnabled {
+		get => onShownEnabled;
+		set => this.onShownEnabled = value;
+	}
+	bool? onContentReadyEnabled;
+	[Parameter]
+	bool? OnContentReadyEnabled {
+		get => onContentReadyEnabled;
+		set => this.onContentReadyEnabled = value;
+	}
+	bool? onDisposingEnabled;
+	[Parameter]
+	bool? OnDisposingEnabled {
+		get => onDisposingEnabled;
+		set => this.onDisposingEnabled = value;
+	}
+	bool? onOptionChangedEnabled;
+	[Parameter]
+	bool? OnOptionChangedEnabled {
+		get => onOptionChangedEnabled;
+		set => this.onOptionChangedEnabled = value;
+	}
+	bool? onInitializedEnabled;
+	[Parameter]
+	bool? OnInitializedEnabled {
+		get => onInitializedEnabled;
+		set => this.onInitializedEnabled = value;
 	}
 	protected override async Task OnInitAsync() {
 		await base.OnInitAsync();
+		DevExpress.Ui.DxTooltipInterop.Resize += DxTooltip_Resize;
+		DevExpress.Ui.DxTooltipInterop.ResizeEnd += DxTooltip_ResizeEnd;
+		DevExpress.Ui.DxTooltipInterop.ResizeStart += DxTooltip_ResizeStart;
+		DevExpress.Ui.DxTooltipInterop.TitleRendered += DxTooltip_TitleRendered;
+		DevExpress.Ui.DxTooltipInterop.Hidden += DxTooltip_Hidden;
+		DevExpress.Ui.DxTooltipInterop.Hiding += DxTooltip_Hiding;
+		DevExpress.Ui.DxTooltipInterop.Showing += DxTooltip_Showing;
+		DevExpress.Ui.DxTooltipInterop.Shown += DxTooltip_Shown;
+		DevExpress.Ui.DxTooltipInterop.ContentReady += DxTooltip_ContentReady;
+		DevExpress.Ui.DxTooltipInterop.Disposing += DxTooltip_Disposing;
+		DevExpress.Ui.DxTooltipInterop.OptionChanged += DxTooltip_OptionChanged;
+		DevExpress.Ui.DxTooltipInterop.Initialized += DxTooltip_Initialized;
+	}
+	[Parameter]
+	Action Resize { get; set; }
+	void DxTooltip_Resize(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Resize?.Invoke();
+		}
+	}
+	[Parameter]
+	Action ResizeEnd { get; set; }
+	void DxTooltip_ResizeEnd(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			ResizeEnd?.Invoke();
+		}
+	}
+	[Parameter]
+	Action ResizeStart { get; set; }
+	void DxTooltip_ResizeStart(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			ResizeStart?.Invoke();
+		}
+	}
+	[Parameter]
+	Action TitleRendered { get; set; }
+	void DxTooltip_TitleRendered(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			TitleRendered?.Invoke();
+		}
+	}
+	[Parameter]
+	Action Hidden { get; set; }
+	void DxTooltip_Hidden(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Hidden?.Invoke();
+		}
+	}
+	[Parameter]
+	Action Hiding { get; set; }
+	void DxTooltip_Hiding(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Hiding?.Invoke();
+		}
+	}
+	[Parameter]
+	Action Showing { get; set; }
+	void DxTooltip_Showing(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Showing?.Invoke();
+		}
+	}
+	[Parameter]
+	Action Shown { get; set; }
+	void DxTooltip_Shown(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Shown?.Invoke();
+		}
+	}
+	[Parameter]
+	Action ContentReady { get; set; }
+	void DxTooltip_ContentReady(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			ContentReady?.Invoke();
+		}
+	}
+	[Parameter]
+	Action Disposing { get; set; }
+	void DxTooltip_Disposing(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Disposing?.Invoke();
+		}
+	}
+	[Parameter]
+	Action OptionChanged { get; set; }
+	void DxTooltip_OptionChanged(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			OptionChanged?.Invoke();
+		}
+	}
+	[Parameter]
+	Action Initialized { get; set; }
+	void DxTooltip_Initialized(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Initialized?.Invoke();
+		}
 	}
 	public void Dispose() {
+		DevExpress.Ui.DxTooltipInterop.Resize -= DxTooltip_Resize;
+		DevExpress.Ui.DxTooltipInterop.ResizeEnd -= DxTooltip_ResizeEnd;
+		DevExpress.Ui.DxTooltipInterop.ResizeStart -= DxTooltip_ResizeStart;
+		DevExpress.Ui.DxTooltipInterop.TitleRendered -= DxTooltip_TitleRendered;
+		DevExpress.Ui.DxTooltipInterop.Hidden -= DxTooltip_Hidden;
+		DevExpress.Ui.DxTooltipInterop.Hiding -= DxTooltip_Hiding;
+		DevExpress.Ui.DxTooltipInterop.Showing -= DxTooltip_Showing;
+		DevExpress.Ui.DxTooltipInterop.Shown -= DxTooltip_Shown;
+		DevExpress.Ui.DxTooltipInterop.ContentReady -= DxTooltip_ContentReady;
+		DevExpress.Ui.DxTooltipInterop.Disposing -= DxTooltip_Disposing;
+		DevExpress.Ui.DxTooltipInterop.OptionChanged -= DxTooltip_OptionChanged;
+		DevExpress.Ui.DxTooltipInterop.Initialized -= DxTooltip_Initialized;
 	}
 }

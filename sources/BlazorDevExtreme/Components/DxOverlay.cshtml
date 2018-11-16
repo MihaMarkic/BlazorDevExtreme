@@ -26,14 +26,28 @@
 			shadingColor = shadingColor,
 			visible = visible,
 			width = width,
+			accessKey = accessKey,
+			activeStateEnabled = activeStateEnabled,
+			disabled = disabled,
+			focusStateEnabled = focusStateEnabled,
+			hint = hint,
+			hoverStateEnabled = hoverStateEnabled,
+			tabIndex = tabIndex,
+			bindingOptions = bindingOptions,
+			elementAttr = elementAttr,
+			rtlEnabled = rtlEnabled,
 			onHiddenEnabled = onHiddenEnabled,
 			onHidingEnabled = onHidingEnabled,
 			onShowingEnabled = onShowingEnabled,
 			onShownEnabled = onShownEnabled,
+			onContentReadyEnabled = onContentReadyEnabled,
+			onDisposingEnabled = onDisposingEnabled,
+			onOptionChangedEnabled = onOptionChangedEnabled,
+			onInitializedEnabled = onInitializedEnabled,
 		};
 	}
 	protected override Task Init(DevExpress.Ui.DxOverlayOptions options) {
-return 		DevExpress.Ui.DxOverlayInterop.Init(dxTarget, options);
+		return DevExpress.Ui.DxOverlayInterop.Init(dxTarget, options);
 	}
 	object animation;
 	[Parameter]
@@ -50,7 +64,7 @@ return 		DevExpress.Ui.DxOverlayInterop.Init(dxTarget, options);
 	bool? closeOnBackButton;
 	[Parameter]
 	bool? CloseOnBackButton {
-		get => isInitialized ? DevExpress.Ui.DxOverlayInterop.GetCloseOnBackButton(dxTarget).Result : closeOnBackButton;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxOverlayInterop.GetCloseOnBackButton(dxTarget).Result : closeOnBackButton;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxOverlayInterop.SetCloseOnBackButton(dxTarget, value);
@@ -86,7 +100,7 @@ return 		DevExpress.Ui.DxOverlayInterop.Init(dxTarget, options);
 	bool? deferRendering;
 	[Parameter]
 	bool? DeferRendering {
-		get => isInitialized ? DevExpress.Ui.DxOverlayInterop.GetDeferRendering(dxTarget).Result : deferRendering;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxOverlayInterop.GetDeferRendering(dxTarget).Result : deferRendering;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxOverlayInterop.SetDeferRendering(dxTarget, value);
@@ -98,7 +112,7 @@ return 		DevExpress.Ui.DxOverlayInterop.Init(dxTarget, options);
 	bool? dragEnabled;
 	[Parameter]
 	bool? DragEnabled {
-		get => isInitialized ? DevExpress.Ui.DxOverlayInterop.GetDragEnabled(dxTarget).Result : dragEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxOverlayInterop.GetDragEnabled(dxTarget).Result : dragEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxOverlayInterop.SetDragEnabled(dxTarget, value);
@@ -182,7 +196,7 @@ return 		DevExpress.Ui.DxOverlayInterop.Init(dxTarget, options);
 	bool? shading;
 	[Parameter]
 	bool? Shading {
-		get => isInitialized ? DevExpress.Ui.DxOverlayInterop.GetShading(dxTarget).Result : shading;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxOverlayInterop.GetShading(dxTarget).Result : shading;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxOverlayInterop.SetShading(dxTarget, value);
@@ -194,7 +208,7 @@ return 		DevExpress.Ui.DxOverlayInterop.Init(dxTarget, options);
 	string shadingColor;
 	[Parameter]
 	string ShadingColor {
-		get => isInitialized ? DevExpress.Ui.DxOverlayInterop.GetShadingColor(dxTarget).Result : shadingColor;
+		get => isInitialized ? (string)DevExpress.Ui.DxOverlayInterop.GetShadingColor(dxTarget).Result : shadingColor;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxOverlayInterop.SetShadingColor(dxTarget, value);
@@ -206,7 +220,7 @@ return 		DevExpress.Ui.DxOverlayInterop.Init(dxTarget, options);
 	bool? visible;
 	[Parameter]
 	bool? Visible {
-		get => isInitialized ? DevExpress.Ui.DxOverlayInterop.GetVisible(dxTarget).Result : visible;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxOverlayInterop.GetVisible(dxTarget).Result : visible;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxOverlayInterop.SetVisible(dxTarget, value);
@@ -224,6 +238,126 @@ return 		DevExpress.Ui.DxOverlayInterop.Init(dxTarget, options);
 				DevExpress.Ui.DxOverlayInterop.SetWidth(dxTarget, value);
 			} else {
 				this.width = value;
+			}
+		}
+	}
+	string accessKey;
+	[Parameter]
+	string AccessKey {
+		get => isInitialized ? (string)DevExpress.Ui.DxOverlayInterop.GetAccessKey(dxTarget).Result : accessKey;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxOverlayInterop.SetAccessKey(dxTarget, value);
+			} else {
+				this.accessKey = value;
+			}
+		}
+	}
+	bool? activeStateEnabled;
+	[Parameter]
+	bool? ActiveStateEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxOverlayInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxOverlayInterop.SetActiveStateEnabled(dxTarget, value);
+			} else {
+				this.activeStateEnabled = value;
+			}
+		}
+	}
+	bool? disabled;
+	[Parameter]
+	bool? Disabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxOverlayInterop.GetDisabled(dxTarget).Result : disabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxOverlayInterop.SetDisabled(dxTarget, value);
+			} else {
+				this.disabled = value;
+			}
+		}
+	}
+	bool? focusStateEnabled;
+	[Parameter]
+	bool? FocusStateEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxOverlayInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxOverlayInterop.SetFocusStateEnabled(dxTarget, value);
+			} else {
+				this.focusStateEnabled = value;
+			}
+		}
+	}
+	string hint;
+	[Parameter]
+	string Hint {
+		get => isInitialized ? (string)DevExpress.Ui.DxOverlayInterop.GetHint(dxTarget).Result : hint;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxOverlayInterop.SetHint(dxTarget, value);
+			} else {
+				this.hint = value;
+			}
+		}
+	}
+	bool? hoverStateEnabled;
+	[Parameter]
+	bool? HoverStateEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxOverlayInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxOverlayInterop.SetHoverStateEnabled(dxTarget, value);
+			} else {
+				this.hoverStateEnabled = value;
+			}
+		}
+	}
+	float? tabIndex;
+	[Parameter]
+	float? TabIndex {
+		get => isInitialized ? (float?)DevExpress.Ui.DxOverlayInterop.GetTabIndex(dxTarget).Result : tabIndex;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxOverlayInterop.SetTabIndex(dxTarget, value);
+			} else {
+				this.tabIndex = value;
+			}
+		}
+	}
+	object bindingOptions;
+	[Parameter]
+	object BindingOptions {
+		get => isInitialized ? DevExpress.Ui.DxOverlayInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxOverlayInterop.SetBindingOptions(dxTarget, value);
+			} else {
+				this.bindingOptions = value;
+			}
+		}
+	}
+	object elementAttr;
+	[Parameter]
+	object ElementAttr {
+		get => isInitialized ? DevExpress.Ui.DxOverlayInterop.GetElementAttr(dxTarget).Result : elementAttr;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxOverlayInterop.SetElementAttr(dxTarget, value);
+			} else {
+				this.elementAttr = value;
+			}
+		}
+	}
+	bool? rtlEnabled;
+	[Parameter]
+	bool? RtlEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxOverlayInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxOverlayInterop.SetRtlEnabled(dxTarget, value);
+			} else {
+				this.rtlEnabled = value;
 			}
 		}
 	}
@@ -251,12 +385,40 @@ return 		DevExpress.Ui.DxOverlayInterop.Init(dxTarget, options);
 		get => onShownEnabled;
 		set => this.onShownEnabled = value;
 	}
+	bool? onContentReadyEnabled;
+	[Parameter]
+	bool? OnContentReadyEnabled {
+		get => onContentReadyEnabled;
+		set => this.onContentReadyEnabled = value;
+	}
+	bool? onDisposingEnabled;
+	[Parameter]
+	bool? OnDisposingEnabled {
+		get => onDisposingEnabled;
+		set => this.onDisposingEnabled = value;
+	}
+	bool? onOptionChangedEnabled;
+	[Parameter]
+	bool? OnOptionChangedEnabled {
+		get => onOptionChangedEnabled;
+		set => this.onOptionChangedEnabled = value;
+	}
+	bool? onInitializedEnabled;
+	[Parameter]
+	bool? OnInitializedEnabled {
+		get => onInitializedEnabled;
+		set => this.onInitializedEnabled = value;
+	}
 	protected override async Task OnInitAsync() {
 		await base.OnInitAsync();
 		DevExpress.Ui.DxOverlayInterop.Hidden += DxOverlay_Hidden;
 		DevExpress.Ui.DxOverlayInterop.Hiding += DxOverlay_Hiding;
 		DevExpress.Ui.DxOverlayInterop.Showing += DxOverlay_Showing;
 		DevExpress.Ui.DxOverlayInterop.Shown += DxOverlay_Shown;
+		DevExpress.Ui.DxOverlayInterop.ContentReady += DxOverlay_ContentReady;
+		DevExpress.Ui.DxOverlayInterop.Disposing += DxOverlay_Disposing;
+		DevExpress.Ui.DxOverlayInterop.OptionChanged += DxOverlay_OptionChanged;
+		DevExpress.Ui.DxOverlayInterop.Initialized += DxOverlay_Initialized;
 	}
 	[Parameter]
 	Action Hidden { get; set; }
@@ -286,6 +448,34 @@ return 		DevExpress.Ui.DxOverlayInterop.Init(dxTarget, options);
 			Shown?.Invoke();
 		}
 	}
+	[Parameter]
+	Action ContentReady { get; set; }
+	void DxOverlay_ContentReady(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			ContentReady?.Invoke();
+		}
+	}
+	[Parameter]
+	Action Disposing { get; set; }
+	void DxOverlay_Disposing(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Disposing?.Invoke();
+		}
+	}
+	[Parameter]
+	Action OptionChanged { get; set; }
+	void DxOverlay_OptionChanged(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			OptionChanged?.Invoke();
+		}
+	}
+	[Parameter]
+	Action Initialized { get; set; }
+	void DxOverlay_Initialized(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Initialized?.Invoke();
+		}
+	}
 	public object Content() {
 		return DevExpress.Ui.DxOverlayInterop.Content(dxTarget).Result;
 	}
@@ -306,5 +496,9 @@ return 		DevExpress.Ui.DxOverlayInterop.Init(dxTarget, options);
 		DevExpress.Ui.DxOverlayInterop.Hiding -= DxOverlay_Hiding;
 		DevExpress.Ui.DxOverlayInterop.Showing -= DxOverlay_Showing;
 		DevExpress.Ui.DxOverlayInterop.Shown -= DxOverlay_Shown;
+		DevExpress.Ui.DxOverlayInterop.ContentReady -= DxOverlay_ContentReady;
+		DevExpress.Ui.DxOverlayInterop.Disposing -= DxOverlay_Disposing;
+		DevExpress.Ui.DxOverlayInterop.OptionChanged -= DxOverlay_OptionChanged;
+		DevExpress.Ui.DxOverlayInterop.Initialized -= DxOverlay_Initialized;
 	}
 }

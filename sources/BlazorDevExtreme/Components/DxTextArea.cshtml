@@ -14,15 +14,63 @@
 			maxHeight = maxHeight,
 			minHeight = minHeight,
 			spellcheck = spellcheck,
+			maxLength = maxLength,
+			mode = mode,
+			value = value,
+			focusStateEnabled = focusStateEnabled,
+			hoverStateEnabled = hoverStateEnabled,
+			inputAttr = inputAttr,
+			mask = mask,
+			maskChar = maskChar,
+			maskInvalidMessage = maskInvalidMessage,
+			maskRules = maskRules,
+			name = name,
+			placeholder = placeholder,
+			showClearButton = showClearButton,
+			showMaskMode = showMaskMode,
+			text = text,
+			useMaskedValue = useMaskedValue,
+			valueChangeEvent = valueChangeEvent,
+			isValid = isValid,
+			readOnly = readOnly,
+			validationError = validationError,
+			validationMessageMode = validationMessageMode,
+			accessKey = accessKey,
+			activeStateEnabled = activeStateEnabled,
+			disabled = disabled,
+			hint = hint,
+			tabIndex = tabIndex,
+			visible = visible,
+			bindingOptions = bindingOptions,
+			elementAttr = elementAttr,
+			height = height,
+			rtlEnabled = rtlEnabled,
+			width = width,
+			onChangeEnabled = onChangeEnabled,
+			onCopyEnabled = onCopyEnabled,
+			onCutEnabled = onCutEnabled,
+			onEnterKeyEnabled = onEnterKeyEnabled,
+			onFocusInEnabled = onFocusInEnabled,
+			onFocusOutEnabled = onFocusOutEnabled,
+			onInputEnabled = onInputEnabled,
+			onKeyDownEnabled = onKeyDownEnabled,
+			onKeyPressEnabled = onKeyPressEnabled,
+			onKeyUpEnabled = onKeyUpEnabled,
+			onPasteEnabled = onPasteEnabled,
+			onValueChangedEnabled = onValueChangedEnabled,
+			onContentReadyEnabled = onContentReadyEnabled,
+			onDisposingEnabled = onDisposingEnabled,
+			onOptionChangedEnabled = onOptionChangedEnabled,
+			onInitializedEnabled = onInitializedEnabled,
 		};
 	}
 	protected override Task Init(DevExpress.Ui.DxTextAreaOptions options) {
-return 		DevExpress.Ui.DxTextAreaInterop.Init(dxTarget, options);
+		return DevExpress.Ui.DxTextAreaInterop.Init(dxTarget, options);
 	}
 	bool? autoResizeEnabled;
 	[Parameter]
 	bool? AutoResizeEnabled {
-		get => isInitialized ? DevExpress.Ui.DxTextAreaInterop.GetAutoResizeEnabled(dxTarget).Result : autoResizeEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTextAreaInterop.GetAutoResizeEnabled(dxTarget).Result : autoResizeEnabled;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTextAreaInterop.SetAutoResizeEnabled(dxTarget, value);
@@ -58,7 +106,7 @@ return 		DevExpress.Ui.DxTextAreaInterop.Init(dxTarget, options);
 	bool? spellcheck;
 	[Parameter]
 	bool? Spellcheck {
-		get => isInitialized ? DevExpress.Ui.DxTextAreaInterop.GetSpellcheck(dxTarget).Result : spellcheck;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTextAreaInterop.GetSpellcheck(dxTarget).Result : spellcheck;
 		set {
 			if (isInitialized) {
 				DevExpress.Ui.DxTextAreaInterop.SetSpellcheck(dxTarget, value);
@@ -67,9 +115,633 @@ return 		DevExpress.Ui.DxTextAreaInterop.Init(dxTarget, options);
 			}
 		}
 	}
+	object maxLength;
+	[Parameter]
+	object MaxLength {
+		get => isInitialized ? DevExpress.Ui.DxTextAreaInterop.GetMaxLength(dxTarget).Result : maxLength;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTextAreaInterop.SetMaxLength(dxTarget, value);
+			} else {
+				this.maxLength = value;
+			}
+		}
+	}
+	string mode;
+	[Parameter]
+	string Mode {
+		get => isInitialized ? (string)DevExpress.Ui.DxTextAreaInterop.GetMode(dxTarget).Result : mode;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTextAreaInterop.SetMode(dxTarget, value);
+			} else {
+				this.mode = value;
+			}
+		}
+	}
+	string value;
+	[Parameter]
+	string Value {
+		get => isInitialized ? (string)DevExpress.Ui.DxTextAreaInterop.GetValue(dxTarget).Result : value;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTextAreaInterop.SetValue(dxTarget, value);
+			} else {
+				this.value = value;
+			}
+		}
+	}
+	bool? focusStateEnabled;
+	[Parameter]
+	bool? FocusStateEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTextAreaInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTextAreaInterop.SetFocusStateEnabled(dxTarget, value);
+			} else {
+				this.focusStateEnabled = value;
+			}
+		}
+	}
+	bool? hoverStateEnabled;
+	[Parameter]
+	bool? HoverStateEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTextAreaInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTextAreaInterop.SetHoverStateEnabled(dxTarget, value);
+			} else {
+				this.hoverStateEnabled = value;
+			}
+		}
+	}
+	object inputAttr;
+	[Parameter]
+	object InputAttr {
+		get => isInitialized ? DevExpress.Ui.DxTextAreaInterop.GetInputAttr(dxTarget).Result : inputAttr;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTextAreaInterop.SetInputAttr(dxTarget, value);
+			} else {
+				this.inputAttr = value;
+			}
+		}
+	}
+	string mask;
+	[Parameter]
+	string Mask {
+		get => isInitialized ? (string)DevExpress.Ui.DxTextAreaInterop.GetMask(dxTarget).Result : mask;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTextAreaInterop.SetMask(dxTarget, value);
+			} else {
+				this.mask = value;
+			}
+		}
+	}
+	string maskChar;
+	[Parameter]
+	string MaskChar {
+		get => isInitialized ? (string)DevExpress.Ui.DxTextAreaInterop.GetMaskChar(dxTarget).Result : maskChar;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTextAreaInterop.SetMaskChar(dxTarget, value);
+			} else {
+				this.maskChar = value;
+			}
+		}
+	}
+	string maskInvalidMessage;
+	[Parameter]
+	string MaskInvalidMessage {
+		get => isInitialized ? (string)DevExpress.Ui.DxTextAreaInterop.GetMaskInvalidMessage(dxTarget).Result : maskInvalidMessage;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTextAreaInterop.SetMaskInvalidMessage(dxTarget, value);
+			} else {
+				this.maskInvalidMessage = value;
+			}
+		}
+	}
+	object maskRules;
+	[Parameter]
+	object MaskRules {
+		get => isInitialized ? DevExpress.Ui.DxTextAreaInterop.GetMaskRules(dxTarget).Result : maskRules;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTextAreaInterop.SetMaskRules(dxTarget, value);
+			} else {
+				this.maskRules = value;
+			}
+		}
+	}
+	string name;
+	[Parameter]
+	string Name {
+		get => isInitialized ? (string)DevExpress.Ui.DxTextAreaInterop.GetName(dxTarget).Result : name;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTextAreaInterop.SetName(dxTarget, value);
+			} else {
+				this.name = value;
+			}
+		}
+	}
+	string placeholder;
+	[Parameter]
+	string Placeholder {
+		get => isInitialized ? (string)DevExpress.Ui.DxTextAreaInterop.GetPlaceholder(dxTarget).Result : placeholder;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTextAreaInterop.SetPlaceholder(dxTarget, value);
+			} else {
+				this.placeholder = value;
+			}
+		}
+	}
+	bool? showClearButton;
+	[Parameter]
+	bool? ShowClearButton {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTextAreaInterop.GetShowClearButton(dxTarget).Result : showClearButton;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTextAreaInterop.SetShowClearButton(dxTarget, value);
+			} else {
+				this.showClearButton = value;
+			}
+		}
+	}
+	string showMaskMode;
+	[Parameter]
+	string ShowMaskMode {
+		get => isInitialized ? (string)DevExpress.Ui.DxTextAreaInterop.GetShowMaskMode(dxTarget).Result : showMaskMode;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTextAreaInterop.SetShowMaskMode(dxTarget, value);
+			} else {
+				this.showMaskMode = value;
+			}
+		}
+	}
+	string text;
+	[Parameter]
+	string Text {
+		get => isInitialized ? (string)DevExpress.Ui.DxTextAreaInterop.GetText(dxTarget).Result : text;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTextAreaInterop.SetText(dxTarget, value);
+			} else {
+				this.text = value;
+			}
+		}
+	}
+	bool? useMaskedValue;
+	[Parameter]
+	bool? UseMaskedValue {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTextAreaInterop.GetUseMaskedValue(dxTarget).Result : useMaskedValue;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTextAreaInterop.SetUseMaskedValue(dxTarget, value);
+			} else {
+				this.useMaskedValue = value;
+			}
+		}
+	}
+	string valueChangeEvent;
+	[Parameter]
+	string ValueChangeEvent {
+		get => isInitialized ? (string)DevExpress.Ui.DxTextAreaInterop.GetValueChangeEvent(dxTarget).Result : valueChangeEvent;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTextAreaInterop.SetValueChangeEvent(dxTarget, value);
+			} else {
+				this.valueChangeEvent = value;
+			}
+		}
+	}
+	bool? isValid;
+	[Parameter]
+	bool? IsValid {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTextAreaInterop.GetIsValid(dxTarget).Result : isValid;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTextAreaInterop.SetIsValid(dxTarget, value);
+			} else {
+				this.isValid = value;
+			}
+		}
+	}
+	bool? readOnly;
+	[Parameter]
+	bool? ReadOnly {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTextAreaInterop.GetReadOnly(dxTarget).Result : readOnly;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTextAreaInterop.SetReadOnly(dxTarget, value);
+			} else {
+				this.readOnly = value;
+			}
+		}
+	}
+	object validationError;
+	[Parameter]
+	object ValidationError {
+		get => isInitialized ? DevExpress.Ui.DxTextAreaInterop.GetValidationError(dxTarget).Result : validationError;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTextAreaInterop.SetValidationError(dxTarget, value);
+			} else {
+				this.validationError = value;
+			}
+		}
+	}
+	string validationMessageMode;
+	[Parameter]
+	string ValidationMessageMode {
+		get => isInitialized ? (string)DevExpress.Ui.DxTextAreaInterop.GetValidationMessageMode(dxTarget).Result : validationMessageMode;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTextAreaInterop.SetValidationMessageMode(dxTarget, value);
+			} else {
+				this.validationMessageMode = value;
+			}
+		}
+	}
+	string accessKey;
+	[Parameter]
+	string AccessKey {
+		get => isInitialized ? (string)DevExpress.Ui.DxTextAreaInterop.GetAccessKey(dxTarget).Result : accessKey;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTextAreaInterop.SetAccessKey(dxTarget, value);
+			} else {
+				this.accessKey = value;
+			}
+		}
+	}
+	bool? activeStateEnabled;
+	[Parameter]
+	bool? ActiveStateEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTextAreaInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTextAreaInterop.SetActiveStateEnabled(dxTarget, value);
+			} else {
+				this.activeStateEnabled = value;
+			}
+		}
+	}
+	bool? disabled;
+	[Parameter]
+	bool? Disabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTextAreaInterop.GetDisabled(dxTarget).Result : disabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTextAreaInterop.SetDisabled(dxTarget, value);
+			} else {
+				this.disabled = value;
+			}
+		}
+	}
+	string hint;
+	[Parameter]
+	string Hint {
+		get => isInitialized ? (string)DevExpress.Ui.DxTextAreaInterop.GetHint(dxTarget).Result : hint;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTextAreaInterop.SetHint(dxTarget, value);
+			} else {
+				this.hint = value;
+			}
+		}
+	}
+	float? tabIndex;
+	[Parameter]
+	float? TabIndex {
+		get => isInitialized ? (float?)DevExpress.Ui.DxTextAreaInterop.GetTabIndex(dxTarget).Result : tabIndex;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTextAreaInterop.SetTabIndex(dxTarget, value);
+			} else {
+				this.tabIndex = value;
+			}
+		}
+	}
+	bool? visible;
+	[Parameter]
+	bool? Visible {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTextAreaInterop.GetVisible(dxTarget).Result : visible;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTextAreaInterop.SetVisible(dxTarget, value);
+			} else {
+				this.visible = value;
+			}
+		}
+	}
+	object bindingOptions;
+	[Parameter]
+	object BindingOptions {
+		get => isInitialized ? DevExpress.Ui.DxTextAreaInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTextAreaInterop.SetBindingOptions(dxTarget, value);
+			} else {
+				this.bindingOptions = value;
+			}
+		}
+	}
+	object elementAttr;
+	[Parameter]
+	object ElementAttr {
+		get => isInitialized ? DevExpress.Ui.DxTextAreaInterop.GetElementAttr(dxTarget).Result : elementAttr;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTextAreaInterop.SetElementAttr(dxTarget, value);
+			} else {
+				this.elementAttr = value;
+			}
+		}
+	}
+	object height;
+	[Parameter]
+	object Height {
+		get => isInitialized ? DevExpress.Ui.DxTextAreaInterop.GetHeight(dxTarget).Result : height;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTextAreaInterop.SetHeight(dxTarget, value);
+			} else {
+				this.height = value;
+			}
+		}
+	}
+	bool? rtlEnabled;
+	[Parameter]
+	bool? RtlEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTextAreaInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTextAreaInterop.SetRtlEnabled(dxTarget, value);
+			} else {
+				this.rtlEnabled = value;
+			}
+		}
+	}
+	object width;
+	[Parameter]
+	object Width {
+		get => isInitialized ? DevExpress.Ui.DxTextAreaInterop.GetWidth(dxTarget).Result : width;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTextAreaInterop.SetWidth(dxTarget, value);
+			} else {
+				this.width = value;
+			}
+		}
+	}
+	bool? onChangeEnabled;
+	[Parameter]
+	bool? OnChangeEnabled {
+		get => onChangeEnabled;
+		set => this.onChangeEnabled = value;
+	}
+	bool? onCopyEnabled;
+	[Parameter]
+	bool? OnCopyEnabled {
+		get => onCopyEnabled;
+		set => this.onCopyEnabled = value;
+	}
+	bool? onCutEnabled;
+	[Parameter]
+	bool? OnCutEnabled {
+		get => onCutEnabled;
+		set => this.onCutEnabled = value;
+	}
+	bool? onEnterKeyEnabled;
+	[Parameter]
+	bool? OnEnterKeyEnabled {
+		get => onEnterKeyEnabled;
+		set => this.onEnterKeyEnabled = value;
+	}
+	bool? onFocusInEnabled;
+	[Parameter]
+	bool? OnFocusInEnabled {
+		get => onFocusInEnabled;
+		set => this.onFocusInEnabled = value;
+	}
+	bool? onFocusOutEnabled;
+	[Parameter]
+	bool? OnFocusOutEnabled {
+		get => onFocusOutEnabled;
+		set => this.onFocusOutEnabled = value;
+	}
+	bool? onInputEnabled;
+	[Parameter]
+	bool? OnInputEnabled {
+		get => onInputEnabled;
+		set => this.onInputEnabled = value;
+	}
+	bool? onKeyDownEnabled;
+	[Parameter]
+	bool? OnKeyDownEnabled {
+		get => onKeyDownEnabled;
+		set => this.onKeyDownEnabled = value;
+	}
+	bool? onKeyPressEnabled;
+	[Parameter]
+	bool? OnKeyPressEnabled {
+		get => onKeyPressEnabled;
+		set => this.onKeyPressEnabled = value;
+	}
+	bool? onKeyUpEnabled;
+	[Parameter]
+	bool? OnKeyUpEnabled {
+		get => onKeyUpEnabled;
+		set => this.onKeyUpEnabled = value;
+	}
+	bool? onPasteEnabled;
+	[Parameter]
+	bool? OnPasteEnabled {
+		get => onPasteEnabled;
+		set => this.onPasteEnabled = value;
+	}
+	bool? onValueChangedEnabled;
+	[Parameter]
+	bool? OnValueChangedEnabled {
+		get => onValueChangedEnabled;
+		set => this.onValueChangedEnabled = value;
+	}
+	bool? onContentReadyEnabled;
+	[Parameter]
+	bool? OnContentReadyEnabled {
+		get => onContentReadyEnabled;
+		set => this.onContentReadyEnabled = value;
+	}
+	bool? onDisposingEnabled;
+	[Parameter]
+	bool? OnDisposingEnabled {
+		get => onDisposingEnabled;
+		set => this.onDisposingEnabled = value;
+	}
+	bool? onOptionChangedEnabled;
+	[Parameter]
+	bool? OnOptionChangedEnabled {
+		get => onOptionChangedEnabled;
+		set => this.onOptionChangedEnabled = value;
+	}
+	bool? onInitializedEnabled;
+	[Parameter]
+	bool? OnInitializedEnabled {
+		get => onInitializedEnabled;
+		set => this.onInitializedEnabled = value;
+	}
 	protected override async Task OnInitAsync() {
 		await base.OnInitAsync();
+		DevExpress.Ui.DxTextAreaInterop.Change += DxTextArea_Change;
+		DevExpress.Ui.DxTextAreaInterop.Copy += DxTextArea_Copy;
+		DevExpress.Ui.DxTextAreaInterop.Cut += DxTextArea_Cut;
+		DevExpress.Ui.DxTextAreaInterop.EnterKey += DxTextArea_EnterKey;
+		DevExpress.Ui.DxTextAreaInterop.FocusIn += DxTextArea_FocusIn;
+		DevExpress.Ui.DxTextAreaInterop.FocusOut += DxTextArea_FocusOut;
+		DevExpress.Ui.DxTextAreaInterop.Input += DxTextArea_Input;
+		DevExpress.Ui.DxTextAreaInterop.KeyDown += DxTextArea_KeyDown;
+		DevExpress.Ui.DxTextAreaInterop.KeyPress += DxTextArea_KeyPress;
+		DevExpress.Ui.DxTextAreaInterop.KeyUp += DxTextArea_KeyUp;
+		DevExpress.Ui.DxTextAreaInterop.Paste += DxTextArea_Paste;
+		DevExpress.Ui.DxTextAreaInterop.ValueChanged += DxTextArea_ValueChanged;
+		DevExpress.Ui.DxTextAreaInterop.ContentReady += DxTextArea_ContentReady;
+		DevExpress.Ui.DxTextAreaInterop.Disposing += DxTextArea_Disposing;
+		DevExpress.Ui.DxTextAreaInterop.OptionChanged += DxTextArea_OptionChanged;
+		DevExpress.Ui.DxTextAreaInterop.Initialized += DxTextArea_Initialized;
+	}
+	[Parameter]
+	Action Change { get; set; }
+	void DxTextArea_Change(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Change?.Invoke();
+		}
+	}
+	[Parameter]
+	Action Copy { get; set; }
+	void DxTextArea_Copy(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Copy?.Invoke();
+		}
+	}
+	[Parameter]
+	Action Cut { get; set; }
+	void DxTextArea_Cut(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Cut?.Invoke();
+		}
+	}
+	[Parameter]
+	Action EnterKey { get; set; }
+	void DxTextArea_EnterKey(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			EnterKey?.Invoke();
+		}
+	}
+	[Parameter]
+	Action FocusIn { get; set; }
+	void DxTextArea_FocusIn(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			FocusIn?.Invoke();
+		}
+	}
+	[Parameter]
+	Action FocusOut { get; set; }
+	void DxTextArea_FocusOut(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			FocusOut?.Invoke();
+		}
+	}
+	[Parameter]
+	Action Input { get; set; }
+	void DxTextArea_Input(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Input?.Invoke();
+		}
+	}
+	[Parameter]
+	Action KeyDown { get; set; }
+	void DxTextArea_KeyDown(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			KeyDown?.Invoke();
+		}
+	}
+	[Parameter]
+	Action KeyPress { get; set; }
+	void DxTextArea_KeyPress(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			KeyPress?.Invoke();
+		}
+	}
+	[Parameter]
+	Action KeyUp { get; set; }
+	void DxTextArea_KeyUp(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			KeyUp?.Invoke();
+		}
+	}
+	[Parameter]
+	Action Paste { get; set; }
+	void DxTextArea_Paste(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Paste?.Invoke();
+		}
+	}
+	[Parameter]
+	Action ValueChanged { get; set; }
+	void DxTextArea_ValueChanged(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			ValueChanged?.Invoke();
+		}
+	}
+	[Parameter]
+	Action ContentReady { get; set; }
+	void DxTextArea_ContentReady(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			ContentReady?.Invoke();
+		}
+	}
+	[Parameter]
+	Action Disposing { get; set; }
+	void DxTextArea_Disposing(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Disposing?.Invoke();
+		}
+	}
+	[Parameter]
+	Action OptionChanged { get; set; }
+	void DxTextArea_OptionChanged(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			OptionChanged?.Invoke();
+		}
+	}
+	[Parameter]
+	Action Initialized { get; set; }
+	void DxTextArea_Initialized(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Initialized?.Invoke();
+		}
 	}
 	public void Dispose() {
+		DevExpress.Ui.DxTextAreaInterop.Change -= DxTextArea_Change;
+		DevExpress.Ui.DxTextAreaInterop.Copy -= DxTextArea_Copy;
+		DevExpress.Ui.DxTextAreaInterop.Cut -= DxTextArea_Cut;
+		DevExpress.Ui.DxTextAreaInterop.EnterKey -= DxTextArea_EnterKey;
+		DevExpress.Ui.DxTextAreaInterop.FocusIn -= DxTextArea_FocusIn;
+		DevExpress.Ui.DxTextAreaInterop.FocusOut -= DxTextArea_FocusOut;
+		DevExpress.Ui.DxTextAreaInterop.Input -= DxTextArea_Input;
+		DevExpress.Ui.DxTextAreaInterop.KeyDown -= DxTextArea_KeyDown;
+		DevExpress.Ui.DxTextAreaInterop.KeyPress -= DxTextArea_KeyPress;
+		DevExpress.Ui.DxTextAreaInterop.KeyUp -= DxTextArea_KeyUp;
+		DevExpress.Ui.DxTextAreaInterop.Paste -= DxTextArea_Paste;
+		DevExpress.Ui.DxTextAreaInterop.ValueChanged -= DxTextArea_ValueChanged;
+		DevExpress.Ui.DxTextAreaInterop.ContentReady -= DxTextArea_ContentReady;
+		DevExpress.Ui.DxTextAreaInterop.Disposing -= DxTextArea_Disposing;
+		DevExpress.Ui.DxTextAreaInterop.OptionChanged -= DxTextArea_OptionChanged;
+		DevExpress.Ui.DxTextAreaInterop.Initialized -= DxTextArea_Initialized;
 	}
 }

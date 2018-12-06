@@ -17,4 +17,10 @@
     <ProjectReference Include="..\BlazorDevExtreme\BlazorDevExtreme.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="Pages\DataGridSimple.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+  </ItemGroup>
+
 </Project>

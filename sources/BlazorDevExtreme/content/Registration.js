@@ -1658,6 +1658,14 @@ function BlazorDevExtreme_GridBase_GetOption (element, key) {
 function BlazorDevExtreme_DxDataGrid_Init (element, optionsText) {
 	const options = JSON.parse(optionsText);
 
+	if (options.onInitializedEnabled) {
+		console.log("init");
+		options.onInitialized = function () {
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.ComponentInterop.OnInitialized', element.id);
+
+		}
+	}
+
 	if (options.onCellClickEnabled) {
 		options.onCellClick = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxDataGridInterop.OnCellClick', element.id);

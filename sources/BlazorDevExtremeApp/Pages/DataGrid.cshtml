@@ -1,0 +1,31 @@
+﻿@using Objects
+@using Services
+@addTagHelper *, BlazorDevExtreme
+@page "/datagrid"
+@inject GridDataService DataService
+
+<DxDataGrid Columns="@gridColumns" FilterRow="@filterrow" ShowBorders="true" DataSource="@datasource" Paging="@paging" Editing="@editing" />
+
+@functions {
+object gridColumns = new[]
+{
+new DevExpress.Ui.DxDataGridColumn { dataField="Firstname", caption = "Firstname", dataType = "text", filterOperations= new [] {"contains", "=","notcontains","startswith","endswith" }},
+new DevExpress.Ui.DxDataGridColumn { dataField="Name", caption = "Name", dataType = "text" , filterOperations= new [] {"contains", "=","notcontains","startswith","endswith" }},
+new DevExpress.Ui.DxDataGridColumn { dataField="Male", caption = "Male", dataType = "boolean" }
+};
+object filterrow = new { visible = true };
+object paging = new { pageSize = 10 };
+object editing = new { allowUpdating = true, mode = "form" };
+
+GridData[] datasource;
+
+
+protected override async Task OnInitAsync()
+{
+    datasource = await DataService.GetDataAsync();
+
+}
+
+
+
+}

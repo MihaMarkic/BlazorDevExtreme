@@ -1,5 +1,48 @@
-﻿@page "/"
+﻿@addTagHelper *, BlazorDevExtreme
+@using DevExpress
+@using BlazorDevExtreme
+@using BlazorDevExtreme.Components
+@page "/"
 
-<h1>This is a simple demo application that demonstrated DevExtreme integration with Blazor</h1>
+<h1>Hello, DevExtreme within Blazor!</h1>
 
-<div class="lead">Click one of the menu items on the left</div>
+<label>Clicked count:</label>
+<div>@ClickedCount</div>
+
+<div class="row mb-2">
+    <div class="col">
+        <DxButton Text=@ButtonText Click=@((Action)DxButton_Click) OnClickEnabled="true" />
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        <DxDataGrid Columns="@gridColumns" FilterRow="@(new { visible = true })" DataSource="@gridDataSource" ShowRowLines="true" ShowBorders="true"
+                    Pager="@(new { visible = true })" />
+    </div>
+</div>
+
+@functions {
+object gridDataSource = new[]
+{
+new { name = "John", city = "London", templateColumn = "<button type=\"button\" class=\"btn btn-primary\">Primary</button>" },
+new { name = "Steve", city = "Berlin", templateColumn = "<button type=\"button\" class=\"btn btn-warning\">Warning</button>" }
+};
+object gridColumns = new[]
+{
+new DevExpress.Ui.DxDataGridColumn { caption="Name of Customer", dataField="name", dataType="string" },
+new DevExpress.Ui.DxDataGridColumn { caption="City", dataField="city", dataType="string" },
+new DevExpress.Ui.DxDataGridColumn { caption="TemplateColumn", dataField="templateColumn", encodeHtml = false }
+};
+
+public const string ButtonId = "buttonContainer";
+public int ClickedCount { get; set; } = 0;
+void DxButton_Click()
+{
+    ClickedCount++;
+    StateHasChanged();
+    // displays a notification using a static method
+    UiInterop.Notify($"Clicked {ClickedCount}!", "info", 5000);
+}
+string ButtonText => $"Tubular {ClickedCount}";
+}

@@ -16,6 +16,7 @@
 			headerFilter = headerFilter,
 			height = height,
 			layout = layout,
+			searchTimeout = searchTimeout,
 			state = state,
 			texts = texts,
 			accessKey = accessKey,
@@ -43,10 +44,10 @@
 	bool? allowSearch;
 	[Parameter]
 	bool? AllowSearch {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxPivotGridFieldChooserInterop.GetAllowSearch(dxTarget).Result : allowSearch;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxPivotGridFieldChooserInterop.GetAllowSearchOption(dxTarget).Result : allowSearch;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxPivotGridFieldChooserInterop.SetAllowSearch(dxTarget, value);
+				DevExpress.Ui.DxPivotGridFieldChooserInterop.SetAllowSearchOption(dxTarget, value);
 			} else {
 				this.allowSearch = value;
 			}
@@ -55,10 +56,10 @@
 	string applyChangesMode;
 	[Parameter]
 	string ApplyChangesMode {
-		get => isInitialized ? (string)DevExpress.Ui.DxPivotGridFieldChooserInterop.GetApplyChangesMode(dxTarget).Result : applyChangesMode;
+		get => isInitialized ? (string)DevExpress.Ui.DxPivotGridFieldChooserInterop.GetApplyChangesModeOption(dxTarget).Result : applyChangesMode;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxPivotGridFieldChooserInterop.SetApplyChangesMode(dxTarget, value);
+				DevExpress.Ui.DxPivotGridFieldChooserInterop.SetApplyChangesModeOption(dxTarget, value);
 			} else {
 				this.applyChangesMode = value;
 			}
@@ -67,10 +68,10 @@
 	object dataSource;
 	[Parameter]
 	object DataSource {
-		get => isInitialized ? DevExpress.Ui.DxPivotGridFieldChooserInterop.GetDataSource(dxTarget).Result : dataSource;
+		get => isInitialized ? DevExpress.Ui.DxPivotGridFieldChooserInterop.GetDataSourceOption(dxTarget).Result : dataSource;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxPivotGridFieldChooserInterop.SetDataSource(dxTarget, value);
+				DevExpress.Ui.DxPivotGridFieldChooserInterop.SetDataSourceOption(dxTarget, value);
 			} else {
 				this.dataSource = value;
 			}
@@ -79,10 +80,10 @@
 	object headerFilter;
 	[Parameter]
 	object HeaderFilter {
-		get => isInitialized ? DevExpress.Ui.DxPivotGridFieldChooserInterop.GetHeaderFilter(dxTarget).Result : headerFilter;
+		get => isInitialized ? DevExpress.Ui.DxPivotGridFieldChooserInterop.GetHeaderFilterOption(dxTarget).Result : headerFilter;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxPivotGridFieldChooserInterop.SetHeaderFilter(dxTarget, value);
+				DevExpress.Ui.DxPivotGridFieldChooserInterop.SetHeaderFilterOption(dxTarget, value);
 			} else {
 				this.headerFilter = value;
 			}
@@ -91,10 +92,10 @@
 	object height;
 	[Parameter]
 	object Height {
-		get => isInitialized ? DevExpress.Ui.DxPivotGridFieldChooserInterop.GetHeight(dxTarget).Result : height;
+		get => isInitialized ? DevExpress.Ui.DxPivotGridFieldChooserInterop.GetHeightOption(dxTarget).Result : height;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxPivotGridFieldChooserInterop.SetHeight(dxTarget, value);
+				DevExpress.Ui.DxPivotGridFieldChooserInterop.SetHeightOption(dxTarget, value);
 			} else {
 				this.height = value;
 			}
@@ -103,22 +104,34 @@
 	object layout;
 	[Parameter]
 	object Layout {
-		get => isInitialized ? DevExpress.Ui.DxPivotGridFieldChooserInterop.GetLayout(dxTarget).Result : layout;
+		get => isInitialized ? DevExpress.Ui.DxPivotGridFieldChooserInterop.GetLayoutOption(dxTarget).Result : layout;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxPivotGridFieldChooserInterop.SetLayout(dxTarget, value);
+				DevExpress.Ui.DxPivotGridFieldChooserInterop.SetLayoutOption(dxTarget, value);
 			} else {
 				this.layout = value;
+			}
+		}
+	}
+	float? searchTimeout;
+	[Parameter]
+	float? SearchTimeout {
+		get => isInitialized ? (float?)DevExpress.Ui.DxPivotGridFieldChooserInterop.GetSearchTimeoutOption(dxTarget).Result : searchTimeout;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxPivotGridFieldChooserInterop.SetSearchTimeoutOption(dxTarget, value);
+			} else {
+				this.searchTimeout = value;
 			}
 		}
 	}
 	object state;
 	[Parameter]
 	object State {
-		get => isInitialized ? DevExpress.Ui.DxPivotGridFieldChooserInterop.GetState(dxTarget).Result : state;
+		get => isInitialized ? DevExpress.Ui.DxPivotGridFieldChooserInterop.GetStateOption(dxTarget).Result : state;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxPivotGridFieldChooserInterop.SetState(dxTarget, value);
+				DevExpress.Ui.DxPivotGridFieldChooserInterop.SetStateOption(dxTarget, value);
 			} else {
 				this.state = value;
 			}
@@ -127,10 +140,10 @@
 	object texts;
 	[Parameter]
 	object Texts {
-		get => isInitialized ? DevExpress.Ui.DxPivotGridFieldChooserInterop.GetTexts(dxTarget).Result : texts;
+		get => isInitialized ? DevExpress.Ui.DxPivotGridFieldChooserInterop.GetTextsOption(dxTarget).Result : texts;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxPivotGridFieldChooserInterop.SetTexts(dxTarget, value);
+				DevExpress.Ui.DxPivotGridFieldChooserInterop.SetTextsOption(dxTarget, value);
 			} else {
 				this.texts = value;
 			}
@@ -139,10 +152,10 @@
 	string accessKey;
 	[Parameter]
 	string AccessKey {
-		get => isInitialized ? (string)DevExpress.Ui.DxPivotGridFieldChooserInterop.GetAccessKey(dxTarget).Result : accessKey;
+		get => isInitialized ? (string)DevExpress.Ui.DxPivotGridFieldChooserInterop.GetAccessKeyOption(dxTarget).Result : accessKey;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxPivotGridFieldChooserInterop.SetAccessKey(dxTarget, value);
+				DevExpress.Ui.DxPivotGridFieldChooserInterop.SetAccessKeyOption(dxTarget, value);
 			} else {
 				this.accessKey = value;
 			}
@@ -151,10 +164,10 @@
 	bool? activeStateEnabled;
 	[Parameter]
 	bool? ActiveStateEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxPivotGridFieldChooserInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxPivotGridFieldChooserInterop.GetActiveStateEnabledOption(dxTarget).Result : activeStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxPivotGridFieldChooserInterop.SetActiveStateEnabled(dxTarget, value);
+				DevExpress.Ui.DxPivotGridFieldChooserInterop.SetActiveStateEnabledOption(dxTarget, value);
 			} else {
 				this.activeStateEnabled = value;
 			}
@@ -163,10 +176,10 @@
 	bool? disabled;
 	[Parameter]
 	bool? Disabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxPivotGridFieldChooserInterop.GetDisabled(dxTarget).Result : disabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxPivotGridFieldChooserInterop.GetDisabledOption(dxTarget).Result : disabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxPivotGridFieldChooserInterop.SetDisabled(dxTarget, value);
+				DevExpress.Ui.DxPivotGridFieldChooserInterop.SetDisabledOption(dxTarget, value);
 			} else {
 				this.disabled = value;
 			}
@@ -175,10 +188,10 @@
 	bool? focusStateEnabled;
 	[Parameter]
 	bool? FocusStateEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxPivotGridFieldChooserInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxPivotGridFieldChooserInterop.GetFocusStateEnabledOption(dxTarget).Result : focusStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxPivotGridFieldChooserInterop.SetFocusStateEnabled(dxTarget, value);
+				DevExpress.Ui.DxPivotGridFieldChooserInterop.SetFocusStateEnabledOption(dxTarget, value);
 			} else {
 				this.focusStateEnabled = value;
 			}
@@ -187,10 +200,10 @@
 	string hint;
 	[Parameter]
 	string Hint {
-		get => isInitialized ? (string)DevExpress.Ui.DxPivotGridFieldChooserInterop.GetHint(dxTarget).Result : hint;
+		get => isInitialized ? (string)DevExpress.Ui.DxPivotGridFieldChooserInterop.GetHintOption(dxTarget).Result : hint;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxPivotGridFieldChooserInterop.SetHint(dxTarget, value);
+				DevExpress.Ui.DxPivotGridFieldChooserInterop.SetHintOption(dxTarget, value);
 			} else {
 				this.hint = value;
 			}
@@ -199,10 +212,10 @@
 	bool? hoverStateEnabled;
 	[Parameter]
 	bool? HoverStateEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxPivotGridFieldChooserInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxPivotGridFieldChooserInterop.GetHoverStateEnabledOption(dxTarget).Result : hoverStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxPivotGridFieldChooserInterop.SetHoverStateEnabled(dxTarget, value);
+				DevExpress.Ui.DxPivotGridFieldChooserInterop.SetHoverStateEnabledOption(dxTarget, value);
 			} else {
 				this.hoverStateEnabled = value;
 			}
@@ -211,10 +224,10 @@
 	float? tabIndex;
 	[Parameter]
 	float? TabIndex {
-		get => isInitialized ? (float?)DevExpress.Ui.DxPivotGridFieldChooserInterop.GetTabIndex(dxTarget).Result : tabIndex;
+		get => isInitialized ? (float?)DevExpress.Ui.DxPivotGridFieldChooserInterop.GetTabIndexOption(dxTarget).Result : tabIndex;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxPivotGridFieldChooserInterop.SetTabIndex(dxTarget, value);
+				DevExpress.Ui.DxPivotGridFieldChooserInterop.SetTabIndexOption(dxTarget, value);
 			} else {
 				this.tabIndex = value;
 			}
@@ -223,10 +236,10 @@
 	bool? visible;
 	[Parameter]
 	bool? Visible {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxPivotGridFieldChooserInterop.GetVisible(dxTarget).Result : visible;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxPivotGridFieldChooserInterop.GetVisibleOption(dxTarget).Result : visible;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxPivotGridFieldChooserInterop.SetVisible(dxTarget, value);
+				DevExpress.Ui.DxPivotGridFieldChooserInterop.SetVisibleOption(dxTarget, value);
 			} else {
 				this.visible = value;
 			}
@@ -235,10 +248,10 @@
 	object bindingOptions;
 	[Parameter]
 	object BindingOptions {
-		get => isInitialized ? DevExpress.Ui.DxPivotGridFieldChooserInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
+		get => isInitialized ? DevExpress.Ui.DxPivotGridFieldChooserInterop.GetBindingOptionsOption(dxTarget).Result : bindingOptions;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxPivotGridFieldChooserInterop.SetBindingOptions(dxTarget, value);
+				DevExpress.Ui.DxPivotGridFieldChooserInterop.SetBindingOptionsOption(dxTarget, value);
 			} else {
 				this.bindingOptions = value;
 			}
@@ -247,10 +260,10 @@
 	object elementAttr;
 	[Parameter]
 	object ElementAttr {
-		get => isInitialized ? DevExpress.Ui.DxPivotGridFieldChooserInterop.GetElementAttr(dxTarget).Result : elementAttr;
+		get => isInitialized ? DevExpress.Ui.DxPivotGridFieldChooserInterop.GetElementAttrOption(dxTarget).Result : elementAttr;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxPivotGridFieldChooserInterop.SetElementAttr(dxTarget, value);
+				DevExpress.Ui.DxPivotGridFieldChooserInterop.SetElementAttrOption(dxTarget, value);
 			} else {
 				this.elementAttr = value;
 			}
@@ -259,10 +272,10 @@
 	bool? rtlEnabled;
 	[Parameter]
 	bool? RtlEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxPivotGridFieldChooserInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxPivotGridFieldChooserInterop.GetRtlEnabledOption(dxTarget).Result : rtlEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxPivotGridFieldChooserInterop.SetRtlEnabled(dxTarget, value);
+				DevExpress.Ui.DxPivotGridFieldChooserInterop.SetRtlEnabledOption(dxTarget, value);
 			} else {
 				this.rtlEnabled = value;
 			}
@@ -271,10 +284,10 @@
 	object width;
 	[Parameter]
 	object Width {
-		get => isInitialized ? DevExpress.Ui.DxPivotGridFieldChooserInterop.GetWidth(dxTarget).Result : width;
+		get => isInitialized ? DevExpress.Ui.DxPivotGridFieldChooserInterop.GetWidthOption(dxTarget).Result : width;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxPivotGridFieldChooserInterop.SetWidth(dxTarget, value);
+				DevExpress.Ui.DxPivotGridFieldChooserInterop.SetWidthOption(dxTarget, value);
 			} else {
 				this.width = value;
 			}

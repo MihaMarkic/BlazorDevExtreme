@@ -51,10 +51,10 @@
 	string validationGroup;
 	[Parameter]
 	string ValidationGroup {
-		get => isInitialized ? (string)DevExpress.Ui.DxValidationSummaryInterop.GetValidationGroup(dxTarget).Result : validationGroup;
+		get => isInitialized ? (string)DevExpress.Ui.DxValidationSummaryInterop.GetValidationGroupOption(dxTarget).Result : validationGroup;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxValidationSummaryInterop.SetValidationGroup(dxTarget, value);
+				DevExpress.Ui.DxValidationSummaryInterop.SetValidationGroupOption(dxTarget, value);
 			} else {
 				this.validationGroup = value;
 			}
@@ -63,10 +63,10 @@
 	object dataSource;
 	[Parameter]
 	object DataSource {
-		get => isInitialized ? DevExpress.Ui.DxValidationSummaryInterop.GetDataSource(dxTarget).Result : dataSource;
+		get => isInitialized ? DevExpress.Ui.DxValidationSummaryInterop.GetDataSourceOption(dxTarget).Result : dataSource;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxValidationSummaryInterop.SetDataSource(dxTarget, value);
+				DevExpress.Ui.DxValidationSummaryInterop.SetDataSourceOption(dxTarget, value);
 			} else {
 				this.dataSource = value;
 			}
@@ -75,10 +75,10 @@
 	float? itemHoldTimeout;
 	[Parameter]
 	float? ItemHoldTimeout {
-		get => isInitialized ? (float?)DevExpress.Ui.DxValidationSummaryInterop.GetItemHoldTimeout(dxTarget).Result : itemHoldTimeout;
+		get => isInitialized ? (float?)DevExpress.Ui.DxValidationSummaryInterop.GetItemHoldTimeoutOption(dxTarget).Result : itemHoldTimeout;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxValidationSummaryInterop.SetItemHoldTimeout(dxTarget, value);
+				DevExpress.Ui.DxValidationSummaryInterop.SetItemHoldTimeoutOption(dxTarget, value);
 			} else {
 				this.itemHoldTimeout = value;
 			}
@@ -87,10 +87,10 @@
 	object items;
 	[Parameter]
 	object Items {
-		get => isInitialized ? DevExpress.Ui.DxValidationSummaryInterop.GetItems(dxTarget).Result : items;
+		get => isInitialized ? DevExpress.Ui.DxValidationSummaryInterop.GetItemsOption(dxTarget).Result : items;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxValidationSummaryInterop.SetItems(dxTarget, value);
+				DevExpress.Ui.DxValidationSummaryInterop.SetItemsOption(dxTarget, value);
 			} else {
 				this.items = value;
 			}
@@ -99,10 +99,10 @@
 	object itemTemplate;
 	[Parameter]
 	object ItemTemplate {
-		get => isInitialized ? DevExpress.Ui.DxValidationSummaryInterop.GetItemTemplate(dxTarget).Result : itemTemplate;
+		get => isInitialized ? DevExpress.Ui.DxValidationSummaryInterop.GetItemTemplateOption(dxTarget).Result : itemTemplate;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxValidationSummaryInterop.SetItemTemplate(dxTarget, value);
+				DevExpress.Ui.DxValidationSummaryInterop.SetItemTemplateOption(dxTarget, value);
 			} else {
 				this.itemTemplate = value;
 			}
@@ -111,10 +111,10 @@
 	object keyExpr;
 	[Parameter]
 	object KeyExpr {
-		get => isInitialized ? DevExpress.Ui.DxValidationSummaryInterop.GetKeyExpr(dxTarget).Result : keyExpr;
+		get => isInitialized ? DevExpress.Ui.DxValidationSummaryInterop.GetKeyExprOption(dxTarget).Result : keyExpr;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxValidationSummaryInterop.SetKeyExpr(dxTarget, value);
+				DevExpress.Ui.DxValidationSummaryInterop.SetKeyExprOption(dxTarget, value);
 			} else {
 				this.keyExpr = value;
 			}
@@ -123,10 +123,10 @@
 	string noDataText;
 	[Parameter]
 	string NoDataText {
-		get => isInitialized ? (string)DevExpress.Ui.DxValidationSummaryInterop.GetNoDataText(dxTarget).Result : noDataText;
+		get => isInitialized ? (string)DevExpress.Ui.DxValidationSummaryInterop.GetNoDataTextOption(dxTarget).Result : noDataText;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxValidationSummaryInterop.SetNoDataText(dxTarget, value);
+				DevExpress.Ui.DxValidationSummaryInterop.SetNoDataTextOption(dxTarget, value);
 			} else {
 				this.noDataText = value;
 			}
@@ -135,10 +135,10 @@
 	float? selectedIndex;
 	[Parameter]
 	float? SelectedIndex {
-		get => isInitialized ? (float?)DevExpress.Ui.DxValidationSummaryInterop.GetSelectedIndex(dxTarget).Result : selectedIndex;
+		get => isInitialized ? (float?)DevExpress.Ui.DxValidationSummaryInterop.GetSelectedIndexOption(dxTarget).Result : selectedIndex;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxValidationSummaryInterop.SetSelectedIndex(dxTarget, value);
+				DevExpress.Ui.DxValidationSummaryInterop.SetSelectedIndexOption(dxTarget, value);
 			} else {
 				this.selectedIndex = value;
 			}
@@ -147,10 +147,10 @@
 	object selectedItem;
 	[Parameter]
 	object SelectedItem {
-		get => isInitialized ? DevExpress.Ui.DxValidationSummaryInterop.GetSelectedItem(dxTarget).Result : selectedItem;
+		get => isInitialized ? DevExpress.Ui.DxValidationSummaryInterop.GetSelectedItemOption(dxTarget).Result : selectedItem;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxValidationSummaryInterop.SetSelectedItem(dxTarget, value);
+				DevExpress.Ui.DxValidationSummaryInterop.SetSelectedItemOption(dxTarget, value);
 			} else {
 				this.selectedItem = value;
 			}
@@ -159,10 +159,10 @@
 	object selectedItemKeys;
 	[Parameter]
 	object SelectedItemKeys {
-		get => isInitialized ? DevExpress.Ui.DxValidationSummaryInterop.GetSelectedItemKeys(dxTarget).Result : selectedItemKeys;
+		get => isInitialized ? DevExpress.Ui.DxValidationSummaryInterop.GetSelectedItemKeysOption(dxTarget).Result : selectedItemKeys;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxValidationSummaryInterop.SetSelectedItemKeys(dxTarget, value);
+				DevExpress.Ui.DxValidationSummaryInterop.SetSelectedItemKeysOption(dxTarget, value);
 			} else {
 				this.selectedItemKeys = value;
 			}
@@ -171,10 +171,10 @@
 	object selectedItems;
 	[Parameter]
 	object SelectedItems {
-		get => isInitialized ? DevExpress.Ui.DxValidationSummaryInterop.GetSelectedItems(dxTarget).Result : selectedItems;
+		get => isInitialized ? DevExpress.Ui.DxValidationSummaryInterop.GetSelectedItemsOption(dxTarget).Result : selectedItems;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxValidationSummaryInterop.SetSelectedItems(dxTarget, value);
+				DevExpress.Ui.DxValidationSummaryInterop.SetSelectedItemsOption(dxTarget, value);
 			} else {
 				this.selectedItems = value;
 			}
@@ -183,10 +183,10 @@
 	string accessKey;
 	[Parameter]
 	string AccessKey {
-		get => isInitialized ? (string)DevExpress.Ui.DxValidationSummaryInterop.GetAccessKey(dxTarget).Result : accessKey;
+		get => isInitialized ? (string)DevExpress.Ui.DxValidationSummaryInterop.GetAccessKeyOption(dxTarget).Result : accessKey;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxValidationSummaryInterop.SetAccessKey(dxTarget, value);
+				DevExpress.Ui.DxValidationSummaryInterop.SetAccessKeyOption(dxTarget, value);
 			} else {
 				this.accessKey = value;
 			}
@@ -195,10 +195,10 @@
 	bool? activeStateEnabled;
 	[Parameter]
 	bool? ActiveStateEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxValidationSummaryInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxValidationSummaryInterop.GetActiveStateEnabledOption(dxTarget).Result : activeStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxValidationSummaryInterop.SetActiveStateEnabled(dxTarget, value);
+				DevExpress.Ui.DxValidationSummaryInterop.SetActiveStateEnabledOption(dxTarget, value);
 			} else {
 				this.activeStateEnabled = value;
 			}
@@ -207,10 +207,10 @@
 	bool? disabled;
 	[Parameter]
 	bool? Disabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxValidationSummaryInterop.GetDisabled(dxTarget).Result : disabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxValidationSummaryInterop.GetDisabledOption(dxTarget).Result : disabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxValidationSummaryInterop.SetDisabled(dxTarget, value);
+				DevExpress.Ui.DxValidationSummaryInterop.SetDisabledOption(dxTarget, value);
 			} else {
 				this.disabled = value;
 			}
@@ -219,10 +219,10 @@
 	bool? focusStateEnabled;
 	[Parameter]
 	bool? FocusStateEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxValidationSummaryInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxValidationSummaryInterop.GetFocusStateEnabledOption(dxTarget).Result : focusStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxValidationSummaryInterop.SetFocusStateEnabled(dxTarget, value);
+				DevExpress.Ui.DxValidationSummaryInterop.SetFocusStateEnabledOption(dxTarget, value);
 			} else {
 				this.focusStateEnabled = value;
 			}
@@ -231,10 +231,10 @@
 	string hint;
 	[Parameter]
 	string Hint {
-		get => isInitialized ? (string)DevExpress.Ui.DxValidationSummaryInterop.GetHint(dxTarget).Result : hint;
+		get => isInitialized ? (string)DevExpress.Ui.DxValidationSummaryInterop.GetHintOption(dxTarget).Result : hint;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxValidationSummaryInterop.SetHint(dxTarget, value);
+				DevExpress.Ui.DxValidationSummaryInterop.SetHintOption(dxTarget, value);
 			} else {
 				this.hint = value;
 			}
@@ -243,10 +243,10 @@
 	bool? hoverStateEnabled;
 	[Parameter]
 	bool? HoverStateEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxValidationSummaryInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxValidationSummaryInterop.GetHoverStateEnabledOption(dxTarget).Result : hoverStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxValidationSummaryInterop.SetHoverStateEnabled(dxTarget, value);
+				DevExpress.Ui.DxValidationSummaryInterop.SetHoverStateEnabledOption(dxTarget, value);
 			} else {
 				this.hoverStateEnabled = value;
 			}
@@ -255,10 +255,10 @@
 	float? tabIndex;
 	[Parameter]
 	float? TabIndex {
-		get => isInitialized ? (float?)DevExpress.Ui.DxValidationSummaryInterop.GetTabIndex(dxTarget).Result : tabIndex;
+		get => isInitialized ? (float?)DevExpress.Ui.DxValidationSummaryInterop.GetTabIndexOption(dxTarget).Result : tabIndex;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxValidationSummaryInterop.SetTabIndex(dxTarget, value);
+				DevExpress.Ui.DxValidationSummaryInterop.SetTabIndexOption(dxTarget, value);
 			} else {
 				this.tabIndex = value;
 			}
@@ -267,10 +267,10 @@
 	bool? visible;
 	[Parameter]
 	bool? Visible {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxValidationSummaryInterop.GetVisible(dxTarget).Result : visible;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxValidationSummaryInterop.GetVisibleOption(dxTarget).Result : visible;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxValidationSummaryInterop.SetVisible(dxTarget, value);
+				DevExpress.Ui.DxValidationSummaryInterop.SetVisibleOption(dxTarget, value);
 			} else {
 				this.visible = value;
 			}
@@ -279,10 +279,10 @@
 	object bindingOptions;
 	[Parameter]
 	object BindingOptions {
-		get => isInitialized ? DevExpress.Ui.DxValidationSummaryInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
+		get => isInitialized ? DevExpress.Ui.DxValidationSummaryInterop.GetBindingOptionsOption(dxTarget).Result : bindingOptions;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxValidationSummaryInterop.SetBindingOptions(dxTarget, value);
+				DevExpress.Ui.DxValidationSummaryInterop.SetBindingOptionsOption(dxTarget, value);
 			} else {
 				this.bindingOptions = value;
 			}
@@ -291,10 +291,10 @@
 	object elementAttr;
 	[Parameter]
 	object ElementAttr {
-		get => isInitialized ? DevExpress.Ui.DxValidationSummaryInterop.GetElementAttr(dxTarget).Result : elementAttr;
+		get => isInitialized ? DevExpress.Ui.DxValidationSummaryInterop.GetElementAttrOption(dxTarget).Result : elementAttr;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxValidationSummaryInterop.SetElementAttr(dxTarget, value);
+				DevExpress.Ui.DxValidationSummaryInterop.SetElementAttrOption(dxTarget, value);
 			} else {
 				this.elementAttr = value;
 			}
@@ -303,10 +303,10 @@
 	object height;
 	[Parameter]
 	object Height {
-		get => isInitialized ? DevExpress.Ui.DxValidationSummaryInterop.GetHeight(dxTarget).Result : height;
+		get => isInitialized ? DevExpress.Ui.DxValidationSummaryInterop.GetHeightOption(dxTarget).Result : height;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxValidationSummaryInterop.SetHeight(dxTarget, value);
+				DevExpress.Ui.DxValidationSummaryInterop.SetHeightOption(dxTarget, value);
 			} else {
 				this.height = value;
 			}
@@ -315,10 +315,10 @@
 	bool? rtlEnabled;
 	[Parameter]
 	bool? RtlEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxValidationSummaryInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxValidationSummaryInterop.GetRtlEnabledOption(dxTarget).Result : rtlEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxValidationSummaryInterop.SetRtlEnabled(dxTarget, value);
+				DevExpress.Ui.DxValidationSummaryInterop.SetRtlEnabledOption(dxTarget, value);
 			} else {
 				this.rtlEnabled = value;
 			}
@@ -327,10 +327,10 @@
 	object width;
 	[Parameter]
 	object Width {
-		get => isInitialized ? DevExpress.Ui.DxValidationSummaryInterop.GetWidth(dxTarget).Result : width;
+		get => isInitialized ? DevExpress.Ui.DxValidationSummaryInterop.GetWidthOption(dxTarget).Result : width;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxValidationSummaryInterop.SetWidth(dxTarget, value);
+				DevExpress.Ui.DxValidationSummaryInterop.SetWidthOption(dxTarget, value);
 			} else {
 				this.width = value;
 			}

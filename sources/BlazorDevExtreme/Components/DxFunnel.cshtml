@@ -1,15 +1,15 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorComponent<DevExpress.Viz.Funnel.DxFunnelOptions>
+@inherits DxBlazorComponent<DevExpress.Viz.DxFunnelOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
 @functions {
 	ElementRef dxTarget;
 	public DxFunnel() : base("DxFunnel") { }
-	protected override DevExpress.Viz.Funnel.DxFunnelOptions CreateOptions() {
-		return new DevExpress.Viz.Funnel.DxFunnelOptions {
+	protected override DevExpress.Viz.DxFunnelOptions CreateOptions() {
+		return new DevExpress.Viz.DxFunnelOptions {
 			adaptiveLayout = adaptiveLayout,
 			algorithm = algorithm,
 			argumentField = argumentField,
@@ -28,6 +28,7 @@
 			sortData = sortData,
 			tooltip = tooltip,
 			valueField = valueField,
+			disabled = disabled,
 			export = export,
 			loadingIndicator = loadingIndicator,
 			margin = margin,
@@ -55,16 +56,16 @@
 			onInitializedEnabled = onInitializedEnabled,
 		};
 	}
-	protected override Task Init(DevExpress.Viz.Funnel.DxFunnelOptions options) {
+	protected override Task Init(DevExpress.Viz.DxFunnelOptions options) {
 		return DevExpress.Viz.DxFunnelInterop.Init(dxTarget, options);
 	}
 	object adaptiveLayout;
 	[Parameter]
 	object AdaptiveLayout {
-		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetAdaptiveLayout(dxTarget).Result : adaptiveLayout;
+		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetAdaptiveLayoutOption(dxTarget).Result : adaptiveLayout;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxFunnelInterop.SetAdaptiveLayout(dxTarget, value);
+				DevExpress.Viz.DxFunnelInterop.SetAdaptiveLayoutOption(dxTarget, value);
 			} else {
 				this.adaptiveLayout = value;
 			}
@@ -73,10 +74,10 @@
 	string algorithm;
 	[Parameter]
 	string Algorithm {
-		get => isInitialized ? (string)DevExpress.Viz.DxFunnelInterop.GetAlgorithm(dxTarget).Result : algorithm;
+		get => isInitialized ? (string)DevExpress.Viz.DxFunnelInterop.GetAlgorithmOption(dxTarget).Result : algorithm;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxFunnelInterop.SetAlgorithm(dxTarget, value);
+				DevExpress.Viz.DxFunnelInterop.SetAlgorithmOption(dxTarget, value);
 			} else {
 				this.algorithm = value;
 			}
@@ -85,10 +86,10 @@
 	string argumentField;
 	[Parameter]
 	string ArgumentField {
-		get => isInitialized ? (string)DevExpress.Viz.DxFunnelInterop.GetArgumentField(dxTarget).Result : argumentField;
+		get => isInitialized ? (string)DevExpress.Viz.DxFunnelInterop.GetArgumentFieldOption(dxTarget).Result : argumentField;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxFunnelInterop.SetArgumentField(dxTarget, value);
+				DevExpress.Viz.DxFunnelInterop.SetArgumentFieldOption(dxTarget, value);
 			} else {
 				this.argumentField = value;
 			}
@@ -97,10 +98,10 @@
 	string colorField;
 	[Parameter]
 	string ColorField {
-		get => isInitialized ? (string)DevExpress.Viz.DxFunnelInterop.GetColorField(dxTarget).Result : colorField;
+		get => isInitialized ? (string)DevExpress.Viz.DxFunnelInterop.GetColorFieldOption(dxTarget).Result : colorField;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxFunnelInterop.SetColorField(dxTarget, value);
+				DevExpress.Viz.DxFunnelInterop.SetColorFieldOption(dxTarget, value);
 			} else {
 				this.colorField = value;
 			}
@@ -109,10 +110,10 @@
 	object dataSource;
 	[Parameter]
 	object DataSource {
-		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetDataSource(dxTarget).Result : dataSource;
+		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetDataSourceOption(dxTarget).Result : dataSource;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxFunnelInterop.SetDataSource(dxTarget, value);
+				DevExpress.Viz.DxFunnelInterop.SetDataSourceOption(dxTarget, value);
 			} else {
 				this.dataSource = value;
 			}
@@ -121,10 +122,10 @@
 	bool? hoverEnabled;
 	[Parameter]
 	bool? HoverEnabled {
-		get => isInitialized ? (bool?)DevExpress.Viz.DxFunnelInterop.GetHoverEnabled(dxTarget).Result : hoverEnabled;
+		get => isInitialized ? (bool?)DevExpress.Viz.DxFunnelInterop.GetHoverEnabledOption(dxTarget).Result : hoverEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxFunnelInterop.SetHoverEnabled(dxTarget, value);
+				DevExpress.Viz.DxFunnelInterop.SetHoverEnabledOption(dxTarget, value);
 			} else {
 				this.hoverEnabled = value;
 			}
@@ -133,10 +134,10 @@
 	bool? inverted;
 	[Parameter]
 	bool? Inverted {
-		get => isInitialized ? (bool?)DevExpress.Viz.DxFunnelInterop.GetInverted(dxTarget).Result : inverted;
+		get => isInitialized ? (bool?)DevExpress.Viz.DxFunnelInterop.GetInvertedOption(dxTarget).Result : inverted;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxFunnelInterop.SetInverted(dxTarget, value);
+				DevExpress.Viz.DxFunnelInterop.SetInvertedOption(dxTarget, value);
 			} else {
 				this.inverted = value;
 			}
@@ -145,10 +146,10 @@
 	object item;
 	[Parameter]
 	object Item {
-		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetItem(dxTarget).Result : item;
+		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetItemOption(dxTarget).Result : item;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxFunnelInterop.SetItem(dxTarget, value);
+				DevExpress.Viz.DxFunnelInterop.SetItemOption(dxTarget, value);
 			} else {
 				this.item = value;
 			}
@@ -157,10 +158,10 @@
 	object label;
 	[Parameter]
 	object Label {
-		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetLabel(dxTarget).Result : label;
+		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetLabelOption(dxTarget).Result : label;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxFunnelInterop.SetLabel(dxTarget, value);
+				DevExpress.Viz.DxFunnelInterop.SetLabelOption(dxTarget, value);
 			} else {
 				this.label = value;
 			}
@@ -169,10 +170,10 @@
 	object legend;
 	[Parameter]
 	object Legend {
-		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetLegend(dxTarget).Result : legend;
+		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetLegendOption(dxTarget).Result : legend;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxFunnelInterop.SetLegend(dxTarget, value);
+				DevExpress.Viz.DxFunnelInterop.SetLegendOption(dxTarget, value);
 			} else {
 				this.legend = value;
 			}
@@ -181,10 +182,10 @@
 	float? neckHeight;
 	[Parameter]
 	float? NeckHeight {
-		get => isInitialized ? (float?)DevExpress.Viz.DxFunnelInterop.GetNeckHeight(dxTarget).Result : neckHeight;
+		get => isInitialized ? (float?)DevExpress.Viz.DxFunnelInterop.GetNeckHeightOption(dxTarget).Result : neckHeight;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxFunnelInterop.SetNeckHeight(dxTarget, value);
+				DevExpress.Viz.DxFunnelInterop.SetNeckHeightOption(dxTarget, value);
 			} else {
 				this.neckHeight = value;
 			}
@@ -193,10 +194,10 @@
 	float? neckWidth;
 	[Parameter]
 	float? NeckWidth {
-		get => isInitialized ? (float?)DevExpress.Viz.DxFunnelInterop.GetNeckWidth(dxTarget).Result : neckWidth;
+		get => isInitialized ? (float?)DevExpress.Viz.DxFunnelInterop.GetNeckWidthOption(dxTarget).Result : neckWidth;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxFunnelInterop.SetNeckWidth(dxTarget, value);
+				DevExpress.Viz.DxFunnelInterop.SetNeckWidthOption(dxTarget, value);
 			} else {
 				this.neckWidth = value;
 			}
@@ -205,10 +206,10 @@
 	object palette;
 	[Parameter]
 	object Palette {
-		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetPalette(dxTarget).Result : palette;
+		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetPaletteOption(dxTarget).Result : palette;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxFunnelInterop.SetPalette(dxTarget, value);
+				DevExpress.Viz.DxFunnelInterop.SetPaletteOption(dxTarget, value);
 			} else {
 				this.palette = value;
 			}
@@ -217,10 +218,10 @@
 	string paletteExtensionMode;
 	[Parameter]
 	string PaletteExtensionMode {
-		get => isInitialized ? (string)DevExpress.Viz.DxFunnelInterop.GetPaletteExtensionMode(dxTarget).Result : paletteExtensionMode;
+		get => isInitialized ? (string)DevExpress.Viz.DxFunnelInterop.GetPaletteExtensionModeOption(dxTarget).Result : paletteExtensionMode;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxFunnelInterop.SetPaletteExtensionMode(dxTarget, value);
+				DevExpress.Viz.DxFunnelInterop.SetPaletteExtensionModeOption(dxTarget, value);
 			} else {
 				this.paletteExtensionMode = value;
 			}
@@ -229,10 +230,10 @@
 	string selectionMode;
 	[Parameter]
 	string SelectionMode {
-		get => isInitialized ? (string)DevExpress.Viz.DxFunnelInterop.GetSelectionMode(dxTarget).Result : selectionMode;
+		get => isInitialized ? (string)DevExpress.Viz.DxFunnelInterop.GetSelectionModeOption(dxTarget).Result : selectionMode;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxFunnelInterop.SetSelectionMode(dxTarget, value);
+				DevExpress.Viz.DxFunnelInterop.SetSelectionModeOption(dxTarget, value);
 			} else {
 				this.selectionMode = value;
 			}
@@ -241,10 +242,10 @@
 	bool? sortData;
 	[Parameter]
 	bool? SortData {
-		get => isInitialized ? (bool?)DevExpress.Viz.DxFunnelInterop.GetSortData(dxTarget).Result : sortData;
+		get => isInitialized ? (bool?)DevExpress.Viz.DxFunnelInterop.GetSortDataOption(dxTarget).Result : sortData;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxFunnelInterop.SetSortData(dxTarget, value);
+				DevExpress.Viz.DxFunnelInterop.SetSortDataOption(dxTarget, value);
 			} else {
 				this.sortData = value;
 			}
@@ -253,10 +254,10 @@
 	object tooltip;
 	[Parameter]
 	object Tooltip {
-		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetTooltip(dxTarget).Result : tooltip;
+		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetTooltipOption(dxTarget).Result : tooltip;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxFunnelInterop.SetTooltip(dxTarget, value);
+				DevExpress.Viz.DxFunnelInterop.SetTooltipOption(dxTarget, value);
 			} else {
 				this.tooltip = value;
 			}
@@ -265,22 +266,34 @@
 	string valueField;
 	[Parameter]
 	string ValueField {
-		get => isInitialized ? (string)DevExpress.Viz.DxFunnelInterop.GetValueField(dxTarget).Result : valueField;
+		get => isInitialized ? (string)DevExpress.Viz.DxFunnelInterop.GetValueFieldOption(dxTarget).Result : valueField;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxFunnelInterop.SetValueField(dxTarget, value);
+				DevExpress.Viz.DxFunnelInterop.SetValueFieldOption(dxTarget, value);
 			} else {
 				this.valueField = value;
+			}
+		}
+	}
+	bool? disabled;
+	[Parameter]
+	bool? Disabled {
+		get => isInitialized ? (bool?)DevExpress.Viz.DxFunnelInterop.GetDisabledOption(dxTarget).Result : disabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxFunnelInterop.SetDisabledOption(dxTarget, value);
+			} else {
+				this.disabled = value;
 			}
 		}
 	}
 	object export;
 	[Parameter]
 	object Export {
-		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetExport(dxTarget).Result : export;
+		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetExportOption(dxTarget).Result : export;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxFunnelInterop.SetExport(dxTarget, value);
+				DevExpress.Viz.DxFunnelInterop.SetExportOption(dxTarget, value);
 			} else {
 				this.export = value;
 			}
@@ -289,10 +302,10 @@
 	object loadingIndicator;
 	[Parameter]
 	object LoadingIndicator {
-		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetLoadingIndicator(dxTarget).Result : loadingIndicator;
+		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetLoadingIndicatorOption(dxTarget).Result : loadingIndicator;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxFunnelInterop.SetLoadingIndicator(dxTarget, value);
+				DevExpress.Viz.DxFunnelInterop.SetLoadingIndicatorOption(dxTarget, value);
 			} else {
 				this.loadingIndicator = value;
 			}
@@ -301,10 +314,10 @@
 	object margin;
 	[Parameter]
 	object Margin {
-		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetMargin(dxTarget).Result : margin;
+		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetMarginOption(dxTarget).Result : margin;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxFunnelInterop.SetMargin(dxTarget, value);
+				DevExpress.Viz.DxFunnelInterop.SetMarginOption(dxTarget, value);
 			} else {
 				this.margin = value;
 			}
@@ -313,10 +326,10 @@
 	bool? pathModified;
 	[Parameter]
 	bool? PathModified {
-		get => isInitialized ? (bool?)DevExpress.Viz.DxFunnelInterop.GetPathModified(dxTarget).Result : pathModified;
+		get => isInitialized ? (bool?)DevExpress.Viz.DxFunnelInterop.GetPathModifiedOption(dxTarget).Result : pathModified;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxFunnelInterop.SetPathModified(dxTarget, value);
+				DevExpress.Viz.DxFunnelInterop.SetPathModifiedOption(dxTarget, value);
 			} else {
 				this.pathModified = value;
 			}
@@ -325,10 +338,10 @@
 	bool? redrawOnResize;
 	[Parameter]
 	bool? RedrawOnResize {
-		get => isInitialized ? (bool?)DevExpress.Viz.DxFunnelInterop.GetRedrawOnResize(dxTarget).Result : redrawOnResize;
+		get => isInitialized ? (bool?)DevExpress.Viz.DxFunnelInterop.GetRedrawOnResizeOption(dxTarget).Result : redrawOnResize;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxFunnelInterop.SetRedrawOnResize(dxTarget, value);
+				DevExpress.Viz.DxFunnelInterop.SetRedrawOnResizeOption(dxTarget, value);
 			} else {
 				this.redrawOnResize = value;
 			}
@@ -337,10 +350,10 @@
 	bool? rtlEnabled;
 	[Parameter]
 	bool? RtlEnabled {
-		get => isInitialized ? (bool?)DevExpress.Viz.DxFunnelInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
+		get => isInitialized ? (bool?)DevExpress.Viz.DxFunnelInterop.GetRtlEnabledOption(dxTarget).Result : rtlEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxFunnelInterop.SetRtlEnabled(dxTarget, value);
+				DevExpress.Viz.DxFunnelInterop.SetRtlEnabledOption(dxTarget, value);
 			} else {
 				this.rtlEnabled = value;
 			}
@@ -349,10 +362,10 @@
 	object size;
 	[Parameter]
 	object Size {
-		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetSize(dxTarget).Result : size;
+		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetSizeOption(dxTarget).Result : size;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxFunnelInterop.SetSize(dxTarget, value);
+				DevExpress.Viz.DxFunnelInterop.SetSizeOption(dxTarget, value);
 			} else {
 				this.size = value;
 			}
@@ -361,10 +374,10 @@
 	string theme;
 	[Parameter]
 	string Theme {
-		get => isInitialized ? (string)DevExpress.Viz.DxFunnelInterop.GetTheme(dxTarget).Result : theme;
+		get => isInitialized ? (string)DevExpress.Viz.DxFunnelInterop.GetThemeOption(dxTarget).Result : theme;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxFunnelInterop.SetTheme(dxTarget, value);
+				DevExpress.Viz.DxFunnelInterop.SetThemeOption(dxTarget, value);
 			} else {
 				this.theme = value;
 			}
@@ -373,10 +386,10 @@
 	object title;
 	[Parameter]
 	object Title {
-		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetTitle(dxTarget).Result : title;
+		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetTitleOption(dxTarget).Result : title;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxFunnelInterop.SetTitle(dxTarget, value);
+				DevExpress.Viz.DxFunnelInterop.SetTitleOption(dxTarget, value);
 			} else {
 				this.title = value;
 			}
@@ -385,10 +398,10 @@
 	object bindingOptions;
 	[Parameter]
 	object BindingOptions {
-		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
+		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetBindingOptionsOption(dxTarget).Result : bindingOptions;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxFunnelInterop.SetBindingOptions(dxTarget, value);
+				DevExpress.Viz.DxFunnelInterop.SetBindingOptionsOption(dxTarget, value);
 			} else {
 				this.bindingOptions = value;
 			}
@@ -397,10 +410,10 @@
 	object elementAttr;
 	[Parameter]
 	object ElementAttr {
-		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetElementAttr(dxTarget).Result : elementAttr;
+		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetElementAttrOption(dxTarget).Result : elementAttr;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxFunnelInterop.SetElementAttr(dxTarget, value);
+				DevExpress.Viz.DxFunnelInterop.SetElementAttrOption(dxTarget, value);
 			} else {
 				this.elementAttr = value;
 			}
@@ -409,10 +422,10 @@
 	object height;
 	[Parameter]
 	object Height {
-		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetHeight(dxTarget).Result : height;
+		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetHeightOption(dxTarget).Result : height;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxFunnelInterop.SetHeight(dxTarget, value);
+				DevExpress.Viz.DxFunnelInterop.SetHeightOption(dxTarget, value);
 			} else {
 				this.height = value;
 			}
@@ -421,10 +434,10 @@
 	object width;
 	[Parameter]
 	object Width {
-		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetWidth(dxTarget).Result : width;
+		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetWidthOption(dxTarget).Result : width;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxFunnelInterop.SetWidth(dxTarget, value);
+				DevExpress.Viz.DxFunnelInterop.SetWidthOption(dxTarget, value);
 			} else {
 				this.width = value;
 			}

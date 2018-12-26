@@ -46,11 +46,18 @@
 			filterRow = filterRow,
 			filterSyncEnabled = filterSyncEnabled,
 			filterValue = filterValue,
+			focusedColumnIndex = focusedColumnIndex,
+			focusedRowEnabled = focusedRowEnabled,
+			focusedRowIndex = focusedRowIndex,
+			focusedRowKey = focusedRowKey,
 			headerFilter = headerFilter,
+			highlightChanges = highlightChanges,
 			loadPanel = loadPanel,
 			noDataText = noDataText,
 			pager = pager,
 			paging = paging,
+			renderAsync = renderAsync,
+			repaintChangesOnly = repaintChangesOnly,
 			rowAlternationEnabled = rowAlternationEnabled,
 			searchPanel = searchPanel,
 			selectedRowKeys = selectedRowKeys,
@@ -85,6 +92,10 @@
 			onExportedEnabled = onExportedEnabled,
 			onExportingEnabled = onExportingEnabled,
 			onFileSavingEnabled = onFileSavingEnabled,
+			onFocusedCellChangedEnabled = onFocusedCellChangedEnabled,
+			onFocusedCellChangingEnabled = onFocusedCellChangingEnabled,
+			onFocusedRowChangedEnabled = onFocusedRowChangedEnabled,
+			onFocusedRowChangingEnabled = onFocusedRowChangingEnabled,
 			onRowClickEnabled = onRowClickEnabled,
 			onRowPreparedEnabled = onRowPreparedEnabled,
 			onAdaptiveDetailRowPreparingEnabled = onAdaptiveDetailRowPreparingEnabled,
@@ -116,10 +127,10 @@
 	object columns;
 	[Parameter]
 	object Columns {
-		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetColumns(dxTarget).Result : columns;
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetColumnsOption(dxTarget).Result : columns;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetColumns(dxTarget, value);
+				DevExpress.Ui.DxDataGridInterop.SetColumnsOption(dxTarget, value);
 			} else {
 				this.columns = value;
 			}
@@ -128,10 +139,10 @@
 	object customizeColumns;
 	[Parameter]
 	object CustomizeColumns {
-		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetCustomizeColumns(dxTarget).Result : customizeColumns;
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetCustomizeColumnsOption(dxTarget).Result : customizeColumns;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetCustomizeColumns(dxTarget, value);
+				DevExpress.Ui.DxDataGridInterop.SetCustomizeColumnsOption(dxTarget, value);
 			} else {
 				this.customizeColumns = value;
 			}
@@ -140,10 +151,10 @@
 	object customizeExportData;
 	[Parameter]
 	object CustomizeExportData {
-		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetCustomizeExportData(dxTarget).Result : customizeExportData;
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetCustomizeExportDataOption(dxTarget).Result : customizeExportData;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetCustomizeExportData(dxTarget, value);
+				DevExpress.Ui.DxDataGridInterop.SetCustomizeExportDataOption(dxTarget, value);
 			} else {
 				this.customizeExportData = value;
 			}
@@ -152,10 +163,10 @@
 	object editing;
 	[Parameter]
 	object Editing {
-		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetEditing(dxTarget).Result : editing;
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetEditingOption(dxTarget).Result : editing;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetEditing(dxTarget, value);
+				DevExpress.Ui.DxDataGridInterop.SetEditingOption(dxTarget, value);
 			} else {
 				this.editing = value;
 			}
@@ -164,10 +175,10 @@
 	object export;
 	[Parameter]
 	object Export {
-		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetExport(dxTarget).Result : export;
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetExportOption(dxTarget).Result : export;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetExport(dxTarget, value);
+				DevExpress.Ui.DxDataGridInterop.SetExportOption(dxTarget, value);
 			} else {
 				this.export = value;
 			}
@@ -176,10 +187,10 @@
 	object grouping;
 	[Parameter]
 	object Grouping {
-		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetGrouping(dxTarget).Result : grouping;
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetGroupingOption(dxTarget).Result : grouping;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetGrouping(dxTarget, value);
+				DevExpress.Ui.DxDataGridInterop.SetGroupingOption(dxTarget, value);
 			} else {
 				this.grouping = value;
 			}
@@ -188,10 +199,10 @@
 	object groupPanel;
 	[Parameter]
 	object GroupPanel {
-		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetGroupPanel(dxTarget).Result : groupPanel;
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetGroupPanelOption(dxTarget).Result : groupPanel;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetGroupPanel(dxTarget, value);
+				DevExpress.Ui.DxDataGridInterop.SetGroupPanelOption(dxTarget, value);
 			} else {
 				this.groupPanel = value;
 			}
@@ -200,10 +211,10 @@
 	object keyExpr;
 	[Parameter]
 	object KeyExpr {
-		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetKeyExpr(dxTarget).Result : keyExpr;
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetKeyExprOption(dxTarget).Result : keyExpr;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetKeyExpr(dxTarget, value);
+				DevExpress.Ui.DxDataGridInterop.SetKeyExprOption(dxTarget, value);
 			} else {
 				this.keyExpr = value;
 			}
@@ -212,10 +223,10 @@
 	object masterDetail;
 	[Parameter]
 	object MasterDetail {
-		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetMasterDetail(dxTarget).Result : masterDetail;
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetMasterDetailOption(dxTarget).Result : masterDetail;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetMasterDetail(dxTarget, value);
+				DevExpress.Ui.DxDataGridInterop.SetMasterDetailOption(dxTarget, value);
 			} else {
 				this.masterDetail = value;
 			}
@@ -224,10 +235,10 @@
 	object remoteOperations;
 	[Parameter]
 	object RemoteOperations {
-		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetRemoteOperations(dxTarget).Result : remoteOperations;
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetRemoteOperationsOption(dxTarget).Result : remoteOperations;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetRemoteOperations(dxTarget, value);
+				DevExpress.Ui.DxDataGridInterop.SetRemoteOperationsOption(dxTarget, value);
 			} else {
 				this.remoteOperations = value;
 			}
@@ -236,10 +247,10 @@
 	object rowTemplate;
 	[Parameter]
 	object RowTemplate {
-		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetRowTemplate(dxTarget).Result : rowTemplate;
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetRowTemplateOption(dxTarget).Result : rowTemplate;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetRowTemplate(dxTarget, value);
+				DevExpress.Ui.DxDataGridInterop.SetRowTemplateOption(dxTarget, value);
 			} else {
 				this.rowTemplate = value;
 			}
@@ -248,10 +259,10 @@
 	object scrolling;
 	[Parameter]
 	object Scrolling {
-		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetScrolling(dxTarget).Result : scrolling;
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetScrollingOption(dxTarget).Result : scrolling;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetScrolling(dxTarget, value);
+				DevExpress.Ui.DxDataGridInterop.SetScrollingOption(dxTarget, value);
 			} else {
 				this.scrolling = value;
 			}
@@ -260,10 +271,10 @@
 	object selection;
 	[Parameter]
 	object Selection {
-		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetSelection(dxTarget).Result : selection;
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetSelectionOption(dxTarget).Result : selection;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetSelection(dxTarget, value);
+				DevExpress.Ui.DxDataGridInterop.SetSelectionOption(dxTarget, value);
 			} else {
 				this.selection = value;
 			}
@@ -272,10 +283,10 @@
 	object selectionFilter;
 	[Parameter]
 	object SelectionFilter {
-		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetSelectionFilter(dxTarget).Result : selectionFilter;
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetSelectionFilterOption(dxTarget).Result : selectionFilter;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetSelectionFilter(dxTarget, value);
+				DevExpress.Ui.DxDataGridInterop.SetSelectionFilterOption(dxTarget, value);
 			} else {
 				this.selectionFilter = value;
 			}
@@ -284,10 +295,10 @@
 	object sortByGroupSummaryInfo;
 	[Parameter]
 	object SortByGroupSummaryInfo {
-		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetSortByGroupSummaryInfo(dxTarget).Result : sortByGroupSummaryInfo;
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetSortByGroupSummaryInfoOption(dxTarget).Result : sortByGroupSummaryInfo;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetSortByGroupSummaryInfo(dxTarget, value);
+				DevExpress.Ui.DxDataGridInterop.SetSortByGroupSummaryInfoOption(dxTarget, value);
 			} else {
 				this.sortByGroupSummaryInfo = value;
 			}
@@ -296,10 +307,10 @@
 	object summary;
 	[Parameter]
 	object Summary {
-		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetSummary(dxTarget).Result : summary;
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetSummaryOption(dxTarget).Result : summary;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetSummary(dxTarget, value);
+				DevExpress.Ui.DxDataGridInterop.SetSummaryOption(dxTarget, value);
 			} else {
 				this.summary = value;
 			}
@@ -308,10 +319,10 @@
 	bool? allowColumnReordering;
 	[Parameter]
 	bool? AllowColumnReordering {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetAllowColumnReordering(dxTarget).Result : allowColumnReordering;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetAllowColumnReorderingOption(dxTarget).Result : allowColumnReordering;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetAllowColumnReordering(dxTarget, value);
+				DevExpress.Ui.DxDataGridInterop.SetAllowColumnReorderingOption(dxTarget, value);
 			} else {
 				this.allowColumnReordering = value;
 			}
@@ -320,10 +331,10 @@
 	bool? allowColumnResizing;
 	[Parameter]
 	bool? AllowColumnResizing {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetAllowColumnResizing(dxTarget).Result : allowColumnResizing;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetAllowColumnResizingOption(dxTarget).Result : allowColumnResizing;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetAllowColumnResizing(dxTarget, value);
+				DevExpress.Ui.DxDataGridInterop.SetAllowColumnResizingOption(dxTarget, value);
 			} else {
 				this.allowColumnResizing = value;
 			}
@@ -332,10 +343,10 @@
 	bool? cacheEnabled;
 	[Parameter]
 	bool? CacheEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetCacheEnabled(dxTarget).Result : cacheEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetCacheEnabledOption(dxTarget).Result : cacheEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetCacheEnabled(dxTarget, value);
+				DevExpress.Ui.DxDataGridInterop.SetCacheEnabledOption(dxTarget, value);
 			} else {
 				this.cacheEnabled = value;
 			}
@@ -344,10 +355,10 @@
 	bool? cellHintEnabled;
 	[Parameter]
 	bool? CellHintEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetCellHintEnabled(dxTarget).Result : cellHintEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetCellHintEnabledOption(dxTarget).Result : cellHintEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetCellHintEnabled(dxTarget, value);
+				DevExpress.Ui.DxDataGridInterop.SetCellHintEnabledOption(dxTarget, value);
 			} else {
 				this.cellHintEnabled = value;
 			}
@@ -356,10 +367,10 @@
 	bool? columnAutoWidth;
 	[Parameter]
 	bool? ColumnAutoWidth {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetColumnAutoWidth(dxTarget).Result : columnAutoWidth;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetColumnAutoWidthOption(dxTarget).Result : columnAutoWidth;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetColumnAutoWidth(dxTarget, value);
+				DevExpress.Ui.DxDataGridInterop.SetColumnAutoWidthOption(dxTarget, value);
 			} else {
 				this.columnAutoWidth = value;
 			}
@@ -368,10 +379,10 @@
 	object columnChooser;
 	[Parameter]
 	object ColumnChooser {
-		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetColumnChooser(dxTarget).Result : columnChooser;
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetColumnChooserOption(dxTarget).Result : columnChooser;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetColumnChooser(dxTarget, value);
+				DevExpress.Ui.DxDataGridInterop.SetColumnChooserOption(dxTarget, value);
 			} else {
 				this.columnChooser = value;
 			}
@@ -380,10 +391,10 @@
 	object columnFixing;
 	[Parameter]
 	object ColumnFixing {
-		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetColumnFixing(dxTarget).Result : columnFixing;
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetColumnFixingOption(dxTarget).Result : columnFixing;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetColumnFixing(dxTarget, value);
+				DevExpress.Ui.DxDataGridInterop.SetColumnFixingOption(dxTarget, value);
 			} else {
 				this.columnFixing = value;
 			}
@@ -392,10 +403,10 @@
 	bool? columnHidingEnabled;
 	[Parameter]
 	bool? ColumnHidingEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetColumnHidingEnabled(dxTarget).Result : columnHidingEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetColumnHidingEnabledOption(dxTarget).Result : columnHidingEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetColumnHidingEnabled(dxTarget, value);
+				DevExpress.Ui.DxDataGridInterop.SetColumnHidingEnabledOption(dxTarget, value);
 			} else {
 				this.columnHidingEnabled = value;
 			}
@@ -404,10 +415,10 @@
 	float? columnMinWidth;
 	[Parameter]
 	float? ColumnMinWidth {
-		get => isInitialized ? (float?)DevExpress.Ui.DxDataGridInterop.GetColumnMinWidth(dxTarget).Result : columnMinWidth;
+		get => isInitialized ? (float?)DevExpress.Ui.DxDataGridInterop.GetColumnMinWidthOption(dxTarget).Result : columnMinWidth;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetColumnMinWidth(dxTarget, value);
+				DevExpress.Ui.DxDataGridInterop.SetColumnMinWidthOption(dxTarget, value);
 			} else {
 				this.columnMinWidth = value;
 			}
@@ -416,10 +427,10 @@
 	string columnResizingMode;
 	[Parameter]
 	string ColumnResizingMode {
-		get => isInitialized ? (string)DevExpress.Ui.DxDataGridInterop.GetColumnResizingMode(dxTarget).Result : columnResizingMode;
+		get => isInitialized ? (string)DevExpress.Ui.DxDataGridInterop.GetColumnResizingModeOption(dxTarget).Result : columnResizingMode;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetColumnResizingMode(dxTarget, value);
+				DevExpress.Ui.DxDataGridInterop.SetColumnResizingModeOption(dxTarget, value);
 			} else {
 				this.columnResizingMode = value;
 			}
@@ -428,10 +439,10 @@
 	float? columnWidth;
 	[Parameter]
 	float? ColumnWidth {
-		get => isInitialized ? (float?)DevExpress.Ui.DxDataGridInterop.GetColumnWidth(dxTarget).Result : columnWidth;
+		get => isInitialized ? (float?)DevExpress.Ui.DxDataGridInterop.GetColumnWidthOption(dxTarget).Result : columnWidth;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetColumnWidth(dxTarget, value);
+				DevExpress.Ui.DxDataGridInterop.SetColumnWidthOption(dxTarget, value);
 			} else {
 				this.columnWidth = value;
 			}
@@ -440,10 +451,10 @@
 	object dataSource;
 	[Parameter]
 	object DataSource {
-		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetDataSource(dxTarget).Result : dataSource;
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetDataSourceOption(dxTarget).Result : dataSource;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetDataSource(dxTarget, value);
+				DevExpress.Ui.DxDataGridInterop.SetDataSourceOption(dxTarget, value);
 			} else {
 				this.dataSource = value;
 			}
@@ -452,10 +463,10 @@
 	string dateSerializationFormat;
 	[Parameter]
 	string DateSerializationFormat {
-		get => isInitialized ? (string)DevExpress.Ui.DxDataGridInterop.GetDateSerializationFormat(dxTarget).Result : dateSerializationFormat;
+		get => isInitialized ? (string)DevExpress.Ui.DxDataGridInterop.GetDateSerializationFormatOption(dxTarget).Result : dateSerializationFormat;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetDateSerializationFormat(dxTarget, value);
+				DevExpress.Ui.DxDataGridInterop.SetDateSerializationFormatOption(dxTarget, value);
 			} else {
 				this.dateSerializationFormat = value;
 			}
@@ -464,10 +475,10 @@
 	bool? errorRowEnabled;
 	[Parameter]
 	bool? ErrorRowEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetErrorRowEnabled(dxTarget).Result : errorRowEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetErrorRowEnabledOption(dxTarget).Result : errorRowEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetErrorRowEnabled(dxTarget, value);
+				DevExpress.Ui.DxDataGridInterop.SetErrorRowEnabledOption(dxTarget, value);
 			} else {
 				this.errorRowEnabled = value;
 			}
@@ -476,10 +487,10 @@
 	object filterBuilder;
 	[Parameter]
 	object FilterBuilder {
-		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetFilterBuilder(dxTarget).Result : filterBuilder;
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetFilterBuilderOption(dxTarget).Result : filterBuilder;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetFilterBuilder(dxTarget, value);
+				DevExpress.Ui.DxDataGridInterop.SetFilterBuilderOption(dxTarget, value);
 			} else {
 				this.filterBuilder = value;
 			}
@@ -488,10 +499,10 @@
 	object filterBuilderPopup;
 	[Parameter]
 	object FilterBuilderPopup {
-		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetFilterBuilderPopup(dxTarget).Result : filterBuilderPopup;
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetFilterBuilderPopupOption(dxTarget).Result : filterBuilderPopup;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetFilterBuilderPopup(dxTarget, value);
+				DevExpress.Ui.DxDataGridInterop.SetFilterBuilderPopupOption(dxTarget, value);
 			} else {
 				this.filterBuilderPopup = value;
 			}
@@ -500,10 +511,10 @@
 	object filterPanel;
 	[Parameter]
 	object FilterPanel {
-		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetFilterPanel(dxTarget).Result : filterPanel;
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetFilterPanelOption(dxTarget).Result : filterPanel;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetFilterPanel(dxTarget, value);
+				DevExpress.Ui.DxDataGridInterop.SetFilterPanelOption(dxTarget, value);
 			} else {
 				this.filterPanel = value;
 			}
@@ -512,10 +523,10 @@
 	object filterRow;
 	[Parameter]
 	object FilterRow {
-		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetFilterRow(dxTarget).Result : filterRow;
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetFilterRowOption(dxTarget).Result : filterRow;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetFilterRow(dxTarget, value);
+				DevExpress.Ui.DxDataGridInterop.SetFilterRowOption(dxTarget, value);
 			} else {
 				this.filterRow = value;
 			}
@@ -524,10 +535,10 @@
 	object filterSyncEnabled;
 	[Parameter]
 	object FilterSyncEnabled {
-		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetFilterSyncEnabled(dxTarget).Result : filterSyncEnabled;
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetFilterSyncEnabledOption(dxTarget).Result : filterSyncEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetFilterSyncEnabled(dxTarget, value);
+				DevExpress.Ui.DxDataGridInterop.SetFilterSyncEnabledOption(dxTarget, value);
 			} else {
 				this.filterSyncEnabled = value;
 			}
@@ -536,34 +547,94 @@
 	object filterValue;
 	[Parameter]
 	object FilterValue {
-		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetFilterValue(dxTarget).Result : filterValue;
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetFilterValueOption(dxTarget).Result : filterValue;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetFilterValue(dxTarget, value);
+				DevExpress.Ui.DxDataGridInterop.SetFilterValueOption(dxTarget, value);
 			} else {
 				this.filterValue = value;
+			}
+		}
+	}
+	float? focusedColumnIndex;
+	[Parameter]
+	float? FocusedColumnIndex {
+		get => isInitialized ? (float?)DevExpress.Ui.DxDataGridInterop.GetFocusedColumnIndexOption(dxTarget).Result : focusedColumnIndex;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetFocusedColumnIndexOption(dxTarget, value);
+			} else {
+				this.focusedColumnIndex = value;
+			}
+		}
+	}
+	bool? focusedRowEnabled;
+	[Parameter]
+	bool? FocusedRowEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetFocusedRowEnabledOption(dxTarget).Result : focusedRowEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetFocusedRowEnabledOption(dxTarget, value);
+			} else {
+				this.focusedRowEnabled = value;
+			}
+		}
+	}
+	float? focusedRowIndex;
+	[Parameter]
+	float? FocusedRowIndex {
+		get => isInitialized ? (float?)DevExpress.Ui.DxDataGridInterop.GetFocusedRowIndexOption(dxTarget).Result : focusedRowIndex;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetFocusedRowIndexOption(dxTarget, value);
+			} else {
+				this.focusedRowIndex = value;
+			}
+		}
+	}
+	object focusedRowKey;
+	[Parameter]
+	object FocusedRowKey {
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetFocusedRowKeyOption(dxTarget).Result : focusedRowKey;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetFocusedRowKeyOption(dxTarget, value);
+			} else {
+				this.focusedRowKey = value;
 			}
 		}
 	}
 	object headerFilter;
 	[Parameter]
 	object HeaderFilter {
-		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetHeaderFilter(dxTarget).Result : headerFilter;
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetHeaderFilterOption(dxTarget).Result : headerFilter;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetHeaderFilter(dxTarget, value);
+				DevExpress.Ui.DxDataGridInterop.SetHeaderFilterOption(dxTarget, value);
 			} else {
 				this.headerFilter = value;
+			}
+		}
+	}
+	bool? highlightChanges;
+	[Parameter]
+	bool? HighlightChanges {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetHighlightChangesOption(dxTarget).Result : highlightChanges;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetHighlightChangesOption(dxTarget, value);
+			} else {
+				this.highlightChanges = value;
 			}
 		}
 	}
 	object loadPanel;
 	[Parameter]
 	object LoadPanel {
-		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetLoadPanel(dxTarget).Result : loadPanel;
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetLoadPanelOption(dxTarget).Result : loadPanel;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetLoadPanel(dxTarget, value);
+				DevExpress.Ui.DxDataGridInterop.SetLoadPanelOption(dxTarget, value);
 			} else {
 				this.loadPanel = value;
 			}
@@ -572,10 +643,10 @@
 	string noDataText;
 	[Parameter]
 	string NoDataText {
-		get => isInitialized ? (string)DevExpress.Ui.DxDataGridInterop.GetNoDataText(dxTarget).Result : noDataText;
+		get => isInitialized ? (string)DevExpress.Ui.DxDataGridInterop.GetNoDataTextOption(dxTarget).Result : noDataText;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetNoDataText(dxTarget, value);
+				DevExpress.Ui.DxDataGridInterop.SetNoDataTextOption(dxTarget, value);
 			} else {
 				this.noDataText = value;
 			}
@@ -584,10 +655,10 @@
 	object pager;
 	[Parameter]
 	object Pager {
-		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetPager(dxTarget).Result : pager;
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetPagerOption(dxTarget).Result : pager;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetPager(dxTarget, value);
+				DevExpress.Ui.DxDataGridInterop.SetPagerOption(dxTarget, value);
 			} else {
 				this.pager = value;
 			}
@@ -596,22 +667,46 @@
 	object paging;
 	[Parameter]
 	object Paging {
-		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetPaging(dxTarget).Result : paging;
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetPagingOption(dxTarget).Result : paging;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetPaging(dxTarget, value);
+				DevExpress.Ui.DxDataGridInterop.SetPagingOption(dxTarget, value);
 			} else {
 				this.paging = value;
+			}
+		}
+	}
+	bool? renderAsync;
+	[Parameter]
+	bool? RenderAsync {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetRenderAsyncOption(dxTarget).Result : renderAsync;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetRenderAsyncOption(dxTarget, value);
+			} else {
+				this.renderAsync = value;
+			}
+		}
+	}
+	bool? repaintChangesOnly;
+	[Parameter]
+	bool? RepaintChangesOnly {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetRepaintChangesOnlyOption(dxTarget).Result : repaintChangesOnly;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDataGridInterop.SetRepaintChangesOnlyOption(dxTarget, value);
+			} else {
+				this.repaintChangesOnly = value;
 			}
 		}
 	}
 	bool? rowAlternationEnabled;
 	[Parameter]
 	bool? RowAlternationEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetRowAlternationEnabled(dxTarget).Result : rowAlternationEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetRowAlternationEnabledOption(dxTarget).Result : rowAlternationEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetRowAlternationEnabled(dxTarget, value);
+				DevExpress.Ui.DxDataGridInterop.SetRowAlternationEnabledOption(dxTarget, value);
 			} else {
 				this.rowAlternationEnabled = value;
 			}
@@ -620,10 +715,10 @@
 	object searchPanel;
 	[Parameter]
 	object SearchPanel {
-		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetSearchPanel(dxTarget).Result : searchPanel;
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetSearchPanelOption(dxTarget).Result : searchPanel;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetSearchPanel(dxTarget, value);
+				DevExpress.Ui.DxDataGridInterop.SetSearchPanelOption(dxTarget, value);
 			} else {
 				this.searchPanel = value;
 			}
@@ -632,10 +727,10 @@
 	object selectedRowKeys;
 	[Parameter]
 	object SelectedRowKeys {
-		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetSelectedRowKeys(dxTarget).Result : selectedRowKeys;
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetSelectedRowKeysOption(dxTarget).Result : selectedRowKeys;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetSelectedRowKeys(dxTarget, value);
+				DevExpress.Ui.DxDataGridInterop.SetSelectedRowKeysOption(dxTarget, value);
 			} else {
 				this.selectedRowKeys = value;
 			}
@@ -644,10 +739,10 @@
 	bool? showBorders;
 	[Parameter]
 	bool? ShowBorders {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetShowBorders(dxTarget).Result : showBorders;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetShowBordersOption(dxTarget).Result : showBorders;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetShowBorders(dxTarget, value);
+				DevExpress.Ui.DxDataGridInterop.SetShowBordersOption(dxTarget, value);
 			} else {
 				this.showBorders = value;
 			}
@@ -656,10 +751,10 @@
 	bool? showColumnHeaders;
 	[Parameter]
 	bool? ShowColumnHeaders {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetShowColumnHeaders(dxTarget).Result : showColumnHeaders;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetShowColumnHeadersOption(dxTarget).Result : showColumnHeaders;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetShowColumnHeaders(dxTarget, value);
+				DevExpress.Ui.DxDataGridInterop.SetShowColumnHeadersOption(dxTarget, value);
 			} else {
 				this.showColumnHeaders = value;
 			}
@@ -668,10 +763,10 @@
 	bool? showColumnLines;
 	[Parameter]
 	bool? ShowColumnLines {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetShowColumnLines(dxTarget).Result : showColumnLines;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetShowColumnLinesOption(dxTarget).Result : showColumnLines;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetShowColumnLines(dxTarget, value);
+				DevExpress.Ui.DxDataGridInterop.SetShowColumnLinesOption(dxTarget, value);
 			} else {
 				this.showColumnLines = value;
 			}
@@ -680,10 +775,10 @@
 	bool? showRowLines;
 	[Parameter]
 	bool? ShowRowLines {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetShowRowLines(dxTarget).Result : showRowLines;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetShowRowLinesOption(dxTarget).Result : showRowLines;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetShowRowLines(dxTarget, value);
+				DevExpress.Ui.DxDataGridInterop.SetShowRowLinesOption(dxTarget, value);
 			} else {
 				this.showRowLines = value;
 			}
@@ -692,10 +787,10 @@
 	object sorting;
 	[Parameter]
 	object Sorting {
-		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetSorting(dxTarget).Result : sorting;
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetSortingOption(dxTarget).Result : sorting;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetSorting(dxTarget, value);
+				DevExpress.Ui.DxDataGridInterop.SetSortingOption(dxTarget, value);
 			} else {
 				this.sorting = value;
 			}
@@ -704,10 +799,10 @@
 	object stateStoring;
 	[Parameter]
 	object StateStoring {
-		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetStateStoring(dxTarget).Result : stateStoring;
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetStateStoringOption(dxTarget).Result : stateStoring;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetStateStoring(dxTarget, value);
+				DevExpress.Ui.DxDataGridInterop.SetStateStoringOption(dxTarget, value);
 			} else {
 				this.stateStoring = value;
 			}
@@ -716,10 +811,10 @@
 	bool? twoWayBindingEnabled;
 	[Parameter]
 	bool? TwoWayBindingEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetTwoWayBindingEnabled(dxTarget).Result : twoWayBindingEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetTwoWayBindingEnabledOption(dxTarget).Result : twoWayBindingEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetTwoWayBindingEnabled(dxTarget, value);
+				DevExpress.Ui.DxDataGridInterop.SetTwoWayBindingEnabledOption(dxTarget, value);
 			} else {
 				this.twoWayBindingEnabled = value;
 			}
@@ -728,10 +823,10 @@
 	bool? wordWrapEnabled;
 	[Parameter]
 	bool? WordWrapEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetWordWrapEnabled(dxTarget).Result : wordWrapEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetWordWrapEnabledOption(dxTarget).Result : wordWrapEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetWordWrapEnabled(dxTarget, value);
+				DevExpress.Ui.DxDataGridInterop.SetWordWrapEnabledOption(dxTarget, value);
 			} else {
 				this.wordWrapEnabled = value;
 			}
@@ -740,10 +835,10 @@
 	string accessKey;
 	[Parameter]
 	string AccessKey {
-		get => isInitialized ? (string)DevExpress.Ui.DxDataGridInterop.GetAccessKey(dxTarget).Result : accessKey;
+		get => isInitialized ? (string)DevExpress.Ui.DxDataGridInterop.GetAccessKeyOption(dxTarget).Result : accessKey;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetAccessKey(dxTarget, value);
+				DevExpress.Ui.DxDataGridInterop.SetAccessKeyOption(dxTarget, value);
 			} else {
 				this.accessKey = value;
 			}
@@ -752,10 +847,10 @@
 	bool? activeStateEnabled;
 	[Parameter]
 	bool? ActiveStateEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetActiveStateEnabledOption(dxTarget).Result : activeStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetActiveStateEnabled(dxTarget, value);
+				DevExpress.Ui.DxDataGridInterop.SetActiveStateEnabledOption(dxTarget, value);
 			} else {
 				this.activeStateEnabled = value;
 			}
@@ -764,10 +859,10 @@
 	bool? disabled;
 	[Parameter]
 	bool? Disabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetDisabled(dxTarget).Result : disabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetDisabledOption(dxTarget).Result : disabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetDisabled(dxTarget, value);
+				DevExpress.Ui.DxDataGridInterop.SetDisabledOption(dxTarget, value);
 			} else {
 				this.disabled = value;
 			}
@@ -776,10 +871,10 @@
 	bool? focusStateEnabled;
 	[Parameter]
 	bool? FocusStateEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetFocusStateEnabledOption(dxTarget).Result : focusStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetFocusStateEnabled(dxTarget, value);
+				DevExpress.Ui.DxDataGridInterop.SetFocusStateEnabledOption(dxTarget, value);
 			} else {
 				this.focusStateEnabled = value;
 			}
@@ -788,10 +883,10 @@
 	string hint;
 	[Parameter]
 	string Hint {
-		get => isInitialized ? (string)DevExpress.Ui.DxDataGridInterop.GetHint(dxTarget).Result : hint;
+		get => isInitialized ? (string)DevExpress.Ui.DxDataGridInterop.GetHintOption(dxTarget).Result : hint;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetHint(dxTarget, value);
+				DevExpress.Ui.DxDataGridInterop.SetHintOption(dxTarget, value);
 			} else {
 				this.hint = value;
 			}
@@ -800,10 +895,10 @@
 	bool? hoverStateEnabled;
 	[Parameter]
 	bool? HoverStateEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetHoverStateEnabledOption(dxTarget).Result : hoverStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetHoverStateEnabled(dxTarget, value);
+				DevExpress.Ui.DxDataGridInterop.SetHoverStateEnabledOption(dxTarget, value);
 			} else {
 				this.hoverStateEnabled = value;
 			}
@@ -812,10 +907,10 @@
 	float? tabIndex;
 	[Parameter]
 	float? TabIndex {
-		get => isInitialized ? (float?)DevExpress.Ui.DxDataGridInterop.GetTabIndex(dxTarget).Result : tabIndex;
+		get => isInitialized ? (float?)DevExpress.Ui.DxDataGridInterop.GetTabIndexOption(dxTarget).Result : tabIndex;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetTabIndex(dxTarget, value);
+				DevExpress.Ui.DxDataGridInterop.SetTabIndexOption(dxTarget, value);
 			} else {
 				this.tabIndex = value;
 			}
@@ -824,10 +919,10 @@
 	bool? visible;
 	[Parameter]
 	bool? Visible {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetVisible(dxTarget).Result : visible;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetVisibleOption(dxTarget).Result : visible;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetVisible(dxTarget, value);
+				DevExpress.Ui.DxDataGridInterop.SetVisibleOption(dxTarget, value);
 			} else {
 				this.visible = value;
 			}
@@ -836,10 +931,10 @@
 	object bindingOptions;
 	[Parameter]
 	object BindingOptions {
-		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetBindingOptionsOption(dxTarget).Result : bindingOptions;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetBindingOptions(dxTarget, value);
+				DevExpress.Ui.DxDataGridInterop.SetBindingOptionsOption(dxTarget, value);
 			} else {
 				this.bindingOptions = value;
 			}
@@ -848,10 +943,10 @@
 	object elementAttr;
 	[Parameter]
 	object ElementAttr {
-		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetElementAttr(dxTarget).Result : elementAttr;
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetElementAttrOption(dxTarget).Result : elementAttr;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetElementAttr(dxTarget, value);
+				DevExpress.Ui.DxDataGridInterop.SetElementAttrOption(dxTarget, value);
 			} else {
 				this.elementAttr = value;
 			}
@@ -860,10 +955,10 @@
 	object height;
 	[Parameter]
 	object Height {
-		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetHeight(dxTarget).Result : height;
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetHeightOption(dxTarget).Result : height;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetHeight(dxTarget, value);
+				DevExpress.Ui.DxDataGridInterop.SetHeightOption(dxTarget, value);
 			} else {
 				this.height = value;
 			}
@@ -872,10 +967,10 @@
 	bool? rtlEnabled;
 	[Parameter]
 	bool? RtlEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetRtlEnabledOption(dxTarget).Result : rtlEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetRtlEnabled(dxTarget, value);
+				DevExpress.Ui.DxDataGridInterop.SetRtlEnabledOption(dxTarget, value);
 			} else {
 				this.rtlEnabled = value;
 			}
@@ -884,10 +979,10 @@
 	object width;
 	[Parameter]
 	object Width {
-		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetWidth(dxTarget).Result : width;
+		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetWidthOption(dxTarget).Result : width;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDataGridInterop.SetWidth(dxTarget, value);
+				DevExpress.Ui.DxDataGridInterop.SetWidthOption(dxTarget, value);
 			} else {
 				this.width = value;
 			}
@@ -952,6 +1047,30 @@
 	bool? OnFileSavingEnabled {
 		get => onFileSavingEnabled;
 		set => this.onFileSavingEnabled = value;
+	}
+	bool? onFocusedCellChangedEnabled;
+	[Parameter]
+	bool? OnFocusedCellChangedEnabled {
+		get => onFocusedCellChangedEnabled;
+		set => this.onFocusedCellChangedEnabled = value;
+	}
+	bool? onFocusedCellChangingEnabled;
+	[Parameter]
+	bool? OnFocusedCellChangingEnabled {
+		get => onFocusedCellChangingEnabled;
+		set => this.onFocusedCellChangingEnabled = value;
+	}
+	bool? onFocusedRowChangedEnabled;
+	[Parameter]
+	bool? OnFocusedRowChangedEnabled {
+		get => onFocusedRowChangedEnabled;
+		set => this.onFocusedRowChangedEnabled = value;
+	}
+	bool? onFocusedRowChangingEnabled;
+	[Parameter]
+	bool? OnFocusedRowChangingEnabled {
+		get => onFocusedRowChangingEnabled;
+		set => this.onFocusedRowChangingEnabled = value;
 	}
 	bool? onRowClickEnabled;
 	[Parameter]
@@ -1103,6 +1222,10 @@
 		DevExpress.Ui.DxDataGridInterop.Exported += DxDataGrid_Exported;
 		DevExpress.Ui.DxDataGridInterop.Exporting += DxDataGrid_Exporting;
 		DevExpress.Ui.DxDataGridInterop.FileSaving += DxDataGrid_FileSaving;
+		DevExpress.Ui.DxDataGridInterop.FocusedCellChanged += DxDataGrid_FocusedCellChanged;
+		DevExpress.Ui.DxDataGridInterop.FocusedCellChanging += DxDataGrid_FocusedCellChanging;
+		DevExpress.Ui.DxDataGridInterop.FocusedRowChanged += DxDataGrid_FocusedRowChanged;
+		DevExpress.Ui.DxDataGridInterop.FocusedRowChanging += DxDataGrid_FocusedRowChanging;
 		DevExpress.Ui.DxDataGridInterop.RowClick += DxDataGrid_RowClick;
 		DevExpress.Ui.DxDataGridInterop.RowPrepared += DxDataGrid_RowPrepared;
 		DevExpress.Ui.DxDataGridInterop.AdaptiveDetailRowPreparing += DxDataGrid_AdaptiveDetailRowPreparing;
@@ -1195,6 +1318,34 @@
 	void DxDataGrid_FileSaving(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			FileSaving?.Invoke();
+		}
+	}
+	[Parameter]
+	Action FocusedCellChanged { get; set; }
+	void DxDataGrid_FocusedCellChanged(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			FocusedCellChanged?.Invoke();
+		}
+	}
+	[Parameter]
+	Action FocusedCellChanging { get; set; }
+	void DxDataGrid_FocusedCellChanging(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			FocusedCellChanging?.Invoke();
+		}
+	}
+	[Parameter]
+	Action FocusedRowChanged { get; set; }
+	void DxDataGrid_FocusedRowChanged(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			FocusedRowChanged?.Invoke();
+		}
+	}
+	[Parameter]
+	Action FocusedRowChanging { get; set; }
+	void DxDataGrid_FocusedRowChanging(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			FocusedRowChanging?.Invoke();
 		}
 	}
 	[Parameter]
@@ -1426,6 +1577,10 @@
 		DevExpress.Ui.DxDataGridInterop.Exported -= DxDataGrid_Exported;
 		DevExpress.Ui.DxDataGridInterop.Exporting -= DxDataGrid_Exporting;
 		DevExpress.Ui.DxDataGridInterop.FileSaving -= DxDataGrid_FileSaving;
+		DevExpress.Ui.DxDataGridInterop.FocusedCellChanged -= DxDataGrid_FocusedCellChanged;
+		DevExpress.Ui.DxDataGridInterop.FocusedCellChanging -= DxDataGrid_FocusedCellChanging;
+		DevExpress.Ui.DxDataGridInterop.FocusedRowChanged -= DxDataGrid_FocusedRowChanged;
+		DevExpress.Ui.DxDataGridInterop.FocusedRowChanging -= DxDataGrid_FocusedRowChanging;
 		DevExpress.Ui.DxDataGridInterop.RowClick -= DxDataGrid_RowClick;
 		DevExpress.Ui.DxDataGridInterop.RowPrepared -= DxDataGrid_RowPrepared;
 		DevExpress.Ui.DxDataGridInterop.AdaptiveDetailRowPreparing -= DxDataGrid_AdaptiveDetailRowPreparing;

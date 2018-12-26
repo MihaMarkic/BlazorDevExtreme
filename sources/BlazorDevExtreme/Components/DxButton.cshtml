@@ -14,6 +14,7 @@
 			focusStateEnabled = focusStateEnabled,
 			hoverStateEnabled = hoverStateEnabled,
 			icon = icon,
+			stylingMode = stylingMode,
 			template = template,
 			text = text,
 			type = type,
@@ -42,10 +43,10 @@
 	bool? activeStateEnabled;
 	[Parameter]
 	bool? ActiveStateEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxButtonInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxButtonInterop.GetActiveStateEnabledOption(dxTarget).Result : activeStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxButtonInterop.SetActiveStateEnabled(dxTarget, value);
+				DevExpress.Ui.DxButtonInterop.SetActiveStateEnabledOption(dxTarget, value);
 			} else {
 				this.activeStateEnabled = value;
 			}
@@ -54,10 +55,10 @@
 	bool? focusStateEnabled;
 	[Parameter]
 	bool? FocusStateEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxButtonInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxButtonInterop.GetFocusStateEnabledOption(dxTarget).Result : focusStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxButtonInterop.SetFocusStateEnabled(dxTarget, value);
+				DevExpress.Ui.DxButtonInterop.SetFocusStateEnabledOption(dxTarget, value);
 			} else {
 				this.focusStateEnabled = value;
 			}
@@ -66,10 +67,10 @@
 	bool? hoverStateEnabled;
 	[Parameter]
 	bool? HoverStateEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxButtonInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxButtonInterop.GetHoverStateEnabledOption(dxTarget).Result : hoverStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxButtonInterop.SetHoverStateEnabled(dxTarget, value);
+				DevExpress.Ui.DxButtonInterop.SetHoverStateEnabledOption(dxTarget, value);
 			} else {
 				this.hoverStateEnabled = value;
 			}
@@ -78,22 +79,34 @@
 	string icon;
 	[Parameter]
 	string Icon {
-		get => isInitialized ? (string)DevExpress.Ui.DxButtonInterop.GetIcon(dxTarget).Result : icon;
+		get => isInitialized ? (string)DevExpress.Ui.DxButtonInterop.GetIconOption(dxTarget).Result : icon;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxButtonInterop.SetIcon(dxTarget, value);
+				DevExpress.Ui.DxButtonInterop.SetIconOption(dxTarget, value);
 			} else {
 				this.icon = value;
+			}
+		}
+	}
+	string stylingMode;
+	[Parameter]
+	string StylingMode {
+		get => isInitialized ? (string)DevExpress.Ui.DxButtonInterop.GetStylingModeOption(dxTarget).Result : stylingMode;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxButtonInterop.SetStylingModeOption(dxTarget, value);
+			} else {
+				this.stylingMode = value;
 			}
 		}
 	}
 	object template;
 	[Parameter]
 	object Template {
-		get => isInitialized ? DevExpress.Ui.DxButtonInterop.GetTemplate(dxTarget).Result : template;
+		get => isInitialized ? DevExpress.Ui.DxButtonInterop.GetTemplateOption(dxTarget).Result : template;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxButtonInterop.SetTemplate(dxTarget, value);
+				DevExpress.Ui.DxButtonInterop.SetTemplateOption(dxTarget, value);
 			} else {
 				this.template = value;
 			}
@@ -102,10 +115,10 @@
 	string text;
 	[Parameter]
 	string Text {
-		get => isInitialized ? (string)DevExpress.Ui.DxButtonInterop.GetText(dxTarget).Result : text;
+		get => isInitialized ? (string)DevExpress.Ui.DxButtonInterop.GetTextOption(dxTarget).Result : text;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxButtonInterop.SetText(dxTarget, value);
+				DevExpress.Ui.DxButtonInterop.SetTextOption(dxTarget, value);
 			} else {
 				this.text = value;
 			}
@@ -114,10 +127,10 @@
 	string type;
 	[Parameter]
 	string Type {
-		get => isInitialized ? (string)DevExpress.Ui.DxButtonInterop.GetType(dxTarget).Result : type;
+		get => isInitialized ? (string)DevExpress.Ui.DxButtonInterop.GetTypeOption(dxTarget).Result : type;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxButtonInterop.SetType(dxTarget, value);
+				DevExpress.Ui.DxButtonInterop.SetTypeOption(dxTarget, value);
 			} else {
 				this.type = value;
 			}
@@ -126,10 +139,10 @@
 	bool? useSubmitBehavior;
 	[Parameter]
 	bool? UseSubmitBehavior {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxButtonInterop.GetUseSubmitBehavior(dxTarget).Result : useSubmitBehavior;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxButtonInterop.GetUseSubmitBehaviorOption(dxTarget).Result : useSubmitBehavior;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxButtonInterop.SetUseSubmitBehavior(dxTarget, value);
+				DevExpress.Ui.DxButtonInterop.SetUseSubmitBehaviorOption(dxTarget, value);
 			} else {
 				this.useSubmitBehavior = value;
 			}
@@ -138,10 +151,10 @@
 	string validationGroup;
 	[Parameter]
 	string ValidationGroup {
-		get => isInitialized ? (string)DevExpress.Ui.DxButtonInterop.GetValidationGroup(dxTarget).Result : validationGroup;
+		get => isInitialized ? (string)DevExpress.Ui.DxButtonInterop.GetValidationGroupOption(dxTarget).Result : validationGroup;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxButtonInterop.SetValidationGroup(dxTarget, value);
+				DevExpress.Ui.DxButtonInterop.SetValidationGroupOption(dxTarget, value);
 			} else {
 				this.validationGroup = value;
 			}
@@ -150,10 +163,10 @@
 	string accessKey;
 	[Parameter]
 	string AccessKey {
-		get => isInitialized ? (string)DevExpress.Ui.DxButtonInterop.GetAccessKey(dxTarget).Result : accessKey;
+		get => isInitialized ? (string)DevExpress.Ui.DxButtonInterop.GetAccessKeyOption(dxTarget).Result : accessKey;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxButtonInterop.SetAccessKey(dxTarget, value);
+				DevExpress.Ui.DxButtonInterop.SetAccessKeyOption(dxTarget, value);
 			} else {
 				this.accessKey = value;
 			}
@@ -162,10 +175,10 @@
 	bool? disabled;
 	[Parameter]
 	bool? Disabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxButtonInterop.GetDisabled(dxTarget).Result : disabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxButtonInterop.GetDisabledOption(dxTarget).Result : disabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxButtonInterop.SetDisabled(dxTarget, value);
+				DevExpress.Ui.DxButtonInterop.SetDisabledOption(dxTarget, value);
 			} else {
 				this.disabled = value;
 			}
@@ -174,10 +187,10 @@
 	string hint;
 	[Parameter]
 	string Hint {
-		get => isInitialized ? (string)DevExpress.Ui.DxButtonInterop.GetHint(dxTarget).Result : hint;
+		get => isInitialized ? (string)DevExpress.Ui.DxButtonInterop.GetHintOption(dxTarget).Result : hint;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxButtonInterop.SetHint(dxTarget, value);
+				DevExpress.Ui.DxButtonInterop.SetHintOption(dxTarget, value);
 			} else {
 				this.hint = value;
 			}
@@ -186,10 +199,10 @@
 	float? tabIndex;
 	[Parameter]
 	float? TabIndex {
-		get => isInitialized ? (float?)DevExpress.Ui.DxButtonInterop.GetTabIndex(dxTarget).Result : tabIndex;
+		get => isInitialized ? (float?)DevExpress.Ui.DxButtonInterop.GetTabIndexOption(dxTarget).Result : tabIndex;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxButtonInterop.SetTabIndex(dxTarget, value);
+				DevExpress.Ui.DxButtonInterop.SetTabIndexOption(dxTarget, value);
 			} else {
 				this.tabIndex = value;
 			}
@@ -198,10 +211,10 @@
 	bool? visible;
 	[Parameter]
 	bool? Visible {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxButtonInterop.GetVisible(dxTarget).Result : visible;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxButtonInterop.GetVisibleOption(dxTarget).Result : visible;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxButtonInterop.SetVisible(dxTarget, value);
+				DevExpress.Ui.DxButtonInterop.SetVisibleOption(dxTarget, value);
 			} else {
 				this.visible = value;
 			}
@@ -210,10 +223,10 @@
 	object bindingOptions;
 	[Parameter]
 	object BindingOptions {
-		get => isInitialized ? DevExpress.Ui.DxButtonInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
+		get => isInitialized ? DevExpress.Ui.DxButtonInterop.GetBindingOptionsOption(dxTarget).Result : bindingOptions;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxButtonInterop.SetBindingOptions(dxTarget, value);
+				DevExpress.Ui.DxButtonInterop.SetBindingOptionsOption(dxTarget, value);
 			} else {
 				this.bindingOptions = value;
 			}
@@ -222,10 +235,10 @@
 	object elementAttr;
 	[Parameter]
 	object ElementAttr {
-		get => isInitialized ? DevExpress.Ui.DxButtonInterop.GetElementAttr(dxTarget).Result : elementAttr;
+		get => isInitialized ? DevExpress.Ui.DxButtonInterop.GetElementAttrOption(dxTarget).Result : elementAttr;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxButtonInterop.SetElementAttr(dxTarget, value);
+				DevExpress.Ui.DxButtonInterop.SetElementAttrOption(dxTarget, value);
 			} else {
 				this.elementAttr = value;
 			}
@@ -234,10 +247,10 @@
 	object height;
 	[Parameter]
 	object Height {
-		get => isInitialized ? DevExpress.Ui.DxButtonInterop.GetHeight(dxTarget).Result : height;
+		get => isInitialized ? DevExpress.Ui.DxButtonInterop.GetHeightOption(dxTarget).Result : height;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxButtonInterop.SetHeight(dxTarget, value);
+				DevExpress.Ui.DxButtonInterop.SetHeightOption(dxTarget, value);
 			} else {
 				this.height = value;
 			}
@@ -246,10 +259,10 @@
 	bool? rtlEnabled;
 	[Parameter]
 	bool? RtlEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxButtonInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxButtonInterop.GetRtlEnabledOption(dxTarget).Result : rtlEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxButtonInterop.SetRtlEnabled(dxTarget, value);
+				DevExpress.Ui.DxButtonInterop.SetRtlEnabledOption(dxTarget, value);
 			} else {
 				this.rtlEnabled = value;
 			}
@@ -258,10 +271,10 @@
 	object width;
 	[Parameter]
 	object Width {
-		get => isInitialized ? DevExpress.Ui.DxButtonInterop.GetWidth(dxTarget).Result : width;
+		get => isInitialized ? DevExpress.Ui.DxButtonInterop.GetWidthOption(dxTarget).Result : width;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxButtonInterop.SetWidth(dxTarget, value);
+				DevExpress.Ui.DxButtonInterop.SetWidthOption(dxTarget, value);
 			} else {
 				this.width = value;
 			}

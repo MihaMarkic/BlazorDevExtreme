@@ -1,15 +1,15 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorComponent<DevExpress.Viz.Gauges.DxBarGaugeOptions>
+@inherits DxBlazorComponent<DevExpress.Viz.DxBarGaugeOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
 @functions {
 	ElementRef dxTarget;
 	public DxBarGauge() : base("DxBarGauge") { }
-	protected override DevExpress.Viz.Gauges.DxBarGaugeOptions CreateOptions() {
-		return new DevExpress.Viz.Gauges.DxBarGaugeOptions {
+	protected override DevExpress.Viz.DxBarGaugeOptions CreateOptions() {
+		return new DevExpress.Viz.DxBarGaugeOptions {
 			animation = animation,
 			backgroundColor = backgroundColor,
 			barSpacing = barSpacing,
@@ -21,10 +21,9 @@
 			paletteExtensionMode = paletteExtensionMode,
 			relativeInnerRadius = relativeInnerRadius,
 			startValue = startValue,
-			subtitle = subtitle,
-			title = title,
 			tooltip = tooltip,
 			values = values,
+			disabled = disabled,
 			export = export,
 			loadingIndicator = loadingIndicator,
 			margin = margin,
@@ -33,6 +32,7 @@
 			rtlEnabled = rtlEnabled,
 			size = size,
 			theme = theme,
+			title = title,
 			bindingOptions = bindingOptions,
 			elementAttr = elementAttr,
 			height = height,
@@ -49,16 +49,16 @@
 			onInitializedEnabled = onInitializedEnabled,
 		};
 	}
-	protected override Task Init(DevExpress.Viz.Gauges.DxBarGaugeOptions options) {
+	protected override Task Init(DevExpress.Viz.DxBarGaugeOptions options) {
 		return DevExpress.Viz.DxBarGaugeInterop.Init(dxTarget, options);
 	}
 	object animation;
 	[Parameter]
 	object Animation {
-		get => isInitialized ? DevExpress.Viz.DxBarGaugeInterop.GetAnimation(dxTarget).Result : animation;
+		get => isInitialized ? DevExpress.Viz.DxBarGaugeInterop.GetAnimationOption(dxTarget).Result : animation;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxBarGaugeInterop.SetAnimation(dxTarget, value);
+				DevExpress.Viz.DxBarGaugeInterop.SetAnimationOption(dxTarget, value);
 			} else {
 				this.animation = value;
 			}
@@ -67,10 +67,10 @@
 	string backgroundColor;
 	[Parameter]
 	string BackgroundColor {
-		get => isInitialized ? (string)DevExpress.Viz.DxBarGaugeInterop.GetBackgroundColor(dxTarget).Result : backgroundColor;
+		get => isInitialized ? (string)DevExpress.Viz.DxBarGaugeInterop.GetBackgroundColorOption(dxTarget).Result : backgroundColor;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxBarGaugeInterop.SetBackgroundColor(dxTarget, value);
+				DevExpress.Viz.DxBarGaugeInterop.SetBackgroundColorOption(dxTarget, value);
 			} else {
 				this.backgroundColor = value;
 			}
@@ -79,10 +79,10 @@
 	float? barSpacing;
 	[Parameter]
 	float? BarSpacing {
-		get => isInitialized ? (float?)DevExpress.Viz.DxBarGaugeInterop.GetBarSpacing(dxTarget).Result : barSpacing;
+		get => isInitialized ? (float?)DevExpress.Viz.DxBarGaugeInterop.GetBarSpacingOption(dxTarget).Result : barSpacing;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxBarGaugeInterop.SetBarSpacing(dxTarget, value);
+				DevExpress.Viz.DxBarGaugeInterop.SetBarSpacingOption(dxTarget, value);
 			} else {
 				this.barSpacing = value;
 			}
@@ -91,10 +91,10 @@
 	float? baseValue;
 	[Parameter]
 	float? BaseValue {
-		get => isInitialized ? (float?)DevExpress.Viz.DxBarGaugeInterop.GetBaseValue(dxTarget).Result : baseValue;
+		get => isInitialized ? (float?)DevExpress.Viz.DxBarGaugeInterop.GetBaseValueOption(dxTarget).Result : baseValue;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxBarGaugeInterop.SetBaseValue(dxTarget, value);
+				DevExpress.Viz.DxBarGaugeInterop.SetBaseValueOption(dxTarget, value);
 			} else {
 				this.baseValue = value;
 			}
@@ -103,10 +103,10 @@
 	float? endValue;
 	[Parameter]
 	float? EndValue {
-		get => isInitialized ? (float?)DevExpress.Viz.DxBarGaugeInterop.GetEndValue(dxTarget).Result : endValue;
+		get => isInitialized ? (float?)DevExpress.Viz.DxBarGaugeInterop.GetEndValueOption(dxTarget).Result : endValue;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxBarGaugeInterop.SetEndValue(dxTarget, value);
+				DevExpress.Viz.DxBarGaugeInterop.SetEndValueOption(dxTarget, value);
 			} else {
 				this.endValue = value;
 			}
@@ -115,10 +115,10 @@
 	object geometry;
 	[Parameter]
 	object Geometry {
-		get => isInitialized ? DevExpress.Viz.DxBarGaugeInterop.GetGeometry(dxTarget).Result : geometry;
+		get => isInitialized ? DevExpress.Viz.DxBarGaugeInterop.GetGeometryOption(dxTarget).Result : geometry;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxBarGaugeInterop.SetGeometry(dxTarget, value);
+				DevExpress.Viz.DxBarGaugeInterop.SetGeometryOption(dxTarget, value);
 			} else {
 				this.geometry = value;
 			}
@@ -127,10 +127,10 @@
 	object label;
 	[Parameter]
 	object Label {
-		get => isInitialized ? DevExpress.Viz.DxBarGaugeInterop.GetLabel(dxTarget).Result : label;
+		get => isInitialized ? DevExpress.Viz.DxBarGaugeInterop.GetLabelOption(dxTarget).Result : label;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxBarGaugeInterop.SetLabel(dxTarget, value);
+				DevExpress.Viz.DxBarGaugeInterop.SetLabelOption(dxTarget, value);
 			} else {
 				this.label = value;
 			}
@@ -139,10 +139,10 @@
 	object palette;
 	[Parameter]
 	object Palette {
-		get => isInitialized ? DevExpress.Viz.DxBarGaugeInterop.GetPalette(dxTarget).Result : palette;
+		get => isInitialized ? DevExpress.Viz.DxBarGaugeInterop.GetPaletteOption(dxTarget).Result : palette;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxBarGaugeInterop.SetPalette(dxTarget, value);
+				DevExpress.Viz.DxBarGaugeInterop.SetPaletteOption(dxTarget, value);
 			} else {
 				this.palette = value;
 			}
@@ -151,10 +151,10 @@
 	string paletteExtensionMode;
 	[Parameter]
 	string PaletteExtensionMode {
-		get => isInitialized ? (string)DevExpress.Viz.DxBarGaugeInterop.GetPaletteExtensionMode(dxTarget).Result : paletteExtensionMode;
+		get => isInitialized ? (string)DevExpress.Viz.DxBarGaugeInterop.GetPaletteExtensionModeOption(dxTarget).Result : paletteExtensionMode;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxBarGaugeInterop.SetPaletteExtensionMode(dxTarget, value);
+				DevExpress.Viz.DxBarGaugeInterop.SetPaletteExtensionModeOption(dxTarget, value);
 			} else {
 				this.paletteExtensionMode = value;
 			}
@@ -163,10 +163,10 @@
 	float? relativeInnerRadius;
 	[Parameter]
 	float? RelativeInnerRadius {
-		get => isInitialized ? (float?)DevExpress.Viz.DxBarGaugeInterop.GetRelativeInnerRadius(dxTarget).Result : relativeInnerRadius;
+		get => isInitialized ? (float?)DevExpress.Viz.DxBarGaugeInterop.GetRelativeInnerRadiusOption(dxTarget).Result : relativeInnerRadius;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxBarGaugeInterop.SetRelativeInnerRadius(dxTarget, value);
+				DevExpress.Viz.DxBarGaugeInterop.SetRelativeInnerRadiusOption(dxTarget, value);
 			} else {
 				this.relativeInnerRadius = value;
 			}
@@ -175,46 +175,22 @@
 	float? startValue;
 	[Parameter]
 	float? StartValue {
-		get => isInitialized ? (float?)DevExpress.Viz.DxBarGaugeInterop.GetStartValue(dxTarget).Result : startValue;
+		get => isInitialized ? (float?)DevExpress.Viz.DxBarGaugeInterop.GetStartValueOption(dxTarget).Result : startValue;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxBarGaugeInterop.SetStartValue(dxTarget, value);
+				DevExpress.Viz.DxBarGaugeInterop.SetStartValueOption(dxTarget, value);
 			} else {
 				this.startValue = value;
-			}
-		}
-	}
-	object subtitle;
-	[Parameter]
-	object Subtitle {
-		get => isInitialized ? DevExpress.Viz.DxBarGaugeInterop.GetSubtitle(dxTarget).Result : subtitle;
-		set {
-			if (isInitialized) {
-				DevExpress.Viz.DxBarGaugeInterop.SetSubtitle(dxTarget, value);
-			} else {
-				this.subtitle = value;
-			}
-		}
-	}
-	object title;
-	[Parameter]
-	object Title {
-		get => isInitialized ? DevExpress.Viz.DxBarGaugeInterop.GetTitle(dxTarget).Result : title;
-		set {
-			if (isInitialized) {
-				DevExpress.Viz.DxBarGaugeInterop.SetTitle(dxTarget, value);
-			} else {
-				this.title = value;
 			}
 		}
 	}
 	object tooltip;
 	[Parameter]
 	object Tooltip {
-		get => isInitialized ? DevExpress.Viz.DxBarGaugeInterop.GetTooltip(dxTarget).Result : tooltip;
+		get => isInitialized ? DevExpress.Viz.DxBarGaugeInterop.GetTooltipOption(dxTarget).Result : tooltip;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxBarGaugeInterop.SetTooltip(dxTarget, value);
+				DevExpress.Viz.DxBarGaugeInterop.SetTooltipOption(dxTarget, value);
 			} else {
 				this.tooltip = value;
 			}
@@ -223,22 +199,34 @@
 	object values;
 	[Parameter]
 	object Values {
-		get => isInitialized ? DevExpress.Viz.DxBarGaugeInterop.GetValues(dxTarget).Result : values;
+		get => isInitialized ? DevExpress.Viz.DxBarGaugeInterop.GetValuesOption(dxTarget).Result : values;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxBarGaugeInterop.SetValues(dxTarget, value);
+				DevExpress.Viz.DxBarGaugeInterop.SetValuesOption(dxTarget, value);
 			} else {
 				this.values = value;
+			}
+		}
+	}
+	bool? disabled;
+	[Parameter]
+	bool? Disabled {
+		get => isInitialized ? (bool?)DevExpress.Viz.DxBarGaugeInterop.GetDisabledOption(dxTarget).Result : disabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxBarGaugeInterop.SetDisabledOption(dxTarget, value);
+			} else {
+				this.disabled = value;
 			}
 		}
 	}
 	object export;
 	[Parameter]
 	object Export {
-		get => isInitialized ? DevExpress.Viz.DxBarGaugeInterop.GetExport(dxTarget).Result : export;
+		get => isInitialized ? DevExpress.Viz.DxBarGaugeInterop.GetExportOption(dxTarget).Result : export;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxBarGaugeInterop.SetExport(dxTarget, value);
+				DevExpress.Viz.DxBarGaugeInterop.SetExportOption(dxTarget, value);
 			} else {
 				this.export = value;
 			}
@@ -247,10 +235,10 @@
 	object loadingIndicator;
 	[Parameter]
 	object LoadingIndicator {
-		get => isInitialized ? DevExpress.Viz.DxBarGaugeInterop.GetLoadingIndicator(dxTarget).Result : loadingIndicator;
+		get => isInitialized ? DevExpress.Viz.DxBarGaugeInterop.GetLoadingIndicatorOption(dxTarget).Result : loadingIndicator;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxBarGaugeInterop.SetLoadingIndicator(dxTarget, value);
+				DevExpress.Viz.DxBarGaugeInterop.SetLoadingIndicatorOption(dxTarget, value);
 			} else {
 				this.loadingIndicator = value;
 			}
@@ -259,10 +247,10 @@
 	object margin;
 	[Parameter]
 	object Margin {
-		get => isInitialized ? DevExpress.Viz.DxBarGaugeInterop.GetMargin(dxTarget).Result : margin;
+		get => isInitialized ? DevExpress.Viz.DxBarGaugeInterop.GetMarginOption(dxTarget).Result : margin;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxBarGaugeInterop.SetMargin(dxTarget, value);
+				DevExpress.Viz.DxBarGaugeInterop.SetMarginOption(dxTarget, value);
 			} else {
 				this.margin = value;
 			}
@@ -271,10 +259,10 @@
 	bool? pathModified;
 	[Parameter]
 	bool? PathModified {
-		get => isInitialized ? (bool?)DevExpress.Viz.DxBarGaugeInterop.GetPathModified(dxTarget).Result : pathModified;
+		get => isInitialized ? (bool?)DevExpress.Viz.DxBarGaugeInterop.GetPathModifiedOption(dxTarget).Result : pathModified;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxBarGaugeInterop.SetPathModified(dxTarget, value);
+				DevExpress.Viz.DxBarGaugeInterop.SetPathModifiedOption(dxTarget, value);
 			} else {
 				this.pathModified = value;
 			}
@@ -283,10 +271,10 @@
 	bool? redrawOnResize;
 	[Parameter]
 	bool? RedrawOnResize {
-		get => isInitialized ? (bool?)DevExpress.Viz.DxBarGaugeInterop.GetRedrawOnResize(dxTarget).Result : redrawOnResize;
+		get => isInitialized ? (bool?)DevExpress.Viz.DxBarGaugeInterop.GetRedrawOnResizeOption(dxTarget).Result : redrawOnResize;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxBarGaugeInterop.SetRedrawOnResize(dxTarget, value);
+				DevExpress.Viz.DxBarGaugeInterop.SetRedrawOnResizeOption(dxTarget, value);
 			} else {
 				this.redrawOnResize = value;
 			}
@@ -295,10 +283,10 @@
 	bool? rtlEnabled;
 	[Parameter]
 	bool? RtlEnabled {
-		get => isInitialized ? (bool?)DevExpress.Viz.DxBarGaugeInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
+		get => isInitialized ? (bool?)DevExpress.Viz.DxBarGaugeInterop.GetRtlEnabledOption(dxTarget).Result : rtlEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxBarGaugeInterop.SetRtlEnabled(dxTarget, value);
+				DevExpress.Viz.DxBarGaugeInterop.SetRtlEnabledOption(dxTarget, value);
 			} else {
 				this.rtlEnabled = value;
 			}
@@ -307,10 +295,10 @@
 	object size;
 	[Parameter]
 	object Size {
-		get => isInitialized ? DevExpress.Viz.DxBarGaugeInterop.GetSize(dxTarget).Result : size;
+		get => isInitialized ? DevExpress.Viz.DxBarGaugeInterop.GetSizeOption(dxTarget).Result : size;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxBarGaugeInterop.SetSize(dxTarget, value);
+				DevExpress.Viz.DxBarGaugeInterop.SetSizeOption(dxTarget, value);
 			} else {
 				this.size = value;
 			}
@@ -319,22 +307,34 @@
 	string theme;
 	[Parameter]
 	string Theme {
-		get => isInitialized ? (string)DevExpress.Viz.DxBarGaugeInterop.GetTheme(dxTarget).Result : theme;
+		get => isInitialized ? (string)DevExpress.Viz.DxBarGaugeInterop.GetThemeOption(dxTarget).Result : theme;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxBarGaugeInterop.SetTheme(dxTarget, value);
+				DevExpress.Viz.DxBarGaugeInterop.SetThemeOption(dxTarget, value);
 			} else {
 				this.theme = value;
+			}
+		}
+	}
+	object title;
+	[Parameter]
+	object Title {
+		get => isInitialized ? DevExpress.Viz.DxBarGaugeInterop.GetTitleOption(dxTarget).Result : title;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxBarGaugeInterop.SetTitleOption(dxTarget, value);
+			} else {
+				this.title = value;
 			}
 		}
 	}
 	object bindingOptions;
 	[Parameter]
 	object BindingOptions {
-		get => isInitialized ? DevExpress.Viz.DxBarGaugeInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
+		get => isInitialized ? DevExpress.Viz.DxBarGaugeInterop.GetBindingOptionsOption(dxTarget).Result : bindingOptions;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxBarGaugeInterop.SetBindingOptions(dxTarget, value);
+				DevExpress.Viz.DxBarGaugeInterop.SetBindingOptionsOption(dxTarget, value);
 			} else {
 				this.bindingOptions = value;
 			}
@@ -343,10 +343,10 @@
 	object elementAttr;
 	[Parameter]
 	object ElementAttr {
-		get => isInitialized ? DevExpress.Viz.DxBarGaugeInterop.GetElementAttr(dxTarget).Result : elementAttr;
+		get => isInitialized ? DevExpress.Viz.DxBarGaugeInterop.GetElementAttrOption(dxTarget).Result : elementAttr;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxBarGaugeInterop.SetElementAttr(dxTarget, value);
+				DevExpress.Viz.DxBarGaugeInterop.SetElementAttrOption(dxTarget, value);
 			} else {
 				this.elementAttr = value;
 			}
@@ -355,10 +355,10 @@
 	object height;
 	[Parameter]
 	object Height {
-		get => isInitialized ? DevExpress.Viz.DxBarGaugeInterop.GetHeight(dxTarget).Result : height;
+		get => isInitialized ? DevExpress.Viz.DxBarGaugeInterop.GetHeightOption(dxTarget).Result : height;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxBarGaugeInterop.SetHeight(dxTarget, value);
+				DevExpress.Viz.DxBarGaugeInterop.SetHeightOption(dxTarget, value);
 			} else {
 				this.height = value;
 			}
@@ -367,10 +367,10 @@
 	object width;
 	[Parameter]
 	object Width {
-		get => isInitialized ? DevExpress.Viz.DxBarGaugeInterop.GetWidth(dxTarget).Result : width;
+		get => isInitialized ? DevExpress.Viz.DxBarGaugeInterop.GetWidthOption(dxTarget).Result : width;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxBarGaugeInterop.SetWidth(dxTarget, value);
+				DevExpress.Viz.DxBarGaugeInterop.SetWidthOption(dxTarget, value);
 			} else {
 				this.width = value;
 			}

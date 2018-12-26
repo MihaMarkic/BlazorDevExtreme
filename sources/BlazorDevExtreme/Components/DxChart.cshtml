@@ -1,15 +1,15 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorComponent<DevExpress.Viz.Charts.DxChartOptions>
+@inherits DxBlazorComponent<DevExpress.Viz.DxChartOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
 @functions {
 	ElementRef dxTarget;
 	public DxChart() : base("DxChart") { }
-	protected override DevExpress.Viz.Charts.DxChartOptions CreateOptions() {
-		return new DevExpress.Viz.Charts.DxChartOptions {
+	protected override DevExpress.Viz.DxChartOptions CreateOptions() {
+		return new DevExpress.Viz.DxChartOptions {
 			adjustOnZoom = adjustOnZoom,
 			argumentAxis = argumentAxis,
 			barGroupPadding = barGroupPadding,
@@ -39,6 +39,7 @@
 			tooltip = tooltip,
 			useAggregation = useAggregation,
 			valueAxis = valueAxis,
+			zoomAndPan = zoomAndPan,
 			zoomingMode = zoomingMode,
 			adaptiveLayout = adaptiveLayout,
 			animation = animation,
@@ -48,6 +49,7 @@
 			palette = palette,
 			paletteExtensionMode = paletteExtensionMode,
 			pointSelectionMode = pointSelectionMode,
+			disabled = disabled,
 			export = export,
 			loadingIndicator = loadingIndicator,
 			margin = margin,
@@ -84,16 +86,16 @@
 			onInitializedEnabled = onInitializedEnabled,
 		};
 	}
-	protected override Task Init(DevExpress.Viz.Charts.DxChartOptions options) {
+	protected override Task Init(DevExpress.Viz.DxChartOptions options) {
 		return DevExpress.Viz.DxChartInterop.Init(dxTarget, options);
 	}
 	bool? adjustOnZoom;
 	[Parameter]
 	bool? AdjustOnZoom {
-		get => isInitialized ? (bool?)DevExpress.Viz.DxChartInterop.GetAdjustOnZoom(dxTarget).Result : adjustOnZoom;
+		get => isInitialized ? (bool?)DevExpress.Viz.DxChartInterop.GetAdjustOnZoomOption(dxTarget).Result : adjustOnZoom;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxChartInterop.SetAdjustOnZoom(dxTarget, value);
+				DevExpress.Viz.DxChartInterop.SetAdjustOnZoomOption(dxTarget, value);
 			} else {
 				this.adjustOnZoom = value;
 			}
@@ -102,10 +104,10 @@
 	object argumentAxis;
 	[Parameter]
 	object ArgumentAxis {
-		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetArgumentAxis(dxTarget).Result : argumentAxis;
+		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetArgumentAxisOption(dxTarget).Result : argumentAxis;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxChartInterop.SetArgumentAxis(dxTarget, value);
+				DevExpress.Viz.DxChartInterop.SetArgumentAxisOption(dxTarget, value);
 			} else {
 				this.argumentAxis = value;
 			}
@@ -114,10 +116,10 @@
 	float? barGroupPadding;
 	[Parameter]
 	float? BarGroupPadding {
-		get => isInitialized ? (float?)DevExpress.Viz.DxChartInterop.GetBarGroupPadding(dxTarget).Result : barGroupPadding;
+		get => isInitialized ? (float?)DevExpress.Viz.DxChartInterop.GetBarGroupPaddingOption(dxTarget).Result : barGroupPadding;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxChartInterop.SetBarGroupPadding(dxTarget, value);
+				DevExpress.Viz.DxChartInterop.SetBarGroupPaddingOption(dxTarget, value);
 			} else {
 				this.barGroupPadding = value;
 			}
@@ -126,10 +128,10 @@
 	float? barGroupWidth;
 	[Parameter]
 	float? BarGroupWidth {
-		get => isInitialized ? (float?)DevExpress.Viz.DxChartInterop.GetBarGroupWidth(dxTarget).Result : barGroupWidth;
+		get => isInitialized ? (float?)DevExpress.Viz.DxChartInterop.GetBarGroupWidthOption(dxTarget).Result : barGroupWidth;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxChartInterop.SetBarGroupWidth(dxTarget, value);
+				DevExpress.Viz.DxChartInterop.SetBarGroupWidthOption(dxTarget, value);
 			} else {
 				this.barGroupWidth = value;
 			}
@@ -138,10 +140,10 @@
 	float? barWidth;
 	[Parameter]
 	float? BarWidth {
-		get => isInitialized ? (float?)DevExpress.Viz.DxChartInterop.GetBarWidth(dxTarget).Result : barWidth;
+		get => isInitialized ? (float?)DevExpress.Viz.DxChartInterop.GetBarWidthOption(dxTarget).Result : barWidth;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxChartInterop.SetBarWidth(dxTarget, value);
+				DevExpress.Viz.DxChartInterop.SetBarWidthOption(dxTarget, value);
 			} else {
 				this.barWidth = value;
 			}
@@ -150,10 +152,10 @@
 	object commonAxisSettings;
 	[Parameter]
 	object CommonAxisSettings {
-		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetCommonAxisSettings(dxTarget).Result : commonAxisSettings;
+		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetCommonAxisSettingsOption(dxTarget).Result : commonAxisSettings;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxChartInterop.SetCommonAxisSettings(dxTarget, value);
+				DevExpress.Viz.DxChartInterop.SetCommonAxisSettingsOption(dxTarget, value);
 			} else {
 				this.commonAxisSettings = value;
 			}
@@ -162,10 +164,10 @@
 	object commonPaneSettings;
 	[Parameter]
 	object CommonPaneSettings {
-		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetCommonPaneSettings(dxTarget).Result : commonPaneSettings;
+		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetCommonPaneSettingsOption(dxTarget).Result : commonPaneSettings;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxChartInterop.SetCommonPaneSettings(dxTarget, value);
+				DevExpress.Viz.DxChartInterop.SetCommonPaneSettingsOption(dxTarget, value);
 			} else {
 				this.commonPaneSettings = value;
 			}
@@ -174,10 +176,10 @@
 	object commonSeriesSettings;
 	[Parameter]
 	object CommonSeriesSettings {
-		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetCommonSeriesSettings(dxTarget).Result : commonSeriesSettings;
+		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetCommonSeriesSettingsOption(dxTarget).Result : commonSeriesSettings;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxChartInterop.SetCommonSeriesSettings(dxTarget, value);
+				DevExpress.Viz.DxChartInterop.SetCommonSeriesSettingsOption(dxTarget, value);
 			} else {
 				this.commonSeriesSettings = value;
 			}
@@ -186,10 +188,10 @@
 	string containerBackgroundColor;
 	[Parameter]
 	string ContainerBackgroundColor {
-		get => isInitialized ? (string)DevExpress.Viz.DxChartInterop.GetContainerBackgroundColor(dxTarget).Result : containerBackgroundColor;
+		get => isInitialized ? (string)DevExpress.Viz.DxChartInterop.GetContainerBackgroundColorOption(dxTarget).Result : containerBackgroundColor;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxChartInterop.SetContainerBackgroundColor(dxTarget, value);
+				DevExpress.Viz.DxChartInterop.SetContainerBackgroundColorOption(dxTarget, value);
 			} else {
 				this.containerBackgroundColor = value;
 			}
@@ -198,10 +200,10 @@
 	object crosshair;
 	[Parameter]
 	object Crosshair {
-		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetCrosshair(dxTarget).Result : crosshair;
+		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetCrosshairOption(dxTarget).Result : crosshair;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxChartInterop.SetCrosshair(dxTarget, value);
+				DevExpress.Viz.DxChartInterop.SetCrosshairOption(dxTarget, value);
 			} else {
 				this.crosshair = value;
 			}
@@ -210,10 +212,10 @@
 	object dataPrepareSettings;
 	[Parameter]
 	object DataPrepareSettings {
-		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetDataPrepareSettings(dxTarget).Result : dataPrepareSettings;
+		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetDataPrepareSettingsOption(dxTarget).Result : dataPrepareSettings;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxChartInterop.SetDataPrepareSettings(dxTarget, value);
+				DevExpress.Viz.DxChartInterop.SetDataPrepareSettingsOption(dxTarget, value);
 			} else {
 				this.dataPrepareSettings = value;
 			}
@@ -222,10 +224,10 @@
 	string defaultPane;
 	[Parameter]
 	string DefaultPane {
-		get => isInitialized ? (string)DevExpress.Viz.DxChartInterop.GetDefaultPane(dxTarget).Result : defaultPane;
+		get => isInitialized ? (string)DevExpress.Viz.DxChartInterop.GetDefaultPaneOption(dxTarget).Result : defaultPane;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxChartInterop.SetDefaultPane(dxTarget, value);
+				DevExpress.Viz.DxChartInterop.SetDefaultPaneOption(dxTarget, value);
 			} else {
 				this.defaultPane = value;
 			}
@@ -234,10 +236,10 @@
 	bool? equalBarWidth;
 	[Parameter]
 	bool? EqualBarWidth {
-		get => isInitialized ? (bool?)DevExpress.Viz.DxChartInterop.GetEqualBarWidth(dxTarget).Result : equalBarWidth;
+		get => isInitialized ? (bool?)DevExpress.Viz.DxChartInterop.GetEqualBarWidthOption(dxTarget).Result : equalBarWidth;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxChartInterop.SetEqualBarWidth(dxTarget, value);
+				DevExpress.Viz.DxChartInterop.SetEqualBarWidthOption(dxTarget, value);
 			} else {
 				this.equalBarWidth = value;
 			}
@@ -246,10 +248,10 @@
 	object legend;
 	[Parameter]
 	object Legend {
-		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetLegend(dxTarget).Result : legend;
+		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetLegendOption(dxTarget).Result : legend;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxChartInterop.SetLegend(dxTarget, value);
+				DevExpress.Viz.DxChartInterop.SetLegendOption(dxTarget, value);
 			} else {
 				this.legend = value;
 			}
@@ -258,10 +260,10 @@
 	float? maxBubbleSize;
 	[Parameter]
 	float? MaxBubbleSize {
-		get => isInitialized ? (float?)DevExpress.Viz.DxChartInterop.GetMaxBubbleSize(dxTarget).Result : maxBubbleSize;
+		get => isInitialized ? (float?)DevExpress.Viz.DxChartInterop.GetMaxBubbleSizeOption(dxTarget).Result : maxBubbleSize;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxChartInterop.SetMaxBubbleSize(dxTarget, value);
+				DevExpress.Viz.DxChartInterop.SetMaxBubbleSizeOption(dxTarget, value);
 			} else {
 				this.maxBubbleSize = value;
 			}
@@ -270,10 +272,10 @@
 	float? minBubbleSize;
 	[Parameter]
 	float? MinBubbleSize {
-		get => isInitialized ? (float?)DevExpress.Viz.DxChartInterop.GetMinBubbleSize(dxTarget).Result : minBubbleSize;
+		get => isInitialized ? (float?)DevExpress.Viz.DxChartInterop.GetMinBubbleSizeOption(dxTarget).Result : minBubbleSize;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxChartInterop.SetMinBubbleSize(dxTarget, value);
+				DevExpress.Viz.DxChartInterop.SetMinBubbleSizeOption(dxTarget, value);
 			} else {
 				this.minBubbleSize = value;
 			}
@@ -282,10 +284,10 @@
 	bool? negativesAsZeroes;
 	[Parameter]
 	bool? NegativesAsZeroes {
-		get => isInitialized ? (bool?)DevExpress.Viz.DxChartInterop.GetNegativesAsZeroes(dxTarget).Result : negativesAsZeroes;
+		get => isInitialized ? (bool?)DevExpress.Viz.DxChartInterop.GetNegativesAsZeroesOption(dxTarget).Result : negativesAsZeroes;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxChartInterop.SetNegativesAsZeroes(dxTarget, value);
+				DevExpress.Viz.DxChartInterop.SetNegativesAsZeroesOption(dxTarget, value);
 			} else {
 				this.negativesAsZeroes = value;
 			}
@@ -294,10 +296,10 @@
 	object panes;
 	[Parameter]
 	object Panes {
-		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetPanes(dxTarget).Result : panes;
+		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetPanesOption(dxTarget).Result : panes;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxChartInterop.SetPanes(dxTarget, value);
+				DevExpress.Viz.DxChartInterop.SetPanesOption(dxTarget, value);
 			} else {
 				this.panes = value;
 			}
@@ -306,10 +308,10 @@
 	string resolveLabelOverlapping;
 	[Parameter]
 	string ResolveLabelOverlapping {
-		get => isInitialized ? (string)DevExpress.Viz.DxChartInterop.GetResolveLabelOverlapping(dxTarget).Result : resolveLabelOverlapping;
+		get => isInitialized ? (string)DevExpress.Viz.DxChartInterop.GetResolveLabelOverlappingOption(dxTarget).Result : resolveLabelOverlapping;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxChartInterop.SetResolveLabelOverlapping(dxTarget, value);
+				DevExpress.Viz.DxChartInterop.SetResolveLabelOverlappingOption(dxTarget, value);
 			} else {
 				this.resolveLabelOverlapping = value;
 			}
@@ -318,10 +320,10 @@
 	bool? rotated;
 	[Parameter]
 	bool? Rotated {
-		get => isInitialized ? (bool?)DevExpress.Viz.DxChartInterop.GetRotated(dxTarget).Result : rotated;
+		get => isInitialized ? (bool?)DevExpress.Viz.DxChartInterop.GetRotatedOption(dxTarget).Result : rotated;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxChartInterop.SetRotated(dxTarget, value);
+				DevExpress.Viz.DxChartInterop.SetRotatedOption(dxTarget, value);
 			} else {
 				this.rotated = value;
 			}
@@ -330,10 +332,10 @@
 	object scrollBar;
 	[Parameter]
 	object ScrollBar {
-		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetScrollBar(dxTarget).Result : scrollBar;
+		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetScrollBarOption(dxTarget).Result : scrollBar;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxChartInterop.SetScrollBar(dxTarget, value);
+				DevExpress.Viz.DxChartInterop.SetScrollBarOption(dxTarget, value);
 			} else {
 				this.scrollBar = value;
 			}
@@ -342,10 +344,10 @@
 	string scrollingMode;
 	[Parameter]
 	string ScrollingMode {
-		get => isInitialized ? (string)DevExpress.Viz.DxChartInterop.GetScrollingMode(dxTarget).Result : scrollingMode;
+		get => isInitialized ? (string)DevExpress.Viz.DxChartInterop.GetScrollingModeOption(dxTarget).Result : scrollingMode;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxChartInterop.SetScrollingMode(dxTarget, value);
+				DevExpress.Viz.DxChartInterop.SetScrollingModeOption(dxTarget, value);
 			} else {
 				this.scrollingMode = value;
 			}
@@ -354,10 +356,10 @@
 	object series;
 	[Parameter]
 	object Series {
-		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetSeries(dxTarget).Result : series;
+		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetSeriesOption(dxTarget).Result : series;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxChartInterop.SetSeries(dxTarget, value);
+				DevExpress.Viz.DxChartInterop.SetSeriesOption(dxTarget, value);
 			} else {
 				this.series = value;
 			}
@@ -366,10 +368,10 @@
 	string seriesSelectionMode;
 	[Parameter]
 	string SeriesSelectionMode {
-		get => isInitialized ? (string)DevExpress.Viz.DxChartInterop.GetSeriesSelectionMode(dxTarget).Result : seriesSelectionMode;
+		get => isInitialized ? (string)DevExpress.Viz.DxChartInterop.GetSeriesSelectionModeOption(dxTarget).Result : seriesSelectionMode;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxChartInterop.SetSeriesSelectionMode(dxTarget, value);
+				DevExpress.Viz.DxChartInterop.SetSeriesSelectionModeOption(dxTarget, value);
 			} else {
 				this.seriesSelectionMode = value;
 			}
@@ -378,10 +380,10 @@
 	object seriesTemplate;
 	[Parameter]
 	object SeriesTemplate {
-		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetSeriesTemplate(dxTarget).Result : seriesTemplate;
+		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetSeriesTemplateOption(dxTarget).Result : seriesTemplate;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxChartInterop.SetSeriesTemplate(dxTarget, value);
+				DevExpress.Viz.DxChartInterop.SetSeriesTemplateOption(dxTarget, value);
 			} else {
 				this.seriesTemplate = value;
 			}
@@ -390,10 +392,10 @@
 	bool? synchronizeMultiAxes;
 	[Parameter]
 	bool? SynchronizeMultiAxes {
-		get => isInitialized ? (bool?)DevExpress.Viz.DxChartInterop.GetSynchronizeMultiAxes(dxTarget).Result : synchronizeMultiAxes;
+		get => isInitialized ? (bool?)DevExpress.Viz.DxChartInterop.GetSynchronizeMultiAxesOption(dxTarget).Result : synchronizeMultiAxes;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxChartInterop.SetSynchronizeMultiAxes(dxTarget, value);
+				DevExpress.Viz.DxChartInterop.SetSynchronizeMultiAxesOption(dxTarget, value);
 			} else {
 				this.synchronizeMultiAxes = value;
 			}
@@ -402,10 +404,10 @@
 	object tooltip;
 	[Parameter]
 	object Tooltip {
-		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetTooltip(dxTarget).Result : tooltip;
+		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetTooltipOption(dxTarget).Result : tooltip;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxChartInterop.SetTooltip(dxTarget, value);
+				DevExpress.Viz.DxChartInterop.SetTooltipOption(dxTarget, value);
 			} else {
 				this.tooltip = value;
 			}
@@ -414,10 +416,10 @@
 	bool? useAggregation;
 	[Parameter]
 	bool? UseAggregation {
-		get => isInitialized ? (bool?)DevExpress.Viz.DxChartInterop.GetUseAggregation(dxTarget).Result : useAggregation;
+		get => isInitialized ? (bool?)DevExpress.Viz.DxChartInterop.GetUseAggregationOption(dxTarget).Result : useAggregation;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxChartInterop.SetUseAggregation(dxTarget, value);
+				DevExpress.Viz.DxChartInterop.SetUseAggregationOption(dxTarget, value);
 			} else {
 				this.useAggregation = value;
 			}
@@ -426,22 +428,34 @@
 	object valueAxis;
 	[Parameter]
 	object ValueAxis {
-		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetValueAxis(dxTarget).Result : valueAxis;
+		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetValueAxisOption(dxTarget).Result : valueAxis;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxChartInterop.SetValueAxis(dxTarget, value);
+				DevExpress.Viz.DxChartInterop.SetValueAxisOption(dxTarget, value);
 			} else {
 				this.valueAxis = value;
+			}
+		}
+	}
+	object zoomAndPan;
+	[Parameter]
+	object ZoomAndPan {
+		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetZoomAndPanOption(dxTarget).Result : zoomAndPan;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxChartInterop.SetZoomAndPanOption(dxTarget, value);
+			} else {
+				this.zoomAndPan = value;
 			}
 		}
 	}
 	string zoomingMode;
 	[Parameter]
 	string ZoomingMode {
-		get => isInitialized ? (string)DevExpress.Viz.DxChartInterop.GetZoomingMode(dxTarget).Result : zoomingMode;
+		get => isInitialized ? (string)DevExpress.Viz.DxChartInterop.GetZoomingModeOption(dxTarget).Result : zoomingMode;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxChartInterop.SetZoomingMode(dxTarget, value);
+				DevExpress.Viz.DxChartInterop.SetZoomingModeOption(dxTarget, value);
 			} else {
 				this.zoomingMode = value;
 			}
@@ -450,10 +464,10 @@
 	object adaptiveLayout;
 	[Parameter]
 	object AdaptiveLayout {
-		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetAdaptiveLayout(dxTarget).Result : adaptiveLayout;
+		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetAdaptiveLayoutOption(dxTarget).Result : adaptiveLayout;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxChartInterop.SetAdaptiveLayout(dxTarget, value);
+				DevExpress.Viz.DxChartInterop.SetAdaptiveLayoutOption(dxTarget, value);
 			} else {
 				this.adaptiveLayout = value;
 			}
@@ -462,10 +476,10 @@
 	object animation;
 	[Parameter]
 	object Animation {
-		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetAnimation(dxTarget).Result : animation;
+		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetAnimationOption(dxTarget).Result : animation;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxChartInterop.SetAnimation(dxTarget, value);
+				DevExpress.Viz.DxChartInterop.SetAnimationOption(dxTarget, value);
 			} else {
 				this.animation = value;
 			}
@@ -474,10 +488,10 @@
 	object customizeLabel;
 	[Parameter]
 	object CustomizeLabel {
-		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetCustomizeLabel(dxTarget).Result : customizeLabel;
+		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetCustomizeLabelOption(dxTarget).Result : customizeLabel;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxChartInterop.SetCustomizeLabel(dxTarget, value);
+				DevExpress.Viz.DxChartInterop.SetCustomizeLabelOption(dxTarget, value);
 			} else {
 				this.customizeLabel = value;
 			}
@@ -486,10 +500,10 @@
 	object customizePoint;
 	[Parameter]
 	object CustomizePoint {
-		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetCustomizePoint(dxTarget).Result : customizePoint;
+		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetCustomizePointOption(dxTarget).Result : customizePoint;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxChartInterop.SetCustomizePoint(dxTarget, value);
+				DevExpress.Viz.DxChartInterop.SetCustomizePointOption(dxTarget, value);
 			} else {
 				this.customizePoint = value;
 			}
@@ -498,10 +512,10 @@
 	object dataSource;
 	[Parameter]
 	object DataSource {
-		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetDataSource(dxTarget).Result : dataSource;
+		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetDataSourceOption(dxTarget).Result : dataSource;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxChartInterop.SetDataSource(dxTarget, value);
+				DevExpress.Viz.DxChartInterop.SetDataSourceOption(dxTarget, value);
 			} else {
 				this.dataSource = value;
 			}
@@ -510,10 +524,10 @@
 	object palette;
 	[Parameter]
 	object Palette {
-		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetPalette(dxTarget).Result : palette;
+		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetPaletteOption(dxTarget).Result : palette;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxChartInterop.SetPalette(dxTarget, value);
+				DevExpress.Viz.DxChartInterop.SetPaletteOption(dxTarget, value);
 			} else {
 				this.palette = value;
 			}
@@ -522,10 +536,10 @@
 	string paletteExtensionMode;
 	[Parameter]
 	string PaletteExtensionMode {
-		get => isInitialized ? (string)DevExpress.Viz.DxChartInterop.GetPaletteExtensionMode(dxTarget).Result : paletteExtensionMode;
+		get => isInitialized ? (string)DevExpress.Viz.DxChartInterop.GetPaletteExtensionModeOption(dxTarget).Result : paletteExtensionMode;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxChartInterop.SetPaletteExtensionMode(dxTarget, value);
+				DevExpress.Viz.DxChartInterop.SetPaletteExtensionModeOption(dxTarget, value);
 			} else {
 				this.paletteExtensionMode = value;
 			}
@@ -534,22 +548,34 @@
 	string pointSelectionMode;
 	[Parameter]
 	string PointSelectionMode {
-		get => isInitialized ? (string)DevExpress.Viz.DxChartInterop.GetPointSelectionMode(dxTarget).Result : pointSelectionMode;
+		get => isInitialized ? (string)DevExpress.Viz.DxChartInterop.GetPointSelectionModeOption(dxTarget).Result : pointSelectionMode;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxChartInterop.SetPointSelectionMode(dxTarget, value);
+				DevExpress.Viz.DxChartInterop.SetPointSelectionModeOption(dxTarget, value);
 			} else {
 				this.pointSelectionMode = value;
+			}
+		}
+	}
+	bool? disabled;
+	[Parameter]
+	bool? Disabled {
+		get => isInitialized ? (bool?)DevExpress.Viz.DxChartInterop.GetDisabledOption(dxTarget).Result : disabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxChartInterop.SetDisabledOption(dxTarget, value);
+			} else {
+				this.disabled = value;
 			}
 		}
 	}
 	object export;
 	[Parameter]
 	object Export {
-		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetExport(dxTarget).Result : export;
+		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetExportOption(dxTarget).Result : export;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxChartInterop.SetExport(dxTarget, value);
+				DevExpress.Viz.DxChartInterop.SetExportOption(dxTarget, value);
 			} else {
 				this.export = value;
 			}
@@ -558,10 +584,10 @@
 	object loadingIndicator;
 	[Parameter]
 	object LoadingIndicator {
-		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetLoadingIndicator(dxTarget).Result : loadingIndicator;
+		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetLoadingIndicatorOption(dxTarget).Result : loadingIndicator;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxChartInterop.SetLoadingIndicator(dxTarget, value);
+				DevExpress.Viz.DxChartInterop.SetLoadingIndicatorOption(dxTarget, value);
 			} else {
 				this.loadingIndicator = value;
 			}
@@ -570,10 +596,10 @@
 	object margin;
 	[Parameter]
 	object Margin {
-		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetMargin(dxTarget).Result : margin;
+		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetMarginOption(dxTarget).Result : margin;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxChartInterop.SetMargin(dxTarget, value);
+				DevExpress.Viz.DxChartInterop.SetMarginOption(dxTarget, value);
 			} else {
 				this.margin = value;
 			}
@@ -582,10 +608,10 @@
 	bool? pathModified;
 	[Parameter]
 	bool? PathModified {
-		get => isInitialized ? (bool?)DevExpress.Viz.DxChartInterop.GetPathModified(dxTarget).Result : pathModified;
+		get => isInitialized ? (bool?)DevExpress.Viz.DxChartInterop.GetPathModifiedOption(dxTarget).Result : pathModified;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxChartInterop.SetPathModified(dxTarget, value);
+				DevExpress.Viz.DxChartInterop.SetPathModifiedOption(dxTarget, value);
 			} else {
 				this.pathModified = value;
 			}
@@ -594,10 +620,10 @@
 	bool? redrawOnResize;
 	[Parameter]
 	bool? RedrawOnResize {
-		get => isInitialized ? (bool?)DevExpress.Viz.DxChartInterop.GetRedrawOnResize(dxTarget).Result : redrawOnResize;
+		get => isInitialized ? (bool?)DevExpress.Viz.DxChartInterop.GetRedrawOnResizeOption(dxTarget).Result : redrawOnResize;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxChartInterop.SetRedrawOnResize(dxTarget, value);
+				DevExpress.Viz.DxChartInterop.SetRedrawOnResizeOption(dxTarget, value);
 			} else {
 				this.redrawOnResize = value;
 			}
@@ -606,10 +632,10 @@
 	bool? rtlEnabled;
 	[Parameter]
 	bool? RtlEnabled {
-		get => isInitialized ? (bool?)DevExpress.Viz.DxChartInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
+		get => isInitialized ? (bool?)DevExpress.Viz.DxChartInterop.GetRtlEnabledOption(dxTarget).Result : rtlEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxChartInterop.SetRtlEnabled(dxTarget, value);
+				DevExpress.Viz.DxChartInterop.SetRtlEnabledOption(dxTarget, value);
 			} else {
 				this.rtlEnabled = value;
 			}
@@ -618,10 +644,10 @@
 	object size;
 	[Parameter]
 	object Size {
-		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetSize(dxTarget).Result : size;
+		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetSizeOption(dxTarget).Result : size;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxChartInterop.SetSize(dxTarget, value);
+				DevExpress.Viz.DxChartInterop.SetSizeOption(dxTarget, value);
 			} else {
 				this.size = value;
 			}
@@ -630,10 +656,10 @@
 	string theme;
 	[Parameter]
 	string Theme {
-		get => isInitialized ? (string)DevExpress.Viz.DxChartInterop.GetTheme(dxTarget).Result : theme;
+		get => isInitialized ? (string)DevExpress.Viz.DxChartInterop.GetThemeOption(dxTarget).Result : theme;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxChartInterop.SetTheme(dxTarget, value);
+				DevExpress.Viz.DxChartInterop.SetThemeOption(dxTarget, value);
 			} else {
 				this.theme = value;
 			}
@@ -642,10 +668,10 @@
 	object title;
 	[Parameter]
 	object Title {
-		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetTitle(dxTarget).Result : title;
+		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetTitleOption(dxTarget).Result : title;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxChartInterop.SetTitle(dxTarget, value);
+				DevExpress.Viz.DxChartInterop.SetTitleOption(dxTarget, value);
 			} else {
 				this.title = value;
 			}
@@ -654,10 +680,10 @@
 	object bindingOptions;
 	[Parameter]
 	object BindingOptions {
-		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
+		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetBindingOptionsOption(dxTarget).Result : bindingOptions;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxChartInterop.SetBindingOptions(dxTarget, value);
+				DevExpress.Viz.DxChartInterop.SetBindingOptionsOption(dxTarget, value);
 			} else {
 				this.bindingOptions = value;
 			}
@@ -666,10 +692,10 @@
 	object elementAttr;
 	[Parameter]
 	object ElementAttr {
-		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetElementAttr(dxTarget).Result : elementAttr;
+		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetElementAttrOption(dxTarget).Result : elementAttr;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxChartInterop.SetElementAttr(dxTarget, value);
+				DevExpress.Viz.DxChartInterop.SetElementAttrOption(dxTarget, value);
 			} else {
 				this.elementAttr = value;
 			}
@@ -678,10 +704,10 @@
 	object height;
 	[Parameter]
 	object Height {
-		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetHeight(dxTarget).Result : height;
+		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetHeightOption(dxTarget).Result : height;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxChartInterop.SetHeight(dxTarget, value);
+				DevExpress.Viz.DxChartInterop.SetHeightOption(dxTarget, value);
 			} else {
 				this.height = value;
 			}
@@ -690,10 +716,10 @@
 	object width;
 	[Parameter]
 	object Width {
-		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetWidth(dxTarget).Result : width;
+		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetWidthOption(dxTarget).Result : width;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxChartInterop.SetWidth(dxTarget, value);
+				DevExpress.Viz.DxChartInterop.SetWidthOption(dxTarget, value);
 			} else {
 				this.width = value;
 			}
@@ -995,6 +1021,18 @@
 		if (e.Identifier == Id) {
 			Initialized?.Invoke();
 		}
+	}
+	public object GetArgumentAxis() {
+		return DevExpress.Viz.DxChartInterop.GetArgumentAxis(dxTarget).Result;
+	}
+	public object GetValueAxis() {
+		return DevExpress.Viz.DxChartInterop.GetValueAxis(dxTarget).Result;
+	}
+	public object GetValueAxis(string name) {
+		return DevExpress.Viz.DxChartInterop.GetValueAxis(dxTarget, name).Result;
+	}
+	public void ResetVisualRange() {
+		DevExpress.Viz.DxChartInterop.ResetVisualRange(dxTarget);
 	}
 	public void ZoomArgument(object startValue, object endValue) {
 		DevExpress.Viz.DxChartInterop.ZoomArgument(dxTarget, startValue, endValue);

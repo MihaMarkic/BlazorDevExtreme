@@ -57,10 +57,10 @@
 	string cancelText;
 	[Parameter]
 	string CancelText {
-		get => isInitialized ? (string)DevExpress.Ui.DxActionSheetInterop.GetCancelText(dxTarget).Result : cancelText;
+		get => isInitialized ? (string)DevExpress.Ui.DxActionSheetInterop.GetCancelTextOption(dxTarget).Result : cancelText;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxActionSheetInterop.SetCancelText(dxTarget, value);
+				DevExpress.Ui.DxActionSheetInterop.SetCancelTextOption(dxTarget, value);
 			} else {
 				this.cancelText = value;
 			}
@@ -69,10 +69,10 @@
 	bool? showCancelButton;
 	[Parameter]
 	bool? ShowCancelButton {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxActionSheetInterop.GetShowCancelButton(dxTarget).Result : showCancelButton;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxActionSheetInterop.GetShowCancelButtonOption(dxTarget).Result : showCancelButton;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxActionSheetInterop.SetShowCancelButton(dxTarget, value);
+				DevExpress.Ui.DxActionSheetInterop.SetShowCancelButtonOption(dxTarget, value);
 			} else {
 				this.showCancelButton = value;
 			}
@@ -81,10 +81,10 @@
 	bool? showTitle;
 	[Parameter]
 	bool? ShowTitle {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxActionSheetInterop.GetShowTitle(dxTarget).Result : showTitle;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxActionSheetInterop.GetShowTitleOption(dxTarget).Result : showTitle;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxActionSheetInterop.SetShowTitle(dxTarget, value);
+				DevExpress.Ui.DxActionSheetInterop.SetShowTitleOption(dxTarget, value);
 			} else {
 				this.showTitle = value;
 			}
@@ -93,10 +93,10 @@
 	object target;
 	[Parameter]
 	object Target {
-		get => isInitialized ? DevExpress.Ui.DxActionSheetInterop.GetTarget(dxTarget).Result : target;
+		get => isInitialized ? DevExpress.Ui.DxActionSheetInterop.GetTargetOption(dxTarget).Result : target;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxActionSheetInterop.SetTarget(dxTarget, value);
+				DevExpress.Ui.DxActionSheetInterop.SetTargetOption(dxTarget, value);
 			} else {
 				this.target = value;
 			}
@@ -105,10 +105,10 @@
 	string title;
 	[Parameter]
 	string Title {
-		get => isInitialized ? (string)DevExpress.Ui.DxActionSheetInterop.GetTitle(dxTarget).Result : title;
+		get => isInitialized ? (string)DevExpress.Ui.DxActionSheetInterop.GetTitleOption(dxTarget).Result : title;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxActionSheetInterop.SetTitle(dxTarget, value);
+				DevExpress.Ui.DxActionSheetInterop.SetTitleOption(dxTarget, value);
 			} else {
 				this.title = value;
 			}
@@ -117,10 +117,10 @@
 	bool? usePopover;
 	[Parameter]
 	bool? UsePopover {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxActionSheetInterop.GetUsePopover(dxTarget).Result : usePopover;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxActionSheetInterop.GetUsePopoverOption(dxTarget).Result : usePopover;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxActionSheetInterop.SetUsePopover(dxTarget, value);
+				DevExpress.Ui.DxActionSheetInterop.SetUsePopoverOption(dxTarget, value);
 			} else {
 				this.usePopover = value;
 			}
@@ -129,10 +129,10 @@
 	bool? visible;
 	[Parameter]
 	bool? Visible {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxActionSheetInterop.GetVisible(dxTarget).Result : visible;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxActionSheetInterop.GetVisibleOption(dxTarget).Result : visible;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxActionSheetInterop.SetVisible(dxTarget, value);
+				DevExpress.Ui.DxActionSheetInterop.SetVisibleOption(dxTarget, value);
 			} else {
 				this.visible = value;
 			}
@@ -141,10 +141,10 @@
 	object dataSource;
 	[Parameter]
 	object DataSource {
-		get => isInitialized ? DevExpress.Ui.DxActionSheetInterop.GetDataSource(dxTarget).Result : dataSource;
+		get => isInitialized ? DevExpress.Ui.DxActionSheetInterop.GetDataSourceOption(dxTarget).Result : dataSource;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxActionSheetInterop.SetDataSource(dxTarget, value);
+				DevExpress.Ui.DxActionSheetInterop.SetDataSourceOption(dxTarget, value);
 			} else {
 				this.dataSource = value;
 			}
@@ -153,10 +153,10 @@
 	float? itemHoldTimeout;
 	[Parameter]
 	float? ItemHoldTimeout {
-		get => isInitialized ? (float?)DevExpress.Ui.DxActionSheetInterop.GetItemHoldTimeout(dxTarget).Result : itemHoldTimeout;
+		get => isInitialized ? (float?)DevExpress.Ui.DxActionSheetInterop.GetItemHoldTimeoutOption(dxTarget).Result : itemHoldTimeout;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxActionSheetInterop.SetItemHoldTimeout(dxTarget, value);
+				DevExpress.Ui.DxActionSheetInterop.SetItemHoldTimeoutOption(dxTarget, value);
 			} else {
 				this.itemHoldTimeout = value;
 			}
@@ -165,10 +165,10 @@
 	object items;
 	[Parameter]
 	object Items {
-		get => isInitialized ? DevExpress.Ui.DxActionSheetInterop.GetItems(dxTarget).Result : items;
+		get => isInitialized ? DevExpress.Ui.DxActionSheetInterop.GetItemsOption(dxTarget).Result : items;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxActionSheetInterop.SetItems(dxTarget, value);
+				DevExpress.Ui.DxActionSheetInterop.SetItemsOption(dxTarget, value);
 			} else {
 				this.items = value;
 			}
@@ -177,10 +177,10 @@
 	object itemTemplate;
 	[Parameter]
 	object ItemTemplate {
-		get => isInitialized ? DevExpress.Ui.DxActionSheetInterop.GetItemTemplate(dxTarget).Result : itemTemplate;
+		get => isInitialized ? DevExpress.Ui.DxActionSheetInterop.GetItemTemplateOption(dxTarget).Result : itemTemplate;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxActionSheetInterop.SetItemTemplate(dxTarget, value);
+				DevExpress.Ui.DxActionSheetInterop.SetItemTemplateOption(dxTarget, value);
 			} else {
 				this.itemTemplate = value;
 			}
@@ -189,10 +189,10 @@
 	object keyExpr;
 	[Parameter]
 	object KeyExpr {
-		get => isInitialized ? DevExpress.Ui.DxActionSheetInterop.GetKeyExpr(dxTarget).Result : keyExpr;
+		get => isInitialized ? DevExpress.Ui.DxActionSheetInterop.GetKeyExprOption(dxTarget).Result : keyExpr;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxActionSheetInterop.SetKeyExpr(dxTarget, value);
+				DevExpress.Ui.DxActionSheetInterop.SetKeyExprOption(dxTarget, value);
 			} else {
 				this.keyExpr = value;
 			}
@@ -201,10 +201,10 @@
 	string noDataText;
 	[Parameter]
 	string NoDataText {
-		get => isInitialized ? (string)DevExpress.Ui.DxActionSheetInterop.GetNoDataText(dxTarget).Result : noDataText;
+		get => isInitialized ? (string)DevExpress.Ui.DxActionSheetInterop.GetNoDataTextOption(dxTarget).Result : noDataText;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxActionSheetInterop.SetNoDataText(dxTarget, value);
+				DevExpress.Ui.DxActionSheetInterop.SetNoDataTextOption(dxTarget, value);
 			} else {
 				this.noDataText = value;
 			}
@@ -213,10 +213,10 @@
 	float? selectedIndex;
 	[Parameter]
 	float? SelectedIndex {
-		get => isInitialized ? (float?)DevExpress.Ui.DxActionSheetInterop.GetSelectedIndex(dxTarget).Result : selectedIndex;
+		get => isInitialized ? (float?)DevExpress.Ui.DxActionSheetInterop.GetSelectedIndexOption(dxTarget).Result : selectedIndex;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxActionSheetInterop.SetSelectedIndex(dxTarget, value);
+				DevExpress.Ui.DxActionSheetInterop.SetSelectedIndexOption(dxTarget, value);
 			} else {
 				this.selectedIndex = value;
 			}
@@ -225,10 +225,10 @@
 	object selectedItem;
 	[Parameter]
 	object SelectedItem {
-		get => isInitialized ? DevExpress.Ui.DxActionSheetInterop.GetSelectedItem(dxTarget).Result : selectedItem;
+		get => isInitialized ? DevExpress.Ui.DxActionSheetInterop.GetSelectedItemOption(dxTarget).Result : selectedItem;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxActionSheetInterop.SetSelectedItem(dxTarget, value);
+				DevExpress.Ui.DxActionSheetInterop.SetSelectedItemOption(dxTarget, value);
 			} else {
 				this.selectedItem = value;
 			}
@@ -237,10 +237,10 @@
 	object selectedItemKeys;
 	[Parameter]
 	object SelectedItemKeys {
-		get => isInitialized ? DevExpress.Ui.DxActionSheetInterop.GetSelectedItemKeys(dxTarget).Result : selectedItemKeys;
+		get => isInitialized ? DevExpress.Ui.DxActionSheetInterop.GetSelectedItemKeysOption(dxTarget).Result : selectedItemKeys;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxActionSheetInterop.SetSelectedItemKeys(dxTarget, value);
+				DevExpress.Ui.DxActionSheetInterop.SetSelectedItemKeysOption(dxTarget, value);
 			} else {
 				this.selectedItemKeys = value;
 			}
@@ -249,10 +249,10 @@
 	object selectedItems;
 	[Parameter]
 	object SelectedItems {
-		get => isInitialized ? DevExpress.Ui.DxActionSheetInterop.GetSelectedItems(dxTarget).Result : selectedItems;
+		get => isInitialized ? DevExpress.Ui.DxActionSheetInterop.GetSelectedItemsOption(dxTarget).Result : selectedItems;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxActionSheetInterop.SetSelectedItems(dxTarget, value);
+				DevExpress.Ui.DxActionSheetInterop.SetSelectedItemsOption(dxTarget, value);
 			} else {
 				this.selectedItems = value;
 			}
@@ -261,10 +261,10 @@
 	string accessKey;
 	[Parameter]
 	string AccessKey {
-		get => isInitialized ? (string)DevExpress.Ui.DxActionSheetInterop.GetAccessKey(dxTarget).Result : accessKey;
+		get => isInitialized ? (string)DevExpress.Ui.DxActionSheetInterop.GetAccessKeyOption(dxTarget).Result : accessKey;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxActionSheetInterop.SetAccessKey(dxTarget, value);
+				DevExpress.Ui.DxActionSheetInterop.SetAccessKeyOption(dxTarget, value);
 			} else {
 				this.accessKey = value;
 			}
@@ -273,10 +273,10 @@
 	bool? activeStateEnabled;
 	[Parameter]
 	bool? ActiveStateEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxActionSheetInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxActionSheetInterop.GetActiveStateEnabledOption(dxTarget).Result : activeStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxActionSheetInterop.SetActiveStateEnabled(dxTarget, value);
+				DevExpress.Ui.DxActionSheetInterop.SetActiveStateEnabledOption(dxTarget, value);
 			} else {
 				this.activeStateEnabled = value;
 			}
@@ -285,10 +285,10 @@
 	bool? disabled;
 	[Parameter]
 	bool? Disabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxActionSheetInterop.GetDisabled(dxTarget).Result : disabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxActionSheetInterop.GetDisabledOption(dxTarget).Result : disabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxActionSheetInterop.SetDisabled(dxTarget, value);
+				DevExpress.Ui.DxActionSheetInterop.SetDisabledOption(dxTarget, value);
 			} else {
 				this.disabled = value;
 			}
@@ -297,10 +297,10 @@
 	bool? focusStateEnabled;
 	[Parameter]
 	bool? FocusStateEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxActionSheetInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxActionSheetInterop.GetFocusStateEnabledOption(dxTarget).Result : focusStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxActionSheetInterop.SetFocusStateEnabled(dxTarget, value);
+				DevExpress.Ui.DxActionSheetInterop.SetFocusStateEnabledOption(dxTarget, value);
 			} else {
 				this.focusStateEnabled = value;
 			}
@@ -309,10 +309,10 @@
 	string hint;
 	[Parameter]
 	string Hint {
-		get => isInitialized ? (string)DevExpress.Ui.DxActionSheetInterop.GetHint(dxTarget).Result : hint;
+		get => isInitialized ? (string)DevExpress.Ui.DxActionSheetInterop.GetHintOption(dxTarget).Result : hint;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxActionSheetInterop.SetHint(dxTarget, value);
+				DevExpress.Ui.DxActionSheetInterop.SetHintOption(dxTarget, value);
 			} else {
 				this.hint = value;
 			}
@@ -321,10 +321,10 @@
 	bool? hoverStateEnabled;
 	[Parameter]
 	bool? HoverStateEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxActionSheetInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxActionSheetInterop.GetHoverStateEnabledOption(dxTarget).Result : hoverStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxActionSheetInterop.SetHoverStateEnabled(dxTarget, value);
+				DevExpress.Ui.DxActionSheetInterop.SetHoverStateEnabledOption(dxTarget, value);
 			} else {
 				this.hoverStateEnabled = value;
 			}
@@ -333,10 +333,10 @@
 	float? tabIndex;
 	[Parameter]
 	float? TabIndex {
-		get => isInitialized ? (float?)DevExpress.Ui.DxActionSheetInterop.GetTabIndex(dxTarget).Result : tabIndex;
+		get => isInitialized ? (float?)DevExpress.Ui.DxActionSheetInterop.GetTabIndexOption(dxTarget).Result : tabIndex;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxActionSheetInterop.SetTabIndex(dxTarget, value);
+				DevExpress.Ui.DxActionSheetInterop.SetTabIndexOption(dxTarget, value);
 			} else {
 				this.tabIndex = value;
 			}
@@ -345,10 +345,10 @@
 	object bindingOptions;
 	[Parameter]
 	object BindingOptions {
-		get => isInitialized ? DevExpress.Ui.DxActionSheetInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
+		get => isInitialized ? DevExpress.Ui.DxActionSheetInterop.GetBindingOptionsOption(dxTarget).Result : bindingOptions;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxActionSheetInterop.SetBindingOptions(dxTarget, value);
+				DevExpress.Ui.DxActionSheetInterop.SetBindingOptionsOption(dxTarget, value);
 			} else {
 				this.bindingOptions = value;
 			}
@@ -357,10 +357,10 @@
 	object elementAttr;
 	[Parameter]
 	object ElementAttr {
-		get => isInitialized ? DevExpress.Ui.DxActionSheetInterop.GetElementAttr(dxTarget).Result : elementAttr;
+		get => isInitialized ? DevExpress.Ui.DxActionSheetInterop.GetElementAttrOption(dxTarget).Result : elementAttr;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxActionSheetInterop.SetElementAttr(dxTarget, value);
+				DevExpress.Ui.DxActionSheetInterop.SetElementAttrOption(dxTarget, value);
 			} else {
 				this.elementAttr = value;
 			}
@@ -369,10 +369,10 @@
 	object height;
 	[Parameter]
 	object Height {
-		get => isInitialized ? DevExpress.Ui.DxActionSheetInterop.GetHeight(dxTarget).Result : height;
+		get => isInitialized ? DevExpress.Ui.DxActionSheetInterop.GetHeightOption(dxTarget).Result : height;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxActionSheetInterop.SetHeight(dxTarget, value);
+				DevExpress.Ui.DxActionSheetInterop.SetHeightOption(dxTarget, value);
 			} else {
 				this.height = value;
 			}
@@ -381,10 +381,10 @@
 	bool? rtlEnabled;
 	[Parameter]
 	bool? RtlEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxActionSheetInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxActionSheetInterop.GetRtlEnabledOption(dxTarget).Result : rtlEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxActionSheetInterop.SetRtlEnabled(dxTarget, value);
+				DevExpress.Ui.DxActionSheetInterop.SetRtlEnabledOption(dxTarget, value);
 			} else {
 				this.rtlEnabled = value;
 			}
@@ -393,10 +393,10 @@
 	object width;
 	[Parameter]
 	object Width {
-		get => isInitialized ? DevExpress.Ui.DxActionSheetInterop.GetWidth(dxTarget).Result : width;
+		get => isInitialized ? DevExpress.Ui.DxActionSheetInterop.GetWidthOption(dxTarget).Result : width;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxActionSheetInterop.SetWidth(dxTarget, value);
+				DevExpress.Ui.DxActionSheetInterop.SetWidthOption(dxTarget, value);
 			} else {
 				this.width = value;
 			}

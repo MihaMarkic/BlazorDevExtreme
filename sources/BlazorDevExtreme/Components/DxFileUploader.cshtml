@@ -12,8 +12,15 @@
 		return new DevExpress.Ui.DxFileUploaderOptions {
 			accept = accept,
 			allowCanceling = allowCanceling,
+			allowedFileExtensions = allowedFileExtensions,
+			chunkSize = chunkSize,
 			focusStateEnabled = focusStateEnabled,
+			invalidFileExtensionMessage = invalidFileExtensionMessage,
+			invalidMaxFileSizeMessage = invalidMaxFileSizeMessage,
+			invalidMinFileSizeMessage = invalidMinFileSizeMessage,
 			labelText = labelText,
+			maxFileSize = maxFileSize,
+			minFileSize = minFileSize,
 			multiple = multiple,
 			name = name,
 			progress = progressValue,
@@ -62,10 +69,10 @@
 	string accept;
 	[Parameter]
 	string Accept {
-		get => isInitialized ? (string)DevExpress.Ui.DxFileUploaderInterop.GetAccept(dxTarget).Result : accept;
+		get => isInitialized ? (string)DevExpress.Ui.DxFileUploaderInterop.GetAcceptOption(dxTarget).Result : accept;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFileUploaderInterop.SetAccept(dxTarget, value);
+				DevExpress.Ui.DxFileUploaderInterop.SetAcceptOption(dxTarget, value);
 			} else {
 				this.accept = value;
 			}
@@ -74,46 +81,130 @@
 	bool? allowCanceling;
 	[Parameter]
 	bool? AllowCanceling {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxFileUploaderInterop.GetAllowCanceling(dxTarget).Result : allowCanceling;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxFileUploaderInterop.GetAllowCancelingOption(dxTarget).Result : allowCanceling;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFileUploaderInterop.SetAllowCanceling(dxTarget, value);
+				DevExpress.Ui.DxFileUploaderInterop.SetAllowCancelingOption(dxTarget, value);
 			} else {
 				this.allowCanceling = value;
+			}
+		}
+	}
+	object allowedFileExtensions;
+	[Parameter]
+	object AllowedFileExtensions {
+		get => isInitialized ? DevExpress.Ui.DxFileUploaderInterop.GetAllowedFileExtensionsOption(dxTarget).Result : allowedFileExtensions;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxFileUploaderInterop.SetAllowedFileExtensionsOption(dxTarget, value);
+			} else {
+				this.allowedFileExtensions = value;
+			}
+		}
+	}
+	float? chunkSize;
+	[Parameter]
+	float? ChunkSize {
+		get => isInitialized ? (float?)DevExpress.Ui.DxFileUploaderInterop.GetChunkSizeOption(dxTarget).Result : chunkSize;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxFileUploaderInterop.SetChunkSizeOption(dxTarget, value);
+			} else {
+				this.chunkSize = value;
 			}
 		}
 	}
 	bool? focusStateEnabled;
 	[Parameter]
 	bool? FocusStateEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxFileUploaderInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxFileUploaderInterop.GetFocusStateEnabledOption(dxTarget).Result : focusStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFileUploaderInterop.SetFocusStateEnabled(dxTarget, value);
+				DevExpress.Ui.DxFileUploaderInterop.SetFocusStateEnabledOption(dxTarget, value);
 			} else {
 				this.focusStateEnabled = value;
+			}
+		}
+	}
+	string invalidFileExtensionMessage;
+	[Parameter]
+	string InvalidFileExtensionMessage {
+		get => isInitialized ? (string)DevExpress.Ui.DxFileUploaderInterop.GetInvalidFileExtensionMessageOption(dxTarget).Result : invalidFileExtensionMessage;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxFileUploaderInterop.SetInvalidFileExtensionMessageOption(dxTarget, value);
+			} else {
+				this.invalidFileExtensionMessage = value;
+			}
+		}
+	}
+	string invalidMaxFileSizeMessage;
+	[Parameter]
+	string InvalidMaxFileSizeMessage {
+		get => isInitialized ? (string)DevExpress.Ui.DxFileUploaderInterop.GetInvalidMaxFileSizeMessageOption(dxTarget).Result : invalidMaxFileSizeMessage;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxFileUploaderInterop.SetInvalidMaxFileSizeMessageOption(dxTarget, value);
+			} else {
+				this.invalidMaxFileSizeMessage = value;
+			}
+		}
+	}
+	string invalidMinFileSizeMessage;
+	[Parameter]
+	string InvalidMinFileSizeMessage {
+		get => isInitialized ? (string)DevExpress.Ui.DxFileUploaderInterop.GetInvalidMinFileSizeMessageOption(dxTarget).Result : invalidMinFileSizeMessage;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxFileUploaderInterop.SetInvalidMinFileSizeMessageOption(dxTarget, value);
+			} else {
+				this.invalidMinFileSizeMessage = value;
 			}
 		}
 	}
 	string labelText;
 	[Parameter]
 	string LabelText {
-		get => isInitialized ? (string)DevExpress.Ui.DxFileUploaderInterop.GetLabelText(dxTarget).Result : labelText;
+		get => isInitialized ? (string)DevExpress.Ui.DxFileUploaderInterop.GetLabelTextOption(dxTarget).Result : labelText;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFileUploaderInterop.SetLabelText(dxTarget, value);
+				DevExpress.Ui.DxFileUploaderInterop.SetLabelTextOption(dxTarget, value);
 			} else {
 				this.labelText = value;
+			}
+		}
+	}
+	float? maxFileSize;
+	[Parameter]
+	float? MaxFileSize {
+		get => isInitialized ? (float?)DevExpress.Ui.DxFileUploaderInterop.GetMaxFileSizeOption(dxTarget).Result : maxFileSize;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxFileUploaderInterop.SetMaxFileSizeOption(dxTarget, value);
+			} else {
+				this.maxFileSize = value;
+			}
+		}
+	}
+	float? minFileSize;
+	[Parameter]
+	float? MinFileSize {
+		get => isInitialized ? (float?)DevExpress.Ui.DxFileUploaderInterop.GetMinFileSizeOption(dxTarget).Result : minFileSize;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxFileUploaderInterop.SetMinFileSizeOption(dxTarget, value);
+			} else {
+				this.minFileSize = value;
 			}
 		}
 	}
 	bool? multiple;
 	[Parameter]
 	bool? Multiple {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxFileUploaderInterop.GetMultiple(dxTarget).Result : multiple;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxFileUploaderInterop.GetMultipleOption(dxTarget).Result : multiple;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFileUploaderInterop.SetMultiple(dxTarget, value);
+				DevExpress.Ui.DxFileUploaderInterop.SetMultipleOption(dxTarget, value);
 			} else {
 				this.multiple = value;
 			}
@@ -122,10 +213,10 @@
 	string name;
 	[Parameter]
 	string Name {
-		get => isInitialized ? (string)DevExpress.Ui.DxFileUploaderInterop.GetName(dxTarget).Result : name;
+		get => isInitialized ? (string)DevExpress.Ui.DxFileUploaderInterop.GetNameOption(dxTarget).Result : name;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFileUploaderInterop.SetName(dxTarget, value);
+				DevExpress.Ui.DxFileUploaderInterop.SetNameOption(dxTarget, value);
 			} else {
 				this.name = value;
 			}
@@ -134,10 +225,10 @@
 	float? progressValue;
 	[Parameter]
 	float? ProgressValue {
-		get => isInitialized ? (float?)DevExpress.Ui.DxFileUploaderInterop.GetProgress(dxTarget).Result : progressValue;
+		get => isInitialized ? (float?)DevExpress.Ui.DxFileUploaderInterop.GetProgressOption(dxTarget).Result : progressValue;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFileUploaderInterop.SetProgress(dxTarget, value);
+				DevExpress.Ui.DxFileUploaderInterop.SetProgressOption(dxTarget, value);
 			} else {
 				this.progressValue = value;
 			}
@@ -146,10 +237,10 @@
 	string readyToUploadMessage;
 	[Parameter]
 	string ReadyToUploadMessage {
-		get => isInitialized ? (string)DevExpress.Ui.DxFileUploaderInterop.GetReadyToUploadMessage(dxTarget).Result : readyToUploadMessage;
+		get => isInitialized ? (string)DevExpress.Ui.DxFileUploaderInterop.GetReadyToUploadMessageOption(dxTarget).Result : readyToUploadMessage;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFileUploaderInterop.SetReadyToUploadMessage(dxTarget, value);
+				DevExpress.Ui.DxFileUploaderInterop.SetReadyToUploadMessageOption(dxTarget, value);
 			} else {
 				this.readyToUploadMessage = value;
 			}
@@ -158,10 +249,10 @@
 	string selectButtonText;
 	[Parameter]
 	string SelectButtonText {
-		get => isInitialized ? (string)DevExpress.Ui.DxFileUploaderInterop.GetSelectButtonText(dxTarget).Result : selectButtonText;
+		get => isInitialized ? (string)DevExpress.Ui.DxFileUploaderInterop.GetSelectButtonTextOption(dxTarget).Result : selectButtonText;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFileUploaderInterop.SetSelectButtonText(dxTarget, value);
+				DevExpress.Ui.DxFileUploaderInterop.SetSelectButtonTextOption(dxTarget, value);
 			} else {
 				this.selectButtonText = value;
 			}
@@ -170,10 +261,10 @@
 	bool? showFileList;
 	[Parameter]
 	bool? ShowFileList {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxFileUploaderInterop.GetShowFileList(dxTarget).Result : showFileList;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxFileUploaderInterop.GetShowFileListOption(dxTarget).Result : showFileList;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFileUploaderInterop.SetShowFileList(dxTarget, value);
+				DevExpress.Ui.DxFileUploaderInterop.SetShowFileListOption(dxTarget, value);
 			} else {
 				this.showFileList = value;
 			}
@@ -182,10 +273,10 @@
 	string uploadButtonText;
 	[Parameter]
 	string UploadButtonText {
-		get => isInitialized ? (string)DevExpress.Ui.DxFileUploaderInterop.GetUploadButtonText(dxTarget).Result : uploadButtonText;
+		get => isInitialized ? (string)DevExpress.Ui.DxFileUploaderInterop.GetUploadButtonTextOption(dxTarget).Result : uploadButtonText;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFileUploaderInterop.SetUploadButtonText(dxTarget, value);
+				DevExpress.Ui.DxFileUploaderInterop.SetUploadButtonTextOption(dxTarget, value);
 			} else {
 				this.uploadButtonText = value;
 			}
@@ -194,10 +285,10 @@
 	string uploadedMessage;
 	[Parameter]
 	string UploadedMessage {
-		get => isInitialized ? (string)DevExpress.Ui.DxFileUploaderInterop.GetUploadedMessage(dxTarget).Result : uploadedMessage;
+		get => isInitialized ? (string)DevExpress.Ui.DxFileUploaderInterop.GetUploadedMessageOption(dxTarget).Result : uploadedMessage;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFileUploaderInterop.SetUploadedMessage(dxTarget, value);
+				DevExpress.Ui.DxFileUploaderInterop.SetUploadedMessageOption(dxTarget, value);
 			} else {
 				this.uploadedMessage = value;
 			}
@@ -206,10 +297,10 @@
 	string uploadFailedMessage;
 	[Parameter]
 	string UploadFailedMessage {
-		get => isInitialized ? (string)DevExpress.Ui.DxFileUploaderInterop.GetUploadFailedMessage(dxTarget).Result : uploadFailedMessage;
+		get => isInitialized ? (string)DevExpress.Ui.DxFileUploaderInterop.GetUploadFailedMessageOption(dxTarget).Result : uploadFailedMessage;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFileUploaderInterop.SetUploadFailedMessage(dxTarget, value);
+				DevExpress.Ui.DxFileUploaderInterop.SetUploadFailedMessageOption(dxTarget, value);
 			} else {
 				this.uploadFailedMessage = value;
 			}
@@ -218,10 +309,10 @@
 	object uploadHeaders;
 	[Parameter]
 	object UploadHeaders {
-		get => isInitialized ? DevExpress.Ui.DxFileUploaderInterop.GetUploadHeaders(dxTarget).Result : uploadHeaders;
+		get => isInitialized ? DevExpress.Ui.DxFileUploaderInterop.GetUploadHeadersOption(dxTarget).Result : uploadHeaders;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFileUploaderInterop.SetUploadHeaders(dxTarget, value);
+				DevExpress.Ui.DxFileUploaderInterop.SetUploadHeadersOption(dxTarget, value);
 			} else {
 				this.uploadHeaders = value;
 			}
@@ -230,10 +321,10 @@
 	string uploadMethod;
 	[Parameter]
 	string UploadMethod {
-		get => isInitialized ? (string)DevExpress.Ui.DxFileUploaderInterop.GetUploadMethod(dxTarget).Result : uploadMethod;
+		get => isInitialized ? (string)DevExpress.Ui.DxFileUploaderInterop.GetUploadMethodOption(dxTarget).Result : uploadMethod;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFileUploaderInterop.SetUploadMethod(dxTarget, value);
+				DevExpress.Ui.DxFileUploaderInterop.SetUploadMethodOption(dxTarget, value);
 			} else {
 				this.uploadMethod = value;
 			}
@@ -242,10 +333,10 @@
 	string uploadMode;
 	[Parameter]
 	string UploadMode {
-		get => isInitialized ? (string)DevExpress.Ui.DxFileUploaderInterop.GetUploadMode(dxTarget).Result : uploadMode;
+		get => isInitialized ? (string)DevExpress.Ui.DxFileUploaderInterop.GetUploadModeOption(dxTarget).Result : uploadMode;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFileUploaderInterop.SetUploadMode(dxTarget, value);
+				DevExpress.Ui.DxFileUploaderInterop.SetUploadModeOption(dxTarget, value);
 			} else {
 				this.uploadMode = value;
 			}
@@ -254,10 +345,10 @@
 	string uploadUrl;
 	[Parameter]
 	string UploadUrl {
-		get => isInitialized ? (string)DevExpress.Ui.DxFileUploaderInterop.GetUploadUrl(dxTarget).Result : uploadUrl;
+		get => isInitialized ? (string)DevExpress.Ui.DxFileUploaderInterop.GetUploadUrlOption(dxTarget).Result : uploadUrl;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFileUploaderInterop.SetUploadUrl(dxTarget, value);
+				DevExpress.Ui.DxFileUploaderInterop.SetUploadUrlOption(dxTarget, value);
 			} else {
 				this.uploadUrl = value;
 			}
@@ -266,10 +357,10 @@
 	object value;
 	[Parameter]
 	object Value {
-		get => isInitialized ? DevExpress.Ui.DxFileUploaderInterop.GetValue(dxTarget).Result : value;
+		get => isInitialized ? DevExpress.Ui.DxFileUploaderInterop.GetValueOption(dxTarget).Result : value;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFileUploaderInterop.SetValue(dxTarget, value);
+				DevExpress.Ui.DxFileUploaderInterop.SetValueOption(dxTarget, value);
 			} else {
 				this.value = value;
 			}
@@ -278,10 +369,10 @@
 	bool? isValid;
 	[Parameter]
 	bool? IsValid {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxFileUploaderInterop.GetIsValid(dxTarget).Result : isValid;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxFileUploaderInterop.GetIsValidOption(dxTarget).Result : isValid;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFileUploaderInterop.SetIsValid(dxTarget, value);
+				DevExpress.Ui.DxFileUploaderInterop.SetIsValidOption(dxTarget, value);
 			} else {
 				this.isValid = value;
 			}
@@ -290,10 +381,10 @@
 	bool? readOnly;
 	[Parameter]
 	bool? ReadOnly {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxFileUploaderInterop.GetReadOnly(dxTarget).Result : readOnly;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxFileUploaderInterop.GetReadOnlyOption(dxTarget).Result : readOnly;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFileUploaderInterop.SetReadOnly(dxTarget, value);
+				DevExpress.Ui.DxFileUploaderInterop.SetReadOnlyOption(dxTarget, value);
 			} else {
 				this.readOnly = value;
 			}
@@ -302,10 +393,10 @@
 	object validationError;
 	[Parameter]
 	object ValidationError {
-		get => isInitialized ? DevExpress.Ui.DxFileUploaderInterop.GetValidationError(dxTarget).Result : validationError;
+		get => isInitialized ? DevExpress.Ui.DxFileUploaderInterop.GetValidationErrorOption(dxTarget).Result : validationError;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFileUploaderInterop.SetValidationError(dxTarget, value);
+				DevExpress.Ui.DxFileUploaderInterop.SetValidationErrorOption(dxTarget, value);
 			} else {
 				this.validationError = value;
 			}
@@ -314,10 +405,10 @@
 	string validationMessageMode;
 	[Parameter]
 	string ValidationMessageMode {
-		get => isInitialized ? (string)DevExpress.Ui.DxFileUploaderInterop.GetValidationMessageMode(dxTarget).Result : validationMessageMode;
+		get => isInitialized ? (string)DevExpress.Ui.DxFileUploaderInterop.GetValidationMessageModeOption(dxTarget).Result : validationMessageMode;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFileUploaderInterop.SetValidationMessageMode(dxTarget, value);
+				DevExpress.Ui.DxFileUploaderInterop.SetValidationMessageModeOption(dxTarget, value);
 			} else {
 				this.validationMessageMode = value;
 			}
@@ -326,10 +417,10 @@
 	string accessKey;
 	[Parameter]
 	string AccessKey {
-		get => isInitialized ? (string)DevExpress.Ui.DxFileUploaderInterop.GetAccessKey(dxTarget).Result : accessKey;
+		get => isInitialized ? (string)DevExpress.Ui.DxFileUploaderInterop.GetAccessKeyOption(dxTarget).Result : accessKey;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFileUploaderInterop.SetAccessKey(dxTarget, value);
+				DevExpress.Ui.DxFileUploaderInterop.SetAccessKeyOption(dxTarget, value);
 			} else {
 				this.accessKey = value;
 			}
@@ -338,10 +429,10 @@
 	bool? activeStateEnabled;
 	[Parameter]
 	bool? ActiveStateEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxFileUploaderInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxFileUploaderInterop.GetActiveStateEnabledOption(dxTarget).Result : activeStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFileUploaderInterop.SetActiveStateEnabled(dxTarget, value);
+				DevExpress.Ui.DxFileUploaderInterop.SetActiveStateEnabledOption(dxTarget, value);
 			} else {
 				this.activeStateEnabled = value;
 			}
@@ -350,10 +441,10 @@
 	bool? disabled;
 	[Parameter]
 	bool? Disabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxFileUploaderInterop.GetDisabled(dxTarget).Result : disabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxFileUploaderInterop.GetDisabledOption(dxTarget).Result : disabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFileUploaderInterop.SetDisabled(dxTarget, value);
+				DevExpress.Ui.DxFileUploaderInterop.SetDisabledOption(dxTarget, value);
 			} else {
 				this.disabled = value;
 			}
@@ -362,10 +453,10 @@
 	string hint;
 	[Parameter]
 	string Hint {
-		get => isInitialized ? (string)DevExpress.Ui.DxFileUploaderInterop.GetHint(dxTarget).Result : hint;
+		get => isInitialized ? (string)DevExpress.Ui.DxFileUploaderInterop.GetHintOption(dxTarget).Result : hint;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFileUploaderInterop.SetHint(dxTarget, value);
+				DevExpress.Ui.DxFileUploaderInterop.SetHintOption(dxTarget, value);
 			} else {
 				this.hint = value;
 			}
@@ -374,10 +465,10 @@
 	bool? hoverStateEnabled;
 	[Parameter]
 	bool? HoverStateEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxFileUploaderInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxFileUploaderInterop.GetHoverStateEnabledOption(dxTarget).Result : hoverStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFileUploaderInterop.SetHoverStateEnabled(dxTarget, value);
+				DevExpress.Ui.DxFileUploaderInterop.SetHoverStateEnabledOption(dxTarget, value);
 			} else {
 				this.hoverStateEnabled = value;
 			}
@@ -386,10 +477,10 @@
 	float? tabIndex;
 	[Parameter]
 	float? TabIndex {
-		get => isInitialized ? (float?)DevExpress.Ui.DxFileUploaderInterop.GetTabIndex(dxTarget).Result : tabIndex;
+		get => isInitialized ? (float?)DevExpress.Ui.DxFileUploaderInterop.GetTabIndexOption(dxTarget).Result : tabIndex;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFileUploaderInterop.SetTabIndex(dxTarget, value);
+				DevExpress.Ui.DxFileUploaderInterop.SetTabIndexOption(dxTarget, value);
 			} else {
 				this.tabIndex = value;
 			}
@@ -398,10 +489,10 @@
 	bool? visible;
 	[Parameter]
 	bool? Visible {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxFileUploaderInterop.GetVisible(dxTarget).Result : visible;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxFileUploaderInterop.GetVisibleOption(dxTarget).Result : visible;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFileUploaderInterop.SetVisible(dxTarget, value);
+				DevExpress.Ui.DxFileUploaderInterop.SetVisibleOption(dxTarget, value);
 			} else {
 				this.visible = value;
 			}
@@ -410,10 +501,10 @@
 	object bindingOptions;
 	[Parameter]
 	object BindingOptions {
-		get => isInitialized ? DevExpress.Ui.DxFileUploaderInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
+		get => isInitialized ? DevExpress.Ui.DxFileUploaderInterop.GetBindingOptionsOption(dxTarget).Result : bindingOptions;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFileUploaderInterop.SetBindingOptions(dxTarget, value);
+				DevExpress.Ui.DxFileUploaderInterop.SetBindingOptionsOption(dxTarget, value);
 			} else {
 				this.bindingOptions = value;
 			}
@@ -422,10 +513,10 @@
 	object elementAttr;
 	[Parameter]
 	object ElementAttr {
-		get => isInitialized ? DevExpress.Ui.DxFileUploaderInterop.GetElementAttr(dxTarget).Result : elementAttr;
+		get => isInitialized ? DevExpress.Ui.DxFileUploaderInterop.GetElementAttrOption(dxTarget).Result : elementAttr;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFileUploaderInterop.SetElementAttr(dxTarget, value);
+				DevExpress.Ui.DxFileUploaderInterop.SetElementAttrOption(dxTarget, value);
 			} else {
 				this.elementAttr = value;
 			}
@@ -434,10 +525,10 @@
 	object height;
 	[Parameter]
 	object Height {
-		get => isInitialized ? DevExpress.Ui.DxFileUploaderInterop.GetHeight(dxTarget).Result : height;
+		get => isInitialized ? DevExpress.Ui.DxFileUploaderInterop.GetHeightOption(dxTarget).Result : height;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFileUploaderInterop.SetHeight(dxTarget, value);
+				DevExpress.Ui.DxFileUploaderInterop.SetHeightOption(dxTarget, value);
 			} else {
 				this.height = value;
 			}
@@ -446,10 +537,10 @@
 	bool? rtlEnabled;
 	[Parameter]
 	bool? RtlEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxFileUploaderInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxFileUploaderInterop.GetRtlEnabledOption(dxTarget).Result : rtlEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFileUploaderInterop.SetRtlEnabled(dxTarget, value);
+				DevExpress.Ui.DxFileUploaderInterop.SetRtlEnabledOption(dxTarget, value);
 			} else {
 				this.rtlEnabled = value;
 			}
@@ -458,10 +549,10 @@
 	object width;
 	[Parameter]
 	object Width {
-		get => isInitialized ? DevExpress.Ui.DxFileUploaderInterop.GetWidth(dxTarget).Result : width;
+		get => isInitialized ? DevExpress.Ui.DxFileUploaderInterop.GetWidthOption(dxTarget).Result : width;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFileUploaderInterop.SetWidth(dxTarget, value);
+				DevExpress.Ui.DxFileUploaderInterop.SetWidthOption(dxTarget, value);
 			} else {
 				this.width = value;
 			}

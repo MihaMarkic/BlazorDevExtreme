@@ -1,15 +1,15 @@
 @using Microsoft.AspNetCore.Blazor.Components
 @using Microsoft.AspNetCore.Blazor
 @implements IDisposable
-@inherits DxBlazorComponent<DevExpress.Viz.Sparklines.DxSparklineOptions>
+@inherits DxBlazorComponent<DevExpress.Viz.DxSparklineOptions>
 
 <div id="@Id" ref="dxTarget"></div>
 
 @functions {
 	ElementRef dxTarget;
 	public DxSparkline() : base("DxSparkline") { }
-	protected override DevExpress.Viz.Sparklines.DxSparklineOptions CreateOptions() {
-		return new DevExpress.Viz.Sparklines.DxSparklineOptions {
+	protected override DevExpress.Viz.DxSparklineOptions CreateOptions() {
+		return new DevExpress.Viz.DxSparklineOptions {
 			argumentField = argumentField,
 			barNegativeColor = barNegativeColor,
 			barPositiveColor = barPositiveColor,
@@ -33,6 +33,7 @@
 			winColor = winColor,
 			winlossThreshold = winlossThreshold,
 			tooltip = tooltip,
+			disabled = disabled,
 			export = export,
 			loadingIndicator = loadingIndicator,
 			margin = margin,
@@ -58,16 +59,16 @@
 			onInitializedEnabled = onInitializedEnabled,
 		};
 	}
-	protected override Task Init(DevExpress.Viz.Sparklines.DxSparklineOptions options) {
+	protected override Task Init(DevExpress.Viz.DxSparklineOptions options) {
 		return DevExpress.Viz.DxSparklineInterop.Init(dxTarget, options);
 	}
 	string argumentField;
 	[Parameter]
 	string ArgumentField {
-		get => isInitialized ? (string)DevExpress.Viz.DxSparklineInterop.GetArgumentField(dxTarget).Result : argumentField;
+		get => isInitialized ? (string)DevExpress.Viz.DxSparklineInterop.GetArgumentFieldOption(dxTarget).Result : argumentField;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxSparklineInterop.SetArgumentField(dxTarget, value);
+				DevExpress.Viz.DxSparklineInterop.SetArgumentFieldOption(dxTarget, value);
 			} else {
 				this.argumentField = value;
 			}
@@ -76,10 +77,10 @@
 	string barNegativeColor;
 	[Parameter]
 	string BarNegativeColor {
-		get => isInitialized ? (string)DevExpress.Viz.DxSparklineInterop.GetBarNegativeColor(dxTarget).Result : barNegativeColor;
+		get => isInitialized ? (string)DevExpress.Viz.DxSparklineInterop.GetBarNegativeColorOption(dxTarget).Result : barNegativeColor;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxSparklineInterop.SetBarNegativeColor(dxTarget, value);
+				DevExpress.Viz.DxSparklineInterop.SetBarNegativeColorOption(dxTarget, value);
 			} else {
 				this.barNegativeColor = value;
 			}
@@ -88,10 +89,10 @@
 	string barPositiveColor;
 	[Parameter]
 	string BarPositiveColor {
-		get => isInitialized ? (string)DevExpress.Viz.DxSparklineInterop.GetBarPositiveColor(dxTarget).Result : barPositiveColor;
+		get => isInitialized ? (string)DevExpress.Viz.DxSparklineInterop.GetBarPositiveColorOption(dxTarget).Result : barPositiveColor;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxSparklineInterop.SetBarPositiveColor(dxTarget, value);
+				DevExpress.Viz.DxSparklineInterop.SetBarPositiveColorOption(dxTarget, value);
 			} else {
 				this.barPositiveColor = value;
 			}
@@ -100,10 +101,10 @@
 	object dataSource;
 	[Parameter]
 	object DataSource {
-		get => isInitialized ? DevExpress.Viz.DxSparklineInterop.GetDataSource(dxTarget).Result : dataSource;
+		get => isInitialized ? DevExpress.Viz.DxSparklineInterop.GetDataSourceOption(dxTarget).Result : dataSource;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxSparklineInterop.SetDataSource(dxTarget, value);
+				DevExpress.Viz.DxSparklineInterop.SetDataSourceOption(dxTarget, value);
 			} else {
 				this.dataSource = value;
 			}
@@ -112,10 +113,10 @@
 	string firstLastColor;
 	[Parameter]
 	string FirstLastColor {
-		get => isInitialized ? (string)DevExpress.Viz.DxSparklineInterop.GetFirstLastColor(dxTarget).Result : firstLastColor;
+		get => isInitialized ? (string)DevExpress.Viz.DxSparklineInterop.GetFirstLastColorOption(dxTarget).Result : firstLastColor;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxSparklineInterop.SetFirstLastColor(dxTarget, value);
+				DevExpress.Viz.DxSparklineInterop.SetFirstLastColorOption(dxTarget, value);
 			} else {
 				this.firstLastColor = value;
 			}
@@ -124,10 +125,10 @@
 	bool? ignoreEmptyPoints;
 	[Parameter]
 	bool? IgnoreEmptyPoints {
-		get => isInitialized ? (bool?)DevExpress.Viz.DxSparklineInterop.GetIgnoreEmptyPoints(dxTarget).Result : ignoreEmptyPoints;
+		get => isInitialized ? (bool?)DevExpress.Viz.DxSparklineInterop.GetIgnoreEmptyPointsOption(dxTarget).Result : ignoreEmptyPoints;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxSparklineInterop.SetIgnoreEmptyPoints(dxTarget, value);
+				DevExpress.Viz.DxSparklineInterop.SetIgnoreEmptyPointsOption(dxTarget, value);
 			} else {
 				this.ignoreEmptyPoints = value;
 			}
@@ -136,10 +137,10 @@
 	string lineColor;
 	[Parameter]
 	string LineColor {
-		get => isInitialized ? (string)DevExpress.Viz.DxSparklineInterop.GetLineColor(dxTarget).Result : lineColor;
+		get => isInitialized ? (string)DevExpress.Viz.DxSparklineInterop.GetLineColorOption(dxTarget).Result : lineColor;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxSparklineInterop.SetLineColor(dxTarget, value);
+				DevExpress.Viz.DxSparklineInterop.SetLineColorOption(dxTarget, value);
 			} else {
 				this.lineColor = value;
 			}
@@ -148,10 +149,10 @@
 	float? lineWidth;
 	[Parameter]
 	float? LineWidth {
-		get => isInitialized ? (float?)DevExpress.Viz.DxSparklineInterop.GetLineWidth(dxTarget).Result : lineWidth;
+		get => isInitialized ? (float?)DevExpress.Viz.DxSparklineInterop.GetLineWidthOption(dxTarget).Result : lineWidth;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxSparklineInterop.SetLineWidth(dxTarget, value);
+				DevExpress.Viz.DxSparklineInterop.SetLineWidthOption(dxTarget, value);
 			} else {
 				this.lineWidth = value;
 			}
@@ -160,10 +161,10 @@
 	string lossColor;
 	[Parameter]
 	string LossColor {
-		get => isInitialized ? (string)DevExpress.Viz.DxSparklineInterop.GetLossColor(dxTarget).Result : lossColor;
+		get => isInitialized ? (string)DevExpress.Viz.DxSparklineInterop.GetLossColorOption(dxTarget).Result : lossColor;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxSparklineInterop.SetLossColor(dxTarget, value);
+				DevExpress.Viz.DxSparklineInterop.SetLossColorOption(dxTarget, value);
 			} else {
 				this.lossColor = value;
 			}
@@ -172,10 +173,10 @@
 	string maxColor;
 	[Parameter]
 	string MaxColor {
-		get => isInitialized ? (string)DevExpress.Viz.DxSparklineInterop.GetMaxColor(dxTarget).Result : maxColor;
+		get => isInitialized ? (string)DevExpress.Viz.DxSparklineInterop.GetMaxColorOption(dxTarget).Result : maxColor;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxSparklineInterop.SetMaxColor(dxTarget, value);
+				DevExpress.Viz.DxSparklineInterop.SetMaxColorOption(dxTarget, value);
 			} else {
 				this.maxColor = value;
 			}
@@ -184,10 +185,10 @@
 	float? maxValue;
 	[Parameter]
 	float? MaxValue {
-		get => isInitialized ? (float?)DevExpress.Viz.DxSparklineInterop.GetMaxValue(dxTarget).Result : maxValue;
+		get => isInitialized ? (float?)DevExpress.Viz.DxSparklineInterop.GetMaxValueOption(dxTarget).Result : maxValue;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxSparklineInterop.SetMaxValue(dxTarget, value);
+				DevExpress.Viz.DxSparklineInterop.SetMaxValueOption(dxTarget, value);
 			} else {
 				this.maxValue = value;
 			}
@@ -196,10 +197,10 @@
 	string minColor;
 	[Parameter]
 	string MinColor {
-		get => isInitialized ? (string)DevExpress.Viz.DxSparklineInterop.GetMinColor(dxTarget).Result : minColor;
+		get => isInitialized ? (string)DevExpress.Viz.DxSparklineInterop.GetMinColorOption(dxTarget).Result : minColor;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxSparklineInterop.SetMinColor(dxTarget, value);
+				DevExpress.Viz.DxSparklineInterop.SetMinColorOption(dxTarget, value);
 			} else {
 				this.minColor = value;
 			}
@@ -208,10 +209,10 @@
 	float? minValue;
 	[Parameter]
 	float? MinValue {
-		get => isInitialized ? (float?)DevExpress.Viz.DxSparklineInterop.GetMinValue(dxTarget).Result : minValue;
+		get => isInitialized ? (float?)DevExpress.Viz.DxSparklineInterop.GetMinValueOption(dxTarget).Result : minValue;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxSparklineInterop.SetMinValue(dxTarget, value);
+				DevExpress.Viz.DxSparklineInterop.SetMinValueOption(dxTarget, value);
 			} else {
 				this.minValue = value;
 			}
@@ -220,10 +221,10 @@
 	string pointColor;
 	[Parameter]
 	string PointColor {
-		get => isInitialized ? (string)DevExpress.Viz.DxSparklineInterop.GetPointColor(dxTarget).Result : pointColor;
+		get => isInitialized ? (string)DevExpress.Viz.DxSparklineInterop.GetPointColorOption(dxTarget).Result : pointColor;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxSparklineInterop.SetPointColor(dxTarget, value);
+				DevExpress.Viz.DxSparklineInterop.SetPointColorOption(dxTarget, value);
 			} else {
 				this.pointColor = value;
 			}
@@ -232,10 +233,10 @@
 	float? pointSize;
 	[Parameter]
 	float? PointSize {
-		get => isInitialized ? (float?)DevExpress.Viz.DxSparklineInterop.GetPointSize(dxTarget).Result : pointSize;
+		get => isInitialized ? (float?)DevExpress.Viz.DxSparklineInterop.GetPointSizeOption(dxTarget).Result : pointSize;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxSparklineInterop.SetPointSize(dxTarget, value);
+				DevExpress.Viz.DxSparklineInterop.SetPointSizeOption(dxTarget, value);
 			} else {
 				this.pointSize = value;
 			}
@@ -244,10 +245,10 @@
 	string pointSymbol;
 	[Parameter]
 	string PointSymbol {
-		get => isInitialized ? (string)DevExpress.Viz.DxSparklineInterop.GetPointSymbol(dxTarget).Result : pointSymbol;
+		get => isInitialized ? (string)DevExpress.Viz.DxSparklineInterop.GetPointSymbolOption(dxTarget).Result : pointSymbol;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxSparklineInterop.SetPointSymbol(dxTarget, value);
+				DevExpress.Viz.DxSparklineInterop.SetPointSymbolOption(dxTarget, value);
 			} else {
 				this.pointSymbol = value;
 			}
@@ -256,10 +257,10 @@
 	bool? showFirstLast;
 	[Parameter]
 	bool? ShowFirstLast {
-		get => isInitialized ? (bool?)DevExpress.Viz.DxSparklineInterop.GetShowFirstLast(dxTarget).Result : showFirstLast;
+		get => isInitialized ? (bool?)DevExpress.Viz.DxSparklineInterop.GetShowFirstLastOption(dxTarget).Result : showFirstLast;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxSparklineInterop.SetShowFirstLast(dxTarget, value);
+				DevExpress.Viz.DxSparklineInterop.SetShowFirstLastOption(dxTarget, value);
 			} else {
 				this.showFirstLast = value;
 			}
@@ -268,10 +269,10 @@
 	bool? showMinMax;
 	[Parameter]
 	bool? ShowMinMax {
-		get => isInitialized ? (bool?)DevExpress.Viz.DxSparklineInterop.GetShowMinMax(dxTarget).Result : showMinMax;
+		get => isInitialized ? (bool?)DevExpress.Viz.DxSparklineInterop.GetShowMinMaxOption(dxTarget).Result : showMinMax;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxSparklineInterop.SetShowMinMax(dxTarget, value);
+				DevExpress.Viz.DxSparklineInterop.SetShowMinMaxOption(dxTarget, value);
 			} else {
 				this.showMinMax = value;
 			}
@@ -280,10 +281,10 @@
 	string type;
 	[Parameter]
 	string Type {
-		get => isInitialized ? (string)DevExpress.Viz.DxSparklineInterop.GetType(dxTarget).Result : type;
+		get => isInitialized ? (string)DevExpress.Viz.DxSparklineInterop.GetTypeOption(dxTarget).Result : type;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxSparklineInterop.SetType(dxTarget, value);
+				DevExpress.Viz.DxSparklineInterop.SetTypeOption(dxTarget, value);
 			} else {
 				this.type = value;
 			}
@@ -292,10 +293,10 @@
 	string valueField;
 	[Parameter]
 	string ValueField {
-		get => isInitialized ? (string)DevExpress.Viz.DxSparklineInterop.GetValueField(dxTarget).Result : valueField;
+		get => isInitialized ? (string)DevExpress.Viz.DxSparklineInterop.GetValueFieldOption(dxTarget).Result : valueField;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxSparklineInterop.SetValueField(dxTarget, value);
+				DevExpress.Viz.DxSparklineInterop.SetValueFieldOption(dxTarget, value);
 			} else {
 				this.valueField = value;
 			}
@@ -304,10 +305,10 @@
 	string winColor;
 	[Parameter]
 	string WinColor {
-		get => isInitialized ? (string)DevExpress.Viz.DxSparklineInterop.GetWinColor(dxTarget).Result : winColor;
+		get => isInitialized ? (string)DevExpress.Viz.DxSparklineInterop.GetWinColorOption(dxTarget).Result : winColor;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxSparklineInterop.SetWinColor(dxTarget, value);
+				DevExpress.Viz.DxSparklineInterop.SetWinColorOption(dxTarget, value);
 			} else {
 				this.winColor = value;
 			}
@@ -316,10 +317,10 @@
 	float? winlossThreshold;
 	[Parameter]
 	float? WinlossThreshold {
-		get => isInitialized ? (float?)DevExpress.Viz.DxSparklineInterop.GetWinlossThreshold(dxTarget).Result : winlossThreshold;
+		get => isInitialized ? (float?)DevExpress.Viz.DxSparklineInterop.GetWinlossThresholdOption(dxTarget).Result : winlossThreshold;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxSparklineInterop.SetWinlossThreshold(dxTarget, value);
+				DevExpress.Viz.DxSparklineInterop.SetWinlossThresholdOption(dxTarget, value);
 			} else {
 				this.winlossThreshold = value;
 			}
@@ -328,22 +329,34 @@
 	object tooltip;
 	[Parameter]
 	object Tooltip {
-		get => isInitialized ? DevExpress.Viz.DxSparklineInterop.GetTooltip(dxTarget).Result : tooltip;
+		get => isInitialized ? DevExpress.Viz.DxSparklineInterop.GetTooltipOption(dxTarget).Result : tooltip;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxSparklineInterop.SetTooltip(dxTarget, value);
+				DevExpress.Viz.DxSparklineInterop.SetTooltipOption(dxTarget, value);
 			} else {
 				this.tooltip = value;
+			}
+		}
+	}
+	bool? disabled;
+	[Parameter]
+	bool? Disabled {
+		get => isInitialized ? (bool?)DevExpress.Viz.DxSparklineInterop.GetDisabledOption(dxTarget).Result : disabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxSparklineInterop.SetDisabledOption(dxTarget, value);
+			} else {
+				this.disabled = value;
 			}
 		}
 	}
 	object export;
 	[Parameter]
 	object Export {
-		get => isInitialized ? DevExpress.Viz.DxSparklineInterop.GetExport(dxTarget).Result : export;
+		get => isInitialized ? DevExpress.Viz.DxSparklineInterop.GetExportOption(dxTarget).Result : export;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxSparklineInterop.SetExport(dxTarget, value);
+				DevExpress.Viz.DxSparklineInterop.SetExportOption(dxTarget, value);
 			} else {
 				this.export = value;
 			}
@@ -352,10 +365,10 @@
 	object loadingIndicator;
 	[Parameter]
 	object LoadingIndicator {
-		get => isInitialized ? DevExpress.Viz.DxSparklineInterop.GetLoadingIndicator(dxTarget).Result : loadingIndicator;
+		get => isInitialized ? DevExpress.Viz.DxSparklineInterop.GetLoadingIndicatorOption(dxTarget).Result : loadingIndicator;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxSparklineInterop.SetLoadingIndicator(dxTarget, value);
+				DevExpress.Viz.DxSparklineInterop.SetLoadingIndicatorOption(dxTarget, value);
 			} else {
 				this.loadingIndicator = value;
 			}
@@ -364,10 +377,10 @@
 	object margin;
 	[Parameter]
 	object Margin {
-		get => isInitialized ? DevExpress.Viz.DxSparklineInterop.GetMargin(dxTarget).Result : margin;
+		get => isInitialized ? DevExpress.Viz.DxSparklineInterop.GetMarginOption(dxTarget).Result : margin;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxSparklineInterop.SetMargin(dxTarget, value);
+				DevExpress.Viz.DxSparklineInterop.SetMarginOption(dxTarget, value);
 			} else {
 				this.margin = value;
 			}
@@ -376,10 +389,10 @@
 	bool? pathModified;
 	[Parameter]
 	bool? PathModified {
-		get => isInitialized ? (bool?)DevExpress.Viz.DxSparklineInterop.GetPathModified(dxTarget).Result : pathModified;
+		get => isInitialized ? (bool?)DevExpress.Viz.DxSparklineInterop.GetPathModifiedOption(dxTarget).Result : pathModified;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxSparklineInterop.SetPathModified(dxTarget, value);
+				DevExpress.Viz.DxSparklineInterop.SetPathModifiedOption(dxTarget, value);
 			} else {
 				this.pathModified = value;
 			}
@@ -388,10 +401,10 @@
 	bool? redrawOnResize;
 	[Parameter]
 	bool? RedrawOnResize {
-		get => isInitialized ? (bool?)DevExpress.Viz.DxSparklineInterop.GetRedrawOnResize(dxTarget).Result : redrawOnResize;
+		get => isInitialized ? (bool?)DevExpress.Viz.DxSparklineInterop.GetRedrawOnResizeOption(dxTarget).Result : redrawOnResize;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxSparklineInterop.SetRedrawOnResize(dxTarget, value);
+				DevExpress.Viz.DxSparklineInterop.SetRedrawOnResizeOption(dxTarget, value);
 			} else {
 				this.redrawOnResize = value;
 			}
@@ -400,10 +413,10 @@
 	bool? rtlEnabled;
 	[Parameter]
 	bool? RtlEnabled {
-		get => isInitialized ? (bool?)DevExpress.Viz.DxSparklineInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
+		get => isInitialized ? (bool?)DevExpress.Viz.DxSparklineInterop.GetRtlEnabledOption(dxTarget).Result : rtlEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxSparklineInterop.SetRtlEnabled(dxTarget, value);
+				DevExpress.Viz.DxSparklineInterop.SetRtlEnabledOption(dxTarget, value);
 			} else {
 				this.rtlEnabled = value;
 			}
@@ -412,10 +425,10 @@
 	object size;
 	[Parameter]
 	object Size {
-		get => isInitialized ? DevExpress.Viz.DxSparklineInterop.GetSize(dxTarget).Result : size;
+		get => isInitialized ? DevExpress.Viz.DxSparklineInterop.GetSizeOption(dxTarget).Result : size;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxSparklineInterop.SetSize(dxTarget, value);
+				DevExpress.Viz.DxSparklineInterop.SetSizeOption(dxTarget, value);
 			} else {
 				this.size = value;
 			}
@@ -424,10 +437,10 @@
 	string theme;
 	[Parameter]
 	string Theme {
-		get => isInitialized ? (string)DevExpress.Viz.DxSparklineInterop.GetTheme(dxTarget).Result : theme;
+		get => isInitialized ? (string)DevExpress.Viz.DxSparklineInterop.GetThemeOption(dxTarget).Result : theme;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxSparklineInterop.SetTheme(dxTarget, value);
+				DevExpress.Viz.DxSparklineInterop.SetThemeOption(dxTarget, value);
 			} else {
 				this.theme = value;
 			}
@@ -436,10 +449,10 @@
 	object title;
 	[Parameter]
 	object Title {
-		get => isInitialized ? DevExpress.Viz.DxSparklineInterop.GetTitle(dxTarget).Result : title;
+		get => isInitialized ? DevExpress.Viz.DxSparklineInterop.GetTitleOption(dxTarget).Result : title;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxSparklineInterop.SetTitle(dxTarget, value);
+				DevExpress.Viz.DxSparklineInterop.SetTitleOption(dxTarget, value);
 			} else {
 				this.title = value;
 			}
@@ -448,10 +461,10 @@
 	object bindingOptions;
 	[Parameter]
 	object BindingOptions {
-		get => isInitialized ? DevExpress.Viz.DxSparklineInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
+		get => isInitialized ? DevExpress.Viz.DxSparklineInterop.GetBindingOptionsOption(dxTarget).Result : bindingOptions;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxSparklineInterop.SetBindingOptions(dxTarget, value);
+				DevExpress.Viz.DxSparklineInterop.SetBindingOptionsOption(dxTarget, value);
 			} else {
 				this.bindingOptions = value;
 			}
@@ -460,10 +473,10 @@
 	object elementAttr;
 	[Parameter]
 	object ElementAttr {
-		get => isInitialized ? DevExpress.Viz.DxSparklineInterop.GetElementAttr(dxTarget).Result : elementAttr;
+		get => isInitialized ? DevExpress.Viz.DxSparklineInterop.GetElementAttrOption(dxTarget).Result : elementAttr;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxSparklineInterop.SetElementAttr(dxTarget, value);
+				DevExpress.Viz.DxSparklineInterop.SetElementAttrOption(dxTarget, value);
 			} else {
 				this.elementAttr = value;
 			}
@@ -472,10 +485,10 @@
 	object height;
 	[Parameter]
 	object Height {
-		get => isInitialized ? DevExpress.Viz.DxSparklineInterop.GetHeight(dxTarget).Result : height;
+		get => isInitialized ? DevExpress.Viz.DxSparklineInterop.GetHeightOption(dxTarget).Result : height;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxSparklineInterop.SetHeight(dxTarget, value);
+				DevExpress.Viz.DxSparklineInterop.SetHeightOption(dxTarget, value);
 			} else {
 				this.height = value;
 			}
@@ -484,10 +497,10 @@
 	object width;
 	[Parameter]
 	object Width {
-		get => isInitialized ? DevExpress.Viz.DxSparklineInterop.GetWidth(dxTarget).Result : width;
+		get => isInitialized ? DevExpress.Viz.DxSparklineInterop.GetWidthOption(dxTarget).Result : width;
 		set {
 			if (isInitialized) {
-				DevExpress.Viz.DxSparklineInterop.SetWidth(dxTarget, value);
+				DevExpress.Viz.DxSparklineInterop.SetWidthOption(dxTarget, value);
 			} else {
 				this.width = value;
 			}

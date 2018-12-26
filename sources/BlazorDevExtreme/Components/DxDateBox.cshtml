@@ -28,6 +28,7 @@
 			placeholder = placeholder,
 			showAnalogClock = showAnalogClock,
 			type = type,
+			useMaskBehavior = useMaskBehavior,
 			value = value,
 			acceptCustomValue = acceptCustomValue,
 			activeStateEnabled = activeStateEnabled,
@@ -35,6 +36,8 @@
 			deferRendering = deferRendering,
 			dropDownButtonTemplate = dropDownButtonTemplate,
 			opened = isOpened,
+			openOnFieldClick = openOnFieldClick,
+			showDropDownButton = showDropDownButton,
 			maxLength = maxLength,
 			mode = mode,
 			focusStateEnabled = focusStateEnabled,
@@ -48,6 +51,7 @@
 			showClearButton = showClearButton,
 			showMaskMode = showMaskMode,
 			spellcheck = spellcheck,
+			stylingMode = stylingMode,
 			text = text,
 			useMaskedValue = useMaskedValue,
 			valueChangeEvent = valueChangeEvent,
@@ -91,10 +95,10 @@
 	bool? adaptivityEnabled;
 	[Parameter]
 	bool? AdaptivityEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxDateBoxInterop.GetAdaptivityEnabled(dxTarget).Result : adaptivityEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDateBoxInterop.GetAdaptivityEnabledOption(dxTarget).Result : adaptivityEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDateBoxInterop.SetAdaptivityEnabled(dxTarget, value);
+				DevExpress.Ui.DxDateBoxInterop.SetAdaptivityEnabledOption(dxTarget, value);
 			} else {
 				this.adaptivityEnabled = value;
 			}
@@ -103,10 +107,10 @@
 	string applyButtonText;
 	[Parameter]
 	string ApplyButtonText {
-		get => isInitialized ? (string)DevExpress.Ui.DxDateBoxInterop.GetApplyButtonText(dxTarget).Result : applyButtonText;
+		get => isInitialized ? (string)DevExpress.Ui.DxDateBoxInterop.GetApplyButtonTextOption(dxTarget).Result : applyButtonText;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDateBoxInterop.SetApplyButtonText(dxTarget, value);
+				DevExpress.Ui.DxDateBoxInterop.SetApplyButtonTextOption(dxTarget, value);
 			} else {
 				this.applyButtonText = value;
 			}
@@ -115,10 +119,10 @@
 	object calendarOptions;
 	[Parameter]
 	object CalendarOptions {
-		get => isInitialized ? DevExpress.Ui.DxDateBoxInterop.GetCalendarOptions(dxTarget).Result : calendarOptions;
+		get => isInitialized ? DevExpress.Ui.DxDateBoxInterop.GetCalendarOptionsOption(dxTarget).Result : calendarOptions;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDateBoxInterop.SetCalendarOptions(dxTarget, value);
+				DevExpress.Ui.DxDateBoxInterop.SetCalendarOptionsOption(dxTarget, value);
 			} else {
 				this.calendarOptions = value;
 			}
@@ -127,10 +131,10 @@
 	string cancelButtonText;
 	[Parameter]
 	string CancelButtonText {
-		get => isInitialized ? (string)DevExpress.Ui.DxDateBoxInterop.GetCancelButtonText(dxTarget).Result : cancelButtonText;
+		get => isInitialized ? (string)DevExpress.Ui.DxDateBoxInterop.GetCancelButtonTextOption(dxTarget).Result : cancelButtonText;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDateBoxInterop.SetCancelButtonText(dxTarget, value);
+				DevExpress.Ui.DxDateBoxInterop.SetCancelButtonTextOption(dxTarget, value);
 			} else {
 				this.cancelButtonText = value;
 			}
@@ -139,10 +143,10 @@
 	string dateOutOfRangeMessage;
 	[Parameter]
 	string DateOutOfRangeMessage {
-		get => isInitialized ? (string)DevExpress.Ui.DxDateBoxInterop.GetDateOutOfRangeMessage(dxTarget).Result : dateOutOfRangeMessage;
+		get => isInitialized ? (string)DevExpress.Ui.DxDateBoxInterop.GetDateOutOfRangeMessageOption(dxTarget).Result : dateOutOfRangeMessage;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDateBoxInterop.SetDateOutOfRangeMessage(dxTarget, value);
+				DevExpress.Ui.DxDateBoxInterop.SetDateOutOfRangeMessageOption(dxTarget, value);
 			} else {
 				this.dateOutOfRangeMessage = value;
 			}
@@ -151,10 +155,10 @@
 	string dateSerializationFormat;
 	[Parameter]
 	string DateSerializationFormat {
-		get => isInitialized ? (string)DevExpress.Ui.DxDateBoxInterop.GetDateSerializationFormat(dxTarget).Result : dateSerializationFormat;
+		get => isInitialized ? (string)DevExpress.Ui.DxDateBoxInterop.GetDateSerializationFormatOption(dxTarget).Result : dateSerializationFormat;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDateBoxInterop.SetDateSerializationFormat(dxTarget, value);
+				DevExpress.Ui.DxDateBoxInterop.SetDateSerializationFormatOption(dxTarget, value);
 			} else {
 				this.dateSerializationFormat = value;
 			}
@@ -163,10 +167,10 @@
 	object disabledDates;
 	[Parameter]
 	object DisabledDates {
-		get => isInitialized ? DevExpress.Ui.DxDateBoxInterop.GetDisabledDates(dxTarget).Result : disabledDates;
+		get => isInitialized ? DevExpress.Ui.DxDateBoxInterop.GetDisabledDatesOption(dxTarget).Result : disabledDates;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDateBoxInterop.SetDisabledDates(dxTarget, value);
+				DevExpress.Ui.DxDateBoxInterop.SetDisabledDatesOption(dxTarget, value);
 			} else {
 				this.disabledDates = value;
 			}
@@ -175,10 +179,10 @@
 	object displayFormat;
 	[Parameter]
 	object DisplayFormat {
-		get => isInitialized ? DevExpress.Ui.DxDateBoxInterop.GetDisplayFormat(dxTarget).Result : displayFormat;
+		get => isInitialized ? DevExpress.Ui.DxDateBoxInterop.GetDisplayFormatOption(dxTarget).Result : displayFormat;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDateBoxInterop.SetDisplayFormat(dxTarget, value);
+				DevExpress.Ui.DxDateBoxInterop.SetDisplayFormatOption(dxTarget, value);
 			} else {
 				this.displayFormat = value;
 			}
@@ -187,10 +191,10 @@
 	float? interval;
 	[Parameter]
 	float? Interval {
-		get => isInitialized ? (float?)DevExpress.Ui.DxDateBoxInterop.GetInterval(dxTarget).Result : interval;
+		get => isInitialized ? (float?)DevExpress.Ui.DxDateBoxInterop.GetIntervalOption(dxTarget).Result : interval;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDateBoxInterop.SetInterval(dxTarget, value);
+				DevExpress.Ui.DxDateBoxInterop.SetIntervalOption(dxTarget, value);
 			} else {
 				this.interval = value;
 			}
@@ -199,10 +203,10 @@
 	string invalidDateMessage;
 	[Parameter]
 	string InvalidDateMessage {
-		get => isInitialized ? (string)DevExpress.Ui.DxDateBoxInterop.GetInvalidDateMessage(dxTarget).Result : invalidDateMessage;
+		get => isInitialized ? (string)DevExpress.Ui.DxDateBoxInterop.GetInvalidDateMessageOption(dxTarget).Result : invalidDateMessage;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDateBoxInterop.SetInvalidDateMessage(dxTarget, value);
+				DevExpress.Ui.DxDateBoxInterop.SetInvalidDateMessageOption(dxTarget, value);
 			} else {
 				this.invalidDateMessage = value;
 			}
@@ -211,10 +215,10 @@
 	object max;
 	[Parameter]
 	object Max {
-		get => isInitialized ? DevExpress.Ui.DxDateBoxInterop.GetMax(dxTarget).Result : max;
+		get => isInitialized ? DevExpress.Ui.DxDateBoxInterop.GetMaxOption(dxTarget).Result : max;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDateBoxInterop.SetMax(dxTarget, value);
+				DevExpress.Ui.DxDateBoxInterop.SetMaxOption(dxTarget, value);
 			} else {
 				this.max = value;
 			}
@@ -223,10 +227,10 @@
 	string maxZoomLevel;
 	[Parameter]
 	string MaxZoomLevel {
-		get => isInitialized ? (string)DevExpress.Ui.DxDateBoxInterop.GetMaxZoomLevel(dxTarget).Result : maxZoomLevel;
+		get => isInitialized ? (string)DevExpress.Ui.DxDateBoxInterop.GetMaxZoomLevelOption(dxTarget).Result : maxZoomLevel;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDateBoxInterop.SetMaxZoomLevel(dxTarget, value);
+				DevExpress.Ui.DxDateBoxInterop.SetMaxZoomLevelOption(dxTarget, value);
 			} else {
 				this.maxZoomLevel = value;
 			}
@@ -235,10 +239,10 @@
 	object min;
 	[Parameter]
 	object Min {
-		get => isInitialized ? DevExpress.Ui.DxDateBoxInterop.GetMin(dxTarget).Result : min;
+		get => isInitialized ? DevExpress.Ui.DxDateBoxInterop.GetMinOption(dxTarget).Result : min;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDateBoxInterop.SetMin(dxTarget, value);
+				DevExpress.Ui.DxDateBoxInterop.SetMinOption(dxTarget, value);
 			} else {
 				this.min = value;
 			}
@@ -247,10 +251,10 @@
 	string minZoomLevel;
 	[Parameter]
 	string MinZoomLevel {
-		get => isInitialized ? (string)DevExpress.Ui.DxDateBoxInterop.GetMinZoomLevel(dxTarget).Result : minZoomLevel;
+		get => isInitialized ? (string)DevExpress.Ui.DxDateBoxInterop.GetMinZoomLevelOption(dxTarget).Result : minZoomLevel;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDateBoxInterop.SetMinZoomLevel(dxTarget, value);
+				DevExpress.Ui.DxDateBoxInterop.SetMinZoomLevelOption(dxTarget, value);
 			} else {
 				this.minZoomLevel = value;
 			}
@@ -259,10 +263,10 @@
 	string pickerType;
 	[Parameter]
 	string PickerType {
-		get => isInitialized ? (string)DevExpress.Ui.DxDateBoxInterop.GetPickerType(dxTarget).Result : pickerType;
+		get => isInitialized ? (string)DevExpress.Ui.DxDateBoxInterop.GetPickerTypeOption(dxTarget).Result : pickerType;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDateBoxInterop.SetPickerType(dxTarget, value);
+				DevExpress.Ui.DxDateBoxInterop.SetPickerTypeOption(dxTarget, value);
 			} else {
 				this.pickerType = value;
 			}
@@ -271,10 +275,10 @@
 	string placeholder;
 	[Parameter]
 	string Placeholder {
-		get => isInitialized ? (string)DevExpress.Ui.DxDateBoxInterop.GetPlaceholder(dxTarget).Result : placeholder;
+		get => isInitialized ? (string)DevExpress.Ui.DxDateBoxInterop.GetPlaceholderOption(dxTarget).Result : placeholder;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDateBoxInterop.SetPlaceholder(dxTarget, value);
+				DevExpress.Ui.DxDateBoxInterop.SetPlaceholderOption(dxTarget, value);
 			} else {
 				this.placeholder = value;
 			}
@@ -283,10 +287,10 @@
 	bool? showAnalogClock;
 	[Parameter]
 	bool? ShowAnalogClock {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxDateBoxInterop.GetShowAnalogClock(dxTarget).Result : showAnalogClock;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDateBoxInterop.GetShowAnalogClockOption(dxTarget).Result : showAnalogClock;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDateBoxInterop.SetShowAnalogClock(dxTarget, value);
+				DevExpress.Ui.DxDateBoxInterop.SetShowAnalogClockOption(dxTarget, value);
 			} else {
 				this.showAnalogClock = value;
 			}
@@ -295,22 +299,34 @@
 	string type;
 	[Parameter]
 	string Type {
-		get => isInitialized ? (string)DevExpress.Ui.DxDateBoxInterop.GetType(dxTarget).Result : type;
+		get => isInitialized ? (string)DevExpress.Ui.DxDateBoxInterop.GetTypeOption(dxTarget).Result : type;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDateBoxInterop.SetType(dxTarget, value);
+				DevExpress.Ui.DxDateBoxInterop.SetTypeOption(dxTarget, value);
 			} else {
 				this.type = value;
+			}
+		}
+	}
+	bool? useMaskBehavior;
+	[Parameter]
+	bool? UseMaskBehavior {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDateBoxInterop.GetUseMaskBehaviorOption(dxTarget).Result : useMaskBehavior;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDateBoxInterop.SetUseMaskBehaviorOption(dxTarget, value);
+			} else {
+				this.useMaskBehavior = value;
 			}
 		}
 	}
 	object value;
 	[Parameter]
 	object Value {
-		get => isInitialized ? DevExpress.Ui.DxDateBoxInterop.GetValue(dxTarget).Result : value;
+		get => isInitialized ? DevExpress.Ui.DxDateBoxInterop.GetValueOption(dxTarget).Result : value;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDateBoxInterop.SetValue(dxTarget, value);
+				DevExpress.Ui.DxDateBoxInterop.SetValueOption(dxTarget, value);
 			} else {
 				this.value = value;
 			}
@@ -319,10 +335,10 @@
 	bool? acceptCustomValue;
 	[Parameter]
 	bool? AcceptCustomValue {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxDateBoxInterop.GetAcceptCustomValue(dxTarget).Result : acceptCustomValue;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDateBoxInterop.GetAcceptCustomValueOption(dxTarget).Result : acceptCustomValue;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDateBoxInterop.SetAcceptCustomValue(dxTarget, value);
+				DevExpress.Ui.DxDateBoxInterop.SetAcceptCustomValueOption(dxTarget, value);
 			} else {
 				this.acceptCustomValue = value;
 			}
@@ -331,10 +347,10 @@
 	bool? activeStateEnabled;
 	[Parameter]
 	bool? ActiveStateEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxDateBoxInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDateBoxInterop.GetActiveStateEnabledOption(dxTarget).Result : activeStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDateBoxInterop.SetActiveStateEnabled(dxTarget, value);
+				DevExpress.Ui.DxDateBoxInterop.SetActiveStateEnabledOption(dxTarget, value);
 			} else {
 				this.activeStateEnabled = value;
 			}
@@ -343,10 +359,10 @@
 	string applyValueMode;
 	[Parameter]
 	string ApplyValueMode {
-		get => isInitialized ? (string)DevExpress.Ui.DxDateBoxInterop.GetApplyValueMode(dxTarget).Result : applyValueMode;
+		get => isInitialized ? (string)DevExpress.Ui.DxDateBoxInterop.GetApplyValueModeOption(dxTarget).Result : applyValueMode;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDateBoxInterop.SetApplyValueMode(dxTarget, value);
+				DevExpress.Ui.DxDateBoxInterop.SetApplyValueModeOption(dxTarget, value);
 			} else {
 				this.applyValueMode = value;
 			}
@@ -355,10 +371,10 @@
 	bool? deferRendering;
 	[Parameter]
 	bool? DeferRendering {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxDateBoxInterop.GetDeferRendering(dxTarget).Result : deferRendering;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDateBoxInterop.GetDeferRenderingOption(dxTarget).Result : deferRendering;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDateBoxInterop.SetDeferRendering(dxTarget, value);
+				DevExpress.Ui.DxDateBoxInterop.SetDeferRenderingOption(dxTarget, value);
 			} else {
 				this.deferRendering = value;
 			}
@@ -367,10 +383,10 @@
 	object dropDownButtonTemplate;
 	[Parameter]
 	object DropDownButtonTemplate {
-		get => isInitialized ? DevExpress.Ui.DxDateBoxInterop.GetDropDownButtonTemplate(dxTarget).Result : dropDownButtonTemplate;
+		get => isInitialized ? DevExpress.Ui.DxDateBoxInterop.GetDropDownButtonTemplateOption(dxTarget).Result : dropDownButtonTemplate;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDateBoxInterop.SetDropDownButtonTemplate(dxTarget, value);
+				DevExpress.Ui.DxDateBoxInterop.SetDropDownButtonTemplateOption(dxTarget, value);
 			} else {
 				this.dropDownButtonTemplate = value;
 			}
@@ -379,22 +395,46 @@
 	bool? isOpened;
 	[Parameter]
 	bool? IsOpened {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxDateBoxInterop.GetOpened(dxTarget).Result : isOpened;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDateBoxInterop.GetOpenedOption(dxTarget).Result : isOpened;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDateBoxInterop.SetOpened(dxTarget, value);
+				DevExpress.Ui.DxDateBoxInterop.SetOpenedOption(dxTarget, value);
 			} else {
 				this.isOpened = value;
+			}
+		}
+	}
+	bool? openOnFieldClick;
+	[Parameter]
+	bool? OpenOnFieldClick {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDateBoxInterop.GetOpenOnFieldClickOption(dxTarget).Result : openOnFieldClick;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDateBoxInterop.SetOpenOnFieldClickOption(dxTarget, value);
+			} else {
+				this.openOnFieldClick = value;
+			}
+		}
+	}
+	bool? showDropDownButton;
+	[Parameter]
+	bool? ShowDropDownButton {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDateBoxInterop.GetShowDropDownButtonOption(dxTarget).Result : showDropDownButton;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDateBoxInterop.SetShowDropDownButtonOption(dxTarget, value);
+			} else {
+				this.showDropDownButton = value;
 			}
 		}
 	}
 	object maxLength;
 	[Parameter]
 	object MaxLength {
-		get => isInitialized ? DevExpress.Ui.DxDateBoxInterop.GetMaxLength(dxTarget).Result : maxLength;
+		get => isInitialized ? DevExpress.Ui.DxDateBoxInterop.GetMaxLengthOption(dxTarget).Result : maxLength;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDateBoxInterop.SetMaxLength(dxTarget, value);
+				DevExpress.Ui.DxDateBoxInterop.SetMaxLengthOption(dxTarget, value);
 			} else {
 				this.maxLength = value;
 			}
@@ -403,10 +443,10 @@
 	string mode;
 	[Parameter]
 	string Mode {
-		get => isInitialized ? (string)DevExpress.Ui.DxDateBoxInterop.GetMode(dxTarget).Result : mode;
+		get => isInitialized ? (string)DevExpress.Ui.DxDateBoxInterop.GetModeOption(dxTarget).Result : mode;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDateBoxInterop.SetMode(dxTarget, value);
+				DevExpress.Ui.DxDateBoxInterop.SetModeOption(dxTarget, value);
 			} else {
 				this.mode = value;
 			}
@@ -415,10 +455,10 @@
 	bool? focusStateEnabled;
 	[Parameter]
 	bool? FocusStateEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxDateBoxInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDateBoxInterop.GetFocusStateEnabledOption(dxTarget).Result : focusStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDateBoxInterop.SetFocusStateEnabled(dxTarget, value);
+				DevExpress.Ui.DxDateBoxInterop.SetFocusStateEnabledOption(dxTarget, value);
 			} else {
 				this.focusStateEnabled = value;
 			}
@@ -427,10 +467,10 @@
 	bool? hoverStateEnabled;
 	[Parameter]
 	bool? HoverStateEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxDateBoxInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDateBoxInterop.GetHoverStateEnabledOption(dxTarget).Result : hoverStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDateBoxInterop.SetHoverStateEnabled(dxTarget, value);
+				DevExpress.Ui.DxDateBoxInterop.SetHoverStateEnabledOption(dxTarget, value);
 			} else {
 				this.hoverStateEnabled = value;
 			}
@@ -439,10 +479,10 @@
 	object inputAttr;
 	[Parameter]
 	object InputAttr {
-		get => isInitialized ? DevExpress.Ui.DxDateBoxInterop.GetInputAttr(dxTarget).Result : inputAttr;
+		get => isInitialized ? DevExpress.Ui.DxDateBoxInterop.GetInputAttrOption(dxTarget).Result : inputAttr;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDateBoxInterop.SetInputAttr(dxTarget, value);
+				DevExpress.Ui.DxDateBoxInterop.SetInputAttrOption(dxTarget, value);
 			} else {
 				this.inputAttr = value;
 			}
@@ -451,10 +491,10 @@
 	string mask;
 	[Parameter]
 	string Mask {
-		get => isInitialized ? (string)DevExpress.Ui.DxDateBoxInterop.GetMask(dxTarget).Result : mask;
+		get => isInitialized ? (string)DevExpress.Ui.DxDateBoxInterop.GetMaskOption(dxTarget).Result : mask;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDateBoxInterop.SetMask(dxTarget, value);
+				DevExpress.Ui.DxDateBoxInterop.SetMaskOption(dxTarget, value);
 			} else {
 				this.mask = value;
 			}
@@ -463,10 +503,10 @@
 	string maskChar;
 	[Parameter]
 	string MaskChar {
-		get => isInitialized ? (string)DevExpress.Ui.DxDateBoxInterop.GetMaskChar(dxTarget).Result : maskChar;
+		get => isInitialized ? (string)DevExpress.Ui.DxDateBoxInterop.GetMaskCharOption(dxTarget).Result : maskChar;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDateBoxInterop.SetMaskChar(dxTarget, value);
+				DevExpress.Ui.DxDateBoxInterop.SetMaskCharOption(dxTarget, value);
 			} else {
 				this.maskChar = value;
 			}
@@ -475,10 +515,10 @@
 	string maskInvalidMessage;
 	[Parameter]
 	string MaskInvalidMessage {
-		get => isInitialized ? (string)DevExpress.Ui.DxDateBoxInterop.GetMaskInvalidMessage(dxTarget).Result : maskInvalidMessage;
+		get => isInitialized ? (string)DevExpress.Ui.DxDateBoxInterop.GetMaskInvalidMessageOption(dxTarget).Result : maskInvalidMessage;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDateBoxInterop.SetMaskInvalidMessage(dxTarget, value);
+				DevExpress.Ui.DxDateBoxInterop.SetMaskInvalidMessageOption(dxTarget, value);
 			} else {
 				this.maskInvalidMessage = value;
 			}
@@ -487,10 +527,10 @@
 	object maskRules;
 	[Parameter]
 	object MaskRules {
-		get => isInitialized ? DevExpress.Ui.DxDateBoxInterop.GetMaskRules(dxTarget).Result : maskRules;
+		get => isInitialized ? DevExpress.Ui.DxDateBoxInterop.GetMaskRulesOption(dxTarget).Result : maskRules;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDateBoxInterop.SetMaskRules(dxTarget, value);
+				DevExpress.Ui.DxDateBoxInterop.SetMaskRulesOption(dxTarget, value);
 			} else {
 				this.maskRules = value;
 			}
@@ -499,10 +539,10 @@
 	string name;
 	[Parameter]
 	string Name {
-		get => isInitialized ? (string)DevExpress.Ui.DxDateBoxInterop.GetName(dxTarget).Result : name;
+		get => isInitialized ? (string)DevExpress.Ui.DxDateBoxInterop.GetNameOption(dxTarget).Result : name;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDateBoxInterop.SetName(dxTarget, value);
+				DevExpress.Ui.DxDateBoxInterop.SetNameOption(dxTarget, value);
 			} else {
 				this.name = value;
 			}
@@ -511,10 +551,10 @@
 	bool? showClearButton;
 	[Parameter]
 	bool? ShowClearButton {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxDateBoxInterop.GetShowClearButton(dxTarget).Result : showClearButton;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDateBoxInterop.GetShowClearButtonOption(dxTarget).Result : showClearButton;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDateBoxInterop.SetShowClearButton(dxTarget, value);
+				DevExpress.Ui.DxDateBoxInterop.SetShowClearButtonOption(dxTarget, value);
 			} else {
 				this.showClearButton = value;
 			}
@@ -523,10 +563,10 @@
 	string showMaskMode;
 	[Parameter]
 	string ShowMaskMode {
-		get => isInitialized ? (string)DevExpress.Ui.DxDateBoxInterop.GetShowMaskMode(dxTarget).Result : showMaskMode;
+		get => isInitialized ? (string)DevExpress.Ui.DxDateBoxInterop.GetShowMaskModeOption(dxTarget).Result : showMaskMode;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDateBoxInterop.SetShowMaskMode(dxTarget, value);
+				DevExpress.Ui.DxDateBoxInterop.SetShowMaskModeOption(dxTarget, value);
 			} else {
 				this.showMaskMode = value;
 			}
@@ -535,22 +575,34 @@
 	bool? spellcheck;
 	[Parameter]
 	bool? Spellcheck {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxDateBoxInterop.GetSpellcheck(dxTarget).Result : spellcheck;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDateBoxInterop.GetSpellcheckOption(dxTarget).Result : spellcheck;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDateBoxInterop.SetSpellcheck(dxTarget, value);
+				DevExpress.Ui.DxDateBoxInterop.SetSpellcheckOption(dxTarget, value);
 			} else {
 				this.spellcheck = value;
+			}
+		}
+	}
+	string stylingMode;
+	[Parameter]
+	string StylingMode {
+		get => isInitialized ? (string)DevExpress.Ui.DxDateBoxInterop.GetStylingModeOption(dxTarget).Result : stylingMode;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDateBoxInterop.SetStylingModeOption(dxTarget, value);
+			} else {
+				this.stylingMode = value;
 			}
 		}
 	}
 	string text;
 	[Parameter]
 	string Text {
-		get => isInitialized ? (string)DevExpress.Ui.DxDateBoxInterop.GetText(dxTarget).Result : text;
+		get => isInitialized ? (string)DevExpress.Ui.DxDateBoxInterop.GetTextOption(dxTarget).Result : text;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDateBoxInterop.SetText(dxTarget, value);
+				DevExpress.Ui.DxDateBoxInterop.SetTextOption(dxTarget, value);
 			} else {
 				this.text = value;
 			}
@@ -559,10 +611,10 @@
 	bool? useMaskedValue;
 	[Parameter]
 	bool? UseMaskedValue {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxDateBoxInterop.GetUseMaskedValue(dxTarget).Result : useMaskedValue;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDateBoxInterop.GetUseMaskedValueOption(dxTarget).Result : useMaskedValue;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDateBoxInterop.SetUseMaskedValue(dxTarget, value);
+				DevExpress.Ui.DxDateBoxInterop.SetUseMaskedValueOption(dxTarget, value);
 			} else {
 				this.useMaskedValue = value;
 			}
@@ -571,10 +623,10 @@
 	string valueChangeEvent;
 	[Parameter]
 	string ValueChangeEvent {
-		get => isInitialized ? (string)DevExpress.Ui.DxDateBoxInterop.GetValueChangeEvent(dxTarget).Result : valueChangeEvent;
+		get => isInitialized ? (string)DevExpress.Ui.DxDateBoxInterop.GetValueChangeEventOption(dxTarget).Result : valueChangeEvent;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDateBoxInterop.SetValueChangeEvent(dxTarget, value);
+				DevExpress.Ui.DxDateBoxInterop.SetValueChangeEventOption(dxTarget, value);
 			} else {
 				this.valueChangeEvent = value;
 			}
@@ -583,10 +635,10 @@
 	bool? isValid;
 	[Parameter]
 	bool? IsValid {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxDateBoxInterop.GetIsValid(dxTarget).Result : isValid;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDateBoxInterop.GetIsValidOption(dxTarget).Result : isValid;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDateBoxInterop.SetIsValid(dxTarget, value);
+				DevExpress.Ui.DxDateBoxInterop.SetIsValidOption(dxTarget, value);
 			} else {
 				this.isValid = value;
 			}
@@ -595,10 +647,10 @@
 	bool? readOnly;
 	[Parameter]
 	bool? ReadOnly {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxDateBoxInterop.GetReadOnly(dxTarget).Result : readOnly;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDateBoxInterop.GetReadOnlyOption(dxTarget).Result : readOnly;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDateBoxInterop.SetReadOnly(dxTarget, value);
+				DevExpress.Ui.DxDateBoxInterop.SetReadOnlyOption(dxTarget, value);
 			} else {
 				this.readOnly = value;
 			}
@@ -607,10 +659,10 @@
 	object validationError;
 	[Parameter]
 	object ValidationError {
-		get => isInitialized ? DevExpress.Ui.DxDateBoxInterop.GetValidationError(dxTarget).Result : validationError;
+		get => isInitialized ? DevExpress.Ui.DxDateBoxInterop.GetValidationErrorOption(dxTarget).Result : validationError;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDateBoxInterop.SetValidationError(dxTarget, value);
+				DevExpress.Ui.DxDateBoxInterop.SetValidationErrorOption(dxTarget, value);
 			} else {
 				this.validationError = value;
 			}
@@ -619,10 +671,10 @@
 	string validationMessageMode;
 	[Parameter]
 	string ValidationMessageMode {
-		get => isInitialized ? (string)DevExpress.Ui.DxDateBoxInterop.GetValidationMessageMode(dxTarget).Result : validationMessageMode;
+		get => isInitialized ? (string)DevExpress.Ui.DxDateBoxInterop.GetValidationMessageModeOption(dxTarget).Result : validationMessageMode;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDateBoxInterop.SetValidationMessageMode(dxTarget, value);
+				DevExpress.Ui.DxDateBoxInterop.SetValidationMessageModeOption(dxTarget, value);
 			} else {
 				this.validationMessageMode = value;
 			}
@@ -631,10 +683,10 @@
 	string accessKey;
 	[Parameter]
 	string AccessKey {
-		get => isInitialized ? (string)DevExpress.Ui.DxDateBoxInterop.GetAccessKey(dxTarget).Result : accessKey;
+		get => isInitialized ? (string)DevExpress.Ui.DxDateBoxInterop.GetAccessKeyOption(dxTarget).Result : accessKey;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDateBoxInterop.SetAccessKey(dxTarget, value);
+				DevExpress.Ui.DxDateBoxInterop.SetAccessKeyOption(dxTarget, value);
 			} else {
 				this.accessKey = value;
 			}
@@ -643,10 +695,10 @@
 	bool? disabled;
 	[Parameter]
 	bool? Disabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxDateBoxInterop.GetDisabled(dxTarget).Result : disabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDateBoxInterop.GetDisabledOption(dxTarget).Result : disabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDateBoxInterop.SetDisabled(dxTarget, value);
+				DevExpress.Ui.DxDateBoxInterop.SetDisabledOption(dxTarget, value);
 			} else {
 				this.disabled = value;
 			}
@@ -655,10 +707,10 @@
 	string hint;
 	[Parameter]
 	string Hint {
-		get => isInitialized ? (string)DevExpress.Ui.DxDateBoxInterop.GetHint(dxTarget).Result : hint;
+		get => isInitialized ? (string)DevExpress.Ui.DxDateBoxInterop.GetHintOption(dxTarget).Result : hint;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDateBoxInterop.SetHint(dxTarget, value);
+				DevExpress.Ui.DxDateBoxInterop.SetHintOption(dxTarget, value);
 			} else {
 				this.hint = value;
 			}
@@ -667,10 +719,10 @@
 	float? tabIndex;
 	[Parameter]
 	float? TabIndex {
-		get => isInitialized ? (float?)DevExpress.Ui.DxDateBoxInterop.GetTabIndex(dxTarget).Result : tabIndex;
+		get => isInitialized ? (float?)DevExpress.Ui.DxDateBoxInterop.GetTabIndexOption(dxTarget).Result : tabIndex;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDateBoxInterop.SetTabIndex(dxTarget, value);
+				DevExpress.Ui.DxDateBoxInterop.SetTabIndexOption(dxTarget, value);
 			} else {
 				this.tabIndex = value;
 			}
@@ -679,10 +731,10 @@
 	bool? visible;
 	[Parameter]
 	bool? Visible {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxDateBoxInterop.GetVisible(dxTarget).Result : visible;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDateBoxInterop.GetVisibleOption(dxTarget).Result : visible;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDateBoxInterop.SetVisible(dxTarget, value);
+				DevExpress.Ui.DxDateBoxInterop.SetVisibleOption(dxTarget, value);
 			} else {
 				this.visible = value;
 			}
@@ -691,10 +743,10 @@
 	object bindingOptions;
 	[Parameter]
 	object BindingOptions {
-		get => isInitialized ? DevExpress.Ui.DxDateBoxInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
+		get => isInitialized ? DevExpress.Ui.DxDateBoxInterop.GetBindingOptionsOption(dxTarget).Result : bindingOptions;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDateBoxInterop.SetBindingOptions(dxTarget, value);
+				DevExpress.Ui.DxDateBoxInterop.SetBindingOptionsOption(dxTarget, value);
 			} else {
 				this.bindingOptions = value;
 			}
@@ -703,10 +755,10 @@
 	object elementAttr;
 	[Parameter]
 	object ElementAttr {
-		get => isInitialized ? DevExpress.Ui.DxDateBoxInterop.GetElementAttr(dxTarget).Result : elementAttr;
+		get => isInitialized ? DevExpress.Ui.DxDateBoxInterop.GetElementAttrOption(dxTarget).Result : elementAttr;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDateBoxInterop.SetElementAttr(dxTarget, value);
+				DevExpress.Ui.DxDateBoxInterop.SetElementAttrOption(dxTarget, value);
 			} else {
 				this.elementAttr = value;
 			}
@@ -715,10 +767,10 @@
 	object height;
 	[Parameter]
 	object Height {
-		get => isInitialized ? DevExpress.Ui.DxDateBoxInterop.GetHeight(dxTarget).Result : height;
+		get => isInitialized ? DevExpress.Ui.DxDateBoxInterop.GetHeightOption(dxTarget).Result : height;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDateBoxInterop.SetHeight(dxTarget, value);
+				DevExpress.Ui.DxDateBoxInterop.SetHeightOption(dxTarget, value);
 			} else {
 				this.height = value;
 			}
@@ -727,10 +779,10 @@
 	bool? rtlEnabled;
 	[Parameter]
 	bool? RtlEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxDateBoxInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDateBoxInterop.GetRtlEnabledOption(dxTarget).Result : rtlEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDateBoxInterop.SetRtlEnabled(dxTarget, value);
+				DevExpress.Ui.DxDateBoxInterop.SetRtlEnabledOption(dxTarget, value);
 			} else {
 				this.rtlEnabled = value;
 			}
@@ -739,10 +791,10 @@
 	object width;
 	[Parameter]
 	object Width {
-		get => isInitialized ? DevExpress.Ui.DxDateBoxInterop.GetWidth(dxTarget).Result : width;
+		get => isInitialized ? DevExpress.Ui.DxDateBoxInterop.GetWidthOption(dxTarget).Result : width;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxDateBoxInterop.SetWidth(dxTarget, value);
+				DevExpress.Ui.DxDateBoxInterop.SetWidthOption(dxTarget, value);
 			} else {
 				this.width = value;
 			}

@@ -43,10 +43,10 @@
 	bool? activeStateEnabled;
 	[Parameter]
 	bool? ActiveStateEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxCheckBoxInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxCheckBoxInterop.GetActiveStateEnabledOption(dxTarget).Result : activeStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxCheckBoxInterop.SetActiveStateEnabled(dxTarget, value);
+				DevExpress.Ui.DxCheckBoxInterop.SetActiveStateEnabledOption(dxTarget, value);
 			} else {
 				this.activeStateEnabled = value;
 			}
@@ -55,10 +55,10 @@
 	bool? focusStateEnabled;
 	[Parameter]
 	bool? FocusStateEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxCheckBoxInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxCheckBoxInterop.GetFocusStateEnabledOption(dxTarget).Result : focusStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxCheckBoxInterop.SetFocusStateEnabled(dxTarget, value);
+				DevExpress.Ui.DxCheckBoxInterop.SetFocusStateEnabledOption(dxTarget, value);
 			} else {
 				this.focusStateEnabled = value;
 			}
@@ -67,10 +67,10 @@
 	bool? hoverStateEnabled;
 	[Parameter]
 	bool? HoverStateEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxCheckBoxInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxCheckBoxInterop.GetHoverStateEnabledOption(dxTarget).Result : hoverStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxCheckBoxInterop.SetHoverStateEnabled(dxTarget, value);
+				DevExpress.Ui.DxCheckBoxInterop.SetHoverStateEnabledOption(dxTarget, value);
 			} else {
 				this.hoverStateEnabled = value;
 			}
@@ -79,10 +79,10 @@
 	string name;
 	[Parameter]
 	string Name {
-		get => isInitialized ? (string)DevExpress.Ui.DxCheckBoxInterop.GetName(dxTarget).Result : name;
+		get => isInitialized ? (string)DevExpress.Ui.DxCheckBoxInterop.GetNameOption(dxTarget).Result : name;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxCheckBoxInterop.SetName(dxTarget, value);
+				DevExpress.Ui.DxCheckBoxInterop.SetNameOption(dxTarget, value);
 			} else {
 				this.name = value;
 			}
@@ -91,10 +91,10 @@
 	string text;
 	[Parameter]
 	string Text {
-		get => isInitialized ? (string)DevExpress.Ui.DxCheckBoxInterop.GetText(dxTarget).Result : text;
+		get => isInitialized ? (string)DevExpress.Ui.DxCheckBoxInterop.GetTextOption(dxTarget).Result : text;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxCheckBoxInterop.SetText(dxTarget, value);
+				DevExpress.Ui.DxCheckBoxInterop.SetTextOption(dxTarget, value);
 			} else {
 				this.text = value;
 			}
@@ -103,10 +103,10 @@
 	bool? value;
 	[Parameter]
 	bool? Value {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxCheckBoxInterop.GetValue(dxTarget).Result : value;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxCheckBoxInterop.GetValueOption(dxTarget).Result : value;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxCheckBoxInterop.SetValue(dxTarget, value);
+				DevExpress.Ui.DxCheckBoxInterop.SetValueOption(dxTarget, value);
 			} else {
 				this.value = value;
 			}
@@ -115,10 +115,10 @@
 	bool? isValid;
 	[Parameter]
 	bool? IsValid {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxCheckBoxInterop.GetIsValid(dxTarget).Result : isValid;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxCheckBoxInterop.GetIsValidOption(dxTarget).Result : isValid;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxCheckBoxInterop.SetIsValid(dxTarget, value);
+				DevExpress.Ui.DxCheckBoxInterop.SetIsValidOption(dxTarget, value);
 			} else {
 				this.isValid = value;
 			}
@@ -127,10 +127,10 @@
 	bool? readOnly;
 	[Parameter]
 	bool? ReadOnly {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxCheckBoxInterop.GetReadOnly(dxTarget).Result : readOnly;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxCheckBoxInterop.GetReadOnlyOption(dxTarget).Result : readOnly;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxCheckBoxInterop.SetReadOnly(dxTarget, value);
+				DevExpress.Ui.DxCheckBoxInterop.SetReadOnlyOption(dxTarget, value);
 			} else {
 				this.readOnly = value;
 			}
@@ -139,10 +139,10 @@
 	object validationError;
 	[Parameter]
 	object ValidationError {
-		get => isInitialized ? DevExpress.Ui.DxCheckBoxInterop.GetValidationError(dxTarget).Result : validationError;
+		get => isInitialized ? DevExpress.Ui.DxCheckBoxInterop.GetValidationErrorOption(dxTarget).Result : validationError;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxCheckBoxInterop.SetValidationError(dxTarget, value);
+				DevExpress.Ui.DxCheckBoxInterop.SetValidationErrorOption(dxTarget, value);
 			} else {
 				this.validationError = value;
 			}
@@ -151,10 +151,10 @@
 	string validationMessageMode;
 	[Parameter]
 	string ValidationMessageMode {
-		get => isInitialized ? (string)DevExpress.Ui.DxCheckBoxInterop.GetValidationMessageMode(dxTarget).Result : validationMessageMode;
+		get => isInitialized ? (string)DevExpress.Ui.DxCheckBoxInterop.GetValidationMessageModeOption(dxTarget).Result : validationMessageMode;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxCheckBoxInterop.SetValidationMessageMode(dxTarget, value);
+				DevExpress.Ui.DxCheckBoxInterop.SetValidationMessageModeOption(dxTarget, value);
 			} else {
 				this.validationMessageMode = value;
 			}
@@ -163,10 +163,10 @@
 	string accessKey;
 	[Parameter]
 	string AccessKey {
-		get => isInitialized ? (string)DevExpress.Ui.DxCheckBoxInterop.GetAccessKey(dxTarget).Result : accessKey;
+		get => isInitialized ? (string)DevExpress.Ui.DxCheckBoxInterop.GetAccessKeyOption(dxTarget).Result : accessKey;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxCheckBoxInterop.SetAccessKey(dxTarget, value);
+				DevExpress.Ui.DxCheckBoxInterop.SetAccessKeyOption(dxTarget, value);
 			} else {
 				this.accessKey = value;
 			}
@@ -175,10 +175,10 @@
 	bool? disabled;
 	[Parameter]
 	bool? Disabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxCheckBoxInterop.GetDisabled(dxTarget).Result : disabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxCheckBoxInterop.GetDisabledOption(dxTarget).Result : disabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxCheckBoxInterop.SetDisabled(dxTarget, value);
+				DevExpress.Ui.DxCheckBoxInterop.SetDisabledOption(dxTarget, value);
 			} else {
 				this.disabled = value;
 			}
@@ -187,10 +187,10 @@
 	string hint;
 	[Parameter]
 	string Hint {
-		get => isInitialized ? (string)DevExpress.Ui.DxCheckBoxInterop.GetHint(dxTarget).Result : hint;
+		get => isInitialized ? (string)DevExpress.Ui.DxCheckBoxInterop.GetHintOption(dxTarget).Result : hint;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxCheckBoxInterop.SetHint(dxTarget, value);
+				DevExpress.Ui.DxCheckBoxInterop.SetHintOption(dxTarget, value);
 			} else {
 				this.hint = value;
 			}
@@ -199,10 +199,10 @@
 	float? tabIndex;
 	[Parameter]
 	float? TabIndex {
-		get => isInitialized ? (float?)DevExpress.Ui.DxCheckBoxInterop.GetTabIndex(dxTarget).Result : tabIndex;
+		get => isInitialized ? (float?)DevExpress.Ui.DxCheckBoxInterop.GetTabIndexOption(dxTarget).Result : tabIndex;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxCheckBoxInterop.SetTabIndex(dxTarget, value);
+				DevExpress.Ui.DxCheckBoxInterop.SetTabIndexOption(dxTarget, value);
 			} else {
 				this.tabIndex = value;
 			}
@@ -211,10 +211,10 @@
 	bool? visible;
 	[Parameter]
 	bool? Visible {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxCheckBoxInterop.GetVisible(dxTarget).Result : visible;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxCheckBoxInterop.GetVisibleOption(dxTarget).Result : visible;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxCheckBoxInterop.SetVisible(dxTarget, value);
+				DevExpress.Ui.DxCheckBoxInterop.SetVisibleOption(dxTarget, value);
 			} else {
 				this.visible = value;
 			}
@@ -223,10 +223,10 @@
 	object bindingOptions;
 	[Parameter]
 	object BindingOptions {
-		get => isInitialized ? DevExpress.Ui.DxCheckBoxInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
+		get => isInitialized ? DevExpress.Ui.DxCheckBoxInterop.GetBindingOptionsOption(dxTarget).Result : bindingOptions;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxCheckBoxInterop.SetBindingOptions(dxTarget, value);
+				DevExpress.Ui.DxCheckBoxInterop.SetBindingOptionsOption(dxTarget, value);
 			} else {
 				this.bindingOptions = value;
 			}
@@ -235,10 +235,10 @@
 	object elementAttr;
 	[Parameter]
 	object ElementAttr {
-		get => isInitialized ? DevExpress.Ui.DxCheckBoxInterop.GetElementAttr(dxTarget).Result : elementAttr;
+		get => isInitialized ? DevExpress.Ui.DxCheckBoxInterop.GetElementAttrOption(dxTarget).Result : elementAttr;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxCheckBoxInterop.SetElementAttr(dxTarget, value);
+				DevExpress.Ui.DxCheckBoxInterop.SetElementAttrOption(dxTarget, value);
 			} else {
 				this.elementAttr = value;
 			}
@@ -247,10 +247,10 @@
 	object height;
 	[Parameter]
 	object Height {
-		get => isInitialized ? DevExpress.Ui.DxCheckBoxInterop.GetHeight(dxTarget).Result : height;
+		get => isInitialized ? DevExpress.Ui.DxCheckBoxInterop.GetHeightOption(dxTarget).Result : height;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxCheckBoxInterop.SetHeight(dxTarget, value);
+				DevExpress.Ui.DxCheckBoxInterop.SetHeightOption(dxTarget, value);
 			} else {
 				this.height = value;
 			}
@@ -259,10 +259,10 @@
 	bool? rtlEnabled;
 	[Parameter]
 	bool? RtlEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxCheckBoxInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxCheckBoxInterop.GetRtlEnabledOption(dxTarget).Result : rtlEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxCheckBoxInterop.SetRtlEnabled(dxTarget, value);
+				DevExpress.Ui.DxCheckBoxInterop.SetRtlEnabledOption(dxTarget, value);
 			} else {
 				this.rtlEnabled = value;
 			}
@@ -271,10 +271,10 @@
 	object width;
 	[Parameter]
 	object Width {
-		get => isInitialized ? DevExpress.Ui.DxCheckBoxInterop.GetWidth(dxTarget).Result : width;
+		get => isInitialized ? DevExpress.Ui.DxCheckBoxInterop.GetWidthOption(dxTarget).Result : width;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxCheckBoxInterop.SetWidth(dxTarget, value);
+				DevExpress.Ui.DxCheckBoxInterop.SetWidthOption(dxTarget, value);
 			} else {
 				this.width = value;
 			}

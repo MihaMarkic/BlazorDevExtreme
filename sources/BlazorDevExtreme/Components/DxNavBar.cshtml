@@ -13,6 +13,7 @@
 			scrollByContent = scrollByContent,
 			focusStateEnabled = focusStateEnabled,
 			hoverStateEnabled = hoverStateEnabled,
+			repaintChangesOnly = repaintChangesOnly,
 			scrollingEnabled = scrollingEnabled,
 			selectedItems = selectedItems,
 			selectionMode = selectionMode,
@@ -54,10 +55,10 @@
 	bool? scrollByContent;
 	[Parameter]
 	bool? ScrollByContent {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxNavBarInterop.GetScrollByContent(dxTarget).Result : scrollByContent;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxNavBarInterop.GetScrollByContentOption(dxTarget).Result : scrollByContent;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxNavBarInterop.SetScrollByContent(dxTarget, value);
+				DevExpress.Ui.DxNavBarInterop.SetScrollByContentOption(dxTarget, value);
 			} else {
 				this.scrollByContent = value;
 			}
@@ -66,10 +67,10 @@
 	bool? focusStateEnabled;
 	[Parameter]
 	bool? FocusStateEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxNavBarInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxNavBarInterop.GetFocusStateEnabledOption(dxTarget).Result : focusStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxNavBarInterop.SetFocusStateEnabled(dxTarget, value);
+				DevExpress.Ui.DxNavBarInterop.SetFocusStateEnabledOption(dxTarget, value);
 			} else {
 				this.focusStateEnabled = value;
 			}
@@ -78,22 +79,34 @@
 	bool? hoverStateEnabled;
 	[Parameter]
 	bool? HoverStateEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxNavBarInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxNavBarInterop.GetHoverStateEnabledOption(dxTarget).Result : hoverStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxNavBarInterop.SetHoverStateEnabled(dxTarget, value);
+				DevExpress.Ui.DxNavBarInterop.SetHoverStateEnabledOption(dxTarget, value);
 			} else {
 				this.hoverStateEnabled = value;
+			}
+		}
+	}
+	bool? repaintChangesOnly;
+	[Parameter]
+	bool? RepaintChangesOnly {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxNavBarInterop.GetRepaintChangesOnlyOption(dxTarget).Result : repaintChangesOnly;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxNavBarInterop.SetRepaintChangesOnlyOption(dxTarget, value);
+			} else {
+				this.repaintChangesOnly = value;
 			}
 		}
 	}
 	bool? scrollingEnabled;
 	[Parameter]
 	bool? ScrollingEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxNavBarInterop.GetScrollingEnabled(dxTarget).Result : scrollingEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxNavBarInterop.GetScrollingEnabledOption(dxTarget).Result : scrollingEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxNavBarInterop.SetScrollingEnabled(dxTarget, value);
+				DevExpress.Ui.DxNavBarInterop.SetScrollingEnabledOption(dxTarget, value);
 			} else {
 				this.scrollingEnabled = value;
 			}
@@ -102,10 +115,10 @@
 	object selectedItems;
 	[Parameter]
 	object SelectedItems {
-		get => isInitialized ? DevExpress.Ui.DxNavBarInterop.GetSelectedItems(dxTarget).Result : selectedItems;
+		get => isInitialized ? DevExpress.Ui.DxNavBarInterop.GetSelectedItemsOption(dxTarget).Result : selectedItems;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxNavBarInterop.SetSelectedItems(dxTarget, value);
+				DevExpress.Ui.DxNavBarInterop.SetSelectedItemsOption(dxTarget, value);
 			} else {
 				this.selectedItems = value;
 			}
@@ -114,10 +127,10 @@
 	string selectionMode;
 	[Parameter]
 	string SelectionMode {
-		get => isInitialized ? (string)DevExpress.Ui.DxNavBarInterop.GetSelectionMode(dxTarget).Result : selectionMode;
+		get => isInitialized ? (string)DevExpress.Ui.DxNavBarInterop.GetSelectionModeOption(dxTarget).Result : selectionMode;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxNavBarInterop.SetSelectionMode(dxTarget, value);
+				DevExpress.Ui.DxNavBarInterop.SetSelectionModeOption(dxTarget, value);
 			} else {
 				this.selectionMode = value;
 			}
@@ -126,10 +139,10 @@
 	bool? showNavButtons;
 	[Parameter]
 	bool? ShowNavButtons {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxNavBarInterop.GetShowNavButtons(dxTarget).Result : showNavButtons;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxNavBarInterop.GetShowNavButtonsOption(dxTarget).Result : showNavButtons;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxNavBarInterop.SetShowNavButtons(dxTarget, value);
+				DevExpress.Ui.DxNavBarInterop.SetShowNavButtonsOption(dxTarget, value);
 			} else {
 				this.showNavButtons = value;
 			}
@@ -138,10 +151,10 @@
 	object dataSource;
 	[Parameter]
 	object DataSource {
-		get => isInitialized ? DevExpress.Ui.DxNavBarInterop.GetDataSource(dxTarget).Result : dataSource;
+		get => isInitialized ? DevExpress.Ui.DxNavBarInterop.GetDataSourceOption(dxTarget).Result : dataSource;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxNavBarInterop.SetDataSource(dxTarget, value);
+				DevExpress.Ui.DxNavBarInterop.SetDataSourceOption(dxTarget, value);
 			} else {
 				this.dataSource = value;
 			}
@@ -150,10 +163,10 @@
 	float? itemHoldTimeout;
 	[Parameter]
 	float? ItemHoldTimeout {
-		get => isInitialized ? (float?)DevExpress.Ui.DxNavBarInterop.GetItemHoldTimeout(dxTarget).Result : itemHoldTimeout;
+		get => isInitialized ? (float?)DevExpress.Ui.DxNavBarInterop.GetItemHoldTimeoutOption(dxTarget).Result : itemHoldTimeout;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxNavBarInterop.SetItemHoldTimeout(dxTarget, value);
+				DevExpress.Ui.DxNavBarInterop.SetItemHoldTimeoutOption(dxTarget, value);
 			} else {
 				this.itemHoldTimeout = value;
 			}
@@ -162,10 +175,10 @@
 	object items;
 	[Parameter]
 	object Items {
-		get => isInitialized ? DevExpress.Ui.DxNavBarInterop.GetItems(dxTarget).Result : items;
+		get => isInitialized ? DevExpress.Ui.DxNavBarInterop.GetItemsOption(dxTarget).Result : items;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxNavBarInterop.SetItems(dxTarget, value);
+				DevExpress.Ui.DxNavBarInterop.SetItemsOption(dxTarget, value);
 			} else {
 				this.items = value;
 			}
@@ -174,10 +187,10 @@
 	object itemTemplate;
 	[Parameter]
 	object ItemTemplate {
-		get => isInitialized ? DevExpress.Ui.DxNavBarInterop.GetItemTemplate(dxTarget).Result : itemTemplate;
+		get => isInitialized ? DevExpress.Ui.DxNavBarInterop.GetItemTemplateOption(dxTarget).Result : itemTemplate;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxNavBarInterop.SetItemTemplate(dxTarget, value);
+				DevExpress.Ui.DxNavBarInterop.SetItemTemplateOption(dxTarget, value);
 			} else {
 				this.itemTemplate = value;
 			}
@@ -186,10 +199,10 @@
 	object keyExpr;
 	[Parameter]
 	object KeyExpr {
-		get => isInitialized ? DevExpress.Ui.DxNavBarInterop.GetKeyExpr(dxTarget).Result : keyExpr;
+		get => isInitialized ? DevExpress.Ui.DxNavBarInterop.GetKeyExprOption(dxTarget).Result : keyExpr;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxNavBarInterop.SetKeyExpr(dxTarget, value);
+				DevExpress.Ui.DxNavBarInterop.SetKeyExprOption(dxTarget, value);
 			} else {
 				this.keyExpr = value;
 			}
@@ -198,10 +211,10 @@
 	string noDataText;
 	[Parameter]
 	string NoDataText {
-		get => isInitialized ? (string)DevExpress.Ui.DxNavBarInterop.GetNoDataText(dxTarget).Result : noDataText;
+		get => isInitialized ? (string)DevExpress.Ui.DxNavBarInterop.GetNoDataTextOption(dxTarget).Result : noDataText;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxNavBarInterop.SetNoDataText(dxTarget, value);
+				DevExpress.Ui.DxNavBarInterop.SetNoDataTextOption(dxTarget, value);
 			} else {
 				this.noDataText = value;
 			}
@@ -210,10 +223,10 @@
 	float? selectedIndex;
 	[Parameter]
 	float? SelectedIndex {
-		get => isInitialized ? (float?)DevExpress.Ui.DxNavBarInterop.GetSelectedIndex(dxTarget).Result : selectedIndex;
+		get => isInitialized ? (float?)DevExpress.Ui.DxNavBarInterop.GetSelectedIndexOption(dxTarget).Result : selectedIndex;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxNavBarInterop.SetSelectedIndex(dxTarget, value);
+				DevExpress.Ui.DxNavBarInterop.SetSelectedIndexOption(dxTarget, value);
 			} else {
 				this.selectedIndex = value;
 			}
@@ -222,10 +235,10 @@
 	object selectedItem;
 	[Parameter]
 	object SelectedItem {
-		get => isInitialized ? DevExpress.Ui.DxNavBarInterop.GetSelectedItem(dxTarget).Result : selectedItem;
+		get => isInitialized ? DevExpress.Ui.DxNavBarInterop.GetSelectedItemOption(dxTarget).Result : selectedItem;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxNavBarInterop.SetSelectedItem(dxTarget, value);
+				DevExpress.Ui.DxNavBarInterop.SetSelectedItemOption(dxTarget, value);
 			} else {
 				this.selectedItem = value;
 			}
@@ -234,10 +247,10 @@
 	object selectedItemKeys;
 	[Parameter]
 	object SelectedItemKeys {
-		get => isInitialized ? DevExpress.Ui.DxNavBarInterop.GetSelectedItemKeys(dxTarget).Result : selectedItemKeys;
+		get => isInitialized ? DevExpress.Ui.DxNavBarInterop.GetSelectedItemKeysOption(dxTarget).Result : selectedItemKeys;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxNavBarInterop.SetSelectedItemKeys(dxTarget, value);
+				DevExpress.Ui.DxNavBarInterop.SetSelectedItemKeysOption(dxTarget, value);
 			} else {
 				this.selectedItemKeys = value;
 			}
@@ -246,10 +259,10 @@
 	string accessKey;
 	[Parameter]
 	string AccessKey {
-		get => isInitialized ? (string)DevExpress.Ui.DxNavBarInterop.GetAccessKey(dxTarget).Result : accessKey;
+		get => isInitialized ? (string)DevExpress.Ui.DxNavBarInterop.GetAccessKeyOption(dxTarget).Result : accessKey;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxNavBarInterop.SetAccessKey(dxTarget, value);
+				DevExpress.Ui.DxNavBarInterop.SetAccessKeyOption(dxTarget, value);
 			} else {
 				this.accessKey = value;
 			}
@@ -258,10 +271,10 @@
 	bool? activeStateEnabled;
 	[Parameter]
 	bool? ActiveStateEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxNavBarInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxNavBarInterop.GetActiveStateEnabledOption(dxTarget).Result : activeStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxNavBarInterop.SetActiveStateEnabled(dxTarget, value);
+				DevExpress.Ui.DxNavBarInterop.SetActiveStateEnabledOption(dxTarget, value);
 			} else {
 				this.activeStateEnabled = value;
 			}
@@ -270,10 +283,10 @@
 	bool? disabled;
 	[Parameter]
 	bool? Disabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxNavBarInterop.GetDisabled(dxTarget).Result : disabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxNavBarInterop.GetDisabledOption(dxTarget).Result : disabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxNavBarInterop.SetDisabled(dxTarget, value);
+				DevExpress.Ui.DxNavBarInterop.SetDisabledOption(dxTarget, value);
 			} else {
 				this.disabled = value;
 			}
@@ -282,10 +295,10 @@
 	string hint;
 	[Parameter]
 	string Hint {
-		get => isInitialized ? (string)DevExpress.Ui.DxNavBarInterop.GetHint(dxTarget).Result : hint;
+		get => isInitialized ? (string)DevExpress.Ui.DxNavBarInterop.GetHintOption(dxTarget).Result : hint;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxNavBarInterop.SetHint(dxTarget, value);
+				DevExpress.Ui.DxNavBarInterop.SetHintOption(dxTarget, value);
 			} else {
 				this.hint = value;
 			}
@@ -294,10 +307,10 @@
 	float? tabIndex;
 	[Parameter]
 	float? TabIndex {
-		get => isInitialized ? (float?)DevExpress.Ui.DxNavBarInterop.GetTabIndex(dxTarget).Result : tabIndex;
+		get => isInitialized ? (float?)DevExpress.Ui.DxNavBarInterop.GetTabIndexOption(dxTarget).Result : tabIndex;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxNavBarInterop.SetTabIndex(dxTarget, value);
+				DevExpress.Ui.DxNavBarInterop.SetTabIndexOption(dxTarget, value);
 			} else {
 				this.tabIndex = value;
 			}
@@ -306,10 +319,10 @@
 	bool? visible;
 	[Parameter]
 	bool? Visible {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxNavBarInterop.GetVisible(dxTarget).Result : visible;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxNavBarInterop.GetVisibleOption(dxTarget).Result : visible;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxNavBarInterop.SetVisible(dxTarget, value);
+				DevExpress.Ui.DxNavBarInterop.SetVisibleOption(dxTarget, value);
 			} else {
 				this.visible = value;
 			}
@@ -318,10 +331,10 @@
 	object bindingOptions;
 	[Parameter]
 	object BindingOptions {
-		get => isInitialized ? DevExpress.Ui.DxNavBarInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
+		get => isInitialized ? DevExpress.Ui.DxNavBarInterop.GetBindingOptionsOption(dxTarget).Result : bindingOptions;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxNavBarInterop.SetBindingOptions(dxTarget, value);
+				DevExpress.Ui.DxNavBarInterop.SetBindingOptionsOption(dxTarget, value);
 			} else {
 				this.bindingOptions = value;
 			}
@@ -330,10 +343,10 @@
 	object elementAttr;
 	[Parameter]
 	object ElementAttr {
-		get => isInitialized ? DevExpress.Ui.DxNavBarInterop.GetElementAttr(dxTarget).Result : elementAttr;
+		get => isInitialized ? DevExpress.Ui.DxNavBarInterop.GetElementAttrOption(dxTarget).Result : elementAttr;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxNavBarInterop.SetElementAttr(dxTarget, value);
+				DevExpress.Ui.DxNavBarInterop.SetElementAttrOption(dxTarget, value);
 			} else {
 				this.elementAttr = value;
 			}
@@ -342,10 +355,10 @@
 	object height;
 	[Parameter]
 	object Height {
-		get => isInitialized ? DevExpress.Ui.DxNavBarInterop.GetHeight(dxTarget).Result : height;
+		get => isInitialized ? DevExpress.Ui.DxNavBarInterop.GetHeightOption(dxTarget).Result : height;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxNavBarInterop.SetHeight(dxTarget, value);
+				DevExpress.Ui.DxNavBarInterop.SetHeightOption(dxTarget, value);
 			} else {
 				this.height = value;
 			}
@@ -354,10 +367,10 @@
 	bool? rtlEnabled;
 	[Parameter]
 	bool? RtlEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxNavBarInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxNavBarInterop.GetRtlEnabledOption(dxTarget).Result : rtlEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxNavBarInterop.SetRtlEnabled(dxTarget, value);
+				DevExpress.Ui.DxNavBarInterop.SetRtlEnabledOption(dxTarget, value);
 			} else {
 				this.rtlEnabled = value;
 			}
@@ -366,10 +379,10 @@
 	object width;
 	[Parameter]
 	object Width {
-		get => isInitialized ? DevExpress.Ui.DxNavBarInterop.GetWidth(dxTarget).Result : width;
+		get => isInitialized ? DevExpress.Ui.DxNavBarInterop.GetWidthOption(dxTarget).Result : width;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxNavBarInterop.SetWidth(dxTarget, value);
+				DevExpress.Ui.DxNavBarInterop.SetWidthOption(dxTarget, value);
 			} else {
 				this.width = value;
 			}

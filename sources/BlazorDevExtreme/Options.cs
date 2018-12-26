@@ -25,7 +25,7 @@ namespace DevExpress
 		public object offset { get; set; }
 	}
 
-	public partial class ComponentOptions
+	public partial class ComponentOptions<T>
 	{
 		public bool? onDisposingEnabled { get; set; }
 		public bool? onInitializedEnabled { get; set; }
@@ -36,10 +36,13 @@ namespace DevExpress
 	{
 		public string decimalSeparator { get; set; }
 		public string defaultCurrency { get; set; }
+		public string editorStylingMode { get; set; }
 		public bool? forceIsoDateParsing { get; set; }
 		public bool? rtlEnabled { get; set; }
 		public string serverDecimalSeparator { get; set; }
 		public string thousandsSeparator { get; set; }
+		public bool? useLegacyStoreResult { get; set; }
+		public bool? useLegacyVisibleIndex { get; set; }
 	}
 
 	public partial class Device
@@ -56,7 +59,7 @@ namespace DevExpress
 		public bool? win { get; set; }
 	}
 
-	public partial class DOMComponentOptions: ComponentOptions
+	public partial class DOMComponentOptions<T>: ComponentOptions<T>
 	{
 		public object bindingOptions { get; set; }
 		public object elementAttr { get; set; }
@@ -65,10 +68,40 @@ namespace DevExpress
 		public object width { get; set; }
 	}
 
+	public partial class DataHelperMixin
+	{
+	}
+	public partial class DxEvent
+	{
+	}
+	public partial class Localization
+	{
+	}
+	public partial class AnimationPresets
+	{
+	}
+	public partial class TransitionExecutor
+	{
+	}
+	public partial class Component
+	{
+	}
+	public partial class DevicesObject
+	{
+	}
+	public partial class DOMComponent: Component
+	{
+	}
+	public partial class EndpointSelector
+	{
+	}
+	public partial class ValidationEngine
+	{
+	}
 }
 namespace DevExpress.Data
 {
-	public partial class StoreOptions
+	public partial class StoreOptions<T>
 	{
 		public object errorHandler { get; set; }
 		public object key { get; set; }
@@ -78,13 +111,14 @@ namespace DevExpress.Data
 		public bool? onLoadingEnabled { get; set; }
 		public bool? onModifiedEnabled { get; set; }
 		public bool? onModifyingEnabled { get; set; }
+		public bool? onPushEnabled { get; set; }
 		public bool? onRemovedEnabled { get; set; }
 		public bool? onRemovingEnabled { get; set; }
 		public bool? onUpdatedEnabled { get; set; }
 		public bool? onUpdatingEnabled { get; set; }
 	}
 
-	public partial class ArrayStoreOptions: StoreOptions
+	public partial class ArrayStoreOptions<T>: StoreOptions<T>
 	{
 		public object data { get; set; }
 	}
@@ -109,7 +143,7 @@ namespace DevExpress.Data
 		public object userData { get; set; }
 	}
 
-	public partial class CustomStoreOptions: StoreOptions
+	public partial class CustomStoreOptions: StoreOptions<object>
 	{
 		public object byKey { get; set; }
 		public bool? cacheRawData { get; set; }
@@ -135,7 +169,9 @@ namespace DevExpress.Data
 		public float? pageSize { get; set; }
 		public bool? paginate { get; set; }
 		public object postProcess { get; set; }
+		public float? pushAggregationTimeout { get; set; }
 		public bool? requireTotalCount { get; set; }
+		public bool? reshapeOnPush { get; set; }
 		public object searchExpr { get; set; }
 		public string searchOperation { get; set; }
 		public object searchValue { get; set; }
@@ -144,7 +180,7 @@ namespace DevExpress.Data
 		public object store { get; set; }
 	}
 
-	public partial class LocalStoreOptions: ArrayStoreOptions
+	public partial class LocalStoreOptions: ArrayStoreOptions<object>
 	{
 		public float? flushInterval { get; set; }
 		public bool? immediate { get; set; }
@@ -163,7 +199,7 @@ namespace DevExpress.Data
 		public bool? withCredentials { get; set; }
 	}
 
-	public partial class ODataStoreOptions: StoreOptions
+	public partial class ODataStoreOptions: StoreOptions<object>
 	{
 		public object beforeSend { get; set; }
 		public bool? deserializeDates { get; set; }
@@ -221,7 +257,7 @@ namespace DevExpress.Data
 		public string groupName { get; set; }
 		public object headerFilter { get; set; }
 		public bool? isMeasure { get; set; }
-		public float? precision { get; set; }
+		public string name { get; set; }
 		public string runningTotal { get; set; }
 		public object selector { get; set; }
 		public bool? showGrandTotals { get; set; }
@@ -233,16 +269,73 @@ namespace DevExpress.Data
 		public object sortingMethod { get; set; }
 		public string sortOrder { get; set; }
 		public string summaryDisplayMode { get; set; }
-		public string summaryType { get; set; }
+		public object summaryType { get; set; }
 		public bool? visible { get; set; }
 		public float? width { get; set; }
 		public bool? wordWrapEnabled { get; set; }
 	}
 
+	public partial class Guid
+	{
+	}
+	public partial class Store
+	{
+	}
+	public partial class ArrayStore: Store
+	{
+	}
+	public partial class CustomStore: Store
+	{
+	}
+	public partial class DataSource
+	{
+	}
+	public partial class LocalStore: ArrayStore
+	{
+	}
+	public partial class Query
+	{
+	}
+	public partial class ODataContext
+	{
+	}
+	public partial class ODataStore: Store
+	{
+	}
+	public partial class EdmLiteral
+	{
+	}
+	public partial class PivotGridDataSource
+	{
+	}
+	public partial class XmlaStore
+	{
+	}
+}
+namespace DevExpress.Exporter
+{
+	public partial class ExcelFont
+	{
+		public bool? bold { get; set; }
+		public string color { get; set; }
+		public bool? italic { get; set; }
+		public string name { get; set; }
+		public float? size { get; set; }
+		public string underline { get; set; }
+	}
+
+	public partial class ExcelDataGridCell
+	{
+		public object column { get; set; }
+		public object data { get; set; }
+		public string rowType { get; set; }
+		public object value { get; set; }
+	}
+
 }
 namespace DevExpress.Framework
 {
-	public partial class DxCommandOptions: DOMComponentOptions
+	public partial class DxCommandOptions: DOMComponentOptions<object>
 	{
 		public bool? disabled { get; set; }
 		public string icon { get; set; }
@@ -305,6 +398,39 @@ namespace DevExpress.Framework
 		public string targetPlaceholder { get; set; }
 	}
 
+	public partial class DxCommand: DOMComponent
+	{
+	}
+	public partial class Router
+	{
+	}
+	public partial class StateManager
+	{
+	}
+	public partial class ViewCache
+	{
+	}
+	public partial class DxCommandContainer
+	{
+	}
+	public partial class DxView
+	{
+	}
+	public partial class DxLayout
+	{
+	}
+	public partial class DxViewPlaceholder
+	{
+	}
+	public partial class DxTransition
+	{
+	}
+	public partial class DxContentPlaceholder
+	{
+	}
+	public partial class DxContent
+	{
+	}
 }
 namespace DevExpress.Framework.Html
 {
@@ -328,10 +454,13 @@ namespace DevExpress.Framework.Html
 		public object viewPort { get; set; }
 	}
 
+	public partial class HtmlApplication
+	{
+	}
 }
 namespace DevExpress.Ui
 {
-	public partial class DxAccordionOptions: CollectionWidgetOptions
+	public partial class DxAccordionOptions: CollectionWidgetOptions<object>
 	{
 		public float? animationDuration { get; set; }
 		public bool? collapsible { get; set; }
@@ -339,6 +468,7 @@ namespace DevExpress.Ui
 		public object itemTitleTemplate { get; set; }
 		public bool? multiple { get; set; }
 		public bool? onItemTitleClickEnabled { get; set; }
+		public bool? repaintChangesOnly { get; set; }
 	}
 
 	public partial class DxAccordionItemTemplate: CollectionWidgetItemTemplate
@@ -347,7 +477,7 @@ namespace DevExpress.Ui
 		public string title { get; set; }
 	}
 
-	public partial class DxActionSheetOptions: CollectionWidgetOptions
+	public partial class DxActionSheetOptions: CollectionWidgetOptions<object>
 	{
 		public string cancelText { get; set; }
 		public bool? onCancelClickEnabled { get; set; }
@@ -365,12 +495,12 @@ namespace DevExpress.Ui
 		public string type { get; set; }
 	}
 
-	public partial class DxAutocompleteOptions: DxDropDownListOptions
+	public partial class DxAutocompleteOptions: DxDropDownListOptions<object>
 	{
 		public float? maxItemCount { get; set; }
 	}
 
-	public partial class DxBoxOptions: CollectionWidgetOptions
+	public partial class DxBoxOptions: CollectionWidgetOptions<object>
 	{
 		public string align { get; set; }
 		public string crossAlign { get; set; }
@@ -385,10 +515,11 @@ namespace DevExpress.Ui
 		public float? shrink { get; set; }
 	}
 
-	public partial class DxButtonOptions: WidgetOptions
+	public partial class DxButtonOptions: WidgetOptions<object>
 	{
 		public string icon { get; set; }
 		public bool? onClickEnabled { get; set; }
+		public string stylingMode { get; set; }
 		public object template { get; set; }
 		public string text { get; set; }
 		public string type { get; set; }
@@ -402,7 +533,26 @@ namespace DevExpress.Ui
 		public string text { get; set; }
 	}
 
-	public partial class DxCalendarOptions: EditorOptions
+	public partial class DxButtonGroupOptions: WidgetOptions<object>
+	{
+		public object items { get; set; }
+		public object itemTemplate { get; set; }
+		public object keyExpr { get; set; }
+		public bool? onSelectionChangedEnabled { get; set; }
+		public object selectedItemKeys { get; set; }
+		public object selectedItems { get; set; }
+		public string selectionMode { get; set; }
+		public string stylingMode { get; set; }
+	}
+
+	public partial class DxButtonGroupItem: CollectionWidgetItemTemplate
+	{
+		public string hint { get; set; }
+		public string icon { get; set; }
+		public string type { get; set; }
+	}
+
+	public partial class DxCalendarOptions: EditorOptions<object>
 	{
 		public object cellTemplate { get; set; }
 		public string dateSerializationFormat { get; set; }
@@ -417,13 +567,13 @@ namespace DevExpress.Ui
 		public string zoomLevel { get; set; }
 	}
 
-	public partial class DxCheckBoxOptions: EditorOptions
+	public partial class DxCheckBoxOptions: EditorOptions<object>
 	{
 		public string name { get; set; }
 		public string text { get; set; }
 	}
 
-	public partial class DxColorBoxOptions: DxDropDownEditorOptions
+	public partial class DxColorBoxOptions: DxDropDownEditorOptions<object>
 	{
 		public string applyButtonText { get; set; }
 		public string cancelButtonText { get; set; }
@@ -432,7 +582,7 @@ namespace DevExpress.Ui
 		public float? keyStep { get; set; }
 	}
 
-	public partial class DxContextMenuOptions: DxMenuBaseOptions
+	public partial class DxContextMenuOptions: DxMenuBaseOptions<object>
 	{
 		public object closeOnOutsideClick { get; set; }
 		public bool? onHiddenEnabled { get; set; }
@@ -446,7 +596,7 @@ namespace DevExpress.Ui
 		public object target { get; set; }
 	}
 
-	public partial class GridBaseOptions: WidgetOptions
+	public partial class GridBaseOptions<T>: WidgetOptions<T>
 	{
 		public bool? allowColumnReordering { get; set; }
 		public bool? allowColumnResizing { get; set; }
@@ -470,7 +620,12 @@ namespace DevExpress.Ui
 		public object filterRow { get; set; }
 		public object filterSyncEnabled { get; set; }
 		public object filterValue { get; set; }
+		public float? focusedColumnIndex { get; set; }
+		public bool? focusedRowEnabled { get; set; }
+		public float? focusedRowIndex { get; set; }
+		public object focusedRowKey { get; set; }
 		public object headerFilter { get; set; }
+		public bool? highlightChanges { get; set; }
 		public object loadPanel { get; set; }
 		public string noDataText { get; set; }
 		public bool? onAdaptiveDetailRowPreparingEnabled { get; set; }
@@ -492,6 +647,8 @@ namespace DevExpress.Ui
 		public bool? onToolbarPreparingEnabled { get; set; }
 		public object pager { get; set; }
 		public object paging { get; set; }
+		public bool? renderAsync { get; set; }
+		public bool? repaintChangesOnly { get; set; }
 		public bool? rowAlternationEnabled { get; set; }
 		public object scrolling { get; set; }
 		public object searchPanel { get; set; }
@@ -509,12 +666,10 @@ namespace DevExpress.Ui
 
 	public partial class GridBaseEditing
 	{
-		public bool? allowAdding { get; set; }
-		public bool? allowDeleting { get; set; }
-		public bool? allowUpdating { get; set; }
 		public object form { get; set; }
 		public string mode { get; set; }
 		public object popup { get; set; }
+		public string refreshMode { get; set; }
 		public object texts { get; set; }
 		public bool? useIcons { get; set; }
 	}
@@ -558,7 +713,7 @@ namespace DevExpress.Ui
 		public string mode { get; set; }
 	}
 
-	public partial class DxDataGridOptions: GridBaseOptions
+	public partial class DxDataGridOptions: GridBaseOptions<object>
 	{
 		public object customizeColumns { get; set; }
 		public object customizeExportData { get; set; }
@@ -577,6 +732,10 @@ namespace DevExpress.Ui
 		public bool? onExportedEnabled { get; set; }
 		public bool? onExportingEnabled { get; set; }
 		public bool? onFileSavingEnabled { get; set; }
+		public bool? onFocusedCellChangedEnabled { get; set; }
+		public bool? onFocusedCellChangingEnabled { get; set; }
+		public bool? onFocusedRowChangedEnabled { get; set; }
+		public bool? onFocusedRowChangingEnabled { get; set; }
 		public bool? onRowClickEnabled { get; set; }
 		public bool? onRowPreparedEnabled { get; set; }
 		public object remoteOperations { get; set; }
@@ -588,6 +747,9 @@ namespace DevExpress.Ui
 
 	public partial class DxDataGridEditing: GridBaseEditing
 	{
+		public bool? allowAdding { get; set; }
+		public object allowDeleting { get; set; }
+		public object allowUpdating { get; set; }
 	}
 
 	public partial class DxDataGridScrolling: GridBaseScrolling
@@ -602,7 +764,7 @@ namespace DevExpress.Ui
 		public string showCheckBoxesMode { get; set; }
 	}
 
-	public partial class DxDateBoxOptions: DxDropDownEditorOptions
+	public partial class DxDateBoxOptions: DxDropDownEditorOptions<object>
 	{
 		public bool? adaptivityEnabled { get; set; }
 		public string applyButtonText { get; set; }
@@ -621,9 +783,10 @@ namespace DevExpress.Ui
 		public string pickerType { get; set; }
 		public bool? showAnalogClock { get; set; }
 		public string type { get; set; }
+		public bool? useMaskBehavior { get; set; }
 	}
 
-	public partial class DxDeferRenderingOptions: WidgetOptions
+	public partial class DxDeferRenderingOptions: WidgetOptions<object>
 	{
 		public object animation { get; set; }
 		public bool? onRenderedEnabled { get; set; }
@@ -633,7 +796,23 @@ namespace DevExpress.Ui
 		public string staggerItemSelector { get; set; }
 	}
 
-	public partial class DxDropDownBoxOptions: DxDropDownEditorOptions
+	public partial class DxDrawerOptions: WidgetOptions<object>
+	{
+		public float? animationDuration { get; set; }
+		public bool? animationEnabled { get; set; }
+		public object closeOnOutsideClick { get; set; }
+		public float? maxSize { get; set; }
+		public float? minSize { get; set; }
+		public bool? opened { get; set; }
+		public string openedStateMode { get; set; }
+		public string position { get; set; }
+		public string revealMode { get; set; }
+		public bool? shading { get; set; }
+		public object target { get; set; }
+		public object template { get; set; }
+	}
+
+	public partial class DxDropDownBoxOptions: DxDropDownEditorOptions<object>
 	{
 		public object contentTemplate { get; set; }
 		public object dropDownOptions { get; set; }
@@ -645,7 +824,7 @@ namespace DevExpress.Ui
 		public object valueExpr { get; set; }
 	}
 
-	public partial class DxDropDownMenuOptions: WidgetOptions
+	public partial class DxDropDownMenuOptions: WidgetOptions<object>
 	{
 		public string buttonIcon { get; set; }
 		public string buttonText { get; set; }
@@ -660,11 +839,18 @@ namespace DevExpress.Ui
 		public bool? usePopover { get; set; }
 	}
 
-	public partial class DxFileUploaderOptions: EditorOptions
+	public partial class DxFileUploaderOptions: EditorOptions<object>
 	{
 		public string accept { get; set; }
 		public bool? allowCanceling { get; set; }
+		public object allowedFileExtensions { get; set; }
+		public float? chunkSize { get; set; }
+		public string invalidFileExtensionMessage { get; set; }
+		public string invalidMaxFileSizeMessage { get; set; }
+		public string invalidMinFileSizeMessage { get; set; }
 		public string labelText { get; set; }
+		public float? maxFileSize { get; set; }
+		public float? minFileSize { get; set; }
 		public bool? multiple { get; set; }
 		public string name { get; set; }
 		public bool? onProgressEnabled { get; set; }
@@ -685,20 +871,29 @@ namespace DevExpress.Ui
 		public string uploadUrl { get; set; }
 	}
 
-	public partial class DxFilterBuilderOptions: WidgetOptions
+	public partial class DxFilterBuilderOptions: WidgetOptions<object>
 	{
 		public bool? allowHierarchicalFields { get; set; }
 		public object customOperations { get; set; }
 		public object fields { get; set; }
 		public object filterOperationDescriptions { get; set; }
 		public object groupOperationDescriptions { get; set; }
+		public object groupOperations { get; set; }
+		public float? maxGroupLevel { get; set; }
 		public bool? onEditorPreparedEnabled { get; set; }
 		public bool? onEditorPreparingEnabled { get; set; }
 		public bool? onValueChangedEnabled { get; set; }
 		public object value { get; set; }
 	}
 
-	public partial class DxFormOptions: WidgetOptions
+	public static class DxFilterBuilderOptionsGroupOperations
+	{
+		public const string And = "and";
+		public const string Or = "or";
+		public const string NotAnd = "notAnd";
+		public const string NotOr = "notOr";
+	}
+	public partial class DxFormOptions: WidgetOptions<object>
 	{
 		public bool? alignItemLabels { get; set; }
 		public bool? alignItemLabelsInAllGroups { get; set; }
@@ -724,7 +919,7 @@ namespace DevExpress.Ui
 		public string validationGroup { get; set; }
 	}
 
-	public partial class DxGalleryOptions: CollectionWidgetOptions
+	public partial class DxGalleryOptions: CollectionWidgetOptions<object>
 	{
 		public float? animationDuration { get; set; }
 		public bool? animationEnabled { get; set; }
@@ -745,7 +940,18 @@ namespace DevExpress.Ui
 		public string imageSrc { get; set; }
 	}
 
-	public partial class DxListOptions: CollectionWidgetOptions
+	public partial class DxHtmlEditorOptions: EditorOptions<object>
+	{
+		public string name { get; set; }
+		public bool? onFocusInEnabled { get; set; }
+		public bool? onFocusOutEnabled { get; set; }
+		public string placeholder { get; set; }
+		public object toolbar { get; set; }
+		public string valueType { get; set; }
+		public object variables { get; set; }
+	}
+
+	public partial class DxListOptions: CollectionWidgetOptions<object>
 	{
 		public bool? allowItemDeleting { get; set; }
 		public bool? allowItemReordering { get; set; }
@@ -773,6 +979,7 @@ namespace DevExpress.Ui
 		public string pullingDownText { get; set; }
 		public bool? pullRefreshEnabled { get; set; }
 		public string refreshingText { get; set; }
+		public bool? repaintChangesOnly { get; set; }
 		public bool? scrollByContent { get; set; }
 		public bool? scrollByThumb { get; set; }
 		public bool? scrollingEnabled { get; set; }
@@ -789,13 +996,14 @@ namespace DevExpress.Ui
 		public string searchValue { get; set; }
 	}
 
-	public partial class DxLoadIndicatorOptions: WidgetOptions
+	public partial class DxLoadIndicatorOptions: WidgetOptions<object>
 	{
 		public string indicatorSrc { get; set; }
 	}
 
-	public partial class DxLoadPanelOptions: DxOverlayOptions
+	public partial class DxLoadPanelOptions: DxOverlayOptions<object>
 	{
+		public object container { get; set; }
 		public float? delay { get; set; }
 		public string indicatorSrc { get; set; }
 		public string message { get; set; }
@@ -807,7 +1015,7 @@ namespace DevExpress.Ui
 	{
 	}
 
-	public partial class DxLookupOptions: DxDropDownListOptions
+	public partial class DxLookupOptions: DxDropDownListOptions<object>
 	{
 		public object animation { get; set; }
 		public string applyButtonText { get; set; }
@@ -841,7 +1049,7 @@ namespace DevExpress.Ui
 		public bool? usePopover { get; set; }
 	}
 
-	public partial class DxMapOptions: WidgetOptions
+	public partial class DxMapOptions: WidgetOptions<object>
 	{
 		public bool? autoAdjust { get; set; }
 		public object center { get; set; }
@@ -867,7 +1075,7 @@ namespace DevExpress.Ui
 		public float? lng { get; set; }
 	}
 
-	public partial class DxMenuOptions: DxMenuBaseOptions
+	public partial class DxMenuOptions: DxMenuBaseOptions<object>
 	{
 		public bool? adaptivityEnabled { get; set; }
 		public bool? hideSubmenuOnMouseLeave { get; set; }
@@ -880,7 +1088,7 @@ namespace DevExpress.Ui
 		public string submenuDirection { get; set; }
 	}
 
-	public partial class DxMultiViewOptions: CollectionWidgetOptions
+	public partial class DxMultiViewOptions<T>: CollectionWidgetOptions<T>
 	{
 		public bool? animationEnabled { get; set; }
 		public bool? deferRendering { get; set; }
@@ -892,7 +1100,7 @@ namespace DevExpress.Ui
 	{
 	}
 
-	public partial class DxNavBarOptions: DxTabsOptions
+	public partial class DxNavBarOptions: DxTabsOptions<object>
 	{
 	}
 
@@ -900,7 +1108,7 @@ namespace DevExpress.Ui
 	{
 	}
 
-	public partial class DxNumberBoxOptions: DxTextEditorOptions
+	public partial class DxNumberBoxOptions: DxTextEditorOptions<object>
 	{
 		public object format { get; set; }
 		public string invalidValueMessage { get; set; }
@@ -912,7 +1120,7 @@ namespace DevExpress.Ui
 		public bool? useLargeSpinButtons { get; set; }
 	}
 
-	public partial class DxOverlayOptions: WidgetOptions
+	public partial class DxOverlayOptions<T>: WidgetOptions<T>
 	{
 		public object animation { get; set; }
 		public bool? closeOnBackButton { get; set; }
@@ -939,7 +1147,7 @@ namespace DevExpress.Ui
 		public object show { get; set; }
 	}
 
-	public partial class DxPanoramaOptions: CollectionWidgetOptions
+	public partial class DxPanoramaOptions: CollectionWidgetOptions<object>
 	{
 		public object backgroundImage { get; set; }
 		public string title { get; set; }
@@ -950,7 +1158,7 @@ namespace DevExpress.Ui
 		public string title { get; set; }
 	}
 
-	public partial class DxPivotOptions: CollectionWidgetOptions
+	public partial class DxPivotOptions: CollectionWidgetOptions<object>
 	{
 		public object contentTemplate { get; set; }
 		public object itemTitleTemplate { get; set; }
@@ -963,7 +1171,7 @@ namespace DevExpress.Ui
 		public object titleTemplate { get; set; }
 	}
 
-	public partial class DxPivotGridOptions: WidgetOptions
+	public partial class DxPivotGridOptions: WidgetOptions<object>
 	{
 		public bool? allowExpandAll { get; set; }
 		public bool? allowFiltering { get; set; }
@@ -996,7 +1204,7 @@ namespace DevExpress.Ui
 		public bool? wordWrapEnabled { get; set; }
 	}
 
-	public partial class DxPivotGridFieldChooserOptions: WidgetOptions
+	public partial class DxPivotGridFieldChooserOptions: WidgetOptions<object>
 	{
 		public bool? allowSearch { get; set; }
 		public string applyChangesMode { get; set; }
@@ -1004,11 +1212,12 @@ namespace DevExpress.Ui
 		public object headerFilter { get; set; }
 		public object layout { get; set; }
 		public bool? onContextMenuPreparingEnabled { get; set; }
+		public float? searchTimeout { get; set; }
 		public object state { get; set; }
 		public object texts { get; set; }
 	}
 
-	public partial class DxPopoverOptions: DxPopupOptions
+	public partial class DxPopoverOptions<T>: DxPopupOptions<T>
 	{
 		public object hideEvent { get; set; }
 		public object showEvent { get; set; }
@@ -1019,7 +1228,7 @@ namespace DevExpress.Ui
 	{
 	}
 
-	public partial class DxPopupOptions: DxOverlayOptions
+	public partial class DxPopupOptions<T>: DxOverlayOptions<T>
 	{
 		public object container { get; set; }
 		public bool? fullScreen { get; set; }
@@ -1052,14 +1261,14 @@ namespace DevExpress.Ui
 		public string widget { get; set; }
 	}
 
-	public partial class DxProgressBarOptions: DxTrackBarOptions
+	public partial class DxProgressBarOptions: DxTrackBarOptions<object>
 	{
 		public bool? onCompleteEnabled { get; set; }
 		public bool? showStatus { get; set; }
 		public object statusFormat { get; set; }
 	}
 
-	public partial class DxRadioGroupOptions: EditorOptions
+	public partial class DxRadioGroupOptions: EditorOptions<object>
 	{
 		public string layout { get; set; }
 		public string name { get; set; }
@@ -1070,7 +1279,7 @@ namespace DevExpress.Ui
 		public object valueExpr { get; set; }
 	}
 
-	public partial class DxRangeSliderOptions: DxSliderBaseOptions
+	public partial class DxRangeSliderOptions: DxSliderBaseOptions<object>
 	{
 		public float? end { get; set; }
 		public string endName { get; set; }
@@ -1078,9 +1287,13 @@ namespace DevExpress.Ui
 		public string startName { get; set; }
 	}
 
-	public partial class DxResizableOptions: DOMComponentOptions
+	public partial class DxRecurrenceEditorOptions: EditorOptions<object>
 	{
-		public string handles { get; set; }
+	}
+
+	public partial class DxResizableOptions: DOMComponentOptions<object>
+	{
+		public object handles { get; set; }
 		public float? maxHeight { get; set; }
 		public float? maxWidth { get; set; }
 		public float? minHeight { get; set; }
@@ -1090,7 +1303,7 @@ namespace DevExpress.Ui
 		public bool? onResizeStartEnabled { get; set; }
 	}
 
-	public partial class DxResponsiveBoxOptions: CollectionWidgetOptions
+	public partial class DxResponsiveBoxOptions: CollectionWidgetOptions<object>
 	{
 		public object cols { get; set; }
 		public object rows { get; set; }
@@ -1103,7 +1316,7 @@ namespace DevExpress.Ui
 		public object location { get; set; }
 	}
 
-	public partial class DxSchedulerOptions: WidgetOptions
+	public partial class DxSchedulerOptions: WidgetOptions<object>
 	{
 		public string allDayExpr { get; set; }
 		public object appointmentTemplate { get; set; }
@@ -1123,6 +1336,7 @@ namespace DevExpress.Ui
 		public string endDateTimeZoneExpr { get; set; }
 		public float? endDayHour { get; set; }
 		public object firstDayOfWeek { get; set; }
+		public bool? groupByDate { get; set; }
 		public object groups { get; set; }
 		public float? indicatorUpdateInterval { get; set; }
 		public object max { get; set; }
@@ -1162,19 +1376,7 @@ namespace DevExpress.Ui
 		public object views { get; set; }
 	}
 
-	public static class DxSchedulerOptionsViews
-	{
-		public const string Day = "day";
-		public const string Week = "week";
-		public const string WorkWeek = "workWeek";
-		public const string Month = "month";
-		public const string TimelineDay = "timelineDay";
-		public const string TimelineWeek = "timelineWeek";
-		public const string TimelineWorkWeek = "timelineWorkWeek";
-		public const string TimelineMonth = "timelineMonth";
-		public const string Agenda = "agenda";
-	}
-	public partial class DxScrollViewOptions: DxScrollableOptions
+	public partial class DxScrollViewOptions: DxScrollableOptions<object>
 	{
 		public bool? onPullDownEnabled { get; set; }
 		public bool? onReachBottomEnabled { get; set; }
@@ -1184,18 +1386,18 @@ namespace DevExpress.Ui
 		public string refreshingText { get; set; }
 	}
 
-	public partial class DxSelectBoxOptions: DxDropDownListOptions
+	public partial class DxSelectBoxOptions<T>: DxDropDownListOptions<T>
 	{
 		public object fieldTemplate { get; set; }
 		public bool? onCustomItemCreatingEnabled { get; set; }
 		public bool? showSelectionControls { get; set; }
 	}
 
-	public partial class DxSliderOptions: DxSliderBaseOptions
+	public partial class DxSliderOptions: DxSliderBaseOptions<object>
 	{
 	}
 
-	public partial class DxSlideOutOptions: CollectionWidgetOptions
+	public partial class DxSlideOutOptions: CollectionWidgetOptions<object>
 	{
 		public object contentTemplate { get; set; }
 		public bool? menuGrouped { get; set; }
@@ -1213,7 +1415,7 @@ namespace DevExpress.Ui
 		public object menuTemplate { get; set; }
 	}
 
-	public partial class DxSlideOutViewOptions: WidgetOptions
+	public partial class DxSlideOutViewOptions: WidgetOptions<object>
 	{
 		public object contentTemplate { get; set; }
 		public string menuPosition { get; set; }
@@ -1222,15 +1424,18 @@ namespace DevExpress.Ui
 		public bool? swipeEnabled { get; set; }
 	}
 
-	public partial class DxSwitchOptions: EditorOptions
+	public partial class DxSwitchOptions: EditorOptions<object>
 	{
 		public string name { get; set; }
 		public string offText { get; set; }
 		public string onText { get; set; }
+		public string switchedOffText { get; set; }
+		public string switchedOnText { get; set; }
 	}
 
-	public partial class DxTabsOptions: CollectionWidgetOptions
+	public partial class DxTabsOptions<T>: CollectionWidgetOptions<T>
 	{
+		public bool? repaintChangesOnly { get; set; }
 		public bool? scrollByContent { get; set; }
 		public bool? scrollingEnabled { get; set; }
 		public string selectionMode { get; set; }
@@ -1243,12 +1448,13 @@ namespace DevExpress.Ui
 		public string icon { get; set; }
 	}
 
-	public partial class DxTabPanelOptions: DxMultiViewOptions
+	public partial class DxTabPanelOptions: DxMultiViewOptions<object>
 	{
 		public object itemTitleTemplate { get; set; }
 		public bool? onTitleClickEnabled { get; set; }
 		public bool? onTitleHoldEnabled { get; set; }
 		public bool? onTitleRenderedEnabled { get; set; }
+		public bool? repaintChangesOnly { get; set; }
 		public bool? scrollByContent { get; set; }
 		public bool? scrollingEnabled { get; set; }
 		public bool? showNavButtons { get; set; }
@@ -1262,7 +1468,7 @@ namespace DevExpress.Ui
 		public string title { get; set; }
 	}
 
-	public partial class DxTagBoxOptions: DxSelectBoxOptions
+	public partial class DxTagBoxOptions: DxSelectBoxOptions<object>
 	{
 		public bool? hideSelectedItems { get; set; }
 		public float? maxDisplayedTags { get; set; }
@@ -1275,20 +1481,20 @@ namespace DevExpress.Ui
 		public object tagTemplate { get; set; }
 	}
 
-	public partial class DxTextAreaOptions: DxTextBoxOptions
+	public partial class DxTextAreaOptions: DxTextBoxOptions<object>
 	{
 		public bool? autoResizeEnabled { get; set; }
 		public object maxHeight { get; set; }
 		public object minHeight { get; set; }
 	}
 
-	public partial class DxTextBoxOptions: DxTextEditorOptions
+	public partial class DxTextBoxOptions<T>: DxTextEditorOptions<T>
 	{
 		public object maxLength { get; set; }
 		public string mode { get; set; }
 	}
 
-	public partial class DxTileViewOptions: CollectionWidgetOptions
+	public partial class DxTileViewOptions: CollectionWidgetOptions<object>
 	{
 		public float? baseItemHeight { get; set; }
 		public float? baseItemWidth { get; set; }
@@ -1303,7 +1509,7 @@ namespace DevExpress.Ui
 		public float? widthRatio { get; set; }
 	}
 
-	public partial class DxToastOptions: DxOverlayOptions
+	public partial class DxToastOptions: DxOverlayOptions<object>
 	{
 		public bool? closeOnClick { get; set; }
 		public bool? closeOnSwipe { get; set; }
@@ -1316,7 +1522,7 @@ namespace DevExpress.Ui
 	{
 	}
 
-	public partial class DxToolbarOptions: CollectionWidgetOptions
+	public partial class DxToolbarOptions: CollectionWidgetOptions<object>
 	{
 		public object menuItemTemplate { get; set; }
 		public string renderAs { get; set; }
@@ -1332,17 +1538,17 @@ namespace DevExpress.Ui
 		public string widget { get; set; }
 	}
 
-	public partial class DxTooltipOptions: DxPopoverOptions
+	public partial class DxTooltipOptions: DxPopoverOptions<object>
 	{
 	}
 
-	public partial class DxTrackBarOptions: EditorOptions
+	public partial class DxTrackBarOptions<T>: EditorOptions<T>
 	{
 		public float? max { get; set; }
 		public float? min { get; set; }
 	}
 
-	public partial class DxTreeListOptions: GridBaseOptions
+	public partial class DxTreeListOptions: GridBaseOptions<object>
 	{
 		public bool? autoExpandAll { get; set; }
 		public object customizeColumns { get; set; }
@@ -1359,6 +1565,10 @@ namespace DevExpress.Ui
 		public bool? onEditingStartEnabled { get; set; }
 		public bool? onEditorPreparedEnabled { get; set; }
 		public bool? onEditorPreparingEnabled { get; set; }
+		public bool? onFocusedCellChangedEnabled { get; set; }
+		public bool? onFocusedCellChangingEnabled { get; set; }
+		public bool? onFocusedRowChangedEnabled { get; set; }
+		public bool? onFocusedRowChangingEnabled { get; set; }
 		public bool? onNodesInitializedEnabled { get; set; }
 		public bool? onRowClickEnabled { get; set; }
 		public bool? onRowPreparedEnabled { get; set; }
@@ -1369,6 +1579,9 @@ namespace DevExpress.Ui
 
 	public partial class DxTreeListEditing: GridBaseEditing
 	{
+		public object allowAdding { get; set; }
+		public object allowDeleting { get; set; }
+		public object allowUpdating { get; set; }
 	}
 
 	public partial class DxTreeListEditingTexts: GridBaseEditingTexts
@@ -1390,18 +1603,20 @@ namespace DevExpress.Ui
 		public bool? recursive { get; set; }
 	}
 
-	public partial class DxTreeViewOptions: HierarchicalCollectionWidgetOptions
+	public partial class DxTreeViewOptions: HierarchicalCollectionWidgetOptions<object>
 	{
 		public bool? animationEnabled { get; set; }
 		public object createChildren { get; set; }
 		public string dataStructure { get; set; }
 		public bool? expandAllEnabled { get; set; }
 		public object expandedExpr { get; set; }
+		public string expandEvent { get; set; }
 		public bool? expandNodesRecursive { get; set; }
 		public object hasItemsExpr { get; set; }
 		public bool? onItemCollapsedEnabled { get; set; }
 		public bool? onItemExpandedEnabled { get; set; }
 		public bool? onItemSelectionChangedEnabled { get; set; }
+		public bool? onSelectAllValueChangedEnabled { get; set; }
 		public object parentIdExpr { get; set; }
 		public object rootValue { get; set; }
 		public string scrollDirection { get; set; }
@@ -1495,16 +1710,16 @@ namespace DevExpress.Ui
 		public object value { get; set; }
 	}
 
-	public partial class DxValidationGroupOptions: DOMComponentOptions
+	public partial class DxValidationGroupOptions: DOMComponentOptions<object>
 	{
 	}
 
-	public partial class DxValidationSummaryOptions: CollectionWidgetOptions
+	public partial class DxValidationSummaryOptions: CollectionWidgetOptions<object>
 	{
 		public string validationGroup { get; set; }
 	}
 
-	public partial class DxValidatorOptions: DOMComponentOptions
+	public partial class DxValidatorOptions: DOMComponentOptions<object>
 	{
 		public object adapter { get; set; }
 		public string name { get; set; }
@@ -1520,7 +1735,7 @@ namespace DevExpress.Ui
 		public string view { get; set; }
 	}
 
-	public partial class CollectionWidgetOptions: WidgetOptions
+	public partial class CollectionWidgetOptions<T>: WidgetOptions<T>
 	{
 		public object dataSource { get; set; }
 		public float? itemHoldTimeout { get; set; }
@@ -1552,7 +1767,7 @@ namespace DevExpress.Ui
 	{
 	}
 
-	public partial class DxMenuBaseOptions: HierarchicalCollectionWidgetOptions
+	public partial class DxMenuBaseOptions<T>: HierarchicalCollectionWidgetOptions<T>
 	{
 		public object animation { get; set; }
 		public string cssClass { get; set; }
@@ -1576,15 +1791,16 @@ namespace DevExpress.Ui
 		public bool? allowExporting { get; set; }
 		public bool? allowGrouping { get; set; }
 		public bool? autoExpandGroup { get; set; }
+		public object buttons { get; set; }
 		public object calculateGroupValue { get; set; }
 		public object columns { get; set; }
 		public object groupCellTemplate { get; set; }
 		public float? groupIndex { get; set; }
-		public float? precision { get; set; }
 		public bool? showWhenGrouped { get; set; }
+		public string type { get; set; }
 	}
 
-	public partial class DxDropDownEditorOptions: DxTextBoxOptions
+	public partial class DxDropDownEditorOptions<T>: DxTextBoxOptions<T>
 	{
 		public bool? acceptCustomValue { get; set; }
 		public string applyValueMode { get; set; }
@@ -1593,9 +1809,11 @@ namespace DevExpress.Ui
 		public bool? onClosedEnabled { get; set; }
 		public bool? onOpenedEnabled { get; set; }
 		public bool? opened { get; set; }
+		public bool? openOnFieldClick { get; set; }
+		public bool? showDropDownButton { get; set; }
 	}
 
-	public partial class DxDropDownListOptions: DxDropDownEditorOptions
+	public partial class DxDropDownListOptions<T>: DxDropDownEditorOptions<T>
 	{
 		public string displayValue { get; set; }
 		public bool? grouped { get; set; }
@@ -1617,7 +1835,7 @@ namespace DevExpress.Ui
 		public object valueExpr { get; set; }
 	}
 
-	public partial class EditorOptions: WidgetOptions
+	public partial class EditorOptions<T>: WidgetOptions<T>
 	{
 		public bool? isValid { get; set; }
 		public bool? onValueChangedEnabled { get; set; }
@@ -1627,7 +1845,7 @@ namespace DevExpress.Ui
 		public object value { get; set; }
 	}
 
-	public partial class DataExpressionMixinOptions
+	public partial class DataExpressionMixinOptions<T>
 	{
 		public object dataSource { get; set; }
 		public object displayExpr { get; set; }
@@ -1662,22 +1880,6 @@ namespace DevExpress.Ui
 		public string trueText { get; set; }
 	}
 
-	public static class DxFilterBuilderFieldFilterOperations
-	{
-		public const string Assignment = "=";
-		public const string LowerGreaterThan = "<>";
-		public const string LowerThan = "<";
-		public const string LowerOrEqualThan = "<=";
-		public const string GreaterThan = ">";
-		public const string GreaterThanEqual = ">=";
-		public const string Contains = "contains";
-		public const string Endswith = "endswith";
-		public const string Isblank = "isblank";
-		public const string Isnotblank = "isnotblank";
-		public const string Notcontains = "notcontains";
-		public const string Startswith = "startswith";
-		public const string Between = "between";
-	}
 	public partial class DxFilterBuilderCustomOperation
 	{
 		public object calculateFilterExpression { get; set; }
@@ -1769,8 +1971,10 @@ namespace DevExpress.Ui
 		public object buttonOptions { get; set; }
 		public float? colSpan { get; set; }
 		public string cssClass { get; set; }
+		public string horizontalAlignment { get; set; }
 		public string itemType { get; set; }
 		public string name { get; set; }
+		public string verticalAlignment { get; set; }
 		public bool? visible { get; set; }
 		public float? visibleIndex { get; set; }
 	}
@@ -1817,6 +2021,7 @@ namespace DevExpress.Ui
 		public float? minWidth { get; set; }
 		public string name { get; set; }
 		public float? ownerBand { get; set; }
+		public bool? renderAsync { get; set; }
 		public string selectedFilterOperation { get; set; }
 		public object setCellValue { get; set; }
 		public bool? showEditorAlways { get; set; }
@@ -1847,7 +2052,33 @@ namespace DevExpress.Ui
 	}
 	public partial class DxTreeListColumn: GridBaseColumn
 	{
+		public object buttons { get; set; }
 		public object columns { get; set; }
+		public string type { get; set; }
+	}
+
+	public partial class GridBaseColumnButton
+	{
+		public string cssClass { get; set; }
+		public string hint { get; set; }
+		public string icon { get; set; }
+		public string text { get; set; }
+	}
+
+	public partial class DxDataGridColumnButton: GridBaseColumnButton
+	{
+		public object name { get; set; }
+		public bool? onClickEnabled { get; set; }
+		public object template { get; set; }
+		public object visible { get; set; }
+	}
+
+	public partial class DxTreeListColumnButton: GridBaseColumnButton
+	{
+		public object name { get; set; }
+		public bool? onClickEnabled { get; set; }
+		public object template { get; set; }
+		public object visible { get; set; }
 	}
 
 	public partial class DxDataGridRowObject
@@ -1876,7 +2107,7 @@ namespace DevExpress.Ui
 		public object values { get; set; }
 	}
 
-	public partial class HierarchicalCollectionWidgetOptions: CollectionWidgetOptions
+	public partial class HierarchicalCollectionWidgetOptions<T>: CollectionWidgetOptions<T>
 	{
 		public object disabledExpr { get; set; }
 		public object displayExpr { get; set; }
@@ -1884,9 +2115,28 @@ namespace DevExpress.Ui
 		public object selectedExpr { get; set; }
 	}
 
+	public partial class DxHtmlEditorToolbar
+	{
+		public object container { get; set; }
+		public object items { get; set; }
+	}
+
+	public partial class DxHtmlEditorToolbarItem: DxToolbarItemTemplate
+	{
+		public string formatName { get; set; }
+		public object formatValues { get; set; }
+	}
+
+	public partial class DxHtmlEditorVariables
+	{
+		public object dataSource { get; set; }
+		public object escapeChar { get; set; }
+	}
+
 	public partial class DxListItemTemplate: CollectionWidgetItemTemplate
 	{
 		public string badge { get; set; }
+		public string icon { get; set; }
 		public string key { get; set; }
 		public bool? showChevron { get; set; }
 	}
@@ -1934,7 +2184,7 @@ namespace DevExpress.Ui
 		public string text { get; set; }
 	}
 
-	public partial class DxScrollableOptions: DOMComponentOptions
+	public partial class DxScrollableOptions<T>: DOMComponentOptions<T>
 	{
 		public bool? bounceEnabled { get; set; }
 		public string direction { get; set; }
@@ -1947,7 +2197,7 @@ namespace DevExpress.Ui
 		public bool? useNative { get; set; }
 	}
 
-	public partial class DxSliderBaseOptions: DxTrackBarOptions
+	public partial class DxSliderBaseOptions<T>: DxTrackBarOptions<T>
 	{
 		public float? keyStep { get; set; }
 		public object label { get; set; }
@@ -1957,7 +2207,7 @@ namespace DevExpress.Ui
 		public object tooltip { get; set; }
 	}
 
-	public partial class DxTextEditorOptions: EditorOptions
+	public partial class DxTextEditorOptions<T>: EditorOptions<T>
 	{
 		public object inputAttr { get; set; }
 		public string mask { get; set; }
@@ -1980,6 +2230,7 @@ namespace DevExpress.Ui
 		public bool? showClearButton { get; set; }
 		public string showMaskMode { get; set; }
 		public bool? spellcheck { get; set; }
+		public string stylingMode { get; set; }
 		public string text { get; set; }
 		public bool? useMaskedValue { get; set; }
 		public string valueChangeEvent { get; set; }
@@ -2018,7 +2269,7 @@ namespace DevExpress.Ui
 		public string text { get; set; }
 	}
 
-	public partial class SearchBoxMixinOptions
+	public partial class SearchBoxMixinOptions<T>
 	{
 		public object searchEditorOptions { get; set; }
 		public bool? searchEnabled { get; set; }
@@ -2033,7 +2284,7 @@ namespace DevExpress.Ui
 		public string name { get; set; }
 	}
 
-	public partial class WidgetOptions: DOMComponentOptions
+	public partial class WidgetOptions<T>: DOMComponentOptions<T>
 	{
 		public string accessKey { get; set; }
 		public bool? activeStateEnabled { get; set; }
@@ -2046,11 +2297,30 @@ namespace DevExpress.Ui
 		public bool? visible { get; set; }
 	}
 
+	public partial class DataExpressionMixin
+	{
+	}
+	public partial class DxPivotGridSummaryCell
+	{
+	}
+	public partial class SearchBoxMixin
+	{
+	}
+	public partial class DxTemplate
+	{
+	}
+	public partial class Dialog
+	{
+	}
+	public partial class Themes
+	{
+	}
 }
 namespace DevExpress.Viz
 {
-	public partial class BaseWidgetOptions: DOMComponentOptions
+	public partial class BaseWidgetOptions<T>: DOMComponentOptions<T>
 	{
+		public bool? disabled { get; set; }
 		public object export { get; set; }
 		public object loadingIndicator { get; set; }
 		public object margin { get; set; }
@@ -2073,10 +2343,19 @@ namespace DevExpress.Viz
 		public bool? enabled { get; set; }
 		public string fileName { get; set; }
 		public object formats { get; set; }
+		public float? margin { get; set; }
 		public bool? printingEnabled { get; set; }
 		public string proxyUrl { get; set; }
 	}
 
+	public static class BaseWidgetExportFormats
+	{
+		public const string GIF = "GIF";
+		public const string JPEG = "JPEG";
+		public const string PDF = "PDF";
+		public const string PNG = "PNG";
+		public const string SVG = "SVG";
+	}
 	public partial class BaseWidgetLoadingIndicator
 	{
 		public string backgroundColor { get; set; }
@@ -2122,7 +2401,6 @@ namespace DevExpress.Viz
 		public float? opacity { get; set; }
 		public float? paddingLeftRight { get; set; }
 		public float? paddingTopBottom { get; set; }
-		public float? precision { get; set; }
 		public object shadow { get; set; }
 		public float? zIndex { get; set; }
 	}
@@ -2133,17 +2411,634 @@ namespace DevExpress.Viz
 		public object startValue { get; set; }
 	}
 
-	public partial class VizTimeInterval
+	public partial class VizRange
 	{
-		public float? days { get; set; }
-		public float? hours { get; set; }
-		public float? milliseconds { get; set; }
-		public float? minutes { get; set; }
-		public float? months { get; set; }
-		public float? quarters { get; set; }
-		public float? seconds { get; set; }
-		public float? weeks { get; set; }
-		public float? years { get; set; }
+		public object endValue { get; set; }
+		public object length { get; set; }
+		public object startValue { get; set; }
+	}
+
+	public partial class Font
+	{
+		public string color { get; set; }
+		public string family { get; set; }
+		public float? opacity { get; set; }
+		public object size { get; set; }
+		public float? weight { get; set; }
+	}
+
+	public partial class DxChartOptions: BaseChartOptions<object>
+	{
+		public bool? adjustOnZoom { get; set; }
+		public object argumentAxis { get; set; }
+		public float? barGroupPadding { get; set; }
+		public float? barGroupWidth { get; set; }
+		public float? barWidth { get; set; }
+		public object commonAxisSettings { get; set; }
+		public object commonPaneSettings { get; set; }
+		public object commonSeriesSettings { get; set; }
+		public string containerBackgroundColor { get; set; }
+		public object crosshair { get; set; }
+		public object dataPrepareSettings { get; set; }
+		public string defaultPane { get; set; }
+		public bool? equalBarWidth { get; set; }
+		public float? maxBubbleSize { get; set; }
+		public float? minBubbleSize { get; set; }
+		public bool? negativesAsZeroes { get; set; }
+		public bool? onArgumentAxisClickEnabled { get; set; }
+		public bool? onLegendClickEnabled { get; set; }
+		public bool? onSeriesClickEnabled { get; set; }
+		public bool? onSeriesHoverChangedEnabled { get; set; }
+		public bool? onSeriesSelectionChangedEnabled { get; set; }
+		public bool? onZoomEndEnabled { get; set; }
+		public bool? onZoomStartEnabled { get; set; }
+		public object panes { get; set; }
+		public string resolveLabelOverlapping { get; set; }
+		public bool? rotated { get; set; }
+		public object scrollBar { get; set; }
+		public string scrollingMode { get; set; }
+		public string seriesSelectionMode { get; set; }
+		public object seriesTemplate { get; set; }
+		public bool? synchronizeMultiAxes { get; set; }
+		public bool? useAggregation { get; set; }
+		public object valueAxis { get; set; }
+		public object zoomAndPan { get; set; }
+		public string zoomingMode { get; set; }
+	}
+
+	public partial class DxChartArgumentAxis: DxChartCommonAxisSettings
+	{
+		public float? aggregationGroupWidth { get; set; }
+		public object aggregationInterval { get; set; }
+		public string argumentType { get; set; }
+		public float? axisDivisionFactor { get; set; }
+		public object breaks { get; set; }
+		public object categories { get; set; }
+		public object constantLines { get; set; }
+		public object holidays { get; set; }
+		public string hoverMode { get; set; }
+		public float? logarithmBase { get; set; }
+		public object max { get; set; }
+		public object min { get; set; }
+		public float? minorTickCount { get; set; }
+		public object minorTickInterval { get; set; }
+		public string position { get; set; }
+		public object singleWorkdays { get; set; }
+		public object strips { get; set; }
+		public object tickInterval { get; set; }
+		public string type { get; set; }
+		public object visualRange { get; set; }
+		public string visualRangeUpdateMode { get; set; }
+		public object wholeRange { get; set; }
+		public bool? workdaysOnly { get; set; }
+		public object workWeek { get; set; }
+	}
+
+	public partial class DxChartArgumentAxisConstantLines: DxChartCommonAxisSettingsConstantLineStyle
+	{
+		public bool? extendAxis { get; set; }
+		public object value { get; set; }
+	}
+
+	public partial class DxChartArgumentAxisConstantLinesLabel: DxChartCommonAxisSettingsConstantLineStyleLabel
+	{
+		public string horizontalAlignment { get; set; }
+		public string text { get; set; }
+		public string verticalAlignment { get; set; }
+	}
+
+	public partial class DxChartArgumentAxisConstantLineStyle: DxChartCommonAxisSettingsConstantLineStyle
+	{
+	}
+
+	public partial class DxChartArgumentAxisConstantLineStyleLabel: DxChartCommonAxisSettingsConstantLineStyleLabel
+	{
+		public string horizontalAlignment { get; set; }
+		public string verticalAlignment { get; set; }
+	}
+
+	public partial class DxChartArgumentAxisLabel: DxChartCommonAxisSettingsLabel
+	{
+		public object customizeHint { get; set; }
+		public object customizeText { get; set; }
+		public object format { get; set; }
+	}
+
+	public partial class DxChartArgumentAxisStrips: DxChartCommonAxisSettingsStripStyle
+	{
+		public string color { get; set; }
+		public object endValue { get; set; }
+		public object startValue { get; set; }
+	}
+
+	public partial class DxChartArgumentAxisStripsLabel: DxChartCommonAxisSettingsStripStyleLabel
+	{
+		public string text { get; set; }
+	}
+
+	public partial class DxChartArgumentAxisTitle: DxChartCommonAxisSettingsTitle
+	{
+		public string text { get; set; }
+	}
+
+	public partial class DxChartCommonAxisSettings
+	{
+		public bool? allowDecimals { get; set; }
+		public object breakStyle { get; set; }
+		public string color { get; set; }
+		public object constantLineStyle { get; set; }
+		public string discreteAxisDivisionMode { get; set; }
+		public bool? endOnTick { get; set; }
+		public object grid { get; set; }
+		public bool? inverted { get; set; }
+		public object label { get; set; }
+		public float? maxValueMargin { get; set; }
+		public object minorGrid { get; set; }
+		public object minorTick { get; set; }
+		public float? minValueMargin { get; set; }
+		public float? opacity { get; set; }
+		public float? placeholderSize { get; set; }
+		public object stripStyle { get; set; }
+		public object tick { get; set; }
+		public object title { get; set; }
+		public bool? valueMarginsEnabled { get; set; }
+		public bool? visible { get; set; }
+		public float? width { get; set; }
+	}
+
+	public partial class DxChartCommonAxisSettingsConstantLineStyle
+	{
+		public string color { get; set; }
+		public string dashStyle { get; set; }
+		public object label { get; set; }
+		public float? paddingLeftRight { get; set; }
+		public float? paddingTopBottom { get; set; }
+		public float? width { get; set; }
+	}
+
+	public partial class DxChartCommonAxisSettingsConstantLineStyleLabel
+	{
+		public object font { get; set; }
+		public string position { get; set; }
+		public bool? visible { get; set; }
+	}
+
+	public partial class DxChartCommonAxisSettingsLabel
+	{
+		public string alignment { get; set; }
+		public string displayMode { get; set; }
+		public object font { get; set; }
+		public float? indentFromAxis { get; set; }
+		public string overlappingBehavior { get; set; }
+		public float? rotationAngle { get; set; }
+		public float? staggeringSpacing { get; set; }
+		public bool? visible { get; set; }
+	}
+
+	public partial class DxChartCommonAxisSettingsStripStyle
+	{
+		public object label { get; set; }
+		public float? paddingLeftRight { get; set; }
+		public float? paddingTopBottom { get; set; }
+	}
+
+	public partial class DxChartCommonAxisSettingsStripStyleLabel
+	{
+		public object font { get; set; }
+		public string horizontalAlignment { get; set; }
+		public string verticalAlignment { get; set; }
+	}
+
+	public partial class DxChartCommonAxisSettingsTitle
+	{
+		public object font { get; set; }
+		public float? margin { get; set; }
+	}
+
+	public partial class DxChartCommonPaneSettings
+	{
+		public string backgroundColor { get; set; }
+		public object border { get; set; }
+	}
+
+	public partial class DxChartCommonSeriesSettings: DxChartSeriesTypesCommonSeries
+	{
+		public object area { get; set; }
+		public object bar { get; set; }
+		public object bubble { get; set; }
+		public object candlestick { get; set; }
+		public object fullstackedarea { get; set; }
+		public object fullstackedbar { get; set; }
+		public object fullstackedline { get; set; }
+		public object fullstackedspline { get; set; }
+		public object fullstackedsplinearea { get; set; }
+		public object line { get; set; }
+		public object rangearea { get; set; }
+		public object rangebar { get; set; }
+		public object scatter { get; set; }
+		public object spline { get; set; }
+		public object splinearea { get; set; }
+		public object stackedarea { get; set; }
+		public object stackedbar { get; set; }
+		public object stackedline { get; set; }
+		public object stackedspline { get; set; }
+		public object stackedsplinearea { get; set; }
+		public object steparea { get; set; }
+		public object stepline { get; set; }
+		public object stock { get; set; }
+		public string type { get; set; }
+	}
+
+	public partial class DxChartLegend: BaseChartLegend
+	{
+		public object customizeHint { get; set; }
+		public object customizeText { get; set; }
+		public string hoverMode { get; set; }
+		public string position { get; set; }
+	}
+
+	public partial class DxChartPanes: DxChartCommonPaneSettings
+	{
+		public string name { get; set; }
+	}
+
+	public partial class DxChartTooltip: BaseChartTooltip
+	{
+		public string location { get; set; }
+		public bool? shared { get; set; }
+	}
+
+	public partial class DxChartValueAxis: DxChartCommonAxisSettings
+	{
+		public bool? autoBreaksEnabled { get; set; }
+		public float? axisDivisionFactor { get; set; }
+		public object breaks { get; set; }
+		public object categories { get; set; }
+		public object constantLines { get; set; }
+		public float? logarithmBase { get; set; }
+		public object max { get; set; }
+		public float? maxAutoBreakCount { get; set; }
+		public object min { get; set; }
+		public float? minorTickCount { get; set; }
+		public object minorTickInterval { get; set; }
+		public float? multipleAxesSpacing { get; set; }
+		public string name { get; set; }
+		public string pane { get; set; }
+		public string position { get; set; }
+		public bool? showZero { get; set; }
+		public object strips { get; set; }
+		public float? synchronizedValue { get; set; }
+		public object tickInterval { get; set; }
+		public string type { get; set; }
+		public string valueType { get; set; }
+		public object visualRange { get; set; }
+		public string visualRangeUpdateMode { get; set; }
+		public object wholeRange { get; set; }
+	}
+
+	public partial class DxChartValueAxisConstantLines: DxChartCommonAxisSettingsConstantLineStyle
+	{
+		public bool? extendAxis { get; set; }
+		public object value { get; set; }
+	}
+
+	public partial class DxChartValueAxisConstantLinesLabel: DxChartCommonAxisSettingsConstantLineStyleLabel
+	{
+		public string horizontalAlignment { get; set; }
+		public string text { get; set; }
+		public string verticalAlignment { get; set; }
+	}
+
+	public partial class DxChartValueAxisConstantLineStyle: DxChartCommonAxisSettingsConstantLineStyle
+	{
+	}
+
+	public partial class DxChartValueAxisConstantLineStyleLabel: DxChartCommonAxisSettingsConstantLineStyleLabel
+	{
+		public string horizontalAlignment { get; set; }
+		public string verticalAlignment { get; set; }
+	}
+
+	public partial class DxChartValueAxisLabel: DxChartCommonAxisSettingsLabel
+	{
+		public object customizeHint { get; set; }
+		public object customizeText { get; set; }
+		public object format { get; set; }
+	}
+
+	public partial class DxChartValueAxisStrips: DxChartCommonAxisSettingsStripStyle
+	{
+		public string color { get; set; }
+		public object endValue { get; set; }
+		public object startValue { get; set; }
+	}
+
+	public partial class DxChartValueAxisStripsLabel: DxChartCommonAxisSettingsStripStyleLabel
+	{
+		public string text { get; set; }
+	}
+
+	public partial class DxChartValueAxisTitle: DxChartCommonAxisSettingsTitle
+	{
+		public string text { get; set; }
+	}
+
+	public partial class DxPieChartOptions: BaseChartOptions<object>
+	{
+		public object commonSeriesSettings { get; set; }
+		public float? diameter { get; set; }
+		public float? innerRadius { get; set; }
+		public float? minDiameter { get; set; }
+		public bool? onLegendClickEnabled { get; set; }
+		public string resolveLabelOverlapping { get; set; }
+		public string segmentsDirection { get; set; }
+		public object seriesTemplate { get; set; }
+		public string sizeGroup { get; set; }
+		public float? startAngle { get; set; }
+		public string type { get; set; }
+	}
+
+	public partial class DxPieChartAdaptiveLayout: BaseChartAdaptiveLayout
+	{
+	}
+
+	public partial class DxPieChartLegend: BaseChartLegend
+	{
+		public object customizeHint { get; set; }
+		public object customizeText { get; set; }
+		public string hoverMode { get; set; }
+	}
+
+	public partial class DxPolarChartOptions: BaseChartOptions<object>
+	{
+		public object argumentAxis { get; set; }
+		public float? barGroupPadding { get; set; }
+		public float? barGroupWidth { get; set; }
+		public float? barWidth { get; set; }
+		public object commonAxisSettings { get; set; }
+		public object commonSeriesSettings { get; set; }
+		public string containerBackgroundColor { get; set; }
+		public object dataPrepareSettings { get; set; }
+		public bool? equalBarWidth { get; set; }
+		public bool? negativesAsZeroes { get; set; }
+		public bool? onArgumentAxisClickEnabled { get; set; }
+		public bool? onLegendClickEnabled { get; set; }
+		public bool? onSeriesClickEnabled { get; set; }
+		public bool? onSeriesHoverChangedEnabled { get; set; }
+		public bool? onSeriesSelectionChangedEnabled { get; set; }
+		public string resolveLabelOverlapping { get; set; }
+		public string seriesSelectionMode { get; set; }
+		public object seriesTemplate { get; set; }
+		public bool? useSpiderWeb { get; set; }
+		public object valueAxis { get; set; }
+	}
+
+	public partial class DxPolarChartAdaptiveLayout: BaseChartAdaptiveLayout
+	{
+	}
+
+	public partial class DxPolarChartArgumentAxis: DxPolarChartCommonAxisSettings
+	{
+		public string argumentType { get; set; }
+		public float? axisDivisionFactor { get; set; }
+		public object categories { get; set; }
+		public object constantLines { get; set; }
+		public bool? firstPointOnStartAngle { get; set; }
+		public string hoverMode { get; set; }
+		public float? logarithmBase { get; set; }
+		public float? minorTickCount { get; set; }
+		public object minorTickInterval { get; set; }
+		public float? originValue { get; set; }
+		public float? period { get; set; }
+		public float? startAngle { get; set; }
+		public object strips { get; set; }
+		public object tickInterval { get; set; }
+		public string type { get; set; }
+	}
+
+	public partial class DxPolarChartArgumentAxisConstantLines: DxPolarChartCommonAxisSettingsConstantLineStyle
+	{
+		public bool? extendAxis { get; set; }
+		public object value { get; set; }
+	}
+
+	public partial class DxPolarChartArgumentAxisConstantLinesLabel: DxPolarChartCommonAxisSettingsConstantLineStyleLabel
+	{
+		public string text { get; set; }
+	}
+
+	public partial class DxPolarChartArgumentAxisLabel: DxPolarChartCommonAxisSettingsLabel
+	{
+		public object customizeHint { get; set; }
+		public object customizeText { get; set; }
+		public object format { get; set; }
+	}
+
+	public partial class DxPolarChartArgumentAxisStrips: DxPolarChartCommonAxisSettingsStripStyle
+	{
+		public string color { get; set; }
+		public object endValue { get; set; }
+		public object startValue { get; set; }
+	}
+
+	public partial class DxPolarChartArgumentAxisStripsLabel: DxPolarChartCommonAxisSettingsStripStyleLabel
+	{
+		public string text { get; set; }
+	}
+
+	public partial class DxPolarChartCommonAxisSettings
+	{
+		public bool? allowDecimals { get; set; }
+		public string color { get; set; }
+		public object constantLineStyle { get; set; }
+		public string discreteAxisDivisionMode { get; set; }
+		public bool? endOnTick { get; set; }
+		public object grid { get; set; }
+		public bool? inverted { get; set; }
+		public object label { get; set; }
+		public object minorGrid { get; set; }
+		public object minorTick { get; set; }
+		public float? opacity { get; set; }
+		public object stripStyle { get; set; }
+		public object tick { get; set; }
+		public bool? visible { get; set; }
+		public float? width { get; set; }
+	}
+
+	public partial class DxPolarChartCommonAxisSettingsConstantLineStyle
+	{
+		public string color { get; set; }
+		public string dashStyle { get; set; }
+		public object label { get; set; }
+		public float? width { get; set; }
+	}
+
+	public partial class DxPolarChartCommonAxisSettingsConstantLineStyleLabel
+	{
+		public object font { get; set; }
+		public bool? visible { get; set; }
+	}
+
+	public partial class DxPolarChartCommonAxisSettingsLabel
+	{
+		public object font { get; set; }
+		public float? indentFromAxis { get; set; }
+		public string overlappingBehavior { get; set; }
+		public bool? visible { get; set; }
+	}
+
+	public partial class DxPolarChartCommonAxisSettingsStripStyle
+	{
+		public object label { get; set; }
+	}
+
+	public partial class DxPolarChartCommonAxisSettingsStripStyleLabel
+	{
+		public object font { get; set; }
+	}
+
+	public partial class DxPolarChartCommonAxisSettingsTick
+	{
+		public string color { get; set; }
+		public float? length { get; set; }
+		public float? opacity { get; set; }
+		public bool? visible { get; set; }
+		public float? width { get; set; }
+	}
+
+	public partial class DxPolarChartCommonSeriesSettings: DxPolarChartSeriesTypesCommonPolarChartSeries
+	{
+		public object area { get; set; }
+		public object bar { get; set; }
+		public object line { get; set; }
+		public object scatter { get; set; }
+		public object stackedbar { get; set; }
+		public string type { get; set; }
+	}
+
+	public partial class DxPolarChartLegend: BaseChartLegend
+	{
+		public object customizeHint { get; set; }
+		public object customizeText { get; set; }
+		public string hoverMode { get; set; }
+	}
+
+	public partial class DxPolarChartTooltip: BaseChartTooltip
+	{
+		public bool? shared { get; set; }
+	}
+
+	public partial class DxPolarChartValueAxis: DxPolarChartCommonAxisSettings
+	{
+		public float? axisDivisionFactor { get; set; }
+		public object categories { get; set; }
+		public object constantLines { get; set; }
+		public float? logarithmBase { get; set; }
+		public float? maxValueMargin { get; set; }
+		public float? minorTickCount { get; set; }
+		public object minorTickInterval { get; set; }
+		public float? minValueMargin { get; set; }
+		public bool? showZero { get; set; }
+		public object strips { get; set; }
+		public object tickInterval { get; set; }
+		public string type { get; set; }
+		public bool? valueMarginsEnabled { get; set; }
+		public string valueType { get; set; }
+	}
+
+	public partial class DxPolarChartValueAxisConstantLines: DxPolarChartCommonAxisSettingsConstantLineStyle
+	{
+		public bool? extendAxis { get; set; }
+		public object value { get; set; }
+	}
+
+	public partial class DxPolarChartValueAxisConstantLinesLabel: DxPolarChartCommonAxisSettingsConstantLineStyleLabel
+	{
+		public string text { get; set; }
+	}
+
+	public partial class DxPolarChartValueAxisLabel: DxPolarChartCommonAxisSettingsLabel
+	{
+		public object customizeHint { get; set; }
+		public object customizeText { get; set; }
+		public object format { get; set; }
+	}
+
+	public partial class DxPolarChartValueAxisStrips: DxPolarChartCommonAxisSettingsStripStyle
+	{
+		public string color { get; set; }
+		public object endValue { get; set; }
+		public object startValue { get; set; }
+	}
+
+	public partial class DxPolarChartValueAxisStripsLabel: DxPolarChartCommonAxisSettingsStripStyleLabel
+	{
+		public string text { get; set; }
+	}
+
+	public partial class DxPolarChartValueAxisTick: DxPolarChartCommonAxisSettingsTick
+	{
+	}
+
+	public partial class BaseChartOptions<T>: BaseWidgetOptions<T>
+	{
+		public object adaptiveLayout { get; set; }
+		public object animation { get; set; }
+		public object customizeLabel { get; set; }
+		public object customizePoint { get; set; }
+		public object dataSource { get; set; }
+		public object legend { get; set; }
+		public bool? onDoneEnabled { get; set; }
+		public bool? onPointClickEnabled { get; set; }
+		public bool? onPointHoverChangedEnabled { get; set; }
+		public bool? onPointSelectionChangedEnabled { get; set; }
+		public bool? onTooltipHiddenEnabled { get; set; }
+		public bool? onTooltipShownEnabled { get; set; }
+		public object palette { get; set; }
+		public string paletteExtensionMode { get; set; }
+		public string pointSelectionMode { get; set; }
+		public object series { get; set; }
+	}
+
+	public partial class BaseChartAdaptiveLayout
+	{
+		public float? height { get; set; }
+		public bool? keepLabels { get; set; }
+		public float? width { get; set; }
+	}
+
+	public partial class BaseChartLegend
+	{
+		public string backgroundColor { get; set; }
+		public object border { get; set; }
+		public float? columnCount { get; set; }
+		public float? columnItemSpacing { get; set; }
+		public object font { get; set; }
+		public string horizontalAlignment { get; set; }
+		public string itemsAlignment { get; set; }
+		public string itemTextPosition { get; set; }
+		public object margin { get; set; }
+		public float? markerSize { get; set; }
+		public string orientation { get; set; }
+		public float? paddingLeftRight { get; set; }
+		public float? paddingTopBottom { get; set; }
+		public float? rowCount { get; set; }
+		public float? rowItemSpacing { get; set; }
+		public string verticalAlignment { get; set; }
+		public bool? visible { get; set; }
+	}
+
+	public partial class BaseChartTooltip: BaseWidgetTooltip
+	{
+		public object argumentFormat { get; set; }
+		public object customizeTooltip { get; set; }
+	}
+
+	public partial class ChartSeries: DxChartSeriesTypesCommonSeries
+	{
+		public string name { get; set; }
+		public object tag { get; set; }
+		public string type { get; set; }
 	}
 
 	public partial class DxChartSeriesTypes
@@ -2326,7 +3221,6 @@ namespace DevExpress.Viz
 	{
 		public string alignment { get; set; }
 		public object argumentFormat { get; set; }
-		public float? argumentPrecision { get; set; }
 		public string backgroundColor { get; set; }
 		public object border { get; set; }
 		public object connector { get; set; }
@@ -2334,9 +3228,7 @@ namespace DevExpress.Viz
 		public object font { get; set; }
 		public object format { get; set; }
 		public float? horizontalOffset { get; set; }
-		public float? percentPrecision { get; set; }
 		public string position { get; set; }
-		public float? precision { get; set; }
 		public float? rotationAngle { get; set; }
 		public bool? showForZeroValues { get; set; }
 		public float? verticalOffset { get; set; }
@@ -2658,24 +3550,41 @@ namespace DevExpress.Viz
 	{
 	}
 
-	public partial class DxExporterOptions: ComponentOptions
+	public partial class DxFunnelOptions: BaseWidgetOptions<object>
 	{
-		public object exportFormat { get; set; }
-		public string fileName { get; set; }
-		public bool? printingEnabled { get; set; }
-		public string serverUrl { get; set; }
-		public bool? showMenu { get; set; }
-		public string sourceContainer { get; set; }
+		public object adaptiveLayout { get; set; }
+		public string algorithm { get; set; }
+		public string argumentField { get; set; }
+		public string colorField { get; set; }
+		public object dataSource { get; set; }
+		public bool? hoverEnabled { get; set; }
+		public bool? inverted { get; set; }
+		public object item { get; set; }
+		public object label { get; set; }
+		public object legend { get; set; }
+		public float? neckHeight { get; set; }
+		public float? neckWidth { get; set; }
+		public bool? onHoverChangedEnabled { get; set; }
+		public bool? onItemClickEnabled { get; set; }
+		public bool? onLegendClickEnabled { get; set; }
+		public bool? onSelectionChangedEnabled { get; set; }
+		public object palette { get; set; }
+		public string paletteExtensionMode { get; set; }
+		public string selectionMode { get; set; }
+		public bool? sortData { get; set; }
+		public string valueField { get; set; }
 	}
 
-	public static class DxExporterOptionsExportFormat
+	public partial class DxFunnelTooltip: BaseWidgetTooltip
 	{
-		public const string PNG = "PNG";
-		public const string JPEG = "JPEG";
-		public const string GIF = "GIF";
-		public const string PDF = "PDF";
-		public const string SVG = "SVG";
+		public object customizeTooltip { get; set; }
 	}
+
+	public partial class GaugeIndicator: CommonIndicator
+	{
+		public string type { get; set; }
+	}
+
 	public partial class CommonIndicator
 	{
 		public float? arrowLength { get; set; }
@@ -2698,69 +3607,133 @@ namespace DevExpress.Viz
 		public float? width { get; set; }
 	}
 
-	public partial class CommonIndicatorText
+	public partial class BaseGaugeOptions<T>: BaseWidgetOptions<T>
+	{
+		public object animation { get; set; }
+		public string containerBackgroundColor { get; set; }
+		public bool? onTooltipHiddenEnabled { get; set; }
+		public bool? onTooltipShownEnabled { get; set; }
+		public object rangeContainer { get; set; }
+		public object scale { get; set; }
+		public object subvalues { get; set; }
+		public float? value { get; set; }
+	}
+
+	public partial class BaseGaugeAnimation
+	{
+		public float? duration { get; set; }
+		public string easing { get; set; }
+		public bool? enabled { get; set; }
+	}
+
+	public partial class BaseGaugeRangeContainer
+	{
+		public string backgroundColor { get; set; }
+		public float? offset { get; set; }
+		public object palette { get; set; }
+		public string paletteExtensionMode { get; set; }
+		public object ranges { get; set; }
+	}
+
+	public partial class BaseGaugeScale
+	{
+		public bool? allowDecimals { get; set; }
+		public object customMinorTicks { get; set; }
+		public object customTicks { get; set; }
+		public float? endValue { get; set; }
+		public object label { get; set; }
+		public object minorTick { get; set; }
+		public float? minorTickInterval { get; set; }
+		public float? startValue { get; set; }
+		public object tick { get; set; }
+		public float? tickInterval { get; set; }
+	}
+
+	public partial class BaseGaugeScaleLabel
 	{
 		public object customizeText { get; set; }
 		public object font { get; set; }
 		public object format { get; set; }
-		public float? indent { get; set; }
-		public float? precision { get; set; }
+		public string overlappingBehavior { get; set; }
+		public bool? useRangeColors { get; set; }
+		public bool? visible { get; set; }
 	}
 
-	public partial class CircularRectangleNeedle: CommonIndicator
+	public partial class BaseGaugeTooltip: BaseWidgetTooltip
 	{
+		public object customizeTooltip { get; set; }
 	}
 
-	public partial class CircularTriangleNeedle: CommonIndicator
+	public partial class DxCircularGaugeOptions: BaseGaugeOptions<object>
 	{
+		public object geometry { get; set; }
+		public object subvalueIndicator { get; set; }
+		public object valueIndicator { get; set; }
 	}
 
-	public partial class CircularTwoColorNeedle: CommonIndicator
+	public partial class DxCircularGaugeRangeContainer: BaseGaugeRangeContainer
 	{
+		public string orientation { get; set; }
+		public float? width { get; set; }
 	}
 
-	public partial class CircularRangeBar: CommonIndicator
+	public partial class DxCircularGaugeScale: BaseGaugeScale
 	{
+		public string orientation { get; set; }
 	}
 
-	public partial class CircularTriangleMarker: CommonIndicator
+	public partial class DxCircularGaugeScaleLabel: BaseGaugeScaleLabel
 	{
+		public string hideFirstOrLast { get; set; }
+		public float? indentFromTick { get; set; }
 	}
 
-	public partial class CircularTextCloud: CommonIndicator
+	public partial class DxLinearGaugeOptions: BaseGaugeOptions<object>
 	{
+		public object geometry { get; set; }
+		public object subvalueIndicator { get; set; }
+		public object valueIndicator { get; set; }
 	}
 
-	public partial class CircularTextCloudText: CommonIndicatorText
+	public partial class DxLinearGaugeRangeContainer: BaseGaugeRangeContainer
 	{
+		public string horizontalOrientation { get; set; }
+		public string verticalOrientation { get; set; }
+		public object width { get; set; }
 	}
 
-	public partial class LinearRectangle: CommonIndicator
+	public partial class DxLinearGaugeScale: BaseGaugeScale
 	{
+		public string horizontalOrientation { get; set; }
+		public string verticalOrientation { get; set; }
 	}
 
-	public partial class LinearCircle: CommonIndicator
+	public partial class DxLinearGaugeScaleLabel: BaseGaugeScaleLabel
 	{
+		public float? indentFromTick { get; set; }
 	}
 
-	public partial class LinearRhombus: CommonIndicator
+	public partial class DxBarGaugeOptions: BaseWidgetOptions<object>
 	{
+		public object animation { get; set; }
+		public string backgroundColor { get; set; }
+		public float? barSpacing { get; set; }
+		public float? baseValue { get; set; }
+		public float? endValue { get; set; }
+		public object geometry { get; set; }
+		public object label { get; set; }
+		public bool? onTooltipHiddenEnabled { get; set; }
+		public bool? onTooltipShownEnabled { get; set; }
+		public object palette { get; set; }
+		public string paletteExtensionMode { get; set; }
+		public float? relativeInnerRadius { get; set; }
+		public float? startValue { get; set; }
+		public object values { get; set; }
 	}
 
-	public partial class LinearRangeBar: CommonIndicator
+	public partial class DxBarGaugeTooltip: BaseWidgetTooltip
 	{
-	}
-
-	public partial class LinearTriangleMarker: CommonIndicator
-	{
-	}
-
-	public partial class LinearTextCloud: CommonIndicator
-	{
-	}
-
-	public partial class LinearTextCloudText: CommonIndicatorText
-	{
+		public object customizeTooltip { get; set; }
 	}
 
 	public partial class ChartPointAggregationInfoObject
@@ -2769,6 +3742,19 @@ namespace DevExpress.Viz
 		public object data { get; set; }
 		public object intervalEnd { get; set; }
 		public object intervalStart { get; set; }
+	}
+
+	public partial class DxSankeyConnectionInfoObject
+	{
+		public string source { get; set; }
+		public string target { get; set; }
+		public float? weight { get; set; }
+	}
+
+	public partial class PieChartSeries: DxPieChartSeriesTypesCommonPieChartSeries
+	{
+		public string name { get; set; }
+		public object tag { get; set; }
 	}
 
 	public partial class DxPieChartSeriesTypes
@@ -2786,17 +3772,21 @@ namespace DevExpress.Viz
 		public string color { get; set; }
 		public string hoverMode { get; set; }
 		public object hoverStyle { get; set; }
-		public float? innerRadius { get; set; }
 		public object label { get; set; }
 		public float? maxLabelCount { get; set; }
 		public float? minSegmentSize { get; set; }
-		public string segmentsDirection { get; set; }
 		public string selectionMode { get; set; }
 		public object selectionStyle { get; set; }
 		public object smallValuesGrouping { get; set; }
-		public float? startAngle { get; set; }
 		public string tagField { get; set; }
 		public string valueField { get; set; }
+	}
+
+	public partial class PolarChartSeries: DxPolarChartSeriesTypesCommonPolarChartSeries
+	{
+		public string name { get; set; }
+		public object tag { get; set; }
+		public string type { get; set; }
 	}
 
 	public partial class DxPolarChartSeriesTypes
@@ -2852,7 +3842,6 @@ namespace DevExpress.Viz
 	public partial class DxPolarChartSeriesTypesCommonPolarChartSeriesLabel
 	{
 		public object argumentFormat { get; set; }
-		public float? argumentPrecision { get; set; }
 		public string backgroundColor { get; set; }
 		public object border { get; set; }
 		public object connector { get; set; }
@@ -2860,7 +3849,6 @@ namespace DevExpress.Viz
 		public object font { get; set; }
 		public object format { get; set; }
 		public string position { get; set; }
-		public float? precision { get; set; }
 		public float? rotationAngle { get; set; }
 		public bool? showForZeroValues { get; set; }
 		public bool? visible { get; set; }
@@ -2892,876 +3880,7 @@ namespace DevExpress.Viz
 	{
 	}
 
-	public partial class Font
-	{
-		public string color { get; set; }
-		public string family { get; set; }
-		public float? opacity { get; set; }
-		public object size { get; set; }
-		public float? weight { get; set; }
-	}
-
-}
-namespace DevExpress.Viz.Charts
-{
-	public partial class DxChartOptions: BaseChartOptions
-	{
-		public bool? adjustOnZoom { get; set; }
-		public object argumentAxis { get; set; }
-		public float? barGroupPadding { get; set; }
-		public float? barGroupWidth { get; set; }
-		public float? barWidth { get; set; }
-		public object commonAxisSettings { get; set; }
-		public object commonPaneSettings { get; set; }
-		public object commonSeriesSettings { get; set; }
-		public string containerBackgroundColor { get; set; }
-		public object crosshair { get; set; }
-		public object dataPrepareSettings { get; set; }
-		public string defaultPane { get; set; }
-		public bool? equalBarWidth { get; set; }
-		public float? maxBubbleSize { get; set; }
-		public float? minBubbleSize { get; set; }
-		public bool? negativesAsZeroes { get; set; }
-		public bool? onArgumentAxisClickEnabled { get; set; }
-		public bool? onLegendClickEnabled { get; set; }
-		public bool? onSeriesClickEnabled { get; set; }
-		public bool? onSeriesHoverChangedEnabled { get; set; }
-		public bool? onSeriesSelectionChangedEnabled { get; set; }
-		public bool? onZoomEndEnabled { get; set; }
-		public bool? onZoomStartEnabled { get; set; }
-		public object panes { get; set; }
-		public string resolveLabelOverlapping { get; set; }
-		public bool? rotated { get; set; }
-		public object scrollBar { get; set; }
-		public string scrollingMode { get; set; }
-		public string seriesSelectionMode { get; set; }
-		public object seriesTemplate { get; set; }
-		public bool? synchronizeMultiAxes { get; set; }
-		public bool? useAggregation { get; set; }
-		public object valueAxis { get; set; }
-		public string zoomingMode { get; set; }
-	}
-
-	public partial class DxChartArgumentAxis: DxChartCommonAxisSettings
-	{
-		public float? aggregationGroupWidth { get; set; }
-		public object aggregationInterval { get; set; }
-		public string argumentType { get; set; }
-		public float? axisDivisionFactor { get; set; }
-		public object breaks { get; set; }
-		public object categories { get; set; }
-		public object constantLines { get; set; }
-		public object holidays { get; set; }
-		public string hoverMode { get; set; }
-		public float? logarithmBase { get; set; }
-		public object max { get; set; }
-		public object min { get; set; }
-		public float? minorTickCount { get; set; }
-		public object minorTickInterval { get; set; }
-		public string position { get; set; }
-		public object singleWorkdays { get; set; }
-		public object strips { get; set; }
-		public object tickInterval { get; set; }
-		public string type { get; set; }
-		public bool? workdaysOnly { get; set; }
-		public object workWeek { get; set; }
-	}
-
-	public partial class DxChartArgumentAxisConstantLines: DxChartCommonAxisSettingsConstantLineStyle
-	{
-		public object value { get; set; }
-	}
-
-	public partial class DxChartArgumentAxisConstantLinesLabel: DxChartCommonAxisSettingsConstantLineStyleLabel
-	{
-		public string horizontalAlignment { get; set; }
-		public string text { get; set; }
-		public string verticalAlignment { get; set; }
-	}
-
-	public partial class DxChartArgumentAxisConstantLineStyle: DxChartCommonAxisSettingsConstantLineStyle
-	{
-	}
-
-	public partial class DxChartArgumentAxisConstantLineStyleLabel: DxChartCommonAxisSettingsConstantLineStyleLabel
-	{
-		public string horizontalAlignment { get; set; }
-		public string verticalAlignment { get; set; }
-	}
-
-	public partial class DxChartArgumentAxisLabel: DxChartCommonAxisSettingsLabel
-	{
-		public object customizeHint { get; set; }
-		public object customizeText { get; set; }
-		public object format { get; set; }
-		public float? precision { get; set; }
-	}
-
-	public partial class DxChartArgumentAxisStrips: DxChartCommonAxisSettingsStripStyle
-	{
-		public string color { get; set; }
-		public object endValue { get; set; }
-		public object startValue { get; set; }
-	}
-
-	public partial class DxChartArgumentAxisStripsLabel: DxChartCommonAxisSettingsStripStyleLabel
-	{
-		public string text { get; set; }
-	}
-
-	public partial class DxChartArgumentAxisTitle: DxChartCommonAxisSettingsTitle
-	{
-		public string text { get; set; }
-	}
-
-	public partial class DxChartCommonAxisSettings
-	{
-		public bool? allowDecimals { get; set; }
-		public object breakStyle { get; set; }
-		public string color { get; set; }
-		public object constantLineStyle { get; set; }
-		public string discreteAxisDivisionMode { get; set; }
-		public bool? endOnTick { get; set; }
-		public object grid { get; set; }
-		public bool? inverted { get; set; }
-		public object label { get; set; }
-		public float? maxValueMargin { get; set; }
-		public object minorGrid { get; set; }
-		public object minorTick { get; set; }
-		public float? minValueMargin { get; set; }
-		public float? opacity { get; set; }
-		public float? placeholderSize { get; set; }
-		public bool? setTicksAtUnitBeginning { get; set; }
-		public object stripStyle { get; set; }
-		public object tick { get; set; }
-		public object title { get; set; }
-		public bool? valueMarginsEnabled { get; set; }
-		public bool? visible { get; set; }
-		public float? width { get; set; }
-	}
-
-	public partial class DxChartCommonAxisSettingsConstantLineStyle
-	{
-		public string color { get; set; }
-		public string dashStyle { get; set; }
-		public object label { get; set; }
-		public float? paddingLeftRight { get; set; }
-		public float? paddingTopBottom { get; set; }
-		public float? width { get; set; }
-	}
-
-	public partial class DxChartCommonAxisSettingsConstantLineStyleLabel
-	{
-		public object font { get; set; }
-		public string position { get; set; }
-		public bool? visible { get; set; }
-	}
-
-	public partial class DxChartCommonAxisSettingsLabel
-	{
-		public string alignment { get; set; }
-		public string displayMode { get; set; }
-		public object font { get; set; }
-		public float? indentFromAxis { get; set; }
-		public object overlappingBehavior { get; set; }
-		public float? rotationAngle { get; set; }
-		public float? staggeringSpacing { get; set; }
-		public bool? visible { get; set; }
-	}
-
-	public partial class DxChartCommonAxisSettingsStripStyle
-	{
-		public object label { get; set; }
-		public float? paddingLeftRight { get; set; }
-		public float? paddingTopBottom { get; set; }
-	}
-
-	public partial class DxChartCommonAxisSettingsStripStyleLabel
-	{
-		public object font { get; set; }
-		public string horizontalAlignment { get; set; }
-		public string verticalAlignment { get; set; }
-	}
-
-	public partial class DxChartCommonAxisSettingsTitle
-	{
-		public object font { get; set; }
-		public float? margin { get; set; }
-	}
-
-	public partial class DxChartCommonPaneSettings
-	{
-		public string backgroundColor { get; set; }
-		public object border { get; set; }
-	}
-
-	public partial class DxChartCommonSeriesSettings: DxChartSeriesTypesCommonSeries
-	{
-		public object area { get; set; }
-		public object bar { get; set; }
-		public object bubble { get; set; }
-		public object candlestick { get; set; }
-		public object fullstackedarea { get; set; }
-		public object fullstackedbar { get; set; }
-		public object fullstackedline { get; set; }
-		public object fullstackedspline { get; set; }
-		public object fullstackedsplinearea { get; set; }
-		public object line { get; set; }
-		public object rangearea { get; set; }
-		public object rangebar { get; set; }
-		public object scatter { get; set; }
-		public object spline { get; set; }
-		public object splinearea { get; set; }
-		public object stackedarea { get; set; }
-		public object stackedbar { get; set; }
-		public object stackedline { get; set; }
-		public object stackedspline { get; set; }
-		public object stackedsplinearea { get; set; }
-		public object steparea { get; set; }
-		public object stepline { get; set; }
-		public object stock { get; set; }
-		public string type { get; set; }
-	}
-
-	public partial class DxChartLegend: BaseChartLegend
-	{
-		public object customizeHint { get; set; }
-		public object customizeText { get; set; }
-		public string hoverMode { get; set; }
-		public string position { get; set; }
-	}
-
-	public partial class DxChartPanes: DxChartCommonPaneSettings
-	{
-		public string name { get; set; }
-	}
-
-	public partial class DxChartSeries: DxChartSeriesTypesCommonSeries
-	{
-		public string name { get; set; }
-		public object tag { get; set; }
-		public string type { get; set; }
-	}
-
-	public partial class DxChartTooltip: BaseChartTooltip
-	{
-		public string location { get; set; }
-		public bool? shared { get; set; }
-	}
-
-	public partial class DxChartValueAxis: DxChartCommonAxisSettings
-	{
-		public bool? autoBreaksEnabled { get; set; }
-		public float? axisDivisionFactor { get; set; }
-		public object breaks { get; set; }
-		public object categories { get; set; }
-		public object constantLines { get; set; }
-		public float? logarithmBase { get; set; }
-		public object max { get; set; }
-		public float? maxAutoBreakCount { get; set; }
-		public object min { get; set; }
-		public float? minorTickCount { get; set; }
-		public object minorTickInterval { get; set; }
-		public float? multipleAxesSpacing { get; set; }
-		public string name { get; set; }
-		public string pane { get; set; }
-		public string position { get; set; }
-		public bool? showZero { get; set; }
-		public object strips { get; set; }
-		public float? synchronizedValue { get; set; }
-		public object tickInterval { get; set; }
-		public string type { get; set; }
-		public string valueType { get; set; }
-	}
-
-	public partial class DxChartValueAxisConstantLines: DxChartCommonAxisSettingsConstantLineStyle
-	{
-		public object value { get; set; }
-	}
-
-	public partial class DxChartValueAxisConstantLinesLabel: DxChartCommonAxisSettingsConstantLineStyleLabel
-	{
-		public string horizontalAlignment { get; set; }
-		public string text { get; set; }
-		public string verticalAlignment { get; set; }
-	}
-
-	public partial class DxChartValueAxisConstantLineStyle: DxChartCommonAxisSettingsConstantLineStyle
-	{
-	}
-
-	public partial class DxChartValueAxisConstantLineStyleLabel: DxChartCommonAxisSettingsConstantLineStyleLabel
-	{
-		public string horizontalAlignment { get; set; }
-		public string verticalAlignment { get; set; }
-	}
-
-	public partial class DxChartValueAxisLabel: DxChartCommonAxisSettingsLabel
-	{
-		public object customizeHint { get; set; }
-		public object customizeText { get; set; }
-		public object format { get; set; }
-		public float? precision { get; set; }
-	}
-
-	public partial class DxChartValueAxisStrips: DxChartCommonAxisSettingsStripStyle
-	{
-		public string color { get; set; }
-		public object endValue { get; set; }
-		public object startValue { get; set; }
-	}
-
-	public partial class DxChartValueAxisStripsLabel: DxChartCommonAxisSettingsStripStyleLabel
-	{
-		public string text { get; set; }
-	}
-
-	public partial class DxChartValueAxisTitle: DxChartCommonAxisSettingsTitle
-	{
-		public string text { get; set; }
-	}
-
-	public partial class DxPieChartOptions: BaseChartOptions
-	{
-		public object commonSeriesSettings { get; set; }
-		public float? diameter { get; set; }
-		public float? innerRadius { get; set; }
-		public float? minDiameter { get; set; }
-		public bool? onLegendClickEnabled { get; set; }
-		public string resolveLabelOverlapping { get; set; }
-		public string segmentsDirection { get; set; }
-		public object seriesTemplate { get; set; }
-		public string sizeGroup { get; set; }
-		public float? startAngle { get; set; }
-		public string type { get; set; }
-	}
-
-	public partial class DxPieChartAdaptiveLayout: BaseChartAdaptiveLayout
-	{
-	}
-
-	public partial class DxPieChartCommonSeriesSettings: DxPieChartSeriesTypesCommonPieChartSeries
-	{
-		public string type { get; set; }
-	}
-
-	public partial class DxPieChartLegend: BaseChartLegend
-	{
-		public object customizeHint { get; set; }
-		public object customizeText { get; set; }
-		public string hoverMode { get; set; }
-	}
-
-	public partial class DxPieChartSeries: DxPieChartSeriesTypesCommonPieChartSeries
-	{
-		public string name { get; set; }
-		public object tag { get; set; }
-		public string type { get; set; }
-	}
-
-	public partial class DxPolarChartOptions: BaseChartOptions
-	{
-		public object argumentAxis { get; set; }
-		public float? barGroupPadding { get; set; }
-		public float? barGroupWidth { get; set; }
-		public float? barWidth { get; set; }
-		public object commonAxisSettings { get; set; }
-		public object commonSeriesSettings { get; set; }
-		public string containerBackgroundColor { get; set; }
-		public object dataPrepareSettings { get; set; }
-		public bool? equalBarWidth { get; set; }
-		public bool? negativesAsZeroes { get; set; }
-		public bool? onArgumentAxisClickEnabled { get; set; }
-		public bool? onLegendClickEnabled { get; set; }
-		public bool? onSeriesClickEnabled { get; set; }
-		public bool? onSeriesHoverChangedEnabled { get; set; }
-		public bool? onSeriesSelectionChangedEnabled { get; set; }
-		public string resolveLabelOverlapping { get; set; }
-		public string seriesSelectionMode { get; set; }
-		public object seriesTemplate { get; set; }
-		public bool? useSpiderWeb { get; set; }
-		public object valueAxis { get; set; }
-	}
-
-	public partial class DxPolarChartAdaptiveLayout: BaseChartAdaptiveLayout
-	{
-	}
-
-	public partial class DxPolarChartArgumentAxis: DxPolarChartCommonAxisSettings
-	{
-		public string argumentType { get; set; }
-		public float? axisDivisionFactor { get; set; }
-		public object categories { get; set; }
-		public object constantLines { get; set; }
-		public bool? firstPointOnStartAngle { get; set; }
-		public string hoverMode { get; set; }
-		public float? logarithmBase { get; set; }
-		public float? minorTickCount { get; set; }
-		public object minorTickInterval { get; set; }
-		public float? originValue { get; set; }
-		public float? period { get; set; }
-		public float? startAngle { get; set; }
-		public object strips { get; set; }
-		public object tickInterval { get; set; }
-		public string type { get; set; }
-	}
-
-	public partial class DxPolarChartArgumentAxisConstantLines: DxPolarChartCommonAxisSettingsConstantLineStyle
-	{
-		public object value { get; set; }
-	}
-
-	public partial class DxPolarChartArgumentAxisConstantLinesLabel: DxPolarChartCommonAxisSettingsConstantLineStyleLabel
-	{
-		public string text { get; set; }
-	}
-
-	public partial class DxPolarChartArgumentAxisLabel: DxPolarChartCommonAxisSettingsLabel
-	{
-		public object customizeHint { get; set; }
-		public object customizeText { get; set; }
-		public object format { get; set; }
-		public float? precision { get; set; }
-	}
-
-	public partial class DxPolarChartArgumentAxisStrips: DxPolarChartCommonAxisSettingsStripStyle
-	{
-		public string color { get; set; }
-		public object endValue { get; set; }
-		public object startValue { get; set; }
-	}
-
-	public partial class DxPolarChartArgumentAxisStripsLabel: DxPolarChartCommonAxisSettingsStripStyleLabel
-	{
-		public string text { get; set; }
-	}
-
-	public partial class DxPolarChartCommonAxisSettings
-	{
-		public bool? allowDecimals { get; set; }
-		public string color { get; set; }
-		public object constantLineStyle { get; set; }
-		public string discreteAxisDivisionMode { get; set; }
-		public bool? endOnTick { get; set; }
-		public object grid { get; set; }
-		public bool? inverted { get; set; }
-		public object label { get; set; }
-		public object minorGrid { get; set; }
-		public object minorTick { get; set; }
-		public float? opacity { get; set; }
-		public bool? setTicksAtUnitBeginning { get; set; }
-		public object stripStyle { get; set; }
-		public object tick { get; set; }
-		public bool? visible { get; set; }
-		public float? width { get; set; }
-	}
-
-	public partial class DxPolarChartCommonAxisSettingsConstantLineStyle
-	{
-		public string color { get; set; }
-		public string dashStyle { get; set; }
-		public object label { get; set; }
-		public float? width { get; set; }
-	}
-
-	public partial class DxPolarChartCommonAxisSettingsConstantLineStyleLabel
-	{
-		public object font { get; set; }
-		public bool? visible { get; set; }
-	}
-
-	public partial class DxPolarChartCommonAxisSettingsLabel
-	{
-		public object font { get; set; }
-		public float? indentFromAxis { get; set; }
-		public string overlappingBehavior { get; set; }
-		public bool? visible { get; set; }
-	}
-
-	public partial class DxPolarChartCommonAxisSettingsStripStyle
-	{
-		public object label { get; set; }
-	}
-
-	public partial class DxPolarChartCommonAxisSettingsStripStyleLabel
-	{
-		public object font { get; set; }
-	}
-
-	public partial class DxPolarChartCommonAxisSettingsTick
-	{
-		public string color { get; set; }
-		public float? length { get; set; }
-		public float? opacity { get; set; }
-		public bool? visible { get; set; }
-		public float? width { get; set; }
-	}
-
-	public partial class DxPolarChartCommonSeriesSettings: DxPolarChartSeriesTypesCommonPolarChartSeries
-	{
-		public object area { get; set; }
-		public object bar { get; set; }
-		public object line { get; set; }
-		public object scatter { get; set; }
-		public object stackedbar { get; set; }
-		public string type { get; set; }
-	}
-
-	public partial class DxPolarChartLegend: BaseChartLegend
-	{
-		public object customizeHint { get; set; }
-		public object customizeText { get; set; }
-		public string hoverMode { get; set; }
-	}
-
-	public partial class DxPolarChartSeries: DxPolarChartSeriesTypesCommonPolarChartSeries
-	{
-		public string name { get; set; }
-		public object tag { get; set; }
-		public string type { get; set; }
-	}
-
-	public partial class DxPolarChartTooltip: BaseChartTooltip
-	{
-		public bool? shared { get; set; }
-	}
-
-	public partial class DxPolarChartValueAxis: DxPolarChartCommonAxisSettings
-	{
-		public float? axisDivisionFactor { get; set; }
-		public object categories { get; set; }
-		public object constantLines { get; set; }
-		public float? logarithmBase { get; set; }
-		public float? maxValueMargin { get; set; }
-		public float? minorTickCount { get; set; }
-		public object minorTickInterval { get; set; }
-		public float? minValueMargin { get; set; }
-		public bool? showZero { get; set; }
-		public object strips { get; set; }
-		public object tickInterval { get; set; }
-		public string type { get; set; }
-		public bool? valueMarginsEnabled { get; set; }
-		public string valueType { get; set; }
-	}
-
-	public partial class DxPolarChartValueAxisConstantLines: DxPolarChartCommonAxisSettingsConstantLineStyle
-	{
-		public object value { get; set; }
-	}
-
-	public partial class DxPolarChartValueAxisConstantLinesLabel: DxPolarChartCommonAxisSettingsConstantLineStyleLabel
-	{
-		public string text { get; set; }
-	}
-
-	public partial class DxPolarChartValueAxisLabel: DxPolarChartCommonAxisSettingsLabel
-	{
-		public object customizeHint { get; set; }
-		public object customizeText { get; set; }
-		public object format { get; set; }
-		public float? precision { get; set; }
-	}
-
-	public partial class DxPolarChartValueAxisStrips: DxPolarChartCommonAxisSettingsStripStyle
-	{
-		public string color { get; set; }
-		public object endValue { get; set; }
-		public object startValue { get; set; }
-	}
-
-	public partial class DxPolarChartValueAxisStripsLabel: DxPolarChartCommonAxisSettingsStripStyleLabel
-	{
-		public string text { get; set; }
-	}
-
-	public partial class DxPolarChartValueAxisTick: DxPolarChartCommonAxisSettingsTick
-	{
-	}
-
-	public partial class BaseChartOptions: BaseWidgetOptions
-	{
-		public object adaptiveLayout { get; set; }
-		public object animation { get; set; }
-		public object customizeLabel { get; set; }
-		public object customizePoint { get; set; }
-		public object dataSource { get; set; }
-		public object legend { get; set; }
-		public bool? onDoneEnabled { get; set; }
-		public bool? onPointClickEnabled { get; set; }
-		public bool? onPointHoverChangedEnabled { get; set; }
-		public bool? onPointSelectionChangedEnabled { get; set; }
-		public bool? onTooltipHiddenEnabled { get; set; }
-		public bool? onTooltipShownEnabled { get; set; }
-		public object palette { get; set; }
-		public string paletteExtensionMode { get; set; }
-		public string pointSelectionMode { get; set; }
-		public object series { get; set; }
-	}
-
-	public partial class BaseChartAdaptiveLayout
-	{
-		public float? height { get; set; }
-		public bool? keepLabels { get; set; }
-		public float? width { get; set; }
-	}
-
-	public partial class BaseChartLegend
-	{
-		public string backgroundColor { get; set; }
-		public object border { get; set; }
-		public float? columnCount { get; set; }
-		public float? columnItemSpacing { get; set; }
-		public object font { get; set; }
-		public string horizontalAlignment { get; set; }
-		public string itemsAlignment { get; set; }
-		public string itemTextPosition { get; set; }
-		public object margin { get; set; }
-		public float? markerSize { get; set; }
-		public string orientation { get; set; }
-		public float? paddingLeftRight { get; set; }
-		public float? paddingTopBottom { get; set; }
-		public float? rowCount { get; set; }
-		public float? rowItemSpacing { get; set; }
-		public string verticalAlignment { get; set; }
-		public bool? visible { get; set; }
-	}
-
-	public partial class BaseChartTooltip: BaseWidgetTooltip
-	{
-		public object argumentFormat { get; set; }
-		public float? argumentPrecision { get; set; }
-		public object customizeTooltip { get; set; }
-		public float? percentPrecision { get; set; }
-	}
-
-}
-namespace DevExpress.Viz.Funnel
-{
-	public partial class DxFunnelOptions: BaseWidgetOptions
-	{
-		public object adaptiveLayout { get; set; }
-		public string algorithm { get; set; }
-		public string argumentField { get; set; }
-		public string colorField { get; set; }
-		public object dataSource { get; set; }
-		public bool? hoverEnabled { get; set; }
-		public bool? inverted { get; set; }
-		public object item { get; set; }
-		public object label { get; set; }
-		public object legend { get; set; }
-		public float? neckHeight { get; set; }
-		public float? neckWidth { get; set; }
-		public bool? onHoverChangedEnabled { get; set; }
-		public bool? onItemClickEnabled { get; set; }
-		public bool? onLegendClickEnabled { get; set; }
-		public bool? onSelectionChangedEnabled { get; set; }
-		public object palette { get; set; }
-		public string paletteExtensionMode { get; set; }
-		public string selectionMode { get; set; }
-		public bool? sortData { get; set; }
-		public string valueField { get; set; }
-	}
-
-	public partial class DxFunnelTooltip: BaseWidgetTooltip
-	{
-		public object customizeTooltip { get; set; }
-	}
-
-}
-namespace DevExpress.Viz.Gauges
-{
-	public partial class BaseGaugeOptions: BaseWidgetOptions
-	{
-		public object animation { get; set; }
-		public string containerBackgroundColor { get; set; }
-		public bool? onTooltipHiddenEnabled { get; set; }
-		public bool? onTooltipShownEnabled { get; set; }
-		public object rangeContainer { get; set; }
-		public object scale { get; set; }
-		public object subtitle { get; set; }
-		public object subvalues { get; set; }
-		public float? value { get; set; }
-	}
-
-	public partial class BaseGaugeAnimation
-	{
-		public float? duration { get; set; }
-		public string easing { get; set; }
-		public bool? enabled { get; set; }
-	}
-
-	public partial class BaseGaugeRangeContainer
-	{
-		public string backgroundColor { get; set; }
-		public float? offset { get; set; }
-		public object palette { get; set; }
-		public string paletteExtensionMode { get; set; }
-		public object ranges { get; set; }
-	}
-
-	public partial class BaseGaugeScale
-	{
-		public bool? allowDecimals { get; set; }
-		public object customMinorTicks { get; set; }
-		public object customTicks { get; set; }
-		public float? endValue { get; set; }
-		public bool? hideFirstLabel { get; set; }
-		public bool? hideFirstTick { get; set; }
-		public bool? hideLastLabel { get; set; }
-		public bool? hideLastTick { get; set; }
-		public object label { get; set; }
-		public object majorTick { get; set; }
-		public object minorTick { get; set; }
-		public float? minorTickInterval { get; set; }
-		public float? startValue { get; set; }
-		public object tick { get; set; }
-		public float? tickInterval { get; set; }
-	}
-
-	public partial class BaseGaugeScaleLabel
-	{
-		public object customizeText { get; set; }
-		public object font { get; set; }
-		public object format { get; set; }
-		public object overlappingBehavior { get; set; }
-		public float? precision { get; set; }
-		public bool? useRangeColors { get; set; }
-		public bool? visible { get; set; }
-	}
-
-	public partial class BaseGaugeScaleLabelOverlappingBehavior
-	{
-		public bool? useAutoArrangement { get; set; }
-	}
-
-	public partial class BaseGaugeSubtitle
-	{
-		public object font { get; set; }
-		public string text { get; set; }
-	}
-
-	public partial class BaseGaugeTitle: BaseWidgetTitle
-	{
-		public string position { get; set; }
-	}
-
-	public partial class BaseGaugeTooltip: BaseWidgetTooltip
-	{
-		public object customizeTooltip { get; set; }
-	}
-
-	public partial class DxCircularGaugeOptions: BaseGaugeOptions
-	{
-		public object geometry { get; set; }
-		public object subvalueIndicator { get; set; }
-		public object valueIndicator { get; set; }
-	}
-
-	public partial class DxCircularGaugeRangeContainer: BaseGaugeRangeContainer
-	{
-		public string orientation { get; set; }
-		public float? width { get; set; }
-	}
-
-	public partial class DxCircularGaugeScale: BaseGaugeScale
-	{
-		public string orientation { get; set; }
-	}
-
-	public partial class DxCircularGaugeScaleLabel: BaseGaugeScaleLabel
-	{
-		public string hideFirstOrLast { get; set; }
-		public float? indentFromTick { get; set; }
-	}
-
-	public partial class DxCircularGaugeScaleLabelOverlappingBehavior: BaseGaugeScaleLabelOverlappingBehavior
-	{
-		public string hideFirstOrLast { get; set; }
-	}
-
-	public partial class DxCircularGaugeSubvalueIndicator: CommonIndicator
-	{
-		public string type { get; set; }
-	}
-
-	public partial class DxCircularGaugeValueIndicator: CommonIndicator
-	{
-		public string type { get; set; }
-	}
-
-	public partial class DxLinearGaugeOptions: BaseGaugeOptions
-	{
-		public object geometry { get; set; }
-		public object subvalueIndicator { get; set; }
-		public object valueIndicator { get; set; }
-	}
-
-	public partial class DxLinearGaugeRangeContainer: BaseGaugeRangeContainer
-	{
-		public string horizontalOrientation { get; set; }
-		public string verticalOrientation { get; set; }
-		public object width { get; set; }
-	}
-
-	public partial class DxLinearGaugeScale: BaseGaugeScale
-	{
-		public string horizontalOrientation { get; set; }
-		public string verticalOrientation { get; set; }
-	}
-
-	public partial class DxLinearGaugeScaleLabel: BaseGaugeScaleLabel
-	{
-		public float? indentFromTick { get; set; }
-	}
-
-	public partial class DxLinearGaugeScaleLabelOverlappingBehavior: BaseGaugeScaleLabelOverlappingBehavior
-	{
-		public string hideFirstOrLast { get; set; }
-	}
-
-	public partial class DxLinearGaugeSubvalueIndicator: CommonIndicator
-	{
-		public string type { get; set; }
-	}
-
-	public partial class DxLinearGaugeValueIndicator: CommonIndicator
-	{
-		public string type { get; set; }
-	}
-
-	public partial class DxBarGaugeOptions: BaseWidgetOptions
-	{
-		public object animation { get; set; }
-		public string backgroundColor { get; set; }
-		public float? barSpacing { get; set; }
-		public float? baseValue { get; set; }
-		public float? endValue { get; set; }
-		public object geometry { get; set; }
-		public object label { get; set; }
-		public bool? onTooltipHiddenEnabled { get; set; }
-		public bool? onTooltipShownEnabled { get; set; }
-		public object palette { get; set; }
-		public string paletteExtensionMode { get; set; }
-		public float? relativeInnerRadius { get; set; }
-		public float? startValue { get; set; }
-		public object subtitle { get; set; }
-		public object values { get; set; }
-	}
-
-	public partial class DxBarGaugeTitle: BaseWidgetTitle
-	{
-		public string position { get; set; }
-	}
-
-	public partial class DxBarGaugeTooltip: BaseWidgetTooltip
-	{
-		public object customizeTooltip { get; set; }
-	}
-
-}
-namespace DevExpress.Viz.RangeSelector
-{
-	public partial class DxRangeSelectorOptions: BaseWidgetOptions
+	public partial class DxRangeSelectorOptions: BaseWidgetOptions<object>
 	{
 		public object background { get; set; }
 		public object behavior { get; set; }
@@ -3770,21 +3889,44 @@ namespace DevExpress.Viz.RangeSelector
 		public object dataSource { get; set; }
 		public string dataSourceField { get; set; }
 		public object indent { get; set; }
-		public bool? onSelectedRangeChangedEnabled { get; set; }
 		public bool? onValueChangedEnabled { get; set; }
 		public object scale { get; set; }
-		public object selectedRange { get; set; }
 		public string selectedRangeColor { get; set; }
+		public string selectedRangeUpdateMode { get; set; }
 		public object shutter { get; set; }
 		public object sliderHandle { get; set; }
 		public object sliderMarker { get; set; }
 		public object value { get; set; }
 	}
 
-}
-namespace DevExpress.Viz.Sparklines
-{
-	public partial class BaseSparklineOptions: BaseWidgetOptions
+	public partial class DxSankeyOptions: BaseWidgetOptions<object>
+	{
+		public object adaptiveLayout { get; set; }
+		public object alignment { get; set; }
+		public object dataSource { get; set; }
+		public bool? hoverEnabled { get; set; }
+		public object label { get; set; }
+		public object link { get; set; }
+		public object node { get; set; }
+		public bool? onLinkClickEnabled { get; set; }
+		public bool? onLinkHoverChangedEnabled { get; set; }
+		public bool? onNodeClickEnabled { get; set; }
+		public bool? onNodeHoverChangedEnabled { get; set; }
+		public object palette { get; set; }
+		public string paletteExtensionMode { get; set; }
+		public object sortData { get; set; }
+		public string sourceField { get; set; }
+		public string targetField { get; set; }
+		public string weightField { get; set; }
+	}
+
+	public partial class DxSankeyTooltip: BaseWidgetTooltip
+	{
+		public object customizeLinkTooltip { get; set; }
+		public object customizeNodeTooltip { get; set; }
+	}
+
+	public partial class BaseSparklineOptions<T>: BaseWidgetOptions<T>
 	{
 		public bool? onTooltipHiddenEnabled { get; set; }
 		public bool? onTooltipShownEnabled { get; set; }
@@ -3793,11 +3935,9 @@ namespace DevExpress.Viz.Sparklines
 	public partial class BaseSparklineTooltip: BaseWidgetTooltip
 	{
 		public object customizeTooltip { get; set; }
-		public string horizontalAlignment { get; set; }
-		public string verticalAlignment { get; set; }
 	}
 
-	public partial class DxSparklineOptions: BaseSparklineOptions
+	public partial class DxSparklineOptions: BaseSparklineOptions<object>
 	{
 		public string argumentField { get; set; }
 		public string barNegativeColor { get; set; }
@@ -3823,7 +3963,7 @@ namespace DevExpress.Viz.Sparklines
 		public float? winlossThreshold { get; set; }
 	}
 
-	public partial class DxBulletOptions: BaseSparklineOptions
+	public partial class DxBulletOptions: BaseSparklineOptions<object>
 	{
 		public string color { get; set; }
 		public float? endScaleValue { get; set; }
@@ -3836,97 +3976,7 @@ namespace DevExpress.Viz.Sparklines
 		public float? value { get; set; }
 	}
 
-}
-namespace DevExpress.Viz.Map
-{
-	public partial class DxVectorMapOptions: BaseWidgetOptions
-	{
-		public object areaSettings { get; set; }
-		public object background { get; set; }
-		public object bounds { get; set; }
-		public object center { get; set; }
-		public object controlBar { get; set; }
-		public object layers { get; set; }
-		public object legends { get; set; }
-		public object mapData { get; set; }
-		public object markers { get; set; }
-		public object markerSettings { get; set; }
-		public float? maxZoomFactor { get; set; }
-		public bool? onAreaClickEnabled { get; set; }
-		public bool? onAreaSelectionChangedEnabled { get; set; }
-		public bool? onCenterChangedEnabled { get; set; }
-		public bool? onClickEnabled { get; set; }
-		public bool? onMarkerClickEnabled { get; set; }
-		public bool? onMarkerSelectionChangedEnabled { get; set; }
-		public bool? onSelectionChangedEnabled { get; set; }
-		public bool? onTooltipHiddenEnabled { get; set; }
-		public bool? onTooltipShownEnabled { get; set; }
-		public bool? onZoomFactorChangedEnabled { get; set; }
-		public bool? panningEnabled { get; set; }
-		public object projection { get; set; }
-		public bool? touchEnabled { get; set; }
-		public bool? wheelEnabled { get; set; }
-		public float? zoomFactor { get; set; }
-		public bool? zoomingEnabled { get; set; }
-	}
-
-	public partial class DxVectorMapAreaSettings
-	{
-		public string borderColor { get; set; }
-		public float? borderWidth { get; set; }
-		public string color { get; set; }
-		public string colorGroupingField { get; set; }
-		public object colorGroups { get; set; }
-		public object customize { get; set; }
-		public string hoveredBorderColor { get; set; }
-		public float? hoveredBorderWidth { get; set; }
-		public string hoveredColor { get; set; }
-		public bool? hoverEnabled { get; set; }
-		public object label { get; set; }
-		public object palette { get; set; }
-		public float? paletteSize { get; set; }
-		public string selectedBorderColor { get; set; }
-		public float? selectedBorderWidth { get; set; }
-		public string selectedColor { get; set; }
-		public string selectionMode { get; set; }
-	}
-
-	public partial class DxVectorMapMarkerSettings
-	{
-		public string borderColor { get; set; }
-		public float? borderWidth { get; set; }
-		public string color { get; set; }
-		public string colorGroupingField { get; set; }
-		public object colorGroups { get; set; }
-		public object customize { get; set; }
-		public string hoveredBorderColor { get; set; }
-		public float? hoveredBorderWidth { get; set; }
-		public string hoveredColor { get; set; }
-		public bool? hoverEnabled { get; set; }
-		public object label { get; set; }
-		public float? maxSize { get; set; }
-		public float? minSize { get; set; }
-		public float? opacity { get; set; }
-		public object palette { get; set; }
-		public string selectedBorderColor { get; set; }
-		public float? selectedBorderWidth { get; set; }
-		public string selectedColor { get; set; }
-		public string selectionMode { get; set; }
-		public float? size { get; set; }
-		public string sizeGroupingField { get; set; }
-		public object sizeGroups { get; set; }
-		public string type { get; set; }
-	}
-
-	public partial class DxVectorMapTooltip: BaseWidgetTooltip
-	{
-		public object customizeTooltip { get; set; }
-	}
-
-}
-namespace DevExpress.Viz.TreeMap
-{
-	public partial class DxTreeMapOptions: BaseWidgetOptions
+	public partial class DxTreeMapOptions: BaseWidgetOptions<object>
 	{
 		public string childrenField { get; set; }
 		public string colorField { get; set; }
@@ -3958,4 +4008,80 @@ namespace DevExpress.Viz.TreeMap
 		public object customizeTooltip { get; set; }
 	}
 
+	public partial class DxVectorMapOptions: BaseWidgetOptions<object>
+	{
+		public object background { get; set; }
+		public object bounds { get; set; }
+		public object center { get; set; }
+		public object controlBar { get; set; }
+		public object layers { get; set; }
+		public object legends { get; set; }
+		public float? maxZoomFactor { get; set; }
+		public bool? onCenterChangedEnabled { get; set; }
+		public bool? onClickEnabled { get; set; }
+		public bool? onSelectionChangedEnabled { get; set; }
+		public bool? onTooltipHiddenEnabled { get; set; }
+		public bool? onTooltipShownEnabled { get; set; }
+		public bool? onZoomFactorChangedEnabled { get; set; }
+		public bool? panningEnabled { get; set; }
+		public object projection { get; set; }
+		public bool? touchEnabled { get; set; }
+		public bool? wheelEnabled { get; set; }
+		public float? zoomFactor { get; set; }
+		public bool? zoomingEnabled { get; set; }
+	}
+
+	public partial class DxVectorMapTooltip: BaseWidgetTooltip
+	{
+		public object customizeTooltip { get; set; }
+	}
+
+	public partial class BaseSeriesObject
+	{
+	}
+	public partial class BasePointObject
+	{
+	}
+	public partial class BaseLabelObject
+	{
+	}
+	public partial class ChartSeriesObject: BaseSeriesObject
+	{
+	}
+	public partial class ChartPointObject: BasePointObject
+	{
+	}
+	public partial class ChartAxisObject
+	{
+	}
+	public partial class DxFunnelItem
+	{
+	}
+	public partial class PiePointObject: BasePointObject
+	{
+	}
+	public partial class PieChartSeriesObject: BaseSeriesObject
+	{
+	}
+	public partial class PolarChartSeriesObject: BaseSeriesObject
+	{
+	}
+	public partial class PolarPointObject: BasePointObject
+	{
+	}
+	public partial class DxSankeyNode
+	{
+	}
+	public partial class DxSankeyLink
+	{
+	}
+	public partial class DxTreeMapNode
+	{
+	}
+	public partial class MapLayer
+	{
+	}
+	public partial class MapLayerElement
+	{
+	}
 }

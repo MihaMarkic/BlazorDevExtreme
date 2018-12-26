@@ -36,14 +36,29 @@ function BlazorDevExtreme_DxEvent_GetOption (element, key) {
 	return DevExpress.dxEvent.getInstance(blazor_element).option(key);
 }
 // DevExpress.localization interop automatically generated
-function BlazorDevExtreme_Localization_loadMessages_0 (messages) {
+function BlazorDevExtreme_Localization_formatDate_0 (value, format) {
+	DevExpress.localization.formatDate(value, format);
+}
+function BlazorDevExtreme_Localization_formatMessage_1 (key, value) {
+	DevExpress.localization.formatMessage(key, value);
+}
+function BlazorDevExtreme_Localization_formatNumber_2 (value, format) {
+	DevExpress.localization.formatNumber(value, format);
+}
+function BlazorDevExtreme_Localization_loadMessages_3 (messages) {
 	DevExpress.localization.loadMessages(messages);
 }
-function BlazorDevExtreme_Localization_locale_1 () {
+function BlazorDevExtreme_Localization_locale_4 () {
 	DevExpress.localization.locale();
 }
-function BlazorDevExtreme_Localization_locale_2 (locale) {
+function BlazorDevExtreme_Localization_locale_5 (locale) {
 	DevExpress.localization.locale(locale);
+}
+function BlazorDevExtreme_Localization_parseDate_6 (text, format) {
+	DevExpress.localization.parseDate(text, format);
+}
+function BlazorDevExtreme_Localization_parseNumber_7 (text, format) {
+	DevExpress.localization.parseNumber(text, format);
 }
 function BlazorDevExtreme_Localization_SetOption (element, key, value) {
 	DevExpress.localization.getInstance(element).option(key, value);
@@ -109,19 +124,19 @@ function BlazorDevExtreme_Component_Init (element, optionsText) {
 		options.onDisposing = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.ComponentInterop.OnDisposing', element.id);
 			
-		}
+		};
 	}
 	if (options.onInitializedEnabled) {
 		options.onInitialized = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.ComponentInterop.OnInitialized', element.id);
 			
-		}
+		};
 	}
 	if (options.onOptionChangedEnabled) {
 		options.onOptionChanged = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.ComponentInterop.OnOptionChanged', element.id);
 			
-		}
+		};
 	}
 	let instance = new DevExpress.Component(element, options);
 }
@@ -203,13 +218,13 @@ function BlazorDevExtreme_DOMComponent_Init (element, optionsText) {
 		options.onDisposing = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.DOMComponentInterop.OnDisposing', element.id);
 			
-		}
+		};
 	}
 	if (options.onOptionChangedEnabled) {
 		options.onOptionChanged = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.DOMComponentInterop.OnOptionChanged', element.id);
 			
-		}
+		};
 	}
 	let instance = new DevExpress.DOMComponent(element, options);
 }
@@ -358,61 +373,67 @@ function BlazorDevExtreme_Store_Init (element, optionsText) {
 		options.onInserted = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Data.StoreInterop.OnInserted', element.id);
 			
-		}
+		};
 	}
 	if (options.onInsertingEnabled) {
 		options.onInserting = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Data.StoreInterop.OnInserting', element.id);
 			
-		}
+		};
 	}
 	if (options.onLoadedEnabled) {
 		options.onLoaded = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Data.StoreInterop.OnLoaded', element.id);
 			
-		}
+		};
 	}
 	if (options.onLoadingEnabled) {
 		options.onLoading = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Data.StoreInterop.OnLoading', element.id);
 			
-		}
+		};
 	}
 	if (options.onModifiedEnabled) {
 		options.onModified = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Data.StoreInterop.OnModified', element.id);
 			
-		}
+		};
 	}
 	if (options.onModifyingEnabled) {
 		options.onModifying = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Data.StoreInterop.OnModifying', element.id);
 			
-		}
+		};
+	}
+	if (options.onPushEnabled) {
+		options.onPush = function () {
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Data.StoreInterop.OnPush', element.id);
+			
+		};
 	}
 	if (options.onRemovedEnabled) {
 		options.onRemoved = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Data.StoreInterop.OnRemoved', element.id);
 			
-		}
+		};
 	}
 	if (options.onRemovingEnabled) {
 		options.onRemoving = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Data.StoreInterop.OnRemoving', element.id);
 			
-		}
+		};
 	}
 	if (options.onUpdatedEnabled) {
 		options.onUpdated = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Data.StoreInterop.OnUpdated', element.id);
 			
-		}
+		};
 	}
 	if (options.onUpdatingEnabled) {
 		options.onUpdating = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Data.StoreInterop.OnUpdating', element.id);
 			
-		}
+		};
 	}
 	let instance = new DevExpress.data.Store(element, options);
 }
@@ -446,13 +467,16 @@ function BlazorDevExtreme_Store_on_8 (blazor_element, eventName, eventHandler) {
 function BlazorDevExtreme_Store_on_9 (blazor_element, events) {
 	return DevExpress.data.Store.getInstance(blazor_element).on(events);
 }
-function BlazorDevExtreme_Store_remove_10 (blazor_element, key) {
+function BlazorDevExtreme_Store_push_10 (blazor_element, changes) {
+	DevExpress.data.Store.getInstance(blazor_element).push(changes);
+}
+function BlazorDevExtreme_Store_remove_11 (blazor_element, key) {
 	return DevExpress.data.Store.getInstance(blazor_element).remove(key);
 }
-function BlazorDevExtreme_Store_totalCount_11 (blazor_element, obj) {
+function BlazorDevExtreme_Store_totalCount_12 (blazor_element, obj) {
 	return DevExpress.data.Store.getInstance(blazor_element).totalCount(obj);
 }
-function BlazorDevExtreme_Store_update_12 (blazor_element, key, values) {
+function BlazorDevExtreme_Store_update_13 (blazor_element, key, values) {
 	return DevExpress.data.Store.getInstance(blazor_element).update(key, values);
 }
 function BlazorDevExtreme_Store_SetOption (element, key, value) {
@@ -502,19 +526,19 @@ function BlazorDevExtreme_DataSource_Init (element, optionsText) {
 		options.onChanged = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Data.DataSourceInterop.OnChanged', element.id);
 			
-		}
+		};
 	}
 	if (options.onLoadErrorEnabled) {
 		options.onLoadError = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Data.DataSourceInterop.OnLoadError', element.id);
 			
-		}
+		};
 	}
 	if (options.onLoadingChangedEnabled) {
 		options.onLoadingChanged = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Data.DataSourceInterop.OnLoadingChanged', element.id);
 			
-		}
+		};
 	}
 	let instance = new DevExpress.data.DataSource(element, options);
 }
@@ -755,7 +779,7 @@ function BlazorDevExtreme_ODataStore_Init (element, optionsText) {
 		options.onLoading = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Data.ODataStoreInterop.OnLoading', element.id);
 			
-		}
+		};
 	}
 	let instance = new DevExpress.data.ODataStore(element, options);
 }
@@ -767,12 +791,6 @@ function BlazorDevExtreme_ODataStore_byKey_1 (blazor_element, key, extraOptions)
 }
 function BlazorDevExtreme_ODataStore_createQuery_2 (blazor_element, loadOptions) {
 	return DevExpress.data.ODataStore.getInstance(blazor_element).createQuery(loadOptions);
-}
-function BlazorDevExtreme_ODataStore_load_3 (blazor_element) {
-	return DevExpress.data.ODataStore.getInstance(blazor_element).load();
-}
-function BlazorDevExtreme_ODataStore_load_4 (blazor_element, options) {
-	return DevExpress.data.ODataStore.getInstance(blazor_element).load(options);
 }
 function BlazorDevExtreme_ODataStore_SetOption (element, key, value) {
 	DevExpress.data.ODataStore.getInstance(element).option(key, value);
@@ -798,25 +816,25 @@ function BlazorDevExtreme_PivotGridDataSource_Init (element, optionsText) {
 		options.onChanged = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Data.PivotGridDataSourceInterop.OnChanged', element.id);
 			
-		}
+		};
 	}
 	if (options.onFieldsPreparedEnabled) {
 		options.onFieldsPrepared = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Data.PivotGridDataSourceInterop.OnFieldsPrepared', element.id);
 			
-		}
+		};
 	}
 	if (options.onLoadErrorEnabled) {
 		options.onLoadError = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Data.PivotGridDataSourceInterop.OnLoadError', element.id);
 			
-		}
+		};
 	}
 	if (options.onLoadingChangedEnabled) {
 		options.onLoadingChanged = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Data.PivotGridDataSourceInterop.OnLoadingChanged', element.id);
 			
-		}
+		};
 	}
 	let instance = new DevExpress.data.PivotGridDataSource(element, options);
 }
@@ -934,7 +952,7 @@ function BlazorDevExtreme_DxCommand_Init (element, optionsText) {
 		options.onExecute = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Framework.DxCommandInterop.OnExecute', element.id);
 			
-		}
+		};
 	}
 	let instance = new DevExpress.framework.dxCommand(element, options);
 }
@@ -1179,7 +1197,7 @@ function BlazorDevExtreme_DxAccordion_Init (element, optionsText) {
 		options.onItemTitleClick = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxAccordionInterop.OnItemTitleClick', element.id);
 			
-		}
+		};
 	}
 	let instance = new DevExpress.ui.dxAccordion(element, options);
 }
@@ -1206,7 +1224,7 @@ function BlazorDevExtreme_DxActionSheet_Init (element, optionsText) {
 		options.onCancelClick = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxActionSheetInterop.OnCancelClick', element.id);
 			
-		}
+		};
 	}
 	let instance = new DevExpress.ui.dxActionSheet(element, options);
 }
@@ -1257,7 +1275,7 @@ function BlazorDevExtreme_DxButton_Init (element, optionsText) {
 		options.onClick = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxButtonInterop.OnClick', element.id);
 			
-		}
+		};
 	}
 	let instance = new DevExpress.ui.dxButton(element, options);
 }
@@ -1266,6 +1284,24 @@ function BlazorDevExtreme_DxButton_SetOption (element, key, value) {
 }
 function BlazorDevExtreme_DxButton_GetOption (element, key) {
 	return DevExpress.ui.dxButton.getInstance(blazor_element).option(key);
+}
+// DevExpress.ui.dxButtonGroup interop automatically generated
+function BlazorDevExtreme_DxButtonGroup_Init (element, optionsText) {
+	const options = JSON.parse(optionsText);
+
+	if (options.onSelectionChangedEnabled) {
+		options.onSelectionChanged = function () {
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxButtonGroupInterop.OnSelectionChanged', element.id);
+			
+		};
+	}
+	let instance = new DevExpress.ui.dxButtonGroup(element, options);
+}
+function BlazorDevExtreme_DxButtonGroup_SetOption (element, key, value) {
+	DevExpress.ui.dxButtonGroup.getInstance(element).option(key, value);
+}
+function BlazorDevExtreme_DxButtonGroup_GetOption (element, key) {
+	return DevExpress.ui.dxButtonGroup.getInstance(blazor_element).option(key);
 }
 // DevExpress.ui.dxCalendar interop automatically generated
 function BlazorDevExtreme_DxCalendar_Init (element, optionsText) {
@@ -1311,31 +1347,31 @@ function BlazorDevExtreme_DxContextMenu_Init (element, optionsText) {
 		options.onHidden = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxContextMenuInterop.OnHidden', element.id);
 			
-		}
+		};
 	}
 	if (options.onHidingEnabled) {
 		options.onHiding = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxContextMenuInterop.OnHiding', element.id);
 			
-		}
+		};
 	}
 	if (options.onPositioningEnabled) {
 		options.onPositioning = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxContextMenuInterop.OnPositioning', element.id);
 			
-		}
+		};
 	}
 	if (options.onShowingEnabled) {
 		options.onShowing = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxContextMenuInterop.OnShowing', element.id);
 			
-		}
+		};
 	}
 	if (options.onShownEnabled) {
 		options.onShown = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxContextMenuInterop.OnShown', element.id);
 			
-		}
+		};
 	}
 	let instance = new DevExpress.ui.dxContextMenu(element, options);
 }
@@ -1362,103 +1398,103 @@ function BlazorDevExtreme_GridBase_Init (element, optionsText) {
 		options.onAdaptiveDetailRowPreparing = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.GridBaseInterop.OnAdaptiveDetailRowPreparing', element.id);
 			
-		}
+		};
 	}
 	if (options.onDataErrorOccurredEnabled) {
 		options.onDataErrorOccurred = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.GridBaseInterop.OnDataErrorOccurred', element.id);
 			
-		}
+		};
 	}
 	if (options.onInitNewRowEnabled) {
 		options.onInitNewRow = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.GridBaseInterop.OnInitNewRow', element.id);
 			
-		}
+		};
 	}
 	if (options.onKeyDownEnabled) {
 		options.onKeyDown = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.GridBaseInterop.OnKeyDown', element.id);
 			
-		}
+		};
 	}
 	if (options.onRowCollapsedEnabled) {
 		options.onRowCollapsed = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.GridBaseInterop.OnRowCollapsed', element.id);
 			
-		}
+		};
 	}
 	if (options.onRowCollapsingEnabled) {
 		options.onRowCollapsing = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.GridBaseInterop.OnRowCollapsing', element.id);
 			
-		}
+		};
 	}
 	if (options.onRowExpandedEnabled) {
 		options.onRowExpanded = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.GridBaseInterop.OnRowExpanded', element.id);
 			
-		}
+		};
 	}
 	if (options.onRowExpandingEnabled) {
 		options.onRowExpanding = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.GridBaseInterop.OnRowExpanding', element.id);
 			
-		}
+		};
 	}
 	if (options.onRowInsertedEnabled) {
 		options.onRowInserted = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.GridBaseInterop.OnRowInserted', element.id);
 			
-		}
+		};
 	}
 	if (options.onRowInsertingEnabled) {
 		options.onRowInserting = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.GridBaseInterop.OnRowInserting', element.id);
 			
-		}
+		};
 	}
 	if (options.onRowRemovedEnabled) {
 		options.onRowRemoved = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.GridBaseInterop.OnRowRemoved', element.id);
 			
-		}
+		};
 	}
 	if (options.onRowRemovingEnabled) {
 		options.onRowRemoving = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.GridBaseInterop.OnRowRemoving', element.id);
 			
-		}
+		};
 	}
 	if (options.onRowUpdatedEnabled) {
 		options.onRowUpdated = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.GridBaseInterop.OnRowUpdated', element.id);
 			
-		}
+		};
 	}
 	if (options.onRowUpdatingEnabled) {
 		options.onRowUpdating = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.GridBaseInterop.OnRowUpdating', element.id);
 			
-		}
+		};
 	}
 	if (options.onRowValidatingEnabled) {
 		options.onRowValidating = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.GridBaseInterop.OnRowValidating', element.id);
 			
-		}
+		};
 	}
 	if (options.onSelectionChangedEnabled) {
 		options.onSelectionChanged = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.GridBaseInterop.OnSelectionChanged', element.id);
 			
-		}
+		};
 	}
 	if (options.onToolbarPreparingEnabled) {
 		options.onToolbarPreparing = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.GridBaseInterop.OnToolbarPreparing', element.id);
 			
-		}
+		};
 	}
 	let instance = new DevExpress.ui.GridBase(element, options);
 }
@@ -1589,63 +1625,72 @@ function BlazorDevExtreme_GridBase_hideColumnChooser_41 (blazor_element) {
 	DevExpress.ui.GridBase.getInstance(blazor_element).hideColumnChooser();
 }
 function BlazorDevExtreme_GridBase_isAdaptiveDetailRowExpanded_42 (blazor_element, key) {
-	DevExpress.ui.GridBase.getInstance(blazor_element).isAdaptiveDetailRowExpanded(key);
+	return DevExpress.ui.GridBase.getInstance(blazor_element).isAdaptiveDetailRowExpanded(key);
 }
-function BlazorDevExtreme_GridBase_isRowSelected_43 (blazor_element, key) {
+function BlazorDevExtreme_GridBase_isRowFocused_43 (blazor_element, key) {
+	return DevExpress.ui.GridBase.getInstance(blazor_element).isRowFocused(key);
+}
+function BlazorDevExtreme_GridBase_isRowSelected_44 (blazor_element, key) {
 	return DevExpress.ui.GridBase.getInstance(blazor_element).isRowSelected(key);
 }
-function BlazorDevExtreme_GridBase_keyOf_44 (blazor_element, obj) {
+function BlazorDevExtreme_GridBase_keyOf_45 (blazor_element, obj) {
 	return DevExpress.ui.GridBase.getInstance(blazor_element).keyOf(obj);
 }
-function BlazorDevExtreme_GridBase_pageCount_45 (blazor_element) {
+function BlazorDevExtreme_GridBase_navigateToRow_46 (blazor_element, key) {
+	DevExpress.ui.GridBase.getInstance(blazor_element).navigateToRow(key);
+}
+function BlazorDevExtreme_GridBase_pageCount_47 (blazor_element) {
 	return DevExpress.ui.GridBase.getInstance(blazor_element).pageCount();
 }
-function BlazorDevExtreme_GridBase_pageIndex_46 (blazor_element) {
+function BlazorDevExtreme_GridBase_pageIndex_48 (blazor_element) {
 	return DevExpress.ui.GridBase.getInstance(blazor_element).pageIndex();
 }
-function BlazorDevExtreme_GridBase_pageIndex_47 (blazor_element, newIndex) {
+function BlazorDevExtreme_GridBase_pageIndex_49 (blazor_element, newIndex) {
 	return DevExpress.ui.GridBase.getInstance(blazor_element).pageIndex(newIndex);
 }
-function BlazorDevExtreme_GridBase_pageSize_48 (blazor_element) {
+function BlazorDevExtreme_GridBase_pageSize_50 (blazor_element) {
 	return DevExpress.ui.GridBase.getInstance(blazor_element).pageSize();
 }
-function BlazorDevExtreme_GridBase_pageSize_49 (blazor_element, value) {
+function BlazorDevExtreme_GridBase_pageSize_51 (blazor_element, value) {
 	DevExpress.ui.GridBase.getInstance(blazor_element).pageSize(value);
 }
-function BlazorDevExtreme_GridBase_refresh_50 (blazor_element) {
+function BlazorDevExtreme_GridBase_refresh_52 (blazor_element) {
 	return DevExpress.ui.GridBase.getInstance(blazor_element).refresh();
 }
-function BlazorDevExtreme_GridBase_repaintRows_51 (blazor_element, rowIndexes) {
+function BlazorDevExtreme_GridBase_refresh_53 (blazor_element, changesOnly) {
+	return DevExpress.ui.GridBase.getInstance(blazor_element).refresh(changesOnly);
+}
+function BlazorDevExtreme_GridBase_repaintRows_54 (blazor_element, rowIndexes) {
 	DevExpress.ui.GridBase.getInstance(blazor_element).repaintRows(rowIndexes);
 }
-function BlazorDevExtreme_GridBase_saveEditData_52 (blazor_element) {
+function BlazorDevExtreme_GridBase_saveEditData_55 (blazor_element) {
 	return DevExpress.ui.GridBase.getInstance(blazor_element).saveEditData();
 }
-function BlazorDevExtreme_GridBase_searchByText_53 (blazor_element, text) {
+function BlazorDevExtreme_GridBase_searchByText_56 (blazor_element, text) {
 	DevExpress.ui.GridBase.getInstance(blazor_element).searchByText(text);
 }
-function BlazorDevExtreme_GridBase_selectAll_54 (blazor_element) {
+function BlazorDevExtreme_GridBase_selectAll_57 (blazor_element) {
 	return DevExpress.ui.GridBase.getInstance(blazor_element).selectAll();
 }
-function BlazorDevExtreme_GridBase_selectRows_55 (blazor_element, keys, preserve) {
+function BlazorDevExtreme_GridBase_selectRows_58 (blazor_element, keys, preserve) {
 	return DevExpress.ui.GridBase.getInstance(blazor_element).selectRows(keys, preserve);
 }
-function BlazorDevExtreme_GridBase_selectRowsByIndexes_56 (blazor_element, indexes) {
+function BlazorDevExtreme_GridBase_selectRowsByIndexes_59 (blazor_element, indexes) {
 	return DevExpress.ui.GridBase.getInstance(blazor_element).selectRowsByIndexes(indexes);
 }
-function BlazorDevExtreme_GridBase_showColumnChooser_57 (blazor_element) {
+function BlazorDevExtreme_GridBase_showColumnChooser_60 (blazor_element) {
 	DevExpress.ui.GridBase.getInstance(blazor_element).showColumnChooser();
 }
-function BlazorDevExtreme_GridBase_state_58 (blazor_element) {
+function BlazorDevExtreme_GridBase_state_61 (blazor_element) {
 	return DevExpress.ui.GridBase.getInstance(blazor_element).state();
 }
-function BlazorDevExtreme_GridBase_state_59 (blazor_element, state) {
+function BlazorDevExtreme_GridBase_state_62 (blazor_element, state) {
 	DevExpress.ui.GridBase.getInstance(blazor_element).state(state);
 }
-function BlazorDevExtreme_GridBase_undeleteRow_60 (blazor_element, rowIndex) {
+function BlazorDevExtreme_GridBase_undeleteRow_63 (blazor_element, rowIndex) {
 	DevExpress.ui.GridBase.getInstance(blazor_element).undeleteRow(rowIndex);
 }
-function BlazorDevExtreme_GridBase_updateDimensions_61 (blazor_element) {
+function BlazorDevExtreme_GridBase_updateDimensions_64 (blazor_element) {
 	DevExpress.ui.GridBase.getInstance(blazor_element).updateDimensions();
 }
 function BlazorDevExtreme_GridBase_SetOption (element, key, value) {
@@ -1662,73 +1707,97 @@ function BlazorDevExtreme_DxDataGrid_Init (element, optionsText) {
 		options.onCellClick = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxDataGridInterop.OnCellClick', element.id);
 			
-		}
+		};
 	}
 	if (options.onCellHoverChangedEnabled) {
 		options.onCellHoverChanged = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxDataGridInterop.OnCellHoverChanged', element.id);
 			
-		}
+		};
 	}
 	if (options.onCellPreparedEnabled) {
 		options.onCellPrepared = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxDataGridInterop.OnCellPrepared', element.id);
 			
-		}
+		};
 	}
 	if (options.onContextMenuPreparingEnabled) {
 		options.onContextMenuPreparing = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxDataGridInterop.OnContextMenuPreparing', element.id);
 			
-		}
+		};
 	}
 	if (options.onEditingStartEnabled) {
 		options.onEditingStart = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxDataGridInterop.OnEditingStart', element.id);
 			
-		}
+		};
 	}
 	if (options.onEditorPreparedEnabled) {
 		options.onEditorPrepared = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxDataGridInterop.OnEditorPrepared', element.id);
 			
-		}
+		};
 	}
 	if (options.onEditorPreparingEnabled) {
 		options.onEditorPreparing = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxDataGridInterop.OnEditorPreparing', element.id);
 			
-		}
+		};
 	}
 	if (options.onExportedEnabled) {
 		options.onExported = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxDataGridInterop.OnExported', element.id);
 			
-		}
+		};
 	}
 	if (options.onExportingEnabled) {
 		options.onExporting = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxDataGridInterop.OnExporting', element.id);
 			
-		}
+		};
 	}
 	if (options.onFileSavingEnabled) {
 		options.onFileSaving = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxDataGridInterop.OnFileSaving', element.id);
 			
-		}
+		};
+	}
+	if (options.onFocusedCellChangedEnabled) {
+		options.onFocusedCellChanged = function () {
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxDataGridInterop.OnFocusedCellChanged', element.id);
+			
+		};
+	}
+	if (options.onFocusedCellChangingEnabled) {
+		options.onFocusedCellChanging = function () {
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxDataGridInterop.OnFocusedCellChanging', element.id);
+			
+		};
+	}
+	if (options.onFocusedRowChangedEnabled) {
+		options.onFocusedRowChanged = function () {
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxDataGridInterop.OnFocusedRowChanged', element.id);
+			
+		};
+	}
+	if (options.onFocusedRowChangingEnabled) {
+		options.onFocusedRowChanging = function () {
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxDataGridInterop.OnFocusedRowChanging', element.id);
+			
+		};
 	}
 	if (options.onRowClickEnabled) {
 		options.onRowClick = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxDataGridInterop.OnRowClick', element.id);
 			
-		}
+		};
 	}
 	if (options.onRowPreparedEnabled) {
 		options.onRowPrepared = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxDataGridInterop.OnRowPrepared', element.id);
 			
-		}
+		};
 	}
 	let instance = new DevExpress.ui.dxDataGrid(element, options);
 }
@@ -1824,13 +1893,13 @@ function BlazorDevExtreme_DxDeferRendering_Init (element, optionsText) {
 		options.onRendered = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxDeferRenderingInterop.OnRendered', element.id);
 			
-		}
+		};
 	}
 	if (options.onShownEnabled) {
 		options.onShown = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxDeferRenderingInterop.OnShown', element.id);
 			
-		}
+		};
 	}
 	let instance = new DevExpress.ui.dxDeferRendering(element, options);
 }
@@ -1839,6 +1908,30 @@ function BlazorDevExtreme_DxDeferRendering_SetOption (element, key, value) {
 }
 function BlazorDevExtreme_DxDeferRendering_GetOption (element, key) {
 	return DevExpress.ui.dxDeferRendering.getInstance(blazor_element).option(key);
+}
+// DevExpress.ui.dxDrawer interop automatically generated
+function BlazorDevExtreme_DxDrawer_Init (element, optionsText) {
+	const options = JSON.parse(optionsText);
+
+	let instance = new DevExpress.ui.dxDrawer(element, options);
+}
+function BlazorDevExtreme_DxDrawer_content_0 (blazor_element) {
+	return DevExpress.ui.dxDrawer.getInstance(blazor_element).content();
+}
+function BlazorDevExtreme_DxDrawer_hide_1 (blazor_element) {
+	return DevExpress.ui.dxDrawer.getInstance(blazor_element).hide();
+}
+function BlazorDevExtreme_DxDrawer_show_2 (blazor_element) {
+	return DevExpress.ui.dxDrawer.getInstance(blazor_element).show();
+}
+function BlazorDevExtreme_DxDrawer_toggle_3 (blazor_element) {
+	return DevExpress.ui.dxDrawer.getInstance(blazor_element).toggle();
+}
+function BlazorDevExtreme_DxDrawer_SetOption (element, key, value) {
+	DevExpress.ui.dxDrawer.getInstance(element).option(key, value);
+}
+function BlazorDevExtreme_DxDrawer_GetOption (element, key) {
+	return DevExpress.ui.dxDrawer.getInstance(blazor_element).option(key);
 }
 // DevExpress.ui.dxDropDownBox interop automatically generated
 function BlazorDevExtreme_DxDropDownBox_Init (element, optionsText) {
@@ -1863,13 +1956,13 @@ function BlazorDevExtreme_DxDropDownMenu_Init (element, optionsText) {
 		options.onButtonClick = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxDropDownMenuInterop.OnButtonClick', element.id);
 			
-		}
+		};
 	}
 	if (options.onItemClickEnabled) {
 		options.onItemClick = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxDropDownMenuInterop.OnItemClick', element.id);
 			
-		}
+		};
 	}
 	let instance = new DevExpress.ui.dxDropDownMenu(element, options);
 }
@@ -1893,37 +1986,37 @@ function BlazorDevExtreme_DxFileUploader_Init (element, optionsText) {
 		options.onProgress = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxFileUploaderInterop.OnProgress', element.id);
 			
-		}
+		};
 	}
 	if (options.onUploadAbortedEnabled) {
 		options.onUploadAborted = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxFileUploaderInterop.OnUploadAborted', element.id);
 			
-		}
+		};
 	}
 	if (options.onUploadedEnabled) {
 		options.onUploaded = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxFileUploaderInterop.OnUploaded', element.id);
 			
-		}
+		};
 	}
 	if (options.onUploadErrorEnabled) {
 		options.onUploadError = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxFileUploaderInterop.OnUploadError', element.id);
 			
-		}
+		};
 	}
 	if (options.onUploadStartedEnabled) {
 		options.onUploadStarted = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxFileUploaderInterop.OnUploadStarted', element.id);
 			
-		}
+		};
 	}
 	if (options.onValueChangedEnabled) {
 		options.onValueChanged = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxFileUploaderInterop.OnValueChanged', element.id);
 			
-		}
+		};
 	}
 	let instance = new DevExpress.ui.dxFileUploader(element, options);
 }
@@ -1941,19 +2034,19 @@ function BlazorDevExtreme_DxFilterBuilder_Init (element, optionsText) {
 		options.onEditorPrepared = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxFilterBuilderInterop.OnEditorPrepared', element.id);
 			
-		}
+		};
 	}
 	if (options.onEditorPreparingEnabled) {
 		options.onEditorPreparing = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxFilterBuilderInterop.OnEditorPreparing', element.id);
 			
-		}
+		};
 	}
 	if (options.onValueChangedEnabled) {
 		options.onValueChanged = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxFilterBuilderInterop.OnValueChanged', element.id);
 			
-		}
+		};
 	}
 	let instance = new DevExpress.ui.dxFilterBuilder(element, options);
 }
@@ -1974,41 +2067,44 @@ function BlazorDevExtreme_DxForm_Init (element, optionsText) {
 		options.onEditorEnterKey = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxFormInterop.OnEditorEnterKey', element.id);
 			
-		}
+		};
 	}
 	if (options.onFieldDataChangedEnabled) {
 		options.onFieldDataChanged = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxFormInterop.OnFieldDataChanged', element.id);
 			
-		}
+		};
 	}
 	let instance = new DevExpress.ui.dxForm(element, options);
 }
-function BlazorDevExtreme_DxForm_getEditor_0 (blazor_element, dataField) {
+function BlazorDevExtreme_DxForm_getButton_0 (blazor_element, name) {
+	return DevExpress.ui.dxForm.getInstance(blazor_element).getButton(name);
+}
+function BlazorDevExtreme_DxForm_getEditor_1 (blazor_element, dataField) {
 	return DevExpress.ui.dxForm.getInstance(blazor_element).getEditor(dataField);
 }
-function BlazorDevExtreme_DxForm_itemOption_1 (blazor_element, id) {
+function BlazorDevExtreme_DxForm_itemOption_2 (blazor_element, id) {
 	return DevExpress.ui.dxForm.getInstance(blazor_element).itemOption(id);
 }
-function BlazorDevExtreme_DxForm_itemOption_2 (blazor_element, id, option, value) {
+function BlazorDevExtreme_DxForm_itemOption_3 (blazor_element, id, option, value) {
 	DevExpress.ui.dxForm.getInstance(blazor_element).itemOption(id, option, value);
 }
-function BlazorDevExtreme_DxForm_itemOption_3 (blazor_element, id, options) {
+function BlazorDevExtreme_DxForm_itemOption_4 (blazor_element, id, options) {
 	DevExpress.ui.dxForm.getInstance(blazor_element).itemOption(id, options);
 }
-function BlazorDevExtreme_DxForm_resetValues_4 (blazor_element) {
+function BlazorDevExtreme_DxForm_resetValues_5 (blazor_element) {
 	DevExpress.ui.dxForm.getInstance(blazor_element).resetValues();
 }
-function BlazorDevExtreme_DxForm_updateData_5 (blazor_element, data) {
+function BlazorDevExtreme_DxForm_updateData_6 (blazor_element, data) {
 	DevExpress.ui.dxForm.getInstance(blazor_element).updateData(data);
 }
-function BlazorDevExtreme_DxForm_updateData_6 (blazor_element, dataField, value) {
+function BlazorDevExtreme_DxForm_updateData_7 (blazor_element, dataField, value) {
 	DevExpress.ui.dxForm.getInstance(blazor_element).updateData(dataField, value);
 }
-function BlazorDevExtreme_DxForm_updateDimensions_7 (blazor_element) {
+function BlazorDevExtreme_DxForm_updateDimensions_8 (blazor_element) {
 	return DevExpress.ui.dxForm.getInstance(blazor_element).updateDimensions();
 }
-function BlazorDevExtreme_DxForm_validate_8 (blazor_element) {
+function BlazorDevExtreme_DxForm_validate_9 (blazor_element) {
 	return DevExpress.ui.dxForm.getInstance(blazor_element).validate();
 }
 function BlazorDevExtreme_DxForm_SetOption (element, key, value) {
@@ -2038,6 +2134,87 @@ function BlazorDevExtreme_DxGallery_SetOption (element, key, value) {
 function BlazorDevExtreme_DxGallery_GetOption (element, key) {
 	return DevExpress.ui.dxGallery.getInstance(blazor_element).option(key);
 }
+// DevExpress.ui.dxHtmlEditor interop automatically generated
+function BlazorDevExtreme_DxHtmlEditor_Init (element, optionsText) {
+	const options = JSON.parse(optionsText);
+
+	if (options.onFocusInEnabled) {
+		options.onFocusIn = function () {
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxHtmlEditorInterop.OnFocusIn', element.id);
+			
+		};
+	}
+	if (options.onFocusOutEnabled) {
+		options.onFocusOut = function () {
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxHtmlEditorInterop.OnFocusOut', element.id);
+			
+		};
+	}
+	let instance = new DevExpress.ui.dxHtmlEditor(element, options);
+}
+function BlazorDevExtreme_DxHtmlEditor_clearHistory_0 (blazor_element) {
+	DevExpress.ui.dxHtmlEditor.getInstance(blazor_element).clearHistory();
+}
+function BlazorDevExtreme_DxHtmlEditor_delete_1 (blazor_element, index, length) {
+	DevExpress.ui.dxHtmlEditor.getInstance(blazor_element).delete(index, length);
+}
+function BlazorDevExtreme_DxHtmlEditor_format_2 (blazor_element, formatName, formatValue) {
+	DevExpress.ui.dxHtmlEditor.getInstance(blazor_element).format(formatName, formatValue);
+}
+function BlazorDevExtreme_DxHtmlEditor_formatLine_3 (blazor_element, index, length, formatName, formatValue) {
+	DevExpress.ui.dxHtmlEditor.getInstance(blazor_element).formatLine(index, length, formatName, formatValue);
+}
+function BlazorDevExtreme_DxHtmlEditor_formatLine_4 (blazor_element, index, length, formats) {
+	DevExpress.ui.dxHtmlEditor.getInstance(blazor_element).formatLine(index, length, formats);
+}
+function BlazorDevExtreme_DxHtmlEditor_formatText_5 (blazor_element, index, length, formatName, formatValue) {
+	DevExpress.ui.dxHtmlEditor.getInstance(blazor_element).formatText(index, length, formatName, formatValue);
+}
+function BlazorDevExtreme_DxHtmlEditor_formatText_6 (blazor_element, index, length, formats) {
+	DevExpress.ui.dxHtmlEditor.getInstance(blazor_element).formatText(index, length, formats);
+}
+function BlazorDevExtreme_DxHtmlEditor_getFormat_7 (blazor_element, index, length) {
+	return DevExpress.ui.dxHtmlEditor.getInstance(blazor_element).getFormat(index, length);
+}
+function BlazorDevExtreme_DxHtmlEditor_getLength_8 (blazor_element) {
+	return DevExpress.ui.dxHtmlEditor.getInstance(blazor_element).getLength();
+}
+function BlazorDevExtreme_DxHtmlEditor_getModule_9 (blazor_element, modulePath) {
+	return DevExpress.ui.dxHtmlEditor.getInstance(blazor_element).getModule(modulePath);
+}
+function BlazorDevExtreme_DxHtmlEditor_getQuillInstance_10 (blazor_element) {
+	return DevExpress.ui.dxHtmlEditor.getInstance(blazor_element).getQuillInstance();
+}
+function BlazorDevExtreme_DxHtmlEditor_getSelection_11 (blazor_element) {
+	return DevExpress.ui.dxHtmlEditor.getInstance(blazor_element).getSelection();
+}
+function BlazorDevExtreme_DxHtmlEditor_insertEmbed_12 (blazor_element, index, type, config) {
+	DevExpress.ui.dxHtmlEditor.getInstance(blazor_element).insertEmbed(index, type, config);
+}
+function BlazorDevExtreme_DxHtmlEditor_insertText_13 (blazor_element, index, text, formats) {
+	DevExpress.ui.dxHtmlEditor.getInstance(blazor_element).insertText(index, text, formats);
+}
+function BlazorDevExtreme_DxHtmlEditor_redo_14 (blazor_element) {
+	DevExpress.ui.dxHtmlEditor.getInstance(blazor_element).redo();
+}
+function BlazorDevExtreme_DxHtmlEditor_registerModules_15 (blazor_element, modules) {
+	DevExpress.ui.dxHtmlEditor.getInstance(blazor_element).registerModules(modules);
+}
+function BlazorDevExtreme_DxHtmlEditor_removeFormat_16 (blazor_element, index, length) {
+	DevExpress.ui.dxHtmlEditor.getInstance(blazor_element).removeFormat(index, length);
+}
+function BlazorDevExtreme_DxHtmlEditor_setSelection_17 (blazor_element, index, length) {
+	DevExpress.ui.dxHtmlEditor.getInstance(blazor_element).setSelection(index, length);
+}
+function BlazorDevExtreme_DxHtmlEditor_undo_18 (blazor_element) {
+	DevExpress.ui.dxHtmlEditor.getInstance(blazor_element).undo();
+}
+function BlazorDevExtreme_DxHtmlEditor_SetOption (element, key, value) {
+	DevExpress.ui.dxHtmlEditor.getInstance(element).option(key, value);
+}
+function BlazorDevExtreme_DxHtmlEditor_GetOption (element, key) {
+	return DevExpress.ui.dxHtmlEditor.getInstance(blazor_element).option(key);
+}
 // DevExpress.ui.dxList interop automatically generated
 function BlazorDevExtreme_DxList_Init (element, optionsText) {
 	const options = JSON.parse(optionsText);
@@ -2046,73 +2223,73 @@ function BlazorDevExtreme_DxList_Init (element, optionsText) {
 		options.onGroupRendered = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxListInterop.OnGroupRendered', element.id);
 			
-		}
+		};
 	}
 	if (options.onItemClickEnabled) {
 		options.onItemClick = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxListInterop.OnItemClick', element.id);
 			
-		}
+		};
 	}
 	if (options.onItemContextMenuEnabled) {
 		options.onItemContextMenu = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxListInterop.OnItemContextMenu', element.id);
 			
-		}
+		};
 	}
 	if (options.onItemDeletedEnabled) {
 		options.onItemDeleted = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxListInterop.OnItemDeleted', element.id);
 			
-		}
+		};
 	}
 	if (options.onItemDeletingEnabled) {
 		options.onItemDeleting = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxListInterop.OnItemDeleting', element.id);
 			
-		}
+		};
 	}
 	if (options.onItemHoldEnabled) {
 		options.onItemHold = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxListInterop.OnItemHold', element.id);
 			
-		}
+		};
 	}
 	if (options.onItemReorderedEnabled) {
 		options.onItemReordered = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxListInterop.OnItemReordered', element.id);
 			
-		}
+		};
 	}
 	if (options.onItemSwipeEnabled) {
 		options.onItemSwipe = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxListInterop.OnItemSwipe', element.id);
 			
-		}
+		};
 	}
 	if (options.onPageLoadingEnabled) {
 		options.onPageLoading = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxListInterop.OnPageLoading', element.id);
 			
-		}
+		};
 	}
 	if (options.onPullRefreshEnabled) {
 		options.onPullRefresh = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxListInterop.OnPullRefresh', element.id);
 			
-		}
+		};
 	}
 	if (options.onScrollEnabled) {
 		options.onScroll = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxListInterop.OnScroll', element.id);
 			
-		}
+		};
 	}
 	if (options.onSelectAllValueChangedEnabled) {
 		options.onSelectAllValueChanged = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxListInterop.OnSelectAllValueChanged', element.id);
 			
-		}
+		};
 	}
 	let instance = new DevExpress.ui.dxList(element, options);
 }
@@ -2223,31 +2400,31 @@ function BlazorDevExtreme_DxLookup_Init (element, optionsText) {
 		options.onPageLoading = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxLookupInterop.OnPageLoading', element.id);
 			
-		}
+		};
 	}
 	if (options.onPullRefreshEnabled) {
 		options.onPullRefresh = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxLookupInterop.OnPullRefresh', element.id);
 			
-		}
+		};
 	}
 	if (options.onScrollEnabled) {
 		options.onScroll = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxLookupInterop.OnScroll', element.id);
 			
-		}
+		};
 	}
 	if (options.onTitleRenderedEnabled) {
 		options.onTitleRendered = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxLookupInterop.OnTitleRendered', element.id);
 			
-		}
+		};
 	}
 	if (options.onValueChangedEnabled) {
 		options.onValueChanged = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxLookupInterop.OnValueChanged', element.id);
 			
-		}
+		};
 	}
 	let instance = new DevExpress.ui.dxLookup(element, options);
 }
@@ -2265,37 +2442,37 @@ function BlazorDevExtreme_DxMap_Init (element, optionsText) {
 		options.onClick = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxMapInterop.OnClick', element.id);
 			
-		}
+		};
 	}
 	if (options.onMarkerAddedEnabled) {
 		options.onMarkerAdded = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxMapInterop.OnMarkerAdded', element.id);
 			
-		}
+		};
 	}
 	if (options.onMarkerRemovedEnabled) {
 		options.onMarkerRemoved = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxMapInterop.OnMarkerRemoved', element.id);
 			
-		}
+		};
 	}
 	if (options.onReadyEnabled) {
 		options.onReady = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxMapInterop.OnReady', element.id);
 			
-		}
+		};
 	}
 	if (options.onRouteAddedEnabled) {
 		options.onRouteAdded = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxMapInterop.OnRouteAdded', element.id);
 			
-		}
+		};
 	}
 	if (options.onRouteRemovedEnabled) {
 		options.onRouteRemoved = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxMapInterop.OnRouteRemoved', element.id);
 			
-		}
+		};
 	}
 	let instance = new DevExpress.ui.dxMap(element, options);
 }
@@ -2325,25 +2502,25 @@ function BlazorDevExtreme_DxMenu_Init (element, optionsText) {
 		options.onSubmenuHidden = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxMenuInterop.OnSubmenuHidden', element.id);
 			
-		}
+		};
 	}
 	if (options.onSubmenuHidingEnabled) {
 		options.onSubmenuHiding = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxMenuInterop.OnSubmenuHiding', element.id);
 			
-		}
+		};
 	}
 	if (options.onSubmenuShowingEnabled) {
 		options.onSubmenuShowing = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxMenuInterop.OnSubmenuShowing', element.id);
 			
-		}
+		};
 	}
 	if (options.onSubmenuShownEnabled) {
 		options.onSubmenuShown = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxMenuInterop.OnSubmenuShown', element.id);
 			
-		}
+		};
 	}
 	let instance = new DevExpress.ui.dxMenu(element, options);
 }
@@ -2397,25 +2574,25 @@ function BlazorDevExtreme_DxOverlay_Init (element, optionsText) {
 		options.onHidden = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxOverlayInterop.OnHidden', element.id);
 			
-		}
+		};
 	}
 	if (options.onHidingEnabled) {
 		options.onHiding = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxOverlayInterop.OnHiding', element.id);
 			
-		}
+		};
 	}
 	if (options.onShowingEnabled) {
 		options.onShowing = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxOverlayInterop.OnShowing', element.id);
 			
-		}
+		};
 	}
 	if (options.onShownEnabled) {
 		options.onShown = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxOverlayInterop.OnShown', element.id);
 			
-		}
+		};
 	}
 	let instance = new DevExpress.ui.dxOverlay(element, options);
 }
@@ -2472,37 +2649,37 @@ function BlazorDevExtreme_DxPivotGrid_Init (element, optionsText) {
 		options.onCellClick = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxPivotGridInterop.OnCellClick', element.id);
 			
-		}
+		};
 	}
 	if (options.onCellPreparedEnabled) {
 		options.onCellPrepared = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxPivotGridInterop.OnCellPrepared', element.id);
 			
-		}
+		};
 	}
 	if (options.onContextMenuPreparingEnabled) {
 		options.onContextMenuPreparing = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxPivotGridInterop.OnContextMenuPreparing', element.id);
 			
-		}
+		};
 	}
 	if (options.onExportedEnabled) {
 		options.onExported = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxPivotGridInterop.OnExported', element.id);
 			
-		}
+		};
 	}
 	if (options.onExportingEnabled) {
 		options.onExporting = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxPivotGridInterop.OnExporting', element.id);
 			
-		}
+		};
 	}
 	if (options.onFileSavingEnabled) {
 		options.onFileSaving = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxPivotGridInterop.OnFileSaving', element.id);
 			
-		}
+		};
 	}
 	let instance = new DevExpress.ui.dxPivotGrid(element, options);
 }
@@ -2535,7 +2712,7 @@ function BlazorDevExtreme_DxPivotGridFieldChooser_Init (element, optionsText) {
 		options.onContextMenuPreparing = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxPivotGridFieldChooserInterop.OnContextMenuPreparing', element.id);
 			
-		}
+		};
 	}
 	let instance = new DevExpress.ui.dxPivotGridFieldChooser(element, options);
 }
@@ -2583,25 +2760,25 @@ function BlazorDevExtreme_DxPopup_Init (element, optionsText) {
 		options.onResize = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxPopupInterop.OnResize', element.id);
 			
-		}
+		};
 	}
 	if (options.onResizeEndEnabled) {
 		options.onResizeEnd = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxPopupInterop.OnResizeEnd', element.id);
 			
-		}
+		};
 	}
 	if (options.onResizeStartEnabled) {
 		options.onResizeStart = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxPopupInterop.OnResizeStart', element.id);
 			
-		}
+		};
 	}
 	if (options.onTitleRenderedEnabled) {
 		options.onTitleRendered = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxPopupInterop.OnTitleRendered', element.id);
 			
-		}
+		};
 	}
 	let instance = new DevExpress.ui.dxPopup(element, options);
 }
@@ -2619,7 +2796,7 @@ function BlazorDevExtreme_DxProgressBar_Init (element, optionsText) {
 		options.onComplete = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxProgressBarInterop.OnComplete', element.id);
 			
-		}
+		};
 	}
 	let instance = new DevExpress.ui.dxProgressBar(element, options);
 }
@@ -2652,7 +2829,7 @@ function BlazorDevExtreme_DxRangeSlider_Init (element, optionsText) {
 		options.onValueChanged = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxRangeSliderInterop.OnValueChanged', element.id);
 			
-		}
+		};
 	}
 	let instance = new DevExpress.ui.dxRangeSlider(element, options);
 }
@@ -2665,6 +2842,18 @@ function BlazorDevExtreme_DxRangeSlider_SetOption (element, key, value) {
 function BlazorDevExtreme_DxRangeSlider_GetOption (element, key) {
 	return DevExpress.ui.dxRangeSlider.getInstance(blazor_element).option(key);
 }
+// DevExpress.ui.dxRecurrenceEditor interop automatically generated
+function BlazorDevExtreme_DxRecurrenceEditor_Init (element, optionsText) {
+	const options = JSON.parse(optionsText);
+
+	let instance = new DevExpress.ui.dxRecurrenceEditor(element, options);
+}
+function BlazorDevExtreme_DxRecurrenceEditor_SetOption (element, key, value) {
+	DevExpress.ui.dxRecurrenceEditor.getInstance(element).option(key, value);
+}
+function BlazorDevExtreme_DxRecurrenceEditor_GetOption (element, key) {
+	return DevExpress.ui.dxRecurrenceEditor.getInstance(blazor_element).option(key);
+}
 // DevExpress.ui.dxResizable interop automatically generated
 function BlazorDevExtreme_DxResizable_Init (element, optionsText) {
 	const options = JSON.parse(optionsText);
@@ -2673,19 +2862,19 @@ function BlazorDevExtreme_DxResizable_Init (element, optionsText) {
 		options.onResize = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxResizableInterop.OnResize', element.id);
 			
-		}
+		};
 	}
 	if (options.onResizeEndEnabled) {
 		options.onResizeEnd = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxResizableInterop.OnResizeEnd', element.id);
 			
-		}
+		};
 	}
 	if (options.onResizeStartEnabled) {
 		options.onResizeStart = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxResizableInterop.OnResizeStart', element.id);
 			
-		}
+		};
 	}
 	let instance = new DevExpress.ui.dxResizable(element, options);
 }
@@ -2715,79 +2904,79 @@ function BlazorDevExtreme_DxScheduler_Init (element, optionsText) {
 		options.onAppointmentAdded = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxSchedulerInterop.OnAppointmentAdded', element.id);
 			
-		}
+		};
 	}
 	if (options.onAppointmentAddingEnabled) {
 		options.onAppointmentAdding = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxSchedulerInterop.OnAppointmentAdding', element.id);
 			
-		}
+		};
 	}
 	if (options.onAppointmentClickEnabled) {
 		options.onAppointmentClick = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxSchedulerInterop.OnAppointmentClick', element.id);
 			
-		}
+		};
 	}
 	if (options.onAppointmentContextMenuEnabled) {
 		options.onAppointmentContextMenu = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxSchedulerInterop.OnAppointmentContextMenu', element.id);
 			
-		}
+		};
 	}
 	if (options.onAppointmentDblClickEnabled) {
 		options.onAppointmentDblClick = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxSchedulerInterop.OnAppointmentDblClick', element.id);
 			
-		}
+		};
 	}
 	if (options.onAppointmentDeletedEnabled) {
 		options.onAppointmentDeleted = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxSchedulerInterop.OnAppointmentDeleted', element.id);
 			
-		}
+		};
 	}
 	if (options.onAppointmentDeletingEnabled) {
 		options.onAppointmentDeleting = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxSchedulerInterop.OnAppointmentDeleting', element.id);
 			
-		}
+		};
 	}
 	if (options.onAppointmentFormCreatedEnabled) {
 		options.onAppointmentFormCreated = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxSchedulerInterop.OnAppointmentFormCreated', element.id);
 			
-		}
+		};
 	}
 	if (options.onAppointmentRenderedEnabled) {
 		options.onAppointmentRendered = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxSchedulerInterop.OnAppointmentRendered', element.id);
 			
-		}
+		};
 	}
 	if (options.onAppointmentUpdatedEnabled) {
 		options.onAppointmentUpdated = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxSchedulerInterop.OnAppointmentUpdated', element.id);
 			
-		}
+		};
 	}
 	if (options.onAppointmentUpdatingEnabled) {
 		options.onAppointmentUpdating = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxSchedulerInterop.OnAppointmentUpdating', element.id);
 			
-		}
+		};
 	}
 	if (options.onCellClickEnabled) {
 		options.onCellClick = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxSchedulerInterop.OnCellClick', element.id);
 			
-		}
+		};
 	}
 	if (options.onCellContextMenuEnabled) {
 		options.onCellContextMenu = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxSchedulerInterop.OnCellContextMenu', element.id);
 			
-		}
+		};
 	}
 	let instance = new DevExpress.ui.dxScheduler(element, options);
 }
@@ -2841,13 +3030,13 @@ function BlazorDevExtreme_DxScrollView_Init (element, optionsText) {
 		options.onPullDown = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxScrollViewInterop.OnPullDown', element.id);
 			
-		}
+		};
 	}
 	if (options.onReachBottomEnabled) {
 		options.onReachBottom = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxScrollViewInterop.OnReachBottom', element.id);
 			
-		}
+		};
 	}
 	let instance = new DevExpress.ui.dxScrollView(element, options);
 }
@@ -2871,7 +3060,7 @@ function BlazorDevExtreme_DxSelectBox_Init (element, optionsText) {
 		options.onCustomItemCreating = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxSelectBoxInterop.OnCustomItemCreating', element.id);
 			
-		}
+		};
 	}
 	let instance = new DevExpress.ui.dxSelectBox(element, options);
 }
@@ -2901,13 +3090,13 @@ function BlazorDevExtreme_DxSlideOut_Init (element, optionsText) {
 		options.onMenuGroupRendered = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxSlideOutInterop.OnMenuGroupRendered', element.id);
 			
-		}
+		};
 	}
 	if (options.onMenuItemRenderedEnabled) {
 		options.onMenuItemRendered = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxSlideOutInterop.OnMenuItemRendered', element.id);
 			
-		}
+		};
 	}
 	let instance = new DevExpress.ui.dxSlideOut(element, options);
 }
@@ -2985,19 +3174,19 @@ function BlazorDevExtreme_DxTabPanel_Init (element, optionsText) {
 		options.onTitleClick = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTabPanelInterop.OnTitleClick', element.id);
 			
-		}
+		};
 	}
 	if (options.onTitleHoldEnabled) {
 		options.onTitleHold = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTabPanelInterop.OnTitleHold', element.id);
 			
-		}
+		};
 	}
 	if (options.onTitleRenderedEnabled) {
 		options.onTitleRendered = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTabPanelInterop.OnTitleRendered', element.id);
 			
-		}
+		};
 	}
 	let instance = new DevExpress.ui.dxTabPanel(element, options);
 }
@@ -3015,19 +3204,19 @@ function BlazorDevExtreme_DxTagBox_Init (element, optionsText) {
 		options.onMultiTagPreparing = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTagBoxInterop.OnMultiTagPreparing', element.id);
 			
-		}
+		};
 	}
 	if (options.onSelectAllValueChangedEnabled) {
 		options.onSelectAllValueChanged = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTagBoxInterop.OnSelectAllValueChanged', element.id);
 			
-		}
+		};
 	}
 	if (options.onSelectionChangedEnabled) {
 		options.onSelectionChanged = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTagBoxInterop.OnSelectionChanged', element.id);
 			
-		}
+		};
 	}
 	let instance = new DevExpress.ui.dxTagBox(element, options);
 }
@@ -3132,61 +3321,85 @@ function BlazorDevExtreme_DxTreeList_Init (element, optionsText) {
 		options.onCellClick = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTreeListInterop.OnCellClick', element.id);
 			
-		}
+		};
 	}
 	if (options.onCellHoverChangedEnabled) {
 		options.onCellHoverChanged = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTreeListInterop.OnCellHoverChanged', element.id);
 			
-		}
+		};
 	}
 	if (options.onCellPreparedEnabled) {
 		options.onCellPrepared = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTreeListInterop.OnCellPrepared', element.id);
 			
-		}
+		};
 	}
 	if (options.onContextMenuPreparingEnabled) {
 		options.onContextMenuPreparing = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTreeListInterop.OnContextMenuPreparing', element.id);
 			
-		}
+		};
 	}
 	if (options.onEditingStartEnabled) {
 		options.onEditingStart = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTreeListInterop.OnEditingStart', element.id);
 			
-		}
+		};
 	}
 	if (options.onEditorPreparedEnabled) {
 		options.onEditorPrepared = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTreeListInterop.OnEditorPrepared', element.id);
 			
-		}
+		};
 	}
 	if (options.onEditorPreparingEnabled) {
 		options.onEditorPreparing = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTreeListInterop.OnEditorPreparing', element.id);
 			
-		}
+		};
+	}
+	if (options.onFocusedCellChangedEnabled) {
+		options.onFocusedCellChanged = function () {
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTreeListInterop.OnFocusedCellChanged', element.id);
+			
+		};
+	}
+	if (options.onFocusedCellChangingEnabled) {
+		options.onFocusedCellChanging = function () {
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTreeListInterop.OnFocusedCellChanging', element.id);
+			
+		};
+	}
+	if (options.onFocusedRowChangedEnabled) {
+		options.onFocusedRowChanged = function () {
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTreeListInterop.OnFocusedRowChanged', element.id);
+			
+		};
+	}
+	if (options.onFocusedRowChangingEnabled) {
+		options.onFocusedRowChanging = function () {
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTreeListInterop.OnFocusedRowChanging', element.id);
+			
+		};
 	}
 	if (options.onNodesInitializedEnabled) {
 		options.onNodesInitialized = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTreeListInterop.OnNodesInitialized', element.id);
 			
-		}
+		};
 	}
 	if (options.onRowClickEnabled) {
 		options.onRowClick = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTreeListInterop.OnRowClick', element.id);
 			
-		}
+		};
 	}
 	if (options.onRowPreparedEnabled) {
 		options.onRowPrepared = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTreeListInterop.OnRowPrepared', element.id);
 			
-		}
+		};
 	}
 	let instance = new DevExpress.ui.dxTreeList(element, options);
 }
@@ -3229,25 +3442,28 @@ function BlazorDevExtreme_DxTreeList_getSelectedRowKeys_11 (blazor_element, mode
 function BlazorDevExtreme_DxTreeList_getSelectedRowsData_12 (blazor_element) {
 	return DevExpress.ui.dxTreeList.getInstance(blazor_element).getSelectedRowsData();
 }
-function BlazorDevExtreme_DxTreeList_getVisibleColumns_13 (blazor_element) {
+function BlazorDevExtreme_DxTreeList_getSelectedRowsData_13 (blazor_element, mode) {
+	return DevExpress.ui.dxTreeList.getInstance(blazor_element).getSelectedRowsData(mode);
+}
+function BlazorDevExtreme_DxTreeList_getVisibleColumns_14 (blazor_element) {
 	return DevExpress.ui.dxTreeList.getInstance(blazor_element).getVisibleColumns();
 }
-function BlazorDevExtreme_DxTreeList_getVisibleColumns_14 (blazor_element, headerLevel) {
+function BlazorDevExtreme_DxTreeList_getVisibleColumns_15 (blazor_element, headerLevel) {
 	return DevExpress.ui.dxTreeList.getInstance(blazor_element).getVisibleColumns(headerLevel);
 }
-function BlazorDevExtreme_DxTreeList_getVisibleRows_15 (blazor_element) {
+function BlazorDevExtreme_DxTreeList_getVisibleRows_16 (blazor_element) {
 	return DevExpress.ui.dxTreeList.getInstance(blazor_element).getVisibleRows();
 }
-function BlazorDevExtreme_DxTreeList_isRowExpanded_16 (blazor_element, key) {
+function BlazorDevExtreme_DxTreeList_isRowExpanded_17 (blazor_element, key) {
 	return DevExpress.ui.dxTreeList.getInstance(blazor_element).isRowExpanded(key);
 }
-function BlazorDevExtreme_DxTreeList_loadDescendants_17 (blazor_element) {
+function BlazorDevExtreme_DxTreeList_loadDescendants_18 (blazor_element) {
 	return DevExpress.ui.dxTreeList.getInstance(blazor_element).loadDescendants();
 }
-function BlazorDevExtreme_DxTreeList_loadDescendants_18 (blazor_element, keys) {
+function BlazorDevExtreme_DxTreeList_loadDescendants_19 (blazor_element, keys) {
 	return DevExpress.ui.dxTreeList.getInstance(blazor_element).loadDescendants(keys);
 }
-function BlazorDevExtreme_DxTreeList_loadDescendants_19 (blazor_element, keys, childrenOnly) {
+function BlazorDevExtreme_DxTreeList_loadDescendants_20 (blazor_element, keys, childrenOnly) {
 	return DevExpress.ui.dxTreeList.getInstance(blazor_element).loadDescendants(keys, childrenOnly);
 }
 function BlazorDevExtreme_DxTreeList_SetOption (element, key, value) {
@@ -3264,98 +3480,110 @@ function BlazorDevExtreme_DxTreeView_Init (element, optionsText) {
 		options.onItemClick = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTreeViewInterop.OnItemClick', element.id);
 			
-		}
+		};
 	}
 	if (options.onItemCollapsedEnabled) {
 		options.onItemCollapsed = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTreeViewInterop.OnItemCollapsed', element.id);
 			
-		}
+		};
 	}
 	if (options.onItemContextMenuEnabled) {
 		options.onItemContextMenu = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTreeViewInterop.OnItemContextMenu', element.id);
 			
-		}
+		};
 	}
 	if (options.onItemExpandedEnabled) {
 		options.onItemExpanded = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTreeViewInterop.OnItemExpanded', element.id);
 			
-		}
+		};
 	}
 	if (options.onItemHoldEnabled) {
 		options.onItemHold = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTreeViewInterop.OnItemHold', element.id);
 			
-		}
+		};
 	}
 	if (options.onItemRenderedEnabled) {
 		options.onItemRendered = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTreeViewInterop.OnItemRendered', element.id);
 			
-		}
+		};
 	}
 	if (options.onItemSelectionChangedEnabled) {
 		options.onItemSelectionChanged = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTreeViewInterop.OnItemSelectionChanged', element.id);
 			
-		}
+		};
+	}
+	if (options.onSelectAllValueChangedEnabled) {
+		options.onSelectAllValueChanged = function () {
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTreeViewInterop.OnSelectAllValueChanged', element.id);
+			
+		};
 	}
 	if (options.onSelectionChangedEnabled) {
 		options.onSelectionChanged = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTreeViewInterop.OnSelectionChanged', element.id);
 			
-		}
+		};
 	}
 	let instance = new DevExpress.ui.dxTreeView(element, options);
 }
-function BlazorDevExtreme_DxTreeView_collapseItem_0 (blazor_element, itemData) {
+function BlazorDevExtreme_DxTreeView_collapseAll_0 (blazor_element) {
+	DevExpress.ui.dxTreeView.getInstance(blazor_element).collapseAll();
+}
+function BlazorDevExtreme_DxTreeView_collapseItem_1 (blazor_element, itemData) {
 	DevExpress.ui.dxTreeView.getInstance(blazor_element).collapseItem(itemData);
 }
-function BlazorDevExtreme_DxTreeView_collapseItem_1 (blazor_element, itemElement) {
+function BlazorDevExtreme_DxTreeView_collapseItem_2 (blazor_element, itemElement) {
 	DevExpress.ui.dxTreeView.getInstance(blazor_element).collapseItem(itemElement);
 }
-function BlazorDevExtreme_DxTreeView_collapseItem_2 (blazor_element, key) {
+function BlazorDevExtreme_DxTreeView_collapseItem_3 (blazor_element, key) {
 	DevExpress.ui.dxTreeView.getInstance(blazor_element).collapseItem(key);
 }
-function BlazorDevExtreme_DxTreeView_expandItem_3 (blazor_element, itemData) {
+function BlazorDevExtreme_DxTreeView_expandAll_4 (blazor_element) {
+	DevExpress.ui.dxTreeView.getInstance(blazor_element).expandAll();
+}
+function BlazorDevExtreme_DxTreeView_expandItem_5 (blazor_element, itemData) {
 	DevExpress.ui.dxTreeView.getInstance(blazor_element).expandItem(itemData);
 }
-function BlazorDevExtreme_DxTreeView_expandItem_4 (blazor_element, itemElement) {
+function BlazorDevExtreme_DxTreeView_expandItem_6 (blazor_element, itemElement) {
 	DevExpress.ui.dxTreeView.getInstance(blazor_element).expandItem(itemElement);
 }
-function BlazorDevExtreme_DxTreeView_expandItem_5 (blazor_element, key) {
+function BlazorDevExtreme_DxTreeView_expandItem_7 (blazor_element, key) {
 	DevExpress.ui.dxTreeView.getInstance(blazor_element).expandItem(key);
 }
-function BlazorDevExtreme_DxTreeView_getNodes_6 (blazor_element) {
+function BlazorDevExtreme_DxTreeView_getNodes_8 (blazor_element) {
 	return DevExpress.ui.dxTreeView.getInstance(blazor_element).getNodes();
 }
-function BlazorDevExtreme_DxTreeView_selectAll_7 (blazor_element) {
+function BlazorDevExtreme_DxTreeView_selectAll_9 (blazor_element) {
 	DevExpress.ui.dxTreeView.getInstance(blazor_element).selectAll();
 }
-function BlazorDevExtreme_DxTreeView_selectItem_8 (blazor_element, itemData) {
+function BlazorDevExtreme_DxTreeView_selectItem_10 (blazor_element, itemData) {
 	DevExpress.ui.dxTreeView.getInstance(blazor_element).selectItem(itemData);
 }
-function BlazorDevExtreme_DxTreeView_selectItem_9 (blazor_element, itemElement) {
+function BlazorDevExtreme_DxTreeView_selectItem_11 (blazor_element, itemElement) {
 	DevExpress.ui.dxTreeView.getInstance(blazor_element).selectItem(itemElement);
 }
-function BlazorDevExtreme_DxTreeView_selectItem_10 (blazor_element, key) {
+function BlazorDevExtreme_DxTreeView_selectItem_12 (blazor_element, key) {
 	DevExpress.ui.dxTreeView.getInstance(blazor_element).selectItem(key);
 }
-function BlazorDevExtreme_DxTreeView_unselectAll_11 (blazor_element) {
+function BlazorDevExtreme_DxTreeView_unselectAll_13 (blazor_element) {
 	DevExpress.ui.dxTreeView.getInstance(blazor_element).unselectAll();
 }
-function BlazorDevExtreme_DxTreeView_unselectItem_12 (blazor_element, itemData) {
+function BlazorDevExtreme_DxTreeView_unselectItem_14 (blazor_element, itemData) {
 	DevExpress.ui.dxTreeView.getInstance(blazor_element).unselectItem(itemData);
 }
-function BlazorDevExtreme_DxTreeView_unselectItem_13 (blazor_element, itemElement) {
+function BlazorDevExtreme_DxTreeView_unselectItem_15 (blazor_element, itemElement) {
 	DevExpress.ui.dxTreeView.getInstance(blazor_element).unselectItem(itemElement);
 }
-function BlazorDevExtreme_DxTreeView_unselectItem_14 (blazor_element, key) {
+function BlazorDevExtreme_DxTreeView_unselectItem_16 (blazor_element, key) {
 	DevExpress.ui.dxTreeView.getInstance(blazor_element).unselectItem(key);
 }
-function BlazorDevExtreme_DxTreeView_updateDimensions_15 (blazor_element) {
+function BlazorDevExtreme_DxTreeView_updateDimensions_17 (blazor_element) {
 	return DevExpress.ui.dxTreeView.getInstance(blazor_element).updateDimensions();
 }
 function BlazorDevExtreme_DxTreeView_SetOption (element, key, value) {
@@ -3402,7 +3630,7 @@ function BlazorDevExtreme_DxValidator_Init (element, optionsText) {
 		options.onValidated = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxValidatorInterop.OnValidated', element.id);
 			
-		}
+		};
 	}
 	let instance = new DevExpress.ui.dxValidator(element, options);
 }
@@ -3429,31 +3657,31 @@ function BlazorDevExtreme_CollectionWidget_Init (element, optionsText) {
 		options.onItemClick = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.CollectionWidgetInterop.OnItemClick', element.id);
 			
-		}
+		};
 	}
 	if (options.onItemContextMenuEnabled) {
 		options.onItemContextMenu = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.CollectionWidgetInterop.OnItemContextMenu', element.id);
 			
-		}
+		};
 	}
 	if (options.onItemHoldEnabled) {
 		options.onItemHold = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.CollectionWidgetInterop.OnItemHold', element.id);
 			
-		}
+		};
 	}
 	if (options.onItemRenderedEnabled) {
 		options.onItemRendered = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.CollectionWidgetInterop.OnItemRendered', element.id);
 			
-		}
+		};
 	}
 	if (options.onSelectionChangedEnabled) {
 		options.onSelectionChanged = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.CollectionWidgetInterop.OnSelectionChanged', element.id);
 			
-		}
+		};
 	}
 	let instance = new DevExpress.ui.CollectionWidget(element, options);
 }
@@ -3492,13 +3720,13 @@ function BlazorDevExtreme_DxDropDownEditor_Init (element, optionsText) {
 		options.onClosed = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxDropDownEditorInterop.OnClosed', element.id);
 			
-		}
+		};
 	}
 	if (options.onOpenedEnabled) {
 		options.onOpened = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxDropDownEditorInterop.OnOpened', element.id);
 			
-		}
+		};
 	}
 	let instance = new DevExpress.ui.dxDropDownEditor(element, options);
 }
@@ -3531,19 +3759,19 @@ function BlazorDevExtreme_DxDropDownList_Init (element, optionsText) {
 		options.onItemClick = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxDropDownListInterop.OnItemClick', element.id);
 			
-		}
+		};
 	}
 	if (options.onSelectionChangedEnabled) {
 		options.onSelectionChanged = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxDropDownListInterop.OnSelectionChanged', element.id);
 			
-		}
+		};
 	}
 	if (options.onValueChangedEnabled) {
 		options.onValueChanged = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxDropDownListInterop.OnValueChanged', element.id);
 			
-		}
+		};
 	}
 	let instance = new DevExpress.ui.dxDropDownList(element, options);
 }
@@ -3564,7 +3792,7 @@ function BlazorDevExtreme_Editor_Init (element, optionsText) {
 		options.onValueChanged = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.EditorInterop.OnValueChanged', element.id);
 			
-		}
+		};
 	}
 	let instance = new DevExpress.ui.Editor(element, options);
 }
@@ -3664,13 +3892,13 @@ function BlazorDevExtreme_DxScrollable_Init (element, optionsText) {
 		options.onScroll = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxScrollableInterop.OnScroll', element.id);
 			
-		}
+		};
 	}
 	if (options.onUpdatedEnabled) {
 		options.onUpdated = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxScrollableInterop.OnUpdated', element.id);
 			
-		}
+		};
 	}
 	let instance = new DevExpress.ui.dxScrollable(element, options);
 }
@@ -3742,67 +3970,67 @@ function BlazorDevExtreme_DxTextEditor_Init (element, optionsText) {
 		options.onChange = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTextEditorInterop.OnChange', element.id);
 			
-		}
+		};
 	}
 	if (options.onCopyEnabled) {
 		options.onCopy = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTextEditorInterop.OnCopy', element.id);
 			
-		}
+		};
 	}
 	if (options.onCutEnabled) {
 		options.onCut = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTextEditorInterop.OnCut', element.id);
 			
-		}
+		};
 	}
 	if (options.onEnterKeyEnabled) {
 		options.onEnterKey = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTextEditorInterop.OnEnterKey', element.id);
 			
-		}
+		};
 	}
 	if (options.onFocusInEnabled) {
 		options.onFocusIn = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTextEditorInterop.OnFocusIn', element.id);
 			
-		}
+		};
 	}
 	if (options.onFocusOutEnabled) {
 		options.onFocusOut = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTextEditorInterop.OnFocusOut', element.id);
 			
-		}
+		};
 	}
 	if (options.onInputEnabled) {
 		options.onInput = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTextEditorInterop.OnInput', element.id);
 			
-		}
+		};
 	}
 	if (options.onKeyDownEnabled) {
 		options.onKeyDown = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTextEditorInterop.OnKeyDown', element.id);
 			
-		}
+		};
 	}
 	if (options.onKeyPressEnabled) {
 		options.onKeyPress = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTextEditorInterop.OnKeyPress', element.id);
 			
-		}
+		};
 	}
 	if (options.onKeyUpEnabled) {
 		options.onKeyUp = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTextEditorInterop.OnKeyUp', element.id);
 			
-		}
+		};
 	}
 	if (options.onPasteEnabled) {
 		options.onPaste = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxTextEditorInterop.OnPaste', element.id);
 			
-		}
+		};
 	}
 	let instance = new DevExpress.ui.dxTextEditor(element, options);
 }
@@ -3850,7 +4078,7 @@ function BlazorDevExtreme_Widget_Init (element, optionsText) {
 		options.onContentReady = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.WidgetInterop.OnContentReady', element.id);
 			
-		}
+		};
 	}
 	let instance = new DevExpress.ui.Widget(element, options);
 }
@@ -3909,31 +4137,31 @@ function BlazorDevExtreme_BaseWidget_Init (element, optionsText) {
 		options.onDrawn = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.BaseWidgetInterop.OnDrawn', element.id);
 			
-		}
+		};
 	}
 	if (options.onExportedEnabled) {
 		options.onExported = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.BaseWidgetInterop.OnExported', element.id);
 			
-		}
+		};
 	}
 	if (options.onExportingEnabled) {
 		options.onExporting = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.BaseWidgetInterop.OnExporting', element.id);
 			
-		}
+		};
 	}
 	if (options.onFileSavingEnabled) {
 		options.onFileSaving = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.BaseWidgetInterop.OnFileSaving', element.id);
 			
-		}
+		};
 	}
 	if (options.onIncidentOccurredEnabled) {
 		options.onIncidentOccurred = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.BaseWidgetInterop.OnIncidentOccurred', element.id);
 			
-		}
+		};
 	}
 	let instance = new DevExpress.viz.BaseWidget(element, options);
 }
@@ -3972,47 +4200,59 @@ function BlazorDevExtreme_DxChart_Init (element, optionsText) {
 		options.onArgumentAxisClick = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxChartInterop.OnArgumentAxisClick', element.id);
 			
-		}
+		};
 	}
 	if (options.onLegendClickEnabled) {
 		options.onLegendClick = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxChartInterop.OnLegendClick', element.id);
 			
-		}
+		};
 	}
 	if (options.onSeriesClickEnabled) {
 		options.onSeriesClick = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxChartInterop.OnSeriesClick', element.id);
 			
-		}
+		};
 	}
 	if (options.onSeriesHoverChangedEnabled) {
 		options.onSeriesHoverChanged = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxChartInterop.OnSeriesHoverChanged', element.id);
 			
-		}
+		};
 	}
 	if (options.onSeriesSelectionChangedEnabled) {
 		options.onSeriesSelectionChanged = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxChartInterop.OnSeriesSelectionChanged', element.id);
 			
-		}
+		};
 	}
 	if (options.onZoomEndEnabled) {
 		options.onZoomEnd = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxChartInterop.OnZoomEnd', element.id);
 			
-		}
+		};
 	}
 	if (options.onZoomStartEnabled) {
 		options.onZoomStart = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxChartInterop.OnZoomStart', element.id);
 			
-		}
+		};
 	}
 	let instance = new DevExpress.viz.dxChart(element, options);
 }
-function BlazorDevExtreme_DxChart_zoomArgument_0 (blazor_element, startValue, endValue) {
+function BlazorDevExtreme_DxChart_getArgumentAxis_0 (blazor_element) {
+	return DevExpress.viz.dxChart.getInstance(blazor_element).getArgumentAxis();
+}
+function BlazorDevExtreme_DxChart_getValueAxis_1 (blazor_element) {
+	return DevExpress.viz.dxChart.getInstance(blazor_element).getValueAxis();
+}
+function BlazorDevExtreme_DxChart_getValueAxis_2 (blazor_element, name) {
+	return DevExpress.viz.dxChart.getInstance(blazor_element).getValueAxis(name);
+}
+function BlazorDevExtreme_DxChart_resetVisualRange_3 (blazor_element) {
+	DevExpress.viz.dxChart.getInstance(blazor_element).resetVisualRange();
+}
+function BlazorDevExtreme_DxChart_zoomArgument_4 (blazor_element, startValue, endValue) {
 	DevExpress.viz.dxChart.getInstance(blazor_element).zoomArgument(startValue, endValue);
 }
 function BlazorDevExtreme_DxChart_SetOption (element, key, value) {
@@ -4029,18 +4269,9 @@ function BlazorDevExtreme_DxPieChart_Init (element, optionsText) {
 		options.onLegendClick = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxPieChartInterop.OnLegendClick', element.id);
 			
-		}
+		};
 	}
 	let instance = new DevExpress.viz.dxPieChart(element, options);
-}
-function BlazorDevExtreme_DxPieChart_getSeries_0 (blazor_element) {
-	return DevExpress.viz.dxPieChart.getInstance(blazor_element).getSeries();
-}
-function BlazorDevExtreme_DxPieChart_getSeriesByName_1 (blazor_element, seriesName) {
-	return DevExpress.viz.dxPieChart.getInstance(blazor_element).getSeriesByName(seriesName);
-}
-function BlazorDevExtreme_DxPieChart_getSeriesByPos_2 (blazor_element, seriesIndex) {
-	return DevExpress.viz.dxPieChart.getInstance(blazor_element).getSeriesByPos(seriesIndex);
 }
 function BlazorDevExtreme_DxPieChart_SetOption (element, key, value) {
 	DevExpress.viz.dxPieChart.getInstance(element).option(key, value);
@@ -4056,31 +4287,31 @@ function BlazorDevExtreme_DxPolarChart_Init (element, optionsText) {
 		options.onArgumentAxisClick = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxPolarChartInterop.OnArgumentAxisClick', element.id);
 			
-		}
+		};
 	}
 	if (options.onLegendClickEnabled) {
 		options.onLegendClick = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxPolarChartInterop.OnLegendClick', element.id);
 			
-		}
+		};
 	}
 	if (options.onSeriesClickEnabled) {
 		options.onSeriesClick = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxPolarChartInterop.OnSeriesClick', element.id);
 			
-		}
+		};
 	}
 	if (options.onSeriesHoverChangedEnabled) {
 		options.onSeriesHoverChanged = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxPolarChartInterop.OnSeriesHoverChanged', element.id);
 			
-		}
+		};
 	}
 	if (options.onSeriesSelectionChangedEnabled) {
 		options.onSeriesSelectionChanged = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxPolarChartInterop.OnSeriesSelectionChanged', element.id);
 			
-		}
+		};
 	}
 	let instance = new DevExpress.viz.dxPolarChart(element, options);
 }
@@ -4098,37 +4329,37 @@ function BlazorDevExtreme_BaseChart_Init (element, optionsText) {
 		options.onDone = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.BaseChartInterop.OnDone', element.id);
 			
-		}
+		};
 	}
 	if (options.onPointClickEnabled) {
 		options.onPointClick = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.BaseChartInterop.OnPointClick', element.id);
 			
-		}
+		};
 	}
 	if (options.onPointHoverChangedEnabled) {
 		options.onPointHoverChanged = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.BaseChartInterop.OnPointHoverChanged', element.id);
 			
-		}
+		};
 	}
 	if (options.onPointSelectionChangedEnabled) {
 		options.onPointSelectionChanged = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.BaseChartInterop.OnPointSelectionChanged', element.id);
 			
-		}
+		};
 	}
 	if (options.onTooltipHiddenEnabled) {
 		options.onTooltipHidden = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.BaseChartInterop.OnTooltipHidden', element.id);
 			
-		}
+		};
 	}
 	if (options.onTooltipShownEnabled) {
 		options.onTooltipShown = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.BaseChartInterop.OnTooltipShown', element.id);
 			
-		}
+		};
 	}
 	let instance = new DevExpress.viz.BaseChart(element, options);
 }
@@ -4150,10 +4381,13 @@ function BlazorDevExtreme_BaseChart_getSeriesByPos_4 (blazor_element, seriesInde
 function BlazorDevExtreme_BaseChart_hideTooltip_5 (blazor_element) {
 	DevExpress.viz.BaseChart.getInstance(blazor_element).hideTooltip();
 }
-function BlazorDevExtreme_BaseChart_render_6 (blazor_element) {
+function BlazorDevExtreme_BaseChart_refresh_6 (blazor_element) {
+	DevExpress.viz.BaseChart.getInstance(blazor_element).refresh();
+}
+function BlazorDevExtreme_BaseChart_render_7 (blazor_element) {
 	DevExpress.viz.BaseChart.getInstance(blazor_element).render();
 }
-function BlazorDevExtreme_BaseChart_render_7 (blazor_element, renderOptions) {
+function BlazorDevExtreme_BaseChart_render_8 (blazor_element, renderOptions) {
 	DevExpress.viz.BaseChart.getInstance(blazor_element).render(renderOptions);
 }
 function BlazorDevExtreme_BaseChart_SetOption (element, key, value) {
@@ -4161,24 +4395,6 @@ function BlazorDevExtreme_BaseChart_SetOption (element, key, value) {
 }
 function BlazorDevExtreme_BaseChart_GetOption (element, key) {
 	return DevExpress.viz.BaseChart.getInstance(blazor_element).option(key);
-}
-// DevExpress.viz.dxExporter interop automatically generated
-function BlazorDevExtreme_DxExporter_Init (element, optionsText) {
-	const options = JSON.parse(optionsText);
-
-	let instance = new DevExpress.viz.dxExporter(element, options);
-}
-function BlazorDevExtreme_DxExporter_exportTo_0 (blazor_element, fileName, format) {
-	DevExpress.viz.dxExporter.getInstance(blazor_element).exportTo(fileName, format);
-}
-function BlazorDevExtreme_DxExporter_print_1 (blazor_element) {
-	DevExpress.viz.dxExporter.getInstance(blazor_element).print();
-}
-function BlazorDevExtreme_DxExporter_SetOption (element, key, value) {
-	DevExpress.viz.dxExporter.getInstance(element).option(key, value);
-}
-function BlazorDevExtreme_DxExporter_GetOption (element, key) {
-	return DevExpress.viz.dxExporter.getInstance(blazor_element).option(key);
 }
 // DevExpress.viz.dxFunnel interop automatically generated
 function BlazorDevExtreme_DxFunnel_Init (element, optionsText) {
@@ -4188,25 +4404,25 @@ function BlazorDevExtreme_DxFunnel_Init (element, optionsText) {
 		options.onHoverChanged = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxFunnelInterop.OnHoverChanged', element.id);
 			
-		}
+		};
 	}
 	if (options.onItemClickEnabled) {
 		options.onItemClick = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxFunnelInterop.OnItemClick', element.id);
 			
-		}
+		};
 	}
 	if (options.onLegendClickEnabled) {
 		options.onLegendClick = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxFunnelInterop.OnLegendClick', element.id);
 			
-		}
+		};
 	}
 	if (options.onSelectionChangedEnabled) {
 		options.onSelectionChanged = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxFunnelInterop.OnSelectionChanged', element.id);
 			
-		}
+		};
 	}
 	let instance = new DevExpress.viz.dxFunnel(element, options);
 }
@@ -4236,13 +4452,13 @@ function BlazorDevExtreme_BaseGauge_Init (element, optionsText) {
 		options.onTooltipHidden = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.BaseGaugeInterop.OnTooltipHidden', element.id);
 			
-		}
+		};
 	}
 	if (options.onTooltipShownEnabled) {
 		options.onTooltipShown = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.BaseGaugeInterop.OnTooltipShown', element.id);
 			
-		}
+		};
 	}
 	let instance = new DevExpress.viz.BaseGauge(element, options);
 }
@@ -4296,13 +4512,13 @@ function BlazorDevExtreme_DxBarGauge_Init (element, optionsText) {
 		options.onTooltipHidden = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxBarGaugeInterop.OnTooltipHidden', element.id);
 			
-		}
+		};
 	}
 	if (options.onTooltipShownEnabled) {
 		options.onTooltipShown = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxBarGaugeInterop.OnTooltipShown', element.id);
 			
-		}
+		};
 	}
 	let instance = new DevExpress.viz.dxBarGauge(element, options);
 }
@@ -4436,6 +4652,12 @@ function BlazorDevExtreme_BaseLabelObject_GetOption (element, key) {
 	return DevExpress.viz.baseLabelObject.getInstance(blazor_element).option(key);
 }
 // DevExpress.viz.chartSeriesObject interop automatically generated
+function BlazorDevExtreme_ChartSeriesObject_getArgumentAxis_0 (blazor_element) {
+	return DevExpress.viz.chartSeriesObject.getInstance(blazor_element).getArgumentAxis();
+}
+function BlazorDevExtreme_ChartSeriesObject_getValueAxis_1 (blazor_element) {
+	return DevExpress.viz.chartSeriesObject.getInstance(blazor_element).getValueAxis();
+}
 function BlazorDevExtreme_ChartSeriesObject_SetOption (element, key, value) {
 	DevExpress.viz.chartSeriesObject.getInstance(element).option(key, value);
 }
@@ -4451,6 +4673,19 @@ function BlazorDevExtreme_ChartPointObject_SetOption (element, key, value) {
 }
 function BlazorDevExtreme_ChartPointObject_GetOption (element, key) {
 	return DevExpress.viz.chartPointObject.getInstance(blazor_element).option(key);
+}
+// DevExpress.viz.chartAxisObject interop automatically generated
+function BlazorDevExtreme_ChartAxisObject_visualRange_0 (blazor_element) {
+	return DevExpress.viz.chartAxisObject.getInstance(blazor_element).visualRange();
+}
+function BlazorDevExtreme_ChartAxisObject_visualRange_1 (blazor_element, visualRange) {
+	DevExpress.viz.chartAxisObject.getInstance(blazor_element).visualRange(visualRange);
+}
+function BlazorDevExtreme_ChartAxisObject_SetOption (element, key, value) {
+	DevExpress.viz.chartAxisObject.getInstance(element).option(key, value);
+}
+function BlazorDevExtreme_ChartAxisObject_GetOption (element, key) {
+	return DevExpress.viz.chartAxisObject.getInstance(blazor_element).option(key);
 }
 // DevExpress.viz.dxFunnelItem interop automatically generated
 function BlazorDevExtreme_DxFunnelItem_getColor_0 (blazor_element) {
@@ -4519,6 +4754,44 @@ function BlazorDevExtreme_PolarPointObject_SetOption (element, key, value) {
 }
 function BlazorDevExtreme_PolarPointObject_GetOption (element, key) {
 	return DevExpress.viz.polarPointObject.getInstance(blazor_element).option(key);
+}
+// DevExpress.viz.dxSankeyNode interop automatically generated
+function BlazorDevExtreme_DxSankeyNode_hideTooltip_0 (blazor_element) {
+	DevExpress.viz.dxSankeyNode.getInstance(blazor_element).hideTooltip();
+}
+function BlazorDevExtreme_DxSankeyNode_hover_1 (blazor_element, state) {
+	DevExpress.viz.dxSankeyNode.getInstance(blazor_element).hover(state);
+}
+function BlazorDevExtreme_DxSankeyNode_isHovered_2 (blazor_element) {
+	return DevExpress.viz.dxSankeyNode.getInstance(blazor_element).isHovered();
+}
+function BlazorDevExtreme_DxSankeyNode_showTooltip_3 (blazor_element) {
+	DevExpress.viz.dxSankeyNode.getInstance(blazor_element).showTooltip();
+}
+function BlazorDevExtreme_DxSankeyNode_SetOption (element, key, value) {
+	DevExpress.viz.dxSankeyNode.getInstance(element).option(key, value);
+}
+function BlazorDevExtreme_DxSankeyNode_GetOption (element, key) {
+	return DevExpress.viz.dxSankeyNode.getInstance(blazor_element).option(key);
+}
+// DevExpress.viz.dxSankeyLink interop automatically generated
+function BlazorDevExtreme_DxSankeyLink_hideTooltip_0 (blazor_element) {
+	DevExpress.viz.dxSankeyLink.getInstance(blazor_element).hideTooltip();
+}
+function BlazorDevExtreme_DxSankeyLink_hover_1 (blazor_element, state) {
+	DevExpress.viz.dxSankeyLink.getInstance(blazor_element).hover(state);
+}
+function BlazorDevExtreme_DxSankeyLink_isHovered_2 (blazor_element) {
+	return DevExpress.viz.dxSankeyLink.getInstance(blazor_element).isHovered();
+}
+function BlazorDevExtreme_DxSankeyLink_showTooltip_3 (blazor_element) {
+	DevExpress.viz.dxSankeyLink.getInstance(blazor_element).showTooltip();
+}
+function BlazorDevExtreme_DxSankeyLink_SetOption (element, key, value) {
+	DevExpress.viz.dxSankeyLink.getInstance(element).option(key, value);
+}
+function BlazorDevExtreme_DxSankeyLink_GetOption (element, key) {
+	return DevExpress.viz.dxSankeyLink.getInstance(blazor_element).option(key);
 }
 // DevExpress.viz.dxTreeMapNode interop automatically generated
 function BlazorDevExtreme_DxTreeMapNode_customize_0 (blazor_element, options) {
@@ -4619,84 +4892,31 @@ function BlazorDevExtreme_MapLayerElement_SetOption (element, key, value) {
 function BlazorDevExtreme_MapLayerElement_GetOption (element, key) {
 	return DevExpress.viz.MapLayerElement.getInstance(blazor_element).option(key);
 }
-// DevExpress.viz.areaObjects interop automatically generated
-function BlazorDevExtreme_AreaObjects_applySettings_0 (blazor_element, settings) {
-	DevExpress.viz.areaObjects.getInstance(blazor_element).applySettings(settings);
-}
-function BlazorDevExtreme_AreaObjects_attribute_1 (blazor_element, name) {
-	return DevExpress.viz.areaObjects.getInstance(blazor_element).attribute(name);
-}
-function BlazorDevExtreme_AreaObjects_selected_2 (blazor_element) {
-	return DevExpress.viz.areaObjects.getInstance(blazor_element).selected();
-}
-function BlazorDevExtreme_AreaObjects_selected_3 (blazor_element, state) {
-	DevExpress.viz.areaObjects.getInstance(blazor_element).selected(state);
-}
-function BlazorDevExtreme_AreaObjects_SetOption (element, key, value) {
-	DevExpress.viz.areaObjects.getInstance(element).option(key, value);
-}
-function BlazorDevExtreme_AreaObjects_GetOption (element, key) {
-	return DevExpress.viz.areaObjects.getInstance(blazor_element).option(key);
-}
-// DevExpress.viz.markerObjects interop automatically generated
-function BlazorDevExtreme_MarkerObjects_applySettings_0 (blazor_element, settings) {
-	DevExpress.viz.markerObjects.getInstance(blazor_element).applySettings(settings);
-}
-function BlazorDevExtreme_MarkerObjects_attribute_1 (blazor_element, name) {
-	return DevExpress.viz.markerObjects.getInstance(blazor_element).attribute(name);
-}
-function BlazorDevExtreme_MarkerObjects_coordinates_2 (blazor_element) {
-	return DevExpress.viz.markerObjects.getInstance(blazor_element).coordinates();
-}
-function BlazorDevExtreme_MarkerObjects_selected_3 (blazor_element) {
-	return DevExpress.viz.markerObjects.getInstance(blazor_element).selected();
-}
-function BlazorDevExtreme_MarkerObjects_selected_4 (blazor_element, state) {
-	DevExpress.viz.markerObjects.getInstance(blazor_element).selected(state);
-}
-function BlazorDevExtreme_MarkerObjects_SetOption (element, key, value) {
-	DevExpress.viz.markerObjects.getInstance(element).option(key, value);
-}
-function BlazorDevExtreme_MarkerObjects_GetOption (element, key) {
-	return DevExpress.viz.markerObjects.getInstance(blazor_element).option(key);
-}
 // DevExpress.viz.dxRangeSelector interop automatically generated
 function BlazorDevExtreme_DxRangeSelector_Init (element, optionsText) {
 	const options = JSON.parse(optionsText);
 
-	if (options.onSelectedRangeChangedEnabled) {
-		options.onSelectedRangeChanged = function () {
-			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxRangeSelectorInterop.OnSelectedRangeChanged', element.id);
-			
-		}
-	}
 	if (options.onValueChangedEnabled) {
 		options.onValueChanged = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxRangeSelectorInterop.OnValueChanged', element.id);
 			
-		}
+		};
 	}
 	let instance = new DevExpress.viz.dxRangeSelector(element, options);
 }
 function BlazorDevExtreme_DxRangeSelector_getDataSource_0 (blazor_element) {
 	return DevExpress.viz.dxRangeSelector.getInstance(blazor_element).getDataSource();
 }
-function BlazorDevExtreme_DxRangeSelector_getSelectedRange_1 (blazor_element) {
-	return DevExpress.viz.dxRangeSelector.getInstance(blazor_element).getSelectedRange();
-}
-function BlazorDevExtreme_DxRangeSelector_getValue_2 (blazor_element) {
+function BlazorDevExtreme_DxRangeSelector_getValue_1 (blazor_element) {
 	return DevExpress.viz.dxRangeSelector.getInstance(blazor_element).getValue();
 }
-function BlazorDevExtreme_DxRangeSelector_render_3 (blazor_element) {
+function BlazorDevExtreme_DxRangeSelector_render_2 (blazor_element) {
 	DevExpress.viz.dxRangeSelector.getInstance(blazor_element).render();
 }
-function BlazorDevExtreme_DxRangeSelector_render_4 (blazor_element, skipChartAnimation) {
+function BlazorDevExtreme_DxRangeSelector_render_3 (blazor_element, skipChartAnimation) {
 	DevExpress.viz.dxRangeSelector.getInstance(blazor_element).render(skipChartAnimation);
 }
-function BlazorDevExtreme_DxRangeSelector_setSelectedRange_5 (blazor_element, selectedRange) {
-	DevExpress.viz.dxRangeSelector.getInstance(blazor_element).setSelectedRange(selectedRange);
-}
-function BlazorDevExtreme_DxRangeSelector_setValue_6 (blazor_element, value) {
+function BlazorDevExtreme_DxRangeSelector_setValue_4 (blazor_element, value) {
 	DevExpress.viz.dxRangeSelector.getInstance(blazor_element).setValue(value);
 }
 function BlazorDevExtreme_DxRangeSelector_SetOption (element, key, value) {
@@ -4704,6 +4924,54 @@ function BlazorDevExtreme_DxRangeSelector_SetOption (element, key, value) {
 }
 function BlazorDevExtreme_DxRangeSelector_GetOption (element, key) {
 	return DevExpress.viz.dxRangeSelector.getInstance(blazor_element).option(key);
+}
+// DevExpress.viz.dxSankey interop automatically generated
+function BlazorDevExtreme_DxSankey_Init (element, optionsText) {
+	const options = JSON.parse(optionsText);
+
+	if (options.onLinkClickEnabled) {
+		options.onLinkClick = function () {
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxSankeyInterop.OnLinkClick', element.id);
+			
+		};
+	}
+	if (options.onLinkHoverChangedEnabled) {
+		options.onLinkHoverChanged = function () {
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxSankeyInterop.OnLinkHoverChanged', element.id);
+			
+		};
+	}
+	if (options.onNodeClickEnabled) {
+		options.onNodeClick = function () {
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxSankeyInterop.OnNodeClick', element.id);
+			
+		};
+	}
+	if (options.onNodeHoverChangedEnabled) {
+		options.onNodeHoverChanged = function () {
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxSankeyInterop.OnNodeHoverChanged', element.id);
+			
+		};
+	}
+	let instance = new DevExpress.viz.dxSankey(element, options);
+}
+function BlazorDevExtreme_DxSankey_getAllLinks_0 (blazor_element) {
+	return DevExpress.viz.dxSankey.getInstance(blazor_element).getAllLinks();
+}
+function BlazorDevExtreme_DxSankey_getAllNodes_1 (blazor_element) {
+	return DevExpress.viz.dxSankey.getInstance(blazor_element).getAllNodes();
+}
+function BlazorDevExtreme_DxSankey_getDataSource_2 (blazor_element) {
+	return DevExpress.viz.dxSankey.getInstance(blazor_element).getDataSource();
+}
+function BlazorDevExtreme_DxSankey_hideTooltip_3 (blazor_element) {
+	DevExpress.viz.dxSankey.getInstance(blazor_element).hideTooltip();
+}
+function BlazorDevExtreme_DxSankey_SetOption (element, key, value) {
+	DevExpress.viz.dxSankey.getInstance(element).option(key, value);
+}
+function BlazorDevExtreme_DxSankey_GetOption (element, key) {
+	return DevExpress.viz.dxSankey.getInstance(blazor_element).option(key);
 }
 // DevExpress.viz.BaseSparkline interop automatically generated
 function BlazorDevExtreme_BaseSparkline_Init (element, optionsText) {
@@ -4713,13 +4981,13 @@ function BlazorDevExtreme_BaseSparkline_Init (element, optionsText) {
 		options.onTooltipHidden = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.BaseSparklineInterop.OnTooltipHidden', element.id);
 			
-		}
+		};
 	}
 	if (options.onTooltipShownEnabled) {
 		options.onTooltipShown = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.BaseSparklineInterop.OnTooltipShown', element.id);
 			
-		}
+		};
 	}
 	let instance = new DevExpress.viz.BaseSparkline(element, options);
 }
@@ -4764,37 +5032,37 @@ function BlazorDevExtreme_DxTreeMap_Init (element, optionsText) {
 		options.onClick = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxTreeMapInterop.OnClick', element.id);
 			
-		}
+		};
 	}
 	if (options.onDrillEnabled) {
 		options.onDrill = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxTreeMapInterop.OnDrill', element.id);
 			
-		}
+		};
 	}
 	if (options.onHoverChangedEnabled) {
 		options.onHoverChanged = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxTreeMapInterop.OnHoverChanged', element.id);
 			
-		}
+		};
 	}
 	if (options.onNodesInitializedEnabled) {
 		options.onNodesInitialized = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxTreeMapInterop.OnNodesInitialized', element.id);
 			
-		}
+		};
 	}
 	if (options.onNodesRenderingEnabled) {
 		options.onNodesRendering = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxTreeMapInterop.OnNodesRendering', element.id);
 			
-		}
+		};
 	}
 	if (options.onSelectionChangedEnabled) {
 		options.onSelectionChanged = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxTreeMapInterop.OnSelectionChanged', element.id);
 			
-		}
+		};
 	}
 	let instance = new DevExpress.viz.dxTreeMap(element, options);
 }
@@ -4829,65 +5097,41 @@ function BlazorDevExtreme_DxTreeMap_GetOption (element, key) {
 function BlazorDevExtreme_DxVectorMap_Init (element, optionsText) {
 	const options = JSON.parse(optionsText);
 
-	if (options.onAreaClickEnabled) {
-		options.onAreaClick = function () {
-			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxVectorMapInterop.OnAreaClick', element.id);
-			
-		}
-	}
-	if (options.onAreaSelectionChangedEnabled) {
-		options.onAreaSelectionChanged = function () {
-			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxVectorMapInterop.OnAreaSelectionChanged', element.id);
-			
-		}
-	}
 	if (options.onCenterChangedEnabled) {
 		options.onCenterChanged = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxVectorMapInterop.OnCenterChanged', element.id);
 			
-		}
+		};
 	}
 	if (options.onClickEnabled) {
 		options.onClick = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxVectorMapInterop.OnClick', element.id);
 			
-		}
-	}
-	if (options.onMarkerClickEnabled) {
-		options.onMarkerClick = function () {
-			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxVectorMapInterop.OnMarkerClick', element.id);
-			
-		}
-	}
-	if (options.onMarkerSelectionChangedEnabled) {
-		options.onMarkerSelectionChanged = function () {
-			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxVectorMapInterop.OnMarkerSelectionChanged', element.id);
-			
-		}
+		};
 	}
 	if (options.onSelectionChangedEnabled) {
 		options.onSelectionChanged = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxVectorMapInterop.OnSelectionChanged', element.id);
 			
-		}
+		};
 	}
 	if (options.onTooltipHiddenEnabled) {
 		options.onTooltipHidden = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxVectorMapInterop.OnTooltipHidden', element.id);
 			
-		}
+		};
 	}
 	if (options.onTooltipShownEnabled) {
 		options.onTooltipShown = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxVectorMapInterop.OnTooltipShown', element.id);
 			
-		}
+		};
 	}
 	if (options.onZoomFactorChangedEnabled) {
 		options.onZoomFactorChanged = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Viz.DxVectorMapInterop.OnZoomFactorChanged', element.id);
 			
-		}
+		};
 	}
 	let instance = new DevExpress.viz.dxVectorMap(element, options);
 }
@@ -4897,43 +5141,31 @@ function BlazorDevExtreme_DxVectorMap_center_0 (blazor_element) {
 function BlazorDevExtreme_DxVectorMap_center_1 (blazor_element, centerCoordinates) {
 	DevExpress.viz.dxVectorMap.getInstance(blazor_element).center(centerCoordinates);
 }
-function BlazorDevExtreme_DxVectorMap_clearAreaSelection_2 (blazor_element) {
-	DevExpress.viz.dxVectorMap.getInstance(blazor_element).clearAreaSelection();
-}
-function BlazorDevExtreme_DxVectorMap_clearMarkerSelection_3 (blazor_element) {
-	DevExpress.viz.dxVectorMap.getInstance(blazor_element).clearMarkerSelection();
-}
-function BlazorDevExtreme_DxVectorMap_clearSelection_4 (blazor_element) {
+function BlazorDevExtreme_DxVectorMap_clearSelection_2 (blazor_element) {
 	DevExpress.viz.dxVectorMap.getInstance(blazor_element).clearSelection();
 }
-function BlazorDevExtreme_DxVectorMap_convertCoordinates_5 (blazor_element, x, y) {
+function BlazorDevExtreme_DxVectorMap_convertCoordinates_3 (blazor_element, x, y) {
 	return DevExpress.viz.dxVectorMap.getInstance(blazor_element).convertCoordinates(x, y);
 }
-function BlazorDevExtreme_DxVectorMap_getAreas_6 (blazor_element) {
-	return DevExpress.viz.dxVectorMap.getInstance(blazor_element).getAreas();
-}
-function BlazorDevExtreme_DxVectorMap_getLayerByIndex_7 (blazor_element, index) {
+function BlazorDevExtreme_DxVectorMap_getLayerByIndex_4 (blazor_element, index) {
 	return DevExpress.viz.dxVectorMap.getInstance(blazor_element).getLayerByIndex(index);
 }
-function BlazorDevExtreme_DxVectorMap_getLayerByName_8 (blazor_element, name) {
+function BlazorDevExtreme_DxVectorMap_getLayerByName_5 (blazor_element, name) {
 	return DevExpress.viz.dxVectorMap.getInstance(blazor_element).getLayerByName(name);
 }
-function BlazorDevExtreme_DxVectorMap_getLayers_9 (blazor_element) {
+function BlazorDevExtreme_DxVectorMap_getLayers_6 (blazor_element) {
 	return DevExpress.viz.dxVectorMap.getInstance(blazor_element).getLayers();
 }
-function BlazorDevExtreme_DxVectorMap_getMarkers_10 (blazor_element) {
-	return DevExpress.viz.dxVectorMap.getInstance(blazor_element).getMarkers();
-}
-function BlazorDevExtreme_DxVectorMap_viewport_11 (blazor_element) {
+function BlazorDevExtreme_DxVectorMap_viewport_7 (blazor_element) {
 	return DevExpress.viz.dxVectorMap.getInstance(blazor_element).viewport();
 }
-function BlazorDevExtreme_DxVectorMap_viewport_12 (blazor_element, viewportCoordinates) {
+function BlazorDevExtreme_DxVectorMap_viewport_8 (blazor_element, viewportCoordinates) {
 	DevExpress.viz.dxVectorMap.getInstance(blazor_element).viewport(viewportCoordinates);
 }
-function BlazorDevExtreme_DxVectorMap_zoomFactor_13 (blazor_element) {
+function BlazorDevExtreme_DxVectorMap_zoomFactor_9 (blazor_element) {
 	return DevExpress.viz.dxVectorMap.getInstance(blazor_element).zoomFactor();
 }
-function BlazorDevExtreme_DxVectorMap_zoomFactor_14 (blazor_element, zoomFactor) {
+function BlazorDevExtreme_DxVectorMap_zoomFactor_10 (blazor_element, zoomFactor) {
 	DevExpress.viz.dxVectorMap.getInstance(blazor_element).zoomFactor(zoomFactor);
 }
 function BlazorDevExtreme_DxVectorMap_SetOption (element, key, value) {
@@ -4941,29 +5173,4 @@ function BlazorDevExtreme_DxVectorMap_SetOption (element, key, value) {
 }
 function BlazorDevExtreme_DxVectorMap_GetOption (element, key) {
 	return DevExpress.viz.dxVectorMap.getInstance(blazor_element).option(key);
-}
-// DevExpress.viz.core interop automatically generated
-function BlazorDevExtreme_Core_currentPalette_0 (paletteName) {
-	DevExpress.viz.core.currentPalette(paletteName);
-}
-function BlazorDevExtreme_Core_currentTheme_1 (platform, colorScheme) {
-	DevExpress.viz.core.currentTheme(platform, colorScheme);
-}
-function BlazorDevExtreme_Core_currentTheme_2 (theme) {
-	DevExpress.viz.core.currentTheme(theme);
-}
-function BlazorDevExtreme_Core_getPalette_3 (paletteName) {
-	DevExpress.viz.core.getPalette(paletteName);
-}
-function BlazorDevExtreme_Core_registerPalette_4 (paletteName, palette) {
-	DevExpress.viz.core.registerPalette(paletteName, palette);
-}
-function BlazorDevExtreme_Core_registerTheme_5 (customTheme, baseTheme) {
-	DevExpress.viz.core.registerTheme(customTheme, baseTheme);
-}
-function BlazorDevExtreme_Core_SetOption (element, key, value) {
-	DevExpress.viz.core.getInstance(element).option(key, value);
-}
-function BlazorDevExtreme_Core_GetOption (element, key) {
-	return DevExpress.viz.core.getInstance(blazor_element).option(key);
 }

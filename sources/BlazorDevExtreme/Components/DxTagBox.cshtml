@@ -16,11 +16,13 @@
 			multiline = multiline,
 			selectAllMode = selectAllMode,
 			selectedItems = selectedItems,
+			showDropDownButton = showDropDownButton,
 			showMultiTagOnly = showMultiTagOnly,
 			tagTemplate = tagTemplate,
 			value = value,
 			acceptCustomValue = acceptCustomValue,
 			fieldTemplate = fieldTemplate,
+			openOnFieldClick = openOnFieldClick,
 			placeholder = placeholder,
 			showSelectionControls = showSelectionControls,
 			valueChangeEvent = valueChangeEvent,
@@ -52,6 +54,7 @@
 			showClearButton = showClearButton,
 			showMaskMode = showMaskMode,
 			spellcheck = spellcheck,
+			stylingMode = stylingMode,
 			text = text,
 			useMaskedValue = useMaskedValue,
 			isValid = isValid,
@@ -104,10 +107,10 @@
 	string applyValueMode;
 	[Parameter]
 	string ApplyValueMode {
-		get => isInitialized ? (string)DevExpress.Ui.DxTagBoxInterop.GetApplyValueMode(dxTarget).Result : applyValueMode;
+		get => isInitialized ? (string)DevExpress.Ui.DxTagBoxInterop.GetApplyValueModeOption(dxTarget).Result : applyValueMode;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetApplyValueMode(dxTarget, value);
+				DevExpress.Ui.DxTagBoxInterop.SetApplyValueModeOption(dxTarget, value);
 			} else {
 				this.applyValueMode = value;
 			}
@@ -116,10 +119,10 @@
 	bool? hideSelectedItems;
 	[Parameter]
 	bool? HideSelectedItems {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxTagBoxInterop.GetHideSelectedItems(dxTarget).Result : hideSelectedItems;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTagBoxInterop.GetHideSelectedItemsOption(dxTarget).Result : hideSelectedItems;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetHideSelectedItems(dxTarget, value);
+				DevExpress.Ui.DxTagBoxInterop.SetHideSelectedItemsOption(dxTarget, value);
 			} else {
 				this.hideSelectedItems = value;
 			}
@@ -128,10 +131,10 @@
 	float? maxDisplayedTags;
 	[Parameter]
 	float? MaxDisplayedTags {
-		get => isInitialized ? (float?)DevExpress.Ui.DxTagBoxInterop.GetMaxDisplayedTags(dxTarget).Result : maxDisplayedTags;
+		get => isInitialized ? (float?)DevExpress.Ui.DxTagBoxInterop.GetMaxDisplayedTagsOption(dxTarget).Result : maxDisplayedTags;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetMaxDisplayedTags(dxTarget, value);
+				DevExpress.Ui.DxTagBoxInterop.SetMaxDisplayedTagsOption(dxTarget, value);
 			} else {
 				this.maxDisplayedTags = value;
 			}
@@ -140,10 +143,10 @@
 	bool? multiline;
 	[Parameter]
 	bool? Multiline {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxTagBoxInterop.GetMultiline(dxTarget).Result : multiline;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTagBoxInterop.GetMultilineOption(dxTarget).Result : multiline;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetMultiline(dxTarget, value);
+				DevExpress.Ui.DxTagBoxInterop.SetMultilineOption(dxTarget, value);
 			} else {
 				this.multiline = value;
 			}
@@ -152,10 +155,10 @@
 	string selectAllMode;
 	[Parameter]
 	string SelectAllMode {
-		get => isInitialized ? (string)DevExpress.Ui.DxTagBoxInterop.GetSelectAllMode(dxTarget).Result : selectAllMode;
+		get => isInitialized ? (string)DevExpress.Ui.DxTagBoxInterop.GetSelectAllModeOption(dxTarget).Result : selectAllMode;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetSelectAllMode(dxTarget, value);
+				DevExpress.Ui.DxTagBoxInterop.SetSelectAllModeOption(dxTarget, value);
 			} else {
 				this.selectAllMode = value;
 			}
@@ -164,22 +167,34 @@
 	object selectedItems;
 	[Parameter]
 	object SelectedItems {
-		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetSelectedItems(dxTarget).Result : selectedItems;
+		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetSelectedItemsOption(dxTarget).Result : selectedItems;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetSelectedItems(dxTarget, value);
+				DevExpress.Ui.DxTagBoxInterop.SetSelectedItemsOption(dxTarget, value);
 			} else {
 				this.selectedItems = value;
+			}
+		}
+	}
+	bool? showDropDownButton;
+	[Parameter]
+	bool? ShowDropDownButton {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTagBoxInterop.GetShowDropDownButtonOption(dxTarget).Result : showDropDownButton;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTagBoxInterop.SetShowDropDownButtonOption(dxTarget, value);
+			} else {
+				this.showDropDownButton = value;
 			}
 		}
 	}
 	bool? showMultiTagOnly;
 	[Parameter]
 	bool? ShowMultiTagOnly {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxTagBoxInterop.GetShowMultiTagOnly(dxTarget).Result : showMultiTagOnly;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTagBoxInterop.GetShowMultiTagOnlyOption(dxTarget).Result : showMultiTagOnly;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetShowMultiTagOnly(dxTarget, value);
+				DevExpress.Ui.DxTagBoxInterop.SetShowMultiTagOnlyOption(dxTarget, value);
 			} else {
 				this.showMultiTagOnly = value;
 			}
@@ -188,10 +203,10 @@
 	object tagTemplate;
 	[Parameter]
 	object TagTemplate {
-		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetTagTemplate(dxTarget).Result : tagTemplate;
+		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetTagTemplateOption(dxTarget).Result : tagTemplate;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetTagTemplate(dxTarget, value);
+				DevExpress.Ui.DxTagBoxInterop.SetTagTemplateOption(dxTarget, value);
 			} else {
 				this.tagTemplate = value;
 			}
@@ -200,10 +215,10 @@
 	object value;
 	[Parameter]
 	object Value {
-		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetValue(dxTarget).Result : value;
+		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetValueOption(dxTarget).Result : value;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetValue(dxTarget, value);
+				DevExpress.Ui.DxTagBoxInterop.SetValueOption(dxTarget, value);
 			} else {
 				this.value = value;
 			}
@@ -212,10 +227,10 @@
 	bool? acceptCustomValue;
 	[Parameter]
 	bool? AcceptCustomValue {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxTagBoxInterop.GetAcceptCustomValue(dxTarget).Result : acceptCustomValue;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTagBoxInterop.GetAcceptCustomValueOption(dxTarget).Result : acceptCustomValue;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetAcceptCustomValue(dxTarget, value);
+				DevExpress.Ui.DxTagBoxInterop.SetAcceptCustomValueOption(dxTarget, value);
 			} else {
 				this.acceptCustomValue = value;
 			}
@@ -224,22 +239,34 @@
 	object fieldTemplate;
 	[Parameter]
 	object FieldTemplate {
-		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetFieldTemplate(dxTarget).Result : fieldTemplate;
+		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetFieldTemplateOption(dxTarget).Result : fieldTemplate;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetFieldTemplate(dxTarget, value);
+				DevExpress.Ui.DxTagBoxInterop.SetFieldTemplateOption(dxTarget, value);
 			} else {
 				this.fieldTemplate = value;
+			}
+		}
+	}
+	bool? openOnFieldClick;
+	[Parameter]
+	bool? OpenOnFieldClick {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTagBoxInterop.GetOpenOnFieldClickOption(dxTarget).Result : openOnFieldClick;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTagBoxInterop.SetOpenOnFieldClickOption(dxTarget, value);
+			} else {
+				this.openOnFieldClick = value;
 			}
 		}
 	}
 	string placeholder;
 	[Parameter]
 	string Placeholder {
-		get => isInitialized ? (string)DevExpress.Ui.DxTagBoxInterop.GetPlaceholder(dxTarget).Result : placeholder;
+		get => isInitialized ? (string)DevExpress.Ui.DxTagBoxInterop.GetPlaceholderOption(dxTarget).Result : placeholder;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetPlaceholder(dxTarget, value);
+				DevExpress.Ui.DxTagBoxInterop.SetPlaceholderOption(dxTarget, value);
 			} else {
 				this.placeholder = value;
 			}
@@ -248,10 +275,10 @@
 	bool? showSelectionControls;
 	[Parameter]
 	bool? ShowSelectionControls {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxTagBoxInterop.GetShowSelectionControls(dxTarget).Result : showSelectionControls;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTagBoxInterop.GetShowSelectionControlsOption(dxTarget).Result : showSelectionControls;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetShowSelectionControls(dxTarget, value);
+				DevExpress.Ui.DxTagBoxInterop.SetShowSelectionControlsOption(dxTarget, value);
 			} else {
 				this.showSelectionControls = value;
 			}
@@ -260,10 +287,10 @@
 	string valueChangeEvent;
 	[Parameter]
 	string ValueChangeEvent {
-		get => isInitialized ? (string)DevExpress.Ui.DxTagBoxInterop.GetValueChangeEvent(dxTarget).Result : valueChangeEvent;
+		get => isInitialized ? (string)DevExpress.Ui.DxTagBoxInterop.GetValueChangeEventOption(dxTarget).Result : valueChangeEvent;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetValueChangeEvent(dxTarget, value);
+				DevExpress.Ui.DxTagBoxInterop.SetValueChangeEventOption(dxTarget, value);
 			} else {
 				this.valueChangeEvent = value;
 			}
@@ -272,10 +299,10 @@
 	string displayValue;
 	[Parameter]
 	string DisplayValue {
-		get => isInitialized ? (string)DevExpress.Ui.DxTagBoxInterop.GetDisplayValue(dxTarget).Result : displayValue;
+		get => isInitialized ? (string)DevExpress.Ui.DxTagBoxInterop.GetDisplayValueOption(dxTarget).Result : displayValue;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetDisplayValue(dxTarget, value);
+				DevExpress.Ui.DxTagBoxInterop.SetDisplayValueOption(dxTarget, value);
 			} else {
 				this.displayValue = value;
 			}
@@ -284,10 +311,10 @@
 	bool? grouped;
 	[Parameter]
 	bool? Grouped {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxTagBoxInterop.GetGrouped(dxTarget).Result : grouped;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTagBoxInterop.GetGroupedOption(dxTarget).Result : grouped;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetGrouped(dxTarget, value);
+				DevExpress.Ui.DxTagBoxInterop.SetGroupedOption(dxTarget, value);
 			} else {
 				this.grouped = value;
 			}
@@ -296,10 +323,10 @@
 	object groupTemplate;
 	[Parameter]
 	object GroupTemplate {
-		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetGroupTemplate(dxTarget).Result : groupTemplate;
+		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetGroupTemplateOption(dxTarget).Result : groupTemplate;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetGroupTemplate(dxTarget, value);
+				DevExpress.Ui.DxTagBoxInterop.SetGroupTemplateOption(dxTarget, value);
 			} else {
 				this.groupTemplate = value;
 			}
@@ -308,10 +335,10 @@
 	float? minSearchLength;
 	[Parameter]
 	float? MinSearchLength {
-		get => isInitialized ? (float?)DevExpress.Ui.DxTagBoxInterop.GetMinSearchLength(dxTarget).Result : minSearchLength;
+		get => isInitialized ? (float?)DevExpress.Ui.DxTagBoxInterop.GetMinSearchLengthOption(dxTarget).Result : minSearchLength;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetMinSearchLength(dxTarget, value);
+				DevExpress.Ui.DxTagBoxInterop.SetMinSearchLengthOption(dxTarget, value);
 			} else {
 				this.minSearchLength = value;
 			}
@@ -320,10 +347,10 @@
 	string noDataText;
 	[Parameter]
 	string NoDataText {
-		get => isInitialized ? (string)DevExpress.Ui.DxTagBoxInterop.GetNoDataText(dxTarget).Result : noDataText;
+		get => isInitialized ? (string)DevExpress.Ui.DxTagBoxInterop.GetNoDataTextOption(dxTarget).Result : noDataText;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetNoDataText(dxTarget, value);
+				DevExpress.Ui.DxTagBoxInterop.SetNoDataTextOption(dxTarget, value);
 			} else {
 				this.noDataText = value;
 			}
@@ -332,10 +359,10 @@
 	bool? searchEnabled;
 	[Parameter]
 	bool? SearchEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxTagBoxInterop.GetSearchEnabled(dxTarget).Result : searchEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTagBoxInterop.GetSearchEnabledOption(dxTarget).Result : searchEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetSearchEnabled(dxTarget, value);
+				DevExpress.Ui.DxTagBoxInterop.SetSearchEnabledOption(dxTarget, value);
 			} else {
 				this.searchEnabled = value;
 			}
@@ -344,10 +371,10 @@
 	object searchExpr;
 	[Parameter]
 	object SearchExpr {
-		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetSearchExpr(dxTarget).Result : searchExpr;
+		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetSearchExprOption(dxTarget).Result : searchExpr;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetSearchExpr(dxTarget, value);
+				DevExpress.Ui.DxTagBoxInterop.SetSearchExprOption(dxTarget, value);
 			} else {
 				this.searchExpr = value;
 			}
@@ -356,10 +383,10 @@
 	string searchMode;
 	[Parameter]
 	string SearchMode {
-		get => isInitialized ? (string)DevExpress.Ui.DxTagBoxInterop.GetSearchMode(dxTarget).Result : searchMode;
+		get => isInitialized ? (string)DevExpress.Ui.DxTagBoxInterop.GetSearchModeOption(dxTarget).Result : searchMode;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetSearchMode(dxTarget, value);
+				DevExpress.Ui.DxTagBoxInterop.SetSearchModeOption(dxTarget, value);
 			} else {
 				this.searchMode = value;
 			}
@@ -368,10 +395,10 @@
 	float? searchTimeout;
 	[Parameter]
 	float? SearchTimeout {
-		get => isInitialized ? (float?)DevExpress.Ui.DxTagBoxInterop.GetSearchTimeout(dxTarget).Result : searchTimeout;
+		get => isInitialized ? (float?)DevExpress.Ui.DxTagBoxInterop.GetSearchTimeoutOption(dxTarget).Result : searchTimeout;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetSearchTimeout(dxTarget, value);
+				DevExpress.Ui.DxTagBoxInterop.SetSearchTimeoutOption(dxTarget, value);
 			} else {
 				this.searchTimeout = value;
 			}
@@ -380,10 +407,10 @@
 	object selectedItem;
 	[Parameter]
 	object SelectedItem {
-		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetSelectedItem(dxTarget).Result : selectedItem;
+		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetSelectedItemOption(dxTarget).Result : selectedItem;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetSelectedItem(dxTarget, value);
+				DevExpress.Ui.DxTagBoxInterop.SetSelectedItemOption(dxTarget, value);
 			} else {
 				this.selectedItem = value;
 			}
@@ -392,10 +419,10 @@
 	bool? showDataBeforeSearch;
 	[Parameter]
 	bool? ShowDataBeforeSearch {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxTagBoxInterop.GetShowDataBeforeSearch(dxTarget).Result : showDataBeforeSearch;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTagBoxInterop.GetShowDataBeforeSearchOption(dxTarget).Result : showDataBeforeSearch;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetShowDataBeforeSearch(dxTarget, value);
+				DevExpress.Ui.DxTagBoxInterop.SetShowDataBeforeSearchOption(dxTarget, value);
 			} else {
 				this.showDataBeforeSearch = value;
 			}
@@ -404,10 +431,10 @@
 	bool? activeStateEnabled;
 	[Parameter]
 	bool? ActiveStateEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxTagBoxInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTagBoxInterop.GetActiveStateEnabledOption(dxTarget).Result : activeStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetActiveStateEnabled(dxTarget, value);
+				DevExpress.Ui.DxTagBoxInterop.SetActiveStateEnabledOption(dxTarget, value);
 			} else {
 				this.activeStateEnabled = value;
 			}
@@ -416,10 +443,10 @@
 	bool? deferRendering;
 	[Parameter]
 	bool? DeferRendering {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxTagBoxInterop.GetDeferRendering(dxTarget).Result : deferRendering;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTagBoxInterop.GetDeferRenderingOption(dxTarget).Result : deferRendering;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetDeferRendering(dxTarget, value);
+				DevExpress.Ui.DxTagBoxInterop.SetDeferRenderingOption(dxTarget, value);
 			} else {
 				this.deferRendering = value;
 			}
@@ -428,10 +455,10 @@
 	object dropDownButtonTemplate;
 	[Parameter]
 	object DropDownButtonTemplate {
-		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetDropDownButtonTemplate(dxTarget).Result : dropDownButtonTemplate;
+		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetDropDownButtonTemplateOption(dxTarget).Result : dropDownButtonTemplate;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetDropDownButtonTemplate(dxTarget, value);
+				DevExpress.Ui.DxTagBoxInterop.SetDropDownButtonTemplateOption(dxTarget, value);
 			} else {
 				this.dropDownButtonTemplate = value;
 			}
@@ -440,10 +467,10 @@
 	bool? isOpened;
 	[Parameter]
 	bool? IsOpened {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxTagBoxInterop.GetOpened(dxTarget).Result : isOpened;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTagBoxInterop.GetOpenedOption(dxTarget).Result : isOpened;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetOpened(dxTarget, value);
+				DevExpress.Ui.DxTagBoxInterop.SetOpenedOption(dxTarget, value);
 			} else {
 				this.isOpened = value;
 			}
@@ -452,10 +479,10 @@
 	object maxLength;
 	[Parameter]
 	object MaxLength {
-		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetMaxLength(dxTarget).Result : maxLength;
+		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetMaxLengthOption(dxTarget).Result : maxLength;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetMaxLength(dxTarget, value);
+				DevExpress.Ui.DxTagBoxInterop.SetMaxLengthOption(dxTarget, value);
 			} else {
 				this.maxLength = value;
 			}
@@ -464,10 +491,10 @@
 	string mode;
 	[Parameter]
 	string Mode {
-		get => isInitialized ? (string)DevExpress.Ui.DxTagBoxInterop.GetMode(dxTarget).Result : mode;
+		get => isInitialized ? (string)DevExpress.Ui.DxTagBoxInterop.GetModeOption(dxTarget).Result : mode;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetMode(dxTarget, value);
+				DevExpress.Ui.DxTagBoxInterop.SetModeOption(dxTarget, value);
 			} else {
 				this.mode = value;
 			}
@@ -476,10 +503,10 @@
 	bool? focusStateEnabled;
 	[Parameter]
 	bool? FocusStateEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxTagBoxInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTagBoxInterop.GetFocusStateEnabledOption(dxTarget).Result : focusStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetFocusStateEnabled(dxTarget, value);
+				DevExpress.Ui.DxTagBoxInterop.SetFocusStateEnabledOption(dxTarget, value);
 			} else {
 				this.focusStateEnabled = value;
 			}
@@ -488,10 +515,10 @@
 	bool? hoverStateEnabled;
 	[Parameter]
 	bool? HoverStateEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxTagBoxInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTagBoxInterop.GetHoverStateEnabledOption(dxTarget).Result : hoverStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetHoverStateEnabled(dxTarget, value);
+				DevExpress.Ui.DxTagBoxInterop.SetHoverStateEnabledOption(dxTarget, value);
 			} else {
 				this.hoverStateEnabled = value;
 			}
@@ -500,10 +527,10 @@
 	object inputAttr;
 	[Parameter]
 	object InputAttr {
-		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetInputAttr(dxTarget).Result : inputAttr;
+		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetInputAttrOption(dxTarget).Result : inputAttr;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetInputAttr(dxTarget, value);
+				DevExpress.Ui.DxTagBoxInterop.SetInputAttrOption(dxTarget, value);
 			} else {
 				this.inputAttr = value;
 			}
@@ -512,10 +539,10 @@
 	string mask;
 	[Parameter]
 	string Mask {
-		get => isInitialized ? (string)DevExpress.Ui.DxTagBoxInterop.GetMask(dxTarget).Result : mask;
+		get => isInitialized ? (string)DevExpress.Ui.DxTagBoxInterop.GetMaskOption(dxTarget).Result : mask;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetMask(dxTarget, value);
+				DevExpress.Ui.DxTagBoxInterop.SetMaskOption(dxTarget, value);
 			} else {
 				this.mask = value;
 			}
@@ -524,10 +551,10 @@
 	string maskChar;
 	[Parameter]
 	string MaskChar {
-		get => isInitialized ? (string)DevExpress.Ui.DxTagBoxInterop.GetMaskChar(dxTarget).Result : maskChar;
+		get => isInitialized ? (string)DevExpress.Ui.DxTagBoxInterop.GetMaskCharOption(dxTarget).Result : maskChar;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetMaskChar(dxTarget, value);
+				DevExpress.Ui.DxTagBoxInterop.SetMaskCharOption(dxTarget, value);
 			} else {
 				this.maskChar = value;
 			}
@@ -536,10 +563,10 @@
 	string maskInvalidMessage;
 	[Parameter]
 	string MaskInvalidMessage {
-		get => isInitialized ? (string)DevExpress.Ui.DxTagBoxInterop.GetMaskInvalidMessage(dxTarget).Result : maskInvalidMessage;
+		get => isInitialized ? (string)DevExpress.Ui.DxTagBoxInterop.GetMaskInvalidMessageOption(dxTarget).Result : maskInvalidMessage;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetMaskInvalidMessage(dxTarget, value);
+				DevExpress.Ui.DxTagBoxInterop.SetMaskInvalidMessageOption(dxTarget, value);
 			} else {
 				this.maskInvalidMessage = value;
 			}
@@ -548,10 +575,10 @@
 	object maskRules;
 	[Parameter]
 	object MaskRules {
-		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetMaskRules(dxTarget).Result : maskRules;
+		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetMaskRulesOption(dxTarget).Result : maskRules;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetMaskRules(dxTarget, value);
+				DevExpress.Ui.DxTagBoxInterop.SetMaskRulesOption(dxTarget, value);
 			} else {
 				this.maskRules = value;
 			}
@@ -560,10 +587,10 @@
 	string name;
 	[Parameter]
 	string Name {
-		get => isInitialized ? (string)DevExpress.Ui.DxTagBoxInterop.GetName(dxTarget).Result : name;
+		get => isInitialized ? (string)DevExpress.Ui.DxTagBoxInterop.GetNameOption(dxTarget).Result : name;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetName(dxTarget, value);
+				DevExpress.Ui.DxTagBoxInterop.SetNameOption(dxTarget, value);
 			} else {
 				this.name = value;
 			}
@@ -572,10 +599,10 @@
 	bool? showClearButton;
 	[Parameter]
 	bool? ShowClearButton {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxTagBoxInterop.GetShowClearButton(dxTarget).Result : showClearButton;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTagBoxInterop.GetShowClearButtonOption(dxTarget).Result : showClearButton;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetShowClearButton(dxTarget, value);
+				DevExpress.Ui.DxTagBoxInterop.SetShowClearButtonOption(dxTarget, value);
 			} else {
 				this.showClearButton = value;
 			}
@@ -584,10 +611,10 @@
 	string showMaskMode;
 	[Parameter]
 	string ShowMaskMode {
-		get => isInitialized ? (string)DevExpress.Ui.DxTagBoxInterop.GetShowMaskMode(dxTarget).Result : showMaskMode;
+		get => isInitialized ? (string)DevExpress.Ui.DxTagBoxInterop.GetShowMaskModeOption(dxTarget).Result : showMaskMode;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetShowMaskMode(dxTarget, value);
+				DevExpress.Ui.DxTagBoxInterop.SetShowMaskModeOption(dxTarget, value);
 			} else {
 				this.showMaskMode = value;
 			}
@@ -596,22 +623,34 @@
 	bool? spellcheck;
 	[Parameter]
 	bool? Spellcheck {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxTagBoxInterop.GetSpellcheck(dxTarget).Result : spellcheck;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTagBoxInterop.GetSpellcheckOption(dxTarget).Result : spellcheck;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetSpellcheck(dxTarget, value);
+				DevExpress.Ui.DxTagBoxInterop.SetSpellcheckOption(dxTarget, value);
 			} else {
 				this.spellcheck = value;
+			}
+		}
+	}
+	string stylingMode;
+	[Parameter]
+	string StylingMode {
+		get => isInitialized ? (string)DevExpress.Ui.DxTagBoxInterop.GetStylingModeOption(dxTarget).Result : stylingMode;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTagBoxInterop.SetStylingModeOption(dxTarget, value);
+			} else {
+				this.stylingMode = value;
 			}
 		}
 	}
 	string text;
 	[Parameter]
 	string Text {
-		get => isInitialized ? (string)DevExpress.Ui.DxTagBoxInterop.GetText(dxTarget).Result : text;
+		get => isInitialized ? (string)DevExpress.Ui.DxTagBoxInterop.GetTextOption(dxTarget).Result : text;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetText(dxTarget, value);
+				DevExpress.Ui.DxTagBoxInterop.SetTextOption(dxTarget, value);
 			} else {
 				this.text = value;
 			}
@@ -620,10 +659,10 @@
 	bool? useMaskedValue;
 	[Parameter]
 	bool? UseMaskedValue {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxTagBoxInterop.GetUseMaskedValue(dxTarget).Result : useMaskedValue;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTagBoxInterop.GetUseMaskedValueOption(dxTarget).Result : useMaskedValue;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetUseMaskedValue(dxTarget, value);
+				DevExpress.Ui.DxTagBoxInterop.SetUseMaskedValueOption(dxTarget, value);
 			} else {
 				this.useMaskedValue = value;
 			}
@@ -632,10 +671,10 @@
 	bool? isValid;
 	[Parameter]
 	bool? IsValid {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxTagBoxInterop.GetIsValid(dxTarget).Result : isValid;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTagBoxInterop.GetIsValidOption(dxTarget).Result : isValid;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetIsValid(dxTarget, value);
+				DevExpress.Ui.DxTagBoxInterop.SetIsValidOption(dxTarget, value);
 			} else {
 				this.isValid = value;
 			}
@@ -644,10 +683,10 @@
 	bool? readOnly;
 	[Parameter]
 	bool? ReadOnly {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxTagBoxInterop.GetReadOnly(dxTarget).Result : readOnly;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTagBoxInterop.GetReadOnlyOption(dxTarget).Result : readOnly;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetReadOnly(dxTarget, value);
+				DevExpress.Ui.DxTagBoxInterop.SetReadOnlyOption(dxTarget, value);
 			} else {
 				this.readOnly = value;
 			}
@@ -656,10 +695,10 @@
 	object validationError;
 	[Parameter]
 	object ValidationError {
-		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetValidationError(dxTarget).Result : validationError;
+		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetValidationErrorOption(dxTarget).Result : validationError;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetValidationError(dxTarget, value);
+				DevExpress.Ui.DxTagBoxInterop.SetValidationErrorOption(dxTarget, value);
 			} else {
 				this.validationError = value;
 			}
@@ -668,10 +707,10 @@
 	string validationMessageMode;
 	[Parameter]
 	string ValidationMessageMode {
-		get => isInitialized ? (string)DevExpress.Ui.DxTagBoxInterop.GetValidationMessageMode(dxTarget).Result : validationMessageMode;
+		get => isInitialized ? (string)DevExpress.Ui.DxTagBoxInterop.GetValidationMessageModeOption(dxTarget).Result : validationMessageMode;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetValidationMessageMode(dxTarget, value);
+				DevExpress.Ui.DxTagBoxInterop.SetValidationMessageModeOption(dxTarget, value);
 			} else {
 				this.validationMessageMode = value;
 			}
@@ -680,10 +719,10 @@
 	string accessKey;
 	[Parameter]
 	string AccessKey {
-		get => isInitialized ? (string)DevExpress.Ui.DxTagBoxInterop.GetAccessKey(dxTarget).Result : accessKey;
+		get => isInitialized ? (string)DevExpress.Ui.DxTagBoxInterop.GetAccessKeyOption(dxTarget).Result : accessKey;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetAccessKey(dxTarget, value);
+				DevExpress.Ui.DxTagBoxInterop.SetAccessKeyOption(dxTarget, value);
 			} else {
 				this.accessKey = value;
 			}
@@ -692,10 +731,10 @@
 	bool? disabled;
 	[Parameter]
 	bool? Disabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxTagBoxInterop.GetDisabled(dxTarget).Result : disabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTagBoxInterop.GetDisabledOption(dxTarget).Result : disabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetDisabled(dxTarget, value);
+				DevExpress.Ui.DxTagBoxInterop.SetDisabledOption(dxTarget, value);
 			} else {
 				this.disabled = value;
 			}
@@ -704,10 +743,10 @@
 	string hint;
 	[Parameter]
 	string Hint {
-		get => isInitialized ? (string)DevExpress.Ui.DxTagBoxInterop.GetHint(dxTarget).Result : hint;
+		get => isInitialized ? (string)DevExpress.Ui.DxTagBoxInterop.GetHintOption(dxTarget).Result : hint;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetHint(dxTarget, value);
+				DevExpress.Ui.DxTagBoxInterop.SetHintOption(dxTarget, value);
 			} else {
 				this.hint = value;
 			}
@@ -716,10 +755,10 @@
 	float? tabIndex;
 	[Parameter]
 	float? TabIndex {
-		get => isInitialized ? (float?)DevExpress.Ui.DxTagBoxInterop.GetTabIndex(dxTarget).Result : tabIndex;
+		get => isInitialized ? (float?)DevExpress.Ui.DxTagBoxInterop.GetTabIndexOption(dxTarget).Result : tabIndex;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetTabIndex(dxTarget, value);
+				DevExpress.Ui.DxTagBoxInterop.SetTabIndexOption(dxTarget, value);
 			} else {
 				this.tabIndex = value;
 			}
@@ -728,10 +767,10 @@
 	bool? visible;
 	[Parameter]
 	bool? Visible {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxTagBoxInterop.GetVisible(dxTarget).Result : visible;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTagBoxInterop.GetVisibleOption(dxTarget).Result : visible;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetVisible(dxTarget, value);
+				DevExpress.Ui.DxTagBoxInterop.SetVisibleOption(dxTarget, value);
 			} else {
 				this.visible = value;
 			}
@@ -740,10 +779,10 @@
 	object bindingOptions;
 	[Parameter]
 	object BindingOptions {
-		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
+		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetBindingOptionsOption(dxTarget).Result : bindingOptions;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetBindingOptions(dxTarget, value);
+				DevExpress.Ui.DxTagBoxInterop.SetBindingOptionsOption(dxTarget, value);
 			} else {
 				this.bindingOptions = value;
 			}
@@ -752,10 +791,10 @@
 	object elementAttr;
 	[Parameter]
 	object ElementAttr {
-		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetElementAttr(dxTarget).Result : elementAttr;
+		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetElementAttrOption(dxTarget).Result : elementAttr;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetElementAttr(dxTarget, value);
+				DevExpress.Ui.DxTagBoxInterop.SetElementAttrOption(dxTarget, value);
 			} else {
 				this.elementAttr = value;
 			}
@@ -764,10 +803,10 @@
 	object height;
 	[Parameter]
 	object Height {
-		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetHeight(dxTarget).Result : height;
+		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetHeightOption(dxTarget).Result : height;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetHeight(dxTarget, value);
+				DevExpress.Ui.DxTagBoxInterop.SetHeightOption(dxTarget, value);
 			} else {
 				this.height = value;
 			}
@@ -776,10 +815,10 @@
 	bool? rtlEnabled;
 	[Parameter]
 	bool? RtlEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxTagBoxInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTagBoxInterop.GetRtlEnabledOption(dxTarget).Result : rtlEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetRtlEnabled(dxTarget, value);
+				DevExpress.Ui.DxTagBoxInterop.SetRtlEnabledOption(dxTarget, value);
 			} else {
 				this.rtlEnabled = value;
 			}
@@ -788,10 +827,10 @@
 	object width;
 	[Parameter]
 	object Width {
-		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetWidth(dxTarget).Result : width;
+		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetWidthOption(dxTarget).Result : width;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetWidth(dxTarget, value);
+				DevExpress.Ui.DxTagBoxInterop.SetWidthOption(dxTarget, value);
 			} else {
 				this.width = value;
 			}
@@ -800,10 +839,10 @@
 	object dataSource;
 	[Parameter]
 	object DataSource {
-		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetDataSource(dxTarget).Result : dataSource;
+		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetDataSourceOption(dxTarget).Result : dataSource;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetDataSource(dxTarget, value);
+				DevExpress.Ui.DxTagBoxInterop.SetDataSourceOption(dxTarget, value);
 			} else {
 				this.dataSource = value;
 			}
@@ -812,10 +851,10 @@
 	object displayExpr;
 	[Parameter]
 	object DisplayExpr {
-		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetDisplayExpr(dxTarget).Result : displayExpr;
+		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetDisplayExprOption(dxTarget).Result : displayExpr;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetDisplayExpr(dxTarget, value);
+				DevExpress.Ui.DxTagBoxInterop.SetDisplayExprOption(dxTarget, value);
 			} else {
 				this.displayExpr = value;
 			}
@@ -824,10 +863,10 @@
 	object items;
 	[Parameter]
 	object Items {
-		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetItems(dxTarget).Result : items;
+		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetItemsOption(dxTarget).Result : items;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetItems(dxTarget, value);
+				DevExpress.Ui.DxTagBoxInterop.SetItemsOption(dxTarget, value);
 			} else {
 				this.items = value;
 			}
@@ -836,10 +875,10 @@
 	object itemTemplate;
 	[Parameter]
 	object ItemTemplate {
-		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetItemTemplate(dxTarget).Result : itemTemplate;
+		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetItemTemplateOption(dxTarget).Result : itemTemplate;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetItemTemplate(dxTarget, value);
+				DevExpress.Ui.DxTagBoxInterop.SetItemTemplateOption(dxTarget, value);
 			} else {
 				this.itemTemplate = value;
 			}
@@ -848,10 +887,10 @@
 	object valueExpr;
 	[Parameter]
 	object ValueExpr {
-		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetValueExpr(dxTarget).Result : valueExpr;
+		get => isInitialized ? DevExpress.Ui.DxTagBoxInterop.GetValueExprOption(dxTarget).Result : valueExpr;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxTagBoxInterop.SetValueExpr(dxTarget, value);
+				DevExpress.Ui.DxTagBoxInterop.SetValueExprOption(dxTarget, value);
 			} else {
 				this.valueExpr = value;
 			}

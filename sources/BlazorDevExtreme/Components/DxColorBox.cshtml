@@ -22,6 +22,8 @@
 			deferRendering = deferRendering,
 			dropDownButtonTemplate = dropDownButtonTemplate,
 			opened = isOpened,
+			openOnFieldClick = openOnFieldClick,
+			showDropDownButton = showDropDownButton,
 			maxLength = maxLength,
 			mode = mode,
 			focusStateEnabled = focusStateEnabled,
@@ -36,6 +38,7 @@
 			showClearButton = showClearButton,
 			showMaskMode = showMaskMode,
 			spellcheck = spellcheck,
+			stylingMode = stylingMode,
 			text = text,
 			useMaskedValue = useMaskedValue,
 			valueChangeEvent = valueChangeEvent,
@@ -79,10 +82,10 @@
 	string applyButtonText;
 	[Parameter]
 	string ApplyButtonText {
-		get => isInitialized ? (string)DevExpress.Ui.DxColorBoxInterop.GetApplyButtonText(dxTarget).Result : applyButtonText;
+		get => isInitialized ? (string)DevExpress.Ui.DxColorBoxInterop.GetApplyButtonTextOption(dxTarget).Result : applyButtonText;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxColorBoxInterop.SetApplyButtonText(dxTarget, value);
+				DevExpress.Ui.DxColorBoxInterop.SetApplyButtonTextOption(dxTarget, value);
 			} else {
 				this.applyButtonText = value;
 			}
@@ -91,10 +94,10 @@
 	string applyValueMode;
 	[Parameter]
 	string ApplyValueMode {
-		get => isInitialized ? (string)DevExpress.Ui.DxColorBoxInterop.GetApplyValueMode(dxTarget).Result : applyValueMode;
+		get => isInitialized ? (string)DevExpress.Ui.DxColorBoxInterop.GetApplyValueModeOption(dxTarget).Result : applyValueMode;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxColorBoxInterop.SetApplyValueMode(dxTarget, value);
+				DevExpress.Ui.DxColorBoxInterop.SetApplyValueModeOption(dxTarget, value);
 			} else {
 				this.applyValueMode = value;
 			}
@@ -103,10 +106,10 @@
 	string cancelButtonText;
 	[Parameter]
 	string CancelButtonText {
-		get => isInitialized ? (string)DevExpress.Ui.DxColorBoxInterop.GetCancelButtonText(dxTarget).Result : cancelButtonText;
+		get => isInitialized ? (string)DevExpress.Ui.DxColorBoxInterop.GetCancelButtonTextOption(dxTarget).Result : cancelButtonText;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxColorBoxInterop.SetCancelButtonText(dxTarget, value);
+				DevExpress.Ui.DxColorBoxInterop.SetCancelButtonTextOption(dxTarget, value);
 			} else {
 				this.cancelButtonText = value;
 			}
@@ -115,10 +118,10 @@
 	bool? editAlphaChannel;
 	[Parameter]
 	bool? EditAlphaChannel {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxColorBoxInterop.GetEditAlphaChannel(dxTarget).Result : editAlphaChannel;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxColorBoxInterop.GetEditAlphaChannelOption(dxTarget).Result : editAlphaChannel;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxColorBoxInterop.SetEditAlphaChannel(dxTarget, value);
+				DevExpress.Ui.DxColorBoxInterop.SetEditAlphaChannelOption(dxTarget, value);
 			} else {
 				this.editAlphaChannel = value;
 			}
@@ -127,10 +130,10 @@
 	object fieldTemplate;
 	[Parameter]
 	object FieldTemplate {
-		get => isInitialized ? DevExpress.Ui.DxColorBoxInterop.GetFieldTemplate(dxTarget).Result : fieldTemplate;
+		get => isInitialized ? DevExpress.Ui.DxColorBoxInterop.GetFieldTemplateOption(dxTarget).Result : fieldTemplate;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxColorBoxInterop.SetFieldTemplate(dxTarget, value);
+				DevExpress.Ui.DxColorBoxInterop.SetFieldTemplateOption(dxTarget, value);
 			} else {
 				this.fieldTemplate = value;
 			}
@@ -139,10 +142,10 @@
 	float? keyStep;
 	[Parameter]
 	float? KeyStep {
-		get => isInitialized ? (float?)DevExpress.Ui.DxColorBoxInterop.GetKeyStep(dxTarget).Result : keyStep;
+		get => isInitialized ? (float?)DevExpress.Ui.DxColorBoxInterop.GetKeyStepOption(dxTarget).Result : keyStep;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxColorBoxInterop.SetKeyStep(dxTarget, value);
+				DevExpress.Ui.DxColorBoxInterop.SetKeyStepOption(dxTarget, value);
 			} else {
 				this.keyStep = value;
 			}
@@ -151,10 +154,10 @@
 	string value;
 	[Parameter]
 	string Value {
-		get => isInitialized ? (string)DevExpress.Ui.DxColorBoxInterop.GetValue(dxTarget).Result : value;
+		get => isInitialized ? (string)DevExpress.Ui.DxColorBoxInterop.GetValueOption(dxTarget).Result : value;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxColorBoxInterop.SetValue(dxTarget, value);
+				DevExpress.Ui.DxColorBoxInterop.SetValueOption(dxTarget, value);
 			} else {
 				this.value = value;
 			}
@@ -163,10 +166,10 @@
 	bool? acceptCustomValue;
 	[Parameter]
 	bool? AcceptCustomValue {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxColorBoxInterop.GetAcceptCustomValue(dxTarget).Result : acceptCustomValue;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxColorBoxInterop.GetAcceptCustomValueOption(dxTarget).Result : acceptCustomValue;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxColorBoxInterop.SetAcceptCustomValue(dxTarget, value);
+				DevExpress.Ui.DxColorBoxInterop.SetAcceptCustomValueOption(dxTarget, value);
 			} else {
 				this.acceptCustomValue = value;
 			}
@@ -175,10 +178,10 @@
 	bool? activeStateEnabled;
 	[Parameter]
 	bool? ActiveStateEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxColorBoxInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxColorBoxInterop.GetActiveStateEnabledOption(dxTarget).Result : activeStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxColorBoxInterop.SetActiveStateEnabled(dxTarget, value);
+				DevExpress.Ui.DxColorBoxInterop.SetActiveStateEnabledOption(dxTarget, value);
 			} else {
 				this.activeStateEnabled = value;
 			}
@@ -187,10 +190,10 @@
 	bool? deferRendering;
 	[Parameter]
 	bool? DeferRendering {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxColorBoxInterop.GetDeferRendering(dxTarget).Result : deferRendering;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxColorBoxInterop.GetDeferRenderingOption(dxTarget).Result : deferRendering;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxColorBoxInterop.SetDeferRendering(dxTarget, value);
+				DevExpress.Ui.DxColorBoxInterop.SetDeferRenderingOption(dxTarget, value);
 			} else {
 				this.deferRendering = value;
 			}
@@ -199,10 +202,10 @@
 	object dropDownButtonTemplate;
 	[Parameter]
 	object DropDownButtonTemplate {
-		get => isInitialized ? DevExpress.Ui.DxColorBoxInterop.GetDropDownButtonTemplate(dxTarget).Result : dropDownButtonTemplate;
+		get => isInitialized ? DevExpress.Ui.DxColorBoxInterop.GetDropDownButtonTemplateOption(dxTarget).Result : dropDownButtonTemplate;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxColorBoxInterop.SetDropDownButtonTemplate(dxTarget, value);
+				DevExpress.Ui.DxColorBoxInterop.SetDropDownButtonTemplateOption(dxTarget, value);
 			} else {
 				this.dropDownButtonTemplate = value;
 			}
@@ -211,22 +214,46 @@
 	bool? isOpened;
 	[Parameter]
 	bool? IsOpened {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxColorBoxInterop.GetOpened(dxTarget).Result : isOpened;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxColorBoxInterop.GetOpenedOption(dxTarget).Result : isOpened;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxColorBoxInterop.SetOpened(dxTarget, value);
+				DevExpress.Ui.DxColorBoxInterop.SetOpenedOption(dxTarget, value);
 			} else {
 				this.isOpened = value;
+			}
+		}
+	}
+	bool? openOnFieldClick;
+	[Parameter]
+	bool? OpenOnFieldClick {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxColorBoxInterop.GetOpenOnFieldClickOption(dxTarget).Result : openOnFieldClick;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxColorBoxInterop.SetOpenOnFieldClickOption(dxTarget, value);
+			} else {
+				this.openOnFieldClick = value;
+			}
+		}
+	}
+	bool? showDropDownButton;
+	[Parameter]
+	bool? ShowDropDownButton {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxColorBoxInterop.GetShowDropDownButtonOption(dxTarget).Result : showDropDownButton;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxColorBoxInterop.SetShowDropDownButtonOption(dxTarget, value);
+			} else {
+				this.showDropDownButton = value;
 			}
 		}
 	}
 	object maxLength;
 	[Parameter]
 	object MaxLength {
-		get => isInitialized ? DevExpress.Ui.DxColorBoxInterop.GetMaxLength(dxTarget).Result : maxLength;
+		get => isInitialized ? DevExpress.Ui.DxColorBoxInterop.GetMaxLengthOption(dxTarget).Result : maxLength;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxColorBoxInterop.SetMaxLength(dxTarget, value);
+				DevExpress.Ui.DxColorBoxInterop.SetMaxLengthOption(dxTarget, value);
 			} else {
 				this.maxLength = value;
 			}
@@ -235,10 +262,10 @@
 	string mode;
 	[Parameter]
 	string Mode {
-		get => isInitialized ? (string)DevExpress.Ui.DxColorBoxInterop.GetMode(dxTarget).Result : mode;
+		get => isInitialized ? (string)DevExpress.Ui.DxColorBoxInterop.GetModeOption(dxTarget).Result : mode;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxColorBoxInterop.SetMode(dxTarget, value);
+				DevExpress.Ui.DxColorBoxInterop.SetModeOption(dxTarget, value);
 			} else {
 				this.mode = value;
 			}
@@ -247,10 +274,10 @@
 	bool? focusStateEnabled;
 	[Parameter]
 	bool? FocusStateEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxColorBoxInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxColorBoxInterop.GetFocusStateEnabledOption(dxTarget).Result : focusStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxColorBoxInterop.SetFocusStateEnabled(dxTarget, value);
+				DevExpress.Ui.DxColorBoxInterop.SetFocusStateEnabledOption(dxTarget, value);
 			} else {
 				this.focusStateEnabled = value;
 			}
@@ -259,10 +286,10 @@
 	bool? hoverStateEnabled;
 	[Parameter]
 	bool? HoverStateEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxColorBoxInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxColorBoxInterop.GetHoverStateEnabledOption(dxTarget).Result : hoverStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxColorBoxInterop.SetHoverStateEnabled(dxTarget, value);
+				DevExpress.Ui.DxColorBoxInterop.SetHoverStateEnabledOption(dxTarget, value);
 			} else {
 				this.hoverStateEnabled = value;
 			}
@@ -271,10 +298,10 @@
 	object inputAttr;
 	[Parameter]
 	object InputAttr {
-		get => isInitialized ? DevExpress.Ui.DxColorBoxInterop.GetInputAttr(dxTarget).Result : inputAttr;
+		get => isInitialized ? DevExpress.Ui.DxColorBoxInterop.GetInputAttrOption(dxTarget).Result : inputAttr;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxColorBoxInterop.SetInputAttr(dxTarget, value);
+				DevExpress.Ui.DxColorBoxInterop.SetInputAttrOption(dxTarget, value);
 			} else {
 				this.inputAttr = value;
 			}
@@ -283,10 +310,10 @@
 	string mask;
 	[Parameter]
 	string Mask {
-		get => isInitialized ? (string)DevExpress.Ui.DxColorBoxInterop.GetMask(dxTarget).Result : mask;
+		get => isInitialized ? (string)DevExpress.Ui.DxColorBoxInterop.GetMaskOption(dxTarget).Result : mask;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxColorBoxInterop.SetMask(dxTarget, value);
+				DevExpress.Ui.DxColorBoxInterop.SetMaskOption(dxTarget, value);
 			} else {
 				this.mask = value;
 			}
@@ -295,10 +322,10 @@
 	string maskChar;
 	[Parameter]
 	string MaskChar {
-		get => isInitialized ? (string)DevExpress.Ui.DxColorBoxInterop.GetMaskChar(dxTarget).Result : maskChar;
+		get => isInitialized ? (string)DevExpress.Ui.DxColorBoxInterop.GetMaskCharOption(dxTarget).Result : maskChar;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxColorBoxInterop.SetMaskChar(dxTarget, value);
+				DevExpress.Ui.DxColorBoxInterop.SetMaskCharOption(dxTarget, value);
 			} else {
 				this.maskChar = value;
 			}
@@ -307,10 +334,10 @@
 	string maskInvalidMessage;
 	[Parameter]
 	string MaskInvalidMessage {
-		get => isInitialized ? (string)DevExpress.Ui.DxColorBoxInterop.GetMaskInvalidMessage(dxTarget).Result : maskInvalidMessage;
+		get => isInitialized ? (string)DevExpress.Ui.DxColorBoxInterop.GetMaskInvalidMessageOption(dxTarget).Result : maskInvalidMessage;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxColorBoxInterop.SetMaskInvalidMessage(dxTarget, value);
+				DevExpress.Ui.DxColorBoxInterop.SetMaskInvalidMessageOption(dxTarget, value);
 			} else {
 				this.maskInvalidMessage = value;
 			}
@@ -319,10 +346,10 @@
 	object maskRules;
 	[Parameter]
 	object MaskRules {
-		get => isInitialized ? DevExpress.Ui.DxColorBoxInterop.GetMaskRules(dxTarget).Result : maskRules;
+		get => isInitialized ? DevExpress.Ui.DxColorBoxInterop.GetMaskRulesOption(dxTarget).Result : maskRules;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxColorBoxInterop.SetMaskRules(dxTarget, value);
+				DevExpress.Ui.DxColorBoxInterop.SetMaskRulesOption(dxTarget, value);
 			} else {
 				this.maskRules = value;
 			}
@@ -331,10 +358,10 @@
 	string name;
 	[Parameter]
 	string Name {
-		get => isInitialized ? (string)DevExpress.Ui.DxColorBoxInterop.GetName(dxTarget).Result : name;
+		get => isInitialized ? (string)DevExpress.Ui.DxColorBoxInterop.GetNameOption(dxTarget).Result : name;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxColorBoxInterop.SetName(dxTarget, value);
+				DevExpress.Ui.DxColorBoxInterop.SetNameOption(dxTarget, value);
 			} else {
 				this.name = value;
 			}
@@ -343,10 +370,10 @@
 	string placeholder;
 	[Parameter]
 	string Placeholder {
-		get => isInitialized ? (string)DevExpress.Ui.DxColorBoxInterop.GetPlaceholder(dxTarget).Result : placeholder;
+		get => isInitialized ? (string)DevExpress.Ui.DxColorBoxInterop.GetPlaceholderOption(dxTarget).Result : placeholder;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxColorBoxInterop.SetPlaceholder(dxTarget, value);
+				DevExpress.Ui.DxColorBoxInterop.SetPlaceholderOption(dxTarget, value);
 			} else {
 				this.placeholder = value;
 			}
@@ -355,10 +382,10 @@
 	bool? showClearButton;
 	[Parameter]
 	bool? ShowClearButton {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxColorBoxInterop.GetShowClearButton(dxTarget).Result : showClearButton;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxColorBoxInterop.GetShowClearButtonOption(dxTarget).Result : showClearButton;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxColorBoxInterop.SetShowClearButton(dxTarget, value);
+				DevExpress.Ui.DxColorBoxInterop.SetShowClearButtonOption(dxTarget, value);
 			} else {
 				this.showClearButton = value;
 			}
@@ -367,10 +394,10 @@
 	string showMaskMode;
 	[Parameter]
 	string ShowMaskMode {
-		get => isInitialized ? (string)DevExpress.Ui.DxColorBoxInterop.GetShowMaskMode(dxTarget).Result : showMaskMode;
+		get => isInitialized ? (string)DevExpress.Ui.DxColorBoxInterop.GetShowMaskModeOption(dxTarget).Result : showMaskMode;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxColorBoxInterop.SetShowMaskMode(dxTarget, value);
+				DevExpress.Ui.DxColorBoxInterop.SetShowMaskModeOption(dxTarget, value);
 			} else {
 				this.showMaskMode = value;
 			}
@@ -379,22 +406,34 @@
 	bool? spellcheck;
 	[Parameter]
 	bool? Spellcheck {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxColorBoxInterop.GetSpellcheck(dxTarget).Result : spellcheck;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxColorBoxInterop.GetSpellcheckOption(dxTarget).Result : spellcheck;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxColorBoxInterop.SetSpellcheck(dxTarget, value);
+				DevExpress.Ui.DxColorBoxInterop.SetSpellcheckOption(dxTarget, value);
 			} else {
 				this.spellcheck = value;
+			}
+		}
+	}
+	string stylingMode;
+	[Parameter]
+	string StylingMode {
+		get => isInitialized ? (string)DevExpress.Ui.DxColorBoxInterop.GetStylingModeOption(dxTarget).Result : stylingMode;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxColorBoxInterop.SetStylingModeOption(dxTarget, value);
+			} else {
+				this.stylingMode = value;
 			}
 		}
 	}
 	string text;
 	[Parameter]
 	string Text {
-		get => isInitialized ? (string)DevExpress.Ui.DxColorBoxInterop.GetText(dxTarget).Result : text;
+		get => isInitialized ? (string)DevExpress.Ui.DxColorBoxInterop.GetTextOption(dxTarget).Result : text;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxColorBoxInterop.SetText(dxTarget, value);
+				DevExpress.Ui.DxColorBoxInterop.SetTextOption(dxTarget, value);
 			} else {
 				this.text = value;
 			}
@@ -403,10 +442,10 @@
 	bool? useMaskedValue;
 	[Parameter]
 	bool? UseMaskedValue {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxColorBoxInterop.GetUseMaskedValue(dxTarget).Result : useMaskedValue;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxColorBoxInterop.GetUseMaskedValueOption(dxTarget).Result : useMaskedValue;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxColorBoxInterop.SetUseMaskedValue(dxTarget, value);
+				DevExpress.Ui.DxColorBoxInterop.SetUseMaskedValueOption(dxTarget, value);
 			} else {
 				this.useMaskedValue = value;
 			}
@@ -415,10 +454,10 @@
 	string valueChangeEvent;
 	[Parameter]
 	string ValueChangeEvent {
-		get => isInitialized ? (string)DevExpress.Ui.DxColorBoxInterop.GetValueChangeEvent(dxTarget).Result : valueChangeEvent;
+		get => isInitialized ? (string)DevExpress.Ui.DxColorBoxInterop.GetValueChangeEventOption(dxTarget).Result : valueChangeEvent;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxColorBoxInterop.SetValueChangeEvent(dxTarget, value);
+				DevExpress.Ui.DxColorBoxInterop.SetValueChangeEventOption(dxTarget, value);
 			} else {
 				this.valueChangeEvent = value;
 			}
@@ -427,10 +466,10 @@
 	bool? isValid;
 	[Parameter]
 	bool? IsValid {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxColorBoxInterop.GetIsValid(dxTarget).Result : isValid;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxColorBoxInterop.GetIsValidOption(dxTarget).Result : isValid;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxColorBoxInterop.SetIsValid(dxTarget, value);
+				DevExpress.Ui.DxColorBoxInterop.SetIsValidOption(dxTarget, value);
 			} else {
 				this.isValid = value;
 			}
@@ -439,10 +478,10 @@
 	bool? readOnly;
 	[Parameter]
 	bool? ReadOnly {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxColorBoxInterop.GetReadOnly(dxTarget).Result : readOnly;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxColorBoxInterop.GetReadOnlyOption(dxTarget).Result : readOnly;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxColorBoxInterop.SetReadOnly(dxTarget, value);
+				DevExpress.Ui.DxColorBoxInterop.SetReadOnlyOption(dxTarget, value);
 			} else {
 				this.readOnly = value;
 			}
@@ -451,10 +490,10 @@
 	object validationError;
 	[Parameter]
 	object ValidationError {
-		get => isInitialized ? DevExpress.Ui.DxColorBoxInterop.GetValidationError(dxTarget).Result : validationError;
+		get => isInitialized ? DevExpress.Ui.DxColorBoxInterop.GetValidationErrorOption(dxTarget).Result : validationError;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxColorBoxInterop.SetValidationError(dxTarget, value);
+				DevExpress.Ui.DxColorBoxInterop.SetValidationErrorOption(dxTarget, value);
 			} else {
 				this.validationError = value;
 			}
@@ -463,10 +502,10 @@
 	string validationMessageMode;
 	[Parameter]
 	string ValidationMessageMode {
-		get => isInitialized ? (string)DevExpress.Ui.DxColorBoxInterop.GetValidationMessageMode(dxTarget).Result : validationMessageMode;
+		get => isInitialized ? (string)DevExpress.Ui.DxColorBoxInterop.GetValidationMessageModeOption(dxTarget).Result : validationMessageMode;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxColorBoxInterop.SetValidationMessageMode(dxTarget, value);
+				DevExpress.Ui.DxColorBoxInterop.SetValidationMessageModeOption(dxTarget, value);
 			} else {
 				this.validationMessageMode = value;
 			}
@@ -475,10 +514,10 @@
 	string accessKey;
 	[Parameter]
 	string AccessKey {
-		get => isInitialized ? (string)DevExpress.Ui.DxColorBoxInterop.GetAccessKey(dxTarget).Result : accessKey;
+		get => isInitialized ? (string)DevExpress.Ui.DxColorBoxInterop.GetAccessKeyOption(dxTarget).Result : accessKey;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxColorBoxInterop.SetAccessKey(dxTarget, value);
+				DevExpress.Ui.DxColorBoxInterop.SetAccessKeyOption(dxTarget, value);
 			} else {
 				this.accessKey = value;
 			}
@@ -487,10 +526,10 @@
 	bool? disabled;
 	[Parameter]
 	bool? Disabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxColorBoxInterop.GetDisabled(dxTarget).Result : disabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxColorBoxInterop.GetDisabledOption(dxTarget).Result : disabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxColorBoxInterop.SetDisabled(dxTarget, value);
+				DevExpress.Ui.DxColorBoxInterop.SetDisabledOption(dxTarget, value);
 			} else {
 				this.disabled = value;
 			}
@@ -499,10 +538,10 @@
 	string hint;
 	[Parameter]
 	string Hint {
-		get => isInitialized ? (string)DevExpress.Ui.DxColorBoxInterop.GetHint(dxTarget).Result : hint;
+		get => isInitialized ? (string)DevExpress.Ui.DxColorBoxInterop.GetHintOption(dxTarget).Result : hint;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxColorBoxInterop.SetHint(dxTarget, value);
+				DevExpress.Ui.DxColorBoxInterop.SetHintOption(dxTarget, value);
 			} else {
 				this.hint = value;
 			}
@@ -511,10 +550,10 @@
 	float? tabIndex;
 	[Parameter]
 	float? TabIndex {
-		get => isInitialized ? (float?)DevExpress.Ui.DxColorBoxInterop.GetTabIndex(dxTarget).Result : tabIndex;
+		get => isInitialized ? (float?)DevExpress.Ui.DxColorBoxInterop.GetTabIndexOption(dxTarget).Result : tabIndex;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxColorBoxInterop.SetTabIndex(dxTarget, value);
+				DevExpress.Ui.DxColorBoxInterop.SetTabIndexOption(dxTarget, value);
 			} else {
 				this.tabIndex = value;
 			}
@@ -523,10 +562,10 @@
 	bool? visible;
 	[Parameter]
 	bool? Visible {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxColorBoxInterop.GetVisible(dxTarget).Result : visible;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxColorBoxInterop.GetVisibleOption(dxTarget).Result : visible;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxColorBoxInterop.SetVisible(dxTarget, value);
+				DevExpress.Ui.DxColorBoxInterop.SetVisibleOption(dxTarget, value);
 			} else {
 				this.visible = value;
 			}
@@ -535,10 +574,10 @@
 	object bindingOptions;
 	[Parameter]
 	object BindingOptions {
-		get => isInitialized ? DevExpress.Ui.DxColorBoxInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
+		get => isInitialized ? DevExpress.Ui.DxColorBoxInterop.GetBindingOptionsOption(dxTarget).Result : bindingOptions;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxColorBoxInterop.SetBindingOptions(dxTarget, value);
+				DevExpress.Ui.DxColorBoxInterop.SetBindingOptionsOption(dxTarget, value);
 			} else {
 				this.bindingOptions = value;
 			}
@@ -547,10 +586,10 @@
 	object elementAttr;
 	[Parameter]
 	object ElementAttr {
-		get => isInitialized ? DevExpress.Ui.DxColorBoxInterop.GetElementAttr(dxTarget).Result : elementAttr;
+		get => isInitialized ? DevExpress.Ui.DxColorBoxInterop.GetElementAttrOption(dxTarget).Result : elementAttr;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxColorBoxInterop.SetElementAttr(dxTarget, value);
+				DevExpress.Ui.DxColorBoxInterop.SetElementAttrOption(dxTarget, value);
 			} else {
 				this.elementAttr = value;
 			}
@@ -559,10 +598,10 @@
 	object height;
 	[Parameter]
 	object Height {
-		get => isInitialized ? DevExpress.Ui.DxColorBoxInterop.GetHeight(dxTarget).Result : height;
+		get => isInitialized ? DevExpress.Ui.DxColorBoxInterop.GetHeightOption(dxTarget).Result : height;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxColorBoxInterop.SetHeight(dxTarget, value);
+				DevExpress.Ui.DxColorBoxInterop.SetHeightOption(dxTarget, value);
 			} else {
 				this.height = value;
 			}
@@ -571,10 +610,10 @@
 	bool? rtlEnabled;
 	[Parameter]
 	bool? RtlEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxColorBoxInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxColorBoxInterop.GetRtlEnabledOption(dxTarget).Result : rtlEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxColorBoxInterop.SetRtlEnabled(dxTarget, value);
+				DevExpress.Ui.DxColorBoxInterop.SetRtlEnabledOption(dxTarget, value);
 			} else {
 				this.rtlEnabled = value;
 			}
@@ -583,10 +622,10 @@
 	object width;
 	[Parameter]
 	object Width {
-		get => isInitialized ? DevExpress.Ui.DxColorBoxInterop.GetWidth(dxTarget).Result : width;
+		get => isInitialized ? DevExpress.Ui.DxColorBoxInterop.GetWidthOption(dxTarget).Result : width;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxColorBoxInterop.SetWidth(dxTarget, value);
+				DevExpress.Ui.DxColorBoxInterop.SetWidthOption(dxTarget, value);
 			} else {
 				this.width = value;
 			}

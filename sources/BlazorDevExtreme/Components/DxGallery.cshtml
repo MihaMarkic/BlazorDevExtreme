@@ -61,10 +61,10 @@
 	float? animationDuration;
 	[Parameter]
 	float? AnimationDuration {
-		get => isInitialized ? (float?)DevExpress.Ui.DxGalleryInterop.GetAnimationDuration(dxTarget).Result : animationDuration;
+		get => isInitialized ? (float?)DevExpress.Ui.DxGalleryInterop.GetAnimationDurationOption(dxTarget).Result : animationDuration;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxGalleryInterop.SetAnimationDuration(dxTarget, value);
+				DevExpress.Ui.DxGalleryInterop.SetAnimationDurationOption(dxTarget, value);
 			} else {
 				this.animationDuration = value;
 			}
@@ -73,10 +73,10 @@
 	bool? animationEnabled;
 	[Parameter]
 	bool? AnimationEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxGalleryInterop.GetAnimationEnabled(dxTarget).Result : animationEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxGalleryInterop.GetAnimationEnabledOption(dxTarget).Result : animationEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxGalleryInterop.SetAnimationEnabled(dxTarget, value);
+				DevExpress.Ui.DxGalleryInterop.SetAnimationEnabledOption(dxTarget, value);
 			} else {
 				this.animationEnabled = value;
 			}
@@ -85,10 +85,10 @@
 	bool? focusStateEnabled;
 	[Parameter]
 	bool? FocusStateEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxGalleryInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxGalleryInterop.GetFocusStateEnabledOption(dxTarget).Result : focusStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxGalleryInterop.SetFocusStateEnabled(dxTarget, value);
+				DevExpress.Ui.DxGalleryInterop.SetFocusStateEnabledOption(dxTarget, value);
 			} else {
 				this.focusStateEnabled = value;
 			}
@@ -97,10 +97,10 @@
 	bool? indicatorEnabled;
 	[Parameter]
 	bool? IndicatorEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxGalleryInterop.GetIndicatorEnabled(dxTarget).Result : indicatorEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxGalleryInterop.GetIndicatorEnabledOption(dxTarget).Result : indicatorEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxGalleryInterop.SetIndicatorEnabled(dxTarget, value);
+				DevExpress.Ui.DxGalleryInterop.SetIndicatorEnabledOption(dxTarget, value);
 			} else {
 				this.indicatorEnabled = value;
 			}
@@ -109,10 +109,10 @@
 	float? initialItemWidth;
 	[Parameter]
 	float? InitialItemWidth {
-		get => isInitialized ? (float?)DevExpress.Ui.DxGalleryInterop.GetInitialItemWidth(dxTarget).Result : initialItemWidth;
+		get => isInitialized ? (float?)DevExpress.Ui.DxGalleryInterop.GetInitialItemWidthOption(dxTarget).Result : initialItemWidth;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxGalleryInterop.SetInitialItemWidth(dxTarget, value);
+				DevExpress.Ui.DxGalleryInterop.SetInitialItemWidthOption(dxTarget, value);
 			} else {
 				this.initialItemWidth = value;
 			}
@@ -121,10 +121,10 @@
 	bool? loop;
 	[Parameter]
 	bool? Loop {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxGalleryInterop.GetLoop(dxTarget).Result : loop;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxGalleryInterop.GetLoopOption(dxTarget).Result : loop;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxGalleryInterop.SetLoop(dxTarget, value);
+				DevExpress.Ui.DxGalleryInterop.SetLoopOption(dxTarget, value);
 			} else {
 				this.loop = value;
 			}
@@ -133,10 +133,10 @@
 	float? selectedIndex;
 	[Parameter]
 	float? SelectedIndex {
-		get => isInitialized ? (float?)DevExpress.Ui.DxGalleryInterop.GetSelectedIndex(dxTarget).Result : selectedIndex;
+		get => isInitialized ? (float?)DevExpress.Ui.DxGalleryInterop.GetSelectedIndexOption(dxTarget).Result : selectedIndex;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxGalleryInterop.SetSelectedIndex(dxTarget, value);
+				DevExpress.Ui.DxGalleryInterop.SetSelectedIndexOption(dxTarget, value);
 			} else {
 				this.selectedIndex = value;
 			}
@@ -145,10 +145,10 @@
 	bool? showIndicator;
 	[Parameter]
 	bool? ShowIndicator {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxGalleryInterop.GetShowIndicator(dxTarget).Result : showIndicator;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxGalleryInterop.GetShowIndicatorOption(dxTarget).Result : showIndicator;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxGalleryInterop.SetShowIndicator(dxTarget, value);
+				DevExpress.Ui.DxGalleryInterop.SetShowIndicatorOption(dxTarget, value);
 			} else {
 				this.showIndicator = value;
 			}
@@ -157,10 +157,10 @@
 	bool? showNavButtons;
 	[Parameter]
 	bool? ShowNavButtons {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxGalleryInterop.GetShowNavButtons(dxTarget).Result : showNavButtons;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxGalleryInterop.GetShowNavButtonsOption(dxTarget).Result : showNavButtons;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxGalleryInterop.SetShowNavButtons(dxTarget, value);
+				DevExpress.Ui.DxGalleryInterop.SetShowNavButtonsOption(dxTarget, value);
 			} else {
 				this.showNavButtons = value;
 			}
@@ -169,10 +169,10 @@
 	float? slideshowDelay;
 	[Parameter]
 	float? SlideshowDelay {
-		get => isInitialized ? (float?)DevExpress.Ui.DxGalleryInterop.GetSlideshowDelay(dxTarget).Result : slideshowDelay;
+		get => isInitialized ? (float?)DevExpress.Ui.DxGalleryInterop.GetSlideshowDelayOption(dxTarget).Result : slideshowDelay;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxGalleryInterop.SetSlideshowDelay(dxTarget, value);
+				DevExpress.Ui.DxGalleryInterop.SetSlideshowDelayOption(dxTarget, value);
 			} else {
 				this.slideshowDelay = value;
 			}
@@ -181,10 +181,10 @@
 	bool? stretchImages;
 	[Parameter]
 	bool? StretchImages {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxGalleryInterop.GetStretchImages(dxTarget).Result : stretchImages;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxGalleryInterop.GetStretchImagesOption(dxTarget).Result : stretchImages;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxGalleryInterop.SetStretchImages(dxTarget, value);
+				DevExpress.Ui.DxGalleryInterop.SetStretchImagesOption(dxTarget, value);
 			} else {
 				this.stretchImages = value;
 			}
@@ -193,10 +193,10 @@
 	bool? swipeEnabled;
 	[Parameter]
 	bool? SwipeEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxGalleryInterop.GetSwipeEnabled(dxTarget).Result : swipeEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxGalleryInterop.GetSwipeEnabledOption(dxTarget).Result : swipeEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxGalleryInterop.SetSwipeEnabled(dxTarget, value);
+				DevExpress.Ui.DxGalleryInterop.SetSwipeEnabledOption(dxTarget, value);
 			} else {
 				this.swipeEnabled = value;
 			}
@@ -205,10 +205,10 @@
 	bool? wrapAround;
 	[Parameter]
 	bool? WrapAround {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxGalleryInterop.GetWrapAround(dxTarget).Result : wrapAround;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxGalleryInterop.GetWrapAroundOption(dxTarget).Result : wrapAround;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxGalleryInterop.SetWrapAround(dxTarget, value);
+				DevExpress.Ui.DxGalleryInterop.SetWrapAroundOption(dxTarget, value);
 			} else {
 				this.wrapAround = value;
 			}
@@ -217,10 +217,10 @@
 	object dataSource;
 	[Parameter]
 	object DataSource {
-		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetDataSource(dxTarget).Result : dataSource;
+		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetDataSourceOption(dxTarget).Result : dataSource;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxGalleryInterop.SetDataSource(dxTarget, value);
+				DevExpress.Ui.DxGalleryInterop.SetDataSourceOption(dxTarget, value);
 			} else {
 				this.dataSource = value;
 			}
@@ -229,10 +229,10 @@
 	float? itemHoldTimeout;
 	[Parameter]
 	float? ItemHoldTimeout {
-		get => isInitialized ? (float?)DevExpress.Ui.DxGalleryInterop.GetItemHoldTimeout(dxTarget).Result : itemHoldTimeout;
+		get => isInitialized ? (float?)DevExpress.Ui.DxGalleryInterop.GetItemHoldTimeoutOption(dxTarget).Result : itemHoldTimeout;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxGalleryInterop.SetItemHoldTimeout(dxTarget, value);
+				DevExpress.Ui.DxGalleryInterop.SetItemHoldTimeoutOption(dxTarget, value);
 			} else {
 				this.itemHoldTimeout = value;
 			}
@@ -241,10 +241,10 @@
 	object items;
 	[Parameter]
 	object Items {
-		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetItems(dxTarget).Result : items;
+		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetItemsOption(dxTarget).Result : items;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxGalleryInterop.SetItems(dxTarget, value);
+				DevExpress.Ui.DxGalleryInterop.SetItemsOption(dxTarget, value);
 			} else {
 				this.items = value;
 			}
@@ -253,10 +253,10 @@
 	object itemTemplate;
 	[Parameter]
 	object ItemTemplate {
-		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetItemTemplate(dxTarget).Result : itemTemplate;
+		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetItemTemplateOption(dxTarget).Result : itemTemplate;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxGalleryInterop.SetItemTemplate(dxTarget, value);
+				DevExpress.Ui.DxGalleryInterop.SetItemTemplateOption(dxTarget, value);
 			} else {
 				this.itemTemplate = value;
 			}
@@ -265,10 +265,10 @@
 	object keyExpr;
 	[Parameter]
 	object KeyExpr {
-		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetKeyExpr(dxTarget).Result : keyExpr;
+		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetKeyExprOption(dxTarget).Result : keyExpr;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxGalleryInterop.SetKeyExpr(dxTarget, value);
+				DevExpress.Ui.DxGalleryInterop.SetKeyExprOption(dxTarget, value);
 			} else {
 				this.keyExpr = value;
 			}
@@ -277,10 +277,10 @@
 	string noDataText;
 	[Parameter]
 	string NoDataText {
-		get => isInitialized ? (string)DevExpress.Ui.DxGalleryInterop.GetNoDataText(dxTarget).Result : noDataText;
+		get => isInitialized ? (string)DevExpress.Ui.DxGalleryInterop.GetNoDataTextOption(dxTarget).Result : noDataText;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxGalleryInterop.SetNoDataText(dxTarget, value);
+				DevExpress.Ui.DxGalleryInterop.SetNoDataTextOption(dxTarget, value);
 			} else {
 				this.noDataText = value;
 			}
@@ -289,10 +289,10 @@
 	object selectedItem;
 	[Parameter]
 	object SelectedItem {
-		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetSelectedItem(dxTarget).Result : selectedItem;
+		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetSelectedItemOption(dxTarget).Result : selectedItem;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxGalleryInterop.SetSelectedItem(dxTarget, value);
+				DevExpress.Ui.DxGalleryInterop.SetSelectedItemOption(dxTarget, value);
 			} else {
 				this.selectedItem = value;
 			}
@@ -301,10 +301,10 @@
 	object selectedItemKeys;
 	[Parameter]
 	object SelectedItemKeys {
-		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetSelectedItemKeys(dxTarget).Result : selectedItemKeys;
+		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetSelectedItemKeysOption(dxTarget).Result : selectedItemKeys;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxGalleryInterop.SetSelectedItemKeys(dxTarget, value);
+				DevExpress.Ui.DxGalleryInterop.SetSelectedItemKeysOption(dxTarget, value);
 			} else {
 				this.selectedItemKeys = value;
 			}
@@ -313,10 +313,10 @@
 	object selectedItems;
 	[Parameter]
 	object SelectedItems {
-		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetSelectedItems(dxTarget).Result : selectedItems;
+		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetSelectedItemsOption(dxTarget).Result : selectedItems;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxGalleryInterop.SetSelectedItems(dxTarget, value);
+				DevExpress.Ui.DxGalleryInterop.SetSelectedItemsOption(dxTarget, value);
 			} else {
 				this.selectedItems = value;
 			}
@@ -325,10 +325,10 @@
 	string accessKey;
 	[Parameter]
 	string AccessKey {
-		get => isInitialized ? (string)DevExpress.Ui.DxGalleryInterop.GetAccessKey(dxTarget).Result : accessKey;
+		get => isInitialized ? (string)DevExpress.Ui.DxGalleryInterop.GetAccessKeyOption(dxTarget).Result : accessKey;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxGalleryInterop.SetAccessKey(dxTarget, value);
+				DevExpress.Ui.DxGalleryInterop.SetAccessKeyOption(dxTarget, value);
 			} else {
 				this.accessKey = value;
 			}
@@ -337,10 +337,10 @@
 	bool? activeStateEnabled;
 	[Parameter]
 	bool? ActiveStateEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxGalleryInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxGalleryInterop.GetActiveStateEnabledOption(dxTarget).Result : activeStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxGalleryInterop.SetActiveStateEnabled(dxTarget, value);
+				DevExpress.Ui.DxGalleryInterop.SetActiveStateEnabledOption(dxTarget, value);
 			} else {
 				this.activeStateEnabled = value;
 			}
@@ -349,10 +349,10 @@
 	bool? disabled;
 	[Parameter]
 	bool? Disabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxGalleryInterop.GetDisabled(dxTarget).Result : disabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxGalleryInterop.GetDisabledOption(dxTarget).Result : disabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxGalleryInterop.SetDisabled(dxTarget, value);
+				DevExpress.Ui.DxGalleryInterop.SetDisabledOption(dxTarget, value);
 			} else {
 				this.disabled = value;
 			}
@@ -361,10 +361,10 @@
 	string hint;
 	[Parameter]
 	string Hint {
-		get => isInitialized ? (string)DevExpress.Ui.DxGalleryInterop.GetHint(dxTarget).Result : hint;
+		get => isInitialized ? (string)DevExpress.Ui.DxGalleryInterop.GetHintOption(dxTarget).Result : hint;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxGalleryInterop.SetHint(dxTarget, value);
+				DevExpress.Ui.DxGalleryInterop.SetHintOption(dxTarget, value);
 			} else {
 				this.hint = value;
 			}
@@ -373,10 +373,10 @@
 	bool? hoverStateEnabled;
 	[Parameter]
 	bool? HoverStateEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxGalleryInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxGalleryInterop.GetHoverStateEnabledOption(dxTarget).Result : hoverStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxGalleryInterop.SetHoverStateEnabled(dxTarget, value);
+				DevExpress.Ui.DxGalleryInterop.SetHoverStateEnabledOption(dxTarget, value);
 			} else {
 				this.hoverStateEnabled = value;
 			}
@@ -385,10 +385,10 @@
 	float? tabIndex;
 	[Parameter]
 	float? TabIndex {
-		get => isInitialized ? (float?)DevExpress.Ui.DxGalleryInterop.GetTabIndex(dxTarget).Result : tabIndex;
+		get => isInitialized ? (float?)DevExpress.Ui.DxGalleryInterop.GetTabIndexOption(dxTarget).Result : tabIndex;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxGalleryInterop.SetTabIndex(dxTarget, value);
+				DevExpress.Ui.DxGalleryInterop.SetTabIndexOption(dxTarget, value);
 			} else {
 				this.tabIndex = value;
 			}
@@ -397,10 +397,10 @@
 	bool? visible;
 	[Parameter]
 	bool? Visible {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxGalleryInterop.GetVisible(dxTarget).Result : visible;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxGalleryInterop.GetVisibleOption(dxTarget).Result : visible;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxGalleryInterop.SetVisible(dxTarget, value);
+				DevExpress.Ui.DxGalleryInterop.SetVisibleOption(dxTarget, value);
 			} else {
 				this.visible = value;
 			}
@@ -409,10 +409,10 @@
 	object bindingOptions;
 	[Parameter]
 	object BindingOptions {
-		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
+		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetBindingOptionsOption(dxTarget).Result : bindingOptions;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxGalleryInterop.SetBindingOptions(dxTarget, value);
+				DevExpress.Ui.DxGalleryInterop.SetBindingOptionsOption(dxTarget, value);
 			} else {
 				this.bindingOptions = value;
 			}
@@ -421,10 +421,10 @@
 	object elementAttr;
 	[Parameter]
 	object ElementAttr {
-		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetElementAttr(dxTarget).Result : elementAttr;
+		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetElementAttrOption(dxTarget).Result : elementAttr;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxGalleryInterop.SetElementAttr(dxTarget, value);
+				DevExpress.Ui.DxGalleryInterop.SetElementAttrOption(dxTarget, value);
 			} else {
 				this.elementAttr = value;
 			}
@@ -433,10 +433,10 @@
 	object height;
 	[Parameter]
 	object Height {
-		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetHeight(dxTarget).Result : height;
+		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetHeightOption(dxTarget).Result : height;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxGalleryInterop.SetHeight(dxTarget, value);
+				DevExpress.Ui.DxGalleryInterop.SetHeightOption(dxTarget, value);
 			} else {
 				this.height = value;
 			}
@@ -445,10 +445,10 @@
 	bool? rtlEnabled;
 	[Parameter]
 	bool? RtlEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxGalleryInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxGalleryInterop.GetRtlEnabledOption(dxTarget).Result : rtlEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxGalleryInterop.SetRtlEnabled(dxTarget, value);
+				DevExpress.Ui.DxGalleryInterop.SetRtlEnabledOption(dxTarget, value);
 			} else {
 				this.rtlEnabled = value;
 			}
@@ -457,10 +457,10 @@
 	object width;
 	[Parameter]
 	object Width {
-		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetWidth(dxTarget).Result : width;
+		get => isInitialized ? DevExpress.Ui.DxGalleryInterop.GetWidthOption(dxTarget).Result : width;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxGalleryInterop.SetWidth(dxTarget, value);
+				DevExpress.Ui.DxGalleryInterop.SetWidthOption(dxTarget, value);
 			} else {
 				this.width = value;
 			}

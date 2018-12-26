@@ -57,10 +57,10 @@
 	bool? alignItemLabels;
 	[Parameter]
 	bool? AlignItemLabels {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxFormInterop.GetAlignItemLabels(dxTarget).Result : alignItemLabels;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxFormInterop.GetAlignItemLabelsOption(dxTarget).Result : alignItemLabels;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFormInterop.SetAlignItemLabels(dxTarget, value);
+				DevExpress.Ui.DxFormInterop.SetAlignItemLabelsOption(dxTarget, value);
 			} else {
 				this.alignItemLabels = value;
 			}
@@ -69,10 +69,10 @@
 	bool? alignItemLabelsInAllGroups;
 	[Parameter]
 	bool? AlignItemLabelsInAllGroups {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxFormInterop.GetAlignItemLabelsInAllGroups(dxTarget).Result : alignItemLabelsInAllGroups;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxFormInterop.GetAlignItemLabelsInAllGroupsOption(dxTarget).Result : alignItemLabelsInAllGroups;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFormInterop.SetAlignItemLabelsInAllGroups(dxTarget, value);
+				DevExpress.Ui.DxFormInterop.SetAlignItemLabelsInAllGroupsOption(dxTarget, value);
 			} else {
 				this.alignItemLabelsInAllGroups = value;
 			}
@@ -81,10 +81,10 @@
 	object colCount;
 	[Parameter]
 	object ColCount {
-		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetColCount(dxTarget).Result : colCount;
+		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetColCountOption(dxTarget).Result : colCount;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFormInterop.SetColCount(dxTarget, value);
+				DevExpress.Ui.DxFormInterop.SetColCountOption(dxTarget, value);
 			} else {
 				this.colCount = value;
 			}
@@ -93,10 +93,10 @@
 	object colCountByScreen;
 	[Parameter]
 	object ColCountByScreen {
-		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetColCountByScreen(dxTarget).Result : colCountByScreen;
+		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetColCountByScreenOption(dxTarget).Result : colCountByScreen;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFormInterop.SetColCountByScreen(dxTarget, value);
+				DevExpress.Ui.DxFormInterop.SetColCountByScreenOption(dxTarget, value);
 			} else {
 				this.colCountByScreen = value;
 			}
@@ -105,10 +105,10 @@
 	object customizeItem;
 	[Parameter]
 	object CustomizeItem {
-		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetCustomizeItem(dxTarget).Result : customizeItem;
+		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetCustomizeItemOption(dxTarget).Result : customizeItem;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFormInterop.SetCustomizeItem(dxTarget, value);
+				DevExpress.Ui.DxFormInterop.SetCustomizeItemOption(dxTarget, value);
 			} else {
 				this.customizeItem = value;
 			}
@@ -117,10 +117,10 @@
 	object formData;
 	[Parameter]
 	object FormData {
-		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetFormData(dxTarget).Result : formData;
+		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetFormDataOption(dxTarget).Result : formData;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFormInterop.SetFormData(dxTarget, value);
+				DevExpress.Ui.DxFormInterop.SetFormDataOption(dxTarget, value);
 			} else {
 				this.formData = value;
 			}
@@ -129,10 +129,10 @@
 	object items;
 	[Parameter]
 	object Items {
-		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetItems(dxTarget).Result : items;
+		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetItemsOption(dxTarget).Result : items;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFormInterop.SetItems(dxTarget, value);
+				DevExpress.Ui.DxFormInterop.SetItemsOption(dxTarget, value);
 			} else {
 				this.items = value;
 			}
@@ -141,10 +141,10 @@
 	string labelLocation;
 	[Parameter]
 	string LabelLocation {
-		get => isInitialized ? (string)DevExpress.Ui.DxFormInterop.GetLabelLocation(dxTarget).Result : labelLocation;
+		get => isInitialized ? (string)DevExpress.Ui.DxFormInterop.GetLabelLocationOption(dxTarget).Result : labelLocation;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFormInterop.SetLabelLocation(dxTarget, value);
+				DevExpress.Ui.DxFormInterop.SetLabelLocationOption(dxTarget, value);
 			} else {
 				this.labelLocation = value;
 			}
@@ -153,10 +153,10 @@
 	float? minColWidth;
 	[Parameter]
 	float? MinColWidth {
-		get => isInitialized ? (float?)DevExpress.Ui.DxFormInterop.GetMinColWidth(dxTarget).Result : minColWidth;
+		get => isInitialized ? (float?)DevExpress.Ui.DxFormInterop.GetMinColWidthOption(dxTarget).Result : minColWidth;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFormInterop.SetMinColWidth(dxTarget, value);
+				DevExpress.Ui.DxFormInterop.SetMinColWidthOption(dxTarget, value);
 			} else {
 				this.minColWidth = value;
 			}
@@ -165,10 +165,10 @@
 	string optionalMark;
 	[Parameter]
 	string OptionalMark {
-		get => isInitialized ? (string)DevExpress.Ui.DxFormInterop.GetOptionalMark(dxTarget).Result : optionalMark;
+		get => isInitialized ? (string)DevExpress.Ui.DxFormInterop.GetOptionalMarkOption(dxTarget).Result : optionalMark;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFormInterop.SetOptionalMark(dxTarget, value);
+				DevExpress.Ui.DxFormInterop.SetOptionalMarkOption(dxTarget, value);
 			} else {
 				this.optionalMark = value;
 			}
@@ -177,10 +177,10 @@
 	bool? readOnly;
 	[Parameter]
 	bool? ReadOnly {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxFormInterop.GetReadOnly(dxTarget).Result : readOnly;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxFormInterop.GetReadOnlyOption(dxTarget).Result : readOnly;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFormInterop.SetReadOnly(dxTarget, value);
+				DevExpress.Ui.DxFormInterop.SetReadOnlyOption(dxTarget, value);
 			} else {
 				this.readOnly = value;
 			}
@@ -189,10 +189,10 @@
 	string requiredMark;
 	[Parameter]
 	string RequiredMark {
-		get => isInitialized ? (string)DevExpress.Ui.DxFormInterop.GetRequiredMark(dxTarget).Result : requiredMark;
+		get => isInitialized ? (string)DevExpress.Ui.DxFormInterop.GetRequiredMarkOption(dxTarget).Result : requiredMark;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFormInterop.SetRequiredMark(dxTarget, value);
+				DevExpress.Ui.DxFormInterop.SetRequiredMarkOption(dxTarget, value);
 			} else {
 				this.requiredMark = value;
 			}
@@ -201,10 +201,10 @@
 	string requiredMessage;
 	[Parameter]
 	string RequiredMessage {
-		get => isInitialized ? (string)DevExpress.Ui.DxFormInterop.GetRequiredMessage(dxTarget).Result : requiredMessage;
+		get => isInitialized ? (string)DevExpress.Ui.DxFormInterop.GetRequiredMessageOption(dxTarget).Result : requiredMessage;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFormInterop.SetRequiredMessage(dxTarget, value);
+				DevExpress.Ui.DxFormInterop.SetRequiredMessageOption(dxTarget, value);
 			} else {
 				this.requiredMessage = value;
 			}
@@ -213,10 +213,10 @@
 	object screenByWidth;
 	[Parameter]
 	object ScreenByWidth {
-		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetScreenByWidth(dxTarget).Result : screenByWidth;
+		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetScreenByWidthOption(dxTarget).Result : screenByWidth;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFormInterop.SetScreenByWidth(dxTarget, value);
+				DevExpress.Ui.DxFormInterop.SetScreenByWidthOption(dxTarget, value);
 			} else {
 				this.screenByWidth = value;
 			}
@@ -225,10 +225,10 @@
 	bool? scrollingEnabled;
 	[Parameter]
 	bool? ScrollingEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxFormInterop.GetScrollingEnabled(dxTarget).Result : scrollingEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxFormInterop.GetScrollingEnabledOption(dxTarget).Result : scrollingEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFormInterop.SetScrollingEnabled(dxTarget, value);
+				DevExpress.Ui.DxFormInterop.SetScrollingEnabledOption(dxTarget, value);
 			} else {
 				this.scrollingEnabled = value;
 			}
@@ -237,10 +237,10 @@
 	bool? showColonAfterLabel;
 	[Parameter]
 	bool? ShowColonAfterLabel {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxFormInterop.GetShowColonAfterLabel(dxTarget).Result : showColonAfterLabel;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxFormInterop.GetShowColonAfterLabelOption(dxTarget).Result : showColonAfterLabel;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFormInterop.SetShowColonAfterLabel(dxTarget, value);
+				DevExpress.Ui.DxFormInterop.SetShowColonAfterLabelOption(dxTarget, value);
 			} else {
 				this.showColonAfterLabel = value;
 			}
@@ -249,10 +249,10 @@
 	bool? showOptionalMark;
 	[Parameter]
 	bool? ShowOptionalMark {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxFormInterop.GetShowOptionalMark(dxTarget).Result : showOptionalMark;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxFormInterop.GetShowOptionalMarkOption(dxTarget).Result : showOptionalMark;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFormInterop.SetShowOptionalMark(dxTarget, value);
+				DevExpress.Ui.DxFormInterop.SetShowOptionalMarkOption(dxTarget, value);
 			} else {
 				this.showOptionalMark = value;
 			}
@@ -261,10 +261,10 @@
 	bool? showRequiredMark;
 	[Parameter]
 	bool? ShowRequiredMark {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxFormInterop.GetShowRequiredMark(dxTarget).Result : showRequiredMark;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxFormInterop.GetShowRequiredMarkOption(dxTarget).Result : showRequiredMark;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFormInterop.SetShowRequiredMark(dxTarget, value);
+				DevExpress.Ui.DxFormInterop.SetShowRequiredMarkOption(dxTarget, value);
 			} else {
 				this.showRequiredMark = value;
 			}
@@ -273,10 +273,10 @@
 	bool? showValidationSummary;
 	[Parameter]
 	bool? ShowValidationSummary {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxFormInterop.GetShowValidationSummary(dxTarget).Result : showValidationSummary;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxFormInterop.GetShowValidationSummaryOption(dxTarget).Result : showValidationSummary;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFormInterop.SetShowValidationSummary(dxTarget, value);
+				DevExpress.Ui.DxFormInterop.SetShowValidationSummaryOption(dxTarget, value);
 			} else {
 				this.showValidationSummary = value;
 			}
@@ -285,10 +285,10 @@
 	string validationGroup;
 	[Parameter]
 	string ValidationGroup {
-		get => isInitialized ? (string)DevExpress.Ui.DxFormInterop.GetValidationGroup(dxTarget).Result : validationGroup;
+		get => isInitialized ? (string)DevExpress.Ui.DxFormInterop.GetValidationGroupOption(dxTarget).Result : validationGroup;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFormInterop.SetValidationGroup(dxTarget, value);
+				DevExpress.Ui.DxFormInterop.SetValidationGroupOption(dxTarget, value);
 			} else {
 				this.validationGroup = value;
 			}
@@ -297,10 +297,10 @@
 	string accessKey;
 	[Parameter]
 	string AccessKey {
-		get => isInitialized ? (string)DevExpress.Ui.DxFormInterop.GetAccessKey(dxTarget).Result : accessKey;
+		get => isInitialized ? (string)DevExpress.Ui.DxFormInterop.GetAccessKeyOption(dxTarget).Result : accessKey;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFormInterop.SetAccessKey(dxTarget, value);
+				DevExpress.Ui.DxFormInterop.SetAccessKeyOption(dxTarget, value);
 			} else {
 				this.accessKey = value;
 			}
@@ -309,10 +309,10 @@
 	bool? activeStateEnabled;
 	[Parameter]
 	bool? ActiveStateEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxFormInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxFormInterop.GetActiveStateEnabledOption(dxTarget).Result : activeStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFormInterop.SetActiveStateEnabled(dxTarget, value);
+				DevExpress.Ui.DxFormInterop.SetActiveStateEnabledOption(dxTarget, value);
 			} else {
 				this.activeStateEnabled = value;
 			}
@@ -321,10 +321,10 @@
 	bool? disabled;
 	[Parameter]
 	bool? Disabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxFormInterop.GetDisabled(dxTarget).Result : disabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxFormInterop.GetDisabledOption(dxTarget).Result : disabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFormInterop.SetDisabled(dxTarget, value);
+				DevExpress.Ui.DxFormInterop.SetDisabledOption(dxTarget, value);
 			} else {
 				this.disabled = value;
 			}
@@ -333,10 +333,10 @@
 	bool? focusStateEnabled;
 	[Parameter]
 	bool? FocusStateEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxFormInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxFormInterop.GetFocusStateEnabledOption(dxTarget).Result : focusStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFormInterop.SetFocusStateEnabled(dxTarget, value);
+				DevExpress.Ui.DxFormInterop.SetFocusStateEnabledOption(dxTarget, value);
 			} else {
 				this.focusStateEnabled = value;
 			}
@@ -345,10 +345,10 @@
 	string hint;
 	[Parameter]
 	string Hint {
-		get => isInitialized ? (string)DevExpress.Ui.DxFormInterop.GetHint(dxTarget).Result : hint;
+		get => isInitialized ? (string)DevExpress.Ui.DxFormInterop.GetHintOption(dxTarget).Result : hint;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFormInterop.SetHint(dxTarget, value);
+				DevExpress.Ui.DxFormInterop.SetHintOption(dxTarget, value);
 			} else {
 				this.hint = value;
 			}
@@ -357,10 +357,10 @@
 	bool? hoverStateEnabled;
 	[Parameter]
 	bool? HoverStateEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxFormInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxFormInterop.GetHoverStateEnabledOption(dxTarget).Result : hoverStateEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFormInterop.SetHoverStateEnabled(dxTarget, value);
+				DevExpress.Ui.DxFormInterop.SetHoverStateEnabledOption(dxTarget, value);
 			} else {
 				this.hoverStateEnabled = value;
 			}
@@ -369,10 +369,10 @@
 	float? tabIndex;
 	[Parameter]
 	float? TabIndex {
-		get => isInitialized ? (float?)DevExpress.Ui.DxFormInterop.GetTabIndex(dxTarget).Result : tabIndex;
+		get => isInitialized ? (float?)DevExpress.Ui.DxFormInterop.GetTabIndexOption(dxTarget).Result : tabIndex;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFormInterop.SetTabIndex(dxTarget, value);
+				DevExpress.Ui.DxFormInterop.SetTabIndexOption(dxTarget, value);
 			} else {
 				this.tabIndex = value;
 			}
@@ -381,10 +381,10 @@
 	bool? visible;
 	[Parameter]
 	bool? Visible {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxFormInterop.GetVisible(dxTarget).Result : visible;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxFormInterop.GetVisibleOption(dxTarget).Result : visible;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFormInterop.SetVisible(dxTarget, value);
+				DevExpress.Ui.DxFormInterop.SetVisibleOption(dxTarget, value);
 			} else {
 				this.visible = value;
 			}
@@ -393,10 +393,10 @@
 	object bindingOptions;
 	[Parameter]
 	object BindingOptions {
-		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
+		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetBindingOptionsOption(dxTarget).Result : bindingOptions;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFormInterop.SetBindingOptions(dxTarget, value);
+				DevExpress.Ui.DxFormInterop.SetBindingOptionsOption(dxTarget, value);
 			} else {
 				this.bindingOptions = value;
 			}
@@ -405,10 +405,10 @@
 	object elementAttr;
 	[Parameter]
 	object ElementAttr {
-		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetElementAttr(dxTarget).Result : elementAttr;
+		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetElementAttrOption(dxTarget).Result : elementAttr;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFormInterop.SetElementAttr(dxTarget, value);
+				DevExpress.Ui.DxFormInterop.SetElementAttrOption(dxTarget, value);
 			} else {
 				this.elementAttr = value;
 			}
@@ -417,10 +417,10 @@
 	object height;
 	[Parameter]
 	object Height {
-		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetHeight(dxTarget).Result : height;
+		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetHeightOption(dxTarget).Result : height;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFormInterop.SetHeight(dxTarget, value);
+				DevExpress.Ui.DxFormInterop.SetHeightOption(dxTarget, value);
 			} else {
 				this.height = value;
 			}
@@ -429,10 +429,10 @@
 	bool? rtlEnabled;
 	[Parameter]
 	bool? RtlEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxFormInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
+		get => isInitialized ? (bool?)DevExpress.Ui.DxFormInterop.GetRtlEnabledOption(dxTarget).Result : rtlEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFormInterop.SetRtlEnabled(dxTarget, value);
+				DevExpress.Ui.DxFormInterop.SetRtlEnabledOption(dxTarget, value);
 			} else {
 				this.rtlEnabled = value;
 			}
@@ -441,10 +441,10 @@
 	object width;
 	[Parameter]
 	object Width {
-		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetWidth(dxTarget).Result : width;
+		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetWidthOption(dxTarget).Result : width;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxFormInterop.SetWidth(dxTarget, value);
+				DevExpress.Ui.DxFormInterop.SetWidthOption(dxTarget, value);
 			} else {
 				this.width = value;
 			}
@@ -536,6 +536,9 @@
 		if (e.Identifier == Id) {
 			Initialized?.Invoke();
 		}
+	}
+	public object GetButton(string name) {
+		return DevExpress.Ui.DxFormInterop.GetButton(dxTarget, name).Result;
 	}
 	public object GetEditor(string dataField) {
 		return DevExpress.Ui.DxFormInterop.GetEditor(dxTarget, dataField).Result;

@@ -3884,7 +3884,8 @@ namespace DevExpress.Ui
 		public static event EventHandler<JQueryEventArgs> Uploaded;
 		public static event EventHandler<JQueryEventArgs> UploadError;
 		public static event EventHandler<JQueryEventArgs> UploadStarted;
-		public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxFileUploaderOptions options)
+        
+        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxFileUploaderOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
 			return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxFileUploader_Init", dxTarget, json);
@@ -3894,6 +3895,7 @@ namespace DevExpress.Ui
 		{
 			Progress?.Invoke(null, new JQueryEventArgs(identifier));
 		}
+        
 		[JSInvokable("DevExpress.Ui.DxFileUploaderInterop.OnUploadAborted")]
 		public static void OnUploadAborted(string identifier)
 		{
@@ -3914,7 +3916,8 @@ namespace DevExpress.Ui
 		{
 			UploadStarted?.Invoke(null, new JQueryEventArgs(identifier));
 		}
-		public static Task<string> GetAccept(ElementRef dxTarget)
+
+        public static Task<string> GetAccept(ElementRef dxTarget)
 		{
 			return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxFileUploader_GetOption", dxTarget, "accept");
 		}
@@ -8503,17 +8506,19 @@ namespace DevExpress.Ui
 	}
 	public class EditorInterop: WidgetInterop
 	{
-		public static event EventHandler<JQueryEventArgs> ValueChanged;
+		public static event EventHandler<(JQueryEventArgs, string)> ValueChanged;
+
 		public static Task Init(ElementRef dxTarget, DevExpress.Ui.EditorOptions options)
 		{
 			string json = SimpleJson.SimpleJson.SerializeObject(options);
 			return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Editor_Init", dxTarget, json);
 		}
 		[JSInvokable("DevExpress.Ui.EditorInterop.OnValueChanged")]
-		public static void OnValueChanged(string identifier)
+        public static void OnValueChanged(string identifier, string value)
 		{
-			ValueChanged?.Invoke(null, new JQueryEventArgs(identifier));
-		}
+            ValueChanged?.Invoke(null, (new JQueryEventArgs(identifier), value));
+        }
+
 		public static Task<bool?> GetIsValid(ElementRef dxTarget)
 		{
 			return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_Editor_GetOption", dxTarget, "isValid");

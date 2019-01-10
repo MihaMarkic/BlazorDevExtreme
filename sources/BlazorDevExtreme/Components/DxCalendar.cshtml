@@ -6,475 +6,475 @@
 <div id="@Id" ref="dxTarget"></div>
 
 @functions {
-	ElementRef dxTarget;
-	public DxCalendar() : base("DxCalendar") { }
-	protected override DevExpress.Ui.DxCalendarOptions CreateOptions() {
-		return new DevExpress.Ui.DxCalendarOptions {
-			activeStateEnabled = activeStateEnabled,
-			cellTemplate = cellTemplate,
-			dateSerializationFormat = dateSerializationFormat,
-			disabledDates = disabledDates,
-			firstDayOfWeek = firstDayOfWeek,
-			focusStateEnabled = focusStateEnabled,
-			hoverStateEnabled = hoverStateEnabled,
-			max = max,
-			maxZoomLevel = maxZoomLevel,
-			min = min,
-			minZoomLevel = minZoomLevel,
-			name = name,
-			showTodayButton = showTodayButton,
-			value = value,
-			zoomLevel = zoomLevel,
-			isValid = isValid,
-			readOnly = readOnly,
-			validationError = validationError,
-			validationMessageMode = validationMessageMode,
-			accessKey = accessKey,
-			disabled = disabled,
-			hint = hint,
-			tabIndex = tabIndex,
-			visible = visible,
-			bindingOptions = bindingOptions,
-			elementAttr = elementAttr,
-			height = height,
-			rtlEnabled = rtlEnabled,
-			width = width,
-			onValueChangedEnabled = onValueChangedEnabled,
-			onContentReadyEnabled = onContentReadyEnabled,
-			onDisposingEnabled = onDisposingEnabled,
-			onOptionChangedEnabled = onOptionChangedEnabled,
-			onInitializedEnabled = onInitializedEnabled,
-		};
-	}
-	protected override Task Init(DevExpress.Ui.DxCalendarOptions options) {
-		return DevExpress.Ui.DxCalendarInterop.Init(dxTarget, options);
-	}
-	bool? activeStateEnabled;
-	[Parameter]
-	bool? ActiveStateEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxCalendarInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
-		set {
-			if (isInitialized) {
-				DevExpress.Ui.DxCalendarInterop.SetActiveStateEnabled(dxTarget, value);
-			} else {
-				this.activeStateEnabled = value;
-			}
-		}
-	}
-	object cellTemplate;
-	[Parameter]
-	object CellTemplate {
-		get => isInitialized ? DevExpress.Ui.DxCalendarInterop.GetCellTemplate(dxTarget).Result : cellTemplate;
-		set {
-			if (isInitialized) {
-				DevExpress.Ui.DxCalendarInterop.SetCellTemplate(dxTarget, value);
-			} else {
-				this.cellTemplate = value;
-			}
-		}
-	}
-	string dateSerializationFormat;
-	[Parameter]
-	string DateSerializationFormat {
-		get => isInitialized ? (string)DevExpress.Ui.DxCalendarInterop.GetDateSerializationFormat(dxTarget).Result : dateSerializationFormat;
-		set {
-			if (isInitialized) {
-				DevExpress.Ui.DxCalendarInterop.SetDateSerializationFormat(dxTarget, value);
-			} else {
-				this.dateSerializationFormat = value;
-			}
-		}
-	}
-	object disabledDates;
-	[Parameter]
-	object DisabledDates {
-		get => isInitialized ? DevExpress.Ui.DxCalendarInterop.GetDisabledDates(dxTarget).Result : disabledDates;
-		set {
-			if (isInitialized) {
-				DevExpress.Ui.DxCalendarInterop.SetDisabledDates(dxTarget, value);
-			} else {
-				this.disabledDates = value;
-			}
-		}
-	}
-	object firstDayOfWeek;
-	[Parameter]
-	object FirstDayOfWeek {
-		get => isInitialized ? DevExpress.Ui.DxCalendarInterop.GetFirstDayOfWeek(dxTarget).Result : firstDayOfWeek;
-		set {
-			if (isInitialized) {
-				DevExpress.Ui.DxCalendarInterop.SetFirstDayOfWeek(dxTarget, value);
-			} else {
-				this.firstDayOfWeek = value;
-			}
-		}
-	}
-	bool? focusStateEnabled;
-	[Parameter]
-	bool? FocusStateEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxCalendarInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
-		set {
-			if (isInitialized) {
-				DevExpress.Ui.DxCalendarInterop.SetFocusStateEnabled(dxTarget, value);
-			} else {
-				this.focusStateEnabled = value;
-			}
-		}
-	}
-	bool? hoverStateEnabled;
-	[Parameter]
-	bool? HoverStateEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxCalendarInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
-		set {
-			if (isInitialized) {
-				DevExpress.Ui.DxCalendarInterop.SetHoverStateEnabled(dxTarget, value);
-			} else {
-				this.hoverStateEnabled = value;
-			}
-		}
-	}
-	object max;
-	[Parameter]
-	object Max {
-		get => isInitialized ? DevExpress.Ui.DxCalendarInterop.GetMax(dxTarget).Result : max;
-		set {
-			if (isInitialized) {
-				DevExpress.Ui.DxCalendarInterop.SetMax(dxTarget, value);
-			} else {
-				this.max = value;
-			}
-		}
-	}
-	string maxZoomLevel;
-	[Parameter]
-	string MaxZoomLevel {
-		get => isInitialized ? (string)DevExpress.Ui.DxCalendarInterop.GetMaxZoomLevel(dxTarget).Result : maxZoomLevel;
-		set {
-			if (isInitialized) {
-				DevExpress.Ui.DxCalendarInterop.SetMaxZoomLevel(dxTarget, value);
-			} else {
-				this.maxZoomLevel = value;
-			}
-		}
-	}
-	object min;
-	[Parameter]
-	object Min {
-		get => isInitialized ? DevExpress.Ui.DxCalendarInterop.GetMin(dxTarget).Result : min;
-		set {
-			if (isInitialized) {
-				DevExpress.Ui.DxCalendarInterop.SetMin(dxTarget, value);
-			} else {
-				this.min = value;
-			}
-		}
-	}
-	string minZoomLevel;
-	[Parameter]
-	string MinZoomLevel {
-		get => isInitialized ? (string)DevExpress.Ui.DxCalendarInterop.GetMinZoomLevel(dxTarget).Result : minZoomLevel;
-		set {
-			if (isInitialized) {
-				DevExpress.Ui.DxCalendarInterop.SetMinZoomLevel(dxTarget, value);
-			} else {
-				this.minZoomLevel = value;
-			}
-		}
-	}
-	string name;
-	[Parameter]
-	string Name {
-		get => isInitialized ? (string)DevExpress.Ui.DxCalendarInterop.GetName(dxTarget).Result : name;
-		set {
-			if (isInitialized) {
-				DevExpress.Ui.DxCalendarInterop.SetName(dxTarget, value);
-			} else {
-				this.name = value;
-			}
-		}
-	}
-	bool? showTodayButton;
-	[Parameter]
-	bool? ShowTodayButton {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxCalendarInterop.GetShowTodayButton(dxTarget).Result : showTodayButton;
-		set {
-			if (isInitialized) {
-				DevExpress.Ui.DxCalendarInterop.SetShowTodayButton(dxTarget, value);
-			} else {
-				this.showTodayButton = value;
-			}
-		}
-	}
-	object value;
-	[Parameter]
-	object Value {
-		get => isInitialized ? DevExpress.Ui.DxCalendarInterop.GetValue(dxTarget).Result : value;
-		set {
-			if (isInitialized) {
-				DevExpress.Ui.DxCalendarInterop.SetValue(dxTarget, value);
-			} else {
-				this.value = value;
-			}
-		}
-	}
-	string zoomLevel;
-	[Parameter]
-	string ZoomLevel {
-		get => isInitialized ? (string)DevExpress.Ui.DxCalendarInterop.GetZoomLevel(dxTarget).Result : zoomLevel;
-		set {
-			if (isInitialized) {
-				DevExpress.Ui.DxCalendarInterop.SetZoomLevel(dxTarget, value);
-			} else {
-				this.zoomLevel = value;
-			}
-		}
-	}
-	bool? isValid;
-	[Parameter]
-	bool? IsValid {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxCalendarInterop.GetIsValid(dxTarget).Result : isValid;
-		set {
-			if (isInitialized) {
-				DevExpress.Ui.DxCalendarInterop.SetIsValid(dxTarget, value);
-			} else {
-				this.isValid = value;
-			}
-		}
-	}
-	bool? readOnly;
-	[Parameter]
-	bool? ReadOnly {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxCalendarInterop.GetReadOnly(dxTarget).Result : readOnly;
-		set {
-			if (isInitialized) {
-				DevExpress.Ui.DxCalendarInterop.SetReadOnly(dxTarget, value);
-			} else {
-				this.readOnly = value;
-			}
-		}
-	}
-	object validationError;
-	[Parameter]
-	object ValidationError {
-		get => isInitialized ? DevExpress.Ui.DxCalendarInterop.GetValidationError(dxTarget).Result : validationError;
-		set {
-			if (isInitialized) {
-				DevExpress.Ui.DxCalendarInterop.SetValidationError(dxTarget, value);
-			} else {
-				this.validationError = value;
-			}
-		}
-	}
-	string validationMessageMode;
-	[Parameter]
-	string ValidationMessageMode {
-		get => isInitialized ? (string)DevExpress.Ui.DxCalendarInterop.GetValidationMessageMode(dxTarget).Result : validationMessageMode;
-		set {
-			if (isInitialized) {
-				DevExpress.Ui.DxCalendarInterop.SetValidationMessageMode(dxTarget, value);
-			} else {
-				this.validationMessageMode = value;
-			}
-		}
-	}
-	string accessKey;
-	[Parameter]
-	string AccessKey {
-		get => isInitialized ? (string)DevExpress.Ui.DxCalendarInterop.GetAccessKey(dxTarget).Result : accessKey;
-		set {
-			if (isInitialized) {
-				DevExpress.Ui.DxCalendarInterop.SetAccessKey(dxTarget, value);
-			} else {
-				this.accessKey = value;
-			}
-		}
-	}
-	bool? disabled;
-	[Parameter]
-	bool? Disabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxCalendarInterop.GetDisabled(dxTarget).Result : disabled;
-		set {
-			if (isInitialized) {
-				DevExpress.Ui.DxCalendarInterop.SetDisabled(dxTarget, value);
-			} else {
-				this.disabled = value;
-			}
-		}
-	}
-	string hint;
-	[Parameter]
-	string Hint {
-		get => isInitialized ? (string)DevExpress.Ui.DxCalendarInterop.GetHint(dxTarget).Result : hint;
-		set {
-			if (isInitialized) {
-				DevExpress.Ui.DxCalendarInterop.SetHint(dxTarget, value);
-			} else {
-				this.hint = value;
-			}
-		}
-	}
-	float? tabIndex;
-	[Parameter]
-	float? TabIndex {
-		get => isInitialized ? (float?)DevExpress.Ui.DxCalendarInterop.GetTabIndex(dxTarget).Result : tabIndex;
-		set {
-			if (isInitialized) {
-				DevExpress.Ui.DxCalendarInterop.SetTabIndex(dxTarget, value);
-			} else {
-				this.tabIndex = value;
-			}
-		}
-	}
-	bool? visible;
-	[Parameter]
-	bool? Visible {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxCalendarInterop.GetVisible(dxTarget).Result : visible;
-		set {
-			if (isInitialized) {
-				DevExpress.Ui.DxCalendarInterop.SetVisible(dxTarget, value);
-			} else {
-				this.visible = value;
-			}
-		}
-	}
-	object bindingOptions;
-	[Parameter]
-	object BindingOptions {
-		get => isInitialized ? DevExpress.Ui.DxCalendarInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
-		set {
-			if (isInitialized) {
-				DevExpress.Ui.DxCalendarInterop.SetBindingOptions(dxTarget, value);
-			} else {
-				this.bindingOptions = value;
-			}
-		}
-	}
-	object elementAttr;
-	[Parameter]
-	object ElementAttr {
-		get => isInitialized ? DevExpress.Ui.DxCalendarInterop.GetElementAttr(dxTarget).Result : elementAttr;
-		set {
-			if (isInitialized) {
-				DevExpress.Ui.DxCalendarInterop.SetElementAttr(dxTarget, value);
-			} else {
-				this.elementAttr = value;
-			}
-		}
-	}
-	object height;
-	[Parameter]
-	object Height {
-		get => isInitialized ? DevExpress.Ui.DxCalendarInterop.GetHeight(dxTarget).Result : height;
-		set {
-			if (isInitialized) {
-				DevExpress.Ui.DxCalendarInterop.SetHeight(dxTarget, value);
-			} else {
-				this.height = value;
-			}
-		}
-	}
-	bool? rtlEnabled;
-	[Parameter]
-	bool? RtlEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxCalendarInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
-		set {
-			if (isInitialized) {
-				DevExpress.Ui.DxCalendarInterop.SetRtlEnabled(dxTarget, value);
-			} else {
-				this.rtlEnabled = value;
-			}
-		}
-	}
-	object width;
-	[Parameter]
-	object Width {
-		get => isInitialized ? DevExpress.Ui.DxCalendarInterop.GetWidth(dxTarget).Result : width;
-		set {
-			if (isInitialized) {
-				DevExpress.Ui.DxCalendarInterop.SetWidth(dxTarget, value);
-			} else {
-				this.width = value;
-			}
-		}
-	}
-	bool? onValueChangedEnabled;
-	[Parameter]
-	bool? OnValueChangedEnabled {
-		get => onValueChangedEnabled;
-		set => this.onValueChangedEnabled = value;
-	}
-	bool? onContentReadyEnabled;
-	[Parameter]
-	bool? OnContentReadyEnabled {
-		get => onContentReadyEnabled;
-		set => this.onContentReadyEnabled = value;
-	}
-	bool? onDisposingEnabled;
-	[Parameter]
-	bool? OnDisposingEnabled {
-		get => onDisposingEnabled;
-		set => this.onDisposingEnabled = value;
-	}
-	bool? onOptionChangedEnabled;
-	[Parameter]
-	bool? OnOptionChangedEnabled {
-		get => onOptionChangedEnabled;
-		set => this.onOptionChangedEnabled = value;
-	}
-	bool? onInitializedEnabled;
-	[Parameter]
-	bool? OnInitializedEnabled {
-		get => onInitializedEnabled;
-		set => this.onInitializedEnabled = value;
-	}
-	protected override async Task OnInitAsync() {
-		await base.OnInitAsync();
-		DevExpress.Ui.DxCalendarInterop.ValueChanged += DxCalendar_ValueChanged;
-		DevExpress.Ui.DxCalendarInterop.ContentReady += DxCalendar_ContentReady;
-		DevExpress.Ui.DxCalendarInterop.Disposing += DxCalendar_Disposing;
-		DevExpress.Ui.DxCalendarInterop.OptionChanged += DxCalendar_OptionChanged;
-		DevExpress.Ui.DxCalendarInterop.Initialized += DxCalendar_Initialized;
-	}
-	[Parameter]
-	Action ValueChanged { get; set; }
-	void DxCalendar_ValueChanged(object sender, JQueryEventArgs e) {
-		if (e.Identifier == Id) {
-			ValueChanged?.Invoke();
-		}
-	}
-	[Parameter]
-	Action ContentReady { get; set; }
-	void DxCalendar_ContentReady(object sender, JQueryEventArgs e) {
-		if (e.Identifier == Id) {
-			ContentReady?.Invoke();
-		}
-	}
-	[Parameter]
-	Action Disposing { get; set; }
-	void DxCalendar_Disposing(object sender, JQueryEventArgs e) {
-		if (e.Identifier == Id) {
-			Disposing?.Invoke();
-		}
-	}
-	[Parameter]
-	Action OptionChanged { get; set; }
-	void DxCalendar_OptionChanged(object sender, JQueryEventArgs e) {
-		if (e.Identifier == Id) {
-			OptionChanged?.Invoke();
-		}
-	}
-	[Parameter]
-	Action Initialized { get; set; }
-	void DxCalendar_Initialized(object sender, JQueryEventArgs e) {
-		if (e.Identifier == Id) {
-			Initialized?.Invoke();
-		}
-	}
-	public void Dispose() {
-		DevExpress.Ui.DxCalendarInterop.ValueChanged -= DxCalendar_ValueChanged;
-		DevExpress.Ui.DxCalendarInterop.ContentReady -= DxCalendar_ContentReady;
-		DevExpress.Ui.DxCalendarInterop.Disposing -= DxCalendar_Disposing;
-		DevExpress.Ui.DxCalendarInterop.OptionChanged -= DxCalendar_OptionChanged;
-		DevExpress.Ui.DxCalendarInterop.Initialized -= DxCalendar_Initialized;
-	}
+    ElementRef dxTarget;
+    public DxCalendar() : base("DxCalendar") { }
+    protected override DevExpress.Ui.DxCalendarOptions CreateOptions() {
+        return new DevExpress.Ui.DxCalendarOptions {
+            activeStateEnabled = activeStateEnabled,
+            cellTemplate = cellTemplate,
+            dateSerializationFormat = dateSerializationFormat,
+            disabledDates = disabledDates,
+            firstDayOfWeek = firstDayOfWeek,
+            focusStateEnabled = focusStateEnabled,
+            hoverStateEnabled = hoverStateEnabled,
+            max = max,
+            maxZoomLevel = maxZoomLevel,
+            min = min,
+            minZoomLevel = minZoomLevel,
+            name = name,
+            showTodayButton = showTodayButton,
+            value = value,
+            zoomLevel = zoomLevel,
+            isValid = isValid,
+            readOnly = readOnly,
+            validationError = validationError,
+            validationMessageMode = validationMessageMode,
+            accessKey = accessKey,
+            disabled = disabled,
+            hint = hint,
+            tabIndex = tabIndex,
+            visible = visible,
+            bindingOptions = bindingOptions,
+            elementAttr = elementAttr,
+            height = height,
+            rtlEnabled = rtlEnabled,
+            width = width,
+            onValueChangedEnabled = onValueChangedEnabled,
+            onContentReadyEnabled = onContentReadyEnabled,
+            onDisposingEnabled = onDisposingEnabled,
+            onOptionChangedEnabled = onOptionChangedEnabled,
+            onInitializedEnabled = onInitializedEnabled,
+        };
+    }
+    protected override Task Init(DevExpress.Ui.DxCalendarOptions options) {
+        return DevExpress.Ui.DxCalendarInterop.Init(dxTarget, options);
+    }
+    bool? activeStateEnabled;
+    [Parameter]
+    bool? ActiveStateEnabled {
+        get => isInitialized ? (bool?)DevExpress.Ui.DxCalendarInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxCalendarInterop.SetActiveStateEnabled(dxTarget, value);
+            } else {
+                this.activeStateEnabled = value;
+            }
+        }
+    }
+    object cellTemplate;
+    [Parameter]
+    object CellTemplate {
+        get => isInitialized ? DevExpress.Ui.DxCalendarInterop.GetCellTemplate(dxTarget).Result : cellTemplate;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxCalendarInterop.SetCellTemplate(dxTarget, value);
+            } else {
+                this.cellTemplate = value;
+            }
+        }
+    }
+    string dateSerializationFormat;
+    [Parameter]
+    string DateSerializationFormat {
+        get => isInitialized ? (string)DevExpress.Ui.DxCalendarInterop.GetDateSerializationFormat(dxTarget).Result : dateSerializationFormat;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxCalendarInterop.SetDateSerializationFormat(dxTarget, value);
+            } else {
+                this.dateSerializationFormat = value;
+            }
+        }
+    }
+    object disabledDates;
+    [Parameter]
+    object DisabledDates {
+        get => isInitialized ? DevExpress.Ui.DxCalendarInterop.GetDisabledDates(dxTarget).Result : disabledDates;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxCalendarInterop.SetDisabledDates(dxTarget, value);
+            } else {
+                this.disabledDates = value;
+            }
+        }
+    }
+    object firstDayOfWeek;
+    [Parameter]
+    object FirstDayOfWeek {
+        get => isInitialized ? DevExpress.Ui.DxCalendarInterop.GetFirstDayOfWeek(dxTarget).Result : firstDayOfWeek;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxCalendarInterop.SetFirstDayOfWeek(dxTarget, value);
+            } else {
+                this.firstDayOfWeek = value;
+            }
+        }
+    }
+    bool? focusStateEnabled;
+    [Parameter]
+    bool? FocusStateEnabled {
+        get => isInitialized ? (bool?)DevExpress.Ui.DxCalendarInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxCalendarInterop.SetFocusStateEnabled(dxTarget, value);
+            } else {
+                this.focusStateEnabled = value;
+            }
+        }
+    }
+    bool? hoverStateEnabled;
+    [Parameter]
+    bool? HoverStateEnabled {
+        get => isInitialized ? (bool?)DevExpress.Ui.DxCalendarInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxCalendarInterop.SetHoverStateEnabled(dxTarget, value);
+            } else {
+                this.hoverStateEnabled = value;
+            }
+        }
+    }
+    object max;
+    [Parameter]
+    object Max {
+        get => isInitialized ? DevExpress.Ui.DxCalendarInterop.GetMax(dxTarget).Result : max;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxCalendarInterop.SetMax(dxTarget, value);
+            } else {
+                this.max = value;
+            }
+        }
+    }
+    string maxZoomLevel;
+    [Parameter]
+    string MaxZoomLevel {
+        get => isInitialized ? (string)DevExpress.Ui.DxCalendarInterop.GetMaxZoomLevel(dxTarget).Result : maxZoomLevel;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxCalendarInterop.SetMaxZoomLevel(dxTarget, value);
+            } else {
+                this.maxZoomLevel = value;
+            }
+        }
+    }
+    object min;
+    [Parameter]
+    object Min {
+        get => isInitialized ? DevExpress.Ui.DxCalendarInterop.GetMin(dxTarget).Result : min;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxCalendarInterop.SetMin(dxTarget, value);
+            } else {
+                this.min = value;
+            }
+        }
+    }
+    string minZoomLevel;
+    [Parameter]
+    string MinZoomLevel {
+        get => isInitialized ? (string)DevExpress.Ui.DxCalendarInterop.GetMinZoomLevel(dxTarget).Result : minZoomLevel;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxCalendarInterop.SetMinZoomLevel(dxTarget, value);
+            } else {
+                this.minZoomLevel = value;
+            }
+        }
+    }
+    string name;
+    [Parameter]
+    string Name {
+        get => isInitialized ? (string)DevExpress.Ui.DxCalendarInterop.GetName(dxTarget).Result : name;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxCalendarInterop.SetName(dxTarget, value);
+            } else {
+                this.name = value;
+            }
+        }
+    }
+    bool? showTodayButton;
+    [Parameter]
+    bool? ShowTodayButton {
+        get => isInitialized ? (bool?)DevExpress.Ui.DxCalendarInterop.GetShowTodayButton(dxTarget).Result : showTodayButton;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxCalendarInterop.SetShowTodayButton(dxTarget, value);
+            } else {
+                this.showTodayButton = value;
+            }
+        }
+    }
+    object value;
+    [Parameter]
+    object Value {
+        get => isInitialized ? DevExpress.Ui.DxCalendarInterop.GetValue(dxTarget).Result : value;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxCalendarInterop.SetValue(dxTarget, value);
+            } else {
+                this.value = value;
+            }
+        }
+    }
+    string zoomLevel;
+    [Parameter]
+    string ZoomLevel {
+        get => isInitialized ? (string)DevExpress.Ui.DxCalendarInterop.GetZoomLevel(dxTarget).Result : zoomLevel;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxCalendarInterop.SetZoomLevel(dxTarget, value);
+            } else {
+                this.zoomLevel = value;
+            }
+        }
+    }
+    bool? isValid;
+    [Parameter]
+    bool? IsValid {
+        get => isInitialized ? (bool?)DevExpress.Ui.DxCalendarInterop.GetIsValid(dxTarget).Result : isValid;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxCalendarInterop.SetIsValid(dxTarget, value);
+            } else {
+                this.isValid = value;
+            }
+        }
+    }
+    bool? readOnly;
+    [Parameter]
+    bool? ReadOnly {
+        get => isInitialized ? (bool?)DevExpress.Ui.DxCalendarInterop.GetReadOnly(dxTarget).Result : readOnly;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxCalendarInterop.SetReadOnly(dxTarget, value);
+            } else {
+                this.readOnly = value;
+            }
+        }
+    }
+    object validationError;
+    [Parameter]
+    object ValidationError {
+        get => isInitialized ? DevExpress.Ui.DxCalendarInterop.GetValidationError(dxTarget).Result : validationError;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxCalendarInterop.SetValidationError(dxTarget, value);
+            } else {
+                this.validationError = value;
+            }
+        }
+    }
+    string validationMessageMode;
+    [Parameter]
+    string ValidationMessageMode {
+        get => isInitialized ? (string)DevExpress.Ui.DxCalendarInterop.GetValidationMessageMode(dxTarget).Result : validationMessageMode;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxCalendarInterop.SetValidationMessageMode(dxTarget, value);
+            } else {
+                this.validationMessageMode = value;
+            }
+        }
+    }
+    string accessKey;
+    [Parameter]
+    string AccessKey {
+        get => isInitialized ? (string)DevExpress.Ui.DxCalendarInterop.GetAccessKey(dxTarget).Result : accessKey;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxCalendarInterop.SetAccessKey(dxTarget, value);
+            } else {
+                this.accessKey = value;
+            }
+        }
+    }
+    bool? disabled;
+    [Parameter]
+    bool? Disabled {
+        get => isInitialized ? (bool?)DevExpress.Ui.DxCalendarInterop.GetDisabled(dxTarget).Result : disabled;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxCalendarInterop.SetDisabled(dxTarget, value);
+            } else {
+                this.disabled = value;
+            }
+        }
+    }
+    string hint;
+    [Parameter]
+    string Hint {
+        get => isInitialized ? (string)DevExpress.Ui.DxCalendarInterop.GetHint(dxTarget).Result : hint;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxCalendarInterop.SetHint(dxTarget, value);
+            } else {
+                this.hint = value;
+            }
+        }
+    }
+    float? tabIndex;
+    [Parameter]
+    float? TabIndex {
+        get => isInitialized ? (float?)DevExpress.Ui.DxCalendarInterop.GetTabIndex(dxTarget).Result : tabIndex;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxCalendarInterop.SetTabIndex(dxTarget, value);
+            } else {
+                this.tabIndex = value;
+            }
+        }
+    }
+    bool? visible;
+    [Parameter]
+    bool? Visible {
+        get => isInitialized ? (bool?)DevExpress.Ui.DxCalendarInterop.GetVisible(dxTarget).Result : visible;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxCalendarInterop.SetVisible(dxTarget, value);
+            } else {
+                this.visible = value;
+            }
+        }
+    }
+    object bindingOptions;
+    [Parameter]
+    object BindingOptions {
+        get => isInitialized ? DevExpress.Ui.DxCalendarInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxCalendarInterop.SetBindingOptions(dxTarget, value);
+            } else {
+                this.bindingOptions = value;
+            }
+        }
+    }
+    object elementAttr;
+    [Parameter]
+    object ElementAttr {
+        get => isInitialized ? DevExpress.Ui.DxCalendarInterop.GetElementAttr(dxTarget).Result : elementAttr;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxCalendarInterop.SetElementAttr(dxTarget, value);
+            } else {
+                this.elementAttr = value;
+            }
+        }
+    }
+    object height;
+    [Parameter]
+    object Height {
+        get => isInitialized ? DevExpress.Ui.DxCalendarInterop.GetHeight(dxTarget).Result : height;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxCalendarInterop.SetHeight(dxTarget, value);
+            } else {
+                this.height = value;
+            }
+        }
+    }
+    bool? rtlEnabled;
+    [Parameter]
+    bool? RtlEnabled {
+        get => isInitialized ? (bool?)DevExpress.Ui.DxCalendarInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxCalendarInterop.SetRtlEnabled(dxTarget, value);
+            } else {
+                this.rtlEnabled = value;
+            }
+        }
+    }
+    object width;
+    [Parameter]
+    object Width {
+        get => isInitialized ? DevExpress.Ui.DxCalendarInterop.GetWidth(dxTarget).Result : width;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxCalendarInterop.SetWidth(dxTarget, value);
+            } else {
+                this.width = value;
+            }
+        }
+    }
+    bool? onValueChangedEnabled;
+    [Parameter]
+    bool? OnValueChangedEnabled {
+        get => onValueChangedEnabled;
+        set => this.onValueChangedEnabled = value;
+    }
+    bool? onContentReadyEnabled;
+    [Parameter]
+    bool? OnContentReadyEnabled {
+        get => onContentReadyEnabled;
+        set => this.onContentReadyEnabled = value;
+    }
+    bool? onDisposingEnabled;
+    [Parameter]
+    bool? OnDisposingEnabled {
+        get => onDisposingEnabled;
+        set => this.onDisposingEnabled = value;
+    }
+    bool? onOptionChangedEnabled;
+    [Parameter]
+    bool? OnOptionChangedEnabled {
+        get => onOptionChangedEnabled;
+        set => this.onOptionChangedEnabled = value;
+    }
+    bool? onInitializedEnabled;
+    [Parameter]
+    bool? OnInitializedEnabled {
+        get => onInitializedEnabled;
+        set => this.onInitializedEnabled = value;
+    }
+    protected override async Task OnInitAsync() {
+        await base.OnInitAsync();
+        //DevExpress.Ui.DxCalendarInterop.ValueChanged += DxCalendar_ValueChanged;
+        DevExpress.Ui.DxCalendarInterop.ContentReady += DxCalendar_ContentReady;
+        DevExpress.Ui.DxCalendarInterop.Disposing += DxCalendar_Disposing;
+        DevExpress.Ui.DxCalendarInterop.OptionChanged += DxCalendar_OptionChanged;
+        DevExpress.Ui.DxCalendarInterop.Initialized += DxCalendar_Initialized;
+    }
+    [Parameter]
+    Action ValueChanged { get; set; }
+    void DxCalendar_ValueChanged(object sender, JQueryEventArgs e) {
+        if (e.Identifier == Id) {
+            ValueChanged?.Invoke();
+        }
+    }
+    [Parameter]
+    Action ContentReady { get; set; }
+    void DxCalendar_ContentReady(object sender, JQueryEventArgs e) {
+        if (e.Identifier == Id) {
+            ContentReady?.Invoke();
+        }
+    }
+    [Parameter]
+    Action Disposing { get; set; }
+    void DxCalendar_Disposing(object sender, JQueryEventArgs e) {
+        if (e.Identifier == Id) {
+            Disposing?.Invoke();
+        }
+    }
+    [Parameter]
+    Action OptionChanged { get; set; }
+    void DxCalendar_OptionChanged(object sender, JQueryEventArgs e) {
+        if (e.Identifier == Id) {
+            OptionChanged?.Invoke();
+        }
+    }
+    [Parameter]
+    Action Initialized { get; set; }
+    void DxCalendar_Initialized(object sender, JQueryEventArgs e) {
+        if (e.Identifier == Id) {
+            Initialized?.Invoke();
+        }
+    }
+    public void Dispose() {
+        //DevExpress.Ui.DxCalendarInterop.ValueChanged -= DxCalendar_ValueChanged;
+        DevExpress.Ui.DxCalendarInterop.ContentReady -= DxCalendar_ContentReady;
+        DevExpress.Ui.DxCalendarInterop.Disposing -= DxCalendar_Disposing;
+        DevExpress.Ui.DxCalendarInterop.OptionChanged -= DxCalendar_OptionChanged;
+        DevExpress.Ui.DxCalendarInterop.Initialized -= DxCalendar_Initialized;
+    }
 }

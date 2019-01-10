@@ -1658,8 +1658,14 @@ function BlazorDevExtreme_GridBase_GetOption (element, key) {
 function BlazorDevExtreme_DxDataGrid_Init (element, optionsText) {
 	const options = JSON.parse(optionsText);
 
+	if (options.onContentReadyEnabled) {
+		options.onContentReady = function () {
+			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.WidgetInterop.OnContentReady', element.id);
+
+		}
+	}
+
 	if (options.onInitializedEnabled) {
-		console.log("init");
 		options.onInitialized = function () {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.ComponentInterop.OnInitialized', element.id);
 
@@ -1929,7 +1935,7 @@ function BlazorDevExtreme_DxFileUploader_Init (element, optionsText) {
 	}
 	if (options.onValueChangedEnabled) {
 		options.onValueChanged = function () {
-			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxFileUploaderInterop.OnValueChanged', element.id);
+            DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.EditorInterop.OnValueChanged', element.id);
 			
 		}
 	}
@@ -2880,7 +2886,14 @@ function BlazorDevExtreme_DxSelectBox_Init (element, optionsText) {
 			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxSelectBoxInterop.OnCustomItemCreating', element.id);
 			
 		}
-	}
+    }
+
+    if (options.onValueChangedEnabled) {
+        options.onValueChanged = function () {
+            DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.EditorInterop.OnValueChanged', element.id, instance.option("value"));
+
+        }
+    }
 	let instance = new DevExpress.ui.dxSelectBox(element, options);
 }
 function BlazorDevExtreme_DxSelectBox_SetOption (element, key, value) {

@@ -871,7 +871,7 @@
         DevExpress.Ui.DxDateBoxInterop.KeyPress += DxDateBox_KeyPress;
         DevExpress.Ui.DxDateBoxInterop.KeyUp += DxDateBox_KeyUp;
         DevExpress.Ui.DxDateBoxInterop.Paste += DxDateBox_Paste;
-        //DevExpress.Ui.DxDateBoxInterop.ValueChanged += DxDateBox_ValueChanged;
+        DevExpress.Ui.DxDateBoxInterop.ValueChanged += DxDateBox_ValueChanged;
         DevExpress.Ui.DxDateBoxInterop.ContentReady += DxDateBox_ContentReady;
         DevExpress.Ui.DxDateBoxInterop.Disposing += DxDateBox_Disposing;
         DevExpress.Ui.DxDateBoxInterop.OptionChanged += DxDateBox_OptionChanged;
@@ -969,10 +969,12 @@
         }
     }
     [Parameter]
-    Action ValueChanged { get; set; }
-    void DxDateBox_ValueChanged(object sender, JQueryEventArgs e) {
-        if (e.Identifier == Id) {
-            ValueChanged?.Invoke();
+    Action<string> ValueChanged { get; set; }
+    void DxDateBox_ValueChanged(object sender, (JQueryEventArgs jQueryEventArgs, string value) args)
+    {
+        if (args.jQueryEventArgs.Identifier == Id)
+        {
+            ValueChanged?.Invoke(args.value);
         }
     }
     [Parameter]
@@ -1023,7 +1025,7 @@
         DevExpress.Ui.DxDateBoxInterop.KeyPress -= DxDateBox_KeyPress;
         DevExpress.Ui.DxDateBoxInterop.KeyUp -= DxDateBox_KeyUp;
         DevExpress.Ui.DxDateBoxInterop.Paste -= DxDateBox_Paste;
-        //DevExpress.Ui.DxDateBoxInterop.ValueChanged -= DxDateBox_ValueChanged;
+        DevExpress.Ui.DxDateBoxInterop.ValueChanged -= DxDateBox_ValueChanged;
         DevExpress.Ui.DxDateBoxInterop.ContentReady -= DxDateBox_ContentReady;
         DevExpress.Ui.DxDateBoxInterop.Disposing -= DxDateBox_Disposing;
         DevExpress.Ui.DxDateBoxInterop.OptionChanged -= DxDateBox_OptionChanged;

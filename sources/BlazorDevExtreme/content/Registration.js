@@ -1816,6 +1816,13 @@ function BlazorDevExtreme_DxDataGrid_GetOption (element, key) {
 function BlazorDevExtreme_DxDateBox_Init (element, optionsText) {
 	const options = JSON.parse(optionsText);
 
+    if (options.onValueChangedEnabled) {
+        options.onValueChanged = function () {
+            DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.EditorInterop.OnValueChanged', element.id, instance.option("value"));
+
+        }
+    }
+
 	let instance = new DevExpress.ui.dxDateBox(element, options);
 }
 function BlazorDevExtreme_DxDateBox_close_0 (blazor_element) {
@@ -3072,9 +3079,19 @@ function BlazorDevExtreme_DxTextArea_GetOption (element, key) {
 };
 // DevExpress.ui.dxTextBox interop automatically generated
 function BlazorDevExtreme_DxTextBox_Init (element, optionsText) {
-	const options = JSON.parse(optionsText);
+    
+    const options = JSON.parse(optionsText);
 
-	let instance = new DevExpress.ui.dxTextBox(element, options);
+    if (options.onValueChangedEnabled) {
+        options.onValueChanged = function () {
+            DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.EditorInterop.OnValueChanged', element.id, instance.option("value"));
+
+        }
+    }
+
+    let instance = new DevExpress.ui.dxTextBox(element, options);
+    // Not working:
+    //BlazorDevExtreme_Editor_Init(element, optionsText, instance);
 }
 function BlazorDevExtreme_DxTextBox_SetOption (element, key, value) {
 	DevExpress.ui.dxTextBox.getInstance(element).option(key, value);
@@ -3583,7 +3600,7 @@ function BlazorDevExtreme_Editor_Init (element, optionsText) {
 
 	if (options.onValueChangedEnabled) {
 		options.onValueChanged = function () {
-			DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.EditorInterop.OnValueChanged', element.id);
+            DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.EditorInterop.OnValueChanged', element.id, instance.option("value"));
 			
 		}
 	}

@@ -569,7 +569,7 @@
         DevExpress.Ui.DxTextBoxInterop.KeyPress += DxTextBox_KeyPress;
         DevExpress.Ui.DxTextBoxInterop.KeyUp += DxTextBox_KeyUp;
         DevExpress.Ui.DxTextBoxInterop.Paste += DxTextBox_Paste;
-        //DevExpress.Ui.DxTextBoxInterop.ValueChanged += DxTextBox_ValueChanged;
+        DevExpress.Ui.DxTextBoxInterop.ValueChanged += DxTextBox_ValueChanged;
         DevExpress.Ui.DxTextBoxInterop.ContentReady += DxTextBox_ContentReady;
         DevExpress.Ui.DxTextBoxInterop.Disposing += DxTextBox_Disposing;
         DevExpress.Ui.DxTextBoxInterop.OptionChanged += DxTextBox_OptionChanged;
@@ -653,10 +653,10 @@
         }
     }
     [Parameter]
-    Action ValueChanged { get; set; }
-    void DxTextBox_ValueChanged(object sender, JQueryEventArgs e) {
-        if (e.Identifier == Id) {
-            ValueChanged?.Invoke();
+    Action<string> ValueChanged { get; set; }
+    void DxTextBox_ValueChanged(object sender, (JQueryEventArgs jQueryEventArgs, string value) args) {
+        if (args.jQueryEventArgs.Identifier == Id) {
+            ValueChanged?.Invoke(args.value);
         }
     }
     [Parameter]
@@ -699,7 +699,7 @@
         DevExpress.Ui.DxTextBoxInterop.KeyPress -= DxTextBox_KeyPress;
         DevExpress.Ui.DxTextBoxInterop.KeyUp -= DxTextBox_KeyUp;
         DevExpress.Ui.DxTextBoxInterop.Paste -= DxTextBox_Paste;
-        //DevExpress.Ui.DxTextBoxInterop.ValueChanged -= DxTextBox_ValueChanged;
+        DevExpress.Ui.DxTextBoxInterop.ValueChanged -= DxTextBox_ValueChanged;
         DevExpress.Ui.DxTextBoxInterop.ContentReady -= DxTextBox_ContentReady;
         DevExpress.Ui.DxTextBoxInterop.Disposing -= DxTextBox_Disposing;
         DevExpress.Ui.DxTextBoxInterop.OptionChanged -= DxTextBox_OptionChanged;

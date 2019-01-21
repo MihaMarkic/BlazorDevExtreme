@@ -1648,8 +1648,12 @@ function BlazorDevExtreme_GridBase_undeleteRow_60 (blazor_element, rowIndex) {
 function BlazorDevExtreme_GridBase_updateDimensions_61 (blazor_element) {
 	DevExpress.ui.GridBase.getInstance(blazor_element).updateDimensions();
 };
+function BlazorDevExtreme_DxDataGrid_updateDimensions(blazor_element) {
+    DevExpress.ui.dxDataGrid.getInstance(blazor_element).updateDimensions();
+};
 function BlazorDevExtreme_GridBase_SetOption (element, key, value) {
-	DevExpress.ui.GridBase.getInstance(element).option(key, value);
+
+    DevExpress.ui.GridBase.getInstance(element).option(key, value);
 };
 function BlazorDevExtreme_GridBase_GetOption (element, key) {
 	return DevExpress.ui.GridBase.getInstance(blazor_element).option(key);
@@ -1807,7 +1811,8 @@ function BlazorDevExtreme_DxDataGrid_totalCount_19 (blazor_element) {
 	return DevExpress.ui.dxDataGrid.getInstance(blazor_element).totalCount();
 };
 function BlazorDevExtreme_DxDataGrid_SetOption (element, key, value) {
-	DevExpress.ui.dxDataGrid.getInstance(element).option(key, value);
+    const option = JSON.parse(value);
+    DevExpress.ui.dxDataGrid.getInstance(element).option(key, option);
 };
 function BlazorDevExtreme_DxDataGrid_GetOption (element, key) {
 	return DevExpress.ui.dxDataGrid.getInstance(blazor_element).option(key);

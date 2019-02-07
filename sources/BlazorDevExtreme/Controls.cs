@@ -1,7 +1,7 @@
 using System;
 using System.Threading.Tasks;
 using Microsoft.JSInterop;
-using Microsoft.AspNetCore.Blazor;
+using Microsoft.AspNetCore.Components;
 using BlazorDevExtreme;
 
 namespace DevExpress
@@ -4921,6 +4921,11 @@ namespace DevExpress.Ui
         public static Task SetShowPane(ElementRef dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxLoadPanel_SetOption", dxTarget, "showPane", value);
+        }
+
+        public static new Task SetVisible(ElementRef dxTarget, bool? value)
+        {
+            return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Widget_SetOption", dxTarget, "visible", value);
         }
     }
     public class DxLookupInterop: DxDropDownListInterop

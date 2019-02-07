@@ -1,10 +1,10 @@
-﻿using Microsoft.AspNetCore.Blazor.Components;
+﻿using Microsoft.AspNetCore.Components;
 using System;
 using System.Threading.Tasks;
 
 namespace BlazorDevExtreme.Components
 {
-    public abstract class DxBlazorComponent<TOptions>: BlazorComponent
+    public abstract class DxBlazorComponent<TOptions>: ComponentBase
     {
         public static int Index { get; private set; }
         protected bool isInitialized;

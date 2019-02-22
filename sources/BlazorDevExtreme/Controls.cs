@@ -2407,6 +2407,14 @@ namespace DevExpress.Ui
     }
     public class DxCheckBoxInterop: EditorInterop
     {
+        public static new event EventHandler<(JQueryEventArgs, bool?)> ValueChanged;
+
+        [JSInvokable("DevExpress.Ui.DxCheckBoxInterop.OnValueChanged")]
+        public static void OnValueChanged(string identifier, bool? value)
+        {
+            ValueChanged?.Invoke(null, (new JQueryEventArgs(identifier), value));
+        }
+
         public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxCheckBoxOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);

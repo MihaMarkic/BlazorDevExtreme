@@ -28,15 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="content\Registration.js" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.Browser" Version="3.0.0-preview-19075-0444" />
     <PackageReference Include="Microsoft.AspNetCore.Components.Build" Version="3.0.0-preview-19075-0444" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <BlazorGenerate Remove="Components\DxButton.cshtml" />
   </ItemGroup>
 </Project>

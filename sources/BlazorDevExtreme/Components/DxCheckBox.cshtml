@@ -6,7 +6,7 @@
 <div id="@Id" ref="dxTarget"></div>
 
 @functions {
-    ElementRef dxTarget;
+    ElementRef dxTarget; 
     public DxCheckBox() : base("DxCheckBox") { }
     protected override DevExpress.Ui.DxCheckBoxOptions CreateOptions() {
         return new DevExpress.Ui.DxCheckBoxOptions {
@@ -312,17 +312,17 @@
     }
     protected override async Task OnInitAsync() {
         await base.OnInitAsync();
-        //DevExpress.Ui.DxCheckBoxInterop.ValueChanged += DxCheckBox_ValueChanged;
+        DevExpress.Ui.DxCheckBoxInterop.ValueChanged += DxCheckBox_ValueChanged;
         DevExpress.Ui.DxCheckBoxInterop.ContentReady += DxCheckBox_ContentReady;
         DevExpress.Ui.DxCheckBoxInterop.Disposing += DxCheckBox_Disposing;
         DevExpress.Ui.DxCheckBoxInterop.OptionChanged += DxCheckBox_OptionChanged;
         DevExpress.Ui.DxCheckBoxInterop.Initialized += DxCheckBox_Initialized;
     }
     [Parameter]
-    Action ValueChanged { get; set; }
-    void DxCheckBox_ValueChanged(object sender, JQueryEventArgs e) {
-        if (e.Identifier == Id) {
-            ValueChanged?.Invoke();
+    Action<bool?> ValueChanged { get; set; }
+    void DxCheckBox_ValueChanged(object sender, (JQueryEventArgs jQueryEventArgs, bool? value) args) {
+        if (args.jQueryEventArgs.Identifier == Id) {
+            ValueChanged?.Invoke(args.value);
         }
     }
     [Parameter]

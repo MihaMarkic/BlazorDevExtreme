@@ -1283,6 +1283,13 @@ function BlazorDevExtreme_DxCalendar_GetOption (element, key) {
 function BlazorDevExtreme_DxCheckBox_Init (element, optionsText) {
 	const options = JSON.parse(optionsText);
 
+    if (options.onValueChangedEnabled) {
+        options.onValueChanged = function () {
+            DotNet.invokeMethodAsync(assemblyName, 'DevExpress.Ui.DxCheckBoxInterop.OnValueChanged', element.id, instance.option("value"));
+
+        }
+    }
+
 	let instance = new DevExpress.ui.dxCheckBox(element, options);
 }
 function BlazorDevExtreme_DxCheckBox_SetOption (element, key, value) {

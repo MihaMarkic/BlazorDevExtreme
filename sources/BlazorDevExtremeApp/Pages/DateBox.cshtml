@@ -1,0 +1,24 @@
+﻿@using Objects
+@using Services
+@addTagHelper *, BlazorDevExtreme
+@page "/datebox"
+@inject GridDataService DataService
+
+<DxDateBox OnValueChangedEnabled="true" DateSerializationFormat="yyyy-MM-ddTHH:mm:ss" Type="datetime" bind-Value="@ReleaseDate"
+           InputAttr="@(new { id = "releasedate" })" OnInitializedEnabled="true" />
+
+@functions {
+
+    protected string ReleaseDate { get; set; }
+
+    protected override void OnInit()
+    {
+        DevExpress.ComponentInterop.Initialized += ComponentInitialized;
+    }
+
+    void ComponentInitialized(object sender, JQueryEventArgs e)
+    {
+        Console.WriteLine(e.Identifier + " *** Init called");
+    }
+
+}

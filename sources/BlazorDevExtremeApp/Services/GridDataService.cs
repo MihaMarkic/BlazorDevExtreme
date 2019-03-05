@@ -23,7 +23,7 @@ namespace BlazorDevExtremeApp.Services
             false,true
         };
 
-        public Task<GridData[]> GetDataAsync()
+        public Task<IEnumerable<GridData>> GetDataAsync()
         {
             var rng = new Random();
             return Task.FromResult(Enumerable.Range(1, 50).Select(index => new GridData
@@ -31,7 +31,7 @@ namespace BlazorDevExtremeApp.Services
                 Firstname = FirstNames[rng.Next(FirstNames.Length)],
                 Name = Names[rng.Next(Names.Length)],
                 Male = Male[rng.Next(Male.Length)],
-            }).ToArray());
+            }));
         }
     }
 }

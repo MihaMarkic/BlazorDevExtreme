@@ -1,17 +1,78 @@
 ﻿@addTagHelper *, BlazorDevExtreme
-@using DevExpress
-@using BlazorDevExtreme
-@using BlazorDevExtreme.Components
+
+@using Objects
+@using Services
+
 @page "/DataGridSimple"
 
 <h1>dxDataGrid simple</h1>
 
-<DxDataGrid Columns="@(
+@*<DxDataGrid Columns="@(
     new[]{
         new DevExpress.Ui.DxDataGridColumn { caption="Name of Customer", dataField="name", dataType="string" },
-        new DevExpress.Ui.DxDataGridColumn { caption="City", dataField="city", dataType="string" } })" 
-    FilterRow="@(new { visible = true })" 
-    DataSource="@(new[] { new { name = "John", city = "London"}, new { name = "Steve", city = "Berlin"}})" 
-            ShowRowLines="true" 
-            ShowBorders="true" 
-            Pager="@(new { visible = true })" />
+        new DevExpress.Ui.DxDataGridColumn { caption="City", dataField="city", dataType="string" } })"
+    FilterRow="@(new { visible = true })"
+    DataSource="@(new[] { new { name = "John", city = "London"}, new { name = "Steve", city = "Berlin"}})"
+            ShowRowLines="true"
+            ShowBorders="true"
+            Pager="@(new { visible = true })" />*@
+
+<DxDataGrid DataSource="@_items" ref="@_dataGrid" Editing="@editing" Columns="@gridColumns" />
+
+<button type="button" onclick="@SaveData">Save Data</button>
+
+@functions{
+    List<GridData> _items = new List<GridData>();
+    DxDataGrid _dataGrid;
+
+    // private object ArticleDataSource
+    //{
+    //    get
+    //    {
+    //        return new
+    //        {
+    //            paginate = false,
+    //            store = new
+    //            {
+    //                type = "array",
+    //                data = _articleItems,
+    //                key = nameof(ProductRecallItem.Id)
+    //            }
+    //        };
+    //    }
+    //    set
+    //    {
+    //        if (value != null)
+    //        {
+    //            _articleItems = Json.Deserialize<List<ProductRecallItem>>(Convert.ToString(value));
+    //        }
+    //    }
+    //}
+
+    static object editing = new
+    {
+        allowUpdating = true,
+        allowDeleting = true,
+        allowAdding = true,
+        mode = "cell"
+    };
+
+    object gridColumns = new[]
+     {
+        new DevExpress.Ui.DxDataGridColumn {cssClass ="align-middle",  caption = "Firstname", dataField = nameof(GridData.Firstname), dataType = "string", width = 150, encodeHtml = false, allowSorting = false, allowFiltering = false},
+        new DevExpress.Ui.DxDataGridColumn {cssClass ="align-middle",  caption = "Name", dataField = nameof(GridData.Name), dataType = "string", width = 200, encodeHtml = false, allowSorting = false, allowFiltering = false},
+    };
+
+    protected override Task OnInitAsync()
+    {
+        Console.WriteLine("called OnInitAsync");
+        return base.OnInitAsync();
+    }
+
+    async void SaveData()
+    {
+        Console.WriteLine("click SaveData");
+        var data = await _dataGrid.GetDataSource();
+        Console.WriteLine(data);
+    }
+}

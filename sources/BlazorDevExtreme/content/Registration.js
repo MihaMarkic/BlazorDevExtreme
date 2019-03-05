@@ -1575,7 +1575,7 @@ function BlazorDevExtreme_GridBase_getCombinedFilter_34 (blazor_element, returnD
 	return DevExpress.ui.GridBase.getInstance(blazor_element).getCombinedFilter(returnDataField);
 };
 function BlazorDevExtreme_GridBase_getDataSource_35 (blazor_element) {
-	return DevExpress.ui.GridBase.getInstance(blazor_element).getDataSource();
+	return DevExpress.ui.dxDataGrid.getInstance(blazor_element).getDataSource();
 };
 function BlazorDevExtreme_GridBase_getKeyByRowIndex_36 (blazor_element, rowIndex) {
 	return DevExpress.ui.GridBase.getInstance(blazor_element).getKeyByRowIndex(rowIndex);
@@ -1659,11 +1659,12 @@ function BlazorDevExtreme_DxDataGrid_updateDimensions(blazor_element) {
     DevExpress.ui.dxDataGrid.getInstance(blazor_element).updateDimensions();
 };
 function BlazorDevExtreme_GridBase_SetOption (element, key, value) {
-
-    DevExpress.ui.GridBase.getInstance(element).option(key, value);
+    const option = JSON.parse(value);
+    DevExpress.ui.GridBase.getInstance(element).option(key, option);
 };
 function BlazorDevExtreme_GridBase_GetOption (element, key) {
-	return DevExpress.ui.GridBase.getInstance(blazor_element).option(key);
+    var value = DevExpress.ui.dxDataGrid.getInstance(element).option(key);
+    return JSON.stringify(value);
 };
 // DevExpress.ui.dxDataGrid interop automatically generated
 function BlazorDevExtreme_DxDataGrid_Init (element, optionsText) {
@@ -1822,11 +1823,19 @@ function BlazorDevExtreme_DxDataGrid_SetOption (element, key, value) {
     DevExpress.ui.dxDataGrid.getInstance(element).option(key, option);
 };
 function BlazorDevExtreme_DxDataGrid_GetOption (element, key) {
-	return DevExpress.ui.dxDataGrid.getInstance(blazor_element).option(key);
+    var value = DevExpress.ui.dxDataGrid.getInstance(element).option(key);
+    return JSON.stringify(value);
 };
 // DevExpress.ui.dxDateBox interop automatically generated
 function BlazorDevExtreme_DxDateBox_Init (element, optionsText) {
 	const options = JSON.parse(optionsText);
+
+    if (options.onInitializedEnabled) {
+        options.onInitialized = function () {
+            DotNet.invokeMethodAsync(assemblyName, 'DevExpress.ComponentInterop.OnInitialized', element.id);
+
+        }
+    }
 
     if (options.onValueChangedEnabled) {
         options.onValueChanged = function () {

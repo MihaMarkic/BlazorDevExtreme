@@ -1382,6 +1382,10 @@
 	public void ExportToExcel(bool selectionOnly) {
 		DevExpress.Ui.DxDataGridInterop.ExportToExcel(dxTarget, selectionOnly);
 	}
+    public Task<object> GetDataSource()
+    {
+        return DevExpress.Ui.GridBaseInterop.GetDataSource(dxTarget);
+    }
 	public object GetSelectedRowKeys() {
 		return DevExpress.Ui.DxDataGridInterop.GetSelectedRowKeys(dxTarget).Result;
 	}

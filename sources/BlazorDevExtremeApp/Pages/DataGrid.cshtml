@@ -7,24 +7,24 @@
 <DxDataGrid Columns="@gridColumns" FilterRow="@filterrow" ShowBorders="true" DataSource="@datasource" Paging="@paging" Editing="@editing" />
 
 @functions {
-object gridColumns = new[]
-{
+    object gridColumns = new[]
+    {
 new DevExpress.Ui.DxDataGridColumn { dataField="Firstname", caption = "Firstname", dataType = "text", filterOperations= new [] {"contains", "=","notcontains","startswith","endswith" }},
 new DevExpress.Ui.DxDataGridColumn { dataField="Name", caption = "Name", dataType = "text" , filterOperations= new [] {"contains", "=","notcontains","startswith","endswith" }},
 new DevExpress.Ui.DxDataGridColumn { dataField="Male", caption = "Male", dataType = "boolean" }
 };
-object filterrow = new { visible = true };
-object paging = new { pageSize = 10 };
-object editing = new { allowUpdating = true, mode = "form" };
+    object filterrow = new { visible = true };
+    object paging = new { pageSize = 10 };
+    object editing = new { allowUpdating = true, mode = "form" };
 
-GridData[] datasource;
+    IEnumerable<GridData> datasource;
 
 
-protected override async Task OnInitAsync()
-{
-    datasource = await DataService.GetDataAsync();
+    protected override async Task OnInitAsync()
+    {
+        datasource = await DataService.GetDataAsync();
 
-}
+    }
 
 
 

@@ -2786,7 +2786,8 @@ namespace DevExpress.Ui
         }
         public static Task SetDataSource(ElementRef dxTarget, object value)
         {
-            return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "dataSource", value);
+            string jsonValue = SimpleJson.SimpleJson.SerializeObject(value);
+            return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "dataSource", jsonValue);
         }
         public static Task<string> GetDateSerializationFormat(ElementRef dxTarget)
         {
@@ -3297,12 +3298,6 @@ namespace DevExpress.Ui
         {
             string jsonValue = SimpleJson.SimpleJson.SerializeObject(value);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDataGrid_SetOption", dxTarget, "columns", jsonValue);
-        }
-
-        public new static Task SetDataSource(ElementRef dxTarget, object value)
-        {
-            string jsonValue = SimpleJson.SimpleJson.SerializeObject(value);
-            return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDataGrid_SetOption", dxTarget, "dataSource", jsonValue);
         }
 
         [JSInvokable("DevExpress.Ui.DxDataGridInterop.OnCellClick")]

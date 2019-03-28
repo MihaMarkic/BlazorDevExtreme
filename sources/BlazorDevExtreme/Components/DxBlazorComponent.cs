@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components;
+using Microsoft.JSInterop;
 using System;
 using System.Threading.Tasks;
 
@@ -6,6 +7,9 @@ namespace BlazorDevExtreme.Components
 {
     public abstract class DxBlazorComponent<TOptions>: ComponentBase
     {
+        [Inject]
+        public IJSRuntime JsRuntime { get; set; }
+
         public static int Index { get; private set; }
         protected bool isInitialized;
         public string Id { get; }
@@ -18,6 +22,9 @@ namespace BlazorDevExtreme.Components
         protected abstract Task Init(TOptions options);
         protected override async Task OnInitAsync()
         {
+            // hack to get to the jsruntime:
+            JSRuntime.Current = JsRuntime;
+
             Console.WriteLine($"Button Id is {Id}");
             while (!isInitialized)
             {

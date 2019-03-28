@@ -1,8 +1,9 @@
 using System;
 using System.Threading.Tasks;
-using Microsoft.JSInterop;
 using Microsoft.AspNetCore.Components;
 using BlazorDevExtreme;
+using Microsoft.JSInterop;
+using JSRuntime = BlazorDevExtreme.JSRuntime;
 
 namespace DevExpress
 {
@@ -13,6 +14,7 @@ namespace DevExpress
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataHelperMixin_getDataSource_0", dxTarget);
         }
     }
+
     public class DxEventInterop
     {
         public static Task<bool> IsDefaultPrevented(ElementRef dxTarget)

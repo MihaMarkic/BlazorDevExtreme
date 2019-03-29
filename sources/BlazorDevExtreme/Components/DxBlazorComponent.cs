@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
 using System;
+using System.Diagnostics;
 using System.Threading.Tasks;
 
 namespace BlazorDevExtreme.Components
@@ -20,12 +21,13 @@ namespace BlazorDevExtreme.Components
         }
         protected abstract TOptions CreateOptions();
         protected abstract Task Init(TOptions options);
-        protected override async Task OnInitAsync()
+
+        protected override async Task OnAfterRenderAsync()
         {
             // hack to get to the jsruntime:
             JSRuntime.Current = JsRuntime;
 
-            Console.WriteLine($"Button Id is {Id}");
+            Debug.WriteLine($"Button Id is {Id}");
             while (!isInitialized)
             {
                 try
@@ -36,11 +38,11 @@ namespace BlazorDevExtreme.Components
                 }
                 catch
                 {
-                    Console.WriteLine($"DX component initialization for {Id} failed, will retry in 200ms. This is normal if it happens few times.");
+                    Debug.WriteLine($"DX component initialization for {Id} failed, will retry in 200ms. This is normal if it happens few times.");
                     await Task.Delay(200);
                 }
             }
-            Console.WriteLine($"Button {Id} is initialized");
+            Debug.WriteLine($"Button {Id} is initialized");
         }
     }
 }

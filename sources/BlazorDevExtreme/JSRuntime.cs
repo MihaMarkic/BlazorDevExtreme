@@ -8,14 +8,7 @@ namespace BlazorDevExtreme
 
         public static IJSRuntime Current
         {
-            get => _current;
-            set
-            {
-                if (_current == null)
-                {
-                    _current = value;
-                }
-            }
+            get;set;
         }
     }
 }

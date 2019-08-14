@@ -1,0 +1,363 @@
+
+@using Microsoft.AspNetCore.Components
+@implements IDisposable
+@inherits DxBlazorComponent<DevExpress.Ui.DxCheckBoxOptions>
+
+<div id="@Id" @ref="dxTarget"></div>
+
+@functions {
+    ElementReference dxTarget; 
+    public DxCheckBox() : base("DxCheckBox") { }
+    protected override DevExpress.Ui.DxCheckBoxOptions CreateOptions() {
+        return new DevExpress.Ui.DxCheckBoxOptions {
+            activeStateEnabled = activeStateEnabled,
+            focusStateEnabled = focusStateEnabled,
+            hoverStateEnabled = hoverStateEnabled,
+            name = name,
+            text = text,
+            value = value,
+            isValid = isValid,
+            readOnly = readOnly,
+            validationError = validationError,
+            validationMessageMode = validationMessageMode,
+            accessKey = accessKey,
+            disabled = disabled,
+            hint = hint,
+            tabIndex = tabIndex,
+            visible = visible,
+            bindingOptions = bindingOptions,
+            elementAttr = elementAttr,
+            height = height,
+            rtlEnabled = rtlEnabled,
+            width = width,
+            onValueChangedEnabled = onValueChangedEnabled,
+            onContentReadyEnabled = onContentReadyEnabled,
+            onDisposingEnabled = onDisposingEnabled,
+            onOptionChangedEnabled = onOptionChangedEnabled,
+            onInitializedEnabled = onInitializedEnabled,
+        };
+    }
+    protected override Task Init(DevExpress.Ui.DxCheckBoxOptions options) {
+        return DevExpress.Ui.DxCheckBoxInterop.Init(dxTarget, options);
+    }
+    bool? activeStateEnabled;
+    [Parameter]
+    bool? ActiveStateEnabled {
+        get => isInitialized ? (bool?)DevExpress.Ui.DxCheckBoxInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxCheckBoxInterop.SetActiveStateEnabled(dxTarget, value);
+            } else {
+                this.activeStateEnabled = value;
+            }
+        }
+    }
+    bool? focusStateEnabled;
+    [Parameter]
+    bool? FocusStateEnabled {
+        get => isInitialized ? (bool?)DevExpress.Ui.DxCheckBoxInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxCheckBoxInterop.SetFocusStateEnabled(dxTarget, value);
+            } else {
+                this.focusStateEnabled = value;
+            }
+        }
+    }
+    bool? hoverStateEnabled;
+    [Parameter]
+    bool? HoverStateEnabled {
+        get => isInitialized ? (bool?)DevExpress.Ui.DxCheckBoxInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxCheckBoxInterop.SetHoverStateEnabled(dxTarget, value);
+            } else {
+                this.hoverStateEnabled = value;
+            }
+        }
+    }
+    string name;
+    [Parameter]
+    string Name {
+        get => isInitialized ? (string)DevExpress.Ui.DxCheckBoxInterop.GetName(dxTarget).Result : name;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxCheckBoxInterop.SetName(dxTarget, value);
+            } else {
+                this.name = value;
+            }
+        }
+    }
+    string text;
+    [Parameter]
+    string Text {
+        get => isInitialized ? (string)DevExpress.Ui.DxCheckBoxInterop.GetText(dxTarget).Result : text;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxCheckBoxInterop.SetText(dxTarget, value);
+            } else {
+                this.text = value;
+            }
+        }
+    }
+    bool? value;
+    [Parameter]
+    bool? Value {
+        get => isInitialized ? (bool?)DevExpress.Ui.DxCheckBoxInterop.GetValue(dxTarget).Result : value;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxCheckBoxInterop.SetValue(dxTarget, value);
+            } else {
+                this.value = value;
+            }
+        }
+    }
+    bool? isValid;
+    [Parameter]
+    bool? IsValid {
+        get => isInitialized ? (bool?)DevExpress.Ui.DxCheckBoxInterop.GetIsValid(dxTarget).Result : isValid;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxCheckBoxInterop.SetIsValid(dxTarget, value);
+            } else {
+                this.isValid = value;
+            }
+        }
+    }
+    bool? readOnly;
+    [Parameter]
+    bool? ReadOnly {
+        get => isInitialized ? (bool?)DevExpress.Ui.DxCheckBoxInterop.GetReadOnly(dxTarget).Result : readOnly;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxCheckBoxInterop.SetReadOnly(dxTarget, value);
+            } else {
+                this.readOnly = value;
+            }
+        }
+    }
+    object validationError;
+    [Parameter]
+    object ValidationError {
+        get => isInitialized ? DevExpress.Ui.DxCheckBoxInterop.GetValidationError(dxTarget).Result : validationError;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxCheckBoxInterop.SetValidationError(dxTarget, value);
+            } else {
+                this.validationError = value;
+            }
+        }
+    }
+    string validationMessageMode;
+    [Parameter]
+    string ValidationMessageMode {
+        get => isInitialized ? (string)DevExpress.Ui.DxCheckBoxInterop.GetValidationMessageMode(dxTarget).Result : validationMessageMode;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxCheckBoxInterop.SetValidationMessageMode(dxTarget, value);
+            } else {
+                this.validationMessageMode = value;
+            }
+        }
+    }
+    string accessKey;
+    [Parameter]
+    string AccessKey {
+        get => isInitialized ? (string)DevExpress.Ui.DxCheckBoxInterop.GetAccessKey(dxTarget).Result : accessKey;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxCheckBoxInterop.SetAccessKey(dxTarget, value);
+            } else {
+                this.accessKey = value;
+            }
+        }
+    }
+    bool? disabled;
+    [Parameter]
+    bool? Disabled {
+        get => isInitialized ? (bool?)DevExpress.Ui.DxCheckBoxInterop.GetDisabled(dxTarget).Result : disabled;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxCheckBoxInterop.SetDisabled(dxTarget, value);
+            } else {
+                this.disabled = value;
+            }
+        }
+    }
+    string hint;
+    [Parameter]
+    string Hint {
+        get => isInitialized ? (string)DevExpress.Ui.DxCheckBoxInterop.GetHint(dxTarget).Result : hint;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxCheckBoxInterop.SetHint(dxTarget, value);
+            } else {
+                this.hint = value;
+            }
+        }
+    }
+    float? tabIndex;
+    [Parameter]
+    float? TabIndex {
+        get => isInitialized ? (float?)DevExpress.Ui.DxCheckBoxInterop.GetTabIndex(dxTarget).Result : tabIndex;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxCheckBoxInterop.SetTabIndex(dxTarget, value);
+            } else {
+                this.tabIndex = value;
+            }
+        }
+    }
+    bool? visible;
+    [Parameter]
+    bool? Visible {
+        get => isInitialized ? (bool?)DevExpress.Ui.DxCheckBoxInterop.GetVisible(dxTarget).Result : visible;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxCheckBoxInterop.SetVisible(dxTarget, value);
+            } else {
+                this.visible = value;
+            }
+        }
+    }
+    object bindingOptions;
+    [Parameter]
+    object BindingOptions {
+        get => isInitialized ? DevExpress.Ui.DxCheckBoxInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxCheckBoxInterop.SetBindingOptions(dxTarget, value);
+            } else {
+                this.bindingOptions = value;
+            }
+        }
+    }
+    object elementAttr;
+    [Parameter]
+    object ElementAttr {
+        get => isInitialized ? DevExpress.Ui.DxCheckBoxInterop.GetElementAttr(dxTarget).Result : elementAttr;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxCheckBoxInterop.SetElementAttr(dxTarget, value);
+            } else {
+                this.elementAttr = value;
+            }
+        }
+    }
+    object height;
+    [Parameter]
+    object Height {
+        get => isInitialized ? DevExpress.Ui.DxCheckBoxInterop.GetHeight(dxTarget).Result : height;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxCheckBoxInterop.SetHeight(dxTarget, value);
+            } else {
+                this.height = value;
+            }
+        }
+    }
+    bool? rtlEnabled;
+    [Parameter]
+    bool? RtlEnabled {
+        get => isInitialized ? (bool?)DevExpress.Ui.DxCheckBoxInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxCheckBoxInterop.SetRtlEnabled(dxTarget, value);
+            } else {
+                this.rtlEnabled = value;
+            }
+        }
+    }
+    object width;
+    [Parameter]
+    object Width {
+        get => isInitialized ? DevExpress.Ui.DxCheckBoxInterop.GetWidth(dxTarget).Result : width;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxCheckBoxInterop.SetWidth(dxTarget, value);
+            } else {
+                this.width = value;
+            }
+        }
+    }
+    bool? onValueChangedEnabled;
+    [Parameter]
+    bool? OnValueChangedEnabled {
+        get => onValueChangedEnabled;
+        set => this.onValueChangedEnabled = value;
+    }
+    bool? onContentReadyEnabled;
+    [Parameter]
+    bool? OnContentReadyEnabled {
+        get => onContentReadyEnabled;
+        set => this.onContentReadyEnabled = value;
+    }
+    bool? onDisposingEnabled;
+    [Parameter]
+    bool? OnDisposingEnabled {
+        get => onDisposingEnabled;
+        set => this.onDisposingEnabled = value;
+    }
+    bool? onOptionChangedEnabled;
+    [Parameter]
+    bool? OnOptionChangedEnabled {
+        get => onOptionChangedEnabled;
+        set => this.onOptionChangedEnabled = value;
+    }
+    bool? onInitializedEnabled;
+    [Parameter]
+    bool? OnInitializedEnabled {
+        get => onInitializedEnabled;
+        set => this.onInitializedEnabled = value;
+    }
+    protected override async Task OnInitAsync() {
+        await base.OnInitAsync();
+        DevExpress.Ui.DxCheckBoxInterop.ValueChanged += DxCheckBox_ValueChanged;
+        DevExpress.Ui.DxCheckBoxInterop.ContentReady += DxCheckBox_ContentReady;
+        DevExpress.Ui.DxCheckBoxInterop.Disposing += DxCheckBox_Disposing;
+        DevExpress.Ui.DxCheckBoxInterop.OptionChanged += DxCheckBox_OptionChanged;
+        DevExpress.Ui.DxCheckBoxInterop.Initialized += DxCheckBox_Initialized;
+    }
+    [Parameter]
+    Action<bool?> ValueChanged { get; set; }
+    void DxCheckBox_ValueChanged(object sender, (JQueryEventArgs jQueryEventArgs, bool? value) args) {
+        if (args.jQueryEventArgs.Identifier == Id) {
+            ValueChanged?.Invoke(args.value);
+        }
+    }
+    [Parameter]
+    Action ContentReady { get; set; }
+    void DxCheckBox_ContentReady(object sender, JQueryEventArgs e) {
+        if (e.Identifier == Id) {
+            ContentReady?.Invoke();
+        }
+    }
+    [Parameter]
+    Action Disposing { get; set; }
+    void DxCheckBox_Disposing(object sender, JQueryEventArgs e) {
+        if (e.Identifier == Id) {
+            Disposing?.Invoke();
+        }
+    }
+    [Parameter]
+    Action OptionChanged { get; set; }
+    void DxCheckBox_OptionChanged(object sender, JQueryEventArgs e) {
+        if (e.Identifier == Id) {
+            OptionChanged?.Invoke();
+        }
+    }
+    [Parameter]
+    Action Initialized { get; set; }
+    void DxCheckBox_Initialized(object sender, JQueryEventArgs e) {
+        if (e.Identifier == Id) {
+            Initialized?.Invoke();
+        }
+    }
+    public void Dispose() {
+        //DevExpress.Ui.DxCheckBoxInterop.ValueChanged -= DxCheckBox_ValueChanged;
+        DevExpress.Ui.DxCheckBoxInterop.ContentReady -= DxCheckBox_ContentReady;
+        DevExpress.Ui.DxCheckBoxInterop.Disposing -= DxCheckBox_Disposing;
+        DevExpress.Ui.DxCheckBoxInterop.OptionChanged -= DxCheckBox_OptionChanged;
+        DevExpress.Ui.DxCheckBoxInterop.Initialized -= DxCheckBox_Initialized;
+    }
+}

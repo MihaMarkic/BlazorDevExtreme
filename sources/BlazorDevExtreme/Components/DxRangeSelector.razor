@@ -1,0 +1,568 @@
+
+@using Microsoft.AspNetCore.Components
+@implements IDisposable
+@inherits DxBlazorComponent<DevExpress.Viz.RangeSelector.DxRangeSelectorOptions>
+
+<div id="@Id" @ref="dxTarget"></div>
+
+@functions {
+	ElementReference dxTarget;
+	public DxRangeSelector() : base("DxRangeSelector") { }
+	protected override DevExpress.Viz.RangeSelector.DxRangeSelectorOptions CreateOptions() {
+		return new DevExpress.Viz.RangeSelector.DxRangeSelectorOptions {
+			background = background,
+			behavior = behavior,
+			chart = chart,
+			containerBackgroundColor = containerBackgroundColor,
+			dataSource = dataSource,
+			dataSourceField = dataSourceField,
+			indent = indent,
+			scale = scale,
+			selectedRange = selectedRange,
+			selectedRangeColor = selectedRangeColor,
+			shutter = shutter,
+			sliderHandle = sliderHandle,
+			sliderMarker = sliderMarker,
+			value = value,
+			export = export,
+			loadingIndicator = loadingIndicator,
+			margin = margin,
+			pathModified = pathModified,
+			redrawOnResize = redrawOnResize,
+			rtlEnabled = rtlEnabled,
+			size = size,
+			theme = theme,
+			title = title,
+			tooltip = tooltip,
+			bindingOptions = bindingOptions,
+			elementAttr = elementAttr,
+			height = height,
+			width = width,
+			onSelectedRangeChangedEnabled = onSelectedRangeChangedEnabled,
+			onValueChangedEnabled = onValueChangedEnabled,
+			onDrawnEnabled = onDrawnEnabled,
+			onExportedEnabled = onExportedEnabled,
+			onExportingEnabled = onExportingEnabled,
+			onFileSavingEnabled = onFileSavingEnabled,
+			onIncidentOccurredEnabled = onIncidentOccurredEnabled,
+			onDisposingEnabled = onDisposingEnabled,
+			onOptionChangedEnabled = onOptionChangedEnabled,
+			onInitializedEnabled = onInitializedEnabled,
+		};
+	}
+	protected override Task Init(DevExpress.Viz.RangeSelector.DxRangeSelectorOptions options) {
+		return DevExpress.Viz.DxRangeSelectorInterop.Init(dxTarget, options);
+	}
+	object background;
+	[Parameter]
+	object Background {
+		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetBackground(dxTarget).Result : background;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxRangeSelectorInterop.SetBackground(dxTarget, value);
+			} else {
+				this.background = value;
+			}
+		}
+	}
+	object behavior;
+	[Parameter]
+	object Behavior {
+		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetBehavior(dxTarget).Result : behavior;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxRangeSelectorInterop.SetBehavior(dxTarget, value);
+			} else {
+				this.behavior = value;
+			}
+		}
+	}
+	object chart;
+	[Parameter]
+	object Chart {
+		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetChart(dxTarget).Result : chart;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxRangeSelectorInterop.SetChart(dxTarget, value);
+			} else {
+				this.chart = value;
+			}
+		}
+	}
+	string containerBackgroundColor;
+	[Parameter]
+	string ContainerBackgroundColor {
+		get => isInitialized ? (string)DevExpress.Viz.DxRangeSelectorInterop.GetContainerBackgroundColor(dxTarget).Result : containerBackgroundColor;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxRangeSelectorInterop.SetContainerBackgroundColor(dxTarget, value);
+			} else {
+				this.containerBackgroundColor = value;
+			}
+		}
+	}
+	object dataSource;
+	[Parameter]
+	object DataSource {
+		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetDataSource(dxTarget).Result : dataSource;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxRangeSelectorInterop.SetDataSource(dxTarget, value);
+			} else {
+				this.dataSource = value;
+			}
+		}
+	}
+	string dataSourceField;
+	[Parameter]
+	string DataSourceField {
+		get => isInitialized ? (string)DevExpress.Viz.DxRangeSelectorInterop.GetDataSourceField(dxTarget).Result : dataSourceField;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxRangeSelectorInterop.SetDataSourceField(dxTarget, value);
+			} else {
+				this.dataSourceField = value;
+			}
+		}
+	}
+	object indent;
+	[Parameter]
+	object Indent {
+		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetIndent(dxTarget).Result : indent;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxRangeSelectorInterop.SetIndent(dxTarget, value);
+			} else {
+				this.indent = value;
+			}
+		}
+	}
+	object scale;
+	[Parameter]
+	object Scale {
+		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetScale(dxTarget).Result : scale;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxRangeSelectorInterop.SetScale(dxTarget, value);
+			} else {
+				this.scale = value;
+			}
+		}
+	}
+	object selectedRange;
+	[Parameter]
+	object SelectedRange {
+		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetSelectedRange(dxTarget).Result : selectedRange;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxRangeSelectorInterop.SetSelectedRange(dxTarget, value);
+			} else {
+				this.selectedRange = value;
+			}
+		}
+	}
+	string selectedRangeColor;
+	[Parameter]
+	string SelectedRangeColor {
+		get => isInitialized ? (string)DevExpress.Viz.DxRangeSelectorInterop.GetSelectedRangeColor(dxTarget).Result : selectedRangeColor;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxRangeSelectorInterop.SetSelectedRangeColor(dxTarget, value);
+			} else {
+				this.selectedRangeColor = value;
+			}
+		}
+	}
+	object shutter;
+	[Parameter]
+	object Shutter {
+		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetShutter(dxTarget).Result : shutter;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxRangeSelectorInterop.SetShutter(dxTarget, value);
+			} else {
+				this.shutter = value;
+			}
+		}
+	}
+	object sliderHandle;
+	[Parameter]
+	object SliderHandle {
+		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetSliderHandle(dxTarget).Result : sliderHandle;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxRangeSelectorInterop.SetSliderHandle(dxTarget, value);
+			} else {
+				this.sliderHandle = value;
+			}
+		}
+	}
+	object sliderMarker;
+	[Parameter]
+	object SliderMarker {
+		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetSliderMarker(dxTarget).Result : sliderMarker;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxRangeSelectorInterop.SetSliderMarker(dxTarget, value);
+			} else {
+				this.sliderMarker = value;
+			}
+		}
+	}
+	object value;
+	[Parameter]
+	object Value {
+		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetValue(dxTarget).Result : value;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxRangeSelectorInterop.SetValue(dxTarget, value);
+			} else {
+				this.value = value;
+			}
+		}
+	}
+	object export;
+	[Parameter]
+	object Export {
+		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetExport(dxTarget).Result : export;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxRangeSelectorInterop.SetExport(dxTarget, value);
+			} else {
+				this.export = value;
+			}
+		}
+	}
+	object loadingIndicator;
+	[Parameter]
+	object LoadingIndicator {
+		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetLoadingIndicator(dxTarget).Result : loadingIndicator;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxRangeSelectorInterop.SetLoadingIndicator(dxTarget, value);
+			} else {
+				this.loadingIndicator = value;
+			}
+		}
+	}
+	object margin;
+	[Parameter]
+	object Margin {
+		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetMargin(dxTarget).Result : margin;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxRangeSelectorInterop.SetMargin(dxTarget, value);
+			} else {
+				this.margin = value;
+			}
+		}
+	}
+	bool? pathModified;
+	[Parameter]
+	bool? PathModified {
+		get => isInitialized ? (bool?)DevExpress.Viz.DxRangeSelectorInterop.GetPathModified(dxTarget).Result : pathModified;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxRangeSelectorInterop.SetPathModified(dxTarget, value);
+			} else {
+				this.pathModified = value;
+			}
+		}
+	}
+	bool? redrawOnResize;
+	[Parameter]
+	bool? RedrawOnResize {
+		get => isInitialized ? (bool?)DevExpress.Viz.DxRangeSelectorInterop.GetRedrawOnResize(dxTarget).Result : redrawOnResize;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxRangeSelectorInterop.SetRedrawOnResize(dxTarget, value);
+			} else {
+				this.redrawOnResize = value;
+			}
+		}
+	}
+	bool? rtlEnabled;
+	[Parameter]
+	bool? RtlEnabled {
+		get => isInitialized ? (bool?)DevExpress.Viz.DxRangeSelectorInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxRangeSelectorInterop.SetRtlEnabled(dxTarget, value);
+			} else {
+				this.rtlEnabled = value;
+			}
+		}
+	}
+	object size;
+	[Parameter]
+	object Size {
+		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetSize(dxTarget).Result : size;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxRangeSelectorInterop.SetSize(dxTarget, value);
+			} else {
+				this.size = value;
+			}
+		}
+	}
+	string theme;
+	[Parameter]
+	string Theme {
+		get => isInitialized ? (string)DevExpress.Viz.DxRangeSelectorInterop.GetTheme(dxTarget).Result : theme;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxRangeSelectorInterop.SetTheme(dxTarget, value);
+			} else {
+				this.theme = value;
+			}
+		}
+	}
+	object title;
+	[Parameter]
+	object Title {
+		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetTitle(dxTarget).Result : title;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxRangeSelectorInterop.SetTitle(dxTarget, value);
+			} else {
+				this.title = value;
+			}
+		}
+	}
+	object tooltip;
+	[Parameter]
+	object Tooltip {
+		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetTooltip(dxTarget).Result : tooltip;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxRangeSelectorInterop.SetTooltip(dxTarget, value);
+			} else {
+				this.tooltip = value;
+			}
+		}
+	}
+	object bindingOptions;
+	[Parameter]
+	object BindingOptions {
+		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxRangeSelectorInterop.SetBindingOptions(dxTarget, value);
+			} else {
+				this.bindingOptions = value;
+			}
+		}
+	}
+	object elementAttr;
+	[Parameter]
+	object ElementAttr {
+		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetElementAttr(dxTarget).Result : elementAttr;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxRangeSelectorInterop.SetElementAttr(dxTarget, value);
+			} else {
+				this.elementAttr = value;
+			}
+		}
+	}
+	object height;
+	[Parameter]
+	object Height {
+		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetHeight(dxTarget).Result : height;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxRangeSelectorInterop.SetHeight(dxTarget, value);
+			} else {
+				this.height = value;
+			}
+		}
+	}
+	object width;
+	[Parameter]
+	object Width {
+		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetWidth(dxTarget).Result : width;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxRangeSelectorInterop.SetWidth(dxTarget, value);
+			} else {
+				this.width = value;
+			}
+		}
+	}
+	bool? onSelectedRangeChangedEnabled;
+	[Parameter]
+	bool? OnSelectedRangeChangedEnabled {
+		get => onSelectedRangeChangedEnabled;
+		set => this.onSelectedRangeChangedEnabled = value;
+	}
+	bool? onValueChangedEnabled;
+	[Parameter]
+	bool? OnValueChangedEnabled {
+		get => onValueChangedEnabled;
+		set => this.onValueChangedEnabled = value;
+	}
+	bool? onDrawnEnabled;
+	[Parameter]
+	bool? OnDrawnEnabled {
+		get => onDrawnEnabled;
+		set => this.onDrawnEnabled = value;
+	}
+	bool? onExportedEnabled;
+	[Parameter]
+	bool? OnExportedEnabled {
+		get => onExportedEnabled;
+		set => this.onExportedEnabled = value;
+	}
+	bool? onExportingEnabled;
+	[Parameter]
+	bool? OnExportingEnabled {
+		get => onExportingEnabled;
+		set => this.onExportingEnabled = value;
+	}
+	bool? onFileSavingEnabled;
+	[Parameter]
+	bool? OnFileSavingEnabled {
+		get => onFileSavingEnabled;
+		set => this.onFileSavingEnabled = value;
+	}
+	bool? onIncidentOccurredEnabled;
+	[Parameter]
+	bool? OnIncidentOccurredEnabled {
+		get => onIncidentOccurredEnabled;
+		set => this.onIncidentOccurredEnabled = value;
+	}
+	bool? onDisposingEnabled;
+	[Parameter]
+	bool? OnDisposingEnabled {
+		get => onDisposingEnabled;
+		set => this.onDisposingEnabled = value;
+	}
+	bool? onOptionChangedEnabled;
+	[Parameter]
+	bool? OnOptionChangedEnabled {
+		get => onOptionChangedEnabled;
+		set => this.onOptionChangedEnabled = value;
+	}
+	bool? onInitializedEnabled;
+	[Parameter]
+	bool? OnInitializedEnabled {
+		get => onInitializedEnabled;
+		set => this.onInitializedEnabled = value;
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+		DevExpress.Viz.DxRangeSelectorInterop.SelectedRangeChanged += DxRangeSelector_SelectedRangeChanged;
+		DevExpress.Viz.DxRangeSelectorInterop.ValueChanged += DxRangeSelector_ValueChanged;
+		DevExpress.Viz.DxRangeSelectorInterop.Drawn += DxRangeSelector_Drawn;
+		DevExpress.Viz.DxRangeSelectorInterop.Exported += DxRangeSelector_Exported;
+		DevExpress.Viz.DxRangeSelectorInterop.Exporting += DxRangeSelector_Exporting;
+		DevExpress.Viz.DxRangeSelectorInterop.FileSaving += DxRangeSelector_FileSaving;
+		DevExpress.Viz.DxRangeSelectorInterop.IncidentOccurred += DxRangeSelector_IncidentOccurred;
+		DevExpress.Viz.DxRangeSelectorInterop.Disposing += DxRangeSelector_Disposing;
+		DevExpress.Viz.DxRangeSelectorInterop.OptionChanged += DxRangeSelector_OptionChanged;
+		DevExpress.Viz.DxRangeSelectorInterop.Initialized += DxRangeSelector_Initialized;
+	}
+	[Parameter]
+	Action SelectedRangeChanged { get; set; }
+	void DxRangeSelector_SelectedRangeChanged(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			SelectedRangeChanged?.Invoke();
+		}
+	}
+	[Parameter]
+	Action ValueChanged { get; set; }
+	void DxRangeSelector_ValueChanged(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			ValueChanged?.Invoke();
+		}
+	}
+	[Parameter]
+	Action Drawn { get; set; }
+	void DxRangeSelector_Drawn(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Drawn?.Invoke();
+		}
+	}
+	[Parameter]
+	Action Exported { get; set; }
+	void DxRangeSelector_Exported(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Exported?.Invoke();
+		}
+	}
+	[Parameter]
+	Action Exporting { get; set; }
+	void DxRangeSelector_Exporting(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Exporting?.Invoke();
+		}
+	}
+	[Parameter]
+	Action FileSaving { get; set; }
+	void DxRangeSelector_FileSaving(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			FileSaving?.Invoke();
+		}
+	}
+	[Parameter]
+	Action IncidentOccurred { get; set; }
+	void DxRangeSelector_IncidentOccurred(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			IncidentOccurred?.Invoke();
+		}
+	}
+	[Parameter]
+	Action Disposing { get; set; }
+	void DxRangeSelector_Disposing(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Disposing?.Invoke();
+		}
+	}
+	[Parameter]
+	Action OptionChanged { get; set; }
+	void DxRangeSelector_OptionChanged(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			OptionChanged?.Invoke();
+		}
+	}
+	[Parameter]
+	Action Initialized { get; set; }
+	void DxRangeSelector_Initialized(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Initialized?.Invoke();
+		}
+	}
+	public object GetDataSourceEx() {
+		return DevExpress.Viz.DxRangeSelectorInterop.GetDataSourceEx(dxTarget).Result;
+	}
+	public object GetSelectedRangeEx() {
+		return DevExpress.Viz.DxRangeSelectorInterop.GetSelectedRangeEx(dxTarget).Result;
+	}
+	public object GetValueEx() {
+		return DevExpress.Viz.DxRangeSelectorInterop.GetValueEx(dxTarget).Result;
+	}
+	public void Render() {
+		DevExpress.Viz.DxRangeSelectorInterop.Render(dxTarget);
+	}
+	public void Render(bool skipChartAnimation) {
+		DevExpress.Viz.DxRangeSelectorInterop.Render(dxTarget, skipChartAnimation);
+	}
+	public void SetSelectedRangeEx(object selectedRange) {
+		DevExpress.Viz.DxRangeSelectorInterop.SetSelectedRangeEx(dxTarget, selectedRange);
+	}
+	public void SetValueEx(object value) {
+		DevExpress.Viz.DxRangeSelectorInterop.SetValueEx(dxTarget, value);
+	}
+	public void Dispose() {
+		DevExpress.Viz.DxRangeSelectorInterop.SelectedRangeChanged -= DxRangeSelector_SelectedRangeChanged;
+		DevExpress.Viz.DxRangeSelectorInterop.ValueChanged -= DxRangeSelector_ValueChanged;
+		DevExpress.Viz.DxRangeSelectorInterop.Drawn -= DxRangeSelector_Drawn;
+		DevExpress.Viz.DxRangeSelectorInterop.Exported -= DxRangeSelector_Exported;
+		DevExpress.Viz.DxRangeSelectorInterop.Exporting -= DxRangeSelector_Exporting;
+		DevExpress.Viz.DxRangeSelectorInterop.FileSaving -= DxRangeSelector_FileSaving;
+		DevExpress.Viz.DxRangeSelectorInterop.IncidentOccurred -= DxRangeSelector_IncidentOccurred;
+		DevExpress.Viz.DxRangeSelectorInterop.Disposing -= DxRangeSelector_Disposing;
+		DevExpress.Viz.DxRangeSelectorInterop.OptionChanged -= DxRangeSelector_OptionChanged;
+		DevExpress.Viz.DxRangeSelectorInterop.Initialized -= DxRangeSelector_Initialized;
+	}
+}

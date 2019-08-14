@@ -1,0 +1,495 @@
+
+@using Microsoft.AspNetCore.Components
+@implements IDisposable
+@inherits DxBlazorComponent<DevExpress.Viz.Gauges.DxCircularGaugeOptions>
+
+<div id="@Id" @ref="dxTarget"></div>
+
+@functions {
+	ElementReference dxTarget;
+	public DxCircularGauge() : base("DxCircularGauge") { }
+	protected override DevExpress.Viz.Gauges.DxCircularGaugeOptions CreateOptions() {
+		return new DevExpress.Viz.Gauges.DxCircularGaugeOptions {
+			geometry = geometry,
+			rangeContainer = rangeContainer,
+			scale = scale,
+			subvalueIndicator = subvalueIndicator,
+			valueIndicator = valueIndicator,
+			animation = animation,
+			containerBackgroundColor = containerBackgroundColor,
+			subtitle = subtitle,
+			subvalues = subvalues,
+			title = title,
+			tooltip = tooltip,
+			value = value,
+			export = export,
+			loadingIndicator = loadingIndicator,
+			margin = margin,
+			pathModified = pathModified,
+			redrawOnResize = redrawOnResize,
+			rtlEnabled = rtlEnabled,
+			size = size,
+			theme = theme,
+			bindingOptions = bindingOptions,
+			elementAttr = elementAttr,
+			height = height,
+			width = width,
+			onTooltipHiddenEnabled = onTooltipHiddenEnabled,
+			onTooltipShownEnabled = onTooltipShownEnabled,
+			onDrawnEnabled = onDrawnEnabled,
+			onExportedEnabled = onExportedEnabled,
+			onExportingEnabled = onExportingEnabled,
+			onFileSavingEnabled = onFileSavingEnabled,
+			onIncidentOccurredEnabled = onIncidentOccurredEnabled,
+			onDisposingEnabled = onDisposingEnabled,
+			onOptionChangedEnabled = onOptionChangedEnabled,
+			onInitializedEnabled = onInitializedEnabled,
+		};
+	}
+	protected override Task Init(DevExpress.Viz.Gauges.DxCircularGaugeOptions options) {
+		return DevExpress.Viz.DxCircularGaugeInterop.Init(dxTarget, options);
+	}
+	object geometry;
+	[Parameter]
+	object Geometry {
+		get => isInitialized ? DevExpress.Viz.DxCircularGaugeInterop.GetGeometry(dxTarget).Result : geometry;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxCircularGaugeInterop.SetGeometry(dxTarget, value);
+			} else {
+				this.geometry = value;
+			}
+		}
+	}
+	object rangeContainer;
+	[Parameter]
+	object RangeContainer {
+		get => isInitialized ? DevExpress.Viz.DxCircularGaugeInterop.GetRangeContainer(dxTarget).Result : rangeContainer;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxCircularGaugeInterop.SetRangeContainer(dxTarget, value);
+			} else {
+				this.rangeContainer = value;
+			}
+		}
+	}
+	object scale;
+	[Parameter]
+	object Scale {
+		get => isInitialized ? DevExpress.Viz.DxCircularGaugeInterop.GetScale(dxTarget).Result : scale;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxCircularGaugeInterop.SetScale(dxTarget, value);
+			} else {
+				this.scale = value;
+			}
+		}
+	}
+	object subvalueIndicator;
+	[Parameter]
+	object SubvalueIndicator {
+		get => isInitialized ? DevExpress.Viz.DxCircularGaugeInterop.GetSubvalueIndicator(dxTarget).Result : subvalueIndicator;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxCircularGaugeInterop.SetSubvalueIndicator(dxTarget, value);
+			} else {
+				this.subvalueIndicator = value;
+			}
+		}
+	}
+	object valueIndicator;
+	[Parameter]
+	object ValueIndicator {
+		get => isInitialized ? DevExpress.Viz.DxCircularGaugeInterop.GetValueIndicator(dxTarget).Result : valueIndicator;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxCircularGaugeInterop.SetValueIndicator(dxTarget, value);
+			} else {
+				this.valueIndicator = value;
+			}
+		}
+	}
+	object animation;
+	[Parameter]
+	object Animation {
+		get => isInitialized ? DevExpress.Viz.DxCircularGaugeInterop.GetAnimation(dxTarget).Result : animation;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxCircularGaugeInterop.SetAnimation(dxTarget, value);
+			} else {
+				this.animation = value;
+			}
+		}
+	}
+	string containerBackgroundColor;
+	[Parameter]
+	string ContainerBackgroundColor {
+		get => isInitialized ? (string)DevExpress.Viz.DxCircularGaugeInterop.GetContainerBackgroundColor(dxTarget).Result : containerBackgroundColor;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxCircularGaugeInterop.SetContainerBackgroundColor(dxTarget, value);
+			} else {
+				this.containerBackgroundColor = value;
+			}
+		}
+	}
+	object subtitle;
+	[Parameter]
+	object Subtitle {
+		get => isInitialized ? DevExpress.Viz.DxCircularGaugeInterop.GetSubtitle(dxTarget).Result : subtitle;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxCircularGaugeInterop.SetSubtitle(dxTarget, value);
+			} else {
+				this.subtitle = value;
+			}
+		}
+	}
+	object subvalues;
+	[Parameter]
+	object Subvalues {
+		get => isInitialized ? DevExpress.Viz.DxCircularGaugeInterop.GetSubvalues(dxTarget).Result : subvalues;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxCircularGaugeInterop.SetSubvalues(dxTarget, value);
+			} else {
+				this.subvalues = value;
+			}
+		}
+	}
+	object title;
+	[Parameter]
+	object Title {
+		get => isInitialized ? DevExpress.Viz.DxCircularGaugeInterop.GetTitle(dxTarget).Result : title;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxCircularGaugeInterop.SetTitle(dxTarget, value);
+			} else {
+				this.title = value;
+			}
+		}
+	}
+	object tooltip;
+	[Parameter]
+	object Tooltip {
+		get => isInitialized ? DevExpress.Viz.DxCircularGaugeInterop.GetTooltip(dxTarget).Result : tooltip;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxCircularGaugeInterop.SetTooltip(dxTarget, value);
+			} else {
+				this.tooltip = value;
+			}
+		}
+	}
+	float? value;
+	[Parameter]
+	float? Value {
+		get => isInitialized ? (float?)DevExpress.Viz.DxCircularGaugeInterop.GetValue(dxTarget).Result : value;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxCircularGaugeInterop.SetValue(dxTarget, value);
+			} else {
+				this.value = value;
+			}
+		}
+	}
+	object export;
+	[Parameter]
+	object Export {
+		get => isInitialized ? DevExpress.Viz.DxCircularGaugeInterop.GetExport(dxTarget).Result : export;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxCircularGaugeInterop.SetExport(dxTarget, value);
+			} else {
+				this.export = value;
+			}
+		}
+	}
+	object loadingIndicator;
+	[Parameter]
+	object LoadingIndicator {
+		get => isInitialized ? DevExpress.Viz.DxCircularGaugeInterop.GetLoadingIndicator(dxTarget).Result : loadingIndicator;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxCircularGaugeInterop.SetLoadingIndicator(dxTarget, value);
+			} else {
+				this.loadingIndicator = value;
+			}
+		}
+	}
+	object margin;
+	[Parameter]
+	object Margin {
+		get => isInitialized ? DevExpress.Viz.DxCircularGaugeInterop.GetMargin(dxTarget).Result : margin;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxCircularGaugeInterop.SetMargin(dxTarget, value);
+			} else {
+				this.margin = value;
+			}
+		}
+	}
+	bool? pathModified;
+	[Parameter]
+	bool? PathModified {
+		get => isInitialized ? (bool?)DevExpress.Viz.DxCircularGaugeInterop.GetPathModified(dxTarget).Result : pathModified;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxCircularGaugeInterop.SetPathModified(dxTarget, value);
+			} else {
+				this.pathModified = value;
+			}
+		}
+	}
+	bool? redrawOnResize;
+	[Parameter]
+	bool? RedrawOnResize {
+		get => isInitialized ? (bool?)DevExpress.Viz.DxCircularGaugeInterop.GetRedrawOnResize(dxTarget).Result : redrawOnResize;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxCircularGaugeInterop.SetRedrawOnResize(dxTarget, value);
+			} else {
+				this.redrawOnResize = value;
+			}
+		}
+	}
+	bool? rtlEnabled;
+	[Parameter]
+	bool? RtlEnabled {
+		get => isInitialized ? (bool?)DevExpress.Viz.DxCircularGaugeInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxCircularGaugeInterop.SetRtlEnabled(dxTarget, value);
+			} else {
+				this.rtlEnabled = value;
+			}
+		}
+	}
+	object size;
+	[Parameter]
+	object Size {
+		get => isInitialized ? DevExpress.Viz.DxCircularGaugeInterop.GetSize(dxTarget).Result : size;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxCircularGaugeInterop.SetSize(dxTarget, value);
+			} else {
+				this.size = value;
+			}
+		}
+	}
+	string theme;
+	[Parameter]
+	string Theme {
+		get => isInitialized ? (string)DevExpress.Viz.DxCircularGaugeInterop.GetTheme(dxTarget).Result : theme;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxCircularGaugeInterop.SetTheme(dxTarget, value);
+			} else {
+				this.theme = value;
+			}
+		}
+	}
+	object bindingOptions;
+	[Parameter]
+	object BindingOptions {
+		get => isInitialized ? DevExpress.Viz.DxCircularGaugeInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxCircularGaugeInterop.SetBindingOptions(dxTarget, value);
+			} else {
+				this.bindingOptions = value;
+			}
+		}
+	}
+	object elementAttr;
+	[Parameter]
+	object ElementAttr {
+		get => isInitialized ? DevExpress.Viz.DxCircularGaugeInterop.GetElementAttr(dxTarget).Result : elementAttr;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxCircularGaugeInterop.SetElementAttr(dxTarget, value);
+			} else {
+				this.elementAttr = value;
+			}
+		}
+	}
+	object height;
+	[Parameter]
+	object Height {
+		get => isInitialized ? DevExpress.Viz.DxCircularGaugeInterop.GetHeight(dxTarget).Result : height;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxCircularGaugeInterop.SetHeight(dxTarget, value);
+			} else {
+				this.height = value;
+			}
+		}
+	}
+	object width;
+	[Parameter]
+	object Width {
+		get => isInitialized ? DevExpress.Viz.DxCircularGaugeInterop.GetWidth(dxTarget).Result : width;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxCircularGaugeInterop.SetWidth(dxTarget, value);
+			} else {
+				this.width = value;
+			}
+		}
+	}
+	bool? onTooltipHiddenEnabled;
+	[Parameter]
+	bool? OnTooltipHiddenEnabled {
+		get => onTooltipHiddenEnabled;
+		set => this.onTooltipHiddenEnabled = value;
+	}
+	bool? onTooltipShownEnabled;
+	[Parameter]
+	bool? OnTooltipShownEnabled {
+		get => onTooltipShownEnabled;
+		set => this.onTooltipShownEnabled = value;
+	}
+	bool? onDrawnEnabled;
+	[Parameter]
+	bool? OnDrawnEnabled {
+		get => onDrawnEnabled;
+		set => this.onDrawnEnabled = value;
+	}
+	bool? onExportedEnabled;
+	[Parameter]
+	bool? OnExportedEnabled {
+		get => onExportedEnabled;
+		set => this.onExportedEnabled = value;
+	}
+	bool? onExportingEnabled;
+	[Parameter]
+	bool? OnExportingEnabled {
+		get => onExportingEnabled;
+		set => this.onExportingEnabled = value;
+	}
+	bool? onFileSavingEnabled;
+	[Parameter]
+	bool? OnFileSavingEnabled {
+		get => onFileSavingEnabled;
+		set => this.onFileSavingEnabled = value;
+	}
+	bool? onIncidentOccurredEnabled;
+	[Parameter]
+	bool? OnIncidentOccurredEnabled {
+		get => onIncidentOccurredEnabled;
+		set => this.onIncidentOccurredEnabled = value;
+	}
+	bool? onDisposingEnabled;
+	[Parameter]
+	bool? OnDisposingEnabled {
+		get => onDisposingEnabled;
+		set => this.onDisposingEnabled = value;
+	}
+	bool? onOptionChangedEnabled;
+	[Parameter]
+	bool? OnOptionChangedEnabled {
+		get => onOptionChangedEnabled;
+		set => this.onOptionChangedEnabled = value;
+	}
+	bool? onInitializedEnabled;
+	[Parameter]
+	bool? OnInitializedEnabled {
+		get => onInitializedEnabled;
+		set => this.onInitializedEnabled = value;
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+		DevExpress.Viz.DxCircularGaugeInterop.TooltipHidden += DxCircularGauge_TooltipHidden;
+		DevExpress.Viz.DxCircularGaugeInterop.TooltipShown += DxCircularGauge_TooltipShown;
+		DevExpress.Viz.DxCircularGaugeInterop.Drawn += DxCircularGauge_Drawn;
+		DevExpress.Viz.DxCircularGaugeInterop.Exported += DxCircularGauge_Exported;
+		DevExpress.Viz.DxCircularGaugeInterop.Exporting += DxCircularGauge_Exporting;
+		DevExpress.Viz.DxCircularGaugeInterop.FileSaving += DxCircularGauge_FileSaving;
+		DevExpress.Viz.DxCircularGaugeInterop.IncidentOccurred += DxCircularGauge_IncidentOccurred;
+		DevExpress.Viz.DxCircularGaugeInterop.Disposing += DxCircularGauge_Disposing;
+		DevExpress.Viz.DxCircularGaugeInterop.OptionChanged += DxCircularGauge_OptionChanged;
+		DevExpress.Viz.DxCircularGaugeInterop.Initialized += DxCircularGauge_Initialized;
+	}
+	[Parameter]
+	Action TooltipHidden { get; set; }
+	void DxCircularGauge_TooltipHidden(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			TooltipHidden?.Invoke();
+		}
+	}
+	[Parameter]
+	Action TooltipShown { get; set; }
+	void DxCircularGauge_TooltipShown(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			TooltipShown?.Invoke();
+		}
+	}
+	[Parameter]
+	Action Drawn { get; set; }
+	void DxCircularGauge_Drawn(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Drawn?.Invoke();
+		}
+	}
+	[Parameter]
+	Action Exported { get; set; }
+	void DxCircularGauge_Exported(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Exported?.Invoke();
+		}
+	}
+	[Parameter]
+	Action Exporting { get; set; }
+	void DxCircularGauge_Exporting(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Exporting?.Invoke();
+		}
+	}
+	[Parameter]
+	Action FileSaving { get; set; }
+	void DxCircularGauge_FileSaving(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			FileSaving?.Invoke();
+		}
+	}
+	[Parameter]
+	Action IncidentOccurred { get; set; }
+	void DxCircularGauge_IncidentOccurred(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			IncidentOccurred?.Invoke();
+		}
+	}
+	[Parameter]
+	Action Disposing { get; set; }
+	void DxCircularGauge_Disposing(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Disposing?.Invoke();
+		}
+	}
+	[Parameter]
+	Action OptionChanged { get; set; }
+	void DxCircularGauge_OptionChanged(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			OptionChanged?.Invoke();
+		}
+	}
+	[Parameter]
+	Action Initialized { get; set; }
+	void DxCircularGauge_Initialized(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Initialized?.Invoke();
+		}
+	}
+	public void Dispose() {
+		DevExpress.Viz.DxCircularGaugeInterop.TooltipHidden -= DxCircularGauge_TooltipHidden;
+		DevExpress.Viz.DxCircularGaugeInterop.TooltipShown -= DxCircularGauge_TooltipShown;
+		DevExpress.Viz.DxCircularGaugeInterop.Drawn -= DxCircularGauge_Drawn;
+		DevExpress.Viz.DxCircularGaugeInterop.Exported -= DxCircularGauge_Exported;
+		DevExpress.Viz.DxCircularGaugeInterop.Exporting -= DxCircularGauge_Exporting;
+		DevExpress.Viz.DxCircularGaugeInterop.FileSaving -= DxCircularGauge_FileSaving;
+		DevExpress.Viz.DxCircularGaugeInterop.IncidentOccurred -= DxCircularGauge_IncidentOccurred;
+		DevExpress.Viz.DxCircularGaugeInterop.Disposing -= DxCircularGauge_Disposing;
+		DevExpress.Viz.DxCircularGaugeInterop.OptionChanged -= DxCircularGauge_OptionChanged;
+		DevExpress.Viz.DxCircularGaugeInterop.Initialized -= DxCircularGauge_Initialized;
+	}
+}

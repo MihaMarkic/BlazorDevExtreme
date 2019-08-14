@@ -9,7 +9,7 @@ namespace DevExpress
 {
     public class DataHelperMixinInterop
     {
-        public static Task<object> GetDataSourceEx(ElementRef dxTarget)
+        public static Task<object> GetDataSourceEx(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataHelperMixin_getDataSource_0", dxTarget);
         }
@@ -17,27 +17,27 @@ namespace DevExpress
 
     public class DxEventInterop
     {
-        public static Task<bool> IsDefaultPrevented(ElementRef dxTarget)
+        public static Task<bool> IsDefaultPrevented(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool>("BlazorDevExtreme_DxEvent_isDefaultPrevented_0", dxTarget);
         }
-        public static Task<bool> IsImmediatePropagationStopped(ElementRef dxTarget)
+        public static Task<bool> IsImmediatePropagationStopped(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool>("BlazorDevExtreme_DxEvent_isImmediatePropagationStopped_1", dxTarget);
         }
-        public static Task<bool> IsPropagationStopped(ElementRef dxTarget)
+        public static Task<bool> IsPropagationStopped(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool>("BlazorDevExtreme_DxEvent_isPropagationStopped_2", dxTarget);
         }
-        public static Task PreventDefault(ElementRef dxTarget)
+        public static Task PreventDefault(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxEvent_preventDefault_3", dxTarget);
         }
-        public static Task StopImmediatePropagation(ElementRef dxTarget)
+        public static Task StopImmediatePropagation(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxEvent_stopImmediatePropagation_4", dxTarget);
         }
-        public static Task StopPropagation(ElementRef dxTarget)
+        public static Task StopPropagation(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxEvent_stopPropagation_5", dxTarget);
         }
@@ -59,54 +59,54 @@ namespace DevExpress
     }
     public class AnimationPresetsInterop
     {
-        public static Task ApplyChanges(ElementRef dxTarget)
+        public static Task ApplyChanges(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_AnimationPresets_applyChanges_0", dxTarget);
         }
-        public static Task Clear(ElementRef dxTarget)
+        public static Task Clear(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_AnimationPresets_clear_1", dxTarget);
         }
-        public static Task Clear(ElementRef dxTarget, string name)
+        public static Task Clear(ElementReference dxTarget, string name)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_AnimationPresets_clear_2", dxTarget, name);
         }
-        public static Task<object> GetPreset(ElementRef dxTarget, string name)
+        public static Task<object> GetPreset(ElementReference dxTarget, string name)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_AnimationPresets_getPreset_3", dxTarget, name);
         }
-        public static Task RegisterDefaultPresets(ElementRef dxTarget)
+        public static Task RegisterDefaultPresets(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_AnimationPresets_registerDefaultPresets_4", dxTarget);
         }
-        public static Task RegisterPreset(ElementRef dxTarget, string name, object config)
+        public static Task RegisterPreset(ElementReference dxTarget, string name, object config)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_AnimationPresets_registerPreset_5", dxTarget, name, config);
         }
-        public static Task ResetToDefaults(ElementRef dxTarget)
+        public static Task ResetToDefaults(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_AnimationPresets_resetToDefaults_6", dxTarget);
         }
     }
     public class TransitionExecutorInterop
     {
-        public static Task Enter(ElementRef dxTarget, object elements, object animation)
+        public static Task Enter(ElementReference dxTarget, object elements, object animation)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_TransitionExecutor_enter_0", dxTarget, elements, animation);
         }
-        public static Task Leave(ElementRef dxTarget, object elements, object animation)
+        public static Task Leave(ElementReference dxTarget, object elements, object animation)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_TransitionExecutor_leave_1", dxTarget, elements, animation);
         }
-        public static Task Reset(ElementRef dxTarget)
+        public static Task Reset(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_TransitionExecutor_reset_2", dxTarget);
         }
-        public static Task<object> Start(ElementRef dxTarget)
+        public static Task<object> Start(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_TransitionExecutor_start_3", dxTarget);
         }
-        public static Task Stop(ElementRef dxTarget)
+        public static Task Stop(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_TransitionExecutor_stop_4", dxTarget);
         }
@@ -116,7 +116,7 @@ namespace DevExpress
         public static event EventHandler<JQueryEventArgs> Disposing;
         public static event EventHandler<JQueryEventArgs> Initialized;
         public static event EventHandler<JQueryEventArgs> OptionChanged;
-        public static Task Init(ElementRef dxTarget, DevExpress.ComponentOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.ComponentOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Component_Init", dxTarget, json);
@@ -136,130 +136,130 @@ namespace DevExpress
         {
             OptionChanged?.Invoke(null, new JQueryEventArgs(identifier));
         }
-        public static Task BeginUpdate(ElementRef dxTarget)
+        public static Task BeginUpdate(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Component_beginUpdate_0", dxTarget);
         }
-        public static Task EndUpdate(ElementRef dxTarget)
+        public static Task EndUpdate(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Component_endUpdate_1", dxTarget);
         }
-        public static Task<object> Instance(ElementRef dxTarget)
+        public static Task<object> Instance(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Component_instance_2", dxTarget);
         }
-        public static Task<object> Off(ElementRef dxTarget, string eventName)
+        public static Task<object> Off(ElementReference dxTarget, string eventName)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Component_off_3", dxTarget, eventName);
         }
-        public static Task<object> Off(ElementRef dxTarget, string eventName, object eventHandler)
+        public static Task<object> Off(ElementReference dxTarget, string eventName, object eventHandler)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Component_off_4", dxTarget, eventName, eventHandler);
         }
-        public static Task<object> On(ElementRef dxTarget, string eventName, object eventHandler)
+        public static Task<object> On(ElementReference dxTarget, string eventName, object eventHandler)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Component_on_5", dxTarget, eventName, eventHandler);
         }
-        public static Task<object> On(ElementRef dxTarget, object events)
+        public static Task<object> On(ElementReference dxTarget, object events)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Component_on_6", dxTarget, events);
         }
-        public static Task<object> Option(ElementRef dxTarget)
+        public static Task<object> Option(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Component_option_7", dxTarget);
         }
-        public static Task<object> Option(ElementRef dxTarget, string optionName)
+        public static Task<object> Option(ElementReference dxTarget, string optionName)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Component_option_8", dxTarget, optionName);
         }
-        public static Task Option(ElementRef dxTarget, string optionName, object optionValue)
+        public static Task Option(ElementReference dxTarget, string optionName, object optionValue)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Component_option_9", dxTarget, optionName, optionValue);
         }
-        public static Task Option(ElementRef dxTarget, object options)
+        public static Task Option(ElementReference dxTarget, object options)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Component_option_10", dxTarget, options);
         }
     }
     public class DevicesObjectInterop
     {
-        public static Task<object> Current(ElementRef dxTarget)
+        public static Task<object> Current(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DevicesObject_current_0", dxTarget);
         }
-        public static Task Current(ElementRef dxTarget, object deviceName)
+        public static Task Current(ElementReference dxTarget, object deviceName)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DevicesObject_current_1", dxTarget, deviceName);
         }
-        public static Task<object> Off(ElementRef dxTarget, string eventName)
+        public static Task<object> Off(ElementReference dxTarget, string eventName)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DevicesObject_off_2", dxTarget, eventName);
         }
-        public static Task<object> Off(ElementRef dxTarget, string eventName, object eventHandler)
+        public static Task<object> Off(ElementReference dxTarget, string eventName, object eventHandler)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DevicesObject_off_3", dxTarget, eventName, eventHandler);
         }
-        public static Task<object> On(ElementRef dxTarget, string eventName, object eventHandler)
+        public static Task<object> On(ElementReference dxTarget, string eventName, object eventHandler)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DevicesObject_on_4", dxTarget, eventName, eventHandler);
         }
-        public static Task<object> On(ElementRef dxTarget, object events)
+        public static Task<object> On(ElementReference dxTarget, object events)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DevicesObject_on_5", dxTarget, events);
         }
-        public static Task<string> Orientation(ElementRef dxTarget)
+        public static Task<string> Orientation(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DevicesObject_orientation_6", dxTarget);
         }
-        public static Task<object> Real(ElementRef dxTarget)
+        public static Task<object> Real(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DevicesObject_real_7", dxTarget);
         }
     }
     public class DOMComponentInterop: ComponentInterop
     {
-        public static Task Init(ElementRef dxTarget, DevExpress.DOMComponentOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.DOMComponentOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DOMComponent_Init", dxTarget, json);
         }
-        public static Task<object> GetBindingOptions(ElementRef dxTarget)
+        public static Task<object> GetBindingOptions(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DOMComponent_GetOption", dxTarget, "bindingOptions");
         }
-        public static Task SetBindingOptions(ElementRef dxTarget, object value)
+        public static Task SetBindingOptions(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DOMComponent_SetOption", dxTarget, "bindingOptions", value);
         }
-        public static Task<object> GetElementAttr(ElementRef dxTarget)
+        public static Task<object> GetElementAttr(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DOMComponent_GetOption", dxTarget, "elementAttr");
         }
-        public static Task SetElementAttr(ElementRef dxTarget, object value)
+        public static Task SetElementAttr(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DOMComponent_SetOption", dxTarget, "elementAttr", value);
         }
-        public static Task<object> GetHeight(ElementRef dxTarget)
+        public static Task<object> GetHeight(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DOMComponent_GetOption", dxTarget, "height");
         }
-        public static Task SetHeight(ElementRef dxTarget, object value)
+        public static Task SetHeight(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DOMComponent_SetOption", dxTarget, "height", value);
         }
-        public static Task<bool?> GetRtlEnabled(ElementRef dxTarget)
+        public static Task<bool?> GetRtlEnabled(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DOMComponent_GetOption", dxTarget, "rtlEnabled");
         }
-        public static Task SetRtlEnabled(ElementRef dxTarget, bool? value)
+        public static Task SetRtlEnabled(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DOMComponent_SetOption", dxTarget, "rtlEnabled", value);
         }
-        public static Task<object> GetWidth(ElementRef dxTarget)
+        public static Task<object> GetWidth(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DOMComponent_GetOption", dxTarget, "width");
         }
-        public static Task SetWidth(ElementRef dxTarget, object value)
+        public static Task SetWidth(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DOMComponent_SetOption", dxTarget, "width", value);
         }
@@ -271,18 +271,18 @@ namespace DevExpress
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DOMComponent_getInstance_1", element);
         }
-        public static Task Dispose(ElementRef dxTarget)
+        public static Task Dispose(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DOMComponent_dispose_0", dxTarget);
         }
-        public static Task<object> Element(ElementRef dxTarget)
+        public static Task<object> Element(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DOMComponent_element_1", dxTarget);
         }
     }
     public class EndpointSelectorInterop
     {
-        public static Task<string> UrlFor(ElementRef dxTarget, string key)
+        public static Task<string> UrlFor(ElementReference dxTarget, string key)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_EndpointSelector_urlFor_0", dxTarget, key);
         }
@@ -401,11 +401,11 @@ namespace DevExpress.Data
 {
     public class GuidInterop
     {
-        public static Task<string> ToString(ElementRef dxTarget)
+        public static Task<string> ToString(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_Guid_toString_0", dxTarget);
         }
-        public static Task<string> ValueOf(ElementRef dxTarget)
+        public static Task<string> ValueOf(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_Guid_valueOf_1", dxTarget);
         }
@@ -422,7 +422,7 @@ namespace DevExpress.Data
         public static event EventHandler<JQueryEventArgs> Removing;
         public static event EventHandler<JQueryEventArgs> Updated;
         public static event EventHandler<JQueryEventArgs> Updating;
-        public static Task Init(ElementRef dxTarget, DevExpress.Data.StoreOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Data.StoreOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Store_Init", dxTarget, json);
@@ -477,179 +477,179 @@ namespace DevExpress.Data
         {
             Updating?.Invoke(null, new JQueryEventArgs(identifier));
         }
-        public static Task<object> GetErrorHandler(ElementRef dxTarget)
+        public static Task<object> GetErrorHandler(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Store_GetOption", dxTarget, "errorHandler");
         }
-        public static Task SetErrorHandler(ElementRef dxTarget, object value)
+        public static Task SetErrorHandler(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Store_SetOption", dxTarget, "errorHandler", value);
         }
-        public static Task<object> GetKey(ElementRef dxTarget)
+        public static Task<object> GetKey(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Store_GetOption", dxTarget, "key");
         }
-        public static Task SetKey(ElementRef dxTarget, object value)
+        public static Task SetKey(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Store_SetOption", dxTarget, "key", value);
         }
-        public static Task<object> ByKey(ElementRef dxTarget, object key)
+        public static Task<object> ByKey(ElementReference dxTarget, object key)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Store_byKey_0", dxTarget, key);
         }
-        public static Task<object> Insert(ElementRef dxTarget, object values)
+        public static Task<object> Insert(ElementReference dxTarget, object values)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Store_insert_1", dxTarget, values);
         }
-        public static Task<object> Key(ElementRef dxTarget)
+        public static Task<object> Key(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Store_key_2", dxTarget);
         }
-        public static Task<object> KeyOf(ElementRef dxTarget, object obj)
+        public static Task<object> KeyOf(ElementReference dxTarget, object obj)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Store_keyOf_3", dxTarget, obj);
         }
-        public static Task<object> Load(ElementRef dxTarget)
+        public static Task<object> Load(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Store_load_4", dxTarget);
         }
-        public static Task<object> Load(ElementRef dxTarget, object options)
+        public static Task<object> Load(ElementReference dxTarget, object options)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Store_load_5", dxTarget, options);
         }
-        public static Task<object> Off(ElementRef dxTarget, string eventName)
+        public static Task<object> Off(ElementReference dxTarget, string eventName)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Store_off_6", dxTarget, eventName);
         }
-        public static Task<object> Off(ElementRef dxTarget, string eventName, object eventHandler)
+        public static Task<object> Off(ElementReference dxTarget, string eventName, object eventHandler)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Store_off_7", dxTarget, eventName, eventHandler);
         }
-        public static Task<object> On(ElementRef dxTarget, string eventName, object eventHandler)
+        public static Task<object> On(ElementReference dxTarget, string eventName, object eventHandler)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Store_on_8", dxTarget, eventName, eventHandler);
         }
-        public static Task<object> On(ElementRef dxTarget, object events)
+        public static Task<object> On(ElementReference dxTarget, object events)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Store_on_9", dxTarget, events);
         }
-        public static Task<object> Remove(ElementRef dxTarget, object key)
+        public static Task<object> Remove(ElementReference dxTarget, object key)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Store_remove_10", dxTarget, key);
         }
-        public static Task<object> TotalCount(ElementRef dxTarget, object obj)
+        public static Task<object> TotalCount(ElementReference dxTarget, object obj)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Store_totalCount_11", dxTarget, obj);
         }
-        public static Task<object> Update(ElementRef dxTarget, object key, object values)
+        public static Task<object> Update(ElementReference dxTarget, object key, object values)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Store_update_12", dxTarget, key, values);
         }
     }
     public class ArrayStoreInterop: StoreInterop
     {
-        public static Task Init(ElementRef dxTarget, DevExpress.Data.ArrayStoreOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Data.ArrayStoreOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_ArrayStore_Init", dxTarget, json);
         }
-        public static Task<object> GetData(ElementRef dxTarget)
+        public static Task<object> GetData(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_ArrayStore_GetOption", dxTarget, "data");
         }
-        public static Task SetData(ElementRef dxTarget, object value)
+        public static Task SetData(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_ArrayStore_SetOption", dxTarget, "data", value);
         }
-        public static Task Clear(ElementRef dxTarget)
+        public static Task Clear(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_ArrayStore_clear_0", dxTarget);
         }
-        public static Task<object> CreateQuery(ElementRef dxTarget)
+        public static Task<object> CreateQuery(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_ArrayStore_createQuery_1", dxTarget);
         }
     }
     public class CustomStoreInterop: StoreInterop
     {
-        public static Task Init(ElementRef dxTarget, DevExpress.Data.CustomStoreOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Data.CustomStoreOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_CustomStore_Init", dxTarget, json);
         }
-        public static Task<object> GetByKey(ElementRef dxTarget)
+        public static Task<object> GetByKey(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_CustomStore_GetOption", dxTarget, "byKey");
         }
-        public static Task SetByKey(ElementRef dxTarget, object value)
+        public static Task SetByKey(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_CustomStore_SetOption", dxTarget, "byKey", value);
         }
-        public static Task<bool?> GetCacheRawData(ElementRef dxTarget)
+        public static Task<bool?> GetCacheRawData(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_CustomStore_GetOption", dxTarget, "cacheRawData");
         }
-        public static Task SetCacheRawData(ElementRef dxTarget, bool? value)
+        public static Task SetCacheRawData(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_CustomStore_SetOption", dxTarget, "cacheRawData", value);
         }
-        public static Task<object> GetInsert(ElementRef dxTarget)
+        public static Task<object> GetInsert(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_CustomStore_GetOption", dxTarget, "insert");
         }
-        public static Task SetInsert(ElementRef dxTarget, object value)
+        public static Task SetInsert(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_CustomStore_SetOption", dxTarget, "insert", value);
         }
-        public static Task<object> GetLoad(ElementRef dxTarget)
+        public static Task<object> GetLoad(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_CustomStore_GetOption", dxTarget, "load");
         }
-        public static Task SetLoad(ElementRef dxTarget, object value)
+        public static Task SetLoad(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_CustomStore_SetOption", dxTarget, "load", value);
         }
-        public static Task<string> GetLoadMode(ElementRef dxTarget)
+        public static Task<string> GetLoadMode(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_CustomStore_GetOption", dxTarget, "loadMode");
         }
-        public static Task SetLoadMode(ElementRef dxTarget, string value)
+        public static Task SetLoadMode(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_CustomStore_SetOption", dxTarget, "loadMode", value);
         }
-        public static Task<object> GetRemove(ElementRef dxTarget)
+        public static Task<object> GetRemove(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_CustomStore_GetOption", dxTarget, "remove");
         }
-        public static Task SetRemove(ElementRef dxTarget, object value)
+        public static Task SetRemove(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_CustomStore_SetOption", dxTarget, "remove", value);
         }
-        public static Task<object> GetTotalCount(ElementRef dxTarget)
+        public static Task<object> GetTotalCount(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_CustomStore_GetOption", dxTarget, "totalCount");
         }
-        public static Task SetTotalCount(ElementRef dxTarget, object value)
+        public static Task SetTotalCount(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_CustomStore_SetOption", dxTarget, "totalCount", value);
         }
-        public static Task<object> GetUpdate(ElementRef dxTarget)
+        public static Task<object> GetUpdate(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_CustomStore_GetOption", dxTarget, "update");
         }
-        public static Task SetUpdate(ElementRef dxTarget, object value)
+        public static Task SetUpdate(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_CustomStore_SetOption", dxTarget, "update", value);
         }
-        public static Task<bool?> GetUseDefaultSearch(ElementRef dxTarget)
+        public static Task<bool?> GetUseDefaultSearch(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_CustomStore_GetOption", dxTarget, "useDefaultSearch");
         }
-        public static Task SetUseDefaultSearch(ElementRef dxTarget, bool? value)
+        public static Task SetUseDefaultSearch(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_CustomStore_SetOption", dxTarget, "useDefaultSearch", value);
         }
-        public static Task ClearRawDataCache(ElementRef dxTarget)
+        public static Task ClearRawDataCache(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_CustomStore_clearRawDataCache_0", dxTarget);
         }
@@ -659,7 +659,7 @@ namespace DevExpress.Data
         public static event EventHandler<JQueryEventArgs> Changed;
         public static event EventHandler<JQueryEventArgs> LoadError;
         public static event EventHandler<JQueryEventArgs> LoadingChanged;
-        public static Task Init(ElementRef dxTarget, DevExpress.Data.DataSourceOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Data.DataSourceOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataSource_Init", dxTarget, json);
@@ -679,581 +679,581 @@ namespace DevExpress.Data
         {
             LoadingChanged?.Invoke(null, new JQueryEventArgs(identifier));
         }
-        public static Task<object> GetCustomQueryParams(ElementRef dxTarget)
+        public static Task<object> GetCustomQueryParams(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataSource_GetOption", dxTarget, "customQueryParams");
         }
-        public static Task SetCustomQueryParams(ElementRef dxTarget, object value)
+        public static Task SetCustomQueryParams(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataSource_SetOption", dxTarget, "customQueryParams", value);
         }
-        public static Task<object> GetExpand(ElementRef dxTarget)
+        public static Task<object> GetExpand(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataSource_GetOption", dxTarget, "expand");
         }
-        public static Task SetExpand(ElementRef dxTarget, object value)
+        public static Task SetExpand(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataSource_SetOption", dxTarget, "expand", value);
         }
-        public static Task<object> GetFilter(ElementRef dxTarget)
+        public static Task<object> GetFilter(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataSource_GetOption", dxTarget, "filter");
         }
-        public static Task SetFilter(ElementRef dxTarget, object value)
+        public static Task SetFilter(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataSource_SetOption", dxTarget, "filter", value);
         }
-        public static Task<object> GetGroup(ElementRef dxTarget)
+        public static Task<object> GetGroup(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataSource_GetOption", dxTarget, "group");
         }
-        public static Task SetGroup(ElementRef dxTarget, object value)
+        public static Task SetGroup(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataSource_SetOption", dxTarget, "group", value);
         }
-        public static Task<object> GetMap(ElementRef dxTarget)
+        public static Task<object> GetMap(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataSource_GetOption", dxTarget, "map");
         }
-        public static Task SetMap(ElementRef dxTarget, object value)
+        public static Task SetMap(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataSource_SetOption", dxTarget, "map", value);
         }
-        public static Task<float?> GetPageSize(ElementRef dxTarget)
+        public static Task<float?> GetPageSize(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DataSource_GetOption", dxTarget, "pageSize");
         }
-        public static Task SetPageSize(ElementRef dxTarget, float? value)
+        public static Task SetPageSize(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataSource_SetOption", dxTarget, "pageSize", value);
         }
-        public static Task<bool?> GetPaginate(ElementRef dxTarget)
+        public static Task<bool?> GetPaginate(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DataSource_GetOption", dxTarget, "paginate");
         }
-        public static Task SetPaginate(ElementRef dxTarget, bool? value)
+        public static Task SetPaginate(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataSource_SetOption", dxTarget, "paginate", value);
         }
-        public static Task<object> GetPostProcess(ElementRef dxTarget)
+        public static Task<object> GetPostProcess(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataSource_GetOption", dxTarget, "postProcess");
         }
-        public static Task SetPostProcess(ElementRef dxTarget, object value)
+        public static Task SetPostProcess(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataSource_SetOption", dxTarget, "postProcess", value);
         }
-        public static Task<bool?> GetRequireTotalCount(ElementRef dxTarget)
+        public static Task<bool?> GetRequireTotalCount(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DataSource_GetOption", dxTarget, "requireTotalCount");
         }
-        public static Task SetRequireTotalCount(ElementRef dxTarget, bool? value)
+        public static Task SetRequireTotalCount(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataSource_SetOption", dxTarget, "requireTotalCount", value);
         }
-        public static Task<object> GetSearchExpr(ElementRef dxTarget)
+        public static Task<object> GetSearchExpr(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataSource_GetOption", dxTarget, "searchExpr");
         }
-        public static Task SetSearchExpr(ElementRef dxTarget, object value)
+        public static Task SetSearchExpr(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataSource_SetOption", dxTarget, "searchExpr", value);
         }
-        public static Task<string> GetSearchOperation(ElementRef dxTarget)
+        public static Task<string> GetSearchOperation(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DataSource_GetOption", dxTarget, "searchOperation");
         }
-        public static Task SetSearchOperation(ElementRef dxTarget, string value)
+        public static Task SetSearchOperation(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataSource_SetOption", dxTarget, "searchOperation", value);
         }
-        public static Task<object> GetSearchValue(ElementRef dxTarget)
+        public static Task<object> GetSearchValue(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataSource_GetOption", dxTarget, "searchValue");
         }
-        public static Task SetSearchValue(ElementRef dxTarget, object value)
+        public static Task SetSearchValue(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataSource_SetOption", dxTarget, "searchValue", value);
         }
-        public static Task<object> GetSelect(ElementRef dxTarget)
+        public static Task<object> GetSelect(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataSource_GetOption", dxTarget, "select");
         }
-        public static Task SetSelect(ElementRef dxTarget, object value)
+        public static Task SetSelect(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataSource_SetOption", dxTarget, "select", value);
         }
-        public static Task<object> GetSort(ElementRef dxTarget)
+        public static Task<object> GetSort(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataSource_GetOption", dxTarget, "sort");
         }
-        public static Task SetSort(ElementRef dxTarget, object value)
+        public static Task SetSort(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataSource_SetOption", dxTarget, "sort", value);
         }
-        public static Task<object> GetStore(ElementRef dxTarget)
+        public static Task<object> GetStore(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataSource_GetOption", dxTarget, "store");
         }
-        public static Task SetStore(ElementRef dxTarget, object value)
+        public static Task SetStore(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataSource_SetOption", dxTarget, "store", value);
         }
-        public static Task<bool> Cancel(ElementRef dxTarget)
+        public static Task<bool> Cancel(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool>("BlazorDevExtreme_DataSource_cancel_0", dxTarget);
         }
-        public static Task Dispose(ElementRef dxTarget)
+        public static Task Dispose(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataSource_dispose_1", dxTarget);
         }
-        public static Task<object> Filter(ElementRef dxTarget)
+        public static Task<object> Filter(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataSource_filter_2", dxTarget);
         }
-        public static Task Filter(ElementRef dxTarget, object filterExpr)
+        public static Task Filter(ElementReference dxTarget, object filterExpr)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataSource_filter_3", dxTarget, filterExpr);
         }
-        public static Task<object> Group(ElementRef dxTarget)
+        public static Task<object> Group(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataSource_group_4", dxTarget);
         }
-        public static Task Group(ElementRef dxTarget, object groupExpr)
+        public static Task Group(ElementReference dxTarget, object groupExpr)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataSource_group_5", dxTarget, groupExpr);
         }
-        public static Task<bool> IsLastPage(ElementRef dxTarget)
+        public static Task<bool> IsLastPage(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool>("BlazorDevExtreme_DataSource_isLastPage_6", dxTarget);
         }
-        public static Task<bool> IsLoaded(ElementRef dxTarget)
+        public static Task<bool> IsLoaded(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool>("BlazorDevExtreme_DataSource_isLoaded_7", dxTarget);
         }
-        public static Task<bool> IsLoading(ElementRef dxTarget)
+        public static Task<bool> IsLoading(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool>("BlazorDevExtreme_DataSource_isLoading_8", dxTarget);
         }
-        public static Task<object> Items(ElementRef dxTarget)
+        public static Task<object> Items(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataSource_items_9", dxTarget);
         }
-        public static Task<object> Key(ElementRef dxTarget)
+        public static Task<object> Key(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataSource_key_10", dxTarget);
         }
-        public static Task<object> Load(ElementRef dxTarget)
+        public static Task<object> Load(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataSource_load_11", dxTarget);
         }
-        public static Task<object> LoadOptions(ElementRef dxTarget)
+        public static Task<object> LoadOptions(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataSource_loadOptions_12", dxTarget);
         }
-        public static Task<object> Off(ElementRef dxTarget, string eventName)
+        public static Task<object> Off(ElementReference dxTarget, string eventName)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataSource_off_13", dxTarget, eventName);
         }
-        public static Task<object> Off(ElementRef dxTarget, string eventName, object eventHandler)
+        public static Task<object> Off(ElementReference dxTarget, string eventName, object eventHandler)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataSource_off_14", dxTarget, eventName, eventHandler);
         }
-        public static Task<object> On(ElementRef dxTarget, string eventName, object eventHandler)
+        public static Task<object> On(ElementReference dxTarget, string eventName, object eventHandler)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataSource_on_15", dxTarget, eventName, eventHandler);
         }
-        public static Task<object> On(ElementRef dxTarget, object events)
+        public static Task<object> On(ElementReference dxTarget, object events)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataSource_on_16", dxTarget, events);
         }
-        public static Task<float> PageIndex(ElementRef dxTarget)
+        public static Task<float> PageIndex(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float>("BlazorDevExtreme_DataSource_pageIndex_17", dxTarget);
         }
-        public static Task PageIndex(ElementRef dxTarget, float newIndex)
+        public static Task PageIndex(ElementReference dxTarget, float newIndex)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataSource_pageIndex_18", dxTarget, newIndex);
         }
-        public static Task<float> PageSize(ElementRef dxTarget)
+        public static Task<float> PageSize(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float>("BlazorDevExtreme_DataSource_pageSize_19", dxTarget);
         }
-        public static Task PageSize(ElementRef dxTarget, float value)
+        public static Task PageSize(ElementReference dxTarget, float value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataSource_pageSize_20", dxTarget, value);
         }
-        public static Task<bool> Paginate(ElementRef dxTarget)
+        public static Task<bool> Paginate(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool>("BlazorDevExtreme_DataSource_paginate_21", dxTarget);
         }
-        public static Task Paginate(ElementRef dxTarget, bool value)
+        public static Task Paginate(ElementReference dxTarget, bool value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataSource_paginate_22", dxTarget, value);
         }
-        public static Task<object> Reload(ElementRef dxTarget)
+        public static Task<object> Reload(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataSource_reload_23", dxTarget);
         }
-        public static Task<bool> RequireTotalCount(ElementRef dxTarget)
+        public static Task<bool> RequireTotalCount(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool>("BlazorDevExtreme_DataSource_requireTotalCount_24", dxTarget);
         }
-        public static Task RequireTotalCount(ElementRef dxTarget, bool value)
+        public static Task RequireTotalCount(ElementReference dxTarget, bool value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataSource_requireTotalCount_25", dxTarget, value);
         }
-        public static Task<object> SearchExpr(ElementRef dxTarget)
+        public static Task<object> SearchExpr(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataSource_searchExpr_26", dxTarget);
         }
-        public static Task SearchExpr(ElementRef dxTarget, object expr)
+        public static Task SearchExpr(ElementReference dxTarget, object expr)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataSource_searchExpr_27", dxTarget, expr);
         }
-        public static Task<string> SearchOperation(ElementRef dxTarget)
+        public static Task<string> SearchOperation(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DataSource_searchOperation_28", dxTarget);
         }
-        public static Task SearchOperation(ElementRef dxTarget, string op)
+        public static Task SearchOperation(ElementReference dxTarget, string op)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataSource_searchOperation_29", dxTarget, op);
         }
-        public static Task<object> SearchValue(ElementRef dxTarget)
+        public static Task<object> SearchValue(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataSource_searchValue_30", dxTarget);
         }
-        public static Task SearchValue(ElementRef dxTarget, object value)
+        public static Task SearchValue(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataSource_searchValue_31", dxTarget, value);
         }
-        public static Task<object> Select(ElementRef dxTarget)
+        public static Task<object> Select(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataSource_select_32", dxTarget);
         }
-        public static Task Select(ElementRef dxTarget, object expr)
+        public static Task Select(ElementReference dxTarget, object expr)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataSource_select_33", dxTarget, expr);
         }
-        public static Task<object> Sort(ElementRef dxTarget)
+        public static Task<object> Sort(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataSource_sort_34", dxTarget);
         }
-        public static Task Sort(ElementRef dxTarget, object sortExpr)
+        public static Task Sort(ElementReference dxTarget, object sortExpr)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataSource_sort_35", dxTarget, sortExpr);
         }
-        public static Task<object> Store(ElementRef dxTarget)
+        public static Task<object> Store(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataSource_store_36", dxTarget);
         }
-        public static Task<float> TotalCount(ElementRef dxTarget)
+        public static Task<float> TotalCount(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float>("BlazorDevExtreme_DataSource_totalCount_37", dxTarget);
         }
     }
     public class LocalStoreInterop: ArrayStoreInterop
     {
-        public static Task Init(ElementRef dxTarget, DevExpress.Data.LocalStoreOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Data.LocalStoreOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_LocalStore_Init", dxTarget, json);
         }
-        public static Task<float?> GetFlushInterval(ElementRef dxTarget)
+        public static Task<float?> GetFlushInterval(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_LocalStore_GetOption", dxTarget, "flushInterval");
         }
-        public static Task SetFlushInterval(ElementRef dxTarget, float? value)
+        public static Task SetFlushInterval(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_LocalStore_SetOption", dxTarget, "flushInterval", value);
         }
-        public static Task<bool?> GetImmediate(ElementRef dxTarget)
+        public static Task<bool?> GetImmediate(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_LocalStore_GetOption", dxTarget, "immediate");
         }
-        public static Task SetImmediate(ElementRef dxTarget, bool? value)
+        public static Task SetImmediate(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_LocalStore_SetOption", dxTarget, "immediate", value);
         }
-        public static Task<string> GetName(ElementRef dxTarget)
+        public static Task<string> GetName(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_LocalStore_GetOption", dxTarget, "name");
         }
-        public static Task SetName(ElementRef dxTarget, string value)
+        public static Task SetName(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_LocalStore_SetOption", dxTarget, "name", value);
         }
-        public static Task Clear(ElementRef dxTarget)
+        public static Task Clear(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_LocalStore_clear_0", dxTarget);
         }
     }
     public class QueryInterop
     {
-        public static Task<object> Aggregate(ElementRef dxTarget, object seed, object step, object finalize)
+        public static Task<object> Aggregate(ElementReference dxTarget, object seed, object step, object finalize)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Query_aggregate_0", dxTarget, seed, step, finalize);
         }
-        public static Task<object> Aggregate(ElementRef dxTarget, object step)
+        public static Task<object> Aggregate(ElementReference dxTarget, object step)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Query_aggregate_1", dxTarget, step);
         }
-        public static Task<object> Avg(ElementRef dxTarget)
+        public static Task<object> Avg(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Query_avg_2", dxTarget);
         }
-        public static Task<object> Avg(ElementRef dxTarget, object getter)
+        public static Task<object> Avg(ElementReference dxTarget, object getter)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Query_avg_3", dxTarget, getter);
         }
-        public static Task<object> Count(ElementRef dxTarget)
+        public static Task<object> Count(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Query_count_4", dxTarget);
         }
-        public static Task<object> Enumerate(ElementRef dxTarget)
+        public static Task<object> Enumerate(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Query_enumerate_5", dxTarget);
         }
-        public static Task<object> Filter(ElementRef dxTarget, object criteria)
+        public static Task<object> Filter(ElementReference dxTarget, object criteria)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Query_filter_6", dxTarget, criteria);
         }
-        public static Task<object> GroupBy(ElementRef dxTarget, object getter)
+        public static Task<object> GroupBy(ElementReference dxTarget, object getter)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Query_groupBy_8", dxTarget, getter);
         }
-        public static Task<object> Max(ElementRef dxTarget)
+        public static Task<object> Max(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Query_max_9", dxTarget);
         }
-        public static Task<object> Max(ElementRef dxTarget, object getter)
+        public static Task<object> Max(ElementReference dxTarget, object getter)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Query_max_10", dxTarget, getter);
         }
-        public static Task<object> Min(ElementRef dxTarget)
+        public static Task<object> Min(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Query_min_11", dxTarget);
         }
-        public static Task<object> Min(ElementRef dxTarget, object getter)
+        public static Task<object> Min(ElementReference dxTarget, object getter)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Query_min_12", dxTarget, getter);
         }
-        public static Task<object> Select(ElementRef dxTarget, object getter)
+        public static Task<object> Select(ElementReference dxTarget, object getter)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Query_select_13", dxTarget, getter);
         }
-        public static Task<object> Slice(ElementRef dxTarget, float skip, float take)
+        public static Task<object> Slice(ElementReference dxTarget, float skip, float take)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Query_slice_14", dxTarget, skip, take);
         }
-        public static Task<object> SortBy(ElementRef dxTarget, object getter)
+        public static Task<object> SortBy(ElementReference dxTarget, object getter)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Query_sortBy_15", dxTarget, getter);
         }
-        public static Task<object> SortBy(ElementRef dxTarget, object getter, bool desc)
+        public static Task<object> SortBy(ElementReference dxTarget, object getter, bool desc)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Query_sortBy_16", dxTarget, getter, desc);
         }
-        public static Task<object> Sum(ElementRef dxTarget)
+        public static Task<object> Sum(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Query_sum_17", dxTarget);
         }
-        public static Task<object> Sum(ElementRef dxTarget, object getter)
+        public static Task<object> Sum(ElementReference dxTarget, object getter)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Query_sum_18", dxTarget, getter);
         }
-        public static Task<object> ThenBy(ElementRef dxTarget, object getter)
+        public static Task<object> ThenBy(ElementReference dxTarget, object getter)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Query_thenBy_19", dxTarget, getter);
         }
-        public static Task<object> ThenBy(ElementRef dxTarget, object getter, bool desc)
+        public static Task<object> ThenBy(ElementReference dxTarget, object getter, bool desc)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Query_thenBy_20", dxTarget, getter, desc);
         }
-        public static Task<object> ToArray(ElementRef dxTarget)
+        public static Task<object> ToArray(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Query_toArray_21", dxTarget);
         }
     }
     public class ODataContextInterop
     {
-        public static Task Init(ElementRef dxTarget, DevExpress.Data.ODataContextOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Data.ODataContextOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_ODataContext_Init", dxTarget, json);
         }
-        public static Task<object> GetBeforeSend(ElementRef dxTarget)
+        public static Task<object> GetBeforeSend(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_ODataContext_GetOption", dxTarget, "beforeSend");
         }
-        public static Task SetBeforeSend(ElementRef dxTarget, object value)
+        public static Task SetBeforeSend(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_ODataContext_SetOption", dxTarget, "beforeSend", value);
         }
-        public static Task<bool?> GetDeserializeDates(ElementRef dxTarget)
+        public static Task<bool?> GetDeserializeDates(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_ODataContext_GetOption", dxTarget, "deserializeDates");
         }
-        public static Task SetDeserializeDates(ElementRef dxTarget, bool? value)
+        public static Task SetDeserializeDates(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_ODataContext_SetOption", dxTarget, "deserializeDates", value);
         }
-        public static Task<object> GetEntities(ElementRef dxTarget)
+        public static Task<object> GetEntities(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_ODataContext_GetOption", dxTarget, "entities");
         }
-        public static Task SetEntities(ElementRef dxTarget, object value)
+        public static Task SetEntities(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_ODataContext_SetOption", dxTarget, "entities", value);
         }
-        public static Task<object> GetErrorHandler(ElementRef dxTarget)
+        public static Task<object> GetErrorHandler(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_ODataContext_GetOption", dxTarget, "errorHandler");
         }
-        public static Task SetErrorHandler(ElementRef dxTarget, object value)
+        public static Task SetErrorHandler(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_ODataContext_SetOption", dxTarget, "errorHandler", value);
         }
-        public static Task<bool?> GetJsonp(ElementRef dxTarget)
+        public static Task<bool?> GetJsonp(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_ODataContext_GetOption", dxTarget, "jsonp");
         }
-        public static Task SetJsonp(ElementRef dxTarget, bool? value)
+        public static Task SetJsonp(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_ODataContext_SetOption", dxTarget, "jsonp", value);
         }
-        public static Task<string> GetUrl(ElementRef dxTarget)
+        public static Task<string> GetUrl(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_ODataContext_GetOption", dxTarget, "url");
         }
-        public static Task SetUrl(ElementRef dxTarget, string value)
+        public static Task SetUrl(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_ODataContext_SetOption", dxTarget, "url", value);
         }
-        public static Task<float?> GetVersion(ElementRef dxTarget)
+        public static Task<float?> GetVersion(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_ODataContext_GetOption", dxTarget, "version");
         }
-        public static Task SetVersion(ElementRef dxTarget, float? value)
+        public static Task SetVersion(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_ODataContext_SetOption", dxTarget, "version", value);
         }
-        public static Task<bool?> GetWithCredentials(ElementRef dxTarget)
+        public static Task<bool?> GetWithCredentials(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_ODataContext_GetOption", dxTarget, "withCredentials");
         }
-        public static Task SetWithCredentials(ElementRef dxTarget, bool? value)
+        public static Task SetWithCredentials(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_ODataContext_SetOption", dxTarget, "withCredentials", value);
         }
-        public static Task<object> Get(ElementRef dxTarget, string operationName, object @params)
+        public static Task<object> Get(ElementReference dxTarget, string operationName, object @params)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_ODataContext_get_0", dxTarget, operationName, @params);
         }
-        public static Task<object> Invoke(ElementRef dxTarget, string operationName, object @params, object httpMethod)
+        public static Task<object> Invoke(ElementReference dxTarget, string operationName, object @params, object httpMethod)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_ODataContext_invoke_1", dxTarget, operationName, @params, httpMethod);
         }
-        public static Task<object> ObjectLink(ElementRef dxTarget, string entityAlias, object key)
+        public static Task<object> ObjectLink(ElementReference dxTarget, string entityAlias, object key)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_ODataContext_objectLink_2", dxTarget, entityAlias, key);
         }
     }
     public class ODataStoreInterop: StoreInterop
     {
-        public static Task Init(ElementRef dxTarget, DevExpress.Data.ODataStoreOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Data.ODataStoreOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_ODataStore_Init", dxTarget, json);
         }
-        public static Task<object> GetBeforeSend(ElementRef dxTarget)
+        public static Task<object> GetBeforeSend(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_ODataStore_GetOption", dxTarget, "beforeSend");
         }
-        public static Task SetBeforeSend(ElementRef dxTarget, object value)
+        public static Task SetBeforeSend(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_ODataStore_SetOption", dxTarget, "beforeSend", value);
         }
-        public static Task<bool?> GetDeserializeDates(ElementRef dxTarget)
+        public static Task<bool?> GetDeserializeDates(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_ODataStore_GetOption", dxTarget, "deserializeDates");
         }
-        public static Task SetDeserializeDates(ElementRef dxTarget, bool? value)
+        public static Task SetDeserializeDates(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_ODataStore_SetOption", dxTarget, "deserializeDates", value);
         }
-        public static Task<object> GetFieldTypes(ElementRef dxTarget)
+        public static Task<object> GetFieldTypes(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_ODataStore_GetOption", dxTarget, "fieldTypes");
         }
-        public static Task SetFieldTypes(ElementRef dxTarget, object value)
+        public static Task SetFieldTypes(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_ODataStore_SetOption", dxTarget, "fieldTypes", value);
         }
-        public static Task<bool?> GetJsonp(ElementRef dxTarget)
+        public static Task<bool?> GetJsonp(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_ODataStore_GetOption", dxTarget, "jsonp");
         }
-        public static Task SetJsonp(ElementRef dxTarget, bool? value)
+        public static Task SetJsonp(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_ODataStore_SetOption", dxTarget, "jsonp", value);
         }
-        public static Task<object> GetKeyType(ElementRef dxTarget)
+        public static Task<object> GetKeyType(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_ODataStore_GetOption", dxTarget, "keyType");
         }
-        public static Task SetKeyType(ElementRef dxTarget, object value)
+        public static Task SetKeyType(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_ODataStore_SetOption", dxTarget, "keyType", value);
         }
-        public static Task<string> GetUrl(ElementRef dxTarget)
+        public static Task<string> GetUrl(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_ODataStore_GetOption", dxTarget, "url");
         }
-        public static Task SetUrl(ElementRef dxTarget, string value)
+        public static Task SetUrl(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_ODataStore_SetOption", dxTarget, "url", value);
         }
-        public static Task<float?> GetVersion(ElementRef dxTarget)
+        public static Task<float?> GetVersion(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_ODataStore_GetOption", dxTarget, "version");
         }
-        public static Task SetVersion(ElementRef dxTarget, float? value)
+        public static Task SetVersion(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_ODataStore_SetOption", dxTarget, "version", value);
         }
-        public static Task<bool?> GetWithCredentials(ElementRef dxTarget)
+        public static Task<bool?> GetWithCredentials(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_ODataStore_GetOption", dxTarget, "withCredentials");
         }
-        public static Task SetWithCredentials(ElementRef dxTarget, bool? value)
+        public static Task SetWithCredentials(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_ODataStore_SetOption", dxTarget, "withCredentials", value);
         }
-        public static Task<object> ByKey(ElementRef dxTarget, object key)
+        public static Task<object> ByKey(ElementReference dxTarget, object key)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_ODataStore_byKey_0", dxTarget, key);
         }
-        public static Task<object> ByKey(ElementRef dxTarget, object key, object extraOptions)
+        public static Task<object> ByKey(ElementReference dxTarget, object key, object extraOptions)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_ODataStore_byKey_1", dxTarget, key, extraOptions);
         }
-        public static Task<object> CreateQuery(ElementRef dxTarget, object loadOptions)
+        public static Task<object> CreateQuery(ElementReference dxTarget, object loadOptions)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_ODataStore_createQuery_2", dxTarget, loadOptions);
         }
-        public static Task<object> Load(ElementRef dxTarget)
+        public static Task<object> Load(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_ODataStore_load_3", dxTarget);
         }
-        public static Task<object> Load(ElementRef dxTarget, object options)
+        public static Task<object> Load(ElementReference dxTarget, object options)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_ODataStore_load_4", dxTarget, options);
         }
     }
     public class EdmLiteralInterop
     {
-        public static Task<string> ValueOf(ElementRef dxTarget)
+        public static Task<string> ValueOf(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_EdmLiteral_valueOf_0", dxTarget);
         }
@@ -1264,7 +1264,7 @@ namespace DevExpress.Data
         public static event EventHandler<JQueryEventArgs> FieldsPrepared;
         public static event EventHandler<JQueryEventArgs> LoadError;
         public static event EventHandler<JQueryEventArgs> LoadingChanged;
-        public static Task Init(ElementRef dxTarget, DevExpress.Data.PivotGridDataSourceOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Data.PivotGridDataSourceOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_PivotGridDataSource_Init", dxTarget, json);
@@ -1289,175 +1289,175 @@ namespace DevExpress.Data
         {
             LoadingChanged?.Invoke(null, new JQueryEventArgs(identifier));
         }
-        public static Task<object> GetFields(ElementRef dxTarget)
+        public static Task<object> GetFields(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_PivotGridDataSource_GetOption", dxTarget, "fields");
         }
-        public static Task SetFields(ElementRef dxTarget, object value)
+        public static Task SetFields(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_PivotGridDataSource_SetOption", dxTarget, "fields", value);
         }
-        public static Task<object> GetFilter(ElementRef dxTarget)
+        public static Task<object> GetFilter(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_PivotGridDataSource_GetOption", dxTarget, "filter");
         }
-        public static Task SetFilter(ElementRef dxTarget, object value)
+        public static Task SetFilter(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_PivotGridDataSource_SetOption", dxTarget, "filter", value);
         }
-        public static Task<bool?> GetRemoteOperations(ElementRef dxTarget)
+        public static Task<bool?> GetRemoteOperations(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_PivotGridDataSource_GetOption", dxTarget, "remoteOperations");
         }
-        public static Task SetRemoteOperations(ElementRef dxTarget, bool? value)
+        public static Task SetRemoteOperations(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_PivotGridDataSource_SetOption", dxTarget, "remoteOperations", value);
         }
-        public static Task<bool?> GetRetrieveFields(ElementRef dxTarget)
+        public static Task<bool?> GetRetrieveFields(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_PivotGridDataSource_GetOption", dxTarget, "retrieveFields");
         }
-        public static Task SetRetrieveFields(ElementRef dxTarget, bool? value)
+        public static Task SetRetrieveFields(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_PivotGridDataSource_SetOption", dxTarget, "retrieveFields", value);
         }
-        public static Task<object> GetStore(ElementRef dxTarget)
+        public static Task<object> GetStore(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_PivotGridDataSource_GetOption", dxTarget, "store");
         }
-        public static Task SetStore(ElementRef dxTarget, object value)
+        public static Task SetStore(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_PivotGridDataSource_SetOption", dxTarget, "store", value);
         }
-        public static Task CollapseAll(ElementRef dxTarget, object id)
+        public static Task CollapseAll(ElementReference dxTarget, object id)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_PivotGridDataSource_collapseAll_0", dxTarget, id);
         }
-        public static Task CollapseHeaderItem(ElementRef dxTarget, string area, object path)
+        public static Task CollapseHeaderItem(ElementReference dxTarget, string area, object path)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_PivotGridDataSource_collapseHeaderItem_1", dxTarget, area, path);
         }
-        public static Task<object> CreateDrillDownDataSource(ElementRef dxTarget, object options)
+        public static Task<object> CreateDrillDownDataSource(ElementReference dxTarget, object options)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_PivotGridDataSource_createDrillDownDataSource_2", dxTarget, options);
         }
-        public static Task Dispose(ElementRef dxTarget)
+        public static Task Dispose(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_PivotGridDataSource_dispose_3", dxTarget);
         }
-        public static Task ExpandAll(ElementRef dxTarget, object id)
+        public static Task ExpandAll(ElementReference dxTarget, object id)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_PivotGridDataSource_expandAll_4", dxTarget, id);
         }
-        public static Task ExpandHeaderItem(ElementRef dxTarget, string area, object path)
+        public static Task ExpandHeaderItem(ElementReference dxTarget, string area, object path)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_PivotGridDataSource_expandHeaderItem_5", dxTarget, area, path);
         }
-        public static Task<object> Field(ElementRef dxTarget, object id)
+        public static Task<object> Field(ElementReference dxTarget, object id)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_PivotGridDataSource_field_6", dxTarget, id);
         }
-        public static Task Field(ElementRef dxTarget, object id, object options)
+        public static Task Field(ElementReference dxTarget, object id, object options)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_PivotGridDataSource_field_7", dxTarget, id, options);
         }
-        public static Task<object> Fields(ElementRef dxTarget)
+        public static Task<object> Fields(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_PivotGridDataSource_fields_8", dxTarget);
         }
-        public static Task Fields(ElementRef dxTarget, object fields)
+        public static Task Fields(ElementReference dxTarget, object fields)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_PivotGridDataSource_fields_9", dxTarget, fields);
         }
-        public static Task<object> Filter(ElementRef dxTarget)
+        public static Task<object> Filter(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_PivotGridDataSource_filter_10", dxTarget);
         }
-        public static Task Filter(ElementRef dxTarget, object filterExpr)
+        public static Task Filter(ElementReference dxTarget, object filterExpr)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_PivotGridDataSource_filter_11", dxTarget, filterExpr);
         }
-        public static Task<object> GetAreaFields(ElementRef dxTarget, string area, bool collectGroups)
+        public static Task<object> GetAreaFields(ElementReference dxTarget, string area, bool collectGroups)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_PivotGridDataSource_getAreaFields_12", dxTarget, area, collectGroups);
         }
-        public static Task<object> GetData(ElementRef dxTarget)
+        public static Task<object> GetData(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_PivotGridDataSource_getData_13", dxTarget);
         }
-        public static Task<bool> IsLoading(ElementRef dxTarget)
+        public static Task<bool> IsLoading(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool>("BlazorDevExtreme_PivotGridDataSource_isLoading_14", dxTarget);
         }
-        public static Task<object> Load(ElementRef dxTarget)
+        public static Task<object> Load(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_PivotGridDataSource_load_15", dxTarget);
         }
-        public static Task<object> Off(ElementRef dxTarget, string eventName)
+        public static Task<object> Off(ElementReference dxTarget, string eventName)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_PivotGridDataSource_off_16", dxTarget, eventName);
         }
-        public static Task<object> Off(ElementRef dxTarget, string eventName, object eventHandler)
+        public static Task<object> Off(ElementReference dxTarget, string eventName, object eventHandler)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_PivotGridDataSource_off_17", dxTarget, eventName, eventHandler);
         }
-        public static Task<object> On(ElementRef dxTarget, string eventName, object eventHandler)
+        public static Task<object> On(ElementReference dxTarget, string eventName, object eventHandler)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_PivotGridDataSource_on_18", dxTarget, eventName, eventHandler);
         }
-        public static Task<object> On(ElementRef dxTarget, object events)
+        public static Task<object> On(ElementReference dxTarget, object events)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_PivotGridDataSource_on_19", dxTarget, events);
         }
-        public static Task<object> Reload(ElementRef dxTarget)
+        public static Task<object> Reload(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_PivotGridDataSource_reload_20", dxTarget);
         }
-        public static Task<object> State(ElementRef dxTarget)
+        public static Task<object> State(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_PivotGridDataSource_state_21", dxTarget);
         }
-        public static Task State(ElementRef dxTarget, object state)
+        public static Task State(ElementReference dxTarget, object state)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_PivotGridDataSource_state_22", dxTarget, state);
         }
     }
     public class XmlaStoreInterop
     {
-        public static Task Init(ElementRef dxTarget, DevExpress.Data.XmlaStoreOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Data.XmlaStoreOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_XmlaStore_Init", dxTarget, json);
         }
-        public static Task<object> GetBeforeSend(ElementRef dxTarget)
+        public static Task<object> GetBeforeSend(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_XmlaStore_GetOption", dxTarget, "beforeSend");
         }
-        public static Task SetBeforeSend(ElementRef dxTarget, object value)
+        public static Task SetBeforeSend(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_XmlaStore_SetOption", dxTarget, "beforeSend", value);
         }
-        public static Task<string> GetCatalog(ElementRef dxTarget)
+        public static Task<string> GetCatalog(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_XmlaStore_GetOption", dxTarget, "catalog");
         }
-        public static Task SetCatalog(ElementRef dxTarget, string value)
+        public static Task SetCatalog(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_XmlaStore_SetOption", dxTarget, "catalog", value);
         }
-        public static Task<string> GetCube(ElementRef dxTarget)
+        public static Task<string> GetCube(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_XmlaStore_GetOption", dxTarget, "cube");
         }
-        public static Task SetCube(ElementRef dxTarget, string value)
+        public static Task SetCube(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_XmlaStore_SetOption", dxTarget, "cube", value);
         }
-        public static Task<string> GetUrl(ElementRef dxTarget)
+        public static Task<string> GetUrl(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_XmlaStore_GetOption", dxTarget, "url");
         }
-        public static Task SetUrl(ElementRef dxTarget, string value)
+        public static Task SetUrl(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_XmlaStore_SetOption", dxTarget, "url", value);
         }
@@ -1467,19 +1467,19 @@ namespace DevExpress.Core
 {
     public class EventsMixinInterop
     {
-        public static Task<object> Off(ElementRef dxTarget, string eventName)
+        public static Task<object> Off(ElementReference dxTarget, string eventName)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_EventsMixin_off_0", dxTarget, eventName);
         }
-        public static Task<object> Off(ElementRef dxTarget, string eventName, object eventHandler)
+        public static Task<object> Off(ElementReference dxTarget, string eventName, object eventHandler)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_EventsMixin_off_1", dxTarget, eventName, eventHandler);
         }
-        public static Task<object> On(ElementRef dxTarget, string eventName, object eventHandler)
+        public static Task<object> On(ElementReference dxTarget, string eventName, object eventHandler)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_EventsMixin_on_2", dxTarget, eventName, eventHandler);
         }
-        public static Task<object> On(ElementRef dxTarget, object events)
+        public static Task<object> On(ElementReference dxTarget, object events)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_EventsMixin_on_3", dxTarget, events);
         }
@@ -1490,7 +1490,7 @@ namespace DevExpress.Framework
     public class DxCommandInterop: DOMComponentInterop
     {
         public static event EventHandler<JQueryEventArgs> Execute;
-        public static Task Init(ElementRef dxTarget, DevExpress.Framework.DxCommandOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Framework.DxCommandOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxCommand_Init", dxTarget, json);
@@ -1500,353 +1500,353 @@ namespace DevExpress.Framework
         {
             Execute?.Invoke(null, new JQueryEventArgs(identifier));
         }
-        public static Task<bool?> GetDisabled(ElementRef dxTarget)
+        public static Task<bool?> GetDisabled(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxCommand_GetOption", dxTarget, "disabled");
         }
-        public static Task SetDisabled(ElementRef dxTarget, bool? value)
+        public static Task SetDisabled(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxCommand_SetOption", dxTarget, "disabled", value);
         }
-        public static Task<string> GetIcon(ElementRef dxTarget)
+        public static Task<string> GetIcon(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxCommand_GetOption", dxTarget, "icon");
         }
-        public static Task SetIcon(ElementRef dxTarget, string value)
+        public static Task SetIcon(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxCommand_SetOption", dxTarget, "icon", value);
         }
-        public static Task<object> GetIconSrc(ElementRef dxTarget)
+        public static Task<object> GetIconSrc(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxCommand_GetOption", dxTarget, "iconSrc");
         }
-        public static Task SetIconSrc(ElementRef dxTarget, object value)
+        public static Task SetIconSrc(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxCommand_SetOption", dxTarget, "iconSrc", value);
         }
-        public static Task<string> GetId(ElementRef dxTarget)
+        public static Task<string> GetId(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxCommand_GetOption", dxTarget, "id");
         }
-        public static Task SetId(ElementRef dxTarget, string value)
+        public static Task SetId(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxCommand_SetOption", dxTarget, "id", value);
         }
-        public static Task<string> GetRenderStage(ElementRef dxTarget)
+        public static Task<string> GetRenderStage(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxCommand_GetOption", dxTarget, "renderStage");
         }
-        public static Task SetRenderStage(ElementRef dxTarget, string value)
+        public static Task SetRenderStage(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxCommand_SetOption", dxTarget, "renderStage", value);
         }
-        public static Task<string> GetTitle(ElementRef dxTarget)
+        public static Task<string> GetTitle(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxCommand_GetOption", dxTarget, "title");
         }
-        public static Task SetTitle(ElementRef dxTarget, string value)
+        public static Task SetTitle(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxCommand_SetOption", dxTarget, "title", value);
         }
-        public static Task<string> GetType(ElementRef dxTarget)
+        public static Task<string> GetType(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxCommand_GetOption", dxTarget, "type");
         }
-        public static Task SetType(ElementRef dxTarget, string value)
+        public static Task SetType(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxCommand_SetOption", dxTarget, "type", value);
         }
-        public static Task<bool?> GetVisible(ElementRef dxTarget)
+        public static Task<bool?> GetVisible(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxCommand_GetOption", dxTarget, "visible");
         }
-        public static Task SetVisible(ElementRef dxTarget, bool? value)
+        public static Task SetVisible(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxCommand_SetOption", dxTarget, "visible", value);
         }
-        public static Task DoExecute(ElementRef dxTarget)
+        public static Task DoExecute(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxCommand_execute_0", dxTarget);
         }
     }
     public class RouterInterop
     {
-        public static Task<string> Format(ElementRef dxTarget, object obj)
+        public static Task<string> Format(ElementReference dxTarget, object obj)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_Router_format_0", dxTarget, obj);
         }
-        public static Task<object> Parse(ElementRef dxTarget, string uri)
+        public static Task<object> Parse(ElementReference dxTarget, string uri)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Router_parse_1", dxTarget, uri);
         }
-        public static Task Register(ElementRef dxTarget, string pattern, object defaults, object constraints)
+        public static Task Register(ElementReference dxTarget, string pattern, object defaults, object constraints)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Router_register_2", dxTarget, pattern, defaults, constraints);
         }
     }
     public class StateManagerInterop
     {
-        public static Task Init(ElementRef dxTarget, DevExpress.Framework.StateManagerOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Framework.StateManagerOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_StateManager_Init", dxTarget, json);
         }
-        public static Task<object> GetStorage(ElementRef dxTarget)
+        public static Task<object> GetStorage(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_StateManager_GetOption", dxTarget, "storage");
         }
-        public static Task SetStorage(ElementRef dxTarget, object value)
+        public static Task SetStorage(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_StateManager_SetOption", dxTarget, "storage", value);
         }
-        public static Task AddStateSource(ElementRef dxTarget, object stateSource)
+        public static Task AddStateSource(ElementReference dxTarget, object stateSource)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_StateManager_addStateSource_0", dxTarget, stateSource);
         }
-        public static Task ClearState(ElementRef dxTarget)
+        public static Task ClearState(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_StateManager_clearState_1", dxTarget);
         }
-        public static Task RemoveStateSource(ElementRef dxTarget, object stateSource)
+        public static Task RemoveStateSource(ElementReference dxTarget, object stateSource)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_StateManager_removeStateSource_2", dxTarget, stateSource);
         }
-        public static Task RestoreState(ElementRef dxTarget)
+        public static Task RestoreState(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_StateManager_restoreState_3", dxTarget);
         }
-        public static Task SaveState(ElementRef dxTarget)
+        public static Task SaveState(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_StateManager_saveState_4", dxTarget);
         }
     }
     public class ViewCacheInterop
     {
-        public static Task Clear(ElementRef dxTarget)
+        public static Task Clear(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_ViewCache_clear_0", dxTarget);
         }
-        public static Task<object> GetView(ElementRef dxTarget, string key)
+        public static Task<object> GetView(ElementReference dxTarget, string key)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_ViewCache_getView_1", dxTarget, key);
         }
-        public static Task<bool> HasView(ElementRef dxTarget, string key)
+        public static Task<bool> HasView(ElementReference dxTarget, string key)
         {
             return JSRuntime.Current.InvokeAsync<bool>("BlazorDevExtreme_ViewCache_hasView_2", dxTarget, key);
         }
-        public static Task<object> Off(ElementRef dxTarget, string eventName)
+        public static Task<object> Off(ElementReference dxTarget, string eventName)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_ViewCache_off_3", dxTarget, eventName);
         }
-        public static Task<object> Off(ElementRef dxTarget, string eventName, object eventHandler)
+        public static Task<object> Off(ElementReference dxTarget, string eventName, object eventHandler)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_ViewCache_off_4", dxTarget, eventName, eventHandler);
         }
-        public static Task<object> On(ElementRef dxTarget, string eventName, object eventHandler)
+        public static Task<object> On(ElementReference dxTarget, string eventName, object eventHandler)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_ViewCache_on_5", dxTarget, eventName, eventHandler);
         }
-        public static Task<object> On(ElementRef dxTarget, object events)
+        public static Task<object> On(ElementReference dxTarget, object events)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_ViewCache_on_6", dxTarget, events);
         }
-        public static Task<object> RemoveView(ElementRef dxTarget, string key)
+        public static Task<object> RemoveView(ElementReference dxTarget, string key)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_ViewCache_removeView_7", dxTarget, key);
         }
-        public static Task SetView(ElementRef dxTarget, string key, object viewInfo)
+        public static Task SetView(ElementReference dxTarget, string key, object viewInfo)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_ViewCache_setView_8", dxTarget, key, viewInfo);
         }
     }
     public class DxCommandContainerInterop
     {
-        public static Task Init(ElementRef dxTarget, DevExpress.Framework.DxCommandContainerOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Framework.DxCommandContainerOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxCommandContainer_Init", dxTarget, json);
         }
-        public static Task<string> GetId(ElementRef dxTarget)
+        public static Task<string> GetId(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxCommandContainer_GetOption", dxTarget, "id");
         }
-        public static Task SetId(ElementRef dxTarget, string value)
+        public static Task SetId(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxCommandContainer_SetOption", dxTarget, "id", value);
         }
     }
     public class DxViewInterop
     {
-        public static Task Init(ElementRef dxTarget, DevExpress.Framework.DxViewOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Framework.DxViewOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxView_Init", dxTarget, json);
         }
-        public static Task<bool?> GetDisableCache(ElementRef dxTarget)
+        public static Task<bool?> GetDisableCache(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxView_GetOption", dxTarget, "disableCache");
         }
-        public static Task SetDisableCache(ElementRef dxTarget, bool? value)
+        public static Task SetDisableCache(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxView_SetOption", dxTarget, "disableCache", value);
         }
-        public static Task<bool?> GetModal(ElementRef dxTarget)
+        public static Task<bool?> GetModal(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxView_GetOption", dxTarget, "modal");
         }
-        public static Task SetModal(ElementRef dxTarget, bool? value)
+        public static Task SetModal(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxView_SetOption", dxTarget, "modal", value);
         }
-        public static Task<string> GetName(ElementRef dxTarget)
+        public static Task<string> GetName(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxView_GetOption", dxTarget, "name");
         }
-        public static Task SetName(ElementRef dxTarget, string value)
+        public static Task SetName(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxView_SetOption", dxTarget, "name", value);
         }
-        public static Task<string> GetOrientation(ElementRef dxTarget)
+        public static Task<string> GetOrientation(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxView_GetOption", dxTarget, "orientation");
         }
-        public static Task SetOrientation(ElementRef dxTarget, string value)
+        public static Task SetOrientation(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxView_SetOption", dxTarget, "orientation", value);
         }
-        public static Task<string> GetPane(ElementRef dxTarget)
+        public static Task<string> GetPane(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxView_GetOption", dxTarget, "pane");
         }
-        public static Task SetPane(ElementRef dxTarget, string value)
+        public static Task SetPane(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxView_SetOption", dxTarget, "pane", value);
         }
-        public static Task<string> GetTitle(ElementRef dxTarget)
+        public static Task<string> GetTitle(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxView_GetOption", dxTarget, "title");
         }
-        public static Task SetTitle(ElementRef dxTarget, string value)
+        public static Task SetTitle(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxView_SetOption", dxTarget, "title", value);
         }
     }
     public class DxLayoutInterop
     {
-        public static Task Init(ElementRef dxTarget, DevExpress.Framework.DxLayoutOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Framework.DxLayoutOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxLayout_Init", dxTarget, json);
         }
-        public static Task<string> GetName(ElementRef dxTarget)
+        public static Task<string> GetName(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxLayout_GetOption", dxTarget, "name");
         }
-        public static Task SetName(ElementRef dxTarget, string value)
+        public static Task SetName(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxLayout_SetOption", dxTarget, "name", value);
         }
     }
     public class DxViewPlaceholderInterop
     {
-        public static Task Init(ElementRef dxTarget, DevExpress.Framework.DxViewPlaceholderOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Framework.DxViewPlaceholderOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxViewPlaceholder_Init", dxTarget, json);
         }
-        public static Task<string> GetViewName(ElementRef dxTarget)
+        public static Task<string> GetViewName(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxViewPlaceholder_GetOption", dxTarget, "viewName");
         }
-        public static Task SetViewName(ElementRef dxTarget, string value)
+        public static Task SetViewName(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxViewPlaceholder_SetOption", dxTarget, "viewName", value);
         }
     }
     public class DxTransitionInterop
     {
-        public static Task Init(ElementRef dxTarget, DevExpress.Framework.DxTransitionOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Framework.DxTransitionOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTransition_Init", dxTarget, json);
         }
-        public static Task<string> GetAnimation(ElementRef dxTarget)
+        public static Task<string> GetAnimation(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxTransition_GetOption", dxTarget, "animation");
         }
-        public static Task SetAnimation(ElementRef dxTarget, string value)
+        public static Task SetAnimation(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTransition_SetOption", dxTarget, "animation", value);
         }
-        public static Task<string> GetName(ElementRef dxTarget)
+        public static Task<string> GetName(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxTransition_GetOption", dxTarget, "name");
         }
-        public static Task SetName(ElementRef dxTarget, string value)
+        public static Task SetName(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTransition_SetOption", dxTarget, "name", value);
         }
-        public static Task<string> GetType(ElementRef dxTarget)
+        public static Task<string> GetType(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxTransition_GetOption", dxTarget, "type");
         }
-        public static Task SetType(ElementRef dxTarget, string value)
+        public static Task SetType(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTransition_SetOption", dxTarget, "type", value);
         }
     }
     public class DxContentPlaceholderInterop
     {
-        public static Task Init(ElementRef dxTarget, DevExpress.Framework.DxContentPlaceholderOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Framework.DxContentPlaceholderOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxContentPlaceholder_Init", dxTarget, json);
         }
-        public static Task<string> GetAnimation(ElementRef dxTarget)
+        public static Task<string> GetAnimation(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxContentPlaceholder_GetOption", dxTarget, "animation");
         }
-        public static Task SetAnimation(ElementRef dxTarget, string value)
+        public static Task SetAnimation(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxContentPlaceholder_SetOption", dxTarget, "animation", value);
         }
-        public static Task<string> GetContentCssPosition(ElementRef dxTarget)
+        public static Task<string> GetContentCssPosition(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxContentPlaceholder_GetOption", dxTarget, "contentCssPosition");
         }
-        public static Task SetContentCssPosition(ElementRef dxTarget, string value)
+        public static Task SetContentCssPosition(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxContentPlaceholder_SetOption", dxTarget, "contentCssPosition", value);
         }
-        public static Task<string> GetName(ElementRef dxTarget)
+        public static Task<string> GetName(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxContentPlaceholder_GetOption", dxTarget, "name");
         }
-        public static Task SetName(ElementRef dxTarget, string value)
+        public static Task SetName(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxContentPlaceholder_SetOption", dxTarget, "name", value);
         }
-        public static Task<string> GetTransition(ElementRef dxTarget)
+        public static Task<string> GetTransition(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxContentPlaceholder_GetOption", dxTarget, "transition");
         }
-        public static Task SetTransition(ElementRef dxTarget, string value)
+        public static Task SetTransition(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxContentPlaceholder_SetOption", dxTarget, "transition", value);
         }
     }
     public class DxContentInterop
     {
-        public static Task Init(ElementRef dxTarget, DevExpress.Framework.DxContentOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Framework.DxContentOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxContent_Init", dxTarget, json);
         }
-        public static Task<string> GetTargetPlaceholder(ElementRef dxTarget)
+        public static Task<string> GetTargetPlaceholder(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxContent_GetOption", dxTarget, "targetPlaceholder");
         }
-        public static Task SetTargetPlaceholder(ElementRef dxTarget, string value)
+        public static Task SetTargetPlaceholder(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxContent_SetOption", dxTarget, "targetPlaceholder", value);
         }
@@ -1856,204 +1856,204 @@ namespace DevExpress.Framework.Html
 {
     public class HtmlApplicationInterop
     {
-        public static Task Init(ElementRef dxTarget, DevExpress.Framework.Html.HtmlApplicationOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Framework.Html.HtmlApplicationOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_HtmlApplication_Init", dxTarget, json);
         }
-        public static Task<object> GetAnimationSet(ElementRef dxTarget)
+        public static Task<object> GetAnimationSet(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_HtmlApplication_GetOption", dxTarget, "animationSet");
         }
-        public static Task SetAnimationSet(ElementRef dxTarget, object value)
+        public static Task SetAnimationSet(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_HtmlApplication_SetOption", dxTarget, "animationSet", value);
         }
-        public static Task<object> GetCommandMapping(ElementRef dxTarget)
+        public static Task<object> GetCommandMapping(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_HtmlApplication_GetOption", dxTarget, "commandMapping");
         }
-        public static Task SetCommandMapping(ElementRef dxTarget, object value)
+        public static Task SetCommandMapping(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_HtmlApplication_SetOption", dxTarget, "commandMapping", value);
         }
-        public static Task<bool?> GetDisableViewCache(ElementRef dxTarget)
+        public static Task<bool?> GetDisableViewCache(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_HtmlApplication_GetOption", dxTarget, "disableViewCache");
         }
-        public static Task SetDisableViewCache(ElementRef dxTarget, bool? value)
+        public static Task SetDisableViewCache(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_HtmlApplication_SetOption", dxTarget, "disableViewCache", value);
         }
-        public static Task<object> GetLayoutSet(ElementRef dxTarget)
+        public static Task<object> GetLayoutSet(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_HtmlApplication_GetOption", dxTarget, "layoutSet");
         }
-        public static Task SetLayoutSet(ElementRef dxTarget, object value)
+        public static Task SetLayoutSet(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_HtmlApplication_SetOption", dxTarget, "layoutSet", value);
         }
-        public static Task<string> GetMode(ElementRef dxTarget)
+        public static Task<string> GetMode(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_HtmlApplication_GetOption", dxTarget, "mode");
         }
-        public static Task SetMode(ElementRef dxTarget, string value)
+        public static Task SetMode(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_HtmlApplication_SetOption", dxTarget, "mode", value);
         }
-        public static Task<object> GetNamespace(ElementRef dxTarget)
+        public static Task<object> GetNamespace(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_HtmlApplication_GetOption", dxTarget, "namespace");
         }
-        public static Task SetNamespace(ElementRef dxTarget, object value)
+        public static Task SetNamespace(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_HtmlApplication_SetOption", dxTarget, "namespace", value);
         }
-        public static Task<string> GetNavigateToRootViewMode(ElementRef dxTarget)
+        public static Task<string> GetNavigateToRootViewMode(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_HtmlApplication_GetOption", dxTarget, "navigateToRootViewMode");
         }
-        public static Task SetNavigateToRootViewMode(ElementRef dxTarget, string value)
+        public static Task SetNavigateToRootViewMode(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_HtmlApplication_SetOption", dxTarget, "navigateToRootViewMode", value);
         }
-        public static Task<object> GetNavigation(ElementRef dxTarget)
+        public static Task<object> GetNavigation(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_HtmlApplication_GetOption", dxTarget, "navigation");
         }
-        public static Task SetNavigation(ElementRef dxTarget, object value)
+        public static Task SetNavigation(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_HtmlApplication_SetOption", dxTarget, "navigation", value);
         }
-        public static Task<object> GetRouter(ElementRef dxTarget)
+        public static Task<object> GetRouter(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_HtmlApplication_GetOption", dxTarget, "router");
         }
-        public static Task SetRouter(ElementRef dxTarget, object value)
+        public static Task SetRouter(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_HtmlApplication_SetOption", dxTarget, "router", value);
         }
-        public static Task<object> GetStateManager(ElementRef dxTarget)
+        public static Task<object> GetStateManager(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_HtmlApplication_GetOption", dxTarget, "stateManager");
         }
-        public static Task SetStateManager(ElementRef dxTarget, object value)
+        public static Task SetStateManager(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_HtmlApplication_SetOption", dxTarget, "stateManager", value);
         }
-        public static Task<object> GetStateStorage(ElementRef dxTarget)
+        public static Task<object> GetStateStorage(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_HtmlApplication_GetOption", dxTarget, "stateStorage");
         }
-        public static Task SetStateStorage(ElementRef dxTarget, object value)
+        public static Task SetStateStorage(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_HtmlApplication_SetOption", dxTarget, "stateStorage", value);
         }
-        public static Task<string> GetTemplatesVersion(ElementRef dxTarget)
+        public static Task<string> GetTemplatesVersion(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_HtmlApplication_GetOption", dxTarget, "templatesVersion");
         }
-        public static Task SetTemplatesVersion(ElementRef dxTarget, string value)
+        public static Task SetTemplatesVersion(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_HtmlApplication_SetOption", dxTarget, "templatesVersion", value);
         }
-        public static Task<bool?> GetUseViewTitleAsBackText(ElementRef dxTarget)
+        public static Task<bool?> GetUseViewTitleAsBackText(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_HtmlApplication_GetOption", dxTarget, "useViewTitleAsBackText");
         }
-        public static Task SetUseViewTitleAsBackText(ElementRef dxTarget, bool? value)
+        public static Task SetUseViewTitleAsBackText(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_HtmlApplication_SetOption", dxTarget, "useViewTitleAsBackText", value);
         }
-        public static Task<object> GetViewCache(ElementRef dxTarget)
+        public static Task<object> GetViewCache(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_HtmlApplication_GetOption", dxTarget, "viewCache");
         }
-        public static Task SetViewCache(ElementRef dxTarget, object value)
+        public static Task SetViewCache(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_HtmlApplication_SetOption", dxTarget, "viewCache", value);
         }
-        public static Task<float?> GetViewCacheSize(ElementRef dxTarget)
+        public static Task<float?> GetViewCacheSize(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_HtmlApplication_GetOption", dxTarget, "viewCacheSize");
         }
-        public static Task SetViewCacheSize(ElementRef dxTarget, float? value)
+        public static Task SetViewCacheSize(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_HtmlApplication_SetOption", dxTarget, "viewCacheSize", value);
         }
-        public static Task<object> GetViewPort(ElementRef dxTarget)
+        public static Task<object> GetViewPort(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_HtmlApplication_GetOption", dxTarget, "viewPort");
         }
-        public static Task SetViewPort(ElementRef dxTarget, object value)
+        public static Task SetViewPort(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_HtmlApplication_SetOption", dxTarget, "viewPort", value);
         }
-        public static Task Back(ElementRef dxTarget)
+        public static Task Back(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_HtmlApplication_back_0", dxTarget);
         }
-        public static Task<bool> CanBack(ElementRef dxTarget)
+        public static Task<bool> CanBack(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool>("BlazorDevExtreme_HtmlApplication_canBack_1", dxTarget);
         }
-        public static Task ClearState(ElementRef dxTarget)
+        public static Task ClearState(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_HtmlApplication_clearState_2", dxTarget);
         }
-        public static Task CreateNavigation(ElementRef dxTarget, object navigationConfig)
+        public static Task CreateNavigation(ElementReference dxTarget, object navigationConfig)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_HtmlApplication_createNavigation_3", dxTarget, navigationConfig);
         }
-        public static Task<object> GetViewTemplate(ElementRef dxTarget, string viewName)
+        public static Task<object> GetViewTemplate(ElementReference dxTarget, string viewName)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_HtmlApplication_getViewTemplate_4", dxTarget, viewName);
         }
-        public static Task<object> GetViewTemplateInfo(ElementRef dxTarget, string viewName)
+        public static Task<object> GetViewTemplateInfo(ElementReference dxTarget, string viewName)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_HtmlApplication_getViewTemplateInfo_5", dxTarget, viewName);
         }
-        public static Task<object> LoadTemplates(ElementRef dxTarget, object source)
+        public static Task<object> LoadTemplates(ElementReference dxTarget, object source)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_HtmlApplication_loadTemplates_6", dxTarget, source);
         }
-        public static Task Navigate(ElementRef dxTarget, object uri)
+        public static Task Navigate(ElementReference dxTarget, object uri)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_HtmlApplication_navigate_7", dxTarget, uri);
         }
-        public static Task Navigate(ElementRef dxTarget, object uri, object options)
+        public static Task Navigate(ElementReference dxTarget, object uri, object options)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_HtmlApplication_navigate_8", dxTarget, uri, options);
         }
-        public static Task<object> Off(ElementRef dxTarget, string eventName)
+        public static Task<object> Off(ElementReference dxTarget, string eventName)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_HtmlApplication_off_9", dxTarget, eventName);
         }
-        public static Task<object> Off(ElementRef dxTarget, string eventName, object eventHandler)
+        public static Task<object> Off(ElementReference dxTarget, string eventName, object eventHandler)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_HtmlApplication_off_10", dxTarget, eventName, eventHandler);
         }
-        public static Task<object> On(ElementRef dxTarget, string eventName, object eventHandler)
+        public static Task<object> On(ElementReference dxTarget, string eventName, object eventHandler)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_HtmlApplication_on_11", dxTarget, eventName, eventHandler);
         }
-        public static Task<object> On(ElementRef dxTarget, object events)
+        public static Task<object> On(ElementReference dxTarget, object events)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_HtmlApplication_on_12", dxTarget, events);
         }
-        public static Task RenderNavigation(ElementRef dxTarget)
+        public static Task RenderNavigation(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_HtmlApplication_renderNavigation_13", dxTarget);
         }
-        public static Task RestoreState(ElementRef dxTarget)
+        public static Task RestoreState(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_HtmlApplication_restoreState_14", dxTarget);
         }
-        public static Task SaveState(ElementRef dxTarget)
+        public static Task SaveState(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_HtmlApplication_saveState_15", dxTarget);
         }
-        public static Task<object> TemplateContext(ElementRef dxTarget)
+        public static Task<object> TemplateContext(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_HtmlApplication_templateContext_16", dxTarget);
         }
@@ -2064,7 +2064,7 @@ namespace DevExpress.Ui
     public class DxAccordionInterop: CollectionWidgetInterop
     {
         public static event EventHandler<JQueryEventArgs> ItemTitleClick;
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxAccordionOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.DxAccordionOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxAccordion_Init", dxTarget, json);
@@ -2074,55 +2074,55 @@ namespace DevExpress.Ui
         {
             ItemTitleClick?.Invoke(null, new JQueryEventArgs(identifier));
         }
-        public static Task<float?> GetAnimationDuration(ElementRef dxTarget)
+        public static Task<float?> GetAnimationDuration(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DxAccordion_GetOption", dxTarget, "animationDuration");
         }
-        public static Task SetAnimationDuration(ElementRef dxTarget, float? value)
+        public static Task SetAnimationDuration(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxAccordion_SetOption", dxTarget, "animationDuration", value);
         }
-        public static Task<bool?> GetCollapsible(ElementRef dxTarget)
+        public static Task<bool?> GetCollapsible(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxAccordion_GetOption", dxTarget, "collapsible");
         }
-        public static Task SetCollapsible(ElementRef dxTarget, bool? value)
+        public static Task SetCollapsible(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxAccordion_SetOption", dxTarget, "collapsible", value);
         }
-        public static Task<bool?> GetDeferRendering(ElementRef dxTarget)
+        public static Task<bool?> GetDeferRendering(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxAccordion_GetOption", dxTarget, "deferRendering");
         }
-        public static Task SetDeferRendering(ElementRef dxTarget, bool? value)
+        public static Task SetDeferRendering(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxAccordion_SetOption", dxTarget, "deferRendering", value);
         }
-        public static Task<object> GetItemTitleTemplate(ElementRef dxTarget)
+        public static Task<object> GetItemTitleTemplate(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxAccordion_GetOption", dxTarget, "itemTitleTemplate");
         }
-        public static Task SetItemTitleTemplate(ElementRef dxTarget, object value)
+        public static Task SetItemTitleTemplate(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxAccordion_SetOption", dxTarget, "itemTitleTemplate", value);
         }
-        public static Task<bool?> GetMultiple(ElementRef dxTarget)
+        public static Task<bool?> GetMultiple(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxAccordion_GetOption", dxTarget, "multiple");
         }
-        public static Task SetMultiple(ElementRef dxTarget, bool? value)
+        public static Task SetMultiple(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxAccordion_SetOption", dxTarget, "multiple", value);
         }
-        public static Task<object> CollapseItem(ElementRef dxTarget, float index)
+        public static Task<object> CollapseItem(ElementReference dxTarget, float index)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxAccordion_collapseItem_0", dxTarget, index);
         }
-        public static Task<object> ExpandItem(ElementRef dxTarget, float index)
+        public static Task<object> ExpandItem(ElementReference dxTarget, float index)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxAccordion_expandItem_1", dxTarget, index);
         }
-        public static Task<object> UpdateDimensions(ElementRef dxTarget)
+        public static Task<object> UpdateDimensions(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxAccordion_updateDimensions_2", dxTarget);
         }
@@ -2130,7 +2130,7 @@ namespace DevExpress.Ui
     public class DxActionSheetInterop: CollectionWidgetInterop
     {
         public static event EventHandler<JQueryEventArgs> CancelClick;
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxActionSheetOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.DxActionSheetOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxActionSheet_Init", dxTarget, json);
@@ -2140,111 +2140,111 @@ namespace DevExpress.Ui
         {
             CancelClick?.Invoke(null, new JQueryEventArgs(identifier));
         }
-        public static Task<string> GetCancelText(ElementRef dxTarget)
+        public static Task<string> GetCancelText(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxActionSheet_GetOption", dxTarget, "cancelText");
         }
-        public static Task SetCancelText(ElementRef dxTarget, string value)
+        public static Task SetCancelText(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxActionSheet_SetOption", dxTarget, "cancelText", value);
         }
-        public static Task<bool?> GetShowCancelButton(ElementRef dxTarget)
+        public static Task<bool?> GetShowCancelButton(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxActionSheet_GetOption", dxTarget, "showCancelButton");
         }
-        public static Task SetShowCancelButton(ElementRef dxTarget, bool? value)
+        public static Task SetShowCancelButton(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxActionSheet_SetOption", dxTarget, "showCancelButton", value);
         }
-        public static Task<bool?> GetShowTitle(ElementRef dxTarget)
+        public static Task<bool?> GetShowTitle(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxActionSheet_GetOption", dxTarget, "showTitle");
         }
-        public static Task SetShowTitle(ElementRef dxTarget, bool? value)
+        public static Task SetShowTitle(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxActionSheet_SetOption", dxTarget, "showTitle", value);
         }
-        public static Task<object> GetTarget(ElementRef dxTarget)
+        public static Task<object> GetTarget(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxActionSheet_GetOption", dxTarget, "target");
         }
-        public static Task SetTarget(ElementRef dxTarget, object value)
+        public static Task SetTarget(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxActionSheet_SetOption", dxTarget, "target", value);
         }
-        public static Task<string> GetTitle(ElementRef dxTarget)
+        public static Task<string> GetTitle(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxActionSheet_GetOption", dxTarget, "title");
         }
-        public static Task SetTitle(ElementRef dxTarget, string value)
+        public static Task SetTitle(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxActionSheet_SetOption", dxTarget, "title", value);
         }
-        public static Task<bool?> GetUsePopover(ElementRef dxTarget)
+        public static Task<bool?> GetUsePopover(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxActionSheet_GetOption", dxTarget, "usePopover");
         }
-        public static Task SetUsePopover(ElementRef dxTarget, bool? value)
+        public static Task SetUsePopover(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxActionSheet_SetOption", dxTarget, "usePopover", value);
         }
-        public static Task<object> Hide(ElementRef dxTarget)
+        public static Task<object> Hide(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxActionSheet_hide_0", dxTarget);
         }
-        public static Task<object> Show(ElementRef dxTarget)
+        public static Task<object> Show(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxActionSheet_show_1", dxTarget);
         }
-        public static Task<object> Toggle(ElementRef dxTarget, bool showing)
+        public static Task<object> Toggle(ElementReference dxTarget, bool showing)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxActionSheet_toggle_2", dxTarget, showing);
         }
     }
     public class DxAutocompleteInterop: DxDropDownListInterop
     {
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxAutocompleteOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.DxAutocompleteOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxAutocomplete_Init", dxTarget, json);
         }
-        public static Task<float?> GetMaxItemCount(ElementRef dxTarget)
+        public static Task<float?> GetMaxItemCount(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DxAutocomplete_GetOption", dxTarget, "maxItemCount");
         }
-        public static Task SetMaxItemCount(ElementRef dxTarget, float? value)
+        public static Task SetMaxItemCount(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxAutocomplete_SetOption", dxTarget, "maxItemCount", value);
         }
     }
     public class DxBoxInterop: CollectionWidgetInterop
     {
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxBoxOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.DxBoxOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxBox_Init", dxTarget, json);
         }
-        public static Task<string> GetAlign(ElementRef dxTarget)
+        public static Task<string> GetAlign(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxBox_GetOption", dxTarget, "align");
         }
-        public static Task SetAlign(ElementRef dxTarget, string value)
+        public static Task SetAlign(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxBox_SetOption", dxTarget, "align", value);
         }
-        public static Task<string> GetCrossAlign(ElementRef dxTarget)
+        public static Task<string> GetCrossAlign(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxBox_GetOption", dxTarget, "crossAlign");
         }
-        public static Task SetCrossAlign(ElementRef dxTarget, string value)
+        public static Task SetCrossAlign(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxBox_SetOption", dxTarget, "crossAlign", value);
         }
-        public static Task<string> GetDirection(ElementRef dxTarget)
+        public static Task<string> GetDirection(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxBox_GetOption", dxTarget, "direction");
         }
-        public static Task SetDirection(ElementRef dxTarget, string value)
+        public static Task SetDirection(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxBox_SetOption", dxTarget, "direction", value);
         }
@@ -2252,7 +2252,7 @@ namespace DevExpress.Ui
     public class DxButtonInterop: WidgetInterop
     {
         public static event EventHandler<JQueryEventArgs> Click;
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxButtonOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.DxButtonOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxButton_Init", dxTarget, json);
@@ -2262,147 +2262,147 @@ namespace DevExpress.Ui
         {
             Click?.Invoke(null, new JQueryEventArgs(identifier));
         }
-        public static Task<string> GetIcon(ElementRef dxTarget)
+        public static Task<string> GetIcon(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxButton_GetOption", dxTarget, "icon");
         }
-        public static Task SetIcon(ElementRef dxTarget, string value)
+        public static Task SetIcon(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxButton_SetOption", dxTarget, "icon", value);
         }
-        public static Task<object> GetTemplate(ElementRef dxTarget)
+        public static Task<object> GetTemplate(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxButton_GetOption", dxTarget, "template");
         }
-        public static Task SetTemplate(ElementRef dxTarget, object value)
+        public static Task SetTemplate(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxButton_SetOption", dxTarget, "template", value);
         }
-        public static Task<string> GetText(ElementRef dxTarget)
+        public static Task<string> GetText(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxButton_GetOption", dxTarget, "text");
         }
-        public static Task SetText(ElementRef dxTarget, string value)
+        public static Task SetText(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxButton_SetOption", dxTarget, "text", value);
         }
-        public static Task<string> GetType(ElementRef dxTarget)
+        public static Task<string> GetType(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxButton_GetOption", dxTarget, "type");
         }
-        public static Task SetType(ElementRef dxTarget, string value)
+        public static Task SetType(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxButton_SetOption", dxTarget, "type", value);
         }
-        public static Task<bool?> GetUseSubmitBehavior(ElementRef dxTarget)
+        public static Task<bool?> GetUseSubmitBehavior(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxButton_GetOption", dxTarget, "useSubmitBehavior");
         }
-        public static Task SetUseSubmitBehavior(ElementRef dxTarget, bool? value)
+        public static Task SetUseSubmitBehavior(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxButton_SetOption", dxTarget, "useSubmitBehavior", value);
         }
-        public static Task<string> GetValidationGroup(ElementRef dxTarget)
+        public static Task<string> GetValidationGroup(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxButton_GetOption", dxTarget, "validationGroup");
         }
-        public static Task SetValidationGroup(ElementRef dxTarget, string value)
+        public static Task SetValidationGroup(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxButton_SetOption", dxTarget, "validationGroup", value);
         }
     }
     public class DxCalendarInterop: EditorInterop
     {
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxCalendarOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.DxCalendarOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxCalendar_Init", dxTarget, json);
         }
-        public static Task<object> GetCellTemplate(ElementRef dxTarget)
+        public static Task<object> GetCellTemplate(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxCalendar_GetOption", dxTarget, "cellTemplate");
         }
-        public static Task SetCellTemplate(ElementRef dxTarget, object value)
+        public static Task SetCellTemplate(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxCalendar_SetOption", dxTarget, "cellTemplate", value);
         }
-        public static Task<string> GetDateSerializationFormat(ElementRef dxTarget)
+        public static Task<string> GetDateSerializationFormat(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxCalendar_GetOption", dxTarget, "dateSerializationFormat");
         }
-        public static Task SetDateSerializationFormat(ElementRef dxTarget, string value)
+        public static Task SetDateSerializationFormat(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxCalendar_SetOption", dxTarget, "dateSerializationFormat", value);
         }
-        public static Task<object> GetDisabledDates(ElementRef dxTarget)
+        public static Task<object> GetDisabledDates(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxCalendar_GetOption", dxTarget, "disabledDates");
         }
-        public static Task SetDisabledDates(ElementRef dxTarget, object value)
+        public static Task SetDisabledDates(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxCalendar_SetOption", dxTarget, "disabledDates", value);
         }
-        public static Task<object> GetFirstDayOfWeek(ElementRef dxTarget)
+        public static Task<object> GetFirstDayOfWeek(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxCalendar_GetOption", dxTarget, "firstDayOfWeek");
         }
-        public static Task SetFirstDayOfWeek(ElementRef dxTarget, object value)
+        public static Task SetFirstDayOfWeek(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxCalendar_SetOption", dxTarget, "firstDayOfWeek", value);
         }
-        public static Task<object> GetMax(ElementRef dxTarget)
+        public static Task<object> GetMax(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxCalendar_GetOption", dxTarget, "max");
         }
-        public static Task SetMax(ElementRef dxTarget, object value)
+        public static Task SetMax(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxCalendar_SetOption", dxTarget, "max", value);
         }
-        public static Task<string> GetMaxZoomLevel(ElementRef dxTarget)
+        public static Task<string> GetMaxZoomLevel(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxCalendar_GetOption", dxTarget, "maxZoomLevel");
         }
-        public static Task SetMaxZoomLevel(ElementRef dxTarget, string value)
+        public static Task SetMaxZoomLevel(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxCalendar_SetOption", dxTarget, "maxZoomLevel", value);
         }
-        public static Task<object> GetMin(ElementRef dxTarget)
+        public static Task<object> GetMin(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxCalendar_GetOption", dxTarget, "min");
         }
-        public static Task SetMin(ElementRef dxTarget, object value)
+        public static Task SetMin(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxCalendar_SetOption", dxTarget, "min", value);
         }
-        public static Task<string> GetMinZoomLevel(ElementRef dxTarget)
+        public static Task<string> GetMinZoomLevel(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxCalendar_GetOption", dxTarget, "minZoomLevel");
         }
-        public static Task SetMinZoomLevel(ElementRef dxTarget, string value)
+        public static Task SetMinZoomLevel(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxCalendar_SetOption", dxTarget, "minZoomLevel", value);
         }
-        public static Task<string> GetName(ElementRef dxTarget)
+        public static Task<string> GetName(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxCalendar_GetOption", dxTarget, "name");
         }
-        public static Task SetName(ElementRef dxTarget, string value)
+        public static Task SetName(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxCalendar_SetOption", dxTarget, "name", value);
         }
-        public static Task<bool?> GetShowTodayButton(ElementRef dxTarget)
+        public static Task<bool?> GetShowTodayButton(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxCalendar_GetOption", dxTarget, "showTodayButton");
         }
-        public static Task SetShowTodayButton(ElementRef dxTarget, bool? value)
+        public static Task SetShowTodayButton(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxCalendar_SetOption", dxTarget, "showTodayButton", value);
         }
-        public static Task<string> GetZoomLevel(ElementRef dxTarget)
+        public static Task<string> GetZoomLevel(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxCalendar_GetOption", dxTarget, "zoomLevel");
         }
-        public static Task SetZoomLevel(ElementRef dxTarget, string value)
+        public static Task SetZoomLevel(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxCalendar_SetOption", dxTarget, "zoomLevel", value);
         }
@@ -2417,72 +2417,72 @@ namespace DevExpress.Ui
             ValueChanged?.Invoke(null, (new JQueryEventArgs(identifier), value));
         }
 
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxCheckBoxOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.DxCheckBoxOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxCheckBox_Init", dxTarget, json);
         }
-        public static Task<string> GetName(ElementRef dxTarget)
+        public static Task<string> GetName(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxCheckBox_GetOption", dxTarget, "name");
         }
-        public static Task SetName(ElementRef dxTarget, string value)
+        public static Task SetName(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxCheckBox_SetOption", dxTarget, "name", value);
         }
-        public static Task<string> GetText(ElementRef dxTarget)
+        public static Task<string> GetText(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxCheckBox_GetOption", dxTarget, "text");
         }
-        public static Task SetText(ElementRef dxTarget, string value)
+        public static Task SetText(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxCheckBox_SetOption", dxTarget, "text", value);
         }
     }
     public class DxColorBoxInterop: DxDropDownEditorInterop
     {
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxColorBoxOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.DxColorBoxOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxColorBox_Init", dxTarget, json);
         }
-        public static Task<string> GetApplyButtonText(ElementRef dxTarget)
+        public static Task<string> GetApplyButtonText(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxColorBox_GetOption", dxTarget, "applyButtonText");
         }
-        public static Task SetApplyButtonText(ElementRef dxTarget, string value)
+        public static Task SetApplyButtonText(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxColorBox_SetOption", dxTarget, "applyButtonText", value);
         }
-        public static Task<string> GetCancelButtonText(ElementRef dxTarget)
+        public static Task<string> GetCancelButtonText(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxColorBox_GetOption", dxTarget, "cancelButtonText");
         }
-        public static Task SetCancelButtonText(ElementRef dxTarget, string value)
+        public static Task SetCancelButtonText(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxColorBox_SetOption", dxTarget, "cancelButtonText", value);
         }
-        public static Task<bool?> GetEditAlphaChannel(ElementRef dxTarget)
+        public static Task<bool?> GetEditAlphaChannel(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxColorBox_GetOption", dxTarget, "editAlphaChannel");
         }
-        public static Task SetEditAlphaChannel(ElementRef dxTarget, bool? value)
+        public static Task SetEditAlphaChannel(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxColorBox_SetOption", dxTarget, "editAlphaChannel", value);
         }
-        public static Task<object> GetFieldTemplate(ElementRef dxTarget)
+        public static Task<object> GetFieldTemplate(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxColorBox_GetOption", dxTarget, "fieldTemplate");
         }
-        public static Task SetFieldTemplate(ElementRef dxTarget, object value)
+        public static Task SetFieldTemplate(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxColorBox_SetOption", dxTarget, "fieldTemplate", value);
         }
-        public static Task<float?> GetKeyStep(ElementRef dxTarget)
+        public static Task<float?> GetKeyStep(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DxColorBox_GetOption", dxTarget, "keyStep");
         }
-        public static Task SetKeyStep(ElementRef dxTarget, float? value)
+        public static Task SetKeyStep(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxColorBox_SetOption", dxTarget, "keyStep", value);
         }
@@ -2494,7 +2494,7 @@ namespace DevExpress.Ui
         public static event EventHandler<JQueryEventArgs> Positioning;
         public static event EventHandler<JQueryEventArgs> Showing;
         public static event EventHandler<JQueryEventArgs> Shown;
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxContextMenuOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.DxContextMenuOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxContextMenu_Init", dxTarget, json);
@@ -2524,55 +2524,55 @@ namespace DevExpress.Ui
         {
             Shown?.Invoke(null, new JQueryEventArgs(identifier));
         }
-        public static Task<object> GetCloseOnOutsideClick(ElementRef dxTarget)
+        public static Task<object> GetCloseOnOutsideClick(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxContextMenu_GetOption", dxTarget, "closeOnOutsideClick");
         }
-        public static Task SetCloseOnOutsideClick(ElementRef dxTarget, object value)
+        public static Task SetCloseOnOutsideClick(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxContextMenu_SetOption", dxTarget, "closeOnOutsideClick", value);
         }
-        public static Task<object> GetPosition(ElementRef dxTarget)
+        public static Task<object> GetPosition(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxContextMenu_GetOption", dxTarget, "position");
         }
-        public static Task SetPosition(ElementRef dxTarget, object value)
+        public static Task SetPosition(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxContextMenu_SetOption", dxTarget, "position", value);
         }
-        public static Task<object> GetShowEvent(ElementRef dxTarget)
+        public static Task<object> GetShowEvent(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxContextMenu_GetOption", dxTarget, "showEvent");
         }
-        public static Task SetShowEvent(ElementRef dxTarget, object value)
+        public static Task SetShowEvent(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxContextMenu_SetOption", dxTarget, "showEvent", value);
         }
-        public static Task<string> GetSubmenuDirection(ElementRef dxTarget)
+        public static Task<string> GetSubmenuDirection(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxContextMenu_GetOption", dxTarget, "submenuDirection");
         }
-        public static Task SetSubmenuDirection(ElementRef dxTarget, string value)
+        public static Task SetSubmenuDirection(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxContextMenu_SetOption", dxTarget, "submenuDirection", value);
         }
-        public static Task<object> GetTarget(ElementRef dxTarget)
+        public static Task<object> GetTarget(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxContextMenu_GetOption", dxTarget, "target");
         }
-        public static Task SetTarget(ElementRef dxTarget, object value)
+        public static Task SetTarget(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxContextMenu_SetOption", dxTarget, "target", value);
         }
-        public static Task<object> Hide(ElementRef dxTarget)
+        public static Task<object> Hide(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxContextMenu_hide_0", dxTarget);
         }
-        public static Task<object> Show(ElementRef dxTarget)
+        public static Task<object> Show(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxContextMenu_show_1", dxTarget);
         }
-        public static Task<object> Toggle(ElementRef dxTarget, bool showing)
+        public static Task<object> Toggle(ElementReference dxTarget, bool showing)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxContextMenu_toggle_2", dxTarget, showing);
         }
@@ -2596,7 +2596,7 @@ namespace DevExpress.Ui
         public static event EventHandler<JQueryEventArgs> RowValidating;
         public static event EventHandler<JQueryEventArgs> SelectionChanged;
         public static event EventHandler<JQueryEventArgs> ToolbarPreparing;
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.GridBaseOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.GridBaseOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_Init", dxTarget, json);
@@ -2686,572 +2686,572 @@ namespace DevExpress.Ui
         {
             ToolbarPreparing?.Invoke(null, new JQueryEventArgs(identifier));
         }
-        public static Task<bool?> GetAllowColumnReordering(ElementRef dxTarget)
+        public static Task<bool?> GetAllowColumnReordering(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "allowColumnReordering");
         }
-        public static Task SetAllowColumnReordering(ElementRef dxTarget, bool? value)
+        public static Task SetAllowColumnReordering(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "allowColumnReordering", value);
         }
-        public static Task<bool?> GetAllowColumnResizing(ElementRef dxTarget)
+        public static Task<bool?> GetAllowColumnResizing(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "allowColumnResizing");
         }
-        public static Task SetAllowColumnResizing(ElementRef dxTarget, bool? value)
+        public static Task SetAllowColumnResizing(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "allowColumnResizing", value);
         }
-        public static Task<bool?> GetCacheEnabled(ElementRef dxTarget)
+        public static Task<bool?> GetCacheEnabled(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "cacheEnabled");
         }
-        public static Task SetCacheEnabled(ElementRef dxTarget, bool? value)
+        public static Task SetCacheEnabled(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "cacheEnabled", value);
         }
-        public static Task<bool?> GetCellHintEnabled(ElementRef dxTarget)
+        public static Task<bool?> GetCellHintEnabled(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "cellHintEnabled");
         }
-        public static Task SetCellHintEnabled(ElementRef dxTarget, bool? value)
+        public static Task SetCellHintEnabled(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "cellHintEnabled", value);
         }
-        public static Task<bool?> GetColumnAutoWidth(ElementRef dxTarget)
+        public static Task<bool?> GetColumnAutoWidth(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "columnAutoWidth");
         }
-        public static Task SetColumnAutoWidth(ElementRef dxTarget, bool? value)
+        public static Task SetColumnAutoWidth(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "columnAutoWidth", value);
         }
-        public static Task<object> GetColumnChooser(ElementRef dxTarget)
+        public static Task<object> GetColumnChooser(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "columnChooser");
         }
-        public static Task SetColumnChooser(ElementRef dxTarget, object value)
+        public static Task SetColumnChooser(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "columnChooser", value);
         }
-        public static Task<object> GetColumnFixing(ElementRef dxTarget)
+        public static Task<object> GetColumnFixing(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "columnFixing");
         }
-        public static Task SetColumnFixing(ElementRef dxTarget, object value)
+        public static Task SetColumnFixing(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "columnFixing", value);
         }
-        public static Task<bool?> GetColumnHidingEnabled(ElementRef dxTarget)
+        public static Task<bool?> GetColumnHidingEnabled(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "columnHidingEnabled");
         }
-        public static Task SetColumnHidingEnabled(ElementRef dxTarget, bool? value)
+        public static Task SetColumnHidingEnabled(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "columnHidingEnabled", value);
         }
-        public static Task<float?> GetColumnMinWidth(ElementRef dxTarget)
+        public static Task<float?> GetColumnMinWidth(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "columnMinWidth");
         }
-        public static Task SetColumnMinWidth(ElementRef dxTarget, float? value)
+        public static Task SetColumnMinWidth(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "columnMinWidth", value);
         }
-        public static Task<string> GetColumnResizingMode(ElementRef dxTarget)
+        public static Task<string> GetColumnResizingMode(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "columnResizingMode");
         }
-        public static Task SetColumnResizingMode(ElementRef dxTarget, string value)
+        public static Task SetColumnResizingMode(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "columnResizingMode", value);
         }
-        public static Task<object> GetColumns(ElementRef dxTarget)
+        public static Task<object> GetColumns(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "columns");
         }
-        public static Task SetColumns(ElementRef dxTarget, object value)
+        public static Task SetColumns(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "columns", value);
         }
-        public static Task<float?> GetColumnWidth(ElementRef dxTarget)
+        public static Task<float?> GetColumnWidth(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "columnWidth");
         }
-        public static Task SetColumnWidth(ElementRef dxTarget, float? value)
+        public static Task SetColumnWidth(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "columnWidth", value);
         }
-        public static Task<object> GetDataSource(ElementRef dxTarget)
+        public static Task<object> GetDataSource(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "dataSource");
         }
-        public static Task SetDataSource(ElementRef dxTarget, object value)
+        public static Task SetDataSource(ElementReference dxTarget, object value)
         {
             string jsonValue = SimpleJson.SimpleJson.SerializeObject(value);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "dataSource", jsonValue);
         }
-        public static Task<string> GetDateSerializationFormat(ElementRef dxTarget)
+        public static Task<string> GetDateSerializationFormat(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "dateSerializationFormat");
         }
-        public static Task SetDateSerializationFormat(ElementRef dxTarget, string value)
+        public static Task SetDateSerializationFormat(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "dateSerializationFormat", value);
         }
-        public static Task<object> GetEditing(ElementRef dxTarget)
+        public static Task<object> GetEditing(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "editing");
         }
-        public static Task SetEditing(ElementRef dxTarget, object value)
+        public static Task SetEditing(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "editing", value);
         }
-        public static Task<bool?> GetErrorRowEnabled(ElementRef dxTarget)
+        public static Task<bool?> GetErrorRowEnabled(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "errorRowEnabled");
         }
-        public static Task SetErrorRowEnabled(ElementRef dxTarget, bool? value)
+        public static Task SetErrorRowEnabled(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "errorRowEnabled", value);
         }
-        public static Task<object> GetFilterBuilder(ElementRef dxTarget)
+        public static Task<object> GetFilterBuilder(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "filterBuilder");
         }
-        public static Task SetFilterBuilder(ElementRef dxTarget, object value)
+        public static Task SetFilterBuilder(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "filterBuilder", value);
         }
-        public static Task<object> GetFilterBuilderPopup(ElementRef dxTarget)
+        public static Task<object> GetFilterBuilderPopup(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "filterBuilderPopup");
         }
-        public static Task SetFilterBuilderPopup(ElementRef dxTarget, object value)
+        public static Task SetFilterBuilderPopup(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "filterBuilderPopup", value);
         }
-        public static Task<object> GetFilterPanel(ElementRef dxTarget)
+        public static Task<object> GetFilterPanel(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "filterPanel");
         }
-        public static Task SetFilterPanel(ElementRef dxTarget, object value)
+        public static Task SetFilterPanel(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "filterPanel", value);
         }
-        public static Task<object> GetFilterRow(ElementRef dxTarget)
+        public static Task<object> GetFilterRow(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "filterRow");
         }
-        public static Task SetFilterRow(ElementRef dxTarget, object value)
+        public static Task SetFilterRow(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "filterRow", value);
         }
-        public static Task<object> GetFilterSyncEnabled(ElementRef dxTarget)
+        public static Task<object> GetFilterSyncEnabled(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "filterSyncEnabled");
         }
-        public static Task SetFilterSyncEnabled(ElementRef dxTarget, object value)
+        public static Task SetFilterSyncEnabled(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "filterSyncEnabled", value);
         }
-        public static Task<object> GetFilterValue(ElementRef dxTarget)
+        public static Task<object> GetFilterValue(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "filterValue");
         }
-        public static Task SetFilterValue(ElementRef dxTarget, object value)
+        public static Task SetFilterValue(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "filterValue", value);
         }
-        public static Task<object> GetHeaderFilter(ElementRef dxTarget)
+        public static Task<object> GetHeaderFilter(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "headerFilter");
         }
-        public static Task SetHeaderFilter(ElementRef dxTarget, object value)
+        public static Task SetHeaderFilter(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "headerFilter", value);
         }
-        public static Task<object> GetLoadPanel(ElementRef dxTarget)
+        public static Task<object> GetLoadPanel(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "loadPanel");
         }
-        public static Task SetLoadPanel(ElementRef dxTarget, object value)
+        public static Task SetLoadPanel(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "loadPanel", value);
         }
-        public static Task<string> GetNoDataText(ElementRef dxTarget)
+        public static Task<string> GetNoDataText(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "noDataText");
         }
-        public static Task SetNoDataText(ElementRef dxTarget, string value)
+        public static Task SetNoDataText(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "noDataText", value);
         }
-        public static Task<object> GetPager(ElementRef dxTarget)
+        public static Task<object> GetPager(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "pager");
         }
-        public static Task SetPager(ElementRef dxTarget, object value)
+        public static Task SetPager(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "pager", value);
         }
-        public static Task<object> GetPaging(ElementRef dxTarget)
+        public static Task<object> GetPaging(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "paging");
         }
-        public static Task SetPaging(ElementRef dxTarget, object value)
+        public static Task SetPaging(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "paging", value);
         }
-        public static Task<bool?> GetRowAlternationEnabled(ElementRef dxTarget)
+        public static Task<bool?> GetRowAlternationEnabled(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "rowAlternationEnabled");
         }
-        public static Task SetRowAlternationEnabled(ElementRef dxTarget, bool? value)
+        public static Task SetRowAlternationEnabled(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "rowAlternationEnabled", value);
         }
-        public static Task<object> GetScrolling(ElementRef dxTarget)
+        public static Task<object> GetScrolling(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "scrolling");
         }
-        public static Task SetScrolling(ElementRef dxTarget, object value)
+        public static Task SetScrolling(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "scrolling", value);
         }
-        public static Task<object> GetSearchPanel(ElementRef dxTarget)
+        public static Task<object> GetSearchPanel(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "searchPanel");
         }
-        public static Task SetSearchPanel(ElementRef dxTarget, object value)
+        public static Task SetSearchPanel(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "searchPanel", value);
         }
-        public static Task<object> GetSelectedRowKeys(ElementRef dxTarget)
+        public static Task<object> GetSelectedRowKeys(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "selectedRowKeys");
         }
-        public static Task SetSelectedRowKeys(ElementRef dxTarget, object value)
+        public static Task SetSelectedRowKeys(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "selectedRowKeys", value);
         }
-        public static Task<object> GetSelection(ElementRef dxTarget)
+        public static Task<object> GetSelection(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "selection");
         }
-        public static Task SetSelection(ElementRef dxTarget, object value)
+        public static Task SetSelection(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "selection", value);
         }
-        public static Task<bool?> GetShowBorders(ElementRef dxTarget)
+        public static Task<bool?> GetShowBorders(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "showBorders");
         }
-        public static Task SetShowBorders(ElementRef dxTarget, bool? value)
+        public static Task SetShowBorders(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "showBorders", value);
         }
-        public static Task<bool?> GetShowColumnHeaders(ElementRef dxTarget)
+        public static Task<bool?> GetShowColumnHeaders(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "showColumnHeaders");
         }
-        public static Task SetShowColumnHeaders(ElementRef dxTarget, bool? value)
+        public static Task SetShowColumnHeaders(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "showColumnHeaders", value);
         }
-        public static Task<bool?> GetShowColumnLines(ElementRef dxTarget)
+        public static Task<bool?> GetShowColumnLines(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "showColumnLines");
         }
-        public static Task SetShowColumnLines(ElementRef dxTarget, bool? value)
+        public static Task SetShowColumnLines(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "showColumnLines", value);
         }
-        public static Task<bool?> GetShowRowLines(ElementRef dxTarget)
+        public static Task<bool?> GetShowRowLines(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "showRowLines");
         }
-        public static Task SetShowRowLines(ElementRef dxTarget, bool? value)
+        public static Task SetShowRowLines(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "showRowLines", value);
         }
-        public static Task<object> GetSorting(ElementRef dxTarget)
+        public static Task<object> GetSorting(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "sorting");
         }
-        public static Task SetSorting(ElementRef dxTarget, object value)
+        public static Task SetSorting(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "sorting", value);
         }
-        public static Task<object> GetStateStoring(ElementRef dxTarget)
+        public static Task<object> GetStateStoring(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "stateStoring");
         }
-        public static Task SetStateStoring(ElementRef dxTarget, object value)
+        public static Task SetStateStoring(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "stateStoring", value);
         }
-        public static Task<bool?> GetTwoWayBindingEnabled(ElementRef dxTarget)
+        public static Task<bool?> GetTwoWayBindingEnabled(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "twoWayBindingEnabled");
         }
-        public static Task SetTwoWayBindingEnabled(ElementRef dxTarget, bool? value)
+        public static Task SetTwoWayBindingEnabled(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "twoWayBindingEnabled", value);
         }
-        public static Task<bool?> GetWordWrapEnabled(ElementRef dxTarget)
+        public static Task<bool?> GetWordWrapEnabled(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_GridBase_GetOption", dxTarget, "wordWrapEnabled");
         }
-        public static Task SetWordWrapEnabled(ElementRef dxTarget, bool? value)
+        public static Task SetWordWrapEnabled(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_SetOption", dxTarget, "wordWrapEnabled", value);
         }
-        public static Task BeginCustomLoading(ElementRef dxTarget, string messageText)
+        public static Task BeginCustomLoading(ElementReference dxTarget, string messageText)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_beginCustomLoading_0", dxTarget, messageText);
         }
-        public static Task<object> ByKey(ElementRef dxTarget, object key)
+        public static Task<object> ByKey(ElementReference dxTarget, object key)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_byKey_1", dxTarget, key);
         }
-        public static Task CancelEditData(ElementRef dxTarget)
+        public static Task CancelEditData(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_cancelEditData_2", dxTarget);
         }
-        public static Task<object> CellValue(ElementRef dxTarget, float rowIndex, string dataField)
+        public static Task<object> CellValue(ElementReference dxTarget, float rowIndex, string dataField)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_cellValue_3", dxTarget, rowIndex, dataField);
         }
-        public static Task CellValue(ElementRef dxTarget, float rowIndex, string dataField, object value)
+        public static Task CellValue(ElementReference dxTarget, float rowIndex, string dataField, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_cellValue_4", dxTarget, rowIndex, dataField, value);
         }
-        public static Task<object> CellValue(ElementRef dxTarget, float rowIndex, float visibleColumnIndex)
+        public static Task<object> CellValue(ElementReference dxTarget, float rowIndex, float visibleColumnIndex)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_cellValue_5", dxTarget, rowIndex, visibleColumnIndex);
         }
-        public static Task CellValue(ElementRef dxTarget, float rowIndex, float visibleColumnIndex, object value)
+        public static Task CellValue(ElementReference dxTarget, float rowIndex, float visibleColumnIndex, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_cellValue_6", dxTarget, rowIndex, visibleColumnIndex, value);
         }
-        public static Task ClearFilter(ElementRef dxTarget)
+        public static Task ClearFilter(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_clearFilter_7", dxTarget);
         }
-        public static Task ClearFilter(ElementRef dxTarget, string filterName)
+        public static Task ClearFilter(ElementReference dxTarget, string filterName)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_clearFilter_8", dxTarget, filterName);
         }
-        public static Task ClearSelection(ElementRef dxTarget)
+        public static Task ClearSelection(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_clearSelection_9", dxTarget);
         }
-        public static Task ClearSorting(ElementRef dxTarget)
+        public static Task ClearSorting(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_clearSorting_10", dxTarget);
         }
-        public static Task CloseEditCell(ElementRef dxTarget)
+        public static Task CloseEditCell(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_closeEditCell_11", dxTarget);
         }
-        public static Task CollapseAdaptiveDetailRow(ElementRef dxTarget)
+        public static Task CollapseAdaptiveDetailRow(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_collapseAdaptiveDetailRow_12", dxTarget);
         }
-        public static Task<float> ColumnCount(ElementRef dxTarget)
+        public static Task<float> ColumnCount(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float>("BlazorDevExtreme_GridBase_columnCount_13", dxTarget);
         }
-        public static Task<object> ColumnOption(ElementRef dxTarget, object id)
+        public static Task<object> ColumnOption(ElementReference dxTarget, object id)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_columnOption_14", dxTarget, id);
         }
-        public static Task<object> ColumnOption(ElementRef dxTarget, object id, string optionName)
+        public static Task<object> ColumnOption(ElementReference dxTarget, object id, string optionName)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_columnOption_15", dxTarget, id, optionName);
         }
-        public static Task ColumnOption(ElementRef dxTarget, object id, string optionName, object optionValue)
+        public static Task ColumnOption(ElementReference dxTarget, object id, string optionName, object optionValue)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_columnOption_16", dxTarget, id, optionName, optionValue);
         }
-        public static Task ColumnOption(ElementRef dxTarget, object id, object options)
+        public static Task ColumnOption(ElementReference dxTarget, object id, object options)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_columnOption_17", dxTarget, id, options);
         }
-        public static Task DeleteColumn(ElementRef dxTarget, object id)
+        public static Task DeleteColumn(ElementReference dxTarget, object id)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_deleteColumn_18", dxTarget, id);
         }
-        public static Task DeleteRow(ElementRef dxTarget, float rowIndex)
+        public static Task DeleteRow(ElementReference dxTarget, float rowIndex)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_deleteRow_19", dxTarget, rowIndex);
         }
-        public static Task<object> DeselectAll(ElementRef dxTarget)
+        public static Task<object> DeselectAll(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_deselectAll_20", dxTarget);
         }
-        public static Task<object> DeselectRows(ElementRef dxTarget, object keys)
+        public static Task<object> DeselectRows(ElementReference dxTarget, object keys)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_deselectRows_21", dxTarget, keys);
         }
-        public static Task EditCell(ElementRef dxTarget, float rowIndex, string dataField)
+        public static Task EditCell(ElementReference dxTarget, float rowIndex, string dataField)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_editCell_22", dxTarget, rowIndex, dataField);
         }
-        public static Task EditCell(ElementRef dxTarget, float rowIndex, float visibleColumnIndex)
+        public static Task EditCell(ElementReference dxTarget, float rowIndex, float visibleColumnIndex)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_editCell_23", dxTarget, rowIndex, visibleColumnIndex);
         }
-        public static Task EditRow(ElementRef dxTarget, float rowIndex)
+        public static Task EditRow(ElementReference dxTarget, float rowIndex)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_editRow_24", dxTarget, rowIndex);
         }
-        public static Task EndCustomLoading(ElementRef dxTarget)
+        public static Task EndCustomLoading(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_endCustomLoading_25", dxTarget);
         }
-        public static Task ExpandAdaptiveDetailRow(ElementRef dxTarget, object key)
+        public static Task ExpandAdaptiveDetailRow(ElementReference dxTarget, object key)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_expandAdaptiveDetailRow_26", dxTarget, key);
         }
-        public static Task<object> Filter(ElementRef dxTarget)
+        public static Task<object> Filter(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_filter_27", dxTarget);
         }
-        public static Task Filter(ElementRef dxTarget, object filterExpr)
+        public static Task Filter(ElementReference dxTarget, object filterExpr)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_filter_28", dxTarget, filterExpr);
         }
-        public static Task Focus(ElementRef dxTarget)
+        public static Task Focus(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_focus_29", dxTarget);
         }
-        public static Task Focus(ElementRef dxTarget, object element)
+        public static Task Focus(ElementReference dxTarget, object element)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_focus_30", dxTarget, element);
         }
-        public static Task<object> GetCellElement(ElementRef dxTarget, float rowIndex, string dataField)
+        public static Task<object> GetCellElement(ElementReference dxTarget, float rowIndex, string dataField)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_getCellElement_31", dxTarget, rowIndex, dataField);
         }
-        public static Task<object> GetCellElement(ElementRef dxTarget, float rowIndex, float visibleColumnIndex)
+        public static Task<object> GetCellElement(ElementReference dxTarget, float rowIndex, float visibleColumnIndex)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_getCellElement_32", dxTarget, rowIndex, visibleColumnIndex);
         }
-        public static Task<object> GetCombinedFilter(ElementRef dxTarget)
+        public static Task<object> GetCombinedFilter(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_getCombinedFilter_33", dxTarget);
         }
-        public static Task<object> GetCombinedFilter(ElementRef dxTarget, bool returnDataField)
+        public static Task<object> GetCombinedFilter(ElementReference dxTarget, bool returnDataField)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_getCombinedFilter_34", dxTarget, returnDataField);
         }
-        public static Task<object> GetDataSourceEx(ElementRef dxTarget)
+        public static Task<object> GetDataSourceEx(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_getDataSource_35", dxTarget);
         }
-        public static Task<object> GetKeyByRowIndex(ElementRef dxTarget, float rowIndex)
+        public static Task<object> GetKeyByRowIndex(ElementReference dxTarget, float rowIndex)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_getKeyByRowIndex_36", dxTarget, rowIndex);
         }
-        public static Task<object> GetRowElement(ElementRef dxTarget, float rowIndex)
+        public static Task<object> GetRowElement(ElementReference dxTarget, float rowIndex)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_getRowElement_37", dxTarget, rowIndex);
         }
-        public static Task<float> GetRowIndexByKey(ElementRef dxTarget, object key)
+        public static Task<float> GetRowIndexByKey(ElementReference dxTarget, object key)
         {
             return JSRuntime.Current.InvokeAsync<float>("BlazorDevExtreme_GridBase_getRowIndexByKey_38", dxTarget, key);
         }
-        public static Task<object> GetScrollable(ElementRef dxTarget)
+        public static Task<object> GetScrollable(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_getScrollable_39", dxTarget);
         }
-        public static Task<bool> HasEditData(ElementRef dxTarget)
+        public static Task<bool> HasEditData(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool>("BlazorDevExtreme_GridBase_hasEditData_40", dxTarget);
         }
-        public static Task HideColumnChooser(ElementRef dxTarget)
+        public static Task HideColumnChooser(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_hideColumnChooser_41", dxTarget);
         }
-        public static Task IsAdaptiveDetailRowExpanded(ElementRef dxTarget, object key)
+        public static Task IsAdaptiveDetailRowExpanded(ElementReference dxTarget, object key)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_isAdaptiveDetailRowExpanded_42", dxTarget, key);
         }
-        public static Task<bool> IsRowSelected(ElementRef dxTarget, object key)
+        public static Task<bool> IsRowSelected(ElementReference dxTarget, object key)
         {
             return JSRuntime.Current.InvokeAsync<bool>("BlazorDevExtreme_GridBase_isRowSelected_43", dxTarget, key);
         }
-        public static Task<object> KeyOf(ElementRef dxTarget, object obj)
+        public static Task<object> KeyOf(ElementReference dxTarget, object obj)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_keyOf_44", dxTarget, obj);
         }
-        public static Task<float> PageCount(ElementRef dxTarget)
+        public static Task<float> PageCount(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float>("BlazorDevExtreme_GridBase_pageCount_45", dxTarget);
         }
-        public static Task<float> PageIndex(ElementRef dxTarget)
+        public static Task<float> PageIndex(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float>("BlazorDevExtreme_GridBase_pageIndex_46", dxTarget);
         }
-        public static Task<object> PageIndex(ElementRef dxTarget, float newIndex)
+        public static Task<object> PageIndex(ElementReference dxTarget, float newIndex)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_pageIndex_47", dxTarget, newIndex);
         }
-        public static Task<float> PageSize(ElementRef dxTarget)
+        public static Task<float> PageSize(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float>("BlazorDevExtreme_GridBase_pageSize_48", dxTarget);
         }
-        public static Task PageSize(ElementRef dxTarget, float value)
+        public static Task PageSize(ElementReference dxTarget, float value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_pageSize_49", dxTarget, value);
         }
-        public static Task<object> Refresh(ElementRef dxTarget)
+        public static Task<object> Refresh(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_refresh_50", dxTarget);
         }
-        public static Task RepaintRows(ElementRef dxTarget, object rowIndexes)
+        public static Task RepaintRows(ElementReference dxTarget, object rowIndexes)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_repaintRows_51", dxTarget, rowIndexes);
         }
-        public static Task<object> SaveEditData(ElementRef dxTarget)
+        public static Task<object> SaveEditData(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_saveEditData_52", dxTarget);
         }
-        public static Task SearchByText(ElementRef dxTarget, string text)
+        public static Task SearchByText(ElementReference dxTarget, string text)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_searchByText_53", dxTarget, text);
         }
-        public static Task<object> SelectAll(ElementRef dxTarget)
+        public static Task<object> SelectAll(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_selectAll_54", dxTarget);
         }
-        public static Task<object> SelectRows(ElementRef dxTarget, object keys, bool preserve)
+        public static Task<object> SelectRows(ElementReference dxTarget, object keys, bool preserve)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_selectRows_55", dxTarget, keys, preserve);
         }
-        public static Task<object> SelectRowsByIndexes(ElementRef dxTarget, object indexes)
+        public static Task<object> SelectRowsByIndexes(ElementReference dxTarget, object indexes)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_selectRowsByIndexes_56", dxTarget, indexes);
         }
-        public static Task ShowColumnChooser(ElementRef dxTarget)
+        public static Task ShowColumnChooser(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_showColumnChooser_57", dxTarget);
         }
-        public static Task<object> State(ElementRef dxTarget)
+        public static Task<object> State(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_state_58", dxTarget);
         }
-        public static Task State(ElementRef dxTarget, object state)
+        public static Task State(ElementReference dxTarget, object state)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_state_59", dxTarget, state);
         }
-        public static Task UndeleteRow(ElementRef dxTarget, float rowIndex)
+        public static Task UndeleteRow(ElementReference dxTarget, float rowIndex)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_undeleteRow_60", dxTarget, rowIndex);
         }
-        public static Task UpdateDimensions(ElementRef dxTarget)
+        public static Task UpdateDimensions(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_GridBase_updateDimensions_61", dxTarget);
         }
@@ -3270,33 +3270,33 @@ namespace DevExpress.Ui
         public static event EventHandler<JQueryEventArgs> FileSaving;
         public static event EventHandler<JQueryEventArgs> RowClick;
         public static event EventHandler<JQueryEventArgs> RowPrepared;
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxDataGridOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.DxDataGridOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDataGrid_Init", dxTarget, json);
         }
 
-        public new static Task UpdateDimensions(ElementRef dxTarget)
+        public new static Task UpdateDimensions(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDataGid_updateDimensions", dxTarget);
         }
 
-        public new static Task SetPaging(ElementRef dxTarget, object value)
+        public new static Task SetPaging(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDataGrid_SetOption", dxTarget, "paging", value);
         }
             
-        public new static Task SetPager(ElementRef dxTarget, object value)
+        public new static Task SetPager(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDataGrid_SetOption", dxTarget, "pager", value);
         }
 
-        public new static Task SetFilterRow(ElementRef dxTarget, object value)
+        public new static Task SetFilterRow(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDataGrid_SetOption", dxTarget, "filterRow", value);
         }
 
-        public new static Task SetColumns(ElementRef dxTarget, object value)
+        public new static Task SetColumns(ElementReference dxTarget, object value)
         {
             string jsonValue = SimpleJson.SimpleJson.SerializeObject(value);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDataGrid_SetOption", dxTarget, "columns", jsonValue);
@@ -3362,327 +3362,327 @@ namespace DevExpress.Ui
         {
             RowPrepared?.Invoke(null, new JQueryEventArgs(identifier));
         }
-        public static Task<object> GetCustomizeColumns(ElementRef dxTarget)
+        public static Task<object> GetCustomizeColumns(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDataGrid_GetOption", dxTarget, "customizeColumns");
         }
-        public static Task SetCustomizeColumns(ElementRef dxTarget, object value)
+        public static Task SetCustomizeColumns(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDataGrid_SetOption", dxTarget, "customizeColumns", value);
         }
-        public static Task<object> GetCustomizeExportData(ElementRef dxTarget)
+        public static Task<object> GetCustomizeExportData(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDataGrid_GetOption", dxTarget, "customizeExportData");
         }
-        public static Task SetCustomizeExportData(ElementRef dxTarget, object value)
+        public static Task SetCustomizeExportData(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDataGrid_SetOption", dxTarget, "customizeExportData", value);
         }
-        public static Task<object> GetExport(ElementRef dxTarget)
+        public static Task<object> GetExport(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDataGrid_GetOption", dxTarget, "export");
         }
-        public static Task SetExport(ElementRef dxTarget, object value)
+        public static Task SetExport(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDataGrid_SetOption", dxTarget, "export", value);
         }
-        public static Task<object> GetGrouping(ElementRef dxTarget)
+        public static Task<object> GetGrouping(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDataGrid_GetOption", dxTarget, "grouping");
         }
-        public static Task SetGrouping(ElementRef dxTarget, object value)
+        public static Task SetGrouping(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDataGrid_SetOption", dxTarget, "grouping", value);
         }
-        public static Task<object> GetGroupPanel(ElementRef dxTarget)
+        public static Task<object> GetGroupPanel(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDataGrid_GetOption", dxTarget, "groupPanel");
         }
-        public static Task SetGroupPanel(ElementRef dxTarget, object value)
+        public static Task SetGroupPanel(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDataGrid_SetOption", dxTarget, "groupPanel", value);
         }
-        public static Task<object> GetKeyExpr(ElementRef dxTarget)
+        public static Task<object> GetKeyExpr(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDataGrid_GetOption", dxTarget, "keyExpr");
         }
-        public static Task SetKeyExpr(ElementRef dxTarget, object value)
+        public static Task SetKeyExpr(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDataGrid_SetOption", dxTarget, "keyExpr", value);
         }
-        public static Task<object> GetMasterDetail(ElementRef dxTarget)
+        public static Task<object> GetMasterDetail(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDataGrid_GetOption", dxTarget, "masterDetail");
         }
-        public static Task SetMasterDetail(ElementRef dxTarget, object value)
+        public static Task SetMasterDetail(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDataGrid_SetOption", dxTarget, "masterDetail", value);
         }
-        public static Task<object> GetRemoteOperations(ElementRef dxTarget)
+        public static Task<object> GetRemoteOperations(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDataGrid_GetOption", dxTarget, "remoteOperations");
         }
-        public static Task SetRemoteOperations(ElementRef dxTarget, object value)
+        public static Task SetRemoteOperations(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDataGrid_SetOption", dxTarget, "remoteOperations", value);
         }
-        public static Task<object> GetRowTemplate(ElementRef dxTarget)
+        public static Task<object> GetRowTemplate(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDataGrid_GetOption", dxTarget, "rowTemplate");
         }
-        public static Task SetRowTemplate(ElementRef dxTarget, object value)
+        public static Task SetRowTemplate(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDataGrid_SetOption", dxTarget, "rowTemplate", value);
         }
-        public static Task<object> GetSelectionFilter(ElementRef dxTarget)
+        public static Task<object> GetSelectionFilter(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDataGrid_GetOption", dxTarget, "selectionFilter");
         }
-        public static Task SetSelectionFilter(ElementRef dxTarget, object value)
+        public static Task SetSelectionFilter(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDataGrid_SetOption", dxTarget, "selectionFilter", value);
         }
-        public static Task<object> GetSortByGroupSummaryInfo(ElementRef dxTarget)
+        public static Task<object> GetSortByGroupSummaryInfo(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDataGrid_GetOption", dxTarget, "sortByGroupSummaryInfo");
         }
-        public static Task SetSortByGroupSummaryInfo(ElementRef dxTarget, object value)
+        public static Task SetSortByGroupSummaryInfo(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDataGrid_SetOption", dxTarget, "sortByGroupSummaryInfo", value);
         }
-        public static Task<object> GetSummary(ElementRef dxTarget)
+        public static Task<object> GetSummary(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDataGrid_GetOption", dxTarget, "summary");
         }
-        public static Task SetSummary(ElementRef dxTarget, object value)
+        public static Task SetSummary(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDataGrid_SetOption", dxTarget, "summary", value);
         }
-        public static Task AddColumn(ElementRef dxTarget, object columnOptions)
+        public static Task AddColumn(ElementReference dxTarget, object columnOptions)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDataGrid_addColumn_0", dxTarget, columnOptions);
         }
-        public static Task AddRow(ElementRef dxTarget)
+        public static Task AddRow(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDataGrid_addRow_1", dxTarget);
         }
-        public static Task ClearGrouping(ElementRef dxTarget)
+        public static Task ClearGrouping(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDataGrid_clearGrouping_2", dxTarget);
         }
-        public static Task CollapseAll(ElementRef dxTarget, float groupIndex)
+        public static Task CollapseAll(ElementReference dxTarget, float groupIndex)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDataGrid_collapseAll_3", dxTarget, groupIndex);
         }
-        public static Task<object> CollapseRow(ElementRef dxTarget, object key)
+        public static Task<object> CollapseRow(ElementReference dxTarget, object key)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDataGrid_collapseRow_4", dxTarget, key);
         }
-        public static Task ExpandAll(ElementRef dxTarget, float groupIndex)
+        public static Task ExpandAll(ElementReference dxTarget, float groupIndex)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDataGrid_expandAll_5", dxTarget, groupIndex);
         }
-        public static Task<object> ExpandRow(ElementRef dxTarget, object key)
+        public static Task<object> ExpandRow(ElementReference dxTarget, object key)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDataGrid_expandRow_6", dxTarget, key);
         }
-        public static Task ExportToExcel(ElementRef dxTarget, bool selectionOnly)
+        public static Task ExportToExcel(ElementReference dxTarget, bool selectionOnly)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDataGrid_exportToExcel_7", dxTarget, selectionOnly);
         }
-        public static Task<object> GetSelectedRowKeys(ElementRef dxTarget)
+        public static Task<object> GetSelectedRowKeys(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDataGrid_getSelectedRowKeys_8", dxTarget);
         }
-        public static Task<object> GetSelectedRowsData(ElementRef dxTarget)
+        public static Task<object> GetSelectedRowsData(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDataGrid_getSelectedRowsData_9", dxTarget);
         }
-        public static Task<object> GetTotalSummaryValue(ElementRef dxTarget, string summaryItemName)
+        public static Task<object> GetTotalSummaryValue(ElementReference dxTarget, string summaryItemName)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDataGrid_getTotalSummaryValue_10", dxTarget, summaryItemName);
         }
-        public static Task<object> GetVisibleColumns(ElementRef dxTarget)
+        public static Task<object> GetVisibleColumns(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDataGrid_getVisibleColumns_11", dxTarget);
         }
-        public static Task<object> GetVisibleColumns(ElementRef dxTarget, float headerLevel)
+        public static Task<object> GetVisibleColumns(ElementReference dxTarget, float headerLevel)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDataGrid_getVisibleColumns_12", dxTarget, headerLevel);
         }
-        public static Task<object> GetVisibleRows(ElementRef dxTarget)
+        public static Task<object> GetVisibleRows(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDataGrid_getVisibleRows_13", dxTarget);
         }
-        public static Task InsertRow(ElementRef dxTarget)
+        public static Task InsertRow(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDataGrid_insertRow_14", dxTarget);
         }
-        public static Task<bool> IsRowExpanded(ElementRef dxTarget, object key)
+        public static Task<bool> IsRowExpanded(ElementReference dxTarget, object key)
         {
             return JSRuntime.Current.InvokeAsync<bool>("BlazorDevExtreme_DxDataGrid_isRowExpanded_15", dxTarget, key);
         }
-        public static Task<bool> IsRowSelected(ElementRef dxTarget, object data)
+        public static Task<bool> IsRowSelected(ElementReference dxTarget, object data)
         {
             return JSRuntime.Current.InvokeAsync<bool>("BlazorDevExtreme_DxDataGrid_isRowSelected_16", dxTarget, data);
         }
-        public static Task RemoveRow(ElementRef dxTarget, float rowIndex)
+        public static Task RemoveRow(ElementReference dxTarget, float rowIndex)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDataGrid_removeRow_18", dxTarget, rowIndex);
         }
-        public static Task<float> TotalCount(ElementRef dxTarget)
+        public static Task<float> TotalCount(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float>("BlazorDevExtreme_DxDataGrid_totalCount_19", dxTarget);
         }
     }
     public class DxDateBoxInterop: DxDropDownEditorInterop
     {
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxDateBoxOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.DxDateBoxOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDateBox_Init", dxTarget, json);
         }
-        public static Task<bool?> GetAdaptivityEnabled(ElementRef dxTarget)
+        public static Task<bool?> GetAdaptivityEnabled(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxDateBox_GetOption", dxTarget, "adaptivityEnabled");
         }
-        public static Task SetAdaptivityEnabled(ElementRef dxTarget, bool? value)
+        public static Task SetAdaptivityEnabled(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDateBox_SetOption", dxTarget, "adaptivityEnabled", value);
         }
-        public static Task<string> GetApplyButtonText(ElementRef dxTarget)
+        public static Task<string> GetApplyButtonText(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxDateBox_GetOption", dxTarget, "applyButtonText");
         }
-        public static Task SetApplyButtonText(ElementRef dxTarget, string value)
+        public static Task SetApplyButtonText(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDateBox_SetOption", dxTarget, "applyButtonText", value);
         }
-        public static Task<object> GetCalendarOptions(ElementRef dxTarget)
+        public static Task<object> GetCalendarOptions(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDateBox_GetOption", dxTarget, "calendarOptions");
         }
-        public static Task SetCalendarOptions(ElementRef dxTarget, object value)
+        public static Task SetCalendarOptions(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDateBox_SetOption", dxTarget, "calendarOptions", value);
         }
-        public static Task<string> GetCancelButtonText(ElementRef dxTarget)
+        public static Task<string> GetCancelButtonText(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxDateBox_GetOption", dxTarget, "cancelButtonText");
         }
-        public static Task SetCancelButtonText(ElementRef dxTarget, string value)
+        public static Task SetCancelButtonText(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDateBox_SetOption", dxTarget, "cancelButtonText", value);
         }
-        public static Task<string> GetDateOutOfRangeMessage(ElementRef dxTarget)
+        public static Task<string> GetDateOutOfRangeMessage(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxDateBox_GetOption", dxTarget, "dateOutOfRangeMessage");
         }
-        public static Task SetDateOutOfRangeMessage(ElementRef dxTarget, string value)
+        public static Task SetDateOutOfRangeMessage(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDateBox_SetOption", dxTarget, "dateOutOfRangeMessage", value);
         }
-        public static Task<string> GetDateSerializationFormat(ElementRef dxTarget)
+        public static Task<string> GetDateSerializationFormat(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxDateBox_GetOption", dxTarget, "dateSerializationFormat");
         }
-        public static Task SetDateSerializationFormat(ElementRef dxTarget, string value)
+        public static Task SetDateSerializationFormat(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDateBox_SetOption", dxTarget, "dateSerializationFormat", value);
         }
-        public static Task<object> GetDisabledDates(ElementRef dxTarget)
+        public static Task<object> GetDisabledDates(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDateBox_GetOption", dxTarget, "disabledDates");
         }
-        public static Task SetDisabledDates(ElementRef dxTarget, object value)
+        public static Task SetDisabledDates(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDateBox_SetOption", dxTarget, "disabledDates", value);
         }
-        public static Task<object> GetDisplayFormat(ElementRef dxTarget)
+        public static Task<object> GetDisplayFormat(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDateBox_GetOption", dxTarget, "displayFormat");
         }
-        public static Task SetDisplayFormat(ElementRef dxTarget, object value)
+        public static Task SetDisplayFormat(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDateBox_SetOption", dxTarget, "displayFormat", value);
         }
-        public static Task<float?> GetInterval(ElementRef dxTarget)
+        public static Task<float?> GetInterval(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DxDateBox_GetOption", dxTarget, "interval");
         }
-        public static Task SetInterval(ElementRef dxTarget, float? value)
+        public static Task SetInterval(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDateBox_SetOption", dxTarget, "interval", value);
         }
-        public static Task<string> GetInvalidDateMessage(ElementRef dxTarget)
+        public static Task<string> GetInvalidDateMessage(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxDateBox_GetOption", dxTarget, "invalidDateMessage");
         }
-        public static Task SetInvalidDateMessage(ElementRef dxTarget, string value)
+        public static Task SetInvalidDateMessage(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDateBox_SetOption", dxTarget, "invalidDateMessage", value);
         }
-        public static Task<object> GetMax(ElementRef dxTarget)
+        public static Task<object> GetMax(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDateBox_GetOption", dxTarget, "max");
         }
-        public static Task SetMax(ElementRef dxTarget, object value)
+        public static Task SetMax(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDateBox_SetOption", dxTarget, "max", value);
         }
-        public static Task<string> GetMaxZoomLevel(ElementRef dxTarget)
+        public static Task<string> GetMaxZoomLevel(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxDateBox_GetOption", dxTarget, "maxZoomLevel");
         }
-        public static Task SetMaxZoomLevel(ElementRef dxTarget, string value)
+        public static Task SetMaxZoomLevel(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDateBox_SetOption", dxTarget, "maxZoomLevel", value);
         }
-        public static Task<object> GetMin(ElementRef dxTarget)
+        public static Task<object> GetMin(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDateBox_GetOption", dxTarget, "min");
         }
-        public static Task SetMin(ElementRef dxTarget, object value)
+        public static Task SetMin(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDateBox_SetOption", dxTarget, "min", value);
         }
-        public static Task<string> GetMinZoomLevel(ElementRef dxTarget)
+        public static Task<string> GetMinZoomLevel(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxDateBox_GetOption", dxTarget, "minZoomLevel");
         }
-        public static Task SetMinZoomLevel(ElementRef dxTarget, string value)
+        public static Task SetMinZoomLevel(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDateBox_SetOption", dxTarget, "minZoomLevel", value);
         }
-        public static Task<string> GetPickerType(ElementRef dxTarget)
+        public static Task<string> GetPickerType(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxDateBox_GetOption", dxTarget, "pickerType");
         }
-        public static Task SetPickerType(ElementRef dxTarget, string value)
+        public static Task SetPickerType(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDateBox_SetOption", dxTarget, "pickerType", value);
         }
-        public static Task<bool?> GetShowAnalogClock(ElementRef dxTarget)
+        public static Task<bool?> GetShowAnalogClock(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxDateBox_GetOption", dxTarget, "showAnalogClock");
         }
-        public static Task SetShowAnalogClock(ElementRef dxTarget, bool? value)
+        public static Task SetShowAnalogClock(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDateBox_SetOption", dxTarget, "showAnalogClock", value);
         }
-        public static Task<string> GetType(ElementRef dxTarget)
+        public static Task<string> GetType(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxDateBox_GetOption", dxTarget, "type");
         }
-        public static Task SetType(ElementRef dxTarget, string value)
+        public static Task SetType(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDateBox_SetOption", dxTarget, "type", value);
         }
-        public static Task Close(ElementRef dxTarget)
+        public static Task Close(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDateBox_close_0", dxTarget);
         }
-        public static Task Open(ElementRef dxTarget)
+        public static Task Open(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDateBox_open_1", dxTarget);
         }
@@ -3691,7 +3691,7 @@ namespace DevExpress.Ui
     {
         public static event EventHandler<JQueryEventArgs> Rendered;
         public static event EventHandler<JQueryEventArgs> Shown;
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxDeferRenderingOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.DxDeferRenderingOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDeferRendering_Init", dxTarget, json);
@@ -3706,111 +3706,111 @@ namespace DevExpress.Ui
         {
             Shown?.Invoke(null, new JQueryEventArgs(identifier));
         }
-        public static Task<object> GetAnimation(ElementRef dxTarget)
+        public static Task<object> GetAnimation(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDeferRendering_GetOption", dxTarget, "animation");
         }
-        public static Task SetAnimation(ElementRef dxTarget, object value)
+        public static Task SetAnimation(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDeferRendering_SetOption", dxTarget, "animation", value);
         }
-        public static Task<object> GetRenderWhen(ElementRef dxTarget)
+        public static Task<object> GetRenderWhen(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDeferRendering_GetOption", dxTarget, "renderWhen");
         }
-        public static Task SetRenderWhen(ElementRef dxTarget, object value)
+        public static Task SetRenderWhen(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDeferRendering_SetOption", dxTarget, "renderWhen", value);
         }
-        public static Task<bool?> GetShowLoadIndicator(ElementRef dxTarget)
+        public static Task<bool?> GetShowLoadIndicator(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxDeferRendering_GetOption", dxTarget, "showLoadIndicator");
         }
-        public static Task SetShowLoadIndicator(ElementRef dxTarget, bool? value)
+        public static Task SetShowLoadIndicator(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDeferRendering_SetOption", dxTarget, "showLoadIndicator", value);
         }
-        public static Task<string> GetStaggerItemSelector(ElementRef dxTarget)
+        public static Task<string> GetStaggerItemSelector(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxDeferRendering_GetOption", dxTarget, "staggerItemSelector");
         }
-        public static Task SetStaggerItemSelector(ElementRef dxTarget, string value)
+        public static Task SetStaggerItemSelector(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDeferRendering_SetOption", dxTarget, "staggerItemSelector", value);
         }
     }
     public class DxDropDownBoxInterop: DxDropDownEditorInterop
     {
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxDropDownBoxOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.DxDropDownBoxOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownBox_Init", dxTarget, json);
         }
-        public static Task<object> GetContentTemplate(ElementRef dxTarget)
+        public static Task<object> GetContentTemplate(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownBox_GetOption", dxTarget, "contentTemplate");
         }
-        public static Task SetContentTemplate(ElementRef dxTarget, object value)
+        public static Task SetContentTemplate(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownBox_SetOption", dxTarget, "contentTemplate", value);
         }
-        public static Task<object> GetDropDownOptions(ElementRef dxTarget)
+        public static Task<object> GetDropDownOptions(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownBox_GetOption", dxTarget, "dropDownOptions");
         }
-        public static Task SetDropDownOptions(ElementRef dxTarget, object value)
+        public static Task SetDropDownOptions(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownBox_SetOption", dxTarget, "dropDownOptions", value);
         }
-        public static Task<object> GetFieldTemplate(ElementRef dxTarget)
+        public static Task<object> GetFieldTemplate(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownBox_GetOption", dxTarget, "fieldTemplate");
         }
-        public static Task SetFieldTemplate(ElementRef dxTarget, object value)
+        public static Task SetFieldTemplate(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownBox_SetOption", dxTarget, "fieldTemplate", value);
         }
-        public static Task<object> GetDataSource(ElementRef dxTarget)
+        public static Task<object> GetDataSource(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownBox_GetOption", dxTarget, "dataSource");
         }
-        public static Task SetDataSource(ElementRef dxTarget, object value)
+        public static Task SetDataSource(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownBox_SetOption", dxTarget, "dataSource", value);
         }
-        public static Task<object> GetDisplayExpr(ElementRef dxTarget)
+        public static Task<object> GetDisplayExpr(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownBox_GetOption", dxTarget, "displayExpr");
         }
-        public static Task SetDisplayExpr(ElementRef dxTarget, object value)
+        public static Task SetDisplayExpr(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownBox_SetOption", dxTarget, "displayExpr", value);
         }
-        public static Task<object> GetItems(ElementRef dxTarget)
+        public static Task<object> GetItems(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownBox_GetOption", dxTarget, "items");
         }
-        public static Task SetItems(ElementRef dxTarget, object value)
+        public static Task SetItems(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownBox_SetOption", dxTarget, "items", value);
         }
-        public static Task<object> GetItemTemplate(ElementRef dxTarget)
+        public static Task<object> GetItemTemplate(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownBox_GetOption", dxTarget, "itemTemplate");
         }
-        public static Task SetItemTemplate(ElementRef dxTarget, object value)
+        public static Task SetItemTemplate(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownBox_SetOption", dxTarget, "itemTemplate", value);
         }
-        public static Task<object> GetValueExpr(ElementRef dxTarget)
+        public static Task<object> GetValueExpr(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownBox_GetOption", dxTarget, "valueExpr");
         }
-        public static Task SetValueExpr(ElementRef dxTarget, object value)
+        public static Task SetValueExpr(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownBox_SetOption", dxTarget, "valueExpr", value);
         }
-        public static Task<object> GetDataSourceEx(ElementRef dxTarget)
+        public static Task<object> GetDataSourceEx(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownBox_getDataSource_0", dxTarget);
         }
@@ -3819,7 +3819,7 @@ namespace DevExpress.Ui
     {
         public static event EventHandler<JQueryEventArgs> ButtonClick;
         public static event EventHandler<JQueryEventArgs> ItemClick;
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxDropDownMenuOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.DxDropDownMenuOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownMenu_Init", dxTarget, json);
@@ -3834,83 +3834,83 @@ namespace DevExpress.Ui
         {
             ItemClick?.Invoke(null, new JQueryEventArgs(identifier));
         }
-        public static Task<string> GetButtonIcon(ElementRef dxTarget)
+        public static Task<string> GetButtonIcon(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxDropDownMenu_GetOption", dxTarget, "buttonIcon");
         }
-        public static Task SetButtonIcon(ElementRef dxTarget, string value)
+        public static Task SetButtonIcon(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownMenu_SetOption", dxTarget, "buttonIcon", value);
         }
-        public static Task<string> GetButtonText(ElementRef dxTarget)
+        public static Task<string> GetButtonText(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxDropDownMenu_GetOption", dxTarget, "buttonText");
         }
-        public static Task SetButtonText(ElementRef dxTarget, string value)
+        public static Task SetButtonText(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownMenu_SetOption", dxTarget, "buttonText", value);
         }
-        public static Task<object> GetDataSource(ElementRef dxTarget)
+        public static Task<object> GetDataSource(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownMenu_GetOption", dxTarget, "dataSource");
         }
-        public static Task SetDataSource(ElementRef dxTarget, object value)
+        public static Task SetDataSource(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownMenu_SetOption", dxTarget, "dataSource", value);
         }
-        public static Task<object> GetItems(ElementRef dxTarget)
+        public static Task<object> GetItems(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownMenu_GetOption", dxTarget, "items");
         }
-        public static Task SetItems(ElementRef dxTarget, object value)
+        public static Task SetItems(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownMenu_SetOption", dxTarget, "items", value);
         }
-        public static Task<object> GetItemTemplate(ElementRef dxTarget)
+        public static Task<object> GetItemTemplate(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownMenu_GetOption", dxTarget, "itemTemplate");
         }
-        public static Task SetItemTemplate(ElementRef dxTarget, object value)
+        public static Task SetItemTemplate(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownMenu_SetOption", dxTarget, "itemTemplate", value);
         }
-        public static Task<bool?> GetOpened(ElementRef dxTarget)
+        public static Task<bool?> GetOpened(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxDropDownMenu_GetOption", dxTarget, "opened");
         }
-        public static Task SetOpened(ElementRef dxTarget, bool? value)
+        public static Task SetOpened(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownMenu_SetOption", dxTarget, "opened", value);
         }
-        public static Task<object> GetPopupHeight(ElementRef dxTarget)
+        public static Task<object> GetPopupHeight(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownMenu_GetOption", dxTarget, "popupHeight");
         }
-        public static Task SetPopupHeight(ElementRef dxTarget, object value)
+        public static Task SetPopupHeight(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownMenu_SetOption", dxTarget, "popupHeight", value);
         }
-        public static Task<object> GetPopupWidth(ElementRef dxTarget)
+        public static Task<object> GetPopupWidth(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownMenu_GetOption", dxTarget, "popupWidth");
         }
-        public static Task SetPopupWidth(ElementRef dxTarget, object value)
+        public static Task SetPopupWidth(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownMenu_SetOption", dxTarget, "popupWidth", value);
         }
-        public static Task<bool?> GetUsePopover(ElementRef dxTarget)
+        public static Task<bool?> GetUsePopover(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxDropDownMenu_GetOption", dxTarget, "usePopover");
         }
-        public static Task SetUsePopover(ElementRef dxTarget, bool? value)
+        public static Task SetUsePopover(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownMenu_SetOption", dxTarget, "usePopover", value);
         }
-        public static Task Close(ElementRef dxTarget)
+        public static Task Close(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownMenu_close_0", dxTarget);
         }
-        public static Task Open(ElementRef dxTarget)
+        public static Task Open(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownMenu_open_1", dxTarget);
         }
@@ -3923,7 +3923,7 @@ namespace DevExpress.Ui
         public static event EventHandler<JQueryEventArgs> UploadError;
         public static event EventHandler<JQueryEventArgs> UploadStarted;
         
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxFileUploaderOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.DxFileUploaderOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxFileUploader_Init", dxTarget, json);
@@ -3955,131 +3955,131 @@ namespace DevExpress.Ui
             UploadStarted?.Invoke(null, new JQueryEventArgs(identifier));
         }
 
-        public static Task<string> GetAccept(ElementRef dxTarget)
+        public static Task<string> GetAccept(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxFileUploader_GetOption", dxTarget, "accept");
         }
-        public static Task SetAccept(ElementRef dxTarget, string value)
+        public static Task SetAccept(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxFileUploader_SetOption", dxTarget, "accept", value);
         }
-        public static Task<bool?> GetAllowCanceling(ElementRef dxTarget)
+        public static Task<bool?> GetAllowCanceling(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxFileUploader_GetOption", dxTarget, "allowCanceling");
         }
-        public static Task SetAllowCanceling(ElementRef dxTarget, bool? value)
+        public static Task SetAllowCanceling(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxFileUploader_SetOption", dxTarget, "allowCanceling", value);
         }
-        public static Task<string> GetLabelText(ElementRef dxTarget)
+        public static Task<string> GetLabelText(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxFileUploader_GetOption", dxTarget, "labelText");
         }
-        public static Task SetLabelText(ElementRef dxTarget, string value)
+        public static Task SetLabelText(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxFileUploader_SetOption", dxTarget, "labelText", value);
         }
-        public static Task<bool?> GetMultiple(ElementRef dxTarget)
+        public static Task<bool?> GetMultiple(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxFileUploader_GetOption", dxTarget, "multiple");
         }
-        public static Task SetMultiple(ElementRef dxTarget, bool? value)
+        public static Task SetMultiple(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxFileUploader_SetOption", dxTarget, "multiple", value);
         }
-        public static Task<string> GetName(ElementRef dxTarget)
+        public static Task<string> GetName(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxFileUploader_GetOption", dxTarget, "name");
         }
-        public static Task SetName(ElementRef dxTarget, string value)
+        public static Task SetName(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxFileUploader_SetOption", dxTarget, "name", value);
         }
-        public static Task<float?> GetProgress(ElementRef dxTarget)
+        public static Task<float?> GetProgress(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DxFileUploader_GetOption", dxTarget, "progress");
         }
-        public static Task SetProgress(ElementRef dxTarget, float? value)
+        public static Task SetProgress(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxFileUploader_SetOption", dxTarget, "progress", value);
         }
-        public static Task<string> GetReadyToUploadMessage(ElementRef dxTarget)
+        public static Task<string> GetReadyToUploadMessage(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxFileUploader_GetOption", dxTarget, "readyToUploadMessage");
         }
-        public static Task SetReadyToUploadMessage(ElementRef dxTarget, string value)
+        public static Task SetReadyToUploadMessage(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxFileUploader_SetOption", dxTarget, "readyToUploadMessage", value);
         }
-        public static Task<string> GetSelectButtonText(ElementRef dxTarget)
+        public static Task<string> GetSelectButtonText(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxFileUploader_GetOption", dxTarget, "selectButtonText");
         }
-        public static Task SetSelectButtonText(ElementRef dxTarget, string value)
+        public static Task SetSelectButtonText(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxFileUploader_SetOption", dxTarget, "selectButtonText", value);
         }
-        public static Task<bool?> GetShowFileList(ElementRef dxTarget)
+        public static Task<bool?> GetShowFileList(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxFileUploader_GetOption", dxTarget, "showFileList");
         }
-        public static Task SetShowFileList(ElementRef dxTarget, bool? value)
+        public static Task SetShowFileList(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxFileUploader_SetOption", dxTarget, "showFileList", value);
         }
-        public static Task<string> GetUploadButtonText(ElementRef dxTarget)
+        public static Task<string> GetUploadButtonText(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxFileUploader_GetOption", dxTarget, "uploadButtonText");
         }
-        public static Task SetUploadButtonText(ElementRef dxTarget, string value)
+        public static Task SetUploadButtonText(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxFileUploader_SetOption", dxTarget, "uploadButtonText", value);
         }
-        public static Task<string> GetUploadedMessage(ElementRef dxTarget)
+        public static Task<string> GetUploadedMessage(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxFileUploader_GetOption", dxTarget, "uploadedMessage");
         }
-        public static Task SetUploadedMessage(ElementRef dxTarget, string value)
+        public static Task SetUploadedMessage(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxFileUploader_SetOption", dxTarget, "uploadedMessage", value);
         }
-        public static Task<string> GetUploadFailedMessage(ElementRef dxTarget)
+        public static Task<string> GetUploadFailedMessage(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxFileUploader_GetOption", dxTarget, "uploadFailedMessage");
         }
-        public static Task SetUploadFailedMessage(ElementRef dxTarget, string value)
+        public static Task SetUploadFailedMessage(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxFileUploader_SetOption", dxTarget, "uploadFailedMessage", value);
         }
-        public static Task<object> GetUploadHeaders(ElementRef dxTarget)
+        public static Task<object> GetUploadHeaders(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxFileUploader_GetOption", dxTarget, "uploadHeaders");
         }
-        public static Task SetUploadHeaders(ElementRef dxTarget, object value)
+        public static Task SetUploadHeaders(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxFileUploader_SetOption", dxTarget, "uploadHeaders", value);
         }
-        public static Task<string> GetUploadMethod(ElementRef dxTarget)
+        public static Task<string> GetUploadMethod(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxFileUploader_GetOption", dxTarget, "uploadMethod");
         }
-        public static Task SetUploadMethod(ElementRef dxTarget, string value)
+        public static Task SetUploadMethod(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxFileUploader_SetOption", dxTarget, "uploadMethod", value);
         }
-        public static Task<string> GetUploadMode(ElementRef dxTarget)
+        public static Task<string> GetUploadMode(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxFileUploader_GetOption", dxTarget, "uploadMode");
         }
-        public static Task SetUploadMode(ElementRef dxTarget, string value)
+        public static Task SetUploadMode(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxFileUploader_SetOption", dxTarget, "uploadMode", value);
         }
-        public static Task<string> GetUploadUrl(ElementRef dxTarget)
+        public static Task<string> GetUploadUrl(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxFileUploader_GetOption", dxTarget, "uploadUrl");
         }
-        public static Task SetUploadUrl(ElementRef dxTarget, string value)
+        public static Task SetUploadUrl(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxFileUploader_SetOption", dxTarget, "uploadUrl", value);
         }
@@ -4089,7 +4089,7 @@ namespace DevExpress.Ui
         public static event EventHandler<JQueryEventArgs> EditorPrepared;
         public static event EventHandler<JQueryEventArgs> EditorPreparing;
         public static event EventHandler<JQueryEventArgs> ValueChanged;
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxFilterBuilderOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.DxFilterBuilderOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxFilterBuilder_Init", dxTarget, json);
@@ -4109,55 +4109,55 @@ namespace DevExpress.Ui
         {
             ValueChanged?.Invoke(null, new JQueryEventArgs(identifier));
         }
-        public static Task<bool?> GetAllowHierarchicalFields(ElementRef dxTarget)
+        public static Task<bool?> GetAllowHierarchicalFields(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxFilterBuilder_GetOption", dxTarget, "allowHierarchicalFields");
         }
-        public static Task SetAllowHierarchicalFields(ElementRef dxTarget, bool? value)
+        public static Task SetAllowHierarchicalFields(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxFilterBuilder_SetOption", dxTarget, "allowHierarchicalFields", value);
         }
-        public static Task<object> GetCustomOperations(ElementRef dxTarget)
+        public static Task<object> GetCustomOperations(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxFilterBuilder_GetOption", dxTarget, "customOperations");
         }
-        public static Task SetCustomOperations(ElementRef dxTarget, object value)
+        public static Task SetCustomOperations(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxFilterBuilder_SetOption", dxTarget, "customOperations", value);
         }
-        public static Task<object> GetFields(ElementRef dxTarget)
+        public static Task<object> GetFields(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxFilterBuilder_GetOption", dxTarget, "fields");
         }
-        public static Task SetFields(ElementRef dxTarget, object value)
+        public static Task SetFields(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxFilterBuilder_SetOption", dxTarget, "fields", value);
         }
-        public static Task<object> GetFilterOperationDescriptions(ElementRef dxTarget)
+        public static Task<object> GetFilterOperationDescriptions(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxFilterBuilder_GetOption", dxTarget, "filterOperationDescriptions");
         }
-        public static Task SetFilterOperationDescriptions(ElementRef dxTarget, object value)
+        public static Task SetFilterOperationDescriptions(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxFilterBuilder_SetOption", dxTarget, "filterOperationDescriptions", value);
         }
-        public static Task<object> GetGroupOperationDescriptions(ElementRef dxTarget)
+        public static Task<object> GetGroupOperationDescriptions(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxFilterBuilder_GetOption", dxTarget, "groupOperationDescriptions");
         }
-        public static Task SetGroupOperationDescriptions(ElementRef dxTarget, object value)
+        public static Task SetGroupOperationDescriptions(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxFilterBuilder_SetOption", dxTarget, "groupOperationDescriptions", value);
         }
-        public static Task<object> GetValue(ElementRef dxTarget)
+        public static Task<object> GetValue(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxFilterBuilder_GetOption", dxTarget, "value");
         }
-        public static Task SetValue(ElementRef dxTarget, object value)
+        public static Task SetValue(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxFilterBuilder_SetOption", dxTarget, "value", value);
         }
-        public static Task<object> GetFilterExpression(ElementRef dxTarget)
+        public static Task<object> GetFilterExpression(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxFilterBuilder_getFilterExpression_0", dxTarget);
         }
@@ -4166,7 +4166,7 @@ namespace DevExpress.Ui
     {
         public static event EventHandler<JQueryEventArgs> EditorEnterKey;
         public static event EventHandler<JQueryEventArgs> FieldDataChanged;
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxFormOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.DxFormOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxForm_Init", dxTarget, json);
@@ -4181,307 +4181,307 @@ namespace DevExpress.Ui
         {
             FieldDataChanged?.Invoke(null, new JQueryEventArgs(identifier));
         }
-        public static Task<bool?> GetAlignItemLabels(ElementRef dxTarget)
+        public static Task<bool?> GetAlignItemLabels(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxForm_GetOption", dxTarget, "alignItemLabels");
         }
-        public static Task SetAlignItemLabels(ElementRef dxTarget, bool? value)
+        public static Task SetAlignItemLabels(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxForm_SetOption", dxTarget, "alignItemLabels", value);
         }
-        public static Task<bool?> GetAlignItemLabelsInAllGroups(ElementRef dxTarget)
+        public static Task<bool?> GetAlignItemLabelsInAllGroups(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxForm_GetOption", dxTarget, "alignItemLabelsInAllGroups");
         }
-        public static Task SetAlignItemLabelsInAllGroups(ElementRef dxTarget, bool? value)
+        public static Task SetAlignItemLabelsInAllGroups(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxForm_SetOption", dxTarget, "alignItemLabelsInAllGroups", value);
         }
-        public static Task<object> GetColCount(ElementRef dxTarget)
+        public static Task<object> GetColCount(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxForm_GetOption", dxTarget, "colCount");
         }
-        public static Task SetColCount(ElementRef dxTarget, object value)
+        public static Task SetColCount(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxForm_SetOption", dxTarget, "colCount", value);
         }
-        public static Task<object> GetColCountByScreen(ElementRef dxTarget)
+        public static Task<object> GetColCountByScreen(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxForm_GetOption", dxTarget, "colCountByScreen");
         }
-        public static Task SetColCountByScreen(ElementRef dxTarget, object value)
+        public static Task SetColCountByScreen(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxForm_SetOption", dxTarget, "colCountByScreen", value);
         }
-        public static Task<object> GetCustomizeItem(ElementRef dxTarget)
+        public static Task<object> GetCustomizeItem(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxForm_GetOption", dxTarget, "customizeItem");
         }
-        public static Task SetCustomizeItem(ElementRef dxTarget, object value)
+        public static Task SetCustomizeItem(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxForm_SetOption", dxTarget, "customizeItem", value);
         }
-        public static Task<object> GetFormData(ElementRef dxTarget)
+        public static Task<object> GetFormData(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxForm_GetOption", dxTarget, "formData");
         }
-        public static Task SetFormData(ElementRef dxTarget, object value)
+        public static Task SetFormData(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxForm_SetOption", dxTarget, "formData", value);
         }
-        public static Task<object> GetItems(ElementRef dxTarget)
+        public static Task<object> GetItems(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxForm_GetOption", dxTarget, "items");
         }
-        public static Task SetItems(ElementRef dxTarget, object value)
+        public static Task SetItems(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxForm_SetOption", dxTarget, "items", value);
         }
-        public static Task<string> GetLabelLocation(ElementRef dxTarget)
+        public static Task<string> GetLabelLocation(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxForm_GetOption", dxTarget, "labelLocation");
         }
-        public static Task SetLabelLocation(ElementRef dxTarget, string value)
+        public static Task SetLabelLocation(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxForm_SetOption", dxTarget, "labelLocation", value);
         }
-        public static Task<float?> GetMinColWidth(ElementRef dxTarget)
+        public static Task<float?> GetMinColWidth(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DxForm_GetOption", dxTarget, "minColWidth");
         }
-        public static Task SetMinColWidth(ElementRef dxTarget, float? value)
+        public static Task SetMinColWidth(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxForm_SetOption", dxTarget, "minColWidth", value);
         }
-        public static Task<string> GetOptionalMark(ElementRef dxTarget)
+        public static Task<string> GetOptionalMark(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxForm_GetOption", dxTarget, "optionalMark");
         }
-        public static Task SetOptionalMark(ElementRef dxTarget, string value)
+        public static Task SetOptionalMark(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxForm_SetOption", dxTarget, "optionalMark", value);
         }
-        public static Task<bool?> GetReadOnly(ElementRef dxTarget)
+        public static Task<bool?> GetReadOnly(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxForm_GetOption", dxTarget, "readOnly");
         }
-        public static Task SetReadOnly(ElementRef dxTarget, bool? value)
+        public static Task SetReadOnly(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxForm_SetOption", dxTarget, "readOnly", value);
         }
-        public static Task<string> GetRequiredMark(ElementRef dxTarget)
+        public static Task<string> GetRequiredMark(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxForm_GetOption", dxTarget, "requiredMark");
         }
-        public static Task SetRequiredMark(ElementRef dxTarget, string value)
+        public static Task SetRequiredMark(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxForm_SetOption", dxTarget, "requiredMark", value);
         }
-        public static Task<string> GetRequiredMessage(ElementRef dxTarget)
+        public static Task<string> GetRequiredMessage(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxForm_GetOption", dxTarget, "requiredMessage");
         }
-        public static Task SetRequiredMessage(ElementRef dxTarget, string value)
+        public static Task SetRequiredMessage(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxForm_SetOption", dxTarget, "requiredMessage", value);
         }
-        public static Task<object> GetScreenByWidth(ElementRef dxTarget)
+        public static Task<object> GetScreenByWidth(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxForm_GetOption", dxTarget, "screenByWidth");
         }
-        public static Task SetScreenByWidth(ElementRef dxTarget, object value)
+        public static Task SetScreenByWidth(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxForm_SetOption", dxTarget, "screenByWidth", value);
         }
-        public static Task<bool?> GetScrollingEnabled(ElementRef dxTarget)
+        public static Task<bool?> GetScrollingEnabled(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxForm_GetOption", dxTarget, "scrollingEnabled");
         }
-        public static Task SetScrollingEnabled(ElementRef dxTarget, bool? value)
+        public static Task SetScrollingEnabled(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxForm_SetOption", dxTarget, "scrollingEnabled", value);
         }
-        public static Task<bool?> GetShowColonAfterLabel(ElementRef dxTarget)
+        public static Task<bool?> GetShowColonAfterLabel(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxForm_GetOption", dxTarget, "showColonAfterLabel");
         }
-        public static Task SetShowColonAfterLabel(ElementRef dxTarget, bool? value)
+        public static Task SetShowColonAfterLabel(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxForm_SetOption", dxTarget, "showColonAfterLabel", value);
         }
-        public static Task<bool?> GetShowOptionalMark(ElementRef dxTarget)
+        public static Task<bool?> GetShowOptionalMark(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxForm_GetOption", dxTarget, "showOptionalMark");
         }
-        public static Task SetShowOptionalMark(ElementRef dxTarget, bool? value)
+        public static Task SetShowOptionalMark(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxForm_SetOption", dxTarget, "showOptionalMark", value);
         }
-        public static Task<bool?> GetShowRequiredMark(ElementRef dxTarget)
+        public static Task<bool?> GetShowRequiredMark(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxForm_GetOption", dxTarget, "showRequiredMark");
         }
-        public static Task SetShowRequiredMark(ElementRef dxTarget, bool? value)
+        public static Task SetShowRequiredMark(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxForm_SetOption", dxTarget, "showRequiredMark", value);
         }
-        public static Task<bool?> GetShowValidationSummary(ElementRef dxTarget)
+        public static Task<bool?> GetShowValidationSummary(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxForm_GetOption", dxTarget, "showValidationSummary");
         }
-        public static Task SetShowValidationSummary(ElementRef dxTarget, bool? value)
+        public static Task SetShowValidationSummary(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxForm_SetOption", dxTarget, "showValidationSummary", value);
         }
-        public static Task<string> GetValidationGroup(ElementRef dxTarget)
+        public static Task<string> GetValidationGroup(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxForm_GetOption", dxTarget, "validationGroup");
         }
-        public static Task SetValidationGroup(ElementRef dxTarget, string value)
+        public static Task SetValidationGroup(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxForm_SetOption", dxTarget, "validationGroup", value);
         }
-        public static Task<object> GetEditor(ElementRef dxTarget, string dataField)
+        public static Task<object> GetEditor(ElementReference dxTarget, string dataField)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxForm_getEditor_0", dxTarget, dataField);
         }
-        public static Task<object> ItemOption(ElementRef dxTarget, string id)
+        public static Task<object> ItemOption(ElementReference dxTarget, string id)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxForm_itemOption_1", dxTarget, id);
         }
-        public static Task ItemOption(ElementRef dxTarget, string id, string option, object value)
+        public static Task ItemOption(ElementReference dxTarget, string id, string option, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxForm_itemOption_2", dxTarget, id, option, value);
         }
-        public static Task ItemOption(ElementRef dxTarget, string id, object options)
+        public static Task ItemOption(ElementReference dxTarget, string id, object options)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxForm_itemOption_3", dxTarget, id, options);
         }
-        public static Task ResetValues(ElementRef dxTarget)
+        public static Task ResetValues(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxForm_resetValues_4", dxTarget);
         }
-        public static Task UpdateData(ElementRef dxTarget, object data)
+        public static Task UpdateData(ElementReference dxTarget, object data)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxForm_updateData_5", dxTarget, data);
         }
-        public static Task UpdateData(ElementRef dxTarget, string dataField, object value)
+        public static Task UpdateData(ElementReference dxTarget, string dataField, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxForm_updateData_6", dxTarget, dataField, value);
         }
-        public static Task<object> UpdateDimensions(ElementRef dxTarget)
+        public static Task<object> UpdateDimensions(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxForm_updateDimensions_7", dxTarget);
         }
-        public static Task<object> Validate(ElementRef dxTarget)
+        public static Task<object> Validate(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxForm_validate_8", dxTarget);
         }
     }
     public class DxGalleryInterop: CollectionWidgetInterop
     {
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxGalleryOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.DxGalleryOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxGallery_Init", dxTarget, json);
         }
-        public static Task<float?> GetAnimationDuration(ElementRef dxTarget)
+        public static Task<float?> GetAnimationDuration(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DxGallery_GetOption", dxTarget, "animationDuration");
         }
-        public static Task SetAnimationDuration(ElementRef dxTarget, float? value)
+        public static Task SetAnimationDuration(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxGallery_SetOption", dxTarget, "animationDuration", value);
         }
-        public static Task<bool?> GetAnimationEnabled(ElementRef dxTarget)
+        public static Task<bool?> GetAnimationEnabled(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxGallery_GetOption", dxTarget, "animationEnabled");
         }
-        public static Task SetAnimationEnabled(ElementRef dxTarget, bool? value)
+        public static Task SetAnimationEnabled(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxGallery_SetOption", dxTarget, "animationEnabled", value);
         }
-        public static Task<bool?> GetIndicatorEnabled(ElementRef dxTarget)
+        public static Task<bool?> GetIndicatorEnabled(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxGallery_GetOption", dxTarget, "indicatorEnabled");
         }
-        public static Task SetIndicatorEnabled(ElementRef dxTarget, bool? value)
+        public static Task SetIndicatorEnabled(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxGallery_SetOption", dxTarget, "indicatorEnabled", value);
         }
-        public static Task<float?> GetInitialItemWidth(ElementRef dxTarget)
+        public static Task<float?> GetInitialItemWidth(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DxGallery_GetOption", dxTarget, "initialItemWidth");
         }
-        public static Task SetInitialItemWidth(ElementRef dxTarget, float? value)
+        public static Task SetInitialItemWidth(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxGallery_SetOption", dxTarget, "initialItemWidth", value);
         }
-        public static Task<bool?> GetLoop(ElementRef dxTarget)
+        public static Task<bool?> GetLoop(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxGallery_GetOption", dxTarget, "loop");
         }
-        public static Task SetLoop(ElementRef dxTarget, bool? value)
+        public static Task SetLoop(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxGallery_SetOption", dxTarget, "loop", value);
         }
-        public static Task<bool?> GetShowIndicator(ElementRef dxTarget)
+        public static Task<bool?> GetShowIndicator(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxGallery_GetOption", dxTarget, "showIndicator");
         }
-        public static Task SetShowIndicator(ElementRef dxTarget, bool? value)
+        public static Task SetShowIndicator(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxGallery_SetOption", dxTarget, "showIndicator", value);
         }
-        public static Task<bool?> GetShowNavButtons(ElementRef dxTarget)
+        public static Task<bool?> GetShowNavButtons(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxGallery_GetOption", dxTarget, "showNavButtons");
         }
-        public static Task SetShowNavButtons(ElementRef dxTarget, bool? value)
+        public static Task SetShowNavButtons(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxGallery_SetOption", dxTarget, "showNavButtons", value);
         }
-        public static Task<float?> GetSlideshowDelay(ElementRef dxTarget)
+        public static Task<float?> GetSlideshowDelay(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DxGallery_GetOption", dxTarget, "slideshowDelay");
         }
-        public static Task SetSlideshowDelay(ElementRef dxTarget, float? value)
+        public static Task SetSlideshowDelay(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxGallery_SetOption", dxTarget, "slideshowDelay", value);
         }
-        public static Task<bool?> GetStretchImages(ElementRef dxTarget)
+        public static Task<bool?> GetStretchImages(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxGallery_GetOption", dxTarget, "stretchImages");
         }
-        public static Task SetStretchImages(ElementRef dxTarget, bool? value)
+        public static Task SetStretchImages(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxGallery_SetOption", dxTarget, "stretchImages", value);
         }
-        public static Task<bool?> GetSwipeEnabled(ElementRef dxTarget)
+        public static Task<bool?> GetSwipeEnabled(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxGallery_GetOption", dxTarget, "swipeEnabled");
         }
-        public static Task SetSwipeEnabled(ElementRef dxTarget, bool? value)
+        public static Task SetSwipeEnabled(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxGallery_SetOption", dxTarget, "swipeEnabled", value);
         }
-        public static Task<bool?> GetWrapAround(ElementRef dxTarget)
+        public static Task<bool?> GetWrapAround(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxGallery_GetOption", dxTarget, "wrapAround");
         }
-        public static Task SetWrapAround(ElementRef dxTarget, bool? value)
+        public static Task SetWrapAround(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxGallery_SetOption", dxTarget, "wrapAround", value);
         }
-        public static Task<object> GoToItem(ElementRef dxTarget, float itemIndex, bool animation)
+        public static Task<object> GoToItem(ElementReference dxTarget, float itemIndex, bool animation)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxGallery_goToItem_0", dxTarget, itemIndex, animation);
         }
-        public static Task<object> NextItem(ElementRef dxTarget, bool animation)
+        public static Task<object> NextItem(ElementReference dxTarget, bool animation)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxGallery_nextItem_1", dxTarget, animation);
         }
-        public static Task<object> PrevItem(ElementRef dxTarget, bool animation)
+        public static Task<object> PrevItem(ElementReference dxTarget, bool animation)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxGallery_prevItem_2", dxTarget, animation);
         }
@@ -4497,7 +4497,7 @@ namespace DevExpress.Ui
         public static event EventHandler<JQueryEventArgs> PullRefresh;
         public static event EventHandler<JQueryEventArgs> Scroll;
         public static event EventHandler<JQueryEventArgs> SelectAllValueChanged;
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxListOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.DxListOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxList_Init", dxTarget, json);
@@ -4547,388 +4547,388 @@ namespace DevExpress.Ui
         {
             SelectAllValueChanged?.Invoke(null, new JQueryEventArgs(identifier));
         }
-        public static Task<bool?> GetAllowItemDeleting(ElementRef dxTarget)
+        public static Task<bool?> GetAllowItemDeleting(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxList_GetOption", dxTarget, "allowItemDeleting");
         }
-        public static Task SetAllowItemDeleting(ElementRef dxTarget, bool? value)
+        public static Task SetAllowItemDeleting(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxList_SetOption", dxTarget, "allowItemDeleting", value);
         }
-        public static Task<bool?> GetAllowItemReordering(ElementRef dxTarget)
+        public static Task<bool?> GetAllowItemReordering(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxList_GetOption", dxTarget, "allowItemReordering");
         }
-        public static Task SetAllowItemReordering(ElementRef dxTarget, bool? value)
+        public static Task SetAllowItemReordering(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxList_SetOption", dxTarget, "allowItemReordering", value);
         }
-        public static Task<bool?> GetBounceEnabled(ElementRef dxTarget)
+        public static Task<bool?> GetBounceEnabled(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxList_GetOption", dxTarget, "bounceEnabled");
         }
-        public static Task SetBounceEnabled(ElementRef dxTarget, bool? value)
+        public static Task SetBounceEnabled(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxList_SetOption", dxTarget, "bounceEnabled", value);
         }
-        public static Task<bool?> GetCollapsibleGroups(ElementRef dxTarget)
+        public static Task<bool?> GetCollapsibleGroups(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxList_GetOption", dxTarget, "collapsibleGroups");
         }
-        public static Task SetCollapsibleGroups(ElementRef dxTarget, bool? value)
+        public static Task SetCollapsibleGroups(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxList_SetOption", dxTarget, "collapsibleGroups", value);
         }
-        public static Task<bool?> GetGrouped(ElementRef dxTarget)
+        public static Task<bool?> GetGrouped(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxList_GetOption", dxTarget, "grouped");
         }
-        public static Task SetGrouped(ElementRef dxTarget, bool? value)
+        public static Task SetGrouped(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxList_SetOption", dxTarget, "grouped", value);
         }
-        public static Task<object> GetGroupTemplate(ElementRef dxTarget)
+        public static Task<object> GetGroupTemplate(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxList_GetOption", dxTarget, "groupTemplate");
         }
-        public static Task SetGroupTemplate(ElementRef dxTarget, object value)
+        public static Task SetGroupTemplate(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxList_SetOption", dxTarget, "groupTemplate", value);
         }
-        public static Task<bool?> GetIndicateLoading(ElementRef dxTarget)
+        public static Task<bool?> GetIndicateLoading(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxList_GetOption", dxTarget, "indicateLoading");
         }
-        public static Task SetIndicateLoading(ElementRef dxTarget, bool? value)
+        public static Task SetIndicateLoading(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxList_SetOption", dxTarget, "indicateLoading", value);
         }
-        public static Task<string> GetItemDeleteMode(ElementRef dxTarget)
+        public static Task<string> GetItemDeleteMode(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxList_GetOption", dxTarget, "itemDeleteMode");
         }
-        public static Task SetItemDeleteMode(ElementRef dxTarget, string value)
+        public static Task SetItemDeleteMode(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxList_SetOption", dxTarget, "itemDeleteMode", value);
         }
-        public static Task<object> GetMenuItems(ElementRef dxTarget)
+        public static Task<object> GetMenuItems(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxList_GetOption", dxTarget, "menuItems");
         }
-        public static Task SetMenuItems(ElementRef dxTarget, object value)
+        public static Task SetMenuItems(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxList_SetOption", dxTarget, "menuItems", value);
         }
-        public static Task<string> GetMenuMode(ElementRef dxTarget)
+        public static Task<string> GetMenuMode(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxList_GetOption", dxTarget, "menuMode");
         }
-        public static Task SetMenuMode(ElementRef dxTarget, string value)
+        public static Task SetMenuMode(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxList_SetOption", dxTarget, "menuMode", value);
         }
-        public static Task<string> GetNextButtonText(ElementRef dxTarget)
+        public static Task<string> GetNextButtonText(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxList_GetOption", dxTarget, "nextButtonText");
         }
-        public static Task SetNextButtonText(ElementRef dxTarget, string value)
+        public static Task SetNextButtonText(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxList_SetOption", dxTarget, "nextButtonText", value);
         }
-        public static Task<string> GetPageLoadingText(ElementRef dxTarget)
+        public static Task<string> GetPageLoadingText(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxList_GetOption", dxTarget, "pageLoadingText");
         }
-        public static Task SetPageLoadingText(ElementRef dxTarget, string value)
+        public static Task SetPageLoadingText(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxList_SetOption", dxTarget, "pageLoadingText", value);
         }
-        public static Task<string> GetPageLoadMode(ElementRef dxTarget)
+        public static Task<string> GetPageLoadMode(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxList_GetOption", dxTarget, "pageLoadMode");
         }
-        public static Task SetPageLoadMode(ElementRef dxTarget, string value)
+        public static Task SetPageLoadMode(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxList_SetOption", dxTarget, "pageLoadMode", value);
         }
-        public static Task<string> GetPulledDownText(ElementRef dxTarget)
+        public static Task<string> GetPulledDownText(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxList_GetOption", dxTarget, "pulledDownText");
         }
-        public static Task SetPulledDownText(ElementRef dxTarget, string value)
+        public static Task SetPulledDownText(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxList_SetOption", dxTarget, "pulledDownText", value);
         }
-        public static Task<string> GetPullingDownText(ElementRef dxTarget)
+        public static Task<string> GetPullingDownText(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxList_GetOption", dxTarget, "pullingDownText");
         }
-        public static Task SetPullingDownText(ElementRef dxTarget, string value)
+        public static Task SetPullingDownText(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxList_SetOption", dxTarget, "pullingDownText", value);
         }
-        public static Task<bool?> GetPullRefreshEnabled(ElementRef dxTarget)
+        public static Task<bool?> GetPullRefreshEnabled(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxList_GetOption", dxTarget, "pullRefreshEnabled");
         }
-        public static Task SetPullRefreshEnabled(ElementRef dxTarget, bool? value)
+        public static Task SetPullRefreshEnabled(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxList_SetOption", dxTarget, "pullRefreshEnabled", value);
         }
-        public static Task<string> GetRefreshingText(ElementRef dxTarget)
+        public static Task<string> GetRefreshingText(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxList_GetOption", dxTarget, "refreshingText");
         }
-        public static Task SetRefreshingText(ElementRef dxTarget, string value)
+        public static Task SetRefreshingText(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxList_SetOption", dxTarget, "refreshingText", value);
         }
-        public static Task<bool?> GetScrollByContent(ElementRef dxTarget)
+        public static Task<bool?> GetScrollByContent(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxList_GetOption", dxTarget, "scrollByContent");
         }
-        public static Task SetScrollByContent(ElementRef dxTarget, bool? value)
+        public static Task SetScrollByContent(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxList_SetOption", dxTarget, "scrollByContent", value);
         }
-        public static Task<bool?> GetScrollByThumb(ElementRef dxTarget)
+        public static Task<bool?> GetScrollByThumb(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxList_GetOption", dxTarget, "scrollByThumb");
         }
-        public static Task SetScrollByThumb(ElementRef dxTarget, bool? value)
+        public static Task SetScrollByThumb(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxList_SetOption", dxTarget, "scrollByThumb", value);
         }
-        public static Task<bool?> GetScrollingEnabled(ElementRef dxTarget)
+        public static Task<bool?> GetScrollingEnabled(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxList_GetOption", dxTarget, "scrollingEnabled");
         }
-        public static Task SetScrollingEnabled(ElementRef dxTarget, bool? value)
+        public static Task SetScrollingEnabled(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxList_SetOption", dxTarget, "scrollingEnabled", value);
         }
-        public static Task<string> GetSelectAllMode(ElementRef dxTarget)
+        public static Task<string> GetSelectAllMode(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxList_GetOption", dxTarget, "selectAllMode");
         }
-        public static Task SetSelectAllMode(ElementRef dxTarget, string value)
+        public static Task SetSelectAllMode(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxList_SetOption", dxTarget, "selectAllMode", value);
         }
-        public static Task<string> GetSelectionMode(ElementRef dxTarget)
+        public static Task<string> GetSelectionMode(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxList_GetOption", dxTarget, "selectionMode");
         }
-        public static Task SetSelectionMode(ElementRef dxTarget, string value)
+        public static Task SetSelectionMode(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxList_SetOption", dxTarget, "selectionMode", value);
         }
-        public static Task<string> GetShowScrollbar(ElementRef dxTarget)
+        public static Task<string> GetShowScrollbar(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxList_GetOption", dxTarget, "showScrollbar");
         }
-        public static Task SetShowScrollbar(ElementRef dxTarget, string value)
+        public static Task SetShowScrollbar(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxList_SetOption", dxTarget, "showScrollbar", value);
         }
-        public static Task<bool?> GetShowSelectionControls(ElementRef dxTarget)
+        public static Task<bool?> GetShowSelectionControls(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxList_GetOption", dxTarget, "showSelectionControls");
         }
-        public static Task SetShowSelectionControls(ElementRef dxTarget, bool? value)
+        public static Task SetShowSelectionControls(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxList_SetOption", dxTarget, "showSelectionControls", value);
         }
-        public static Task<bool?> GetUseNativeScrolling(ElementRef dxTarget)
+        public static Task<bool?> GetUseNativeScrolling(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxList_GetOption", dxTarget, "useNativeScrolling");
         }
-        public static Task SetUseNativeScrolling(ElementRef dxTarget, bool? value)
+        public static Task SetUseNativeScrolling(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxList_SetOption", dxTarget, "useNativeScrolling", value);
         }
-        public static Task<object> GetSearchEditorOptions(ElementRef dxTarget)
+        public static Task<object> GetSearchEditorOptions(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxList_GetOption", dxTarget, "searchEditorOptions");
         }
-        public static Task SetSearchEditorOptions(ElementRef dxTarget, object value)
+        public static Task SetSearchEditorOptions(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxList_SetOption", dxTarget, "searchEditorOptions", value);
         }
-        public static Task<bool?> GetSearchEnabled(ElementRef dxTarget)
+        public static Task<bool?> GetSearchEnabled(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxList_GetOption", dxTarget, "searchEnabled");
         }
-        public static Task SetSearchEnabled(ElementRef dxTarget, bool? value)
+        public static Task SetSearchEnabled(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxList_SetOption", dxTarget, "searchEnabled", value);
         }
-        public static Task<object> GetSearchExpr(ElementRef dxTarget)
+        public static Task<object> GetSearchExpr(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxList_GetOption", dxTarget, "searchExpr");
         }
-        public static Task SetSearchExpr(ElementRef dxTarget, object value)
+        public static Task SetSearchExpr(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxList_SetOption", dxTarget, "searchExpr", value);
         }
-        public static Task<string> GetSearchMode(ElementRef dxTarget)
+        public static Task<string> GetSearchMode(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxList_GetOption", dxTarget, "searchMode");
         }
-        public static Task SetSearchMode(ElementRef dxTarget, string value)
+        public static Task SetSearchMode(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxList_SetOption", dxTarget, "searchMode", value);
         }
-        public static Task<float?> GetSearchTimeout(ElementRef dxTarget)
+        public static Task<float?> GetSearchTimeout(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DxList_GetOption", dxTarget, "searchTimeout");
         }
-        public static Task SetSearchTimeout(ElementRef dxTarget, float? value)
+        public static Task SetSearchTimeout(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxList_SetOption", dxTarget, "searchTimeout", value);
         }
-        public static Task<string> GetSearchValue(ElementRef dxTarget)
+        public static Task<string> GetSearchValue(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxList_GetOption", dxTarget, "searchValue");
         }
-        public static Task SetSearchValue(ElementRef dxTarget, string value)
+        public static Task SetSearchValue(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxList_SetOption", dxTarget, "searchValue", value);
         }
-        public static Task<float> ClientHeight(ElementRef dxTarget)
+        public static Task<float> ClientHeight(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float>("BlazorDevExtreme_DxList_clientHeight_0", dxTarget);
         }
-        public static Task<object> CollapseGroup(ElementRef dxTarget, float groupIndex)
+        public static Task<object> CollapseGroup(ElementReference dxTarget, float groupIndex)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxList_collapseGroup_1", dxTarget, groupIndex);
         }
-        public static Task<object> DeleteItem(ElementRef dxTarget, object itemElement)
+        public static Task<object> DeleteItem(ElementReference dxTarget, object itemElement)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxList_deleteItem_2", dxTarget, itemElement);
         }
-        public static Task<object> ExpandGroup(ElementRef dxTarget, float groupIndex)
+        public static Task<object> ExpandGroup(ElementReference dxTarget, float groupIndex)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxList_expandGroup_4", dxTarget, groupIndex);
         }
-        public static Task<bool> IsItemSelected(ElementRef dxTarget, object itemElement)
+        public static Task<bool> IsItemSelected(ElementReference dxTarget, object itemElement)
         {
             return JSRuntime.Current.InvokeAsync<bool>("BlazorDevExtreme_DxList_isItemSelected_5", dxTarget, itemElement);
         }
-        public static Task Reload(ElementRef dxTarget)
+        public static Task Reload(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxList_reload_7", dxTarget);
         }
-        public static Task<object> ReorderItem(ElementRef dxTarget, object itemElement, object toItemElement)
+        public static Task<object> ReorderItem(ElementReference dxTarget, object itemElement, object toItemElement)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxList_reorderItem_8", dxTarget, itemElement, toItemElement);
         }
-        public static Task ScrollBy(ElementRef dxTarget, float distance)
+        public static Task ScrollBy(ElementReference dxTarget, float distance)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxList_scrollBy_10", dxTarget, distance);
         }
-        public static Task<float> ScrollHeight(ElementRef dxTarget)
+        public static Task<float> ScrollHeight(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float>("BlazorDevExtreme_DxList_scrollHeight_11", dxTarget);
         }
-        public static Task ScrollTo(ElementRef dxTarget, float location)
+        public static Task ScrollTo(ElementReference dxTarget, float location)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxList_scrollTo_12", dxTarget, location);
         }
-        public static Task ScrollToItem(ElementRef dxTarget, object itemElement)
+        public static Task ScrollToItem(ElementReference dxTarget, object itemElement)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxList_scrollToItem_13", dxTarget, itemElement);
         }
-        public static Task<float> ScrollTop(ElementRef dxTarget)
+        public static Task<float> ScrollTop(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float>("BlazorDevExtreme_DxList_scrollTop_15", dxTarget);
         }
-        public static Task SelectAll(ElementRef dxTarget)
+        public static Task SelectAll(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxList_selectAll_16", dxTarget);
         }
-        public static Task SelectItem(ElementRef dxTarget, object itemElement)
+        public static Task SelectItem(ElementReference dxTarget, object itemElement)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxList_selectItem_17", dxTarget, itemElement);
         }
-        public static Task UnselectAll(ElementRef dxTarget)
+        public static Task UnselectAll(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxList_unselectAll_19", dxTarget);
         }
-        public static Task UnselectItem(ElementRef dxTarget, object itemElement)
+        public static Task UnselectItem(ElementReference dxTarget, object itemElement)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxList_unselectItem_20", dxTarget, itemElement);
         }
-        public static Task<object> UpdateDimensions(ElementRef dxTarget)
+        public static Task<object> UpdateDimensions(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxList_updateDimensions_22", dxTarget);
         }
     }
     public class DxLoadIndicatorInterop: WidgetInterop
     {
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxLoadIndicatorOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.DxLoadIndicatorOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxLoadIndicator_Init", dxTarget, json);
         }
-        public static Task<string> GetIndicatorSrc(ElementRef dxTarget)
+        public static Task<string> GetIndicatorSrc(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxLoadIndicator_GetOption", dxTarget, "indicatorSrc");
         }
-        public static Task SetIndicatorSrc(ElementRef dxTarget, string value)
+        public static Task SetIndicatorSrc(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxLoadIndicator_SetOption", dxTarget, "indicatorSrc", value);
         }
     }
     public class DxLoadPanelInterop: DxOverlayInterop
     {
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxLoadPanelOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.DxLoadPanelOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxLoadPanel_Init", dxTarget, json);
         }
-        public static Task<float?> GetDelay(ElementRef dxTarget)
+        public static Task<float?> GetDelay(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DxLoadPanel_GetOption", dxTarget, "delay");
         }
-        public static Task SetDelay(ElementRef dxTarget, float? value)
+        public static Task SetDelay(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxLoadPanel_SetOption", dxTarget, "delay", value);
         }
-        public static Task<string> GetIndicatorSrc(ElementRef dxTarget)
+        public static Task<string> GetIndicatorSrc(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxLoadPanel_GetOption", dxTarget, "indicatorSrc");
         }
-        public static Task SetIndicatorSrc(ElementRef dxTarget, string value)
+        public static Task SetIndicatorSrc(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxLoadPanel_SetOption", dxTarget, "indicatorSrc", value);
         }
-        public static Task<string> GetMessage(ElementRef dxTarget)
+        public static Task<string> GetMessage(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxLoadPanel_GetOption", dxTarget, "message");
         }
-        public static Task SetMessage(ElementRef dxTarget, string value)
+        public static Task SetMessage(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxLoadPanel_SetOption", dxTarget, "message", value);
         }
-        public static Task<bool?> GetShowIndicator(ElementRef dxTarget)
+        public static Task<bool?> GetShowIndicator(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxLoadPanel_GetOption", dxTarget, "showIndicator");
         }
-        public static Task SetShowIndicator(ElementRef dxTarget, bool? value)
+        public static Task SetShowIndicator(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxLoadPanel_SetOption", dxTarget, "showIndicator", value);
         }
-        public static Task<bool?> GetShowPane(ElementRef dxTarget)
+        public static Task<bool?> GetShowPane(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxLoadPanel_GetOption", dxTarget, "showPane");
         }
-        public static Task SetShowPane(ElementRef dxTarget, bool? value)
+        public static Task SetShowPane(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxLoadPanel_SetOption", dxTarget, "showPane", value);
         }
 
-        public static new Task SetVisible(ElementRef dxTarget, bool? value)
+        public static new Task SetVisible(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Widget_SetOption", dxTarget, "visible", value);
         }
@@ -4939,7 +4939,7 @@ namespace DevExpress.Ui
         public static event EventHandler<JQueryEventArgs> PullRefresh;
         public static event EventHandler<JQueryEventArgs> Scroll;
         public static event EventHandler<JQueryEventArgs> TitleRendered;
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxLookupOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.DxLookupOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxLookup_Init", dxTarget, json);
@@ -4964,211 +4964,211 @@ namespace DevExpress.Ui
         {
             TitleRendered?.Invoke(null, new JQueryEventArgs(identifier));
         }
-        public static Task<object> GetAnimation(ElementRef dxTarget)
+        public static Task<object> GetAnimation(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxLookup_GetOption", dxTarget, "animation");
         }
-        public static Task SetAnimation(ElementRef dxTarget, object value)
+        public static Task SetAnimation(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxLookup_SetOption", dxTarget, "animation", value);
         }
-        public static Task<string> GetApplyButtonText(ElementRef dxTarget)
+        public static Task<string> GetApplyButtonText(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxLookup_GetOption", dxTarget, "applyButtonText");
         }
-        public static Task SetApplyButtonText(ElementRef dxTarget, string value)
+        public static Task SetApplyButtonText(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxLookup_SetOption", dxTarget, "applyButtonText", value);
         }
-        public static Task<string> GetCancelButtonText(ElementRef dxTarget)
+        public static Task<string> GetCancelButtonText(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxLookup_GetOption", dxTarget, "cancelButtonText");
         }
-        public static Task SetCancelButtonText(ElementRef dxTarget, string value)
+        public static Task SetCancelButtonText(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxLookup_SetOption", dxTarget, "cancelButtonText", value);
         }
-        public static Task<bool?> GetCleanSearchOnOpening(ElementRef dxTarget)
+        public static Task<bool?> GetCleanSearchOnOpening(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxLookup_GetOption", dxTarget, "cleanSearchOnOpening");
         }
-        public static Task SetCleanSearchOnOpening(ElementRef dxTarget, bool? value)
+        public static Task SetCleanSearchOnOpening(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxLookup_SetOption", dxTarget, "cleanSearchOnOpening", value);
         }
-        public static Task<string> GetClearButtonText(ElementRef dxTarget)
+        public static Task<string> GetClearButtonText(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxLookup_GetOption", dxTarget, "clearButtonText");
         }
-        public static Task SetClearButtonText(ElementRef dxTarget, string value)
+        public static Task SetClearButtonText(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxLookup_SetOption", dxTarget, "clearButtonText", value);
         }
-        public static Task<object> GetCloseOnOutsideClick(ElementRef dxTarget)
+        public static Task<object> GetCloseOnOutsideClick(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxLookup_GetOption", dxTarget, "closeOnOutsideClick");
         }
-        public static Task SetCloseOnOutsideClick(ElementRef dxTarget, object value)
+        public static Task SetCloseOnOutsideClick(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxLookup_SetOption", dxTarget, "closeOnOutsideClick", value);
         }
-        public static Task<object> GetFieldTemplate(ElementRef dxTarget)
+        public static Task<object> GetFieldTemplate(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxLookup_GetOption", dxTarget, "fieldTemplate");
         }
-        public static Task SetFieldTemplate(ElementRef dxTarget, object value)
+        public static Task SetFieldTemplate(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxLookup_SetOption", dxTarget, "fieldTemplate", value);
         }
-        public static Task<bool?> GetFullScreen(ElementRef dxTarget)
+        public static Task<bool?> GetFullScreen(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxLookup_GetOption", dxTarget, "fullScreen");
         }
-        public static Task SetFullScreen(ElementRef dxTarget, bool? value)
+        public static Task SetFullScreen(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxLookup_SetOption", dxTarget, "fullScreen", value);
         }
-        public static Task<string> GetNextButtonText(ElementRef dxTarget)
+        public static Task<string> GetNextButtonText(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxLookup_GetOption", dxTarget, "nextButtonText");
         }
-        public static Task SetNextButtonText(ElementRef dxTarget, string value)
+        public static Task SetNextButtonText(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxLookup_SetOption", dxTarget, "nextButtonText", value);
         }
-        public static Task<string> GetPageLoadingText(ElementRef dxTarget)
+        public static Task<string> GetPageLoadingText(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxLookup_GetOption", dxTarget, "pageLoadingText");
         }
-        public static Task SetPageLoadingText(ElementRef dxTarget, string value)
+        public static Task SetPageLoadingText(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxLookup_SetOption", dxTarget, "pageLoadingText", value);
         }
-        public static Task<string> GetPageLoadMode(ElementRef dxTarget)
+        public static Task<string> GetPageLoadMode(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxLookup_GetOption", dxTarget, "pageLoadMode");
         }
-        public static Task SetPageLoadMode(ElementRef dxTarget, string value)
+        public static Task SetPageLoadMode(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxLookup_SetOption", dxTarget, "pageLoadMode", value);
         }
-        public static Task<object> GetPopupHeight(ElementRef dxTarget)
+        public static Task<object> GetPopupHeight(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxLookup_GetOption", dxTarget, "popupHeight");
         }
-        public static Task SetPopupHeight(ElementRef dxTarget, object value)
+        public static Task SetPopupHeight(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxLookup_SetOption", dxTarget, "popupHeight", value);
         }
-        public static Task<object> GetPopupWidth(ElementRef dxTarget)
+        public static Task<object> GetPopupWidth(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxLookup_GetOption", dxTarget, "popupWidth");
         }
-        public static Task SetPopupWidth(ElementRef dxTarget, object value)
+        public static Task SetPopupWidth(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxLookup_SetOption", dxTarget, "popupWidth", value);
         }
-        public static Task<object> GetPosition(ElementRef dxTarget)
+        public static Task<object> GetPosition(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxLookup_GetOption", dxTarget, "position");
         }
-        public static Task SetPosition(ElementRef dxTarget, object value)
+        public static Task SetPosition(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxLookup_SetOption", dxTarget, "position", value);
         }
-        public static Task<string> GetPulledDownText(ElementRef dxTarget)
+        public static Task<string> GetPulledDownText(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxLookup_GetOption", dxTarget, "pulledDownText");
         }
-        public static Task SetPulledDownText(ElementRef dxTarget, string value)
+        public static Task SetPulledDownText(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxLookup_SetOption", dxTarget, "pulledDownText", value);
         }
-        public static Task<string> GetPullingDownText(ElementRef dxTarget)
+        public static Task<string> GetPullingDownText(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxLookup_GetOption", dxTarget, "pullingDownText");
         }
-        public static Task SetPullingDownText(ElementRef dxTarget, string value)
+        public static Task SetPullingDownText(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxLookup_SetOption", dxTarget, "pullingDownText", value);
         }
-        public static Task<bool?> GetPullRefreshEnabled(ElementRef dxTarget)
+        public static Task<bool?> GetPullRefreshEnabled(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxLookup_GetOption", dxTarget, "pullRefreshEnabled");
         }
-        public static Task SetPullRefreshEnabled(ElementRef dxTarget, bool? value)
+        public static Task SetPullRefreshEnabled(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxLookup_SetOption", dxTarget, "pullRefreshEnabled", value);
         }
-        public static Task<string> GetRefreshingText(ElementRef dxTarget)
+        public static Task<string> GetRefreshingText(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxLookup_GetOption", dxTarget, "refreshingText");
         }
-        public static Task SetRefreshingText(ElementRef dxTarget, string value)
+        public static Task SetRefreshingText(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxLookup_SetOption", dxTarget, "refreshingText", value);
         }
-        public static Task<string> GetSearchPlaceholder(ElementRef dxTarget)
+        public static Task<string> GetSearchPlaceholder(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxLookup_GetOption", dxTarget, "searchPlaceholder");
         }
-        public static Task SetSearchPlaceholder(ElementRef dxTarget, string value)
+        public static Task SetSearchPlaceholder(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxLookup_SetOption", dxTarget, "searchPlaceholder", value);
         }
-        public static Task<bool?> GetShading(ElementRef dxTarget)
+        public static Task<bool?> GetShading(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxLookup_GetOption", dxTarget, "shading");
         }
-        public static Task SetShading(ElementRef dxTarget, bool? value)
+        public static Task SetShading(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxLookup_SetOption", dxTarget, "shading", value);
         }
-        public static Task<bool?> GetShowCancelButton(ElementRef dxTarget)
+        public static Task<bool?> GetShowCancelButton(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxLookup_GetOption", dxTarget, "showCancelButton");
         }
-        public static Task SetShowCancelButton(ElementRef dxTarget, bool? value)
+        public static Task SetShowCancelButton(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxLookup_SetOption", dxTarget, "showCancelButton", value);
         }
-        public static Task<bool?> GetShowPopupTitle(ElementRef dxTarget)
+        public static Task<bool?> GetShowPopupTitle(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxLookup_GetOption", dxTarget, "showPopupTitle");
         }
-        public static Task SetShowPopupTitle(ElementRef dxTarget, bool? value)
+        public static Task SetShowPopupTitle(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxLookup_SetOption", dxTarget, "showPopupTitle", value);
         }
-        public static Task<string> GetTitle(ElementRef dxTarget)
+        public static Task<string> GetTitle(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxLookup_GetOption", dxTarget, "title");
         }
-        public static Task SetTitle(ElementRef dxTarget, string value)
+        public static Task SetTitle(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxLookup_SetOption", dxTarget, "title", value);
         }
-        public static Task<object> GetTitleTemplate(ElementRef dxTarget)
+        public static Task<object> GetTitleTemplate(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxLookup_GetOption", dxTarget, "titleTemplate");
         }
-        public static Task SetTitleTemplate(ElementRef dxTarget, object value)
+        public static Task SetTitleTemplate(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxLookup_SetOption", dxTarget, "titleTemplate", value);
         }
-        public static Task<bool?> GetUseNativeScrolling(ElementRef dxTarget)
+        public static Task<bool?> GetUseNativeScrolling(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxLookup_GetOption", dxTarget, "useNativeScrolling");
         }
-        public static Task SetUseNativeScrolling(ElementRef dxTarget, bool? value)
+        public static Task SetUseNativeScrolling(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxLookup_SetOption", dxTarget, "useNativeScrolling", value);
         }
-        public static Task<bool?> GetUsePopover(ElementRef dxTarget)
+        public static Task<bool?> GetUsePopover(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxLookup_GetOption", dxTarget, "usePopover");
         }
-        public static Task SetUsePopover(ElementRef dxTarget, bool? value)
+        public static Task SetUsePopover(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxLookup_SetOption", dxTarget, "usePopover", value);
         }
@@ -5181,7 +5181,7 @@ namespace DevExpress.Ui
         public static event EventHandler<JQueryEventArgs> Ready;
         public static event EventHandler<JQueryEventArgs> RouteAdded;
         public static event EventHandler<JQueryEventArgs> RouteRemoved;
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxMapOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.DxMapOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxMap_Init", dxTarget, json);
@@ -5216,99 +5216,99 @@ namespace DevExpress.Ui
         {
             RouteRemoved?.Invoke(null, new JQueryEventArgs(identifier));
         }
-        public static Task<bool?> GetAutoAdjust(ElementRef dxTarget)
+        public static Task<bool?> GetAutoAdjust(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxMap_GetOption", dxTarget, "autoAdjust");
         }
-        public static Task SetAutoAdjust(ElementRef dxTarget, bool? value)
+        public static Task SetAutoAdjust(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxMap_SetOption", dxTarget, "autoAdjust", value);
         }
-        public static Task<object> GetCenter(ElementRef dxTarget)
+        public static Task<object> GetCenter(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxMap_GetOption", dxTarget, "center");
         }
-        public static Task SetCenter(ElementRef dxTarget, object value)
+        public static Task SetCenter(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxMap_SetOption", dxTarget, "center", value);
         }
-        public static Task<bool?> GetControls(ElementRef dxTarget)
+        public static Task<bool?> GetControls(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxMap_GetOption", dxTarget, "controls");
         }
-        public static Task SetControls(ElementRef dxTarget, bool? value)
+        public static Task SetControls(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxMap_SetOption", dxTarget, "controls", value);
         }
-        public static Task<object> GetKey(ElementRef dxTarget)
+        public static Task<object> GetKey(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxMap_GetOption", dxTarget, "key");
         }
-        public static Task SetKey(ElementRef dxTarget, object value)
+        public static Task SetKey(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxMap_SetOption", dxTarget, "key", value);
         }
-        public static Task<string> GetMarkerIconSrc(ElementRef dxTarget)
+        public static Task<string> GetMarkerIconSrc(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxMap_GetOption", dxTarget, "markerIconSrc");
         }
-        public static Task SetMarkerIconSrc(ElementRef dxTarget, string value)
+        public static Task SetMarkerIconSrc(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxMap_SetOption", dxTarget, "markerIconSrc", value);
         }
-        public static Task<object> GetMarkers(ElementRef dxTarget)
+        public static Task<object> GetMarkers(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxMap_GetOption", dxTarget, "markers");
         }
-        public static Task SetMarkers(ElementRef dxTarget, object value)
+        public static Task SetMarkers(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxMap_SetOption", dxTarget, "markers", value);
         }
-        public static Task<string> GetProvider(ElementRef dxTarget)
+        public static Task<string> GetProvider(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxMap_GetOption", dxTarget, "provider");
         }
-        public static Task SetProvider(ElementRef dxTarget, string value)
+        public static Task SetProvider(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxMap_SetOption", dxTarget, "provider", value);
         }
-        public static Task<object> GetRoutes(ElementRef dxTarget)
+        public static Task<object> GetRoutes(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxMap_GetOption", dxTarget, "routes");
         }
-        public static Task SetRoutes(ElementRef dxTarget, object value)
+        public static Task SetRoutes(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxMap_SetOption", dxTarget, "routes", value);
         }
-        public static Task<string> GetType(ElementRef dxTarget)
+        public static Task<string> GetType(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxMap_GetOption", dxTarget, "type");
         }
-        public static Task SetType(ElementRef dxTarget, string value)
+        public static Task SetType(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxMap_SetOption", dxTarget, "type", value);
         }
-        public static Task<float?> GetZoom(ElementRef dxTarget)
+        public static Task<float?> GetZoom(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DxMap_GetOption", dxTarget, "zoom");
         }
-        public static Task SetZoom(ElementRef dxTarget, float? value)
+        public static Task SetZoom(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxMap_SetOption", dxTarget, "zoom", value);
         }
-        public static Task<object> AddMarker(ElementRef dxTarget, object markerOptions)
+        public static Task<object> AddMarker(ElementReference dxTarget, object markerOptions)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxMap_addMarker_0", dxTarget, markerOptions);
         }
-        public static Task<object> AddRoute(ElementRef dxTarget, object options)
+        public static Task<object> AddRoute(ElementReference dxTarget, object options)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxMap_addRoute_1", dxTarget, options);
         }
-        public static Task<object> RemoveMarker(ElementRef dxTarget, object marker)
+        public static Task<object> RemoveMarker(ElementReference dxTarget, object marker)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxMap_removeMarker_2", dxTarget, marker);
         }
-        public static Task<object> RemoveRoute(ElementRef dxTarget, object route)
+        public static Task<object> RemoveRoute(ElementReference dxTarget, object route)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxMap_removeRoute_3", dxTarget, route);
         }
@@ -5319,7 +5319,7 @@ namespace DevExpress.Ui
         public static event EventHandler<JQueryEventArgs> SubmenuHiding;
         public static event EventHandler<JQueryEventArgs> SubmenuShowing;
         public static event EventHandler<JQueryEventArgs> SubmenuShown;
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxMenuOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.DxMenuOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxMenu_Init", dxTarget, json);
@@ -5344,90 +5344,90 @@ namespace DevExpress.Ui
         {
             SubmenuShown?.Invoke(null, new JQueryEventArgs(identifier));
         }
-        public static Task<bool?> GetAdaptivityEnabled(ElementRef dxTarget)
+        public static Task<bool?> GetAdaptivityEnabled(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxMenu_GetOption", dxTarget, "adaptivityEnabled");
         }
-        public static Task SetAdaptivityEnabled(ElementRef dxTarget, bool? value)
+        public static Task SetAdaptivityEnabled(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxMenu_SetOption", dxTarget, "adaptivityEnabled", value);
         }
-        public static Task<bool?> GetHideSubmenuOnMouseLeave(ElementRef dxTarget)
+        public static Task<bool?> GetHideSubmenuOnMouseLeave(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxMenu_GetOption", dxTarget, "hideSubmenuOnMouseLeave");
         }
-        public static Task SetHideSubmenuOnMouseLeave(ElementRef dxTarget, bool? value)
+        public static Task SetHideSubmenuOnMouseLeave(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxMenu_SetOption", dxTarget, "hideSubmenuOnMouseLeave", value);
         }
-        public static Task<string> GetOrientation(ElementRef dxTarget)
+        public static Task<string> GetOrientation(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxMenu_GetOption", dxTarget, "orientation");
         }
-        public static Task SetOrientation(ElementRef dxTarget, string value)
+        public static Task SetOrientation(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxMenu_SetOption", dxTarget, "orientation", value);
         }
-        public static Task<object> GetShowFirstSubmenuMode(ElementRef dxTarget)
+        public static Task<object> GetShowFirstSubmenuMode(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxMenu_GetOption", dxTarget, "showFirstSubmenuMode");
         }
-        public static Task SetShowFirstSubmenuMode(ElementRef dxTarget, object value)
+        public static Task SetShowFirstSubmenuMode(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxMenu_SetOption", dxTarget, "showFirstSubmenuMode", value);
         }
-        public static Task<string> GetSubmenuDirection(ElementRef dxTarget)
+        public static Task<string> GetSubmenuDirection(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxMenu_GetOption", dxTarget, "submenuDirection");
         }
-        public static Task SetSubmenuDirection(ElementRef dxTarget, string value)
+        public static Task SetSubmenuDirection(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxMenu_SetOption", dxTarget, "submenuDirection", value);
         }
     }
     public class DxMultiViewInterop: CollectionWidgetInterop
     {
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxMultiViewOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.DxMultiViewOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxMultiView_Init", dxTarget, json);
         }
-        public static Task<bool?> GetAnimationEnabled(ElementRef dxTarget)
+        public static Task<bool?> GetAnimationEnabled(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxMultiView_GetOption", dxTarget, "animationEnabled");
         }
-        public static Task SetAnimationEnabled(ElementRef dxTarget, bool? value)
+        public static Task SetAnimationEnabled(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxMultiView_SetOption", dxTarget, "animationEnabled", value);
         }
-        public static Task<bool?> GetDeferRendering(ElementRef dxTarget)
+        public static Task<bool?> GetDeferRendering(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxMultiView_GetOption", dxTarget, "deferRendering");
         }
-        public static Task SetDeferRendering(ElementRef dxTarget, bool? value)
+        public static Task SetDeferRendering(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxMultiView_SetOption", dxTarget, "deferRendering", value);
         }
-        public static Task<bool?> GetLoop(ElementRef dxTarget)
+        public static Task<bool?> GetLoop(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxMultiView_GetOption", dxTarget, "loop");
         }
-        public static Task SetLoop(ElementRef dxTarget, bool? value)
+        public static Task SetLoop(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxMultiView_SetOption", dxTarget, "loop", value);
         }
-        public static Task<bool?> GetSwipeEnabled(ElementRef dxTarget)
+        public static Task<bool?> GetSwipeEnabled(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxMultiView_GetOption", dxTarget, "swipeEnabled");
         }
-        public static Task SetSwipeEnabled(ElementRef dxTarget, bool? value)
+        public static Task SetSwipeEnabled(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxMultiView_SetOption", dxTarget, "swipeEnabled", value);
         }
     }
     public class DxNavBarInterop: DxTabsInterop
     {
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxNavBarOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.DxNavBarOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxNavBar_Init", dxTarget, json);
@@ -5435,72 +5435,72 @@ namespace DevExpress.Ui
     }
     public class DxNumberBoxInterop: DxTextEditorInterop
     {
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxNumberBoxOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.DxNumberBoxOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxNumberBox_Init", dxTarget, json);
         }
-        public static Task<object> GetFormat(ElementRef dxTarget)
+        public static Task<object> GetFormat(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxNumberBox_GetOption", dxTarget, "format");
         }
-        public static Task SetFormat(ElementRef dxTarget, object value)
+        public static Task SetFormat(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxNumberBox_SetOption", dxTarget, "format", value);
         }
-        public static Task<string> GetInvalidValueMessage(ElementRef dxTarget)
+        public static Task<string> GetInvalidValueMessage(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxNumberBox_GetOption", dxTarget, "invalidValueMessage");
         }
-        public static Task SetInvalidValueMessage(ElementRef dxTarget, string value)
+        public static Task SetInvalidValueMessage(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxNumberBox_SetOption", dxTarget, "invalidValueMessage", value);
         }
-        public static Task<float?> GetMax(ElementRef dxTarget)
+        public static Task<float?> GetMax(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DxNumberBox_GetOption", dxTarget, "max");
         }
-        public static Task SetMax(ElementRef dxTarget, float? value)
+        public static Task SetMax(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxNumberBox_SetOption", dxTarget, "max", value);
         }
-        public static Task<float?> GetMin(ElementRef dxTarget)
+        public static Task<float?> GetMin(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DxNumberBox_GetOption", dxTarget, "min");
         }
-        public static Task SetMin(ElementRef dxTarget, float? value)
+        public static Task SetMin(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxNumberBox_SetOption", dxTarget, "min", value);
         }
-        public static Task<string> GetMode(ElementRef dxTarget)
+        public static Task<string> GetMode(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxNumberBox_GetOption", dxTarget, "mode");
         }
-        public static Task SetMode(ElementRef dxTarget, string value)
+        public static Task SetMode(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxNumberBox_SetOption", dxTarget, "mode", value);
         }
-        public static Task<bool?> GetShowSpinButtons(ElementRef dxTarget)
+        public static Task<bool?> GetShowSpinButtons(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxNumberBox_GetOption", dxTarget, "showSpinButtons");
         }
-        public static Task SetShowSpinButtons(ElementRef dxTarget, bool? value)
+        public static Task SetShowSpinButtons(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxNumberBox_SetOption", dxTarget, "showSpinButtons", value);
         }
-        public static Task<float?> GetStep(ElementRef dxTarget)
+        public static Task<float?> GetStep(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DxNumberBox_GetOption", dxTarget, "step");
         }
-        public static Task SetStep(ElementRef dxTarget, float? value)
+        public static Task SetStep(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxNumberBox_SetOption", dxTarget, "step", value);
         }
-        public static Task<bool?> GetUseLargeSpinButtons(ElementRef dxTarget)
+        public static Task<bool?> GetUseLargeSpinButtons(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxNumberBox_GetOption", dxTarget, "useLargeSpinButtons");
         }
-        public static Task SetUseLargeSpinButtons(ElementRef dxTarget, bool? value)
+        public static Task SetUseLargeSpinButtons(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxNumberBox_SetOption", dxTarget, "useLargeSpinButtons", value);
         }
@@ -5511,7 +5511,7 @@ namespace DevExpress.Ui
         public static event EventHandler<JQueryEventArgs> Hiding;
         public static event EventHandler<JQueryEventArgs> Showing;
         public static event EventHandler<JQueryEventArgs> Shown;
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxOverlayOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.DxOverlayOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxOverlay_Init", dxTarget, json);
@@ -5536,183 +5536,183 @@ namespace DevExpress.Ui
         {
             Shown?.Invoke(null, new JQueryEventArgs(identifier));
         }
-        public static Task<object> GetAnimation(ElementRef dxTarget)
+        public static Task<object> GetAnimation(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxOverlay_GetOption", dxTarget, "animation");
         }
-        public static Task SetAnimation(ElementRef dxTarget, object value)
+        public static Task SetAnimation(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxOverlay_SetOption", dxTarget, "animation", value);
         }
-        public static Task<bool?> GetCloseOnBackButton(ElementRef dxTarget)
+        public static Task<bool?> GetCloseOnBackButton(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxOverlay_GetOption", dxTarget, "closeOnBackButton");
         }
-        public static Task SetCloseOnBackButton(ElementRef dxTarget, bool? value)
+        public static Task SetCloseOnBackButton(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxOverlay_SetOption", dxTarget, "closeOnBackButton", value);
         }
-        public static Task<object> GetCloseOnOutsideClick(ElementRef dxTarget)
+        public static Task<object> GetCloseOnOutsideClick(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxOverlay_GetOption", dxTarget, "closeOnOutsideClick");
         }
-        public static Task SetCloseOnOutsideClick(ElementRef dxTarget, object value)
+        public static Task SetCloseOnOutsideClick(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxOverlay_SetOption", dxTarget, "closeOnOutsideClick", value);
         }
-        public static Task<object> GetContentTemplate(ElementRef dxTarget)
+        public static Task<object> GetContentTemplate(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxOverlay_GetOption", dxTarget, "contentTemplate");
         }
-        public static Task SetContentTemplate(ElementRef dxTarget, object value)
+        public static Task SetContentTemplate(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxOverlay_SetOption", dxTarget, "contentTemplate", value);
         }
-        public static Task<bool?> GetDeferRendering(ElementRef dxTarget)
+        public static Task<bool?> GetDeferRendering(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxOverlay_GetOption", dxTarget, "deferRendering");
         }
-        public static Task SetDeferRendering(ElementRef dxTarget, bool? value)
+        public static Task SetDeferRendering(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxOverlay_SetOption", dxTarget, "deferRendering", value);
         }
-        public static Task<bool?> GetDragEnabled(ElementRef dxTarget)
+        public static Task<bool?> GetDragEnabled(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxOverlay_GetOption", dxTarget, "dragEnabled");
         }
-        public static Task SetDragEnabled(ElementRef dxTarget, bool? value)
+        public static Task SetDragEnabled(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxOverlay_SetOption", dxTarget, "dragEnabled", value);
         }
-        public static Task<object> GetMaxHeight(ElementRef dxTarget)
+        public static Task<object> GetMaxHeight(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxOverlay_GetOption", dxTarget, "maxHeight");
         }
-        public static Task SetMaxHeight(ElementRef dxTarget, object value)
+        public static Task SetMaxHeight(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxOverlay_SetOption", dxTarget, "maxHeight", value);
         }
-        public static Task<object> GetMaxWidth(ElementRef dxTarget)
+        public static Task<object> GetMaxWidth(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxOverlay_GetOption", dxTarget, "maxWidth");
         }
-        public static Task SetMaxWidth(ElementRef dxTarget, object value)
+        public static Task SetMaxWidth(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxOverlay_SetOption", dxTarget, "maxWidth", value);
         }
-        public static Task<object> GetMinHeight(ElementRef dxTarget)
+        public static Task<object> GetMinHeight(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxOverlay_GetOption", dxTarget, "minHeight");
         }
-        public static Task SetMinHeight(ElementRef dxTarget, object value)
+        public static Task SetMinHeight(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxOverlay_SetOption", dxTarget, "minHeight", value);
         }
-        public static Task<object> GetMinWidth(ElementRef dxTarget)
+        public static Task<object> GetMinWidth(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxOverlay_GetOption", dxTarget, "minWidth");
         }
-        public static Task SetMinWidth(ElementRef dxTarget, object value)
+        public static Task SetMinWidth(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxOverlay_SetOption", dxTarget, "minWidth", value);
         }
-        public static Task<object> GetPosition(ElementRef dxTarget)
+        public static Task<object> GetPosition(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxOverlay_GetOption", dxTarget, "position");
         }
-        public static Task SetPosition(ElementRef dxTarget, object value)
+        public static Task SetPosition(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxOverlay_SetOption", dxTarget, "position", value);
         }
-        public static Task<bool?> GetShading(ElementRef dxTarget)
+        public static Task<bool?> GetShading(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxOverlay_GetOption", dxTarget, "shading");
         }
-        public static Task SetShading(ElementRef dxTarget, bool? value)
+        public static Task SetShading(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxOverlay_SetOption", dxTarget, "shading", value);
         }
-        public static Task<string> GetShadingColor(ElementRef dxTarget)
+        public static Task<string> GetShadingColor(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxOverlay_GetOption", dxTarget, "shadingColor");
         }
-        public static Task SetShadingColor(ElementRef dxTarget, string value)
+        public static Task SetShadingColor(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxOverlay_SetOption", dxTarget, "shadingColor", value);
         }
-        public static Task<object> Content(ElementRef dxTarget)
+        public static Task<object> Content(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxOverlay_content_0", dxTarget);
         }
-        public static Task<object> Hide(ElementRef dxTarget)
+        public static Task<object> Hide(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxOverlay_hide_1", dxTarget);
         }
-        public static Task Repaint(ElementRef dxTarget)
+        public static Task Repaint(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxOverlay_repaint_2", dxTarget);
         }
-        public static Task<object> Show(ElementRef dxTarget)
+        public static Task<object> Show(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxOverlay_show_3", dxTarget);
         }
-        public static Task<object> Toggle(ElementRef dxTarget, bool showing)
+        public static Task<object> Toggle(ElementReference dxTarget, bool showing)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxOverlay_toggle_4", dxTarget, showing);
         }
     }
     public class DxPanoramaInterop: CollectionWidgetInterop
     {
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxPanoramaOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.DxPanoramaOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPanorama_Init", dxTarget, json);
         }
-        public static Task<object> GetBackgroundImage(ElementRef dxTarget)
+        public static Task<object> GetBackgroundImage(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPanorama_GetOption", dxTarget, "backgroundImage");
         }
-        public static Task SetBackgroundImage(ElementRef dxTarget, object value)
+        public static Task SetBackgroundImage(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPanorama_SetOption", dxTarget, "backgroundImage", value);
         }
-        public static Task<string> GetTitle(ElementRef dxTarget)
+        public static Task<string> GetTitle(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxPanorama_GetOption", dxTarget, "title");
         }
-        public static Task SetTitle(ElementRef dxTarget, string value)
+        public static Task SetTitle(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPanorama_SetOption", dxTarget, "title", value);
         }
     }
     public class DxPivotInterop: CollectionWidgetInterop
     {
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxPivotOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.DxPivotOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivot_Init", dxTarget, json);
         }
-        public static Task<object> GetContentTemplate(ElementRef dxTarget)
+        public static Task<object> GetContentTemplate(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivot_GetOption", dxTarget, "contentTemplate");
         }
-        public static Task SetContentTemplate(ElementRef dxTarget, object value)
+        public static Task SetContentTemplate(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivot_SetOption", dxTarget, "contentTemplate", value);
         }
-        public static Task<object> GetItemTitleTemplate(ElementRef dxTarget)
+        public static Task<object> GetItemTitleTemplate(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivot_GetOption", dxTarget, "itemTitleTemplate");
         }
-        public static Task SetItemTitleTemplate(ElementRef dxTarget, object value)
+        public static Task SetItemTitleTemplate(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivot_SetOption", dxTarget, "itemTitleTemplate", value);
         }
-        public static Task<bool?> GetSwipeEnabled(ElementRef dxTarget)
+        public static Task<bool?> GetSwipeEnabled(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxPivot_GetOption", dxTarget, "swipeEnabled");
         }
-        public static Task SetSwipeEnabled(ElementRef dxTarget, bool? value)
+        public static Task SetSwipeEnabled(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivot_SetOption", dxTarget, "swipeEnabled", value);
         }
@@ -5725,7 +5725,7 @@ namespace DevExpress.Ui
         public static event EventHandler<JQueryEventArgs> Exported;
         public static event EventHandler<JQueryEventArgs> Exporting;
         public static event EventHandler<JQueryEventArgs> FileSaving;
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxPivotGridOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.DxPivotGridOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGrid_Init", dxTarget, json);
@@ -5760,207 +5760,207 @@ namespace DevExpress.Ui
         {
             FileSaving?.Invoke(null, new JQueryEventArgs(identifier));
         }
-        public static Task<bool?> GetAllowExpandAll(ElementRef dxTarget)
+        public static Task<bool?> GetAllowExpandAll(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxPivotGrid_GetOption", dxTarget, "allowExpandAll");
         }
-        public static Task SetAllowExpandAll(ElementRef dxTarget, bool? value)
+        public static Task SetAllowExpandAll(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGrid_SetOption", dxTarget, "allowExpandAll", value);
         }
-        public static Task<bool?> GetAllowFiltering(ElementRef dxTarget)
+        public static Task<bool?> GetAllowFiltering(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxPivotGrid_GetOption", dxTarget, "allowFiltering");
         }
-        public static Task SetAllowFiltering(ElementRef dxTarget, bool? value)
+        public static Task SetAllowFiltering(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGrid_SetOption", dxTarget, "allowFiltering", value);
         }
-        public static Task<bool?> GetAllowSorting(ElementRef dxTarget)
+        public static Task<bool?> GetAllowSorting(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxPivotGrid_GetOption", dxTarget, "allowSorting");
         }
-        public static Task SetAllowSorting(ElementRef dxTarget, bool? value)
+        public static Task SetAllowSorting(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGrid_SetOption", dxTarget, "allowSorting", value);
         }
-        public static Task<bool?> GetAllowSortingBySummary(ElementRef dxTarget)
+        public static Task<bool?> GetAllowSortingBySummary(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxPivotGrid_GetOption", dxTarget, "allowSortingBySummary");
         }
-        public static Task SetAllowSortingBySummary(ElementRef dxTarget, bool? value)
+        public static Task SetAllowSortingBySummary(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGrid_SetOption", dxTarget, "allowSortingBySummary", value);
         }
-        public static Task<string> GetDataFieldArea(ElementRef dxTarget)
+        public static Task<string> GetDataFieldArea(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxPivotGrid_GetOption", dxTarget, "dataFieldArea");
         }
-        public static Task SetDataFieldArea(ElementRef dxTarget, string value)
+        public static Task SetDataFieldArea(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGrid_SetOption", dxTarget, "dataFieldArea", value);
         }
-        public static Task<object> GetDataSource(ElementRef dxTarget)
+        public static Task<object> GetDataSource(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGrid_GetOption", dxTarget, "dataSource");
         }
-        public static Task SetDataSource(ElementRef dxTarget, object value)
+        public static Task SetDataSource(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGrid_SetOption", dxTarget, "dataSource", value);
         }
-        public static Task<object> GetExport(ElementRef dxTarget)
+        public static Task<object> GetExport(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGrid_GetOption", dxTarget, "export");
         }
-        public static Task SetExport(ElementRef dxTarget, object value)
+        public static Task SetExport(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGrid_SetOption", dxTarget, "export", value);
         }
-        public static Task<object> GetFieldChooser(ElementRef dxTarget)
+        public static Task<object> GetFieldChooser(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGrid_GetOption", dxTarget, "fieldChooser");
         }
-        public static Task SetFieldChooser(ElementRef dxTarget, object value)
+        public static Task SetFieldChooser(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGrid_SetOption", dxTarget, "fieldChooser", value);
         }
-        public static Task<object> GetFieldPanel(ElementRef dxTarget)
+        public static Task<object> GetFieldPanel(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGrid_GetOption", dxTarget, "fieldPanel");
         }
-        public static Task SetFieldPanel(ElementRef dxTarget, object value)
+        public static Task SetFieldPanel(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGrid_SetOption", dxTarget, "fieldPanel", value);
         }
-        public static Task<object> GetHeaderFilter(ElementRef dxTarget)
+        public static Task<object> GetHeaderFilter(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGrid_GetOption", dxTarget, "headerFilter");
         }
-        public static Task SetHeaderFilter(ElementRef dxTarget, object value)
+        public static Task SetHeaderFilter(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGrid_SetOption", dxTarget, "headerFilter", value);
         }
-        public static Task<bool?> GetHideEmptySummaryCells(ElementRef dxTarget)
+        public static Task<bool?> GetHideEmptySummaryCells(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxPivotGrid_GetOption", dxTarget, "hideEmptySummaryCells");
         }
-        public static Task SetHideEmptySummaryCells(ElementRef dxTarget, bool? value)
+        public static Task SetHideEmptySummaryCells(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGrid_SetOption", dxTarget, "hideEmptySummaryCells", value);
         }
-        public static Task<object> GetLoadPanel(ElementRef dxTarget)
+        public static Task<object> GetLoadPanel(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGrid_GetOption", dxTarget, "loadPanel");
         }
-        public static Task SetLoadPanel(ElementRef dxTarget, object value)
+        public static Task SetLoadPanel(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGrid_SetOption", dxTarget, "loadPanel", value);
         }
-        public static Task<string> GetRowHeaderLayout(ElementRef dxTarget)
+        public static Task<string> GetRowHeaderLayout(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxPivotGrid_GetOption", dxTarget, "rowHeaderLayout");
         }
-        public static Task SetRowHeaderLayout(ElementRef dxTarget, string value)
+        public static Task SetRowHeaderLayout(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGrid_SetOption", dxTarget, "rowHeaderLayout", value);
         }
-        public static Task<object> GetScrolling(ElementRef dxTarget)
+        public static Task<object> GetScrolling(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGrid_GetOption", dxTarget, "scrolling");
         }
-        public static Task SetScrolling(ElementRef dxTarget, object value)
+        public static Task SetScrolling(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGrid_SetOption", dxTarget, "scrolling", value);
         }
-        public static Task<bool?> GetShowBorders(ElementRef dxTarget)
+        public static Task<bool?> GetShowBorders(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxPivotGrid_GetOption", dxTarget, "showBorders");
         }
-        public static Task SetShowBorders(ElementRef dxTarget, bool? value)
+        public static Task SetShowBorders(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGrid_SetOption", dxTarget, "showBorders", value);
         }
-        public static Task<bool?> GetShowColumnGrandTotals(ElementRef dxTarget)
+        public static Task<bool?> GetShowColumnGrandTotals(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxPivotGrid_GetOption", dxTarget, "showColumnGrandTotals");
         }
-        public static Task SetShowColumnGrandTotals(ElementRef dxTarget, bool? value)
+        public static Task SetShowColumnGrandTotals(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGrid_SetOption", dxTarget, "showColumnGrandTotals", value);
         }
-        public static Task<bool?> GetShowColumnTotals(ElementRef dxTarget)
+        public static Task<bool?> GetShowColumnTotals(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxPivotGrid_GetOption", dxTarget, "showColumnTotals");
         }
-        public static Task SetShowColumnTotals(ElementRef dxTarget, bool? value)
+        public static Task SetShowColumnTotals(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGrid_SetOption", dxTarget, "showColumnTotals", value);
         }
-        public static Task<bool?> GetShowRowGrandTotals(ElementRef dxTarget)
+        public static Task<bool?> GetShowRowGrandTotals(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxPivotGrid_GetOption", dxTarget, "showRowGrandTotals");
         }
-        public static Task SetShowRowGrandTotals(ElementRef dxTarget, bool? value)
+        public static Task SetShowRowGrandTotals(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGrid_SetOption", dxTarget, "showRowGrandTotals", value);
         }
-        public static Task<bool?> GetShowRowTotals(ElementRef dxTarget)
+        public static Task<bool?> GetShowRowTotals(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxPivotGrid_GetOption", dxTarget, "showRowTotals");
         }
-        public static Task SetShowRowTotals(ElementRef dxTarget, bool? value)
+        public static Task SetShowRowTotals(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGrid_SetOption", dxTarget, "showRowTotals", value);
         }
-        public static Task<string> GetShowTotalsPrior(ElementRef dxTarget)
+        public static Task<string> GetShowTotalsPrior(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxPivotGrid_GetOption", dxTarget, "showTotalsPrior");
         }
-        public static Task SetShowTotalsPrior(ElementRef dxTarget, string value)
+        public static Task SetShowTotalsPrior(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGrid_SetOption", dxTarget, "showTotalsPrior", value);
         }
-        public static Task<object> GetStateStoring(ElementRef dxTarget)
+        public static Task<object> GetStateStoring(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGrid_GetOption", dxTarget, "stateStoring");
         }
-        public static Task SetStateStoring(ElementRef dxTarget, object value)
+        public static Task SetStateStoring(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGrid_SetOption", dxTarget, "stateStoring", value);
         }
-        public static Task<object> GetTexts(ElementRef dxTarget)
+        public static Task<object> GetTexts(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGrid_GetOption", dxTarget, "texts");
         }
-        public static Task SetTexts(ElementRef dxTarget, object value)
+        public static Task SetTexts(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGrid_SetOption", dxTarget, "texts", value);
         }
-        public static Task<bool?> GetWordWrapEnabled(ElementRef dxTarget)
+        public static Task<bool?> GetWordWrapEnabled(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxPivotGrid_GetOption", dxTarget, "wordWrapEnabled");
         }
-        public static Task SetWordWrapEnabled(ElementRef dxTarget, bool? value)
+        public static Task SetWordWrapEnabled(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGrid_SetOption", dxTarget, "wordWrapEnabled", value);
         }
-        public static Task<object> BindChart(ElementRef dxTarget, object chart, object integrationOptions)
+        public static Task<object> BindChart(ElementReference dxTarget, object chart, object integrationOptions)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGrid_bindChart_0", dxTarget, chart, integrationOptions);
         }
-        public static Task ExportToExcel(ElementRef dxTarget)
+        public static Task ExportToExcel(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGrid_exportToExcel_1", dxTarget);
         }
-        public static Task<object> GetDataSourceEx(ElementRef dxTarget)
+        public static Task<object> GetDataSourceEx(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGrid_getDataSource_2", dxTarget);
         }
-        public static Task<object> GetFieldChooserPopup(ElementRef dxTarget)
+        public static Task<object> GetFieldChooserPopup(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGrid_getFieldChooserPopup_3", dxTarget);
         }
-        public static Task UpdateDimensions(ElementRef dxTarget)
+        public static Task UpdateDimensions(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGrid_updateDimensions_4", dxTarget);
         }
@@ -5968,7 +5968,7 @@ namespace DevExpress.Ui
     public class DxPivotGridFieldChooserInterop: WidgetInterop
     {
         public static event EventHandler<JQueryEventArgs> ContextMenuPreparing;
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxPivotGridFieldChooserOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.DxPivotGridFieldChooserOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGridFieldChooser_Init", dxTarget, json);
@@ -5978,115 +5978,115 @@ namespace DevExpress.Ui
         {
             ContextMenuPreparing?.Invoke(null, new JQueryEventArgs(identifier));
         }
-        public static Task<bool?> GetAllowSearch(ElementRef dxTarget)
+        public static Task<bool?> GetAllowSearch(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxPivotGridFieldChooser_GetOption", dxTarget, "allowSearch");
         }
-        public static Task SetAllowSearch(ElementRef dxTarget, bool? value)
+        public static Task SetAllowSearch(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGridFieldChooser_SetOption", dxTarget, "allowSearch", value);
         }
-        public static Task<string> GetApplyChangesMode(ElementRef dxTarget)
+        public static Task<string> GetApplyChangesMode(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxPivotGridFieldChooser_GetOption", dxTarget, "applyChangesMode");
         }
-        public static Task SetApplyChangesMode(ElementRef dxTarget, string value)
+        public static Task SetApplyChangesMode(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGridFieldChooser_SetOption", dxTarget, "applyChangesMode", value);
         }
-        public static Task<object> GetDataSource(ElementRef dxTarget)
+        public static Task<object> GetDataSource(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGridFieldChooser_GetOption", dxTarget, "dataSource");
         }
-        public static Task SetDataSource(ElementRef dxTarget, object value)
+        public static Task SetDataSource(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGridFieldChooser_SetOption", dxTarget, "dataSource", value);
         }
-        public static Task<object> GetHeaderFilter(ElementRef dxTarget)
+        public static Task<object> GetHeaderFilter(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGridFieldChooser_GetOption", dxTarget, "headerFilter");
         }
-        public static Task SetHeaderFilter(ElementRef dxTarget, object value)
+        public static Task SetHeaderFilter(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGridFieldChooser_SetOption", dxTarget, "headerFilter", value);
         }
-        public static Task<object> GetLayout(ElementRef dxTarget)
+        public static Task<object> GetLayout(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGridFieldChooser_GetOption", dxTarget, "layout");
         }
-        public static Task SetLayout(ElementRef dxTarget, object value)
+        public static Task SetLayout(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGridFieldChooser_SetOption", dxTarget, "layout", value);
         }
-        public static Task<object> GetState(ElementRef dxTarget)
+        public static Task<object> GetState(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGridFieldChooser_GetOption", dxTarget, "state");
         }
-        public static Task SetState(ElementRef dxTarget, object value)
+        public static Task SetState(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGridFieldChooser_SetOption", dxTarget, "state", value);
         }
-        public static Task<object> GetTexts(ElementRef dxTarget)
+        public static Task<object> GetTexts(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGridFieldChooser_GetOption", dxTarget, "texts");
         }
-        public static Task SetTexts(ElementRef dxTarget, object value)
+        public static Task SetTexts(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGridFieldChooser_SetOption", dxTarget, "texts", value);
         }
-        public static Task ApplyChanges(ElementRef dxTarget)
+        public static Task ApplyChanges(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGridFieldChooser_applyChanges_0", dxTarget);
         }
-        public static Task CancelChanges(ElementRef dxTarget)
+        public static Task CancelChanges(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGridFieldChooser_cancelChanges_1", dxTarget);
         }
-        public static Task<object> GetDataSourceEx(ElementRef dxTarget)
+        public static Task<object> GetDataSourceEx(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGridFieldChooser_getDataSource_2", dxTarget);
         }
-        public static Task UpdateDimensions(ElementRef dxTarget)
+        public static Task UpdateDimensions(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGridFieldChooser_updateDimensions_3", dxTarget);
         }
     }
     public class DxPopoverInterop: DxPopupInterop
     {
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxPopoverOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.DxPopoverOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPopover_Init", dxTarget, json);
         }
-        public static Task<object> GetHideEvent(ElementRef dxTarget)
+        public static Task<object> GetHideEvent(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPopover_GetOption", dxTarget, "hideEvent");
         }
-        public static Task SetHideEvent(ElementRef dxTarget, object value)
+        public static Task SetHideEvent(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPopover_SetOption", dxTarget, "hideEvent", value);
         }
-        public static Task<object> GetShowEvent(ElementRef dxTarget)
+        public static Task<object> GetShowEvent(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPopover_GetOption", dxTarget, "showEvent");
         }
-        public static Task SetShowEvent(ElementRef dxTarget, object value)
+        public static Task SetShowEvent(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPopover_SetOption", dxTarget, "showEvent", value);
         }
-        public static Task<object> GetTarget(ElementRef dxTarget)
+        public static Task<object> GetTarget(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPopover_GetOption", dxTarget, "target");
         }
-        public static Task SetTarget(ElementRef dxTarget, object value)
+        public static Task SetTarget(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPopover_SetOption", dxTarget, "target", value);
         }
-        public static Task<object> Show(ElementRef dxTarget)
+        public static Task<object> Show(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPopover_show_0", dxTarget);
         }
-        public static Task<object> Show(ElementRef dxTarget, object target)
+        public static Task<object> Show(ElementReference dxTarget, object target)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPopover_show_1", dxTarget, target);
         }
@@ -6097,7 +6097,7 @@ namespace DevExpress.Ui
         public static event EventHandler<JQueryEventArgs> ResizeEnd;
         public static event EventHandler<JQueryEventArgs> ResizeStart;
         public static event EventHandler<JQueryEventArgs> TitleRendered;
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxPopupOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.DxPopupOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPopup_Init", dxTarget, json);
@@ -6122,67 +6122,67 @@ namespace DevExpress.Ui
         {
             TitleRendered?.Invoke(null, new JQueryEventArgs(identifier));
         }
-        public static Task<object> GetContainer(ElementRef dxTarget)
+        public static Task<object> GetContainer(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPopup_GetOption", dxTarget, "container");
         }
-        public static Task SetContainer(ElementRef dxTarget, object value)
+        public static Task SetContainer(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPopup_SetOption", dxTarget, "container", value);
         }
-        public static Task<bool?> GetFullScreen(ElementRef dxTarget)
+        public static Task<bool?> GetFullScreen(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxPopup_GetOption", dxTarget, "fullScreen");
         }
-        public static Task SetFullScreen(ElementRef dxTarget, bool? value)
+        public static Task SetFullScreen(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPopup_SetOption", dxTarget, "fullScreen", value);
         }
-        public static Task<bool?> GetResizeEnabled(ElementRef dxTarget)
+        public static Task<bool?> GetResizeEnabled(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxPopup_GetOption", dxTarget, "resizeEnabled");
         }
-        public static Task SetResizeEnabled(ElementRef dxTarget, bool? value)
+        public static Task SetResizeEnabled(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPopup_SetOption", dxTarget, "resizeEnabled", value);
         }
-        public static Task<bool?> GetShowCloseButton(ElementRef dxTarget)
+        public static Task<bool?> GetShowCloseButton(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxPopup_GetOption", dxTarget, "showCloseButton");
         }
-        public static Task SetShowCloseButton(ElementRef dxTarget, bool? value)
+        public static Task SetShowCloseButton(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPopup_SetOption", dxTarget, "showCloseButton", value);
         }
-        public static Task<bool?> GetShowTitle(ElementRef dxTarget)
+        public static Task<bool?> GetShowTitle(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxPopup_GetOption", dxTarget, "showTitle");
         }
-        public static Task SetShowTitle(ElementRef dxTarget, bool? value)
+        public static Task SetShowTitle(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPopup_SetOption", dxTarget, "showTitle", value);
         }
-        public static Task<string> GetTitle(ElementRef dxTarget)
+        public static Task<string> GetTitle(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxPopup_GetOption", dxTarget, "title");
         }
-        public static Task SetTitle(ElementRef dxTarget, string value)
+        public static Task SetTitle(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPopup_SetOption", dxTarget, "title", value);
         }
-        public static Task<object> GetTitleTemplate(ElementRef dxTarget)
+        public static Task<object> GetTitleTemplate(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPopup_GetOption", dxTarget, "titleTemplate");
         }
-        public static Task SetTitleTemplate(ElementRef dxTarget, object value)
+        public static Task SetTitleTemplate(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPopup_SetOption", dxTarget, "titleTemplate", value);
         }
-        public static Task<object> GetToolbarItems(ElementRef dxTarget)
+        public static Task<object> GetToolbarItems(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPopup_GetOption", dxTarget, "toolbarItems");
         }
-        public static Task SetToolbarItems(ElementRef dxTarget, object value)
+        public static Task SetToolbarItems(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPopup_SetOption", dxTarget, "toolbarItems", value);
         }
@@ -6190,7 +6190,7 @@ namespace DevExpress.Ui
     public class DxProgressBarInterop: DxTrackBarInterop
     {
         public static event EventHandler<JQueryEventArgs> Complete;
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxProgressBarOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.DxProgressBarOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxProgressBar_Init", dxTarget, json);
@@ -6200,131 +6200,131 @@ namespace DevExpress.Ui
         {
             Complete?.Invoke(null, new JQueryEventArgs(identifier));
         }
-        public static Task<bool?> GetShowStatus(ElementRef dxTarget)
+        public static Task<bool?> GetShowStatus(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxProgressBar_GetOption", dxTarget, "showStatus");
         }
-        public static Task SetShowStatus(ElementRef dxTarget, bool? value)
+        public static Task SetShowStatus(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxProgressBar_SetOption", dxTarget, "showStatus", value);
         }
-        public static Task<object> GetStatusFormat(ElementRef dxTarget)
+        public static Task<object> GetStatusFormat(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxProgressBar_GetOption", dxTarget, "statusFormat");
         }
-        public static Task SetStatusFormat(ElementRef dxTarget, object value)
+        public static Task SetStatusFormat(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxProgressBar_SetOption", dxTarget, "statusFormat", value);
         }
     }
     public class DxRadioGroupInterop: EditorInterop
     {
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxRadioGroupOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.DxRadioGroupOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxRadioGroup_Init", dxTarget, json);
         }
-        public static Task<string> GetLayout(ElementRef dxTarget)
+        public static Task<string> GetLayout(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxRadioGroup_GetOption", dxTarget, "layout");
         }
-        public static Task SetLayout(ElementRef dxTarget, string value)
+        public static Task SetLayout(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxRadioGroup_SetOption", dxTarget, "layout", value);
         }
-        public static Task<string> GetName(ElementRef dxTarget)
+        public static Task<string> GetName(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxRadioGroup_GetOption", dxTarget, "name");
         }
-        public static Task SetName(ElementRef dxTarget, string value)
+        public static Task SetName(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxRadioGroup_SetOption", dxTarget, "name", value);
         }
-        public static Task<object> GetDataSource(ElementRef dxTarget)
+        public static Task<object> GetDataSource(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxRadioGroup_GetOption", dxTarget, "dataSource");
         }
-        public static Task SetDataSource(ElementRef dxTarget, object value)
+        public static Task SetDataSource(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxRadioGroup_SetOption", dxTarget, "dataSource", value);
         }
-        public static Task<object> GetDisplayExpr(ElementRef dxTarget)
+        public static Task<object> GetDisplayExpr(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxRadioGroup_GetOption", dxTarget, "displayExpr");
         }
-        public static Task SetDisplayExpr(ElementRef dxTarget, object value)
+        public static Task SetDisplayExpr(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxRadioGroup_SetOption", dxTarget, "displayExpr", value);
         }
-        public static Task<object> GetItems(ElementRef dxTarget)
+        public static Task<object> GetItems(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxRadioGroup_GetOption", dxTarget, "items");
         }
-        public static Task SetItems(ElementRef dxTarget, object value)
+        public static Task SetItems(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxRadioGroup_SetOption", dxTarget, "items", value);
         }
-        public static Task<object> GetItemTemplate(ElementRef dxTarget)
+        public static Task<object> GetItemTemplate(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxRadioGroup_GetOption", dxTarget, "itemTemplate");
         }
-        public static Task SetItemTemplate(ElementRef dxTarget, object value)
+        public static Task SetItemTemplate(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxRadioGroup_SetOption", dxTarget, "itemTemplate", value);
         }
-        public static Task<object> GetValueExpr(ElementRef dxTarget)
+        public static Task<object> GetValueExpr(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxRadioGroup_GetOption", dxTarget, "valueExpr");
         }
-        public static Task SetValueExpr(ElementRef dxTarget, object value)
+        public static Task SetValueExpr(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxRadioGroup_SetOption", dxTarget, "valueExpr", value);
         }
-        public static Task<object> GetDataSourceEx(ElementRef dxTarget)
+        public static Task<object> GetDataSourceEx(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxRadioGroup_getDataSource_0", dxTarget);
         }
     }
     public class DxRangeSliderInterop: DxSliderBaseInterop
     {
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxRangeSliderOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.DxRangeSliderOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxRangeSlider_Init", dxTarget, json);
         }
-        public static Task<float?> GetEnd(ElementRef dxTarget)
+        public static Task<float?> GetEnd(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DxRangeSlider_GetOption", dxTarget, "end");
         }
-        public static Task SetEnd(ElementRef dxTarget, float? value)
+        public static Task SetEnd(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxRangeSlider_SetOption", dxTarget, "end", value);
         }
-        public static Task<string> GetEndName(ElementRef dxTarget)
+        public static Task<string> GetEndName(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxRangeSlider_GetOption", dxTarget, "endName");
         }
-        public static Task SetEndName(ElementRef dxTarget, string value)
+        public static Task SetEndName(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxRangeSlider_SetOption", dxTarget, "endName", value);
         }
-        public static Task<float?> GetStart(ElementRef dxTarget)
+        public static Task<float?> GetStart(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DxRangeSlider_GetOption", dxTarget, "start");
         }
-        public static Task SetStart(ElementRef dxTarget, float? value)
+        public static Task SetStart(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxRangeSlider_SetOption", dxTarget, "start", value);
         }
-        public static Task<string> GetStartName(ElementRef dxTarget)
+        public static Task<string> GetStartName(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxRangeSlider_GetOption", dxTarget, "startName");
         }
-        public static Task SetStartName(ElementRef dxTarget, string value)
+        public static Task SetStartName(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxRangeSlider_SetOption", dxTarget, "startName", value);
         }
-        public static Task Reset(ElementRef dxTarget)
+        public static Task Reset(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxRangeSlider_reset_0", dxTarget);
         }
@@ -6334,7 +6334,7 @@ namespace DevExpress.Ui
         public static event EventHandler<JQueryEventArgs> Resize;
         public static event EventHandler<JQueryEventArgs> ResizeEnd;
         public static event EventHandler<JQueryEventArgs> ResizeStart;
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxResizableOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.DxResizableOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxResizable_Init", dxTarget, json);
@@ -6354,83 +6354,83 @@ namespace DevExpress.Ui
         {
             ResizeStart?.Invoke(null, new JQueryEventArgs(identifier));
         }
-        public static Task<string> GetHandles(ElementRef dxTarget)
+        public static Task<string> GetHandles(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxResizable_GetOption", dxTarget, "handles");
         }
-        public static Task SetHandles(ElementRef dxTarget, string value)
+        public static Task SetHandles(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxResizable_SetOption", dxTarget, "handles", value);
         }
-        public static Task<float?> GetMaxHeight(ElementRef dxTarget)
+        public static Task<float?> GetMaxHeight(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DxResizable_GetOption", dxTarget, "maxHeight");
         }
-        public static Task SetMaxHeight(ElementRef dxTarget, float? value)
+        public static Task SetMaxHeight(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxResizable_SetOption", dxTarget, "maxHeight", value);
         }
-        public static Task<float?> GetMaxWidth(ElementRef dxTarget)
+        public static Task<float?> GetMaxWidth(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DxResizable_GetOption", dxTarget, "maxWidth");
         }
-        public static Task SetMaxWidth(ElementRef dxTarget, float? value)
+        public static Task SetMaxWidth(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxResizable_SetOption", dxTarget, "maxWidth", value);
         }
-        public static Task<float?> GetMinHeight(ElementRef dxTarget)
+        public static Task<float?> GetMinHeight(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DxResizable_GetOption", dxTarget, "minHeight");
         }
-        public static Task SetMinHeight(ElementRef dxTarget, float? value)
+        public static Task SetMinHeight(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxResizable_SetOption", dxTarget, "minHeight", value);
         }
-        public static Task<float?> GetMinWidth(ElementRef dxTarget)
+        public static Task<float?> GetMinWidth(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DxResizable_GetOption", dxTarget, "minWidth");
         }
-        public static Task SetMinWidth(ElementRef dxTarget, float? value)
+        public static Task SetMinWidth(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxResizable_SetOption", dxTarget, "minWidth", value);
         }
     }
     public class DxResponsiveBoxInterop: CollectionWidgetInterop
     {
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxResponsiveBoxOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.DxResponsiveBoxOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxResponsiveBox_Init", dxTarget, json);
         }
-        public static Task<object> GetCols(ElementRef dxTarget)
+        public static Task<object> GetCols(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxResponsiveBox_GetOption", dxTarget, "cols");
         }
-        public static Task SetCols(ElementRef dxTarget, object value)
+        public static Task SetCols(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxResponsiveBox_SetOption", dxTarget, "cols", value);
         }
-        public static Task<object> GetRows(ElementRef dxTarget)
+        public static Task<object> GetRows(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxResponsiveBox_GetOption", dxTarget, "rows");
         }
-        public static Task SetRows(ElementRef dxTarget, object value)
+        public static Task SetRows(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxResponsiveBox_SetOption", dxTarget, "rows", value);
         }
-        public static Task<object> GetScreenByWidth(ElementRef dxTarget)
+        public static Task<object> GetScreenByWidth(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxResponsiveBox_GetOption", dxTarget, "screenByWidth");
         }
-        public static Task SetScreenByWidth(ElementRef dxTarget, object value)
+        public static Task SetScreenByWidth(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxResponsiveBox_SetOption", dxTarget, "screenByWidth", value);
         }
-        public static Task<string> GetSingleColumnScreen(ElementRef dxTarget)
+        public static Task<string> GetSingleColumnScreen(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxResponsiveBox_GetOption", dxTarget, "singleColumnScreen");
         }
-        public static Task SetSingleColumnScreen(ElementRef dxTarget, string value)
+        public static Task SetSingleColumnScreen(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxResponsiveBox_SetOption", dxTarget, "singleColumnScreen", value);
         }
@@ -6450,7 +6450,7 @@ namespace DevExpress.Ui
         public static event EventHandler<JQueryEventArgs> AppointmentUpdating;
         public static event EventHandler<JQueryEventArgs> CellClick;
         public static event EventHandler<JQueryEventArgs> CellContextMenu;
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxSchedulerOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.DxSchedulerOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_Init", dxTarget, json);
@@ -6520,387 +6520,387 @@ namespace DevExpress.Ui
         {
             CellContextMenu?.Invoke(null, new JQueryEventArgs(identifier));
         }
-        public static Task<string> GetAllDayExpr(ElementRef dxTarget)
+        public static Task<string> GetAllDayExpr(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "allDayExpr");
         }
-        public static Task SetAllDayExpr(ElementRef dxTarget, string value)
+        public static Task SetAllDayExpr(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "allDayExpr", value);
         }
-        public static Task<object> GetAppointmentTemplate(ElementRef dxTarget)
+        public static Task<object> GetAppointmentTemplate(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "appointmentTemplate");
         }
-        public static Task SetAppointmentTemplate(ElementRef dxTarget, object value)
+        public static Task SetAppointmentTemplate(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "appointmentTemplate", value);
         }
-        public static Task<object> GetAppointmentTooltipTemplate(ElementRef dxTarget)
+        public static Task<object> GetAppointmentTooltipTemplate(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "appointmentTooltipTemplate");
         }
-        public static Task SetAppointmentTooltipTemplate(ElementRef dxTarget, object value)
+        public static Task SetAppointmentTooltipTemplate(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "appointmentTooltipTemplate", value);
         }
-        public static Task<float?> GetCellDuration(ElementRef dxTarget)
+        public static Task<float?> GetCellDuration(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "cellDuration");
         }
-        public static Task SetCellDuration(ElementRef dxTarget, float? value)
+        public static Task SetCellDuration(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "cellDuration", value);
         }
-        public static Task<bool?> GetCrossScrollingEnabled(ElementRef dxTarget)
+        public static Task<bool?> GetCrossScrollingEnabled(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "crossScrollingEnabled");
         }
-        public static Task SetCrossScrollingEnabled(ElementRef dxTarget, bool? value)
+        public static Task SetCrossScrollingEnabled(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "crossScrollingEnabled", value);
         }
-        public static Task<object> GetCurrentDate(ElementRef dxTarget)
+        public static Task<object> GetCurrentDate(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "currentDate");
         }
-        public static Task SetCurrentDate(ElementRef dxTarget, object value)
+        public static Task SetCurrentDate(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "currentDate", value);
         }
-        public static Task<string> GetCurrentView(ElementRef dxTarget)
+        public static Task<string> GetCurrentView(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "currentView");
         }
-        public static Task SetCurrentView(ElementRef dxTarget, string value)
+        public static Task SetCurrentView(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "currentView", value);
         }
-        public static Task<object> GetDataCellTemplate(ElementRef dxTarget)
+        public static Task<object> GetDataCellTemplate(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "dataCellTemplate");
         }
-        public static Task SetDataCellTemplate(ElementRef dxTarget, object value)
+        public static Task SetDataCellTemplate(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "dataCellTemplate", value);
         }
-        public static Task<object> GetDataSource(ElementRef dxTarget)
+        public static Task<object> GetDataSource(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "dataSource");
         }
-        public static Task SetDataSource(ElementRef dxTarget, object value)
+        public static Task SetDataSource(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "dataSource", value);
         }
-        public static Task<object> GetDateCellTemplate(ElementRef dxTarget)
+        public static Task<object> GetDateCellTemplate(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "dateCellTemplate");
         }
-        public static Task SetDateCellTemplate(ElementRef dxTarget, object value)
+        public static Task SetDateCellTemplate(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "dateCellTemplate", value);
         }
-        public static Task<string> GetDateSerializationFormat(ElementRef dxTarget)
+        public static Task<string> GetDateSerializationFormat(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "dateSerializationFormat");
         }
-        public static Task SetDateSerializationFormat(ElementRef dxTarget, string value)
+        public static Task SetDateSerializationFormat(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "dateSerializationFormat", value);
         }
-        public static Task<string> GetDescriptionExpr(ElementRef dxTarget)
+        public static Task<string> GetDescriptionExpr(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "descriptionExpr");
         }
-        public static Task SetDescriptionExpr(ElementRef dxTarget, string value)
+        public static Task SetDescriptionExpr(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "descriptionExpr", value);
         }
-        public static Task<object> GetDropDownAppointmentTemplate(ElementRef dxTarget)
+        public static Task<object> GetDropDownAppointmentTemplate(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "dropDownAppointmentTemplate");
         }
-        public static Task SetDropDownAppointmentTemplate(ElementRef dxTarget, object value)
+        public static Task SetDropDownAppointmentTemplate(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "dropDownAppointmentTemplate", value);
         }
-        public static Task<object> GetEditing(ElementRef dxTarget)
+        public static Task<object> GetEditing(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "editing");
         }
-        public static Task SetEditing(ElementRef dxTarget, object value)
+        public static Task SetEditing(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "editing", value);
         }
-        public static Task<string> GetEndDateExpr(ElementRef dxTarget)
+        public static Task<string> GetEndDateExpr(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "endDateExpr");
         }
-        public static Task SetEndDateExpr(ElementRef dxTarget, string value)
+        public static Task SetEndDateExpr(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "endDateExpr", value);
         }
-        public static Task<string> GetEndDateTimeZoneExpr(ElementRef dxTarget)
+        public static Task<string> GetEndDateTimeZoneExpr(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "endDateTimeZoneExpr");
         }
-        public static Task SetEndDateTimeZoneExpr(ElementRef dxTarget, string value)
+        public static Task SetEndDateTimeZoneExpr(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "endDateTimeZoneExpr", value);
         }
-        public static Task<float?> GetEndDayHour(ElementRef dxTarget)
+        public static Task<float?> GetEndDayHour(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "endDayHour");
         }
-        public static Task SetEndDayHour(ElementRef dxTarget, float? value)
+        public static Task SetEndDayHour(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "endDayHour", value);
         }
-        public static Task<object> GetFirstDayOfWeek(ElementRef dxTarget)
+        public static Task<object> GetFirstDayOfWeek(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "firstDayOfWeek");
         }
-        public static Task SetFirstDayOfWeek(ElementRef dxTarget, object value)
+        public static Task SetFirstDayOfWeek(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "firstDayOfWeek", value);
         }
-        public static Task<object> GetGroups(ElementRef dxTarget)
+        public static Task<object> GetGroups(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "groups");
         }
-        public static Task SetGroups(ElementRef dxTarget, object value)
+        public static Task SetGroups(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "groups", value);
         }
-        public static Task<float?> GetIndicatorUpdateInterval(ElementRef dxTarget)
+        public static Task<float?> GetIndicatorUpdateInterval(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "indicatorUpdateInterval");
         }
-        public static Task SetIndicatorUpdateInterval(ElementRef dxTarget, float? value)
+        public static Task SetIndicatorUpdateInterval(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "indicatorUpdateInterval", value);
         }
-        public static Task<object> GetMax(ElementRef dxTarget)
+        public static Task<object> GetMax(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "max");
         }
-        public static Task SetMax(ElementRef dxTarget, object value)
+        public static Task SetMax(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "max", value);
         }
-        public static Task<object> GetMaxAppointmentsPerCell(ElementRef dxTarget)
+        public static Task<object> GetMaxAppointmentsPerCell(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "maxAppointmentsPerCell");
         }
-        public static Task SetMaxAppointmentsPerCell(ElementRef dxTarget, object value)
+        public static Task SetMaxAppointmentsPerCell(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "maxAppointmentsPerCell", value);
         }
-        public static Task<object> GetMin(ElementRef dxTarget)
+        public static Task<object> GetMin(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "min");
         }
-        public static Task SetMin(ElementRef dxTarget, object value)
+        public static Task SetMin(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "min", value);
         }
-        public static Task<string> GetNoDataText(ElementRef dxTarget)
+        public static Task<string> GetNoDataText(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "noDataText");
         }
-        public static Task SetNoDataText(ElementRef dxTarget, string value)
+        public static Task SetNoDataText(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "noDataText", value);
         }
-        public static Task<string> GetRecurrenceEditMode(ElementRef dxTarget)
+        public static Task<string> GetRecurrenceEditMode(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "recurrenceEditMode");
         }
-        public static Task SetRecurrenceEditMode(ElementRef dxTarget, string value)
+        public static Task SetRecurrenceEditMode(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "recurrenceEditMode", value);
         }
-        public static Task<string> GetRecurrenceExceptionExpr(ElementRef dxTarget)
+        public static Task<string> GetRecurrenceExceptionExpr(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "recurrenceExceptionExpr");
         }
-        public static Task SetRecurrenceExceptionExpr(ElementRef dxTarget, string value)
+        public static Task SetRecurrenceExceptionExpr(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "recurrenceExceptionExpr", value);
         }
-        public static Task<string> GetRecurrenceRuleExpr(ElementRef dxTarget)
+        public static Task<string> GetRecurrenceRuleExpr(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "recurrenceRuleExpr");
         }
-        public static Task SetRecurrenceRuleExpr(ElementRef dxTarget, string value)
+        public static Task SetRecurrenceRuleExpr(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "recurrenceRuleExpr", value);
         }
-        public static Task<bool?> GetRemoteFiltering(ElementRef dxTarget)
+        public static Task<bool?> GetRemoteFiltering(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "remoteFiltering");
         }
-        public static Task SetRemoteFiltering(ElementRef dxTarget, bool? value)
+        public static Task SetRemoteFiltering(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "remoteFiltering", value);
         }
-        public static Task<object> GetResourceCellTemplate(ElementRef dxTarget)
+        public static Task<object> GetResourceCellTemplate(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "resourceCellTemplate");
         }
-        public static Task SetResourceCellTemplate(ElementRef dxTarget, object value)
+        public static Task SetResourceCellTemplate(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "resourceCellTemplate", value);
         }
-        public static Task<object> GetResources(ElementRef dxTarget)
+        public static Task<object> GetResources(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "resources");
         }
-        public static Task SetResources(ElementRef dxTarget, object value)
+        public static Task SetResources(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "resources", value);
         }
-        public static Task<object> GetSelectedCellData(ElementRef dxTarget)
+        public static Task<object> GetSelectedCellData(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "selectedCellData");
         }
-        public static Task SetSelectedCellData(ElementRef dxTarget, object value)
+        public static Task SetSelectedCellData(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "selectedCellData", value);
         }
-        public static Task<bool?> GetShadeUntilCurrentTime(ElementRef dxTarget)
+        public static Task<bool?> GetShadeUntilCurrentTime(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "shadeUntilCurrentTime");
         }
-        public static Task SetShadeUntilCurrentTime(ElementRef dxTarget, bool? value)
+        public static Task SetShadeUntilCurrentTime(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "shadeUntilCurrentTime", value);
         }
-        public static Task<bool?> GetShowAllDayPanel(ElementRef dxTarget)
+        public static Task<bool?> GetShowAllDayPanel(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "showAllDayPanel");
         }
-        public static Task SetShowAllDayPanel(ElementRef dxTarget, bool? value)
+        public static Task SetShowAllDayPanel(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "showAllDayPanel", value);
         }
-        public static Task<bool?> GetShowCurrentTimeIndicator(ElementRef dxTarget)
+        public static Task<bool?> GetShowCurrentTimeIndicator(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "showCurrentTimeIndicator");
         }
-        public static Task SetShowCurrentTimeIndicator(ElementRef dxTarget, bool? value)
+        public static Task SetShowCurrentTimeIndicator(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "showCurrentTimeIndicator", value);
         }
-        public static Task<string> GetStartDateExpr(ElementRef dxTarget)
+        public static Task<string> GetStartDateExpr(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "startDateExpr");
         }
-        public static Task SetStartDateExpr(ElementRef dxTarget, string value)
+        public static Task SetStartDateExpr(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "startDateExpr", value);
         }
-        public static Task<string> GetStartDateTimeZoneExpr(ElementRef dxTarget)
+        public static Task<string> GetStartDateTimeZoneExpr(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "startDateTimeZoneExpr");
         }
-        public static Task SetStartDateTimeZoneExpr(ElementRef dxTarget, string value)
+        public static Task SetStartDateTimeZoneExpr(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "startDateTimeZoneExpr", value);
         }
-        public static Task<float?> GetStartDayHour(ElementRef dxTarget)
+        public static Task<float?> GetStartDayHour(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "startDayHour");
         }
-        public static Task SetStartDayHour(ElementRef dxTarget, float? value)
+        public static Task SetStartDayHour(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "startDayHour", value);
         }
-        public static Task<string> GetTextExpr(ElementRef dxTarget)
+        public static Task<string> GetTextExpr(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "textExpr");
         }
-        public static Task SetTextExpr(ElementRef dxTarget, string value)
+        public static Task SetTextExpr(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "textExpr", value);
         }
-        public static Task<object> GetTimeCellTemplate(ElementRef dxTarget)
+        public static Task<object> GetTimeCellTemplate(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "timeCellTemplate");
         }
-        public static Task SetTimeCellTemplate(ElementRef dxTarget, object value)
+        public static Task SetTimeCellTemplate(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "timeCellTemplate", value);
         }
-        public static Task<string> GetTimeZone(ElementRef dxTarget)
+        public static Task<string> GetTimeZone(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "timeZone");
         }
-        public static Task SetTimeZone(ElementRef dxTarget, string value)
+        public static Task SetTimeZone(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "timeZone", value);
         }
-        public static Task<bool?> GetUseDropDownViewSwitcher(ElementRef dxTarget)
+        public static Task<bool?> GetUseDropDownViewSwitcher(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "useDropDownViewSwitcher");
         }
-        public static Task SetUseDropDownViewSwitcher(ElementRef dxTarget, bool? value)
+        public static Task SetUseDropDownViewSwitcher(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "useDropDownViewSwitcher", value);
         }
-        public static Task<object> GetViews(ElementRef dxTarget)
+        public static Task<object> GetViews(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_GetOption", dxTarget, "views");
         }
-        public static Task SetViews(ElementRef dxTarget, object value)
+        public static Task SetViews(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_SetOption", dxTarget, "views", value);
         }
-        public static Task AddAppointment(ElementRef dxTarget, object appointment)
+        public static Task AddAppointment(ElementReference dxTarget, object appointment)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_addAppointment_0", dxTarget, appointment);
         }
-        public static Task DeleteAppointment(ElementRef dxTarget, object appointment)
+        public static Task DeleteAppointment(ElementReference dxTarget, object appointment)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_deleteAppointment_1", dxTarget, appointment);
         }
-        public static Task<object> GetDataSourceEx(ElementRef dxTarget)
+        public static Task<object> GetDataSourceEx(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_getDataSource_2", dxTarget);
         }
-        public static Task<object> GetEndViewDate(ElementRef dxTarget)
+        public static Task<object> GetEndViewDate(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_getEndViewDate_3", dxTarget);
         }
-        public static Task<object> GetStartViewDate(ElementRef dxTarget)
+        public static Task<object> GetStartViewDate(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_getStartViewDate_4", dxTarget);
         }
-        public static Task HideAppointmentPopup(ElementRef dxTarget, bool saveChanges)
+        public static Task HideAppointmentPopup(ElementReference dxTarget, bool saveChanges)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_hideAppointmentPopup_5", dxTarget, saveChanges);
         }
-        public static Task HideAppointmentTooltip(ElementRef dxTarget)
+        public static Task HideAppointmentTooltip(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_hideAppointmentTooltip_6", dxTarget);
         }
-        public static Task RegisterKeyHandler(ElementRef dxTarget)
+        public static Task RegisterKeyHandler(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_registerKeyHandler_7", dxTarget);
         }
-        public static Task ScrollToTime(ElementRef dxTarget, float hours, float minutes, object date)
+        public static Task ScrollToTime(ElementReference dxTarget, float hours, float minutes, object date)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_scrollToTime_8", dxTarget, hours, minutes, date);
         }
-        public static Task ShowAppointmentPopup(ElementRef dxTarget, object appointmentData, bool createNewAppointment, object currentAppointmentData)
+        public static Task ShowAppointmentPopup(ElementReference dxTarget, object appointmentData, bool createNewAppointment, object currentAppointmentData)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_showAppointmentPopup_9", dxTarget, appointmentData, createNewAppointment, currentAppointmentData);
         }
-        public static Task ShowAppointmentTooltip(ElementRef dxTarget, object appointmentData, object target, object currentAppointmentData)
+        public static Task ShowAppointmentTooltip(ElementReference dxTarget, object appointmentData, object target, object currentAppointmentData)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_showAppointmentTooltip_10", dxTarget, appointmentData, target, currentAppointmentData);
         }
-        public static Task UpdateAppointment(ElementRef dxTarget, object target, object appointment)
+        public static Task UpdateAppointment(ElementReference dxTarget, object target, object appointment)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScheduler_updateAppointment_11", dxTarget, target, appointment);
         }
@@ -6909,7 +6909,7 @@ namespace DevExpress.Ui
     {
         public static event EventHandler<JQueryEventArgs> PullDown;
         public static event EventHandler<JQueryEventArgs> ReachBottom;
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxScrollViewOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.DxScrollViewOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScrollView_Init", dxTarget, json);
@@ -6924,43 +6924,43 @@ namespace DevExpress.Ui
         {
             ReachBottom?.Invoke(null, new JQueryEventArgs(identifier));
         }
-        public static Task<string> GetPulledDownText(ElementRef dxTarget)
+        public static Task<string> GetPulledDownText(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxScrollView_GetOption", dxTarget, "pulledDownText");
         }
-        public static Task SetPulledDownText(ElementRef dxTarget, string value)
+        public static Task SetPulledDownText(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScrollView_SetOption", dxTarget, "pulledDownText", value);
         }
-        public static Task<string> GetPullingDownText(ElementRef dxTarget)
+        public static Task<string> GetPullingDownText(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxScrollView_GetOption", dxTarget, "pullingDownText");
         }
-        public static Task SetPullingDownText(ElementRef dxTarget, string value)
+        public static Task SetPullingDownText(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScrollView_SetOption", dxTarget, "pullingDownText", value);
         }
-        public static Task<string> GetReachBottomText(ElementRef dxTarget)
+        public static Task<string> GetReachBottomText(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxScrollView_GetOption", dxTarget, "reachBottomText");
         }
-        public static Task SetReachBottomText(ElementRef dxTarget, string value)
+        public static Task SetReachBottomText(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScrollView_SetOption", dxTarget, "reachBottomText", value);
         }
-        public static Task<string> GetRefreshingText(ElementRef dxTarget)
+        public static Task<string> GetRefreshingText(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxScrollView_GetOption", dxTarget, "refreshingText");
         }
-        public static Task SetRefreshingText(ElementRef dxTarget, string value)
+        public static Task SetRefreshingText(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScrollView_SetOption", dxTarget, "refreshingText", value);
         }
-        public static Task Refresh(ElementRef dxTarget)
+        public static Task Refresh(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScrollView_refresh_0", dxTarget);
         }
-        public static Task<object> Release(ElementRef dxTarget, bool preventScrollBottom)
+        public static Task<object> Release(ElementReference dxTarget, bool preventScrollBottom)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScrollView_release_1", dxTarget, preventScrollBottom);
         }
@@ -6968,7 +6968,7 @@ namespace DevExpress.Ui
     public class DxSelectBoxInterop: DxDropDownListInterop
     {
         public static event EventHandler<JQueryEventArgs> CustomItemCreating;
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxSelectBoxOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.DxSelectBoxOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSelectBox_Init", dxTarget, json);
@@ -6978,26 +6978,26 @@ namespace DevExpress.Ui
         {
             CustomItemCreating?.Invoke(null, new JQueryEventArgs(identifier));
         }
-        public static Task<object> GetFieldTemplate(ElementRef dxTarget)
+        public static Task<object> GetFieldTemplate(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSelectBox_GetOption", dxTarget, "fieldTemplate");
         }
-        public static Task SetFieldTemplate(ElementRef dxTarget, object value)
+        public static Task SetFieldTemplate(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSelectBox_SetOption", dxTarget, "fieldTemplate", value);
         }
-        public static Task<bool?> GetShowSelectionControls(ElementRef dxTarget)
+        public static Task<bool?> GetShowSelectionControls(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxSelectBox_GetOption", dxTarget, "showSelectionControls");
         }
-        public static Task SetShowSelectionControls(ElementRef dxTarget, bool? value)
+        public static Task SetShowSelectionControls(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSelectBox_SetOption", dxTarget, "showSelectionControls", value);
         }
     }
     public class DxSliderInterop: DxSliderBaseInterop
     {
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxSliderOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.DxSliderOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSlider_Init", dxTarget, json);
@@ -7007,7 +7007,7 @@ namespace DevExpress.Ui
     {
         public static event EventHandler<JQueryEventArgs> MenuGroupRendered;
         public static event EventHandler<JQueryEventArgs> MenuItemRendered;
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxSlideOutOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.DxSlideOutOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSlideOut_Init", dxTarget, json);
@@ -7022,211 +7022,211 @@ namespace DevExpress.Ui
         {
             MenuItemRendered?.Invoke(null, new JQueryEventArgs(identifier));
         }
-        public static Task<object> GetContentTemplate(ElementRef dxTarget)
+        public static Task<object> GetContentTemplate(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSlideOut_GetOption", dxTarget, "contentTemplate");
         }
-        public static Task SetContentTemplate(ElementRef dxTarget, object value)
+        public static Task SetContentTemplate(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSlideOut_SetOption", dxTarget, "contentTemplate", value);
         }
-        public static Task<bool?> GetMenuGrouped(ElementRef dxTarget)
+        public static Task<bool?> GetMenuGrouped(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxSlideOut_GetOption", dxTarget, "menuGrouped");
         }
-        public static Task SetMenuGrouped(ElementRef dxTarget, bool? value)
+        public static Task SetMenuGrouped(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSlideOut_SetOption", dxTarget, "menuGrouped", value);
         }
-        public static Task<object> GetMenuGroupTemplate(ElementRef dxTarget)
+        public static Task<object> GetMenuGroupTemplate(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSlideOut_GetOption", dxTarget, "menuGroupTemplate");
         }
-        public static Task SetMenuGroupTemplate(ElementRef dxTarget, object value)
+        public static Task SetMenuGroupTemplate(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSlideOut_SetOption", dxTarget, "menuGroupTemplate", value);
         }
-        public static Task<object> GetMenuItemTemplate(ElementRef dxTarget)
+        public static Task<object> GetMenuItemTemplate(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSlideOut_GetOption", dxTarget, "menuItemTemplate");
         }
-        public static Task SetMenuItemTemplate(ElementRef dxTarget, object value)
+        public static Task SetMenuItemTemplate(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSlideOut_SetOption", dxTarget, "menuItemTemplate", value);
         }
-        public static Task<string> GetMenuPosition(ElementRef dxTarget)
+        public static Task<string> GetMenuPosition(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxSlideOut_GetOption", dxTarget, "menuPosition");
         }
-        public static Task SetMenuPosition(ElementRef dxTarget, string value)
+        public static Task SetMenuPosition(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSlideOut_SetOption", dxTarget, "menuPosition", value);
         }
-        public static Task<bool?> GetMenuVisible(ElementRef dxTarget)
+        public static Task<bool?> GetMenuVisible(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxSlideOut_GetOption", dxTarget, "menuVisible");
         }
-        public static Task SetMenuVisible(ElementRef dxTarget, bool? value)
+        public static Task SetMenuVisible(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSlideOut_SetOption", dxTarget, "menuVisible", value);
         }
-        public static Task<bool?> GetSwipeEnabled(ElementRef dxTarget)
+        public static Task<bool?> GetSwipeEnabled(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxSlideOut_GetOption", dxTarget, "swipeEnabled");
         }
-        public static Task SetSwipeEnabled(ElementRef dxTarget, bool? value)
+        public static Task SetSwipeEnabled(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSlideOut_SetOption", dxTarget, "swipeEnabled", value);
         }
-        public static Task<object> HideMenu(ElementRef dxTarget)
+        public static Task<object> HideMenu(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSlideOut_hideMenu_0", dxTarget);
         }
-        public static Task<object> ShowMenu(ElementRef dxTarget)
+        public static Task<object> ShowMenu(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSlideOut_showMenu_1", dxTarget);
         }
-        public static Task<object> ToggleMenuVisibility(ElementRef dxTarget, bool showing)
+        public static Task<object> ToggleMenuVisibility(ElementReference dxTarget, bool showing)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSlideOut_toggleMenuVisibility_2", dxTarget, showing);
         }
     }
     public class DxSlideOutViewInterop: WidgetInterop
     {
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxSlideOutViewOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.DxSlideOutViewOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSlideOutView_Init", dxTarget, json);
         }
-        public static Task<object> GetContentTemplate(ElementRef dxTarget)
+        public static Task<object> GetContentTemplate(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSlideOutView_GetOption", dxTarget, "contentTemplate");
         }
-        public static Task SetContentTemplate(ElementRef dxTarget, object value)
+        public static Task SetContentTemplate(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSlideOutView_SetOption", dxTarget, "contentTemplate", value);
         }
-        public static Task<string> GetMenuPosition(ElementRef dxTarget)
+        public static Task<string> GetMenuPosition(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxSlideOutView_GetOption", dxTarget, "menuPosition");
         }
-        public static Task SetMenuPosition(ElementRef dxTarget, string value)
+        public static Task SetMenuPosition(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSlideOutView_SetOption", dxTarget, "menuPosition", value);
         }
-        public static Task<object> GetMenuTemplate(ElementRef dxTarget)
+        public static Task<object> GetMenuTemplate(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSlideOutView_GetOption", dxTarget, "menuTemplate");
         }
-        public static Task SetMenuTemplate(ElementRef dxTarget, object value)
+        public static Task SetMenuTemplate(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSlideOutView_SetOption", dxTarget, "menuTemplate", value);
         }
-        public static Task<bool?> GetMenuVisible(ElementRef dxTarget)
+        public static Task<bool?> GetMenuVisible(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxSlideOutView_GetOption", dxTarget, "menuVisible");
         }
-        public static Task SetMenuVisible(ElementRef dxTarget, bool? value)
+        public static Task SetMenuVisible(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSlideOutView_SetOption", dxTarget, "menuVisible", value);
         }
-        public static Task<bool?> GetSwipeEnabled(ElementRef dxTarget)
+        public static Task<bool?> GetSwipeEnabled(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxSlideOutView_GetOption", dxTarget, "swipeEnabled");
         }
-        public static Task SetSwipeEnabled(ElementRef dxTarget, bool? value)
+        public static Task SetSwipeEnabled(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSlideOutView_SetOption", dxTarget, "swipeEnabled", value);
         }
-        public static Task<object> Content(ElementRef dxTarget)
+        public static Task<object> Content(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSlideOutView_content_0", dxTarget);
         }
-        public static Task<object> HideMenu(ElementRef dxTarget)
+        public static Task<object> HideMenu(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSlideOutView_hideMenu_1", dxTarget);
         }
-        public static Task<object> MenuContent(ElementRef dxTarget)
+        public static Task<object> MenuContent(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSlideOutView_menuContent_2", dxTarget);
         }
-        public static Task<object> ShowMenu(ElementRef dxTarget)
+        public static Task<object> ShowMenu(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSlideOutView_showMenu_3", dxTarget);
         }
-        public static Task<object> ToggleMenuVisibility(ElementRef dxTarget)
+        public static Task<object> ToggleMenuVisibility(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSlideOutView_toggleMenuVisibility_4", dxTarget);
         }
     }
     public class DxSwitchInterop: EditorInterop
     {
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxSwitchOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.DxSwitchOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSwitch_Init", dxTarget, json);
         }
-        public static Task<string> GetName(ElementRef dxTarget)
+        public static Task<string> GetName(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxSwitch_GetOption", dxTarget, "name");
         }
-        public static Task SetName(ElementRef dxTarget, string value)
+        public static Task SetName(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSwitch_SetOption", dxTarget, "name", value);
         }
-        public static Task<string> GetOffText(ElementRef dxTarget)
+        public static Task<string> GetOffText(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxSwitch_GetOption", dxTarget, "offText");
         }
-        public static Task SetOffText(ElementRef dxTarget, string value)
+        public static Task SetOffText(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSwitch_SetOption", dxTarget, "offText", value);
         }
-        public static Task<string> GetOnText(ElementRef dxTarget)
+        public static Task<string> GetOnText(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxSwitch_GetOption", dxTarget, "onText");
         }
-        public static Task SetOnText(ElementRef dxTarget, string value)
+        public static Task SetOnText(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSwitch_SetOption", dxTarget, "onText", value);
         }
     }
     public class DxTabsInterop: CollectionWidgetInterop
     {
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxTabsOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.DxTabsOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTabs_Init", dxTarget, json);
         }
-        public static Task<bool?> GetScrollByContent(ElementRef dxTarget)
+        public static Task<bool?> GetScrollByContent(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxTabs_GetOption", dxTarget, "scrollByContent");
         }
-        public static Task SetScrollByContent(ElementRef dxTarget, bool? value)
+        public static Task SetScrollByContent(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTabs_SetOption", dxTarget, "scrollByContent", value);
         }
-        public static Task<bool?> GetScrollingEnabled(ElementRef dxTarget)
+        public static Task<bool?> GetScrollingEnabled(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxTabs_GetOption", dxTarget, "scrollingEnabled");
         }
-        public static Task SetScrollingEnabled(ElementRef dxTarget, bool? value)
+        public static Task SetScrollingEnabled(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTabs_SetOption", dxTarget, "scrollingEnabled", value);
         }
-        public static Task<string> GetSelectionMode(ElementRef dxTarget)
+        public static Task<string> GetSelectionMode(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxTabs_GetOption", dxTarget, "selectionMode");
         }
-        public static Task SetSelectionMode(ElementRef dxTarget, string value)
+        public static Task SetSelectionMode(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTabs_SetOption", dxTarget, "selectionMode", value);
         }
-        public static Task<bool?> GetShowNavButtons(ElementRef dxTarget)
+        public static Task<bool?> GetShowNavButtons(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxTabs_GetOption", dxTarget, "showNavButtons");
         }
-        public static Task SetShowNavButtons(ElementRef dxTarget, bool? value)
+        public static Task SetShowNavButtons(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTabs_SetOption", dxTarget, "showNavButtons", value);
         }
@@ -7236,7 +7236,7 @@ namespace DevExpress.Ui
         public static event EventHandler<JQueryEventArgs> TitleClick;
         public static event EventHandler<JQueryEventArgs> TitleHold;
         public static event EventHandler<JQueryEventArgs> TitleRendered;
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxTabPanelOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.DxTabPanelOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTabPanel_Init", dxTarget, json);
@@ -7256,35 +7256,35 @@ namespace DevExpress.Ui
         {
             TitleRendered?.Invoke(null, new JQueryEventArgs(identifier));
         }
-        public static Task<object> GetItemTitleTemplate(ElementRef dxTarget)
+        public static Task<object> GetItemTitleTemplate(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTabPanel_GetOption", dxTarget, "itemTitleTemplate");
         }
-        public static Task SetItemTitleTemplate(ElementRef dxTarget, object value)
+        public static Task SetItemTitleTemplate(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTabPanel_SetOption", dxTarget, "itemTitleTemplate", value);
         }
-        public static Task<bool?> GetScrollByContent(ElementRef dxTarget)
+        public static Task<bool?> GetScrollByContent(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxTabPanel_GetOption", dxTarget, "scrollByContent");
         }
-        public static Task SetScrollByContent(ElementRef dxTarget, bool? value)
+        public static Task SetScrollByContent(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTabPanel_SetOption", dxTarget, "scrollByContent", value);
         }
-        public static Task<bool?> GetScrollingEnabled(ElementRef dxTarget)
+        public static Task<bool?> GetScrollingEnabled(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxTabPanel_GetOption", dxTarget, "scrollingEnabled");
         }
-        public static Task SetScrollingEnabled(ElementRef dxTarget, bool? value)
+        public static Task SetScrollingEnabled(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTabPanel_SetOption", dxTarget, "scrollingEnabled", value);
         }
-        public static Task<bool?> GetShowNavButtons(ElementRef dxTarget)
+        public static Task<bool?> GetShowNavButtons(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxTabPanel_GetOption", dxTarget, "showNavButtons");
         }
-        public static Task SetShowNavButtons(ElementRef dxTarget, bool? value)
+        public static Task SetShowNavButtons(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTabPanel_SetOption", dxTarget, "showNavButtons", value);
         }
@@ -7293,7 +7293,7 @@ namespace DevExpress.Ui
     {
         public static event EventHandler<JQueryEventArgs> MultiTagPreparing;
         public static event EventHandler<JQueryEventArgs> SelectAllValueChanged;
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxTagBoxOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.DxTagBoxOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTagBox_Init", dxTarget, json);
@@ -7308,246 +7308,246 @@ namespace DevExpress.Ui
         {
             SelectAllValueChanged?.Invoke(null, new JQueryEventArgs(identifier));
         }
-        public static Task<bool?> GetHideSelectedItems(ElementRef dxTarget)
+        public static Task<bool?> GetHideSelectedItems(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxTagBox_GetOption", dxTarget, "hideSelectedItems");
         }
-        public static Task SetHideSelectedItems(ElementRef dxTarget, bool? value)
+        public static Task SetHideSelectedItems(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTagBox_SetOption", dxTarget, "hideSelectedItems", value);
         }
-        public static Task<float?> GetMaxDisplayedTags(ElementRef dxTarget)
+        public static Task<float?> GetMaxDisplayedTags(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DxTagBox_GetOption", dxTarget, "maxDisplayedTags");
         }
-        public static Task SetMaxDisplayedTags(ElementRef dxTarget, float? value)
+        public static Task SetMaxDisplayedTags(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTagBox_SetOption", dxTarget, "maxDisplayedTags", value);
         }
-        public static Task<bool?> GetMultiline(ElementRef dxTarget)
+        public static Task<bool?> GetMultiline(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxTagBox_GetOption", dxTarget, "multiline");
         }
-        public static Task SetMultiline(ElementRef dxTarget, bool? value)
+        public static Task SetMultiline(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTagBox_SetOption", dxTarget, "multiline", value);
         }
-        public static Task<string> GetSelectAllMode(ElementRef dxTarget)
+        public static Task<string> GetSelectAllMode(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxTagBox_GetOption", dxTarget, "selectAllMode");
         }
-        public static Task SetSelectAllMode(ElementRef dxTarget, string value)
+        public static Task SetSelectAllMode(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTagBox_SetOption", dxTarget, "selectAllMode", value);
         }
-        public static Task<object> GetSelectedItems(ElementRef dxTarget)
+        public static Task<object> GetSelectedItems(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTagBox_GetOption", dxTarget, "selectedItems");
         }
-        public static Task SetSelectedItems(ElementRef dxTarget, object value)
+        public static Task SetSelectedItems(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTagBox_SetOption", dxTarget, "selectedItems", value);
         }
-        public static Task<bool?> GetShowMultiTagOnly(ElementRef dxTarget)
+        public static Task<bool?> GetShowMultiTagOnly(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxTagBox_GetOption", dxTarget, "showMultiTagOnly");
         }
-        public static Task SetShowMultiTagOnly(ElementRef dxTarget, bool? value)
+        public static Task SetShowMultiTagOnly(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTagBox_SetOption", dxTarget, "showMultiTagOnly", value);
         }
-        public static Task<object> GetTagTemplate(ElementRef dxTarget)
+        public static Task<object> GetTagTemplate(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTagBox_GetOption", dxTarget, "tagTemplate");
         }
-        public static Task SetTagTemplate(ElementRef dxTarget, object value)
+        public static Task SetTagTemplate(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTagBox_SetOption", dxTarget, "tagTemplate", value);
         }
     }
     public class DxTextAreaInterop: DxTextBoxInterop
     {
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxTextAreaOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.DxTextAreaOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTextArea_Init", dxTarget, json);
         }
-        public static Task<bool?> GetAutoResizeEnabled(ElementRef dxTarget)
+        public static Task<bool?> GetAutoResizeEnabled(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxTextArea_GetOption", dxTarget, "autoResizeEnabled");
         }
-        public static Task SetAutoResizeEnabled(ElementRef dxTarget, bool? value)
+        public static Task SetAutoResizeEnabled(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTextArea_SetOption", dxTarget, "autoResizeEnabled", value);
         }
-        public static Task<object> GetMaxHeight(ElementRef dxTarget)
+        public static Task<object> GetMaxHeight(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTextArea_GetOption", dxTarget, "maxHeight");
         }
-        public static Task SetMaxHeight(ElementRef dxTarget, object value)
+        public static Task SetMaxHeight(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTextArea_SetOption", dxTarget, "maxHeight", value);
         }
-        public static Task<object> GetMinHeight(ElementRef dxTarget)
+        public static Task<object> GetMinHeight(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTextArea_GetOption", dxTarget, "minHeight");
         }
-        public static Task SetMinHeight(ElementRef dxTarget, object value)
+        public static Task SetMinHeight(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTextArea_SetOption", dxTarget, "minHeight", value);
         }
     }
     public class DxTextBoxInterop: DxTextEditorInterop
     {
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxTextBoxOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.DxTextBoxOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTextBox_Init", dxTarget, json);
         }
-        public static Task<object> GetMaxLength(ElementRef dxTarget)
+        public static Task<object> GetMaxLength(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTextBox_GetOption", dxTarget, "maxLength");
         }
-        public static Task SetMaxLength(ElementRef dxTarget, object value)
+        public static Task SetMaxLength(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTextBox_SetOption", dxTarget, "maxLength", value);
         }
-        public static Task<string> GetMode(ElementRef dxTarget)
+        public static Task<string> GetMode(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxTextBox_GetOption", dxTarget, "mode");
         }
-        public static Task SetMode(ElementRef dxTarget, string value)
+        public static Task SetMode(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTextBox_SetOption", dxTarget, "mode", value);
         }
     }
     public class DxTileViewInterop: CollectionWidgetInterop
     {
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxTileViewOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.DxTileViewOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTileView_Init", dxTarget, json);
         }
-        public static Task<float?> GetBaseItemHeight(ElementRef dxTarget)
+        public static Task<float?> GetBaseItemHeight(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DxTileView_GetOption", dxTarget, "baseItemHeight");
         }
-        public static Task SetBaseItemHeight(ElementRef dxTarget, float? value)
+        public static Task SetBaseItemHeight(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTileView_SetOption", dxTarget, "baseItemHeight", value);
         }
-        public static Task<float?> GetBaseItemWidth(ElementRef dxTarget)
+        public static Task<float?> GetBaseItemWidth(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DxTileView_GetOption", dxTarget, "baseItemWidth");
         }
-        public static Task SetBaseItemWidth(ElementRef dxTarget, float? value)
+        public static Task SetBaseItemWidth(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTileView_SetOption", dxTarget, "baseItemWidth", value);
         }
-        public static Task<string> GetDirection(ElementRef dxTarget)
+        public static Task<string> GetDirection(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxTileView_GetOption", dxTarget, "direction");
         }
-        public static Task SetDirection(ElementRef dxTarget, string value)
+        public static Task SetDirection(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTileView_SetOption", dxTarget, "direction", value);
         }
-        public static Task<float?> GetItemMargin(ElementRef dxTarget)
+        public static Task<float?> GetItemMargin(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DxTileView_GetOption", dxTarget, "itemMargin");
         }
-        public static Task SetItemMargin(ElementRef dxTarget, float? value)
+        public static Task SetItemMargin(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTileView_SetOption", dxTarget, "itemMargin", value);
         }
-        public static Task<bool?> GetShowScrollbar(ElementRef dxTarget)
+        public static Task<bool?> GetShowScrollbar(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxTileView_GetOption", dxTarget, "showScrollbar");
         }
-        public static Task SetShowScrollbar(ElementRef dxTarget, bool? value)
+        public static Task SetShowScrollbar(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTileView_SetOption", dxTarget, "showScrollbar", value);
         }
-        public static Task<float> ScrollPosition(ElementRef dxTarget)
+        public static Task<float> ScrollPosition(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float>("BlazorDevExtreme_DxTileView_scrollPosition_0", dxTarget);
         }
     }
     public class DxToastInterop: DxOverlayInterop
     {
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxToastOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.DxToastOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxToast_Init", dxTarget, json);
         }
-        public static Task<bool?> GetCloseOnClick(ElementRef dxTarget)
+        public static Task<bool?> GetCloseOnClick(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxToast_GetOption", dxTarget, "closeOnClick");
         }
-        public static Task SetCloseOnClick(ElementRef dxTarget, bool? value)
+        public static Task SetCloseOnClick(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxToast_SetOption", dxTarget, "closeOnClick", value);
         }
-        public static Task<bool?> GetCloseOnSwipe(ElementRef dxTarget)
+        public static Task<bool?> GetCloseOnSwipe(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxToast_GetOption", dxTarget, "closeOnSwipe");
         }
-        public static Task SetCloseOnSwipe(ElementRef dxTarget, bool? value)
+        public static Task SetCloseOnSwipe(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxToast_SetOption", dxTarget, "closeOnSwipe", value);
         }
-        public static Task<float?> GetDisplayTime(ElementRef dxTarget)
+        public static Task<float?> GetDisplayTime(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DxToast_GetOption", dxTarget, "displayTime");
         }
-        public static Task SetDisplayTime(ElementRef dxTarget, float? value)
+        public static Task SetDisplayTime(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxToast_SetOption", dxTarget, "displayTime", value);
         }
-        public static Task<string> GetMessage(ElementRef dxTarget)
+        public static Task<string> GetMessage(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxToast_GetOption", dxTarget, "message");
         }
-        public static Task SetMessage(ElementRef dxTarget, string value)
+        public static Task SetMessage(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxToast_SetOption", dxTarget, "message", value);
         }
-        public static Task<string> GetType(ElementRef dxTarget)
+        public static Task<string> GetType(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxToast_GetOption", dxTarget, "type");
         }
-        public static Task SetType(ElementRef dxTarget, string value)
+        public static Task SetType(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxToast_SetOption", dxTarget, "type", value);
         }
     }
     public class DxToolbarInterop: CollectionWidgetInterop
     {
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxToolbarOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.DxToolbarOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxToolbar_Init", dxTarget, json);
         }
-        public static Task<object> GetMenuItemTemplate(ElementRef dxTarget)
+        public static Task<object> GetMenuItemTemplate(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxToolbar_GetOption", dxTarget, "menuItemTemplate");
         }
-        public static Task SetMenuItemTemplate(ElementRef dxTarget, object value)
+        public static Task SetMenuItemTemplate(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxToolbar_SetOption", dxTarget, "menuItemTemplate", value);
         }
-        public static Task<string> GetRenderAs(ElementRef dxTarget)
+        public static Task<string> GetRenderAs(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxToolbar_GetOption", dxTarget, "renderAs");
         }
-        public static Task SetRenderAs(ElementRef dxTarget, string value)
+        public static Task SetRenderAs(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxToolbar_SetOption", dxTarget, "renderAs", value);
         }
     }
     public class DxTooltipInterop: DxPopoverInterop
     {
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxTooltipOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.DxTooltipOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTooltip_Init", dxTarget, json);
@@ -7555,24 +7555,24 @@ namespace DevExpress.Ui
     }
     public class DxTrackBarInterop: EditorInterop
     {
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxTrackBarOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.DxTrackBarOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTrackBar_Init", dxTarget, json);
         }
-        public static Task<float?> GetMax(ElementRef dxTarget)
+        public static Task<float?> GetMax(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DxTrackBar_GetOption", dxTarget, "max");
         }
-        public static Task SetMax(ElementRef dxTarget, float? value)
+        public static Task SetMax(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTrackBar_SetOption", dxTarget, "max", value);
         }
-        public static Task<float?> GetMin(ElementRef dxTarget)
+        public static Task<float?> GetMin(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DxTrackBar_GetOption", dxTarget, "min");
         }
-        public static Task SetMin(ElementRef dxTarget, float? value)
+        public static Task SetMin(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTrackBar_SetOption", dxTarget, "min", value);
         }
@@ -7589,7 +7589,7 @@ namespace DevExpress.Ui
         public static event EventHandler<JQueryEventArgs> NodesInitialized;
         public static event EventHandler<JQueryEventArgs> RowClick;
         public static event EventHandler<JQueryEventArgs> RowPrepared;
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxTreeListOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.DxTreeListOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeList_Init", dxTarget, json);
@@ -7644,171 +7644,171 @@ namespace DevExpress.Ui
         {
             RowPrepared?.Invoke(null, new JQueryEventArgs(identifier));
         }
-        public static Task<bool?> GetAutoExpandAll(ElementRef dxTarget)
+        public static Task<bool?> GetAutoExpandAll(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxTreeList_GetOption", dxTarget, "autoExpandAll");
         }
-        public static Task SetAutoExpandAll(ElementRef dxTarget, bool? value)
+        public static Task SetAutoExpandAll(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeList_SetOption", dxTarget, "autoExpandAll", value);
         }
-        public static Task<object> GetCustomizeColumns(ElementRef dxTarget)
+        public static Task<object> GetCustomizeColumns(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeList_GetOption", dxTarget, "customizeColumns");
         }
-        public static Task SetCustomizeColumns(ElementRef dxTarget, object value)
+        public static Task SetCustomizeColumns(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeList_SetOption", dxTarget, "customizeColumns", value);
         }
-        public static Task<string> GetDataStructure(ElementRef dxTarget)
+        public static Task<string> GetDataStructure(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxTreeList_GetOption", dxTarget, "dataStructure");
         }
-        public static Task SetDataStructure(ElementRef dxTarget, string value)
+        public static Task SetDataStructure(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeList_SetOption", dxTarget, "dataStructure", value);
         }
-        public static Task<object> GetExpandedRowKeys(ElementRef dxTarget)
+        public static Task<object> GetExpandedRowKeys(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeList_GetOption", dxTarget, "expandedRowKeys");
         }
-        public static Task SetExpandedRowKeys(ElementRef dxTarget, object value)
+        public static Task SetExpandedRowKeys(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeList_SetOption", dxTarget, "expandedRowKeys", value);
         }
-        public static Task<bool?> GetExpandNodesOnFiltering(ElementRef dxTarget)
+        public static Task<bool?> GetExpandNodesOnFiltering(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxTreeList_GetOption", dxTarget, "expandNodesOnFiltering");
         }
-        public static Task SetExpandNodesOnFiltering(ElementRef dxTarget, bool? value)
+        public static Task SetExpandNodesOnFiltering(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeList_SetOption", dxTarget, "expandNodesOnFiltering", value);
         }
-        public static Task<object> GetHasItemsExpr(ElementRef dxTarget)
+        public static Task<object> GetHasItemsExpr(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeList_GetOption", dxTarget, "hasItemsExpr");
         }
-        public static Task SetHasItemsExpr(ElementRef dxTarget, object value)
+        public static Task SetHasItemsExpr(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeList_SetOption", dxTarget, "hasItemsExpr", value);
         }
-        public static Task<object> GetItemsExpr(ElementRef dxTarget)
+        public static Task<object> GetItemsExpr(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeList_GetOption", dxTarget, "itemsExpr");
         }
-        public static Task SetItemsExpr(ElementRef dxTarget, object value)
+        public static Task SetItemsExpr(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeList_SetOption", dxTarget, "itemsExpr", value);
         }
-        public static Task<object> GetKeyExpr(ElementRef dxTarget)
+        public static Task<object> GetKeyExpr(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeList_GetOption", dxTarget, "keyExpr");
         }
-        public static Task SetKeyExpr(ElementRef dxTarget, object value)
+        public static Task SetKeyExpr(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeList_SetOption", dxTarget, "keyExpr", value);
         }
-        public static Task<object> GetParentIdExpr(ElementRef dxTarget)
+        public static Task<object> GetParentIdExpr(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeList_GetOption", dxTarget, "parentIdExpr");
         }
-        public static Task SetParentIdExpr(ElementRef dxTarget, object value)
+        public static Task SetParentIdExpr(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeList_SetOption", dxTarget, "parentIdExpr", value);
         }
-        public static Task<object> GetRemoteOperations(ElementRef dxTarget)
+        public static Task<object> GetRemoteOperations(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeList_GetOption", dxTarget, "remoteOperations");
         }
-        public static Task SetRemoteOperations(ElementRef dxTarget, object value)
+        public static Task SetRemoteOperations(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeList_SetOption", dxTarget, "remoteOperations", value);
         }
-        public static Task<object> GetRootValue(ElementRef dxTarget)
+        public static Task<object> GetRootValue(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeList_GetOption", dxTarget, "rootValue");
         }
-        public static Task SetRootValue(ElementRef dxTarget, object value)
+        public static Task SetRootValue(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeList_SetOption", dxTarget, "rootValue", value);
         }
-        public static Task AddColumn(ElementRef dxTarget, object columnOptions)
+        public static Task AddColumn(ElementReference dxTarget, object columnOptions)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeList_addColumn_0", dxTarget, columnOptions);
         }
-        public static Task AddRow(ElementRef dxTarget)
+        public static Task AddRow(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeList_addRow_1", dxTarget);
         }
-        public static Task AddRow(ElementRef dxTarget, object parentId)
+        public static Task AddRow(ElementReference dxTarget, object parentId)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeList_addRow_2", dxTarget, parentId);
         }
-        public static Task<object> CollapseRow(ElementRef dxTarget, object key)
+        public static Task<object> CollapseRow(ElementReference dxTarget, object key)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeList_collapseRow_3", dxTarget, key);
         }
-        public static Task<object> ExpandRow(ElementRef dxTarget, object key)
+        public static Task<object> ExpandRow(ElementReference dxTarget, object key)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeList_expandRow_4", dxTarget, key);
         }
-        public static Task ForEachNode(ElementRef dxTarget, object callback)
+        public static Task ForEachNode(ElementReference dxTarget, object callback)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeList_forEachNode_5", dxTarget, callback);
         }
-        public static Task ForEachNode(ElementRef dxTarget, object nodes, object callback)
+        public static Task ForEachNode(ElementReference dxTarget, object nodes, object callback)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeList_forEachNode_6", dxTarget, nodes, callback);
         }
-        public static Task<object> GetNodeByKey(ElementRef dxTarget, object key)
+        public static Task<object> GetNodeByKey(ElementReference dxTarget, object key)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeList_getNodeByKey_7", dxTarget, key);
         }
-        public static Task<object> GetRootNode(ElementRef dxTarget)
+        public static Task<object> GetRootNode(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeList_getRootNode_8", dxTarget);
         }
-        public static Task<object> GetSelectedRowKeys(ElementRef dxTarget)
+        public static Task<object> GetSelectedRowKeys(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeList_getSelectedRowKeys_9", dxTarget);
         }
-        public static Task<object> GetSelectedRowKeys(ElementRef dxTarget, bool leavesOnly)
+        public static Task<object> GetSelectedRowKeys(ElementReference dxTarget, bool leavesOnly)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeList_getSelectedRowKeys_10", dxTarget, leavesOnly);
         }
-        public static Task<object> GetSelectedRowKeys(ElementRef dxTarget, string mode)
+        public static Task<object> GetSelectedRowKeys(ElementReference dxTarget, string mode)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeList_getSelectedRowKeys_11", dxTarget, mode);
         }
-        public static Task<object> GetSelectedRowsData(ElementRef dxTarget)
+        public static Task<object> GetSelectedRowsData(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeList_getSelectedRowsData_12", dxTarget);
         }
-        public static Task<object> GetVisibleColumns(ElementRef dxTarget)
+        public static Task<object> GetVisibleColumns(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeList_getVisibleColumns_13", dxTarget);
         }
-        public static Task<object> GetVisibleColumns(ElementRef dxTarget, float headerLevel)
+        public static Task<object> GetVisibleColumns(ElementReference dxTarget, float headerLevel)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeList_getVisibleColumns_14", dxTarget, headerLevel);
         }
-        public static Task<object> GetVisibleRows(ElementRef dxTarget)
+        public static Task<object> GetVisibleRows(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeList_getVisibleRows_15", dxTarget);
         }
-        public static Task<bool> IsRowExpanded(ElementRef dxTarget, object key)
+        public static Task<bool> IsRowExpanded(ElementReference dxTarget, object key)
         {
             return JSRuntime.Current.InvokeAsync<bool>("BlazorDevExtreme_DxTreeList_isRowExpanded_16", dxTarget, key);
         }
-        public static Task<object> LoadDescendants(ElementRef dxTarget)
+        public static Task<object> LoadDescendants(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeList_loadDescendants_17", dxTarget);
         }
-        public static Task<object> LoadDescendants(ElementRef dxTarget, object keys)
+        public static Task<object> LoadDescendants(ElementReference dxTarget, object keys)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeList_loadDescendants_18", dxTarget, keys);
         }
-        public static Task<object> LoadDescendants(ElementRef dxTarget, object keys, bool childrenOnly)
+        public static Task<object> LoadDescendants(ElementReference dxTarget, object keys, bool childrenOnly)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeList_loadDescendants_19", dxTarget, keys, childrenOnly);
         }
@@ -7818,7 +7818,7 @@ namespace DevExpress.Ui
         public static event EventHandler<JQueryEventArgs> ItemCollapsed;
         public static event EventHandler<JQueryEventArgs> ItemExpanded;
         public static event EventHandler<JQueryEventArgs> ItemSelectionChanged;
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxTreeViewOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.DxTreeViewOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeView_Init", dxTarget, json);
@@ -7838,243 +7838,243 @@ namespace DevExpress.Ui
         {
             ItemSelectionChanged?.Invoke(null, new JQueryEventArgs(identifier));
         }
-        public static Task<bool?> GetAnimationEnabled(ElementRef dxTarget)
+        public static Task<bool?> GetAnimationEnabled(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxTreeView_GetOption", dxTarget, "animationEnabled");
         }
-        public static Task SetAnimationEnabled(ElementRef dxTarget, bool? value)
+        public static Task SetAnimationEnabled(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeView_SetOption", dxTarget, "animationEnabled", value);
         }
-        public static Task<object> GetCreateChildren(ElementRef dxTarget)
+        public static Task<object> GetCreateChildren(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeView_GetOption", dxTarget, "createChildren");
         }
-        public static Task SetCreateChildren(ElementRef dxTarget, object value)
+        public static Task SetCreateChildren(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeView_SetOption", dxTarget, "createChildren", value);
         }
-        public static Task<string> GetDataStructure(ElementRef dxTarget)
+        public static Task<string> GetDataStructure(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxTreeView_GetOption", dxTarget, "dataStructure");
         }
-        public static Task SetDataStructure(ElementRef dxTarget, string value)
+        public static Task SetDataStructure(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeView_SetOption", dxTarget, "dataStructure", value);
         }
-        public static Task<bool?> GetExpandAllEnabled(ElementRef dxTarget)
+        public static Task<bool?> GetExpandAllEnabled(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxTreeView_GetOption", dxTarget, "expandAllEnabled");
         }
-        public static Task SetExpandAllEnabled(ElementRef dxTarget, bool? value)
+        public static Task SetExpandAllEnabled(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeView_SetOption", dxTarget, "expandAllEnabled", value);
         }
-        public static Task<object> GetExpandedExpr(ElementRef dxTarget)
+        public static Task<object> GetExpandedExpr(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeView_GetOption", dxTarget, "expandedExpr");
         }
-        public static Task SetExpandedExpr(ElementRef dxTarget, object value)
+        public static Task SetExpandedExpr(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeView_SetOption", dxTarget, "expandedExpr", value);
         }
-        public static Task<bool?> GetExpandNodesRecursive(ElementRef dxTarget)
+        public static Task<bool?> GetExpandNodesRecursive(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxTreeView_GetOption", dxTarget, "expandNodesRecursive");
         }
-        public static Task SetExpandNodesRecursive(ElementRef dxTarget, bool? value)
+        public static Task SetExpandNodesRecursive(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeView_SetOption", dxTarget, "expandNodesRecursive", value);
         }
-        public static Task<object> GetHasItemsExpr(ElementRef dxTarget)
+        public static Task<object> GetHasItemsExpr(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeView_GetOption", dxTarget, "hasItemsExpr");
         }
-        public static Task SetHasItemsExpr(ElementRef dxTarget, object value)
+        public static Task SetHasItemsExpr(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeView_SetOption", dxTarget, "hasItemsExpr", value);
         }
-        public static Task<object> GetParentIdExpr(ElementRef dxTarget)
+        public static Task<object> GetParentIdExpr(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeView_GetOption", dxTarget, "parentIdExpr");
         }
-        public static Task SetParentIdExpr(ElementRef dxTarget, object value)
+        public static Task SetParentIdExpr(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeView_SetOption", dxTarget, "parentIdExpr", value);
         }
-        public static Task<object> GetRootValue(ElementRef dxTarget)
+        public static Task<object> GetRootValue(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeView_GetOption", dxTarget, "rootValue");
         }
-        public static Task SetRootValue(ElementRef dxTarget, object value)
+        public static Task SetRootValue(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeView_SetOption", dxTarget, "rootValue", value);
         }
-        public static Task<string> GetScrollDirection(ElementRef dxTarget)
+        public static Task<string> GetScrollDirection(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxTreeView_GetOption", dxTarget, "scrollDirection");
         }
-        public static Task SetScrollDirection(ElementRef dxTarget, string value)
+        public static Task SetScrollDirection(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeView_SetOption", dxTarget, "scrollDirection", value);
         }
-        public static Task<string> GetSelectAllText(ElementRef dxTarget)
+        public static Task<string> GetSelectAllText(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxTreeView_GetOption", dxTarget, "selectAllText");
         }
-        public static Task SetSelectAllText(ElementRef dxTarget, string value)
+        public static Task SetSelectAllText(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeView_SetOption", dxTarget, "selectAllText", value);
         }
-        public static Task<bool?> GetSelectByClick(ElementRef dxTarget)
+        public static Task<bool?> GetSelectByClick(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxTreeView_GetOption", dxTarget, "selectByClick");
         }
-        public static Task SetSelectByClick(ElementRef dxTarget, bool? value)
+        public static Task SetSelectByClick(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeView_SetOption", dxTarget, "selectByClick", value);
         }
-        public static Task<string> GetSelectionMode(ElementRef dxTarget)
+        public static Task<string> GetSelectionMode(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxTreeView_GetOption", dxTarget, "selectionMode");
         }
-        public static Task SetSelectionMode(ElementRef dxTarget, string value)
+        public static Task SetSelectionMode(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeView_SetOption", dxTarget, "selectionMode", value);
         }
-        public static Task<bool?> GetSelectNodesRecursive(ElementRef dxTarget)
+        public static Task<bool?> GetSelectNodesRecursive(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxTreeView_GetOption", dxTarget, "selectNodesRecursive");
         }
-        public static Task SetSelectNodesRecursive(ElementRef dxTarget, bool? value)
+        public static Task SetSelectNodesRecursive(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeView_SetOption", dxTarget, "selectNodesRecursive", value);
         }
-        public static Task<string> GetShowCheckBoxesMode(ElementRef dxTarget)
+        public static Task<string> GetShowCheckBoxesMode(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxTreeView_GetOption", dxTarget, "showCheckBoxesMode");
         }
-        public static Task SetShowCheckBoxesMode(ElementRef dxTarget, string value)
+        public static Task SetShowCheckBoxesMode(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeView_SetOption", dxTarget, "showCheckBoxesMode", value);
         }
-        public static Task<bool?> GetVirtualModeEnabled(ElementRef dxTarget)
+        public static Task<bool?> GetVirtualModeEnabled(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxTreeView_GetOption", dxTarget, "virtualModeEnabled");
         }
-        public static Task SetVirtualModeEnabled(ElementRef dxTarget, bool? value)
+        public static Task SetVirtualModeEnabled(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeView_SetOption", dxTarget, "virtualModeEnabled", value);
         }
-        public static Task<object> GetSearchEditorOptions(ElementRef dxTarget)
+        public static Task<object> GetSearchEditorOptions(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeView_GetOption", dxTarget, "searchEditorOptions");
         }
-        public static Task SetSearchEditorOptions(ElementRef dxTarget, object value)
+        public static Task SetSearchEditorOptions(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeView_SetOption", dxTarget, "searchEditorOptions", value);
         }
-        public static Task<bool?> GetSearchEnabled(ElementRef dxTarget)
+        public static Task<bool?> GetSearchEnabled(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxTreeView_GetOption", dxTarget, "searchEnabled");
         }
-        public static Task SetSearchEnabled(ElementRef dxTarget, bool? value)
+        public static Task SetSearchEnabled(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeView_SetOption", dxTarget, "searchEnabled", value);
         }
-        public static Task<object> GetSearchExpr(ElementRef dxTarget)
+        public static Task<object> GetSearchExpr(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeView_GetOption", dxTarget, "searchExpr");
         }
-        public static Task SetSearchExpr(ElementRef dxTarget, object value)
+        public static Task SetSearchExpr(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeView_SetOption", dxTarget, "searchExpr", value);
         }
-        public static Task<string> GetSearchMode(ElementRef dxTarget)
+        public static Task<string> GetSearchMode(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxTreeView_GetOption", dxTarget, "searchMode");
         }
-        public static Task SetSearchMode(ElementRef dxTarget, string value)
+        public static Task SetSearchMode(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeView_SetOption", dxTarget, "searchMode", value);
         }
-        public static Task<float?> GetSearchTimeout(ElementRef dxTarget)
+        public static Task<float?> GetSearchTimeout(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DxTreeView_GetOption", dxTarget, "searchTimeout");
         }
-        public static Task SetSearchTimeout(ElementRef dxTarget, float? value)
+        public static Task SetSearchTimeout(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeView_SetOption", dxTarget, "searchTimeout", value);
         }
-        public static Task<string> GetSearchValue(ElementRef dxTarget)
+        public static Task<string> GetSearchValue(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxTreeView_GetOption", dxTarget, "searchValue");
         }
-        public static Task SetSearchValue(ElementRef dxTarget, string value)
+        public static Task SetSearchValue(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeView_SetOption", dxTarget, "searchValue", value);
         }
-        public static Task CollapseItem(ElementRef dxTarget, object itemData)
+        public static Task CollapseItem(ElementReference dxTarget, object itemData)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeView_collapseItem_0", dxTarget, itemData);
         }
-        public static Task ExpandItem(ElementRef dxTarget, object itemData)
+        public static Task ExpandItem(ElementReference dxTarget, object itemData)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeView_expandItem_3", dxTarget, itemData);
         }
-        public static Task<object> GetNodes(ElementRef dxTarget)
+        public static Task<object> GetNodes(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeView_getNodes_6", dxTarget);
         }
-        public static Task SelectAll(ElementRef dxTarget)
+        public static Task SelectAll(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeView_selectAll_7", dxTarget);
         }
-        public static Task SelectItem(ElementRef dxTarget, object itemData)
+        public static Task SelectItem(ElementReference dxTarget, object itemData)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeView_selectItem_8", dxTarget, itemData);
         }
-        public static Task UnselectAll(ElementRef dxTarget)
+        public static Task UnselectAll(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeView_unselectAll_11", dxTarget);
         }
-        public static Task UnselectItem(ElementRef dxTarget, object itemData)
+        public static Task UnselectItem(ElementReference dxTarget, object itemData)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeView_unselectItem_12", dxTarget, itemData);
         }
-        public static Task<object> UpdateDimensions(ElementRef dxTarget)
+        public static Task<object> UpdateDimensions(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeView_updateDimensions_15", dxTarget);
         }
     }
     public class DxValidationGroupInterop: DOMComponentInterop
     {
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxValidationGroupOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.DxValidationGroupOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxValidationGroup_Init", dxTarget, json);
         }
-        public static Task Reset(ElementRef dxTarget)
+        public static Task Reset(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxValidationGroup_reset_0", dxTarget);
         }
-        public static Task<object> Validate(ElementRef dxTarget)
+        public static Task<object> Validate(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxValidationGroup_validate_1", dxTarget);
         }
     }
     public class DxValidationSummaryInterop: CollectionWidgetInterop
     {
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxValidationSummaryOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.DxValidationSummaryOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxValidationSummary_Init", dxTarget, json);
         }
-        public static Task<string> GetValidationGroup(ElementRef dxTarget)
+        public static Task<string> GetValidationGroup(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxValidationSummary_GetOption", dxTarget, "validationGroup");
         }
-        public static Task SetValidationGroup(ElementRef dxTarget, string value)
+        public static Task SetValidationGroup(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxValidationSummary_SetOption", dxTarget, "validationGroup", value);
         }
@@ -8082,7 +8082,7 @@ namespace DevExpress.Ui
     public class DxValidatorInterop: DOMComponentInterop
     {
         public static event EventHandler<JQueryEventArgs> Validated;
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxValidatorOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.DxValidatorOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxValidator_Init", dxTarget, json);
@@ -8092,47 +8092,47 @@ namespace DevExpress.Ui
         {
             Validated?.Invoke(null, new JQueryEventArgs(identifier));
         }
-        public static Task<object> GetAdapter(ElementRef dxTarget)
+        public static Task<object> GetAdapter(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxValidator_GetOption", dxTarget, "adapter");
         }
-        public static Task SetAdapter(ElementRef dxTarget, object value)
+        public static Task SetAdapter(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxValidator_SetOption", dxTarget, "adapter", value);
         }
-        public static Task<string> GetName(ElementRef dxTarget)
+        public static Task<string> GetName(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxValidator_GetOption", dxTarget, "name");
         }
-        public static Task SetName(ElementRef dxTarget, string value)
+        public static Task SetName(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxValidator_SetOption", dxTarget, "name", value);
         }
-        public static Task<string> GetValidationGroup(ElementRef dxTarget)
+        public static Task<string> GetValidationGroup(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxValidator_GetOption", dxTarget, "validationGroup");
         }
-        public static Task SetValidationGroup(ElementRef dxTarget, string value)
+        public static Task SetValidationGroup(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxValidator_SetOption", dxTarget, "validationGroup", value);
         }
-        public static Task<object> GetValidationRules(ElementRef dxTarget)
+        public static Task<object> GetValidationRules(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxValidator_GetOption", dxTarget, "validationRules");
         }
-        public static Task SetValidationRules(ElementRef dxTarget, object value)
+        public static Task SetValidationRules(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxValidator_SetOption", dxTarget, "validationRules", value);
         }
-        public static Task Focus(ElementRef dxTarget)
+        public static Task Focus(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxValidator_focus_0", dxTarget);
         }
-        public static Task Reset(ElementRef dxTarget)
+        public static Task Reset(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxValidator_reset_1", dxTarget);
         }
-        public static Task<object> Validate(ElementRef dxTarget)
+        public static Task<object> Validate(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxValidator_validate_2", dxTarget);
         }
@@ -8144,7 +8144,7 @@ namespace DevExpress.Ui
         public static event EventHandler<JQueryEventArgs> ItemHold;
         public static event EventHandler<JQueryEventArgs> ItemRendered;
         public static event EventHandler<JQueryEventArgs> SelectionChanged;
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.CollectionWidgetOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.CollectionWidgetOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_CollectionWidget_Init", dxTarget, json);
@@ -8174,143 +8174,143 @@ namespace DevExpress.Ui
         {
             SelectionChanged?.Invoke(null, new JQueryEventArgs(identifier));
         }
-        public static Task<object> GetDataSource(ElementRef dxTarget)
+        public static Task<object> GetDataSource(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_CollectionWidget_GetOption", dxTarget, "dataSource");
         }
-        public static Task SetDataSource(ElementRef dxTarget, object value)
+        public static Task SetDataSource(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_CollectionWidget_SetOption", dxTarget, "dataSource", value);
         }
-        public static Task<float?> GetItemHoldTimeout(ElementRef dxTarget)
+        public static Task<float?> GetItemHoldTimeout(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_CollectionWidget_GetOption", dxTarget, "itemHoldTimeout");
         }
-        public static Task SetItemHoldTimeout(ElementRef dxTarget, float? value)
+        public static Task SetItemHoldTimeout(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_CollectionWidget_SetOption", dxTarget, "itemHoldTimeout", value);
         }
-        public static Task<object> GetItems(ElementRef dxTarget)
+        public static Task<object> GetItems(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_CollectionWidget_GetOption", dxTarget, "items");
         }
-        public static Task SetItems(ElementRef dxTarget, object value)
+        public static Task SetItems(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_CollectionWidget_SetOption", dxTarget, "items", value);
         }
-        public static Task<object> GetItemTemplate(ElementRef dxTarget)
+        public static Task<object> GetItemTemplate(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_CollectionWidget_GetOption", dxTarget, "itemTemplate");
         }
-        public static Task SetItemTemplate(ElementRef dxTarget, object value)
+        public static Task SetItemTemplate(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_CollectionWidget_SetOption", dxTarget, "itemTemplate", value);
         }
-        public static Task<object> GetKeyExpr(ElementRef dxTarget)
+        public static Task<object> GetKeyExpr(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_CollectionWidget_GetOption", dxTarget, "keyExpr");
         }
-        public static Task SetKeyExpr(ElementRef dxTarget, object value)
+        public static Task SetKeyExpr(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_CollectionWidget_SetOption", dxTarget, "keyExpr", value);
         }
-        public static Task<string> GetNoDataText(ElementRef dxTarget)
+        public static Task<string> GetNoDataText(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_CollectionWidget_GetOption", dxTarget, "noDataText");
         }
-        public static Task SetNoDataText(ElementRef dxTarget, string value)
+        public static Task SetNoDataText(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_CollectionWidget_SetOption", dxTarget, "noDataText", value);
         }
-        public static Task<float?> GetSelectedIndex(ElementRef dxTarget)
+        public static Task<float?> GetSelectedIndex(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_CollectionWidget_GetOption", dxTarget, "selectedIndex");
         }
-        public static Task SetSelectedIndex(ElementRef dxTarget, float? value)
+        public static Task SetSelectedIndex(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_CollectionWidget_SetOption", dxTarget, "selectedIndex", value);
         }
-        public static Task<object> GetSelectedItem(ElementRef dxTarget)
+        public static Task<object> GetSelectedItem(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_CollectionWidget_GetOption", dxTarget, "selectedItem");
         }
-        public static Task SetSelectedItem(ElementRef dxTarget, object value)
+        public static Task SetSelectedItem(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_CollectionWidget_SetOption", dxTarget, "selectedItem", value);
         }
-        public static Task<object> GetSelectedItemKeys(ElementRef dxTarget)
+        public static Task<object> GetSelectedItemKeys(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_CollectionWidget_GetOption", dxTarget, "selectedItemKeys");
         }
-        public static Task SetSelectedItemKeys(ElementRef dxTarget, object value)
+        public static Task SetSelectedItemKeys(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_CollectionWidget_SetOption", dxTarget, "selectedItemKeys", value);
         }
-        public static Task<object> GetSelectedItems(ElementRef dxTarget)
+        public static Task<object> GetSelectedItems(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_CollectionWidget_GetOption", dxTarget, "selectedItems");
         }
-        public static Task SetSelectedItems(ElementRef dxTarget, object value)
+        public static Task SetSelectedItems(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_CollectionWidget_SetOption", dxTarget, "selectedItems", value);
         }
-        public static Task<object> GetDataSourceEx(ElementRef dxTarget)
+        public static Task<object> GetDataSourceEx(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_CollectionWidget_getDataSource_0", dxTarget);
         }
     }
     public class DxMenuBaseInterop: HierarchicalCollectionWidgetInterop
     {
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxMenuBaseOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.DxMenuBaseOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxMenuBase_Init", dxTarget, json);
         }
-        public static Task<object> GetAnimation(ElementRef dxTarget)
+        public static Task<object> GetAnimation(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxMenuBase_GetOption", dxTarget, "animation");
         }
-        public static Task SetAnimation(ElementRef dxTarget, object value)
+        public static Task SetAnimation(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxMenuBase_SetOption", dxTarget, "animation", value);
         }
-        public static Task<string> GetCssClass(ElementRef dxTarget)
+        public static Task<string> GetCssClass(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxMenuBase_GetOption", dxTarget, "cssClass");
         }
-        public static Task SetCssClass(ElementRef dxTarget, string value)
+        public static Task SetCssClass(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxMenuBase_SetOption", dxTarget, "cssClass", value);
         }
-        public static Task<bool?> GetSelectByClick(ElementRef dxTarget)
+        public static Task<bool?> GetSelectByClick(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxMenuBase_GetOption", dxTarget, "selectByClick");
         }
-        public static Task SetSelectByClick(ElementRef dxTarget, bool? value)
+        public static Task SetSelectByClick(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxMenuBase_SetOption", dxTarget, "selectByClick", value);
         }
-        public static Task<string> GetSelectionMode(ElementRef dxTarget)
+        public static Task<string> GetSelectionMode(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxMenuBase_GetOption", dxTarget, "selectionMode");
         }
-        public static Task SetSelectionMode(ElementRef dxTarget, string value)
+        public static Task SetSelectionMode(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxMenuBase_SetOption", dxTarget, "selectionMode", value);
         }
-        public static Task<object> GetShowSubmenuMode(ElementRef dxTarget)
+        public static Task<object> GetShowSubmenuMode(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxMenuBase_GetOption", dxTarget, "showSubmenuMode");
         }
-        public static Task SetShowSubmenuMode(ElementRef dxTarget, object value)
+        public static Task SetShowSubmenuMode(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxMenuBase_SetOption", dxTarget, "showSubmenuMode", value);
         }
-        public static Task SelectItem(ElementRef dxTarget, object itemElement)
+        public static Task SelectItem(ElementReference dxTarget, object itemElement)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxMenuBase_selectItem_0", dxTarget, itemElement);
         }
-        public static Task UnselectItem(ElementRef dxTarget, object itemElement)
+        public static Task UnselectItem(ElementReference dxTarget, object itemElement)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxMenuBase_unselectItem_1", dxTarget, itemElement);
         }
@@ -8319,7 +8319,7 @@ namespace DevExpress.Ui
     {
         public static event EventHandler<JQueryEventArgs> Closed;
         public static event EventHandler<JQueryEventArgs> Opened;
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxDropDownEditorOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.DxDropDownEditorOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownEditor_Init", dxTarget, json);
@@ -8334,63 +8334,63 @@ namespace DevExpress.Ui
         {
             Opened?.Invoke(null, new JQueryEventArgs(identifier));
         }
-        public static Task<bool?> GetAcceptCustomValue(ElementRef dxTarget)
+        public static Task<bool?> GetAcceptCustomValue(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxDropDownEditor_GetOption", dxTarget, "acceptCustomValue");
         }
-        public static Task SetAcceptCustomValue(ElementRef dxTarget, bool? value)
+        public static Task SetAcceptCustomValue(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownEditor_SetOption", dxTarget, "acceptCustomValue", value);
         }
-        public static Task<string> GetApplyValueMode(ElementRef dxTarget)
+        public static Task<string> GetApplyValueMode(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxDropDownEditor_GetOption", dxTarget, "applyValueMode");
         }
-        public static Task SetApplyValueMode(ElementRef dxTarget, string value)
+        public static Task SetApplyValueMode(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownEditor_SetOption", dxTarget, "applyValueMode", value);
         }
-        public static Task<bool?> GetDeferRendering(ElementRef dxTarget)
+        public static Task<bool?> GetDeferRendering(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxDropDownEditor_GetOption", dxTarget, "deferRendering");
         }
-        public static Task SetDeferRendering(ElementRef dxTarget, bool? value)
+        public static Task SetDeferRendering(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownEditor_SetOption", dxTarget, "deferRendering", value);
         }
-        public static Task<object> GetDropDownButtonTemplate(ElementRef dxTarget)
+        public static Task<object> GetDropDownButtonTemplate(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownEditor_GetOption", dxTarget, "dropDownButtonTemplate");
         }
-        public static Task SetDropDownButtonTemplate(ElementRef dxTarget, object value)
+        public static Task SetDropDownButtonTemplate(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownEditor_SetOption", dxTarget, "dropDownButtonTemplate", value);
         }
-        public static Task<bool?> GetOpened(ElementRef dxTarget)
+        public static Task<bool?> GetOpened(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxDropDownEditor_GetOption", dxTarget, "opened");
         }
-        public static Task SetOpened(ElementRef dxTarget, bool? value)
+        public static Task SetOpened(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownEditor_SetOption", dxTarget, "opened", value);
         }
-        public static Task Close(ElementRef dxTarget)
+        public static Task Close(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownEditor_close_0", dxTarget);
         }
-        public static Task<object> Content(ElementRef dxTarget)
+        public static Task<object> Content(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownEditor_content_1", dxTarget);
         }
-        public static Task<object> Field(ElementRef dxTarget)
+        public static Task<object> Field(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownEditor_field_2", dxTarget);
         }
-        public static Task Open(ElementRef dxTarget)
+        public static Task Open(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownEditor_open_3", dxTarget);
         }
-        public static Task Reset(ElementRef dxTarget)
+        public static Task Reset(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownEditor_reset_4", dxTarget);
         }
@@ -8399,7 +8399,7 @@ namespace DevExpress.Ui
     {
         public static event EventHandler<JQueryEventArgs> ItemClick;
         public static event EventHandler<JQueryEventArgs> SelectionChanged;
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxDropDownListOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.DxDropDownListOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownList_Init", dxTarget, json);
@@ -8414,135 +8414,135 @@ namespace DevExpress.Ui
         {
             SelectionChanged?.Invoke(null, new JQueryEventArgs(identifier));
         }
-        public static Task<string> GetDisplayValue(ElementRef dxTarget)
+        public static Task<string> GetDisplayValue(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxDropDownList_GetOption", dxTarget, "displayValue");
         }
-        public static Task SetDisplayValue(ElementRef dxTarget, string value)
+        public static Task SetDisplayValue(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownList_SetOption", dxTarget, "displayValue", value);
         }
-        public static Task<bool?> GetGrouped(ElementRef dxTarget)
+        public static Task<bool?> GetGrouped(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxDropDownList_GetOption", dxTarget, "grouped");
         }
-        public static Task SetGrouped(ElementRef dxTarget, bool? value)
+        public static Task SetGrouped(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownList_SetOption", dxTarget, "grouped", value);
         }
-        public static Task<object> GetGroupTemplate(ElementRef dxTarget)
+        public static Task<object> GetGroupTemplate(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownList_GetOption", dxTarget, "groupTemplate");
         }
-        public static Task SetGroupTemplate(ElementRef dxTarget, object value)
+        public static Task SetGroupTemplate(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownList_SetOption", dxTarget, "groupTemplate", value);
         }
-        public static Task<float?> GetMinSearchLength(ElementRef dxTarget)
+        public static Task<float?> GetMinSearchLength(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DxDropDownList_GetOption", dxTarget, "minSearchLength");
         }
-        public static Task SetMinSearchLength(ElementRef dxTarget, float? value)
+        public static Task SetMinSearchLength(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownList_SetOption", dxTarget, "minSearchLength", value);
         }
-        public static Task<string> GetNoDataText(ElementRef dxTarget)
+        public static Task<string> GetNoDataText(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxDropDownList_GetOption", dxTarget, "noDataText");
         }
-        public static Task SetNoDataText(ElementRef dxTarget, string value)
+        public static Task SetNoDataText(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownList_SetOption", dxTarget, "noDataText", value);
         }
-        public static Task<bool?> GetSearchEnabled(ElementRef dxTarget)
+        public static Task<bool?> GetSearchEnabled(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxDropDownList_GetOption", dxTarget, "searchEnabled");
         }
-        public static Task SetSearchEnabled(ElementRef dxTarget, bool? value)
+        public static Task SetSearchEnabled(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownList_SetOption", dxTarget, "searchEnabled", value);
         }
-        public static Task<object> GetSearchExpr(ElementRef dxTarget)
+        public static Task<object> GetSearchExpr(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownList_GetOption", dxTarget, "searchExpr");
         }
-        public static Task SetSearchExpr(ElementRef dxTarget, object value)
+        public static Task SetSearchExpr(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownList_SetOption", dxTarget, "searchExpr", value);
         }
-        public static Task<string> GetSearchMode(ElementRef dxTarget)
+        public static Task<string> GetSearchMode(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxDropDownList_GetOption", dxTarget, "searchMode");
         }
-        public static Task SetSearchMode(ElementRef dxTarget, string value)
+        public static Task SetSearchMode(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownList_SetOption", dxTarget, "searchMode", value);
         }
-        public static Task<float?> GetSearchTimeout(ElementRef dxTarget)
+        public static Task<float?> GetSearchTimeout(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DxDropDownList_GetOption", dxTarget, "searchTimeout");
         }
-        public static Task SetSearchTimeout(ElementRef dxTarget, float? value)
+        public static Task SetSearchTimeout(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownList_SetOption", dxTarget, "searchTimeout", value);
         }
-        public static Task<object> GetSelectedItem(ElementRef dxTarget)
+        public static Task<object> GetSelectedItem(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownList_GetOption", dxTarget, "selectedItem");
         }
-        public static Task SetSelectedItem(ElementRef dxTarget, object value)
+        public static Task SetSelectedItem(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownList_SetOption", dxTarget, "selectedItem", value);
         }
-        public static Task<bool?> GetShowDataBeforeSearch(ElementRef dxTarget)
+        public static Task<bool?> GetShowDataBeforeSearch(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxDropDownList_GetOption", dxTarget, "showDataBeforeSearch");
         }
-        public static Task SetShowDataBeforeSearch(ElementRef dxTarget, bool? value)
+        public static Task SetShowDataBeforeSearch(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownList_SetOption", dxTarget, "showDataBeforeSearch", value);
         }
-        public static Task<object> GetDataSource(ElementRef dxTarget)
+        public static Task<object> GetDataSource(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownList_GetOption", dxTarget, "dataSource");
         }
-        public static Task SetDataSource(ElementRef dxTarget, object value)
+        public static Task SetDataSource(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownList_SetOption", dxTarget, "dataSource", value);
         }
-        public static Task<object> GetDisplayExpr(ElementRef dxTarget)
+        public static Task<object> GetDisplayExpr(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownList_GetOption", dxTarget, "displayExpr");
         }
-        public static Task SetDisplayExpr(ElementRef dxTarget, object value)
+        public static Task SetDisplayExpr(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownList_SetOption", dxTarget, "displayExpr", value);
         }
-        public static Task<object> GetItems(ElementRef dxTarget)
+        public static Task<object> GetItems(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownList_GetOption", dxTarget, "items");
         }
-        public static Task SetItems(ElementRef dxTarget, object value)
+        public static Task SetItems(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownList_SetOption", dxTarget, "items", value);
         }
-        public static Task<object> GetItemTemplate(ElementRef dxTarget)
+        public static Task<object> GetItemTemplate(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownList_GetOption", dxTarget, "itemTemplate");
         }
-        public static Task SetItemTemplate(ElementRef dxTarget, object value)
+        public static Task SetItemTemplate(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownList_SetOption", dxTarget, "itemTemplate", value);
         }
-        public static Task<object> GetValueExpr(ElementRef dxTarget)
+        public static Task<object> GetValueExpr(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownList_GetOption", dxTarget, "valueExpr");
         }
-        public static Task SetValueExpr(ElementRef dxTarget, object value)
+        public static Task SetValueExpr(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownList_SetOption", dxTarget, "valueExpr", value);
         }
-        public static Task<object> GetDataSourceEx(ElementRef dxTarget)
+        public static Task<object> GetDataSourceEx(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxDropDownList_getDataSource_0", dxTarget);
         }
@@ -8551,7 +8551,7 @@ namespace DevExpress.Ui
     {
         public static event EventHandler<(JQueryEventArgs, string)> ValueChanged;
 
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.EditorOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.EditorOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Editor_Init", dxTarget, json);
@@ -8562,210 +8562,210 @@ namespace DevExpress.Ui
             ValueChanged?.Invoke(null, (new JQueryEventArgs(identifier), value));
         }
 
-        public static Task<bool?> GetIsValid(ElementRef dxTarget)
+        public static Task<bool?> GetIsValid(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_Editor_GetOption", dxTarget, "isValid");
         }
-        public static Task SetIsValid(ElementRef dxTarget, bool? value)
+        public static Task SetIsValid(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Editor_SetOption", dxTarget, "isValid", value);
         }
-        public static Task<bool?> GetReadOnly(ElementRef dxTarget)
+        public static Task<bool?> GetReadOnly(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_Editor_GetOption", dxTarget, "readOnly");
         }
-        public static Task SetReadOnly(ElementRef dxTarget, bool? value)
+        public static Task SetReadOnly(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Editor_SetOption", dxTarget, "readOnly", value);
         }
-        public static Task<object> GetValidationError(ElementRef dxTarget)
+        public static Task<object> GetValidationError(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Editor_GetOption", dxTarget, "validationError");
         }
-        public static Task SetValidationError(ElementRef dxTarget, object value)
+        public static Task SetValidationError(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Editor_SetOption", dxTarget, "validationError", value);
         }
-        public static Task<string> GetValidationMessageMode(ElementRef dxTarget)
+        public static Task<string> GetValidationMessageMode(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_Editor_GetOption", dxTarget, "validationMessageMode");
         }
-        public static Task SetValidationMessageMode(ElementRef dxTarget, string value)
+        public static Task SetValidationMessageMode(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Editor_SetOption", dxTarget, "validationMessageMode", value);
         }
-        public static Task<object> GetValue(ElementRef dxTarget)
+        public static Task<object> GetValue(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Editor_GetOption", dxTarget, "value");
         }
-        public static Task SetValue(ElementRef dxTarget, object value)
+        public static Task SetValue(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Editor_SetOption", dxTarget, "value", value);
         }
-        public static Task Reset(ElementRef dxTarget)
+        public static Task Reset(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Editor_reset_0", dxTarget);
         }
     }
     public class DataExpressionMixinInterop
     {
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DataExpressionMixinOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.DataExpressionMixinOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataExpressionMixin_Init", dxTarget, json);
         }
-        public static Task<object> GetDataSource(ElementRef dxTarget)
+        public static Task<object> GetDataSource(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataExpressionMixin_GetOption", dxTarget, "dataSource");
         }
-        public static Task SetDataSource(ElementRef dxTarget, object value)
+        public static Task SetDataSource(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataExpressionMixin_SetOption", dxTarget, "dataSource", value);
         }
-        public static Task<object> GetDisplayExpr(ElementRef dxTarget)
+        public static Task<object> GetDisplayExpr(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataExpressionMixin_GetOption", dxTarget, "displayExpr");
         }
-        public static Task SetDisplayExpr(ElementRef dxTarget, object value)
+        public static Task SetDisplayExpr(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataExpressionMixin_SetOption", dxTarget, "displayExpr", value);
         }
-        public static Task<object> GetItems(ElementRef dxTarget)
+        public static Task<object> GetItems(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataExpressionMixin_GetOption", dxTarget, "items");
         }
-        public static Task SetItems(ElementRef dxTarget, object value)
+        public static Task SetItems(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataExpressionMixin_SetOption", dxTarget, "items", value);
         }
-        public static Task<object> GetItemTemplate(ElementRef dxTarget)
+        public static Task<object> GetItemTemplate(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataExpressionMixin_GetOption", dxTarget, "itemTemplate");
         }
-        public static Task SetItemTemplate(ElementRef dxTarget, object value)
+        public static Task SetItemTemplate(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataExpressionMixin_SetOption", dxTarget, "itemTemplate", value);
         }
-        public static Task<object> GetValue(ElementRef dxTarget)
+        public static Task<object> GetValue(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataExpressionMixin_GetOption", dxTarget, "value");
         }
-        public static Task SetValue(ElementRef dxTarget, object value)
+        public static Task SetValue(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataExpressionMixin_SetOption", dxTarget, "value", value);
         }
-        public static Task<object> GetValueExpr(ElementRef dxTarget)
+        public static Task<object> GetValueExpr(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataExpressionMixin_GetOption", dxTarget, "valueExpr");
         }
-        public static Task SetValueExpr(ElementRef dxTarget, object value)
+        public static Task SetValueExpr(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataExpressionMixin_SetOption", dxTarget, "valueExpr", value);
         }
-        public static Task<object> GetDataSourceEx(ElementRef dxTarget)
+        public static Task<object> GetDataSourceEx(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DataExpressionMixin_getDataSource_0", dxTarget);
         }
     }
     public class HierarchicalCollectionWidgetInterop: CollectionWidgetInterop
     {
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.HierarchicalCollectionWidgetOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.HierarchicalCollectionWidgetOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_HierarchicalCollectionWidget_Init", dxTarget, json);
         }
-        public static Task<object> GetDisabledExpr(ElementRef dxTarget)
+        public static Task<object> GetDisabledExpr(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_HierarchicalCollectionWidget_GetOption", dxTarget, "disabledExpr");
         }
-        public static Task SetDisabledExpr(ElementRef dxTarget, object value)
+        public static Task SetDisabledExpr(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_HierarchicalCollectionWidget_SetOption", dxTarget, "disabledExpr", value);
         }
-        public static Task<object> GetDisplayExpr(ElementRef dxTarget)
+        public static Task<object> GetDisplayExpr(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_HierarchicalCollectionWidget_GetOption", dxTarget, "displayExpr");
         }
-        public static Task SetDisplayExpr(ElementRef dxTarget, object value)
+        public static Task SetDisplayExpr(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_HierarchicalCollectionWidget_SetOption", dxTarget, "displayExpr", value);
         }
-        public static Task<object> GetItemsExpr(ElementRef dxTarget)
+        public static Task<object> GetItemsExpr(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_HierarchicalCollectionWidget_GetOption", dxTarget, "itemsExpr");
         }
-        public static Task SetItemsExpr(ElementRef dxTarget, object value)
+        public static Task SetItemsExpr(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_HierarchicalCollectionWidget_SetOption", dxTarget, "itemsExpr", value);
         }
-        public static Task<object> GetSelectedExpr(ElementRef dxTarget)
+        public static Task<object> GetSelectedExpr(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_HierarchicalCollectionWidget_GetOption", dxTarget, "selectedExpr");
         }
-        public static Task SetSelectedExpr(ElementRef dxTarget, object value)
+        public static Task SetSelectedExpr(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_HierarchicalCollectionWidget_SetOption", dxTarget, "selectedExpr", value);
         }
     }
     public class DxPivotGridSummaryCellInterop
     {
-        public static Task<object> Child(ElementRef dxTarget, string direction, object fieldValue)
+        public static Task<object> Child(ElementReference dxTarget, string direction, object fieldValue)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGridSummaryCell_child_0", dxTarget, direction, fieldValue);
         }
-        public static Task<object> Children(ElementRef dxTarget, string direction)
+        public static Task<object> Children(ElementReference dxTarget, string direction)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGridSummaryCell_children_1", dxTarget, direction);
         }
-        public static Task<object> Field(ElementRef dxTarget, string area)
+        public static Task<object> Field(ElementReference dxTarget, string area)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGridSummaryCell_field_2", dxTarget, area);
         }
-        public static Task<object> GrandTotal(ElementRef dxTarget)
+        public static Task<object> GrandTotal(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGridSummaryCell_grandTotal_3", dxTarget);
         }
-        public static Task<object> GrandTotal(ElementRef dxTarget, string direction)
+        public static Task<object> GrandTotal(ElementReference dxTarget, string direction)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGridSummaryCell_grandTotal_4", dxTarget, direction);
         }
-        public static Task<object> Next(ElementRef dxTarget, string direction)
+        public static Task<object> Next(ElementReference dxTarget, string direction)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGridSummaryCell_next_5", dxTarget, direction);
         }
-        public static Task<object> Next(ElementRef dxTarget, string direction, bool allowCrossGroup)
+        public static Task<object> Next(ElementReference dxTarget, string direction, bool allowCrossGroup)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGridSummaryCell_next_6", dxTarget, direction, allowCrossGroup);
         }
-        public static Task<object> Parent(ElementRef dxTarget, string direction)
+        public static Task<object> Parent(ElementReference dxTarget, string direction)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGridSummaryCell_parent_7", dxTarget, direction);
         }
-        public static Task<object> Prev(ElementRef dxTarget, string direction)
+        public static Task<object> Prev(ElementReference dxTarget, string direction)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGridSummaryCell_prev_8", dxTarget, direction);
         }
-        public static Task<object> Prev(ElementRef dxTarget, string direction, bool allowCrossGroup)
+        public static Task<object> Prev(ElementReference dxTarget, string direction, bool allowCrossGroup)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGridSummaryCell_prev_9", dxTarget, direction, allowCrossGroup);
         }
-        public static Task<object> Slice(ElementRef dxTarget, object field, object value)
+        public static Task<object> Slice(ElementReference dxTarget, object field, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGridSummaryCell_slice_10", dxTarget, field, value);
         }
-        public static Task<object> ValueEx(ElementRef dxTarget)
+        public static Task<object> ValueEx(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGridSummaryCell_value_11", dxTarget);
         }
-        public static Task<object> ValueEx(ElementRef dxTarget, object field)
+        public static Task<object> ValueEx(ElementReference dxTarget, object field)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGridSummaryCell_value_12", dxTarget, field);
         }
-        public static Task<object> ValueEx(ElementRef dxTarget, object field, bool isCalculatedValue)
+        public static Task<object> ValueEx(ElementReference dxTarget, object field, bool isCalculatedValue)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGridSummaryCell_value_13", dxTarget, field, isCalculatedValue);
         }
-        public static Task<object> ValueEx(ElementRef dxTarget, bool isCalculatedValue)
+        public static Task<object> ValueEx(ElementReference dxTarget, bool isCalculatedValue)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPivotGridSummaryCell_value_14", dxTarget, isCalculatedValue);
         }
@@ -8774,7 +8774,7 @@ namespace DevExpress.Ui
     {
         public static event EventHandler<JQueryEventArgs> Scroll;
         public static event EventHandler<JQueryEventArgs> Updated;
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxScrollableOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.DxScrollableOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScrollable_Init", dxTarget, json);
@@ -8789,171 +8789,171 @@ namespace DevExpress.Ui
         {
             Updated?.Invoke(null, new JQueryEventArgs(identifier));
         }
-        public static Task<bool?> GetBounceEnabled(ElementRef dxTarget)
+        public static Task<bool?> GetBounceEnabled(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxScrollable_GetOption", dxTarget, "bounceEnabled");
         }
-        public static Task SetBounceEnabled(ElementRef dxTarget, bool? value)
+        public static Task SetBounceEnabled(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScrollable_SetOption", dxTarget, "bounceEnabled", value);
         }
-        public static Task<string> GetDirection(ElementRef dxTarget)
+        public static Task<string> GetDirection(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxScrollable_GetOption", dxTarget, "direction");
         }
-        public static Task SetDirection(ElementRef dxTarget, string value)
+        public static Task SetDirection(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScrollable_SetOption", dxTarget, "direction", value);
         }
-        public static Task<bool?> GetDisabled(ElementRef dxTarget)
+        public static Task<bool?> GetDisabled(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxScrollable_GetOption", dxTarget, "disabled");
         }
-        public static Task SetDisabled(ElementRef dxTarget, bool? value)
+        public static Task SetDisabled(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScrollable_SetOption", dxTarget, "disabled", value);
         }
-        public static Task<bool?> GetScrollByContent(ElementRef dxTarget)
+        public static Task<bool?> GetScrollByContent(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxScrollable_GetOption", dxTarget, "scrollByContent");
         }
-        public static Task SetScrollByContent(ElementRef dxTarget, bool? value)
+        public static Task SetScrollByContent(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScrollable_SetOption", dxTarget, "scrollByContent", value);
         }
-        public static Task<bool?> GetScrollByThumb(ElementRef dxTarget)
+        public static Task<bool?> GetScrollByThumb(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxScrollable_GetOption", dxTarget, "scrollByThumb");
         }
-        public static Task SetScrollByThumb(ElementRef dxTarget, bool? value)
+        public static Task SetScrollByThumb(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScrollable_SetOption", dxTarget, "scrollByThumb", value);
         }
-        public static Task<string> GetShowScrollbar(ElementRef dxTarget)
+        public static Task<string> GetShowScrollbar(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxScrollable_GetOption", dxTarget, "showScrollbar");
         }
-        public static Task SetShowScrollbar(ElementRef dxTarget, string value)
+        public static Task SetShowScrollbar(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScrollable_SetOption", dxTarget, "showScrollbar", value);
         }
-        public static Task<bool?> GetUseNative(ElementRef dxTarget)
+        public static Task<bool?> GetUseNative(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxScrollable_GetOption", dxTarget, "useNative");
         }
-        public static Task SetUseNative(ElementRef dxTarget, bool? value)
+        public static Task SetUseNative(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScrollable_SetOption", dxTarget, "useNative", value);
         }
-        public static Task<float> ClientHeight(ElementRef dxTarget)
+        public static Task<float> ClientHeight(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float>("BlazorDevExtreme_DxScrollable_clientHeight_0", dxTarget);
         }
-        public static Task<float> ClientWidth(ElementRef dxTarget)
+        public static Task<float> ClientWidth(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float>("BlazorDevExtreme_DxScrollable_clientWidth_1", dxTarget);
         }
-        public static Task<object> Content(ElementRef dxTarget)
+        public static Task<object> Content(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScrollable_content_2", dxTarget);
         }
-        public static Task ScrollBy(ElementRef dxTarget, float distance)
+        public static Task ScrollBy(ElementReference dxTarget, float distance)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScrollable_scrollBy_3", dxTarget, distance);
         }
-        public static Task ScrollBy(ElementRef dxTarget, object distanceObject)
+        public static Task ScrollBy(ElementReference dxTarget, object distanceObject)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScrollable_scrollBy_4", dxTarget, distanceObject);
         }
-        public static Task<float> ScrollHeight(ElementRef dxTarget)
+        public static Task<float> ScrollHeight(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float>("BlazorDevExtreme_DxScrollable_scrollHeight_5", dxTarget);
         }
-        public static Task<float> ScrollLeft(ElementRef dxTarget)
+        public static Task<float> ScrollLeft(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float>("BlazorDevExtreme_DxScrollable_scrollLeft_6", dxTarget);
         }
-        public static Task<object> ScrollOffset(ElementRef dxTarget)
+        public static Task<object> ScrollOffset(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScrollable_scrollOffset_7", dxTarget);
         }
-        public static Task ScrollTo(ElementRef dxTarget, float targetLocation)
+        public static Task ScrollTo(ElementReference dxTarget, float targetLocation)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScrollable_scrollTo_8", dxTarget, targetLocation);
         }
-        public static Task ScrollTo(ElementRef dxTarget, object targetLocation)
+        public static Task ScrollTo(ElementReference dxTarget, object targetLocation)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScrollable_scrollTo_9", dxTarget, targetLocation);
         }
-        public static Task ScrollToElement(ElementRef dxTarget, object element)
+        public static Task ScrollToElement(ElementReference dxTarget, object element)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScrollable_scrollToElement_10", dxTarget, element);
         }
-        public static Task<float> ScrollTop(ElementRef dxTarget)
+        public static Task<float> ScrollTop(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float>("BlazorDevExtreme_DxScrollable_scrollTop_11", dxTarget);
         }
-        public static Task<float> ScrollWidth(ElementRef dxTarget)
+        public static Task<float> ScrollWidth(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float>("BlazorDevExtreme_DxScrollable_scrollWidth_12", dxTarget);
         }
-        public static Task<object> Update(ElementRef dxTarget)
+        public static Task<object> Update(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxScrollable_update_13", dxTarget);
         }
     }
     public class DxSliderBaseInterop: DxTrackBarInterop
     {
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxSliderBaseOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.DxSliderBaseOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSliderBase_Init", dxTarget, json);
         }
-        public static Task<float?> GetKeyStep(ElementRef dxTarget)
+        public static Task<float?> GetKeyStep(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DxSliderBase_GetOption", dxTarget, "keyStep");
         }
-        public static Task SetKeyStep(ElementRef dxTarget, float? value)
+        public static Task SetKeyStep(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSliderBase_SetOption", dxTarget, "keyStep", value);
         }
-        public static Task<object> GetLabel(ElementRef dxTarget)
+        public static Task<object> GetLabel(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSliderBase_GetOption", dxTarget, "label");
         }
-        public static Task SetLabel(ElementRef dxTarget, object value)
+        public static Task SetLabel(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSliderBase_SetOption", dxTarget, "label", value);
         }
-        public static Task<string> GetName(ElementRef dxTarget)
+        public static Task<string> GetName(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxSliderBase_GetOption", dxTarget, "name");
         }
-        public static Task SetName(ElementRef dxTarget, string value)
+        public static Task SetName(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSliderBase_SetOption", dxTarget, "name", value);
         }
-        public static Task<bool?> GetShowRange(ElementRef dxTarget)
+        public static Task<bool?> GetShowRange(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxSliderBase_GetOption", dxTarget, "showRange");
         }
-        public static Task SetShowRange(ElementRef dxTarget, bool? value)
+        public static Task SetShowRange(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSliderBase_SetOption", dxTarget, "showRange", value);
         }
-        public static Task<float?> GetStep(ElementRef dxTarget)
+        public static Task<float?> GetStep(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DxSliderBase_GetOption", dxTarget, "step");
         }
-        public static Task SetStep(ElementRef dxTarget, float? value)
+        public static Task SetStep(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSliderBase_SetOption", dxTarget, "step", value);
         }
-        public static Task<object> GetTooltip(ElementRef dxTarget)
+        public static Task<object> GetTooltip(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSliderBase_GetOption", dxTarget, "tooltip");
         }
-        public static Task SetTooltip(ElementRef dxTarget, object value)
+        public static Task SetTooltip(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSliderBase_SetOption", dxTarget, "tooltip", value);
         }
@@ -8971,7 +8971,7 @@ namespace DevExpress.Ui
         public static event EventHandler<JQueryEventArgs> KeyPress;
         public static event EventHandler<JQueryEventArgs> KeyUp;
         public static event EventHandler<JQueryEventArgs> Paste;
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxTextEditorOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.DxTextEditorOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTextEditor_Init", dxTarget, json);
@@ -9031,187 +9031,187 @@ namespace DevExpress.Ui
         {
             Paste?.Invoke(null, new JQueryEventArgs(identifier));
         }
-        public static Task<object> GetInputAttr(ElementRef dxTarget)
+        public static Task<object> GetInputAttr(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTextEditor_GetOption", dxTarget, "inputAttr");
         }
-        public static Task SetInputAttr(ElementRef dxTarget, object value)
+        public static Task SetInputAttr(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTextEditor_SetOption", dxTarget, "inputAttr", value);
         }
-        public static Task<string> GetMask(ElementRef dxTarget)
+        public static Task<string> GetMask(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxTextEditor_GetOption", dxTarget, "mask");
         }
-        public static Task SetMask(ElementRef dxTarget, string value)
+        public static Task SetMask(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTextEditor_SetOption", dxTarget, "mask", value);
         }
-        public static Task<string> GetMaskChar(ElementRef dxTarget)
+        public static Task<string> GetMaskChar(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxTextEditor_GetOption", dxTarget, "maskChar");
         }
-        public static Task SetMaskChar(ElementRef dxTarget, string value)
+        public static Task SetMaskChar(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTextEditor_SetOption", dxTarget, "maskChar", value);
         }
-        public static Task<string> GetMaskInvalidMessage(ElementRef dxTarget)
+        public static Task<string> GetMaskInvalidMessage(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxTextEditor_GetOption", dxTarget, "maskInvalidMessage");
         }
-        public static Task SetMaskInvalidMessage(ElementRef dxTarget, string value)
+        public static Task SetMaskInvalidMessage(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTextEditor_SetOption", dxTarget, "maskInvalidMessage", value);
         }
-        public static Task<object> GetMaskRules(ElementRef dxTarget)
+        public static Task<object> GetMaskRules(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTextEditor_GetOption", dxTarget, "maskRules");
         }
-        public static Task SetMaskRules(ElementRef dxTarget, object value)
+        public static Task SetMaskRules(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTextEditor_SetOption", dxTarget, "maskRules", value);
         }
-        public static Task<string> GetName(ElementRef dxTarget)
+        public static Task<string> GetName(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxTextEditor_GetOption", dxTarget, "name");
         }
-        public static Task SetName(ElementRef dxTarget, string value)
+        public static Task SetName(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTextEditor_SetOption", dxTarget, "name", value);
         }
-        public static Task<string> GetPlaceholder(ElementRef dxTarget)
+        public static Task<string> GetPlaceholder(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxTextEditor_GetOption", dxTarget, "placeholder");
         }
-        public static Task SetPlaceholder(ElementRef dxTarget, string value)
+        public static Task SetPlaceholder(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTextEditor_SetOption", dxTarget, "placeholder", value);
         }
-        public static Task<bool?> GetShowClearButton(ElementRef dxTarget)
+        public static Task<bool?> GetShowClearButton(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxTextEditor_GetOption", dxTarget, "showClearButton");
         }
-        public static Task SetShowClearButton(ElementRef dxTarget, bool? value)
+        public static Task SetShowClearButton(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTextEditor_SetOption", dxTarget, "showClearButton", value);
         }
-        public static Task<string> GetShowMaskMode(ElementRef dxTarget)
+        public static Task<string> GetShowMaskMode(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxTextEditor_GetOption", dxTarget, "showMaskMode");
         }
-        public static Task SetShowMaskMode(ElementRef dxTarget, string value)
+        public static Task SetShowMaskMode(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTextEditor_SetOption", dxTarget, "showMaskMode", value);
         }
-        public static Task<bool?> GetSpellcheck(ElementRef dxTarget)
+        public static Task<bool?> GetSpellcheck(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxTextEditor_GetOption", dxTarget, "spellcheck");
         }
-        public static Task SetSpellcheck(ElementRef dxTarget, bool? value)
+        public static Task SetSpellcheck(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTextEditor_SetOption", dxTarget, "spellcheck", value);
         }
-        public static Task<string> GetText(ElementRef dxTarget)
+        public static Task<string> GetText(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxTextEditor_GetOption", dxTarget, "text");
         }
-        public static Task SetText(ElementRef dxTarget, string value)
+        public static Task SetText(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTextEditor_SetOption", dxTarget, "text", value);
         }
-        public static Task<bool?> GetUseMaskedValue(ElementRef dxTarget)
+        public static Task<bool?> GetUseMaskedValue(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxTextEditor_GetOption", dxTarget, "useMaskedValue");
         }
-        public static Task SetUseMaskedValue(ElementRef dxTarget, bool? value)
+        public static Task SetUseMaskedValue(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTextEditor_SetOption", dxTarget, "useMaskedValue", value);
         }
-        public static Task<string> GetValueChangeEvent(ElementRef dxTarget)
+        public static Task<string> GetValueChangeEvent(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxTextEditor_GetOption", dxTarget, "valueChangeEvent");
         }
-        public static Task SetValueChangeEvent(ElementRef dxTarget, string value)
+        public static Task SetValueChangeEvent(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTextEditor_SetOption", dxTarget, "valueChangeEvent", value);
         }
-        public static Task Blur(ElementRef dxTarget)
+        public static Task Blur(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTextEditor_blur_0", dxTarget);
         }
-        public static Task Focus(ElementRef dxTarget)
+        public static Task Focus(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTextEditor_focus_1", dxTarget);
         }
     }
     public class SearchBoxMixinInterop
     {
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.SearchBoxMixinOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.SearchBoxMixinOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_SearchBoxMixin_Init", dxTarget, json);
         }
-        public static Task<object> GetSearchEditorOptions(ElementRef dxTarget)
+        public static Task<object> GetSearchEditorOptions(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_SearchBoxMixin_GetOption", dxTarget, "searchEditorOptions");
         }
-        public static Task SetSearchEditorOptions(ElementRef dxTarget, object value)
+        public static Task SetSearchEditorOptions(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_SearchBoxMixin_SetOption", dxTarget, "searchEditorOptions", value);
         }
-        public static Task<bool?> GetSearchEnabled(ElementRef dxTarget)
+        public static Task<bool?> GetSearchEnabled(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_SearchBoxMixin_GetOption", dxTarget, "searchEnabled");
         }
-        public static Task SetSearchEnabled(ElementRef dxTarget, bool? value)
+        public static Task SetSearchEnabled(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_SearchBoxMixin_SetOption", dxTarget, "searchEnabled", value);
         }
-        public static Task<object> GetSearchExpr(ElementRef dxTarget)
+        public static Task<object> GetSearchExpr(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_SearchBoxMixin_GetOption", dxTarget, "searchExpr");
         }
-        public static Task SetSearchExpr(ElementRef dxTarget, object value)
+        public static Task SetSearchExpr(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_SearchBoxMixin_SetOption", dxTarget, "searchExpr", value);
         }
-        public static Task<string> GetSearchMode(ElementRef dxTarget)
+        public static Task<string> GetSearchMode(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_SearchBoxMixin_GetOption", dxTarget, "searchMode");
         }
-        public static Task SetSearchMode(ElementRef dxTarget, string value)
+        public static Task SetSearchMode(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_SearchBoxMixin_SetOption", dxTarget, "searchMode", value);
         }
-        public static Task<float?> GetSearchTimeout(ElementRef dxTarget)
+        public static Task<float?> GetSearchTimeout(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_SearchBoxMixin_GetOption", dxTarget, "searchTimeout");
         }
-        public static Task SetSearchTimeout(ElementRef dxTarget, float? value)
+        public static Task SetSearchTimeout(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_SearchBoxMixin_SetOption", dxTarget, "searchTimeout", value);
         }
-        public static Task<string> GetSearchValue(ElementRef dxTarget)
+        public static Task<string> GetSearchValue(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_SearchBoxMixin_GetOption", dxTarget, "searchValue");
         }
-        public static Task SetSearchValue(ElementRef dxTarget, string value)
+        public static Task SetSearchValue(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_SearchBoxMixin_SetOption", dxTarget, "searchValue", value);
         }
     }
     public class DxTemplateInterop
     {
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.DxTemplateOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.DxTemplateOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTemplate_Init", dxTarget, json);
         }
-        public static Task<string> GetName(ElementRef dxTarget)
+        public static Task<string> GetName(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxTemplate_GetOption", dxTarget, "name");
         }
-        public static Task SetName(ElementRef dxTarget, string value)
+        public static Task SetName(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTemplate_SetOption", dxTarget, "name", value);
         }
@@ -9219,7 +9219,7 @@ namespace DevExpress.Ui
     public class WidgetInterop: DOMComponentInterop
     {
         public static event EventHandler<JQueryEventArgs> ContentReady;
-        public static Task Init(ElementRef dxTarget, DevExpress.Ui.WidgetOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Ui.WidgetOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Widget_Init", dxTarget, json);
@@ -9229,79 +9229,79 @@ namespace DevExpress.Ui
         {
             ContentReady?.Invoke(null, new JQueryEventArgs(identifier));
         }
-        public static Task<string> GetAccessKey(ElementRef dxTarget)
+        public static Task<string> GetAccessKey(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_Widget_GetOption", dxTarget, "accessKey");
         }
-        public static Task SetAccessKey(ElementRef dxTarget, string value)
+        public static Task SetAccessKey(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Widget_SetOption", dxTarget, "accessKey", value);
         }
-        public static Task<bool?> GetActiveStateEnabled(ElementRef dxTarget)
+        public static Task<bool?> GetActiveStateEnabled(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_Widget_GetOption", dxTarget, "activeStateEnabled");
         }
-        public static Task SetActiveStateEnabled(ElementRef dxTarget, bool? value)
+        public static Task SetActiveStateEnabled(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Widget_SetOption", dxTarget, "activeStateEnabled", value);
         }
-        public static Task<bool?> GetDisabled(ElementRef dxTarget)
+        public static Task<bool?> GetDisabled(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_Widget_GetOption", dxTarget, "disabled");
         }
-        public static Task SetDisabled(ElementRef dxTarget, bool? value)
+        public static Task SetDisabled(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Widget_SetOption", dxTarget, "disabled", value);
         }
-        public static Task<bool?> GetFocusStateEnabled(ElementRef dxTarget)
+        public static Task<bool?> GetFocusStateEnabled(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_Widget_GetOption", dxTarget, "focusStateEnabled");
         }
-        public static Task SetFocusStateEnabled(ElementRef dxTarget, bool? value)
+        public static Task SetFocusStateEnabled(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Widget_SetOption", dxTarget, "focusStateEnabled", value);
         }
-        public static Task<string> GetHint(ElementRef dxTarget)
+        public static Task<string> GetHint(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_Widget_GetOption", dxTarget, "hint");
         }
-        public static Task SetHint(ElementRef dxTarget, string value)
+        public static Task SetHint(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Widget_SetOption", dxTarget, "hint", value);
         }
-        public static Task<bool?> GetHoverStateEnabled(ElementRef dxTarget)
+        public static Task<bool?> GetHoverStateEnabled(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_Widget_GetOption", dxTarget, "hoverStateEnabled");
         }
-        public static Task SetHoverStateEnabled(ElementRef dxTarget, bool? value)
+        public static Task SetHoverStateEnabled(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Widget_SetOption", dxTarget, "hoverStateEnabled", value);
         }
-        public static Task<float?> GetTabIndex(ElementRef dxTarget)
+        public static Task<float?> GetTabIndex(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_Widget_GetOption", dxTarget, "tabIndex");
         }
-        public static Task SetTabIndex(ElementRef dxTarget, float? value)
+        public static Task SetTabIndex(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Widget_SetOption", dxTarget, "tabIndex", value);
         }
-        public static Task<bool?> GetVisible(ElementRef dxTarget)
+        public static Task<bool?> GetVisible(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_Widget_GetOption", dxTarget, "visible");
         }
-        public static Task SetVisible(ElementRef dxTarget, bool? value)
+        public static Task SetVisible(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Widget_SetOption", dxTarget, "visible", value);
         }
-        public static Task Focus(ElementRef dxTarget)
+        public static Task Focus(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Widget_focus_0", dxTarget);
         }
-        public static Task RegisterKeyHandler(ElementRef dxTarget, string key, object handler)
+        public static Task RegisterKeyHandler(ElementReference dxTarget, string key, object handler)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Widget_registerKeyHandler_1", dxTarget, key, handler);
         }
-        public static Task Repaint(ElementRef dxTarget)
+        public static Task Repaint(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_Widget_repaint_2", dxTarget);
         }
@@ -9346,7 +9346,7 @@ namespace DevExpress.Viz
         public static event EventHandler<JQueryEventArgs> Exporting;
         public static event EventHandler<JQueryEventArgs> FileSaving;
         public static event EventHandler<JQueryEventArgs> IncidentOccurred;
-        public static Task Init(ElementRef dxTarget, DevExpress.Viz.BaseWidgetOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Viz.BaseWidgetOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseWidget_Init", dxTarget, json);
@@ -9376,103 +9376,103 @@ namespace DevExpress.Viz
         {
             IncidentOccurred?.Invoke(null, new JQueryEventArgs(identifier));
         }
-        public static Task<object> GetExport(ElementRef dxTarget)
+        public static Task<object> GetExport(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseWidget_GetOption", dxTarget, "export");
         }
-        public static Task SetExport(ElementRef dxTarget, object value)
+        public static Task SetExport(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseWidget_SetOption", dxTarget, "export", value);
         }
-        public static Task<object> GetLoadingIndicator(ElementRef dxTarget)
+        public static Task<object> GetLoadingIndicator(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseWidget_GetOption", dxTarget, "loadingIndicator");
         }
-        public static Task SetLoadingIndicator(ElementRef dxTarget, object value)
+        public static Task SetLoadingIndicator(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseWidget_SetOption", dxTarget, "loadingIndicator", value);
         }
-        public static Task<object> GetMargin(ElementRef dxTarget)
+        public static Task<object> GetMargin(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseWidget_GetOption", dxTarget, "margin");
         }
-        public static Task SetMargin(ElementRef dxTarget, object value)
+        public static Task SetMargin(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseWidget_SetOption", dxTarget, "margin", value);
         }
-        public static Task<bool?> GetPathModified(ElementRef dxTarget)
+        public static Task<bool?> GetPathModified(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_BaseWidget_GetOption", dxTarget, "pathModified");
         }
-        public static Task SetPathModified(ElementRef dxTarget, bool? value)
+        public static Task SetPathModified(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseWidget_SetOption", dxTarget, "pathModified", value);
         }
-        public static Task<bool?> GetRedrawOnResize(ElementRef dxTarget)
+        public static Task<bool?> GetRedrawOnResize(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_BaseWidget_GetOption", dxTarget, "redrawOnResize");
         }
-        public static Task SetRedrawOnResize(ElementRef dxTarget, bool? value)
+        public static Task SetRedrawOnResize(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseWidget_SetOption", dxTarget, "redrawOnResize", value);
         }
-        public static Task<object> GetSize(ElementRef dxTarget)
+        public static Task<object> GetSize(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseWidget_GetOption", dxTarget, "size");
         }
-        public static Task SetSize(ElementRef dxTarget, object value)
+        public static Task SetSize(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseWidget_SetOption", dxTarget, "size", value);
         }
-        public static Task<string> GetTheme(ElementRef dxTarget)
+        public static Task<string> GetTheme(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_BaseWidget_GetOption", dxTarget, "theme");
         }
-        public static Task SetTheme(ElementRef dxTarget, string value)
+        public static Task SetTheme(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseWidget_SetOption", dxTarget, "theme", value);
         }
-        public static Task<object> GetTitle(ElementRef dxTarget)
+        public static Task<object> GetTitle(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseWidget_GetOption", dxTarget, "title");
         }
-        public static Task SetTitle(ElementRef dxTarget, object value)
+        public static Task SetTitle(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseWidget_SetOption", dxTarget, "title", value);
         }
-        public static Task<object> GetTooltip(ElementRef dxTarget)
+        public static Task<object> GetTooltip(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseWidget_GetOption", dxTarget, "tooltip");
         }
-        public static Task SetTooltip(ElementRef dxTarget, object value)
+        public static Task SetTooltip(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseWidget_SetOption", dxTarget, "tooltip", value);
         }
-        public static Task ExportTo(ElementRef dxTarget, string fileName, string format)
+        public static Task ExportTo(ElementReference dxTarget, string fileName, string format)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseWidget_exportTo_0", dxTarget, fileName, format);
         }
-        public static Task<object> GetSizeEx(ElementRef dxTarget)
+        public static Task<object> GetSizeEx(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseWidget_getSize_1", dxTarget);
         }
-        public static Task HideLoadingIndicator(ElementRef dxTarget)
+        public static Task HideLoadingIndicator(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseWidget_hideLoadingIndicator_2", dxTarget);
         }
-        public static Task Print(ElementRef dxTarget)
+        public static Task Print(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseWidget_print_3", dxTarget);
         }
-        public static Task Render(ElementRef dxTarget)
+        public static Task Render(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseWidget_render_4", dxTarget);
         }
-        public static Task ShowLoadingIndicator(ElementRef dxTarget)
+        public static Task ShowLoadingIndicator(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseWidget_showLoadingIndicator_5", dxTarget);
         }
-        public static Task<string> Svg(ElementRef dxTarget)
+        public static Task<string> Svg(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_BaseWidget_svg_6", dxTarget);
         }
@@ -9486,7 +9486,7 @@ namespace DevExpress.Viz
         public static event EventHandler<JQueryEventArgs> SeriesSelectionChanged;
         public static event EventHandler<JQueryEventArgs> ZoomEnd;
         public static event EventHandler<JQueryEventArgs> ZoomStart;
-        public static Task Init(ElementRef dxTarget, DevExpress.Viz.Charts.DxChartOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Viz.Charts.DxChartOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxChart_Init", dxTarget, json);
@@ -9526,223 +9526,223 @@ namespace DevExpress.Viz
         {
             ZoomStart?.Invoke(null, new JQueryEventArgs(identifier));
         }
-        public static Task<bool?> GetAdjustOnZoom(ElementRef dxTarget)
+        public static Task<bool?> GetAdjustOnZoom(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxChart_GetOption", dxTarget, "adjustOnZoom");
         }
-        public static Task SetAdjustOnZoom(ElementRef dxTarget, bool? value)
+        public static Task SetAdjustOnZoom(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxChart_SetOption", dxTarget, "adjustOnZoom", value);
         }
-        public static Task<object> GetArgumentAxis(ElementRef dxTarget)
+        public static Task<object> GetArgumentAxis(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxChart_GetOption", dxTarget, "argumentAxis");
         }
-        public static Task SetArgumentAxis(ElementRef dxTarget, object value)
+        public static Task SetArgumentAxis(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxChart_SetOption", dxTarget, "argumentAxis", value);
         }
-        public static Task<float?> GetBarGroupPadding(ElementRef dxTarget)
+        public static Task<float?> GetBarGroupPadding(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DxChart_GetOption", dxTarget, "barGroupPadding");
         }
-        public static Task SetBarGroupPadding(ElementRef dxTarget, float? value)
+        public static Task SetBarGroupPadding(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxChart_SetOption", dxTarget, "barGroupPadding", value);
         }
-        public static Task<float?> GetBarGroupWidth(ElementRef dxTarget)
+        public static Task<float?> GetBarGroupWidth(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DxChart_GetOption", dxTarget, "barGroupWidth");
         }
-        public static Task SetBarGroupWidth(ElementRef dxTarget, float? value)
+        public static Task SetBarGroupWidth(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxChart_SetOption", dxTarget, "barGroupWidth", value);
         }
-        public static Task<float?> GetBarWidth(ElementRef dxTarget)
+        public static Task<float?> GetBarWidth(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DxChart_GetOption", dxTarget, "barWidth");
         }
-        public static Task SetBarWidth(ElementRef dxTarget, float? value)
+        public static Task SetBarWidth(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxChart_SetOption", dxTarget, "barWidth", value);
         }
-        public static Task<object> GetCommonAxisSettings(ElementRef dxTarget)
+        public static Task<object> GetCommonAxisSettings(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxChart_GetOption", dxTarget, "commonAxisSettings");
         }
-        public static Task SetCommonAxisSettings(ElementRef dxTarget, object value)
+        public static Task SetCommonAxisSettings(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxChart_SetOption", dxTarget, "commonAxisSettings", value);
         }
-        public static Task<object> GetCommonPaneSettings(ElementRef dxTarget)
+        public static Task<object> GetCommonPaneSettings(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxChart_GetOption", dxTarget, "commonPaneSettings");
         }
-        public static Task SetCommonPaneSettings(ElementRef dxTarget, object value)
+        public static Task SetCommonPaneSettings(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxChart_SetOption", dxTarget, "commonPaneSettings", value);
         }
-        public static Task<object> GetCommonSeriesSettings(ElementRef dxTarget)
+        public static Task<object> GetCommonSeriesSettings(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxChart_GetOption", dxTarget, "commonSeriesSettings");
         }
-        public static Task SetCommonSeriesSettings(ElementRef dxTarget, object value)
+        public static Task SetCommonSeriesSettings(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxChart_SetOption", dxTarget, "commonSeriesSettings", value);
         }
-        public static Task<string> GetContainerBackgroundColor(ElementRef dxTarget)
+        public static Task<string> GetContainerBackgroundColor(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxChart_GetOption", dxTarget, "containerBackgroundColor");
         }
-        public static Task SetContainerBackgroundColor(ElementRef dxTarget, string value)
+        public static Task SetContainerBackgroundColor(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxChart_SetOption", dxTarget, "containerBackgroundColor", value);
         }
-        public static Task<object> GetCrosshair(ElementRef dxTarget)
+        public static Task<object> GetCrosshair(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxChart_GetOption", dxTarget, "crosshair");
         }
-        public static Task SetCrosshair(ElementRef dxTarget, object value)
+        public static Task SetCrosshair(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxChart_SetOption", dxTarget, "crosshair", value);
         }
-        public static Task<object> GetDataPrepareSettings(ElementRef dxTarget)
+        public static Task<object> GetDataPrepareSettings(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxChart_GetOption", dxTarget, "dataPrepareSettings");
         }
-        public static Task SetDataPrepareSettings(ElementRef dxTarget, object value)
+        public static Task SetDataPrepareSettings(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxChart_SetOption", dxTarget, "dataPrepareSettings", value);
         }
-        public static Task<string> GetDefaultPane(ElementRef dxTarget)
+        public static Task<string> GetDefaultPane(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxChart_GetOption", dxTarget, "defaultPane");
         }
-        public static Task SetDefaultPane(ElementRef dxTarget, string value)
+        public static Task SetDefaultPane(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxChart_SetOption", dxTarget, "defaultPane", value);
         }
-        public static Task<bool?> GetEqualBarWidth(ElementRef dxTarget)
+        public static Task<bool?> GetEqualBarWidth(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxChart_GetOption", dxTarget, "equalBarWidth");
         }
-        public static Task SetEqualBarWidth(ElementRef dxTarget, bool? value)
+        public static Task SetEqualBarWidth(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxChart_SetOption", dxTarget, "equalBarWidth", value);
         }
-        public static Task<float?> GetMaxBubbleSize(ElementRef dxTarget)
+        public static Task<float?> GetMaxBubbleSize(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DxChart_GetOption", dxTarget, "maxBubbleSize");
         }
-        public static Task SetMaxBubbleSize(ElementRef dxTarget, float? value)
+        public static Task SetMaxBubbleSize(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxChart_SetOption", dxTarget, "maxBubbleSize", value);
         }
-        public static Task<float?> GetMinBubbleSize(ElementRef dxTarget)
+        public static Task<float?> GetMinBubbleSize(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DxChart_GetOption", dxTarget, "minBubbleSize");
         }
-        public static Task SetMinBubbleSize(ElementRef dxTarget, float? value)
+        public static Task SetMinBubbleSize(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxChart_SetOption", dxTarget, "minBubbleSize", value);
         }
-        public static Task<bool?> GetNegativesAsZeroes(ElementRef dxTarget)
+        public static Task<bool?> GetNegativesAsZeroes(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxChart_GetOption", dxTarget, "negativesAsZeroes");
         }
-        public static Task SetNegativesAsZeroes(ElementRef dxTarget, bool? value)
+        public static Task SetNegativesAsZeroes(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxChart_SetOption", dxTarget, "negativesAsZeroes", value);
         }
-        public static Task<object> GetPanes(ElementRef dxTarget)
+        public static Task<object> GetPanes(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxChart_GetOption", dxTarget, "panes");
         }
-        public static Task SetPanes(ElementRef dxTarget, object value)
+        public static Task SetPanes(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxChart_SetOption", dxTarget, "panes", value);
         }
-        public static Task<string> GetResolveLabelOverlapping(ElementRef dxTarget)
+        public static Task<string> GetResolveLabelOverlapping(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxChart_GetOption", dxTarget, "resolveLabelOverlapping");
         }
-        public static Task SetResolveLabelOverlapping(ElementRef dxTarget, string value)
+        public static Task SetResolveLabelOverlapping(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxChart_SetOption", dxTarget, "resolveLabelOverlapping", value);
         }
-        public static Task<bool?> GetRotated(ElementRef dxTarget)
+        public static Task<bool?> GetRotated(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxChart_GetOption", dxTarget, "rotated");
         }
-        public static Task SetRotated(ElementRef dxTarget, bool? value)
+        public static Task SetRotated(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxChart_SetOption", dxTarget, "rotated", value);
         }
-        public static Task<object> GetScrollBar(ElementRef dxTarget)
+        public static Task<object> GetScrollBar(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxChart_GetOption", dxTarget, "scrollBar");
         }
-        public static Task SetScrollBar(ElementRef dxTarget, object value)
+        public static Task SetScrollBar(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxChart_SetOption", dxTarget, "scrollBar", value);
         }
-        public static Task<string> GetScrollingMode(ElementRef dxTarget)
+        public static Task<string> GetScrollingMode(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxChart_GetOption", dxTarget, "scrollingMode");
         }
-        public static Task SetScrollingMode(ElementRef dxTarget, string value)
+        public static Task SetScrollingMode(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxChart_SetOption", dxTarget, "scrollingMode", value);
         }
-        public static Task<string> GetSeriesSelectionMode(ElementRef dxTarget)
+        public static Task<string> GetSeriesSelectionMode(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxChart_GetOption", dxTarget, "seriesSelectionMode");
         }
-        public static Task SetSeriesSelectionMode(ElementRef dxTarget, string value)
+        public static Task SetSeriesSelectionMode(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxChart_SetOption", dxTarget, "seriesSelectionMode", value);
         }
-        public static Task<object> GetSeriesTemplate(ElementRef dxTarget)
+        public static Task<object> GetSeriesTemplate(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxChart_GetOption", dxTarget, "seriesTemplate");
         }
-        public static Task SetSeriesTemplate(ElementRef dxTarget, object value)
+        public static Task SetSeriesTemplate(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxChart_SetOption", dxTarget, "seriesTemplate", value);
         }
-        public static Task<bool?> GetSynchronizeMultiAxes(ElementRef dxTarget)
+        public static Task<bool?> GetSynchronizeMultiAxes(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxChart_GetOption", dxTarget, "synchronizeMultiAxes");
         }
-        public static Task SetSynchronizeMultiAxes(ElementRef dxTarget, bool? value)
+        public static Task SetSynchronizeMultiAxes(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxChart_SetOption", dxTarget, "synchronizeMultiAxes", value);
         }
-        public static Task<bool?> GetUseAggregation(ElementRef dxTarget)
+        public static Task<bool?> GetUseAggregation(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxChart_GetOption", dxTarget, "useAggregation");
         }
-        public static Task SetUseAggregation(ElementRef dxTarget, bool? value)
+        public static Task SetUseAggregation(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxChart_SetOption", dxTarget, "useAggregation", value);
         }
-        public static Task<object> GetValueAxis(ElementRef dxTarget)
+        public static Task<object> GetValueAxis(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxChart_GetOption", dxTarget, "valueAxis");
         }
-        public static Task SetValueAxis(ElementRef dxTarget, object value)
+        public static Task SetValueAxis(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxChart_SetOption", dxTarget, "valueAxis", value);
         }
-        public static Task<string> GetZoomingMode(ElementRef dxTarget)
+        public static Task<string> GetZoomingMode(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxChart_GetOption", dxTarget, "zoomingMode");
         }
-        public static Task SetZoomingMode(ElementRef dxTarget, string value)
+        public static Task SetZoomingMode(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxChart_SetOption", dxTarget, "zoomingMode", value);
         }
-        public static Task ZoomArgument(ElementRef dxTarget, object startValue, object endValue)
+        public static Task ZoomArgument(ElementReference dxTarget, object startValue, object endValue)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxChart_zoomArgument_0", dxTarget, startValue, endValue);
         }
@@ -9750,7 +9750,7 @@ namespace DevExpress.Viz
     public class DxPieChartInterop: BaseChartInterop
     {
         public static event EventHandler<JQueryEventArgs> LegendClick;
-        public static Task Init(ElementRef dxTarget, DevExpress.Viz.Charts.DxPieChartOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Viz.Charts.DxPieChartOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPieChart_Init", dxTarget, json);
@@ -9760,95 +9760,95 @@ namespace DevExpress.Viz
         {
             LegendClick?.Invoke(null, new JQueryEventArgs(identifier));
         }
-        public static Task<object> GetCommonSeriesSettings(ElementRef dxTarget)
+        public static Task<object> GetCommonSeriesSettings(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPieChart_GetOption", dxTarget, "commonSeriesSettings");
         }
-        public static Task SetCommonSeriesSettings(ElementRef dxTarget, object value)
+        public static Task SetCommonSeriesSettings(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPieChart_SetOption", dxTarget, "commonSeriesSettings", value);
         }
-        public static Task<float?> GetDiameter(ElementRef dxTarget)
+        public static Task<float?> GetDiameter(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DxPieChart_GetOption", dxTarget, "diameter");
         }
-        public static Task SetDiameter(ElementRef dxTarget, float? value)
+        public static Task SetDiameter(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPieChart_SetOption", dxTarget, "diameter", value);
         }
-        public static Task<float?> GetInnerRadius(ElementRef dxTarget)
+        public static Task<float?> GetInnerRadius(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DxPieChart_GetOption", dxTarget, "innerRadius");
         }
-        public static Task SetInnerRadius(ElementRef dxTarget, float? value)
+        public static Task SetInnerRadius(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPieChart_SetOption", dxTarget, "innerRadius", value);
         }
-        public static Task<float?> GetMinDiameter(ElementRef dxTarget)
+        public static Task<float?> GetMinDiameter(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DxPieChart_GetOption", dxTarget, "minDiameter");
         }
-        public static Task SetMinDiameter(ElementRef dxTarget, float? value)
+        public static Task SetMinDiameter(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPieChart_SetOption", dxTarget, "minDiameter", value);
         }
-        public static Task<string> GetResolveLabelOverlapping(ElementRef dxTarget)
+        public static Task<string> GetResolveLabelOverlapping(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxPieChart_GetOption", dxTarget, "resolveLabelOverlapping");
         }
-        public static Task SetResolveLabelOverlapping(ElementRef dxTarget, string value)
+        public static Task SetResolveLabelOverlapping(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPieChart_SetOption", dxTarget, "resolveLabelOverlapping", value);
         }
-        public static Task<string> GetSegmentsDirection(ElementRef dxTarget)
+        public static Task<string> GetSegmentsDirection(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxPieChart_GetOption", dxTarget, "segmentsDirection");
         }
-        public static Task SetSegmentsDirection(ElementRef dxTarget, string value)
+        public static Task SetSegmentsDirection(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPieChart_SetOption", dxTarget, "segmentsDirection", value);
         }
-        public static Task<object> GetSeriesTemplate(ElementRef dxTarget)
+        public static Task<object> GetSeriesTemplate(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPieChart_GetOption", dxTarget, "seriesTemplate");
         }
-        public static Task SetSeriesTemplate(ElementRef dxTarget, object value)
+        public static Task SetSeriesTemplate(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPieChart_SetOption", dxTarget, "seriesTemplate", value);
         }
-        public static Task<string> GetSizeGroup(ElementRef dxTarget)
+        public static Task<string> GetSizeGroup(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxPieChart_GetOption", dxTarget, "sizeGroup");
         }
-        public static Task SetSizeGroup(ElementRef dxTarget, string value)
+        public static Task SetSizeGroup(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPieChart_SetOption", dxTarget, "sizeGroup", value);
         }
-        public static Task<float?> GetStartAngle(ElementRef dxTarget)
+        public static Task<float?> GetStartAngle(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DxPieChart_GetOption", dxTarget, "startAngle");
         }
-        public static Task SetStartAngle(ElementRef dxTarget, float? value)
+        public static Task SetStartAngle(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPieChart_SetOption", dxTarget, "startAngle", value);
         }
-        public static Task<string> GetType(ElementRef dxTarget)
+        public static Task<string> GetType(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxPieChart_GetOption", dxTarget, "type");
         }
-        public static Task SetType(ElementRef dxTarget, string value)
+        public static Task SetType(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPieChart_SetOption", dxTarget, "type", value);
         }
-        public static Task<object> GetSeriesEx(ElementRef dxTarget)
+        public static Task<object> GetSeriesEx(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPieChart_getSeries_0", dxTarget);
         }
-        public static Task<object> GetSeriesByName(ElementRef dxTarget, object seriesName)
+        public static Task<object> GetSeriesByName(ElementReference dxTarget, object seriesName)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPieChart_getSeriesByName_1", dxTarget, seriesName);
         }
-        public static Task<object> GetSeriesByPos(ElementRef dxTarget, float seriesIndex)
+        public static Task<object> GetSeriesByPos(ElementReference dxTarget, float seriesIndex)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPieChart_getSeriesByPos_2", dxTarget, seriesIndex);
         }
@@ -9860,7 +9860,7 @@ namespace DevExpress.Viz
         public static event EventHandler<JQueryEventArgs> SeriesClick;
         public static event EventHandler<JQueryEventArgs> SeriesHoverChanged;
         public static event EventHandler<JQueryEventArgs> SeriesSelectionChanged;
-        public static Task Init(ElementRef dxTarget, DevExpress.Viz.Charts.DxPolarChartOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Viz.Charts.DxPolarChartOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPolarChart_Init", dxTarget, json);
@@ -9890,123 +9890,123 @@ namespace DevExpress.Viz
         {
             SeriesSelectionChanged?.Invoke(null, new JQueryEventArgs(identifier));
         }
-        public static Task<object> GetArgumentAxis(ElementRef dxTarget)
+        public static Task<object> GetArgumentAxis(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPolarChart_GetOption", dxTarget, "argumentAxis");
         }
-        public static Task SetArgumentAxis(ElementRef dxTarget, object value)
+        public static Task SetArgumentAxis(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPolarChart_SetOption", dxTarget, "argumentAxis", value);
         }
-        public static Task<float?> GetBarGroupPadding(ElementRef dxTarget)
+        public static Task<float?> GetBarGroupPadding(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DxPolarChart_GetOption", dxTarget, "barGroupPadding");
         }
-        public static Task SetBarGroupPadding(ElementRef dxTarget, float? value)
+        public static Task SetBarGroupPadding(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPolarChart_SetOption", dxTarget, "barGroupPadding", value);
         }
-        public static Task<float?> GetBarGroupWidth(ElementRef dxTarget)
+        public static Task<float?> GetBarGroupWidth(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DxPolarChart_GetOption", dxTarget, "barGroupWidth");
         }
-        public static Task SetBarGroupWidth(ElementRef dxTarget, float? value)
+        public static Task SetBarGroupWidth(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPolarChart_SetOption", dxTarget, "barGroupWidth", value);
         }
-        public static Task<float?> GetBarWidth(ElementRef dxTarget)
+        public static Task<float?> GetBarWidth(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DxPolarChart_GetOption", dxTarget, "barWidth");
         }
-        public static Task SetBarWidth(ElementRef dxTarget, float? value)
+        public static Task SetBarWidth(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPolarChart_SetOption", dxTarget, "barWidth", value);
         }
-        public static Task<object> GetCommonAxisSettings(ElementRef dxTarget)
+        public static Task<object> GetCommonAxisSettings(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPolarChart_GetOption", dxTarget, "commonAxisSettings");
         }
-        public static Task SetCommonAxisSettings(ElementRef dxTarget, object value)
+        public static Task SetCommonAxisSettings(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPolarChart_SetOption", dxTarget, "commonAxisSettings", value);
         }
-        public static Task<object> GetCommonSeriesSettings(ElementRef dxTarget)
+        public static Task<object> GetCommonSeriesSettings(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPolarChart_GetOption", dxTarget, "commonSeriesSettings");
         }
-        public static Task SetCommonSeriesSettings(ElementRef dxTarget, object value)
+        public static Task SetCommonSeriesSettings(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPolarChart_SetOption", dxTarget, "commonSeriesSettings", value);
         }
-        public static Task<string> GetContainerBackgroundColor(ElementRef dxTarget)
+        public static Task<string> GetContainerBackgroundColor(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxPolarChart_GetOption", dxTarget, "containerBackgroundColor");
         }
-        public static Task SetContainerBackgroundColor(ElementRef dxTarget, string value)
+        public static Task SetContainerBackgroundColor(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPolarChart_SetOption", dxTarget, "containerBackgroundColor", value);
         }
-        public static Task<object> GetDataPrepareSettings(ElementRef dxTarget)
+        public static Task<object> GetDataPrepareSettings(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPolarChart_GetOption", dxTarget, "dataPrepareSettings");
         }
-        public static Task SetDataPrepareSettings(ElementRef dxTarget, object value)
+        public static Task SetDataPrepareSettings(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPolarChart_SetOption", dxTarget, "dataPrepareSettings", value);
         }
-        public static Task<bool?> GetEqualBarWidth(ElementRef dxTarget)
+        public static Task<bool?> GetEqualBarWidth(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxPolarChart_GetOption", dxTarget, "equalBarWidth");
         }
-        public static Task SetEqualBarWidth(ElementRef dxTarget, bool? value)
+        public static Task SetEqualBarWidth(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPolarChart_SetOption", dxTarget, "equalBarWidth", value);
         }
-        public static Task<bool?> GetNegativesAsZeroes(ElementRef dxTarget)
+        public static Task<bool?> GetNegativesAsZeroes(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxPolarChart_GetOption", dxTarget, "negativesAsZeroes");
         }
-        public static Task SetNegativesAsZeroes(ElementRef dxTarget, bool? value)
+        public static Task SetNegativesAsZeroes(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPolarChart_SetOption", dxTarget, "negativesAsZeroes", value);
         }
-        public static Task<string> GetResolveLabelOverlapping(ElementRef dxTarget)
+        public static Task<string> GetResolveLabelOverlapping(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxPolarChart_GetOption", dxTarget, "resolveLabelOverlapping");
         }
-        public static Task SetResolveLabelOverlapping(ElementRef dxTarget, string value)
+        public static Task SetResolveLabelOverlapping(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPolarChart_SetOption", dxTarget, "resolveLabelOverlapping", value);
         }
-        public static Task<string> GetSeriesSelectionMode(ElementRef dxTarget)
+        public static Task<string> GetSeriesSelectionMode(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxPolarChart_GetOption", dxTarget, "seriesSelectionMode");
         }
-        public static Task SetSeriesSelectionMode(ElementRef dxTarget, string value)
+        public static Task SetSeriesSelectionMode(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPolarChart_SetOption", dxTarget, "seriesSelectionMode", value);
         }
-        public static Task<object> GetSeriesTemplate(ElementRef dxTarget)
+        public static Task<object> GetSeriesTemplate(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPolarChart_GetOption", dxTarget, "seriesTemplate");
         }
-        public static Task SetSeriesTemplate(ElementRef dxTarget, object value)
+        public static Task SetSeriesTemplate(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPolarChart_SetOption", dxTarget, "seriesTemplate", value);
         }
-        public static Task<bool?> GetUseSpiderWeb(ElementRef dxTarget)
+        public static Task<bool?> GetUseSpiderWeb(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxPolarChart_GetOption", dxTarget, "useSpiderWeb");
         }
-        public static Task SetUseSpiderWeb(ElementRef dxTarget, bool? value)
+        public static Task SetUseSpiderWeb(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPolarChart_SetOption", dxTarget, "useSpiderWeb", value);
         }
-        public static Task<object> GetValueAxis(ElementRef dxTarget)
+        public static Task<object> GetValueAxis(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPolarChart_GetOption", dxTarget, "valueAxis");
         }
-        public static Task SetValueAxis(ElementRef dxTarget, object value)
+        public static Task SetValueAxis(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxPolarChart_SetOption", dxTarget, "valueAxis", value);
         }
@@ -10019,7 +10019,7 @@ namespace DevExpress.Viz
         public static event EventHandler<JQueryEventArgs> PointSelectionChanged;
         public static event EventHandler<JQueryEventArgs> TooltipHidden;
         public static event EventHandler<JQueryEventArgs> TooltipShown;
-        public static Task Init(ElementRef dxTarget, DevExpress.Viz.Charts.BaseChartOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Viz.Charts.BaseChartOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseChart_Init", dxTarget, json);
@@ -10054,179 +10054,179 @@ namespace DevExpress.Viz
         {
             TooltipShown?.Invoke(null, new JQueryEventArgs(identifier));
         }
-        public static Task<object> GetAdaptiveLayout(ElementRef dxTarget)
+        public static Task<object> GetAdaptiveLayout(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseChart_GetOption", dxTarget, "adaptiveLayout");
         }
-        public static Task SetAdaptiveLayout(ElementRef dxTarget, object value)
+        public static Task SetAdaptiveLayout(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseChart_SetOption", dxTarget, "adaptiveLayout", value);
         }
-        public static Task<object> GetAnimation(ElementRef dxTarget)
+        public static Task<object> GetAnimation(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseChart_GetOption", dxTarget, "animation");
         }
-        public static Task SetAnimation(ElementRef dxTarget, object value)
+        public static Task SetAnimation(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseChart_SetOption", dxTarget, "animation", value);
         }
-        public static Task<object> GetCustomizeLabel(ElementRef dxTarget)
+        public static Task<object> GetCustomizeLabel(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseChart_GetOption", dxTarget, "customizeLabel");
         }
-        public static Task SetCustomizeLabel(ElementRef dxTarget, object value)
+        public static Task SetCustomizeLabel(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseChart_SetOption", dxTarget, "customizeLabel", value);
         }
-        public static Task<object> GetCustomizePoint(ElementRef dxTarget)
+        public static Task<object> GetCustomizePoint(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseChart_GetOption", dxTarget, "customizePoint");
         }
-        public static Task SetCustomizePoint(ElementRef dxTarget, object value)
+        public static Task SetCustomizePoint(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseChart_SetOption", dxTarget, "customizePoint", value);
         }
-        public static Task<object> GetDataSource(ElementRef dxTarget)
+        public static Task<object> GetDataSource(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseChart_GetOption", dxTarget, "dataSource");
         }
-        public static Task SetDataSource(ElementRef dxTarget, object value)
+        public static Task SetDataSource(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseChart_SetOption", dxTarget, "dataSource", value);
         }
-        public static Task<object> GetLegend(ElementRef dxTarget)
+        public static Task<object> GetLegend(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseChart_GetOption", dxTarget, "legend");
         }
-        public static Task SetLegend(ElementRef dxTarget, object value)
+        public static Task SetLegend(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseChart_SetOption", dxTarget, "legend", value);
         }
-        public static Task<object> GetPalette(ElementRef dxTarget)
+        public static Task<object> GetPalette(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseChart_GetOption", dxTarget, "palette");
         }
-        public static Task SetPalette(ElementRef dxTarget, object value)
+        public static Task SetPalette(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseChart_SetOption", dxTarget, "palette", value);
         }
-        public static Task<string> GetPaletteExtensionMode(ElementRef dxTarget)
+        public static Task<string> GetPaletteExtensionMode(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_BaseChart_GetOption", dxTarget, "paletteExtensionMode");
         }
-        public static Task SetPaletteExtensionMode(ElementRef dxTarget, string value)
+        public static Task SetPaletteExtensionMode(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseChart_SetOption", dxTarget, "paletteExtensionMode", value);
         }
-        public static Task<string> GetPointSelectionMode(ElementRef dxTarget)
+        public static Task<string> GetPointSelectionMode(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_BaseChart_GetOption", dxTarget, "pointSelectionMode");
         }
-        public static Task SetPointSelectionMode(ElementRef dxTarget, string value)
+        public static Task SetPointSelectionMode(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseChart_SetOption", dxTarget, "pointSelectionMode", value);
         }
-        public static Task<object> GetSeries(ElementRef dxTarget)
+        public static Task<object> GetSeries(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseChart_GetOption", dxTarget, "series");
         }
-        public static Task SetSeries(ElementRef dxTarget, object value)
+        public static Task SetSeries(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseChart_SetOption", dxTarget, "series", value);
         }
-        public static Task ClearSelection(ElementRef dxTarget)
+        public static Task ClearSelection(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseChart_clearSelection_0", dxTarget);
         }
-        public static Task<object> GetAllSeries(ElementRef dxTarget)
+        public static Task<object> GetAllSeries(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseChart_getAllSeries_1", dxTarget);
         }
-        public static Task<object> GetDataSourceEx(ElementRef dxTarget)
+        public static Task<object> GetDataSourceEx(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseChart_getDataSource_2", dxTarget);
         }
-        public static Task<object> GetSeriesByName(ElementRef dxTarget, object seriesName)
+        public static Task<object> GetSeriesByName(ElementReference dxTarget, object seriesName)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseChart_getSeriesByName_3", dxTarget, seriesName);
         }
-        public static Task<object> GetSeriesByPos(ElementRef dxTarget, float seriesIndex)
+        public static Task<object> GetSeriesByPos(ElementReference dxTarget, float seriesIndex)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseChart_getSeriesByPos_4", dxTarget, seriesIndex);
         }
-        public static Task HideTooltip(ElementRef dxTarget)
+        public static Task HideTooltip(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseChart_hideTooltip_5", dxTarget);
         }
-        public static Task Render(ElementRef dxTarget)
+        public static Task Render(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseChart_render_6", dxTarget);
         }
-        public static Task Render(ElementRef dxTarget, object renderOptions)
+        public static Task Render(ElementReference dxTarget, object renderOptions)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseChart_render_7", dxTarget, renderOptions);
         }
     }
     public class DxExporterInterop: ComponentInterop
     {
-        public static Task Init(ElementRef dxTarget, DevExpress.Viz.DxExporterOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Viz.DxExporterOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxExporter_Init", dxTarget, json);
         }
-        public static Task<object> GetExportFormat(ElementRef dxTarget)
+        public static Task<object> GetExportFormat(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxExporter_GetOption", dxTarget, "exportFormat");
         }
-        public static Task SetExportFormat(ElementRef dxTarget, object value)
+        public static Task SetExportFormat(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxExporter_SetOption", dxTarget, "exportFormat", value);
         }
-        public static Task<string> GetFileName(ElementRef dxTarget)
+        public static Task<string> GetFileName(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxExporter_GetOption", dxTarget, "fileName");
         }
-        public static Task SetFileName(ElementRef dxTarget, string value)
+        public static Task SetFileName(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxExporter_SetOption", dxTarget, "fileName", value);
         }
-        public static Task<bool?> GetPrintingEnabled(ElementRef dxTarget)
+        public static Task<bool?> GetPrintingEnabled(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxExporter_GetOption", dxTarget, "printingEnabled");
         }
-        public static Task SetPrintingEnabled(ElementRef dxTarget, bool? value)
+        public static Task SetPrintingEnabled(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxExporter_SetOption", dxTarget, "printingEnabled", value);
         }
-        public static Task<string> GetServerUrl(ElementRef dxTarget)
+        public static Task<string> GetServerUrl(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxExporter_GetOption", dxTarget, "serverUrl");
         }
-        public static Task SetServerUrl(ElementRef dxTarget, string value)
+        public static Task SetServerUrl(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxExporter_SetOption", dxTarget, "serverUrl", value);
         }
-        public static Task<bool?> GetShowMenu(ElementRef dxTarget)
+        public static Task<bool?> GetShowMenu(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxExporter_GetOption", dxTarget, "showMenu");
         }
-        public static Task SetShowMenu(ElementRef dxTarget, bool? value)
+        public static Task SetShowMenu(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxExporter_SetOption", dxTarget, "showMenu", value);
         }
-        public static Task<string> GetSourceContainer(ElementRef dxTarget)
+        public static Task<string> GetSourceContainer(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxExporter_GetOption", dxTarget, "sourceContainer");
         }
-        public static Task SetSourceContainer(ElementRef dxTarget, string value)
+        public static Task SetSourceContainer(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxExporter_SetOption", dxTarget, "sourceContainer", value);
         }
-        public static Task ExportTo(ElementRef dxTarget, string fileName, string format)
+        public static Task ExportTo(ElementReference dxTarget, string fileName, string format)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxExporter_exportTo_0", dxTarget, fileName, format);
         }
-        public static Task Print(ElementRef dxTarget)
+        public static Task Print(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxExporter_print_1", dxTarget);
         }
@@ -10237,7 +10237,7 @@ namespace DevExpress.Viz
         public static event EventHandler<JQueryEventArgs> ItemClick;
         public static event EventHandler<JQueryEventArgs> LegendClick;
         public static event EventHandler<JQueryEventArgs> SelectionChanged;
-        public static Task Init(ElementRef dxTarget, DevExpress.Viz.Funnel.DxFunnelOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Viz.Funnel.DxFunnelOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxFunnel_Init", dxTarget, json);
@@ -10262,155 +10262,155 @@ namespace DevExpress.Viz
         {
             SelectionChanged?.Invoke(null, new JQueryEventArgs(identifier));
         }
-        public static Task<object> GetAdaptiveLayout(ElementRef dxTarget)
+        public static Task<object> GetAdaptiveLayout(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxFunnel_GetOption", dxTarget, "adaptiveLayout");
         }
-        public static Task SetAdaptiveLayout(ElementRef dxTarget, object value)
+        public static Task SetAdaptiveLayout(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxFunnel_SetOption", dxTarget, "adaptiveLayout", value);
         }
-        public static Task<string> GetAlgorithm(ElementRef dxTarget)
+        public static Task<string> GetAlgorithm(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxFunnel_GetOption", dxTarget, "algorithm");
         }
-        public static Task SetAlgorithm(ElementRef dxTarget, string value)
+        public static Task SetAlgorithm(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxFunnel_SetOption", dxTarget, "algorithm", value);
         }
-        public static Task<string> GetArgumentField(ElementRef dxTarget)
+        public static Task<string> GetArgumentField(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxFunnel_GetOption", dxTarget, "argumentField");
         }
-        public static Task SetArgumentField(ElementRef dxTarget, string value)
+        public static Task SetArgumentField(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxFunnel_SetOption", dxTarget, "argumentField", value);
         }
-        public static Task<string> GetColorField(ElementRef dxTarget)
+        public static Task<string> GetColorField(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxFunnel_GetOption", dxTarget, "colorField");
         }
-        public static Task SetColorField(ElementRef dxTarget, string value)
+        public static Task SetColorField(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxFunnel_SetOption", dxTarget, "colorField", value);
         }
-        public static Task<object> GetDataSource(ElementRef dxTarget)
+        public static Task<object> GetDataSource(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxFunnel_GetOption", dxTarget, "dataSource");
         }
-        public static Task SetDataSource(ElementRef dxTarget, object value)
+        public static Task SetDataSource(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxFunnel_SetOption", dxTarget, "dataSource", value);
         }
-        public static Task<bool?> GetHoverEnabled(ElementRef dxTarget)
+        public static Task<bool?> GetHoverEnabled(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxFunnel_GetOption", dxTarget, "hoverEnabled");
         }
-        public static Task SetHoverEnabled(ElementRef dxTarget, bool? value)
+        public static Task SetHoverEnabled(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxFunnel_SetOption", dxTarget, "hoverEnabled", value);
         }
-        public static Task<bool?> GetInverted(ElementRef dxTarget)
+        public static Task<bool?> GetInverted(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxFunnel_GetOption", dxTarget, "inverted");
         }
-        public static Task SetInverted(ElementRef dxTarget, bool? value)
+        public static Task SetInverted(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxFunnel_SetOption", dxTarget, "inverted", value);
         }
-        public static Task<object> GetItem(ElementRef dxTarget)
+        public static Task<object> GetItem(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxFunnel_GetOption", dxTarget, "item");
         }
-        public static Task SetItem(ElementRef dxTarget, object value)
+        public static Task SetItem(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxFunnel_SetOption", dxTarget, "item", value);
         }
-        public static Task<object> GetLabel(ElementRef dxTarget)
+        public static Task<object> GetLabel(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxFunnel_GetOption", dxTarget, "label");
         }
-        public static Task SetLabel(ElementRef dxTarget, object value)
+        public static Task SetLabel(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxFunnel_SetOption", dxTarget, "label", value);
         }
-        public static Task<object> GetLegend(ElementRef dxTarget)
+        public static Task<object> GetLegend(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxFunnel_GetOption", dxTarget, "legend");
         }
-        public static Task SetLegend(ElementRef dxTarget, object value)
+        public static Task SetLegend(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxFunnel_SetOption", dxTarget, "legend", value);
         }
-        public static Task<float?> GetNeckHeight(ElementRef dxTarget)
+        public static Task<float?> GetNeckHeight(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DxFunnel_GetOption", dxTarget, "neckHeight");
         }
-        public static Task SetNeckHeight(ElementRef dxTarget, float? value)
+        public static Task SetNeckHeight(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxFunnel_SetOption", dxTarget, "neckHeight", value);
         }
-        public static Task<float?> GetNeckWidth(ElementRef dxTarget)
+        public static Task<float?> GetNeckWidth(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DxFunnel_GetOption", dxTarget, "neckWidth");
         }
-        public static Task SetNeckWidth(ElementRef dxTarget, float? value)
+        public static Task SetNeckWidth(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxFunnel_SetOption", dxTarget, "neckWidth", value);
         }
-        public static Task<object> GetPalette(ElementRef dxTarget)
+        public static Task<object> GetPalette(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxFunnel_GetOption", dxTarget, "palette");
         }
-        public static Task SetPalette(ElementRef dxTarget, object value)
+        public static Task SetPalette(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxFunnel_SetOption", dxTarget, "palette", value);
         }
-        public static Task<string> GetPaletteExtensionMode(ElementRef dxTarget)
+        public static Task<string> GetPaletteExtensionMode(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxFunnel_GetOption", dxTarget, "paletteExtensionMode");
         }
-        public static Task SetPaletteExtensionMode(ElementRef dxTarget, string value)
+        public static Task SetPaletteExtensionMode(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxFunnel_SetOption", dxTarget, "paletteExtensionMode", value);
         }
-        public static Task<string> GetSelectionMode(ElementRef dxTarget)
+        public static Task<string> GetSelectionMode(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxFunnel_GetOption", dxTarget, "selectionMode");
         }
-        public static Task SetSelectionMode(ElementRef dxTarget, string value)
+        public static Task SetSelectionMode(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxFunnel_SetOption", dxTarget, "selectionMode", value);
         }
-        public static Task<bool?> GetSortData(ElementRef dxTarget)
+        public static Task<bool?> GetSortData(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxFunnel_GetOption", dxTarget, "sortData");
         }
-        public static Task SetSortData(ElementRef dxTarget, bool? value)
+        public static Task SetSortData(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxFunnel_SetOption", dxTarget, "sortData", value);
         }
-        public static Task<string> GetValueField(ElementRef dxTarget)
+        public static Task<string> GetValueField(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxFunnel_GetOption", dxTarget, "valueField");
         }
-        public static Task SetValueField(ElementRef dxTarget, string value)
+        public static Task SetValueField(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxFunnel_SetOption", dxTarget, "valueField", value);
         }
-        public static Task ClearSelection(ElementRef dxTarget)
+        public static Task ClearSelection(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxFunnel_clearSelection_0", dxTarget);
         }
-        public static Task<object> GetAllItems(ElementRef dxTarget)
+        public static Task<object> GetAllItems(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxFunnel_getAllItems_1", dxTarget);
         }
-        public static Task<object> GetDataSourceEx(ElementRef dxTarget)
+        public static Task<object> GetDataSourceEx(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxFunnel_getDataSource_2", dxTarget);
         }
-        public static Task HideTooltip(ElementRef dxTarget)
+        public static Task HideTooltip(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxFunnel_hideTooltip_3", dxTarget);
         }
@@ -10419,7 +10419,7 @@ namespace DevExpress.Viz
     {
         public static event EventHandler<JQueryEventArgs> TooltipHidden;
         public static event EventHandler<JQueryEventArgs> TooltipShown;
-        public static Task Init(ElementRef dxTarget, DevExpress.Viz.Gauges.BaseGaugeOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Viz.Gauges.BaseGaugeOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseGauge_Init", dxTarget, json);
@@ -10434,139 +10434,139 @@ namespace DevExpress.Viz
         {
             TooltipShown?.Invoke(null, new JQueryEventArgs(identifier));
         }
-        public static Task<object> GetAnimation(ElementRef dxTarget)
+        public static Task<object> GetAnimation(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseGauge_GetOption", dxTarget, "animation");
         }
-        public static Task SetAnimation(ElementRef dxTarget, object value)
+        public static Task SetAnimation(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseGauge_SetOption", dxTarget, "animation", value);
         }
-        public static Task<string> GetContainerBackgroundColor(ElementRef dxTarget)
+        public static Task<string> GetContainerBackgroundColor(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_BaseGauge_GetOption", dxTarget, "containerBackgroundColor");
         }
-        public static Task SetContainerBackgroundColor(ElementRef dxTarget, string value)
+        public static Task SetContainerBackgroundColor(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseGauge_SetOption", dxTarget, "containerBackgroundColor", value);
         }
-        public static Task<object> GetRangeContainer(ElementRef dxTarget)
+        public static Task<object> GetRangeContainer(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseGauge_GetOption", dxTarget, "rangeContainer");
         }
-        public static Task SetRangeContainer(ElementRef dxTarget, object value)
+        public static Task SetRangeContainer(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseGauge_SetOption", dxTarget, "rangeContainer", value);
         }
-        public static Task<object> GetScale(ElementRef dxTarget)
+        public static Task<object> GetScale(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseGauge_GetOption", dxTarget, "scale");
         }
-        public static Task SetScale(ElementRef dxTarget, object value)
+        public static Task SetScale(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseGauge_SetOption", dxTarget, "scale", value);
         }
-        public static Task<object> GetSubtitle(ElementRef dxTarget)
+        public static Task<object> GetSubtitle(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseGauge_GetOption", dxTarget, "subtitle");
         }
-        public static Task SetSubtitle(ElementRef dxTarget, object value)
+        public static Task SetSubtitle(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseGauge_SetOption", dxTarget, "subtitle", value);
         }
-        public static Task<object> GetSubvalues(ElementRef dxTarget)
+        public static Task<object> GetSubvalues(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseGauge_GetOption", dxTarget, "subvalues");
         }
-        public static Task SetSubvalues(ElementRef dxTarget, object value)
+        public static Task SetSubvalues(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseGauge_SetOption", dxTarget, "subvalues", value);
         }
-        public static Task<float?> GetValue(ElementRef dxTarget)
+        public static Task<float?> GetValue(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_BaseGauge_GetOption", dxTarget, "value");
         }
-        public static Task SetValue(ElementRef dxTarget, float? value)
+        public static Task SetValue(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseGauge_SetOption", dxTarget, "value", value);
         }
-        public static Task<object> SubvaluesEx(ElementRef dxTarget)
+        public static Task<object> SubvaluesEx(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseGauge_subvalues_0", dxTarget);
         }
-        public static Task SubvaluesEx(ElementRef dxTarget, object subvalues)
+        public static Task SubvaluesEx(ElementReference dxTarget, object subvalues)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseGauge_subvalues_1", dxTarget, subvalues);
         }
-        public static Task<float> ValueEx(ElementRef dxTarget)
+        public static Task<float> ValueEx(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float>("BlazorDevExtreme_BaseGauge_value_2", dxTarget);
         }
-        public static Task ValueEx(ElementRef dxTarget, float value)
+        public static Task ValueEx(ElementReference dxTarget, float value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseGauge_value_3", dxTarget, value);
         }
     }
     public class DxCircularGaugeInterop: BaseGaugeInterop
     {
-        public static Task Init(ElementRef dxTarget, DevExpress.Viz.Gauges.DxCircularGaugeOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Viz.Gauges.DxCircularGaugeOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxCircularGauge_Init", dxTarget, json);
         }
-        public static Task<object> GetGeometry(ElementRef dxTarget)
+        public static Task<object> GetGeometry(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxCircularGauge_GetOption", dxTarget, "geometry");
         }
-        public static Task SetGeometry(ElementRef dxTarget, object value)
+        public static Task SetGeometry(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxCircularGauge_SetOption", dxTarget, "geometry", value);
         }
-        public static Task<object> GetSubvalueIndicator(ElementRef dxTarget)
+        public static Task<object> GetSubvalueIndicator(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxCircularGauge_GetOption", dxTarget, "subvalueIndicator");
         }
-        public static Task SetSubvalueIndicator(ElementRef dxTarget, object value)
+        public static Task SetSubvalueIndicator(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxCircularGauge_SetOption", dxTarget, "subvalueIndicator", value);
         }
-        public static Task<object> GetValueIndicator(ElementRef dxTarget)
+        public static Task<object> GetValueIndicator(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxCircularGauge_GetOption", dxTarget, "valueIndicator");
         }
-        public static Task SetValueIndicator(ElementRef dxTarget, object value)
+        public static Task SetValueIndicator(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxCircularGauge_SetOption", dxTarget, "valueIndicator", value);
         }
     }
     public class DxLinearGaugeInterop: BaseGaugeInterop
     {
-        public static Task Init(ElementRef dxTarget, DevExpress.Viz.Gauges.DxLinearGaugeOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Viz.Gauges.DxLinearGaugeOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxLinearGauge_Init", dxTarget, json);
         }
-        public static Task<object> GetGeometry(ElementRef dxTarget)
+        public static Task<object> GetGeometry(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxLinearGauge_GetOption", dxTarget, "geometry");
         }
-        public static Task SetGeometry(ElementRef dxTarget, object value)
+        public static Task SetGeometry(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxLinearGauge_SetOption", dxTarget, "geometry", value);
         }
-        public static Task<object> GetSubvalueIndicator(ElementRef dxTarget)
+        public static Task<object> GetSubvalueIndicator(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxLinearGauge_GetOption", dxTarget, "subvalueIndicator");
         }
-        public static Task SetSubvalueIndicator(ElementRef dxTarget, object value)
+        public static Task SetSubvalueIndicator(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxLinearGauge_SetOption", dxTarget, "subvalueIndicator", value);
         }
-        public static Task<object> GetValueIndicator(ElementRef dxTarget)
+        public static Task<object> GetValueIndicator(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxLinearGauge_GetOption", dxTarget, "valueIndicator");
         }
-        public static Task SetValueIndicator(ElementRef dxTarget, object value)
+        public static Task SetValueIndicator(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxLinearGauge_SetOption", dxTarget, "valueIndicator", value);
         }
@@ -10575,7 +10575,7 @@ namespace DevExpress.Viz
     {
         public static event EventHandler<JQueryEventArgs> TooltipHidden;
         public static event EventHandler<JQueryEventArgs> TooltipShown;
-        public static Task Init(ElementRef dxTarget, DevExpress.Viz.Gauges.DxBarGaugeOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Viz.Gauges.DxBarGaugeOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxBarGauge_Init", dxTarget, json);
@@ -10590,252 +10590,252 @@ namespace DevExpress.Viz
         {
             TooltipShown?.Invoke(null, new JQueryEventArgs(identifier));
         }
-        public static Task<object> GetAnimation(ElementRef dxTarget)
+        public static Task<object> GetAnimation(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxBarGauge_GetOption", dxTarget, "animation");
         }
-        public static Task SetAnimation(ElementRef dxTarget, object value)
+        public static Task SetAnimation(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxBarGauge_SetOption", dxTarget, "animation", value);
         }
-        public static Task<string> GetBackgroundColor(ElementRef dxTarget)
+        public static Task<string> GetBackgroundColor(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxBarGauge_GetOption", dxTarget, "backgroundColor");
         }
-        public static Task SetBackgroundColor(ElementRef dxTarget, string value)
+        public static Task SetBackgroundColor(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxBarGauge_SetOption", dxTarget, "backgroundColor", value);
         }
-        public static Task<float?> GetBarSpacing(ElementRef dxTarget)
+        public static Task<float?> GetBarSpacing(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DxBarGauge_GetOption", dxTarget, "barSpacing");
         }
-        public static Task SetBarSpacing(ElementRef dxTarget, float? value)
+        public static Task SetBarSpacing(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxBarGauge_SetOption", dxTarget, "barSpacing", value);
         }
-        public static Task<float?> GetBaseValue(ElementRef dxTarget)
+        public static Task<float?> GetBaseValue(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DxBarGauge_GetOption", dxTarget, "baseValue");
         }
-        public static Task SetBaseValue(ElementRef dxTarget, float? value)
+        public static Task SetBaseValue(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxBarGauge_SetOption", dxTarget, "baseValue", value);
         }
-        public static Task<float?> GetEndValue(ElementRef dxTarget)
+        public static Task<float?> GetEndValue(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DxBarGauge_GetOption", dxTarget, "endValue");
         }
-        public static Task SetEndValue(ElementRef dxTarget, float? value)
+        public static Task SetEndValue(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxBarGauge_SetOption", dxTarget, "endValue", value);
         }
-        public static Task<object> GetGeometry(ElementRef dxTarget)
+        public static Task<object> GetGeometry(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxBarGauge_GetOption", dxTarget, "geometry");
         }
-        public static Task SetGeometry(ElementRef dxTarget, object value)
+        public static Task SetGeometry(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxBarGauge_SetOption", dxTarget, "geometry", value);
         }
-        public static Task<object> GetLabel(ElementRef dxTarget)
+        public static Task<object> GetLabel(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxBarGauge_GetOption", dxTarget, "label");
         }
-        public static Task SetLabel(ElementRef dxTarget, object value)
+        public static Task SetLabel(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxBarGauge_SetOption", dxTarget, "label", value);
         }
-        public static Task<object> GetPalette(ElementRef dxTarget)
+        public static Task<object> GetPalette(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxBarGauge_GetOption", dxTarget, "palette");
         }
-        public static Task SetPalette(ElementRef dxTarget, object value)
+        public static Task SetPalette(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxBarGauge_SetOption", dxTarget, "palette", value);
         }
-        public static Task<string> GetPaletteExtensionMode(ElementRef dxTarget)
+        public static Task<string> GetPaletteExtensionMode(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxBarGauge_GetOption", dxTarget, "paletteExtensionMode");
         }
-        public static Task SetPaletteExtensionMode(ElementRef dxTarget, string value)
+        public static Task SetPaletteExtensionMode(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxBarGauge_SetOption", dxTarget, "paletteExtensionMode", value);
         }
-        public static Task<float?> GetRelativeInnerRadius(ElementRef dxTarget)
+        public static Task<float?> GetRelativeInnerRadius(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DxBarGauge_GetOption", dxTarget, "relativeInnerRadius");
         }
-        public static Task SetRelativeInnerRadius(ElementRef dxTarget, float? value)
+        public static Task SetRelativeInnerRadius(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxBarGauge_SetOption", dxTarget, "relativeInnerRadius", value);
         }
-        public static Task<float?> GetStartValue(ElementRef dxTarget)
+        public static Task<float?> GetStartValue(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DxBarGauge_GetOption", dxTarget, "startValue");
         }
-        public static Task SetStartValue(ElementRef dxTarget, float? value)
+        public static Task SetStartValue(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxBarGauge_SetOption", dxTarget, "startValue", value);
         }
-        public static Task<object> GetSubtitle(ElementRef dxTarget)
+        public static Task<object> GetSubtitle(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxBarGauge_GetOption", dxTarget, "subtitle");
         }
-        public static Task SetSubtitle(ElementRef dxTarget, object value)
+        public static Task SetSubtitle(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxBarGauge_SetOption", dxTarget, "subtitle", value);
         }
-        public static Task<object> GetValues(ElementRef dxTarget)
+        public static Task<object> GetValues(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxBarGauge_GetOption", dxTarget, "values");
         }
-        public static Task SetValues(ElementRef dxTarget, object value)
+        public static Task SetValues(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxBarGauge_SetOption", dxTarget, "values", value);
         }
-        public static Task<object> ValuesEx(ElementRef dxTarget)
+        public static Task<object> ValuesEx(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxBarGauge_values_0", dxTarget);
         }
-        public static Task ValuesEx(ElementRef dxTarget, object values)
+        public static Task ValuesEx(ElementReference dxTarget, object values)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxBarGauge_values_1", dxTarget, values);
         }
     }
     public class BaseSeriesObjectInterop
     {
-        public static Task ClearHover(ElementRef dxTarget)
+        public static Task ClearHover(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseSeriesObject_clearHover_0", dxTarget);
         }
-        public static Task ClearSelection(ElementRef dxTarget)
+        public static Task ClearSelection(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseSeriesObject_clearSelection_1", dxTarget);
         }
-        public static Task DeselectPoint(ElementRef dxTarget, object point)
+        public static Task DeselectPoint(ElementReference dxTarget, object point)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseSeriesObject_deselectPoint_2", dxTarget, point);
         }
-        public static Task<object> GetAllPoints(ElementRef dxTarget)
+        public static Task<object> GetAllPoints(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseSeriesObject_getAllPoints_3", dxTarget);
         }
-        public static Task<string> GetColor(ElementRef dxTarget)
+        public static Task<string> GetColor(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_BaseSeriesObject_getColor_4", dxTarget);
         }
-        public static Task<object> GetPointByPos(ElementRef dxTarget, float positionIndex)
+        public static Task<object> GetPointByPos(ElementReference dxTarget, float positionIndex)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseSeriesObject_getPointByPos_5", dxTarget, positionIndex);
         }
-        public static Task<object> GetPointsByArg(ElementRef dxTarget, object pointArg)
+        public static Task<object> GetPointsByArg(ElementReference dxTarget, object pointArg)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseSeriesObject_getPointsByArg_6", dxTarget, pointArg);
         }
-        public static Task<object> GetVisiblePoints(ElementRef dxTarget)
+        public static Task<object> GetVisiblePoints(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseSeriesObject_getVisiblePoints_7", dxTarget);
         }
-        public static Task Hide(ElementRef dxTarget)
+        public static Task Hide(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseSeriesObject_hide_8", dxTarget);
         }
-        public static Task Hover(ElementRef dxTarget)
+        public static Task Hover(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseSeriesObject_hover_9", dxTarget);
         }
-        public static Task<bool> IsHovered(ElementRef dxTarget)
+        public static Task<bool> IsHovered(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool>("BlazorDevExtreme_BaseSeriesObject_isHovered_10", dxTarget);
         }
-        public static Task<bool> IsSelected(ElementRef dxTarget)
+        public static Task<bool> IsSelected(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool>("BlazorDevExtreme_BaseSeriesObject_isSelected_11", dxTarget);
         }
-        public static Task<bool> IsVisible(ElementRef dxTarget)
+        public static Task<bool> IsVisible(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool>("BlazorDevExtreme_BaseSeriesObject_isVisible_12", dxTarget);
         }
-        public static Task Select(ElementRef dxTarget)
+        public static Task Select(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseSeriesObject_select_13", dxTarget);
         }
-        public static Task SelectPoint(ElementRef dxTarget, object point)
+        public static Task SelectPoint(ElementReference dxTarget, object point)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseSeriesObject_selectPoint_14", dxTarget, point);
         }
-        public static Task Show(ElementRef dxTarget)
+        public static Task Show(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseSeriesObject_show_15", dxTarget);
         }
     }
     public class BasePointObjectInterop
     {
-        public static Task ClearHover(ElementRef dxTarget)
+        public static Task ClearHover(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BasePointObject_clearHover_0", dxTarget);
         }
-        public static Task ClearSelection(ElementRef dxTarget)
+        public static Task ClearSelection(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BasePointObject_clearSelection_1", dxTarget);
         }
-        public static Task<string> GetColor(ElementRef dxTarget)
+        public static Task<string> GetColor(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_BasePointObject_getColor_2", dxTarget);
         }
-        public static Task<object> GetLabel(ElementRef dxTarget)
+        public static Task<object> GetLabel(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BasePointObject_getLabel_3", dxTarget);
         }
-        public static Task HideTooltip(ElementRef dxTarget)
+        public static Task HideTooltip(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BasePointObject_hideTooltip_4", dxTarget);
         }
-        public static Task Hover(ElementRef dxTarget)
+        public static Task Hover(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BasePointObject_hover_5", dxTarget);
         }
-        public static Task<bool> IsHovered(ElementRef dxTarget)
+        public static Task<bool> IsHovered(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool>("BlazorDevExtreme_BasePointObject_isHovered_6", dxTarget);
         }
-        public static Task<bool> IsSelected(ElementRef dxTarget)
+        public static Task<bool> IsSelected(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool>("BlazorDevExtreme_BasePointObject_isSelected_7", dxTarget);
         }
-        public static Task Select(ElementRef dxTarget)
+        public static Task Select(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BasePointObject_select_8", dxTarget);
         }
-        public static Task ShowTooltip(ElementRef dxTarget)
+        public static Task ShowTooltip(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BasePointObject_showTooltip_9", dxTarget);
         }
     }
     public class BaseLabelObjectInterop
     {
-        public static Task<object> GetBoundingRect(ElementRef dxTarget)
+        public static Task<object> GetBoundingRect(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseLabelObject_getBoundingRect_0", dxTarget);
         }
-        public static Task Hide(ElementRef dxTarget)
+        public static Task Hide(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseLabelObject_hide_1", dxTarget);
         }
-        public static Task Hide(ElementRef dxTarget, bool holdInvisible)
+        public static Task Hide(ElementReference dxTarget, bool holdInvisible)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseLabelObject_hide_2", dxTarget, holdInvisible);
         }
-        public static Task<bool> IsVisible(ElementRef dxTarget)
+        public static Task<bool> IsVisible(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool>("BlazorDevExtreme_BaseLabelObject_isVisible_3", dxTarget);
         }
-        public static Task Show(ElementRef dxTarget)
+        public static Task Show(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseLabelObject_show_4", dxTarget);
         }
-        public static Task Show(ElementRef dxTarget, bool holdVisible)
+        public static Task Show(ElementReference dxTarget, bool holdVisible)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseLabelObject_show_5", dxTarget, holdVisible);
         }
@@ -10845,57 +10845,57 @@ namespace DevExpress.Viz
     }
     public class ChartPointObjectInterop: BasePointObjectInterop
     {
-        public static Task<object> GetBoundingRect(ElementRef dxTarget)
+        public static Task<object> GetBoundingRect(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_ChartPointObject_getBoundingRect_0", dxTarget);
         }
     }
     public class DxFunnelItemInterop
     {
-        public static Task<string> GetColor(ElementRef dxTarget)
+        public static Task<string> GetColor(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxFunnelItem_getColor_0", dxTarget);
         }
-        public static Task Hover(ElementRef dxTarget, bool state)
+        public static Task Hover(ElementReference dxTarget, bool state)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxFunnelItem_hover_1", dxTarget, state);
         }
-        public static Task<bool> IsHovered(ElementRef dxTarget)
+        public static Task<bool> IsHovered(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool>("BlazorDevExtreme_DxFunnelItem_isHovered_2", dxTarget);
         }
-        public static Task<bool> IsSelected(ElementRef dxTarget)
+        public static Task<bool> IsSelected(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool>("BlazorDevExtreme_DxFunnelItem_isSelected_3", dxTarget);
         }
-        public static Task Select(ElementRef dxTarget, bool state)
+        public static Task Select(ElementReference dxTarget, bool state)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxFunnelItem_select_4", dxTarget, state);
         }
-        public static Task ShowTooltip(ElementRef dxTarget)
+        public static Task ShowTooltip(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxFunnelItem_showTooltip_5", dxTarget);
         }
     }
     public class PiePointObjectInterop: BasePointObjectInterop
     {
-        public static Task Hide(ElementRef dxTarget)
+        public static Task Hide(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_PiePointObject_hide_0", dxTarget);
         }
-        public static Task HideTooltip(ElementRef dxTarget)
+        public static Task HideTooltip(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_PiePointObject_hideTooltip_1", dxTarget);
         }
-        public static Task<bool> IsVisible(ElementRef dxTarget)
+        public static Task<bool> IsVisible(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool>("BlazorDevExtreme_PiePointObject_isVisible_2", dxTarget);
         }
-        public static Task Show(ElementRef dxTarget)
+        public static Task Show(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_PiePointObject_show_3", dxTarget);
         }
-        public static Task ShowTooltip(ElementRef dxTarget)
+        public static Task ShowTooltip(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_PiePointObject_showTooltip_4", dxTarget);
         }
@@ -10911,155 +10911,155 @@ namespace DevExpress.Viz
     }
     public class DxTreeMapNodeInterop
     {
-        public static Task Customize(ElementRef dxTarget, object options)
+        public static Task Customize(ElementReference dxTarget, object options)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeMapNode_customize_0", dxTarget, options);
         }
-        public static Task DrillDown(ElementRef dxTarget)
+        public static Task DrillDown(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeMapNode_drillDown_1", dxTarget);
         }
-        public static Task<object> GetAllChildren(ElementRef dxTarget)
+        public static Task<object> GetAllChildren(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeMapNode_getAllChildren_2", dxTarget);
         }
-        public static Task<object> GetAllNodes(ElementRef dxTarget)
+        public static Task<object> GetAllNodes(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeMapNode_getAllNodes_3", dxTarget);
         }
-        public static Task<object> GetChild(ElementRef dxTarget, float index)
+        public static Task<object> GetChild(ElementReference dxTarget, float index)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeMapNode_getChild_4", dxTarget, index);
         }
-        public static Task<float> GetChildrenCount(ElementRef dxTarget)
+        public static Task<float> GetChildrenCount(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float>("BlazorDevExtreme_DxTreeMapNode_getChildrenCount_5", dxTarget);
         }
-        public static Task<object> GetParent(ElementRef dxTarget)
+        public static Task<object> GetParent(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeMapNode_getParent_6", dxTarget);
         }
-        public static Task<bool> IsActive(ElementRef dxTarget)
+        public static Task<bool> IsActive(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool>("BlazorDevExtreme_DxTreeMapNode_isActive_7", dxTarget);
         }
-        public static Task<bool> IsHovered(ElementRef dxTarget)
+        public static Task<bool> IsHovered(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool>("BlazorDevExtreme_DxTreeMapNode_isHovered_8", dxTarget);
         }
-        public static Task<bool> IsLeaf(ElementRef dxTarget)
+        public static Task<bool> IsLeaf(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool>("BlazorDevExtreme_DxTreeMapNode_isLeaf_9", dxTarget);
         }
-        public static Task<bool> IsSelected(ElementRef dxTarget)
+        public static Task<bool> IsSelected(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool>("BlazorDevExtreme_DxTreeMapNode_isSelected_10", dxTarget);
         }
-        public static Task<string> Label(ElementRef dxTarget)
+        public static Task<string> Label(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxTreeMapNode_label_11", dxTarget);
         }
-        public static Task Label(ElementRef dxTarget, string label)
+        public static Task Label(ElementReference dxTarget, string label)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeMapNode_label_12", dxTarget, label);
         }
-        public static Task ResetCustomization(ElementRef dxTarget)
+        public static Task ResetCustomization(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeMapNode_resetCustomization_13", dxTarget);
         }
-        public static Task Select(ElementRef dxTarget, bool state)
+        public static Task Select(ElementReference dxTarget, bool state)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeMapNode_select_14", dxTarget, state);
         }
-        public static Task ShowTooltip(ElementRef dxTarget)
+        public static Task ShowTooltip(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeMapNode_showTooltip_15", dxTarget);
         }
-        public static Task<float> ValueEx(ElementRef dxTarget)
+        public static Task<float> ValueEx(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float>("BlazorDevExtreme_DxTreeMapNode_value_16", dxTarget);
         }
     }
     public class MapLayerInterop
     {
-        public static Task ClearSelection(ElementRef dxTarget)
+        public static Task ClearSelection(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_MapLayer_clearSelection_0", dxTarget);
         }
-        public static Task<object> GetDataSourceEx(ElementRef dxTarget)
+        public static Task<object> GetDataSourceEx(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_MapLayer_getDataSource_1", dxTarget);
         }
-        public static Task<object> GetElements(ElementRef dxTarget)
+        public static Task<object> GetElements(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_MapLayer_getElements_2", dxTarget);
         }
     }
     public class MapLayerElementInterop
     {
-        public static Task ApplySettings(ElementRef dxTarget, object settings)
+        public static Task ApplySettings(ElementReference dxTarget, object settings)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_MapLayerElement_applySettings_0", dxTarget, settings);
         }
-        public static Task<object> Attribute(ElementRef dxTarget, string name)
+        public static Task<object> Attribute(ElementReference dxTarget, string name)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_MapLayerElement_attribute_1", dxTarget, name);
         }
-        public static Task Attribute(ElementRef dxTarget, string name, object value)
+        public static Task Attribute(ElementReference dxTarget, string name, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_MapLayerElement_attribute_2", dxTarget, name, value);
         }
-        public static Task<object> Coordinates(ElementRef dxTarget)
+        public static Task<object> Coordinates(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_MapLayerElement_coordinates_3", dxTarget);
         }
-        public static Task<bool> Selected(ElementRef dxTarget)
+        public static Task<bool> Selected(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool>("BlazorDevExtreme_MapLayerElement_selected_4", dxTarget);
         }
-        public static Task Selected(ElementRef dxTarget, bool state)
+        public static Task Selected(ElementReference dxTarget, bool state)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_MapLayerElement_selected_5", dxTarget, state);
         }
     }
     public class AreaObjectsInterop
     {
-        public static Task ApplySettings(ElementRef dxTarget, object settings)
+        public static Task ApplySettings(ElementReference dxTarget, object settings)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_AreaObjects_applySettings_0", dxTarget, settings);
         }
-        public static Task<object> Attribute(ElementRef dxTarget, string name)
+        public static Task<object> Attribute(ElementReference dxTarget, string name)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_AreaObjects_attribute_1", dxTarget, name);
         }
-        public static Task<bool> Selected(ElementRef dxTarget)
+        public static Task<bool> Selected(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool>("BlazorDevExtreme_AreaObjects_selected_2", dxTarget);
         }
-        public static Task Selected(ElementRef dxTarget, bool state)
+        public static Task Selected(ElementReference dxTarget, bool state)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_AreaObjects_selected_3", dxTarget, state);
         }
     }
     public class MarkerObjectsInterop
     {
-        public static Task ApplySettings(ElementRef dxTarget, object settings)
+        public static Task ApplySettings(ElementReference dxTarget, object settings)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_MarkerObjects_applySettings_0", dxTarget, settings);
         }
-        public static Task<object> Attribute(ElementRef dxTarget, string name)
+        public static Task<object> Attribute(ElementReference dxTarget, string name)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_MarkerObjects_attribute_1", dxTarget, name);
         }
-        public static Task<object> Coordinates(ElementRef dxTarget)
+        public static Task<object> Coordinates(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_MarkerObjects_coordinates_2", dxTarget);
         }
-        public static Task<bool> Selected(ElementRef dxTarget)
+        public static Task<bool> Selected(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool>("BlazorDevExtreme_MarkerObjects_selected_3", dxTarget);
         }
-        public static Task Selected(ElementRef dxTarget, bool state)
+        public static Task Selected(ElementReference dxTarget, bool state)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_MarkerObjects_selected_4", dxTarget, state);
         }
@@ -11068,7 +11068,7 @@ namespace DevExpress.Viz
     {
         public static event EventHandler<JQueryEventArgs> SelectedRangeChanged;
         public static event EventHandler<JQueryEventArgs> ValueChanged;
-        public static Task Init(ElementRef dxTarget, DevExpress.Viz.RangeSelector.DxRangeSelectorOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Viz.RangeSelector.DxRangeSelectorOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxRangeSelector_Init", dxTarget, json);
@@ -11083,143 +11083,143 @@ namespace DevExpress.Viz
         {
             ValueChanged?.Invoke(null, new JQueryEventArgs(identifier));
         }
-        public static Task<object> GetBackground(ElementRef dxTarget)
+        public static Task<object> GetBackground(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxRangeSelector_GetOption", dxTarget, "background");
         }
-        public static Task SetBackground(ElementRef dxTarget, object value)
+        public static Task SetBackground(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxRangeSelector_SetOption", dxTarget, "background", value);
         }
-        public static Task<object> GetBehavior(ElementRef dxTarget)
+        public static Task<object> GetBehavior(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxRangeSelector_GetOption", dxTarget, "behavior");
         }
-        public static Task SetBehavior(ElementRef dxTarget, object value)
+        public static Task SetBehavior(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxRangeSelector_SetOption", dxTarget, "behavior", value);
         }
-        public static Task<object> GetChart(ElementRef dxTarget)
+        public static Task<object> GetChart(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxRangeSelector_GetOption", dxTarget, "chart");
         }
-        public static Task SetChart(ElementRef dxTarget, object value)
+        public static Task SetChart(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxRangeSelector_SetOption", dxTarget, "chart", value);
         }
-        public static Task<string> GetContainerBackgroundColor(ElementRef dxTarget)
+        public static Task<string> GetContainerBackgroundColor(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxRangeSelector_GetOption", dxTarget, "containerBackgroundColor");
         }
-        public static Task SetContainerBackgroundColor(ElementRef dxTarget, string value)
+        public static Task SetContainerBackgroundColor(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxRangeSelector_SetOption", dxTarget, "containerBackgroundColor", value);
         }
-        public static Task<object> GetDataSource(ElementRef dxTarget)
+        public static Task<object> GetDataSource(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxRangeSelector_GetOption", dxTarget, "dataSource");
         }
-        public static Task SetDataSource(ElementRef dxTarget, object value)
+        public static Task SetDataSource(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxRangeSelector_SetOption", dxTarget, "dataSource", value);
         }
-        public static Task<string> GetDataSourceField(ElementRef dxTarget)
+        public static Task<string> GetDataSourceField(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxRangeSelector_GetOption", dxTarget, "dataSourceField");
         }
-        public static Task SetDataSourceField(ElementRef dxTarget, string value)
+        public static Task SetDataSourceField(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxRangeSelector_SetOption", dxTarget, "dataSourceField", value);
         }
-        public static Task<object> GetIndent(ElementRef dxTarget)
+        public static Task<object> GetIndent(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxRangeSelector_GetOption", dxTarget, "indent");
         }
-        public static Task SetIndent(ElementRef dxTarget, object value)
+        public static Task SetIndent(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxRangeSelector_SetOption", dxTarget, "indent", value);
         }
-        public static Task<object> GetScale(ElementRef dxTarget)
+        public static Task<object> GetScale(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxRangeSelector_GetOption", dxTarget, "scale");
         }
-        public static Task SetScale(ElementRef dxTarget, object value)
+        public static Task SetScale(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxRangeSelector_SetOption", dxTarget, "scale", value);
         }
-        public static Task<object> GetSelectedRange(ElementRef dxTarget)
+        public static Task<object> GetSelectedRange(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxRangeSelector_GetOption", dxTarget, "selectedRange");
         }
-        public static Task SetSelectedRange(ElementRef dxTarget, object value)
+        public static Task SetSelectedRange(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxRangeSelector_SetOption", dxTarget, "selectedRange", value);
         }
-        public static Task<string> GetSelectedRangeColor(ElementRef dxTarget)
+        public static Task<string> GetSelectedRangeColor(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxRangeSelector_GetOption", dxTarget, "selectedRangeColor");
         }
-        public static Task SetSelectedRangeColor(ElementRef dxTarget, string value)
+        public static Task SetSelectedRangeColor(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxRangeSelector_SetOption", dxTarget, "selectedRangeColor", value);
         }
-        public static Task<object> GetShutter(ElementRef dxTarget)
+        public static Task<object> GetShutter(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxRangeSelector_GetOption", dxTarget, "shutter");
         }
-        public static Task SetShutter(ElementRef dxTarget, object value)
+        public static Task SetShutter(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxRangeSelector_SetOption", dxTarget, "shutter", value);
         }
-        public static Task<object> GetSliderHandle(ElementRef dxTarget)
+        public static Task<object> GetSliderHandle(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxRangeSelector_GetOption", dxTarget, "sliderHandle");
         }
-        public static Task SetSliderHandle(ElementRef dxTarget, object value)
+        public static Task SetSliderHandle(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxRangeSelector_SetOption", dxTarget, "sliderHandle", value);
         }
-        public static Task<object> GetSliderMarker(ElementRef dxTarget)
+        public static Task<object> GetSliderMarker(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxRangeSelector_GetOption", dxTarget, "sliderMarker");
         }
-        public static Task SetSliderMarker(ElementRef dxTarget, object value)
+        public static Task SetSliderMarker(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxRangeSelector_SetOption", dxTarget, "sliderMarker", value);
         }
-        public static Task<object> GetValue(ElementRef dxTarget)
+        public static Task<object> GetValue(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxRangeSelector_GetOption", dxTarget, "value");
         }
-        public static Task SetValue(ElementRef dxTarget, object value)
+        public static Task SetValue(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxRangeSelector_SetOption", dxTarget, "value", value);
         }
-        public static Task<object> GetDataSourceEx(ElementRef dxTarget)
+        public static Task<object> GetDataSourceEx(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxRangeSelector_getDataSource_0", dxTarget);
         }
-        public static Task<object> GetSelectedRangeEx(ElementRef dxTarget)
+        public static Task<object> GetSelectedRangeEx(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxRangeSelector_getSelectedRange_1", dxTarget);
         }
-        public static Task<object> GetValueEx(ElementRef dxTarget)
+        public static Task<object> GetValueEx(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxRangeSelector_getValue_2", dxTarget);
         }
-        public static Task Render(ElementRef dxTarget)
+        public static Task Render(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxRangeSelector_render_3", dxTarget);
         }
-        public static Task Render(ElementRef dxTarget, bool skipChartAnimation)
+        public static Task Render(ElementReference dxTarget, bool skipChartAnimation)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxRangeSelector_render_4", dxTarget, skipChartAnimation);
         }
-        public static Task SetSelectedRangeEx(ElementRef dxTarget, object selectedRange)
+        public static Task SetSelectedRangeEx(ElementReference dxTarget, object selectedRange)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxRangeSelector_setSelectedRange_5", dxTarget, selectedRange);
         }
-        public static Task SetValueEx(ElementRef dxTarget, object value)
+        public static Task SetValueEx(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxRangeSelector_setValue_6", dxTarget, value);
         }
@@ -11228,7 +11228,7 @@ namespace DevExpress.Viz
     {
         public static event EventHandler<JQueryEventArgs> TooltipHidden;
         public static event EventHandler<JQueryEventArgs> TooltipShown;
-        public static Task Init(ElementRef dxTarget, DevExpress.Viz.Sparklines.BaseSparklineOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Viz.Sparklines.BaseSparklineOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_BaseSparkline_Init", dxTarget, json);
@@ -11246,268 +11246,268 @@ namespace DevExpress.Viz
     }
     public class DxSparklineInterop: BaseSparklineInterop
     {
-        public static Task Init(ElementRef dxTarget, DevExpress.Viz.Sparklines.DxSparklineOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Viz.Sparklines.DxSparklineOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSparkline_Init", dxTarget, json);
         }
-        public static Task<string> GetArgumentField(ElementRef dxTarget)
+        public static Task<string> GetArgumentField(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxSparkline_GetOption", dxTarget, "argumentField");
         }
-        public static Task SetArgumentField(ElementRef dxTarget, string value)
+        public static Task SetArgumentField(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSparkline_SetOption", dxTarget, "argumentField", value);
         }
-        public static Task<string> GetBarNegativeColor(ElementRef dxTarget)
+        public static Task<string> GetBarNegativeColor(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxSparkline_GetOption", dxTarget, "barNegativeColor");
         }
-        public static Task SetBarNegativeColor(ElementRef dxTarget, string value)
+        public static Task SetBarNegativeColor(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSparkline_SetOption", dxTarget, "barNegativeColor", value);
         }
-        public static Task<string> GetBarPositiveColor(ElementRef dxTarget)
+        public static Task<string> GetBarPositiveColor(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxSparkline_GetOption", dxTarget, "barPositiveColor");
         }
-        public static Task SetBarPositiveColor(ElementRef dxTarget, string value)
+        public static Task SetBarPositiveColor(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSparkline_SetOption", dxTarget, "barPositiveColor", value);
         }
-        public static Task<object> GetDataSource(ElementRef dxTarget)
+        public static Task<object> GetDataSource(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSparkline_GetOption", dxTarget, "dataSource");
         }
-        public static Task SetDataSource(ElementRef dxTarget, object value)
+        public static Task SetDataSource(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSparkline_SetOption", dxTarget, "dataSource", value);
         }
-        public static Task<string> GetFirstLastColor(ElementRef dxTarget)
+        public static Task<string> GetFirstLastColor(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxSparkline_GetOption", dxTarget, "firstLastColor");
         }
-        public static Task SetFirstLastColor(ElementRef dxTarget, string value)
+        public static Task SetFirstLastColor(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSparkline_SetOption", dxTarget, "firstLastColor", value);
         }
-        public static Task<bool?> GetIgnoreEmptyPoints(ElementRef dxTarget)
+        public static Task<bool?> GetIgnoreEmptyPoints(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxSparkline_GetOption", dxTarget, "ignoreEmptyPoints");
         }
-        public static Task SetIgnoreEmptyPoints(ElementRef dxTarget, bool? value)
+        public static Task SetIgnoreEmptyPoints(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSparkline_SetOption", dxTarget, "ignoreEmptyPoints", value);
         }
-        public static Task<string> GetLineColor(ElementRef dxTarget)
+        public static Task<string> GetLineColor(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxSparkline_GetOption", dxTarget, "lineColor");
         }
-        public static Task SetLineColor(ElementRef dxTarget, string value)
+        public static Task SetLineColor(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSparkline_SetOption", dxTarget, "lineColor", value);
         }
-        public static Task<float?> GetLineWidth(ElementRef dxTarget)
+        public static Task<float?> GetLineWidth(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DxSparkline_GetOption", dxTarget, "lineWidth");
         }
-        public static Task SetLineWidth(ElementRef dxTarget, float? value)
+        public static Task SetLineWidth(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSparkline_SetOption", dxTarget, "lineWidth", value);
         }
-        public static Task<string> GetLossColor(ElementRef dxTarget)
+        public static Task<string> GetLossColor(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxSparkline_GetOption", dxTarget, "lossColor");
         }
-        public static Task SetLossColor(ElementRef dxTarget, string value)
+        public static Task SetLossColor(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSparkline_SetOption", dxTarget, "lossColor", value);
         }
-        public static Task<string> GetMaxColor(ElementRef dxTarget)
+        public static Task<string> GetMaxColor(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxSparkline_GetOption", dxTarget, "maxColor");
         }
-        public static Task SetMaxColor(ElementRef dxTarget, string value)
+        public static Task SetMaxColor(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSparkline_SetOption", dxTarget, "maxColor", value);
         }
-        public static Task<float?> GetMaxValue(ElementRef dxTarget)
+        public static Task<float?> GetMaxValue(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DxSparkline_GetOption", dxTarget, "maxValue");
         }
-        public static Task SetMaxValue(ElementRef dxTarget, float? value)
+        public static Task SetMaxValue(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSparkline_SetOption", dxTarget, "maxValue", value);
         }
-        public static Task<string> GetMinColor(ElementRef dxTarget)
+        public static Task<string> GetMinColor(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxSparkline_GetOption", dxTarget, "minColor");
         }
-        public static Task SetMinColor(ElementRef dxTarget, string value)
+        public static Task SetMinColor(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSparkline_SetOption", dxTarget, "minColor", value);
         }
-        public static Task<float?> GetMinValue(ElementRef dxTarget)
+        public static Task<float?> GetMinValue(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DxSparkline_GetOption", dxTarget, "minValue");
         }
-        public static Task SetMinValue(ElementRef dxTarget, float? value)
+        public static Task SetMinValue(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSparkline_SetOption", dxTarget, "minValue", value);
         }
-        public static Task<string> GetPointColor(ElementRef dxTarget)
+        public static Task<string> GetPointColor(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxSparkline_GetOption", dxTarget, "pointColor");
         }
-        public static Task SetPointColor(ElementRef dxTarget, string value)
+        public static Task SetPointColor(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSparkline_SetOption", dxTarget, "pointColor", value);
         }
-        public static Task<float?> GetPointSize(ElementRef dxTarget)
+        public static Task<float?> GetPointSize(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DxSparkline_GetOption", dxTarget, "pointSize");
         }
-        public static Task SetPointSize(ElementRef dxTarget, float? value)
+        public static Task SetPointSize(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSparkline_SetOption", dxTarget, "pointSize", value);
         }
-        public static Task<string> GetPointSymbol(ElementRef dxTarget)
+        public static Task<string> GetPointSymbol(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxSparkline_GetOption", dxTarget, "pointSymbol");
         }
-        public static Task SetPointSymbol(ElementRef dxTarget, string value)
+        public static Task SetPointSymbol(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSparkline_SetOption", dxTarget, "pointSymbol", value);
         }
-        public static Task<bool?> GetShowFirstLast(ElementRef dxTarget)
+        public static Task<bool?> GetShowFirstLast(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxSparkline_GetOption", dxTarget, "showFirstLast");
         }
-        public static Task SetShowFirstLast(ElementRef dxTarget, bool? value)
+        public static Task SetShowFirstLast(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSparkline_SetOption", dxTarget, "showFirstLast", value);
         }
-        public static Task<bool?> GetShowMinMax(ElementRef dxTarget)
+        public static Task<bool?> GetShowMinMax(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxSparkline_GetOption", dxTarget, "showMinMax");
         }
-        public static Task SetShowMinMax(ElementRef dxTarget, bool? value)
+        public static Task SetShowMinMax(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSparkline_SetOption", dxTarget, "showMinMax", value);
         }
-        public static Task<string> GetType(ElementRef dxTarget)
+        public static Task<string> GetType(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxSparkline_GetOption", dxTarget, "type");
         }
-        public static Task SetType(ElementRef dxTarget, string value)
+        public static Task SetType(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSparkline_SetOption", dxTarget, "type", value);
         }
-        public static Task<string> GetValueField(ElementRef dxTarget)
+        public static Task<string> GetValueField(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxSparkline_GetOption", dxTarget, "valueField");
         }
-        public static Task SetValueField(ElementRef dxTarget, string value)
+        public static Task SetValueField(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSparkline_SetOption", dxTarget, "valueField", value);
         }
-        public static Task<string> GetWinColor(ElementRef dxTarget)
+        public static Task<string> GetWinColor(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxSparkline_GetOption", dxTarget, "winColor");
         }
-        public static Task SetWinColor(ElementRef dxTarget, string value)
+        public static Task SetWinColor(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSparkline_SetOption", dxTarget, "winColor", value);
         }
-        public static Task<float?> GetWinlossThreshold(ElementRef dxTarget)
+        public static Task<float?> GetWinlossThreshold(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DxSparkline_GetOption", dxTarget, "winlossThreshold");
         }
-        public static Task SetWinlossThreshold(ElementRef dxTarget, float? value)
+        public static Task SetWinlossThreshold(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSparkline_SetOption", dxTarget, "winlossThreshold", value);
         }
-        public static Task<object> GetDataSourceEx(ElementRef dxTarget)
+        public static Task<object> GetDataSourceEx(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxSparkline_getDataSource_0", dxTarget);
         }
     }
     public class DxBulletInterop: BaseSparklineInterop
     {
-        public static Task Init(ElementRef dxTarget, DevExpress.Viz.Sparklines.DxBulletOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Viz.Sparklines.DxBulletOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxBullet_Init", dxTarget, json);
         }
-        public static Task<string> GetColor(ElementRef dxTarget)
+        public static Task<string> GetColor(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxBullet_GetOption", dxTarget, "color");
         }
-        public static Task SetColor(ElementRef dxTarget, string value)
+        public static Task SetColor(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxBullet_SetOption", dxTarget, "color", value);
         }
-        public static Task<float?> GetEndScaleValue(ElementRef dxTarget)
+        public static Task<float?> GetEndScaleValue(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DxBullet_GetOption", dxTarget, "endScaleValue");
         }
-        public static Task SetEndScaleValue(ElementRef dxTarget, float? value)
+        public static Task SetEndScaleValue(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxBullet_SetOption", dxTarget, "endScaleValue", value);
         }
-        public static Task<bool?> GetShowTarget(ElementRef dxTarget)
+        public static Task<bool?> GetShowTarget(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxBullet_GetOption", dxTarget, "showTarget");
         }
-        public static Task SetShowTarget(ElementRef dxTarget, bool? value)
+        public static Task SetShowTarget(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxBullet_SetOption", dxTarget, "showTarget", value);
         }
-        public static Task<bool?> GetShowZeroLevel(ElementRef dxTarget)
+        public static Task<bool?> GetShowZeroLevel(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxBullet_GetOption", dxTarget, "showZeroLevel");
         }
-        public static Task SetShowZeroLevel(ElementRef dxTarget, bool? value)
+        public static Task SetShowZeroLevel(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxBullet_SetOption", dxTarget, "showZeroLevel", value);
         }
-        public static Task<float?> GetStartScaleValue(ElementRef dxTarget)
+        public static Task<float?> GetStartScaleValue(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DxBullet_GetOption", dxTarget, "startScaleValue");
         }
-        public static Task SetStartScaleValue(ElementRef dxTarget, float? value)
+        public static Task SetStartScaleValue(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxBullet_SetOption", dxTarget, "startScaleValue", value);
         }
-        public static Task<float?> GetTarget(ElementRef dxTarget)
+        public static Task<float?> GetTarget(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DxBullet_GetOption", dxTarget, "target");
         }
-        public static Task SetTarget(ElementRef dxTarget, float? value)
+        public static Task SetTarget(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxBullet_SetOption", dxTarget, "target", value);
         }
-        public static Task<string> GetTargetColor(ElementRef dxTarget)
+        public static Task<string> GetTargetColor(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxBullet_GetOption", dxTarget, "targetColor");
         }
-        public static Task SetTargetColor(ElementRef dxTarget, string value)
+        public static Task SetTargetColor(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxBullet_SetOption", dxTarget, "targetColor", value);
         }
-        public static Task<float?> GetTargetWidth(ElementRef dxTarget)
+        public static Task<float?> GetTargetWidth(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DxBullet_GetOption", dxTarget, "targetWidth");
         }
-        public static Task SetTargetWidth(ElementRef dxTarget, float? value)
+        public static Task SetTargetWidth(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxBullet_SetOption", dxTarget, "targetWidth", value);
         }
-        public static Task<float?> GetValue(ElementRef dxTarget)
+        public static Task<float?> GetValue(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DxBullet_GetOption", dxTarget, "value");
         }
-        public static Task SetValue(ElementRef dxTarget, float? value)
+        public static Task SetValue(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxBullet_SetOption", dxTarget, "value", value);
         }
@@ -11520,7 +11520,7 @@ namespace DevExpress.Viz
         public static event EventHandler<JQueryEventArgs> NodesInitialized;
         public static event EventHandler<JQueryEventArgs> NodesRendering;
         public static event EventHandler<JQueryEventArgs> SelectionChanged;
-        public static Task Init(ElementRef dxTarget, DevExpress.Viz.TreeMap.DxTreeMapOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Viz.TreeMap.DxTreeMapOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeMap_Init", dxTarget, json);
@@ -11555,167 +11555,167 @@ namespace DevExpress.Viz
         {
             SelectionChanged?.Invoke(null, new JQueryEventArgs(identifier));
         }
-        public static Task<string> GetChildrenField(ElementRef dxTarget)
+        public static Task<string> GetChildrenField(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxTreeMap_GetOption", dxTarget, "childrenField");
         }
-        public static Task SetChildrenField(ElementRef dxTarget, string value)
+        public static Task SetChildrenField(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeMap_SetOption", dxTarget, "childrenField", value);
         }
-        public static Task<string> GetColorField(ElementRef dxTarget)
+        public static Task<string> GetColorField(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxTreeMap_GetOption", dxTarget, "colorField");
         }
-        public static Task SetColorField(ElementRef dxTarget, string value)
+        public static Task SetColorField(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeMap_SetOption", dxTarget, "colorField", value);
         }
-        public static Task<object> GetColorizer(ElementRef dxTarget)
+        public static Task<object> GetColorizer(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeMap_GetOption", dxTarget, "colorizer");
         }
-        public static Task SetColorizer(ElementRef dxTarget, object value)
+        public static Task SetColorizer(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeMap_SetOption", dxTarget, "colorizer", value);
         }
-        public static Task<object> GetDataSource(ElementRef dxTarget)
+        public static Task<object> GetDataSource(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeMap_GetOption", dxTarget, "dataSource");
         }
-        public static Task SetDataSource(ElementRef dxTarget, object value)
+        public static Task SetDataSource(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeMap_SetOption", dxTarget, "dataSource", value);
         }
-        public static Task<object> GetGroup(ElementRef dxTarget)
+        public static Task<object> GetGroup(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeMap_GetOption", dxTarget, "group");
         }
-        public static Task SetGroup(ElementRef dxTarget, object value)
+        public static Task SetGroup(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeMap_SetOption", dxTarget, "group", value);
         }
-        public static Task<bool?> GetHoverEnabled(ElementRef dxTarget)
+        public static Task<bool?> GetHoverEnabled(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxTreeMap_GetOption", dxTarget, "hoverEnabled");
         }
-        public static Task SetHoverEnabled(ElementRef dxTarget, bool? value)
+        public static Task SetHoverEnabled(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeMap_SetOption", dxTarget, "hoverEnabled", value);
         }
-        public static Task<string> GetIdField(ElementRef dxTarget)
+        public static Task<string> GetIdField(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxTreeMap_GetOption", dxTarget, "idField");
         }
-        public static Task SetIdField(ElementRef dxTarget, string value)
+        public static Task SetIdField(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeMap_SetOption", dxTarget, "idField", value);
         }
-        public static Task<bool?> GetInteractWithGroup(ElementRef dxTarget)
+        public static Task<bool?> GetInteractWithGroup(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxTreeMap_GetOption", dxTarget, "interactWithGroup");
         }
-        public static Task SetInteractWithGroup(ElementRef dxTarget, bool? value)
+        public static Task SetInteractWithGroup(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeMap_SetOption", dxTarget, "interactWithGroup", value);
         }
-        public static Task<string> GetLabelField(ElementRef dxTarget)
+        public static Task<string> GetLabelField(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxTreeMap_GetOption", dxTarget, "labelField");
         }
-        public static Task SetLabelField(ElementRef dxTarget, string value)
+        public static Task SetLabelField(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeMap_SetOption", dxTarget, "labelField", value);
         }
-        public static Task<object> GetLayoutAlgorithm(ElementRef dxTarget)
+        public static Task<object> GetLayoutAlgorithm(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeMap_GetOption", dxTarget, "layoutAlgorithm");
         }
-        public static Task SetLayoutAlgorithm(ElementRef dxTarget, object value)
+        public static Task SetLayoutAlgorithm(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeMap_SetOption", dxTarget, "layoutAlgorithm", value);
         }
-        public static Task<string> GetLayoutDirection(ElementRef dxTarget)
+        public static Task<string> GetLayoutDirection(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxTreeMap_GetOption", dxTarget, "layoutDirection");
         }
-        public static Task SetLayoutDirection(ElementRef dxTarget, string value)
+        public static Task SetLayoutDirection(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeMap_SetOption", dxTarget, "layoutDirection", value);
         }
-        public static Task<float?> GetMaxDepth(ElementRef dxTarget)
+        public static Task<float?> GetMaxDepth(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DxTreeMap_GetOption", dxTarget, "maxDepth");
         }
-        public static Task SetMaxDepth(ElementRef dxTarget, float? value)
+        public static Task SetMaxDepth(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeMap_SetOption", dxTarget, "maxDepth", value);
         }
-        public static Task<string> GetParentField(ElementRef dxTarget)
+        public static Task<string> GetParentField(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxTreeMap_GetOption", dxTarget, "parentField");
         }
-        public static Task SetParentField(ElementRef dxTarget, string value)
+        public static Task SetParentField(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeMap_SetOption", dxTarget, "parentField", value);
         }
-        public static Task<string> GetResolveLabelOverflow(ElementRef dxTarget)
+        public static Task<string> GetResolveLabelOverflow(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxTreeMap_GetOption", dxTarget, "resolveLabelOverflow");
         }
-        public static Task SetResolveLabelOverflow(ElementRef dxTarget, string value)
+        public static Task SetResolveLabelOverflow(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeMap_SetOption", dxTarget, "resolveLabelOverflow", value);
         }
-        public static Task<string> GetSelectionMode(ElementRef dxTarget)
+        public static Task<string> GetSelectionMode(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxTreeMap_GetOption", dxTarget, "selectionMode");
         }
-        public static Task SetSelectionMode(ElementRef dxTarget, string value)
+        public static Task SetSelectionMode(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeMap_SetOption", dxTarget, "selectionMode", value);
         }
-        public static Task<object> GetTile(ElementRef dxTarget)
+        public static Task<object> GetTile(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeMap_GetOption", dxTarget, "tile");
         }
-        public static Task SetTile(ElementRef dxTarget, object value)
+        public static Task SetTile(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeMap_SetOption", dxTarget, "tile", value);
         }
-        public static Task<string> GetValueField(ElementRef dxTarget)
+        public static Task<string> GetValueField(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<string>("BlazorDevExtreme_DxTreeMap_GetOption", dxTarget, "valueField");
         }
-        public static Task SetValueField(ElementRef dxTarget, string value)
+        public static Task SetValueField(ElementReference dxTarget, string value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeMap_SetOption", dxTarget, "valueField", value);
         }
-        public static Task ClearSelection(ElementRef dxTarget)
+        public static Task ClearSelection(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeMap_clearSelection_0", dxTarget);
         }
-        public static Task DrillUp(ElementRef dxTarget)
+        public static Task DrillUp(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeMap_drillUp_1", dxTarget);
         }
-        public static Task<object> GetCurrentNode(ElementRef dxTarget)
+        public static Task<object> GetCurrentNode(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeMap_getCurrentNode_2", dxTarget);
         }
-        public static Task<object> GetDataSourceEx(ElementRef dxTarget)
+        public static Task<object> GetDataSourceEx(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeMap_getDataSource_3", dxTarget);
         }
-        public static Task<object> GetRootNode(ElementRef dxTarget)
+        public static Task<object> GetRootNode(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeMap_getRootNode_4", dxTarget);
         }
-        public static Task HideTooltip(ElementRef dxTarget)
+        public static Task HideTooltip(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeMap_hideTooltip_5", dxTarget);
         }
-        public static Task ResetDrillDown(ElementRef dxTarget)
+        public static Task ResetDrillDown(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxTreeMap_resetDrillDown_6", dxTarget);
         }
@@ -11732,7 +11732,7 @@ namespace DevExpress.Viz
         public static event EventHandler<JQueryEventArgs> TooltipHidden;
         public static event EventHandler<JQueryEventArgs> TooltipShown;
         public static event EventHandler<JQueryEventArgs> ZoomFactorChanged;
-        public static Task Init(ElementRef dxTarget, DevExpress.Viz.Map.DxVectorMapOptions options)
+        public static Task Init(ElementReference dxTarget, DevExpress.Viz.Map.DxVectorMapOptions options)
         {
             string json = SimpleJson.SimpleJson.SerializeObject(options);
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxVectorMap_Init", dxTarget, json);
@@ -11787,199 +11787,199 @@ namespace DevExpress.Viz
         {
             ZoomFactorChanged?.Invoke(null, new JQueryEventArgs(identifier));
         }
-        public static Task<object> GetAreaSettings(ElementRef dxTarget)
+        public static Task<object> GetAreaSettings(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxVectorMap_GetOption", dxTarget, "areaSettings");
         }
-        public static Task SetAreaSettings(ElementRef dxTarget, object value)
+        public static Task SetAreaSettings(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxVectorMap_SetOption", dxTarget, "areaSettings", value);
         }
-        public static Task<object> GetBackground(ElementRef dxTarget)
+        public static Task<object> GetBackground(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxVectorMap_GetOption", dxTarget, "background");
         }
-        public static Task SetBackground(ElementRef dxTarget, object value)
+        public static Task SetBackground(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxVectorMap_SetOption", dxTarget, "background", value);
         }
-        public static Task<object> GetBounds(ElementRef dxTarget)
+        public static Task<object> GetBounds(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxVectorMap_GetOption", dxTarget, "bounds");
         }
-        public static Task SetBounds(ElementRef dxTarget, object value)
+        public static Task SetBounds(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxVectorMap_SetOption", dxTarget, "bounds", value);
         }
-        public static Task<object> GetCenter(ElementRef dxTarget)
+        public static Task<object> GetCenter(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxVectorMap_GetOption", dxTarget, "center");
         }
-        public static Task SetCenter(ElementRef dxTarget, object value)
+        public static Task SetCenter(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxVectorMap_SetOption", dxTarget, "center", value);
         }
-        public static Task<object> GetControlBar(ElementRef dxTarget)
+        public static Task<object> GetControlBar(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxVectorMap_GetOption", dxTarget, "controlBar");
         }
-        public static Task SetControlBar(ElementRef dxTarget, object value)
+        public static Task SetControlBar(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxVectorMap_SetOption", dxTarget, "controlBar", value);
         }
-        public static Task<object> GetLayers(ElementRef dxTarget)
+        public static Task<object> GetLayers(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxVectorMap_GetOption", dxTarget, "layers");
         }
-        public static Task SetLayers(ElementRef dxTarget, object value)
+        public static Task SetLayers(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxVectorMap_SetOption", dxTarget, "layers", value);
         }
-        public static Task<object> GetLegends(ElementRef dxTarget)
+        public static Task<object> GetLegends(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxVectorMap_GetOption", dxTarget, "legends");
         }
-        public static Task SetLegends(ElementRef dxTarget, object value)
+        public static Task SetLegends(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxVectorMap_SetOption", dxTarget, "legends", value);
         }
-        public static Task<object> GetMapData(ElementRef dxTarget)
+        public static Task<object> GetMapData(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxVectorMap_GetOption", dxTarget, "mapData");
         }
-        public static Task SetMapData(ElementRef dxTarget, object value)
+        public static Task SetMapData(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxVectorMap_SetOption", dxTarget, "mapData", value);
         }
-        public static Task<object> GetMarkers(ElementRef dxTarget)
+        public static Task<object> GetMarkers(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxVectorMap_GetOption", dxTarget, "markers");
         }
-        public static Task SetMarkers(ElementRef dxTarget, object value)
+        public static Task SetMarkers(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxVectorMap_SetOption", dxTarget, "markers", value);
         }
-        public static Task<object> GetMarkerSettings(ElementRef dxTarget)
+        public static Task<object> GetMarkerSettings(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxVectorMap_GetOption", dxTarget, "markerSettings");
         }
-        public static Task SetMarkerSettings(ElementRef dxTarget, object value)
+        public static Task SetMarkerSettings(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxVectorMap_SetOption", dxTarget, "markerSettings", value);
         }
-        public static Task<float?> GetMaxZoomFactor(ElementRef dxTarget)
+        public static Task<float?> GetMaxZoomFactor(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DxVectorMap_GetOption", dxTarget, "maxZoomFactor");
         }
-        public static Task SetMaxZoomFactor(ElementRef dxTarget, float? value)
+        public static Task SetMaxZoomFactor(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxVectorMap_SetOption", dxTarget, "maxZoomFactor", value);
         }
-        public static Task<bool?> GetPanningEnabled(ElementRef dxTarget)
+        public static Task<bool?> GetPanningEnabled(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxVectorMap_GetOption", dxTarget, "panningEnabled");
         }
-        public static Task SetPanningEnabled(ElementRef dxTarget, bool? value)
+        public static Task SetPanningEnabled(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxVectorMap_SetOption", dxTarget, "panningEnabled", value);
         }
-        public static Task<object> GetProjection(ElementRef dxTarget)
+        public static Task<object> GetProjection(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxVectorMap_GetOption", dxTarget, "projection");
         }
-        public static Task SetProjection(ElementRef dxTarget, object value)
+        public static Task SetProjection(ElementReference dxTarget, object value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxVectorMap_SetOption", dxTarget, "projection", value);
         }
-        public static Task<bool?> GetTouchEnabled(ElementRef dxTarget)
+        public static Task<bool?> GetTouchEnabled(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxVectorMap_GetOption", dxTarget, "touchEnabled");
         }
-        public static Task SetTouchEnabled(ElementRef dxTarget, bool? value)
+        public static Task SetTouchEnabled(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxVectorMap_SetOption", dxTarget, "touchEnabled", value);
         }
-        public static Task<bool?> GetWheelEnabled(ElementRef dxTarget)
+        public static Task<bool?> GetWheelEnabled(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxVectorMap_GetOption", dxTarget, "wheelEnabled");
         }
-        public static Task SetWheelEnabled(ElementRef dxTarget, bool? value)
+        public static Task SetWheelEnabled(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxVectorMap_SetOption", dxTarget, "wheelEnabled", value);
         }
-        public static Task<float?> GetZoomFactor(ElementRef dxTarget)
+        public static Task<float?> GetZoomFactor(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float?>("BlazorDevExtreme_DxVectorMap_GetOption", dxTarget, "zoomFactor");
         }
-        public static Task SetZoomFactor(ElementRef dxTarget, float? value)
+        public static Task SetZoomFactor(ElementReference dxTarget, float? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxVectorMap_SetOption", dxTarget, "zoomFactor", value);
         }
-        public static Task<bool?> GetZoomingEnabled(ElementRef dxTarget)
+        public static Task<bool?> GetZoomingEnabled(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<bool?>("BlazorDevExtreme_DxVectorMap_GetOption", dxTarget, "zoomingEnabled");
         }
-        public static Task SetZoomingEnabled(ElementRef dxTarget, bool? value)
+        public static Task SetZoomingEnabled(ElementReference dxTarget, bool? value)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxVectorMap_SetOption", dxTarget, "zoomingEnabled", value);
         }
-        public static Task<object> CenterEx(ElementRef dxTarget)
+        public static Task<object> CenterEx(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxVectorMap_center_0", dxTarget);
         }
-        public static Task CenterEx(ElementRef dxTarget, object centerCoordinates)
+        public static Task CenterEx(ElementReference dxTarget, object centerCoordinates)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxVectorMap_center_1", dxTarget, centerCoordinates);
         }
-        public static Task ClearAreaSelection(ElementRef dxTarget)
+        public static Task ClearAreaSelection(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxVectorMap_clearAreaSelection_2", dxTarget);
         }
-        public static Task ClearMarkerSelection(ElementRef dxTarget)
+        public static Task ClearMarkerSelection(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxVectorMap_clearMarkerSelection_3", dxTarget);
         }
-        public static Task ClearSelection(ElementRef dxTarget)
+        public static Task ClearSelection(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxVectorMap_clearSelection_4", dxTarget);
         }
-        public static Task<object> ConvertCoordinates(ElementRef dxTarget, float x, float y)
+        public static Task<object> ConvertCoordinates(ElementReference dxTarget, float x, float y)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxVectorMap_convertCoordinates_5", dxTarget, x, y);
         }
-        public static Task<object> GetAreas(ElementRef dxTarget)
+        public static Task<object> GetAreas(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxVectorMap_getAreas_6", dxTarget);
         }
-        public static Task<object> GetLayerByIndex(ElementRef dxTarget, float index)
+        public static Task<object> GetLayerByIndex(ElementReference dxTarget, float index)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxVectorMap_getLayerByIndex_7", dxTarget, index);
         }
-        public static Task<object> GetLayerByName(ElementRef dxTarget, string name)
+        public static Task<object> GetLayerByName(ElementReference dxTarget, string name)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxVectorMap_getLayerByName_8", dxTarget, name);
         }
-        public static Task<object> GetLayersEx(ElementRef dxTarget)
+        public static Task<object> GetLayersEx(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxVectorMap_getLayers_9", dxTarget);
         }
-        public static Task<object> GetMarkersEx(ElementRef dxTarget)
+        public static Task<object> GetMarkersEx(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxVectorMap_getMarkers_10", dxTarget);
         }
-        public static Task<object> Viewport(ElementRef dxTarget)
+        public static Task<object> Viewport(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxVectorMap_viewport_11", dxTarget);
         }
-        public static Task Viewport(ElementRef dxTarget, object viewportCoordinates)
+        public static Task Viewport(ElementReference dxTarget, object viewportCoordinates)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxVectorMap_viewport_12", dxTarget, viewportCoordinates);
         }
-        public static Task<float> ZoomFactorEx(ElementRef dxTarget)
+        public static Task<float> ZoomFactorEx(ElementReference dxTarget)
         {
             return JSRuntime.Current.InvokeAsync<float>("BlazorDevExtreme_DxVectorMap_zoomFactor_13", dxTarget);
         }
-        public static Task ZoomFactorEx(ElementRef dxTarget, float zoomFactor)
+        public static Task ZoomFactorEx(ElementReference dxTarget, float zoomFactor)
         {
             return JSRuntime.Current.InvokeAsync<object>("BlazorDevExtreme_DxVectorMap_zoomFactor_14", dxTarget, zoomFactor);
         }

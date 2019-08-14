@@ -1,0 +1,554 @@
+
+@using Microsoft.AspNetCore.Components
+@implements IDisposable
+@inherits DxBlazorComponent<DevExpress.Ui.DxToastOptions>
+
+<div id="@Id" @ref="dxTarget"></div>
+
+@functions {
+	ElementReference dxTarget;
+	public DxToast() : base("DxToast") { }
+	protected override DevExpress.Ui.DxToastOptions CreateOptions() {
+		return new DevExpress.Ui.DxToastOptions {
+			animation = animation,
+			closeOnBackButton = closeOnBackButton,
+			closeOnClick = closeOnClick,
+			closeOnOutsideClick = closeOnOutsideClick,
+			closeOnSwipe = closeOnSwipe,
+			displayTime = displayTime,
+			height = height,
+			maxWidth = maxWidth,
+			message = message,
+			minWidth = minWidth,
+			position = position,
+			shading = shading,
+			type = type,
+			width = width,
+			contentTemplate = contentTemplate,
+			deferRendering = deferRendering,
+			dragEnabled = dragEnabled,
+			maxHeight = maxHeight,
+			minHeight = minHeight,
+			shadingColor = shadingColor,
+			visible = visible,
+			accessKey = accessKey,
+			activeStateEnabled = activeStateEnabled,
+			disabled = disabled,
+			focusStateEnabled = focusStateEnabled,
+			hint = hint,
+			hoverStateEnabled = hoverStateEnabled,
+			tabIndex = tabIndex,
+			bindingOptions = bindingOptions,
+			elementAttr = elementAttr,
+			rtlEnabled = rtlEnabled,
+			onHiddenEnabled = onHiddenEnabled,
+			onHidingEnabled = onHidingEnabled,
+			onShowingEnabled = onShowingEnabled,
+			onShownEnabled = onShownEnabled,
+			onContentReadyEnabled = onContentReadyEnabled,
+			onDisposingEnabled = onDisposingEnabled,
+			onOptionChangedEnabled = onOptionChangedEnabled,
+			onInitializedEnabled = onInitializedEnabled,
+		};
+	}
+	protected override Task Init(DevExpress.Ui.DxToastOptions options) {
+		return DevExpress.Ui.DxToastInterop.Init(dxTarget, options);
+	}
+	object animation;
+	[Parameter]
+	object Animation {
+		get => isInitialized ? DevExpress.Ui.DxToastInterop.GetAnimation(dxTarget).Result : animation;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxToastInterop.SetAnimation(dxTarget, value);
+			} else {
+				this.animation = value;
+			}
+		}
+	}
+	bool? closeOnBackButton;
+	[Parameter]
+	bool? CloseOnBackButton {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxToastInterop.GetCloseOnBackButton(dxTarget).Result : closeOnBackButton;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxToastInterop.SetCloseOnBackButton(dxTarget, value);
+			} else {
+				this.closeOnBackButton = value;
+			}
+		}
+	}
+	bool? closeOnClick;
+	[Parameter]
+	bool? CloseOnClick {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxToastInterop.GetCloseOnClick(dxTarget).Result : closeOnClick;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxToastInterop.SetCloseOnClick(dxTarget, value);
+			} else {
+				this.closeOnClick = value;
+			}
+		}
+	}
+	object closeOnOutsideClick;
+	[Parameter]
+	object CloseOnOutsideClick {
+		get => isInitialized ? DevExpress.Ui.DxToastInterop.GetCloseOnOutsideClick(dxTarget).Result : closeOnOutsideClick;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxToastInterop.SetCloseOnOutsideClick(dxTarget, value);
+			} else {
+				this.closeOnOutsideClick = value;
+			}
+		}
+	}
+	bool? closeOnSwipe;
+	[Parameter]
+	bool? CloseOnSwipe {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxToastInterop.GetCloseOnSwipe(dxTarget).Result : closeOnSwipe;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxToastInterop.SetCloseOnSwipe(dxTarget, value);
+			} else {
+				this.closeOnSwipe = value;
+			}
+		}
+	}
+	float? displayTime;
+	[Parameter]
+	float? DisplayTime {
+		get => isInitialized ? (float?)DevExpress.Ui.DxToastInterop.GetDisplayTime(dxTarget).Result : displayTime;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxToastInterop.SetDisplayTime(dxTarget, value);
+			} else {
+				this.displayTime = value;
+			}
+		}
+	}
+	object height;
+	[Parameter]
+	object Height {
+		get => isInitialized ? DevExpress.Ui.DxToastInterop.GetHeight(dxTarget).Result : height;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxToastInterop.SetHeight(dxTarget, value);
+			} else {
+				this.height = value;
+			}
+		}
+	}
+	object maxWidth;
+	[Parameter]
+	object MaxWidth {
+		get => isInitialized ? DevExpress.Ui.DxToastInterop.GetMaxWidth(dxTarget).Result : maxWidth;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxToastInterop.SetMaxWidth(dxTarget, value);
+			} else {
+				this.maxWidth = value;
+			}
+		}
+	}
+	string message;
+	[Parameter]
+	string Message {
+		get => isInitialized ? (string)DevExpress.Ui.DxToastInterop.GetMessage(dxTarget).Result : message;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxToastInterop.SetMessage(dxTarget, value);
+			} else {
+				this.message = value;
+			}
+		}
+	}
+	object minWidth;
+	[Parameter]
+	object MinWidth {
+		get => isInitialized ? DevExpress.Ui.DxToastInterop.GetMinWidth(dxTarget).Result : minWidth;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxToastInterop.SetMinWidth(dxTarget, value);
+			} else {
+				this.minWidth = value;
+			}
+		}
+	}
+	object position;
+	[Parameter]
+	object Position {
+		get => isInitialized ? DevExpress.Ui.DxToastInterop.GetPosition(dxTarget).Result : position;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxToastInterop.SetPosition(dxTarget, value);
+			} else {
+				this.position = value;
+			}
+		}
+	}
+	bool? shading;
+	[Parameter]
+	bool? Shading {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxToastInterop.GetShading(dxTarget).Result : shading;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxToastInterop.SetShading(dxTarget, value);
+			} else {
+				this.shading = value;
+			}
+		}
+	}
+	string type;
+	[Parameter]
+	string Type {
+		get => isInitialized ? (string)DevExpress.Ui.DxToastInterop.GetType(dxTarget).Result : type;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxToastInterop.SetType(dxTarget, value);
+			} else {
+				this.type = value;
+			}
+		}
+	}
+	object width;
+	[Parameter]
+	object Width {
+		get => isInitialized ? DevExpress.Ui.DxToastInterop.GetWidth(dxTarget).Result : width;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxToastInterop.SetWidth(dxTarget, value);
+			} else {
+				this.width = value;
+			}
+		}
+	}
+	object contentTemplate;
+	[Parameter]
+	object ContentTemplate {
+		get => isInitialized ? DevExpress.Ui.DxToastInterop.GetContentTemplate(dxTarget).Result : contentTemplate;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxToastInterop.SetContentTemplate(dxTarget, value);
+			} else {
+				this.contentTemplate = value;
+			}
+		}
+	}
+	bool? deferRendering;
+	[Parameter]
+	bool? DeferRendering {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxToastInterop.GetDeferRendering(dxTarget).Result : deferRendering;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxToastInterop.SetDeferRendering(dxTarget, value);
+			} else {
+				this.deferRendering = value;
+			}
+		}
+	}
+	bool? dragEnabled;
+	[Parameter]
+	bool? DragEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxToastInterop.GetDragEnabled(dxTarget).Result : dragEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxToastInterop.SetDragEnabled(dxTarget, value);
+			} else {
+				this.dragEnabled = value;
+			}
+		}
+	}
+	object maxHeight;
+	[Parameter]
+	object MaxHeight {
+		get => isInitialized ? DevExpress.Ui.DxToastInterop.GetMaxHeight(dxTarget).Result : maxHeight;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxToastInterop.SetMaxHeight(dxTarget, value);
+			} else {
+				this.maxHeight = value;
+			}
+		}
+	}
+	object minHeight;
+	[Parameter]
+	object MinHeight {
+		get => isInitialized ? DevExpress.Ui.DxToastInterop.GetMinHeight(dxTarget).Result : minHeight;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxToastInterop.SetMinHeight(dxTarget, value);
+			} else {
+				this.minHeight = value;
+			}
+		}
+	}
+	string shadingColor;
+	[Parameter]
+	string ShadingColor {
+		get => isInitialized ? (string)DevExpress.Ui.DxToastInterop.GetShadingColor(dxTarget).Result : shadingColor;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxToastInterop.SetShadingColor(dxTarget, value);
+			} else {
+				this.shadingColor = value;
+			}
+		}
+	}
+	bool? visible;
+	[Parameter]
+	bool? Visible {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxToastInterop.GetVisible(dxTarget).Result : visible;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxToastInterop.SetVisible(dxTarget, value);
+			} else {
+				this.visible = value;
+			}
+		}
+	}
+	string accessKey;
+	[Parameter]
+	string AccessKey {
+		get => isInitialized ? (string)DevExpress.Ui.DxToastInterop.GetAccessKey(dxTarget).Result : accessKey;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxToastInterop.SetAccessKey(dxTarget, value);
+			} else {
+				this.accessKey = value;
+			}
+		}
+	}
+	bool? activeStateEnabled;
+	[Parameter]
+	bool? ActiveStateEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxToastInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxToastInterop.SetActiveStateEnabled(dxTarget, value);
+			} else {
+				this.activeStateEnabled = value;
+			}
+		}
+	}
+	bool? disabled;
+	[Parameter]
+	bool? Disabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxToastInterop.GetDisabled(dxTarget).Result : disabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxToastInterop.SetDisabled(dxTarget, value);
+			} else {
+				this.disabled = value;
+			}
+		}
+	}
+	bool? focusStateEnabled;
+	[Parameter]
+	bool? FocusStateEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxToastInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxToastInterop.SetFocusStateEnabled(dxTarget, value);
+			} else {
+				this.focusStateEnabled = value;
+			}
+		}
+	}
+	string hint;
+	[Parameter]
+	string Hint {
+		get => isInitialized ? (string)DevExpress.Ui.DxToastInterop.GetHint(dxTarget).Result : hint;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxToastInterop.SetHint(dxTarget, value);
+			} else {
+				this.hint = value;
+			}
+		}
+	}
+	bool? hoverStateEnabled;
+	[Parameter]
+	bool? HoverStateEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxToastInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxToastInterop.SetHoverStateEnabled(dxTarget, value);
+			} else {
+				this.hoverStateEnabled = value;
+			}
+		}
+	}
+	float? tabIndex;
+	[Parameter]
+	float? TabIndex {
+		get => isInitialized ? (float?)DevExpress.Ui.DxToastInterop.GetTabIndex(dxTarget).Result : tabIndex;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxToastInterop.SetTabIndex(dxTarget, value);
+			} else {
+				this.tabIndex = value;
+			}
+		}
+	}
+	object bindingOptions;
+	[Parameter]
+	object BindingOptions {
+		get => isInitialized ? DevExpress.Ui.DxToastInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxToastInterop.SetBindingOptions(dxTarget, value);
+			} else {
+				this.bindingOptions = value;
+			}
+		}
+	}
+	object elementAttr;
+	[Parameter]
+	object ElementAttr {
+		get => isInitialized ? DevExpress.Ui.DxToastInterop.GetElementAttr(dxTarget).Result : elementAttr;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxToastInterop.SetElementAttr(dxTarget, value);
+			} else {
+				this.elementAttr = value;
+			}
+		}
+	}
+	bool? rtlEnabled;
+	[Parameter]
+	bool? RtlEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxToastInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxToastInterop.SetRtlEnabled(dxTarget, value);
+			} else {
+				this.rtlEnabled = value;
+			}
+		}
+	}
+	bool? onHiddenEnabled;
+	[Parameter]
+	bool? OnHiddenEnabled {
+		get => onHiddenEnabled;
+		set => this.onHiddenEnabled = value;
+	}
+	bool? onHidingEnabled;
+	[Parameter]
+	bool? OnHidingEnabled {
+		get => onHidingEnabled;
+		set => this.onHidingEnabled = value;
+	}
+	bool? onShowingEnabled;
+	[Parameter]
+	bool? OnShowingEnabled {
+		get => onShowingEnabled;
+		set => this.onShowingEnabled = value;
+	}
+	bool? onShownEnabled;
+	[Parameter]
+	bool? OnShownEnabled {
+		get => onShownEnabled;
+		set => this.onShownEnabled = value;
+	}
+	bool? onContentReadyEnabled;
+	[Parameter]
+	bool? OnContentReadyEnabled {
+		get => onContentReadyEnabled;
+		set => this.onContentReadyEnabled = value;
+	}
+	bool? onDisposingEnabled;
+	[Parameter]
+	bool? OnDisposingEnabled {
+		get => onDisposingEnabled;
+		set => this.onDisposingEnabled = value;
+	}
+	bool? onOptionChangedEnabled;
+	[Parameter]
+	bool? OnOptionChangedEnabled {
+		get => onOptionChangedEnabled;
+		set => this.onOptionChangedEnabled = value;
+	}
+	bool? onInitializedEnabled;
+	[Parameter]
+	bool? OnInitializedEnabled {
+		get => onInitializedEnabled;
+		set => this.onInitializedEnabled = value;
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+		DevExpress.Ui.DxToastInterop.Hidden += DxToast_Hidden;
+		DevExpress.Ui.DxToastInterop.Hiding += DxToast_Hiding;
+		DevExpress.Ui.DxToastInterop.Showing += DxToast_Showing;
+		DevExpress.Ui.DxToastInterop.Shown += DxToast_Shown;
+		DevExpress.Ui.DxToastInterop.ContentReady += DxToast_ContentReady;
+		DevExpress.Ui.DxToastInterop.Disposing += DxToast_Disposing;
+		DevExpress.Ui.DxToastInterop.OptionChanged += DxToast_OptionChanged;
+		DevExpress.Ui.DxToastInterop.Initialized += DxToast_Initialized;
+	}
+	[Parameter]
+	Action Hidden { get; set; }
+	void DxToast_Hidden(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Hidden?.Invoke();
+		}
+	}
+	[Parameter]
+	Action Hiding { get; set; }
+	void DxToast_Hiding(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Hiding?.Invoke();
+		}
+	}
+	[Parameter]
+	Action Showing { get; set; }
+	void DxToast_Showing(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Showing?.Invoke();
+		}
+	}
+	[Parameter]
+	Action Shown { get; set; }
+	void DxToast_Shown(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Shown?.Invoke();
+		}
+	}
+	[Parameter]
+	Action ContentReady { get; set; }
+	void DxToast_ContentReady(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			ContentReady?.Invoke();
+		}
+	}
+	[Parameter]
+	Action Disposing { get; set; }
+	void DxToast_Disposing(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Disposing?.Invoke();
+		}
+	}
+	[Parameter]
+	Action OptionChanged { get; set; }
+	void DxToast_OptionChanged(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			OptionChanged?.Invoke();
+		}
+	}
+	[Parameter]
+	Action Initialized { get; set; }
+	void DxToast_Initialized(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Initialized?.Invoke();
+		}
+	}
+	public void Dispose() {
+		DevExpress.Ui.DxToastInterop.Hidden -= DxToast_Hidden;
+		DevExpress.Ui.DxToastInterop.Hiding -= DxToast_Hiding;
+		DevExpress.Ui.DxToastInterop.Showing -= DxToast_Showing;
+		DevExpress.Ui.DxToastInterop.Shown -= DxToast_Shown;
+		DevExpress.Ui.DxToastInterop.ContentReady -= DxToast_ContentReady;
+		DevExpress.Ui.DxToastInterop.Disposing -= DxToast_Disposing;
+		DevExpress.Ui.DxToastInterop.OptionChanged -= DxToast_OptionChanged;
+		DevExpress.Ui.DxToastInterop.Initialized -= DxToast_Initialized;
+	}
+}

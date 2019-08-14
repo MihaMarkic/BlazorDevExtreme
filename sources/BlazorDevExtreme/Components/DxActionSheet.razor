@@ -1,0 +1,569 @@
+
+@using Microsoft.AspNetCore.Components
+@implements IDisposable
+@inherits DxBlazorComponent<DevExpress.Ui.DxActionSheetOptions>
+
+<div id="@Id" @ref="dxTarget"></div>
+
+@functions {
+	ElementReference dxTarget;
+	public DxActionSheet() : base("DxActionSheet") { }
+	protected override DevExpress.Ui.DxActionSheetOptions CreateOptions() {
+		return new DevExpress.Ui.DxActionSheetOptions {
+			cancelText = cancelText,
+			showCancelButton = showCancelButton,
+			showTitle = showTitle,
+			target = target,
+			title = title,
+			usePopover = usePopover,
+			visible = visible,
+			dataSource = dataSource,
+			itemHoldTimeout = itemHoldTimeout,
+			items = items,
+			itemTemplate = itemTemplate,
+			keyExpr = keyExpr,
+			noDataText = noDataText,
+			selectedIndex = selectedIndex,
+			selectedItem = selectedItem,
+			selectedItemKeys = selectedItemKeys,
+			selectedItems = selectedItems,
+			accessKey = accessKey,
+			activeStateEnabled = activeStateEnabled,
+			disabled = disabled,
+			focusStateEnabled = focusStateEnabled,
+			hint = hint,
+			hoverStateEnabled = hoverStateEnabled,
+			tabIndex = tabIndex,
+			bindingOptions = bindingOptions,
+			elementAttr = elementAttr,
+			height = height,
+			rtlEnabled = rtlEnabled,
+			width = width,
+			onCancelClickEnabled = onCancelClickEnabled,
+			onItemClickEnabled = onItemClickEnabled,
+			onItemContextMenuEnabled = onItemContextMenuEnabled,
+			onItemHoldEnabled = onItemHoldEnabled,
+			onItemRenderedEnabled = onItemRenderedEnabled,
+			onSelectionChangedEnabled = onSelectionChangedEnabled,
+			onContentReadyEnabled = onContentReadyEnabled,
+			onDisposingEnabled = onDisposingEnabled,
+			onOptionChangedEnabled = onOptionChangedEnabled,
+			onInitializedEnabled = onInitializedEnabled,
+		};
+	}
+	protected override Task Init(DevExpress.Ui.DxActionSheetOptions options) {
+		return DevExpress.Ui.DxActionSheetInterop.Init(dxTarget, options);
+	}
+	string cancelText;
+	[Parameter]
+	string CancelText {
+		get => isInitialized ? (string)DevExpress.Ui.DxActionSheetInterop.GetCancelText(dxTarget).Result : cancelText;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxActionSheetInterop.SetCancelText(dxTarget, value);
+			} else {
+				this.cancelText = value;
+			}
+		}
+	}
+	bool? showCancelButton;
+	[Parameter]
+	bool? ShowCancelButton {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxActionSheetInterop.GetShowCancelButton(dxTarget).Result : showCancelButton;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxActionSheetInterop.SetShowCancelButton(dxTarget, value);
+			} else {
+				this.showCancelButton = value;
+			}
+		}
+	}
+	bool? showTitle;
+	[Parameter]
+	bool? ShowTitle {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxActionSheetInterop.GetShowTitle(dxTarget).Result : showTitle;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxActionSheetInterop.SetShowTitle(dxTarget, value);
+			} else {
+				this.showTitle = value;
+			}
+		}
+	}
+	object target;
+	[Parameter]
+	object Target {
+		get => isInitialized ? DevExpress.Ui.DxActionSheetInterop.GetTarget(dxTarget).Result : target;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxActionSheetInterop.SetTarget(dxTarget, value);
+			} else {
+				this.target = value;
+			}
+		}
+	}
+	string title;
+	[Parameter]
+	string Title {
+		get => isInitialized ? (string)DevExpress.Ui.DxActionSheetInterop.GetTitle(dxTarget).Result : title;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxActionSheetInterop.SetTitle(dxTarget, value);
+			} else {
+				this.title = value;
+			}
+		}
+	}
+	bool? usePopover;
+	[Parameter]
+	bool? UsePopover {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxActionSheetInterop.GetUsePopover(dxTarget).Result : usePopover;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxActionSheetInterop.SetUsePopover(dxTarget, value);
+			} else {
+				this.usePopover = value;
+			}
+		}
+	}
+	bool? visible;
+	[Parameter]
+	bool? Visible {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxActionSheetInterop.GetVisible(dxTarget).Result : visible;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxActionSheetInterop.SetVisible(dxTarget, value);
+			} else {
+				this.visible = value;
+			}
+		}
+	}
+	object dataSource;
+	[Parameter]
+	object DataSource {
+		get => isInitialized ? DevExpress.Ui.DxActionSheetInterop.GetDataSource(dxTarget).Result : dataSource;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxActionSheetInterop.SetDataSource(dxTarget, value);
+			} else {
+				this.dataSource = value;
+			}
+		}
+	}
+	float? itemHoldTimeout;
+	[Parameter]
+	float? ItemHoldTimeout {
+		get => isInitialized ? (float?)DevExpress.Ui.DxActionSheetInterop.GetItemHoldTimeout(dxTarget).Result : itemHoldTimeout;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxActionSheetInterop.SetItemHoldTimeout(dxTarget, value);
+			} else {
+				this.itemHoldTimeout = value;
+			}
+		}
+	}
+	object items;
+	[Parameter]
+	object Items {
+		get => isInitialized ? DevExpress.Ui.DxActionSheetInterop.GetItems(dxTarget).Result : items;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxActionSheetInterop.SetItems(dxTarget, value);
+			} else {
+				this.items = value;
+			}
+		}
+	}
+	object itemTemplate;
+	[Parameter]
+	object ItemTemplate {
+		get => isInitialized ? DevExpress.Ui.DxActionSheetInterop.GetItemTemplate(dxTarget).Result : itemTemplate;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxActionSheetInterop.SetItemTemplate(dxTarget, value);
+			} else {
+				this.itemTemplate = value;
+			}
+		}
+	}
+	object keyExpr;
+	[Parameter]
+	object KeyExpr {
+		get => isInitialized ? DevExpress.Ui.DxActionSheetInterop.GetKeyExpr(dxTarget).Result : keyExpr;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxActionSheetInterop.SetKeyExpr(dxTarget, value);
+			} else {
+				this.keyExpr = value;
+			}
+		}
+	}
+	string noDataText;
+	[Parameter]
+	string NoDataText {
+		get => isInitialized ? (string)DevExpress.Ui.DxActionSheetInterop.GetNoDataText(dxTarget).Result : noDataText;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxActionSheetInterop.SetNoDataText(dxTarget, value);
+			} else {
+				this.noDataText = value;
+			}
+		}
+	}
+	float? selectedIndex;
+	[Parameter]
+	float? SelectedIndex {
+		get => isInitialized ? (float?)DevExpress.Ui.DxActionSheetInterop.GetSelectedIndex(dxTarget).Result : selectedIndex;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxActionSheetInterop.SetSelectedIndex(dxTarget, value);
+			} else {
+				this.selectedIndex = value;
+			}
+		}
+	}
+	object selectedItem;
+	[Parameter]
+	object SelectedItem {
+		get => isInitialized ? DevExpress.Ui.DxActionSheetInterop.GetSelectedItem(dxTarget).Result : selectedItem;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxActionSheetInterop.SetSelectedItem(dxTarget, value);
+			} else {
+				this.selectedItem = value;
+			}
+		}
+	}
+	object selectedItemKeys;
+	[Parameter]
+	object SelectedItemKeys {
+		get => isInitialized ? DevExpress.Ui.DxActionSheetInterop.GetSelectedItemKeys(dxTarget).Result : selectedItemKeys;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxActionSheetInterop.SetSelectedItemKeys(dxTarget, value);
+			} else {
+				this.selectedItemKeys = value;
+			}
+		}
+	}
+	object selectedItems;
+	[Parameter]
+	object SelectedItems {
+		get => isInitialized ? DevExpress.Ui.DxActionSheetInterop.GetSelectedItems(dxTarget).Result : selectedItems;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxActionSheetInterop.SetSelectedItems(dxTarget, value);
+			} else {
+				this.selectedItems = value;
+			}
+		}
+	}
+	string accessKey;
+	[Parameter]
+	string AccessKey {
+		get => isInitialized ? (string)DevExpress.Ui.DxActionSheetInterop.GetAccessKey(dxTarget).Result : accessKey;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxActionSheetInterop.SetAccessKey(dxTarget, value);
+			} else {
+				this.accessKey = value;
+			}
+		}
+	}
+	bool? activeStateEnabled;
+	[Parameter]
+	bool? ActiveStateEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxActionSheetInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxActionSheetInterop.SetActiveStateEnabled(dxTarget, value);
+			} else {
+				this.activeStateEnabled = value;
+			}
+		}
+	}
+	bool? disabled;
+	[Parameter]
+	bool? Disabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxActionSheetInterop.GetDisabled(dxTarget).Result : disabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxActionSheetInterop.SetDisabled(dxTarget, value);
+			} else {
+				this.disabled = value;
+			}
+		}
+	}
+	bool? focusStateEnabled;
+	[Parameter]
+	bool? FocusStateEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxActionSheetInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxActionSheetInterop.SetFocusStateEnabled(dxTarget, value);
+			} else {
+				this.focusStateEnabled = value;
+			}
+		}
+	}
+	string hint;
+	[Parameter]
+	string Hint {
+		get => isInitialized ? (string)DevExpress.Ui.DxActionSheetInterop.GetHint(dxTarget).Result : hint;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxActionSheetInterop.SetHint(dxTarget, value);
+			} else {
+				this.hint = value;
+			}
+		}
+	}
+	bool? hoverStateEnabled;
+	[Parameter]
+	bool? HoverStateEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxActionSheetInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxActionSheetInterop.SetHoverStateEnabled(dxTarget, value);
+			} else {
+				this.hoverStateEnabled = value;
+			}
+		}
+	}
+	float? tabIndex;
+	[Parameter]
+	float? TabIndex {
+		get => isInitialized ? (float?)DevExpress.Ui.DxActionSheetInterop.GetTabIndex(dxTarget).Result : tabIndex;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxActionSheetInterop.SetTabIndex(dxTarget, value);
+			} else {
+				this.tabIndex = value;
+			}
+		}
+	}
+	object bindingOptions;
+	[Parameter]
+	object BindingOptions {
+		get => isInitialized ? DevExpress.Ui.DxActionSheetInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxActionSheetInterop.SetBindingOptions(dxTarget, value);
+			} else {
+				this.bindingOptions = value;
+			}
+		}
+	}
+	object elementAttr;
+	[Parameter]
+	object ElementAttr {
+		get => isInitialized ? DevExpress.Ui.DxActionSheetInterop.GetElementAttr(dxTarget).Result : elementAttr;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxActionSheetInterop.SetElementAttr(dxTarget, value);
+			} else {
+				this.elementAttr = value;
+			}
+		}
+	}
+	object height;
+	[Parameter]
+	object Height {
+		get => isInitialized ? DevExpress.Ui.DxActionSheetInterop.GetHeight(dxTarget).Result : height;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxActionSheetInterop.SetHeight(dxTarget, value);
+			} else {
+				this.height = value;
+			}
+		}
+	}
+	bool? rtlEnabled;
+	[Parameter]
+	bool? RtlEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxActionSheetInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxActionSheetInterop.SetRtlEnabled(dxTarget, value);
+			} else {
+				this.rtlEnabled = value;
+			}
+		}
+	}
+	object width;
+	[Parameter]
+	object Width {
+		get => isInitialized ? DevExpress.Ui.DxActionSheetInterop.GetWidth(dxTarget).Result : width;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxActionSheetInterop.SetWidth(dxTarget, value);
+			} else {
+				this.width = value;
+			}
+		}
+	}
+	bool? onCancelClickEnabled;
+	[Parameter]
+	bool? OnCancelClickEnabled {
+		get => onCancelClickEnabled;
+		set => this.onCancelClickEnabled = value;
+	}
+	bool? onItemClickEnabled;
+	[Parameter]
+	bool? OnItemClickEnabled {
+		get => onItemClickEnabled;
+		set => this.onItemClickEnabled = value;
+	}
+	bool? onItemContextMenuEnabled;
+	[Parameter]
+	bool? OnItemContextMenuEnabled {
+		get => onItemContextMenuEnabled;
+		set => this.onItemContextMenuEnabled = value;
+	}
+	bool? onItemHoldEnabled;
+	[Parameter]
+	bool? OnItemHoldEnabled {
+		get => onItemHoldEnabled;
+		set => this.onItemHoldEnabled = value;
+	}
+	bool? onItemRenderedEnabled;
+	[Parameter]
+	bool? OnItemRenderedEnabled {
+		get => onItemRenderedEnabled;
+		set => this.onItemRenderedEnabled = value;
+	}
+	bool? onSelectionChangedEnabled;
+	[Parameter]
+	bool? OnSelectionChangedEnabled {
+		get => onSelectionChangedEnabled;
+		set => this.onSelectionChangedEnabled = value;
+	}
+	bool? onContentReadyEnabled;
+	[Parameter]
+	bool? OnContentReadyEnabled {
+		get => onContentReadyEnabled;
+		set => this.onContentReadyEnabled = value;
+	}
+	bool? onDisposingEnabled;
+	[Parameter]
+	bool? OnDisposingEnabled {
+		get => onDisposingEnabled;
+		set => this.onDisposingEnabled = value;
+	}
+	bool? onOptionChangedEnabled;
+	[Parameter]
+	bool? OnOptionChangedEnabled {
+		get => onOptionChangedEnabled;
+		set => this.onOptionChangedEnabled = value;
+	}
+	bool? onInitializedEnabled;
+	[Parameter]
+	bool? OnInitializedEnabled {
+		get => onInitializedEnabled;
+		set => this.onInitializedEnabled = value;
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+		DevExpress.Ui.DxActionSheetInterop.CancelClick += DxActionSheet_CancelClick;
+		DevExpress.Ui.DxActionSheetInterop.ItemClick += DxActionSheet_ItemClick;
+		DevExpress.Ui.DxActionSheetInterop.ItemContextMenu += DxActionSheet_ItemContextMenu;
+		DevExpress.Ui.DxActionSheetInterop.ItemHold += DxActionSheet_ItemHold;
+		DevExpress.Ui.DxActionSheetInterop.ItemRendered += DxActionSheet_ItemRendered;
+		DevExpress.Ui.DxActionSheetInterop.SelectionChanged += DxActionSheet_SelectionChanged;
+		DevExpress.Ui.DxActionSheetInterop.ContentReady += DxActionSheet_ContentReady;
+		DevExpress.Ui.DxActionSheetInterop.Disposing += DxActionSheet_Disposing;
+		DevExpress.Ui.DxActionSheetInterop.OptionChanged += DxActionSheet_OptionChanged;
+		DevExpress.Ui.DxActionSheetInterop.Initialized += DxActionSheet_Initialized;
+	}
+	[Parameter]
+	Action CancelClick { get; set; }
+	void DxActionSheet_CancelClick(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			CancelClick?.Invoke();
+		}
+	}
+	[Parameter]
+	Action ItemClick { get; set; }
+	void DxActionSheet_ItemClick(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			ItemClick?.Invoke();
+		}
+	}
+	[Parameter]
+	Action ItemContextMenu { get; set; }
+	void DxActionSheet_ItemContextMenu(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			ItemContextMenu?.Invoke();
+		}
+	}
+	[Parameter]
+	Action ItemHold { get; set; }
+	void DxActionSheet_ItemHold(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			ItemHold?.Invoke();
+		}
+	}
+	[Parameter]
+	Action ItemRendered { get; set; }
+	void DxActionSheet_ItemRendered(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			ItemRendered?.Invoke();
+		}
+	}
+	[Parameter]
+	Action SelectionChanged { get; set; }
+	void DxActionSheet_SelectionChanged(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			SelectionChanged?.Invoke();
+		}
+	}
+	[Parameter]
+	Action ContentReady { get; set; }
+	void DxActionSheet_ContentReady(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			ContentReady?.Invoke();
+		}
+	}
+	[Parameter]
+	Action Disposing { get; set; }
+	void DxActionSheet_Disposing(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Disposing?.Invoke();
+		}
+	}
+	[Parameter]
+	Action OptionChanged { get; set; }
+	void DxActionSheet_OptionChanged(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			OptionChanged?.Invoke();
+		}
+	}
+	[Parameter]
+	Action Initialized { get; set; }
+	void DxActionSheet_Initialized(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Initialized?.Invoke();
+		}
+	}
+	public object Hide() {
+		return DevExpress.Ui.DxActionSheetInterop.Hide(dxTarget).Result;
+	}
+	public object Show() {
+		return DevExpress.Ui.DxActionSheetInterop.Show(dxTarget).Result;
+	}
+	public object Toggle(bool showing) {
+		return DevExpress.Ui.DxActionSheetInterop.Toggle(dxTarget, showing).Result;
+	}
+	public void Dispose() {
+		DevExpress.Ui.DxActionSheetInterop.CancelClick -= DxActionSheet_CancelClick;
+		DevExpress.Ui.DxActionSheetInterop.ItemClick -= DxActionSheet_ItemClick;
+		DevExpress.Ui.DxActionSheetInterop.ItemContextMenu -= DxActionSheet_ItemContextMenu;
+		DevExpress.Ui.DxActionSheetInterop.ItemHold -= DxActionSheet_ItemHold;
+		DevExpress.Ui.DxActionSheetInterop.ItemRendered -= DxActionSheet_ItemRendered;
+		DevExpress.Ui.DxActionSheetInterop.SelectionChanged -= DxActionSheet_SelectionChanged;
+		DevExpress.Ui.DxActionSheetInterop.ContentReady -= DxActionSheet_ContentReady;
+		DevExpress.Ui.DxActionSheetInterop.Disposing -= DxActionSheet_Disposing;
+		DevExpress.Ui.DxActionSheetInterop.OptionChanged -= DxActionSheet_OptionChanged;
+		DevExpress.Ui.DxActionSheetInterop.Initialized -= DxActionSheet_Initialized;
+	}
+}

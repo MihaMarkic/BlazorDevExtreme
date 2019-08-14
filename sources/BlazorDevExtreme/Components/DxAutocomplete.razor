@@ -1,0 +1,1057 @@
+@using Microsoft.AspNetCore.Components
+@implements IDisposable
+@inherits DxBlazorComponent<DevExpress.Ui.DxAutocompleteOptions>
+
+<div id="@Id" @ref="dxTarget"></div>
+
+@functions {
+    ElementReference dxTarget;
+    public DxAutocomplete() : base("DxAutocomplete") { }
+    protected override DevExpress.Ui.DxAutocompleteOptions CreateOptions() {
+        return new DevExpress.Ui.DxAutocompleteOptions {
+            maxItemCount = maxItemCount,
+            minSearchLength = minSearchLength,
+            value = value,
+            displayValue = displayValue,
+            grouped = grouped,
+            groupTemplate = groupTemplate,
+            noDataText = noDataText,
+            searchEnabled = searchEnabled,
+            searchExpr = searchExpr,
+            searchMode = searchMode,
+            searchTimeout = searchTimeout,
+            selectedItem = selectedItem,
+            showDataBeforeSearch = showDataBeforeSearch,
+            valueChangeEvent = valueChangeEvent,
+            acceptCustomValue = acceptCustomValue,
+            activeStateEnabled = activeStateEnabled,
+            applyValueMode = applyValueMode,
+            deferRendering = deferRendering,
+            dropDownButtonTemplate = dropDownButtonTemplate,
+            opened = isOpened,
+            maxLength = maxLength,
+            mode = mode,
+            focusStateEnabled = focusStateEnabled,
+            hoverStateEnabled = hoverStateEnabled,
+            inputAttr = inputAttr,
+            mask = mask,
+            maskChar = maskChar,
+            maskInvalidMessage = maskInvalidMessage,
+            maskRules = maskRules,
+            name = name,
+            placeholder = placeholder,
+            showClearButton = showClearButton,
+            showMaskMode = showMaskMode,
+            spellcheck = spellcheck,
+            text = text,
+            useMaskedValue = useMaskedValue,
+            isValid = isValid,
+            readOnly = readOnly,
+            validationError = validationError,
+            validationMessageMode = validationMessageMode,
+            accessKey = accessKey,
+            disabled = disabled,
+            hint = hint,
+            tabIndex = tabIndex,
+            visible = visible,
+            bindingOptions = bindingOptions,
+            elementAttr = elementAttr,
+            height = height,
+            rtlEnabled = rtlEnabled,
+            width = width,
+            dataSource = dataSource,
+            displayExpr = displayExpr,
+            items = items,
+            itemTemplate = itemTemplate,
+            valueExpr = valueExpr,
+            onItemClickEnabled = onItemClickEnabled,
+            onSelectionChangedEnabled = onSelectionChangedEnabled,
+            onValueChangedEnabled = onValueChangedEnabled,
+            onClosedEnabled = onClosedEnabled,
+            onOpenedEnabled = onOpenedEnabled,
+            onChangeEnabled = onChangeEnabled,
+            onCopyEnabled = onCopyEnabled,
+            onCutEnabled = onCutEnabled,
+            onEnterKeyEnabled = onEnterKeyEnabled,
+            onFocusInEnabled = onFocusInEnabled,
+            onFocusOutEnabled = onFocusOutEnabled,
+            onInputEnabled = onInputEnabled,
+            onKeyDownEnabled = onKeyDownEnabled,
+            onKeyPressEnabled = onKeyPressEnabled,
+            onKeyUpEnabled = onKeyUpEnabled,
+            onPasteEnabled = onPasteEnabled,
+            onContentReadyEnabled = onContentReadyEnabled,
+            onDisposingEnabled = onDisposingEnabled,
+            onOptionChangedEnabled = onOptionChangedEnabled,
+            onInitializedEnabled = onInitializedEnabled,
+        };
+    }
+    protected override Task Init(DevExpress.Ui.DxAutocompleteOptions options) {
+        return DevExpress.Ui.DxAutocompleteInterop.Init(dxTarget, options);
+    }
+    float? maxItemCount;
+    [Parameter]
+    float? MaxItemCount {
+        get => isInitialized ? (float?)DevExpress.Ui.DxAutocompleteInterop.GetMaxItemCount(dxTarget).Result : maxItemCount;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxAutocompleteInterop.SetMaxItemCount(dxTarget, value);
+            } else {
+                this.maxItemCount = value;
+            }
+        }
+    }
+    float? minSearchLength;
+    [Parameter]
+    float? MinSearchLength {
+        get => isInitialized ? (float?)DevExpress.Ui.DxAutocompleteInterop.GetMinSearchLength(dxTarget).Result : minSearchLength;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxAutocompleteInterop.SetMinSearchLength(dxTarget, value);
+            } else {
+                this.minSearchLength = value;
+            }
+        }
+    }
+    string value;
+    [Parameter]
+    string Value {
+        get => isInitialized ? (string)DevExpress.Ui.DxAutocompleteInterop.GetValue(dxTarget).Result : value;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxAutocompleteInterop.SetValue(dxTarget, value);
+            } else {
+                this.value = value;
+            }
+        }
+    }
+    string displayValue;
+    [Parameter]
+    string DisplayValue {
+        get => isInitialized ? (string)DevExpress.Ui.DxAutocompleteInterop.GetDisplayValue(dxTarget).Result : displayValue;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxAutocompleteInterop.SetDisplayValue(dxTarget, value);
+            } else {
+                this.displayValue = value;
+            }
+        }
+    }
+    bool? grouped;
+    [Parameter]
+    bool? Grouped {
+        get => isInitialized ? (bool?)DevExpress.Ui.DxAutocompleteInterop.GetGrouped(dxTarget).Result : grouped;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxAutocompleteInterop.SetGrouped(dxTarget, value);
+            } else {
+                this.grouped = value;
+            }
+        }
+    }
+    object groupTemplate;
+    [Parameter]
+    object GroupTemplate {
+        get => isInitialized ? DevExpress.Ui.DxAutocompleteInterop.GetGroupTemplate(dxTarget).Result : groupTemplate;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxAutocompleteInterop.SetGroupTemplate(dxTarget, value);
+            } else {
+                this.groupTemplate = value;
+            }
+        }
+    }
+    string noDataText;
+    [Parameter]
+    string NoDataText {
+        get => isInitialized ? (string)DevExpress.Ui.DxAutocompleteInterop.GetNoDataText(dxTarget).Result : noDataText;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxAutocompleteInterop.SetNoDataText(dxTarget, value);
+            } else {
+                this.noDataText = value;
+            }
+        }
+    }
+    bool? searchEnabled;
+    [Parameter]
+    bool? SearchEnabled {
+        get => isInitialized ? (bool?)DevExpress.Ui.DxAutocompleteInterop.GetSearchEnabled(dxTarget).Result : searchEnabled;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxAutocompleteInterop.SetSearchEnabled(dxTarget, value);
+            } else {
+                this.searchEnabled = value;
+            }
+        }
+    }
+    object searchExpr;
+    [Parameter]
+    object SearchExpr {
+        get => isInitialized ? DevExpress.Ui.DxAutocompleteInterop.GetSearchExpr(dxTarget).Result : searchExpr;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxAutocompleteInterop.SetSearchExpr(dxTarget, value);
+            } else {
+                this.searchExpr = value;
+            }
+        }
+    }
+    string searchMode;
+    [Parameter]
+    string SearchMode {
+        get => isInitialized ? (string)DevExpress.Ui.DxAutocompleteInterop.GetSearchMode(dxTarget).Result : searchMode;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxAutocompleteInterop.SetSearchMode(dxTarget, value);
+            } else {
+                this.searchMode = value;
+            }
+        }
+    }
+    float? searchTimeout;
+    [Parameter]
+    float? SearchTimeout {
+        get => isInitialized ? (float?)DevExpress.Ui.DxAutocompleteInterop.GetSearchTimeout(dxTarget).Result : searchTimeout;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxAutocompleteInterop.SetSearchTimeout(dxTarget, value);
+            } else {
+                this.searchTimeout = value;
+            }
+        }
+    }
+    object selectedItem;
+    [Parameter]
+    object SelectedItem {
+        get => isInitialized ? DevExpress.Ui.DxAutocompleteInterop.GetSelectedItem(dxTarget).Result : selectedItem;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxAutocompleteInterop.SetSelectedItem(dxTarget, value);
+            } else {
+                this.selectedItem = value;
+            }
+        }
+    }
+    bool? showDataBeforeSearch;
+    [Parameter]
+    bool? ShowDataBeforeSearch {
+        get => isInitialized ? (bool?)DevExpress.Ui.DxAutocompleteInterop.GetShowDataBeforeSearch(dxTarget).Result : showDataBeforeSearch;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxAutocompleteInterop.SetShowDataBeforeSearch(dxTarget, value);
+            } else {
+                this.showDataBeforeSearch = value;
+            }
+        }
+    }
+    string valueChangeEvent;
+    [Parameter]
+    string ValueChangeEvent {
+        get => isInitialized ? (string)DevExpress.Ui.DxAutocompleteInterop.GetValueChangeEvent(dxTarget).Result : valueChangeEvent;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxAutocompleteInterop.SetValueChangeEvent(dxTarget, value);
+            } else {
+                this.valueChangeEvent = value;
+            }
+        }
+    }
+    bool? acceptCustomValue;
+    [Parameter]
+    bool? AcceptCustomValue {
+        get => isInitialized ? (bool?)DevExpress.Ui.DxAutocompleteInterop.GetAcceptCustomValue(dxTarget).Result : acceptCustomValue;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxAutocompleteInterop.SetAcceptCustomValue(dxTarget, value);
+            } else {
+                this.acceptCustomValue = value;
+            }
+        }
+    }
+    bool? activeStateEnabled;
+    [Parameter]
+    bool? ActiveStateEnabled {
+        get => isInitialized ? (bool?)DevExpress.Ui.DxAutocompleteInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxAutocompleteInterop.SetActiveStateEnabled(dxTarget, value);
+            } else {
+                this.activeStateEnabled = value;
+            }
+        }
+    }
+    string applyValueMode;
+    [Parameter]
+    string ApplyValueMode {
+        get => isInitialized ? (string)DevExpress.Ui.DxAutocompleteInterop.GetApplyValueMode(dxTarget).Result : applyValueMode;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxAutocompleteInterop.SetApplyValueMode(dxTarget, value);
+            } else {
+                this.applyValueMode = value;
+            }
+        }
+    }
+    bool? deferRendering;
+    [Parameter]
+    bool? DeferRendering {
+        get => isInitialized ? (bool?)DevExpress.Ui.DxAutocompleteInterop.GetDeferRendering(dxTarget).Result : deferRendering;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxAutocompleteInterop.SetDeferRendering(dxTarget, value);
+            } else {
+                this.deferRendering = value;
+            }
+        }
+    }
+    object dropDownButtonTemplate;
+    [Parameter]
+    object DropDownButtonTemplate {
+        get => isInitialized ? DevExpress.Ui.DxAutocompleteInterop.GetDropDownButtonTemplate(dxTarget).Result : dropDownButtonTemplate;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxAutocompleteInterop.SetDropDownButtonTemplate(dxTarget, value);
+            } else {
+                this.dropDownButtonTemplate = value;
+            }
+        }
+    }
+    bool? isOpened;
+    [Parameter]
+    bool? IsOpened {
+        get => isInitialized ? (bool?)DevExpress.Ui.DxAutocompleteInterop.GetOpened(dxTarget).Result : isOpened;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxAutocompleteInterop.SetOpened(dxTarget, value);
+            } else {
+                this.isOpened = value;
+            }
+        }
+    }
+    object maxLength;
+    [Parameter]
+    object MaxLength {
+        get => isInitialized ? DevExpress.Ui.DxAutocompleteInterop.GetMaxLength(dxTarget).Result : maxLength;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxAutocompleteInterop.SetMaxLength(dxTarget, value);
+            } else {
+                this.maxLength = value;
+            }
+        }
+    }
+    string mode;
+    [Parameter]
+    string Mode {
+        get => isInitialized ? (string)DevExpress.Ui.DxAutocompleteInterop.GetMode(dxTarget).Result : mode;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxAutocompleteInterop.SetMode(dxTarget, value);
+            } else {
+                this.mode = value;
+            }
+        }
+    }
+    bool? focusStateEnabled;
+    [Parameter]
+    bool? FocusStateEnabled {
+        get => isInitialized ? (bool?)DevExpress.Ui.DxAutocompleteInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxAutocompleteInterop.SetFocusStateEnabled(dxTarget, value);
+            } else {
+                this.focusStateEnabled = value;
+            }
+        }
+    }
+    bool? hoverStateEnabled;
+    [Parameter]
+    bool? HoverStateEnabled {
+        get => isInitialized ? (bool?)DevExpress.Ui.DxAutocompleteInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxAutocompleteInterop.SetHoverStateEnabled(dxTarget, value);
+            } else {
+                this.hoverStateEnabled = value;
+            }
+        }
+    }
+    object inputAttr;
+    [Parameter]
+    object InputAttr {
+        get => isInitialized ? DevExpress.Ui.DxAutocompleteInterop.GetInputAttr(dxTarget).Result : inputAttr;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxAutocompleteInterop.SetInputAttr(dxTarget, value);
+            } else {
+                this.inputAttr = value;
+            }
+        }
+    }
+    string mask;
+    [Parameter]
+    string Mask {
+        get => isInitialized ? (string)DevExpress.Ui.DxAutocompleteInterop.GetMask(dxTarget).Result : mask;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxAutocompleteInterop.SetMask(dxTarget, value);
+            } else {
+                this.mask = value;
+            }
+        }
+    }
+    string maskChar;
+    [Parameter]
+    string MaskChar {
+        get => isInitialized ? (string)DevExpress.Ui.DxAutocompleteInterop.GetMaskChar(dxTarget).Result : maskChar;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxAutocompleteInterop.SetMaskChar(dxTarget, value);
+            } else {
+                this.maskChar = value;
+            }
+        }
+    }
+    string maskInvalidMessage;
+    [Parameter]
+    string MaskInvalidMessage {
+        get => isInitialized ? (string)DevExpress.Ui.DxAutocompleteInterop.GetMaskInvalidMessage(dxTarget).Result : maskInvalidMessage;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxAutocompleteInterop.SetMaskInvalidMessage(dxTarget, value);
+            } else {
+                this.maskInvalidMessage = value;
+            }
+        }
+    }
+    object maskRules;
+    [Parameter]
+    object MaskRules {
+        get => isInitialized ? DevExpress.Ui.DxAutocompleteInterop.GetMaskRules(dxTarget).Result : maskRules;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxAutocompleteInterop.SetMaskRules(dxTarget, value);
+            } else {
+                this.maskRules = value;
+            }
+        }
+    }
+    string name;
+    [Parameter]
+    string Name {
+        get => isInitialized ? (string)DevExpress.Ui.DxAutocompleteInterop.GetName(dxTarget).Result : name;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxAutocompleteInterop.SetName(dxTarget, value);
+            } else {
+                this.name = value;
+            }
+        }
+    }
+    string placeholder;
+    [Parameter]
+    string Placeholder {
+        get => isInitialized ? (string)DevExpress.Ui.DxAutocompleteInterop.GetPlaceholder(dxTarget).Result : placeholder;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxAutocompleteInterop.SetPlaceholder(dxTarget, value);
+            } else {
+                this.placeholder = value;
+            }
+        }
+    }
+    bool? showClearButton;
+    [Parameter]
+    bool? ShowClearButton {
+        get => isInitialized ? (bool?)DevExpress.Ui.DxAutocompleteInterop.GetShowClearButton(dxTarget).Result : showClearButton;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxAutocompleteInterop.SetShowClearButton(dxTarget, value);
+            } else {
+                this.showClearButton = value;
+            }
+        }
+    }
+    string showMaskMode;
+    [Parameter]
+    string ShowMaskMode {
+        get => isInitialized ? (string)DevExpress.Ui.DxAutocompleteInterop.GetShowMaskMode(dxTarget).Result : showMaskMode;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxAutocompleteInterop.SetShowMaskMode(dxTarget, value);
+            } else {
+                this.showMaskMode = value;
+            }
+        }
+    }
+    bool? spellcheck;
+    [Parameter]
+    bool? Spellcheck {
+        get => isInitialized ? (bool?)DevExpress.Ui.DxAutocompleteInterop.GetSpellcheck(dxTarget).Result : spellcheck;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxAutocompleteInterop.SetSpellcheck(dxTarget, value);
+            } else {
+                this.spellcheck = value;
+            }
+        }
+    }
+    string text;
+    [Parameter]
+    string Text {
+        get => isInitialized ? (string)DevExpress.Ui.DxAutocompleteInterop.GetText(dxTarget).Result : text;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxAutocompleteInterop.SetText(dxTarget, value);
+            } else {
+                this.text = value;
+            }
+        }
+    }
+    bool? useMaskedValue;
+    [Parameter]
+    bool? UseMaskedValue {
+        get => isInitialized ? (bool?)DevExpress.Ui.DxAutocompleteInterop.GetUseMaskedValue(dxTarget).Result : useMaskedValue;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxAutocompleteInterop.SetUseMaskedValue(dxTarget, value);
+            } else {
+                this.useMaskedValue = value;
+            }
+        }
+    }
+    bool? isValid;
+    [Parameter]
+    bool? IsValid {
+        get => isInitialized ? (bool?)DevExpress.Ui.DxAutocompleteInterop.GetIsValid(dxTarget).Result : isValid;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxAutocompleteInterop.SetIsValid(dxTarget, value);
+            } else {
+                this.isValid = value;
+            }
+        }
+    }
+    bool? readOnly;
+    [Parameter]
+    bool? ReadOnly {
+        get => isInitialized ? (bool?)DevExpress.Ui.DxAutocompleteInterop.GetReadOnly(dxTarget).Result : readOnly;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxAutocompleteInterop.SetReadOnly(dxTarget, value);
+            } else {
+                this.readOnly = value;
+            }
+        }
+    }
+    object validationError;
+    [Parameter]
+    object ValidationError {
+        get => isInitialized ? DevExpress.Ui.DxAutocompleteInterop.GetValidationError(dxTarget).Result : validationError;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxAutocompleteInterop.SetValidationError(dxTarget, value);
+            } else {
+                this.validationError = value;
+            }
+        }
+    }
+    string validationMessageMode;
+    [Parameter]
+    string ValidationMessageMode {
+        get => isInitialized ? (string)DevExpress.Ui.DxAutocompleteInterop.GetValidationMessageMode(dxTarget).Result : validationMessageMode;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxAutocompleteInterop.SetValidationMessageMode(dxTarget, value);
+            } else {
+                this.validationMessageMode = value;
+            }
+        }
+    }
+    string accessKey;
+    [Parameter]
+    string AccessKey {
+        get => isInitialized ? (string)DevExpress.Ui.DxAutocompleteInterop.GetAccessKey(dxTarget).Result : accessKey;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxAutocompleteInterop.SetAccessKey(dxTarget, value);
+            } else {
+                this.accessKey = value;
+            }
+        }
+    }
+    bool? disabled;
+    [Parameter]
+    bool? Disabled {
+        get => isInitialized ? (bool?)DevExpress.Ui.DxAutocompleteInterop.GetDisabled(dxTarget).Result : disabled;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxAutocompleteInterop.SetDisabled(dxTarget, value);
+            } else {
+                this.disabled = value;
+            }
+        }
+    }
+    string hint;
+    [Parameter]
+    string Hint {
+        get => isInitialized ? (string)DevExpress.Ui.DxAutocompleteInterop.GetHint(dxTarget).Result : hint;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxAutocompleteInterop.SetHint(dxTarget, value);
+            } else {
+                this.hint = value;
+            }
+        }
+    }
+    float? tabIndex;
+    [Parameter]
+    float? TabIndex {
+        get => isInitialized ? (float?)DevExpress.Ui.DxAutocompleteInterop.GetTabIndex(dxTarget).Result : tabIndex;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxAutocompleteInterop.SetTabIndex(dxTarget, value);
+            } else {
+                this.tabIndex = value;
+            }
+        }
+    }
+    bool? visible;
+    [Parameter]
+    bool? Visible {
+        get => isInitialized ? (bool?)DevExpress.Ui.DxAutocompleteInterop.GetVisible(dxTarget).Result : visible;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxAutocompleteInterop.SetVisible(dxTarget, value);
+            } else {
+                this.visible = value;
+            }
+        }
+    }
+    object bindingOptions;
+    [Parameter]
+    object BindingOptions {
+        get => isInitialized ? DevExpress.Ui.DxAutocompleteInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxAutocompleteInterop.SetBindingOptions(dxTarget, value);
+            } else {
+                this.bindingOptions = value;
+            }
+        }
+    }
+    object elementAttr;
+    [Parameter]
+    object ElementAttr {
+        get => isInitialized ? DevExpress.Ui.DxAutocompleteInterop.GetElementAttr(dxTarget).Result : elementAttr;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxAutocompleteInterop.SetElementAttr(dxTarget, value);
+            } else {
+                this.elementAttr = value;
+            }
+        }
+    }
+    object height;
+    [Parameter]
+    object Height {
+        get => isInitialized ? DevExpress.Ui.DxAutocompleteInterop.GetHeight(dxTarget).Result : height;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxAutocompleteInterop.SetHeight(dxTarget, value);
+            } else {
+                this.height = value;
+            }
+        }
+    }
+    bool? rtlEnabled;
+    [Parameter]
+    bool? RtlEnabled {
+        get => isInitialized ? (bool?)DevExpress.Ui.DxAutocompleteInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxAutocompleteInterop.SetRtlEnabled(dxTarget, value);
+            } else {
+                this.rtlEnabled = value;
+            }
+        }
+    }
+    object width;
+    [Parameter]
+    object Width {
+        get => isInitialized ? DevExpress.Ui.DxAutocompleteInterop.GetWidth(dxTarget).Result : width;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxAutocompleteInterop.SetWidth(dxTarget, value);
+            } else {
+                this.width = value;
+            }
+        }
+    }
+    object dataSource;
+    [Parameter]
+    object DataSource {
+        get => isInitialized ? DevExpress.Ui.DxAutocompleteInterop.GetDataSource(dxTarget).Result : dataSource;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxAutocompleteInterop.SetDataSource(dxTarget, value);
+            } else {
+                this.dataSource = value;
+            }
+        }
+    }
+    object displayExpr;
+    [Parameter]
+    object DisplayExpr {
+        get => isInitialized ? DevExpress.Ui.DxAutocompleteInterop.GetDisplayExpr(dxTarget).Result : displayExpr;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxAutocompleteInterop.SetDisplayExpr(dxTarget, value);
+            } else {
+                this.displayExpr = value;
+            }
+        }
+    }
+    object items;
+    [Parameter]
+    object Items {
+        get => isInitialized ? DevExpress.Ui.DxAutocompleteInterop.GetItems(dxTarget).Result : items;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxAutocompleteInterop.SetItems(dxTarget, value);
+            } else {
+                this.items = value;
+            }
+        }
+    }
+    object itemTemplate;
+    [Parameter]
+    object ItemTemplate {
+        get => isInitialized ? DevExpress.Ui.DxAutocompleteInterop.GetItemTemplate(dxTarget).Result : itemTemplate;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxAutocompleteInterop.SetItemTemplate(dxTarget, value);
+            } else {
+                this.itemTemplate = value;
+            }
+        }
+    }
+    object valueExpr;
+    [Parameter]
+    object ValueExpr {
+        get => isInitialized ? DevExpress.Ui.DxAutocompleteInterop.GetValueExpr(dxTarget).Result : valueExpr;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxAutocompleteInterop.SetValueExpr(dxTarget, value);
+            } else {
+                this.valueExpr = value;
+            }
+        }
+    }
+    bool? onItemClickEnabled;
+    [Parameter]
+    bool? OnItemClickEnabled {
+        get => onItemClickEnabled;
+        set => this.onItemClickEnabled = value;
+    }
+    bool? onSelectionChangedEnabled;
+    [Parameter]
+    bool? OnSelectionChangedEnabled {
+        get => onSelectionChangedEnabled;
+        set => this.onSelectionChangedEnabled = value;
+    }
+    bool? onValueChangedEnabled;
+    [Parameter]
+    bool? OnValueChangedEnabled {
+        get => onValueChangedEnabled;
+        set => this.onValueChangedEnabled = value;
+    }
+    bool? onClosedEnabled;
+    [Parameter]
+    bool? OnClosedEnabled {
+        get => onClosedEnabled;
+        set => this.onClosedEnabled = value;
+    }
+    bool? onOpenedEnabled;
+    [Parameter]
+    bool? OnOpenedEnabled {
+        get => onOpenedEnabled;
+        set => this.onOpenedEnabled = value;
+    }
+    bool? onChangeEnabled;
+    [Parameter]
+    bool? OnChangeEnabled {
+        get => onChangeEnabled;
+        set => this.onChangeEnabled = value;
+    }
+    bool? onCopyEnabled;
+    [Parameter]
+    bool? OnCopyEnabled {
+        get => onCopyEnabled;
+        set => this.onCopyEnabled = value;
+    }
+    bool? onCutEnabled;
+    [Parameter]
+    bool? OnCutEnabled {
+        get => onCutEnabled;
+        set => this.onCutEnabled = value;
+    }
+    bool? onEnterKeyEnabled;
+    [Parameter]
+    bool? OnEnterKeyEnabled {
+        get => onEnterKeyEnabled;
+        set => this.onEnterKeyEnabled = value;
+    }
+    bool? onFocusInEnabled;
+    [Parameter]
+    bool? OnFocusInEnabled {
+        get => onFocusInEnabled;
+        set => this.onFocusInEnabled = value;
+    }
+    bool? onFocusOutEnabled;
+    [Parameter]
+    bool? OnFocusOutEnabled {
+        get => onFocusOutEnabled;
+        set => this.onFocusOutEnabled = value;
+    }
+    bool? onInputEnabled;
+    [Parameter]
+    bool? OnInputEnabled {
+        get => onInputEnabled;
+        set => this.onInputEnabled = value;
+    }
+    bool? onKeyDownEnabled;
+    [Parameter]
+    bool? OnKeyDownEnabled {
+        get => onKeyDownEnabled;
+        set => this.onKeyDownEnabled = value;
+    }
+    bool? onKeyPressEnabled;
+    [Parameter]
+    bool? OnKeyPressEnabled {
+        get => onKeyPressEnabled;
+        set => this.onKeyPressEnabled = value;
+    }
+    bool? onKeyUpEnabled;
+    [Parameter]
+    bool? OnKeyUpEnabled {
+        get => onKeyUpEnabled;
+        set => this.onKeyUpEnabled = value;
+    }
+    bool? onPasteEnabled;
+    [Parameter]
+    bool? OnPasteEnabled {
+        get => onPasteEnabled;
+        set => this.onPasteEnabled = value;
+    }
+    bool? onContentReadyEnabled;
+    [Parameter]
+    bool? OnContentReadyEnabled {
+        get => onContentReadyEnabled;
+        set => this.onContentReadyEnabled = value;
+    }
+    bool? onDisposingEnabled;
+    [Parameter]
+    bool? OnDisposingEnabled {
+        get => onDisposingEnabled;
+        set => this.onDisposingEnabled = value;
+    }
+    bool? onOptionChangedEnabled;
+    [Parameter]
+    bool? OnOptionChangedEnabled {
+        get => onOptionChangedEnabled;
+        set => this.onOptionChangedEnabled = value;
+    }
+    bool? onInitializedEnabled;
+    [Parameter]
+    bool? OnInitializedEnabled {
+        get => onInitializedEnabled;
+        set => this.onInitializedEnabled = value;
+    }
+    protected override async Task OnInitAsync() {
+        await base.OnInitAsync();
+        DevExpress.Ui.DxAutocompleteInterop.ItemClick += DxAutocomplete_ItemClick;
+        DevExpress.Ui.DxAutocompleteInterop.SelectionChanged += DxAutocomplete_SelectionChanged;
+        //DevExpress.Ui.DxAutocompleteInterop.ValueChanged += DxAutocomplete_ValueChanged;
+        DevExpress.Ui.DxAutocompleteInterop.Closed += DxAutocomplete_Closed;
+        DevExpress.Ui.DxAutocompleteInterop.Opened += DxAutocomplete_Opened;
+        DevExpress.Ui.DxAutocompleteInterop.Change += DxAutocomplete_Change;
+        DevExpress.Ui.DxAutocompleteInterop.Copy += DxAutocomplete_Copy;
+        DevExpress.Ui.DxAutocompleteInterop.Cut += DxAutocomplete_Cut;
+        DevExpress.Ui.DxAutocompleteInterop.EnterKey += DxAutocomplete_EnterKey;
+        DevExpress.Ui.DxAutocompleteInterop.FocusIn += DxAutocomplete_FocusIn;
+        DevExpress.Ui.DxAutocompleteInterop.FocusOut += DxAutocomplete_FocusOut;
+        DevExpress.Ui.DxAutocompleteInterop.Input += DxAutocomplete_Input;
+        DevExpress.Ui.DxAutocompleteInterop.KeyDown += DxAutocomplete_KeyDown;
+        DevExpress.Ui.DxAutocompleteInterop.KeyPress += DxAutocomplete_KeyPress;
+        DevExpress.Ui.DxAutocompleteInterop.KeyUp += DxAutocomplete_KeyUp;
+        DevExpress.Ui.DxAutocompleteInterop.Paste += DxAutocomplete_Paste;
+        DevExpress.Ui.DxAutocompleteInterop.ContentReady += DxAutocomplete_ContentReady;
+        DevExpress.Ui.DxAutocompleteInterop.Disposing += DxAutocomplete_Disposing;
+        DevExpress.Ui.DxAutocompleteInterop.OptionChanged += DxAutocomplete_OptionChanged;
+        DevExpress.Ui.DxAutocompleteInterop.Initialized += DxAutocomplete_Initialized;
+    }
+    [Parameter]
+    Action ItemClick { get; set; }
+    void DxAutocomplete_ItemClick(object sender, JQueryEventArgs e) {
+        if (e.Identifier == Id) {
+            ItemClick?.Invoke();
+        }
+    }
+    [Parameter]
+    Action SelectionChanged { get; set; }
+    void DxAutocomplete_SelectionChanged(object sender, JQueryEventArgs e) {
+        if (e.Identifier == Id) {
+            SelectionChanged?.Invoke();
+        }
+    }
+    [Parameter]
+    Action ValueChanged { get; set; }
+    void DxAutocomplete_ValueChanged(object sender, JQueryEventArgs e) {
+        if (e.Identifier == Id) {
+            ValueChanged?.Invoke();
+        }
+    }
+    [Parameter]
+    Action Closed { get; set; }
+    void DxAutocomplete_Closed(object sender, JQueryEventArgs e) {
+        if (e.Identifier == Id) {
+            Closed?.Invoke();
+        }
+    }
+    [Parameter]
+    Action Opened { get; set; }
+    void DxAutocomplete_Opened(object sender, JQueryEventArgs e) {
+        if (e.Identifier == Id) {
+            Opened?.Invoke();
+        }
+    }
+    [Parameter]
+    Action Change { get; set; }
+    void DxAutocomplete_Change(object sender, JQueryEventArgs e) {
+        if (e.Identifier == Id) {
+            Change?.Invoke();
+        }
+    }
+    [Parameter]
+    Action Copy { get; set; }
+    void DxAutocomplete_Copy(object sender, JQueryEventArgs e) {
+        if (e.Identifier == Id) {
+            Copy?.Invoke();
+        }
+    }
+    [Parameter]
+    Action Cut { get; set; }
+    void DxAutocomplete_Cut(object sender, JQueryEventArgs e) {
+        if (e.Identifier == Id) {
+            Cut?.Invoke();
+        }
+    }
+    [Parameter]
+    Action EnterKey { get; set; }
+    void DxAutocomplete_EnterKey(object sender, JQueryEventArgs e) {
+        if (e.Identifier == Id) {
+            EnterKey?.Invoke();
+        }
+    }
+    [Parameter]
+    Action FocusIn { get; set; }
+    void DxAutocomplete_FocusIn(object sender, JQueryEventArgs e) {
+        if (e.Identifier == Id) {
+            FocusIn?.Invoke();
+        }
+    }
+    [Parameter]
+    Action FocusOut { get; set; }
+    void DxAutocomplete_FocusOut(object sender, JQueryEventArgs e) {
+        if (e.Identifier == Id) {
+            FocusOut?.Invoke();
+        }
+    }
+    [Parameter]
+    Action Input { get; set; }
+    void DxAutocomplete_Input(object sender, JQueryEventArgs e) {
+        if (e.Identifier == Id) {
+            Input?.Invoke();
+        }
+    }
+    [Parameter]
+    Action KeyDown { get; set; }
+    void DxAutocomplete_KeyDown(object sender, JQueryEventArgs e) {
+        if (e.Identifier == Id) {
+            KeyDown?.Invoke();
+        }
+    }
+    [Parameter]
+    Action KeyPress { get; set; }
+    void DxAutocomplete_KeyPress(object sender, JQueryEventArgs e) {
+        if (e.Identifier == Id) {
+            KeyPress?.Invoke();
+        }
+    }
+    [Parameter]
+    Action KeyUp { get; set; }
+    void DxAutocomplete_KeyUp(object sender, JQueryEventArgs e) {
+        if (e.Identifier == Id) {
+            KeyUp?.Invoke();
+        }
+    }
+    [Parameter]
+    Action Paste { get; set; }
+    void DxAutocomplete_Paste(object sender, JQueryEventArgs e) {
+        if (e.Identifier == Id) {
+            Paste?.Invoke();
+        }
+    }
+    [Parameter]
+    Action ContentReady { get; set; }
+    void DxAutocomplete_ContentReady(object sender, JQueryEventArgs e) {
+        if (e.Identifier == Id) {
+            ContentReady?.Invoke();
+        }
+    }
+    [Parameter]
+    Action Disposing { get; set; }
+    void DxAutocomplete_Disposing(object sender, JQueryEventArgs e) {
+        if (e.Identifier == Id) {
+            Disposing?.Invoke();
+        }
+    }
+    [Parameter]
+    Action OptionChanged { get; set; }
+    void DxAutocomplete_OptionChanged(object sender, JQueryEventArgs e) {
+        if (e.Identifier == Id) {
+            OptionChanged?.Invoke();
+        }
+    }
+    [Parameter]
+    Action Initialized { get; set; }
+    void DxAutocomplete_Initialized(object sender, JQueryEventArgs e) {
+        if (e.Identifier == Id) {
+            Initialized?.Invoke();
+        }
+    }
+    public void Dispose() {
+        DevExpress.Ui.DxAutocompleteInterop.ItemClick -= DxAutocomplete_ItemClick;
+        DevExpress.Ui.DxAutocompleteInterop.SelectionChanged -= DxAutocomplete_SelectionChanged;
+        //DevExpress.Ui.DxAutocompleteInterop.ValueChanged -= DxAutocomplete_ValueChanged;
+        DevExpress.Ui.DxAutocompleteInterop.Closed -= DxAutocomplete_Closed;
+        DevExpress.Ui.DxAutocompleteInterop.Opened -= DxAutocomplete_Opened;
+        DevExpress.Ui.DxAutocompleteInterop.Change -= DxAutocomplete_Change;
+        DevExpress.Ui.DxAutocompleteInterop.Copy -= DxAutocomplete_Copy;
+        DevExpress.Ui.DxAutocompleteInterop.Cut -= DxAutocomplete_Cut;
+        DevExpress.Ui.DxAutocompleteInterop.EnterKey -= DxAutocomplete_EnterKey;
+        DevExpress.Ui.DxAutocompleteInterop.FocusIn -= DxAutocomplete_FocusIn;
+        DevExpress.Ui.DxAutocompleteInterop.FocusOut -= DxAutocomplete_FocusOut;
+        DevExpress.Ui.DxAutocompleteInterop.Input -= DxAutocomplete_Input;
+        DevExpress.Ui.DxAutocompleteInterop.KeyDown -= DxAutocomplete_KeyDown;
+        DevExpress.Ui.DxAutocompleteInterop.KeyPress -= DxAutocomplete_KeyPress;
+        DevExpress.Ui.DxAutocompleteInterop.KeyUp -= DxAutocomplete_KeyUp;
+        DevExpress.Ui.DxAutocompleteInterop.Paste -= DxAutocomplete_Paste;
+        DevExpress.Ui.DxAutocompleteInterop.ContentReady -= DxAutocomplete_ContentReady;
+        DevExpress.Ui.DxAutocompleteInterop.Disposing -= DxAutocomplete_Disposing;
+        DevExpress.Ui.DxAutocompleteInterop.OptionChanged -= DxAutocomplete_OptionChanged;
+        DevExpress.Ui.DxAutocompleteInterop.Initialized -= DxAutocomplete_Initialized;
+    }
+}

@@ -1,0 +1,618 @@
+
+@using Microsoft.AspNetCore.Components
+@implements IDisposable
+@inherits DxBlazorComponent<DevExpress.Ui.DxTabPanelOptions>
+
+<div id="@Id" @ref="dxTarget"></div>
+
+@functions {
+	ElementReference dxTarget;
+	public DxTabPanel() : base("DxTabPanel") { }
+	protected override DevExpress.Ui.DxTabPanelOptions CreateOptions() {
+		return new DevExpress.Ui.DxTabPanelOptions {
+			animationEnabled = animationEnabled,
+			focusStateEnabled = focusStateEnabled,
+			hoverStateEnabled = hoverStateEnabled,
+			itemTitleTemplate = itemTitleTemplate,
+			scrollByContent = scrollByContent,
+			scrollingEnabled = scrollingEnabled,
+			showNavButtons = showNavButtons,
+			swipeEnabled = swipeEnabled,
+			deferRendering = deferRendering,
+			loop = loop,
+			selectedIndex = selectedIndex,
+			dataSource = dataSource,
+			itemHoldTimeout = itemHoldTimeout,
+			items = items,
+			itemTemplate = itemTemplate,
+			keyExpr = keyExpr,
+			noDataText = noDataText,
+			selectedItem = selectedItem,
+			selectedItemKeys = selectedItemKeys,
+			selectedItems = selectedItems,
+			accessKey = accessKey,
+			activeStateEnabled = activeStateEnabled,
+			disabled = disabled,
+			hint = hint,
+			tabIndex = tabIndex,
+			visible = visible,
+			bindingOptions = bindingOptions,
+			elementAttr = elementAttr,
+			height = height,
+			rtlEnabled = rtlEnabled,
+			width = width,
+			onTitleClickEnabled = onTitleClickEnabled,
+			onTitleHoldEnabled = onTitleHoldEnabled,
+			onTitleRenderedEnabled = onTitleRenderedEnabled,
+			onItemClickEnabled = onItemClickEnabled,
+			onItemContextMenuEnabled = onItemContextMenuEnabled,
+			onItemHoldEnabled = onItemHoldEnabled,
+			onItemRenderedEnabled = onItemRenderedEnabled,
+			onSelectionChangedEnabled = onSelectionChangedEnabled,
+			onContentReadyEnabled = onContentReadyEnabled,
+			onDisposingEnabled = onDisposingEnabled,
+			onOptionChangedEnabled = onOptionChangedEnabled,
+			onInitializedEnabled = onInitializedEnabled,
+		};
+	}
+	protected override Task Init(DevExpress.Ui.DxTabPanelOptions options) {
+		return DevExpress.Ui.DxTabPanelInterop.Init(dxTarget, options);
+	}
+	bool? animationEnabled;
+	[Parameter]
+	bool? AnimationEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTabPanelInterop.GetAnimationEnabled(dxTarget).Result : animationEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTabPanelInterop.SetAnimationEnabled(dxTarget, value);
+			} else {
+				this.animationEnabled = value;
+			}
+		}
+	}
+	bool? focusStateEnabled;
+	[Parameter]
+	bool? FocusStateEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTabPanelInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTabPanelInterop.SetFocusStateEnabled(dxTarget, value);
+			} else {
+				this.focusStateEnabled = value;
+			}
+		}
+	}
+	bool? hoverStateEnabled;
+	[Parameter]
+	bool? HoverStateEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTabPanelInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTabPanelInterop.SetHoverStateEnabled(dxTarget, value);
+			} else {
+				this.hoverStateEnabled = value;
+			}
+		}
+	}
+	object itemTitleTemplate;
+	[Parameter]
+	object ItemTitleTemplate {
+		get => isInitialized ? DevExpress.Ui.DxTabPanelInterop.GetItemTitleTemplate(dxTarget).Result : itemTitleTemplate;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTabPanelInterop.SetItemTitleTemplate(dxTarget, value);
+			} else {
+				this.itemTitleTemplate = value;
+			}
+		}
+	}
+	bool? scrollByContent;
+	[Parameter]
+	bool? ScrollByContent {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTabPanelInterop.GetScrollByContent(dxTarget).Result : scrollByContent;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTabPanelInterop.SetScrollByContent(dxTarget, value);
+			} else {
+				this.scrollByContent = value;
+			}
+		}
+	}
+	bool? scrollingEnabled;
+	[Parameter]
+	bool? ScrollingEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTabPanelInterop.GetScrollingEnabled(dxTarget).Result : scrollingEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTabPanelInterop.SetScrollingEnabled(dxTarget, value);
+			} else {
+				this.scrollingEnabled = value;
+			}
+		}
+	}
+	bool? showNavButtons;
+	[Parameter]
+	bool? ShowNavButtons {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTabPanelInterop.GetShowNavButtons(dxTarget).Result : showNavButtons;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTabPanelInterop.SetShowNavButtons(dxTarget, value);
+			} else {
+				this.showNavButtons = value;
+			}
+		}
+	}
+	bool? swipeEnabled;
+	[Parameter]
+	bool? SwipeEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTabPanelInterop.GetSwipeEnabled(dxTarget).Result : swipeEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTabPanelInterop.SetSwipeEnabled(dxTarget, value);
+			} else {
+				this.swipeEnabled = value;
+			}
+		}
+	}
+	bool? deferRendering;
+	[Parameter]
+	bool? DeferRendering {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTabPanelInterop.GetDeferRendering(dxTarget).Result : deferRendering;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTabPanelInterop.SetDeferRendering(dxTarget, value);
+			} else {
+				this.deferRendering = value;
+			}
+		}
+	}
+	bool? loop;
+	[Parameter]
+	bool? Loop {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTabPanelInterop.GetLoop(dxTarget).Result : loop;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTabPanelInterop.SetLoop(dxTarget, value);
+			} else {
+				this.loop = value;
+			}
+		}
+	}
+	float? selectedIndex;
+	[Parameter]
+	float? SelectedIndex {
+		get => isInitialized ? (float?)DevExpress.Ui.DxTabPanelInterop.GetSelectedIndex(dxTarget).Result : selectedIndex;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTabPanelInterop.SetSelectedIndex(dxTarget, value);
+			} else {
+				this.selectedIndex = value;
+			}
+		}
+	}
+	object dataSource;
+	[Parameter]
+	object DataSource {
+		get => isInitialized ? DevExpress.Ui.DxTabPanelInterop.GetDataSource(dxTarget).Result : dataSource;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTabPanelInterop.SetDataSource(dxTarget, value);
+			} else {
+				this.dataSource = value;
+			}
+		}
+	}
+	float? itemHoldTimeout;
+	[Parameter]
+	float? ItemHoldTimeout {
+		get => isInitialized ? (float?)DevExpress.Ui.DxTabPanelInterop.GetItemHoldTimeout(dxTarget).Result : itemHoldTimeout;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTabPanelInterop.SetItemHoldTimeout(dxTarget, value);
+			} else {
+				this.itemHoldTimeout = value;
+			}
+		}
+	}
+	object items;
+	[Parameter]
+	object Items {
+		get => isInitialized ? DevExpress.Ui.DxTabPanelInterop.GetItems(dxTarget).Result : items;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTabPanelInterop.SetItems(dxTarget, value);
+			} else {
+				this.items = value;
+			}
+		}
+	}
+	object itemTemplate;
+	[Parameter]
+	object ItemTemplate {
+		get => isInitialized ? DevExpress.Ui.DxTabPanelInterop.GetItemTemplate(dxTarget).Result : itemTemplate;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTabPanelInterop.SetItemTemplate(dxTarget, value);
+			} else {
+				this.itemTemplate = value;
+			}
+		}
+	}
+	object keyExpr;
+	[Parameter]
+	object KeyExpr {
+		get => isInitialized ? DevExpress.Ui.DxTabPanelInterop.GetKeyExpr(dxTarget).Result : keyExpr;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTabPanelInterop.SetKeyExpr(dxTarget, value);
+			} else {
+				this.keyExpr = value;
+			}
+		}
+	}
+	string noDataText;
+	[Parameter]
+	string NoDataText {
+		get => isInitialized ? (string)DevExpress.Ui.DxTabPanelInterop.GetNoDataText(dxTarget).Result : noDataText;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTabPanelInterop.SetNoDataText(dxTarget, value);
+			} else {
+				this.noDataText = value;
+			}
+		}
+	}
+	object selectedItem;
+	[Parameter]
+	object SelectedItem {
+		get => isInitialized ? DevExpress.Ui.DxTabPanelInterop.GetSelectedItem(dxTarget).Result : selectedItem;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTabPanelInterop.SetSelectedItem(dxTarget, value);
+			} else {
+				this.selectedItem = value;
+			}
+		}
+	}
+	object selectedItemKeys;
+	[Parameter]
+	object SelectedItemKeys {
+		get => isInitialized ? DevExpress.Ui.DxTabPanelInterop.GetSelectedItemKeys(dxTarget).Result : selectedItemKeys;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTabPanelInterop.SetSelectedItemKeys(dxTarget, value);
+			} else {
+				this.selectedItemKeys = value;
+			}
+		}
+	}
+	object selectedItems;
+	[Parameter]
+	object SelectedItems {
+		get => isInitialized ? DevExpress.Ui.DxTabPanelInterop.GetSelectedItems(dxTarget).Result : selectedItems;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTabPanelInterop.SetSelectedItems(dxTarget, value);
+			} else {
+				this.selectedItems = value;
+			}
+		}
+	}
+	string accessKey;
+	[Parameter]
+	string AccessKey {
+		get => isInitialized ? (string)DevExpress.Ui.DxTabPanelInterop.GetAccessKey(dxTarget).Result : accessKey;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTabPanelInterop.SetAccessKey(dxTarget, value);
+			} else {
+				this.accessKey = value;
+			}
+		}
+	}
+	bool? activeStateEnabled;
+	[Parameter]
+	bool? ActiveStateEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTabPanelInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTabPanelInterop.SetActiveStateEnabled(dxTarget, value);
+			} else {
+				this.activeStateEnabled = value;
+			}
+		}
+	}
+	bool? disabled;
+	[Parameter]
+	bool? Disabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTabPanelInterop.GetDisabled(dxTarget).Result : disabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTabPanelInterop.SetDisabled(dxTarget, value);
+			} else {
+				this.disabled = value;
+			}
+		}
+	}
+	string hint;
+	[Parameter]
+	string Hint {
+		get => isInitialized ? (string)DevExpress.Ui.DxTabPanelInterop.GetHint(dxTarget).Result : hint;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTabPanelInterop.SetHint(dxTarget, value);
+			} else {
+				this.hint = value;
+			}
+		}
+	}
+	float? tabIndex;
+	[Parameter]
+	float? TabIndex {
+		get => isInitialized ? (float?)DevExpress.Ui.DxTabPanelInterop.GetTabIndex(dxTarget).Result : tabIndex;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTabPanelInterop.SetTabIndex(dxTarget, value);
+			} else {
+				this.tabIndex = value;
+			}
+		}
+	}
+	bool? visible;
+	[Parameter]
+	bool? Visible {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTabPanelInterop.GetVisible(dxTarget).Result : visible;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTabPanelInterop.SetVisible(dxTarget, value);
+			} else {
+				this.visible = value;
+			}
+		}
+	}
+	object bindingOptions;
+	[Parameter]
+	object BindingOptions {
+		get => isInitialized ? DevExpress.Ui.DxTabPanelInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTabPanelInterop.SetBindingOptions(dxTarget, value);
+			} else {
+				this.bindingOptions = value;
+			}
+		}
+	}
+	object elementAttr;
+	[Parameter]
+	object ElementAttr {
+		get => isInitialized ? DevExpress.Ui.DxTabPanelInterop.GetElementAttr(dxTarget).Result : elementAttr;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTabPanelInterop.SetElementAttr(dxTarget, value);
+			} else {
+				this.elementAttr = value;
+			}
+		}
+	}
+	object height;
+	[Parameter]
+	object Height {
+		get => isInitialized ? DevExpress.Ui.DxTabPanelInterop.GetHeight(dxTarget).Result : height;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTabPanelInterop.SetHeight(dxTarget, value);
+			} else {
+				this.height = value;
+			}
+		}
+	}
+	bool? rtlEnabled;
+	[Parameter]
+	bool? RtlEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTabPanelInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTabPanelInterop.SetRtlEnabled(dxTarget, value);
+			} else {
+				this.rtlEnabled = value;
+			}
+		}
+	}
+	object width;
+	[Parameter]
+	object Width {
+		get => isInitialized ? DevExpress.Ui.DxTabPanelInterop.GetWidth(dxTarget).Result : width;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTabPanelInterop.SetWidth(dxTarget, value);
+			} else {
+				this.width = value;
+			}
+		}
+	}
+	bool? onTitleClickEnabled;
+	[Parameter]
+	bool? OnTitleClickEnabled {
+		get => onTitleClickEnabled;
+		set => this.onTitleClickEnabled = value;
+	}
+	bool? onTitleHoldEnabled;
+	[Parameter]
+	bool? OnTitleHoldEnabled {
+		get => onTitleHoldEnabled;
+		set => this.onTitleHoldEnabled = value;
+	}
+	bool? onTitleRenderedEnabled;
+	[Parameter]
+	bool? OnTitleRenderedEnabled {
+		get => onTitleRenderedEnabled;
+		set => this.onTitleRenderedEnabled = value;
+	}
+	bool? onItemClickEnabled;
+	[Parameter]
+	bool? OnItemClickEnabled {
+		get => onItemClickEnabled;
+		set => this.onItemClickEnabled = value;
+	}
+	bool? onItemContextMenuEnabled;
+	[Parameter]
+	bool? OnItemContextMenuEnabled {
+		get => onItemContextMenuEnabled;
+		set => this.onItemContextMenuEnabled = value;
+	}
+	bool? onItemHoldEnabled;
+	[Parameter]
+	bool? OnItemHoldEnabled {
+		get => onItemHoldEnabled;
+		set => this.onItemHoldEnabled = value;
+	}
+	bool? onItemRenderedEnabled;
+	[Parameter]
+	bool? OnItemRenderedEnabled {
+		get => onItemRenderedEnabled;
+		set => this.onItemRenderedEnabled = value;
+	}
+	bool? onSelectionChangedEnabled;
+	[Parameter]
+	bool? OnSelectionChangedEnabled {
+		get => onSelectionChangedEnabled;
+		set => this.onSelectionChangedEnabled = value;
+	}
+	bool? onContentReadyEnabled;
+	[Parameter]
+	bool? OnContentReadyEnabled {
+		get => onContentReadyEnabled;
+		set => this.onContentReadyEnabled = value;
+	}
+	bool? onDisposingEnabled;
+	[Parameter]
+	bool? OnDisposingEnabled {
+		get => onDisposingEnabled;
+		set => this.onDisposingEnabled = value;
+	}
+	bool? onOptionChangedEnabled;
+	[Parameter]
+	bool? OnOptionChangedEnabled {
+		get => onOptionChangedEnabled;
+		set => this.onOptionChangedEnabled = value;
+	}
+	bool? onInitializedEnabled;
+	[Parameter]
+	bool? OnInitializedEnabled {
+		get => onInitializedEnabled;
+		set => this.onInitializedEnabled = value;
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+		DevExpress.Ui.DxTabPanelInterop.TitleClick += DxTabPanel_TitleClick;
+		DevExpress.Ui.DxTabPanelInterop.TitleHold += DxTabPanel_TitleHold;
+		DevExpress.Ui.DxTabPanelInterop.TitleRendered += DxTabPanel_TitleRendered;
+		DevExpress.Ui.DxTabPanelInterop.ItemClick += DxTabPanel_ItemClick;
+		DevExpress.Ui.DxTabPanelInterop.ItemContextMenu += DxTabPanel_ItemContextMenu;
+		DevExpress.Ui.DxTabPanelInterop.ItemHold += DxTabPanel_ItemHold;
+		DevExpress.Ui.DxTabPanelInterop.ItemRendered += DxTabPanel_ItemRendered;
+		DevExpress.Ui.DxTabPanelInterop.SelectionChanged += DxTabPanel_SelectionChanged;
+		DevExpress.Ui.DxTabPanelInterop.ContentReady += DxTabPanel_ContentReady;
+		DevExpress.Ui.DxTabPanelInterop.Disposing += DxTabPanel_Disposing;
+		DevExpress.Ui.DxTabPanelInterop.OptionChanged += DxTabPanel_OptionChanged;
+		DevExpress.Ui.DxTabPanelInterop.Initialized += DxTabPanel_Initialized;
+	}
+	[Parameter]
+	Action TitleClick { get; set; }
+	void DxTabPanel_TitleClick(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			TitleClick?.Invoke();
+		}
+	}
+	[Parameter]
+	Action TitleHold { get; set; }
+	void DxTabPanel_TitleHold(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			TitleHold?.Invoke();
+		}
+	}
+	[Parameter]
+	Action TitleRendered { get; set; }
+	void DxTabPanel_TitleRendered(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			TitleRendered?.Invoke();
+		}
+	}
+	[Parameter]
+	Action ItemClick { get; set; }
+	void DxTabPanel_ItemClick(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			ItemClick?.Invoke();
+		}
+	}
+	[Parameter]
+	Action ItemContextMenu { get; set; }
+	void DxTabPanel_ItemContextMenu(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			ItemContextMenu?.Invoke();
+		}
+	}
+	[Parameter]
+	Action ItemHold { get; set; }
+	void DxTabPanel_ItemHold(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			ItemHold?.Invoke();
+		}
+	}
+	[Parameter]
+	Action ItemRendered { get; set; }
+	void DxTabPanel_ItemRendered(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			ItemRendered?.Invoke();
+		}
+	}
+	[Parameter]
+	Action SelectionChanged { get; set; }
+	void DxTabPanel_SelectionChanged(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			SelectionChanged?.Invoke();
+		}
+	}
+	[Parameter]
+	Action ContentReady { get; set; }
+	void DxTabPanel_ContentReady(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			ContentReady?.Invoke();
+		}
+	}
+	[Parameter]
+	Action Disposing { get; set; }
+	void DxTabPanel_Disposing(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Disposing?.Invoke();
+		}
+	}
+	[Parameter]
+	Action OptionChanged { get; set; }
+	void DxTabPanel_OptionChanged(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			OptionChanged?.Invoke();
+		}
+	}
+	[Parameter]
+	Action Initialized { get; set; }
+	void DxTabPanel_Initialized(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Initialized?.Invoke();
+		}
+	}
+	public void Dispose() {
+		DevExpress.Ui.DxTabPanelInterop.TitleClick -= DxTabPanel_TitleClick;
+		DevExpress.Ui.DxTabPanelInterop.TitleHold -= DxTabPanel_TitleHold;
+		DevExpress.Ui.DxTabPanelInterop.TitleRendered -= DxTabPanel_TitleRendered;
+		DevExpress.Ui.DxTabPanelInterop.ItemClick -= DxTabPanel_ItemClick;
+		DevExpress.Ui.DxTabPanelInterop.ItemContextMenu -= DxTabPanel_ItemContextMenu;
+		DevExpress.Ui.DxTabPanelInterop.ItemHold -= DxTabPanel_ItemHold;
+		DevExpress.Ui.DxTabPanelInterop.ItemRendered -= DxTabPanel_ItemRendered;
+		DevExpress.Ui.DxTabPanelInterop.SelectionChanged -= DxTabPanel_SelectionChanged;
+		DevExpress.Ui.DxTabPanelInterop.ContentReady -= DxTabPanel_ContentReady;
+		DevExpress.Ui.DxTabPanelInterop.Disposing -= DxTabPanel_Disposing;
+		DevExpress.Ui.DxTabPanelInterop.OptionChanged -= DxTabPanel_OptionChanged;
+		DevExpress.Ui.DxTabPanelInterop.Initialized -= DxTabPanel_Initialized;
+	}
+}

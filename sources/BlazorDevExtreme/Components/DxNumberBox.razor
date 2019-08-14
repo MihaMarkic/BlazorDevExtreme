@@ -1,0 +1,786 @@
+
+@using Microsoft.AspNetCore.Components
+@implements IDisposable
+@inherits DxBlazorComponent<DevExpress.Ui.DxNumberBoxOptions>
+
+<div id="@Id" @ref="dxTarget"></div>
+
+@functions {
+    ElementReference dxTarget;
+    public DxNumberBox() : base("DxNumberBox") { }
+    protected override DevExpress.Ui.DxNumberBoxOptions CreateOptions() {
+        return new DevExpress.Ui.DxNumberBoxOptions {
+            format = format,
+            invalidValueMessage = invalidValueMessage,
+            max = max,
+            min = min,
+            mode = mode,
+            showSpinButtons = showSpinButtons,
+            step = step,
+            useLargeSpinButtons = useLargeSpinButtons,
+            value = value,
+            focusStateEnabled = focusStateEnabled,
+            hoverStateEnabled = hoverStateEnabled,
+            inputAttr = inputAttr,
+            mask = mask,
+            maskChar = maskChar,
+            maskInvalidMessage = maskInvalidMessage,
+            maskRules = maskRules,
+            name = name,
+            placeholder = placeholder,
+            showClearButton = showClearButton,
+            showMaskMode = showMaskMode,
+            spellcheck = spellcheck,
+            text = text,
+            useMaskedValue = useMaskedValue,
+            valueChangeEvent = valueChangeEvent,
+            isValid = isValid,
+            readOnly = readOnly,
+            validationError = validationError,
+            validationMessageMode = validationMessageMode,
+            accessKey = accessKey,
+            activeStateEnabled = activeStateEnabled,
+            disabled = disabled,
+            hint = hint,
+            tabIndex = tabIndex,
+            visible = visible,
+            bindingOptions = bindingOptions,
+            elementAttr = elementAttr,
+            height = height,
+            rtlEnabled = rtlEnabled,
+            width = width,
+            onChangeEnabled = onChangeEnabled,
+            onCopyEnabled = onCopyEnabled,
+            onCutEnabled = onCutEnabled,
+            onEnterKeyEnabled = onEnterKeyEnabled,
+            onFocusInEnabled = onFocusInEnabled,
+            onFocusOutEnabled = onFocusOutEnabled,
+            onInputEnabled = onInputEnabled,
+            onKeyDownEnabled = onKeyDownEnabled,
+            onKeyPressEnabled = onKeyPressEnabled,
+            onKeyUpEnabled = onKeyUpEnabled,
+            onPasteEnabled = onPasteEnabled,
+            onValueChangedEnabled = onValueChangedEnabled,
+            onContentReadyEnabled = onContentReadyEnabled,
+            onDisposingEnabled = onDisposingEnabled,
+            onOptionChangedEnabled = onOptionChangedEnabled,
+            onInitializedEnabled = onInitializedEnabled,
+        };
+    }
+    protected override Task Init(DevExpress.Ui.DxNumberBoxOptions options) {
+        return DevExpress.Ui.DxNumberBoxInterop.Init(dxTarget, options);
+    }
+    object format;
+    [Parameter]
+    object Format {
+        get => isInitialized ? DevExpress.Ui.DxNumberBoxInterop.GetFormat(dxTarget).Result : format;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxNumberBoxInterop.SetFormat(dxTarget, value);
+            } else {
+                this.format = value;
+            }
+        }
+    }
+    string invalidValueMessage;
+    [Parameter]
+    string InvalidValueMessage {
+        get => isInitialized ? (string)DevExpress.Ui.DxNumberBoxInterop.GetInvalidValueMessage(dxTarget).Result : invalidValueMessage;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxNumberBoxInterop.SetInvalidValueMessage(dxTarget, value);
+            } else {
+                this.invalidValueMessage = value;
+            }
+        }
+    }
+    float? max;
+    [Parameter]
+    float? Max {
+        get => isInitialized ? (float?)DevExpress.Ui.DxNumberBoxInterop.GetMax(dxTarget).Result : max;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxNumberBoxInterop.SetMax(dxTarget, value);
+            } else {
+                this.max = value;
+            }
+        }
+    }
+    float? min;
+    [Parameter]
+    float? Min {
+        get => isInitialized ? (float?)DevExpress.Ui.DxNumberBoxInterop.GetMin(dxTarget).Result : min;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxNumberBoxInterop.SetMin(dxTarget, value);
+            } else {
+                this.min = value;
+            }
+        }
+    }
+    string mode;
+    [Parameter]
+    string Mode {
+        get => isInitialized ? (string)DevExpress.Ui.DxNumberBoxInterop.GetMode(dxTarget).Result : mode;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxNumberBoxInterop.SetMode(dxTarget, value);
+            } else {
+                this.mode = value;
+            }
+        }
+    }
+    bool? showSpinButtons;
+    [Parameter]
+    bool? ShowSpinButtons {
+        get => isInitialized ? (bool?)DevExpress.Ui.DxNumberBoxInterop.GetShowSpinButtons(dxTarget).Result : showSpinButtons;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxNumberBoxInterop.SetShowSpinButtons(dxTarget, value);
+            } else {
+                this.showSpinButtons = value;
+            }
+        }
+    }
+    float? step;
+    [Parameter]
+    float? Step {
+        get => isInitialized ? (float?)DevExpress.Ui.DxNumberBoxInterop.GetStep(dxTarget).Result : step;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxNumberBoxInterop.SetStep(dxTarget, value);
+            } else {
+                this.step = value;
+            }
+        }
+    }
+    bool? useLargeSpinButtons;
+    [Parameter]
+    bool? UseLargeSpinButtons {
+        get => isInitialized ? (bool?)DevExpress.Ui.DxNumberBoxInterop.GetUseLargeSpinButtons(dxTarget).Result : useLargeSpinButtons;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxNumberBoxInterop.SetUseLargeSpinButtons(dxTarget, value);
+            } else {
+                this.useLargeSpinButtons = value;
+            }
+        }
+    }
+    float? value;
+    [Parameter]
+    float? Value {
+        get => isInitialized ? (float?)DevExpress.Ui.DxNumberBoxInterop.GetValue(dxTarget).Result : value;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxNumberBoxInterop.SetValue(dxTarget, value);
+            } else {
+                this.value = value;
+            }
+        }
+    }
+    bool? focusStateEnabled;
+    [Parameter]
+    bool? FocusStateEnabled {
+        get => isInitialized ? (bool?)DevExpress.Ui.DxNumberBoxInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxNumberBoxInterop.SetFocusStateEnabled(dxTarget, value);
+            } else {
+                this.focusStateEnabled = value;
+            }
+        }
+    }
+    bool? hoverStateEnabled;
+    [Parameter]
+    bool? HoverStateEnabled {
+        get => isInitialized ? (bool?)DevExpress.Ui.DxNumberBoxInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxNumberBoxInterop.SetHoverStateEnabled(dxTarget, value);
+            } else {
+                this.hoverStateEnabled = value;
+            }
+        }
+    }
+    object inputAttr;
+    [Parameter]
+    object InputAttr {
+        get => isInitialized ? DevExpress.Ui.DxNumberBoxInterop.GetInputAttr(dxTarget).Result : inputAttr;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxNumberBoxInterop.SetInputAttr(dxTarget, value);
+            } else {
+                this.inputAttr = value;
+            }
+        }
+    }
+    string mask;
+    [Parameter]
+    string Mask {
+        get => isInitialized ? (string)DevExpress.Ui.DxNumberBoxInterop.GetMask(dxTarget).Result : mask;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxNumberBoxInterop.SetMask(dxTarget, value);
+            } else {
+                this.mask = value;
+            }
+        }
+    }
+    string maskChar;
+    [Parameter]
+    string MaskChar {
+        get => isInitialized ? (string)DevExpress.Ui.DxNumberBoxInterop.GetMaskChar(dxTarget).Result : maskChar;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxNumberBoxInterop.SetMaskChar(dxTarget, value);
+            } else {
+                this.maskChar = value;
+            }
+        }
+    }
+    string maskInvalidMessage;
+    [Parameter]
+    string MaskInvalidMessage {
+        get => isInitialized ? (string)DevExpress.Ui.DxNumberBoxInterop.GetMaskInvalidMessage(dxTarget).Result : maskInvalidMessage;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxNumberBoxInterop.SetMaskInvalidMessage(dxTarget, value);
+            } else {
+                this.maskInvalidMessage = value;
+            }
+        }
+    }
+    object maskRules;
+    [Parameter]
+    object MaskRules {
+        get => isInitialized ? DevExpress.Ui.DxNumberBoxInterop.GetMaskRules(dxTarget).Result : maskRules;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxNumberBoxInterop.SetMaskRules(dxTarget, value);
+            } else {
+                this.maskRules = value;
+            }
+        }
+    }
+    string name;
+    [Parameter]
+    string Name {
+        get => isInitialized ? (string)DevExpress.Ui.DxNumberBoxInterop.GetName(dxTarget).Result : name;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxNumberBoxInterop.SetName(dxTarget, value);
+            } else {
+                this.name = value;
+            }
+        }
+    }
+    string placeholder;
+    [Parameter]
+    string Placeholder {
+        get => isInitialized ? (string)DevExpress.Ui.DxNumberBoxInterop.GetPlaceholder(dxTarget).Result : placeholder;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxNumberBoxInterop.SetPlaceholder(dxTarget, value);
+            } else {
+                this.placeholder = value;
+            }
+        }
+    }
+    bool? showClearButton;
+    [Parameter]
+    bool? ShowClearButton {
+        get => isInitialized ? (bool?)DevExpress.Ui.DxNumberBoxInterop.GetShowClearButton(dxTarget).Result : showClearButton;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxNumberBoxInterop.SetShowClearButton(dxTarget, value);
+            } else {
+                this.showClearButton = value;
+            }
+        }
+    }
+    string showMaskMode;
+    [Parameter]
+    string ShowMaskMode {
+        get => isInitialized ? (string)DevExpress.Ui.DxNumberBoxInterop.GetShowMaskMode(dxTarget).Result : showMaskMode;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxNumberBoxInterop.SetShowMaskMode(dxTarget, value);
+            } else {
+                this.showMaskMode = value;
+            }
+        }
+    }
+    bool? spellcheck;
+    [Parameter]
+    bool? Spellcheck {
+        get => isInitialized ? (bool?)DevExpress.Ui.DxNumberBoxInterop.GetSpellcheck(dxTarget).Result : spellcheck;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxNumberBoxInterop.SetSpellcheck(dxTarget, value);
+            } else {
+                this.spellcheck = value;
+            }
+        }
+    }
+    string text;
+    [Parameter]
+    string Text {
+        get => isInitialized ? (string)DevExpress.Ui.DxNumberBoxInterop.GetText(dxTarget).Result : text;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxNumberBoxInterop.SetText(dxTarget, value);
+            } else {
+                this.text = value;
+            }
+        }
+    }
+    bool? useMaskedValue;
+    [Parameter]
+    bool? UseMaskedValue {
+        get => isInitialized ? (bool?)DevExpress.Ui.DxNumberBoxInterop.GetUseMaskedValue(dxTarget).Result : useMaskedValue;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxNumberBoxInterop.SetUseMaskedValue(dxTarget, value);
+            } else {
+                this.useMaskedValue = value;
+            }
+        }
+    }
+    string valueChangeEvent;
+    [Parameter]
+    string ValueChangeEvent {
+        get => isInitialized ? (string)DevExpress.Ui.DxNumberBoxInterop.GetValueChangeEvent(dxTarget).Result : valueChangeEvent;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxNumberBoxInterop.SetValueChangeEvent(dxTarget, value);
+            } else {
+                this.valueChangeEvent = value;
+            }
+        }
+    }
+    bool? isValid;
+    [Parameter]
+    bool? IsValid {
+        get => isInitialized ? (bool?)DevExpress.Ui.DxNumberBoxInterop.GetIsValid(dxTarget).Result : isValid;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxNumberBoxInterop.SetIsValid(dxTarget, value);
+            } else {
+                this.isValid = value;
+            }
+        }
+    }
+    bool? readOnly;
+    [Parameter]
+    bool? ReadOnly {
+        get => isInitialized ? (bool?)DevExpress.Ui.DxNumberBoxInterop.GetReadOnly(dxTarget).Result : readOnly;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxNumberBoxInterop.SetReadOnly(dxTarget, value);
+            } else {
+                this.readOnly = value;
+            }
+        }
+    }
+    object validationError;
+    [Parameter]
+    object ValidationError {
+        get => isInitialized ? DevExpress.Ui.DxNumberBoxInterop.GetValidationError(dxTarget).Result : validationError;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxNumberBoxInterop.SetValidationError(dxTarget, value);
+            } else {
+                this.validationError = value;
+            }
+        }
+    }
+    string validationMessageMode;
+    [Parameter]
+    string ValidationMessageMode {
+        get => isInitialized ? (string)DevExpress.Ui.DxNumberBoxInterop.GetValidationMessageMode(dxTarget).Result : validationMessageMode;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxNumberBoxInterop.SetValidationMessageMode(dxTarget, value);
+            } else {
+                this.validationMessageMode = value;
+            }
+        }
+    }
+    string accessKey;
+    [Parameter]
+    string AccessKey {
+        get => isInitialized ? (string)DevExpress.Ui.DxNumberBoxInterop.GetAccessKey(dxTarget).Result : accessKey;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxNumberBoxInterop.SetAccessKey(dxTarget, value);
+            } else {
+                this.accessKey = value;
+            }
+        }
+    }
+    bool? activeStateEnabled;
+    [Parameter]
+    bool? ActiveStateEnabled {
+        get => isInitialized ? (bool?)DevExpress.Ui.DxNumberBoxInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxNumberBoxInterop.SetActiveStateEnabled(dxTarget, value);
+            } else {
+                this.activeStateEnabled = value;
+            }
+        }
+    }
+    bool? disabled;
+    [Parameter]
+    bool? Disabled {
+        get => isInitialized ? (bool?)DevExpress.Ui.DxNumberBoxInterop.GetDisabled(dxTarget).Result : disabled;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxNumberBoxInterop.SetDisabled(dxTarget, value);
+            } else {
+                this.disabled = value;
+            }
+        }
+    }
+    string hint;
+    [Parameter]
+    string Hint {
+        get => isInitialized ? (string)DevExpress.Ui.DxNumberBoxInterop.GetHint(dxTarget).Result : hint;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxNumberBoxInterop.SetHint(dxTarget, value);
+            } else {
+                this.hint = value;
+            }
+        }
+    }
+    float? tabIndex;
+    [Parameter]
+    float? TabIndex {
+        get => isInitialized ? (float?)DevExpress.Ui.DxNumberBoxInterop.GetTabIndex(dxTarget).Result : tabIndex;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxNumberBoxInterop.SetTabIndex(dxTarget, value);
+            } else {
+                this.tabIndex = value;
+            }
+        }
+    }
+    bool? visible;
+    [Parameter]
+    bool? Visible {
+        get => isInitialized ? (bool?)DevExpress.Ui.DxNumberBoxInterop.GetVisible(dxTarget).Result : visible;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxNumberBoxInterop.SetVisible(dxTarget, value);
+            } else {
+                this.visible = value;
+            }
+        }
+    }
+    object bindingOptions;
+    [Parameter]
+    object BindingOptions {
+        get => isInitialized ? DevExpress.Ui.DxNumberBoxInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxNumberBoxInterop.SetBindingOptions(dxTarget, value);
+            } else {
+                this.bindingOptions = value;
+            }
+        }
+    }
+    object elementAttr;
+    [Parameter]
+    object ElementAttr {
+        get => isInitialized ? DevExpress.Ui.DxNumberBoxInterop.GetElementAttr(dxTarget).Result : elementAttr;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxNumberBoxInterop.SetElementAttr(dxTarget, value);
+            } else {
+                this.elementAttr = value;
+            }
+        }
+    }
+    object height;
+    [Parameter]
+    object Height {
+        get => isInitialized ? DevExpress.Ui.DxNumberBoxInterop.GetHeight(dxTarget).Result : height;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxNumberBoxInterop.SetHeight(dxTarget, value);
+            } else {
+                this.height = value;
+            }
+        }
+    }
+    bool? rtlEnabled;
+    [Parameter]
+    bool? RtlEnabled {
+        get => isInitialized ? (bool?)DevExpress.Ui.DxNumberBoxInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxNumberBoxInterop.SetRtlEnabled(dxTarget, value);
+            } else {
+                this.rtlEnabled = value;
+            }
+        }
+    }
+    object width;
+    [Parameter]
+    object Width {
+        get => isInitialized ? DevExpress.Ui.DxNumberBoxInterop.GetWidth(dxTarget).Result : width;
+        set {
+            if (isInitialized) {
+                DevExpress.Ui.DxNumberBoxInterop.SetWidth(dxTarget, value);
+            } else {
+                this.width = value;
+            }
+        }
+    }
+    bool? onChangeEnabled;
+    [Parameter]
+    bool? OnChangeEnabled {
+        get => onChangeEnabled;
+        set => this.onChangeEnabled = value;
+    }
+    bool? onCopyEnabled;
+    [Parameter]
+    bool? OnCopyEnabled {
+        get => onCopyEnabled;
+        set => this.onCopyEnabled = value;
+    }
+    bool? onCutEnabled;
+    [Parameter]
+    bool? OnCutEnabled {
+        get => onCutEnabled;
+        set => this.onCutEnabled = value;
+    }
+    bool? onEnterKeyEnabled;
+    [Parameter]
+    bool? OnEnterKeyEnabled {
+        get => onEnterKeyEnabled;
+        set => this.onEnterKeyEnabled = value;
+    }
+    bool? onFocusInEnabled;
+    [Parameter]
+    bool? OnFocusInEnabled {
+        get => onFocusInEnabled;
+        set => this.onFocusInEnabled = value;
+    }
+    bool? onFocusOutEnabled;
+    [Parameter]
+    bool? OnFocusOutEnabled {
+        get => onFocusOutEnabled;
+        set => this.onFocusOutEnabled = value;
+    }
+    bool? onInputEnabled;
+    [Parameter]
+    bool? OnInputEnabled {
+        get => onInputEnabled;
+        set => this.onInputEnabled = value;
+    }
+    bool? onKeyDownEnabled;
+    [Parameter]
+    bool? OnKeyDownEnabled {
+        get => onKeyDownEnabled;
+        set => this.onKeyDownEnabled = value;
+    }
+    bool? onKeyPressEnabled;
+    [Parameter]
+    bool? OnKeyPressEnabled {
+        get => onKeyPressEnabled;
+        set => this.onKeyPressEnabled = value;
+    }
+    bool? onKeyUpEnabled;
+    [Parameter]
+    bool? OnKeyUpEnabled {
+        get => onKeyUpEnabled;
+        set => this.onKeyUpEnabled = value;
+    }
+    bool? onPasteEnabled;
+    [Parameter]
+    bool? OnPasteEnabled {
+        get => onPasteEnabled;
+        set => this.onPasteEnabled = value;
+    }
+    bool? onValueChangedEnabled;
+    [Parameter]
+    bool? OnValueChangedEnabled {
+        get => onValueChangedEnabled;
+        set => this.onValueChangedEnabled = value;
+    }
+    bool? onContentReadyEnabled;
+    [Parameter]
+    bool? OnContentReadyEnabled {
+        get => onContentReadyEnabled;
+        set => this.onContentReadyEnabled = value;
+    }
+    bool? onDisposingEnabled;
+    [Parameter]
+    bool? OnDisposingEnabled {
+        get => onDisposingEnabled;
+        set => this.onDisposingEnabled = value;
+    }
+    bool? onOptionChangedEnabled;
+    [Parameter]
+    bool? OnOptionChangedEnabled {
+        get => onOptionChangedEnabled;
+        set => this.onOptionChangedEnabled = value;
+    }
+    bool? onInitializedEnabled;
+    [Parameter]
+    bool? OnInitializedEnabled {
+        get => onInitializedEnabled;
+        set => this.onInitializedEnabled = value;
+    }
+    protected override async Task OnInitAsync() {
+        await base.OnInitAsync();
+        DevExpress.Ui.DxNumberBoxInterop.Change += DxNumberBox_Change;
+        DevExpress.Ui.DxNumberBoxInterop.Copy += DxNumberBox_Copy;
+        DevExpress.Ui.DxNumberBoxInterop.Cut += DxNumberBox_Cut;
+        DevExpress.Ui.DxNumberBoxInterop.EnterKey += DxNumberBox_EnterKey;
+        DevExpress.Ui.DxNumberBoxInterop.FocusIn += DxNumberBox_FocusIn;
+        DevExpress.Ui.DxNumberBoxInterop.FocusOut += DxNumberBox_FocusOut;
+        DevExpress.Ui.DxNumberBoxInterop.Input += DxNumberBox_Input;
+        DevExpress.Ui.DxNumberBoxInterop.KeyDown += DxNumberBox_KeyDown;
+        DevExpress.Ui.DxNumberBoxInterop.KeyPress += DxNumberBox_KeyPress;
+        DevExpress.Ui.DxNumberBoxInterop.KeyUp += DxNumberBox_KeyUp;
+        DevExpress.Ui.DxNumberBoxInterop.Paste += DxNumberBox_Paste;
+        //DevExpress.Ui.DxNumberBoxInterop.ValueChanged += DxNumberBox_ValueChanged;
+        DevExpress.Ui.DxNumberBoxInterop.ContentReady += DxNumberBox_ContentReady;
+        DevExpress.Ui.DxNumberBoxInterop.Disposing += DxNumberBox_Disposing;
+        DevExpress.Ui.DxNumberBoxInterop.OptionChanged += DxNumberBox_OptionChanged;
+        DevExpress.Ui.DxNumberBoxInterop.Initialized += DxNumberBox_Initialized;
+    }
+    [Parameter]
+    Action Change { get; set; }
+    void DxNumberBox_Change(object sender, JQueryEventArgs e) {
+        if (e.Identifier == Id) {
+            Change?.Invoke();
+        }
+    }
+    [Parameter]
+    Action Copy { get; set; }
+    void DxNumberBox_Copy(object sender, JQueryEventArgs e) {
+        if (e.Identifier == Id) {
+            Copy?.Invoke();
+        }
+    }
+    [Parameter]
+    Action Cut { get; set; }
+    void DxNumberBox_Cut(object sender, JQueryEventArgs e) {
+        if (e.Identifier == Id) {
+            Cut?.Invoke();
+        }
+    }
+    [Parameter]
+    Action EnterKey { get; set; }
+    void DxNumberBox_EnterKey(object sender, JQueryEventArgs e) {
+        if (e.Identifier == Id) {
+            EnterKey?.Invoke();
+        }
+    }
+    [Parameter]
+    Action FocusIn { get; set; }
+    void DxNumberBox_FocusIn(object sender, JQueryEventArgs e) {
+        if (e.Identifier == Id) {
+            FocusIn?.Invoke();
+        }
+    }
+    [Parameter]
+    Action FocusOut { get; set; }
+    void DxNumberBox_FocusOut(object sender, JQueryEventArgs e) {
+        if (e.Identifier == Id) {
+            FocusOut?.Invoke();
+        }
+    }
+    [Parameter]
+    Action Input { get; set; }
+    void DxNumberBox_Input(object sender, JQueryEventArgs e) {
+        if (e.Identifier == Id) {
+            Input?.Invoke();
+        }
+    }
+    [Parameter]
+    Action KeyDown { get; set; }
+    void DxNumberBox_KeyDown(object sender, JQueryEventArgs e) {
+        if (e.Identifier == Id) {
+            KeyDown?.Invoke();
+        }
+    }
+    [Parameter]
+    Action KeyPress { get; set; }
+    void DxNumberBox_KeyPress(object sender, JQueryEventArgs e) {
+        if (e.Identifier == Id) {
+            KeyPress?.Invoke();
+        }
+    }
+    [Parameter]
+    Action KeyUp { get; set; }
+    void DxNumberBox_KeyUp(object sender, JQueryEventArgs e) {
+        if (e.Identifier == Id) {
+            KeyUp?.Invoke();
+        }
+    }
+    [Parameter]
+    Action Paste { get; set; }
+    void DxNumberBox_Paste(object sender, JQueryEventArgs e) {
+        if (e.Identifier == Id) {
+            Paste?.Invoke();
+        }
+    }
+    [Parameter]
+    Action ValueChanged { get; set; }
+    void DxNumberBox_ValueChanged(object sender, JQueryEventArgs e) {
+        if (e.Identifier == Id) {
+            ValueChanged?.Invoke();
+        }
+    }
+    [Parameter]
+    Action ContentReady { get; set; }
+    void DxNumberBox_ContentReady(object sender, JQueryEventArgs e) {
+        if (e.Identifier == Id) {
+            ContentReady?.Invoke();
+        }
+    }
+    [Parameter]
+    Action Disposing { get; set; }
+    void DxNumberBox_Disposing(object sender, JQueryEventArgs e) {
+        if (e.Identifier == Id) {
+            Disposing?.Invoke();
+        }
+    }
+    [Parameter]
+    Action OptionChanged { get; set; }
+    void DxNumberBox_OptionChanged(object sender, JQueryEventArgs e) {
+        if (e.Identifier == Id) {
+            OptionChanged?.Invoke();
+        }
+    }
+    [Parameter]
+    Action Initialized { get; set; }
+    void DxNumberBox_Initialized(object sender, JQueryEventArgs e) {
+        if (e.Identifier == Id) {
+            Initialized?.Invoke();
+        }
+    }
+    public void Dispose() {
+        DevExpress.Ui.DxNumberBoxInterop.Change -= DxNumberBox_Change;
+        DevExpress.Ui.DxNumberBoxInterop.Copy -= DxNumberBox_Copy;
+        DevExpress.Ui.DxNumberBoxInterop.Cut -= DxNumberBox_Cut;
+        DevExpress.Ui.DxNumberBoxInterop.EnterKey -= DxNumberBox_EnterKey;
+        DevExpress.Ui.DxNumberBoxInterop.FocusIn -= DxNumberBox_FocusIn;
+        DevExpress.Ui.DxNumberBoxInterop.FocusOut -= DxNumberBox_FocusOut;
+        DevExpress.Ui.DxNumberBoxInterop.Input -= DxNumberBox_Input;
+        DevExpress.Ui.DxNumberBoxInterop.KeyDown -= DxNumberBox_KeyDown;
+        DevExpress.Ui.DxNumberBoxInterop.KeyPress -= DxNumberBox_KeyPress;
+        DevExpress.Ui.DxNumberBoxInterop.KeyUp -= DxNumberBox_KeyUp;
+        DevExpress.Ui.DxNumberBoxInterop.Paste -= DxNumberBox_Paste;
+        //DevExpress.Ui.DxNumberBoxInterop.ValueChanged -= DxNumberBox_ValueChanged;
+        DevExpress.Ui.DxNumberBoxInterop.ContentReady -= DxNumberBox_ContentReady;
+        DevExpress.Ui.DxNumberBoxInterop.Disposing -= DxNumberBox_Disposing;
+        DevExpress.Ui.DxNumberBoxInterop.OptionChanged -= DxNumberBox_OptionChanged;
+        DevExpress.Ui.DxNumberBoxInterop.Initialized -= DxNumberBox_Initialized;
+    }
+}

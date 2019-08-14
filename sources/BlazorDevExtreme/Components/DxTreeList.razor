@@ -1,0 +1,1411 @@
+
+@using Microsoft.AspNetCore.Components
+@implements IDisposable
+@inherits DxBlazorComponent<DevExpress.Ui.DxTreeListOptions>
+
+<div id="@Id" @ref="dxTarget"></div>
+
+@functions {
+	ElementReference dxTarget;
+	public DxTreeList() : base("DxTreeList") { }
+	protected override DevExpress.Ui.DxTreeListOptions CreateOptions() {
+		return new DevExpress.Ui.DxTreeListOptions {
+			autoExpandAll = autoExpandAll,
+			columns = columns,
+			customizeColumns = customizeColumns,
+			dataStructure = dataStructure,
+			editing = editing,
+			expandedRowKeys = expandedRowKeys,
+			expandNodesOnFiltering = expandNodesOnFiltering,
+			hasItemsExpr = hasItemsExpr,
+			itemsExpr = itemsExpr,
+			keyExpr = keyExpr,
+			paging = paging,
+			parentIdExpr = parentIdExpr,
+			remoteOperations = remoteOperations,
+			rootValue = rootValue,
+			scrolling = scrolling,
+			selection = selection,
+			allowColumnReordering = allowColumnReordering,
+			allowColumnResizing = allowColumnResizing,
+			cacheEnabled = cacheEnabled,
+			cellHintEnabled = cellHintEnabled,
+			columnAutoWidth = columnAutoWidth,
+			columnChooser = columnChooser,
+			columnFixing = columnFixing,
+			columnHidingEnabled = columnHidingEnabled,
+			columnMinWidth = columnMinWidth,
+			columnResizingMode = columnResizingMode,
+			columnWidth = columnWidth,
+			dataSource = dataSource,
+			dateSerializationFormat = dateSerializationFormat,
+			errorRowEnabled = errorRowEnabled,
+			filterBuilder = filterBuilder,
+			filterBuilderPopup = filterBuilderPopup,
+			filterPanel = filterPanel,
+			filterRow = filterRow,
+			filterSyncEnabled = filterSyncEnabled,
+			filterValue = filterValue,
+			headerFilter = headerFilter,
+			loadPanel = loadPanel,
+			noDataText = noDataText,
+			pager = pager,
+			rowAlternationEnabled = rowAlternationEnabled,
+			searchPanel = searchPanel,
+			selectedRowKeys = selectedRowKeys,
+			showBorders = showBorders,
+			showColumnHeaders = showColumnHeaders,
+			showColumnLines = showColumnLines,
+			showRowLines = showRowLines,
+			sorting = sorting,
+			stateStoring = stateStoring,
+			twoWayBindingEnabled = twoWayBindingEnabled,
+			wordWrapEnabled = wordWrapEnabled,
+			accessKey = accessKey,
+			activeStateEnabled = activeStateEnabled,
+			disabled = disabled,
+			focusStateEnabled = focusStateEnabled,
+			hint = hint,
+			hoverStateEnabled = hoverStateEnabled,
+			tabIndex = tabIndex,
+			visible = visible,
+			bindingOptions = bindingOptions,
+			elementAttr = elementAttr,
+			height = height,
+			rtlEnabled = rtlEnabled,
+			width = width,
+			onCellClickEnabled = onCellClickEnabled,
+			onCellHoverChangedEnabled = onCellHoverChangedEnabled,
+			onCellPreparedEnabled = onCellPreparedEnabled,
+			onContextMenuPreparingEnabled = onContextMenuPreparingEnabled,
+			onEditingStartEnabled = onEditingStartEnabled,
+			onEditorPreparedEnabled = onEditorPreparedEnabled,
+			onEditorPreparingEnabled = onEditorPreparingEnabled,
+			onNodesInitializedEnabled = onNodesInitializedEnabled,
+			onRowClickEnabled = onRowClickEnabled,
+			onRowPreparedEnabled = onRowPreparedEnabled,
+			onAdaptiveDetailRowPreparingEnabled = onAdaptiveDetailRowPreparingEnabled,
+			onDataErrorOccurredEnabled = onDataErrorOccurredEnabled,
+			onInitNewRowEnabled = onInitNewRowEnabled,
+			onKeyDownEnabled = onKeyDownEnabled,
+			onRowCollapsedEnabled = onRowCollapsedEnabled,
+			onRowCollapsingEnabled = onRowCollapsingEnabled,
+			onRowExpandedEnabled = onRowExpandedEnabled,
+			onRowExpandingEnabled = onRowExpandingEnabled,
+			onRowInsertedEnabled = onRowInsertedEnabled,
+			onRowInsertingEnabled = onRowInsertingEnabled,
+			onRowRemovedEnabled = onRowRemovedEnabled,
+			onRowRemovingEnabled = onRowRemovingEnabled,
+			onRowUpdatedEnabled = onRowUpdatedEnabled,
+			onRowUpdatingEnabled = onRowUpdatingEnabled,
+			onRowValidatingEnabled = onRowValidatingEnabled,
+			onSelectionChangedEnabled = onSelectionChangedEnabled,
+			onToolbarPreparingEnabled = onToolbarPreparingEnabled,
+			onContentReadyEnabled = onContentReadyEnabled,
+			onDisposingEnabled = onDisposingEnabled,
+			onOptionChangedEnabled = onOptionChangedEnabled,
+			onInitializedEnabled = onInitializedEnabled,
+		};
+	}
+	protected override Task Init(DevExpress.Ui.DxTreeListOptions options) {
+		return DevExpress.Ui.DxTreeListInterop.Init(dxTarget, options);
+	}
+	bool? autoExpandAll;
+	[Parameter]
+	bool? AutoExpandAll {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTreeListInterop.GetAutoExpandAll(dxTarget).Result : autoExpandAll;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetAutoExpandAll(dxTarget, value);
+			} else {
+				this.autoExpandAll = value;
+			}
+		}
+	}
+	object columns;
+	[Parameter]
+	object Columns {
+		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetColumns(dxTarget).Result : columns;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetColumns(dxTarget, value);
+			} else {
+				this.columns = value;
+			}
+		}
+	}
+	object customizeColumns;
+	[Parameter]
+	object CustomizeColumns {
+		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetCustomizeColumns(dxTarget).Result : customizeColumns;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetCustomizeColumns(dxTarget, value);
+			} else {
+				this.customizeColumns = value;
+			}
+		}
+	}
+	string dataStructure;
+	[Parameter]
+	string DataStructure {
+		get => isInitialized ? (string)DevExpress.Ui.DxTreeListInterop.GetDataStructure(dxTarget).Result : dataStructure;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetDataStructure(dxTarget, value);
+			} else {
+				this.dataStructure = value;
+			}
+		}
+	}
+	object editing;
+	[Parameter]
+	object Editing {
+		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetEditing(dxTarget).Result : editing;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetEditing(dxTarget, value);
+			} else {
+				this.editing = value;
+			}
+		}
+	}
+	object expandedRowKeys;
+	[Parameter]
+	object ExpandedRowKeys {
+		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetExpandedRowKeys(dxTarget).Result : expandedRowKeys;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetExpandedRowKeys(dxTarget, value);
+			} else {
+				this.expandedRowKeys = value;
+			}
+		}
+	}
+	bool? expandNodesOnFiltering;
+	[Parameter]
+	bool? ExpandNodesOnFiltering {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTreeListInterop.GetExpandNodesOnFiltering(dxTarget).Result : expandNodesOnFiltering;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetExpandNodesOnFiltering(dxTarget, value);
+			} else {
+				this.expandNodesOnFiltering = value;
+			}
+		}
+	}
+	object hasItemsExpr;
+	[Parameter]
+	object HasItemsExpr {
+		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetHasItemsExpr(dxTarget).Result : hasItemsExpr;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetHasItemsExpr(dxTarget, value);
+			} else {
+				this.hasItemsExpr = value;
+			}
+		}
+	}
+	object itemsExpr;
+	[Parameter]
+	object ItemsExpr {
+		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetItemsExpr(dxTarget).Result : itemsExpr;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetItemsExpr(dxTarget, value);
+			} else {
+				this.itemsExpr = value;
+			}
+		}
+	}
+	object keyExpr;
+	[Parameter]
+	object KeyExpr {
+		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetKeyExpr(dxTarget).Result : keyExpr;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetKeyExpr(dxTarget, value);
+			} else {
+				this.keyExpr = value;
+			}
+		}
+	}
+	object paging;
+	[Parameter]
+	object Paging {
+		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetPaging(dxTarget).Result : paging;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetPaging(dxTarget, value);
+			} else {
+				this.paging = value;
+			}
+		}
+	}
+	object parentIdExpr;
+	[Parameter]
+	object ParentIdExpr {
+		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetParentIdExpr(dxTarget).Result : parentIdExpr;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetParentIdExpr(dxTarget, value);
+			} else {
+				this.parentIdExpr = value;
+			}
+		}
+	}
+	object remoteOperations;
+	[Parameter]
+	object RemoteOperations {
+		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetRemoteOperations(dxTarget).Result : remoteOperations;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetRemoteOperations(dxTarget, value);
+			} else {
+				this.remoteOperations = value;
+			}
+		}
+	}
+	object rootValue;
+	[Parameter]
+	object RootValue {
+		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetRootValue(dxTarget).Result : rootValue;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetRootValue(dxTarget, value);
+			} else {
+				this.rootValue = value;
+			}
+		}
+	}
+	object scrolling;
+	[Parameter]
+	object Scrolling {
+		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetScrolling(dxTarget).Result : scrolling;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetScrolling(dxTarget, value);
+			} else {
+				this.scrolling = value;
+			}
+		}
+	}
+	object selection;
+	[Parameter]
+	object Selection {
+		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetSelection(dxTarget).Result : selection;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetSelection(dxTarget, value);
+			} else {
+				this.selection = value;
+			}
+		}
+	}
+	bool? allowColumnReordering;
+	[Parameter]
+	bool? AllowColumnReordering {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTreeListInterop.GetAllowColumnReordering(dxTarget).Result : allowColumnReordering;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetAllowColumnReordering(dxTarget, value);
+			} else {
+				this.allowColumnReordering = value;
+			}
+		}
+	}
+	bool? allowColumnResizing;
+	[Parameter]
+	bool? AllowColumnResizing {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTreeListInterop.GetAllowColumnResizing(dxTarget).Result : allowColumnResizing;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetAllowColumnResizing(dxTarget, value);
+			} else {
+				this.allowColumnResizing = value;
+			}
+		}
+	}
+	bool? cacheEnabled;
+	[Parameter]
+	bool? CacheEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTreeListInterop.GetCacheEnabled(dxTarget).Result : cacheEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetCacheEnabled(dxTarget, value);
+			} else {
+				this.cacheEnabled = value;
+			}
+		}
+	}
+	bool? cellHintEnabled;
+	[Parameter]
+	bool? CellHintEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTreeListInterop.GetCellHintEnabled(dxTarget).Result : cellHintEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetCellHintEnabled(dxTarget, value);
+			} else {
+				this.cellHintEnabled = value;
+			}
+		}
+	}
+	bool? columnAutoWidth;
+	[Parameter]
+	bool? ColumnAutoWidth {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTreeListInterop.GetColumnAutoWidth(dxTarget).Result : columnAutoWidth;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetColumnAutoWidth(dxTarget, value);
+			} else {
+				this.columnAutoWidth = value;
+			}
+		}
+	}
+	object columnChooser;
+	[Parameter]
+	object ColumnChooser {
+		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetColumnChooser(dxTarget).Result : columnChooser;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetColumnChooser(dxTarget, value);
+			} else {
+				this.columnChooser = value;
+			}
+		}
+	}
+	object columnFixing;
+	[Parameter]
+	object ColumnFixing {
+		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetColumnFixing(dxTarget).Result : columnFixing;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetColumnFixing(dxTarget, value);
+			} else {
+				this.columnFixing = value;
+			}
+		}
+	}
+	bool? columnHidingEnabled;
+	[Parameter]
+	bool? ColumnHidingEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTreeListInterop.GetColumnHidingEnabled(dxTarget).Result : columnHidingEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetColumnHidingEnabled(dxTarget, value);
+			} else {
+				this.columnHidingEnabled = value;
+			}
+		}
+	}
+	float? columnMinWidth;
+	[Parameter]
+	float? ColumnMinWidth {
+		get => isInitialized ? (float?)DevExpress.Ui.DxTreeListInterop.GetColumnMinWidth(dxTarget).Result : columnMinWidth;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetColumnMinWidth(dxTarget, value);
+			} else {
+				this.columnMinWidth = value;
+			}
+		}
+	}
+	string columnResizingMode;
+	[Parameter]
+	string ColumnResizingMode {
+		get => isInitialized ? (string)DevExpress.Ui.DxTreeListInterop.GetColumnResizingMode(dxTarget).Result : columnResizingMode;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetColumnResizingMode(dxTarget, value);
+			} else {
+				this.columnResizingMode = value;
+			}
+		}
+	}
+	float? columnWidth;
+	[Parameter]
+	float? ColumnWidth {
+		get => isInitialized ? (float?)DevExpress.Ui.DxTreeListInterop.GetColumnWidth(dxTarget).Result : columnWidth;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetColumnWidth(dxTarget, value);
+			} else {
+				this.columnWidth = value;
+			}
+		}
+	}
+	object dataSource;
+	[Parameter]
+	object DataSource {
+		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetDataSource(dxTarget).Result : dataSource;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetDataSource(dxTarget, value);
+			} else {
+				this.dataSource = value;
+			}
+		}
+	}
+	string dateSerializationFormat;
+	[Parameter]
+	string DateSerializationFormat {
+		get => isInitialized ? (string)DevExpress.Ui.DxTreeListInterop.GetDateSerializationFormat(dxTarget).Result : dateSerializationFormat;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetDateSerializationFormat(dxTarget, value);
+			} else {
+				this.dateSerializationFormat = value;
+			}
+		}
+	}
+	bool? errorRowEnabled;
+	[Parameter]
+	bool? ErrorRowEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTreeListInterop.GetErrorRowEnabled(dxTarget).Result : errorRowEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetErrorRowEnabled(dxTarget, value);
+			} else {
+				this.errorRowEnabled = value;
+			}
+		}
+	}
+	object filterBuilder;
+	[Parameter]
+	object FilterBuilder {
+		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetFilterBuilder(dxTarget).Result : filterBuilder;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetFilterBuilder(dxTarget, value);
+			} else {
+				this.filterBuilder = value;
+			}
+		}
+	}
+	object filterBuilderPopup;
+	[Parameter]
+	object FilterBuilderPopup {
+		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetFilterBuilderPopup(dxTarget).Result : filterBuilderPopup;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetFilterBuilderPopup(dxTarget, value);
+			} else {
+				this.filterBuilderPopup = value;
+			}
+		}
+	}
+	object filterPanel;
+	[Parameter]
+	object FilterPanel {
+		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetFilterPanel(dxTarget).Result : filterPanel;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetFilterPanel(dxTarget, value);
+			} else {
+				this.filterPanel = value;
+			}
+		}
+	}
+	object filterRow;
+	[Parameter]
+	object FilterRow {
+		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetFilterRow(dxTarget).Result : filterRow;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetFilterRow(dxTarget, value);
+			} else {
+				this.filterRow = value;
+			}
+		}
+	}
+	object filterSyncEnabled;
+	[Parameter]
+	object FilterSyncEnabled {
+		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetFilterSyncEnabled(dxTarget).Result : filterSyncEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetFilterSyncEnabled(dxTarget, value);
+			} else {
+				this.filterSyncEnabled = value;
+			}
+		}
+	}
+	object filterValue;
+	[Parameter]
+	object FilterValue {
+		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetFilterValue(dxTarget).Result : filterValue;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetFilterValue(dxTarget, value);
+			} else {
+				this.filterValue = value;
+			}
+		}
+	}
+	object headerFilter;
+	[Parameter]
+	object HeaderFilter {
+		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetHeaderFilter(dxTarget).Result : headerFilter;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetHeaderFilter(dxTarget, value);
+			} else {
+				this.headerFilter = value;
+			}
+		}
+	}
+	object loadPanel;
+	[Parameter]
+	object LoadPanel {
+		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetLoadPanel(dxTarget).Result : loadPanel;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetLoadPanel(dxTarget, value);
+			} else {
+				this.loadPanel = value;
+			}
+		}
+	}
+	string noDataText;
+	[Parameter]
+	string NoDataText {
+		get => isInitialized ? (string)DevExpress.Ui.DxTreeListInterop.GetNoDataText(dxTarget).Result : noDataText;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetNoDataText(dxTarget, value);
+			} else {
+				this.noDataText = value;
+			}
+		}
+	}
+	object pager;
+	[Parameter]
+	object Pager {
+		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetPager(dxTarget).Result : pager;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetPager(dxTarget, value);
+			} else {
+				this.pager = value;
+			}
+		}
+	}
+	bool? rowAlternationEnabled;
+	[Parameter]
+	bool? RowAlternationEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTreeListInterop.GetRowAlternationEnabled(dxTarget).Result : rowAlternationEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetRowAlternationEnabled(dxTarget, value);
+			} else {
+				this.rowAlternationEnabled = value;
+			}
+		}
+	}
+	object searchPanel;
+	[Parameter]
+	object SearchPanel {
+		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetSearchPanel(dxTarget).Result : searchPanel;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetSearchPanel(dxTarget, value);
+			} else {
+				this.searchPanel = value;
+			}
+		}
+	}
+	object selectedRowKeys;
+	[Parameter]
+	object SelectedRowKeys {
+		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetSelectedRowKeys(dxTarget).Result : selectedRowKeys;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetSelectedRowKeys(dxTarget, value);
+			} else {
+				this.selectedRowKeys = value;
+			}
+		}
+	}
+	bool? showBorders;
+	[Parameter]
+	bool? ShowBorders {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTreeListInterop.GetShowBorders(dxTarget).Result : showBorders;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetShowBorders(dxTarget, value);
+			} else {
+				this.showBorders = value;
+			}
+		}
+	}
+	bool? showColumnHeaders;
+	[Parameter]
+	bool? ShowColumnHeaders {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTreeListInterop.GetShowColumnHeaders(dxTarget).Result : showColumnHeaders;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetShowColumnHeaders(dxTarget, value);
+			} else {
+				this.showColumnHeaders = value;
+			}
+		}
+	}
+	bool? showColumnLines;
+	[Parameter]
+	bool? ShowColumnLines {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTreeListInterop.GetShowColumnLines(dxTarget).Result : showColumnLines;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetShowColumnLines(dxTarget, value);
+			} else {
+				this.showColumnLines = value;
+			}
+		}
+	}
+	bool? showRowLines;
+	[Parameter]
+	bool? ShowRowLines {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTreeListInterop.GetShowRowLines(dxTarget).Result : showRowLines;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetShowRowLines(dxTarget, value);
+			} else {
+				this.showRowLines = value;
+			}
+		}
+	}
+	object sorting;
+	[Parameter]
+	object Sorting {
+		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetSorting(dxTarget).Result : sorting;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetSorting(dxTarget, value);
+			} else {
+				this.sorting = value;
+			}
+		}
+	}
+	object stateStoring;
+	[Parameter]
+	object StateStoring {
+		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetStateStoring(dxTarget).Result : stateStoring;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetStateStoring(dxTarget, value);
+			} else {
+				this.stateStoring = value;
+			}
+		}
+	}
+	bool? twoWayBindingEnabled;
+	[Parameter]
+	bool? TwoWayBindingEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTreeListInterop.GetTwoWayBindingEnabled(dxTarget).Result : twoWayBindingEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetTwoWayBindingEnabled(dxTarget, value);
+			} else {
+				this.twoWayBindingEnabled = value;
+			}
+		}
+	}
+	bool? wordWrapEnabled;
+	[Parameter]
+	bool? WordWrapEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTreeListInterop.GetWordWrapEnabled(dxTarget).Result : wordWrapEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetWordWrapEnabled(dxTarget, value);
+			} else {
+				this.wordWrapEnabled = value;
+			}
+		}
+	}
+	string accessKey;
+	[Parameter]
+	string AccessKey {
+		get => isInitialized ? (string)DevExpress.Ui.DxTreeListInterop.GetAccessKey(dxTarget).Result : accessKey;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetAccessKey(dxTarget, value);
+			} else {
+				this.accessKey = value;
+			}
+		}
+	}
+	bool? activeStateEnabled;
+	[Parameter]
+	bool? ActiveStateEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTreeListInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetActiveStateEnabled(dxTarget, value);
+			} else {
+				this.activeStateEnabled = value;
+			}
+		}
+	}
+	bool? disabled;
+	[Parameter]
+	bool? Disabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTreeListInterop.GetDisabled(dxTarget).Result : disabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetDisabled(dxTarget, value);
+			} else {
+				this.disabled = value;
+			}
+		}
+	}
+	bool? focusStateEnabled;
+	[Parameter]
+	bool? FocusStateEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTreeListInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetFocusStateEnabled(dxTarget, value);
+			} else {
+				this.focusStateEnabled = value;
+			}
+		}
+	}
+	string hint;
+	[Parameter]
+	string Hint {
+		get => isInitialized ? (string)DevExpress.Ui.DxTreeListInterop.GetHint(dxTarget).Result : hint;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetHint(dxTarget, value);
+			} else {
+				this.hint = value;
+			}
+		}
+	}
+	bool? hoverStateEnabled;
+	[Parameter]
+	bool? HoverStateEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTreeListInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetHoverStateEnabled(dxTarget, value);
+			} else {
+				this.hoverStateEnabled = value;
+			}
+		}
+	}
+	float? tabIndex;
+	[Parameter]
+	float? TabIndex {
+		get => isInitialized ? (float?)DevExpress.Ui.DxTreeListInterop.GetTabIndex(dxTarget).Result : tabIndex;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetTabIndex(dxTarget, value);
+			} else {
+				this.tabIndex = value;
+			}
+		}
+	}
+	bool? visible;
+	[Parameter]
+	bool? Visible {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTreeListInterop.GetVisible(dxTarget).Result : visible;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetVisible(dxTarget, value);
+			} else {
+				this.visible = value;
+			}
+		}
+	}
+	object bindingOptions;
+	[Parameter]
+	object BindingOptions {
+		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetBindingOptions(dxTarget, value);
+			} else {
+				this.bindingOptions = value;
+			}
+		}
+	}
+	object elementAttr;
+	[Parameter]
+	object ElementAttr {
+		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetElementAttr(dxTarget).Result : elementAttr;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetElementAttr(dxTarget, value);
+			} else {
+				this.elementAttr = value;
+			}
+		}
+	}
+	object height;
+	[Parameter]
+	object Height {
+		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetHeight(dxTarget).Result : height;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetHeight(dxTarget, value);
+			} else {
+				this.height = value;
+			}
+		}
+	}
+	bool? rtlEnabled;
+	[Parameter]
+	bool? RtlEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxTreeListInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetRtlEnabled(dxTarget, value);
+			} else {
+				this.rtlEnabled = value;
+			}
+		}
+	}
+	object width;
+	[Parameter]
+	object Width {
+		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetWidth(dxTarget).Result : width;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxTreeListInterop.SetWidth(dxTarget, value);
+			} else {
+				this.width = value;
+			}
+		}
+	}
+	bool? onCellClickEnabled;
+	[Parameter]
+	bool? OnCellClickEnabled {
+		get => onCellClickEnabled;
+		set => this.onCellClickEnabled = value;
+	}
+	bool? onCellHoverChangedEnabled;
+	[Parameter]
+	bool? OnCellHoverChangedEnabled {
+		get => onCellHoverChangedEnabled;
+		set => this.onCellHoverChangedEnabled = value;
+	}
+	bool? onCellPreparedEnabled;
+	[Parameter]
+	bool? OnCellPreparedEnabled {
+		get => onCellPreparedEnabled;
+		set => this.onCellPreparedEnabled = value;
+	}
+	bool? onContextMenuPreparingEnabled;
+	[Parameter]
+	bool? OnContextMenuPreparingEnabled {
+		get => onContextMenuPreparingEnabled;
+		set => this.onContextMenuPreparingEnabled = value;
+	}
+	bool? onEditingStartEnabled;
+	[Parameter]
+	bool? OnEditingStartEnabled {
+		get => onEditingStartEnabled;
+		set => this.onEditingStartEnabled = value;
+	}
+	bool? onEditorPreparedEnabled;
+	[Parameter]
+	bool? OnEditorPreparedEnabled {
+		get => onEditorPreparedEnabled;
+		set => this.onEditorPreparedEnabled = value;
+	}
+	bool? onEditorPreparingEnabled;
+	[Parameter]
+	bool? OnEditorPreparingEnabled {
+		get => onEditorPreparingEnabled;
+		set => this.onEditorPreparingEnabled = value;
+	}
+	bool? onNodesInitializedEnabled;
+	[Parameter]
+	bool? OnNodesInitializedEnabled {
+		get => onNodesInitializedEnabled;
+		set => this.onNodesInitializedEnabled = value;
+	}
+	bool? onRowClickEnabled;
+	[Parameter]
+	bool? OnRowClickEnabled {
+		get => onRowClickEnabled;
+		set => this.onRowClickEnabled = value;
+	}
+	bool? onRowPreparedEnabled;
+	[Parameter]
+	bool? OnRowPreparedEnabled {
+		get => onRowPreparedEnabled;
+		set => this.onRowPreparedEnabled = value;
+	}
+	bool? onAdaptiveDetailRowPreparingEnabled;
+	[Parameter]
+	bool? OnAdaptiveDetailRowPreparingEnabled {
+		get => onAdaptiveDetailRowPreparingEnabled;
+		set => this.onAdaptiveDetailRowPreparingEnabled = value;
+	}
+	bool? onDataErrorOccurredEnabled;
+	[Parameter]
+	bool? OnDataErrorOccurredEnabled {
+		get => onDataErrorOccurredEnabled;
+		set => this.onDataErrorOccurredEnabled = value;
+	}
+	bool? onInitNewRowEnabled;
+	[Parameter]
+	bool? OnInitNewRowEnabled {
+		get => onInitNewRowEnabled;
+		set => this.onInitNewRowEnabled = value;
+	}
+	bool? onKeyDownEnabled;
+	[Parameter]
+	bool? OnKeyDownEnabled {
+		get => onKeyDownEnabled;
+		set => this.onKeyDownEnabled = value;
+	}
+	bool? onRowCollapsedEnabled;
+	[Parameter]
+	bool? OnRowCollapsedEnabled {
+		get => onRowCollapsedEnabled;
+		set => this.onRowCollapsedEnabled = value;
+	}
+	bool? onRowCollapsingEnabled;
+	[Parameter]
+	bool? OnRowCollapsingEnabled {
+		get => onRowCollapsingEnabled;
+		set => this.onRowCollapsingEnabled = value;
+	}
+	bool? onRowExpandedEnabled;
+	[Parameter]
+	bool? OnRowExpandedEnabled {
+		get => onRowExpandedEnabled;
+		set => this.onRowExpandedEnabled = value;
+	}
+	bool? onRowExpandingEnabled;
+	[Parameter]
+	bool? OnRowExpandingEnabled {
+		get => onRowExpandingEnabled;
+		set => this.onRowExpandingEnabled = value;
+	}
+	bool? onRowInsertedEnabled;
+	[Parameter]
+	bool? OnRowInsertedEnabled {
+		get => onRowInsertedEnabled;
+		set => this.onRowInsertedEnabled = value;
+	}
+	bool? onRowInsertingEnabled;
+	[Parameter]
+	bool? OnRowInsertingEnabled {
+		get => onRowInsertingEnabled;
+		set => this.onRowInsertingEnabled = value;
+	}
+	bool? onRowRemovedEnabled;
+	[Parameter]
+	bool? OnRowRemovedEnabled {
+		get => onRowRemovedEnabled;
+		set => this.onRowRemovedEnabled = value;
+	}
+	bool? onRowRemovingEnabled;
+	[Parameter]
+	bool? OnRowRemovingEnabled {
+		get => onRowRemovingEnabled;
+		set => this.onRowRemovingEnabled = value;
+	}
+	bool? onRowUpdatedEnabled;
+	[Parameter]
+	bool? OnRowUpdatedEnabled {
+		get => onRowUpdatedEnabled;
+		set => this.onRowUpdatedEnabled = value;
+	}
+	bool? onRowUpdatingEnabled;
+	[Parameter]
+	bool? OnRowUpdatingEnabled {
+		get => onRowUpdatingEnabled;
+		set => this.onRowUpdatingEnabled = value;
+	}
+	bool? onRowValidatingEnabled;
+	[Parameter]
+	bool? OnRowValidatingEnabled {
+		get => onRowValidatingEnabled;
+		set => this.onRowValidatingEnabled = value;
+	}
+	bool? onSelectionChangedEnabled;
+	[Parameter]
+	bool? OnSelectionChangedEnabled {
+		get => onSelectionChangedEnabled;
+		set => this.onSelectionChangedEnabled = value;
+	}
+	bool? onToolbarPreparingEnabled;
+	[Parameter]
+	bool? OnToolbarPreparingEnabled {
+		get => onToolbarPreparingEnabled;
+		set => this.onToolbarPreparingEnabled = value;
+	}
+	bool? onContentReadyEnabled;
+	[Parameter]
+	bool? OnContentReadyEnabled {
+		get => onContentReadyEnabled;
+		set => this.onContentReadyEnabled = value;
+	}
+	bool? onDisposingEnabled;
+	[Parameter]
+	bool? OnDisposingEnabled {
+		get => onDisposingEnabled;
+		set => this.onDisposingEnabled = value;
+	}
+	bool? onOptionChangedEnabled;
+	[Parameter]
+	bool? OnOptionChangedEnabled {
+		get => onOptionChangedEnabled;
+		set => this.onOptionChangedEnabled = value;
+	}
+	bool? onInitializedEnabled;
+	[Parameter]
+	bool? OnInitializedEnabled {
+		get => onInitializedEnabled;
+		set => this.onInitializedEnabled = value;
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+		DevExpress.Ui.DxTreeListInterop.CellClick += DxTreeList_CellClick;
+		DevExpress.Ui.DxTreeListInterop.CellHoverChanged += DxTreeList_CellHoverChanged;
+		DevExpress.Ui.DxTreeListInterop.CellPrepared += DxTreeList_CellPrepared;
+		DevExpress.Ui.DxTreeListInterop.ContextMenuPreparing += DxTreeList_ContextMenuPreparing;
+		DevExpress.Ui.DxTreeListInterop.EditingStart += DxTreeList_EditingStart;
+		DevExpress.Ui.DxTreeListInterop.EditorPrepared += DxTreeList_EditorPrepared;
+		DevExpress.Ui.DxTreeListInterop.EditorPreparing += DxTreeList_EditorPreparing;
+		DevExpress.Ui.DxTreeListInterop.NodesInitialized += DxTreeList_NodesInitialized;
+		DevExpress.Ui.DxTreeListInterop.RowClick += DxTreeList_RowClick;
+		DevExpress.Ui.DxTreeListInterop.RowPrepared += DxTreeList_RowPrepared;
+		DevExpress.Ui.DxTreeListInterop.AdaptiveDetailRowPreparing += DxTreeList_AdaptiveDetailRowPreparing;
+		DevExpress.Ui.DxTreeListInterop.DataErrorOccurred += DxTreeList_DataErrorOccurred;
+		DevExpress.Ui.DxTreeListInterop.InitNewRow += DxTreeList_InitNewRow;
+		DevExpress.Ui.DxTreeListInterop.KeyDown += DxTreeList_KeyDown;
+		DevExpress.Ui.DxTreeListInterop.RowCollapsed += DxTreeList_RowCollapsed;
+		DevExpress.Ui.DxTreeListInterop.RowCollapsing += DxTreeList_RowCollapsing;
+		DevExpress.Ui.DxTreeListInterop.RowExpanded += DxTreeList_RowExpanded;
+		DevExpress.Ui.DxTreeListInterop.RowExpanding += DxTreeList_RowExpanding;
+		DevExpress.Ui.DxTreeListInterop.RowInserted += DxTreeList_RowInserted;
+		DevExpress.Ui.DxTreeListInterop.RowInserting += DxTreeList_RowInserting;
+		DevExpress.Ui.DxTreeListInterop.RowRemoved += DxTreeList_RowRemoved;
+		DevExpress.Ui.DxTreeListInterop.RowRemoving += DxTreeList_RowRemoving;
+		DevExpress.Ui.DxTreeListInterop.RowUpdated += DxTreeList_RowUpdated;
+		DevExpress.Ui.DxTreeListInterop.RowUpdating += DxTreeList_RowUpdating;
+		DevExpress.Ui.DxTreeListInterop.RowValidating += DxTreeList_RowValidating;
+		DevExpress.Ui.DxTreeListInterop.SelectionChanged += DxTreeList_SelectionChanged;
+		DevExpress.Ui.DxTreeListInterop.ToolbarPreparing += DxTreeList_ToolbarPreparing;
+		DevExpress.Ui.DxTreeListInterop.ContentReady += DxTreeList_ContentReady;
+		DevExpress.Ui.DxTreeListInterop.Disposing += DxTreeList_Disposing;
+		DevExpress.Ui.DxTreeListInterop.OptionChanged += DxTreeList_OptionChanged;
+		DevExpress.Ui.DxTreeListInterop.Initialized += DxTreeList_Initialized;
+	}
+	[Parameter]
+	Action CellClick { get; set; }
+	void DxTreeList_CellClick(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			CellClick?.Invoke();
+		}
+	}
+	[Parameter]
+	Action CellHoverChanged { get; set; }
+	void DxTreeList_CellHoverChanged(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			CellHoverChanged?.Invoke();
+		}
+	}
+	[Parameter]
+	Action CellPrepared { get; set; }
+	void DxTreeList_CellPrepared(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			CellPrepared?.Invoke();
+		}
+	}
+	[Parameter]
+	Action ContextMenuPreparing { get; set; }
+	void DxTreeList_ContextMenuPreparing(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			ContextMenuPreparing?.Invoke();
+		}
+	}
+	[Parameter]
+	Action EditingStart { get; set; }
+	void DxTreeList_EditingStart(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			EditingStart?.Invoke();
+		}
+	}
+	[Parameter]
+	Action EditorPrepared { get; set; }
+	void DxTreeList_EditorPrepared(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			EditorPrepared?.Invoke();
+		}
+	}
+	[Parameter]
+	Action EditorPreparing { get; set; }
+	void DxTreeList_EditorPreparing(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			EditorPreparing?.Invoke();
+		}
+	}
+	[Parameter]
+	Action NodesInitialized { get; set; }
+	void DxTreeList_NodesInitialized(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			NodesInitialized?.Invoke();
+		}
+	}
+	[Parameter]
+	Action RowClick { get; set; }
+	void DxTreeList_RowClick(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			RowClick?.Invoke();
+		}
+	}
+	[Parameter]
+	Action RowPrepared { get; set; }
+	void DxTreeList_RowPrepared(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			RowPrepared?.Invoke();
+		}
+	}
+	[Parameter]
+	Action AdaptiveDetailRowPreparing { get; set; }
+	void DxTreeList_AdaptiveDetailRowPreparing(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			AdaptiveDetailRowPreparing?.Invoke();
+		}
+	}
+	[Parameter]
+	Action DataErrorOccurred { get; set; }
+	void DxTreeList_DataErrorOccurred(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			DataErrorOccurred?.Invoke();
+		}
+	}
+	[Parameter]
+	Action InitNewRow { get; set; }
+	void DxTreeList_InitNewRow(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			InitNewRow?.Invoke();
+		}
+	}
+	[Parameter]
+	Action KeyDown { get; set; }
+	void DxTreeList_KeyDown(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			KeyDown?.Invoke();
+		}
+	}
+	[Parameter]
+	Action RowCollapsed { get; set; }
+	void DxTreeList_RowCollapsed(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			RowCollapsed?.Invoke();
+		}
+	}
+	[Parameter]
+	Action RowCollapsing { get; set; }
+	void DxTreeList_RowCollapsing(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			RowCollapsing?.Invoke();
+		}
+	}
+	[Parameter]
+	Action RowExpanded { get; set; }
+	void DxTreeList_RowExpanded(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			RowExpanded?.Invoke();
+		}
+	}
+	[Parameter]
+	Action RowExpanding { get; set; }
+	void DxTreeList_RowExpanding(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			RowExpanding?.Invoke();
+		}
+	}
+	[Parameter]
+	Action RowInserted { get; set; }
+	void DxTreeList_RowInserted(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			RowInserted?.Invoke();
+		}
+	}
+	[Parameter]
+	Action RowInserting { get; set; }
+	void DxTreeList_RowInserting(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			RowInserting?.Invoke();
+		}
+	}
+	[Parameter]
+	Action RowRemoved { get; set; }
+	void DxTreeList_RowRemoved(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			RowRemoved?.Invoke();
+		}
+	}
+	[Parameter]
+	Action RowRemoving { get; set; }
+	void DxTreeList_RowRemoving(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			RowRemoving?.Invoke();
+		}
+	}
+	[Parameter]
+	Action RowUpdated { get; set; }
+	void DxTreeList_RowUpdated(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			RowUpdated?.Invoke();
+		}
+	}
+	[Parameter]
+	Action RowUpdating { get; set; }
+	void DxTreeList_RowUpdating(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			RowUpdating?.Invoke();
+		}
+	}
+	[Parameter]
+	Action RowValidating { get; set; }
+	void DxTreeList_RowValidating(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			RowValidating?.Invoke();
+		}
+	}
+	[Parameter]
+	Action SelectionChanged { get; set; }
+	void DxTreeList_SelectionChanged(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			SelectionChanged?.Invoke();
+		}
+	}
+	[Parameter]
+	Action ToolbarPreparing { get; set; }
+	void DxTreeList_ToolbarPreparing(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			ToolbarPreparing?.Invoke();
+		}
+	}
+	[Parameter]
+	Action ContentReady { get; set; }
+	void DxTreeList_ContentReady(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			ContentReady?.Invoke();
+		}
+	}
+	[Parameter]
+	Action Disposing { get; set; }
+	void DxTreeList_Disposing(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Disposing?.Invoke();
+		}
+	}
+	[Parameter]
+	Action OptionChanged { get; set; }
+	void DxTreeList_OptionChanged(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			OptionChanged?.Invoke();
+		}
+	}
+	[Parameter]
+	Action Initialized { get; set; }
+	void DxTreeList_Initialized(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Initialized?.Invoke();
+		}
+	}
+	public void AddColumn(object columnOptions) {
+		DevExpress.Ui.DxTreeListInterop.AddColumn(dxTarget, columnOptions);
+	}
+	public void AddRow() {
+		DevExpress.Ui.DxTreeListInterop.AddRow(dxTarget);
+	}
+	public void AddRow(object parentId) {
+		DevExpress.Ui.DxTreeListInterop.AddRow(dxTarget, parentId);
+	}
+	public object CollapseRow(object key) {
+		return DevExpress.Ui.DxTreeListInterop.CollapseRow(dxTarget, key).Result;
+	}
+	public object ExpandRow(object key) {
+		return DevExpress.Ui.DxTreeListInterop.ExpandRow(dxTarget, key).Result;
+	}
+	public void ForEachNode(object callback) {
+		DevExpress.Ui.DxTreeListInterop.ForEachNode(dxTarget, callback);
+	}
+	public void ForEachNode(object nodes, object callback) {
+		DevExpress.Ui.DxTreeListInterop.ForEachNode(dxTarget, nodes, callback);
+	}
+	public object GetNodeByKey(object key) {
+		return DevExpress.Ui.DxTreeListInterop.GetNodeByKey(dxTarget, key).Result;
+	}
+	public object GetRootNode() {
+		return DevExpress.Ui.DxTreeListInterop.GetRootNode(dxTarget).Result;
+	}
+	public object GetSelectedRowKeys() {
+		return DevExpress.Ui.DxTreeListInterop.GetSelectedRowKeys(dxTarget).Result;
+	}
+	public object GetSelectedRowKeys(bool leavesOnly) {
+		return DevExpress.Ui.DxTreeListInterop.GetSelectedRowKeys(dxTarget, leavesOnly).Result;
+	}
+	public object GetSelectedRowKeys(string mode) {
+		return DevExpress.Ui.DxTreeListInterop.GetSelectedRowKeys(dxTarget, mode).Result;
+	}
+	public object GetSelectedRowsData() {
+		return DevExpress.Ui.DxTreeListInterop.GetSelectedRowsData(dxTarget).Result;
+	}
+	public object GetVisibleColumns() {
+		return DevExpress.Ui.DxTreeListInterop.GetVisibleColumns(dxTarget).Result;
+	}
+	public object GetVisibleColumns(float headerLevel) {
+		return DevExpress.Ui.DxTreeListInterop.GetVisibleColumns(dxTarget, headerLevel).Result;
+	}
+	public object GetVisibleRows() {
+		return DevExpress.Ui.DxTreeListInterop.GetVisibleRows(dxTarget).Result;
+	}
+	public bool IsRowExpanded(object key) {
+		return DevExpress.Ui.DxTreeListInterop.IsRowExpanded(dxTarget, key).Result;
+	}
+	public object LoadDescendants() {
+		return DevExpress.Ui.DxTreeListInterop.LoadDescendants(dxTarget).Result;
+	}
+	public object LoadDescendants(object keys) {
+		return DevExpress.Ui.DxTreeListInterop.LoadDescendants(dxTarget, keys).Result;
+	}
+	public object LoadDescendants(object keys, bool childrenOnly) {
+		return DevExpress.Ui.DxTreeListInterop.LoadDescendants(dxTarget, keys, childrenOnly).Result;
+	}
+	public void Dispose() {
+		DevExpress.Ui.DxTreeListInterop.CellClick -= DxTreeList_CellClick;
+		DevExpress.Ui.DxTreeListInterop.CellHoverChanged -= DxTreeList_CellHoverChanged;
+		DevExpress.Ui.DxTreeListInterop.CellPrepared -= DxTreeList_CellPrepared;
+		DevExpress.Ui.DxTreeListInterop.ContextMenuPreparing -= DxTreeList_ContextMenuPreparing;
+		DevExpress.Ui.DxTreeListInterop.EditingStart -= DxTreeList_EditingStart;
+		DevExpress.Ui.DxTreeListInterop.EditorPrepared -= DxTreeList_EditorPrepared;
+		DevExpress.Ui.DxTreeListInterop.EditorPreparing -= DxTreeList_EditorPreparing;
+		DevExpress.Ui.DxTreeListInterop.NodesInitialized -= DxTreeList_NodesInitialized;
+		DevExpress.Ui.DxTreeListInterop.RowClick -= DxTreeList_RowClick;
+		DevExpress.Ui.DxTreeListInterop.RowPrepared -= DxTreeList_RowPrepared;
+		DevExpress.Ui.DxTreeListInterop.AdaptiveDetailRowPreparing -= DxTreeList_AdaptiveDetailRowPreparing;
+		DevExpress.Ui.DxTreeListInterop.DataErrorOccurred -= DxTreeList_DataErrorOccurred;
+		DevExpress.Ui.DxTreeListInterop.InitNewRow -= DxTreeList_InitNewRow;
+		DevExpress.Ui.DxTreeListInterop.KeyDown -= DxTreeList_KeyDown;
+		DevExpress.Ui.DxTreeListInterop.RowCollapsed -= DxTreeList_RowCollapsed;
+		DevExpress.Ui.DxTreeListInterop.RowCollapsing -= DxTreeList_RowCollapsing;
+		DevExpress.Ui.DxTreeListInterop.RowExpanded -= DxTreeList_RowExpanded;
+		DevExpress.Ui.DxTreeListInterop.RowExpanding -= DxTreeList_RowExpanding;
+		DevExpress.Ui.DxTreeListInterop.RowInserted -= DxTreeList_RowInserted;
+		DevExpress.Ui.DxTreeListInterop.RowInserting -= DxTreeList_RowInserting;
+		DevExpress.Ui.DxTreeListInterop.RowRemoved -= DxTreeList_RowRemoved;
+		DevExpress.Ui.DxTreeListInterop.RowRemoving -= DxTreeList_RowRemoving;
+		DevExpress.Ui.DxTreeListInterop.RowUpdated -= DxTreeList_RowUpdated;
+		DevExpress.Ui.DxTreeListInterop.RowUpdating -= DxTreeList_RowUpdating;
+		DevExpress.Ui.DxTreeListInterop.RowValidating -= DxTreeList_RowValidating;
+		DevExpress.Ui.DxTreeListInterop.SelectionChanged -= DxTreeList_SelectionChanged;
+		DevExpress.Ui.DxTreeListInterop.ToolbarPreparing -= DxTreeList_ToolbarPreparing;
+		DevExpress.Ui.DxTreeListInterop.ContentReady -= DxTreeList_ContentReady;
+		DevExpress.Ui.DxTreeListInterop.Disposing -= DxTreeList_Disposing;
+		DevExpress.Ui.DxTreeListInterop.OptionChanged -= DxTreeList_OptionChanged;
+		DevExpress.Ui.DxTreeListInterop.Initialized -= DxTreeList_Initialized;
+	}
+}

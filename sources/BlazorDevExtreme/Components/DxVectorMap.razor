@@ -1,0 +1,759 @@
+
+@using Microsoft.AspNetCore.Components
+@implements IDisposable
+@inherits DxBlazorComponent<DevExpress.Viz.Map.DxVectorMapOptions>
+
+<div id="@Id" @ref="dxTarget"></div>
+
+@functions {
+	ElementReference dxTarget;
+	public DxVectorMap() : base("DxVectorMap") { }
+	protected override DevExpress.Viz.Map.DxVectorMapOptions CreateOptions() {
+		return new DevExpress.Viz.Map.DxVectorMapOptions {
+			areaSettings = areaSettings,
+			background = background,
+			bounds = bounds,
+			center = center,
+			controlBar = controlBar,
+			layers = layers,
+			legends = legends,
+			mapData = mapData,
+			markers = markers,
+			markerSettings = markerSettings,
+			maxZoomFactor = maxZoomFactor,
+			panningEnabled = panningEnabled,
+			projection = projection,
+			tooltip = tooltip,
+			touchEnabled = touchEnabled,
+			wheelEnabled = wheelEnabled,
+			zoomFactor = zoomFactor,
+			zoomingEnabled = zoomingEnabled,
+			export = export,
+			loadingIndicator = loadingIndicator,
+			margin = margin,
+			pathModified = pathModified,
+			redrawOnResize = redrawOnResize,
+			rtlEnabled = rtlEnabled,
+			size = size,
+			theme = theme,
+			title = title,
+			bindingOptions = bindingOptions,
+			elementAttr = elementAttr,
+			height = height,
+			width = width,
+			onAreaClickEnabled = onAreaClickEnabled,
+			onAreaSelectionChangedEnabled = onAreaSelectionChangedEnabled,
+			onCenterChangedEnabled = onCenterChangedEnabled,
+			onClickEnabled = onClickEnabled,
+			onMarkerClickEnabled = onMarkerClickEnabled,
+			onMarkerSelectionChangedEnabled = onMarkerSelectionChangedEnabled,
+			onSelectionChangedEnabled = onSelectionChangedEnabled,
+			onTooltipHiddenEnabled = onTooltipHiddenEnabled,
+			onTooltipShownEnabled = onTooltipShownEnabled,
+			onZoomFactorChangedEnabled = onZoomFactorChangedEnabled,
+			onDrawnEnabled = onDrawnEnabled,
+			onExportedEnabled = onExportedEnabled,
+			onExportingEnabled = onExportingEnabled,
+			onFileSavingEnabled = onFileSavingEnabled,
+			onIncidentOccurredEnabled = onIncidentOccurredEnabled,
+			onDisposingEnabled = onDisposingEnabled,
+			onOptionChangedEnabled = onOptionChangedEnabled,
+			onInitializedEnabled = onInitializedEnabled,
+		};
+	}
+	protected override Task Init(DevExpress.Viz.Map.DxVectorMapOptions options) {
+		return DevExpress.Viz.DxVectorMapInterop.Init(dxTarget, options);
+	}
+	object areaSettings;
+	[Parameter]
+	object AreaSettings {
+		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetAreaSettings(dxTarget).Result : areaSettings;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxVectorMapInterop.SetAreaSettings(dxTarget, value);
+			} else {
+				this.areaSettings = value;
+			}
+		}
+	}
+	object background;
+	[Parameter]
+	object Background {
+		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetBackground(dxTarget).Result : background;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxVectorMapInterop.SetBackground(dxTarget, value);
+			} else {
+				this.background = value;
+			}
+		}
+	}
+	object bounds;
+	[Parameter]
+	object Bounds {
+		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetBounds(dxTarget).Result : bounds;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxVectorMapInterop.SetBounds(dxTarget, value);
+			} else {
+				this.bounds = value;
+			}
+		}
+	}
+	object center;
+	[Parameter]
+	object Center {
+		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetCenter(dxTarget).Result : center;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxVectorMapInterop.SetCenter(dxTarget, value);
+			} else {
+				this.center = value;
+			}
+		}
+	}
+	object controlBar;
+	[Parameter]
+	object ControlBar {
+		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetControlBar(dxTarget).Result : controlBar;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxVectorMapInterop.SetControlBar(dxTarget, value);
+			} else {
+				this.controlBar = value;
+			}
+		}
+	}
+	object layers;
+	[Parameter]
+	object Layers {
+		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetLayers(dxTarget).Result : layers;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxVectorMapInterop.SetLayers(dxTarget, value);
+			} else {
+				this.layers = value;
+			}
+		}
+	}
+	object legends;
+	[Parameter]
+	object Legends {
+		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetLegends(dxTarget).Result : legends;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxVectorMapInterop.SetLegends(dxTarget, value);
+			} else {
+				this.legends = value;
+			}
+		}
+	}
+	object mapData;
+	[Parameter]
+	object MapData {
+		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetMapData(dxTarget).Result : mapData;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxVectorMapInterop.SetMapData(dxTarget, value);
+			} else {
+				this.mapData = value;
+			}
+		}
+	}
+	object markers;
+	[Parameter]
+	object Markers {
+		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetMarkers(dxTarget).Result : markers;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxVectorMapInterop.SetMarkers(dxTarget, value);
+			} else {
+				this.markers = value;
+			}
+		}
+	}
+	object markerSettings;
+	[Parameter]
+	object MarkerSettings {
+		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetMarkerSettings(dxTarget).Result : markerSettings;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxVectorMapInterop.SetMarkerSettings(dxTarget, value);
+			} else {
+				this.markerSettings = value;
+			}
+		}
+	}
+	float? maxZoomFactor;
+	[Parameter]
+	float? MaxZoomFactor {
+		get => isInitialized ? (float?)DevExpress.Viz.DxVectorMapInterop.GetMaxZoomFactor(dxTarget).Result : maxZoomFactor;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxVectorMapInterop.SetMaxZoomFactor(dxTarget, value);
+			} else {
+				this.maxZoomFactor = value;
+			}
+		}
+	}
+	bool? panningEnabled;
+	[Parameter]
+	bool? PanningEnabled {
+		get => isInitialized ? (bool?)DevExpress.Viz.DxVectorMapInterop.GetPanningEnabled(dxTarget).Result : panningEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxVectorMapInterop.SetPanningEnabled(dxTarget, value);
+			} else {
+				this.panningEnabled = value;
+			}
+		}
+	}
+	object projection;
+	[Parameter]
+	object Projection {
+		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetProjection(dxTarget).Result : projection;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxVectorMapInterop.SetProjection(dxTarget, value);
+			} else {
+				this.projection = value;
+			}
+		}
+	}
+	object tooltip;
+	[Parameter]
+	object Tooltip {
+		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetTooltip(dxTarget).Result : tooltip;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxVectorMapInterop.SetTooltip(dxTarget, value);
+			} else {
+				this.tooltip = value;
+			}
+		}
+	}
+	bool? touchEnabled;
+	[Parameter]
+	bool? TouchEnabled {
+		get => isInitialized ? (bool?)DevExpress.Viz.DxVectorMapInterop.GetTouchEnabled(dxTarget).Result : touchEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxVectorMapInterop.SetTouchEnabled(dxTarget, value);
+			} else {
+				this.touchEnabled = value;
+			}
+		}
+	}
+	bool? wheelEnabled;
+	[Parameter]
+	bool? WheelEnabled {
+		get => isInitialized ? (bool?)DevExpress.Viz.DxVectorMapInterop.GetWheelEnabled(dxTarget).Result : wheelEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxVectorMapInterop.SetWheelEnabled(dxTarget, value);
+			} else {
+				this.wheelEnabled = value;
+			}
+		}
+	}
+	float? zoomFactor;
+	[Parameter]
+	float? ZoomFactor {
+		get => isInitialized ? (float?)DevExpress.Viz.DxVectorMapInterop.GetZoomFactor(dxTarget).Result : zoomFactor;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxVectorMapInterop.SetZoomFactor(dxTarget, value);
+			} else {
+				this.zoomFactor = value;
+			}
+		}
+	}
+	bool? zoomingEnabled;
+	[Parameter]
+	bool? ZoomingEnabled {
+		get => isInitialized ? (bool?)DevExpress.Viz.DxVectorMapInterop.GetZoomingEnabled(dxTarget).Result : zoomingEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxVectorMapInterop.SetZoomingEnabled(dxTarget, value);
+			} else {
+				this.zoomingEnabled = value;
+			}
+		}
+	}
+	object export;
+	[Parameter]
+	object Export {
+		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetExport(dxTarget).Result : export;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxVectorMapInterop.SetExport(dxTarget, value);
+			} else {
+				this.export = value;
+			}
+		}
+	}
+	object loadingIndicator;
+	[Parameter]
+	object LoadingIndicator {
+		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetLoadingIndicator(dxTarget).Result : loadingIndicator;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxVectorMapInterop.SetLoadingIndicator(dxTarget, value);
+			} else {
+				this.loadingIndicator = value;
+			}
+		}
+	}
+	object margin;
+	[Parameter]
+	object Margin {
+		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetMargin(dxTarget).Result : margin;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxVectorMapInterop.SetMargin(dxTarget, value);
+			} else {
+				this.margin = value;
+			}
+		}
+	}
+	bool? pathModified;
+	[Parameter]
+	bool? PathModified {
+		get => isInitialized ? (bool?)DevExpress.Viz.DxVectorMapInterop.GetPathModified(dxTarget).Result : pathModified;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxVectorMapInterop.SetPathModified(dxTarget, value);
+			} else {
+				this.pathModified = value;
+			}
+		}
+	}
+	bool? redrawOnResize;
+	[Parameter]
+	bool? RedrawOnResize {
+		get => isInitialized ? (bool?)DevExpress.Viz.DxVectorMapInterop.GetRedrawOnResize(dxTarget).Result : redrawOnResize;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxVectorMapInterop.SetRedrawOnResize(dxTarget, value);
+			} else {
+				this.redrawOnResize = value;
+			}
+		}
+	}
+	bool? rtlEnabled;
+	[Parameter]
+	bool? RtlEnabled {
+		get => isInitialized ? (bool?)DevExpress.Viz.DxVectorMapInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxVectorMapInterop.SetRtlEnabled(dxTarget, value);
+			} else {
+				this.rtlEnabled = value;
+			}
+		}
+	}
+	object size;
+	[Parameter]
+	object Size {
+		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetSize(dxTarget).Result : size;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxVectorMapInterop.SetSize(dxTarget, value);
+			} else {
+				this.size = value;
+			}
+		}
+	}
+	string theme;
+	[Parameter]
+	string Theme {
+		get => isInitialized ? (string)DevExpress.Viz.DxVectorMapInterop.GetTheme(dxTarget).Result : theme;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxVectorMapInterop.SetTheme(dxTarget, value);
+			} else {
+				this.theme = value;
+			}
+		}
+	}
+	object title;
+	[Parameter]
+	object Title {
+		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetTitle(dxTarget).Result : title;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxVectorMapInterop.SetTitle(dxTarget, value);
+			} else {
+				this.title = value;
+			}
+		}
+	}
+	object bindingOptions;
+	[Parameter]
+	object BindingOptions {
+		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxVectorMapInterop.SetBindingOptions(dxTarget, value);
+			} else {
+				this.bindingOptions = value;
+			}
+		}
+	}
+	object elementAttr;
+	[Parameter]
+	object ElementAttr {
+		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetElementAttr(dxTarget).Result : elementAttr;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxVectorMapInterop.SetElementAttr(dxTarget, value);
+			} else {
+				this.elementAttr = value;
+			}
+		}
+	}
+	object height;
+	[Parameter]
+	object Height {
+		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetHeight(dxTarget).Result : height;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxVectorMapInterop.SetHeight(dxTarget, value);
+			} else {
+				this.height = value;
+			}
+		}
+	}
+	object width;
+	[Parameter]
+	object Width {
+		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetWidth(dxTarget).Result : width;
+		set {
+			if (isInitialized) {
+				DevExpress.Viz.DxVectorMapInterop.SetWidth(dxTarget, value);
+			} else {
+				this.width = value;
+			}
+		}
+	}
+	bool? onAreaClickEnabled;
+	[Parameter]
+	bool? OnAreaClickEnabled {
+		get => onAreaClickEnabled;
+		set => this.onAreaClickEnabled = value;
+	}
+	bool? onAreaSelectionChangedEnabled;
+	[Parameter]
+	bool? OnAreaSelectionChangedEnabled {
+		get => onAreaSelectionChangedEnabled;
+		set => this.onAreaSelectionChangedEnabled = value;
+	}
+	bool? onCenterChangedEnabled;
+	[Parameter]
+	bool? OnCenterChangedEnabled {
+		get => onCenterChangedEnabled;
+		set => this.onCenterChangedEnabled = value;
+	}
+	bool? onClickEnabled;
+	[Parameter]
+	bool? OnClickEnabled {
+		get => onClickEnabled;
+		set => this.onClickEnabled = value;
+	}
+	bool? onMarkerClickEnabled;
+	[Parameter]
+	bool? OnMarkerClickEnabled {
+		get => onMarkerClickEnabled;
+		set => this.onMarkerClickEnabled = value;
+	}
+	bool? onMarkerSelectionChangedEnabled;
+	[Parameter]
+	bool? OnMarkerSelectionChangedEnabled {
+		get => onMarkerSelectionChangedEnabled;
+		set => this.onMarkerSelectionChangedEnabled = value;
+	}
+	bool? onSelectionChangedEnabled;
+	[Parameter]
+	bool? OnSelectionChangedEnabled {
+		get => onSelectionChangedEnabled;
+		set => this.onSelectionChangedEnabled = value;
+	}
+	bool? onTooltipHiddenEnabled;
+	[Parameter]
+	bool? OnTooltipHiddenEnabled {
+		get => onTooltipHiddenEnabled;
+		set => this.onTooltipHiddenEnabled = value;
+	}
+	bool? onTooltipShownEnabled;
+	[Parameter]
+	bool? OnTooltipShownEnabled {
+		get => onTooltipShownEnabled;
+		set => this.onTooltipShownEnabled = value;
+	}
+	bool? onZoomFactorChangedEnabled;
+	[Parameter]
+	bool? OnZoomFactorChangedEnabled {
+		get => onZoomFactorChangedEnabled;
+		set => this.onZoomFactorChangedEnabled = value;
+	}
+	bool? onDrawnEnabled;
+	[Parameter]
+	bool? OnDrawnEnabled {
+		get => onDrawnEnabled;
+		set => this.onDrawnEnabled = value;
+	}
+	bool? onExportedEnabled;
+	[Parameter]
+	bool? OnExportedEnabled {
+		get => onExportedEnabled;
+		set => this.onExportedEnabled = value;
+	}
+	bool? onExportingEnabled;
+	[Parameter]
+	bool? OnExportingEnabled {
+		get => onExportingEnabled;
+		set => this.onExportingEnabled = value;
+	}
+	bool? onFileSavingEnabled;
+	[Parameter]
+	bool? OnFileSavingEnabled {
+		get => onFileSavingEnabled;
+		set => this.onFileSavingEnabled = value;
+	}
+	bool? onIncidentOccurredEnabled;
+	[Parameter]
+	bool? OnIncidentOccurredEnabled {
+		get => onIncidentOccurredEnabled;
+		set => this.onIncidentOccurredEnabled = value;
+	}
+	bool? onDisposingEnabled;
+	[Parameter]
+	bool? OnDisposingEnabled {
+		get => onDisposingEnabled;
+		set => this.onDisposingEnabled = value;
+	}
+	bool? onOptionChangedEnabled;
+	[Parameter]
+	bool? OnOptionChangedEnabled {
+		get => onOptionChangedEnabled;
+		set => this.onOptionChangedEnabled = value;
+	}
+	bool? onInitializedEnabled;
+	[Parameter]
+	bool? OnInitializedEnabled {
+		get => onInitializedEnabled;
+		set => this.onInitializedEnabled = value;
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+		DevExpress.Viz.DxVectorMapInterop.AreaClick += DxVectorMap_AreaClick;
+		DevExpress.Viz.DxVectorMapInterop.AreaSelectionChanged += DxVectorMap_AreaSelectionChanged;
+		DevExpress.Viz.DxVectorMapInterop.CenterChanged += DxVectorMap_CenterChanged;
+		DevExpress.Viz.DxVectorMapInterop.Click += DxVectorMap_Click;
+		DevExpress.Viz.DxVectorMapInterop.MarkerClick += DxVectorMap_MarkerClick;
+		DevExpress.Viz.DxVectorMapInterop.MarkerSelectionChanged += DxVectorMap_MarkerSelectionChanged;
+		DevExpress.Viz.DxVectorMapInterop.SelectionChanged += DxVectorMap_SelectionChanged;
+		DevExpress.Viz.DxVectorMapInterop.TooltipHidden += DxVectorMap_TooltipHidden;
+		DevExpress.Viz.DxVectorMapInterop.TooltipShown += DxVectorMap_TooltipShown;
+		DevExpress.Viz.DxVectorMapInterop.ZoomFactorChanged += DxVectorMap_ZoomFactorChanged;
+		DevExpress.Viz.DxVectorMapInterop.Drawn += DxVectorMap_Drawn;
+		DevExpress.Viz.DxVectorMapInterop.Exported += DxVectorMap_Exported;
+		DevExpress.Viz.DxVectorMapInterop.Exporting += DxVectorMap_Exporting;
+		DevExpress.Viz.DxVectorMapInterop.FileSaving += DxVectorMap_FileSaving;
+		DevExpress.Viz.DxVectorMapInterop.IncidentOccurred += DxVectorMap_IncidentOccurred;
+		DevExpress.Viz.DxVectorMapInterop.Disposing += DxVectorMap_Disposing;
+		DevExpress.Viz.DxVectorMapInterop.OptionChanged += DxVectorMap_OptionChanged;
+		DevExpress.Viz.DxVectorMapInterop.Initialized += DxVectorMap_Initialized;
+	}
+	[Parameter]
+	Action AreaClick { get; set; }
+	void DxVectorMap_AreaClick(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			AreaClick?.Invoke();
+		}
+	}
+	[Parameter]
+	Action AreaSelectionChanged { get; set; }
+	void DxVectorMap_AreaSelectionChanged(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			AreaSelectionChanged?.Invoke();
+		}
+	}
+	[Parameter]
+	Action CenterChanged { get; set; }
+	void DxVectorMap_CenterChanged(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			CenterChanged?.Invoke();
+		}
+	}
+	[Parameter]
+	Action Click { get; set; }
+	void DxVectorMap_Click(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Click?.Invoke();
+		}
+	}
+	[Parameter]
+	Action MarkerClick { get; set; }
+	void DxVectorMap_MarkerClick(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			MarkerClick?.Invoke();
+		}
+	}
+	[Parameter]
+	Action MarkerSelectionChanged { get; set; }
+	void DxVectorMap_MarkerSelectionChanged(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			MarkerSelectionChanged?.Invoke();
+		}
+	}
+	[Parameter]
+	Action SelectionChanged { get; set; }
+	void DxVectorMap_SelectionChanged(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			SelectionChanged?.Invoke();
+		}
+	}
+	[Parameter]
+	Action TooltipHidden { get; set; }
+	void DxVectorMap_TooltipHidden(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			TooltipHidden?.Invoke();
+		}
+	}
+	[Parameter]
+	Action TooltipShown { get; set; }
+	void DxVectorMap_TooltipShown(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			TooltipShown?.Invoke();
+		}
+	}
+	[Parameter]
+	Action ZoomFactorChanged { get; set; }
+	void DxVectorMap_ZoomFactorChanged(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			ZoomFactorChanged?.Invoke();
+		}
+	}
+	[Parameter]
+	Action Drawn { get; set; }
+	void DxVectorMap_Drawn(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Drawn?.Invoke();
+		}
+	}
+	[Parameter]
+	Action Exported { get; set; }
+	void DxVectorMap_Exported(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Exported?.Invoke();
+		}
+	}
+	[Parameter]
+	Action Exporting { get; set; }
+	void DxVectorMap_Exporting(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Exporting?.Invoke();
+		}
+	}
+	[Parameter]
+	Action FileSaving { get; set; }
+	void DxVectorMap_FileSaving(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			FileSaving?.Invoke();
+		}
+	}
+	[Parameter]
+	Action IncidentOccurred { get; set; }
+	void DxVectorMap_IncidentOccurred(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			IncidentOccurred?.Invoke();
+		}
+	}
+	[Parameter]
+	Action Disposing { get; set; }
+	void DxVectorMap_Disposing(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Disposing?.Invoke();
+		}
+	}
+	[Parameter]
+	Action OptionChanged { get; set; }
+	void DxVectorMap_OptionChanged(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			OptionChanged?.Invoke();
+		}
+	}
+	[Parameter]
+	Action Initialized { get; set; }
+	void DxVectorMap_Initialized(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Initialized?.Invoke();
+		}
+	}
+	public object CenterEx() {
+		return DevExpress.Viz.DxVectorMapInterop.CenterEx(dxTarget).Result;
+	}
+	public void CenterEx(object centerCoordinates) {
+		DevExpress.Viz.DxVectorMapInterop.CenterEx(dxTarget, centerCoordinates);
+	}
+	public void ClearAreaSelection() {
+		DevExpress.Viz.DxVectorMapInterop.ClearAreaSelection(dxTarget);
+	}
+	public void ClearMarkerSelection() {
+		DevExpress.Viz.DxVectorMapInterop.ClearMarkerSelection(dxTarget);
+	}
+	public void ClearSelection() {
+		DevExpress.Viz.DxVectorMapInterop.ClearSelection(dxTarget);
+	}
+	public object ConvertCoordinates(float x, float y) {
+		return DevExpress.Viz.DxVectorMapInterop.ConvertCoordinates(dxTarget, x, y).Result;
+	}
+	public object GetAreas() {
+		return DevExpress.Viz.DxVectorMapInterop.GetAreas(dxTarget).Result;
+	}
+	public object GetLayerByIndex(float index) {
+		return DevExpress.Viz.DxVectorMapInterop.GetLayerByIndex(dxTarget, index).Result;
+	}
+	public object GetLayerByName(string name) {
+		return DevExpress.Viz.DxVectorMapInterop.GetLayerByName(dxTarget, name).Result;
+	}
+	public object GetLayersEx() {
+		return DevExpress.Viz.DxVectorMapInterop.GetLayersEx(dxTarget).Result;
+	}
+	public object GetMarkersEx() {
+		return DevExpress.Viz.DxVectorMapInterop.GetMarkersEx(dxTarget).Result;
+	}
+	public object Viewport() {
+		return DevExpress.Viz.DxVectorMapInterop.Viewport(dxTarget).Result;
+	}
+	public void Viewport(object viewportCoordinates) {
+		DevExpress.Viz.DxVectorMapInterop.Viewport(dxTarget, viewportCoordinates);
+	}
+	public float ZoomFactorEx() {
+		return DevExpress.Viz.DxVectorMapInterop.ZoomFactorEx(dxTarget).Result;
+	}
+	public void ZoomFactorEx(float zoomFactor) {
+		DevExpress.Viz.DxVectorMapInterop.ZoomFactorEx(dxTarget, zoomFactor);
+	}
+	public void Dispose() {
+		DevExpress.Viz.DxVectorMapInterop.AreaClick -= DxVectorMap_AreaClick;
+		DevExpress.Viz.DxVectorMapInterop.AreaSelectionChanged -= DxVectorMap_AreaSelectionChanged;
+		DevExpress.Viz.DxVectorMapInterop.CenterChanged -= DxVectorMap_CenterChanged;
+		DevExpress.Viz.DxVectorMapInterop.Click -= DxVectorMap_Click;
+		DevExpress.Viz.DxVectorMapInterop.MarkerClick -= DxVectorMap_MarkerClick;
+		DevExpress.Viz.DxVectorMapInterop.MarkerSelectionChanged -= DxVectorMap_MarkerSelectionChanged;
+		DevExpress.Viz.DxVectorMapInterop.SelectionChanged -= DxVectorMap_SelectionChanged;
+		DevExpress.Viz.DxVectorMapInterop.TooltipHidden -= DxVectorMap_TooltipHidden;
+		DevExpress.Viz.DxVectorMapInterop.TooltipShown -= DxVectorMap_TooltipShown;
+		DevExpress.Viz.DxVectorMapInterop.ZoomFactorChanged -= DxVectorMap_ZoomFactorChanged;
+		DevExpress.Viz.DxVectorMapInterop.Drawn -= DxVectorMap_Drawn;
+		DevExpress.Viz.DxVectorMapInterop.Exported -= DxVectorMap_Exported;
+		DevExpress.Viz.DxVectorMapInterop.Exporting -= DxVectorMap_Exporting;
+		DevExpress.Viz.DxVectorMapInterop.FileSaving -= DxVectorMap_FileSaving;
+		DevExpress.Viz.DxVectorMapInterop.IncidentOccurred -= DxVectorMap_IncidentOccurred;
+		DevExpress.Viz.DxVectorMapInterop.Disposing -= DxVectorMap_Disposing;
+		DevExpress.Viz.DxVectorMapInterop.OptionChanged -= DxVectorMap_OptionChanged;
+		DevExpress.Viz.DxVectorMapInterop.Initialized -= DxVectorMap_Initialized;
+	}
+}

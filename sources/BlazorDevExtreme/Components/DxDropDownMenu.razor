@@ -1,0 +1,411 @@
+
+@using Microsoft.AspNetCore.Components
+@implements IDisposable
+@inherits DxBlazorComponent<DevExpress.Ui.DxDropDownMenuOptions>
+
+<div id="@Id" @ref="dxTarget"></div>
+
+@functions {
+	ElementReference dxTarget;
+	public DxDropDownMenu() : base("DxDropDownMenu") { }
+	protected override DevExpress.Ui.DxDropDownMenuOptions CreateOptions() {
+		return new DevExpress.Ui.DxDropDownMenuOptions {
+			activeStateEnabled = activeStateEnabled,
+			buttonIcon = buttonIcon,
+			buttonText = buttonText,
+			dataSource = dataSource,
+			hoverStateEnabled = hoverStateEnabled,
+			items = items,
+			itemTemplate = itemTemplate,
+			opened = isOpened,
+			popupHeight = popupHeight,
+			popupWidth = popupWidth,
+			usePopover = usePopover,
+			accessKey = accessKey,
+			disabled = disabled,
+			focusStateEnabled = focusStateEnabled,
+			hint = hint,
+			tabIndex = tabIndex,
+			visible = visible,
+			bindingOptions = bindingOptions,
+			elementAttr = elementAttr,
+			height = height,
+			rtlEnabled = rtlEnabled,
+			width = width,
+			onButtonClickEnabled = onButtonClickEnabled,
+			onItemClickEnabled = onItemClickEnabled,
+			onContentReadyEnabled = onContentReadyEnabled,
+			onDisposingEnabled = onDisposingEnabled,
+			onOptionChangedEnabled = onOptionChangedEnabled,
+			onInitializedEnabled = onInitializedEnabled,
+		};
+	}
+	protected override Task Init(DevExpress.Ui.DxDropDownMenuOptions options) {
+		return DevExpress.Ui.DxDropDownMenuInterop.Init(dxTarget, options);
+	}
+	bool? activeStateEnabled;
+	[Parameter]
+	bool? ActiveStateEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDropDownMenuInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDropDownMenuInterop.SetActiveStateEnabled(dxTarget, value);
+			} else {
+				this.activeStateEnabled = value;
+			}
+		}
+	}
+	string buttonIcon;
+	[Parameter]
+	string ButtonIcon {
+		get => isInitialized ? (string)DevExpress.Ui.DxDropDownMenuInterop.GetButtonIcon(dxTarget).Result : buttonIcon;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDropDownMenuInterop.SetButtonIcon(dxTarget, value);
+			} else {
+				this.buttonIcon = value;
+			}
+		}
+	}
+	string buttonText;
+	[Parameter]
+	string ButtonText {
+		get => isInitialized ? (string)DevExpress.Ui.DxDropDownMenuInterop.GetButtonText(dxTarget).Result : buttonText;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDropDownMenuInterop.SetButtonText(dxTarget, value);
+			} else {
+				this.buttonText = value;
+			}
+		}
+	}
+	object dataSource;
+	[Parameter]
+	object DataSource {
+		get => isInitialized ? DevExpress.Ui.DxDropDownMenuInterop.GetDataSource(dxTarget).Result : dataSource;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDropDownMenuInterop.SetDataSource(dxTarget, value);
+			} else {
+				this.dataSource = value;
+			}
+		}
+	}
+	bool? hoverStateEnabled;
+	[Parameter]
+	bool? HoverStateEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDropDownMenuInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDropDownMenuInterop.SetHoverStateEnabled(dxTarget, value);
+			} else {
+				this.hoverStateEnabled = value;
+			}
+		}
+	}
+	object items;
+	[Parameter]
+	object Items {
+		get => isInitialized ? DevExpress.Ui.DxDropDownMenuInterop.GetItems(dxTarget).Result : items;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDropDownMenuInterop.SetItems(dxTarget, value);
+			} else {
+				this.items = value;
+			}
+		}
+	}
+	object itemTemplate;
+	[Parameter]
+	object ItemTemplate {
+		get => isInitialized ? DevExpress.Ui.DxDropDownMenuInterop.GetItemTemplate(dxTarget).Result : itemTemplate;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDropDownMenuInterop.SetItemTemplate(dxTarget, value);
+			} else {
+				this.itemTemplate = value;
+			}
+		}
+	}
+	bool? isOpened;
+	[Parameter]
+	bool? IsOpened {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDropDownMenuInterop.GetOpened(dxTarget).Result : isOpened;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDropDownMenuInterop.SetOpened(dxTarget, value);
+			} else {
+				this.isOpened = value;
+			}
+		}
+	}
+	object popupHeight;
+	[Parameter]
+	object PopupHeight {
+		get => isInitialized ? DevExpress.Ui.DxDropDownMenuInterop.GetPopupHeight(dxTarget).Result : popupHeight;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDropDownMenuInterop.SetPopupHeight(dxTarget, value);
+			} else {
+				this.popupHeight = value;
+			}
+		}
+	}
+	object popupWidth;
+	[Parameter]
+	object PopupWidth {
+		get => isInitialized ? DevExpress.Ui.DxDropDownMenuInterop.GetPopupWidth(dxTarget).Result : popupWidth;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDropDownMenuInterop.SetPopupWidth(dxTarget, value);
+			} else {
+				this.popupWidth = value;
+			}
+		}
+	}
+	bool? usePopover;
+	[Parameter]
+	bool? UsePopover {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDropDownMenuInterop.GetUsePopover(dxTarget).Result : usePopover;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDropDownMenuInterop.SetUsePopover(dxTarget, value);
+			} else {
+				this.usePopover = value;
+			}
+		}
+	}
+	string accessKey;
+	[Parameter]
+	string AccessKey {
+		get => isInitialized ? (string)DevExpress.Ui.DxDropDownMenuInterop.GetAccessKey(dxTarget).Result : accessKey;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDropDownMenuInterop.SetAccessKey(dxTarget, value);
+			} else {
+				this.accessKey = value;
+			}
+		}
+	}
+	bool? disabled;
+	[Parameter]
+	bool? Disabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDropDownMenuInterop.GetDisabled(dxTarget).Result : disabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDropDownMenuInterop.SetDisabled(dxTarget, value);
+			} else {
+				this.disabled = value;
+			}
+		}
+	}
+	bool? focusStateEnabled;
+	[Parameter]
+	bool? FocusStateEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDropDownMenuInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDropDownMenuInterop.SetFocusStateEnabled(dxTarget, value);
+			} else {
+				this.focusStateEnabled = value;
+			}
+		}
+	}
+	string hint;
+	[Parameter]
+	string Hint {
+		get => isInitialized ? (string)DevExpress.Ui.DxDropDownMenuInterop.GetHint(dxTarget).Result : hint;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDropDownMenuInterop.SetHint(dxTarget, value);
+			} else {
+				this.hint = value;
+			}
+		}
+	}
+	float? tabIndex;
+	[Parameter]
+	float? TabIndex {
+		get => isInitialized ? (float?)DevExpress.Ui.DxDropDownMenuInterop.GetTabIndex(dxTarget).Result : tabIndex;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDropDownMenuInterop.SetTabIndex(dxTarget, value);
+			} else {
+				this.tabIndex = value;
+			}
+		}
+	}
+	bool? visible;
+	[Parameter]
+	bool? Visible {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDropDownMenuInterop.GetVisible(dxTarget).Result : visible;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDropDownMenuInterop.SetVisible(dxTarget, value);
+			} else {
+				this.visible = value;
+			}
+		}
+	}
+	object bindingOptions;
+	[Parameter]
+	object BindingOptions {
+		get => isInitialized ? DevExpress.Ui.DxDropDownMenuInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDropDownMenuInterop.SetBindingOptions(dxTarget, value);
+			} else {
+				this.bindingOptions = value;
+			}
+		}
+	}
+	object elementAttr;
+	[Parameter]
+	object ElementAttr {
+		get => isInitialized ? DevExpress.Ui.DxDropDownMenuInterop.GetElementAttr(dxTarget).Result : elementAttr;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDropDownMenuInterop.SetElementAttr(dxTarget, value);
+			} else {
+				this.elementAttr = value;
+			}
+		}
+	}
+	object height;
+	[Parameter]
+	object Height {
+		get => isInitialized ? DevExpress.Ui.DxDropDownMenuInterop.GetHeight(dxTarget).Result : height;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDropDownMenuInterop.SetHeight(dxTarget, value);
+			} else {
+				this.height = value;
+			}
+		}
+	}
+	bool? rtlEnabled;
+	[Parameter]
+	bool? RtlEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxDropDownMenuInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDropDownMenuInterop.SetRtlEnabled(dxTarget, value);
+			} else {
+				this.rtlEnabled = value;
+			}
+		}
+	}
+	object width;
+	[Parameter]
+	object Width {
+		get => isInitialized ? DevExpress.Ui.DxDropDownMenuInterop.GetWidth(dxTarget).Result : width;
+		set {
+			if (isInitialized) {
+				DevExpress.Ui.DxDropDownMenuInterop.SetWidth(dxTarget, value);
+			} else {
+				this.width = value;
+			}
+		}
+	}
+	bool? onButtonClickEnabled;
+	[Parameter]
+	bool? OnButtonClickEnabled {
+		get => onButtonClickEnabled;
+		set => this.onButtonClickEnabled = value;
+	}
+	bool? onItemClickEnabled;
+	[Parameter]
+	bool? OnItemClickEnabled {
+		get => onItemClickEnabled;
+		set => this.onItemClickEnabled = value;
+	}
+	bool? onContentReadyEnabled;
+	[Parameter]
+	bool? OnContentReadyEnabled {
+		get => onContentReadyEnabled;
+		set => this.onContentReadyEnabled = value;
+	}
+	bool? onDisposingEnabled;
+	[Parameter]
+	bool? OnDisposingEnabled {
+		get => onDisposingEnabled;
+		set => this.onDisposingEnabled = value;
+	}
+	bool? onOptionChangedEnabled;
+	[Parameter]
+	bool? OnOptionChangedEnabled {
+		get => onOptionChangedEnabled;
+		set => this.onOptionChangedEnabled = value;
+	}
+	bool? onInitializedEnabled;
+	[Parameter]
+	bool? OnInitializedEnabled {
+		get => onInitializedEnabled;
+		set => this.onInitializedEnabled = value;
+	}
+	protected override async Task OnInitAsync() {
+		await base.OnInitAsync();
+		DevExpress.Ui.DxDropDownMenuInterop.ButtonClick += DxDropDownMenu_ButtonClick;
+		DevExpress.Ui.DxDropDownMenuInterop.ItemClick += DxDropDownMenu_ItemClick;
+		DevExpress.Ui.DxDropDownMenuInterop.ContentReady += DxDropDownMenu_ContentReady;
+		DevExpress.Ui.DxDropDownMenuInterop.Disposing += DxDropDownMenu_Disposing;
+		DevExpress.Ui.DxDropDownMenuInterop.OptionChanged += DxDropDownMenu_OptionChanged;
+		DevExpress.Ui.DxDropDownMenuInterop.Initialized += DxDropDownMenu_Initialized;
+	}
+	[Parameter]
+	Action ButtonClick { get; set; }
+	void DxDropDownMenu_ButtonClick(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			ButtonClick?.Invoke();
+		}
+	}
+	[Parameter]
+	Action ItemClick { get; set; }
+	void DxDropDownMenu_ItemClick(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			ItemClick?.Invoke();
+		}
+	}
+	[Parameter]
+	Action ContentReady { get; set; }
+	void DxDropDownMenu_ContentReady(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			ContentReady?.Invoke();
+		}
+	}
+	[Parameter]
+	Action Disposing { get; set; }
+	void DxDropDownMenu_Disposing(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Disposing?.Invoke();
+		}
+	}
+	[Parameter]
+	Action OptionChanged { get; set; }
+	void DxDropDownMenu_OptionChanged(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			OptionChanged?.Invoke();
+		}
+	}
+	[Parameter]
+	Action Initialized { get; set; }
+	void DxDropDownMenu_Initialized(object sender, JQueryEventArgs e) {
+		if (e.Identifier == Id) {
+			Initialized?.Invoke();
+		}
+	}
+	public void Close() {
+		DevExpress.Ui.DxDropDownMenuInterop.Close(dxTarget);
+	}
+	public void Open() {
+		DevExpress.Ui.DxDropDownMenuInterop.Open(dxTarget);
+	}
+	public void Dispose() {
+		DevExpress.Ui.DxDropDownMenuInterop.ButtonClick -= DxDropDownMenu_ButtonClick;
+		DevExpress.Ui.DxDropDownMenuInterop.ItemClick -= DxDropDownMenu_ItemClick;
+		DevExpress.Ui.DxDropDownMenuInterop.ContentReady -= DxDropDownMenu_ContentReady;
+		DevExpress.Ui.DxDropDownMenuInterop.Disposing -= DxDropDownMenu_Disposing;
+		DevExpress.Ui.DxDropDownMenuInterop.OptionChanged -= DxDropDownMenu_OptionChanged;
+		DevExpress.Ui.DxDropDownMenuInterop.Initialized -= DxDropDownMenu_Initialized;
+	}
+}

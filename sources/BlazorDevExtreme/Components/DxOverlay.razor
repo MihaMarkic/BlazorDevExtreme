@@ -3,7 +3,7 @@
 @implements IDisposable
 @inherits DxBlazorComponent<DevExpress.Ui.DxOverlayOptions>
 
-<div id="@Id" @ref="dxTarget"></div>
+<div id="@Id" @ref:suppressField @ref="dxTarget"></div>
 
 @functions {
 	ElementReference dxTarget;
@@ -409,8 +409,8 @@
 		get => onInitializedEnabled;
 		set => this.onInitializedEnabled = value;
 	}
-	protected override async Task OnInitAsync() {
-		await base.OnInitAsync();
+	protected override async Task OnInitializedAsync() {
+		await base.OnInitializedAsync();
 		DevExpress.Ui.DxOverlayInterop.Hidden += DxOverlay_Hidden;
 		DevExpress.Ui.DxOverlayInterop.Hiding += DxOverlay_Hiding;
 		DevExpress.Ui.DxOverlayInterop.Showing += DxOverlay_Showing;

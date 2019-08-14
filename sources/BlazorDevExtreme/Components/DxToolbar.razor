@@ -3,7 +3,7 @@
 @implements IDisposable
 @inherits DxBlazorComponent<DevExpress.Ui.DxToolbarOptions>
 
-<div id="@Id" @ref="dxTarget"></div>
+<div id="@Id" @ref:suppressField @ref="dxTarget"></div>
 
 @functions {
 	ElementReference dxTarget;
@@ -403,8 +403,8 @@
 		get => onInitializedEnabled;
 		set => this.onInitializedEnabled = value;
 	}
-	protected override async Task OnInitAsync() {
-		await base.OnInitAsync();
+	protected override async Task OnInitializedAsync() {
+		await base.OnInitializedAsync();
 		DevExpress.Ui.DxToolbarInterop.ItemClick += DxToolbar_ItemClick;
 		DevExpress.Ui.DxToolbarInterop.ItemContextMenu += DxToolbar_ItemContextMenu;
 		DevExpress.Ui.DxToolbarInterop.ItemHold += DxToolbar_ItemHold;

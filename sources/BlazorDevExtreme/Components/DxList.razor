@@ -3,7 +3,7 @@
 @implements IDisposable
 @inherits DxBlazorComponent<DevExpress.Ui.DxListOptions>
 
-<div id="@Id" @ref="dxTarget"></div>
+<div id="@Id" @ref:suppressField @ref="dxTarget"></div>
 
 @functions {
 	ElementReference dxTarget;
@@ -28,8 +28,8 @@
 			pageLoadMode = pageLoadMode,
 			pulledDownText = pulledDownText,
 			pullingDownText = pullingDownText,
-			pull@refreshEnabled = pull@refreshEnabled,
-			@refreshingText = @refreshingText,
+			pullRefreshEnabled = pullRefreshEnabled,
+			refreshingText = refreshingText,
 			scrollByContent = scrollByContent,
 			scrollByThumb = scrollByThumb,
 			scrollingEnabled = scrollingEnabled,
@@ -73,7 +73,7 @@
 			onItemReorderedEnabled = onItemReorderedEnabled,
 			onItemSwipeEnabled = onItemSwipeEnabled,
 			onPageLoadingEnabled = onPageLoadingEnabled,
-			onPull@refreshEnabled = onPull@refreshEnabled,
+			onPullRefreshEnabled = onPullrefreshEnabled,
 			onScrollEnabled = onScrollEnabled,
 			onSelectAllValueChangedEnabled = onSelectAllValueChangedEnabled,
 			onItemRenderedEnabled = onItemRenderedEnabled,
@@ -303,27 +303,27 @@
 			}
 		}
 	}
-	bool? pull@refreshEnabled;
+	bool? pullRefreshEnabled;
 	[Parameter]
-	bool? Pull@refreshEnabled {
-		get => isInitialized ? (bool?)DevExpress.Ui.DxListInterop.GetPull@refreshEnabled(dxTarget).Result : pull@refreshEnabled;
+	bool? PullRefreshEnabled {
+		get => isInitialized ? (bool?)DevExpress.Ui.DxListInterop.GetPullRefreshEnabled(dxTarget).Result : pullRefreshEnabled;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxListInterop.SetPull@refreshEnabled(dxTarget, value);
+				DevExpress.Ui.DxListInterop.SetPullRefreshEnabled(dxTarget, value);
 			} else {
-				this.pull@refreshEnabled = value;
+				this.pullRefreshEnabled = value;
 			}
 		}
 	}
-	string @refreshingText;
+	string refreshingText;
 	[Parameter]
-	string @refreshingText {
-		get => isInitialized ? (string)DevExpress.Ui.DxListInterop.Get@refreshingText(dxTarget).Result : @refreshingText;
+	string RefreshingText {
+		get => isInitialized ? (string)DevExpress.Ui.DxListInterop.GetRefreshingText(dxTarget).Result : refreshingText;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxListInterop.Set@refreshingText(dxTarget, value);
+				DevExpress.Ui.DxListInterop.SetRefreshingText(dxTarget, value);
 			} else {
-				this.@refreshingText = value;
+				this.refreshingText = value;
 			}
 		}
 	}
@@ -789,11 +789,11 @@
 		get => onPageLoadingEnabled;
 		set => this.onPageLoadingEnabled = value;
 	}
-	bool? onPull@refreshEnabled;
+	bool? onPullrefreshEnabled;
 	[Parameter]
-	bool? OnPull@refreshEnabled {
-		get => onPull@refreshEnabled;
-		set => this.onPull@refreshEnabled = value;
+	bool? OnPullrefreshEnabled {
+		get => onPullrefreshEnabled;
+		set => this.onPullrefreshEnabled = value;
 	}
 	bool? onScrollEnabled;
 	[Parameter]
@@ -843,8 +843,8 @@
 		get => onInitializedEnabled;
 		set => this.onInitializedEnabled = value;
 	}
-	protected override async Task OnInitAsync() {
-		await base.OnInitAsync();
+	protected override async Task OnInitializedAsync() {
+		await base.OnInitializedAsync();
 		DevExpress.Ui.DxListInterop.GroupRendered += DxList_GroupRendered;
 		DevExpress.Ui.DxListInterop.ItemClick += DxList_ItemClick;
 		DevExpress.Ui.DxListInterop.ItemContextMenu += DxList_ItemContextMenu;
@@ -854,7 +854,7 @@
 		DevExpress.Ui.DxListInterop.ItemReordered += DxList_ItemReordered;
 		DevExpress.Ui.DxListInterop.ItemSwipe += DxList_ItemSwipe;
 		DevExpress.Ui.DxListInterop.PageLoading += DxList_PageLoading;
-		DevExpress.Ui.DxListInterop.Pull@refresh += DxList_Pull@refresh;
+		DevExpress.Ui.DxListInterop.PullRefresh += DxList_PullRefresh;
 		DevExpress.Ui.DxListInterop.Scroll += DxList_Scroll;
 		DevExpress.Ui.DxListInterop.SelectAllValueChanged += DxList_SelectAllValueChanged;
 		DevExpress.Ui.DxListInterop.ItemRendered += DxList_ItemRendered;
@@ -928,10 +928,10 @@
 		}
 	}
 	[Parameter]
-	Action Pull@refresh { get; set; }
-	void DxList_Pull@refresh(object sender, JQueryEventArgs e) {
+	Action Pullrefresh { get; set; }
+	void DxList_PullRefresh(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
-			Pull@refresh?.Invoke();
+			Pullrefresh?.Invoke();
 		}
 	}
 	[Parameter]
@@ -1051,7 +1051,7 @@
 		DevExpress.Ui.DxListInterop.ItemReordered -= DxList_ItemReordered;
 		DevExpress.Ui.DxListInterop.ItemSwipe -= DxList_ItemSwipe;
 		DevExpress.Ui.DxListInterop.PageLoading -= DxList_PageLoading;
-		DevExpress.Ui.DxListInterop.Pull@refresh -= DxList_Pull@refresh;
+		DevExpress.Ui.DxListInterop.PullRefresh -= DxList_PullRefresh;
 		DevExpress.Ui.DxListInterop.Scroll -= DxList_Scroll;
 		DevExpress.Ui.DxListInterop.SelectAllValueChanged -= DxList_SelectAllValueChanged;
 		DevExpress.Ui.DxListInterop.ItemRendered -= DxList_ItemRendered;

@@ -3,9 +3,9 @@
 @implements IDisposable
 @inherits DxBlazorComponent<DevExpress.Ui.DxDataGridOptions>
 
-<div id="@Id" @ref="dxTarget"></div>
+<div id="@Id" @ref:suppressField @ref="dxTarget"></div>
 
-@functions {
+@code {
 	ElementReference dxTarget;
 	public DxDataGrid() : base("DxDataGrid") { }
 	protected override DevExpress.Ui.DxDataGridOptions CreateOptions() {
@@ -1091,8 +1091,8 @@
 		get => onInitializedEnabled;
 		set => this.onInitializedEnabled = value;
 	}
-	protected override async Task OnInitAsync() {
-		await base.OnInitAsync();
+	protected override async Task OnInitializedAsync() {
+		await base.OnInitializedAsync();
 		DevExpress.Ui.DxDataGridInterop.CellClick += DxDataGrid_CellClick;
 		DevExpress.Ui.DxDataGridInterop.CellHoverChanged += DxDataGrid_CellHoverChanged;
 		DevExpress.Ui.DxDataGridInterop.CellPrepared += DxDataGrid_CellPrepared;

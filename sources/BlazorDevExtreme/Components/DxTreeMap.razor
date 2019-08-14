@@ -3,7 +3,7 @@
 @implements IDisposable
 @inherits DxBlazorComponent<DevExpress.Viz.TreeMap.DxTreeMapOptions>
 
-<div id="@Id" @ref="dxTarget"></div>
+<div id="@Id" @ref:suppressField @ref="dxTarget"></div>
 
 @functions {
 	ElementReference dxTarget;
@@ -516,8 +516,8 @@
 		get => onInitializedEnabled;
 		set => this.onInitializedEnabled = value;
 	}
-	protected override async Task OnInitAsync() {
-		await base.OnInitAsync();
+	protected override async Task OnInitializedAsync() {
+		await base.OnInitializedAsync();
 		DevExpress.Viz.DxTreeMapInterop.Click += DxTreeMap_Click;
 		DevExpress.Viz.DxTreeMapInterop.Drill += DxTreeMap_Drill;
 		DevExpress.Viz.DxTreeMapInterop.HoverChanged += DxTreeMap_HoverChanged;

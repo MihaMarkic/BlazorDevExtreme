@@ -3,7 +3,7 @@
 @implements IDisposable
 @inherits DxBlazorComponent<DevExpress.Ui.DxFileUploaderOptions>
 
-<div id="@Id" @ref="dxTarget"></div>
+<div id="@Id" @ref:suppressField @ref="dxTarget"></div>
 
 @functions {
     ElementReference dxTarget;
@@ -527,8 +527,8 @@
         get => onInitializedEnabled;
         set => this.onInitializedEnabled = value;
     }
-    protected override async Task OnInitAsync() {
-        await base.OnInitAsync();
+    protected override async Task OnInitializedAsync() {
+        await base.OnInitializedAsync();
         DevExpress.Ui.DxFileUploaderInterop.Progress += DxFileUploader_Progress;
         DevExpress.Ui.DxFileUploaderInterop.UploadAborted += DxFileUploader_UploadAborted;
         DevExpress.Ui.DxFileUploaderInterop.Uploaded += DxFileUploader_Uploaded;

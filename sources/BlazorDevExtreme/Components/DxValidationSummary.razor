@@ -3,7 +3,7 @@
 @implements IDisposable
 @inherits DxBlazorComponent<DevExpress.Ui.DxValidationSummaryOptions>
 
-<div id="@Id" @ref="dxTarget"></div>
+<div id="@Id" @ref:suppressField @ref="dxTarget"></div>
 
 @functions {
 	ElementReference dxTarget;
@@ -390,8 +390,8 @@
 		get => onInitializedEnabled;
 		set => this.onInitializedEnabled = value;
 	}
-	protected override async Task OnInitAsync() {
-		await base.OnInitAsync();
+	protected override async Task OnInitializedAsync() {
+		await base.OnInitializedAsync();
 		DevExpress.Ui.DxValidationSummaryInterop.ItemClick += DxValidationSummary_ItemClick;
 		DevExpress.Ui.DxValidationSummaryInterop.ItemContextMenu += DxValidationSummary_ItemContextMenu;
 		DevExpress.Ui.DxValidationSummaryInterop.ItemHold += DxValidationSummary_ItemHold;

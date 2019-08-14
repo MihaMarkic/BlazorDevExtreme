@@ -3,7 +3,7 @@
 @implements IDisposable
 @inherits DxBlazorComponent<DevExpress.Ui.GridBaseOptions>
 
-<div id="@Id" @ref="dxTarget"></div>
+<div id="@Id" @ref:suppressField @ref="dxTarget"></div>
 
 @functions {
     ElementReference dxTarget;
@@ -851,8 +851,8 @@
         get => onInitializedEnabled;
         set => this.onInitializedEnabled = value;
     }
-    protected override async Task OnInitAsync() {
-        await base.OnInitAsync();
+    protected override async Task OnInitializedAsync() {
+        await base.OnInitializedAsync();
         DevExpress.Ui.GridBaseInterop.AdaptiveDetailRowPreparing += GridBase_AdaptiveDetailRowPreparing;
         DevExpress.Ui.GridBaseInterop.DataErrorOccurred += GridBase_DataErrorOccurred;
         DevExpress.Ui.GridBaseInterop.InitNewRow += GridBase_InitNewRow;
@@ -1173,8 +1173,8 @@
     public void PageSize(float value) {
         DevExpress.Ui.GridBaseInterop.PageSize(dxTarget, value);
     }
-    public object @refresh() {
-        return DevExpress.Ui.GridBaseInterop.@refresh(dxTarget).Result;
+    public object refresh() {
+        return DevExpress.Ui.GridBaseInterop.Refresh(dxTarget).Result;
     }
     public void RepaintRows(object rowIndexes) {
         DevExpress.Ui.GridBaseInterop.RepaintRows(dxTarget, rowIndexes);

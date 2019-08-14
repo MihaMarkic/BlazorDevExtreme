@@ -3,7 +3,7 @@
 @implements IDisposable
 @inherits DxBlazorComponent<DevExpress.Viz.Sparklines.DxBulletOptions>
 
-<div id="@Id" @ref="dxTarget"></div>
+<div id="@Id" @ref:suppressField @ref="dxTarget"></div>
 
 @functions {
 	ElementReference dxTarget;
@@ -384,8 +384,8 @@
 		get => onInitializedEnabled;
 		set => this.onInitializedEnabled = value;
 	}
-	protected override async Task OnInitAsync() {
-		await base.OnInitAsync();
+	protected override async Task OnInitializedAsync() {
+		await base.OnInitializedAsync();
 		DevExpress.Viz.DxBulletInterop.TooltipHidden += DxBullet_TooltipHidden;
 		DevExpress.Viz.DxBulletInterop.TooltipShown += DxBullet_TooltipShown;
 		DevExpress.Viz.DxBulletInterop.Drawn += DxBullet_Drawn;

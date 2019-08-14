@@ -3,7 +3,7 @@
 @implements IDisposable
 @inherits DxBlazorComponent<DevExpress.Viz.Charts.DxChartOptions>
 
-<div id="@Id" @ref="dxTarget"></div>
+<div id="@Id" @ref:suppressField @ref="dxTarget"></div>
 
 @functions {
 	ElementReference dxTarget;
@@ -825,8 +825,8 @@
 		get => onInitializedEnabled;
 		set => this.onInitializedEnabled = value;
 	}
-	protected override async Task OnInitAsync() {
-		await base.OnInitAsync();
+	protected override async Task OnInitializedAsync() {
+		await base.OnInitializedAsync();
 		DevExpress.Viz.DxChartInterop.ArgumentAxisClick += DxChart_ArgumentAxisClick;
 		DevExpress.Viz.DxChartInterop.LegendClick += DxChart_LegendClick;
 		DevExpress.Viz.DxChartInterop.SeriesClick += DxChart_SeriesClick;

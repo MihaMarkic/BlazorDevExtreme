@@ -3,7 +3,7 @@
 @implements IDisposable
 @inherits DxBlazorComponent<DevExpress.Ui.DxProgressBarOptions>
 
-<div id="@Id" @ref="dxTarget"></div>
+<div id="@Id" @ref:suppressField @ref="dxTarget"></div>
 
 @functions {
     ElementReference dxTarget;
@@ -343,8 +343,8 @@
         get => onInitializedEnabled;
         set => this.onInitializedEnabled = value;
     }
-    protected override async Task OnInitAsync() {
-        await base.OnInitAsync();
+    protected override async Task OnInitializedAsync() {
+        await base.OnInitializedAsync();
         DevExpress.Ui.DxProgressBarInterop.Complete += DxProgressBar_Complete;
         //DevExpress.Ui.DxProgressBarInterop.ValueChanged += DxProgressBar_ValueChanged;
         DevExpress.Ui.DxProgressBarInterop.ContentReady += DxProgressBar_ContentReady;

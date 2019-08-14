@@ -3,7 +3,7 @@
 @implements IDisposable
 @inherits DxBlazorComponent<DevExpress.Ui.DxPivotOptions>
 
-<div id="@Id" @ref="dxTarget"></div>
+<div id="@Id" @ref:suppressField @ref="dxTarget"></div>
 
 @functions {
 	ElementReference dxTarget;
@@ -416,8 +416,8 @@
 		get => onInitializedEnabled;
 		set => this.onInitializedEnabled = value;
 	}
-	protected override async Task OnInitAsync() {
-		await base.OnInitAsync();
+	protected override async Task OnInitializedAsync() {
+		await base.OnInitializedAsync();
 		DevExpress.Ui.DxPivotInterop.ItemClick += DxPivot_ItemClick;
 		DevExpress.Ui.DxPivotInterop.ItemContextMenu += DxPivot_ItemContextMenu;
 		DevExpress.Ui.DxPivotInterop.ItemHold += DxPivot_ItemHold;

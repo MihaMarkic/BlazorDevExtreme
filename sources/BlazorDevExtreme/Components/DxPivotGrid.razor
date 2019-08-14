@@ -3,10 +3,10 @@
 @implements IDisposable
 @inherits DxBlazorComponent<DevExpress.Ui.DxPivotGridOptions>
 
-<div id="@Id" @ref="dxTarget"></div>
+<div id="@Id" @ref:suppressField @ref="dxTarget"></div>
 
-@ElementReference
-	Element@ref dxTarget;
+@code {
+	ElementReference dxTarget;
 	public DxPivotGrid() : base("DxPivotGrid") { }
 	protected override DevExpress.Ui.DxPivotGridOptions CreateOptions() {
 		return new DevExpress.Ui.DxPivotGridOptions {
@@ -553,8 +553,8 @@
 		get => onInitializedEnabled;
 		set => this.onInitializedEnabled = value;
 	}
-	protected override async Task OnInitAsync() {
-		await base.OnInitAsync();
+	protected override async Task OnInitializedAsync() {
+		await base.OnInitializedAsync();
 		DevExpress.Ui.DxPivotGridInterop.CellClick += DxPivotGrid_CellClick;
 		DevExpress.Ui.DxPivotGridInterop.CellPrepared += DxPivotGrid_CellPrepared;
 		DevExpress.Ui.DxPivotGridInterop.ContextMenuPreparing += DxPivotGrid_ContextMenuPreparing;

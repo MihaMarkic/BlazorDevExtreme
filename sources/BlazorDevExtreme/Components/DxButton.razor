@@ -3,7 +3,7 @@
 @implements IDisposable
 @inherits DxBlazorComponent<DevExpress.Ui.DxButtonOptions>
 
-<div id="@Id" @ref="@dxTarget"></div>
+<div id="@Id" @ref:suppressField @ref="dxTarget"></div>
 
 @functions {
     ElementReference dxTarget;
@@ -400,9 +400,9 @@
         get => onInitializedEnabled;
         set => this.onInitializedEnabled = value;
     }
-    protected override async Task OnInitAsync()
+    protected override async Task OnInitializedAsync()
     {
-        await base.OnInitAsync();
+        await base.OnInitializedAsync();
         DevExpress.Ui.DxButtonInterop.Click += DxButton_Click;
         DevExpress.Ui.DxButtonInterop.ContentReady += DxButton_ContentReady;
         DevExpress.Ui.DxButtonInterop.Disposing += DxButton_Disposing;

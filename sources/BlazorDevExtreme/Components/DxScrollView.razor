@@ -3,7 +3,7 @@
 @implements IDisposable
 @inherits DxBlazorComponent<DevExpress.Ui.DxScrollViewOptions>
 
-<div id="@Id" @ref="dxTarget"></div>
+<div id="@Id" @ref:suppressField @ref="dxTarget"></div>
 
 @functions {
 	ElementReference dxTarget;
@@ -13,7 +13,7 @@
 			pulledDownText = pulledDownText,
 			pullingDownText = pullingDownText,
 			reachBottomText = reachBottomText,
-			@refreshingText = @refreshingText,
+			refreshingText = refreshingText,
 			bounceEnabled = bounceEnabled,
 			direction = direction,
 			disabled = disabled,
@@ -74,15 +74,15 @@
 			}
 		}
 	}
-	string @refreshingText;
+	string refreshingText;
 	[Parameter]
-	string @refreshingText {
-		get => isInitialized ? (string)DevExpress.Ui.DxScrollViewInterop.Get@refreshingText(dxTarget).Result : @refreshingText;
+	string RefreshingText {
+		get => isInitialized ? (string)DevExpress.Ui.DxScrollViewInterop.GetRefreshingText(dxTarget).Result : refreshingText;
 		set {
 			if (isInitialized) {
-				DevExpress.Ui.DxScrollViewInterop.Set@refreshingText(dxTarget, value);
+				DevExpress.Ui.DxScrollViewInterop.SetRefreshingText(dxTarget, value);
 			} else {
-				this.@refreshingText = value;
+				this.refreshingText = value;
 			}
 		}
 	}
@@ -272,8 +272,8 @@
 		get => onInitializedEnabled;
 		set => this.onInitializedEnabled = value;
 	}
-	protected override async Task OnInitAsync() {
-		await base.OnInitAsync();
+	protected override async Task OnInitializedAsync() {
+		await base.OnInitializedAsync();
 		DevExpress.Ui.DxScrollViewInterop.PullDown += DxScrollView_PullDown;
 		DevExpress.Ui.DxScrollViewInterop.ReachBottom += DxScrollView_ReachBottom;
 		DevExpress.Ui.DxScrollViewInterop.Scroll += DxScrollView_Scroll;
@@ -331,8 +331,8 @@
 			Initialized?.Invoke();
 		}
 	}
-	public void @refresh() {
-		DevExpress.Ui.DxScrollViewInterop.@refresh(dxTarget);
+	public void refresh() {
+		DevExpress.Ui.DxScrollViewInterop.Refresh(dxTarget);
 	}
 	public object Release(bool preventScrollBottom) {
 		return DevExpress.Ui.DxScrollViewInterop.Release(dxTarget, preventScrollBottom).Result;

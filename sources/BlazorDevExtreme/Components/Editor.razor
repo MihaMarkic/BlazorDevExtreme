@@ -3,7 +3,7 @@
 @implements IDisposable
 @inherits DxBlazorComponent<DevExpress.Ui.EditorOptions>
 
-<div id="@Id" @ref="dxTarget"></div>
+<div id="@Id" @ref:suppressField @ref="dxTarget"></div>
 
 @functions {
     ElementReference dxTarget;
@@ -284,8 +284,8 @@
         get => onInitializedEnabled;
         set => this.onInitializedEnabled = value;
     }
-    protected override async Task OnInitAsync() {
-        await base.OnInitAsync();
+    protected override async Task OnInitializedAsync() {
+        await base.OnInitializedAsync();
         //DevExpress.Ui.EditorInterop.ValueChanged += Editor_ValueChanged;
         DevExpress.Ui.EditorInterop.ContentReady += Editor_ContentReady;
         DevExpress.Ui.EditorInterop.Disposing += Editor_Disposing;

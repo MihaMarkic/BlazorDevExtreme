@@ -3,7 +3,7 @@
 @implements IDisposable
 @inherits DxBlazorComponent<DevExpress.Viz.Map.DxVectorMapOptions>
 
-<div id="@Id" @ref="dxTarget"></div>
+<div id="@Id" @ref:suppressField @ref="dxTarget"></div>
 
 @functions {
 	ElementReference dxTarget;
@@ -544,8 +544,8 @@
 		get => onInitializedEnabled;
 		set => this.onInitializedEnabled = value;
 	}
-	protected override async Task OnInitAsync() {
-		await base.OnInitAsync();
+	protected override async Task OnInitializedAsync() {
+		await base.OnInitializedAsync();
 		DevExpress.Viz.DxVectorMapInterop.AreaClick += DxVectorMap_AreaClick;
 		DevExpress.Viz.DxVectorMapInterop.AreaSelectionChanged += DxVectorMap_AreaSelectionChanged;
 		DevExpress.Viz.DxVectorMapInterop.CenterChanged += DxVectorMap_CenterChanged;

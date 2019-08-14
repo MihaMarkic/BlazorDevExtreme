@@ -3,7 +3,7 @@
 @implements IDisposable
 @inherits DxBlazorComponent<DevExpress.Ui.DxTileViewOptions>
 
-<div id="@Id" @ref="dxTarget"></div>
+<div id="@Id" @ref:suppressField @ref="dxTarget"></div>
 
 @functions {
 	ElementReference dxTarget;
@@ -442,8 +442,8 @@
 		get => onInitializedEnabled;
 		set => this.onInitializedEnabled = value;
 	}
-	protected override async Task OnInitAsync() {
-		await base.OnInitAsync();
+	protected override async Task OnInitializedAsync() {
+		await base.OnInitializedAsync();
 		DevExpress.Ui.DxTileViewInterop.ItemClick += DxTileView_ItemClick;
 		DevExpress.Ui.DxTileViewInterop.ItemContextMenu += DxTileView_ItemContextMenu;
 		DevExpress.Ui.DxTileViewInterop.ItemHold += DxTileView_ItemHold;

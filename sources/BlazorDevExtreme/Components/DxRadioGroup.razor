@@ -3,7 +3,7 @@
 @implements IDisposable
 @inherits DxBlazorComponent<DevExpress.Ui.DxRadioGroupOptions>
 
-<div id="@Id" @ref="dxTarget"></div>
+<div id="@Id" @ref:suppressField @ref="dxTarget"></div>
 
 @functions {
     ElementReference dxTarget;
@@ -375,8 +375,8 @@
         get => onInitializedEnabled;
         set => this.onInitializedEnabled = value;
     }
-    protected override async Task OnInitAsync() {
-        await base.OnInitAsync();
+    protected override async Task OnInitializedAsync() {
+        await base.OnInitializedAsync();
         //DevExpress.Ui.DxRadioGroupInterop.ValueChanged += DxRadioGroup_ValueChanged;
         DevExpress.Ui.DxRadioGroupInterop.ContentReady += DxRadioGroup_ContentReady;
         DevExpress.Ui.DxRadioGroupInterop.Disposing += DxRadioGroup_Disposing;

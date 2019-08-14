@@ -3,7 +3,7 @@
 @implements IDisposable
 @inherits DxBlazorComponent<DevExpress.Ui.DxResponsiveBoxOptions>
 
-<div id="@Id" @ref="dxTarget"></div>
+<div id="@Id" @ref:suppressField @ref="dxTarget"></div>
 
 @functions {
 	ElementReference dxTarget;
@@ -429,8 +429,8 @@
 		get => onInitializedEnabled;
 		set => this.onInitializedEnabled = value;
 	}
-	protected override async Task OnInitAsync() {
-		await base.OnInitAsync();
+	protected override async Task OnInitializedAsync() {
+		await base.OnInitializedAsync();
 		DevExpress.Ui.DxResponsiveBoxInterop.ItemClick += DxResponsiveBox_ItemClick;
 		DevExpress.Ui.DxResponsiveBoxInterop.ItemContextMenu += DxResponsiveBox_ItemContextMenu;
 		DevExpress.Ui.DxResponsiveBoxInterop.ItemHold += DxResponsiveBox_ItemHold;

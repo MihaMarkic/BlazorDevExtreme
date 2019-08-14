@@ -2,7 +2,7 @@
 @implements IDisposable
 @inherits DxBlazorComponent<DevExpress.Viz.Gauges.DxBarGaugeOptions>
 
-<div id="@Id" @ref="dxTarget"></div>
+<div id="@Id" @ref:suppressField @ref="dxTarget"></div>
 
 @functions {
 	ElementReference dxTarget;
@@ -435,8 +435,8 @@
 		get => onInitializedEnabled;
 		set => this.onInitializedEnabled = value;
 	}
-	protected override async Task OnInitAsync() {
-		await base.OnInitAsync();
+	protected override async Task OnInitializedAsync() {
+		await base.OnInitializedAsync();
 		DevExpress.Viz.DxBarGaugeInterop.TooltipHidden += DxBarGauge_TooltipHidden;
 		DevExpress.Viz.DxBarGaugeInterop.TooltipShown += DxBarGauge_TooltipShown;
 		DevExpress.Viz.DxBarGaugeInterop.Drawn += DxBarGauge_Drawn;

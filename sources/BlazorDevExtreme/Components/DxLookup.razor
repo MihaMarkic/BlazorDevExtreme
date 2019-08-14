@@ -3,7 +3,7 @@
 @implements IDisposable
 @inherits DxBlazorComponent<DevExpress.Ui.DxLookupOptions>
 
-<div id="@Id" @ref="dxTarget"></div>
+<div id="@Id" @ref:suppressField @ref="dxTarget"></div>
 
 @functions {
     ElementReference dxTarget;
@@ -31,8 +31,8 @@
             position = position,
             pulledDownText = pulledDownText,
             pullingDownText = pullingDownText,
-            pull@refreshEnabled = pull@refreshEnabled,
-            @refreshingText = @refreshingText,
+            pullRefreshEnabled = pullRefreshEnabled,
+            refreshingText = refreshingText,
             searchEnabled = searchEnabled,
             searchPlaceholder = searchPlaceholder,
             shading = shading,
@@ -91,7 +91,7 @@
             itemTemplate = itemTemplate,
             valueExpr = valueExpr,
             onPageLoadingEnabled = onPageLoadingEnabled,
-            onPull@refreshEnabled = onPull@refreshEnabled,
+            onPullRefreshEnabled = onPullRefreshEnabled,
             onScrollEnabled = onScrollEnabled,
             onTitleRenderedEnabled = onTitleRenderedEnabled,
             onValueChangedEnabled = onValueChangedEnabled,
@@ -371,27 +371,27 @@
             }
         }
     }
-    bool? pull@refreshEnabled;
+    bool? pullRefreshEnabled;
     [Parameter]
-    bool? Pull@refreshEnabled {
-        get => isInitialized ? (bool?)DevExpress.Ui.DxLookupInterop.GetPull@refreshEnabled(dxTarget).Result : pull@refreshEnabled;
+    bool? PullRefreshEnabled {
+        get => isInitialized ? (bool?)DevExpress.Ui.DxLookupInterop.GetPullRefreshEnabled(dxTarget).Result : pullRefreshEnabled;
         set {
             if (isInitialized) {
-                DevExpress.Ui.DxLookupInterop.SetPull@refreshEnabled(dxTarget, value);
+                DevExpress.Ui.DxLookupInterop.SetPullRefreshEnabled(dxTarget, value);
             } else {
-                this.pull@refreshEnabled = value;
+                this.pullRefreshEnabled = value;
             }
         }
     }
-    string @refreshingText;
+    string refreshingText;
     [Parameter]
-    string @refreshingText {
-        get => isInitialized ? (string)DevExpress.Ui.DxLookupInterop.Get@refreshingText(dxTarget).Result : @refreshingText;
+    string RefreshingText {
+        get => isInitialized ? (string)DevExpress.Ui.DxLookupInterop.GetRefreshingText(dxTarget).Result : refreshingText;
         set {
             if (isInitialized) {
-                DevExpress.Ui.DxLookupInterop.Set@refreshingText(dxTarget, value);
+                DevExpress.Ui.DxLookupInterop.SetRefreshingText(dxTarget, value);
             } else {
-                this.@refreshingText = value;
+                this.refreshingText = value;
             }
         }
     }
@@ -1085,11 +1085,11 @@
         get => onPageLoadingEnabled;
         set => this.onPageLoadingEnabled = value;
     }
-    bool? onPull@refreshEnabled;
+    bool? onPullRefreshEnabled;
     [Parameter]
-    bool? OnPull@refreshEnabled {
-        get => onPull@refreshEnabled;
-        set => this.onPull@refreshEnabled = value;
+    bool? OnPullRefreshEnabled {
+        get => onPullRefreshEnabled;
+        set => this.onPullRefreshEnabled = value;
     }
     bool? onScrollEnabled;
     [Parameter]
@@ -1223,10 +1223,10 @@
         get => onInitializedEnabled;
         set => this.onInitializedEnabled = value;
     }
-    protected override async Task OnInitAsync() {
-        await base.OnInitAsync();
+    protected override async Task OnInitializedAsync() {
+        await base.OnInitializedAsync();
         DevExpress.Ui.DxLookupInterop.PageLoading += DxLookup_PageLoading;
-        DevExpress.Ui.DxLookupInterop.Pull@refresh += DxLookup_Pull@refresh;
+        DevExpress.Ui.DxLookupInterop.PullRefresh += DxLookup_PullRefresh;
         DevExpress.Ui.DxLookupInterop.Scroll += DxLookup_Scroll;
         DevExpress.Ui.DxLookupInterop.TitleRendered += DxLookup_TitleRendered;
         //DevExpress.Ui.DxLookupInterop.ValueChanged += DxLookup_ValueChanged;
@@ -1258,10 +1258,10 @@
         }
     }
     [Parameter]
-    Action Pull@refresh { get; set; }
-    void DxLookup_Pull@refresh(object sender, JQueryEventArgs e) {
+    Action Pullrefresh { get; set; }
+    void DxLookup_PullRefresh(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
-            Pull@refresh?.Invoke();
+            Pullrefresh?.Invoke();
         }
     }
     [Parameter]
@@ -1420,7 +1420,7 @@
     }
     public void Dispose() {
         DevExpress.Ui.DxLookupInterop.PageLoading -= DxLookup_PageLoading;
-        DevExpress.Ui.DxLookupInterop.Pull@refresh -= DxLookup_Pull@refresh;
+        DevExpress.Ui.DxLookupInterop.PullRefresh -= DxLookup_PullRefresh;
         DevExpress.Ui.DxLookupInterop.Scroll -= DxLookup_Scroll;
         DevExpress.Ui.DxLookupInterop.TitleRendered -= DxLookup_TitleRendered;
         //DevExpress.Ui.DxLookupInterop.ValueChanged -= DxLookup_ValueChanged;

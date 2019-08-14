@@ -3,7 +3,7 @@
 @implements IDisposable
 @inherits DxBlazorComponent<DevExpress.Ui.DxSlideOutOptions>
 
-<div id="@Id" @ref="dxTarget"></div>
+<div id="@Id" @ref:suppressField @ref="dxTarget"></div>
 
 @functions {
 	ElementReference dxTarget;
@@ -482,8 +482,8 @@
 		get => onInitializedEnabled;
 		set => this.onInitializedEnabled = value;
 	}
-	protected override async Task OnInitAsync() {
-		await base.OnInitAsync();
+	protected override async Task OnInitializedAsync() {
+		await base.OnInitializedAsync();
 		DevExpress.Ui.DxSlideOutInterop.MenuGroupRendered += DxSlideOut_MenuGroupRendered;
 		DevExpress.Ui.DxSlideOutInterop.MenuItemRendered += DxSlideOut_MenuItemRendered;
 		DevExpress.Ui.DxSlideOutInterop.ItemClick += DxSlideOut_ItemClick;

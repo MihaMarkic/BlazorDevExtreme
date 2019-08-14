@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorClassLibrary1", "RazorClassLibrary1\RazorClassLibrary1.csproj", "{A8F4BB14-C641-44B3-9782-C08EEAD64687}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{1DEF29CC-219B-4945-AD73-EBAD0331745D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1DEF29CC-219B-4945-AD73-EBAD0331745D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1DEF29CC-219B-4945-AD73-EBAD0331745D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8F4BB14-C641-44B3-9782-C08EEAD64687}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8F4BB14-C641-44B3-9782-C08EEAD64687}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8F4BB14-C641-44B3-9782-C08EEAD64687}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8F4BB14-C641-44B3-9782-C08EEAD64687}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

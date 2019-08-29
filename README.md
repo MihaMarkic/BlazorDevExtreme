@@ -5,7 +5,7 @@
 This is a library that implements the interop between [Blazor](https://github.com/aspnet/Blazor) and [Developer Express DevExtreme library](https://github.com/DevExpress/DevExtreme). 
 
 ## IMPORTANT (3.4.2019)
-I tempted to discontinue the project since DevExpress [announced](https://community.devexpress.com/blogs/aspnet/archive/2019/04/02/announcing-devexpress-ui-for-blazor-razor-components-preview.aspx) official Blazor support. Keeping this alternative doesn't make much sense anymore, even more so because it is technically very challenging. Thanks for all the comments and contribution, it has been a fun ride.
+I am tempted to discontinue the project since DevExpress [announced](https://community.devexpress.com/blogs/aspnet/archive/2019/04/02/announcing-devexpress-ui-for-blazor-razor-components-preview.aspx) official Blazor support. Keeping this alternative doesn't make much sense anymore, even more so because it is technically very challenging. Thanks for all the comments and contribution, it has been a fun ride.
 
 ### About
 

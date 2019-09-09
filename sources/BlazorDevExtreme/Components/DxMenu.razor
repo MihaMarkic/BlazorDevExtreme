@@ -3,7 +3,7 @@
 @implements IDisposable
 @inherits DxBlazorComponent<DevExpress.Ui.DxMenuOptions>
 
-<div id="@Id" @ref:suppressField @ref="dxTarget"></div>
+<div id="@Id"  @ref="dxTarget"></div>
 
 @code {
 	ElementReference dxTarget;
@@ -62,7 +62,7 @@
 			onInitializedEnabled = onInitializedEnabled,
 		};
 	}
-	protected override Task Init(DevExpress.Ui.DxMenuOptions options) {
+	protected override ValueTask<object> Init(DevExpress.Ui.DxMenuOptions options) {
 		return DevExpress.Ui.DxMenuInterop.Init(dxTarget, options);
 	}
 	bool? adaptivityEnabled;

@@ -3,7 +3,7 @@
 @implements IDisposable
 @inherits DxBlazorComponent<DevExpress.Ui.DxSlideOutOptions>
 
-<div id="@Id" @ref:suppressField @ref="dxTarget"></div>
+<div id="@Id"  @ref="dxTarget"></div>
 
 @functions {
 	ElementReference dxTarget;
@@ -53,7 +53,7 @@
 			onInitializedEnabled = onInitializedEnabled,
 		};
 	}
-	protected override Task Init(DevExpress.Ui.DxSlideOutOptions options) {
+	protected override ValueTask<object> Init(DevExpress.Ui.DxSlideOutOptions options) {
 		return DevExpress.Ui.DxSlideOutInterop.Init(dxTarget, options);
 	}
 	bool? activeStateEnabled;

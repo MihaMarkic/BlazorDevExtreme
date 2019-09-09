@@ -3,7 +3,7 @@
 @implements IDisposable
 @inherits DxBlazorComponent<DevExpress.Ui.DxNavBarOptions>
 
-<div id="@Id" @ref:suppressField @ref="dxTarget"></div>
+<div id="@Id"  @ref="dxTarget"></div>
 
 @functions {
 	ElementReference dxTarget;
@@ -48,7 +48,7 @@
 			onInitializedEnabled = onInitializedEnabled,
 		};
 	}
-	protected override Task Init(DevExpress.Ui.DxNavBarOptions options) {
+	protected override ValueTask<object> Init(DevExpress.Ui.DxNavBarOptions options) {
 		return DevExpress.Ui.DxNavBarInterop.Init(dxTarget, options);
 	}
 	bool? scrollByContent;

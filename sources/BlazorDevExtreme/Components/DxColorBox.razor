@@ -3,7 +3,7 @@
 @implements IDisposable
 @inherits DxBlazorComponent<DevExpress.Ui.DxColorBoxOptions>
 
-<div id="@Id" @ref:suppressField @ref="dxTarget"></div>
+<div id="@Id"  @ref="dxTarget"></div>
 
 @functions {
     ElementReference dxTarget;
@@ -73,7 +73,7 @@
             onInitializedEnabled = onInitializedEnabled,
         };
     }
-    protected override Task Init(DevExpress.Ui.DxColorBoxOptions options) {
+    protected override ValueTask<object> Init(DevExpress.Ui.DxColorBoxOptions options) {
         return DevExpress.Ui.DxColorBoxInterop.Init(dxTarget, options);
     }
     string applyButtonText;

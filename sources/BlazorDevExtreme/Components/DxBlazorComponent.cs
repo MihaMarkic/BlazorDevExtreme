@@ -20,9 +20,9 @@ namespace BlazorDevExtreme.Components
             Console.WriteLine($"Constructor for {coreId}");
         }
         protected abstract TOptions CreateOptions();
-        protected abstract Task Init(TOptions options);
+        protected abstract ValueTask<object> Init(TOptions options);
 
-        protected override async Task OnAfterRenderAsync()
+        protected override async Task OnAfterRenderAsync(bool firstTime)
         {
             // hack to get to the jsruntime:
             JSRuntime.Current = JsRuntime;

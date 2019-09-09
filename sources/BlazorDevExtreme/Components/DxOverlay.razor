@@ -3,7 +3,7 @@
 @implements IDisposable
 @inherits DxBlazorComponent<DevExpress.Ui.DxOverlayOptions>
 
-<div id="@Id" @ref:suppressField @ref="dxTarget"></div>
+<div id="@Id"  @ref="dxTarget"></div>
 
 @functions {
 	ElementReference dxTarget;
@@ -46,7 +46,7 @@
 			onInitializedEnabled = onInitializedEnabled,
 		};
 	}
-	protected override Task Init(DevExpress.Ui.DxOverlayOptions options) {
+	protected override ValueTask<object> Init(DevExpress.Ui.DxOverlayOptions options) {
 		return DevExpress.Ui.DxOverlayInterop.Init(dxTarget, options);
 	}
 	object animation;

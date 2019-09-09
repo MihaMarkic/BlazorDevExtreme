@@ -3,7 +3,7 @@
 @implements IDisposable
 @inherits DxBlazorComponent<DevExpress.Ui.DxValidationGroupOptions>
 
-<div id="@Id" @ref:suppressField @ref="dxTarget"></div>
+<div id="@Id"  @ref="dxTarget"></div>
 
 @functions {
 	ElementReference dxTarget;
@@ -20,7 +20,7 @@
 			onInitializedEnabled = onInitializedEnabled,
 		};
 	}
-	protected override Task Init(DevExpress.Ui.DxValidationGroupOptions options) {
+	protected override ValueTask<object> Init(DevExpress.Ui.DxValidationGroupOptions options) {
 		return DevExpress.Ui.DxValidationGroupInterop.Init(dxTarget, options);
 	}
 	object bindingOptions;

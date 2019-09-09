@@ -3,7 +3,7 @@
 @implements IDisposable
 @inherits DxBlazorComponent<DevExpress.Ui.DxPivotOptions>
 
-<div id="@Id" @ref:suppressField @ref="dxTarget"></div>
+<div id="@Id"  @ref="dxTarget"></div>
 
 @functions {
 	ElementReference dxTarget;
@@ -47,7 +47,7 @@
 			onInitializedEnabled = onInitializedEnabled,
 		};
 	}
-	protected override Task Init(DevExpress.Ui.DxPivotOptions options) {
+	protected override ValueTask<object> Init(DevExpress.Ui.DxPivotOptions options) {
 		return DevExpress.Ui.DxPivotInterop.Init(dxTarget, options);
 	}
 	object contentTemplate;

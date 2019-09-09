@@ -3,7 +3,7 @@
 @implements IDisposable
 @inherits DxBlazorComponent<DevExpress.Ui.DxTooltipOptions>
 
-<div id="@Id" @ref:suppressField @ref="dxTarget"></div>
+<div id="@Id"  @ref="dxTarget"></div>
 
 @functions {
 	ElementReference dxTarget;
@@ -61,7 +61,7 @@
 			onInitializedEnabled = onInitializedEnabled,
 		};
 	}
-	protected override Task Init(DevExpress.Ui.DxTooltipOptions options) {
+	protected override ValueTask<object> Init(DevExpress.Ui.DxTooltipOptions options) {
 		return DevExpress.Ui.DxTooltipInterop.Init(dxTarget, options);
 	}
 	object animation;

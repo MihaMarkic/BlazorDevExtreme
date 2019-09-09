@@ -3,7 +3,7 @@
 @implements IDisposable
 @inherits DxBlazorComponent<DevExpress.Viz.RangeSelector.DxRangeSelectorOptions>
 
-<div id="@Id" @ref:suppressField @ref="dxTarget"></div>
+<div id="@Id"  @ref="dxTarget"></div>
 
 @functions {
 	ElementReference dxTarget;
@@ -50,7 +50,7 @@
 			onInitializedEnabled = onInitializedEnabled,
 		};
 	}
-	protected override Task Init(DevExpress.Viz.RangeSelector.DxRangeSelectorOptions options) {
+	protected override ValueTask<object> Init(DevExpress.Viz.RangeSelector.DxRangeSelectorOptions options) {
 		return DevExpress.Viz.DxRangeSelectorInterop.Init(dxTarget, options);
 	}
 	object background;

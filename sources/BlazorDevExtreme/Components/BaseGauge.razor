@@ -3,7 +3,7 @@
 @implements IDisposable
 @inherits DxBlazorComponent<DevExpress.Viz.Gauges.BaseGaugeOptions>
 
-<div id="@Id" @ref:suppressField @ref="dxTarget"></div>
+<div id="@Id"  @ref="dxTarget"></div>
 
 @functions {
 	ElementReference dxTarget;
@@ -43,7 +43,7 @@
 			onInitializedEnabled = onInitializedEnabled,
 		};
 	}
-	protected override Task Init(DevExpress.Viz.Gauges.BaseGaugeOptions options) {
+	protected override ValueTask<object> Init(DevExpress.Viz.Gauges.BaseGaugeOptions options) {
 		return DevExpress.Viz.BaseGaugeInterop.Init(dxTarget, options);
 	}
 	object animation;

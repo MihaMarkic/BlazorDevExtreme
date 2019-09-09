@@ -3,7 +3,7 @@
 @implements IDisposable
 @inherits DxBlazorComponent<DevExpress.Ui.DxFileUploaderOptions>
 
-<div id="@Id" @ref:suppressField @ref="dxTarget"></div>
+<div id="@Id"  @ref="dxTarget"></div>
 
 @functions {
     ElementReference dxTarget;
@@ -56,7 +56,7 @@
             onInitializedEnabled = onInitializedEnabled,
         };
     }
-    protected override Task Init(DevExpress.Ui.DxFileUploaderOptions options) {
+    protected override ValueTask<object> Init(DevExpress.Ui.DxFileUploaderOptions options) {
         return DevExpress.Ui.DxFileUploaderInterop.Init(dxTarget, options);
     }
     string accept;

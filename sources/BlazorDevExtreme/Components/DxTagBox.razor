@@ -3,7 +3,7 @@
 @implements IDisposable
 @inherits DxBlazorComponent<DevExpress.Ui.DxTagBoxOptions>
 
-<div id="@Id" @ref:suppressField @ref="dxTarget"></div>
+<div id="@Id"  @ref="dxTarget"></div>
 
 @functions {
     ElementReference dxTarget;
@@ -98,7 +98,7 @@
             onInitializedEnabled = onInitializedEnabled,
         };
     }
-    protected override Task Init(DevExpress.Ui.DxTagBoxOptions options) {
+    protected override ValueTask<object> Init(DevExpress.Ui.DxTagBoxOptions options) {
         return DevExpress.Ui.DxTagBoxInterop.Init(dxTarget, options);
     }
     string applyValueMode;

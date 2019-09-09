@@ -3,7 +3,7 @@
 @implements IDisposable
 @inherits DxBlazorComponent<DevExpress.Viz.Charts.DxPolarChartOptions>
 
-<div id="@Id" @ref:suppressField @ref="dxTarget"></div>
+<div id="@Id"  @ref="dxTarget"></div>
 
 @functions {
 	ElementReference dxTarget;
@@ -70,7 +70,7 @@
 			onInitializedEnabled = onInitializedEnabled,
 		};
 	}
-	protected override Task Init(DevExpress.Viz.Charts.DxPolarChartOptions options) {
+	protected override ValueTask<object> Init(DevExpress.Viz.Charts.DxPolarChartOptions options) {
 		return DevExpress.Viz.DxPolarChartInterop.Init(dxTarget, options);
 	}
 	object adaptiveLayout;

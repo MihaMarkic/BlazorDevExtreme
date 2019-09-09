@@ -3,7 +3,7 @@
 @implements IDisposable
 @inherits DxBlazorComponent<DevExpress.Ui.DxTabPanelOptions>
 
-<div id="@Id" @ref:suppressField @ref="dxTarget"></div>
+<div id="@Id"  @ref="dxTarget"></div>
 
 @functions {
 	ElementReference dxTarget;
@@ -55,7 +55,7 @@
 			onInitializedEnabled = onInitializedEnabled,
 		};
 	}
-	protected override Task Init(DevExpress.Ui.DxTabPanelOptions options) {
+	protected override ValueTask<object> Init(DevExpress.Ui.DxTabPanelOptions options) {
 		return DevExpress.Ui.DxTabPanelInterop.Init(dxTarget, options);
 	}
 	bool? animationEnabled;

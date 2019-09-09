@@ -3,7 +3,7 @@
 @implements IDisposable
 @inherits DxBlazorComponent<DevExpress.Viz.Charts.DxChartOptions>
 
-<div id="@Id" @ref:suppressField @ref="dxTarget"></div>
+<div id="@Id"  @ref="dxTarget"></div>
 
 @functions {
 	ElementReference dxTarget;
@@ -84,7 +84,7 @@
 			onInitializedEnabled = onInitializedEnabled,
 		};
 	}
-	protected override Task Init(DevExpress.Viz.Charts.DxChartOptions options) {
+	protected override ValueTask<object> Init(DevExpress.Viz.Charts.DxChartOptions options) {
 		return DevExpress.Viz.DxChartInterop.Init(dxTarget, options);
 	}
 	bool? adjustOnZoom;

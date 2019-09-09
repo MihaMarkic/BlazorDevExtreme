@@ -3,7 +3,7 @@
 @implements IDisposable
 @inherits DxBlazorComponent<DevExpress.Ui.DxTileViewOptions>
 
-<div id="@Id" @ref:suppressField @ref="dxTarget"></div>
+<div id="@Id"  @ref="dxTarget"></div>
 
 @functions {
 	ElementReference dxTarget;
@@ -49,7 +49,7 @@
 			onInitializedEnabled = onInitializedEnabled,
 		};
 	}
-	protected override Task Init(DevExpress.Ui.DxTileViewOptions options) {
+	protected override ValueTask<object> Init(DevExpress.Ui.DxTileViewOptions options) {
 		return DevExpress.Ui.DxTileViewInterop.Init(dxTarget, options);
 	}
 	bool? activeStateEnabled;

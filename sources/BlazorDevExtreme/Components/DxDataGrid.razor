@@ -3,7 +3,7 @@
 @implements IDisposable
 @inherits DxBlazorComponent<DevExpress.Ui.DxDataGridOptions>
 
-<div id="@Id" @ref:suppressField @ref="dxTarget"></div>
+<div id="@Id"  @ref="dxTarget"></div>
 
 @code {
 	ElementReference dxTarget;
@@ -110,7 +110,7 @@
 			onInitializedEnabled = onInitializedEnabled,
 		};
 	}
-	protected override Task Init(DevExpress.Ui.DxDataGridOptions options) {
+	protected override ValueTask<object> Init(DevExpress.Ui.DxDataGridOptions options) {
 		return DevExpress.Ui.DxDataGridInterop.Init(dxTarget, options);
 	}
 	object columns;
@@ -1382,7 +1382,7 @@
 	public void ExportToExcel(bool selectionOnly) {
 		DevExpress.Ui.DxDataGridInterop.ExportToExcel(dxTarget, selectionOnly);
 	}
-    public Task<object> GetDataSource()
+    public ValueTask<object> GetDataSource()
     {
         return DevExpress.Ui.GridBaseInterop.GetDataSource(dxTarget);
     }

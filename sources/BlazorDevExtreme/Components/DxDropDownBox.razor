@@ -3,7 +3,7 @@
 @implements IDisposable
 @inherits DxBlazorComponent<DevExpress.Ui.DxDropDownBoxOptions>
 
-<div id="@Id" @ref:suppressField @ref="dxTarget"></div>
+<div id="@Id"  @ref="dxTarget"></div>
 
 @functions {
     ElementReference dxTarget;
@@ -76,7 +76,7 @@
             onInitializedEnabled = onInitializedEnabled,
         };
     }
-    protected override Task Init(DevExpress.Ui.DxDropDownBoxOptions options) {
+    protected override ValueTask<object> Init(DevExpress.Ui.DxDropDownBoxOptions options) {
         return DevExpress.Ui.DxDropDownBoxInterop.Init(dxTarget, options);
     }
     bool? acceptCustomValue;

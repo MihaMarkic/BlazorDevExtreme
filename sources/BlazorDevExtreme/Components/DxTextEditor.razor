@@ -3,7 +3,7 @@
 @implements IDisposable
 @inherits DxBlazorComponent<DevExpress.Ui.DxTextEditorOptions>
 
-<div id="@Id" @ref:suppressField @ref="dxTarget"></div>
+<div id="@Id"  @ref="dxTarget"></div>
 
 @functions {
     ElementReference dxTarget;
@@ -59,7 +59,7 @@
             onInitializedEnabled = onInitializedEnabled,
         };
     }
-    protected override Task Init(DevExpress.Ui.DxTextEditorOptions options) {
+    protected override ValueTask<object> Init(DevExpress.Ui.DxTextEditorOptions options) {
         return DevExpress.Ui.DxTextEditorInterop.Init(dxTarget, options);
     }
     bool? focusStateEnabled;

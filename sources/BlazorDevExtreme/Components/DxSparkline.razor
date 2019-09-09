@@ -3,7 +3,7 @@
 @implements IDisposable
 @inherits DxBlazorComponent<DevExpress.Viz.Sparklines.DxSparklineOptions>
 
-<div id="@Id" @ref:suppressField @ref="dxTarget"></div>
+<div id="@Id"  @ref="dxTarget"></div>
 
 @functions {
 	ElementReference dxTarget;
@@ -58,7 +58,7 @@
 			onInitializedEnabled = onInitializedEnabled,
 		};
 	}
-	protected override Task Init(DevExpress.Viz.Sparklines.DxSparklineOptions options) {
+	protected override ValueTask<object> Init(DevExpress.Viz.Sparklines.DxSparklineOptions options) {
 		return DevExpress.Viz.DxSparklineInterop.Init(dxTarget, options);
 	}
 	string argumentField;

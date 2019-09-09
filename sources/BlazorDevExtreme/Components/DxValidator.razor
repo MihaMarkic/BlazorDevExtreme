@@ -3,7 +3,7 @@
 @implements IDisposable
 @inherits DxBlazorComponent<DevExpress.Ui.DxValidatorOptions>
 
-<div id="@Id" @ref:suppressField @ref="dxTarget"></div>
+<div id="@Id"  @ref="dxTarget"></div>
 
 @functions {
 	ElementReference dxTarget;
@@ -25,7 +25,7 @@
 			onInitializedEnabled = onInitializedEnabled,
 		};
 	}
-	protected override Task Init(DevExpress.Ui.DxValidatorOptions options) {
+	protected override ValueTask<object> Init(DevExpress.Ui.DxValidatorOptions options) {
 		return DevExpress.Ui.DxValidatorInterop.Init(dxTarget, options);
 	}
 	object adapter;

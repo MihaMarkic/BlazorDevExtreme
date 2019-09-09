@@ -3,7 +3,7 @@
 @implements IDisposable
 @inherits DxBlazorComponent<DevExpress.Ui.DxTextAreaOptions>
 
-<div id="@Id" @ref:suppressField @ref="dxTarget"></div>
+<div id="@Id"  @ref="dxTarget"></div>
 
 @functions {
     ElementReference dxTarget;
@@ -64,7 +64,7 @@
             onInitializedEnabled = onInitializedEnabled,
         };
     }
-    protected override Task Init(DevExpress.Ui.DxTextAreaOptions options) {
+    protected override ValueTask<object> Init(DevExpress.Ui.DxTextAreaOptions options) {
         return DevExpress.Ui.DxTextAreaInterop.Init(dxTarget, options);
     }
     bool? autoResizeEnabled;

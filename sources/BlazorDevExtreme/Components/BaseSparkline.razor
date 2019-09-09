@@ -3,7 +3,7 @@
 @implements IDisposable
 @inherits DxBlazorComponent<DevExpress.Viz.Sparklines.BaseSparklineOptions>
 
-<div id="@Id" @ref:suppressField @ref="dxTarget"></div>
+<div id="@Id"  @ref="dxTarget"></div>
 
 @functions {
 	ElementReference dxTarget;
@@ -36,7 +36,7 @@
 			onInitializedEnabled = onInitializedEnabled,
 		};
 	}
-	protected override Task Init(DevExpress.Viz.Sparklines.BaseSparklineOptions options) {
+	protected override ValueTask<object> Init(DevExpress.Viz.Sparklines.BaseSparklineOptions options) {
 		return DevExpress.Viz.BaseSparklineInterop.Init(dxTarget, options);
 	}
 	object tooltip;

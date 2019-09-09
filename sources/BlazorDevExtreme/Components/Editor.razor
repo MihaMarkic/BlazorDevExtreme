@@ -39,7 +39,7 @@
         return DevExpress.Ui.EditorInterop.Init(dxTarget, options);
     }
     bool? isValid;
-    [Parameter]
+    [Parameter] public
     bool? IsValid {
         get => isInitialized ? (bool?)DevExpress.Ui.EditorInterop.GetIsValid(dxTarget).Result : isValid;
         set {
@@ -51,7 +51,7 @@
         }
     }
     bool? readOnly;
-    [Parameter]
+    [Parameter] public
     bool? ReadOnly {
         get => isInitialized ? (bool?)DevExpress.Ui.EditorInterop.GetReadOnly(dxTarget).Result : readOnly;
         set {
@@ -63,7 +63,7 @@
         }
     }
     object validationError;
-    [Parameter]
+    [Parameter] public
     object ValidationError {
         get => isInitialized ? DevExpress.Ui.EditorInterop.GetValidationError(dxTarget).Result : validationError;
         set {
@@ -75,7 +75,7 @@
         }
     }
     string validationMessageMode;
-    [Parameter]
+    [Parameter] public
     string ValidationMessageMode {
         get => isInitialized ? (string)DevExpress.Ui.EditorInterop.GetValidationMessageMode(dxTarget).Result : validationMessageMode;
         set {
@@ -87,7 +87,7 @@
         }
     }
     object value;
-    [Parameter]
+    [Parameter] public
     object Value {
         get => isInitialized ? DevExpress.Ui.EditorInterop.GetValue(dxTarget).Result : value;
         set {
@@ -99,7 +99,7 @@
         }
     }
     string accessKey;
-    [Parameter]
+    [Parameter] public
     string AccessKey {
         get => isInitialized ? (string)DevExpress.Ui.EditorInterop.GetAccessKey(dxTarget).Result : accessKey;
         set {
@@ -111,7 +111,7 @@
         }
     }
     bool? activeStateEnabled;
-    [Parameter]
+    [Parameter] public
     bool? ActiveStateEnabled {
         get => isInitialized ? (bool?)DevExpress.Ui.EditorInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
         set {
@@ -123,7 +123,7 @@
         }
     }
     bool? disabled;
-    [Parameter]
+    [Parameter] public
     bool? Disabled {
         get => isInitialized ? (bool?)DevExpress.Ui.EditorInterop.GetDisabled(dxTarget).Result : disabled;
         set {
@@ -135,7 +135,7 @@
         }
     }
     bool? focusStateEnabled;
-    [Parameter]
+    [Parameter] public
     bool? FocusStateEnabled {
         get => isInitialized ? (bool?)DevExpress.Ui.EditorInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
         set {
@@ -147,7 +147,7 @@
         }
     }
     string hint;
-    [Parameter]
+    [Parameter] public
     string Hint {
         get => isInitialized ? (string)DevExpress.Ui.EditorInterop.GetHint(dxTarget).Result : hint;
         set {
@@ -159,7 +159,7 @@
         }
     }
     bool? hoverStateEnabled;
-    [Parameter]
+    [Parameter] public
     bool? HoverStateEnabled {
         get => isInitialized ? (bool?)DevExpress.Ui.EditorInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
         set {
@@ -171,7 +171,7 @@
         }
     }
     float? tabIndex;
-    [Parameter]
+    [Parameter] public
     float? TabIndex {
         get => isInitialized ? (float?)DevExpress.Ui.EditorInterop.GetTabIndex(dxTarget).Result : tabIndex;
         set {
@@ -183,7 +183,7 @@
         }
     }
     bool? visible;
-    [Parameter]
+    [Parameter] public
     bool? Visible {
         get => isInitialized ? (bool?)DevExpress.Ui.EditorInterop.GetVisible(dxTarget).Result : visible;
         set {
@@ -195,7 +195,7 @@
         }
     }
     object bindingOptions;
-    [Parameter]
+    [Parameter] public
     object BindingOptions {
         get => isInitialized ? DevExpress.Ui.EditorInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
         set {
@@ -207,7 +207,7 @@
         }
     }
     object elementAttr;
-    [Parameter]
+    [Parameter] public
     object ElementAttr {
         get => isInitialized ? DevExpress.Ui.EditorInterop.GetElementAttr(dxTarget).Result : elementAttr;
         set {
@@ -219,7 +219,7 @@
         }
     }
     object height;
-    [Parameter]
+    [Parameter] public
     object Height {
         get => isInitialized ? DevExpress.Ui.EditorInterop.GetHeight(dxTarget).Result : height;
         set {
@@ -231,7 +231,7 @@
         }
     }
     bool? rtlEnabled;
-    [Parameter]
+    [Parameter] public
     bool? RtlEnabled {
         get => isInitialized ? (bool?)DevExpress.Ui.EditorInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
         set {
@@ -243,7 +243,7 @@
         }
     }
     object width;
-    [Parameter]
+    [Parameter] public
     object Width {
         get => isInitialized ? DevExpress.Ui.EditorInterop.GetWidth(dxTarget).Result : width;
         set {
@@ -255,31 +255,31 @@
         }
     }
     bool? onValueChangedEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnValueChangedEnabled {
         get => onValueChangedEnabled;
         set => this.onValueChangedEnabled = value;
     }
     bool? onContentReadyEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnContentReadyEnabled {
         get => onContentReadyEnabled;
         set => this.onContentReadyEnabled = value;
     }
     bool? onDisposingEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnDisposingEnabled {
         get => onDisposingEnabled;
         set => this.onDisposingEnabled = value;
     }
     bool? onOptionChangedEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnOptionChangedEnabled {
         get => onOptionChangedEnabled;
         set => this.onOptionChangedEnabled = value;
     }
     bool? onInitializedEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnInitializedEnabled {
         get => onInitializedEnabled;
         set => this.onInitializedEnabled = value;
@@ -292,35 +292,35 @@
         DevExpress.Ui.EditorInterop.OptionChanged += Editor_OptionChanged;
         DevExpress.Ui.EditorInterop.Initialized += Editor_Initialized;
     }
-    [Parameter]
+    [Parameter] public
     Action ValueChanged { get; set; }
     void Editor_ValueChanged(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             ValueChanged?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action ContentReady { get; set; }
     void Editor_ContentReady(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             ContentReady?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action Disposing { get; set; }
     void Editor_Disposing(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             Disposing?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action OptionChanged { get; set; }
     void Editor_OptionChanged(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             OptionChanged?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action Initialized { get; set; }
     void Editor_Initialized(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {

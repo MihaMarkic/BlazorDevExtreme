@@ -59,7 +59,7 @@
 		return DevExpress.Ui.DxTabPanelInterop.Init(dxTarget, options);
 	}
 	bool? animationEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? AnimationEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxTabPanelInterop.GetAnimationEnabled(dxTarget).Result : animationEnabled;
 		set {
@@ -71,7 +71,7 @@
 		}
 	}
 	bool? focusStateEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? FocusStateEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxTabPanelInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
 		set {
@@ -83,7 +83,7 @@
 		}
 	}
 	bool? hoverStateEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? HoverStateEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxTabPanelInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
 		set {
@@ -95,7 +95,7 @@
 		}
 	}
 	object itemTitleTemplate;
-	[Parameter]
+	[Parameter] public
 	object ItemTitleTemplate {
 		get => isInitialized ? DevExpress.Ui.DxTabPanelInterop.GetItemTitleTemplate(dxTarget).Result : itemTitleTemplate;
 		set {
@@ -107,7 +107,7 @@
 		}
 	}
 	bool? scrollByContent;
-	[Parameter]
+	[Parameter] public
 	bool? ScrollByContent {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxTabPanelInterop.GetScrollByContent(dxTarget).Result : scrollByContent;
 		set {
@@ -119,7 +119,7 @@
 		}
 	}
 	bool? scrollingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? ScrollingEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxTabPanelInterop.GetScrollingEnabled(dxTarget).Result : scrollingEnabled;
 		set {
@@ -131,7 +131,7 @@
 		}
 	}
 	bool? showNavButtons;
-	[Parameter]
+	[Parameter] public
 	bool? ShowNavButtons {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxTabPanelInterop.GetShowNavButtons(dxTarget).Result : showNavButtons;
 		set {
@@ -143,7 +143,7 @@
 		}
 	}
 	bool? swipeEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? SwipeEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxTabPanelInterop.GetSwipeEnabled(dxTarget).Result : swipeEnabled;
 		set {
@@ -155,7 +155,7 @@
 		}
 	}
 	bool? deferRendering;
-	[Parameter]
+	[Parameter] public
 	bool? DeferRendering {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxTabPanelInterop.GetDeferRendering(dxTarget).Result : deferRendering;
 		set {
@@ -167,7 +167,7 @@
 		}
 	}
 	bool? loop;
-	[Parameter]
+	[Parameter] public
 	bool? Loop {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxTabPanelInterop.GetLoop(dxTarget).Result : loop;
 		set {
@@ -179,7 +179,7 @@
 		}
 	}
 	float? selectedIndex;
-	[Parameter]
+	[Parameter] public
 	float? SelectedIndex {
 		get => isInitialized ? (float?)DevExpress.Ui.DxTabPanelInterop.GetSelectedIndex(dxTarget).Result : selectedIndex;
 		set {
@@ -191,7 +191,7 @@
 		}
 	}
 	object dataSource;
-	[Parameter]
+	[Parameter] public
 	object DataSource {
 		get => isInitialized ? DevExpress.Ui.DxTabPanelInterop.GetDataSource(dxTarget).Result : dataSource;
 		set {
@@ -203,7 +203,7 @@
 		}
 	}
 	float? itemHoldTimeout;
-	[Parameter]
+	[Parameter] public
 	float? ItemHoldTimeout {
 		get => isInitialized ? (float?)DevExpress.Ui.DxTabPanelInterop.GetItemHoldTimeout(dxTarget).Result : itemHoldTimeout;
 		set {
@@ -215,7 +215,7 @@
 		}
 	}
 	object items;
-	[Parameter]
+	[Parameter] public
 	object Items {
 		get => isInitialized ? DevExpress.Ui.DxTabPanelInterop.GetItems(dxTarget).Result : items;
 		set {
@@ -227,7 +227,7 @@
 		}
 	}
 	object itemTemplate;
-	[Parameter]
+	[Parameter] public
 	object ItemTemplate {
 		get => isInitialized ? DevExpress.Ui.DxTabPanelInterop.GetItemTemplate(dxTarget).Result : itemTemplate;
 		set {
@@ -239,7 +239,7 @@
 		}
 	}
 	object keyExpr;
-	[Parameter]
+	[Parameter] public
 	object KeyExpr {
 		get => isInitialized ? DevExpress.Ui.DxTabPanelInterop.GetKeyExpr(dxTarget).Result : keyExpr;
 		set {
@@ -251,7 +251,7 @@
 		}
 	}
 	string noDataText;
-	[Parameter]
+	[Parameter] public
 	string NoDataText {
 		get => isInitialized ? (string)DevExpress.Ui.DxTabPanelInterop.GetNoDataText(dxTarget).Result : noDataText;
 		set {
@@ -263,7 +263,7 @@
 		}
 	}
 	object selectedItem;
-	[Parameter]
+	[Parameter] public
 	object SelectedItem {
 		get => isInitialized ? DevExpress.Ui.DxTabPanelInterop.GetSelectedItem(dxTarget).Result : selectedItem;
 		set {
@@ -275,7 +275,7 @@
 		}
 	}
 	object selectedItemKeys;
-	[Parameter]
+	[Parameter] public
 	object SelectedItemKeys {
 		get => isInitialized ? DevExpress.Ui.DxTabPanelInterop.GetSelectedItemKeys(dxTarget).Result : selectedItemKeys;
 		set {
@@ -287,7 +287,7 @@
 		}
 	}
 	object selectedItems;
-	[Parameter]
+	[Parameter] public
 	object SelectedItems {
 		get => isInitialized ? DevExpress.Ui.DxTabPanelInterop.GetSelectedItems(dxTarget).Result : selectedItems;
 		set {
@@ -299,7 +299,7 @@
 		}
 	}
 	string accessKey;
-	[Parameter]
+	[Parameter] public
 	string AccessKey {
 		get => isInitialized ? (string)DevExpress.Ui.DxTabPanelInterop.GetAccessKey(dxTarget).Result : accessKey;
 		set {
@@ -311,7 +311,7 @@
 		}
 	}
 	bool? activeStateEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? ActiveStateEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxTabPanelInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
 		set {
@@ -323,7 +323,7 @@
 		}
 	}
 	bool? disabled;
-	[Parameter]
+	[Parameter] public
 	bool? Disabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxTabPanelInterop.GetDisabled(dxTarget).Result : disabled;
 		set {
@@ -335,7 +335,7 @@
 		}
 	}
 	string hint;
-	[Parameter]
+	[Parameter] public
 	string Hint {
 		get => isInitialized ? (string)DevExpress.Ui.DxTabPanelInterop.GetHint(dxTarget).Result : hint;
 		set {
@@ -347,7 +347,7 @@
 		}
 	}
 	float? tabIndex;
-	[Parameter]
+	[Parameter] public
 	float? TabIndex {
 		get => isInitialized ? (float?)DevExpress.Ui.DxTabPanelInterop.GetTabIndex(dxTarget).Result : tabIndex;
 		set {
@@ -359,7 +359,7 @@
 		}
 	}
 	bool? visible;
-	[Parameter]
+	[Parameter] public
 	bool? Visible {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxTabPanelInterop.GetVisible(dxTarget).Result : visible;
 		set {
@@ -371,7 +371,7 @@
 		}
 	}
 	object bindingOptions;
-	[Parameter]
+	[Parameter] public
 	object BindingOptions {
 		get => isInitialized ? DevExpress.Ui.DxTabPanelInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
 		set {
@@ -383,7 +383,7 @@
 		}
 	}
 	object elementAttr;
-	[Parameter]
+	[Parameter] public
 	object ElementAttr {
 		get => isInitialized ? DevExpress.Ui.DxTabPanelInterop.GetElementAttr(dxTarget).Result : elementAttr;
 		set {
@@ -395,7 +395,7 @@
 		}
 	}
 	object height;
-	[Parameter]
+	[Parameter] public
 	object Height {
 		get => isInitialized ? DevExpress.Ui.DxTabPanelInterop.GetHeight(dxTarget).Result : height;
 		set {
@@ -407,7 +407,7 @@
 		}
 	}
 	bool? rtlEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? RtlEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxTabPanelInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
 		set {
@@ -419,7 +419,7 @@
 		}
 	}
 	object width;
-	[Parameter]
+	[Parameter] public
 	object Width {
 		get => isInitialized ? DevExpress.Ui.DxTabPanelInterop.GetWidth(dxTarget).Result : width;
 		set {
@@ -431,73 +431,73 @@
 		}
 	}
 	bool? onTitleClickEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnTitleClickEnabled {
 		get => onTitleClickEnabled;
 		set => this.onTitleClickEnabled = value;
 	}
 	bool? onTitleHoldEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnTitleHoldEnabled {
 		get => onTitleHoldEnabled;
 		set => this.onTitleHoldEnabled = value;
 	}
 	bool? onTitleRenderedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnTitleRenderedEnabled {
 		get => onTitleRenderedEnabled;
 		set => this.onTitleRenderedEnabled = value;
 	}
 	bool? onItemClickEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnItemClickEnabled {
 		get => onItemClickEnabled;
 		set => this.onItemClickEnabled = value;
 	}
 	bool? onItemContextMenuEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnItemContextMenuEnabled {
 		get => onItemContextMenuEnabled;
 		set => this.onItemContextMenuEnabled = value;
 	}
 	bool? onItemHoldEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnItemHoldEnabled {
 		get => onItemHoldEnabled;
 		set => this.onItemHoldEnabled = value;
 	}
 	bool? onItemRenderedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnItemRenderedEnabled {
 		get => onItemRenderedEnabled;
 		set => this.onItemRenderedEnabled = value;
 	}
 	bool? onSelectionChangedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnSelectionChangedEnabled {
 		get => onSelectionChangedEnabled;
 		set => this.onSelectionChangedEnabled = value;
 	}
 	bool? onContentReadyEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnContentReadyEnabled {
 		get => onContentReadyEnabled;
 		set => this.onContentReadyEnabled = value;
 	}
 	bool? onDisposingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnDisposingEnabled {
 		get => onDisposingEnabled;
 		set => this.onDisposingEnabled = value;
 	}
 	bool? onOptionChangedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnOptionChangedEnabled {
 		get => onOptionChangedEnabled;
 		set => this.onOptionChangedEnabled = value;
 	}
 	bool? onInitializedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnInitializedEnabled {
 		get => onInitializedEnabled;
 		set => this.onInitializedEnabled = value;
@@ -517,84 +517,84 @@
 		DevExpress.Ui.DxTabPanelInterop.OptionChanged += DxTabPanel_OptionChanged;
 		DevExpress.Ui.DxTabPanelInterop.Initialized += DxTabPanel_Initialized;
 	}
-	[Parameter]
+	[Parameter] public
 	Action TitleClick { get; set; }
 	void DxTabPanel_TitleClick(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			TitleClick?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action TitleHold { get; set; }
 	void DxTabPanel_TitleHold(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			TitleHold?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action TitleRendered { get; set; }
 	void DxTabPanel_TitleRendered(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			TitleRendered?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action ItemClick { get; set; }
 	void DxTabPanel_ItemClick(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ItemClick?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action ItemContextMenu { get; set; }
 	void DxTabPanel_ItemContextMenu(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ItemContextMenu?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action ItemHold { get; set; }
 	void DxTabPanel_ItemHold(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ItemHold?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action ItemRendered { get; set; }
 	void DxTabPanel_ItemRendered(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ItemRendered?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action SelectionChanged { get; set; }
 	void DxTabPanel_SelectionChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			SelectionChanged?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action ContentReady { get; set; }
 	void DxTabPanel_ContentReady(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ContentReady?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Disposing { get; set; }
 	void DxTabPanel_Disposing(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Disposing?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action OptionChanged { get; set; }
 	void DxTabPanel_OptionChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			OptionChanged?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Initialized { get; set; }
 	void DxTabPanel_Initialized(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {

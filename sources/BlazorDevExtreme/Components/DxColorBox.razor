@@ -77,7 +77,7 @@
         return DevExpress.Ui.DxColorBoxInterop.Init(dxTarget, options);
     }
     string applyButtonText;
-    [Parameter]
+    [Parameter] public
     string ApplyButtonText {
         get => isInitialized ? (string)DevExpress.Ui.DxColorBoxInterop.GetApplyButtonText(dxTarget).Result : applyButtonText;
         set {
@@ -89,7 +89,7 @@
         }
     }
     string applyValueMode;
-    [Parameter]
+    [Parameter] public
     string ApplyValueMode {
         get => isInitialized ? (string)DevExpress.Ui.DxColorBoxInterop.GetApplyValueMode(dxTarget).Result : applyValueMode;
         set {
@@ -101,7 +101,7 @@
         }
     }
     string cancelButtonText;
-    [Parameter]
+    [Parameter] public
     string CancelButtonText {
         get => isInitialized ? (string)DevExpress.Ui.DxColorBoxInterop.GetCancelButtonText(dxTarget).Result : cancelButtonText;
         set {
@@ -113,7 +113,7 @@
         }
     }
     bool? editAlphaChannel;
-    [Parameter]
+    [Parameter] public
     bool? EditAlphaChannel {
         get => isInitialized ? (bool?)DevExpress.Ui.DxColorBoxInterop.GetEditAlphaChannel(dxTarget).Result : editAlphaChannel;
         set {
@@ -125,7 +125,7 @@
         }
     }
     object fieldTemplate;
-    [Parameter]
+    [Parameter] public
     object FieldTemplate {
         get => isInitialized ? DevExpress.Ui.DxColorBoxInterop.GetFieldTemplate(dxTarget).Result : fieldTemplate;
         set {
@@ -137,7 +137,7 @@
         }
     }
     float? keyStep;
-    [Parameter]
+    [Parameter] public
     float? KeyStep {
         get => isInitialized ? (float?)DevExpress.Ui.DxColorBoxInterop.GetKeyStep(dxTarget).Result : keyStep;
         set {
@@ -149,7 +149,7 @@
         }
     }
     string value;
-    [Parameter]
+    [Parameter] public
     string Value {
         get => isInitialized ? (string)DevExpress.Ui.DxColorBoxInterop.GetValue(dxTarget).Result : value;
         set {
@@ -161,7 +161,7 @@
         }
     }
     bool? acceptCustomValue;
-    [Parameter]
+    [Parameter] public
     bool? AcceptCustomValue {
         get => isInitialized ? (bool?)DevExpress.Ui.DxColorBoxInterop.GetAcceptCustomValue(dxTarget).Result : acceptCustomValue;
         set {
@@ -173,7 +173,7 @@
         }
     }
     bool? activeStateEnabled;
-    [Parameter]
+    [Parameter] public
     bool? ActiveStateEnabled {
         get => isInitialized ? (bool?)DevExpress.Ui.DxColorBoxInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
         set {
@@ -185,7 +185,7 @@
         }
     }
     bool? deferRendering;
-    [Parameter]
+    [Parameter] public
     bool? DeferRendering {
         get => isInitialized ? (bool?)DevExpress.Ui.DxColorBoxInterop.GetDeferRendering(dxTarget).Result : deferRendering;
         set {
@@ -197,7 +197,7 @@
         }
     }
     object dropDownButtonTemplate;
-    [Parameter]
+    [Parameter] public
     object DropDownButtonTemplate {
         get => isInitialized ? DevExpress.Ui.DxColorBoxInterop.GetDropDownButtonTemplate(dxTarget).Result : dropDownButtonTemplate;
         set {
@@ -209,7 +209,7 @@
         }
     }
     bool? isOpened;
-    [Parameter]
+    [Parameter] public
     bool? IsOpened {
         get => isInitialized ? (bool?)DevExpress.Ui.DxColorBoxInterop.GetOpened(dxTarget).Result : isOpened;
         set {
@@ -221,7 +221,7 @@
         }
     }
     object maxLength;
-    [Parameter]
+    [Parameter] public
     object MaxLength {
         get => isInitialized ? DevExpress.Ui.DxColorBoxInterop.GetMaxLength(dxTarget).Result : maxLength;
         set {
@@ -233,7 +233,7 @@
         }
     }
     string mode;
-    [Parameter]
+    [Parameter] public
     string Mode {
         get => isInitialized ? (string)DevExpress.Ui.DxColorBoxInterop.GetMode(dxTarget).Result : mode;
         set {
@@ -245,7 +245,7 @@
         }
     }
     bool? focusStateEnabled;
-    [Parameter]
+    [Parameter] public
     bool? FocusStateEnabled {
         get => isInitialized ? (bool?)DevExpress.Ui.DxColorBoxInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
         set {
@@ -257,7 +257,7 @@
         }
     }
     bool? hoverStateEnabled;
-    [Parameter]
+    [Parameter] public
     bool? HoverStateEnabled {
         get => isInitialized ? (bool?)DevExpress.Ui.DxColorBoxInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
         set {
@@ -269,7 +269,7 @@
         }
     }
     object inputAttr;
-    [Parameter]
+    [Parameter] public
     object InputAttr {
         get => isInitialized ? DevExpress.Ui.DxColorBoxInterop.GetInputAttr(dxTarget).Result : inputAttr;
         set {
@@ -281,7 +281,7 @@
         }
     }
     string mask;
-    [Parameter]
+    [Parameter] public
     string Mask {
         get => isInitialized ? (string)DevExpress.Ui.DxColorBoxInterop.GetMask(dxTarget).Result : mask;
         set {
@@ -293,7 +293,7 @@
         }
     }
     string maskChar;
-    [Parameter]
+    [Parameter] public
     string MaskChar {
         get => isInitialized ? (string)DevExpress.Ui.DxColorBoxInterop.GetMaskChar(dxTarget).Result : maskChar;
         set {
@@ -305,7 +305,7 @@
         }
     }
     string maskInvalidMessage;
-    [Parameter]
+    [Parameter] public
     string MaskInvalidMessage {
         get => isInitialized ? (string)DevExpress.Ui.DxColorBoxInterop.GetMaskInvalidMessage(dxTarget).Result : maskInvalidMessage;
         set {
@@ -317,7 +317,7 @@
         }
     }
     object maskRules;
-    [Parameter]
+    [Parameter] public
     object MaskRules {
         get => isInitialized ? DevExpress.Ui.DxColorBoxInterop.GetMaskRules(dxTarget).Result : maskRules;
         set {
@@ -329,7 +329,7 @@
         }
     }
     string name;
-    [Parameter]
+    [Parameter] public
     string Name {
         get => isInitialized ? (string)DevExpress.Ui.DxColorBoxInterop.GetName(dxTarget).Result : name;
         set {
@@ -341,7 +341,7 @@
         }
     }
     string placeholder;
-    [Parameter]
+    [Parameter] public
     string Placeholder {
         get => isInitialized ? (string)DevExpress.Ui.DxColorBoxInterop.GetPlaceholder(dxTarget).Result : placeholder;
         set {
@@ -353,7 +353,7 @@
         }
     }
     bool? showClearButton;
-    [Parameter]
+    [Parameter] public
     bool? ShowClearButton {
         get => isInitialized ? (bool?)DevExpress.Ui.DxColorBoxInterop.GetShowClearButton(dxTarget).Result : showClearButton;
         set {
@@ -365,7 +365,7 @@
         }
     }
     string showMaskMode;
-    [Parameter]
+    [Parameter] public
     string ShowMaskMode {
         get => isInitialized ? (string)DevExpress.Ui.DxColorBoxInterop.GetShowMaskMode(dxTarget).Result : showMaskMode;
         set {
@@ -377,7 +377,7 @@
         }
     }
     bool? spellcheck;
-    [Parameter]
+    [Parameter] public
     bool? Spellcheck {
         get => isInitialized ? (bool?)DevExpress.Ui.DxColorBoxInterop.GetSpellcheck(dxTarget).Result : spellcheck;
         set {
@@ -389,7 +389,7 @@
         }
     }
     string text;
-    [Parameter]
+    [Parameter] public
     string Text {
         get => isInitialized ? (string)DevExpress.Ui.DxColorBoxInterop.GetText(dxTarget).Result : text;
         set {
@@ -401,7 +401,7 @@
         }
     }
     bool? useMaskedValue;
-    [Parameter]
+    [Parameter] public
     bool? UseMaskedValue {
         get => isInitialized ? (bool?)DevExpress.Ui.DxColorBoxInterop.GetUseMaskedValue(dxTarget).Result : useMaskedValue;
         set {
@@ -413,7 +413,7 @@
         }
     }
     string valueChangeEvent;
-    [Parameter]
+    [Parameter] public
     string ValueChangeEvent {
         get => isInitialized ? (string)DevExpress.Ui.DxColorBoxInterop.GetValueChangeEvent(dxTarget).Result : valueChangeEvent;
         set {
@@ -425,7 +425,7 @@
         }
     }
     bool? isValid;
-    [Parameter]
+    [Parameter] public
     bool? IsValid {
         get => isInitialized ? (bool?)DevExpress.Ui.DxColorBoxInterop.GetIsValid(dxTarget).Result : isValid;
         set {
@@ -437,7 +437,7 @@
         }
     }
     bool? readOnly;
-    [Parameter]
+    [Parameter] public
     bool? ReadOnly {
         get => isInitialized ? (bool?)DevExpress.Ui.DxColorBoxInterop.GetReadOnly(dxTarget).Result : readOnly;
         set {
@@ -449,7 +449,7 @@
         }
     }
     object validationError;
-    [Parameter]
+    [Parameter] public
     object ValidationError {
         get => isInitialized ? DevExpress.Ui.DxColorBoxInterop.GetValidationError(dxTarget).Result : validationError;
         set {
@@ -461,7 +461,7 @@
         }
     }
     string validationMessageMode;
-    [Parameter]
+    [Parameter] public
     string ValidationMessageMode {
         get => isInitialized ? (string)DevExpress.Ui.DxColorBoxInterop.GetValidationMessageMode(dxTarget).Result : validationMessageMode;
         set {
@@ -473,7 +473,7 @@
         }
     }
     string accessKey;
-    [Parameter]
+    [Parameter] public
     string AccessKey {
         get => isInitialized ? (string)DevExpress.Ui.DxColorBoxInterop.GetAccessKey(dxTarget).Result : accessKey;
         set {
@@ -485,7 +485,7 @@
         }
     }
     bool? disabled;
-    [Parameter]
+    [Parameter] public
     bool? Disabled {
         get => isInitialized ? (bool?)DevExpress.Ui.DxColorBoxInterop.GetDisabled(dxTarget).Result : disabled;
         set {
@@ -497,7 +497,7 @@
         }
     }
     string hint;
-    [Parameter]
+    [Parameter] public
     string Hint {
         get => isInitialized ? (string)DevExpress.Ui.DxColorBoxInterop.GetHint(dxTarget).Result : hint;
         set {
@@ -509,7 +509,7 @@
         }
     }
     float? tabIndex;
-    [Parameter]
+    [Parameter] public
     float? TabIndex {
         get => isInitialized ? (float?)DevExpress.Ui.DxColorBoxInterop.GetTabIndex(dxTarget).Result : tabIndex;
         set {
@@ -521,7 +521,7 @@
         }
     }
     bool? visible;
-    [Parameter]
+    [Parameter] public
     bool? Visible {
         get => isInitialized ? (bool?)DevExpress.Ui.DxColorBoxInterop.GetVisible(dxTarget).Result : visible;
         set {
@@ -533,7 +533,7 @@
         }
     }
     object bindingOptions;
-    [Parameter]
+    [Parameter] public
     object BindingOptions {
         get => isInitialized ? DevExpress.Ui.DxColorBoxInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
         set {
@@ -545,7 +545,7 @@
         }
     }
     object elementAttr;
-    [Parameter]
+    [Parameter] public
     object ElementAttr {
         get => isInitialized ? DevExpress.Ui.DxColorBoxInterop.GetElementAttr(dxTarget).Result : elementAttr;
         set {
@@ -557,7 +557,7 @@
         }
     }
     object height;
-    [Parameter]
+    [Parameter] public
     object Height {
         get => isInitialized ? DevExpress.Ui.DxColorBoxInterop.GetHeight(dxTarget).Result : height;
         set {
@@ -569,7 +569,7 @@
         }
     }
     bool? rtlEnabled;
-    [Parameter]
+    [Parameter] public
     bool? RtlEnabled {
         get => isInitialized ? (bool?)DevExpress.Ui.DxColorBoxInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
         set {
@@ -581,7 +581,7 @@
         }
     }
     object width;
-    [Parameter]
+    [Parameter] public
     object Width {
         get => isInitialized ? DevExpress.Ui.DxColorBoxInterop.GetWidth(dxTarget).Result : width;
         set {
@@ -593,109 +593,109 @@
         }
     }
     bool? onClosedEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnClosedEnabled {
         get => onClosedEnabled;
         set => this.onClosedEnabled = value;
     }
     bool? onOpenedEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnOpenedEnabled {
         get => onOpenedEnabled;
         set => this.onOpenedEnabled = value;
     }
     bool? onChangeEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnChangeEnabled {
         get => onChangeEnabled;
         set => this.onChangeEnabled = value;
     }
     bool? onCopyEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnCopyEnabled {
         get => onCopyEnabled;
         set => this.onCopyEnabled = value;
     }
     bool? onCutEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnCutEnabled {
         get => onCutEnabled;
         set => this.onCutEnabled = value;
     }
     bool? onEnterKeyEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnEnterKeyEnabled {
         get => onEnterKeyEnabled;
         set => this.onEnterKeyEnabled = value;
     }
     bool? onFocusInEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnFocusInEnabled {
         get => onFocusInEnabled;
         set => this.onFocusInEnabled = value;
     }
     bool? onFocusOutEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnFocusOutEnabled {
         get => onFocusOutEnabled;
         set => this.onFocusOutEnabled = value;
     }
     bool? onInputEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnInputEnabled {
         get => onInputEnabled;
         set => this.onInputEnabled = value;
     }
     bool? onKeyDownEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnKeyDownEnabled {
         get => onKeyDownEnabled;
         set => this.onKeyDownEnabled = value;
     }
     bool? onKeyPressEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnKeyPressEnabled {
         get => onKeyPressEnabled;
         set => this.onKeyPressEnabled = value;
     }
     bool? onKeyUpEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnKeyUpEnabled {
         get => onKeyUpEnabled;
         set => this.onKeyUpEnabled = value;
     }
     bool? onPasteEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnPasteEnabled {
         get => onPasteEnabled;
         set => this.onPasteEnabled = value;
     }
     bool? onValueChangedEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnValueChangedEnabled {
         get => onValueChangedEnabled;
         set => this.onValueChangedEnabled = value;
     }
     bool? onContentReadyEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnContentReadyEnabled {
         get => onContentReadyEnabled;
         set => this.onContentReadyEnabled = value;
     }
     bool? onDisposingEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnDisposingEnabled {
         get => onDisposingEnabled;
         set => this.onDisposingEnabled = value;
     }
     bool? onOptionChangedEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnOptionChangedEnabled {
         get => onOptionChangedEnabled;
         set => this.onOptionChangedEnabled = value;
     }
     bool? onInitializedEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnInitializedEnabled {
         get => onInitializedEnabled;
         set => this.onInitializedEnabled = value;
@@ -721,126 +721,126 @@
         DevExpress.Ui.DxColorBoxInterop.OptionChanged += DxColorBox_OptionChanged;
         DevExpress.Ui.DxColorBoxInterop.Initialized += DxColorBox_Initialized;
     }
-    [Parameter]
+    [Parameter] public
     Action Closed { get; set; }
     void DxColorBox_Closed(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             Closed?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action Opened { get; set; }
     void DxColorBox_Opened(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             Opened?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action Change { get; set; }
     void DxColorBox_Change(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             Change?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action Copy { get; set; }
     void DxColorBox_Copy(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             Copy?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action Cut { get; set; }
     void DxColorBox_Cut(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             Cut?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action EnterKey { get; set; }
     void DxColorBox_EnterKey(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             EnterKey?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action FocusIn { get; set; }
     void DxColorBox_FocusIn(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             FocusIn?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action FocusOut { get; set; }
     void DxColorBox_FocusOut(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             FocusOut?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action Input { get; set; }
     void DxColorBox_Input(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             Input?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action KeyDown { get; set; }
     void DxColorBox_KeyDown(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             KeyDown?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action KeyPress { get; set; }
     void DxColorBox_KeyPress(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             KeyPress?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action KeyUp { get; set; }
     void DxColorBox_KeyUp(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             KeyUp?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action Paste { get; set; }
     void DxColorBox_Paste(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             Paste?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action ValueChanged { get; set; }
     void DxColorBox_ValueChanged(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             ValueChanged?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action ContentReady { get; set; }
     void DxColorBox_ContentReady(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             ContentReady?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action Disposing { get; set; }
     void DxColorBox_Disposing(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             Disposing?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action OptionChanged { get; set; }
     void DxColorBox_OptionChanged(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             OptionChanged?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action Initialized { get; set; }
     void DxColorBox_Initialized(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {

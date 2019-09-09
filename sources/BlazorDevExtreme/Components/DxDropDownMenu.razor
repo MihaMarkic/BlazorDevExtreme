@@ -44,7 +44,7 @@
 		return DevExpress.Ui.DxDropDownMenuInterop.Init(dxTarget, options);
 	}
 	bool? activeStateEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? ActiveStateEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxDropDownMenuInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
 		set {
@@ -56,7 +56,7 @@
 		}
 	}
 	string buttonIcon;
-	[Parameter]
+	[Parameter] public
 	string ButtonIcon {
 		get => isInitialized ? (string)DevExpress.Ui.DxDropDownMenuInterop.GetButtonIcon(dxTarget).Result : buttonIcon;
 		set {
@@ -68,7 +68,7 @@
 		}
 	}
 	string buttonText;
-	[Parameter]
+	[Parameter] public
 	string ButtonText {
 		get => isInitialized ? (string)DevExpress.Ui.DxDropDownMenuInterop.GetButtonText(dxTarget).Result : buttonText;
 		set {
@@ -80,7 +80,7 @@
 		}
 	}
 	object dataSource;
-	[Parameter]
+	[Parameter] public
 	object DataSource {
 		get => isInitialized ? DevExpress.Ui.DxDropDownMenuInterop.GetDataSource(dxTarget).Result : dataSource;
 		set {
@@ -92,7 +92,7 @@
 		}
 	}
 	bool? hoverStateEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? HoverStateEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxDropDownMenuInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
 		set {
@@ -104,7 +104,7 @@
 		}
 	}
 	object items;
-	[Parameter]
+	[Parameter] public
 	object Items {
 		get => isInitialized ? DevExpress.Ui.DxDropDownMenuInterop.GetItems(dxTarget).Result : items;
 		set {
@@ -116,7 +116,7 @@
 		}
 	}
 	object itemTemplate;
-	[Parameter]
+	[Parameter] public
 	object ItemTemplate {
 		get => isInitialized ? DevExpress.Ui.DxDropDownMenuInterop.GetItemTemplate(dxTarget).Result : itemTemplate;
 		set {
@@ -128,7 +128,7 @@
 		}
 	}
 	bool? isOpened;
-	[Parameter]
+	[Parameter] public
 	bool? IsOpened {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxDropDownMenuInterop.GetOpened(dxTarget).Result : isOpened;
 		set {
@@ -140,7 +140,7 @@
 		}
 	}
 	object popupHeight;
-	[Parameter]
+	[Parameter] public
 	object PopupHeight {
 		get => isInitialized ? DevExpress.Ui.DxDropDownMenuInterop.GetPopupHeight(dxTarget).Result : popupHeight;
 		set {
@@ -152,7 +152,7 @@
 		}
 	}
 	object popupWidth;
-	[Parameter]
+	[Parameter] public
 	object PopupWidth {
 		get => isInitialized ? DevExpress.Ui.DxDropDownMenuInterop.GetPopupWidth(dxTarget).Result : popupWidth;
 		set {
@@ -164,7 +164,7 @@
 		}
 	}
 	bool? usePopover;
-	[Parameter]
+	[Parameter] public
 	bool? UsePopover {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxDropDownMenuInterop.GetUsePopover(dxTarget).Result : usePopover;
 		set {
@@ -176,7 +176,7 @@
 		}
 	}
 	string accessKey;
-	[Parameter]
+	[Parameter] public
 	string AccessKey {
 		get => isInitialized ? (string)DevExpress.Ui.DxDropDownMenuInterop.GetAccessKey(dxTarget).Result : accessKey;
 		set {
@@ -188,7 +188,7 @@
 		}
 	}
 	bool? disabled;
-	[Parameter]
+	[Parameter] public
 	bool? Disabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxDropDownMenuInterop.GetDisabled(dxTarget).Result : disabled;
 		set {
@@ -200,7 +200,7 @@
 		}
 	}
 	bool? focusStateEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? FocusStateEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxDropDownMenuInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
 		set {
@@ -212,7 +212,7 @@
 		}
 	}
 	string hint;
-	[Parameter]
+	[Parameter] public
 	string Hint {
 		get => isInitialized ? (string)DevExpress.Ui.DxDropDownMenuInterop.GetHint(dxTarget).Result : hint;
 		set {
@@ -224,7 +224,7 @@
 		}
 	}
 	float? tabIndex;
-	[Parameter]
+	[Parameter] public
 	float? TabIndex {
 		get => isInitialized ? (float?)DevExpress.Ui.DxDropDownMenuInterop.GetTabIndex(dxTarget).Result : tabIndex;
 		set {
@@ -236,7 +236,7 @@
 		}
 	}
 	bool? visible;
-	[Parameter]
+	[Parameter] public
 	bool? Visible {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxDropDownMenuInterop.GetVisible(dxTarget).Result : visible;
 		set {
@@ -248,7 +248,7 @@
 		}
 	}
 	object bindingOptions;
-	[Parameter]
+	[Parameter] public
 	object BindingOptions {
 		get => isInitialized ? DevExpress.Ui.DxDropDownMenuInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
 		set {
@@ -260,7 +260,7 @@
 		}
 	}
 	object elementAttr;
-	[Parameter]
+	[Parameter] public
 	object ElementAttr {
 		get => isInitialized ? DevExpress.Ui.DxDropDownMenuInterop.GetElementAttr(dxTarget).Result : elementAttr;
 		set {
@@ -272,7 +272,7 @@
 		}
 	}
 	object height;
-	[Parameter]
+	[Parameter] public
 	object Height {
 		get => isInitialized ? DevExpress.Ui.DxDropDownMenuInterop.GetHeight(dxTarget).Result : height;
 		set {
@@ -284,7 +284,7 @@
 		}
 	}
 	bool? rtlEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? RtlEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxDropDownMenuInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
 		set {
@@ -296,7 +296,7 @@
 		}
 	}
 	object width;
-	[Parameter]
+	[Parameter] public
 	object Width {
 		get => isInitialized ? DevExpress.Ui.DxDropDownMenuInterop.GetWidth(dxTarget).Result : width;
 		set {
@@ -308,37 +308,37 @@
 		}
 	}
 	bool? onButtonClickEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnButtonClickEnabled {
 		get => onButtonClickEnabled;
 		set => this.onButtonClickEnabled = value;
 	}
 	bool? onItemClickEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnItemClickEnabled {
 		get => onItemClickEnabled;
 		set => this.onItemClickEnabled = value;
 	}
 	bool? onContentReadyEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnContentReadyEnabled {
 		get => onContentReadyEnabled;
 		set => this.onContentReadyEnabled = value;
 	}
 	bool? onDisposingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnDisposingEnabled {
 		get => onDisposingEnabled;
 		set => this.onDisposingEnabled = value;
 	}
 	bool? onOptionChangedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnOptionChangedEnabled {
 		get => onOptionChangedEnabled;
 		set => this.onOptionChangedEnabled = value;
 	}
 	bool? onInitializedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnInitializedEnabled {
 		get => onInitializedEnabled;
 		set => this.onInitializedEnabled = value;
@@ -352,42 +352,42 @@
 		DevExpress.Ui.DxDropDownMenuInterop.OptionChanged += DxDropDownMenu_OptionChanged;
 		DevExpress.Ui.DxDropDownMenuInterop.Initialized += DxDropDownMenu_Initialized;
 	}
-	[Parameter]
+	[Parameter] public
 	Action ButtonClick { get; set; }
 	void DxDropDownMenu_ButtonClick(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ButtonClick?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action ItemClick { get; set; }
 	void DxDropDownMenu_ItemClick(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ItemClick?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action ContentReady { get; set; }
 	void DxDropDownMenu_ContentReady(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ContentReady?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Disposing { get; set; }
 	void DxDropDownMenu_Disposing(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Disposing?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action OptionChanged { get; set; }
 	void DxDropDownMenu_OptionChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			OptionChanged?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Initialized { get; set; }
 	void DxDropDownMenu_Initialized(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {

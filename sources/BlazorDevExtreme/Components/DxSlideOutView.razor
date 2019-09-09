@@ -38,7 +38,7 @@
 		return DevExpress.Ui.DxSlideOutViewInterop.Init(dxTarget, options);
 	}
 	object contentTemplate;
-	[Parameter]
+	[Parameter] public
 	object ContentTemplate {
 		get => isInitialized ? DevExpress.Ui.DxSlideOutViewInterop.GetContentTemplate(dxTarget).Result : contentTemplate;
 		set {
@@ -50,7 +50,7 @@
 		}
 	}
 	string menuPosition;
-	[Parameter]
+	[Parameter] public
 	string MenuPosition {
 		get => isInitialized ? (string)DevExpress.Ui.DxSlideOutViewInterop.GetMenuPosition(dxTarget).Result : menuPosition;
 		set {
@@ -62,7 +62,7 @@
 		}
 	}
 	object menuTemplate;
-	[Parameter]
+	[Parameter] public
 	object MenuTemplate {
 		get => isInitialized ? DevExpress.Ui.DxSlideOutViewInterop.GetMenuTemplate(dxTarget).Result : menuTemplate;
 		set {
@@ -74,7 +74,7 @@
 		}
 	}
 	bool? menuVisible;
-	[Parameter]
+	[Parameter] public
 	bool? MenuVisible {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxSlideOutViewInterop.GetMenuVisible(dxTarget).Result : menuVisible;
 		set {
@@ -86,7 +86,7 @@
 		}
 	}
 	bool? swipeEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? SwipeEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxSlideOutViewInterop.GetSwipeEnabled(dxTarget).Result : swipeEnabled;
 		set {
@@ -98,7 +98,7 @@
 		}
 	}
 	string accessKey;
-	[Parameter]
+	[Parameter] public
 	string AccessKey {
 		get => isInitialized ? (string)DevExpress.Ui.DxSlideOutViewInterop.GetAccessKey(dxTarget).Result : accessKey;
 		set {
@@ -110,7 +110,7 @@
 		}
 	}
 	bool? activeStateEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? ActiveStateEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxSlideOutViewInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
 		set {
@@ -122,7 +122,7 @@
 		}
 	}
 	bool? disabled;
-	[Parameter]
+	[Parameter] public
 	bool? Disabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxSlideOutViewInterop.GetDisabled(dxTarget).Result : disabled;
 		set {
@@ -134,7 +134,7 @@
 		}
 	}
 	bool? focusStateEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? FocusStateEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxSlideOutViewInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
 		set {
@@ -146,7 +146,7 @@
 		}
 	}
 	string hint;
-	[Parameter]
+	[Parameter] public
 	string Hint {
 		get => isInitialized ? (string)DevExpress.Ui.DxSlideOutViewInterop.GetHint(dxTarget).Result : hint;
 		set {
@@ -158,7 +158,7 @@
 		}
 	}
 	bool? hoverStateEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? HoverStateEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxSlideOutViewInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
 		set {
@@ -170,7 +170,7 @@
 		}
 	}
 	float? tabIndex;
-	[Parameter]
+	[Parameter] public
 	float? TabIndex {
 		get => isInitialized ? (float?)DevExpress.Ui.DxSlideOutViewInterop.GetTabIndex(dxTarget).Result : tabIndex;
 		set {
@@ -182,7 +182,7 @@
 		}
 	}
 	bool? visible;
-	[Parameter]
+	[Parameter] public
 	bool? Visible {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxSlideOutViewInterop.GetVisible(dxTarget).Result : visible;
 		set {
@@ -194,7 +194,7 @@
 		}
 	}
 	object bindingOptions;
-	[Parameter]
+	[Parameter] public
 	object BindingOptions {
 		get => isInitialized ? DevExpress.Ui.DxSlideOutViewInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
 		set {
@@ -206,7 +206,7 @@
 		}
 	}
 	object elementAttr;
-	[Parameter]
+	[Parameter] public
 	object ElementAttr {
 		get => isInitialized ? DevExpress.Ui.DxSlideOutViewInterop.GetElementAttr(dxTarget).Result : elementAttr;
 		set {
@@ -218,7 +218,7 @@
 		}
 	}
 	object height;
-	[Parameter]
+	[Parameter] public
 	object Height {
 		get => isInitialized ? DevExpress.Ui.DxSlideOutViewInterop.GetHeight(dxTarget).Result : height;
 		set {
@@ -230,7 +230,7 @@
 		}
 	}
 	bool? rtlEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? RtlEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxSlideOutViewInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
 		set {
@@ -242,7 +242,7 @@
 		}
 	}
 	object width;
-	[Parameter]
+	[Parameter] public
 	object Width {
 		get => isInitialized ? DevExpress.Ui.DxSlideOutViewInterop.GetWidth(dxTarget).Result : width;
 		set {
@@ -254,25 +254,25 @@
 		}
 	}
 	bool? onContentReadyEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnContentReadyEnabled {
 		get => onContentReadyEnabled;
 		set => this.onContentReadyEnabled = value;
 	}
 	bool? onDisposingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnDisposingEnabled {
 		get => onDisposingEnabled;
 		set => this.onDisposingEnabled = value;
 	}
 	bool? onOptionChangedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnOptionChangedEnabled {
 		get => onOptionChangedEnabled;
 		set => this.onOptionChangedEnabled = value;
 	}
 	bool? onInitializedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnInitializedEnabled {
 		get => onInitializedEnabled;
 		set => this.onInitializedEnabled = value;
@@ -284,28 +284,28 @@
 		DevExpress.Ui.DxSlideOutViewInterop.OptionChanged += DxSlideOutView_OptionChanged;
 		DevExpress.Ui.DxSlideOutViewInterop.Initialized += DxSlideOutView_Initialized;
 	}
-	[Parameter]
+	[Parameter] public
 	Action ContentReady { get; set; }
 	void DxSlideOutView_ContentReady(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ContentReady?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Disposing { get; set; }
 	void DxSlideOutView_Disposing(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Disposing?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action OptionChanged { get; set; }
 	void DxSlideOutView_OptionChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			OptionChanged?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Initialized { get; set; }
 	void DxSlideOutView_Initialized(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {

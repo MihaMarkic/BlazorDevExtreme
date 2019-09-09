@@ -24,7 +24,7 @@
 		return DevExpress.Ui.DxValidationGroupInterop.Init(dxTarget, options);
 	}
 	object bindingOptions;
-	[Parameter]
+	[Parameter] public
 	object BindingOptions {
 		get => isInitialized ? DevExpress.Ui.DxValidationGroupInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
 		set {
@@ -36,7 +36,7 @@
 		}
 	}
 	object elementAttr;
-	[Parameter]
+	[Parameter] public
 	object ElementAttr {
 		get => isInitialized ? DevExpress.Ui.DxValidationGroupInterop.GetElementAttr(dxTarget).Result : elementAttr;
 		set {
@@ -48,7 +48,7 @@
 		}
 	}
 	object height;
-	[Parameter]
+	[Parameter] public
 	object Height {
 		get => isInitialized ? DevExpress.Ui.DxValidationGroupInterop.GetHeight(dxTarget).Result : height;
 		set {
@@ -60,7 +60,7 @@
 		}
 	}
 	bool? rtlEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? RtlEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxValidationGroupInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
 		set {
@@ -72,7 +72,7 @@
 		}
 	}
 	object width;
-	[Parameter]
+	[Parameter] public
 	object Width {
 		get => isInitialized ? DevExpress.Ui.DxValidationGroupInterop.GetWidth(dxTarget).Result : width;
 		set {
@@ -84,19 +84,19 @@
 		}
 	}
 	bool? onDisposingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnDisposingEnabled {
 		get => onDisposingEnabled;
 		set => this.onDisposingEnabled = value;
 	}
 	bool? onOptionChangedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnOptionChangedEnabled {
 		get => onOptionChangedEnabled;
 		set => this.onOptionChangedEnabled = value;
 	}
 	bool? onInitializedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnInitializedEnabled {
 		get => onInitializedEnabled;
 		set => this.onInitializedEnabled = value;
@@ -107,21 +107,21 @@
 		DevExpress.Ui.DxValidationGroupInterop.OptionChanged += DxValidationGroup_OptionChanged;
 		DevExpress.Ui.DxValidationGroupInterop.Initialized += DxValidationGroup_Initialized;
 	}
-	[Parameter]
+	[Parameter] public
 	Action Disposing { get; set; }
 	void DxValidationGroup_Disposing(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Disposing?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action OptionChanged { get; set; }
 	void DxValidationGroup_OptionChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			OptionChanged?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Initialized { get; set; }
 	void DxValidationGroup_Initialized(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {

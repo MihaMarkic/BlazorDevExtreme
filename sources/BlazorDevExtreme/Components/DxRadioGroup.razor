@@ -46,7 +46,7 @@
         return DevExpress.Ui.DxRadioGroupInterop.Init(dxTarget, options);
     }
     bool? activeStateEnabled;
-    [Parameter]
+    [Parameter] public
     bool? ActiveStateEnabled {
         get => isInitialized ? (bool?)DevExpress.Ui.DxRadioGroupInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
         set {
@@ -58,7 +58,7 @@
         }
     }
     bool? focusStateEnabled;
-    [Parameter]
+    [Parameter] public
     bool? FocusStateEnabled {
         get => isInitialized ? (bool?)DevExpress.Ui.DxRadioGroupInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
         set {
@@ -70,7 +70,7 @@
         }
     }
     bool? hoverStateEnabled;
-    [Parameter]
+    [Parameter] public
     bool? HoverStateEnabled {
         get => isInitialized ? (bool?)DevExpress.Ui.DxRadioGroupInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
         set {
@@ -82,7 +82,7 @@
         }
     }
     string layout;
-    [Parameter]
+    [Parameter] public
     string Layout {
         get => isInitialized ? (string)DevExpress.Ui.DxRadioGroupInterop.GetLayout(dxTarget).Result : layout;
         set {
@@ -94,7 +94,7 @@
         }
     }
     string name;
-    [Parameter]
+    [Parameter] public
     string Name {
         get => isInitialized ? (string)DevExpress.Ui.DxRadioGroupInterop.GetName(dxTarget).Result : name;
         set {
@@ -106,7 +106,7 @@
         }
     }
     object value;
-    [Parameter]
+    [Parameter] public
     object Value {
         get => isInitialized ? DevExpress.Ui.DxRadioGroupInterop.GetValue(dxTarget).Result : value;
         set {
@@ -118,7 +118,7 @@
         }
     }
     bool? isValid;
-    [Parameter]
+    [Parameter] public
     bool? IsValid {
         get => isInitialized ? (bool?)DevExpress.Ui.DxRadioGroupInterop.GetIsValid(dxTarget).Result : isValid;
         set {
@@ -130,7 +130,7 @@
         }
     }
     bool? readOnly;
-    [Parameter]
+    [Parameter] public
     bool? ReadOnly {
         get => isInitialized ? (bool?)DevExpress.Ui.DxRadioGroupInterop.GetReadOnly(dxTarget).Result : readOnly;
         set {
@@ -142,7 +142,7 @@
         }
     }
     object validationError;
-    [Parameter]
+    [Parameter] public
     object ValidationError {
         get => isInitialized ? DevExpress.Ui.DxRadioGroupInterop.GetValidationError(dxTarget).Result : validationError;
         set {
@@ -154,7 +154,7 @@
         }
     }
     string validationMessageMode;
-    [Parameter]
+    [Parameter] public
     string ValidationMessageMode {
         get => isInitialized ? (string)DevExpress.Ui.DxRadioGroupInterop.GetValidationMessageMode(dxTarget).Result : validationMessageMode;
         set {
@@ -166,7 +166,7 @@
         }
     }
     string accessKey;
-    [Parameter]
+    [Parameter] public
     string AccessKey {
         get => isInitialized ? (string)DevExpress.Ui.DxRadioGroupInterop.GetAccessKey(dxTarget).Result : accessKey;
         set {
@@ -178,7 +178,7 @@
         }
     }
     bool? disabled;
-    [Parameter]
+    [Parameter] public
     bool? Disabled {
         get => isInitialized ? (bool?)DevExpress.Ui.DxRadioGroupInterop.GetDisabled(dxTarget).Result : disabled;
         set {
@@ -190,7 +190,7 @@
         }
     }
     string hint;
-    [Parameter]
+    [Parameter] public
     string Hint {
         get => isInitialized ? (string)DevExpress.Ui.DxRadioGroupInterop.GetHint(dxTarget).Result : hint;
         set {
@@ -202,7 +202,7 @@
         }
     }
     float? tabIndex;
-    [Parameter]
+    [Parameter] public
     float? TabIndex {
         get => isInitialized ? (float?)DevExpress.Ui.DxRadioGroupInterop.GetTabIndex(dxTarget).Result : tabIndex;
         set {
@@ -214,7 +214,7 @@
         }
     }
     bool? visible;
-    [Parameter]
+    [Parameter] public
     bool? Visible {
         get => isInitialized ? (bool?)DevExpress.Ui.DxRadioGroupInterop.GetVisible(dxTarget).Result : visible;
         set {
@@ -226,7 +226,7 @@
         }
     }
     object bindingOptions;
-    [Parameter]
+    [Parameter] public
     object BindingOptions {
         get => isInitialized ? DevExpress.Ui.DxRadioGroupInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
         set {
@@ -238,7 +238,7 @@
         }
     }
     object elementAttr;
-    [Parameter]
+    [Parameter] public
     object ElementAttr {
         get => isInitialized ? DevExpress.Ui.DxRadioGroupInterop.GetElementAttr(dxTarget).Result : elementAttr;
         set {
@@ -250,7 +250,7 @@
         }
     }
     object height;
-    [Parameter]
+    [Parameter] public
     object Height {
         get => isInitialized ? DevExpress.Ui.DxRadioGroupInterop.GetHeight(dxTarget).Result : height;
         set {
@@ -262,7 +262,7 @@
         }
     }
     bool? rtlEnabled;
-    [Parameter]
+    [Parameter] public
     bool? RtlEnabled {
         get => isInitialized ? (bool?)DevExpress.Ui.DxRadioGroupInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
         set {
@@ -274,7 +274,7 @@
         }
     }
     object width;
-    [Parameter]
+    [Parameter] public
     object Width {
         get => isInitialized ? DevExpress.Ui.DxRadioGroupInterop.GetWidth(dxTarget).Result : width;
         set {
@@ -286,7 +286,7 @@
         }
     }
     object dataSource;
-    [Parameter]
+    [Parameter] public
     object DataSource {
         get => isInitialized ? DevExpress.Ui.DxRadioGroupInterop.GetDataSource(dxTarget).Result : dataSource;
         set {
@@ -298,7 +298,7 @@
         }
     }
     object displayExpr;
-    [Parameter]
+    [Parameter] public
     object DisplayExpr {
         get => isInitialized ? DevExpress.Ui.DxRadioGroupInterop.GetDisplayExpr(dxTarget).Result : displayExpr;
         set {
@@ -310,7 +310,7 @@
         }
     }
     object items;
-    [Parameter]
+    [Parameter] public
     object Items {
         get => isInitialized ? DevExpress.Ui.DxRadioGroupInterop.GetItems(dxTarget).Result : items;
         set {
@@ -322,7 +322,7 @@
         }
     }
     object itemTemplate;
-    [Parameter]
+    [Parameter] public
     object ItemTemplate {
         get => isInitialized ? DevExpress.Ui.DxRadioGroupInterop.GetItemTemplate(dxTarget).Result : itemTemplate;
         set {
@@ -334,7 +334,7 @@
         }
     }
     object valueExpr;
-    [Parameter]
+    [Parameter] public
     object ValueExpr {
         get => isInitialized ? DevExpress.Ui.DxRadioGroupInterop.GetValueExpr(dxTarget).Result : valueExpr;
         set {
@@ -346,31 +346,31 @@
         }
     }
     bool? onValueChangedEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnValueChangedEnabled {
         get => onValueChangedEnabled;
         set => this.onValueChangedEnabled = value;
     }
     bool? onContentReadyEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnContentReadyEnabled {
         get => onContentReadyEnabled;
         set => this.onContentReadyEnabled = value;
     }
     bool? onDisposingEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnDisposingEnabled {
         get => onDisposingEnabled;
         set => this.onDisposingEnabled = value;
     }
     bool? onOptionChangedEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnOptionChangedEnabled {
         get => onOptionChangedEnabled;
         set => this.onOptionChangedEnabled = value;
     }
     bool? onInitializedEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnInitializedEnabled {
         get => onInitializedEnabled;
         set => this.onInitializedEnabled = value;
@@ -383,35 +383,35 @@
         DevExpress.Ui.DxRadioGroupInterop.OptionChanged += DxRadioGroup_OptionChanged;
         DevExpress.Ui.DxRadioGroupInterop.Initialized += DxRadioGroup_Initialized;
     }
-    [Parameter]
+    [Parameter] public
     Action ValueChanged { get; set; }
     void DxRadioGroup_ValueChanged(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             ValueChanged?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action ContentReady { get; set; }
     void DxRadioGroup_ContentReady(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             ContentReady?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action Disposing { get; set; }
     void DxRadioGroup_Disposing(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             Disposing?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action OptionChanged { get; set; }
     void DxRadioGroup_OptionChanged(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             OptionChanged?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action Initialized { get; set; }
     void DxRadioGroup_Initialized(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {

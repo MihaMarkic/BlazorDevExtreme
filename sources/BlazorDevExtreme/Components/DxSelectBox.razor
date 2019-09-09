@@ -93,7 +93,7 @@
         return DevExpress.Ui.DxSelectBoxInterop.Init(dxTarget, options);
     }
     bool? acceptCustomValue;
-    [Parameter]
+    [Parameter] public
     bool? AcceptCustomValue {
         get => isInitialized ? (bool?)DevExpress.Ui.DxSelectBoxInterop.GetAcceptCustomValue(dxTarget).Result : acceptCustomValue;
         set {
@@ -105,7 +105,7 @@
         }
     }
     object fieldTemplate;
-    [Parameter]
+    [Parameter] public
     object FieldTemplate {
         get => isInitialized ? DevExpress.Ui.DxSelectBoxInterop.GetFieldTemplate(dxTarget).Result : fieldTemplate;
         set {
@@ -117,7 +117,7 @@
         }
     }
     string placeholder;
-    [Parameter]
+    [Parameter] public
     string Placeholder {
         get => isInitialized ? (string)DevExpress.Ui.DxSelectBoxInterop.GetPlaceholder(dxTarget).Result : placeholder;
         set {
@@ -129,7 +129,7 @@
         }
     }
     bool? showSelectionControls;
-    [Parameter]
+    [Parameter] public
     bool? ShowSelectionControls {
         get => isInitialized ? (bool?)DevExpress.Ui.DxSelectBoxInterop.GetShowSelectionControls(dxTarget).Result : showSelectionControls;
         set {
@@ -141,7 +141,7 @@
         }
     }
     string valueChangeEvent;
-    [Parameter]
+    [Parameter] public
     string ValueChangeEvent {
         get => isInitialized ? (string)DevExpress.Ui.DxSelectBoxInterop.GetValueChangeEvent(dxTarget).Result : valueChangeEvent;
         set {
@@ -153,7 +153,7 @@
         }
     }
     string displayValue;
-    [Parameter]
+    [Parameter] public
     string DisplayValue {
         get => isInitialized ? (string)DevExpress.Ui.DxSelectBoxInterop.GetDisplayValue(dxTarget).Result : displayValue;
         set {
@@ -165,7 +165,7 @@
         }
     }
     bool? grouped;
-    [Parameter]
+    [Parameter] public
     bool? Grouped {
         get => isInitialized ? (bool?)DevExpress.Ui.DxSelectBoxInterop.GetGrouped(dxTarget).Result : grouped;
         set {
@@ -177,7 +177,7 @@
         }
     }
     object groupTemplate;
-    [Parameter]
+    [Parameter] public
     object GroupTemplate {
         get => isInitialized ? DevExpress.Ui.DxSelectBoxInterop.GetGroupTemplate(dxTarget).Result : groupTemplate;
         set {
@@ -189,7 +189,7 @@
         }
     }
     float? minSearchLength;
-    [Parameter]
+    [Parameter] public
     float? MinSearchLength {
         get => isInitialized ? (float?)DevExpress.Ui.DxSelectBoxInterop.GetMinSearchLength(dxTarget).Result : minSearchLength;
         set {
@@ -201,7 +201,7 @@
         }
     }
     string noDataText;
-    [Parameter]
+    [Parameter] public
     string NoDataText {
         get => isInitialized ? (string)DevExpress.Ui.DxSelectBoxInterop.GetNoDataText(dxTarget).Result : noDataText;
         set {
@@ -213,7 +213,7 @@
         }
     }
     bool? searchEnabled;
-    [Parameter]
+    [Parameter] public
     bool? SearchEnabled {
         get => isInitialized ? (bool?)DevExpress.Ui.DxSelectBoxInterop.GetSearchEnabled(dxTarget).Result : searchEnabled;
         set {
@@ -225,7 +225,7 @@
         }
     }
     object searchExpr;
-    [Parameter]
+    [Parameter] public
     object SearchExpr {
         get => isInitialized ? DevExpress.Ui.DxSelectBoxInterop.GetSearchExpr(dxTarget).Result : searchExpr;
         set {
@@ -237,7 +237,7 @@
         }
     }
     string searchMode;
-    [Parameter]
+    [Parameter] public
     string SearchMode {
         get => isInitialized ? (string)DevExpress.Ui.DxSelectBoxInterop.GetSearchMode(dxTarget).Result : searchMode;
         set {
@@ -249,7 +249,7 @@
         }
     }
     float? searchTimeout;
-    [Parameter]
+    [Parameter] public
     float? SearchTimeout {
         get => isInitialized ? (float?)DevExpress.Ui.DxSelectBoxInterop.GetSearchTimeout(dxTarget).Result : searchTimeout;
         set {
@@ -261,7 +261,7 @@
         }
     }
     object selectedItem;
-    [Parameter]
+    [Parameter] public
     object SelectedItem {
         get => isInitialized ? DevExpress.Ui.DxSelectBoxInterop.GetSelectedItem(dxTarget).Result : selectedItem;
         set {
@@ -273,7 +273,7 @@
         }
     }
     bool? showDataBeforeSearch;
-    [Parameter]
+    [Parameter] public
     bool? ShowDataBeforeSearch {
         get => isInitialized ? (bool?)DevExpress.Ui.DxSelectBoxInterop.GetShowDataBeforeSearch(dxTarget).Result : showDataBeforeSearch;
         set {
@@ -285,7 +285,7 @@
         }
     }
     object value;
-    [Parameter]
+    [Parameter] public
     object Value {
         get => isInitialized ? DevExpress.Ui.DxSelectBoxInterop.GetValue(dxTarget).Result : value;
         set {
@@ -297,7 +297,7 @@
         }
     }
     bool? activeStateEnabled;
-    [Parameter]
+    [Parameter] public
     bool? ActiveStateEnabled {
         get => isInitialized ? (bool?)DevExpress.Ui.DxSelectBoxInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
         set {
@@ -309,7 +309,7 @@
         }
     }
     string applyValueMode;
-    [Parameter]
+    [Parameter] public
     string ApplyValueMode {
         get => isInitialized ? (string)DevExpress.Ui.DxSelectBoxInterop.GetApplyValueMode(dxTarget).Result : applyValueMode;
         set {
@@ -321,7 +321,7 @@
         }
     }
     bool? deferRendering;
-    [Parameter]
+    [Parameter] public
     bool? DeferRendering {
         get => isInitialized ? (bool?)DevExpress.Ui.DxSelectBoxInterop.GetDeferRendering(dxTarget).Result : deferRendering;
         set {
@@ -333,7 +333,7 @@
         }
     }
     object dropDownButtonTemplate;
-    [Parameter]
+    [Parameter] public
     object DropDownButtonTemplate {
         get => isInitialized ? DevExpress.Ui.DxSelectBoxInterop.GetDropDownButtonTemplate(dxTarget).Result : dropDownButtonTemplate;
         set {
@@ -345,7 +345,7 @@
         }
     }
     bool? isOpened;
-    [Parameter]
+    [Parameter] public
     bool? IsOpened {
         get => isInitialized ? (bool?)DevExpress.Ui.DxSelectBoxInterop.GetOpened(dxTarget).Result : isOpened;
         set {
@@ -357,7 +357,7 @@
         }
     }
     object maxLength;
-    [Parameter]
+    [Parameter] public
     object MaxLength {
         get => isInitialized ? DevExpress.Ui.DxSelectBoxInterop.GetMaxLength(dxTarget).Result : maxLength;
         set {
@@ -369,7 +369,7 @@
         }
     }
     string mode;
-    [Parameter]
+    [Parameter] public
     string Mode {
         get => isInitialized ? (string)DevExpress.Ui.DxSelectBoxInterop.GetMode(dxTarget).Result : mode;
         set {
@@ -381,7 +381,7 @@
         }
     }
     bool? focusStateEnabled;
-    [Parameter]
+    [Parameter] public
     bool? FocusStateEnabled {
         get => isInitialized ? (bool?)DevExpress.Ui.DxSelectBoxInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
         set {
@@ -393,7 +393,7 @@
         }
     }
     bool? hoverStateEnabled;
-    [Parameter]
+    [Parameter] public
     bool? HoverStateEnabled {
         get => isInitialized ? (bool?)DevExpress.Ui.DxSelectBoxInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
         set {
@@ -405,7 +405,7 @@
         }
     }
     object inputAttr;
-    [Parameter]
+    [Parameter] public
     object InputAttr {
         get => isInitialized ? DevExpress.Ui.DxSelectBoxInterop.GetInputAttr(dxTarget).Result : inputAttr;
         set {
@@ -417,7 +417,7 @@
         }
     }
     string mask;
-    [Parameter]
+    [Parameter] public
     string Mask {
         get => isInitialized ? (string)DevExpress.Ui.DxSelectBoxInterop.GetMask(dxTarget).Result : mask;
         set {
@@ -429,7 +429,7 @@
         }
     }
     string maskChar;
-    [Parameter]
+    [Parameter] public
     string MaskChar {
         get => isInitialized ? (string)DevExpress.Ui.DxSelectBoxInterop.GetMaskChar(dxTarget).Result : maskChar;
         set {
@@ -441,7 +441,7 @@
         }
     }
     string maskInvalidMessage;
-    [Parameter]
+    [Parameter] public
     string MaskInvalidMessage {
         get => isInitialized ? (string)DevExpress.Ui.DxSelectBoxInterop.GetMaskInvalidMessage(dxTarget).Result : maskInvalidMessage;
         set {
@@ -453,7 +453,7 @@
         }
     }
     object maskRules;
-    [Parameter]
+    [Parameter] public
     object MaskRules {
         get => isInitialized ? DevExpress.Ui.DxSelectBoxInterop.GetMaskRules(dxTarget).Result : maskRules;
         set {
@@ -465,7 +465,7 @@
         }
     }
     string name;
-    [Parameter]
+    [Parameter] public
     string Name {
         get => isInitialized ? (string)DevExpress.Ui.DxSelectBoxInterop.GetName(dxTarget).Result : name;
         set {
@@ -477,7 +477,7 @@
         }
     }
     bool? showClearButton;
-    [Parameter]
+    [Parameter] public
     bool? ShowClearButton {
         get => isInitialized ? (bool?)DevExpress.Ui.DxSelectBoxInterop.GetShowClearButton(dxTarget).Result : showClearButton;
         set {
@@ -489,7 +489,7 @@
         }
     }
     string showMaskMode;
-    [Parameter]
+    [Parameter] public
     string ShowMaskMode {
         get => isInitialized ? (string)DevExpress.Ui.DxSelectBoxInterop.GetShowMaskMode(dxTarget).Result : showMaskMode;
         set {
@@ -501,7 +501,7 @@
         }
     }
     bool? spellcheck;
-    [Parameter]
+    [Parameter] public
     bool? Spellcheck {
         get => isInitialized ? (bool?)DevExpress.Ui.DxSelectBoxInterop.GetSpellcheck(dxTarget).Result : spellcheck;
         set {
@@ -513,7 +513,7 @@
         }
     }
     string text;
-    [Parameter]
+    [Parameter] public
     string Text {
         get => isInitialized ? (string)DevExpress.Ui.DxSelectBoxInterop.GetText(dxTarget).Result : text;
         set {
@@ -525,7 +525,7 @@
         }
     }
     bool? useMaskedValue;
-    [Parameter]
+    [Parameter] public
     bool? UseMaskedValue {
         get => isInitialized ? (bool?)DevExpress.Ui.DxSelectBoxInterop.GetUseMaskedValue(dxTarget).Result : useMaskedValue;
         set {
@@ -537,7 +537,7 @@
         }
     }
     bool? isValid;
-    [Parameter]
+    [Parameter] public
     bool? IsValid {
         get => isInitialized ? (bool?)DevExpress.Ui.DxSelectBoxInterop.GetIsValid(dxTarget).Result : isValid;
         set {
@@ -549,7 +549,7 @@
         }
     }
     bool? readOnly;
-    [Parameter]
+    [Parameter] public
     bool? ReadOnly {
         get => isInitialized ? (bool?)DevExpress.Ui.DxSelectBoxInterop.GetReadOnly(dxTarget).Result : readOnly;
         set {
@@ -561,7 +561,7 @@
         }
     }
     object validationError;
-    [Parameter]
+    [Parameter] public
     object ValidationError {
         get => isInitialized ? DevExpress.Ui.DxSelectBoxInterop.GetValidationError(dxTarget).Result : validationError;
         set {
@@ -573,7 +573,7 @@
         }
     }
     string validationMessageMode;
-    [Parameter]
+    [Parameter] public
     string ValidationMessageMode {
         get => isInitialized ? (string)DevExpress.Ui.DxSelectBoxInterop.GetValidationMessageMode(dxTarget).Result : validationMessageMode;
         set {
@@ -585,7 +585,7 @@
         }
     }
     string accessKey;
-    [Parameter]
+    [Parameter] public
     string AccessKey {
         get => isInitialized ? (string)DevExpress.Ui.DxSelectBoxInterop.GetAccessKey(dxTarget).Result : accessKey;
         set {
@@ -597,7 +597,7 @@
         }
     }
     bool? disabled;
-    [Parameter]
+    [Parameter] public
     bool? Disabled {
         get => isInitialized ? (bool?)DevExpress.Ui.DxSelectBoxInterop.GetDisabled(dxTarget).Result : disabled;
         set {
@@ -609,7 +609,7 @@
         }
     }
     string hint;
-    [Parameter]
+    [Parameter] public
     string Hint {
         get => isInitialized ? (string)DevExpress.Ui.DxSelectBoxInterop.GetHint(dxTarget).Result : hint;
         set {
@@ -621,7 +621,7 @@
         }
     }
     float? tabIndex;
-    [Parameter]
+    [Parameter] public
     float? TabIndex {
         get => isInitialized ? (float?)DevExpress.Ui.DxSelectBoxInterop.GetTabIndex(dxTarget).Result : tabIndex;
         set {
@@ -633,7 +633,7 @@
         }
     }
     bool? visible;
-    [Parameter]
+    [Parameter] public
     bool? Visible {
         get => isInitialized ? (bool?)DevExpress.Ui.DxSelectBoxInterop.GetVisible(dxTarget).Result : visible;
         set {
@@ -645,7 +645,7 @@
         }
     }
     object bindingOptions;
-    [Parameter]
+    [Parameter] public
     object BindingOptions {
         get => isInitialized ? DevExpress.Ui.DxSelectBoxInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
         set {
@@ -657,7 +657,7 @@
         }
     }
     object elementAttr;
-    [Parameter]
+    [Parameter] public
     object ElementAttr {
         get => isInitialized ? DevExpress.Ui.DxSelectBoxInterop.GetElementAttr(dxTarget).Result : elementAttr;
         set {
@@ -669,7 +669,7 @@
         }
     }
     object height;
-    [Parameter]
+    [Parameter] public
     object Height {
         get => isInitialized ? DevExpress.Ui.DxSelectBoxInterop.GetHeight(dxTarget).Result : height;
         set {
@@ -681,7 +681,7 @@
         }
     }
     bool? rtlEnabled;
-    [Parameter]
+    [Parameter] public
     bool? RtlEnabled {
         get => isInitialized ? (bool?)DevExpress.Ui.DxSelectBoxInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
         set {
@@ -693,7 +693,7 @@
         }
     }
     object width;
-    [Parameter]
+    [Parameter] public
     object Width {
         get => isInitialized ? DevExpress.Ui.DxSelectBoxInterop.GetWidth(dxTarget).Result : width;
         set {
@@ -705,7 +705,7 @@
         }
     }
     object dataSource;
-    [Parameter]
+    [Parameter] public
     object DataSource {
         get => isInitialized ? DevExpress.Ui.DxSelectBoxInterop.GetDataSource(dxTarget).Result : dataSource;
         set {
@@ -717,7 +717,7 @@
         }
     }
     object displayExpr;
-    [Parameter]
+    [Parameter] public
     object DisplayExpr {
         get => isInitialized ? DevExpress.Ui.DxSelectBoxInterop.GetDisplayExpr(dxTarget).Result : displayExpr;
         set {
@@ -729,7 +729,7 @@
         }
     }
     object items;
-    [Parameter]
+    [Parameter] public
     object Items {
         get => isInitialized ? DevExpress.Ui.DxSelectBoxInterop.GetItems(dxTarget).Result : items;
         set {
@@ -741,7 +741,7 @@
         }
     }
     object itemTemplate;
-    [Parameter]
+    [Parameter] public
     object ItemTemplate {
         get => isInitialized ? DevExpress.Ui.DxSelectBoxInterop.GetItemTemplate(dxTarget).Result : itemTemplate;
         set {
@@ -753,7 +753,7 @@
         }
     }
     object valueExpr;
-    [Parameter]
+    [Parameter] public
     object ValueExpr {
         get => isInitialized ? DevExpress.Ui.DxSelectBoxInterop.GetValueExpr(dxTarget).Result : valueExpr;
         set {
@@ -765,127 +765,127 @@
         }
     }
     bool? onCustomItemCreatingEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnCustomItemCreatingEnabled {
         get => onCustomItemCreatingEnabled;
         set => this.onCustomItemCreatingEnabled = value;
     }
     bool? onItemClickEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnItemClickEnabled {
         get => onItemClickEnabled;
         set => this.onItemClickEnabled = value;
     }
     bool? onSelectionChangedEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnSelectionChangedEnabled {
         get => onSelectionChangedEnabled;
         set => this.onSelectionChangedEnabled = value;
     }
     bool? onValueChangedEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnValueChangedEnabled {
         get => onValueChangedEnabled;
         set => this.onValueChangedEnabled = value;
     }
     bool? onClosedEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnClosedEnabled {
         get => onClosedEnabled;
         set => this.onClosedEnabled = value;
     }
     bool? onOpenedEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnOpenedEnabled {
         get => onOpenedEnabled;
         set => this.onOpenedEnabled = value;
     }
     bool? onChangeEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnChangeEnabled {
         get => onChangeEnabled;
         set => this.onChangeEnabled = value;
     }
     bool? onCopyEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnCopyEnabled {
         get => onCopyEnabled;
         set => this.onCopyEnabled = value;
     }
     bool? onCutEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnCutEnabled {
         get => onCutEnabled;
         set => this.onCutEnabled = value;
     }
     bool? onEnterKeyEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnEnterKeyEnabled {
         get => onEnterKeyEnabled;
         set => this.onEnterKeyEnabled = value;
     }
     bool? onFocusInEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnFocusInEnabled {
         get => onFocusInEnabled;
         set => this.onFocusInEnabled = value;
     }
     bool? onFocusOutEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnFocusOutEnabled {
         get => onFocusOutEnabled;
         set => this.onFocusOutEnabled = value;
     }
     bool? onInputEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnInputEnabled {
         get => onInputEnabled;
         set => this.onInputEnabled = value;
     }
     bool? onKeyDownEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnKeyDownEnabled {
         get => onKeyDownEnabled;
         set => this.onKeyDownEnabled = value;
     }
     bool? onKeyPressEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnKeyPressEnabled {
         get => onKeyPressEnabled;
         set => this.onKeyPressEnabled = value;
     }
     bool? onKeyUpEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnKeyUpEnabled {
         get => onKeyUpEnabled;
         set => this.onKeyUpEnabled = value;
     }
     bool? onPasteEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnPasteEnabled {
         get => onPasteEnabled;
         set => this.onPasteEnabled = value;
     }
     bool? onContentReadyEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnContentReadyEnabled {
         get => onContentReadyEnabled;
         set => this.onContentReadyEnabled = value;
     }
     bool? onDisposingEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnDisposingEnabled {
         get => onDisposingEnabled;
         set => this.onDisposingEnabled = value;
     }
     bool? onOptionChangedEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnOptionChangedEnabled {
         get => onOptionChangedEnabled;
         set => this.onOptionChangedEnabled = value;
     }
     bool? onInitializedEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnInitializedEnabled {
         get => onInitializedEnabled;
         set => this.onInitializedEnabled = value;
@@ -914,147 +914,147 @@
         DevExpress.Ui.DxSelectBoxInterop.OptionChanged += DxSelectBox_OptionChanged;
         DevExpress.Ui.DxSelectBoxInterop.Initialized += DxSelectBox_Initialized;
     }
-    [Parameter]
+    [Parameter] public
     Action CustomItemCreating { get; set; }
     void DxSelectBox_CustomItemCreating(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             CustomItemCreating?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action ItemClick { get; set; }
     void DxSelectBox_ItemClick(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             ItemClick?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action SelectionChanged { get; set; }
     void DxSelectBox_SelectionChanged(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             SelectionChanged?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action<string> ValueChanged { get; set; }
     void DxSelectBox_ValueChanged(object sender, (JQueryEventArgs jQueryEventArgs, string value) args) {
         if (args.jQueryEventArgs.Identifier == Id) {
             ValueChanged?.Invoke(args.value);
         }
     }
-    [Parameter]
+    [Parameter] public
     Action Closed { get; set; }
     void DxSelectBox_Closed(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             Closed?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action Opened { get; set; }
     void DxSelectBox_Opened(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             Opened?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action Change { get; set; }
     void DxSelectBox_Change(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             Change?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action Copy { get; set; }
     void DxSelectBox_Copy(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             Copy?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action Cut { get; set; }
     void DxSelectBox_Cut(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             Cut?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action EnterKey { get; set; }
     void DxSelectBox_EnterKey(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             EnterKey?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action FocusIn { get; set; }
     void DxSelectBox_FocusIn(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             FocusIn?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action FocusOut { get; set; }
     void DxSelectBox_FocusOut(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             FocusOut?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action Input { get; set; }
     void DxSelectBox_Input(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             Input?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action KeyDown { get; set; }
     void DxSelectBox_KeyDown(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             KeyDown?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action KeyPress { get; set; }
     void DxSelectBox_KeyPress(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             KeyPress?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action KeyUp { get; set; }
     void DxSelectBox_KeyUp(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             KeyUp?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action Paste { get; set; }
     void DxSelectBox_Paste(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             Paste?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action ContentReady { get; set; }
     void DxSelectBox_ContentReady(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             ContentReady?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action Disposing { get; set; }
     void DxSelectBox_Disposing(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             Disposing?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action OptionChanged { get; set; }
     void DxSelectBox_OptionChanged(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             OptionChanged?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action Initialized { get; set; }
     void DxSelectBox_Initialized(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {

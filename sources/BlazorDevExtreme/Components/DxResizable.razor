@@ -32,7 +32,7 @@
 		return DevExpress.Ui.DxResizableInterop.Init(dxTarget, options);
 	}
 	string handles;
-	[Parameter]
+	[Parameter] public
 	string Handles {
 		get => isInitialized ? (string)DevExpress.Ui.DxResizableInterop.GetHandles(dxTarget).Result : handles;
 		set {
@@ -44,7 +44,7 @@
 		}
 	}
 	object height;
-	[Parameter]
+	[Parameter] public
 	object Height {
 		get => isInitialized ? DevExpress.Ui.DxResizableInterop.GetHeight(dxTarget).Result : height;
 		set {
@@ -56,7 +56,7 @@
 		}
 	}
 	float? maxHeight;
-	[Parameter]
+	[Parameter] public
 	float? MaxHeight {
 		get => isInitialized ? (float?)DevExpress.Ui.DxResizableInterop.GetMaxHeight(dxTarget).Result : maxHeight;
 		set {
@@ -68,7 +68,7 @@
 		}
 	}
 	float? maxWidth;
-	[Parameter]
+	[Parameter] public
 	float? MaxWidth {
 		get => isInitialized ? (float?)DevExpress.Ui.DxResizableInterop.GetMaxWidth(dxTarget).Result : maxWidth;
 		set {
@@ -80,7 +80,7 @@
 		}
 	}
 	float? minHeight;
-	[Parameter]
+	[Parameter] public
 	float? MinHeight {
 		get => isInitialized ? (float?)DevExpress.Ui.DxResizableInterop.GetMinHeight(dxTarget).Result : minHeight;
 		set {
@@ -92,7 +92,7 @@
 		}
 	}
 	float? minWidth;
-	[Parameter]
+	[Parameter] public
 	float? MinWidth {
 		get => isInitialized ? (float?)DevExpress.Ui.DxResizableInterop.GetMinWidth(dxTarget).Result : minWidth;
 		set {
@@ -104,7 +104,7 @@
 		}
 	}
 	object width;
-	[Parameter]
+	[Parameter] public
 	object Width {
 		get => isInitialized ? DevExpress.Ui.DxResizableInterop.GetWidth(dxTarget).Result : width;
 		set {
@@ -116,7 +116,7 @@
 		}
 	}
 	object bindingOptions;
-	[Parameter]
+	[Parameter] public
 	object BindingOptions {
 		get => isInitialized ? DevExpress.Ui.DxResizableInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
 		set {
@@ -128,7 +128,7 @@
 		}
 	}
 	object elementAttr;
-	[Parameter]
+	[Parameter] public
 	object ElementAttr {
 		get => isInitialized ? DevExpress.Ui.DxResizableInterop.GetElementAttr(dxTarget).Result : elementAttr;
 		set {
@@ -140,7 +140,7 @@
 		}
 	}
 	bool? rtlEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? RtlEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxResizableInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
 		set {
@@ -152,37 +152,37 @@
 		}
 	}
 	bool? onResizeEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnResizeEnabled {
 		get => onResizeEnabled;
 		set => this.onResizeEnabled = value;
 	}
 	bool? onResizeEndEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnResizeEndEnabled {
 		get => onResizeEndEnabled;
 		set => this.onResizeEndEnabled = value;
 	}
 	bool? onResizeStartEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnResizeStartEnabled {
 		get => onResizeStartEnabled;
 		set => this.onResizeStartEnabled = value;
 	}
 	bool? onDisposingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnDisposingEnabled {
 		get => onDisposingEnabled;
 		set => this.onDisposingEnabled = value;
 	}
 	bool? onOptionChangedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnOptionChangedEnabled {
 		get => onOptionChangedEnabled;
 		set => this.onOptionChangedEnabled = value;
 	}
 	bool? onInitializedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnInitializedEnabled {
 		get => onInitializedEnabled;
 		set => this.onInitializedEnabled = value;
@@ -196,42 +196,42 @@
 		DevExpress.Ui.DxResizableInterop.OptionChanged += DxResizable_OptionChanged;
 		DevExpress.Ui.DxResizableInterop.Initialized += DxResizable_Initialized;
 	}
-	[Parameter]
+	[Parameter] public
 	Action Resize { get; set; }
 	void DxResizable_Resize(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Resize?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action ResizeEnd { get; set; }
 	void DxResizable_ResizeEnd(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ResizeEnd?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action ResizeStart { get; set; }
 	void DxResizable_ResizeStart(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ResizeStart?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Disposing { get; set; }
 	void DxResizable_Disposing(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Disposing?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action OptionChanged { get; set; }
 	void DxResizable_OptionChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			OptionChanged?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Initialized { get; set; }
 	void DxResizable_Initialized(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {

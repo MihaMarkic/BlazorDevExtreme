@@ -65,7 +65,7 @@
         return DevExpress.Ui.DxTextBoxInterop.Init(dxTarget, options);
     }
     object maxLength;
-    [Parameter]
+    [Parameter] public
     object MaxLength {
         get => isInitialized ? DevExpress.Ui.DxTextBoxInterop.GetMaxLength(dxTarget).Result : maxLength;
         set {
@@ -77,7 +77,7 @@
         }
     }
     string mode;
-    [Parameter]
+    [Parameter] public
     string Mode {
         get => isInitialized ? (string)DevExpress.Ui.DxTextBoxInterop.GetMode(dxTarget).Result : mode;
         set {
@@ -89,7 +89,7 @@
         }
     }
     string value;
-    [Parameter]
+    [Parameter] public
     string Value {
         get => isInitialized ? (string)DevExpress.Ui.DxTextBoxInterop.GetValue(dxTarget).Result : value;
         set {
@@ -101,7 +101,7 @@
         }
     }
     bool? focusStateEnabled;
-    [Parameter]
+    [Parameter] public
     bool? FocusStateEnabled {
         get => isInitialized ? (bool?)DevExpress.Ui.DxTextBoxInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
         set {
@@ -113,7 +113,7 @@
         }
     }
     bool? hoverStateEnabled;
-    [Parameter]
+    [Parameter] public
     bool? HoverStateEnabled {
         get => isInitialized ? (bool?)DevExpress.Ui.DxTextBoxInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
         set {
@@ -125,7 +125,7 @@
         }
     }
     object inputAttr;
-    [Parameter]
+    [Parameter] public
     object InputAttr {
         get => isInitialized ? DevExpress.Ui.DxTextBoxInterop.GetInputAttr(dxTarget).Result : inputAttr;
         set {
@@ -137,7 +137,7 @@
         }
     }
     string mask;
-    [Parameter]
+    [Parameter] public
     string Mask {
         get => isInitialized ? (string)DevExpress.Ui.DxTextBoxInterop.GetMask(dxTarget).Result : mask;
         set {
@@ -149,7 +149,7 @@
         }
     }
     string maskChar;
-    [Parameter]
+    [Parameter] public
     string MaskChar {
         get => isInitialized ? (string)DevExpress.Ui.DxTextBoxInterop.GetMaskChar(dxTarget).Result : maskChar;
         set {
@@ -161,7 +161,7 @@
         }
     }
     string maskInvalidMessage;
-    [Parameter]
+    [Parameter] public
     string MaskInvalidMessage {
         get => isInitialized ? (string)DevExpress.Ui.DxTextBoxInterop.GetMaskInvalidMessage(dxTarget).Result : maskInvalidMessage;
         set {
@@ -173,7 +173,7 @@
         }
     }
     object maskRules;
-    [Parameter]
+    [Parameter] public
     object MaskRules {
         get => isInitialized ? DevExpress.Ui.DxTextBoxInterop.GetMaskRules(dxTarget).Result : maskRules;
         set {
@@ -185,7 +185,7 @@
         }
     }
     string name;
-    [Parameter]
+    [Parameter] public
     string Name {
         get => isInitialized ? (string)DevExpress.Ui.DxTextBoxInterop.GetName(dxTarget).Result : name;
         set {
@@ -197,7 +197,7 @@
         }
     }
     string placeholder;
-    [Parameter]
+    [Parameter] public
     string Placeholder {
         get => isInitialized ? (string)DevExpress.Ui.DxTextBoxInterop.GetPlaceholder(dxTarget).Result : placeholder;
         set {
@@ -209,7 +209,7 @@
         }
     }
     bool? showClearButton;
-    [Parameter]
+    [Parameter] public
     bool? ShowClearButton {
         get => isInitialized ? (bool?)DevExpress.Ui.DxTextBoxInterop.GetShowClearButton(dxTarget).Result : showClearButton;
         set {
@@ -221,7 +221,7 @@
         }
     }
     string showMaskMode;
-    [Parameter]
+    [Parameter] public
     string ShowMaskMode {
         get => isInitialized ? (string)DevExpress.Ui.DxTextBoxInterop.GetShowMaskMode(dxTarget).Result : showMaskMode;
         set {
@@ -233,7 +233,7 @@
         }
     }
     bool? spellcheck;
-    [Parameter]
+    [Parameter] public
     bool? Spellcheck {
         get => isInitialized ? (bool?)DevExpress.Ui.DxTextBoxInterop.GetSpellcheck(dxTarget).Result : spellcheck;
         set {
@@ -245,7 +245,7 @@
         }
     }
     string text;
-    [Parameter]
+    [Parameter] public
     string Text {
         get => isInitialized ? (string)DevExpress.Ui.DxTextBoxInterop.GetText(dxTarget).Result : text;
         set {
@@ -257,7 +257,7 @@
         }
     }
     bool? useMaskedValue;
-    [Parameter]
+    [Parameter] public
     bool? UseMaskedValue {
         get => isInitialized ? (bool?)DevExpress.Ui.DxTextBoxInterop.GetUseMaskedValue(dxTarget).Result : useMaskedValue;
         set {
@@ -269,7 +269,7 @@
         }
     }
     string valueChangeEvent;
-    [Parameter]
+    [Parameter] public
     string ValueChangeEvent {
         get => isInitialized ? (string)DevExpress.Ui.DxTextBoxInterop.GetValueChangeEvent(dxTarget).Result : valueChangeEvent;
         set {
@@ -281,7 +281,7 @@
         }
     }
     bool? isValid;
-    [Parameter]
+    [Parameter] public
     bool? IsValid {
         get => isInitialized ? (bool?)DevExpress.Ui.DxTextBoxInterop.GetIsValid(dxTarget).Result : isValid;
         set {
@@ -293,7 +293,7 @@
         }
     }
     bool? readOnly;
-    [Parameter]
+    [Parameter] public
     bool? ReadOnly {
         get => isInitialized ? (bool?)DevExpress.Ui.DxTextBoxInterop.GetReadOnly(dxTarget).Result : readOnly;
         set {
@@ -305,7 +305,7 @@
         }
     }
     object validationError;
-    [Parameter]
+    [Parameter] public
     object ValidationError {
         get => isInitialized ? DevExpress.Ui.DxTextBoxInterop.GetValidationError(dxTarget).Result : validationError;
         set {
@@ -317,7 +317,7 @@
         }
     }
     string validationMessageMode;
-    [Parameter]
+    [Parameter] public
     string ValidationMessageMode {
         get => isInitialized ? (string)DevExpress.Ui.DxTextBoxInterop.GetValidationMessageMode(dxTarget).Result : validationMessageMode;
         set {
@@ -329,7 +329,7 @@
         }
     }
     string accessKey;
-    [Parameter]
+    [Parameter] public
     string AccessKey {
         get => isInitialized ? (string)DevExpress.Ui.DxTextBoxInterop.GetAccessKey(dxTarget).Result : accessKey;
         set {
@@ -341,7 +341,7 @@
         }
     }
     bool? activeStateEnabled;
-    [Parameter]
+    [Parameter] public
     bool? ActiveStateEnabled {
         get => isInitialized ? (bool?)DevExpress.Ui.DxTextBoxInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
         set {
@@ -353,7 +353,7 @@
         }
     }
     bool? disabled;
-    [Parameter]
+    [Parameter] public
     bool? Disabled {
         get => isInitialized ? (bool?)DevExpress.Ui.DxTextBoxInterop.GetDisabled(dxTarget).Result : disabled;
         set {
@@ -365,7 +365,7 @@
         }
     }
     string hint;
-    [Parameter]
+    [Parameter] public
     string Hint {
         get => isInitialized ? (string)DevExpress.Ui.DxTextBoxInterop.GetHint(dxTarget).Result : hint;
         set {
@@ -377,7 +377,7 @@
         }
     }
     float? tabIndex;
-    [Parameter]
+    [Parameter] public
     float? TabIndex {
         get => isInitialized ? (float?)DevExpress.Ui.DxTextBoxInterop.GetTabIndex(dxTarget).Result : tabIndex;
         set {
@@ -389,7 +389,7 @@
         }
     }
     bool? visible;
-    [Parameter]
+    [Parameter] public
     bool? Visible {
         get => isInitialized ? (bool?)DevExpress.Ui.DxTextBoxInterop.GetVisible(dxTarget).Result : visible;
         set {
@@ -401,7 +401,7 @@
         }
     }
     object bindingOptions;
-    [Parameter]
+    [Parameter] public
     object BindingOptions {
         get => isInitialized ? DevExpress.Ui.DxTextBoxInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
         set {
@@ -413,7 +413,7 @@
         }
     }
     object elementAttr;
-    [Parameter]
+    [Parameter] public
     object ElementAttr {
         get => isInitialized ? DevExpress.Ui.DxTextBoxInterop.GetElementAttr(dxTarget).Result : elementAttr;
         set {
@@ -425,7 +425,7 @@
         }
     }
     object height;
-    [Parameter]
+    [Parameter] public
     object Height {
         get => isInitialized ? DevExpress.Ui.DxTextBoxInterop.GetHeight(dxTarget).Result : height;
         set {
@@ -437,7 +437,7 @@
         }
     }
     bool? rtlEnabled;
-    [Parameter]
+    [Parameter] public
     bool? RtlEnabled {
         get => isInitialized ? (bool?)DevExpress.Ui.DxTextBoxInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
         set {
@@ -449,7 +449,7 @@
         }
     }
     object width;
-    [Parameter]
+    [Parameter] public
     object Width {
         get => isInitialized ? DevExpress.Ui.DxTextBoxInterop.GetWidth(dxTarget).Result : width;
         set {
@@ -461,97 +461,97 @@
         }
     }
     bool? onChangeEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnChangeEnabled {
         get => onChangeEnabled;
         set => this.onChangeEnabled = value;
     }
     bool? onCopyEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnCopyEnabled {
         get => onCopyEnabled;
         set => this.onCopyEnabled = value;
     }
     bool? onCutEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnCutEnabled {
         get => onCutEnabled;
         set => this.onCutEnabled = value;
     }
     bool? onEnterKeyEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnEnterKeyEnabled {
         get => onEnterKeyEnabled;
         set => this.onEnterKeyEnabled = value;
     }
     bool? onFocusInEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnFocusInEnabled {
         get => onFocusInEnabled;
         set => this.onFocusInEnabled = value;
     }
     bool? onFocusOutEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnFocusOutEnabled {
         get => onFocusOutEnabled;
         set => this.onFocusOutEnabled = value;
     }
     bool? onInputEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnInputEnabled {
         get => onInputEnabled;
         set => this.onInputEnabled = value;
     }
     bool? onKeyDownEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnKeyDownEnabled {
         get => onKeyDownEnabled;
         set => this.onKeyDownEnabled = value;
     }
     bool? onKeyPressEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnKeyPressEnabled {
         get => onKeyPressEnabled;
         set => this.onKeyPressEnabled = value;
     }
     bool? onKeyUpEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnKeyUpEnabled {
         get => onKeyUpEnabled;
         set => this.onKeyUpEnabled = value;
     }
     bool? onPasteEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnPasteEnabled {
         get => onPasteEnabled;
         set => this.onPasteEnabled = value;
     }
     bool? onValueChangedEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnValueChangedEnabled {
         get => onValueChangedEnabled;
         set => this.onValueChangedEnabled = value;
     }
     bool? onContentReadyEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnContentReadyEnabled {
         get => onContentReadyEnabled;
         set => this.onContentReadyEnabled = value;
     }
     bool? onDisposingEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnDisposingEnabled {
         get => onDisposingEnabled;
         set => this.onDisposingEnabled = value;
     }
     bool? onOptionChangedEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnOptionChangedEnabled {
         get => onOptionChangedEnabled;
         set => this.onOptionChangedEnabled = value;
     }
     bool? onInitializedEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnInitializedEnabled {
         get => onInitializedEnabled;
         set => this.onInitializedEnabled = value;
@@ -575,112 +575,112 @@
         DevExpress.Ui.DxTextBoxInterop.OptionChanged += DxTextBox_OptionChanged;
         DevExpress.Ui.DxTextBoxInterop.Initialized += DxTextBox_Initialized;
     }
-    [Parameter]
+    [Parameter] public
     Action Change { get; set; }
     void DxTextBox_Change(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             Change?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action Copy { get; set; }
     void DxTextBox_Copy(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             Copy?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action Cut { get; set; }
     void DxTextBox_Cut(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             Cut?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action EnterKey { get; set; }
     void DxTextBox_EnterKey(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             EnterKey?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action FocusIn { get; set; }
     void DxTextBox_FocusIn(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             FocusIn?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action FocusOut { get; set; }
     void DxTextBox_FocusOut(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             FocusOut?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action Input { get; set; }
     void DxTextBox_Input(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             Input?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action KeyDown { get; set; }
     void DxTextBox_KeyDown(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             KeyDown?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action KeyPress { get; set; }
     void DxTextBox_KeyPress(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             KeyPress?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action KeyUp { get; set; }
     void DxTextBox_KeyUp(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             KeyUp?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action Paste { get; set; }
     void DxTextBox_Paste(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             Paste?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action<string> ValueChanged { get; set; }
     void DxTextBox_ValueChanged(object sender, (JQueryEventArgs jQueryEventArgs, string value) args) {
         if (args.jQueryEventArgs.Identifier == Id) {
             ValueChanged?.Invoke(args.value);
         }
     }
-    [Parameter]
+    [Parameter] public
     Action ContentReady { get; set; }
     void DxTextBox_ContentReady(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             ContentReady?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action Disposing { get; set; }
     void DxTextBox_Disposing(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             Disposing?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action OptionChanged { get; set; }
     void DxTextBox_OptionChanged(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             OptionChanged?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action Initialized { get; set; }
     void DxTextBox_Initialized(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {

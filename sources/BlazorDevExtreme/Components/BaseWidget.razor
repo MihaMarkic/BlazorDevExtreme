@@ -38,7 +38,7 @@
 		return DevExpress.Viz.BaseWidgetInterop.Init(dxTarget, options);
 	}
 	object export;
-	[Parameter]
+	[Parameter] public
 	object Export {
 		get => isInitialized ? DevExpress.Viz.BaseWidgetInterop.GetExport(dxTarget).Result : export;
 		set {
@@ -50,7 +50,7 @@
 		}
 	}
 	object loadingIndicator;
-	[Parameter]
+	[Parameter] public
 	object LoadingIndicator {
 		get => isInitialized ? DevExpress.Viz.BaseWidgetInterop.GetLoadingIndicator(dxTarget).Result : loadingIndicator;
 		set {
@@ -62,7 +62,7 @@
 		}
 	}
 	object margin;
-	[Parameter]
+	[Parameter] public
 	object Margin {
 		get => isInitialized ? DevExpress.Viz.BaseWidgetInterop.GetMargin(dxTarget).Result : margin;
 		set {
@@ -74,7 +74,7 @@
 		}
 	}
 	bool? pathModified;
-	[Parameter]
+	[Parameter] public
 	bool? PathModified {
 		get => isInitialized ? (bool?)DevExpress.Viz.BaseWidgetInterop.GetPathModified(dxTarget).Result : pathModified;
 		set {
@@ -86,7 +86,7 @@
 		}
 	}
 	bool? redrawOnResize;
-	[Parameter]
+	[Parameter] public
 	bool? RedrawOnResize {
 		get => isInitialized ? (bool?)DevExpress.Viz.BaseWidgetInterop.GetRedrawOnResize(dxTarget).Result : redrawOnResize;
 		set {
@@ -98,7 +98,7 @@
 		}
 	}
 	bool? rtlEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? RtlEnabled {
 		get => isInitialized ? (bool?)DevExpress.Viz.BaseWidgetInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
 		set {
@@ -110,7 +110,7 @@
 		}
 	}
 	object size;
-	[Parameter]
+	[Parameter] public
 	object Size {
 		get => isInitialized ? DevExpress.Viz.BaseWidgetInterop.GetSize(dxTarget).Result : size;
 		set {
@@ -122,7 +122,7 @@
 		}
 	}
 	string theme;
-	[Parameter]
+	[Parameter] public
 	string Theme {
 		get => isInitialized ? (string)DevExpress.Viz.BaseWidgetInterop.GetTheme(dxTarget).Result : theme;
 		set {
@@ -134,7 +134,7 @@
 		}
 	}
 	object title;
-	[Parameter]
+	[Parameter] public
 	object Title {
 		get => isInitialized ? DevExpress.Viz.BaseWidgetInterop.GetTitle(dxTarget).Result : title;
 		set {
@@ -146,7 +146,7 @@
 		}
 	}
 	object tooltip;
-	[Parameter]
+	[Parameter] public
 	object Tooltip {
 		get => isInitialized ? DevExpress.Viz.BaseWidgetInterop.GetTooltip(dxTarget).Result : tooltip;
 		set {
@@ -158,7 +158,7 @@
 		}
 	}
 	object bindingOptions;
-	[Parameter]
+	[Parameter] public
 	object BindingOptions {
 		get => isInitialized ? DevExpress.Viz.BaseWidgetInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
 		set {
@@ -170,7 +170,7 @@
 		}
 	}
 	object elementAttr;
-	[Parameter]
+	[Parameter] public
 	object ElementAttr {
 		get => isInitialized ? DevExpress.Viz.BaseWidgetInterop.GetElementAttr(dxTarget).Result : elementAttr;
 		set {
@@ -182,7 +182,7 @@
 		}
 	}
 	object height;
-	[Parameter]
+	[Parameter] public
 	object Height {
 		get => isInitialized ? DevExpress.Viz.BaseWidgetInterop.GetHeight(dxTarget).Result : height;
 		set {
@@ -194,7 +194,7 @@
 		}
 	}
 	object width;
-	[Parameter]
+	[Parameter] public
 	object Width {
 		get => isInitialized ? DevExpress.Viz.BaseWidgetInterop.GetWidth(dxTarget).Result : width;
 		set {
@@ -206,49 +206,49 @@
 		}
 	}
 	bool? onDrawnEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnDrawnEnabled {
 		get => onDrawnEnabled;
 		set => this.onDrawnEnabled = value;
 	}
 	bool? onExportedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnExportedEnabled {
 		get => onExportedEnabled;
 		set => this.onExportedEnabled = value;
 	}
 	bool? onExportingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnExportingEnabled {
 		get => onExportingEnabled;
 		set => this.onExportingEnabled = value;
 	}
 	bool? onFileSavingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnFileSavingEnabled {
 		get => onFileSavingEnabled;
 		set => this.onFileSavingEnabled = value;
 	}
 	bool? onIncidentOccurredEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnIncidentOccurredEnabled {
 		get => onIncidentOccurredEnabled;
 		set => this.onIncidentOccurredEnabled = value;
 	}
 	bool? onDisposingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnDisposingEnabled {
 		get => onDisposingEnabled;
 		set => this.onDisposingEnabled = value;
 	}
 	bool? onOptionChangedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnOptionChangedEnabled {
 		get => onOptionChangedEnabled;
 		set => this.onOptionChangedEnabled = value;
 	}
 	bool? onInitializedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnInitializedEnabled {
 		get => onInitializedEnabled;
 		set => this.onInitializedEnabled = value;
@@ -264,56 +264,56 @@
 		DevExpress.Viz.BaseWidgetInterop.OptionChanged += BaseWidget_OptionChanged;
 		DevExpress.Viz.BaseWidgetInterop.Initialized += BaseWidget_Initialized;
 	}
-	[Parameter]
+	[Parameter] public
 	Action Drawn { get; set; }
 	void BaseWidget_Drawn(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Drawn?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Exported { get; set; }
 	void BaseWidget_Exported(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Exported?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Exporting { get; set; }
 	void BaseWidget_Exporting(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Exporting?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action FileSaving { get; set; }
 	void BaseWidget_FileSaving(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			FileSaving?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action IncidentOccurred { get; set; }
 	void BaseWidget_IncidentOccurred(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			IncidentOccurred?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Disposing { get; set; }
 	void BaseWidget_Disposing(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Disposing?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action OptionChanged { get; set; }
 	void BaseWidget_OptionChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			OptionChanged?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Initialized { get; set; }
 	void BaseWidget_Initialized(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {

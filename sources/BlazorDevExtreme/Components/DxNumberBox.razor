@@ -71,7 +71,7 @@
         return DevExpress.Ui.DxNumberBoxInterop.Init(dxTarget, options);
     }
     object format;
-    [Parameter]
+    [Parameter] public
     object Format {
         get => isInitialized ? DevExpress.Ui.DxNumberBoxInterop.GetFormat(dxTarget).Result : format;
         set {
@@ -83,7 +83,7 @@
         }
     }
     string invalidValueMessage;
-    [Parameter]
+    [Parameter] public
     string InvalidValueMessage {
         get => isInitialized ? (string)DevExpress.Ui.DxNumberBoxInterop.GetInvalidValueMessage(dxTarget).Result : invalidValueMessage;
         set {
@@ -95,7 +95,7 @@
         }
     }
     float? max;
-    [Parameter]
+    [Parameter] public
     float? Max {
         get => isInitialized ? (float?)DevExpress.Ui.DxNumberBoxInterop.GetMax(dxTarget).Result : max;
         set {
@@ -107,7 +107,7 @@
         }
     }
     float? min;
-    [Parameter]
+    [Parameter] public
     float? Min {
         get => isInitialized ? (float?)DevExpress.Ui.DxNumberBoxInterop.GetMin(dxTarget).Result : min;
         set {
@@ -119,7 +119,7 @@
         }
     }
     string mode;
-    [Parameter]
+    [Parameter] public
     string Mode {
         get => isInitialized ? (string)DevExpress.Ui.DxNumberBoxInterop.GetMode(dxTarget).Result : mode;
         set {
@@ -131,7 +131,7 @@
         }
     }
     bool? showSpinButtons;
-    [Parameter]
+    [Parameter] public
     bool? ShowSpinButtons {
         get => isInitialized ? (bool?)DevExpress.Ui.DxNumberBoxInterop.GetShowSpinButtons(dxTarget).Result : showSpinButtons;
         set {
@@ -143,7 +143,7 @@
         }
     }
     float? step;
-    [Parameter]
+    [Parameter] public
     float? Step {
         get => isInitialized ? (float?)DevExpress.Ui.DxNumberBoxInterop.GetStep(dxTarget).Result : step;
         set {
@@ -155,7 +155,7 @@
         }
     }
     bool? useLargeSpinButtons;
-    [Parameter]
+    [Parameter] public
     bool? UseLargeSpinButtons {
         get => isInitialized ? (bool?)DevExpress.Ui.DxNumberBoxInterop.GetUseLargeSpinButtons(dxTarget).Result : useLargeSpinButtons;
         set {
@@ -167,7 +167,7 @@
         }
     }
     float? value;
-    [Parameter]
+    [Parameter] public
     float? Value {
         get => isInitialized ? (float?)DevExpress.Ui.DxNumberBoxInterop.GetValue(dxTarget).Result : value;
         set {
@@ -179,7 +179,7 @@
         }
     }
     bool? focusStateEnabled;
-    [Parameter]
+    [Parameter] public
     bool? FocusStateEnabled {
         get => isInitialized ? (bool?)DevExpress.Ui.DxNumberBoxInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
         set {
@@ -191,7 +191,7 @@
         }
     }
     bool? hoverStateEnabled;
-    [Parameter]
+    [Parameter] public
     bool? HoverStateEnabled {
         get => isInitialized ? (bool?)DevExpress.Ui.DxNumberBoxInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
         set {
@@ -203,7 +203,7 @@
         }
     }
     object inputAttr;
-    [Parameter]
+    [Parameter] public
     object InputAttr {
         get => isInitialized ? DevExpress.Ui.DxNumberBoxInterop.GetInputAttr(dxTarget).Result : inputAttr;
         set {
@@ -215,7 +215,7 @@
         }
     }
     string mask;
-    [Parameter]
+    [Parameter] public
     string Mask {
         get => isInitialized ? (string)DevExpress.Ui.DxNumberBoxInterop.GetMask(dxTarget).Result : mask;
         set {
@@ -227,7 +227,7 @@
         }
     }
     string maskChar;
-    [Parameter]
+    [Parameter] public
     string MaskChar {
         get => isInitialized ? (string)DevExpress.Ui.DxNumberBoxInterop.GetMaskChar(dxTarget).Result : maskChar;
         set {
@@ -239,7 +239,7 @@
         }
     }
     string maskInvalidMessage;
-    [Parameter]
+    [Parameter] public
     string MaskInvalidMessage {
         get => isInitialized ? (string)DevExpress.Ui.DxNumberBoxInterop.GetMaskInvalidMessage(dxTarget).Result : maskInvalidMessage;
         set {
@@ -251,7 +251,7 @@
         }
     }
     object maskRules;
-    [Parameter]
+    [Parameter] public
     object MaskRules {
         get => isInitialized ? DevExpress.Ui.DxNumberBoxInterop.GetMaskRules(dxTarget).Result : maskRules;
         set {
@@ -263,7 +263,7 @@
         }
     }
     string name;
-    [Parameter]
+    [Parameter] public
     string Name {
         get => isInitialized ? (string)DevExpress.Ui.DxNumberBoxInterop.GetName(dxTarget).Result : name;
         set {
@@ -275,7 +275,7 @@
         }
     }
     string placeholder;
-    [Parameter]
+    [Parameter] public
     string Placeholder {
         get => isInitialized ? (string)DevExpress.Ui.DxNumberBoxInterop.GetPlaceholder(dxTarget).Result : placeholder;
         set {
@@ -287,7 +287,7 @@
         }
     }
     bool? showClearButton;
-    [Parameter]
+    [Parameter] public
     bool? ShowClearButton {
         get => isInitialized ? (bool?)DevExpress.Ui.DxNumberBoxInterop.GetShowClearButton(dxTarget).Result : showClearButton;
         set {
@@ -299,7 +299,7 @@
         }
     }
     string showMaskMode;
-    [Parameter]
+    [Parameter] public
     string ShowMaskMode {
         get => isInitialized ? (string)DevExpress.Ui.DxNumberBoxInterop.GetShowMaskMode(dxTarget).Result : showMaskMode;
         set {
@@ -311,7 +311,7 @@
         }
     }
     bool? spellcheck;
-    [Parameter]
+    [Parameter] public
     bool? Spellcheck {
         get => isInitialized ? (bool?)DevExpress.Ui.DxNumberBoxInterop.GetSpellcheck(dxTarget).Result : spellcheck;
         set {
@@ -323,7 +323,7 @@
         }
     }
     string text;
-    [Parameter]
+    [Parameter] public
     string Text {
         get => isInitialized ? (string)DevExpress.Ui.DxNumberBoxInterop.GetText(dxTarget).Result : text;
         set {
@@ -335,7 +335,7 @@
         }
     }
     bool? useMaskedValue;
-    [Parameter]
+    [Parameter] public
     bool? UseMaskedValue {
         get => isInitialized ? (bool?)DevExpress.Ui.DxNumberBoxInterop.GetUseMaskedValue(dxTarget).Result : useMaskedValue;
         set {
@@ -347,7 +347,7 @@
         }
     }
     string valueChangeEvent;
-    [Parameter]
+    [Parameter] public
     string ValueChangeEvent {
         get => isInitialized ? (string)DevExpress.Ui.DxNumberBoxInterop.GetValueChangeEvent(dxTarget).Result : valueChangeEvent;
         set {
@@ -359,7 +359,7 @@
         }
     }
     bool? isValid;
-    [Parameter]
+    [Parameter] public
     bool? IsValid {
         get => isInitialized ? (bool?)DevExpress.Ui.DxNumberBoxInterop.GetIsValid(dxTarget).Result : isValid;
         set {
@@ -371,7 +371,7 @@
         }
     }
     bool? readOnly;
-    [Parameter]
+    [Parameter] public
     bool? ReadOnly {
         get => isInitialized ? (bool?)DevExpress.Ui.DxNumberBoxInterop.GetReadOnly(dxTarget).Result : readOnly;
         set {
@@ -383,7 +383,7 @@
         }
     }
     object validationError;
-    [Parameter]
+    [Parameter] public
     object ValidationError {
         get => isInitialized ? DevExpress.Ui.DxNumberBoxInterop.GetValidationError(dxTarget).Result : validationError;
         set {
@@ -395,7 +395,7 @@
         }
     }
     string validationMessageMode;
-    [Parameter]
+    [Parameter] public
     string ValidationMessageMode {
         get => isInitialized ? (string)DevExpress.Ui.DxNumberBoxInterop.GetValidationMessageMode(dxTarget).Result : validationMessageMode;
         set {
@@ -407,7 +407,7 @@
         }
     }
     string accessKey;
-    [Parameter]
+    [Parameter] public
     string AccessKey {
         get => isInitialized ? (string)DevExpress.Ui.DxNumberBoxInterop.GetAccessKey(dxTarget).Result : accessKey;
         set {
@@ -419,7 +419,7 @@
         }
     }
     bool? activeStateEnabled;
-    [Parameter]
+    [Parameter] public
     bool? ActiveStateEnabled {
         get => isInitialized ? (bool?)DevExpress.Ui.DxNumberBoxInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
         set {
@@ -431,7 +431,7 @@
         }
     }
     bool? disabled;
-    [Parameter]
+    [Parameter] public
     bool? Disabled {
         get => isInitialized ? (bool?)DevExpress.Ui.DxNumberBoxInterop.GetDisabled(dxTarget).Result : disabled;
         set {
@@ -443,7 +443,7 @@
         }
     }
     string hint;
-    [Parameter]
+    [Parameter] public
     string Hint {
         get => isInitialized ? (string)DevExpress.Ui.DxNumberBoxInterop.GetHint(dxTarget).Result : hint;
         set {
@@ -455,7 +455,7 @@
         }
     }
     float? tabIndex;
-    [Parameter]
+    [Parameter] public
     float? TabIndex {
         get => isInitialized ? (float?)DevExpress.Ui.DxNumberBoxInterop.GetTabIndex(dxTarget).Result : tabIndex;
         set {
@@ -467,7 +467,7 @@
         }
     }
     bool? visible;
-    [Parameter]
+    [Parameter] public
     bool? Visible {
         get => isInitialized ? (bool?)DevExpress.Ui.DxNumberBoxInterop.GetVisible(dxTarget).Result : visible;
         set {
@@ -479,7 +479,7 @@
         }
     }
     object bindingOptions;
-    [Parameter]
+    [Parameter] public
     object BindingOptions {
         get => isInitialized ? DevExpress.Ui.DxNumberBoxInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
         set {
@@ -491,7 +491,7 @@
         }
     }
     object elementAttr;
-    [Parameter]
+    [Parameter] public
     object ElementAttr {
         get => isInitialized ? DevExpress.Ui.DxNumberBoxInterop.GetElementAttr(dxTarget).Result : elementAttr;
         set {
@@ -503,7 +503,7 @@
         }
     }
     object height;
-    [Parameter]
+    [Parameter] public
     object Height {
         get => isInitialized ? DevExpress.Ui.DxNumberBoxInterop.GetHeight(dxTarget).Result : height;
         set {
@@ -515,7 +515,7 @@
         }
     }
     bool? rtlEnabled;
-    [Parameter]
+    [Parameter] public
     bool? RtlEnabled {
         get => isInitialized ? (bool?)DevExpress.Ui.DxNumberBoxInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
         set {
@@ -527,7 +527,7 @@
         }
     }
     object width;
-    [Parameter]
+    [Parameter] public
     object Width {
         get => isInitialized ? DevExpress.Ui.DxNumberBoxInterop.GetWidth(dxTarget).Result : width;
         set {
@@ -539,97 +539,97 @@
         }
     }
     bool? onChangeEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnChangeEnabled {
         get => onChangeEnabled;
         set => this.onChangeEnabled = value;
     }
     bool? onCopyEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnCopyEnabled {
         get => onCopyEnabled;
         set => this.onCopyEnabled = value;
     }
     bool? onCutEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnCutEnabled {
         get => onCutEnabled;
         set => this.onCutEnabled = value;
     }
     bool? onEnterKeyEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnEnterKeyEnabled {
         get => onEnterKeyEnabled;
         set => this.onEnterKeyEnabled = value;
     }
     bool? onFocusInEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnFocusInEnabled {
         get => onFocusInEnabled;
         set => this.onFocusInEnabled = value;
     }
     bool? onFocusOutEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnFocusOutEnabled {
         get => onFocusOutEnabled;
         set => this.onFocusOutEnabled = value;
     }
     bool? onInputEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnInputEnabled {
         get => onInputEnabled;
         set => this.onInputEnabled = value;
     }
     bool? onKeyDownEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnKeyDownEnabled {
         get => onKeyDownEnabled;
         set => this.onKeyDownEnabled = value;
     }
     bool? onKeyPressEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnKeyPressEnabled {
         get => onKeyPressEnabled;
         set => this.onKeyPressEnabled = value;
     }
     bool? onKeyUpEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnKeyUpEnabled {
         get => onKeyUpEnabled;
         set => this.onKeyUpEnabled = value;
     }
     bool? onPasteEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnPasteEnabled {
         get => onPasteEnabled;
         set => this.onPasteEnabled = value;
     }
     bool? onValueChangedEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnValueChangedEnabled {
         get => onValueChangedEnabled;
         set => this.onValueChangedEnabled = value;
     }
     bool? onContentReadyEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnContentReadyEnabled {
         get => onContentReadyEnabled;
         set => this.onContentReadyEnabled = value;
     }
     bool? onDisposingEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnDisposingEnabled {
         get => onDisposingEnabled;
         set => this.onDisposingEnabled = value;
     }
     bool? onOptionChangedEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnOptionChangedEnabled {
         get => onOptionChangedEnabled;
         set => this.onOptionChangedEnabled = value;
     }
     bool? onInitializedEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnInitializedEnabled {
         get => onInitializedEnabled;
         set => this.onInitializedEnabled = value;
@@ -653,112 +653,112 @@
         DevExpress.Ui.DxNumberBoxInterop.OptionChanged += DxNumberBox_OptionChanged;
         DevExpress.Ui.DxNumberBoxInterop.Initialized += DxNumberBox_Initialized;
     }
-    [Parameter]
+    [Parameter] public
     Action Change { get; set; }
     void DxNumberBox_Change(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             Change?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action Copy { get; set; }
     void DxNumberBox_Copy(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             Copy?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action Cut { get; set; }
     void DxNumberBox_Cut(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             Cut?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action EnterKey { get; set; }
     void DxNumberBox_EnterKey(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             EnterKey?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action FocusIn { get; set; }
     void DxNumberBox_FocusIn(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             FocusIn?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action FocusOut { get; set; }
     void DxNumberBox_FocusOut(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             FocusOut?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action Input { get; set; }
     void DxNumberBox_Input(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             Input?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action KeyDown { get; set; }
     void DxNumberBox_KeyDown(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             KeyDown?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action KeyPress { get; set; }
     void DxNumberBox_KeyPress(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             KeyPress?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action KeyUp { get; set; }
     void DxNumberBox_KeyUp(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             KeyUp?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action Paste { get; set; }
     void DxNumberBox_Paste(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             Paste?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action ValueChanged { get; set; }
     void DxNumberBox_ValueChanged(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             ValueChanged?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action ContentReady { get; set; }
     void DxNumberBox_ContentReady(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             ContentReady?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action Disposing { get; set; }
     void DxNumberBox_Disposing(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             Disposing?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action OptionChanged { get; set; }
     void DxNumberBox_OptionChanged(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             OptionChanged?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action Initialized { get; set; }
     void DxNumberBox_Initialized(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {

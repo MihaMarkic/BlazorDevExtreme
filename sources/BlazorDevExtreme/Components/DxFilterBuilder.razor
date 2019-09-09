@@ -42,7 +42,7 @@
 		return DevExpress.Ui.DxFilterBuilderInterop.Init(dxTarget, options);
 	}
 	bool? allowHierarchicalFields;
-	[Parameter]
+	[Parameter] public
 	bool? AllowHierarchicalFields {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxFilterBuilderInterop.GetAllowHierarchicalFields(dxTarget).Result : allowHierarchicalFields;
 		set {
@@ -54,7 +54,7 @@
 		}
 	}
 	object customOperations;
-	[Parameter]
+	[Parameter] public
 	object CustomOperations {
 		get => isInitialized ? DevExpress.Ui.DxFilterBuilderInterop.GetCustomOperations(dxTarget).Result : customOperations;
 		set {
@@ -66,7 +66,7 @@
 		}
 	}
 	object fields;
-	[Parameter]
+	[Parameter] public
 	object Fields {
 		get => isInitialized ? DevExpress.Ui.DxFilterBuilderInterop.GetFields(dxTarget).Result : fields;
 		set {
@@ -78,7 +78,7 @@
 		}
 	}
 	object filterOperationDescriptions;
-	[Parameter]
+	[Parameter] public
 	object FilterOperationDescriptions {
 		get => isInitialized ? DevExpress.Ui.DxFilterBuilderInterop.GetFilterOperationDescriptions(dxTarget).Result : filterOperationDescriptions;
 		set {
@@ -90,7 +90,7 @@
 		}
 	}
 	object groupOperationDescriptions;
-	[Parameter]
+	[Parameter] public
 	object GroupOperationDescriptions {
 		get => isInitialized ? DevExpress.Ui.DxFilterBuilderInterop.GetGroupOperationDescriptions(dxTarget).Result : groupOperationDescriptions;
 		set {
@@ -102,7 +102,7 @@
 		}
 	}
 	object value;
-	[Parameter]
+	[Parameter] public
 	object Value {
 		get => isInitialized ? DevExpress.Ui.DxFilterBuilderInterop.GetValue(dxTarget).Result : value;
 		set {
@@ -114,7 +114,7 @@
 		}
 	}
 	string accessKey;
-	[Parameter]
+	[Parameter] public
 	string AccessKey {
 		get => isInitialized ? (string)DevExpress.Ui.DxFilterBuilderInterop.GetAccessKey(dxTarget).Result : accessKey;
 		set {
@@ -126,7 +126,7 @@
 		}
 	}
 	bool? activeStateEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? ActiveStateEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxFilterBuilderInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
 		set {
@@ -138,7 +138,7 @@
 		}
 	}
 	bool? disabled;
-	[Parameter]
+	[Parameter] public
 	bool? Disabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxFilterBuilderInterop.GetDisabled(dxTarget).Result : disabled;
 		set {
@@ -150,7 +150,7 @@
 		}
 	}
 	bool? focusStateEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? FocusStateEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxFilterBuilderInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
 		set {
@@ -162,7 +162,7 @@
 		}
 	}
 	string hint;
-	[Parameter]
+	[Parameter] public
 	string Hint {
 		get => isInitialized ? (string)DevExpress.Ui.DxFilterBuilderInterop.GetHint(dxTarget).Result : hint;
 		set {
@@ -174,7 +174,7 @@
 		}
 	}
 	bool? hoverStateEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? HoverStateEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxFilterBuilderInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
 		set {
@@ -186,7 +186,7 @@
 		}
 	}
 	float? tabIndex;
-	[Parameter]
+	[Parameter] public
 	float? TabIndex {
 		get => isInitialized ? (float?)DevExpress.Ui.DxFilterBuilderInterop.GetTabIndex(dxTarget).Result : tabIndex;
 		set {
@@ -198,7 +198,7 @@
 		}
 	}
 	bool? visible;
-	[Parameter]
+	[Parameter] public
 	bool? Visible {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxFilterBuilderInterop.GetVisible(dxTarget).Result : visible;
 		set {
@@ -210,7 +210,7 @@
 		}
 	}
 	object bindingOptions;
-	[Parameter]
+	[Parameter] public
 	object BindingOptions {
 		get => isInitialized ? DevExpress.Ui.DxFilterBuilderInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
 		set {
@@ -222,7 +222,7 @@
 		}
 	}
 	object elementAttr;
-	[Parameter]
+	[Parameter] public
 	object ElementAttr {
 		get => isInitialized ? DevExpress.Ui.DxFilterBuilderInterop.GetElementAttr(dxTarget).Result : elementAttr;
 		set {
@@ -234,7 +234,7 @@
 		}
 	}
 	object height;
-	[Parameter]
+	[Parameter] public
 	object Height {
 		get => isInitialized ? DevExpress.Ui.DxFilterBuilderInterop.GetHeight(dxTarget).Result : height;
 		set {
@@ -246,7 +246,7 @@
 		}
 	}
 	bool? rtlEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? RtlEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxFilterBuilderInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
 		set {
@@ -258,7 +258,7 @@
 		}
 	}
 	object width;
-	[Parameter]
+	[Parameter] public
 	object Width {
 		get => isInitialized ? DevExpress.Ui.DxFilterBuilderInterop.GetWidth(dxTarget).Result : width;
 		set {
@@ -270,43 +270,43 @@
 		}
 	}
 	bool? onEditorPreparedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnEditorPreparedEnabled {
 		get => onEditorPreparedEnabled;
 		set => this.onEditorPreparedEnabled = value;
 	}
 	bool? onEditorPreparingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnEditorPreparingEnabled {
 		get => onEditorPreparingEnabled;
 		set => this.onEditorPreparingEnabled = value;
 	}
 	bool? onValueChangedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnValueChangedEnabled {
 		get => onValueChangedEnabled;
 		set => this.onValueChangedEnabled = value;
 	}
 	bool? onContentReadyEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnContentReadyEnabled {
 		get => onContentReadyEnabled;
 		set => this.onContentReadyEnabled = value;
 	}
 	bool? onDisposingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnDisposingEnabled {
 		get => onDisposingEnabled;
 		set => this.onDisposingEnabled = value;
 	}
 	bool? onOptionChangedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnOptionChangedEnabled {
 		get => onOptionChangedEnabled;
 		set => this.onOptionChangedEnabled = value;
 	}
 	bool? onInitializedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnInitializedEnabled {
 		get => onInitializedEnabled;
 		set => this.onInitializedEnabled = value;
@@ -321,49 +321,49 @@
 		DevExpress.Ui.DxFilterBuilderInterop.OptionChanged += DxFilterBuilder_OptionChanged;
 		DevExpress.Ui.DxFilterBuilderInterop.Initialized += DxFilterBuilder_Initialized;
 	}
-	[Parameter]
+	[Parameter] public
 	Action EditorPrepared { get; set; }
 	void DxFilterBuilder_EditorPrepared(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			EditorPrepared?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action EditorPreparing { get; set; }
 	void DxFilterBuilder_EditorPreparing(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			EditorPreparing?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action ValueChanged { get; set; }
 	void DxFilterBuilder_ValueChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ValueChanged?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action ContentReady { get; set; }
 	void DxFilterBuilder_ContentReady(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ContentReady?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Disposing { get; set; }
 	void DxFilterBuilder_Disposing(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Disposing?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action OptionChanged { get; set; }
 	void DxFilterBuilder_OptionChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			OptionChanged?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Initialized { get; set; }
 	void DxFilterBuilder_Initialized(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {

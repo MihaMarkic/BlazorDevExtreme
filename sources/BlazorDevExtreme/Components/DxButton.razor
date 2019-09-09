@@ -43,7 +43,7 @@
         return DevExpress.Ui.DxButtonInterop.Init(dxTarget, options);
     }
     bool? activeStateEnabled;
-    [Parameter]
+    [Parameter] public
     bool? ActiveStateEnabled
     {
         get => isInitialized ? (bool?)DevExpress.Ui.DxButtonInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
@@ -60,7 +60,7 @@
         }
     }
     bool? focusStateEnabled;
-    [Parameter]
+    [Parameter] public
     bool? FocusStateEnabled
     {
         get => isInitialized ? (bool?)DevExpress.Ui.DxButtonInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
@@ -77,7 +77,7 @@
         }
     }
     bool? hoverStateEnabled;
-    [Parameter]
+    [Parameter] public
     bool? HoverStateEnabled
     {
         get => isInitialized ? (bool?)DevExpress.Ui.DxButtonInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
@@ -94,7 +94,7 @@
         }
     }
     string icon;
-    [Parameter]
+    [Parameter] public
     string Icon
     {
         get => isInitialized ? (string)DevExpress.Ui.DxButtonInterop.GetIcon(dxTarget).Result : icon;
@@ -111,7 +111,7 @@
         }
     }
     object template;
-    [Parameter]
+    [Parameter] public
     object Template
     {
         get => isInitialized ? DevExpress.Ui.DxButtonInterop.GetTemplate(dxTarget).Result : template;
@@ -128,7 +128,7 @@
         }
     }
     string text;
-    [Parameter]
+    [Parameter] public
     string Text
     {
         get => isInitialized ? (string)DevExpress.Ui.DxButtonInterop.GetText(dxTarget).Result : text;
@@ -145,7 +145,7 @@
         }
     }
     string type;
-    [Parameter]
+    [Parameter] public
     string Type
     {
         get => isInitialized ? (string)DevExpress.Ui.DxButtonInterop.GetType(dxTarget).Result : type;
@@ -162,7 +162,7 @@
         }
     }
     bool? useSubmitBehavior;
-    [Parameter]
+    [Parameter] public
     bool? UseSubmitBehavior
     {
         get => isInitialized ? (bool?)DevExpress.Ui.DxButtonInterop.GetUseSubmitBehavior(dxTarget).Result : useSubmitBehavior;
@@ -179,7 +179,7 @@
         }
     }
     string validationGroup;
-    [Parameter]
+    [Parameter] public
     string ValidationGroup
     {
         get => isInitialized ? (string)DevExpress.Ui.DxButtonInterop.GetValidationGroup(dxTarget).Result : validationGroup;
@@ -196,7 +196,7 @@
         }
     }
     string accessKey;
-    [Parameter]
+    [Parameter] public
     string AccessKey
     {
         get => isInitialized ? (string)DevExpress.Ui.DxButtonInterop.GetAccessKey(dxTarget).Result : accessKey;
@@ -213,7 +213,7 @@
         }
     }
     bool? disabled;
-    [Parameter]
+    [Parameter] public
     bool? Disabled
     {
         get => isInitialized ? (bool?)DevExpress.Ui.DxButtonInterop.GetDisabled(dxTarget).Result : disabled;
@@ -230,7 +230,7 @@
         }
     }
     string hint;
-    [Parameter]
+    [Parameter] public
     string Hint
     {
         get => isInitialized ? (string)DevExpress.Ui.DxButtonInterop.GetHint(dxTarget).Result : hint;
@@ -247,7 +247,7 @@
         }
     }
     float? tabIndex;
-    [Parameter]
+    [Parameter] public
     float? TabIndex
     {
         get => isInitialized ? (float?)DevExpress.Ui.DxButtonInterop.GetTabIndex(dxTarget).Result : tabIndex;
@@ -264,7 +264,7 @@
         }
     }
     bool? visible;
-    [Parameter]
+    [Parameter] public
     bool? Visible
     {
         get => isInitialized ? (bool?)DevExpress.Ui.DxButtonInterop.GetVisible(dxTarget).Result : visible;
@@ -281,7 +281,7 @@
         }
     }
     object bindingOptions;
-    [Parameter]
+    [Parameter] public
     object BindingOptions
     {
         get => isInitialized ? DevExpress.Ui.DxButtonInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
@@ -298,7 +298,7 @@
         }
     }
     object elementAttr;
-    [Parameter]
+    [Parameter] public
     object ElementAttr
     {
         get => isInitialized ? DevExpress.Ui.DxButtonInterop.GetElementAttr(dxTarget).Result : elementAttr;
@@ -315,7 +315,7 @@
         }
     }
     object height;
-    [Parameter]
+    [Parameter] public
     object Height
     {
         get => isInitialized ? DevExpress.Ui.DxButtonInterop.GetHeight(dxTarget).Result : height;
@@ -332,7 +332,7 @@
         }
     }
     bool? rtlEnabled;
-    [Parameter]
+    [Parameter] public
     bool? RtlEnabled
     {
         get => isInitialized ? (bool?)DevExpress.Ui.DxButtonInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
@@ -349,7 +349,7 @@
         }
     }
     object width;
-    [Parameter]
+    [Parameter] public
     object Width
     {
         get => isInitialized ? DevExpress.Ui.DxButtonInterop.GetWidth(dxTarget).Result : width;
@@ -366,35 +366,35 @@
         }
     }
     bool? onClickEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnClickEnabled
     {
         get => onClickEnabled;
         set => this.onClickEnabled = value;
     }
     bool? onContentReadyEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnContentReadyEnabled
     {
         get => onContentReadyEnabled;
         set => this.onContentReadyEnabled = value;
     }
     bool? onDisposingEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnDisposingEnabled
     {
         get => onDisposingEnabled;
         set => this.onDisposingEnabled = value;
     }
     bool? onOptionChangedEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnOptionChangedEnabled
     {
         get => onOptionChangedEnabled;
         set => this.onOptionChangedEnabled = value;
     }
     bool? onInitializedEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnInitializedEnabled
     {
         get => onInitializedEnabled;
@@ -409,7 +409,7 @@
         DevExpress.Ui.DxButtonInterop.OptionChanged += DxButton_OptionChanged;
         DevExpress.Ui.DxButtonInterop.Initialized += DxButton_Initialized;
     }
-    [Parameter]
+    [Parameter] public
     Action Click { get; set; }
     void DxButton_Click(object sender, JQueryEventArgs e)
     {
@@ -418,7 +418,7 @@
             Click?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action ContentReady { get; set; }
     void DxButton_ContentReady(object sender, JQueryEventArgs e)
     {
@@ -427,7 +427,7 @@
             ContentReady?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action Disposing { get; set; }
     void DxButton_Disposing(object sender, JQueryEventArgs e)
     {
@@ -436,7 +436,7 @@
             Disposing?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action OptionChanged { get; set; }
     void DxButton_OptionChanged(object sender, JQueryEventArgs e)
     {
@@ -445,7 +445,7 @@
             OptionChanged?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action Initialized { get; set; }
     void DxButton_Initialized(object sender, JQueryEventArgs e)
     {

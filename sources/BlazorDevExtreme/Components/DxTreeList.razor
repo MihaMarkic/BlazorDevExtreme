@@ -111,7 +111,7 @@
 		return DevExpress.Ui.DxTreeListInterop.Init(dxTarget, options);
 	}
 	bool? autoExpandAll;
-	[Parameter]
+	[Parameter] public
 	bool? AutoExpandAll {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxTreeListInterop.GetAutoExpandAll(dxTarget).Result : autoExpandAll;
 		set {
@@ -123,7 +123,7 @@
 		}
 	}
 	object columns;
-	[Parameter]
+	[Parameter] public
 	object Columns {
 		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetColumns(dxTarget).Result : columns;
 		set {
@@ -135,7 +135,7 @@
 		}
 	}
 	object customizeColumns;
-	[Parameter]
+	[Parameter] public
 	object CustomizeColumns {
 		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetCustomizeColumns(dxTarget).Result : customizeColumns;
 		set {
@@ -147,7 +147,7 @@
 		}
 	}
 	string dataStructure;
-	[Parameter]
+	[Parameter] public
 	string DataStructure {
 		get => isInitialized ? (string)DevExpress.Ui.DxTreeListInterop.GetDataStructure(dxTarget).Result : dataStructure;
 		set {
@@ -159,7 +159,7 @@
 		}
 	}
 	object editing;
-	[Parameter]
+	[Parameter] public
 	object Editing {
 		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetEditing(dxTarget).Result : editing;
 		set {
@@ -171,7 +171,7 @@
 		}
 	}
 	object expandedRowKeys;
-	[Parameter]
+	[Parameter] public
 	object ExpandedRowKeys {
 		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetExpandedRowKeys(dxTarget).Result : expandedRowKeys;
 		set {
@@ -183,7 +183,7 @@
 		}
 	}
 	bool? expandNodesOnFiltering;
-	[Parameter]
+	[Parameter] public
 	bool? ExpandNodesOnFiltering {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxTreeListInterop.GetExpandNodesOnFiltering(dxTarget).Result : expandNodesOnFiltering;
 		set {
@@ -195,7 +195,7 @@
 		}
 	}
 	object hasItemsExpr;
-	[Parameter]
+	[Parameter] public
 	object HasItemsExpr {
 		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetHasItemsExpr(dxTarget).Result : hasItemsExpr;
 		set {
@@ -207,7 +207,7 @@
 		}
 	}
 	object itemsExpr;
-	[Parameter]
+	[Parameter] public
 	object ItemsExpr {
 		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetItemsExpr(dxTarget).Result : itemsExpr;
 		set {
@@ -219,7 +219,7 @@
 		}
 	}
 	object keyExpr;
-	[Parameter]
+	[Parameter] public
 	object KeyExpr {
 		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetKeyExpr(dxTarget).Result : keyExpr;
 		set {
@@ -231,7 +231,7 @@
 		}
 	}
 	object paging;
-	[Parameter]
+	[Parameter] public
 	object Paging {
 		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetPaging(dxTarget).Result : paging;
 		set {
@@ -243,7 +243,7 @@
 		}
 	}
 	object parentIdExpr;
-	[Parameter]
+	[Parameter] public
 	object ParentIdExpr {
 		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetParentIdExpr(dxTarget).Result : parentIdExpr;
 		set {
@@ -255,7 +255,7 @@
 		}
 	}
 	object remoteOperations;
-	[Parameter]
+	[Parameter] public
 	object RemoteOperations {
 		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetRemoteOperations(dxTarget).Result : remoteOperations;
 		set {
@@ -267,7 +267,7 @@
 		}
 	}
 	object rootValue;
-	[Parameter]
+	[Parameter] public
 	object RootValue {
 		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetRootValue(dxTarget).Result : rootValue;
 		set {
@@ -279,7 +279,7 @@
 		}
 	}
 	object scrolling;
-	[Parameter]
+	[Parameter] public
 	object Scrolling {
 		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetScrolling(dxTarget).Result : scrolling;
 		set {
@@ -291,7 +291,7 @@
 		}
 	}
 	object selection;
-	[Parameter]
+	[Parameter] public
 	object Selection {
 		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetSelection(dxTarget).Result : selection;
 		set {
@@ -303,7 +303,7 @@
 		}
 	}
 	bool? allowColumnReordering;
-	[Parameter]
+	[Parameter] public
 	bool? AllowColumnReordering {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxTreeListInterop.GetAllowColumnReordering(dxTarget).Result : allowColumnReordering;
 		set {
@@ -315,7 +315,7 @@
 		}
 	}
 	bool? allowColumnResizing;
-	[Parameter]
+	[Parameter] public
 	bool? AllowColumnResizing {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxTreeListInterop.GetAllowColumnResizing(dxTarget).Result : allowColumnResizing;
 		set {
@@ -327,7 +327,7 @@
 		}
 	}
 	bool? cacheEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? CacheEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxTreeListInterop.GetCacheEnabled(dxTarget).Result : cacheEnabled;
 		set {
@@ -339,7 +339,7 @@
 		}
 	}
 	bool? cellHintEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? CellHintEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxTreeListInterop.GetCellHintEnabled(dxTarget).Result : cellHintEnabled;
 		set {
@@ -351,7 +351,7 @@
 		}
 	}
 	bool? columnAutoWidth;
-	[Parameter]
+	[Parameter] public
 	bool? ColumnAutoWidth {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxTreeListInterop.GetColumnAutoWidth(dxTarget).Result : columnAutoWidth;
 		set {
@@ -363,7 +363,7 @@
 		}
 	}
 	object columnChooser;
-	[Parameter]
+	[Parameter] public
 	object ColumnChooser {
 		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetColumnChooser(dxTarget).Result : columnChooser;
 		set {
@@ -375,7 +375,7 @@
 		}
 	}
 	object columnFixing;
-	[Parameter]
+	[Parameter] public
 	object ColumnFixing {
 		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetColumnFixing(dxTarget).Result : columnFixing;
 		set {
@@ -387,7 +387,7 @@
 		}
 	}
 	bool? columnHidingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? ColumnHidingEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxTreeListInterop.GetColumnHidingEnabled(dxTarget).Result : columnHidingEnabled;
 		set {
@@ -399,7 +399,7 @@
 		}
 	}
 	float? columnMinWidth;
-	[Parameter]
+	[Parameter] public
 	float? ColumnMinWidth {
 		get => isInitialized ? (float?)DevExpress.Ui.DxTreeListInterop.GetColumnMinWidth(dxTarget).Result : columnMinWidth;
 		set {
@@ -411,7 +411,7 @@
 		}
 	}
 	string columnResizingMode;
-	[Parameter]
+	[Parameter] public
 	string ColumnResizingMode {
 		get => isInitialized ? (string)DevExpress.Ui.DxTreeListInterop.GetColumnResizingMode(dxTarget).Result : columnResizingMode;
 		set {
@@ -423,7 +423,7 @@
 		}
 	}
 	float? columnWidth;
-	[Parameter]
+	[Parameter] public
 	float? ColumnWidth {
 		get => isInitialized ? (float?)DevExpress.Ui.DxTreeListInterop.GetColumnWidth(dxTarget).Result : columnWidth;
 		set {
@@ -435,7 +435,7 @@
 		}
 	}
 	object dataSource;
-	[Parameter]
+	[Parameter] public
 	object DataSource {
 		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetDataSource(dxTarget).Result : dataSource;
 		set {
@@ -447,7 +447,7 @@
 		}
 	}
 	string dateSerializationFormat;
-	[Parameter]
+	[Parameter] public
 	string DateSerializationFormat {
 		get => isInitialized ? (string)DevExpress.Ui.DxTreeListInterop.GetDateSerializationFormat(dxTarget).Result : dateSerializationFormat;
 		set {
@@ -459,7 +459,7 @@
 		}
 	}
 	bool? errorRowEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? ErrorRowEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxTreeListInterop.GetErrorRowEnabled(dxTarget).Result : errorRowEnabled;
 		set {
@@ -471,7 +471,7 @@
 		}
 	}
 	object filterBuilder;
-	[Parameter]
+	[Parameter] public
 	object FilterBuilder {
 		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetFilterBuilder(dxTarget).Result : filterBuilder;
 		set {
@@ -483,7 +483,7 @@
 		}
 	}
 	object filterBuilderPopup;
-	[Parameter]
+	[Parameter] public
 	object FilterBuilderPopup {
 		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetFilterBuilderPopup(dxTarget).Result : filterBuilderPopup;
 		set {
@@ -495,7 +495,7 @@
 		}
 	}
 	object filterPanel;
-	[Parameter]
+	[Parameter] public
 	object FilterPanel {
 		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetFilterPanel(dxTarget).Result : filterPanel;
 		set {
@@ -507,7 +507,7 @@
 		}
 	}
 	object filterRow;
-	[Parameter]
+	[Parameter] public
 	object FilterRow {
 		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetFilterRow(dxTarget).Result : filterRow;
 		set {
@@ -519,7 +519,7 @@
 		}
 	}
 	object filterSyncEnabled;
-	[Parameter]
+	[Parameter] public
 	object FilterSyncEnabled {
 		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetFilterSyncEnabled(dxTarget).Result : filterSyncEnabled;
 		set {
@@ -531,7 +531,7 @@
 		}
 	}
 	object filterValue;
-	[Parameter]
+	[Parameter] public
 	object FilterValue {
 		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetFilterValue(dxTarget).Result : filterValue;
 		set {
@@ -543,7 +543,7 @@
 		}
 	}
 	object headerFilter;
-	[Parameter]
+	[Parameter] public
 	object HeaderFilter {
 		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetHeaderFilter(dxTarget).Result : headerFilter;
 		set {
@@ -555,7 +555,7 @@
 		}
 	}
 	object loadPanel;
-	[Parameter]
+	[Parameter] public
 	object LoadPanel {
 		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetLoadPanel(dxTarget).Result : loadPanel;
 		set {
@@ -567,7 +567,7 @@
 		}
 	}
 	string noDataText;
-	[Parameter]
+	[Parameter] public
 	string NoDataText {
 		get => isInitialized ? (string)DevExpress.Ui.DxTreeListInterop.GetNoDataText(dxTarget).Result : noDataText;
 		set {
@@ -579,7 +579,7 @@
 		}
 	}
 	object pager;
-	[Parameter]
+	[Parameter] public
 	object Pager {
 		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetPager(dxTarget).Result : pager;
 		set {
@@ -591,7 +591,7 @@
 		}
 	}
 	bool? rowAlternationEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? RowAlternationEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxTreeListInterop.GetRowAlternationEnabled(dxTarget).Result : rowAlternationEnabled;
 		set {
@@ -603,7 +603,7 @@
 		}
 	}
 	object searchPanel;
-	[Parameter]
+	[Parameter] public
 	object SearchPanel {
 		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetSearchPanel(dxTarget).Result : searchPanel;
 		set {
@@ -615,7 +615,7 @@
 		}
 	}
 	object selectedRowKeys;
-	[Parameter]
+	[Parameter] public
 	object SelectedRowKeys {
 		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetSelectedRowKeys(dxTarget).Result : selectedRowKeys;
 		set {
@@ -627,7 +627,7 @@
 		}
 	}
 	bool? showBorders;
-	[Parameter]
+	[Parameter] public
 	bool? ShowBorders {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxTreeListInterop.GetShowBorders(dxTarget).Result : showBorders;
 		set {
@@ -639,7 +639,7 @@
 		}
 	}
 	bool? showColumnHeaders;
-	[Parameter]
+	[Parameter] public
 	bool? ShowColumnHeaders {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxTreeListInterop.GetShowColumnHeaders(dxTarget).Result : showColumnHeaders;
 		set {
@@ -651,7 +651,7 @@
 		}
 	}
 	bool? showColumnLines;
-	[Parameter]
+	[Parameter] public
 	bool? ShowColumnLines {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxTreeListInterop.GetShowColumnLines(dxTarget).Result : showColumnLines;
 		set {
@@ -663,7 +663,7 @@
 		}
 	}
 	bool? showRowLines;
-	[Parameter]
+	[Parameter] public
 	bool? ShowRowLines {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxTreeListInterop.GetShowRowLines(dxTarget).Result : showRowLines;
 		set {
@@ -675,7 +675,7 @@
 		}
 	}
 	object sorting;
-	[Parameter]
+	[Parameter] public
 	object Sorting {
 		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetSorting(dxTarget).Result : sorting;
 		set {
@@ -687,7 +687,7 @@
 		}
 	}
 	object stateStoring;
-	[Parameter]
+	[Parameter] public
 	object StateStoring {
 		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetStateStoring(dxTarget).Result : stateStoring;
 		set {
@@ -699,7 +699,7 @@
 		}
 	}
 	bool? twoWayBindingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? TwoWayBindingEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxTreeListInterop.GetTwoWayBindingEnabled(dxTarget).Result : twoWayBindingEnabled;
 		set {
@@ -711,7 +711,7 @@
 		}
 	}
 	bool? wordWrapEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? WordWrapEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxTreeListInterop.GetWordWrapEnabled(dxTarget).Result : wordWrapEnabled;
 		set {
@@ -723,7 +723,7 @@
 		}
 	}
 	string accessKey;
-	[Parameter]
+	[Parameter] public
 	string AccessKey {
 		get => isInitialized ? (string)DevExpress.Ui.DxTreeListInterop.GetAccessKey(dxTarget).Result : accessKey;
 		set {
@@ -735,7 +735,7 @@
 		}
 	}
 	bool? activeStateEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? ActiveStateEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxTreeListInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
 		set {
@@ -747,7 +747,7 @@
 		}
 	}
 	bool? disabled;
-	[Parameter]
+	[Parameter] public
 	bool? Disabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxTreeListInterop.GetDisabled(dxTarget).Result : disabled;
 		set {
@@ -759,7 +759,7 @@
 		}
 	}
 	bool? focusStateEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? FocusStateEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxTreeListInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
 		set {
@@ -771,7 +771,7 @@
 		}
 	}
 	string hint;
-	[Parameter]
+	[Parameter] public
 	string Hint {
 		get => isInitialized ? (string)DevExpress.Ui.DxTreeListInterop.GetHint(dxTarget).Result : hint;
 		set {
@@ -783,7 +783,7 @@
 		}
 	}
 	bool? hoverStateEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? HoverStateEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxTreeListInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
 		set {
@@ -795,7 +795,7 @@
 		}
 	}
 	float? tabIndex;
-	[Parameter]
+	[Parameter] public
 	float? TabIndex {
 		get => isInitialized ? (float?)DevExpress.Ui.DxTreeListInterop.GetTabIndex(dxTarget).Result : tabIndex;
 		set {
@@ -807,7 +807,7 @@
 		}
 	}
 	bool? visible;
-	[Parameter]
+	[Parameter] public
 	bool? Visible {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxTreeListInterop.GetVisible(dxTarget).Result : visible;
 		set {
@@ -819,7 +819,7 @@
 		}
 	}
 	object bindingOptions;
-	[Parameter]
+	[Parameter] public
 	object BindingOptions {
 		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
 		set {
@@ -831,7 +831,7 @@
 		}
 	}
 	object elementAttr;
-	[Parameter]
+	[Parameter] public
 	object ElementAttr {
 		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetElementAttr(dxTarget).Result : elementAttr;
 		set {
@@ -843,7 +843,7 @@
 		}
 	}
 	object height;
-	[Parameter]
+	[Parameter] public
 	object Height {
 		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetHeight(dxTarget).Result : height;
 		set {
@@ -855,7 +855,7 @@
 		}
 	}
 	bool? rtlEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? RtlEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxTreeListInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
 		set {
@@ -867,7 +867,7 @@
 		}
 	}
 	object width;
-	[Parameter]
+	[Parameter] public
 	object Width {
 		get => isInitialized ? DevExpress.Ui.DxTreeListInterop.GetWidth(dxTarget).Result : width;
 		set {
@@ -879,187 +879,187 @@
 		}
 	}
 	bool? onCellClickEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnCellClickEnabled {
 		get => onCellClickEnabled;
 		set => this.onCellClickEnabled = value;
 	}
 	bool? onCellHoverChangedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnCellHoverChangedEnabled {
 		get => onCellHoverChangedEnabled;
 		set => this.onCellHoverChangedEnabled = value;
 	}
 	bool? onCellPreparedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnCellPreparedEnabled {
 		get => onCellPreparedEnabled;
 		set => this.onCellPreparedEnabled = value;
 	}
 	bool? onContextMenuPreparingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnContextMenuPreparingEnabled {
 		get => onContextMenuPreparingEnabled;
 		set => this.onContextMenuPreparingEnabled = value;
 	}
 	bool? onEditingStartEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnEditingStartEnabled {
 		get => onEditingStartEnabled;
 		set => this.onEditingStartEnabled = value;
 	}
 	bool? onEditorPreparedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnEditorPreparedEnabled {
 		get => onEditorPreparedEnabled;
 		set => this.onEditorPreparedEnabled = value;
 	}
 	bool? onEditorPreparingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnEditorPreparingEnabled {
 		get => onEditorPreparingEnabled;
 		set => this.onEditorPreparingEnabled = value;
 	}
 	bool? onNodesInitializedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnNodesInitializedEnabled {
 		get => onNodesInitializedEnabled;
 		set => this.onNodesInitializedEnabled = value;
 	}
 	bool? onRowClickEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnRowClickEnabled {
 		get => onRowClickEnabled;
 		set => this.onRowClickEnabled = value;
 	}
 	bool? onRowPreparedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnRowPreparedEnabled {
 		get => onRowPreparedEnabled;
 		set => this.onRowPreparedEnabled = value;
 	}
 	bool? onAdaptiveDetailRowPreparingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnAdaptiveDetailRowPreparingEnabled {
 		get => onAdaptiveDetailRowPreparingEnabled;
 		set => this.onAdaptiveDetailRowPreparingEnabled = value;
 	}
 	bool? onDataErrorOccurredEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnDataErrorOccurredEnabled {
 		get => onDataErrorOccurredEnabled;
 		set => this.onDataErrorOccurredEnabled = value;
 	}
 	bool? onInitNewRowEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnInitNewRowEnabled {
 		get => onInitNewRowEnabled;
 		set => this.onInitNewRowEnabled = value;
 	}
 	bool? onKeyDownEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnKeyDownEnabled {
 		get => onKeyDownEnabled;
 		set => this.onKeyDownEnabled = value;
 	}
 	bool? onRowCollapsedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnRowCollapsedEnabled {
 		get => onRowCollapsedEnabled;
 		set => this.onRowCollapsedEnabled = value;
 	}
 	bool? onRowCollapsingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnRowCollapsingEnabled {
 		get => onRowCollapsingEnabled;
 		set => this.onRowCollapsingEnabled = value;
 	}
 	bool? onRowExpandedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnRowExpandedEnabled {
 		get => onRowExpandedEnabled;
 		set => this.onRowExpandedEnabled = value;
 	}
 	bool? onRowExpandingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnRowExpandingEnabled {
 		get => onRowExpandingEnabled;
 		set => this.onRowExpandingEnabled = value;
 	}
 	bool? onRowInsertedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnRowInsertedEnabled {
 		get => onRowInsertedEnabled;
 		set => this.onRowInsertedEnabled = value;
 	}
 	bool? onRowInsertingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnRowInsertingEnabled {
 		get => onRowInsertingEnabled;
 		set => this.onRowInsertingEnabled = value;
 	}
 	bool? onRowRemovedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnRowRemovedEnabled {
 		get => onRowRemovedEnabled;
 		set => this.onRowRemovedEnabled = value;
 	}
 	bool? onRowRemovingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnRowRemovingEnabled {
 		get => onRowRemovingEnabled;
 		set => this.onRowRemovingEnabled = value;
 	}
 	bool? onRowUpdatedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnRowUpdatedEnabled {
 		get => onRowUpdatedEnabled;
 		set => this.onRowUpdatedEnabled = value;
 	}
 	bool? onRowUpdatingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnRowUpdatingEnabled {
 		get => onRowUpdatingEnabled;
 		set => this.onRowUpdatingEnabled = value;
 	}
 	bool? onRowValidatingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnRowValidatingEnabled {
 		get => onRowValidatingEnabled;
 		set => this.onRowValidatingEnabled = value;
 	}
 	bool? onSelectionChangedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnSelectionChangedEnabled {
 		get => onSelectionChangedEnabled;
 		set => this.onSelectionChangedEnabled = value;
 	}
 	bool? onToolbarPreparingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnToolbarPreparingEnabled {
 		get => onToolbarPreparingEnabled;
 		set => this.onToolbarPreparingEnabled = value;
 	}
 	bool? onContentReadyEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnContentReadyEnabled {
 		get => onContentReadyEnabled;
 		set => this.onContentReadyEnabled = value;
 	}
 	bool? onDisposingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnDisposingEnabled {
 		get => onDisposingEnabled;
 		set => this.onDisposingEnabled = value;
 	}
 	bool? onOptionChangedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnOptionChangedEnabled {
 		get => onOptionChangedEnabled;
 		set => this.onOptionChangedEnabled = value;
 	}
 	bool? onInitializedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnInitializedEnabled {
 		get => onInitializedEnabled;
 		set => this.onInitializedEnabled = value;
@@ -1098,217 +1098,217 @@
 		DevExpress.Ui.DxTreeListInterop.OptionChanged += DxTreeList_OptionChanged;
 		DevExpress.Ui.DxTreeListInterop.Initialized += DxTreeList_Initialized;
 	}
-	[Parameter]
+	[Parameter] public
 	Action CellClick { get; set; }
 	void DxTreeList_CellClick(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			CellClick?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action CellHoverChanged { get; set; }
 	void DxTreeList_CellHoverChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			CellHoverChanged?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action CellPrepared { get; set; }
 	void DxTreeList_CellPrepared(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			CellPrepared?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action ContextMenuPreparing { get; set; }
 	void DxTreeList_ContextMenuPreparing(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ContextMenuPreparing?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action EditingStart { get; set; }
 	void DxTreeList_EditingStart(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			EditingStart?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action EditorPrepared { get; set; }
 	void DxTreeList_EditorPrepared(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			EditorPrepared?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action EditorPreparing { get; set; }
 	void DxTreeList_EditorPreparing(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			EditorPreparing?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action NodesInitialized { get; set; }
 	void DxTreeList_NodesInitialized(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			NodesInitialized?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action RowClick { get; set; }
 	void DxTreeList_RowClick(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			RowClick?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action RowPrepared { get; set; }
 	void DxTreeList_RowPrepared(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			RowPrepared?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action AdaptiveDetailRowPreparing { get; set; }
 	void DxTreeList_AdaptiveDetailRowPreparing(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			AdaptiveDetailRowPreparing?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action DataErrorOccurred { get; set; }
 	void DxTreeList_DataErrorOccurred(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			DataErrorOccurred?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action InitNewRow { get; set; }
 	void DxTreeList_InitNewRow(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			InitNewRow?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action KeyDown { get; set; }
 	void DxTreeList_KeyDown(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			KeyDown?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action RowCollapsed { get; set; }
 	void DxTreeList_RowCollapsed(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			RowCollapsed?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action RowCollapsing { get; set; }
 	void DxTreeList_RowCollapsing(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			RowCollapsing?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action RowExpanded { get; set; }
 	void DxTreeList_RowExpanded(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			RowExpanded?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action RowExpanding { get; set; }
 	void DxTreeList_RowExpanding(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			RowExpanding?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action RowInserted { get; set; }
 	void DxTreeList_RowInserted(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			RowInserted?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action RowInserting { get; set; }
 	void DxTreeList_RowInserting(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			RowInserting?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action RowRemoved { get; set; }
 	void DxTreeList_RowRemoved(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			RowRemoved?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action RowRemoving { get; set; }
 	void DxTreeList_RowRemoving(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			RowRemoving?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action RowUpdated { get; set; }
 	void DxTreeList_RowUpdated(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			RowUpdated?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action RowUpdating { get; set; }
 	void DxTreeList_RowUpdating(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			RowUpdating?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action RowValidating { get; set; }
 	void DxTreeList_RowValidating(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			RowValidating?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action SelectionChanged { get; set; }
 	void DxTreeList_SelectionChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			SelectionChanged?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action ToolbarPreparing { get; set; }
 	void DxTreeList_ToolbarPreparing(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ToolbarPreparing?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action ContentReady { get; set; }
 	void DxTreeList_ContentReady(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ContentReady?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Disposing { get; set; }
 	void DxTreeList_Disposing(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Disposing?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action OptionChanged { get; set; }
 	void DxTreeList_OptionChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			OptionChanged?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Initialized { get; set; }
 	void DxTreeList_Initialized(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {

@@ -54,7 +54,7 @@
 		return DevExpress.Viz.DxRangeSelectorInterop.Init(dxTarget, options);
 	}
 	object background;
-	[Parameter]
+	[Parameter] public
 	object Background {
 		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetBackground(dxTarget).Result : background;
 		set {
@@ -66,7 +66,7 @@
 		}
 	}
 	object behavior;
-	[Parameter]
+	[Parameter] public
 	object Behavior {
 		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetBehavior(dxTarget).Result : behavior;
 		set {
@@ -78,7 +78,7 @@
 		}
 	}
 	object chart;
-	[Parameter]
+	[Parameter] public
 	object Chart {
 		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetChart(dxTarget).Result : chart;
 		set {
@@ -90,7 +90,7 @@
 		}
 	}
 	string containerBackgroundColor;
-	[Parameter]
+	[Parameter] public
 	string ContainerBackgroundColor {
 		get => isInitialized ? (string)DevExpress.Viz.DxRangeSelectorInterop.GetContainerBackgroundColor(dxTarget).Result : containerBackgroundColor;
 		set {
@@ -102,7 +102,7 @@
 		}
 	}
 	object dataSource;
-	[Parameter]
+	[Parameter] public
 	object DataSource {
 		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetDataSource(dxTarget).Result : dataSource;
 		set {
@@ -114,7 +114,7 @@
 		}
 	}
 	string dataSourceField;
-	[Parameter]
+	[Parameter] public
 	string DataSourceField {
 		get => isInitialized ? (string)DevExpress.Viz.DxRangeSelectorInterop.GetDataSourceField(dxTarget).Result : dataSourceField;
 		set {
@@ -126,7 +126,7 @@
 		}
 	}
 	object indent;
-	[Parameter]
+	[Parameter] public
 	object Indent {
 		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetIndent(dxTarget).Result : indent;
 		set {
@@ -138,7 +138,7 @@
 		}
 	}
 	object scale;
-	[Parameter]
+	[Parameter] public
 	object Scale {
 		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetScale(dxTarget).Result : scale;
 		set {
@@ -150,7 +150,7 @@
 		}
 	}
 	object selectedRange;
-	[Parameter]
+	[Parameter] public
 	object SelectedRange {
 		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetSelectedRange(dxTarget).Result : selectedRange;
 		set {
@@ -162,7 +162,7 @@
 		}
 	}
 	string selectedRangeColor;
-	[Parameter]
+	[Parameter] public
 	string SelectedRangeColor {
 		get => isInitialized ? (string)DevExpress.Viz.DxRangeSelectorInterop.GetSelectedRangeColor(dxTarget).Result : selectedRangeColor;
 		set {
@@ -174,7 +174,7 @@
 		}
 	}
 	object shutter;
-	[Parameter]
+	[Parameter] public
 	object Shutter {
 		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetShutter(dxTarget).Result : shutter;
 		set {
@@ -186,7 +186,7 @@
 		}
 	}
 	object sliderHandle;
-	[Parameter]
+	[Parameter] public
 	object SliderHandle {
 		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetSliderHandle(dxTarget).Result : sliderHandle;
 		set {
@@ -198,7 +198,7 @@
 		}
 	}
 	object sliderMarker;
-	[Parameter]
+	[Parameter] public
 	object SliderMarker {
 		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetSliderMarker(dxTarget).Result : sliderMarker;
 		set {
@@ -210,7 +210,7 @@
 		}
 	}
 	object value;
-	[Parameter]
+	[Parameter] public
 	object Value {
 		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetValue(dxTarget).Result : value;
 		set {
@@ -222,7 +222,7 @@
 		}
 	}
 	object export;
-	[Parameter]
+	[Parameter] public
 	object Export {
 		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetExport(dxTarget).Result : export;
 		set {
@@ -234,7 +234,7 @@
 		}
 	}
 	object loadingIndicator;
-	[Parameter]
+	[Parameter] public
 	object LoadingIndicator {
 		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetLoadingIndicator(dxTarget).Result : loadingIndicator;
 		set {
@@ -246,7 +246,7 @@
 		}
 	}
 	object margin;
-	[Parameter]
+	[Parameter] public
 	object Margin {
 		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetMargin(dxTarget).Result : margin;
 		set {
@@ -258,7 +258,7 @@
 		}
 	}
 	bool? pathModified;
-	[Parameter]
+	[Parameter] public
 	bool? PathModified {
 		get => isInitialized ? (bool?)DevExpress.Viz.DxRangeSelectorInterop.GetPathModified(dxTarget).Result : pathModified;
 		set {
@@ -270,7 +270,7 @@
 		}
 	}
 	bool? redrawOnResize;
-	[Parameter]
+	[Parameter] public
 	bool? RedrawOnResize {
 		get => isInitialized ? (bool?)DevExpress.Viz.DxRangeSelectorInterop.GetRedrawOnResize(dxTarget).Result : redrawOnResize;
 		set {
@@ -282,7 +282,7 @@
 		}
 	}
 	bool? rtlEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? RtlEnabled {
 		get => isInitialized ? (bool?)DevExpress.Viz.DxRangeSelectorInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
 		set {
@@ -294,7 +294,7 @@
 		}
 	}
 	object size;
-	[Parameter]
+	[Parameter] public
 	object Size {
 		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetSize(dxTarget).Result : size;
 		set {
@@ -306,7 +306,7 @@
 		}
 	}
 	string theme;
-	[Parameter]
+	[Parameter] public
 	string Theme {
 		get => isInitialized ? (string)DevExpress.Viz.DxRangeSelectorInterop.GetTheme(dxTarget).Result : theme;
 		set {
@@ -318,7 +318,7 @@
 		}
 	}
 	object title;
-	[Parameter]
+	[Parameter] public
 	object Title {
 		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetTitle(dxTarget).Result : title;
 		set {
@@ -330,7 +330,7 @@
 		}
 	}
 	object tooltip;
-	[Parameter]
+	[Parameter] public
 	object Tooltip {
 		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetTooltip(dxTarget).Result : tooltip;
 		set {
@@ -342,7 +342,7 @@
 		}
 	}
 	object bindingOptions;
-	[Parameter]
+	[Parameter] public
 	object BindingOptions {
 		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
 		set {
@@ -354,7 +354,7 @@
 		}
 	}
 	object elementAttr;
-	[Parameter]
+	[Parameter] public
 	object ElementAttr {
 		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetElementAttr(dxTarget).Result : elementAttr;
 		set {
@@ -366,7 +366,7 @@
 		}
 	}
 	object height;
-	[Parameter]
+	[Parameter] public
 	object Height {
 		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetHeight(dxTarget).Result : height;
 		set {
@@ -378,7 +378,7 @@
 		}
 	}
 	object width;
-	[Parameter]
+	[Parameter] public
 	object Width {
 		get => isInitialized ? DevExpress.Viz.DxRangeSelectorInterop.GetWidth(dxTarget).Result : width;
 		set {
@@ -390,61 +390,61 @@
 		}
 	}
 	bool? onSelectedRangeChangedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnSelectedRangeChangedEnabled {
 		get => onSelectedRangeChangedEnabled;
 		set => this.onSelectedRangeChangedEnabled = value;
 	}
 	bool? onValueChangedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnValueChangedEnabled {
 		get => onValueChangedEnabled;
 		set => this.onValueChangedEnabled = value;
 	}
 	bool? onDrawnEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnDrawnEnabled {
 		get => onDrawnEnabled;
 		set => this.onDrawnEnabled = value;
 	}
 	bool? onExportedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnExportedEnabled {
 		get => onExportedEnabled;
 		set => this.onExportedEnabled = value;
 	}
 	bool? onExportingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnExportingEnabled {
 		get => onExportingEnabled;
 		set => this.onExportingEnabled = value;
 	}
 	bool? onFileSavingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnFileSavingEnabled {
 		get => onFileSavingEnabled;
 		set => this.onFileSavingEnabled = value;
 	}
 	bool? onIncidentOccurredEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnIncidentOccurredEnabled {
 		get => onIncidentOccurredEnabled;
 		set => this.onIncidentOccurredEnabled = value;
 	}
 	bool? onDisposingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnDisposingEnabled {
 		get => onDisposingEnabled;
 		set => this.onDisposingEnabled = value;
 	}
 	bool? onOptionChangedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnOptionChangedEnabled {
 		get => onOptionChangedEnabled;
 		set => this.onOptionChangedEnabled = value;
 	}
 	bool? onInitializedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnInitializedEnabled {
 		get => onInitializedEnabled;
 		set => this.onInitializedEnabled = value;
@@ -462,70 +462,70 @@
 		DevExpress.Viz.DxRangeSelectorInterop.OptionChanged += DxRangeSelector_OptionChanged;
 		DevExpress.Viz.DxRangeSelectorInterop.Initialized += DxRangeSelector_Initialized;
 	}
-	[Parameter]
+	[Parameter] public
 	Action SelectedRangeChanged { get; set; }
 	void DxRangeSelector_SelectedRangeChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			SelectedRangeChanged?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action ValueChanged { get; set; }
 	void DxRangeSelector_ValueChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ValueChanged?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Drawn { get; set; }
 	void DxRangeSelector_Drawn(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Drawn?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Exported { get; set; }
 	void DxRangeSelector_Exported(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Exported?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Exporting { get; set; }
 	void DxRangeSelector_Exporting(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Exporting?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action FileSaving { get; set; }
 	void DxRangeSelector_FileSaving(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			FileSaving?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action IncidentOccurred { get; set; }
 	void DxRangeSelector_IncidentOccurred(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			IncidentOccurred?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Disposing { get; set; }
 	void DxRangeSelector_Disposing(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Disposing?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action OptionChanged { get; set; }
 	void DxRangeSelector_OptionChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			OptionChanged?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Initialized { get; set; }
 	void DxRangeSelector_Initialized(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {

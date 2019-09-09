@@ -65,7 +65,7 @@
 		return DevExpress.Viz.DxVectorMapInterop.Init(dxTarget, options);
 	}
 	object areaSettings;
-	[Parameter]
+	[Parameter] public
 	object AreaSettings {
 		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetAreaSettings(dxTarget).Result : areaSettings;
 		set {
@@ -77,7 +77,7 @@
 		}
 	}
 	object background;
-	[Parameter]
+	[Parameter] public
 	object Background {
 		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetBackground(dxTarget).Result : background;
 		set {
@@ -89,7 +89,7 @@
 		}
 	}
 	object bounds;
-	[Parameter]
+	[Parameter] public
 	object Bounds {
 		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetBounds(dxTarget).Result : bounds;
 		set {
@@ -101,7 +101,7 @@
 		}
 	}
 	object center;
-	[Parameter]
+	[Parameter] public
 	object Center {
 		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetCenter(dxTarget).Result : center;
 		set {
@@ -113,7 +113,7 @@
 		}
 	}
 	object controlBar;
-	[Parameter]
+	[Parameter] public
 	object ControlBar {
 		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetControlBar(dxTarget).Result : controlBar;
 		set {
@@ -125,7 +125,7 @@
 		}
 	}
 	object layers;
-	[Parameter]
+	[Parameter] public
 	object Layers {
 		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetLayers(dxTarget).Result : layers;
 		set {
@@ -137,7 +137,7 @@
 		}
 	}
 	object legends;
-	[Parameter]
+	[Parameter] public
 	object Legends {
 		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetLegends(dxTarget).Result : legends;
 		set {
@@ -149,7 +149,7 @@
 		}
 	}
 	object mapData;
-	[Parameter]
+	[Parameter] public
 	object MapData {
 		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetMapData(dxTarget).Result : mapData;
 		set {
@@ -161,7 +161,7 @@
 		}
 	}
 	object markers;
-	[Parameter]
+	[Parameter] public
 	object Markers {
 		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetMarkers(dxTarget).Result : markers;
 		set {
@@ -173,7 +173,7 @@
 		}
 	}
 	object markerSettings;
-	[Parameter]
+	[Parameter] public
 	object MarkerSettings {
 		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetMarkerSettings(dxTarget).Result : markerSettings;
 		set {
@@ -185,7 +185,7 @@
 		}
 	}
 	float? maxZoomFactor;
-	[Parameter]
+	[Parameter] public
 	float? MaxZoomFactor {
 		get => isInitialized ? (float?)DevExpress.Viz.DxVectorMapInterop.GetMaxZoomFactor(dxTarget).Result : maxZoomFactor;
 		set {
@@ -197,7 +197,7 @@
 		}
 	}
 	bool? panningEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? PanningEnabled {
 		get => isInitialized ? (bool?)DevExpress.Viz.DxVectorMapInterop.GetPanningEnabled(dxTarget).Result : panningEnabled;
 		set {
@@ -209,7 +209,7 @@
 		}
 	}
 	object projection;
-	[Parameter]
+	[Parameter] public
 	object Projection {
 		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetProjection(dxTarget).Result : projection;
 		set {
@@ -221,7 +221,7 @@
 		}
 	}
 	object tooltip;
-	[Parameter]
+	[Parameter] public
 	object Tooltip {
 		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetTooltip(dxTarget).Result : tooltip;
 		set {
@@ -233,7 +233,7 @@
 		}
 	}
 	bool? touchEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? TouchEnabled {
 		get => isInitialized ? (bool?)DevExpress.Viz.DxVectorMapInterop.GetTouchEnabled(dxTarget).Result : touchEnabled;
 		set {
@@ -245,7 +245,7 @@
 		}
 	}
 	bool? wheelEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? WheelEnabled {
 		get => isInitialized ? (bool?)DevExpress.Viz.DxVectorMapInterop.GetWheelEnabled(dxTarget).Result : wheelEnabled;
 		set {
@@ -257,7 +257,7 @@
 		}
 	}
 	float? zoomFactor;
-	[Parameter]
+	[Parameter] public
 	float? ZoomFactor {
 		get => isInitialized ? (float?)DevExpress.Viz.DxVectorMapInterop.GetZoomFactor(dxTarget).Result : zoomFactor;
 		set {
@@ -269,7 +269,7 @@
 		}
 	}
 	bool? zoomingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? ZoomingEnabled {
 		get => isInitialized ? (bool?)DevExpress.Viz.DxVectorMapInterop.GetZoomingEnabled(dxTarget).Result : zoomingEnabled;
 		set {
@@ -281,7 +281,7 @@
 		}
 	}
 	object export;
-	[Parameter]
+	[Parameter] public
 	object Export {
 		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetExport(dxTarget).Result : export;
 		set {
@@ -293,7 +293,7 @@
 		}
 	}
 	object loadingIndicator;
-	[Parameter]
+	[Parameter] public
 	object LoadingIndicator {
 		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetLoadingIndicator(dxTarget).Result : loadingIndicator;
 		set {
@@ -305,7 +305,7 @@
 		}
 	}
 	object margin;
-	[Parameter]
+	[Parameter] public
 	object Margin {
 		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetMargin(dxTarget).Result : margin;
 		set {
@@ -317,7 +317,7 @@
 		}
 	}
 	bool? pathModified;
-	[Parameter]
+	[Parameter] public
 	bool? PathModified {
 		get => isInitialized ? (bool?)DevExpress.Viz.DxVectorMapInterop.GetPathModified(dxTarget).Result : pathModified;
 		set {
@@ -329,7 +329,7 @@
 		}
 	}
 	bool? redrawOnResize;
-	[Parameter]
+	[Parameter] public
 	bool? RedrawOnResize {
 		get => isInitialized ? (bool?)DevExpress.Viz.DxVectorMapInterop.GetRedrawOnResize(dxTarget).Result : redrawOnResize;
 		set {
@@ -341,7 +341,7 @@
 		}
 	}
 	bool? rtlEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? RtlEnabled {
 		get => isInitialized ? (bool?)DevExpress.Viz.DxVectorMapInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
 		set {
@@ -353,7 +353,7 @@
 		}
 	}
 	object size;
-	[Parameter]
+	[Parameter] public
 	object Size {
 		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetSize(dxTarget).Result : size;
 		set {
@@ -365,7 +365,7 @@
 		}
 	}
 	string theme;
-	[Parameter]
+	[Parameter] public
 	string Theme {
 		get => isInitialized ? (string)DevExpress.Viz.DxVectorMapInterop.GetTheme(dxTarget).Result : theme;
 		set {
@@ -377,7 +377,7 @@
 		}
 	}
 	object title;
-	[Parameter]
+	[Parameter] public
 	object Title {
 		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetTitle(dxTarget).Result : title;
 		set {
@@ -389,7 +389,7 @@
 		}
 	}
 	object bindingOptions;
-	[Parameter]
+	[Parameter] public
 	object BindingOptions {
 		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
 		set {
@@ -401,7 +401,7 @@
 		}
 	}
 	object elementAttr;
-	[Parameter]
+	[Parameter] public
 	object ElementAttr {
 		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetElementAttr(dxTarget).Result : elementAttr;
 		set {
@@ -413,7 +413,7 @@
 		}
 	}
 	object height;
-	[Parameter]
+	[Parameter] public
 	object Height {
 		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetHeight(dxTarget).Result : height;
 		set {
@@ -425,7 +425,7 @@
 		}
 	}
 	object width;
-	[Parameter]
+	[Parameter] public
 	object Width {
 		get => isInitialized ? DevExpress.Viz.DxVectorMapInterop.GetWidth(dxTarget).Result : width;
 		set {
@@ -437,109 +437,109 @@
 		}
 	}
 	bool? onAreaClickEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnAreaClickEnabled {
 		get => onAreaClickEnabled;
 		set => this.onAreaClickEnabled = value;
 	}
 	bool? onAreaSelectionChangedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnAreaSelectionChangedEnabled {
 		get => onAreaSelectionChangedEnabled;
 		set => this.onAreaSelectionChangedEnabled = value;
 	}
 	bool? onCenterChangedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnCenterChangedEnabled {
 		get => onCenterChangedEnabled;
 		set => this.onCenterChangedEnabled = value;
 	}
 	bool? onClickEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnClickEnabled {
 		get => onClickEnabled;
 		set => this.onClickEnabled = value;
 	}
 	bool? onMarkerClickEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnMarkerClickEnabled {
 		get => onMarkerClickEnabled;
 		set => this.onMarkerClickEnabled = value;
 	}
 	bool? onMarkerSelectionChangedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnMarkerSelectionChangedEnabled {
 		get => onMarkerSelectionChangedEnabled;
 		set => this.onMarkerSelectionChangedEnabled = value;
 	}
 	bool? onSelectionChangedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnSelectionChangedEnabled {
 		get => onSelectionChangedEnabled;
 		set => this.onSelectionChangedEnabled = value;
 	}
 	bool? onTooltipHiddenEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnTooltipHiddenEnabled {
 		get => onTooltipHiddenEnabled;
 		set => this.onTooltipHiddenEnabled = value;
 	}
 	bool? onTooltipShownEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnTooltipShownEnabled {
 		get => onTooltipShownEnabled;
 		set => this.onTooltipShownEnabled = value;
 	}
 	bool? onZoomFactorChangedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnZoomFactorChangedEnabled {
 		get => onZoomFactorChangedEnabled;
 		set => this.onZoomFactorChangedEnabled = value;
 	}
 	bool? onDrawnEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnDrawnEnabled {
 		get => onDrawnEnabled;
 		set => this.onDrawnEnabled = value;
 	}
 	bool? onExportedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnExportedEnabled {
 		get => onExportedEnabled;
 		set => this.onExportedEnabled = value;
 	}
 	bool? onExportingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnExportingEnabled {
 		get => onExportingEnabled;
 		set => this.onExportingEnabled = value;
 	}
 	bool? onFileSavingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnFileSavingEnabled {
 		get => onFileSavingEnabled;
 		set => this.onFileSavingEnabled = value;
 	}
 	bool? onIncidentOccurredEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnIncidentOccurredEnabled {
 		get => onIncidentOccurredEnabled;
 		set => this.onIncidentOccurredEnabled = value;
 	}
 	bool? onDisposingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnDisposingEnabled {
 		get => onDisposingEnabled;
 		set => this.onDisposingEnabled = value;
 	}
 	bool? onOptionChangedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnOptionChangedEnabled {
 		get => onOptionChangedEnabled;
 		set => this.onOptionChangedEnabled = value;
 	}
 	bool? onInitializedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnInitializedEnabled {
 		get => onInitializedEnabled;
 		set => this.onInitializedEnabled = value;
@@ -565,126 +565,126 @@
 		DevExpress.Viz.DxVectorMapInterop.OptionChanged += DxVectorMap_OptionChanged;
 		DevExpress.Viz.DxVectorMapInterop.Initialized += DxVectorMap_Initialized;
 	}
-	[Parameter]
+	[Parameter] public
 	Action AreaClick { get; set; }
 	void DxVectorMap_AreaClick(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			AreaClick?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action AreaSelectionChanged { get; set; }
 	void DxVectorMap_AreaSelectionChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			AreaSelectionChanged?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action CenterChanged { get; set; }
 	void DxVectorMap_CenterChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			CenterChanged?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Click { get; set; }
 	void DxVectorMap_Click(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Click?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action MarkerClick { get; set; }
 	void DxVectorMap_MarkerClick(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			MarkerClick?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action MarkerSelectionChanged { get; set; }
 	void DxVectorMap_MarkerSelectionChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			MarkerSelectionChanged?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action SelectionChanged { get; set; }
 	void DxVectorMap_SelectionChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			SelectionChanged?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action TooltipHidden { get; set; }
 	void DxVectorMap_TooltipHidden(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			TooltipHidden?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action TooltipShown { get; set; }
 	void DxVectorMap_TooltipShown(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			TooltipShown?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action ZoomFactorChanged { get; set; }
 	void DxVectorMap_ZoomFactorChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ZoomFactorChanged?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Drawn { get; set; }
 	void DxVectorMap_Drawn(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Drawn?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Exported { get; set; }
 	void DxVectorMap_Exported(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Exported?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Exporting { get; set; }
 	void DxVectorMap_Exporting(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Exporting?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action FileSaving { get; set; }
 	void DxVectorMap_FileSaving(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			FileSaving?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action IncidentOccurred { get; set; }
 	void DxVectorMap_IncidentOccurred(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			IncidentOccurred?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Disposing { get; set; }
 	void DxVectorMap_Disposing(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Disposing?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action OptionChanged { get; set; }
 	void DxVectorMap_OptionChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			OptionChanged?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Initialized { get; set; }
 	void DxVectorMap_Initialized(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {

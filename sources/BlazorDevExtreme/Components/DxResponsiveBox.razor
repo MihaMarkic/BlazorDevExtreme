@@ -52,7 +52,7 @@
 		return DevExpress.Ui.DxResponsiveBoxInterop.Init(dxTarget, options);
 	}
 	object cols;
-	[Parameter]
+	[Parameter] public
 	object Cols {
 		get => isInitialized ? DevExpress.Ui.DxResponsiveBoxInterop.GetCols(dxTarget).Result : cols;
 		set {
@@ -64,7 +64,7 @@
 		}
 	}
 	object height;
-	[Parameter]
+	[Parameter] public
 	object Height {
 		get => isInitialized ? DevExpress.Ui.DxResponsiveBoxInterop.GetHeight(dxTarget).Result : height;
 		set {
@@ -76,7 +76,7 @@
 		}
 	}
 	object rows;
-	[Parameter]
+	[Parameter] public
 	object Rows {
 		get => isInitialized ? DevExpress.Ui.DxResponsiveBoxInterop.GetRows(dxTarget).Result : rows;
 		set {
@@ -88,7 +88,7 @@
 		}
 	}
 	object screenByWidth;
-	[Parameter]
+	[Parameter] public
 	object ScreenByWidth {
 		get => isInitialized ? DevExpress.Ui.DxResponsiveBoxInterop.GetScreenByWidth(dxTarget).Result : screenByWidth;
 		set {
@@ -100,7 +100,7 @@
 		}
 	}
 	string singleColumnScreen;
-	[Parameter]
+	[Parameter] public
 	string SingleColumnScreen {
 		get => isInitialized ? (string)DevExpress.Ui.DxResponsiveBoxInterop.GetSingleColumnScreen(dxTarget).Result : singleColumnScreen;
 		set {
@@ -112,7 +112,7 @@
 		}
 	}
 	object width;
-	[Parameter]
+	[Parameter] public
 	object Width {
 		get => isInitialized ? DevExpress.Ui.DxResponsiveBoxInterop.GetWidth(dxTarget).Result : width;
 		set {
@@ -124,7 +124,7 @@
 		}
 	}
 	object dataSource;
-	[Parameter]
+	[Parameter] public
 	object DataSource {
 		get => isInitialized ? DevExpress.Ui.DxResponsiveBoxInterop.GetDataSource(dxTarget).Result : dataSource;
 		set {
@@ -136,7 +136,7 @@
 		}
 	}
 	float? itemHoldTimeout;
-	[Parameter]
+	[Parameter] public
 	float? ItemHoldTimeout {
 		get => isInitialized ? (float?)DevExpress.Ui.DxResponsiveBoxInterop.GetItemHoldTimeout(dxTarget).Result : itemHoldTimeout;
 		set {
@@ -148,7 +148,7 @@
 		}
 	}
 	object items;
-	[Parameter]
+	[Parameter] public
 	object Items {
 		get => isInitialized ? DevExpress.Ui.DxResponsiveBoxInterop.GetItems(dxTarget).Result : items;
 		set {
@@ -160,7 +160,7 @@
 		}
 	}
 	object itemTemplate;
-	[Parameter]
+	[Parameter] public
 	object ItemTemplate {
 		get => isInitialized ? DevExpress.Ui.DxResponsiveBoxInterop.GetItemTemplate(dxTarget).Result : itemTemplate;
 		set {
@@ -172,7 +172,7 @@
 		}
 	}
 	object keyExpr;
-	[Parameter]
+	[Parameter] public
 	object KeyExpr {
 		get => isInitialized ? DevExpress.Ui.DxResponsiveBoxInterop.GetKeyExpr(dxTarget).Result : keyExpr;
 		set {
@@ -184,7 +184,7 @@
 		}
 	}
 	string noDataText;
-	[Parameter]
+	[Parameter] public
 	string NoDataText {
 		get => isInitialized ? (string)DevExpress.Ui.DxResponsiveBoxInterop.GetNoDataText(dxTarget).Result : noDataText;
 		set {
@@ -196,7 +196,7 @@
 		}
 	}
 	float? selectedIndex;
-	[Parameter]
+	[Parameter] public
 	float? SelectedIndex {
 		get => isInitialized ? (float?)DevExpress.Ui.DxResponsiveBoxInterop.GetSelectedIndex(dxTarget).Result : selectedIndex;
 		set {
@@ -208,7 +208,7 @@
 		}
 	}
 	object selectedItem;
-	[Parameter]
+	[Parameter] public
 	object SelectedItem {
 		get => isInitialized ? DevExpress.Ui.DxResponsiveBoxInterop.GetSelectedItem(dxTarget).Result : selectedItem;
 		set {
@@ -220,7 +220,7 @@
 		}
 	}
 	object selectedItemKeys;
-	[Parameter]
+	[Parameter] public
 	object SelectedItemKeys {
 		get => isInitialized ? DevExpress.Ui.DxResponsiveBoxInterop.GetSelectedItemKeys(dxTarget).Result : selectedItemKeys;
 		set {
@@ -232,7 +232,7 @@
 		}
 	}
 	object selectedItems;
-	[Parameter]
+	[Parameter] public
 	object SelectedItems {
 		get => isInitialized ? DevExpress.Ui.DxResponsiveBoxInterop.GetSelectedItems(dxTarget).Result : selectedItems;
 		set {
@@ -244,7 +244,7 @@
 		}
 	}
 	string accessKey;
-	[Parameter]
+	[Parameter] public
 	string AccessKey {
 		get => isInitialized ? (string)DevExpress.Ui.DxResponsiveBoxInterop.GetAccessKey(dxTarget).Result : accessKey;
 		set {
@@ -256,7 +256,7 @@
 		}
 	}
 	bool? activeStateEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? ActiveStateEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxResponsiveBoxInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
 		set {
@@ -268,7 +268,7 @@
 		}
 	}
 	bool? disabled;
-	[Parameter]
+	[Parameter] public
 	bool? Disabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxResponsiveBoxInterop.GetDisabled(dxTarget).Result : disabled;
 		set {
@@ -280,7 +280,7 @@
 		}
 	}
 	bool? focusStateEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? FocusStateEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxResponsiveBoxInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
 		set {
@@ -292,7 +292,7 @@
 		}
 	}
 	string hint;
-	[Parameter]
+	[Parameter] public
 	string Hint {
 		get => isInitialized ? (string)DevExpress.Ui.DxResponsiveBoxInterop.GetHint(dxTarget).Result : hint;
 		set {
@@ -304,7 +304,7 @@
 		}
 	}
 	bool? hoverStateEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? HoverStateEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxResponsiveBoxInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
 		set {
@@ -316,7 +316,7 @@
 		}
 	}
 	float? tabIndex;
-	[Parameter]
+	[Parameter] public
 	float? TabIndex {
 		get => isInitialized ? (float?)DevExpress.Ui.DxResponsiveBoxInterop.GetTabIndex(dxTarget).Result : tabIndex;
 		set {
@@ -328,7 +328,7 @@
 		}
 	}
 	bool? visible;
-	[Parameter]
+	[Parameter] public
 	bool? Visible {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxResponsiveBoxInterop.GetVisible(dxTarget).Result : visible;
 		set {
@@ -340,7 +340,7 @@
 		}
 	}
 	object bindingOptions;
-	[Parameter]
+	[Parameter] public
 	object BindingOptions {
 		get => isInitialized ? DevExpress.Ui.DxResponsiveBoxInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
 		set {
@@ -352,7 +352,7 @@
 		}
 	}
 	object elementAttr;
-	[Parameter]
+	[Parameter] public
 	object ElementAttr {
 		get => isInitialized ? DevExpress.Ui.DxResponsiveBoxInterop.GetElementAttr(dxTarget).Result : elementAttr;
 		set {
@@ -364,7 +364,7 @@
 		}
 	}
 	bool? rtlEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? RtlEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxResponsiveBoxInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
 		set {
@@ -376,55 +376,55 @@
 		}
 	}
 	bool? onItemClickEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnItemClickEnabled {
 		get => onItemClickEnabled;
 		set => this.onItemClickEnabled = value;
 	}
 	bool? onItemContextMenuEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnItemContextMenuEnabled {
 		get => onItemContextMenuEnabled;
 		set => this.onItemContextMenuEnabled = value;
 	}
 	bool? onItemHoldEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnItemHoldEnabled {
 		get => onItemHoldEnabled;
 		set => this.onItemHoldEnabled = value;
 	}
 	bool? onItemRenderedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnItemRenderedEnabled {
 		get => onItemRenderedEnabled;
 		set => this.onItemRenderedEnabled = value;
 	}
 	bool? onSelectionChangedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnSelectionChangedEnabled {
 		get => onSelectionChangedEnabled;
 		set => this.onSelectionChangedEnabled = value;
 	}
 	bool? onContentReadyEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnContentReadyEnabled {
 		get => onContentReadyEnabled;
 		set => this.onContentReadyEnabled = value;
 	}
 	bool? onDisposingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnDisposingEnabled {
 		get => onDisposingEnabled;
 		set => this.onDisposingEnabled = value;
 	}
 	bool? onOptionChangedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnOptionChangedEnabled {
 		get => onOptionChangedEnabled;
 		set => this.onOptionChangedEnabled = value;
 	}
 	bool? onInitializedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnInitializedEnabled {
 		get => onInitializedEnabled;
 		set => this.onInitializedEnabled = value;
@@ -441,63 +441,63 @@
 		DevExpress.Ui.DxResponsiveBoxInterop.OptionChanged += DxResponsiveBox_OptionChanged;
 		DevExpress.Ui.DxResponsiveBoxInterop.Initialized += DxResponsiveBox_Initialized;
 	}
-	[Parameter]
+	[Parameter] public
 	Action ItemClick { get; set; }
 	void DxResponsiveBox_ItemClick(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ItemClick?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action ItemContextMenu { get; set; }
 	void DxResponsiveBox_ItemContextMenu(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ItemContextMenu?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action ItemHold { get; set; }
 	void DxResponsiveBox_ItemHold(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ItemHold?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action ItemRendered { get; set; }
 	void DxResponsiveBox_ItemRendered(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ItemRendered?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action SelectionChanged { get; set; }
 	void DxResponsiveBox_SelectionChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			SelectionChanged?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action ContentReady { get; set; }
 	void DxResponsiveBox_ContentReady(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ContentReady?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Disposing { get; set; }
 	void DxResponsiveBox_Disposing(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Disposing?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action OptionChanged { get; set; }
 	void DxResponsiveBox_OptionChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			OptionChanged?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Initialized { get; set; }
 	void DxResponsiveBox_Initialized(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {

@@ -61,7 +61,7 @@
 		return DevExpress.Viz.DxTreeMapInterop.Init(dxTarget, options);
 	}
 	string childrenField;
-	[Parameter]
+	[Parameter] public
 	string ChildrenField {
 		get => isInitialized ? (string)DevExpress.Viz.DxTreeMapInterop.GetChildrenField(dxTarget).Result : childrenField;
 		set {
@@ -73,7 +73,7 @@
 		}
 	}
 	string colorField;
-	[Parameter]
+	[Parameter] public
 	string ColorField {
 		get => isInitialized ? (string)DevExpress.Viz.DxTreeMapInterop.GetColorField(dxTarget).Result : colorField;
 		set {
@@ -85,7 +85,7 @@
 		}
 	}
 	object colorizer;
-	[Parameter]
+	[Parameter] public
 	object Colorizer {
 		get => isInitialized ? DevExpress.Viz.DxTreeMapInterop.GetColorizer(dxTarget).Result : colorizer;
 		set {
@@ -97,7 +97,7 @@
 		}
 	}
 	object dataSource;
-	[Parameter]
+	[Parameter] public
 	object DataSource {
 		get => isInitialized ? DevExpress.Viz.DxTreeMapInterop.GetDataSource(dxTarget).Result : dataSource;
 		set {
@@ -109,7 +109,7 @@
 		}
 	}
 	object group;
-	[Parameter]
+	[Parameter] public
 	object Group {
 		get => isInitialized ? DevExpress.Viz.DxTreeMapInterop.GetGroup(dxTarget).Result : group;
 		set {
@@ -121,7 +121,7 @@
 		}
 	}
 	bool? hoverEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? HoverEnabled {
 		get => isInitialized ? (bool?)DevExpress.Viz.DxTreeMapInterop.GetHoverEnabled(dxTarget).Result : hoverEnabled;
 		set {
@@ -133,7 +133,7 @@
 		}
 	}
 	string idField;
-	[Parameter]
+	[Parameter] public
 	string IdField {
 		get => isInitialized ? (string)DevExpress.Viz.DxTreeMapInterop.GetIdField(dxTarget).Result : idField;
 		set {
@@ -145,7 +145,7 @@
 		}
 	}
 	bool? interactWithGroup;
-	[Parameter]
+	[Parameter] public
 	bool? InteractWithGroup {
 		get => isInitialized ? (bool?)DevExpress.Viz.DxTreeMapInterop.GetInteractWithGroup(dxTarget).Result : interactWithGroup;
 		set {
@@ -157,7 +157,7 @@
 		}
 	}
 	string labelField;
-	[Parameter]
+	[Parameter] public
 	string LabelField {
 		get => isInitialized ? (string)DevExpress.Viz.DxTreeMapInterop.GetLabelField(dxTarget).Result : labelField;
 		set {
@@ -169,7 +169,7 @@
 		}
 	}
 	object layoutAlgorithm;
-	[Parameter]
+	[Parameter] public
 	object LayoutAlgorithm {
 		get => isInitialized ? DevExpress.Viz.DxTreeMapInterop.GetLayoutAlgorithm(dxTarget).Result : layoutAlgorithm;
 		set {
@@ -181,7 +181,7 @@
 		}
 	}
 	string layoutDirection;
-	[Parameter]
+	[Parameter] public
 	string LayoutDirection {
 		get => isInitialized ? (string)DevExpress.Viz.DxTreeMapInterop.GetLayoutDirection(dxTarget).Result : layoutDirection;
 		set {
@@ -193,7 +193,7 @@
 		}
 	}
 	float? maxDepth;
-	[Parameter]
+	[Parameter] public
 	float? MaxDepth {
 		get => isInitialized ? (float?)DevExpress.Viz.DxTreeMapInterop.GetMaxDepth(dxTarget).Result : maxDepth;
 		set {
@@ -205,7 +205,7 @@
 		}
 	}
 	string parentField;
-	[Parameter]
+	[Parameter] public
 	string ParentField {
 		get => isInitialized ? (string)DevExpress.Viz.DxTreeMapInterop.GetParentField(dxTarget).Result : parentField;
 		set {
@@ -217,7 +217,7 @@
 		}
 	}
 	string resolveLabelOverflow;
-	[Parameter]
+	[Parameter] public
 	string ResolveLabelOverflow {
 		get => isInitialized ? (string)DevExpress.Viz.DxTreeMapInterop.GetResolveLabelOverflow(dxTarget).Result : resolveLabelOverflow;
 		set {
@@ -229,7 +229,7 @@
 		}
 	}
 	string selectionMode;
-	[Parameter]
+	[Parameter] public
 	string SelectionMode {
 		get => isInitialized ? (string)DevExpress.Viz.DxTreeMapInterop.GetSelectionMode(dxTarget).Result : selectionMode;
 		set {
@@ -241,7 +241,7 @@
 		}
 	}
 	object tile;
-	[Parameter]
+	[Parameter] public
 	object Tile {
 		get => isInitialized ? DevExpress.Viz.DxTreeMapInterop.GetTile(dxTarget).Result : tile;
 		set {
@@ -253,7 +253,7 @@
 		}
 	}
 	object tooltip;
-	[Parameter]
+	[Parameter] public
 	object Tooltip {
 		get => isInitialized ? DevExpress.Viz.DxTreeMapInterop.GetTooltip(dxTarget).Result : tooltip;
 		set {
@@ -265,7 +265,7 @@
 		}
 	}
 	string valueField;
-	[Parameter]
+	[Parameter] public
 	string ValueField {
 		get => isInitialized ? (string)DevExpress.Viz.DxTreeMapInterop.GetValueField(dxTarget).Result : valueField;
 		set {
@@ -277,7 +277,7 @@
 		}
 	}
 	object export;
-	[Parameter]
+	[Parameter] public
 	object Export {
 		get => isInitialized ? DevExpress.Viz.DxTreeMapInterop.GetExport(dxTarget).Result : export;
 		set {
@@ -289,7 +289,7 @@
 		}
 	}
 	object loadingIndicator;
-	[Parameter]
+	[Parameter] public
 	object LoadingIndicator {
 		get => isInitialized ? DevExpress.Viz.DxTreeMapInterop.GetLoadingIndicator(dxTarget).Result : loadingIndicator;
 		set {
@@ -301,7 +301,7 @@
 		}
 	}
 	object margin;
-	[Parameter]
+	[Parameter] public
 	object Margin {
 		get => isInitialized ? DevExpress.Viz.DxTreeMapInterop.GetMargin(dxTarget).Result : margin;
 		set {
@@ -313,7 +313,7 @@
 		}
 	}
 	bool? pathModified;
-	[Parameter]
+	[Parameter] public
 	bool? PathModified {
 		get => isInitialized ? (bool?)DevExpress.Viz.DxTreeMapInterop.GetPathModified(dxTarget).Result : pathModified;
 		set {
@@ -325,7 +325,7 @@
 		}
 	}
 	bool? redrawOnResize;
-	[Parameter]
+	[Parameter] public
 	bool? RedrawOnResize {
 		get => isInitialized ? (bool?)DevExpress.Viz.DxTreeMapInterop.GetRedrawOnResize(dxTarget).Result : redrawOnResize;
 		set {
@@ -337,7 +337,7 @@
 		}
 	}
 	bool? rtlEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? RtlEnabled {
 		get => isInitialized ? (bool?)DevExpress.Viz.DxTreeMapInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
 		set {
@@ -349,7 +349,7 @@
 		}
 	}
 	object size;
-	[Parameter]
+	[Parameter] public
 	object Size {
 		get => isInitialized ? DevExpress.Viz.DxTreeMapInterop.GetSize(dxTarget).Result : size;
 		set {
@@ -361,7 +361,7 @@
 		}
 	}
 	string theme;
-	[Parameter]
+	[Parameter] public
 	string Theme {
 		get => isInitialized ? (string)DevExpress.Viz.DxTreeMapInterop.GetTheme(dxTarget).Result : theme;
 		set {
@@ -373,7 +373,7 @@
 		}
 	}
 	object title;
-	[Parameter]
+	[Parameter] public
 	object Title {
 		get => isInitialized ? DevExpress.Viz.DxTreeMapInterop.GetTitle(dxTarget).Result : title;
 		set {
@@ -385,7 +385,7 @@
 		}
 	}
 	object bindingOptions;
-	[Parameter]
+	[Parameter] public
 	object BindingOptions {
 		get => isInitialized ? DevExpress.Viz.DxTreeMapInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
 		set {
@@ -397,7 +397,7 @@
 		}
 	}
 	object elementAttr;
-	[Parameter]
+	[Parameter] public
 	object ElementAttr {
 		get => isInitialized ? DevExpress.Viz.DxTreeMapInterop.GetElementAttr(dxTarget).Result : elementAttr;
 		set {
@@ -409,7 +409,7 @@
 		}
 	}
 	object height;
-	[Parameter]
+	[Parameter] public
 	object Height {
 		get => isInitialized ? DevExpress.Viz.DxTreeMapInterop.GetHeight(dxTarget).Result : height;
 		set {
@@ -421,7 +421,7 @@
 		}
 	}
 	object width;
-	[Parameter]
+	[Parameter] public
 	object Width {
 		get => isInitialized ? DevExpress.Viz.DxTreeMapInterop.GetWidth(dxTarget).Result : width;
 		set {
@@ -433,85 +433,85 @@
 		}
 	}
 	bool? onClickEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnClickEnabled {
 		get => onClickEnabled;
 		set => this.onClickEnabled = value;
 	}
 	bool? onDrillEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnDrillEnabled {
 		get => onDrillEnabled;
 		set => this.onDrillEnabled = value;
 	}
 	bool? onHoverChangedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnHoverChangedEnabled {
 		get => onHoverChangedEnabled;
 		set => this.onHoverChangedEnabled = value;
 	}
 	bool? onNodesInitializedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnNodesInitializedEnabled {
 		get => onNodesInitializedEnabled;
 		set => this.onNodesInitializedEnabled = value;
 	}
 	bool? onNodesRenderingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnNodesRenderingEnabled {
 		get => onNodesRenderingEnabled;
 		set => this.onNodesRenderingEnabled = value;
 	}
 	bool? onSelectionChangedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnSelectionChangedEnabled {
 		get => onSelectionChangedEnabled;
 		set => this.onSelectionChangedEnabled = value;
 	}
 	bool? onDrawnEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnDrawnEnabled {
 		get => onDrawnEnabled;
 		set => this.onDrawnEnabled = value;
 	}
 	bool? onExportedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnExportedEnabled {
 		get => onExportedEnabled;
 		set => this.onExportedEnabled = value;
 	}
 	bool? onExportingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnExportingEnabled {
 		get => onExportingEnabled;
 		set => this.onExportingEnabled = value;
 	}
 	bool? onFileSavingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnFileSavingEnabled {
 		get => onFileSavingEnabled;
 		set => this.onFileSavingEnabled = value;
 	}
 	bool? onIncidentOccurredEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnIncidentOccurredEnabled {
 		get => onIncidentOccurredEnabled;
 		set => this.onIncidentOccurredEnabled = value;
 	}
 	bool? onDisposingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnDisposingEnabled {
 		get => onDisposingEnabled;
 		set => this.onDisposingEnabled = value;
 	}
 	bool? onOptionChangedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnOptionChangedEnabled {
 		get => onOptionChangedEnabled;
 		set => this.onOptionChangedEnabled = value;
 	}
 	bool? onInitializedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnInitializedEnabled {
 		get => onInitializedEnabled;
 		set => this.onInitializedEnabled = value;
@@ -533,98 +533,98 @@
 		DevExpress.Viz.DxTreeMapInterop.OptionChanged += DxTreeMap_OptionChanged;
 		DevExpress.Viz.DxTreeMapInterop.Initialized += DxTreeMap_Initialized;
 	}
-	[Parameter]
+	[Parameter] public
 	Action Click { get; set; }
 	void DxTreeMap_Click(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Click?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Drill { get; set; }
 	void DxTreeMap_Drill(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Drill?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action HoverChanged { get; set; }
 	void DxTreeMap_HoverChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			HoverChanged?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action NodesInitialized { get; set; }
 	void DxTreeMap_NodesInitialized(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			NodesInitialized?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action NodesRendering { get; set; }
 	void DxTreeMap_NodesRendering(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			NodesRendering?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action SelectionChanged { get; set; }
 	void DxTreeMap_SelectionChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			SelectionChanged?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Drawn { get; set; }
 	void DxTreeMap_Drawn(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Drawn?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Exported { get; set; }
 	void DxTreeMap_Exported(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Exported?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Exporting { get; set; }
 	void DxTreeMap_Exporting(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Exporting?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action FileSaving { get; set; }
 	void DxTreeMap_FileSaving(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			FileSaving?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action IncidentOccurred { get; set; }
 	void DxTreeMap_IncidentOccurred(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			IncidentOccurred?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Disposing { get; set; }
 	void DxTreeMap_Disposing(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Disposing?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action OptionChanged { get; set; }
 	void DxTreeMap_OptionChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			OptionChanged?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Initialized { get; set; }
 	void DxTreeMap_Initialized(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {

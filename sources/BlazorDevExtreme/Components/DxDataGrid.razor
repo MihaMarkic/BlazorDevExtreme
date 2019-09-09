@@ -114,7 +114,7 @@
 		return DevExpress.Ui.DxDataGridInterop.Init(dxTarget, options);
 	}
 	object columns;
-	[Parameter]
+	[Parameter] public
 	object Columns {
 		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetColumns(dxTarget).Result : columns;
 		set {
@@ -126,7 +126,7 @@
 		}
 	}
 	object customizeColumns;
-	[Parameter]
+	[Parameter] public
 	object CustomizeColumns {
 		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetCustomizeColumns(dxTarget).Result : customizeColumns;
 		set {
@@ -138,7 +138,7 @@
 		}
 	}
 	object customizeExportData;
-	[Parameter]
+	[Parameter] public
 	object CustomizeExportData {
 		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetCustomizeExportData(dxTarget).Result : customizeExportData;
 		set {
@@ -150,7 +150,7 @@
 		}
 	}
 	object editing;
-	[Parameter]
+	[Parameter] public
 	object Editing {
 		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetEditing(dxTarget).Result : editing;
 		set {
@@ -162,7 +162,7 @@
 		}
 	}
 	object export;
-	[Parameter]
+	[Parameter] public
 	object Export {
 		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetExport(dxTarget).Result : export;
 		set {
@@ -174,7 +174,7 @@
 		}
 	}
 	object grouping;
-	[Parameter]
+	[Parameter] public
 	object Grouping {
 		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetGrouping(dxTarget).Result : grouping;
 		set {
@@ -186,7 +186,7 @@
 		}
 	}
 	object groupPanel;
-	[Parameter]
+	[Parameter] public
 	object GroupPanel {
 		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetGroupPanel(dxTarget).Result : groupPanel;
 		set {
@@ -198,7 +198,7 @@
 		}
 	}
 	object keyExpr;
-	[Parameter]
+	[Parameter] public
 	object KeyExpr {
 		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetKeyExpr(dxTarget).Result : keyExpr;
 		set {
@@ -210,7 +210,7 @@
 		}
 	}
 	object masterDetail;
-	[Parameter]
+	[Parameter] public
 	object MasterDetail {
 		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetMasterDetail(dxTarget).Result : masterDetail;
 		set {
@@ -222,7 +222,7 @@
 		}
 	}
 	object remoteOperations;
-	[Parameter]
+	[Parameter] public
 	object RemoteOperations {
 		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetRemoteOperations(dxTarget).Result : remoteOperations;
 		set {
@@ -234,7 +234,7 @@
 		}
 	}
 	object rowTemplate;
-	[Parameter]
+	[Parameter] public
 	object RowTemplate {
 		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetRowTemplate(dxTarget).Result : rowTemplate;
 		set {
@@ -246,7 +246,7 @@
 		}
 	}
 	object scrolling;
-	[Parameter]
+	[Parameter] public
 	object Scrolling {
 		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetScrolling(dxTarget).Result : scrolling;
 		set {
@@ -258,7 +258,7 @@
 		}
 	}
 	object selection;
-	[Parameter]
+	[Parameter] public
 	object Selection {
 		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetSelection(dxTarget).Result : selection;
 		set {
@@ -270,7 +270,7 @@
 		}
 	}
 	object selectionFilter;
-	[Parameter]
+	[Parameter] public
 	object SelectionFilter {
 		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetSelectionFilter(dxTarget).Result : selectionFilter;
 		set {
@@ -282,7 +282,7 @@
 		}
 	}
 	object sortByGroupSummaryInfo;
-	[Parameter]
+	[Parameter] public
 	object SortByGroupSummaryInfo {
 		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetSortByGroupSummaryInfo(dxTarget).Result : sortByGroupSummaryInfo;
 		set {
@@ -294,7 +294,7 @@
 		}
 	}
 	object summary;
-	[Parameter]
+	[Parameter] public
 	object Summary {
 		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetSummary(dxTarget).Result : summary;
 		set {
@@ -306,7 +306,7 @@
 		}
 	}
 	bool? allowColumnReordering;
-	[Parameter]
+	[Parameter] public
 	bool? AllowColumnReordering {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetAllowColumnReordering(dxTarget).Result : allowColumnReordering;
 		set {
@@ -318,7 +318,7 @@
 		}
 	}
 	bool? allowColumnResizing;
-	[Parameter]
+	[Parameter] public
 	bool? AllowColumnResizing {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetAllowColumnResizing(dxTarget).Result : allowColumnResizing;
 		set {
@@ -330,7 +330,7 @@
 		}
 	}
 	bool? cacheEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? CacheEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetCacheEnabled(dxTarget).Result : cacheEnabled;
 		set {
@@ -342,7 +342,7 @@
 		}
 	}
 	bool? cellHintEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? CellHintEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetCellHintEnabled(dxTarget).Result : cellHintEnabled;
 		set {
@@ -354,7 +354,7 @@
 		}
 	}
 	bool? columnAutoWidth;
-	[Parameter]
+	[Parameter] public
 	bool? ColumnAutoWidth {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetColumnAutoWidth(dxTarget).Result : columnAutoWidth;
 		set {
@@ -366,7 +366,7 @@
 		}
 	}
 	object columnChooser;
-	[Parameter]
+	[Parameter] public
 	object ColumnChooser {
 		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetColumnChooser(dxTarget).Result : columnChooser;
 		set {
@@ -378,7 +378,7 @@
 		}
 	}
 	object columnFixing;
-	[Parameter]
+	[Parameter] public
 	object ColumnFixing {
 		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetColumnFixing(dxTarget).Result : columnFixing;
 		set {
@@ -390,7 +390,7 @@
 		}
 	}
 	bool? columnHidingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? ColumnHidingEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetColumnHidingEnabled(dxTarget).Result : columnHidingEnabled;
 		set {
@@ -402,7 +402,7 @@
 		}
 	}
 	float? columnMinWidth;
-	[Parameter]
+	[Parameter] public
 	float? ColumnMinWidth {
 		get => isInitialized ? (float?)DevExpress.Ui.DxDataGridInterop.GetColumnMinWidth(dxTarget).Result : columnMinWidth;
 		set {
@@ -414,7 +414,7 @@
 		}
 	}
 	string columnResizingMode;
-	[Parameter]
+	[Parameter] public
 	string ColumnResizingMode {
 		get => isInitialized ? (string)DevExpress.Ui.DxDataGridInterop.GetColumnResizingMode(dxTarget).Result : columnResizingMode;
 		set {
@@ -426,7 +426,7 @@
 		}
 	}
 	float? columnWidth;
-	[Parameter]
+	[Parameter] public
 	float? ColumnWidth {
 		get => isInitialized ? (float?)DevExpress.Ui.DxDataGridInterop.GetColumnWidth(dxTarget).Result : columnWidth;
 		set {
@@ -438,7 +438,7 @@
 		}
 	}
 	object dataSource;
-	[Parameter]
+	[Parameter] public
 	object DataSource {
 		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetDataSource(dxTarget).Result : dataSource;
 		set {
@@ -450,7 +450,7 @@
 		}
 	}
 	string dateSerializationFormat;
-	[Parameter]
+	[Parameter] public
 	string DateSerializationFormat {
 		get => isInitialized ? (string)DevExpress.Ui.DxDataGridInterop.GetDateSerializationFormat(dxTarget).Result : dateSerializationFormat;
 		set {
@@ -462,7 +462,7 @@
 		}
 	}
 	bool? errorRowEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? ErrorRowEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetErrorRowEnabled(dxTarget).Result : errorRowEnabled;
 		set {
@@ -474,7 +474,7 @@
 		}
 	}
 	object filterBuilder;
-	[Parameter]
+	[Parameter] public
 	object FilterBuilder {
 		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetFilterBuilder(dxTarget).Result : filterBuilder;
 		set {
@@ -486,7 +486,7 @@
 		}
 	}
 	object filterBuilderPopup;
-	[Parameter]
+	[Parameter] public
 	object FilterBuilderPopup {
 		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetFilterBuilderPopup(dxTarget).Result : filterBuilderPopup;
 		set {
@@ -498,7 +498,7 @@
 		}
 	}
 	object filterPanel;
-	[Parameter]
+	[Parameter] public
 	object FilterPanel {
 		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetFilterPanel(dxTarget).Result : filterPanel;
 		set {
@@ -510,7 +510,7 @@
 		}
 	}
 	object filterRow;
-	[Parameter]
+	[Parameter] public
 	object FilterRow {
 		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetFilterRow(dxTarget).Result : filterRow;
 		set {
@@ -522,7 +522,7 @@
 		}
 	}
 	object filterSyncEnabled;
-	[Parameter]
+	[Parameter] public
 	object FilterSyncEnabled {
 		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetFilterSyncEnabled(dxTarget).Result : filterSyncEnabled;
 		set {
@@ -534,7 +534,7 @@
 		}
 	}
 	object filterValue;
-	[Parameter]
+	[Parameter] public
 	object FilterValue {
 		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetFilterValue(dxTarget).Result : filterValue;
 		set {
@@ -546,7 +546,7 @@
 		}
 	}
 	object headerFilter;
-	[Parameter]
+	[Parameter] public
 	object HeaderFilter {
 		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetHeaderFilter(dxTarget).Result : headerFilter;
 		set {
@@ -558,7 +558,7 @@
 		}
 	}
 	object loadPanel;
-	[Parameter]
+	[Parameter] public
 	object LoadPanel {
 		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetLoadPanel(dxTarget).Result : loadPanel;
 		set {
@@ -570,7 +570,7 @@
 		}
 	}
 	string noDataText;
-	[Parameter]
+	[Parameter] public
 	string NoDataText {
 		get => isInitialized ? (string)DevExpress.Ui.DxDataGridInterop.GetNoDataText(dxTarget).Result : noDataText;
 		set {
@@ -582,7 +582,7 @@
 		}
 	}
 	object pager;
-	[Parameter]
+	[Parameter] public
 	object Pager {
 		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetPager(dxTarget).Result : pager;
 		set {
@@ -594,7 +594,7 @@
 		}
 	}
 	object paging;
-	[Parameter]
+	[Parameter] public
 	object Paging {
 		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetPaging(dxTarget).Result : paging;
 		set {
@@ -606,7 +606,7 @@
 		}
 	}
 	bool? rowAlternationEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? RowAlternationEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetRowAlternationEnabled(dxTarget).Result : rowAlternationEnabled;
 		set {
@@ -618,7 +618,7 @@
 		}
 	}
 	object searchPanel;
-	[Parameter]
+	[Parameter] public
 	object SearchPanel {
 		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetSearchPanel(dxTarget).Result : searchPanel;
 		set {
@@ -630,7 +630,7 @@
 		}
 	}
 	object selectedRowKeys;
-	[Parameter]
+	[Parameter] public
 	object SelectedRowKeys {
 		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetSelectedRowKeys(dxTarget).Result : selectedRowKeys;
 		set {
@@ -642,7 +642,7 @@
 		}
 	}
 	bool? showBorders;
-	[Parameter]
+	[Parameter] public
 	bool? ShowBorders {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetShowBorders(dxTarget).Result : showBorders;
 		set {
@@ -654,7 +654,7 @@
 		}
 	}
 	bool? showColumnHeaders;
-	[Parameter]
+	[Parameter] public
 	bool? ShowColumnHeaders {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetShowColumnHeaders(dxTarget).Result : showColumnHeaders;
 		set {
@@ -666,7 +666,7 @@
 		}
 	}
 	bool? showColumnLines;
-	[Parameter]
+	[Parameter] public
 	bool? ShowColumnLines {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetShowColumnLines(dxTarget).Result : showColumnLines;
 		set {
@@ -678,7 +678,7 @@
 		}
 	}
 	bool? showRowLines;
-	[Parameter]
+	[Parameter] public
 	bool? ShowRowLines {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetShowRowLines(dxTarget).Result : showRowLines;
 		set {
@@ -690,7 +690,7 @@
 		}
 	}
 	object sorting;
-	[Parameter]
+	[Parameter] public
 	object Sorting {
 		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetSorting(dxTarget).Result : sorting;
 		set {
@@ -702,7 +702,7 @@
 		}
 	}
 	object stateStoring;
-	[Parameter]
+	[Parameter] public
 	object StateStoring {
 		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetStateStoring(dxTarget).Result : stateStoring;
 		set {
@@ -714,7 +714,7 @@
 		}
 	}
 	bool? twoWayBindingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? TwoWayBindingEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetTwoWayBindingEnabled(dxTarget).Result : twoWayBindingEnabled;
 		set {
@@ -726,7 +726,7 @@
 		}
 	}
 	bool? wordWrapEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? WordWrapEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetWordWrapEnabled(dxTarget).Result : wordWrapEnabled;
 		set {
@@ -738,7 +738,7 @@
 		}
 	}
 	string accessKey;
-	[Parameter]
+	[Parameter] public
 	string AccessKey {
 		get => isInitialized ? (string)DevExpress.Ui.DxDataGridInterop.GetAccessKey(dxTarget).Result : accessKey;
 		set {
@@ -750,7 +750,7 @@
 		}
 	}
 	bool? activeStateEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? ActiveStateEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
 		set {
@@ -762,7 +762,7 @@
 		}
 	}
 	bool? disabled;
-	[Parameter]
+	[Parameter] public
 	bool? Disabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetDisabled(dxTarget).Result : disabled;
 		set {
@@ -774,7 +774,7 @@
 		}
 	}
 	bool? focusStateEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? FocusStateEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
 		set {
@@ -786,7 +786,7 @@
 		}
 	}
 	string hint;
-	[Parameter]
+	[Parameter] public
 	string Hint {
 		get => isInitialized ? (string)DevExpress.Ui.DxDataGridInterop.GetHint(dxTarget).Result : hint;
 		set {
@@ -798,7 +798,7 @@
 		}
 	}
 	bool? hoverStateEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? HoverStateEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
 		set {
@@ -810,7 +810,7 @@
 		}
 	}
 	float? tabIndex;
-	[Parameter]
+	[Parameter] public
 	float? TabIndex {
 		get => isInitialized ? (float?)DevExpress.Ui.DxDataGridInterop.GetTabIndex(dxTarget).Result : tabIndex;
 		set {
@@ -822,7 +822,7 @@
 		}
 	}
 	bool? visible;
-	[Parameter]
+	[Parameter] public
 	bool? Visible {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetVisible(dxTarget).Result : visible;
 		set {
@@ -834,7 +834,7 @@
 		}
 	}
 	object bindingOptions;
-	[Parameter]
+	[Parameter] public
 	object BindingOptions {
 		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
 		set {
@@ -846,7 +846,7 @@
 		}
 	}
 	object elementAttr;
-	[Parameter]
+	[Parameter] public
 	object ElementAttr {
 		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetElementAttr(dxTarget).Result : elementAttr;
 		set {
@@ -858,7 +858,7 @@
 		}
 	}
 	object height;
-	[Parameter]
+	[Parameter] public
 	object Height {
 		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetHeight(dxTarget).Result : height;
 		set {
@@ -870,7 +870,7 @@
 		}
 	}
 	bool? rtlEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? RtlEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxDataGridInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
 		set {
@@ -882,7 +882,7 @@
 		}
 	}
 	object width;
-	[Parameter]
+	[Parameter] public
 	object Width {
 		get => isInitialized ? DevExpress.Ui.DxDataGridInterop.GetWidth(dxTarget).Result : width;
 		set {
@@ -894,199 +894,199 @@
 		}
 	}
 	bool? onCellClickEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnCellClickEnabled {
 		get => onCellClickEnabled;
 		set => this.onCellClickEnabled = value;
 	}
 	bool? onCellHoverChangedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnCellHoverChangedEnabled {
 		get => onCellHoverChangedEnabled;
 		set => this.onCellHoverChangedEnabled = value;
 	}
 	bool? onCellPreparedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnCellPreparedEnabled {
 		get => onCellPreparedEnabled;
 		set => this.onCellPreparedEnabled = value;
 	}
 	bool? onContextMenuPreparingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnContextMenuPreparingEnabled {
 		get => onContextMenuPreparingEnabled;
 		set => this.onContextMenuPreparingEnabled = value;
 	}
 	bool? onEditingStartEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnEditingStartEnabled {
 		get => onEditingStartEnabled;
 		set => this.onEditingStartEnabled = value;
 	}
 	bool? onEditorPreparedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnEditorPreparedEnabled {
 		get => onEditorPreparedEnabled;
 		set => this.onEditorPreparedEnabled = value;
 	}
 	bool? onEditorPreparingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnEditorPreparingEnabled {
 		get => onEditorPreparingEnabled;
 		set => this.onEditorPreparingEnabled = value;
 	}
 	bool? onExportedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnExportedEnabled {
 		get => onExportedEnabled;
 		set => this.onExportedEnabled = value;
 	}
 	bool? onExportingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnExportingEnabled {
 		get => onExportingEnabled;
 		set => this.onExportingEnabled = value;
 	}
 	bool? onFileSavingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnFileSavingEnabled {
 		get => onFileSavingEnabled;
 		set => this.onFileSavingEnabled = value;
 	}
 	bool? onRowClickEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnRowClickEnabled {
 		get => onRowClickEnabled;
 		set => this.onRowClickEnabled = value;
 	}
 	bool? onRowPreparedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnRowPreparedEnabled {
 		get => onRowPreparedEnabled;
 		set => this.onRowPreparedEnabled = value;
 	}
 	bool? onAdaptiveDetailRowPreparingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnAdaptiveDetailRowPreparingEnabled {
 		get => onAdaptiveDetailRowPreparingEnabled;
 		set => this.onAdaptiveDetailRowPreparingEnabled = value;
 	}
 	bool? onDataErrorOccurredEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnDataErrorOccurredEnabled {
 		get => onDataErrorOccurredEnabled;
 		set => this.onDataErrorOccurredEnabled = value;
 	}
 	bool? onInitNewRowEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnInitNewRowEnabled {
 		get => onInitNewRowEnabled;
 		set => this.onInitNewRowEnabled = value;
 	}
 	bool? onKeyDownEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnKeyDownEnabled {
 		get => onKeyDownEnabled;
 		set => this.onKeyDownEnabled = value;
 	}
 	bool? onRowCollapsedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnRowCollapsedEnabled {
 		get => onRowCollapsedEnabled;
 		set => this.onRowCollapsedEnabled = value;
 	}
 	bool? onRowCollapsingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnRowCollapsingEnabled {
 		get => onRowCollapsingEnabled;
 		set => this.onRowCollapsingEnabled = value;
 	}
 	bool? onRowExpandedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnRowExpandedEnabled {
 		get => onRowExpandedEnabled;
 		set => this.onRowExpandedEnabled = value;
 	}
 	bool? onRowExpandingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnRowExpandingEnabled {
 		get => onRowExpandingEnabled;
 		set => this.onRowExpandingEnabled = value;
 	}
 	bool? onRowInsertedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnRowInsertedEnabled {
 		get => onRowInsertedEnabled;
 		set => this.onRowInsertedEnabled = value;
 	}
 	bool? onRowInsertingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnRowInsertingEnabled {
 		get => onRowInsertingEnabled;
 		set => this.onRowInsertingEnabled = value;
 	}
 	bool? onRowRemovedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnRowRemovedEnabled {
 		get => onRowRemovedEnabled;
 		set => this.onRowRemovedEnabled = value;
 	}
 	bool? onRowRemovingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnRowRemovingEnabled {
 		get => onRowRemovingEnabled;
 		set => this.onRowRemovingEnabled = value;
 	}
 	bool? onRowUpdatedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnRowUpdatedEnabled {
 		get => onRowUpdatedEnabled;
 		set => this.onRowUpdatedEnabled = value;
 	}
 	bool? onRowUpdatingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnRowUpdatingEnabled {
 		get => onRowUpdatingEnabled;
 		set => this.onRowUpdatingEnabled = value;
 	}
 	bool? onRowValidatingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnRowValidatingEnabled {
 		get => onRowValidatingEnabled;
 		set => this.onRowValidatingEnabled = value;
 	}
 	bool? onSelectionChangedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnSelectionChangedEnabled {
 		get => onSelectionChangedEnabled;
 		set => this.onSelectionChangedEnabled = value;
 	}
 	bool? onToolbarPreparingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnToolbarPreparingEnabled {
 		get => onToolbarPreparingEnabled;
 		set => this.onToolbarPreparingEnabled = value;
 	}
 	bool? onContentReadyEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnContentReadyEnabled {
 		get => onContentReadyEnabled;
 		set => this.onContentReadyEnabled = value;
 	}
 	bool? onDisposingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnDisposingEnabled {
 		get => onDisposingEnabled;
 		set => this.onDisposingEnabled = value;
 	}
 	bool? onOptionChangedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnOptionChangedEnabled {
 		get => onOptionChangedEnabled;
 		set => this.onOptionChangedEnabled = value;
 	}
 	bool? onInitializedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnInitializedEnabled {
 		get => onInitializedEnabled;
 		set => this.onInitializedEnabled = value;
@@ -1127,231 +1127,231 @@
 		DevExpress.Ui.DxDataGridInterop.OptionChanged += DxDataGrid_OptionChanged;
 		DevExpress.Ui.DxDataGridInterop.Initialized += DxDataGrid_Initialized;
 	}
-	[Parameter]
+	[Parameter] public
 	Action CellClick { get; set; }
 	void DxDataGrid_CellClick(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			CellClick?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action CellHoverChanged { get; set; }
 	void DxDataGrid_CellHoverChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			CellHoverChanged?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action CellPrepared { get; set; }
 	void DxDataGrid_CellPrepared(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			CellPrepared?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action ContextMenuPreparing { get; set; }
 	void DxDataGrid_ContextMenuPreparing(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ContextMenuPreparing?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action EditingStart { get; set; }
 	void DxDataGrid_EditingStart(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			EditingStart?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action EditorPrepared { get; set; }
 	void DxDataGrid_EditorPrepared(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			EditorPrepared?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action EditorPreparing { get; set; }
 	void DxDataGrid_EditorPreparing(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			EditorPreparing?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Exported { get; set; }
 	void DxDataGrid_Exported(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Exported?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Exporting { get; set; }
 	void DxDataGrid_Exporting(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Exporting?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action FileSaving { get; set; }
 	void DxDataGrid_FileSaving(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			FileSaving?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action RowClick { get; set; }
 	void DxDataGrid_RowClick(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			RowClick?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action RowPrepared { get; set; }
 	void DxDataGrid_RowPrepared(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			RowPrepared?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action AdaptiveDetailRowPreparing { get; set; }
 	void DxDataGrid_AdaptiveDetailRowPreparing(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			AdaptiveDetailRowPreparing?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action DataErrorOccurred { get; set; }
 	void DxDataGrid_DataErrorOccurred(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			DataErrorOccurred?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action InitNewRow { get; set; }
 	void DxDataGrid_InitNewRow(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			InitNewRow?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action KeyDown { get; set; }
 	void DxDataGrid_KeyDown(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			KeyDown?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action RowCollapsed { get; set; }
 	void DxDataGrid_RowCollapsed(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			RowCollapsed?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action RowCollapsing { get; set; }
 	void DxDataGrid_RowCollapsing(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			RowCollapsing?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action RowExpanded { get; set; }
 	void DxDataGrid_RowExpanded(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			RowExpanded?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action RowExpanding { get; set; }
 	void DxDataGrid_RowExpanding(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			RowExpanding?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action RowInserted { get; set; }
 	void DxDataGrid_RowInserted(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			RowInserted?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action RowInserting { get; set; }
 	void DxDataGrid_RowInserting(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			RowInserting?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action RowRemoved { get; set; }
 	void DxDataGrid_RowRemoved(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			RowRemoved?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action RowRemoving { get; set; }
 	void DxDataGrid_RowRemoving(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			RowRemoving?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action RowUpdated { get; set; }
 	void DxDataGrid_RowUpdated(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			RowUpdated?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action RowUpdating { get; set; }
 	void DxDataGrid_RowUpdating(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			RowUpdating?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action RowValidating { get; set; }
 	void DxDataGrid_RowValidating(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			RowValidating?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action SelectionChanged { get; set; }
 	void DxDataGrid_SelectionChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			SelectionChanged?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action ToolbarPreparing { get; set; }
 	void DxDataGrid_ToolbarPreparing(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ToolbarPreparing?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action ContentReady { get; set; }
 	void DxDataGrid_ContentReady(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ContentReady?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Disposing { get; set; }
 	void DxDataGrid_Disposing(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Disposing?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action OptionChanged { get; set; }
 	void DxDataGrid_OptionChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			OptionChanged?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Initialized { get; set; }
 	void DxDataGrid_Initialized(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {

@@ -88,7 +88,7 @@
 		return DevExpress.Viz.DxChartInterop.Init(dxTarget, options);
 	}
 	bool? adjustOnZoom;
-	[Parameter]
+	[Parameter] public
 	bool? AdjustOnZoom {
 		get => isInitialized ? (bool?)DevExpress.Viz.DxChartInterop.GetAdjustOnZoom(dxTarget).Result : adjustOnZoom;
 		set {
@@ -100,7 +100,7 @@
 		}
 	}
 	object argumentAxis;
-	[Parameter]
+	[Parameter] public
 	object ArgumentAxis {
 		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetArgumentAxis(dxTarget).Result : argumentAxis;
 		set {
@@ -112,7 +112,7 @@
 		}
 	}
 	float? barGroupPadding;
-	[Parameter]
+	[Parameter] public
 	float? BarGroupPadding {
 		get => isInitialized ? (float?)DevExpress.Viz.DxChartInterop.GetBarGroupPadding(dxTarget).Result : barGroupPadding;
 		set {
@@ -124,7 +124,7 @@
 		}
 	}
 	float? barGroupWidth;
-	[Parameter]
+	[Parameter] public
 	float? BarGroupWidth {
 		get => isInitialized ? (float?)DevExpress.Viz.DxChartInterop.GetBarGroupWidth(dxTarget).Result : barGroupWidth;
 		set {
@@ -136,7 +136,7 @@
 		}
 	}
 	float? barWidth;
-	[Parameter]
+	[Parameter] public
 	float? BarWidth {
 		get => isInitialized ? (float?)DevExpress.Viz.DxChartInterop.GetBarWidth(dxTarget).Result : barWidth;
 		set {
@@ -148,7 +148,7 @@
 		}
 	}
 	object commonAxisSettings;
-	[Parameter]
+	[Parameter] public
 	object CommonAxisSettings {
 		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetCommonAxisSettings(dxTarget).Result : commonAxisSettings;
 		set {
@@ -160,7 +160,7 @@
 		}
 	}
 	object commonPaneSettings;
-	[Parameter]
+	[Parameter] public
 	object CommonPaneSettings {
 		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetCommonPaneSettings(dxTarget).Result : commonPaneSettings;
 		set {
@@ -172,7 +172,7 @@
 		}
 	}
 	object commonSeriesSettings;
-	[Parameter]
+	[Parameter] public
 	object CommonSeriesSettings {
 		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetCommonSeriesSettings(dxTarget).Result : commonSeriesSettings;
 		set {
@@ -184,7 +184,7 @@
 		}
 	}
 	string containerBackgroundColor;
-	[Parameter]
+	[Parameter] public
 	string ContainerBackgroundColor {
 		get => isInitialized ? (string)DevExpress.Viz.DxChartInterop.GetContainerBackgroundColor(dxTarget).Result : containerBackgroundColor;
 		set {
@@ -196,7 +196,7 @@
 		}
 	}
 	object crosshair;
-	[Parameter]
+	[Parameter] public
 	object Crosshair {
 		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetCrosshair(dxTarget).Result : crosshair;
 		set {
@@ -208,7 +208,7 @@
 		}
 	}
 	object dataPrepareSettings;
-	[Parameter]
+	[Parameter] public
 	object DataPrepareSettings {
 		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetDataPrepareSettings(dxTarget).Result : dataPrepareSettings;
 		set {
@@ -220,7 +220,7 @@
 		}
 	}
 	string defaultPane;
-	[Parameter]
+	[Parameter] public
 	string DefaultPane {
 		get => isInitialized ? (string)DevExpress.Viz.DxChartInterop.GetDefaultPane(dxTarget).Result : defaultPane;
 		set {
@@ -232,7 +232,7 @@
 		}
 	}
 	bool? equalBarWidth;
-	[Parameter]
+	[Parameter] public
 	bool? EqualBarWidth {
 		get => isInitialized ? (bool?)DevExpress.Viz.DxChartInterop.GetEqualBarWidth(dxTarget).Result : equalBarWidth;
 		set {
@@ -244,7 +244,7 @@
 		}
 	}
 	object legend;
-	[Parameter]
+	[Parameter] public
 	object Legend {
 		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetLegend(dxTarget).Result : legend;
 		set {
@@ -256,7 +256,7 @@
 		}
 	}
 	float? maxBubbleSize;
-	[Parameter]
+	[Parameter] public
 	float? MaxBubbleSize {
 		get => isInitialized ? (float?)DevExpress.Viz.DxChartInterop.GetMaxBubbleSize(dxTarget).Result : maxBubbleSize;
 		set {
@@ -268,7 +268,7 @@
 		}
 	}
 	float? minBubbleSize;
-	[Parameter]
+	[Parameter] public
 	float? MinBubbleSize {
 		get => isInitialized ? (float?)DevExpress.Viz.DxChartInterop.GetMinBubbleSize(dxTarget).Result : minBubbleSize;
 		set {
@@ -280,7 +280,7 @@
 		}
 	}
 	bool? negativesAsZeroes;
-	[Parameter]
+	[Parameter] public
 	bool? NegativesAsZeroes {
 		get => isInitialized ? (bool?)DevExpress.Viz.DxChartInterop.GetNegativesAsZeroes(dxTarget).Result : negativesAsZeroes;
 		set {
@@ -292,7 +292,7 @@
 		}
 	}
 	object panes;
-	[Parameter]
+	[Parameter] public
 	object Panes {
 		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetPanes(dxTarget).Result : panes;
 		set {
@@ -304,7 +304,7 @@
 		}
 	}
 	string resolveLabelOverlapping;
-	[Parameter]
+	[Parameter] public
 	string ResolveLabelOverlapping {
 		get => isInitialized ? (string)DevExpress.Viz.DxChartInterop.GetResolveLabelOverlapping(dxTarget).Result : resolveLabelOverlapping;
 		set {
@@ -316,7 +316,7 @@
 		}
 	}
 	bool? rotated;
-	[Parameter]
+	[Parameter] public
 	bool? Rotated {
 		get => isInitialized ? (bool?)DevExpress.Viz.DxChartInterop.GetRotated(dxTarget).Result : rotated;
 		set {
@@ -328,7 +328,7 @@
 		}
 	}
 	object scrollBar;
-	[Parameter]
+	[Parameter] public
 	object ScrollBar {
 		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetScrollBar(dxTarget).Result : scrollBar;
 		set {
@@ -340,7 +340,7 @@
 		}
 	}
 	string scrollingMode;
-	[Parameter]
+	[Parameter] public
 	string ScrollingMode {
 		get => isInitialized ? (string)DevExpress.Viz.DxChartInterop.GetScrollingMode(dxTarget).Result : scrollingMode;
 		set {
@@ -352,7 +352,7 @@
 		}
 	}
 	object series;
-	[Parameter]
+	[Parameter] public
 	object Series {
 		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetSeries(dxTarget).Result : series;
 		set {
@@ -364,7 +364,7 @@
 		}
 	}
 	string seriesSelectionMode;
-	[Parameter]
+	[Parameter] public
 	string SeriesSelectionMode {
 		get => isInitialized ? (string)DevExpress.Viz.DxChartInterop.GetSeriesSelectionMode(dxTarget).Result : seriesSelectionMode;
 		set {
@@ -376,7 +376,7 @@
 		}
 	}
 	object seriesTemplate;
-	[Parameter]
+	[Parameter] public
 	object SeriesTemplate {
 		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetSeriesTemplate(dxTarget).Result : seriesTemplate;
 		set {
@@ -388,7 +388,7 @@
 		}
 	}
 	bool? synchronizeMultiAxes;
-	[Parameter]
+	[Parameter] public
 	bool? SynchronizeMultiAxes {
 		get => isInitialized ? (bool?)DevExpress.Viz.DxChartInterop.GetSynchronizeMultiAxes(dxTarget).Result : synchronizeMultiAxes;
 		set {
@@ -400,7 +400,7 @@
 		}
 	}
 	object tooltip;
-	[Parameter]
+	[Parameter] public
 	object Tooltip {
 		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetTooltip(dxTarget).Result : tooltip;
 		set {
@@ -412,7 +412,7 @@
 		}
 	}
 	bool? useAggregation;
-	[Parameter]
+	[Parameter] public
 	bool? UseAggregation {
 		get => isInitialized ? (bool?)DevExpress.Viz.DxChartInterop.GetUseAggregation(dxTarget).Result : useAggregation;
 		set {
@@ -424,7 +424,7 @@
 		}
 	}
 	object valueAxis;
-	[Parameter]
+	[Parameter] public
 	object ValueAxis {
 		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetValueAxis(dxTarget).Result : valueAxis;
 		set {
@@ -436,7 +436,7 @@
 		}
 	}
 	string zoomingMode;
-	[Parameter]
+	[Parameter] public
 	string ZoomingMode {
 		get => isInitialized ? (string)DevExpress.Viz.DxChartInterop.GetZoomingMode(dxTarget).Result : zoomingMode;
 		set {
@@ -448,7 +448,7 @@
 		}
 	}
 	object adaptiveLayout;
-	[Parameter]
+	[Parameter] public
 	object AdaptiveLayout {
 		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetAdaptiveLayout(dxTarget).Result : adaptiveLayout;
 		set {
@@ -460,7 +460,7 @@
 		}
 	}
 	object animation;
-	[Parameter]
+	[Parameter] public
 	object Animation {
 		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetAnimation(dxTarget).Result : animation;
 		set {
@@ -472,7 +472,7 @@
 		}
 	}
 	object customizeLabel;
-	[Parameter]
+	[Parameter] public
 	object CustomizeLabel {
 		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetCustomizeLabel(dxTarget).Result : customizeLabel;
 		set {
@@ -484,7 +484,7 @@
 		}
 	}
 	object customizePoint;
-	[Parameter]
+	[Parameter] public
 	object CustomizePoint {
 		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetCustomizePoint(dxTarget).Result : customizePoint;
 		set {
@@ -496,7 +496,7 @@
 		}
 	}
 	object dataSource;
-	[Parameter]
+	[Parameter] public
 	object DataSource {
 		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetDataSource(dxTarget).Result : dataSource;
 		set {
@@ -508,7 +508,7 @@
 		}
 	}
 	object palette;
-	[Parameter]
+	[Parameter] public
 	object Palette {
 		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetPalette(dxTarget).Result : palette;
 		set {
@@ -520,7 +520,7 @@
 		}
 	}
 	string paletteExtensionMode;
-	[Parameter]
+	[Parameter] public
 	string PaletteExtensionMode {
 		get => isInitialized ? (string)DevExpress.Viz.DxChartInterop.GetPaletteExtensionMode(dxTarget).Result : paletteExtensionMode;
 		set {
@@ -532,7 +532,7 @@
 		}
 	}
 	string pointSelectionMode;
-	[Parameter]
+	[Parameter] public
 	string PointSelectionMode {
 		get => isInitialized ? (string)DevExpress.Viz.DxChartInterop.GetPointSelectionMode(dxTarget).Result : pointSelectionMode;
 		set {
@@ -544,7 +544,7 @@
 		}
 	}
 	object export;
-	[Parameter]
+	[Parameter] public
 	object Export {
 		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetExport(dxTarget).Result : export;
 		set {
@@ -556,7 +556,7 @@
 		}
 	}
 	object loadingIndicator;
-	[Parameter]
+	[Parameter] public
 	object LoadingIndicator {
 		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetLoadingIndicator(dxTarget).Result : loadingIndicator;
 		set {
@@ -568,7 +568,7 @@
 		}
 	}
 	object margin;
-	[Parameter]
+	[Parameter] public
 	object Margin {
 		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetMargin(dxTarget).Result : margin;
 		set {
@@ -580,7 +580,7 @@
 		}
 	}
 	bool? pathModified;
-	[Parameter]
+	[Parameter] public
 	bool? PathModified {
 		get => isInitialized ? (bool?)DevExpress.Viz.DxChartInterop.GetPathModified(dxTarget).Result : pathModified;
 		set {
@@ -592,7 +592,7 @@
 		}
 	}
 	bool? redrawOnResize;
-	[Parameter]
+	[Parameter] public
 	bool? RedrawOnResize {
 		get => isInitialized ? (bool?)DevExpress.Viz.DxChartInterop.GetRedrawOnResize(dxTarget).Result : redrawOnResize;
 		set {
@@ -604,7 +604,7 @@
 		}
 	}
 	bool? rtlEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? RtlEnabled {
 		get => isInitialized ? (bool?)DevExpress.Viz.DxChartInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
 		set {
@@ -616,7 +616,7 @@
 		}
 	}
 	object size;
-	[Parameter]
+	[Parameter] public
 	object Size {
 		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetSize(dxTarget).Result : size;
 		set {
@@ -628,7 +628,7 @@
 		}
 	}
 	string theme;
-	[Parameter]
+	[Parameter] public
 	string Theme {
 		get => isInitialized ? (string)DevExpress.Viz.DxChartInterop.GetTheme(dxTarget).Result : theme;
 		set {
@@ -640,7 +640,7 @@
 		}
 	}
 	object title;
-	[Parameter]
+	[Parameter] public
 	object Title {
 		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetTitle(dxTarget).Result : title;
 		set {
@@ -652,7 +652,7 @@
 		}
 	}
 	object bindingOptions;
-	[Parameter]
+	[Parameter] public
 	object BindingOptions {
 		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
 		set {
@@ -664,7 +664,7 @@
 		}
 	}
 	object elementAttr;
-	[Parameter]
+	[Parameter] public
 	object ElementAttr {
 		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetElementAttr(dxTarget).Result : elementAttr;
 		set {
@@ -676,7 +676,7 @@
 		}
 	}
 	object height;
-	[Parameter]
+	[Parameter] public
 	object Height {
 		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetHeight(dxTarget).Result : height;
 		set {
@@ -688,7 +688,7 @@
 		}
 	}
 	object width;
-	[Parameter]
+	[Parameter] public
 	object Width {
 		get => isInitialized ? DevExpress.Viz.DxChartInterop.GetWidth(dxTarget).Result : width;
 		set {
@@ -700,127 +700,127 @@
 		}
 	}
 	bool? onArgumentAxisClickEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnArgumentAxisClickEnabled {
 		get => onArgumentAxisClickEnabled;
 		set => this.onArgumentAxisClickEnabled = value;
 	}
 	bool? onLegendClickEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnLegendClickEnabled {
 		get => onLegendClickEnabled;
 		set => this.onLegendClickEnabled = value;
 	}
 	bool? onSeriesClickEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnSeriesClickEnabled {
 		get => onSeriesClickEnabled;
 		set => this.onSeriesClickEnabled = value;
 	}
 	bool? onSeriesHoverChangedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnSeriesHoverChangedEnabled {
 		get => onSeriesHoverChangedEnabled;
 		set => this.onSeriesHoverChangedEnabled = value;
 	}
 	bool? onSeriesSelectionChangedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnSeriesSelectionChangedEnabled {
 		get => onSeriesSelectionChangedEnabled;
 		set => this.onSeriesSelectionChangedEnabled = value;
 	}
 	bool? onZoomEndEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnZoomEndEnabled {
 		get => onZoomEndEnabled;
 		set => this.onZoomEndEnabled = value;
 	}
 	bool? onZoomStartEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnZoomStartEnabled {
 		get => onZoomStartEnabled;
 		set => this.onZoomStartEnabled = value;
 	}
 	bool? onDoneEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnDoneEnabled {
 		get => onDoneEnabled;
 		set => this.onDoneEnabled = value;
 	}
 	bool? onPointClickEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnPointClickEnabled {
 		get => onPointClickEnabled;
 		set => this.onPointClickEnabled = value;
 	}
 	bool? onPointHoverChangedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnPointHoverChangedEnabled {
 		get => onPointHoverChangedEnabled;
 		set => this.onPointHoverChangedEnabled = value;
 	}
 	bool? onPointSelectionChangedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnPointSelectionChangedEnabled {
 		get => onPointSelectionChangedEnabled;
 		set => this.onPointSelectionChangedEnabled = value;
 	}
 	bool? onTooltipHiddenEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnTooltipHiddenEnabled {
 		get => onTooltipHiddenEnabled;
 		set => this.onTooltipHiddenEnabled = value;
 	}
 	bool? onTooltipShownEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnTooltipShownEnabled {
 		get => onTooltipShownEnabled;
 		set => this.onTooltipShownEnabled = value;
 	}
 	bool? onDrawnEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnDrawnEnabled {
 		get => onDrawnEnabled;
 		set => this.onDrawnEnabled = value;
 	}
 	bool? onExportedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnExportedEnabled {
 		get => onExportedEnabled;
 		set => this.onExportedEnabled = value;
 	}
 	bool? onExportingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnExportingEnabled {
 		get => onExportingEnabled;
 		set => this.onExportingEnabled = value;
 	}
 	bool? onFileSavingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnFileSavingEnabled {
 		get => onFileSavingEnabled;
 		set => this.onFileSavingEnabled = value;
 	}
 	bool? onIncidentOccurredEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnIncidentOccurredEnabled {
 		get => onIncidentOccurredEnabled;
 		set => this.onIncidentOccurredEnabled = value;
 	}
 	bool? onDisposingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnDisposingEnabled {
 		get => onDisposingEnabled;
 		set => this.onDisposingEnabled = value;
 	}
 	bool? onOptionChangedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnOptionChangedEnabled {
 		get => onOptionChangedEnabled;
 		set => this.onOptionChangedEnabled = value;
 	}
 	bool? onInitializedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnInitializedEnabled {
 		get => onInitializedEnabled;
 		set => this.onInitializedEnabled = value;
@@ -849,147 +849,147 @@
 		DevExpress.Viz.DxChartInterop.OptionChanged += DxChart_OptionChanged;
 		DevExpress.Viz.DxChartInterop.Initialized += DxChart_Initialized;
 	}
-	[Parameter]
+	[Parameter] public
 	Action ArgumentAxisClick { get; set; }
 	void DxChart_ArgumentAxisClick(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ArgumentAxisClick?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action LegendClick { get; set; }
 	void DxChart_LegendClick(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			LegendClick?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action SeriesClick { get; set; }
 	void DxChart_SeriesClick(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			SeriesClick?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action SeriesHoverChanged { get; set; }
 	void DxChart_SeriesHoverChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			SeriesHoverChanged?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action SeriesSelectionChanged { get; set; }
 	void DxChart_SeriesSelectionChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			SeriesSelectionChanged?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action ZoomEnd { get; set; }
 	void DxChart_ZoomEnd(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ZoomEnd?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action ZoomStart { get; set; }
 	void DxChart_ZoomStart(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ZoomStart?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Done { get; set; }
 	void DxChart_Done(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Done?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action PointClick { get; set; }
 	void DxChart_PointClick(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			PointClick?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action PointHoverChanged { get; set; }
 	void DxChart_PointHoverChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			PointHoverChanged?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action PointSelectionChanged { get; set; }
 	void DxChart_PointSelectionChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			PointSelectionChanged?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action TooltipHidden { get; set; }
 	void DxChart_TooltipHidden(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			TooltipHidden?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action TooltipShown { get; set; }
 	void DxChart_TooltipShown(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			TooltipShown?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Drawn { get; set; }
 	void DxChart_Drawn(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Drawn?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Exported { get; set; }
 	void DxChart_Exported(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Exported?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Exporting { get; set; }
 	void DxChart_Exporting(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Exporting?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action FileSaving { get; set; }
 	void DxChart_FileSaving(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			FileSaving?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action IncidentOccurred { get; set; }
 	void DxChart_IncidentOccurred(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			IncidentOccurred?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Disposing { get; set; }
 	void DxChart_Disposing(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Disposing?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action OptionChanged { get; set; }
 	void DxChart_OptionChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			OptionChanged?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Initialized { get; set; }
 	void DxChart_Initialized(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {

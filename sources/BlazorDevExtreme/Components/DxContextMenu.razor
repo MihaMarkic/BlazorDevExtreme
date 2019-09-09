@@ -67,7 +67,7 @@
 		return DevExpress.Ui.DxContextMenuInterop.Init(dxTarget, options);
 	}
 	object closeOnOutsideClick;
-	[Parameter]
+	[Parameter] public
 	object CloseOnOutsideClick {
 		get => isInitialized ? DevExpress.Ui.DxContextMenuInterop.GetCloseOnOutsideClick(dxTarget).Result : closeOnOutsideClick;
 		set {
@@ -79,7 +79,7 @@
 		}
 	}
 	object items;
-	[Parameter]
+	[Parameter] public
 	object Items {
 		get => isInitialized ? DevExpress.Ui.DxContextMenuInterop.GetItems(dxTarget).Result : items;
 		set {
@@ -91,7 +91,7 @@
 		}
 	}
 	object position;
-	[Parameter]
+	[Parameter] public
 	object Position {
 		get => isInitialized ? DevExpress.Ui.DxContextMenuInterop.GetPosition(dxTarget).Result : position;
 		set {
@@ -103,7 +103,7 @@
 		}
 	}
 	object showEvent;
-	[Parameter]
+	[Parameter] public
 	object ShowEvent {
 		get => isInitialized ? DevExpress.Ui.DxContextMenuInterop.GetShowEvent(dxTarget).Result : showEvent;
 		set {
@@ -115,7 +115,7 @@
 		}
 	}
 	string submenuDirection;
-	[Parameter]
+	[Parameter] public
 	string SubmenuDirection {
 		get => isInitialized ? (string)DevExpress.Ui.DxContextMenuInterop.GetSubmenuDirection(dxTarget).Result : submenuDirection;
 		set {
@@ -127,7 +127,7 @@
 		}
 	}
 	object target;
-	[Parameter]
+	[Parameter] public
 	object Target {
 		get => isInitialized ? DevExpress.Ui.DxContextMenuInterop.GetTarget(dxTarget).Result : target;
 		set {
@@ -139,7 +139,7 @@
 		}
 	}
 	bool? visible;
-	[Parameter]
+	[Parameter] public
 	bool? Visible {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxContextMenuInterop.GetVisible(dxTarget).Result : visible;
 		set {
@@ -151,7 +151,7 @@
 		}
 	}
 	bool? activeStateEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? ActiveStateEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxContextMenuInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
 		set {
@@ -163,7 +163,7 @@
 		}
 	}
 	object animation;
-	[Parameter]
+	[Parameter] public
 	object Animation {
 		get => isInitialized ? DevExpress.Ui.DxContextMenuInterop.GetAnimation(dxTarget).Result : animation;
 		set {
@@ -175,7 +175,7 @@
 		}
 	}
 	string cssClass;
-	[Parameter]
+	[Parameter] public
 	string CssClass {
 		get => isInitialized ? (string)DevExpress.Ui.DxContextMenuInterop.GetCssClass(dxTarget).Result : cssClass;
 		set {
@@ -187,7 +187,7 @@
 		}
 	}
 	bool? selectByClick;
-	[Parameter]
+	[Parameter] public
 	bool? SelectByClick {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxContextMenuInterop.GetSelectByClick(dxTarget).Result : selectByClick;
 		set {
@@ -199,7 +199,7 @@
 		}
 	}
 	string selectionMode;
-	[Parameter]
+	[Parameter] public
 	string SelectionMode {
 		get => isInitialized ? (string)DevExpress.Ui.DxContextMenuInterop.GetSelectionMode(dxTarget).Result : selectionMode;
 		set {
@@ -211,7 +211,7 @@
 		}
 	}
 	object showSubmenuMode;
-	[Parameter]
+	[Parameter] public
 	object ShowSubmenuMode {
 		get => isInitialized ? DevExpress.Ui.DxContextMenuInterop.GetShowSubmenuMode(dxTarget).Result : showSubmenuMode;
 		set {
@@ -223,7 +223,7 @@
 		}
 	}
 	object disabledExpr;
-	[Parameter]
+	[Parameter] public
 	object DisabledExpr {
 		get => isInitialized ? DevExpress.Ui.DxContextMenuInterop.GetDisabledExpr(dxTarget).Result : disabledExpr;
 		set {
@@ -235,7 +235,7 @@
 		}
 	}
 	object displayExpr;
-	[Parameter]
+	[Parameter] public
 	object DisplayExpr {
 		get => isInitialized ? DevExpress.Ui.DxContextMenuInterop.GetDisplayExpr(dxTarget).Result : displayExpr;
 		set {
@@ -247,7 +247,7 @@
 		}
 	}
 	bool? focusStateEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? FocusStateEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxContextMenuInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
 		set {
@@ -259,7 +259,7 @@
 		}
 	}
 	bool? hoverStateEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? HoverStateEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxContextMenuInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
 		set {
@@ -271,7 +271,7 @@
 		}
 	}
 	object itemsExpr;
-	[Parameter]
+	[Parameter] public
 	object ItemsExpr {
 		get => isInitialized ? DevExpress.Ui.DxContextMenuInterop.GetItemsExpr(dxTarget).Result : itemsExpr;
 		set {
@@ -283,7 +283,7 @@
 		}
 	}
 	object keyExpr;
-	[Parameter]
+	[Parameter] public
 	object KeyExpr {
 		get => isInitialized ? DevExpress.Ui.DxContextMenuInterop.GetKeyExpr(dxTarget).Result : keyExpr;
 		set {
@@ -295,7 +295,7 @@
 		}
 	}
 	object selectedExpr;
-	[Parameter]
+	[Parameter] public
 	object SelectedExpr {
 		get => isInitialized ? DevExpress.Ui.DxContextMenuInterop.GetSelectedExpr(dxTarget).Result : selectedExpr;
 		set {
@@ -307,7 +307,7 @@
 		}
 	}
 	object dataSource;
-	[Parameter]
+	[Parameter] public
 	object DataSource {
 		get => isInitialized ? DevExpress.Ui.DxContextMenuInterop.GetDataSource(dxTarget).Result : dataSource;
 		set {
@@ -319,7 +319,7 @@
 		}
 	}
 	float? itemHoldTimeout;
-	[Parameter]
+	[Parameter] public
 	float? ItemHoldTimeout {
 		get => isInitialized ? (float?)DevExpress.Ui.DxContextMenuInterop.GetItemHoldTimeout(dxTarget).Result : itemHoldTimeout;
 		set {
@@ -331,7 +331,7 @@
 		}
 	}
 	object itemTemplate;
-	[Parameter]
+	[Parameter] public
 	object ItemTemplate {
 		get => isInitialized ? DevExpress.Ui.DxContextMenuInterop.GetItemTemplate(dxTarget).Result : itemTemplate;
 		set {
@@ -343,7 +343,7 @@
 		}
 	}
 	string noDataText;
-	[Parameter]
+	[Parameter] public
 	string NoDataText {
 		get => isInitialized ? (string)DevExpress.Ui.DxContextMenuInterop.GetNoDataText(dxTarget).Result : noDataText;
 		set {
@@ -355,7 +355,7 @@
 		}
 	}
 	float? selectedIndex;
-	[Parameter]
+	[Parameter] public
 	float? SelectedIndex {
 		get => isInitialized ? (float?)DevExpress.Ui.DxContextMenuInterop.GetSelectedIndex(dxTarget).Result : selectedIndex;
 		set {
@@ -367,7 +367,7 @@
 		}
 	}
 	object selectedItem;
-	[Parameter]
+	[Parameter] public
 	object SelectedItem {
 		get => isInitialized ? DevExpress.Ui.DxContextMenuInterop.GetSelectedItem(dxTarget).Result : selectedItem;
 		set {
@@ -379,7 +379,7 @@
 		}
 	}
 	object selectedItemKeys;
-	[Parameter]
+	[Parameter] public
 	object SelectedItemKeys {
 		get => isInitialized ? DevExpress.Ui.DxContextMenuInterop.GetSelectedItemKeys(dxTarget).Result : selectedItemKeys;
 		set {
@@ -391,7 +391,7 @@
 		}
 	}
 	object selectedItems;
-	[Parameter]
+	[Parameter] public
 	object SelectedItems {
 		get => isInitialized ? DevExpress.Ui.DxContextMenuInterop.GetSelectedItems(dxTarget).Result : selectedItems;
 		set {
@@ -403,7 +403,7 @@
 		}
 	}
 	string accessKey;
-	[Parameter]
+	[Parameter] public
 	string AccessKey {
 		get => isInitialized ? (string)DevExpress.Ui.DxContextMenuInterop.GetAccessKey(dxTarget).Result : accessKey;
 		set {
@@ -415,7 +415,7 @@
 		}
 	}
 	bool? disabled;
-	[Parameter]
+	[Parameter] public
 	bool? Disabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxContextMenuInterop.GetDisabled(dxTarget).Result : disabled;
 		set {
@@ -427,7 +427,7 @@
 		}
 	}
 	string hint;
-	[Parameter]
+	[Parameter] public
 	string Hint {
 		get => isInitialized ? (string)DevExpress.Ui.DxContextMenuInterop.GetHint(dxTarget).Result : hint;
 		set {
@@ -439,7 +439,7 @@
 		}
 	}
 	float? tabIndex;
-	[Parameter]
+	[Parameter] public
 	float? TabIndex {
 		get => isInitialized ? (float?)DevExpress.Ui.DxContextMenuInterop.GetTabIndex(dxTarget).Result : tabIndex;
 		set {
@@ -451,7 +451,7 @@
 		}
 	}
 	object bindingOptions;
-	[Parameter]
+	[Parameter] public
 	object BindingOptions {
 		get => isInitialized ? DevExpress.Ui.DxContextMenuInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
 		set {
@@ -463,7 +463,7 @@
 		}
 	}
 	object elementAttr;
-	[Parameter]
+	[Parameter] public
 	object ElementAttr {
 		get => isInitialized ? DevExpress.Ui.DxContextMenuInterop.GetElementAttr(dxTarget).Result : elementAttr;
 		set {
@@ -475,7 +475,7 @@
 		}
 	}
 	object height;
-	[Parameter]
+	[Parameter] public
 	object Height {
 		get => isInitialized ? DevExpress.Ui.DxContextMenuInterop.GetHeight(dxTarget).Result : height;
 		set {
@@ -487,7 +487,7 @@
 		}
 	}
 	bool? rtlEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? RtlEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxContextMenuInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
 		set {
@@ -499,7 +499,7 @@
 		}
 	}
 	object width;
-	[Parameter]
+	[Parameter] public
 	object Width {
 		get => isInitialized ? DevExpress.Ui.DxContextMenuInterop.GetWidth(dxTarget).Result : width;
 		set {
@@ -511,85 +511,85 @@
 		}
 	}
 	bool? onHiddenEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnHiddenEnabled {
 		get => onHiddenEnabled;
 		set => this.onHiddenEnabled = value;
 	}
 	bool? onHidingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnHidingEnabled {
 		get => onHidingEnabled;
 		set => this.onHidingEnabled = value;
 	}
 	bool? onPositioningEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnPositioningEnabled {
 		get => onPositioningEnabled;
 		set => this.onPositioningEnabled = value;
 	}
 	bool? onShowingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnShowingEnabled {
 		get => onShowingEnabled;
 		set => this.onShowingEnabled = value;
 	}
 	bool? onShownEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnShownEnabled {
 		get => onShownEnabled;
 		set => this.onShownEnabled = value;
 	}
 	bool? onItemClickEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnItemClickEnabled {
 		get => onItemClickEnabled;
 		set => this.onItemClickEnabled = value;
 	}
 	bool? onItemContextMenuEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnItemContextMenuEnabled {
 		get => onItemContextMenuEnabled;
 		set => this.onItemContextMenuEnabled = value;
 	}
 	bool? onItemHoldEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnItemHoldEnabled {
 		get => onItemHoldEnabled;
 		set => this.onItemHoldEnabled = value;
 	}
 	bool? onItemRenderedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnItemRenderedEnabled {
 		get => onItemRenderedEnabled;
 		set => this.onItemRenderedEnabled = value;
 	}
 	bool? onSelectionChangedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnSelectionChangedEnabled {
 		get => onSelectionChangedEnabled;
 		set => this.onSelectionChangedEnabled = value;
 	}
 	bool? onContentReadyEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnContentReadyEnabled {
 		get => onContentReadyEnabled;
 		set => this.onContentReadyEnabled = value;
 	}
 	bool? onDisposingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnDisposingEnabled {
 		get => onDisposingEnabled;
 		set => this.onDisposingEnabled = value;
 	}
 	bool? onOptionChangedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnOptionChangedEnabled {
 		get => onOptionChangedEnabled;
 		set => this.onOptionChangedEnabled = value;
 	}
 	bool? onInitializedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnInitializedEnabled {
 		get => onInitializedEnabled;
 		set => this.onInitializedEnabled = value;
@@ -611,98 +611,98 @@
 		DevExpress.Ui.DxContextMenuInterop.OptionChanged += DxContextMenu_OptionChanged;
 		DevExpress.Ui.DxContextMenuInterop.Initialized += DxContextMenu_Initialized;
 	}
-	[Parameter]
+	[Parameter] public
 	Action Hidden { get; set; }
 	void DxContextMenu_Hidden(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Hidden?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Hiding { get; set; }
 	void DxContextMenu_Hiding(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Hiding?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Positioning { get; set; }
 	void DxContextMenu_Positioning(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Positioning?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Showing { get; set; }
 	void DxContextMenu_Showing(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Showing?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Shown { get; set; }
 	void DxContextMenu_Shown(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Shown?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action ItemClick { get; set; }
 	void DxContextMenu_ItemClick(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ItemClick?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action ItemContextMenu { get; set; }
 	void DxContextMenu_ItemContextMenu(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ItemContextMenu?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action ItemHold { get; set; }
 	void DxContextMenu_ItemHold(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ItemHold?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action ItemRendered { get; set; }
 	void DxContextMenu_ItemRendered(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ItemRendered?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action SelectionChanged { get; set; }
 	void DxContextMenu_SelectionChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			SelectionChanged?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action ContentReady { get; set; }
 	void DxContextMenu_ContentReady(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ContentReady?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Disposing { get; set; }
 	void DxContextMenu_Disposing(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Disposing?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action OptionChanged { get; set; }
 	void DxContextMenu_OptionChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			OptionChanged?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Initialized { get; set; }
 	void DxContextMenu_Initialized(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {

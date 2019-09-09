@@ -44,7 +44,7 @@
         return DevExpress.Ui.DxProgressBarInterop.Init(dxTarget, options);
     }
     bool? showStatus;
-    [Parameter]
+    [Parameter] public
     bool? ShowStatus {
         get => isInitialized ? (bool?)DevExpress.Ui.DxProgressBarInterop.GetShowStatus(dxTarget).Result : showStatus;
         set {
@@ -56,7 +56,7 @@
         }
     }
     object statusFormat;
-    [Parameter]
+    [Parameter] public
     object StatusFormat {
         get => isInitialized ? DevExpress.Ui.DxProgressBarInterop.GetStatusFormat(dxTarget).Result : statusFormat;
         set {
@@ -68,7 +68,7 @@
         }
     }
     float? value;
-    [Parameter]
+    [Parameter] public
     float? Value {
         get => isInitialized ? (float?)DevExpress.Ui.DxProgressBarInterop.GetValue(dxTarget).Result : value;
         set {
@@ -80,7 +80,7 @@
         }
     }
     float? max;
-    [Parameter]
+    [Parameter] public
     float? Max {
         get => isInitialized ? (float?)DevExpress.Ui.DxProgressBarInterop.GetMax(dxTarget).Result : max;
         set {
@@ -92,7 +92,7 @@
         }
     }
     float? min;
-    [Parameter]
+    [Parameter] public
     float? Min {
         get => isInitialized ? (float?)DevExpress.Ui.DxProgressBarInterop.GetMin(dxTarget).Result : min;
         set {
@@ -104,7 +104,7 @@
         }
     }
     bool? isValid;
-    [Parameter]
+    [Parameter] public
     bool? IsValid {
         get => isInitialized ? (bool?)DevExpress.Ui.DxProgressBarInterop.GetIsValid(dxTarget).Result : isValid;
         set {
@@ -116,7 +116,7 @@
         }
     }
     bool? readOnly;
-    [Parameter]
+    [Parameter] public
     bool? ReadOnly {
         get => isInitialized ? (bool?)DevExpress.Ui.DxProgressBarInterop.GetReadOnly(dxTarget).Result : readOnly;
         set {
@@ -128,7 +128,7 @@
         }
     }
     object validationError;
-    [Parameter]
+    [Parameter] public
     object ValidationError {
         get => isInitialized ? DevExpress.Ui.DxProgressBarInterop.GetValidationError(dxTarget).Result : validationError;
         set {
@@ -140,7 +140,7 @@
         }
     }
     string validationMessageMode;
-    [Parameter]
+    [Parameter] public
     string ValidationMessageMode {
         get => isInitialized ? (string)DevExpress.Ui.DxProgressBarInterop.GetValidationMessageMode(dxTarget).Result : validationMessageMode;
         set {
@@ -152,7 +152,7 @@
         }
     }
     string accessKey;
-    [Parameter]
+    [Parameter] public
     string AccessKey {
         get => isInitialized ? (string)DevExpress.Ui.DxProgressBarInterop.GetAccessKey(dxTarget).Result : accessKey;
         set {
@@ -164,7 +164,7 @@
         }
     }
     bool? activeStateEnabled;
-    [Parameter]
+    [Parameter] public
     bool? ActiveStateEnabled {
         get => isInitialized ? (bool?)DevExpress.Ui.DxProgressBarInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
         set {
@@ -176,7 +176,7 @@
         }
     }
     bool? disabled;
-    [Parameter]
+    [Parameter] public
     bool? Disabled {
         get => isInitialized ? (bool?)DevExpress.Ui.DxProgressBarInterop.GetDisabled(dxTarget).Result : disabled;
         set {
@@ -188,7 +188,7 @@
         }
     }
     bool? focusStateEnabled;
-    [Parameter]
+    [Parameter] public
     bool? FocusStateEnabled {
         get => isInitialized ? (bool?)DevExpress.Ui.DxProgressBarInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
         set {
@@ -200,7 +200,7 @@
         }
     }
     string hint;
-    [Parameter]
+    [Parameter] public
     string Hint {
         get => isInitialized ? (string)DevExpress.Ui.DxProgressBarInterop.GetHint(dxTarget).Result : hint;
         set {
@@ -212,7 +212,7 @@
         }
     }
     bool? hoverStateEnabled;
-    [Parameter]
+    [Parameter] public
     bool? HoverStateEnabled {
         get => isInitialized ? (bool?)DevExpress.Ui.DxProgressBarInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
         set {
@@ -224,7 +224,7 @@
         }
     }
     float? tabIndex;
-    [Parameter]
+    [Parameter] public
     float? TabIndex {
         get => isInitialized ? (float?)DevExpress.Ui.DxProgressBarInterop.GetTabIndex(dxTarget).Result : tabIndex;
         set {
@@ -236,7 +236,7 @@
         }
     }
     bool? visible;
-    [Parameter]
+    [Parameter] public
     bool? Visible {
         get => isInitialized ? (bool?)DevExpress.Ui.DxProgressBarInterop.GetVisible(dxTarget).Result : visible;
         set {
@@ -248,7 +248,7 @@
         }
     }
     object bindingOptions;
-    [Parameter]
+    [Parameter] public
     object BindingOptions {
         get => isInitialized ? DevExpress.Ui.DxProgressBarInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
         set {
@@ -260,7 +260,7 @@
         }
     }
     object elementAttr;
-    [Parameter]
+    [Parameter] public
     object ElementAttr {
         get => isInitialized ? DevExpress.Ui.DxProgressBarInterop.GetElementAttr(dxTarget).Result : elementAttr;
         set {
@@ -272,7 +272,7 @@
         }
     }
     object height;
-    [Parameter]
+    [Parameter] public
     object Height {
         get => isInitialized ? DevExpress.Ui.DxProgressBarInterop.GetHeight(dxTarget).Result : height;
         set {
@@ -284,7 +284,7 @@
         }
     }
     bool? rtlEnabled;
-    [Parameter]
+    [Parameter] public
     bool? RtlEnabled {
         get => isInitialized ? (bool?)DevExpress.Ui.DxProgressBarInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
         set {
@@ -296,7 +296,7 @@
         }
     }
     object width;
-    [Parameter]
+    [Parameter] public
     object Width {
         get => isInitialized ? DevExpress.Ui.DxProgressBarInterop.GetWidth(dxTarget).Result : width;
         set {
@@ -308,37 +308,37 @@
         }
     }
     bool? onCompleteEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnCompleteEnabled {
         get => onCompleteEnabled;
         set => this.onCompleteEnabled = value;
     }
     bool? onValueChangedEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnValueChangedEnabled {
         get => onValueChangedEnabled;
         set => this.onValueChangedEnabled = value;
     }
     bool? onContentReadyEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnContentReadyEnabled {
         get => onContentReadyEnabled;
         set => this.onContentReadyEnabled = value;
     }
     bool? onDisposingEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnDisposingEnabled {
         get => onDisposingEnabled;
         set => this.onDisposingEnabled = value;
     }
     bool? onOptionChangedEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnOptionChangedEnabled {
         get => onOptionChangedEnabled;
         set => this.onOptionChangedEnabled = value;
     }
     bool? onInitializedEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnInitializedEnabled {
         get => onInitializedEnabled;
         set => this.onInitializedEnabled = value;
@@ -352,42 +352,42 @@
         DevExpress.Ui.DxProgressBarInterop.OptionChanged += DxProgressBar_OptionChanged;
         DevExpress.Ui.DxProgressBarInterop.Initialized += DxProgressBar_Initialized;
     }
-    [Parameter]
+    [Parameter] public
     Action Complete { get; set; }
     void DxProgressBar_Complete(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             Complete?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action ValueChanged { get; set; }
     void DxProgressBar_ValueChanged(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             ValueChanged?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action ContentReady { get; set; }
     void DxProgressBar_ContentReady(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             ContentReady?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action Disposing { get; set; }
     void DxProgressBar_Disposing(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             Disposing?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action OptionChanged { get; set; }
     void DxProgressBar_OptionChanged(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             OptionChanged?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action Initialized { get; set; }
     void DxProgressBar_Initialized(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {

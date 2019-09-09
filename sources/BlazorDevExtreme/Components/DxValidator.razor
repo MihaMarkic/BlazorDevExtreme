@@ -29,7 +29,7 @@
 		return DevExpress.Ui.DxValidatorInterop.Init(dxTarget, options);
 	}
 	object adapter;
-	[Parameter]
+	[Parameter] public
 	object Adapter {
 		get => isInitialized ? DevExpress.Ui.DxValidatorInterop.GetAdapter(dxTarget).Result : adapter;
 		set {
@@ -41,7 +41,7 @@
 		}
 	}
 	string name;
-	[Parameter]
+	[Parameter] public
 	string Name {
 		get => isInitialized ? (string)DevExpress.Ui.DxValidatorInterop.GetName(dxTarget).Result : name;
 		set {
@@ -53,7 +53,7 @@
 		}
 	}
 	string validationGroup;
-	[Parameter]
+	[Parameter] public
 	string ValidationGroup {
 		get => isInitialized ? (string)DevExpress.Ui.DxValidatorInterop.GetValidationGroup(dxTarget).Result : validationGroup;
 		set {
@@ -65,7 +65,7 @@
 		}
 	}
 	object validationRules;
-	[Parameter]
+	[Parameter] public
 	object ValidationRules {
 		get => isInitialized ? DevExpress.Ui.DxValidatorInterop.GetValidationRules(dxTarget).Result : validationRules;
 		set {
@@ -77,7 +77,7 @@
 		}
 	}
 	object bindingOptions;
-	[Parameter]
+	[Parameter] public
 	object BindingOptions {
 		get => isInitialized ? DevExpress.Ui.DxValidatorInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
 		set {
@@ -89,7 +89,7 @@
 		}
 	}
 	object elementAttr;
-	[Parameter]
+	[Parameter] public
 	object ElementAttr {
 		get => isInitialized ? DevExpress.Ui.DxValidatorInterop.GetElementAttr(dxTarget).Result : elementAttr;
 		set {
@@ -101,7 +101,7 @@
 		}
 	}
 	object height;
-	[Parameter]
+	[Parameter] public
 	object Height {
 		get => isInitialized ? DevExpress.Ui.DxValidatorInterop.GetHeight(dxTarget).Result : height;
 		set {
@@ -113,7 +113,7 @@
 		}
 	}
 	bool? rtlEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? RtlEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxValidatorInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
 		set {
@@ -125,7 +125,7 @@
 		}
 	}
 	object width;
-	[Parameter]
+	[Parameter] public
 	object Width {
 		get => isInitialized ? DevExpress.Ui.DxValidatorInterop.GetWidth(dxTarget).Result : width;
 		set {
@@ -137,25 +137,25 @@
 		}
 	}
 	bool? onValidatedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnValidatedEnabled {
 		get => onValidatedEnabled;
 		set => this.onValidatedEnabled = value;
 	}
 	bool? onDisposingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnDisposingEnabled {
 		get => onDisposingEnabled;
 		set => this.onDisposingEnabled = value;
 	}
 	bool? onOptionChangedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnOptionChangedEnabled {
 		get => onOptionChangedEnabled;
 		set => this.onOptionChangedEnabled = value;
 	}
 	bool? onInitializedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnInitializedEnabled {
 		get => onInitializedEnabled;
 		set => this.onInitializedEnabled = value;
@@ -167,28 +167,28 @@
 		DevExpress.Ui.DxValidatorInterop.OptionChanged += DxValidator_OptionChanged;
 		DevExpress.Ui.DxValidatorInterop.Initialized += DxValidator_Initialized;
 	}
-	[Parameter]
+	[Parameter] public
 	Action Validated { get; set; }
 	void DxValidator_Validated(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Validated?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Disposing { get; set; }
 	void DxValidator_Disposing(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Disposing?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action OptionChanged { get; set; }
 	void DxValidator_OptionChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			OptionChanged?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Initialized { get; set; }
 	void DxValidator_Initialized(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {

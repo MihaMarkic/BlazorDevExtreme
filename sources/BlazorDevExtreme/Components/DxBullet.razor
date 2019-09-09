@@ -49,7 +49,7 @@
 		return DevExpress.Viz.DxBulletInterop.Init(dxTarget, options);
 	}
 	string color;
-	[Parameter]
+	[Parameter] public
 	string Color {
 		get => isInitialized ? (string)DevExpress.Viz.DxBulletInterop.GetColor(dxTarget).Result : color;
 		set {
@@ -61,7 +61,7 @@
 		}
 	}
 	float? endScaleValue;
-	[Parameter]
+	[Parameter] public
 	float? EndScaleValue {
 		get => isInitialized ? (float?)DevExpress.Viz.DxBulletInterop.GetEndScaleValue(dxTarget).Result : endScaleValue;
 		set {
@@ -73,7 +73,7 @@
 		}
 	}
 	bool? showTarget;
-	[Parameter]
+	[Parameter] public
 	bool? ShowTarget {
 		get => isInitialized ? (bool?)DevExpress.Viz.DxBulletInterop.GetShowTarget(dxTarget).Result : showTarget;
 		set {
@@ -85,7 +85,7 @@
 		}
 	}
 	bool? showZeroLevel;
-	[Parameter]
+	[Parameter] public
 	bool? ShowZeroLevel {
 		get => isInitialized ? (bool?)DevExpress.Viz.DxBulletInterop.GetShowZeroLevel(dxTarget).Result : showZeroLevel;
 		set {
@@ -97,7 +97,7 @@
 		}
 	}
 	float? startScaleValue;
-	[Parameter]
+	[Parameter] public
 	float? StartScaleValue {
 		get => isInitialized ? (float?)DevExpress.Viz.DxBulletInterop.GetStartScaleValue(dxTarget).Result : startScaleValue;
 		set {
@@ -109,7 +109,7 @@
 		}
 	}
 	float? target;
-	[Parameter]
+	[Parameter] public
 	float? Target {
 		get => isInitialized ? (float?)DevExpress.Viz.DxBulletInterop.GetTarget(dxTarget).Result : target;
 		set {
@@ -121,7 +121,7 @@
 		}
 	}
 	string targetColor;
-	[Parameter]
+	[Parameter] public
 	string TargetColor {
 		get => isInitialized ? (string)DevExpress.Viz.DxBulletInterop.GetTargetColor(dxTarget).Result : targetColor;
 		set {
@@ -133,7 +133,7 @@
 		}
 	}
 	float? targetWidth;
-	[Parameter]
+	[Parameter] public
 	float? TargetWidth {
 		get => isInitialized ? (float?)DevExpress.Viz.DxBulletInterop.GetTargetWidth(dxTarget).Result : targetWidth;
 		set {
@@ -145,7 +145,7 @@
 		}
 	}
 	float? value;
-	[Parameter]
+	[Parameter] public
 	float? Value {
 		get => isInitialized ? (float?)DevExpress.Viz.DxBulletInterop.GetValue(dxTarget).Result : value;
 		set {
@@ -157,7 +157,7 @@
 		}
 	}
 	object tooltip;
-	[Parameter]
+	[Parameter] public
 	object Tooltip {
 		get => isInitialized ? DevExpress.Viz.DxBulletInterop.GetTooltip(dxTarget).Result : tooltip;
 		set {
@@ -169,7 +169,7 @@
 		}
 	}
 	object export;
-	[Parameter]
+	[Parameter] public
 	object Export {
 		get => isInitialized ? DevExpress.Viz.DxBulletInterop.GetExport(dxTarget).Result : export;
 		set {
@@ -181,7 +181,7 @@
 		}
 	}
 	object loadingIndicator;
-	[Parameter]
+	[Parameter] public
 	object LoadingIndicator {
 		get => isInitialized ? DevExpress.Viz.DxBulletInterop.GetLoadingIndicator(dxTarget).Result : loadingIndicator;
 		set {
@@ -193,7 +193,7 @@
 		}
 	}
 	object margin;
-	[Parameter]
+	[Parameter] public
 	object Margin {
 		get => isInitialized ? DevExpress.Viz.DxBulletInterop.GetMargin(dxTarget).Result : margin;
 		set {
@@ -205,7 +205,7 @@
 		}
 	}
 	bool? pathModified;
-	[Parameter]
+	[Parameter] public
 	bool? PathModified {
 		get => isInitialized ? (bool?)DevExpress.Viz.DxBulletInterop.GetPathModified(dxTarget).Result : pathModified;
 		set {
@@ -217,7 +217,7 @@
 		}
 	}
 	bool? redrawOnResize;
-	[Parameter]
+	[Parameter] public
 	bool? RedrawOnResize {
 		get => isInitialized ? (bool?)DevExpress.Viz.DxBulletInterop.GetRedrawOnResize(dxTarget).Result : redrawOnResize;
 		set {
@@ -229,7 +229,7 @@
 		}
 	}
 	bool? rtlEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? RtlEnabled {
 		get => isInitialized ? (bool?)DevExpress.Viz.DxBulletInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
 		set {
@@ -241,7 +241,7 @@
 		}
 	}
 	object size;
-	[Parameter]
+	[Parameter] public
 	object Size {
 		get => isInitialized ? DevExpress.Viz.DxBulletInterop.GetSize(dxTarget).Result : size;
 		set {
@@ -253,7 +253,7 @@
 		}
 	}
 	string theme;
-	[Parameter]
+	[Parameter] public
 	string Theme {
 		get => isInitialized ? (string)DevExpress.Viz.DxBulletInterop.GetTheme(dxTarget).Result : theme;
 		set {
@@ -265,7 +265,7 @@
 		}
 	}
 	object title;
-	[Parameter]
+	[Parameter] public
 	object Title {
 		get => isInitialized ? DevExpress.Viz.DxBulletInterop.GetTitle(dxTarget).Result : title;
 		set {
@@ -277,7 +277,7 @@
 		}
 	}
 	object bindingOptions;
-	[Parameter]
+	[Parameter] public
 	object BindingOptions {
 		get => isInitialized ? DevExpress.Viz.DxBulletInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
 		set {
@@ -289,7 +289,7 @@
 		}
 	}
 	object elementAttr;
-	[Parameter]
+	[Parameter] public
 	object ElementAttr {
 		get => isInitialized ? DevExpress.Viz.DxBulletInterop.GetElementAttr(dxTarget).Result : elementAttr;
 		set {
@@ -301,7 +301,7 @@
 		}
 	}
 	object height;
-	[Parameter]
+	[Parameter] public
 	object Height {
 		get => isInitialized ? DevExpress.Viz.DxBulletInterop.GetHeight(dxTarget).Result : height;
 		set {
@@ -313,7 +313,7 @@
 		}
 	}
 	object width;
-	[Parameter]
+	[Parameter] public
 	object Width {
 		get => isInitialized ? DevExpress.Viz.DxBulletInterop.GetWidth(dxTarget).Result : width;
 		set {
@@ -325,61 +325,61 @@
 		}
 	}
 	bool? onTooltipHiddenEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnTooltipHiddenEnabled {
 		get => onTooltipHiddenEnabled;
 		set => this.onTooltipHiddenEnabled = value;
 	}
 	bool? onTooltipShownEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnTooltipShownEnabled {
 		get => onTooltipShownEnabled;
 		set => this.onTooltipShownEnabled = value;
 	}
 	bool? onDrawnEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnDrawnEnabled {
 		get => onDrawnEnabled;
 		set => this.onDrawnEnabled = value;
 	}
 	bool? onExportedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnExportedEnabled {
 		get => onExportedEnabled;
 		set => this.onExportedEnabled = value;
 	}
 	bool? onExportingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnExportingEnabled {
 		get => onExportingEnabled;
 		set => this.onExportingEnabled = value;
 	}
 	bool? onFileSavingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnFileSavingEnabled {
 		get => onFileSavingEnabled;
 		set => this.onFileSavingEnabled = value;
 	}
 	bool? onIncidentOccurredEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnIncidentOccurredEnabled {
 		get => onIncidentOccurredEnabled;
 		set => this.onIncidentOccurredEnabled = value;
 	}
 	bool? onDisposingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnDisposingEnabled {
 		get => onDisposingEnabled;
 		set => this.onDisposingEnabled = value;
 	}
 	bool? onOptionChangedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnOptionChangedEnabled {
 		get => onOptionChangedEnabled;
 		set => this.onOptionChangedEnabled = value;
 	}
 	bool? onInitializedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnInitializedEnabled {
 		get => onInitializedEnabled;
 		set => this.onInitializedEnabled = value;
@@ -397,70 +397,70 @@
 		DevExpress.Viz.DxBulletInterop.OptionChanged += DxBullet_OptionChanged;
 		DevExpress.Viz.DxBulletInterop.Initialized += DxBullet_Initialized;
 	}
-	[Parameter]
+	[Parameter] public
 	Action TooltipHidden { get; set; }
 	void DxBullet_TooltipHidden(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			TooltipHidden?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action TooltipShown { get; set; }
 	void DxBullet_TooltipShown(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			TooltipShown?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Drawn { get; set; }
 	void DxBullet_Drawn(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Drawn?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Exported { get; set; }
 	void DxBullet_Exported(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Exported?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Exporting { get; set; }
 	void DxBullet_Exporting(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Exporting?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action FileSaving { get; set; }
 	void DxBullet_FileSaving(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			FileSaving?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action IncidentOccurred { get; set; }
 	void DxBullet_IncidentOccurred(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			IncidentOccurred?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Disposing { get; set; }
 	void DxBullet_Disposing(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Disposing?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action OptionChanged { get; set; }
 	void DxBullet_OptionChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			OptionChanged?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Initialized { get; set; }
 	void DxBullet_Initialized(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {

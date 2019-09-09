@@ -33,7 +33,7 @@
 		return DevExpress.Ui.WidgetInterop.Init(dxTarget, options);
 	}
 	string accessKey;
-	[Parameter]
+	[Parameter] public
 	string AccessKey {
 		get => isInitialized ? (string)DevExpress.Ui.WidgetInterop.GetAccessKey(dxTarget).Result : accessKey;
 		set {
@@ -45,7 +45,7 @@
 		}
 	}
 	bool? activeStateEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? ActiveStateEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.WidgetInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
 		set {
@@ -57,7 +57,7 @@
 		}
 	}
 	bool? disabled;
-	[Parameter]
+	[Parameter] public
 	bool? Disabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.WidgetInterop.GetDisabled(dxTarget).Result : disabled;
 		set {
@@ -69,7 +69,7 @@
 		}
 	}
 	bool? focusStateEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? FocusStateEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.WidgetInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
 		set {
@@ -81,7 +81,7 @@
 		}
 	}
 	string hint;
-	[Parameter]
+	[Parameter] public
 	string Hint {
 		get => isInitialized ? (string)DevExpress.Ui.WidgetInterop.GetHint(dxTarget).Result : hint;
 		set {
@@ -93,7 +93,7 @@
 		}
 	}
 	bool? hoverStateEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? HoverStateEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.WidgetInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
 		set {
@@ -105,7 +105,7 @@
 		}
 	}
 	float? tabIndex;
-	[Parameter]
+	[Parameter] public
 	float? TabIndex {
 		get => isInitialized ? (float?)DevExpress.Ui.WidgetInterop.GetTabIndex(dxTarget).Result : tabIndex;
 		set {
@@ -117,7 +117,7 @@
 		}
 	}
 	bool? visible;
-	[Parameter]
+	[Parameter] public
 	bool? Visible {
 		get => isInitialized ? (bool?)DevExpress.Ui.WidgetInterop.GetVisible(dxTarget).Result : visible;
 		set {
@@ -129,7 +129,7 @@
 		}
 	}
 	object bindingOptions;
-	[Parameter]
+	[Parameter] public
 	object BindingOptions {
 		get => isInitialized ? DevExpress.Ui.WidgetInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
 		set {
@@ -141,7 +141,7 @@
 		}
 	}
 	object elementAttr;
-	[Parameter]
+	[Parameter] public
 	object ElementAttr {
 		get => isInitialized ? DevExpress.Ui.WidgetInterop.GetElementAttr(dxTarget).Result : elementAttr;
 		set {
@@ -153,7 +153,7 @@
 		}
 	}
 	object height;
-	[Parameter]
+	[Parameter] public
 	object Height {
 		get => isInitialized ? DevExpress.Ui.WidgetInterop.GetHeight(dxTarget).Result : height;
 		set {
@@ -165,7 +165,7 @@
 		}
 	}
 	bool? rtlEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? RtlEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.WidgetInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
 		set {
@@ -177,7 +177,7 @@
 		}
 	}
 	object width;
-	[Parameter]
+	[Parameter] public
 	object Width {
 		get => isInitialized ? DevExpress.Ui.WidgetInterop.GetWidth(dxTarget).Result : width;
 		set {
@@ -189,25 +189,25 @@
 		}
 	}
 	bool? onContentReadyEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnContentReadyEnabled {
 		get => onContentReadyEnabled;
 		set => this.onContentReadyEnabled = value;
 	}
 	bool? onDisposingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnDisposingEnabled {
 		get => onDisposingEnabled;
 		set => this.onDisposingEnabled = value;
 	}
 	bool? onOptionChangedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnOptionChangedEnabled {
 		get => onOptionChangedEnabled;
 		set => this.onOptionChangedEnabled = value;
 	}
 	bool? onInitializedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnInitializedEnabled {
 		get => onInitializedEnabled;
 		set => this.onInitializedEnabled = value;
@@ -219,28 +219,28 @@
 		DevExpress.Ui.WidgetInterop.OptionChanged += Widget_OptionChanged;
 		DevExpress.Ui.WidgetInterop.Initialized += Widget_Initialized;
 	}
-	[Parameter]
+	[Parameter] public
 	Action ContentReady { get; set; }
 	void Widget_ContentReady(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ContentReady?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Disposing { get; set; }
 	void Widget_Disposing(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Disposing?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action OptionChanged { get; set; }
 	void Widget_OptionChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			OptionChanged?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Initialized { get; set; }
 	void Widget_Initialized(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {

@@ -51,7 +51,7 @@
         return DevExpress.Ui.DxRangeSliderInterop.Init(dxTarget, options);
     }
     float? end;
-    [Parameter]
+    [Parameter] public
     float? End {
         get => isInitialized ? (float?)DevExpress.Ui.DxRangeSliderInterop.GetEnd(dxTarget).Result : end;
         set {
@@ -63,7 +63,7 @@
         }
     }
     string endName;
-    [Parameter]
+    [Parameter] public
     string EndName {
         get => isInitialized ? (string)DevExpress.Ui.DxRangeSliderInterop.GetEndName(dxTarget).Result : endName;
         set {
@@ -75,7 +75,7 @@
         }
     }
     float? start;
-    [Parameter]
+    [Parameter] public
     float? Start {
         get => isInitialized ? (float?)DevExpress.Ui.DxRangeSliderInterop.GetStart(dxTarget).Result : start;
         set {
@@ -87,7 +87,7 @@
         }
     }
     string startName;
-    [Parameter]
+    [Parameter] public
     string StartName {
         get => isInitialized ? (string)DevExpress.Ui.DxRangeSliderInterop.GetStartName(dxTarget).Result : startName;
         set {
@@ -99,7 +99,7 @@
         }
     }
     object value;
-    [Parameter]
+    [Parameter] public
     object Value {
         get => isInitialized ? DevExpress.Ui.DxRangeSliderInterop.GetValue(dxTarget).Result : value;
         set {
@@ -111,7 +111,7 @@
         }
     }
     bool? activeStateEnabled;
-    [Parameter]
+    [Parameter] public
     bool? ActiveStateEnabled {
         get => isInitialized ? (bool?)DevExpress.Ui.DxRangeSliderInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
         set {
@@ -123,7 +123,7 @@
         }
     }
     bool? focusStateEnabled;
-    [Parameter]
+    [Parameter] public
     bool? FocusStateEnabled {
         get => isInitialized ? (bool?)DevExpress.Ui.DxRangeSliderInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
         set {
@@ -135,7 +135,7 @@
         }
     }
     bool? hoverStateEnabled;
-    [Parameter]
+    [Parameter] public
     bool? HoverStateEnabled {
         get => isInitialized ? (bool?)DevExpress.Ui.DxRangeSliderInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
         set {
@@ -147,7 +147,7 @@
         }
     }
     float? keyStep;
-    [Parameter]
+    [Parameter] public
     float? KeyStep {
         get => isInitialized ? (float?)DevExpress.Ui.DxRangeSliderInterop.GetKeyStep(dxTarget).Result : keyStep;
         set {
@@ -159,7 +159,7 @@
         }
     }
     object label;
-    [Parameter]
+    [Parameter] public
     object Label {
         get => isInitialized ? DevExpress.Ui.DxRangeSliderInterop.GetLabel(dxTarget).Result : label;
         set {
@@ -171,7 +171,7 @@
         }
     }
     string name;
-    [Parameter]
+    [Parameter] public
     string Name {
         get => isInitialized ? (string)DevExpress.Ui.DxRangeSliderInterop.GetName(dxTarget).Result : name;
         set {
@@ -183,7 +183,7 @@
         }
     }
     bool? showRange;
-    [Parameter]
+    [Parameter] public
     bool? ShowRange {
         get => isInitialized ? (bool?)DevExpress.Ui.DxRangeSliderInterop.GetShowRange(dxTarget).Result : showRange;
         set {
@@ -195,7 +195,7 @@
         }
     }
     float? step;
-    [Parameter]
+    [Parameter] public
     float? Step {
         get => isInitialized ? (float?)DevExpress.Ui.DxRangeSliderInterop.GetStep(dxTarget).Result : step;
         set {
@@ -207,7 +207,7 @@
         }
     }
     object tooltip;
-    [Parameter]
+    [Parameter] public
     object Tooltip {
         get => isInitialized ? DevExpress.Ui.DxRangeSliderInterop.GetTooltip(dxTarget).Result : tooltip;
         set {
@@ -219,7 +219,7 @@
         }
     }
     float? max;
-    [Parameter]
+    [Parameter] public
     float? Max {
         get => isInitialized ? (float?)DevExpress.Ui.DxRangeSliderInterop.GetMax(dxTarget).Result : max;
         set {
@@ -231,7 +231,7 @@
         }
     }
     float? min;
-    [Parameter]
+    [Parameter] public
     float? Min {
         get => isInitialized ? (float?)DevExpress.Ui.DxRangeSliderInterop.GetMin(dxTarget).Result : min;
         set {
@@ -243,7 +243,7 @@
         }
     }
     bool? isValid;
-    [Parameter]
+    [Parameter] public
     bool? IsValid {
         get => isInitialized ? (bool?)DevExpress.Ui.DxRangeSliderInterop.GetIsValid(dxTarget).Result : isValid;
         set {
@@ -255,7 +255,7 @@
         }
     }
     bool? readOnly;
-    [Parameter]
+    [Parameter] public
     bool? ReadOnly {
         get => isInitialized ? (bool?)DevExpress.Ui.DxRangeSliderInterop.GetReadOnly(dxTarget).Result : readOnly;
         set {
@@ -267,7 +267,7 @@
         }
     }
     object validationError;
-    [Parameter]
+    [Parameter] public
     object ValidationError {
         get => isInitialized ? DevExpress.Ui.DxRangeSliderInterop.GetValidationError(dxTarget).Result : validationError;
         set {
@@ -279,7 +279,7 @@
         }
     }
     string validationMessageMode;
-    [Parameter]
+    [Parameter] public
     string ValidationMessageMode {
         get => isInitialized ? (string)DevExpress.Ui.DxRangeSliderInterop.GetValidationMessageMode(dxTarget).Result : validationMessageMode;
         set {
@@ -291,7 +291,7 @@
         }
     }
     string accessKey;
-    [Parameter]
+    [Parameter] public
     string AccessKey {
         get => isInitialized ? (string)DevExpress.Ui.DxRangeSliderInterop.GetAccessKey(dxTarget).Result : accessKey;
         set {
@@ -303,7 +303,7 @@
         }
     }
     bool? disabled;
-    [Parameter]
+    [Parameter] public
     bool? Disabled {
         get => isInitialized ? (bool?)DevExpress.Ui.DxRangeSliderInterop.GetDisabled(dxTarget).Result : disabled;
         set {
@@ -315,7 +315,7 @@
         }
     }
     string hint;
-    [Parameter]
+    [Parameter] public
     string Hint {
         get => isInitialized ? (string)DevExpress.Ui.DxRangeSliderInterop.GetHint(dxTarget).Result : hint;
         set {
@@ -327,7 +327,7 @@
         }
     }
     float? tabIndex;
-    [Parameter]
+    [Parameter] public
     float? TabIndex {
         get => isInitialized ? (float?)DevExpress.Ui.DxRangeSliderInterop.GetTabIndex(dxTarget).Result : tabIndex;
         set {
@@ -339,7 +339,7 @@
         }
     }
     bool? visible;
-    [Parameter]
+    [Parameter] public
     bool? Visible {
         get => isInitialized ? (bool?)DevExpress.Ui.DxRangeSliderInterop.GetVisible(dxTarget).Result : visible;
         set {
@@ -351,7 +351,7 @@
         }
     }
     object bindingOptions;
-    [Parameter]
+    [Parameter] public
     object BindingOptions {
         get => isInitialized ? DevExpress.Ui.DxRangeSliderInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
         set {
@@ -363,7 +363,7 @@
         }
     }
     object elementAttr;
-    [Parameter]
+    [Parameter] public
     object ElementAttr {
         get => isInitialized ? DevExpress.Ui.DxRangeSliderInterop.GetElementAttr(dxTarget).Result : elementAttr;
         set {
@@ -375,7 +375,7 @@
         }
     }
     object height;
-    [Parameter]
+    [Parameter] public
     object Height {
         get => isInitialized ? DevExpress.Ui.DxRangeSliderInterop.GetHeight(dxTarget).Result : height;
         set {
@@ -387,7 +387,7 @@
         }
     }
     bool? rtlEnabled;
-    [Parameter]
+    [Parameter] public
     bool? RtlEnabled {
         get => isInitialized ? (bool?)DevExpress.Ui.DxRangeSliderInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
         set {
@@ -399,7 +399,7 @@
         }
     }
     object width;
-    [Parameter]
+    [Parameter] public
     object Width {
         get => isInitialized ? DevExpress.Ui.DxRangeSliderInterop.GetWidth(dxTarget).Result : width;
         set {
@@ -411,31 +411,31 @@
         }
     }
     bool? onValueChangedEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnValueChangedEnabled {
         get => onValueChangedEnabled;
         set => this.onValueChangedEnabled = value;
     }
     bool? onContentReadyEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnContentReadyEnabled {
         get => onContentReadyEnabled;
         set => this.onContentReadyEnabled = value;
     }
     bool? onDisposingEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnDisposingEnabled {
         get => onDisposingEnabled;
         set => this.onDisposingEnabled = value;
     }
     bool? onOptionChangedEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnOptionChangedEnabled {
         get => onOptionChangedEnabled;
         set => this.onOptionChangedEnabled = value;
     }
     bool? onInitializedEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnInitializedEnabled {
         get => onInitializedEnabled;
         set => this.onInitializedEnabled = value;
@@ -448,35 +448,35 @@
         DevExpress.Ui.DxRangeSliderInterop.OptionChanged += DxRangeSlider_OptionChanged;
         DevExpress.Ui.DxRangeSliderInterop.Initialized += DxRangeSlider_Initialized;
     }
-    [Parameter]
+    [Parameter] public
     Action ValueChanged { get; set; }
     void DxRangeSlider_ValueChanged(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             ValueChanged?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action ContentReady { get; set; }
     void DxRangeSlider_ContentReady(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             ContentReady?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action Disposing { get; set; }
     void DxRangeSlider_Disposing(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             Disposing?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action OptionChanged { get; set; }
     void DxRangeSlider_OptionChanged(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             OptionChanged?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action Initialized { get; set; }
     void DxRangeSlider_Initialized(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {

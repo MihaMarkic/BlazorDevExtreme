@@ -55,7 +55,7 @@
 		return DevExpress.Ui.DxToastInterop.Init(dxTarget, options);
 	}
 	object animation;
-	[Parameter]
+	[Parameter] public
 	object Animation {
 		get => isInitialized ? DevExpress.Ui.DxToastInterop.GetAnimation(dxTarget).Result : animation;
 		set {
@@ -67,7 +67,7 @@
 		}
 	}
 	bool? closeOnBackButton;
-	[Parameter]
+	[Parameter] public
 	bool? CloseOnBackButton {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxToastInterop.GetCloseOnBackButton(dxTarget).Result : closeOnBackButton;
 		set {
@@ -79,7 +79,7 @@
 		}
 	}
 	bool? closeOnClick;
-	[Parameter]
+	[Parameter] public
 	bool? CloseOnClick {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxToastInterop.GetCloseOnClick(dxTarget).Result : closeOnClick;
 		set {
@@ -91,7 +91,7 @@
 		}
 	}
 	object closeOnOutsideClick;
-	[Parameter]
+	[Parameter] public
 	object CloseOnOutsideClick {
 		get => isInitialized ? DevExpress.Ui.DxToastInterop.GetCloseOnOutsideClick(dxTarget).Result : closeOnOutsideClick;
 		set {
@@ -103,7 +103,7 @@
 		}
 	}
 	bool? closeOnSwipe;
-	[Parameter]
+	[Parameter] public
 	bool? CloseOnSwipe {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxToastInterop.GetCloseOnSwipe(dxTarget).Result : closeOnSwipe;
 		set {
@@ -115,7 +115,7 @@
 		}
 	}
 	float? displayTime;
-	[Parameter]
+	[Parameter] public
 	float? DisplayTime {
 		get => isInitialized ? (float?)DevExpress.Ui.DxToastInterop.GetDisplayTime(dxTarget).Result : displayTime;
 		set {
@@ -127,7 +127,7 @@
 		}
 	}
 	object height;
-	[Parameter]
+	[Parameter] public
 	object Height {
 		get => isInitialized ? DevExpress.Ui.DxToastInterop.GetHeight(dxTarget).Result : height;
 		set {
@@ -139,7 +139,7 @@
 		}
 	}
 	object maxWidth;
-	[Parameter]
+	[Parameter] public
 	object MaxWidth {
 		get => isInitialized ? DevExpress.Ui.DxToastInterop.GetMaxWidth(dxTarget).Result : maxWidth;
 		set {
@@ -151,7 +151,7 @@
 		}
 	}
 	string message;
-	[Parameter]
+	[Parameter] public
 	string Message {
 		get => isInitialized ? (string)DevExpress.Ui.DxToastInterop.GetMessage(dxTarget).Result : message;
 		set {
@@ -163,7 +163,7 @@
 		}
 	}
 	object minWidth;
-	[Parameter]
+	[Parameter] public
 	object MinWidth {
 		get => isInitialized ? DevExpress.Ui.DxToastInterop.GetMinWidth(dxTarget).Result : minWidth;
 		set {
@@ -175,7 +175,7 @@
 		}
 	}
 	object position;
-	[Parameter]
+	[Parameter] public
 	object Position {
 		get => isInitialized ? DevExpress.Ui.DxToastInterop.GetPosition(dxTarget).Result : position;
 		set {
@@ -187,7 +187,7 @@
 		}
 	}
 	bool? shading;
-	[Parameter]
+	[Parameter] public
 	bool? Shading {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxToastInterop.GetShading(dxTarget).Result : shading;
 		set {
@@ -199,7 +199,7 @@
 		}
 	}
 	string type;
-	[Parameter]
+	[Parameter] public
 	string Type {
 		get => isInitialized ? (string)DevExpress.Ui.DxToastInterop.GetType(dxTarget).Result : type;
 		set {
@@ -211,7 +211,7 @@
 		}
 	}
 	object width;
-	[Parameter]
+	[Parameter] public
 	object Width {
 		get => isInitialized ? DevExpress.Ui.DxToastInterop.GetWidth(dxTarget).Result : width;
 		set {
@@ -223,7 +223,7 @@
 		}
 	}
 	object contentTemplate;
-	[Parameter]
+	[Parameter] public
 	object ContentTemplate {
 		get => isInitialized ? DevExpress.Ui.DxToastInterop.GetContentTemplate(dxTarget).Result : contentTemplate;
 		set {
@@ -235,7 +235,7 @@
 		}
 	}
 	bool? deferRendering;
-	[Parameter]
+	[Parameter] public
 	bool? DeferRendering {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxToastInterop.GetDeferRendering(dxTarget).Result : deferRendering;
 		set {
@@ -247,7 +247,7 @@
 		}
 	}
 	bool? dragEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? DragEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxToastInterop.GetDragEnabled(dxTarget).Result : dragEnabled;
 		set {
@@ -259,7 +259,7 @@
 		}
 	}
 	object maxHeight;
-	[Parameter]
+	[Parameter] public
 	object MaxHeight {
 		get => isInitialized ? DevExpress.Ui.DxToastInterop.GetMaxHeight(dxTarget).Result : maxHeight;
 		set {
@@ -271,7 +271,7 @@
 		}
 	}
 	object minHeight;
-	[Parameter]
+	[Parameter] public
 	object MinHeight {
 		get => isInitialized ? DevExpress.Ui.DxToastInterop.GetMinHeight(dxTarget).Result : minHeight;
 		set {
@@ -283,7 +283,7 @@
 		}
 	}
 	string shadingColor;
-	[Parameter]
+	[Parameter] public
 	string ShadingColor {
 		get => isInitialized ? (string)DevExpress.Ui.DxToastInterop.GetShadingColor(dxTarget).Result : shadingColor;
 		set {
@@ -295,7 +295,7 @@
 		}
 	}
 	bool? visible;
-	[Parameter]
+	[Parameter] public
 	bool? Visible {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxToastInterop.GetVisible(dxTarget).Result : visible;
 		set {
@@ -307,7 +307,7 @@
 		}
 	}
 	string accessKey;
-	[Parameter]
+	[Parameter] public
 	string AccessKey {
 		get => isInitialized ? (string)DevExpress.Ui.DxToastInterop.GetAccessKey(dxTarget).Result : accessKey;
 		set {
@@ -319,7 +319,7 @@
 		}
 	}
 	bool? activeStateEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? ActiveStateEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxToastInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
 		set {
@@ -331,7 +331,7 @@
 		}
 	}
 	bool? disabled;
-	[Parameter]
+	[Parameter] public
 	bool? Disabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxToastInterop.GetDisabled(dxTarget).Result : disabled;
 		set {
@@ -343,7 +343,7 @@
 		}
 	}
 	bool? focusStateEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? FocusStateEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxToastInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
 		set {
@@ -355,7 +355,7 @@
 		}
 	}
 	string hint;
-	[Parameter]
+	[Parameter] public
 	string Hint {
 		get => isInitialized ? (string)DevExpress.Ui.DxToastInterop.GetHint(dxTarget).Result : hint;
 		set {
@@ -367,7 +367,7 @@
 		}
 	}
 	bool? hoverStateEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? HoverStateEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxToastInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
 		set {
@@ -379,7 +379,7 @@
 		}
 	}
 	float? tabIndex;
-	[Parameter]
+	[Parameter] public
 	float? TabIndex {
 		get => isInitialized ? (float?)DevExpress.Ui.DxToastInterop.GetTabIndex(dxTarget).Result : tabIndex;
 		set {
@@ -391,7 +391,7 @@
 		}
 	}
 	object bindingOptions;
-	[Parameter]
+	[Parameter] public
 	object BindingOptions {
 		get => isInitialized ? DevExpress.Ui.DxToastInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
 		set {
@@ -403,7 +403,7 @@
 		}
 	}
 	object elementAttr;
-	[Parameter]
+	[Parameter] public
 	object ElementAttr {
 		get => isInitialized ? DevExpress.Ui.DxToastInterop.GetElementAttr(dxTarget).Result : elementAttr;
 		set {
@@ -415,7 +415,7 @@
 		}
 	}
 	bool? rtlEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? RtlEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxToastInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
 		set {
@@ -427,49 +427,49 @@
 		}
 	}
 	bool? onHiddenEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnHiddenEnabled {
 		get => onHiddenEnabled;
 		set => this.onHiddenEnabled = value;
 	}
 	bool? onHidingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnHidingEnabled {
 		get => onHidingEnabled;
 		set => this.onHidingEnabled = value;
 	}
 	bool? onShowingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnShowingEnabled {
 		get => onShowingEnabled;
 		set => this.onShowingEnabled = value;
 	}
 	bool? onShownEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnShownEnabled {
 		get => onShownEnabled;
 		set => this.onShownEnabled = value;
 	}
 	bool? onContentReadyEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnContentReadyEnabled {
 		get => onContentReadyEnabled;
 		set => this.onContentReadyEnabled = value;
 	}
 	bool? onDisposingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnDisposingEnabled {
 		get => onDisposingEnabled;
 		set => this.onDisposingEnabled = value;
 	}
 	bool? onOptionChangedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnOptionChangedEnabled {
 		get => onOptionChangedEnabled;
 		set => this.onOptionChangedEnabled = value;
 	}
 	bool? onInitializedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnInitializedEnabled {
 		get => onInitializedEnabled;
 		set => this.onInitializedEnabled = value;
@@ -485,56 +485,56 @@
 		DevExpress.Ui.DxToastInterop.OptionChanged += DxToast_OptionChanged;
 		DevExpress.Ui.DxToastInterop.Initialized += DxToast_Initialized;
 	}
-	[Parameter]
+	[Parameter] public
 	Action Hidden { get; set; }
 	void DxToast_Hidden(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Hidden?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Hiding { get; set; }
 	void DxToast_Hiding(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Hiding?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Showing { get; set; }
 	void DxToast_Showing(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Showing?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Shown { get; set; }
 	void DxToast_Shown(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Shown?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action ContentReady { get; set; }
 	void DxToast_ContentReady(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ContentReady?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Disposing { get; set; }
 	void DxToast_Disposing(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Disposing?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action OptionChanged { get; set; }
 	void DxToast_OptionChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			OptionChanged?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Initialized { get; set; }
 	void DxToast_Initialized(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {

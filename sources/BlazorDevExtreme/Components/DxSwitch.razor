@@ -42,7 +42,7 @@
         return DevExpress.Ui.DxSwitchInterop.Init(dxTarget, options);
     }
     bool? activeStateEnabled;
-    [Parameter]
+    [Parameter] public
     bool? ActiveStateEnabled {
         get => isInitialized ? (bool?)DevExpress.Ui.DxSwitchInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
         set {
@@ -54,7 +54,7 @@
         }
     }
     bool? focusStateEnabled;
-    [Parameter]
+    [Parameter] public
     bool? FocusStateEnabled {
         get => isInitialized ? (bool?)DevExpress.Ui.DxSwitchInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
         set {
@@ -66,7 +66,7 @@
         }
     }
     bool? hoverStateEnabled;
-    [Parameter]
+    [Parameter] public
     bool? HoverStateEnabled {
         get => isInitialized ? (bool?)DevExpress.Ui.DxSwitchInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
         set {
@@ -78,7 +78,7 @@
         }
     }
     string name;
-    [Parameter]
+    [Parameter] public
     string Name {
         get => isInitialized ? (string)DevExpress.Ui.DxSwitchInterop.GetName(dxTarget).Result : name;
         set {
@@ -90,7 +90,7 @@
         }
     }
     string offText;
-    [Parameter]
+    [Parameter] public
     string OffText {
         get => isInitialized ? (string)DevExpress.Ui.DxSwitchInterop.GetOffText(dxTarget).Result : offText;
         set {
@@ -102,7 +102,7 @@
         }
     }
     string onText;
-    [Parameter]
+    [Parameter] public
     string OnText {
         get => isInitialized ? (string)DevExpress.Ui.DxSwitchInterop.GetOnText(dxTarget).Result : onText;
         set {
@@ -114,7 +114,7 @@
         }
     }
     bool? value;
-    [Parameter]
+    [Parameter] public
     bool? Value {
         get => isInitialized ? (bool?)DevExpress.Ui.DxSwitchInterop.GetValue(dxTarget).Result : value;
         set {
@@ -126,7 +126,7 @@
         }
     }
     bool? isValid;
-    [Parameter]
+    [Parameter] public
     bool? IsValid {
         get => isInitialized ? (bool?)DevExpress.Ui.DxSwitchInterop.GetIsValid(dxTarget).Result : isValid;
         set {
@@ -138,7 +138,7 @@
         }
     }
     bool? readOnly;
-    [Parameter]
+    [Parameter] public
     bool? ReadOnly {
         get => isInitialized ? (bool?)DevExpress.Ui.DxSwitchInterop.GetReadOnly(dxTarget).Result : readOnly;
         set {
@@ -150,7 +150,7 @@
         }
     }
     object validationError;
-    [Parameter]
+    [Parameter] public
     object ValidationError {
         get => isInitialized ? DevExpress.Ui.DxSwitchInterop.GetValidationError(dxTarget).Result : validationError;
         set {
@@ -162,7 +162,7 @@
         }
     }
     string validationMessageMode;
-    [Parameter]
+    [Parameter] public
     string ValidationMessageMode {
         get => isInitialized ? (string)DevExpress.Ui.DxSwitchInterop.GetValidationMessageMode(dxTarget).Result : validationMessageMode;
         set {
@@ -174,7 +174,7 @@
         }
     }
     string accessKey;
-    [Parameter]
+    [Parameter] public
     string AccessKey {
         get => isInitialized ? (string)DevExpress.Ui.DxSwitchInterop.GetAccessKey(dxTarget).Result : accessKey;
         set {
@@ -186,7 +186,7 @@
         }
     }
     bool? disabled;
-    [Parameter]
+    [Parameter] public
     bool? Disabled {
         get => isInitialized ? (bool?)DevExpress.Ui.DxSwitchInterop.GetDisabled(dxTarget).Result : disabled;
         set {
@@ -198,7 +198,7 @@
         }
     }
     string hint;
-    [Parameter]
+    [Parameter] public
     string Hint {
         get => isInitialized ? (string)DevExpress.Ui.DxSwitchInterop.GetHint(dxTarget).Result : hint;
         set {
@@ -210,7 +210,7 @@
         }
     }
     float? tabIndex;
-    [Parameter]
+    [Parameter] public
     float? TabIndex {
         get => isInitialized ? (float?)DevExpress.Ui.DxSwitchInterop.GetTabIndex(dxTarget).Result : tabIndex;
         set {
@@ -222,7 +222,7 @@
         }
     }
     bool? visible;
-    [Parameter]
+    [Parameter] public
     bool? Visible {
         get => isInitialized ? (bool?)DevExpress.Ui.DxSwitchInterop.GetVisible(dxTarget).Result : visible;
         set {
@@ -234,7 +234,7 @@
         }
     }
     object bindingOptions;
-    [Parameter]
+    [Parameter] public
     object BindingOptions {
         get => isInitialized ? DevExpress.Ui.DxSwitchInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
         set {
@@ -246,7 +246,7 @@
         }
     }
     object elementAttr;
-    [Parameter]
+    [Parameter] public
     object ElementAttr {
         get => isInitialized ? DevExpress.Ui.DxSwitchInterop.GetElementAttr(dxTarget).Result : elementAttr;
         set {
@@ -258,7 +258,7 @@
         }
     }
     object height;
-    [Parameter]
+    [Parameter] public
     object Height {
         get => isInitialized ? DevExpress.Ui.DxSwitchInterop.GetHeight(dxTarget).Result : height;
         set {
@@ -270,7 +270,7 @@
         }
     }
     bool? rtlEnabled;
-    [Parameter]
+    [Parameter] public
     bool? RtlEnabled {
         get => isInitialized ? (bool?)DevExpress.Ui.DxSwitchInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
         set {
@@ -282,7 +282,7 @@
         }
     }
     object width;
-    [Parameter]
+    [Parameter] public
     object Width {
         get => isInitialized ? DevExpress.Ui.DxSwitchInterop.GetWidth(dxTarget).Result : width;
         set {
@@ -294,31 +294,31 @@
         }
     }
     bool? onValueChangedEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnValueChangedEnabled {
         get => onValueChangedEnabled;
         set => this.onValueChangedEnabled = value;
     }
     bool? onContentReadyEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnContentReadyEnabled {
         get => onContentReadyEnabled;
         set => this.onContentReadyEnabled = value;
     }
     bool? onDisposingEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnDisposingEnabled {
         get => onDisposingEnabled;
         set => this.onDisposingEnabled = value;
     }
     bool? onOptionChangedEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnOptionChangedEnabled {
         get => onOptionChangedEnabled;
         set => this.onOptionChangedEnabled = value;
     }
     bool? onInitializedEnabled;
-    [Parameter]
+    [Parameter] public
     bool? OnInitializedEnabled {
         get => onInitializedEnabled;
         set => this.onInitializedEnabled = value;
@@ -331,35 +331,35 @@
         DevExpress.Ui.DxSwitchInterop.OptionChanged += DxSwitch_OptionChanged;
         DevExpress.Ui.DxSwitchInterop.Initialized += DxSwitch_Initialized;
     }
-    [Parameter]
+    [Parameter] public
     Action ValueChanged { get; set; }
     void DxSwitch_ValueChanged(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             ValueChanged?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action ContentReady { get; set; }
     void DxSwitch_ContentReady(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             ContentReady?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action Disposing { get; set; }
     void DxSwitch_Disposing(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             Disposing?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action OptionChanged { get; set; }
     void DxSwitch_OptionChanged(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {
             OptionChanged?.Invoke();
         }
     }
-    [Parameter]
+    [Parameter] public
     Action Initialized { get; set; }
     void DxSwitch_Initialized(object sender, JQueryEventArgs e) {
         if (e.Identifier == Id) {

@@ -54,7 +54,7 @@
 		return DevExpress.Ui.DxAccordionInterop.Init(dxTarget, options);
 	}
 	float? animationDuration;
-	[Parameter]
+	[Parameter] public
 	float? AnimationDuration {
 		get => isInitialized ? (float?)DevExpress.Ui.DxAccordionInterop.GetAnimationDuration(dxTarget).Result : animationDuration;
 		set {
@@ -66,7 +66,7 @@
 		}
 	}
 	bool? collapsible;
-	[Parameter]
+	[Parameter] public
 	bool? Collapsible {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxAccordionInterop.GetCollapsible(dxTarget).Result : collapsible;
 		set {
@@ -78,7 +78,7 @@
 		}
 	}
 	bool? deferRendering;
-	[Parameter]
+	[Parameter] public
 	bool? DeferRendering {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxAccordionInterop.GetDeferRendering(dxTarget).Result : deferRendering;
 		set {
@@ -90,7 +90,7 @@
 		}
 	}
 	bool? focusStateEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? FocusStateEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxAccordionInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
 		set {
@@ -102,7 +102,7 @@
 		}
 	}
 	object height;
-	[Parameter]
+	[Parameter] public
 	object Height {
 		get => isInitialized ? DevExpress.Ui.DxAccordionInterop.GetHeight(dxTarget).Result : height;
 		set {
@@ -114,7 +114,7 @@
 		}
 	}
 	bool? hoverStateEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? HoverStateEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxAccordionInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
 		set {
@@ -126,7 +126,7 @@
 		}
 	}
 	object itemTemplate;
-	[Parameter]
+	[Parameter] public
 	object ItemTemplate {
 		get => isInitialized ? DevExpress.Ui.DxAccordionInterop.GetItemTemplate(dxTarget).Result : itemTemplate;
 		set {
@@ -138,7 +138,7 @@
 		}
 	}
 	object itemTitleTemplate;
-	[Parameter]
+	[Parameter] public
 	object ItemTitleTemplate {
 		get => isInitialized ? DevExpress.Ui.DxAccordionInterop.GetItemTitleTemplate(dxTarget).Result : itemTitleTemplate;
 		set {
@@ -150,7 +150,7 @@
 		}
 	}
 	bool? multiple;
-	[Parameter]
+	[Parameter] public
 	bool? Multiple {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxAccordionInterop.GetMultiple(dxTarget).Result : multiple;
 		set {
@@ -162,7 +162,7 @@
 		}
 	}
 	float? selectedIndex;
-	[Parameter]
+	[Parameter] public
 	float? SelectedIndex {
 		get => isInitialized ? (float?)DevExpress.Ui.DxAccordionInterop.GetSelectedIndex(dxTarget).Result : selectedIndex;
 		set {
@@ -174,7 +174,7 @@
 		}
 	}
 	object dataSource;
-	[Parameter]
+	[Parameter] public
 	object DataSource {
 		get => isInitialized ? DevExpress.Ui.DxAccordionInterop.GetDataSource(dxTarget).Result : dataSource;
 		set {
@@ -186,7 +186,7 @@
 		}
 	}
 	float? itemHoldTimeout;
-	[Parameter]
+	[Parameter] public
 	float? ItemHoldTimeout {
 		get => isInitialized ? (float?)DevExpress.Ui.DxAccordionInterop.GetItemHoldTimeout(dxTarget).Result : itemHoldTimeout;
 		set {
@@ -198,7 +198,7 @@
 		}
 	}
 	object items;
-	[Parameter]
+	[Parameter] public
 	object Items {
 		get => isInitialized ? DevExpress.Ui.DxAccordionInterop.GetItems(dxTarget).Result : items;
 		set {
@@ -210,7 +210,7 @@
 		}
 	}
 	object keyExpr;
-	[Parameter]
+	[Parameter] public
 	object KeyExpr {
 		get => isInitialized ? DevExpress.Ui.DxAccordionInterop.GetKeyExpr(dxTarget).Result : keyExpr;
 		set {
@@ -222,7 +222,7 @@
 		}
 	}
 	string noDataText;
-	[Parameter]
+	[Parameter] public
 	string NoDataText {
 		get => isInitialized ? (string)DevExpress.Ui.DxAccordionInterop.GetNoDataText(dxTarget).Result : noDataText;
 		set {
@@ -234,7 +234,7 @@
 		}
 	}
 	object selectedItem;
-	[Parameter]
+	[Parameter] public
 	object SelectedItem {
 		get => isInitialized ? DevExpress.Ui.DxAccordionInterop.GetSelectedItem(dxTarget).Result : selectedItem;
 		set {
@@ -246,7 +246,7 @@
 		}
 	}
 	object selectedItemKeys;
-	[Parameter]
+	[Parameter] public
 	object SelectedItemKeys {
 		get => isInitialized ? DevExpress.Ui.DxAccordionInterop.GetSelectedItemKeys(dxTarget).Result : selectedItemKeys;
 		set {
@@ -258,7 +258,7 @@
 		}
 	}
 	object selectedItems;
-	[Parameter]
+	[Parameter] public
 	object SelectedItems {
 		get => isInitialized ? DevExpress.Ui.DxAccordionInterop.GetSelectedItems(dxTarget).Result : selectedItems;
 		set {
@@ -270,7 +270,7 @@
 		}
 	}
 	string accessKey;
-	[Parameter]
+	[Parameter] public
 	string AccessKey {
 		get => isInitialized ? (string)DevExpress.Ui.DxAccordionInterop.GetAccessKey(dxTarget).Result : accessKey;
 		set {
@@ -282,7 +282,7 @@
 		}
 	}
 	bool? activeStateEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? ActiveStateEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxAccordionInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
 		set {
@@ -294,7 +294,7 @@
 		}
 	}
 	bool? disabled;
-	[Parameter]
+	[Parameter] public
 	bool? Disabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxAccordionInterop.GetDisabled(dxTarget).Result : disabled;
 		set {
@@ -306,7 +306,7 @@
 		}
 	}
 	string hint;
-	[Parameter]
+	[Parameter] public
 	string Hint {
 		get => isInitialized ? (string)DevExpress.Ui.DxAccordionInterop.GetHint(dxTarget).Result : hint;
 		set {
@@ -318,7 +318,7 @@
 		}
 	}
 	float? tabIndex;
-	[Parameter]
+	[Parameter] public
 	float? TabIndex {
 		get => isInitialized ? (float?)DevExpress.Ui.DxAccordionInterop.GetTabIndex(dxTarget).Result : tabIndex;
 		set {
@@ -330,7 +330,7 @@
 		}
 	}
 	bool? visible;
-	[Parameter]
+	[Parameter] public
 	bool? Visible {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxAccordionInterop.GetVisible(dxTarget).Result : visible;
 		set {
@@ -342,7 +342,7 @@
 		}
 	}
 	object bindingOptions;
-	[Parameter]
+	[Parameter] public
 	object BindingOptions {
 		get => isInitialized ? DevExpress.Ui.DxAccordionInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
 		set {
@@ -354,7 +354,7 @@
 		}
 	}
 	object elementAttr;
-	[Parameter]
+	[Parameter] public
 	object ElementAttr {
 		get => isInitialized ? DevExpress.Ui.DxAccordionInterop.GetElementAttr(dxTarget).Result : elementAttr;
 		set {
@@ -366,7 +366,7 @@
 		}
 	}
 	bool? rtlEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? RtlEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxAccordionInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
 		set {
@@ -378,7 +378,7 @@
 		}
 	}
 	object width;
-	[Parameter]
+	[Parameter] public
 	object Width {
 		get => isInitialized ? DevExpress.Ui.DxAccordionInterop.GetWidth(dxTarget).Result : width;
 		set {
@@ -390,61 +390,61 @@
 		}
 	}
 	bool? onItemTitleClickEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnItemTitleClickEnabled {
 		get => onItemTitleClickEnabled;
 		set => this.onItemTitleClickEnabled = value;
 	}
 	bool? onItemClickEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnItemClickEnabled {
 		get => onItemClickEnabled;
 		set => this.onItemClickEnabled = value;
 	}
 	bool? onItemContextMenuEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnItemContextMenuEnabled {
 		get => onItemContextMenuEnabled;
 		set => this.onItemContextMenuEnabled = value;
 	}
 	bool? onItemHoldEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnItemHoldEnabled {
 		get => onItemHoldEnabled;
 		set => this.onItemHoldEnabled = value;
 	}
 	bool? onItemRenderedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnItemRenderedEnabled {
 		get => onItemRenderedEnabled;
 		set => this.onItemRenderedEnabled = value;
 	}
 	bool? onSelectionChangedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnSelectionChangedEnabled {
 		get => onSelectionChangedEnabled;
 		set => this.onSelectionChangedEnabled = value;
 	}
 	bool? onContentReadyEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnContentReadyEnabled {
 		get => onContentReadyEnabled;
 		set => this.onContentReadyEnabled = value;
 	}
 	bool? onDisposingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnDisposingEnabled {
 		get => onDisposingEnabled;
 		set => this.onDisposingEnabled = value;
 	}
 	bool? onOptionChangedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnOptionChangedEnabled {
 		get => onOptionChangedEnabled;
 		set => this.onOptionChangedEnabled = value;
 	}
 	bool? onInitializedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnInitializedEnabled {
 		get => onInitializedEnabled;
 		set => this.onInitializedEnabled = value;
@@ -462,70 +462,70 @@
 		DevExpress.Ui.DxAccordionInterop.OptionChanged += DxAccordion_OptionChanged;
 		DevExpress.Ui.DxAccordionInterop.Initialized += DxAccordion_Initialized;
 	}
-	[Parameter]
+	[Parameter] public
 	Action ItemTitleClick { get; set; }
 	void DxAccordion_ItemTitleClick(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ItemTitleClick?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action ItemClick { get; set; }
 	void DxAccordion_ItemClick(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ItemClick?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action ItemContextMenu { get; set; }
 	void DxAccordion_ItemContextMenu(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ItemContextMenu?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action ItemHold { get; set; }
 	void DxAccordion_ItemHold(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ItemHold?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action ItemRendered { get; set; }
 	void DxAccordion_ItemRendered(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ItemRendered?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action SelectionChanged { get; set; }
 	void DxAccordion_SelectionChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			SelectionChanged?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action ContentReady { get; set; }
 	void DxAccordion_ContentReady(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ContentReady?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Disposing { get; set; }
 	void DxAccordion_Disposing(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Disposing?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action OptionChanged { get; set; }
 	void DxAccordion_OptionChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			OptionChanged?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Initialized { get; set; }
 	void DxAccordion_Initialized(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {

@@ -62,7 +62,7 @@
 		return DevExpress.Ui.DxPopupInterop.Init(dxTarget, options);
 	}
 	object animation;
-	[Parameter]
+	[Parameter] public
 	object Animation {
 		get => isInitialized ? DevExpress.Ui.DxPopupInterop.GetAnimation(dxTarget).Result : animation;
 		set {
@@ -74,7 +74,7 @@
 		}
 	}
 	object container;
-	[Parameter]
+	[Parameter] public
 	object Container {
 		get => isInitialized ? DevExpress.Ui.DxPopupInterop.GetContainer(dxTarget).Result : container;
 		set {
@@ -86,7 +86,7 @@
 		}
 	}
 	bool? dragEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? DragEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxPopupInterop.GetDragEnabled(dxTarget).Result : dragEnabled;
 		set {
@@ -98,7 +98,7 @@
 		}
 	}
 	bool? focusStateEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? FocusStateEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxPopupInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
 		set {
@@ -110,7 +110,7 @@
 		}
 	}
 	bool? fullScreen;
-	[Parameter]
+	[Parameter] public
 	bool? FullScreen {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxPopupInterop.GetFullScreen(dxTarget).Result : fullScreen;
 		set {
@@ -122,7 +122,7 @@
 		}
 	}
 	object height;
-	[Parameter]
+	[Parameter] public
 	object Height {
 		get => isInitialized ? DevExpress.Ui.DxPopupInterop.GetHeight(dxTarget).Result : height;
 		set {
@@ -134,7 +134,7 @@
 		}
 	}
 	object position;
-	[Parameter]
+	[Parameter] public
 	object Position {
 		get => isInitialized ? DevExpress.Ui.DxPopupInterop.GetPosition(dxTarget).Result : position;
 		set {
@@ -146,7 +146,7 @@
 		}
 	}
 	bool? resizeEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? ResizeEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxPopupInterop.GetResizeEnabled(dxTarget).Result : resizeEnabled;
 		set {
@@ -158,7 +158,7 @@
 		}
 	}
 	bool? showCloseButton;
-	[Parameter]
+	[Parameter] public
 	bool? ShowCloseButton {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxPopupInterop.GetShowCloseButton(dxTarget).Result : showCloseButton;
 		set {
@@ -170,7 +170,7 @@
 		}
 	}
 	bool? showTitle;
-	[Parameter]
+	[Parameter] public
 	bool? ShowTitle {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxPopupInterop.GetShowTitle(dxTarget).Result : showTitle;
 		set {
@@ -182,7 +182,7 @@
 		}
 	}
 	string title;
-	[Parameter]
+	[Parameter] public
 	string Title {
 		get => isInitialized ? (string)DevExpress.Ui.DxPopupInterop.GetTitle(dxTarget).Result : title;
 		set {
@@ -194,7 +194,7 @@
 		}
 	}
 	object titleTemplate;
-	[Parameter]
+	[Parameter] public
 	object TitleTemplate {
 		get => isInitialized ? DevExpress.Ui.DxPopupInterop.GetTitleTemplate(dxTarget).Result : titleTemplate;
 		set {
@@ -206,7 +206,7 @@
 		}
 	}
 	object toolbarItems;
-	[Parameter]
+	[Parameter] public
 	object ToolbarItems {
 		get => isInitialized ? DevExpress.Ui.DxPopupInterop.GetToolbarItems(dxTarget).Result : toolbarItems;
 		set {
@@ -218,7 +218,7 @@
 		}
 	}
 	object width;
-	[Parameter]
+	[Parameter] public
 	object Width {
 		get => isInitialized ? DevExpress.Ui.DxPopupInterop.GetWidth(dxTarget).Result : width;
 		set {
@@ -230,7 +230,7 @@
 		}
 	}
 	bool? closeOnBackButton;
-	[Parameter]
+	[Parameter] public
 	bool? CloseOnBackButton {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxPopupInterop.GetCloseOnBackButton(dxTarget).Result : closeOnBackButton;
 		set {
@@ -242,7 +242,7 @@
 		}
 	}
 	object closeOnOutsideClick;
-	[Parameter]
+	[Parameter] public
 	object CloseOnOutsideClick {
 		get => isInitialized ? DevExpress.Ui.DxPopupInterop.GetCloseOnOutsideClick(dxTarget).Result : closeOnOutsideClick;
 		set {
@@ -254,7 +254,7 @@
 		}
 	}
 	object contentTemplate;
-	[Parameter]
+	[Parameter] public
 	object ContentTemplate {
 		get => isInitialized ? DevExpress.Ui.DxPopupInterop.GetContentTemplate(dxTarget).Result : contentTemplate;
 		set {
@@ -266,7 +266,7 @@
 		}
 	}
 	bool? deferRendering;
-	[Parameter]
+	[Parameter] public
 	bool? DeferRendering {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxPopupInterop.GetDeferRendering(dxTarget).Result : deferRendering;
 		set {
@@ -278,7 +278,7 @@
 		}
 	}
 	object maxHeight;
-	[Parameter]
+	[Parameter] public
 	object MaxHeight {
 		get => isInitialized ? DevExpress.Ui.DxPopupInterop.GetMaxHeight(dxTarget).Result : maxHeight;
 		set {
@@ -290,7 +290,7 @@
 		}
 	}
 	object maxWidth;
-	[Parameter]
+	[Parameter] public
 	object MaxWidth {
 		get => isInitialized ? DevExpress.Ui.DxPopupInterop.GetMaxWidth(dxTarget).Result : maxWidth;
 		set {
@@ -302,7 +302,7 @@
 		}
 	}
 	object minHeight;
-	[Parameter]
+	[Parameter] public
 	object MinHeight {
 		get => isInitialized ? DevExpress.Ui.DxPopupInterop.GetMinHeight(dxTarget).Result : minHeight;
 		set {
@@ -314,7 +314,7 @@
 		}
 	}
 	object minWidth;
-	[Parameter]
+	[Parameter] public
 	object MinWidth {
 		get => isInitialized ? DevExpress.Ui.DxPopupInterop.GetMinWidth(dxTarget).Result : minWidth;
 		set {
@@ -326,7 +326,7 @@
 		}
 	}
 	bool? shading;
-	[Parameter]
+	[Parameter] public
 	bool? Shading {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxPopupInterop.GetShading(dxTarget).Result : shading;
 		set {
@@ -338,7 +338,7 @@
 		}
 	}
 	string shadingColor;
-	[Parameter]
+	[Parameter] public
 	string ShadingColor {
 		get => isInitialized ? (string)DevExpress.Ui.DxPopupInterop.GetShadingColor(dxTarget).Result : shadingColor;
 		set {
@@ -350,7 +350,7 @@
 		}
 	}
 	bool? visible;
-	[Parameter]
+	[Parameter] public
 	bool? Visible {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxPopupInterop.GetVisible(dxTarget).Result : visible;
 		set {
@@ -362,7 +362,7 @@
 		}
 	}
 	string accessKey;
-	[Parameter]
+	[Parameter] public
 	string AccessKey {
 		get => isInitialized ? (string)DevExpress.Ui.DxPopupInterop.GetAccessKey(dxTarget).Result : accessKey;
 		set {
@@ -374,7 +374,7 @@
 		}
 	}
 	bool? activeStateEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? ActiveStateEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxPopupInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
 		set {
@@ -386,7 +386,7 @@
 		}
 	}
 	bool? disabled;
-	[Parameter]
+	[Parameter] public
 	bool? Disabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxPopupInterop.GetDisabled(dxTarget).Result : disabled;
 		set {
@@ -398,7 +398,7 @@
 		}
 	}
 	string hint;
-	[Parameter]
+	[Parameter] public
 	string Hint {
 		get => isInitialized ? (string)DevExpress.Ui.DxPopupInterop.GetHint(dxTarget).Result : hint;
 		set {
@@ -410,7 +410,7 @@
 		}
 	}
 	bool? hoverStateEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? HoverStateEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxPopupInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
 		set {
@@ -422,7 +422,7 @@
 		}
 	}
 	float? tabIndex;
-	[Parameter]
+	[Parameter] public
 	float? TabIndex {
 		get => isInitialized ? (float?)DevExpress.Ui.DxPopupInterop.GetTabIndex(dxTarget).Result : tabIndex;
 		set {
@@ -434,7 +434,7 @@
 		}
 	}
 	object bindingOptions;
-	[Parameter]
+	[Parameter] public
 	object BindingOptions {
 		get => isInitialized ? DevExpress.Ui.DxPopupInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
 		set {
@@ -446,7 +446,7 @@
 		}
 	}
 	object elementAttr;
-	[Parameter]
+	[Parameter] public
 	object ElementAttr {
 		get => isInitialized ? DevExpress.Ui.DxPopupInterop.GetElementAttr(dxTarget).Result : elementAttr;
 		set {
@@ -458,7 +458,7 @@
 		}
 	}
 	bool? rtlEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? RtlEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxPopupInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
 		set {
@@ -470,73 +470,73 @@
 		}
 	}
 	bool? onResizeEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnResizeEnabled {
 		get => onResizeEnabled;
 		set => this.onResizeEnabled = value;
 	}
 	bool? onResizeEndEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnResizeEndEnabled {
 		get => onResizeEndEnabled;
 		set => this.onResizeEndEnabled = value;
 	}
 	bool? onResizeStartEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnResizeStartEnabled {
 		get => onResizeStartEnabled;
 		set => this.onResizeStartEnabled = value;
 	}
 	bool? onTitleRenderedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnTitleRenderedEnabled {
 		get => onTitleRenderedEnabled;
 		set => this.onTitleRenderedEnabled = value;
 	}
 	bool? onHiddenEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnHiddenEnabled {
 		get => onHiddenEnabled;
 		set => this.onHiddenEnabled = value;
 	}
 	bool? onHidingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnHidingEnabled {
 		get => onHidingEnabled;
 		set => this.onHidingEnabled = value;
 	}
 	bool? onShowingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnShowingEnabled {
 		get => onShowingEnabled;
 		set => this.onShowingEnabled = value;
 	}
 	bool? onShownEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnShownEnabled {
 		get => onShownEnabled;
 		set => this.onShownEnabled = value;
 	}
 	bool? onContentReadyEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnContentReadyEnabled {
 		get => onContentReadyEnabled;
 		set => this.onContentReadyEnabled = value;
 	}
 	bool? onDisposingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnDisposingEnabled {
 		get => onDisposingEnabled;
 		set => this.onDisposingEnabled = value;
 	}
 	bool? onOptionChangedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnOptionChangedEnabled {
 		get => onOptionChangedEnabled;
 		set => this.onOptionChangedEnabled = value;
 	}
 	bool? onInitializedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnInitializedEnabled {
 		get => onInitializedEnabled;
 		set => this.onInitializedEnabled = value;
@@ -556,84 +556,84 @@
 		DevExpress.Ui.DxPopupInterop.OptionChanged += DxPopup_OptionChanged;
 		DevExpress.Ui.DxPopupInterop.Initialized += DxPopup_Initialized;
 	}
-	[Parameter]
+	[Parameter] public
 	Action Resize { get; set; }
 	void DxPopup_Resize(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Resize?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action ResizeEnd { get; set; }
 	void DxPopup_ResizeEnd(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ResizeEnd?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action ResizeStart { get; set; }
 	void DxPopup_ResizeStart(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ResizeStart?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action TitleRendered { get; set; }
 	void DxPopup_TitleRendered(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			TitleRendered?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Hidden { get; set; }
 	void DxPopup_Hidden(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Hidden?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Hiding { get; set; }
 	void DxPopup_Hiding(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Hiding?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Showing { get; set; }
 	void DxPopup_Showing(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Showing?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Shown { get; set; }
 	void DxPopup_Shown(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Shown?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action ContentReady { get; set; }
 	void DxPopup_ContentReady(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ContentReady?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Disposing { get; set; }
 	void DxPopup_Disposing(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Disposing?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action OptionChanged { get; set; }
 	void DxPopup_OptionChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			OptionChanged?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Initialized { get; set; }
 	void DxPopup_Initialized(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {

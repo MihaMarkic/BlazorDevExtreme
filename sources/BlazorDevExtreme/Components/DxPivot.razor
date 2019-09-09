@@ -51,7 +51,7 @@
 		return DevExpress.Ui.DxPivotInterop.Init(dxTarget, options);
 	}
 	object contentTemplate;
-	[Parameter]
+	[Parameter] public
 	object ContentTemplate {
 		get => isInitialized ? DevExpress.Ui.DxPivotInterop.GetContentTemplate(dxTarget).Result : contentTemplate;
 		set {
@@ -63,7 +63,7 @@
 		}
 	}
 	object itemTitleTemplate;
-	[Parameter]
+	[Parameter] public
 	object ItemTitleTemplate {
 		get => isInitialized ? DevExpress.Ui.DxPivotInterop.GetItemTitleTemplate(dxTarget).Result : itemTitleTemplate;
 		set {
@@ -75,7 +75,7 @@
 		}
 	}
 	float? selectedIndex;
-	[Parameter]
+	[Parameter] public
 	float? SelectedIndex {
 		get => isInitialized ? (float?)DevExpress.Ui.DxPivotInterop.GetSelectedIndex(dxTarget).Result : selectedIndex;
 		set {
@@ -87,7 +87,7 @@
 		}
 	}
 	bool? swipeEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? SwipeEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxPivotInterop.GetSwipeEnabled(dxTarget).Result : swipeEnabled;
 		set {
@@ -99,7 +99,7 @@
 		}
 	}
 	object dataSource;
-	[Parameter]
+	[Parameter] public
 	object DataSource {
 		get => isInitialized ? DevExpress.Ui.DxPivotInterop.GetDataSource(dxTarget).Result : dataSource;
 		set {
@@ -111,7 +111,7 @@
 		}
 	}
 	float? itemHoldTimeout;
-	[Parameter]
+	[Parameter] public
 	float? ItemHoldTimeout {
 		get => isInitialized ? (float?)DevExpress.Ui.DxPivotInterop.GetItemHoldTimeout(dxTarget).Result : itemHoldTimeout;
 		set {
@@ -123,7 +123,7 @@
 		}
 	}
 	object items;
-	[Parameter]
+	[Parameter] public
 	object Items {
 		get => isInitialized ? DevExpress.Ui.DxPivotInterop.GetItems(dxTarget).Result : items;
 		set {
@@ -135,7 +135,7 @@
 		}
 	}
 	object itemTemplate;
-	[Parameter]
+	[Parameter] public
 	object ItemTemplate {
 		get => isInitialized ? DevExpress.Ui.DxPivotInterop.GetItemTemplate(dxTarget).Result : itemTemplate;
 		set {
@@ -147,7 +147,7 @@
 		}
 	}
 	object keyExpr;
-	[Parameter]
+	[Parameter] public
 	object KeyExpr {
 		get => isInitialized ? DevExpress.Ui.DxPivotInterop.GetKeyExpr(dxTarget).Result : keyExpr;
 		set {
@@ -159,7 +159,7 @@
 		}
 	}
 	string noDataText;
-	[Parameter]
+	[Parameter] public
 	string NoDataText {
 		get => isInitialized ? (string)DevExpress.Ui.DxPivotInterop.GetNoDataText(dxTarget).Result : noDataText;
 		set {
@@ -171,7 +171,7 @@
 		}
 	}
 	object selectedItem;
-	[Parameter]
+	[Parameter] public
 	object SelectedItem {
 		get => isInitialized ? DevExpress.Ui.DxPivotInterop.GetSelectedItem(dxTarget).Result : selectedItem;
 		set {
@@ -183,7 +183,7 @@
 		}
 	}
 	object selectedItemKeys;
-	[Parameter]
+	[Parameter] public
 	object SelectedItemKeys {
 		get => isInitialized ? DevExpress.Ui.DxPivotInterop.GetSelectedItemKeys(dxTarget).Result : selectedItemKeys;
 		set {
@@ -195,7 +195,7 @@
 		}
 	}
 	object selectedItems;
-	[Parameter]
+	[Parameter] public
 	object SelectedItems {
 		get => isInitialized ? DevExpress.Ui.DxPivotInterop.GetSelectedItems(dxTarget).Result : selectedItems;
 		set {
@@ -207,7 +207,7 @@
 		}
 	}
 	string accessKey;
-	[Parameter]
+	[Parameter] public
 	string AccessKey {
 		get => isInitialized ? (string)DevExpress.Ui.DxPivotInterop.GetAccessKey(dxTarget).Result : accessKey;
 		set {
@@ -219,7 +219,7 @@
 		}
 	}
 	bool? activeStateEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? ActiveStateEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxPivotInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
 		set {
@@ -231,7 +231,7 @@
 		}
 	}
 	bool? disabled;
-	[Parameter]
+	[Parameter] public
 	bool? Disabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxPivotInterop.GetDisabled(dxTarget).Result : disabled;
 		set {
@@ -243,7 +243,7 @@
 		}
 	}
 	bool? focusStateEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? FocusStateEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxPivotInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
 		set {
@@ -255,7 +255,7 @@
 		}
 	}
 	string hint;
-	[Parameter]
+	[Parameter] public
 	string Hint {
 		get => isInitialized ? (string)DevExpress.Ui.DxPivotInterop.GetHint(dxTarget).Result : hint;
 		set {
@@ -267,7 +267,7 @@
 		}
 	}
 	bool? hoverStateEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? HoverStateEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxPivotInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
 		set {
@@ -279,7 +279,7 @@
 		}
 	}
 	float? tabIndex;
-	[Parameter]
+	[Parameter] public
 	float? TabIndex {
 		get => isInitialized ? (float?)DevExpress.Ui.DxPivotInterop.GetTabIndex(dxTarget).Result : tabIndex;
 		set {
@@ -291,7 +291,7 @@
 		}
 	}
 	bool? visible;
-	[Parameter]
+	[Parameter] public
 	bool? Visible {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxPivotInterop.GetVisible(dxTarget).Result : visible;
 		set {
@@ -303,7 +303,7 @@
 		}
 	}
 	object bindingOptions;
-	[Parameter]
+	[Parameter] public
 	object BindingOptions {
 		get => isInitialized ? DevExpress.Ui.DxPivotInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
 		set {
@@ -315,7 +315,7 @@
 		}
 	}
 	object elementAttr;
-	[Parameter]
+	[Parameter] public
 	object ElementAttr {
 		get => isInitialized ? DevExpress.Ui.DxPivotInterop.GetElementAttr(dxTarget).Result : elementAttr;
 		set {
@@ -327,7 +327,7 @@
 		}
 	}
 	object height;
-	[Parameter]
+	[Parameter] public
 	object Height {
 		get => isInitialized ? DevExpress.Ui.DxPivotInterop.GetHeight(dxTarget).Result : height;
 		set {
@@ -339,7 +339,7 @@
 		}
 	}
 	bool? rtlEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? RtlEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxPivotInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
 		set {
@@ -351,7 +351,7 @@
 		}
 	}
 	object width;
-	[Parameter]
+	[Parameter] public
 	object Width {
 		get => isInitialized ? DevExpress.Ui.DxPivotInterop.GetWidth(dxTarget).Result : width;
 		set {
@@ -363,55 +363,55 @@
 		}
 	}
 	bool? onItemClickEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnItemClickEnabled {
 		get => onItemClickEnabled;
 		set => this.onItemClickEnabled = value;
 	}
 	bool? onItemContextMenuEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnItemContextMenuEnabled {
 		get => onItemContextMenuEnabled;
 		set => this.onItemContextMenuEnabled = value;
 	}
 	bool? onItemHoldEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnItemHoldEnabled {
 		get => onItemHoldEnabled;
 		set => this.onItemHoldEnabled = value;
 	}
 	bool? onItemRenderedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnItemRenderedEnabled {
 		get => onItemRenderedEnabled;
 		set => this.onItemRenderedEnabled = value;
 	}
 	bool? onSelectionChangedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnSelectionChangedEnabled {
 		get => onSelectionChangedEnabled;
 		set => this.onSelectionChangedEnabled = value;
 	}
 	bool? onContentReadyEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnContentReadyEnabled {
 		get => onContentReadyEnabled;
 		set => this.onContentReadyEnabled = value;
 	}
 	bool? onDisposingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnDisposingEnabled {
 		get => onDisposingEnabled;
 		set => this.onDisposingEnabled = value;
 	}
 	bool? onOptionChangedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnOptionChangedEnabled {
 		get => onOptionChangedEnabled;
 		set => this.onOptionChangedEnabled = value;
 	}
 	bool? onInitializedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnInitializedEnabled {
 		get => onInitializedEnabled;
 		set => this.onInitializedEnabled = value;
@@ -428,63 +428,63 @@
 		DevExpress.Ui.DxPivotInterop.OptionChanged += DxPivot_OptionChanged;
 		DevExpress.Ui.DxPivotInterop.Initialized += DxPivot_Initialized;
 	}
-	[Parameter]
+	[Parameter] public
 	Action ItemClick { get; set; }
 	void DxPivot_ItemClick(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ItemClick?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action ItemContextMenu { get; set; }
 	void DxPivot_ItemContextMenu(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ItemContextMenu?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action ItemHold { get; set; }
 	void DxPivot_ItemHold(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ItemHold?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action ItemRendered { get; set; }
 	void DxPivot_ItemRendered(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ItemRendered?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action SelectionChanged { get; set; }
 	void DxPivot_SelectionChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			SelectionChanged?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action ContentReady { get; set; }
 	void DxPivot_ContentReady(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ContentReady?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Disposing { get; set; }
 	void DxPivot_Disposing(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Disposing?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action OptionChanged { get; set; }
 	void DxPivot_OptionChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			OptionChanged?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Initialized { get; set; }
 	void DxPivot_Initialized(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {

@@ -39,7 +39,7 @@
 		return DevExpress.Ui.DxScrollViewInterop.Init(dxTarget, options);
 	}
 	string pulledDownText;
-	[Parameter]
+	[Parameter] public
 	string PulledDownText {
 		get => isInitialized ? (string)DevExpress.Ui.DxScrollViewInterop.GetPulledDownText(dxTarget).Result : pulledDownText;
 		set {
@@ -51,7 +51,7 @@
 		}
 	}
 	string pullingDownText;
-	[Parameter]
+	[Parameter] public
 	string PullingDownText {
 		get => isInitialized ? (string)DevExpress.Ui.DxScrollViewInterop.GetPullingDownText(dxTarget).Result : pullingDownText;
 		set {
@@ -63,7 +63,7 @@
 		}
 	}
 	string reachBottomText;
-	[Parameter]
+	[Parameter] public
 	string ReachBottomText {
 		get => isInitialized ? (string)DevExpress.Ui.DxScrollViewInterop.GetReachBottomText(dxTarget).Result : reachBottomText;
 		set {
@@ -75,7 +75,7 @@
 		}
 	}
 	string refreshingText;
-	[Parameter]
+	[Parameter] public
 	string RefreshingText {
 		get => isInitialized ? (string)DevExpress.Ui.DxScrollViewInterop.GetRefreshingText(dxTarget).Result : refreshingText;
 		set {
@@ -87,7 +87,7 @@
 		}
 	}
 	bool? bounceEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? BounceEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxScrollViewInterop.GetBounceEnabled(dxTarget).Result : bounceEnabled;
 		set {
@@ -99,7 +99,7 @@
 		}
 	}
 	string direction;
-	[Parameter]
+	[Parameter] public
 	string Direction {
 		get => isInitialized ? (string)DevExpress.Ui.DxScrollViewInterop.GetDirection(dxTarget).Result : direction;
 		set {
@@ -111,7 +111,7 @@
 		}
 	}
 	bool? disabled;
-	[Parameter]
+	[Parameter] public
 	bool? Disabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxScrollViewInterop.GetDisabled(dxTarget).Result : disabled;
 		set {
@@ -123,7 +123,7 @@
 		}
 	}
 	bool? scrollByContent;
-	[Parameter]
+	[Parameter] public
 	bool? ScrollByContent {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxScrollViewInterop.GetScrollByContent(dxTarget).Result : scrollByContent;
 		set {
@@ -135,7 +135,7 @@
 		}
 	}
 	bool? scrollByThumb;
-	[Parameter]
+	[Parameter] public
 	bool? ScrollByThumb {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxScrollViewInterop.GetScrollByThumb(dxTarget).Result : scrollByThumb;
 		set {
@@ -147,7 +147,7 @@
 		}
 	}
 	string showScrollbar;
-	[Parameter]
+	[Parameter] public
 	string ShowScrollbar {
 		get => isInitialized ? (string)DevExpress.Ui.DxScrollViewInterop.GetShowScrollbar(dxTarget).Result : showScrollbar;
 		set {
@@ -159,7 +159,7 @@
 		}
 	}
 	bool? useNative;
-	[Parameter]
+	[Parameter] public
 	bool? UseNative {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxScrollViewInterop.GetUseNative(dxTarget).Result : useNative;
 		set {
@@ -171,7 +171,7 @@
 		}
 	}
 	object bindingOptions;
-	[Parameter]
+	[Parameter] public
 	object BindingOptions {
 		get => isInitialized ? DevExpress.Ui.DxScrollViewInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
 		set {
@@ -183,7 +183,7 @@
 		}
 	}
 	object elementAttr;
-	[Parameter]
+	[Parameter] public
 	object ElementAttr {
 		get => isInitialized ? DevExpress.Ui.DxScrollViewInterop.GetElementAttr(dxTarget).Result : elementAttr;
 		set {
@@ -195,7 +195,7 @@
 		}
 	}
 	object height;
-	[Parameter]
+	[Parameter] public
 	object Height {
 		get => isInitialized ? DevExpress.Ui.DxScrollViewInterop.GetHeight(dxTarget).Result : height;
 		set {
@@ -207,7 +207,7 @@
 		}
 	}
 	bool? rtlEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? RtlEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxScrollViewInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
 		set {
@@ -219,7 +219,7 @@
 		}
 	}
 	object width;
-	[Parameter]
+	[Parameter] public
 	object Width {
 		get => isInitialized ? DevExpress.Ui.DxScrollViewInterop.GetWidth(dxTarget).Result : width;
 		set {
@@ -231,43 +231,43 @@
 		}
 	}
 	bool? onPullDownEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnPullDownEnabled {
 		get => onPullDownEnabled;
 		set => this.onPullDownEnabled = value;
 	}
 	bool? onReachBottomEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnReachBottomEnabled {
 		get => onReachBottomEnabled;
 		set => this.onReachBottomEnabled = value;
 	}
 	bool? onScrollEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnScrollEnabled {
 		get => onScrollEnabled;
 		set => this.onScrollEnabled = value;
 	}
 	bool? onUpdatedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnUpdatedEnabled {
 		get => onUpdatedEnabled;
 		set => this.onUpdatedEnabled = value;
 	}
 	bool? onDisposingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnDisposingEnabled {
 		get => onDisposingEnabled;
 		set => this.onDisposingEnabled = value;
 	}
 	bool? onOptionChangedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnOptionChangedEnabled {
 		get => onOptionChangedEnabled;
 		set => this.onOptionChangedEnabled = value;
 	}
 	bool? onInitializedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnInitializedEnabled {
 		get => onInitializedEnabled;
 		set => this.onInitializedEnabled = value;
@@ -282,49 +282,49 @@
 		DevExpress.Ui.DxScrollViewInterop.OptionChanged += DxScrollView_OptionChanged;
 		DevExpress.Ui.DxScrollViewInterop.Initialized += DxScrollView_Initialized;
 	}
-	[Parameter]
+	[Parameter] public
 	Action PullDown { get; set; }
 	void DxScrollView_PullDown(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			PullDown?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action ReachBottom { get; set; }
 	void DxScrollView_ReachBottom(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ReachBottom?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Scroll { get; set; }
 	void DxScrollView_Scroll(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Scroll?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Updated { get; set; }
 	void DxScrollView_Updated(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Updated?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Disposing { get; set; }
 	void DxScrollView_Disposing(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Disposing?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action OptionChanged { get; set; }
 	void DxScrollView_OptionChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			OptionChanged?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Initialized { get; set; }
 	void DxScrollView_Initialized(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {

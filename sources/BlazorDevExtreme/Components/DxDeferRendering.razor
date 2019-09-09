@@ -39,7 +39,7 @@
 		return DevExpress.Ui.DxDeferRenderingInterop.Init(dxTarget, options);
 	}
 	object animation;
-	[Parameter]
+	[Parameter] public
 	object Animation {
 		get => isInitialized ? DevExpress.Ui.DxDeferRenderingInterop.GetAnimation(dxTarget).Result : animation;
 		set {
@@ -51,7 +51,7 @@
 		}
 	}
 	object renderWhen;
-	[Parameter]
+	[Parameter] public
 	object RenderWhen {
 		get => isInitialized ? DevExpress.Ui.DxDeferRenderingInterop.GetRenderWhen(dxTarget).Result : renderWhen;
 		set {
@@ -63,7 +63,7 @@
 		}
 	}
 	bool? showLoadIndicator;
-	[Parameter]
+	[Parameter] public
 	bool? ShowLoadIndicator {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxDeferRenderingInterop.GetShowLoadIndicator(dxTarget).Result : showLoadIndicator;
 		set {
@@ -75,7 +75,7 @@
 		}
 	}
 	string staggerItemSelector;
-	[Parameter]
+	[Parameter] public
 	string StaggerItemSelector {
 		get => isInitialized ? (string)DevExpress.Ui.DxDeferRenderingInterop.GetStaggerItemSelector(dxTarget).Result : staggerItemSelector;
 		set {
@@ -87,7 +87,7 @@
 		}
 	}
 	string accessKey;
-	[Parameter]
+	[Parameter] public
 	string AccessKey {
 		get => isInitialized ? (string)DevExpress.Ui.DxDeferRenderingInterop.GetAccessKey(dxTarget).Result : accessKey;
 		set {
@@ -99,7 +99,7 @@
 		}
 	}
 	bool? activeStateEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? ActiveStateEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxDeferRenderingInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
 		set {
@@ -111,7 +111,7 @@
 		}
 	}
 	bool? disabled;
-	[Parameter]
+	[Parameter] public
 	bool? Disabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxDeferRenderingInterop.GetDisabled(dxTarget).Result : disabled;
 		set {
@@ -123,7 +123,7 @@
 		}
 	}
 	bool? focusStateEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? FocusStateEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxDeferRenderingInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
 		set {
@@ -135,7 +135,7 @@
 		}
 	}
 	string hint;
-	[Parameter]
+	[Parameter] public
 	string Hint {
 		get => isInitialized ? (string)DevExpress.Ui.DxDeferRenderingInterop.GetHint(dxTarget).Result : hint;
 		set {
@@ -147,7 +147,7 @@
 		}
 	}
 	bool? hoverStateEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? HoverStateEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxDeferRenderingInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
 		set {
@@ -159,7 +159,7 @@
 		}
 	}
 	float? tabIndex;
-	[Parameter]
+	[Parameter] public
 	float? TabIndex {
 		get => isInitialized ? (float?)DevExpress.Ui.DxDeferRenderingInterop.GetTabIndex(dxTarget).Result : tabIndex;
 		set {
@@ -171,7 +171,7 @@
 		}
 	}
 	bool? visible;
-	[Parameter]
+	[Parameter] public
 	bool? Visible {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxDeferRenderingInterop.GetVisible(dxTarget).Result : visible;
 		set {
@@ -183,7 +183,7 @@
 		}
 	}
 	object bindingOptions;
-	[Parameter]
+	[Parameter] public
 	object BindingOptions {
 		get => isInitialized ? DevExpress.Ui.DxDeferRenderingInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
 		set {
@@ -195,7 +195,7 @@
 		}
 	}
 	object elementAttr;
-	[Parameter]
+	[Parameter] public
 	object ElementAttr {
 		get => isInitialized ? DevExpress.Ui.DxDeferRenderingInterop.GetElementAttr(dxTarget).Result : elementAttr;
 		set {
@@ -207,7 +207,7 @@
 		}
 	}
 	object height;
-	[Parameter]
+	[Parameter] public
 	object Height {
 		get => isInitialized ? DevExpress.Ui.DxDeferRenderingInterop.GetHeight(dxTarget).Result : height;
 		set {
@@ -219,7 +219,7 @@
 		}
 	}
 	bool? rtlEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? RtlEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxDeferRenderingInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
 		set {
@@ -231,7 +231,7 @@
 		}
 	}
 	object width;
-	[Parameter]
+	[Parameter] public
 	object Width {
 		get => isInitialized ? DevExpress.Ui.DxDeferRenderingInterop.GetWidth(dxTarget).Result : width;
 		set {
@@ -243,37 +243,37 @@
 		}
 	}
 	bool? onRenderedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnRenderedEnabled {
 		get => onRenderedEnabled;
 		set => this.onRenderedEnabled = value;
 	}
 	bool? onShownEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnShownEnabled {
 		get => onShownEnabled;
 		set => this.onShownEnabled = value;
 	}
 	bool? onContentReadyEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnContentReadyEnabled {
 		get => onContentReadyEnabled;
 		set => this.onContentReadyEnabled = value;
 	}
 	bool? onDisposingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnDisposingEnabled {
 		get => onDisposingEnabled;
 		set => this.onDisposingEnabled = value;
 	}
 	bool? onOptionChangedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnOptionChangedEnabled {
 		get => onOptionChangedEnabled;
 		set => this.onOptionChangedEnabled = value;
 	}
 	bool? onInitializedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnInitializedEnabled {
 		get => onInitializedEnabled;
 		set => this.onInitializedEnabled = value;
@@ -287,42 +287,42 @@
 		DevExpress.Ui.DxDeferRenderingInterop.OptionChanged += DxDeferRendering_OptionChanged;
 		DevExpress.Ui.DxDeferRenderingInterop.Initialized += DxDeferRendering_Initialized;
 	}
-	[Parameter]
+	[Parameter] public
 	Action Rendered { get; set; }
 	void DxDeferRendering_Rendered(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Rendered?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Shown { get; set; }
 	void DxDeferRendering_Shown(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Shown?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action ContentReady { get; set; }
 	void DxDeferRendering_ContentReady(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ContentReady?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Disposing { get; set; }
 	void DxDeferRendering_Disposing(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Disposing?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action OptionChanged { get; set; }
 	void DxDeferRendering_OptionChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			OptionChanged?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Initialized { get; set; }
 	void DxDeferRendering_Initialized(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {

@@ -62,7 +62,7 @@
 		return DevExpress.Ui.DxPivotGridInterop.Init(dxTarget, options);
 	}
 	bool? allowExpandAll;
-	[Parameter]
+	[Parameter] public
 	bool? AllowExpandAll {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxPivotGridInterop.GetAllowExpandAll(dxTarget).Result : allowExpandAll;
 		set {
@@ -74,7 +74,7 @@
 		}
 	}
 	bool? allowFiltering;
-	[Parameter]
+	[Parameter] public
 	bool? AllowFiltering {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxPivotGridInterop.GetAllowFiltering(dxTarget).Result : allowFiltering;
 		set {
@@ -86,7 +86,7 @@
 		}
 	}
 	bool? allowSorting;
-	[Parameter]
+	[Parameter] public
 	bool? AllowSorting {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxPivotGridInterop.GetAllowSorting(dxTarget).Result : allowSorting;
 		set {
@@ -98,7 +98,7 @@
 		}
 	}
 	bool? allowSortingBySummary;
-	[Parameter]
+	[Parameter] public
 	bool? AllowSortingBySummary {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxPivotGridInterop.GetAllowSortingBySummary(dxTarget).Result : allowSortingBySummary;
 		set {
@@ -110,7 +110,7 @@
 		}
 	}
 	string dataFieldArea;
-	[Parameter]
+	[Parameter] public
 	string DataFieldArea {
 		get => isInitialized ? (string)DevExpress.Ui.DxPivotGridInterop.GetDataFieldArea(dxTarget).Result : dataFieldArea;
 		set {
@@ -122,7 +122,7 @@
 		}
 	}
 	object dataSource;
-	[Parameter]
+	[Parameter] public
 	object DataSource {
 		get => isInitialized ? DevExpress.Ui.DxPivotGridInterop.GetDataSource(dxTarget).Result : dataSource;
 		set {
@@ -134,7 +134,7 @@
 		}
 	}
 	object export;
-	[Parameter]
+	[Parameter] public
 	object Export {
 		get => isInitialized ? DevExpress.Ui.DxPivotGridInterop.GetExport(dxTarget).Result : export;
 		set {
@@ -146,7 +146,7 @@
 		}
 	}
 	object fieldChooser;
-	[Parameter]
+	[Parameter] public
 	object FieldChooser {
 		get => isInitialized ? DevExpress.Ui.DxPivotGridInterop.GetFieldChooser(dxTarget).Result : fieldChooser;
 		set {
@@ -158,7 +158,7 @@
 		}
 	}
 	object fieldPanel;
-	[Parameter]
+	[Parameter] public
 	object FieldPanel {
 		get => isInitialized ? DevExpress.Ui.DxPivotGridInterop.GetFieldPanel(dxTarget).Result : fieldPanel;
 		set {
@@ -170,7 +170,7 @@
 		}
 	}
 	object headerFilter;
-	[Parameter]
+	[Parameter] public
 	object HeaderFilter {
 		get => isInitialized ? DevExpress.Ui.DxPivotGridInterop.GetHeaderFilter(dxTarget).Result : headerFilter;
 		set {
@@ -182,7 +182,7 @@
 		}
 	}
 	bool? hideEmptySummaryCells;
-	[Parameter]
+	[Parameter] public
 	bool? HideEmptySummaryCells {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxPivotGridInterop.GetHideEmptySummaryCells(dxTarget).Result : hideEmptySummaryCells;
 		set {
@@ -194,7 +194,7 @@
 		}
 	}
 	object loadPanel;
-	[Parameter]
+	[Parameter] public
 	object LoadPanel {
 		get => isInitialized ? DevExpress.Ui.DxPivotGridInterop.GetLoadPanel(dxTarget).Result : loadPanel;
 		set {
@@ -206,7 +206,7 @@
 		}
 	}
 	string rowHeaderLayout;
-	[Parameter]
+	[Parameter] public
 	string RowHeaderLayout {
 		get => isInitialized ? (string)DevExpress.Ui.DxPivotGridInterop.GetRowHeaderLayout(dxTarget).Result : rowHeaderLayout;
 		set {
@@ -218,7 +218,7 @@
 		}
 	}
 	object scrolling;
-	[Parameter]
+	[Parameter] public
 	object Scrolling {
 		get => isInitialized ? DevExpress.Ui.DxPivotGridInterop.GetScrolling(dxTarget).Result : scrolling;
 		set {
@@ -230,7 +230,7 @@
 		}
 	}
 	bool? showBorders;
-	[Parameter]
+	[Parameter] public
 	bool? ShowBorders {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxPivotGridInterop.GetShowBorders(dxTarget).Result : showBorders;
 		set {
@@ -242,7 +242,7 @@
 		}
 	}
 	bool? showColumnGrandTotals;
-	[Parameter]
+	[Parameter] public
 	bool? ShowColumnGrandTotals {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxPivotGridInterop.GetShowColumnGrandTotals(dxTarget).Result : showColumnGrandTotals;
 		set {
@@ -254,7 +254,7 @@
 		}
 	}
 	bool? showColumnTotals;
-	[Parameter]
+	[Parameter] public
 	bool? ShowColumnTotals {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxPivotGridInterop.GetShowColumnTotals(dxTarget).Result : showColumnTotals;
 		set {
@@ -266,7 +266,7 @@
 		}
 	}
 	bool? showRowGrandTotals;
-	[Parameter]
+	[Parameter] public
 	bool? ShowRowGrandTotals {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxPivotGridInterop.GetShowRowGrandTotals(dxTarget).Result : showRowGrandTotals;
 		set {
@@ -278,7 +278,7 @@
 		}
 	}
 	bool? showRowTotals;
-	[Parameter]
+	[Parameter] public
 	bool? ShowRowTotals {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxPivotGridInterop.GetShowRowTotals(dxTarget).Result : showRowTotals;
 		set {
@@ -290,7 +290,7 @@
 		}
 	}
 	string showTotalsPrior;
-	[Parameter]
+	[Parameter] public
 	string ShowTotalsPrior {
 		get => isInitialized ? (string)DevExpress.Ui.DxPivotGridInterop.GetShowTotalsPrior(dxTarget).Result : showTotalsPrior;
 		set {
@@ -302,7 +302,7 @@
 		}
 	}
 	object stateStoring;
-	[Parameter]
+	[Parameter] public
 	object StateStoring {
 		get => isInitialized ? DevExpress.Ui.DxPivotGridInterop.GetStateStoring(dxTarget).Result : stateStoring;
 		set {
@@ -314,7 +314,7 @@
 		}
 	}
 	object texts;
-	[Parameter]
+	[Parameter] public
 	object Texts {
 		get => isInitialized ? DevExpress.Ui.DxPivotGridInterop.GetTexts(dxTarget).Result : texts;
 		set {
@@ -326,7 +326,7 @@
 		}
 	}
 	bool? wordWrapEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? WordWrapEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxPivotGridInterop.GetWordWrapEnabled(dxTarget).Result : wordWrapEnabled;
 		set {
@@ -338,7 +338,7 @@
 		}
 	}
 	string accessKey;
-	[Parameter]
+	[Parameter] public
 	string AccessKey {
 		get => isInitialized ? (string)DevExpress.Ui.DxPivotGridInterop.GetAccessKey(dxTarget).Result : accessKey;
 		set {
@@ -350,7 +350,7 @@
 		}
 	}
 	bool? activeStateEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? ActiveStateEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxPivotGridInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
 		set {
@@ -362,7 +362,7 @@
 		}
 	}
 	bool? disabled;
-	[Parameter]
+	[Parameter] public
 	bool? Disabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxPivotGridInterop.GetDisabled(dxTarget).Result : disabled;
 		set {
@@ -374,7 +374,7 @@
 		}
 	}
 	bool? focusStateEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? FocusStateEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxPivotGridInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
 		set {
@@ -386,7 +386,7 @@
 		}
 	}
 	string hint;
-	[Parameter]
+	[Parameter] public
 	string Hint {
 		get => isInitialized ? (string)DevExpress.Ui.DxPivotGridInterop.GetHint(dxTarget).Result : hint;
 		set {
@@ -398,7 +398,7 @@
 		}
 	}
 	bool? hoverStateEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? HoverStateEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxPivotGridInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
 		set {
@@ -410,7 +410,7 @@
 		}
 	}
 	float? tabIndex;
-	[Parameter]
+	[Parameter] public
 	float? TabIndex {
 		get => isInitialized ? (float?)DevExpress.Ui.DxPivotGridInterop.GetTabIndex(dxTarget).Result : tabIndex;
 		set {
@@ -422,7 +422,7 @@
 		}
 	}
 	bool? visible;
-	[Parameter]
+	[Parameter] public
 	bool? Visible {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxPivotGridInterop.GetVisible(dxTarget).Result : visible;
 		set {
@@ -434,7 +434,7 @@
 		}
 	}
 	object bindingOptions;
-	[Parameter]
+	[Parameter] public
 	object BindingOptions {
 		get => isInitialized ? DevExpress.Ui.DxPivotGridInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
 		set {
@@ -446,7 +446,7 @@
 		}
 	}
 	object elementAttr;
-	[Parameter]
+	[Parameter] public
 	object ElementAttr {
 		get => isInitialized ? DevExpress.Ui.DxPivotGridInterop.GetElementAttr(dxTarget).Result : elementAttr;
 		set {
@@ -458,7 +458,7 @@
 		}
 	}
 	object height;
-	[Parameter]
+	[Parameter] public
 	object Height {
 		get => isInitialized ? DevExpress.Ui.DxPivotGridInterop.GetHeight(dxTarget).Result : height;
 		set {
@@ -470,7 +470,7 @@
 		}
 	}
 	bool? rtlEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? RtlEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxPivotGridInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
 		set {
@@ -482,7 +482,7 @@
 		}
 	}
 	object width;
-	[Parameter]
+	[Parameter] public
 	object Width {
 		get => isInitialized ? DevExpress.Ui.DxPivotGridInterop.GetWidth(dxTarget).Result : width;
 		set {
@@ -494,61 +494,61 @@
 		}
 	}
 	bool? onCellClickEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnCellClickEnabled {
 		get => onCellClickEnabled;
 		set => this.onCellClickEnabled = value;
 	}
 	bool? onCellPreparedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnCellPreparedEnabled {
 		get => onCellPreparedEnabled;
 		set => this.onCellPreparedEnabled = value;
 	}
 	bool? onContextMenuPreparingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnContextMenuPreparingEnabled {
 		get => onContextMenuPreparingEnabled;
 		set => this.onContextMenuPreparingEnabled = value;
 	}
 	bool? onExportedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnExportedEnabled {
 		get => onExportedEnabled;
 		set => this.onExportedEnabled = value;
 	}
 	bool? onExportingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnExportingEnabled {
 		get => onExportingEnabled;
 		set => this.onExportingEnabled = value;
 	}
 	bool? onFileSavingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnFileSavingEnabled {
 		get => onFileSavingEnabled;
 		set => this.onFileSavingEnabled = value;
 	}
 	bool? onContentReadyEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnContentReadyEnabled {
 		get => onContentReadyEnabled;
 		set => this.onContentReadyEnabled = value;
 	}
 	bool? onDisposingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnDisposingEnabled {
 		get => onDisposingEnabled;
 		set => this.onDisposingEnabled = value;
 	}
 	bool? onOptionChangedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnOptionChangedEnabled {
 		get => onOptionChangedEnabled;
 		set => this.onOptionChangedEnabled = value;
 	}
 	bool? onInitializedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnInitializedEnabled {
 		get => onInitializedEnabled;
 		set => this.onInitializedEnabled = value;
@@ -566,70 +566,70 @@
 		DevExpress.Ui.DxPivotGridInterop.OptionChanged += DxPivotGrid_OptionChanged;
 		DevExpress.Ui.DxPivotGridInterop.Initialized += DxPivotGrid_Initialized;
 	}
-	[Parameter]
+	[Parameter] public
 	Action CellClick { get; set; }
 	void DxPivotGrid_CellClick(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			CellClick?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action CellPrepared { get; set; }
 	void DxPivotGrid_CellPrepared(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			CellPrepared?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action ContextMenuPreparing { get; set; }
 	void DxPivotGrid_ContextMenuPreparing(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ContextMenuPreparing?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Exported { get; set; }
 	void DxPivotGrid_Exported(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Exported?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Exporting { get; set; }
 	void DxPivotGrid_Exporting(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Exporting?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action FileSaving { get; set; }
 	void DxPivotGrid_FileSaving(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			FileSaving?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action ContentReady { get; set; }
 	void DxPivotGrid_ContentReady(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ContentReady?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Disposing { get; set; }
 	void DxPivotGrid_Disposing(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Disposing?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action OptionChanged { get; set; }
 	void DxPivotGrid_OptionChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			OptionChanged?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Initialized { get; set; }
 	void DxPivotGrid_Initialized(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {

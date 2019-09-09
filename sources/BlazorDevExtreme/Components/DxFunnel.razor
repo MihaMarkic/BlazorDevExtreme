@@ -59,7 +59,7 @@
 		return DevExpress.Viz.DxFunnelInterop.Init(dxTarget, options);
 	}
 	object adaptiveLayout;
-	[Parameter]
+	[Parameter] public
 	object AdaptiveLayout {
 		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetAdaptiveLayout(dxTarget).Result : adaptiveLayout;
 		set {
@@ -71,7 +71,7 @@
 		}
 	}
 	string algorithm;
-	[Parameter]
+	[Parameter] public
 	string Algorithm {
 		get => isInitialized ? (string)DevExpress.Viz.DxFunnelInterop.GetAlgorithm(dxTarget).Result : algorithm;
 		set {
@@ -83,7 +83,7 @@
 		}
 	}
 	string argumentField;
-	[Parameter]
+	[Parameter] public
 	string ArgumentField {
 		get => isInitialized ? (string)DevExpress.Viz.DxFunnelInterop.GetArgumentField(dxTarget).Result : argumentField;
 		set {
@@ -95,7 +95,7 @@
 		}
 	}
 	string colorField;
-	[Parameter]
+	[Parameter] public
 	string ColorField {
 		get => isInitialized ? (string)DevExpress.Viz.DxFunnelInterop.GetColorField(dxTarget).Result : colorField;
 		set {
@@ -107,7 +107,7 @@
 		}
 	}
 	object dataSource;
-	[Parameter]
+	[Parameter] public
 	object DataSource {
 		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetDataSource(dxTarget).Result : dataSource;
 		set {
@@ -119,7 +119,7 @@
 		}
 	}
 	bool? hoverEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? HoverEnabled {
 		get => isInitialized ? (bool?)DevExpress.Viz.DxFunnelInterop.GetHoverEnabled(dxTarget).Result : hoverEnabled;
 		set {
@@ -131,7 +131,7 @@
 		}
 	}
 	bool? inverted;
-	[Parameter]
+	[Parameter] public
 	bool? Inverted {
 		get => isInitialized ? (bool?)DevExpress.Viz.DxFunnelInterop.GetInverted(dxTarget).Result : inverted;
 		set {
@@ -143,7 +143,7 @@
 		}
 	}
 	object item;
-	[Parameter]
+	[Parameter] public
 	object Item {
 		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetItem(dxTarget).Result : item;
 		set {
@@ -155,7 +155,7 @@
 		}
 	}
 	object label;
-	[Parameter]
+	[Parameter] public
 	object Label {
 		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetLabel(dxTarget).Result : label;
 		set {
@@ -167,7 +167,7 @@
 		}
 	}
 	object legend;
-	[Parameter]
+	[Parameter] public
 	object Legend {
 		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetLegend(dxTarget).Result : legend;
 		set {
@@ -179,7 +179,7 @@
 		}
 	}
 	float? neckHeight;
-	[Parameter]
+	[Parameter] public
 	float? NeckHeight {
 		get => isInitialized ? (float?)DevExpress.Viz.DxFunnelInterop.GetNeckHeight(dxTarget).Result : neckHeight;
 		set {
@@ -191,7 +191,7 @@
 		}
 	}
 	float? neckWidth;
-	[Parameter]
+	[Parameter] public
 	float? NeckWidth {
 		get => isInitialized ? (float?)DevExpress.Viz.DxFunnelInterop.GetNeckWidth(dxTarget).Result : neckWidth;
 		set {
@@ -203,7 +203,7 @@
 		}
 	}
 	object palette;
-	[Parameter]
+	[Parameter] public
 	object Palette {
 		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetPalette(dxTarget).Result : palette;
 		set {
@@ -215,7 +215,7 @@
 		}
 	}
 	string paletteExtensionMode;
-	[Parameter]
+	[Parameter] public
 	string PaletteExtensionMode {
 		get => isInitialized ? (string)DevExpress.Viz.DxFunnelInterop.GetPaletteExtensionMode(dxTarget).Result : paletteExtensionMode;
 		set {
@@ -227,7 +227,7 @@
 		}
 	}
 	string selectionMode;
-	[Parameter]
+	[Parameter] public
 	string SelectionMode {
 		get => isInitialized ? (string)DevExpress.Viz.DxFunnelInterop.GetSelectionMode(dxTarget).Result : selectionMode;
 		set {
@@ -239,7 +239,7 @@
 		}
 	}
 	bool? sortData;
-	[Parameter]
+	[Parameter] public
 	bool? SortData {
 		get => isInitialized ? (bool?)DevExpress.Viz.DxFunnelInterop.GetSortData(dxTarget).Result : sortData;
 		set {
@@ -251,7 +251,7 @@
 		}
 	}
 	object tooltip;
-	[Parameter]
+	[Parameter] public
 	object Tooltip {
 		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetTooltip(dxTarget).Result : tooltip;
 		set {
@@ -263,7 +263,7 @@
 		}
 	}
 	string valueField;
-	[Parameter]
+	[Parameter] public
 	string ValueField {
 		get => isInitialized ? (string)DevExpress.Viz.DxFunnelInterop.GetValueField(dxTarget).Result : valueField;
 		set {
@@ -275,7 +275,7 @@
 		}
 	}
 	object export;
-	[Parameter]
+	[Parameter] public
 	object Export {
 		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetExport(dxTarget).Result : export;
 		set {
@@ -287,7 +287,7 @@
 		}
 	}
 	object loadingIndicator;
-	[Parameter]
+	[Parameter] public
 	object LoadingIndicator {
 		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetLoadingIndicator(dxTarget).Result : loadingIndicator;
 		set {
@@ -299,7 +299,7 @@
 		}
 	}
 	object margin;
-	[Parameter]
+	[Parameter] public
 	object Margin {
 		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetMargin(dxTarget).Result : margin;
 		set {
@@ -311,7 +311,7 @@
 		}
 	}
 	bool? pathModified;
-	[Parameter]
+	[Parameter] public
 	bool? PathModified {
 		get => isInitialized ? (bool?)DevExpress.Viz.DxFunnelInterop.GetPathModified(dxTarget).Result : pathModified;
 		set {
@@ -323,7 +323,7 @@
 		}
 	}
 	bool? redrawOnResize;
-	[Parameter]
+	[Parameter] public
 	bool? RedrawOnResize {
 		get => isInitialized ? (bool?)DevExpress.Viz.DxFunnelInterop.GetRedrawOnResize(dxTarget).Result : redrawOnResize;
 		set {
@@ -335,7 +335,7 @@
 		}
 	}
 	bool? rtlEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? RtlEnabled {
 		get => isInitialized ? (bool?)DevExpress.Viz.DxFunnelInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
 		set {
@@ -347,7 +347,7 @@
 		}
 	}
 	object size;
-	[Parameter]
+	[Parameter] public
 	object Size {
 		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetSize(dxTarget).Result : size;
 		set {
@@ -359,7 +359,7 @@
 		}
 	}
 	string theme;
-	[Parameter]
+	[Parameter] public
 	string Theme {
 		get => isInitialized ? (string)DevExpress.Viz.DxFunnelInterop.GetTheme(dxTarget).Result : theme;
 		set {
@@ -371,7 +371,7 @@
 		}
 	}
 	object title;
-	[Parameter]
+	[Parameter] public
 	object Title {
 		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetTitle(dxTarget).Result : title;
 		set {
@@ -383,7 +383,7 @@
 		}
 	}
 	object bindingOptions;
-	[Parameter]
+	[Parameter] public
 	object BindingOptions {
 		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
 		set {
@@ -395,7 +395,7 @@
 		}
 	}
 	object elementAttr;
-	[Parameter]
+	[Parameter] public
 	object ElementAttr {
 		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetElementAttr(dxTarget).Result : elementAttr;
 		set {
@@ -407,7 +407,7 @@
 		}
 	}
 	object height;
-	[Parameter]
+	[Parameter] public
 	object Height {
 		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetHeight(dxTarget).Result : height;
 		set {
@@ -419,7 +419,7 @@
 		}
 	}
 	object width;
-	[Parameter]
+	[Parameter] public
 	object Width {
 		get => isInitialized ? DevExpress.Viz.DxFunnelInterop.GetWidth(dxTarget).Result : width;
 		set {
@@ -431,73 +431,73 @@
 		}
 	}
 	bool? onHoverChangedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnHoverChangedEnabled {
 		get => onHoverChangedEnabled;
 		set => this.onHoverChangedEnabled = value;
 	}
 	bool? onItemClickEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnItemClickEnabled {
 		get => onItemClickEnabled;
 		set => this.onItemClickEnabled = value;
 	}
 	bool? onLegendClickEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnLegendClickEnabled {
 		get => onLegendClickEnabled;
 		set => this.onLegendClickEnabled = value;
 	}
 	bool? onSelectionChangedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnSelectionChangedEnabled {
 		get => onSelectionChangedEnabled;
 		set => this.onSelectionChangedEnabled = value;
 	}
 	bool? onDrawnEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnDrawnEnabled {
 		get => onDrawnEnabled;
 		set => this.onDrawnEnabled = value;
 	}
 	bool? onExportedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnExportedEnabled {
 		get => onExportedEnabled;
 		set => this.onExportedEnabled = value;
 	}
 	bool? onExportingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnExportingEnabled {
 		get => onExportingEnabled;
 		set => this.onExportingEnabled = value;
 	}
 	bool? onFileSavingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnFileSavingEnabled {
 		get => onFileSavingEnabled;
 		set => this.onFileSavingEnabled = value;
 	}
 	bool? onIncidentOccurredEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnIncidentOccurredEnabled {
 		get => onIncidentOccurredEnabled;
 		set => this.onIncidentOccurredEnabled = value;
 	}
 	bool? onDisposingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnDisposingEnabled {
 		get => onDisposingEnabled;
 		set => this.onDisposingEnabled = value;
 	}
 	bool? onOptionChangedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnOptionChangedEnabled {
 		get => onOptionChangedEnabled;
 		set => this.onOptionChangedEnabled = value;
 	}
 	bool? onInitializedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnInitializedEnabled {
 		get => onInitializedEnabled;
 		set => this.onInitializedEnabled = value;
@@ -517,84 +517,84 @@
 		DevExpress.Viz.DxFunnelInterop.OptionChanged += DxFunnel_OptionChanged;
 		DevExpress.Viz.DxFunnelInterop.Initialized += DxFunnel_Initialized;
 	}
-	[Parameter]
+	[Parameter] public
 	Action HoverChanged { get; set; }
 	void DxFunnel_HoverChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			HoverChanged?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action ItemClick { get; set; }
 	void DxFunnel_ItemClick(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ItemClick?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action LegendClick { get; set; }
 	void DxFunnel_LegendClick(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			LegendClick?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action SelectionChanged { get; set; }
 	void DxFunnel_SelectionChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			SelectionChanged?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Drawn { get; set; }
 	void DxFunnel_Drawn(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Drawn?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Exported { get; set; }
 	void DxFunnel_Exported(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Exported?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Exporting { get; set; }
 	void DxFunnel_Exporting(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Exporting?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action FileSaving { get; set; }
 	void DxFunnel_FileSaving(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			FileSaving?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action IncidentOccurred { get; set; }
 	void DxFunnel_IncidentOccurred(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			IncidentOccurred?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Disposing { get; set; }
 	void DxFunnel_Disposing(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Disposing?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action OptionChanged { get; set; }
 	void DxFunnel_OptionChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			OptionChanged?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Initialized { get; set; }
 	void DxFunnel_Initialized(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {

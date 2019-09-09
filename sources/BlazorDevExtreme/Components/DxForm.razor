@@ -55,7 +55,7 @@
 		return DevExpress.Ui.DxFormInterop.Init(dxTarget, options);
 	}
 	bool? alignItemLabels;
-	[Parameter]
+	[Parameter] public
 	bool? AlignItemLabels {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxFormInterop.GetAlignItemLabels(dxTarget).Result : alignItemLabels;
 		set {
@@ -67,7 +67,7 @@
 		}
 	}
 	bool? alignItemLabelsInAllGroups;
-	[Parameter]
+	[Parameter] public
 	bool? AlignItemLabelsInAllGroups {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxFormInterop.GetAlignItemLabelsInAllGroups(dxTarget).Result : alignItemLabelsInAllGroups;
 		set {
@@ -79,7 +79,7 @@
 		}
 	}
 	object colCount;
-	[Parameter]
+	[Parameter] public
 	object ColCount {
 		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetColCount(dxTarget).Result : colCount;
 		set {
@@ -91,7 +91,7 @@
 		}
 	}
 	object colCountByScreen;
-	[Parameter]
+	[Parameter] public
 	object ColCountByScreen {
 		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetColCountByScreen(dxTarget).Result : colCountByScreen;
 		set {
@@ -103,7 +103,7 @@
 		}
 	}
 	object customizeItem;
-	[Parameter]
+	[Parameter] public
 	object CustomizeItem {
 		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetCustomizeItem(dxTarget).Result : customizeItem;
 		set {
@@ -115,7 +115,7 @@
 		}
 	}
 	object formData;
-	[Parameter]
+	[Parameter] public
 	object FormData {
 		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetFormData(dxTarget).Result : formData;
 		set {
@@ -127,7 +127,7 @@
 		}
 	}
 	object items;
-	[Parameter]
+	[Parameter] public
 	object Items {
 		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetItems(dxTarget).Result : items;
 		set {
@@ -139,7 +139,7 @@
 		}
 	}
 	string labelLocation;
-	[Parameter]
+	[Parameter] public
 	string LabelLocation {
 		get => isInitialized ? (string)DevExpress.Ui.DxFormInterop.GetLabelLocation(dxTarget).Result : labelLocation;
 		set {
@@ -151,7 +151,7 @@
 		}
 	}
 	float? minColWidth;
-	[Parameter]
+	[Parameter] public
 	float? MinColWidth {
 		get => isInitialized ? (float?)DevExpress.Ui.DxFormInterop.GetMinColWidth(dxTarget).Result : minColWidth;
 		set {
@@ -163,7 +163,7 @@
 		}
 	}
 	string optionalMark;
-	[Parameter]
+	[Parameter] public
 	string OptionalMark {
 		get => isInitialized ? (string)DevExpress.Ui.DxFormInterop.GetOptionalMark(dxTarget).Result : optionalMark;
 		set {
@@ -175,7 +175,7 @@
 		}
 	}
 	bool? readOnly;
-	[Parameter]
+	[Parameter] public
 	bool? ReadOnly {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxFormInterop.GetReadOnly(dxTarget).Result : readOnly;
 		set {
@@ -187,7 +187,7 @@
 		}
 	}
 	string requiredMark;
-	[Parameter]
+	[Parameter] public
 	string RequiredMark {
 		get => isInitialized ? (string)DevExpress.Ui.DxFormInterop.GetRequiredMark(dxTarget).Result : requiredMark;
 		set {
@@ -199,7 +199,7 @@
 		}
 	}
 	string requiredMessage;
-	[Parameter]
+	[Parameter] public
 	string RequiredMessage {
 		get => isInitialized ? (string)DevExpress.Ui.DxFormInterop.GetRequiredMessage(dxTarget).Result : requiredMessage;
 		set {
@@ -211,7 +211,7 @@
 		}
 	}
 	object screenByWidth;
-	[Parameter]
+	[Parameter] public
 	object ScreenByWidth {
 		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetScreenByWidth(dxTarget).Result : screenByWidth;
 		set {
@@ -223,7 +223,7 @@
 		}
 	}
 	bool? scrollingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? ScrollingEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxFormInterop.GetScrollingEnabled(dxTarget).Result : scrollingEnabled;
 		set {
@@ -235,7 +235,7 @@
 		}
 	}
 	bool? showColonAfterLabel;
-	[Parameter]
+	[Parameter] public
 	bool? ShowColonAfterLabel {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxFormInterop.GetShowColonAfterLabel(dxTarget).Result : showColonAfterLabel;
 		set {
@@ -247,7 +247,7 @@
 		}
 	}
 	bool? showOptionalMark;
-	[Parameter]
+	[Parameter] public
 	bool? ShowOptionalMark {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxFormInterop.GetShowOptionalMark(dxTarget).Result : showOptionalMark;
 		set {
@@ -259,7 +259,7 @@
 		}
 	}
 	bool? showRequiredMark;
-	[Parameter]
+	[Parameter] public
 	bool? ShowRequiredMark {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxFormInterop.GetShowRequiredMark(dxTarget).Result : showRequiredMark;
 		set {
@@ -271,7 +271,7 @@
 		}
 	}
 	bool? showValidationSummary;
-	[Parameter]
+	[Parameter] public
 	bool? ShowValidationSummary {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxFormInterop.GetShowValidationSummary(dxTarget).Result : showValidationSummary;
 		set {
@@ -283,7 +283,7 @@
 		}
 	}
 	string validationGroup;
-	[Parameter]
+	[Parameter] public
 	string ValidationGroup {
 		get => isInitialized ? (string)DevExpress.Ui.DxFormInterop.GetValidationGroup(dxTarget).Result : validationGroup;
 		set {
@@ -295,7 +295,7 @@
 		}
 	}
 	string accessKey;
-	[Parameter]
+	[Parameter] public
 	string AccessKey {
 		get => isInitialized ? (string)DevExpress.Ui.DxFormInterop.GetAccessKey(dxTarget).Result : accessKey;
 		set {
@@ -307,7 +307,7 @@
 		}
 	}
 	bool? activeStateEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? ActiveStateEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxFormInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
 		set {
@@ -319,7 +319,7 @@
 		}
 	}
 	bool? disabled;
-	[Parameter]
+	[Parameter] public
 	bool? Disabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxFormInterop.GetDisabled(dxTarget).Result : disabled;
 		set {
@@ -331,7 +331,7 @@
 		}
 	}
 	bool? focusStateEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? FocusStateEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxFormInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
 		set {
@@ -343,7 +343,7 @@
 		}
 	}
 	string hint;
-	[Parameter]
+	[Parameter] public
 	string Hint {
 		get => isInitialized ? (string)DevExpress.Ui.DxFormInterop.GetHint(dxTarget).Result : hint;
 		set {
@@ -355,7 +355,7 @@
 		}
 	}
 	bool? hoverStateEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? HoverStateEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxFormInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
 		set {
@@ -367,7 +367,7 @@
 		}
 	}
 	float? tabIndex;
-	[Parameter]
+	[Parameter] public
 	float? TabIndex {
 		get => isInitialized ? (float?)DevExpress.Ui.DxFormInterop.GetTabIndex(dxTarget).Result : tabIndex;
 		set {
@@ -379,7 +379,7 @@
 		}
 	}
 	bool? visible;
-	[Parameter]
+	[Parameter] public
 	bool? Visible {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxFormInterop.GetVisible(dxTarget).Result : visible;
 		set {
@@ -391,7 +391,7 @@
 		}
 	}
 	object bindingOptions;
-	[Parameter]
+	[Parameter] public
 	object BindingOptions {
 		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
 		set {
@@ -403,7 +403,7 @@
 		}
 	}
 	object elementAttr;
-	[Parameter]
+	[Parameter] public
 	object ElementAttr {
 		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetElementAttr(dxTarget).Result : elementAttr;
 		set {
@@ -415,7 +415,7 @@
 		}
 	}
 	object height;
-	[Parameter]
+	[Parameter] public
 	object Height {
 		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetHeight(dxTarget).Result : height;
 		set {
@@ -427,7 +427,7 @@
 		}
 	}
 	bool? rtlEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? RtlEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxFormInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
 		set {
@@ -439,7 +439,7 @@
 		}
 	}
 	object width;
-	[Parameter]
+	[Parameter] public
 	object Width {
 		get => isInitialized ? DevExpress.Ui.DxFormInterop.GetWidth(dxTarget).Result : width;
 		set {
@@ -451,37 +451,37 @@
 		}
 	}
 	bool? onEditorEnterKeyEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnEditorEnterKeyEnabled {
 		get => onEditorEnterKeyEnabled;
 		set => this.onEditorEnterKeyEnabled = value;
 	}
 	bool? onFieldDataChangedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnFieldDataChangedEnabled {
 		get => onFieldDataChangedEnabled;
 		set => this.onFieldDataChangedEnabled = value;
 	}
 	bool? onContentReadyEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnContentReadyEnabled {
 		get => onContentReadyEnabled;
 		set => this.onContentReadyEnabled = value;
 	}
 	bool? onDisposingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnDisposingEnabled {
 		get => onDisposingEnabled;
 		set => this.onDisposingEnabled = value;
 	}
 	bool? onOptionChangedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnOptionChangedEnabled {
 		get => onOptionChangedEnabled;
 		set => this.onOptionChangedEnabled = value;
 	}
 	bool? onInitializedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnInitializedEnabled {
 		get => onInitializedEnabled;
 		set => this.onInitializedEnabled = value;
@@ -495,42 +495,42 @@
 		DevExpress.Ui.DxFormInterop.OptionChanged += DxForm_OptionChanged;
 		DevExpress.Ui.DxFormInterop.Initialized += DxForm_Initialized;
 	}
-	[Parameter]
+	[Parameter] public
 	Action EditorEnterKey { get; set; }
 	void DxForm_EditorEnterKey(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			EditorEnterKey?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action FieldDataChanged { get; set; }
 	void DxForm_FieldDataChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			FieldDataChanged?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action ContentReady { get; set; }
 	void DxForm_ContentReady(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ContentReady?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Disposing { get; set; }
 	void DxForm_Disposing(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Disposing?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action OptionChanged { get; set; }
 	void DxForm_OptionChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			OptionChanged?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Initialized { get; set; }
 	void DxForm_Initialized(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {

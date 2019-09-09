@@ -65,7 +65,7 @@
 		return DevExpress.Ui.DxTooltipInterop.Init(dxTarget, options);
 	}
 	object animation;
-	[Parameter]
+	[Parameter] public
 	object Animation {
 		get => isInitialized ? DevExpress.Ui.DxTooltipInterop.GetAnimation(dxTarget).Result : animation;
 		set {
@@ -77,7 +77,7 @@
 		}
 	}
 	object closeOnOutsideClick;
-	[Parameter]
+	[Parameter] public
 	object CloseOnOutsideClick {
 		get => isInitialized ? DevExpress.Ui.DxTooltipInterop.GetCloseOnOutsideClick(dxTarget).Result : closeOnOutsideClick;
 		set {
@@ -89,7 +89,7 @@
 		}
 	}
 	object height;
-	[Parameter]
+	[Parameter] public
 	object Height {
 		get => isInitialized ? DevExpress.Ui.DxTooltipInterop.GetHeight(dxTarget).Result : height;
 		set {
@@ -101,7 +101,7 @@
 		}
 	}
 	object hideEvent;
-	[Parameter]
+	[Parameter] public
 	object HideEvent {
 		get => isInitialized ? DevExpress.Ui.DxTooltipInterop.GetHideEvent(dxTarget).Result : hideEvent;
 		set {
@@ -113,7 +113,7 @@
 		}
 	}
 	object position;
-	[Parameter]
+	[Parameter] public
 	object Position {
 		get => isInitialized ? DevExpress.Ui.DxTooltipInterop.GetPosition(dxTarget).Result : position;
 		set {
@@ -125,7 +125,7 @@
 		}
 	}
 	bool? shading;
-	[Parameter]
+	[Parameter] public
 	bool? Shading {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxTooltipInterop.GetShading(dxTarget).Result : shading;
 		set {
@@ -137,7 +137,7 @@
 		}
 	}
 	object showEvent;
-	[Parameter]
+	[Parameter] public
 	object ShowEvent {
 		get => isInitialized ? DevExpress.Ui.DxTooltipInterop.GetShowEvent(dxTarget).Result : showEvent;
 		set {
@@ -149,7 +149,7 @@
 		}
 	}
 	bool? showTitle;
-	[Parameter]
+	[Parameter] public
 	bool? ShowTitle {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxTooltipInterop.GetShowTitle(dxTarget).Result : showTitle;
 		set {
@@ -161,7 +161,7 @@
 		}
 	}
 	object target;
-	[Parameter]
+	[Parameter] public
 	object Target {
 		get => isInitialized ? DevExpress.Ui.DxTooltipInterop.GetTarget(dxTarget).Result : target;
 		set {
@@ -173,7 +173,7 @@
 		}
 	}
 	object width;
-	[Parameter]
+	[Parameter] public
 	object Width {
 		get => isInitialized ? DevExpress.Ui.DxTooltipInterop.GetWidth(dxTarget).Result : width;
 		set {
@@ -185,7 +185,7 @@
 		}
 	}
 	object container;
-	[Parameter]
+	[Parameter] public
 	object Container {
 		get => isInitialized ? DevExpress.Ui.DxTooltipInterop.GetContainer(dxTarget).Result : container;
 		set {
@@ -197,7 +197,7 @@
 		}
 	}
 	bool? dragEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? DragEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxTooltipInterop.GetDragEnabled(dxTarget).Result : dragEnabled;
 		set {
@@ -209,7 +209,7 @@
 		}
 	}
 	bool? focusStateEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? FocusStateEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxTooltipInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
 		set {
@@ -221,7 +221,7 @@
 		}
 	}
 	bool? fullScreen;
-	[Parameter]
+	[Parameter] public
 	bool? FullScreen {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxTooltipInterop.GetFullScreen(dxTarget).Result : fullScreen;
 		set {
@@ -233,7 +233,7 @@
 		}
 	}
 	bool? resizeEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? ResizeEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxTooltipInterop.GetResizeEnabled(dxTarget).Result : resizeEnabled;
 		set {
@@ -245,7 +245,7 @@
 		}
 	}
 	bool? showCloseButton;
-	[Parameter]
+	[Parameter] public
 	bool? ShowCloseButton {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxTooltipInterop.GetShowCloseButton(dxTarget).Result : showCloseButton;
 		set {
@@ -257,7 +257,7 @@
 		}
 	}
 	string title;
-	[Parameter]
+	[Parameter] public
 	string Title {
 		get => isInitialized ? (string)DevExpress.Ui.DxTooltipInterop.GetTitle(dxTarget).Result : title;
 		set {
@@ -269,7 +269,7 @@
 		}
 	}
 	object titleTemplate;
-	[Parameter]
+	[Parameter] public
 	object TitleTemplate {
 		get => isInitialized ? DevExpress.Ui.DxTooltipInterop.GetTitleTemplate(dxTarget).Result : titleTemplate;
 		set {
@@ -281,7 +281,7 @@
 		}
 	}
 	object toolbarItems;
-	[Parameter]
+	[Parameter] public
 	object ToolbarItems {
 		get => isInitialized ? DevExpress.Ui.DxTooltipInterop.GetToolbarItems(dxTarget).Result : toolbarItems;
 		set {
@@ -293,7 +293,7 @@
 		}
 	}
 	bool? closeOnBackButton;
-	[Parameter]
+	[Parameter] public
 	bool? CloseOnBackButton {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxTooltipInterop.GetCloseOnBackButton(dxTarget).Result : closeOnBackButton;
 		set {
@@ -305,7 +305,7 @@
 		}
 	}
 	object contentTemplate;
-	[Parameter]
+	[Parameter] public
 	object ContentTemplate {
 		get => isInitialized ? DevExpress.Ui.DxTooltipInterop.GetContentTemplate(dxTarget).Result : contentTemplate;
 		set {
@@ -317,7 +317,7 @@
 		}
 	}
 	bool? deferRendering;
-	[Parameter]
+	[Parameter] public
 	bool? DeferRendering {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxTooltipInterop.GetDeferRendering(dxTarget).Result : deferRendering;
 		set {
@@ -329,7 +329,7 @@
 		}
 	}
 	object maxHeight;
-	[Parameter]
+	[Parameter] public
 	object MaxHeight {
 		get => isInitialized ? DevExpress.Ui.DxTooltipInterop.GetMaxHeight(dxTarget).Result : maxHeight;
 		set {
@@ -341,7 +341,7 @@
 		}
 	}
 	object maxWidth;
-	[Parameter]
+	[Parameter] public
 	object MaxWidth {
 		get => isInitialized ? DevExpress.Ui.DxTooltipInterop.GetMaxWidth(dxTarget).Result : maxWidth;
 		set {
@@ -353,7 +353,7 @@
 		}
 	}
 	object minHeight;
-	[Parameter]
+	[Parameter] public
 	object MinHeight {
 		get => isInitialized ? DevExpress.Ui.DxTooltipInterop.GetMinHeight(dxTarget).Result : minHeight;
 		set {
@@ -365,7 +365,7 @@
 		}
 	}
 	object minWidth;
-	[Parameter]
+	[Parameter] public
 	object MinWidth {
 		get => isInitialized ? DevExpress.Ui.DxTooltipInterop.GetMinWidth(dxTarget).Result : minWidth;
 		set {
@@ -377,7 +377,7 @@
 		}
 	}
 	string shadingColor;
-	[Parameter]
+	[Parameter] public
 	string ShadingColor {
 		get => isInitialized ? (string)DevExpress.Ui.DxTooltipInterop.GetShadingColor(dxTarget).Result : shadingColor;
 		set {
@@ -389,7 +389,7 @@
 		}
 	}
 	bool? visible;
-	[Parameter]
+	[Parameter] public
 	bool? Visible {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxTooltipInterop.GetVisible(dxTarget).Result : visible;
 		set {
@@ -401,7 +401,7 @@
 		}
 	}
 	string accessKey;
-	[Parameter]
+	[Parameter] public
 	string AccessKey {
 		get => isInitialized ? (string)DevExpress.Ui.DxTooltipInterop.GetAccessKey(dxTarget).Result : accessKey;
 		set {
@@ -413,7 +413,7 @@
 		}
 	}
 	bool? activeStateEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? ActiveStateEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxTooltipInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
 		set {
@@ -425,7 +425,7 @@
 		}
 	}
 	bool? disabled;
-	[Parameter]
+	[Parameter] public
 	bool? Disabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxTooltipInterop.GetDisabled(dxTarget).Result : disabled;
 		set {
@@ -437,7 +437,7 @@
 		}
 	}
 	string hint;
-	[Parameter]
+	[Parameter] public
 	string Hint {
 		get => isInitialized ? (string)DevExpress.Ui.DxTooltipInterop.GetHint(dxTarget).Result : hint;
 		set {
@@ -449,7 +449,7 @@
 		}
 	}
 	bool? hoverStateEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? HoverStateEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxTooltipInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
 		set {
@@ -461,7 +461,7 @@
 		}
 	}
 	float? tabIndex;
-	[Parameter]
+	[Parameter] public
 	float? TabIndex {
 		get => isInitialized ? (float?)DevExpress.Ui.DxTooltipInterop.GetTabIndex(dxTarget).Result : tabIndex;
 		set {
@@ -473,7 +473,7 @@
 		}
 	}
 	object bindingOptions;
-	[Parameter]
+	[Parameter] public
 	object BindingOptions {
 		get => isInitialized ? DevExpress.Ui.DxTooltipInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
 		set {
@@ -485,7 +485,7 @@
 		}
 	}
 	object elementAttr;
-	[Parameter]
+	[Parameter] public
 	object ElementAttr {
 		get => isInitialized ? DevExpress.Ui.DxTooltipInterop.GetElementAttr(dxTarget).Result : elementAttr;
 		set {
@@ -497,7 +497,7 @@
 		}
 	}
 	bool? rtlEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? RtlEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxTooltipInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
 		set {
@@ -509,73 +509,73 @@
 		}
 	}
 	bool? onResizeEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnResizeEnabled {
 		get => onResizeEnabled;
 		set => this.onResizeEnabled = value;
 	}
 	bool? onResizeEndEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnResizeEndEnabled {
 		get => onResizeEndEnabled;
 		set => this.onResizeEndEnabled = value;
 	}
 	bool? onResizeStartEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnResizeStartEnabled {
 		get => onResizeStartEnabled;
 		set => this.onResizeStartEnabled = value;
 	}
 	bool? onTitleRenderedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnTitleRenderedEnabled {
 		get => onTitleRenderedEnabled;
 		set => this.onTitleRenderedEnabled = value;
 	}
 	bool? onHiddenEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnHiddenEnabled {
 		get => onHiddenEnabled;
 		set => this.onHiddenEnabled = value;
 	}
 	bool? onHidingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnHidingEnabled {
 		get => onHidingEnabled;
 		set => this.onHidingEnabled = value;
 	}
 	bool? onShowingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnShowingEnabled {
 		get => onShowingEnabled;
 		set => this.onShowingEnabled = value;
 	}
 	bool? onShownEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnShownEnabled {
 		get => onShownEnabled;
 		set => this.onShownEnabled = value;
 	}
 	bool? onContentReadyEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnContentReadyEnabled {
 		get => onContentReadyEnabled;
 		set => this.onContentReadyEnabled = value;
 	}
 	bool? onDisposingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnDisposingEnabled {
 		get => onDisposingEnabled;
 		set => this.onDisposingEnabled = value;
 	}
 	bool? onOptionChangedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnOptionChangedEnabled {
 		get => onOptionChangedEnabled;
 		set => this.onOptionChangedEnabled = value;
 	}
 	bool? onInitializedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnInitializedEnabled {
 		get => onInitializedEnabled;
 		set => this.onInitializedEnabled = value;
@@ -595,84 +595,84 @@
 		DevExpress.Ui.DxTooltipInterop.OptionChanged += DxTooltip_OptionChanged;
 		DevExpress.Ui.DxTooltipInterop.Initialized += DxTooltip_Initialized;
 	}
-	[Parameter]
+	[Parameter] public
 	Action Resize { get; set; }
 	void DxTooltip_Resize(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Resize?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action ResizeEnd { get; set; }
 	void DxTooltip_ResizeEnd(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ResizeEnd?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action ResizeStart { get; set; }
 	void DxTooltip_ResizeStart(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ResizeStart?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action TitleRendered { get; set; }
 	void DxTooltip_TitleRendered(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			TitleRendered?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Hidden { get; set; }
 	void DxTooltip_Hidden(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Hidden?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Hiding { get; set; }
 	void DxTooltip_Hiding(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Hiding?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Showing { get; set; }
 	void DxTooltip_Showing(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Showing?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Shown { get; set; }
 	void DxTooltip_Shown(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Shown?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action ContentReady { get; set; }
 	void DxTooltip_ContentReady(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ContentReady?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Disposing { get; set; }
 	void DxTooltip_Disposing(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Disposing?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action OptionChanged { get; set; }
 	void DxTooltip_OptionChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			OptionChanged?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Initialized { get; set; }
 	void DxTooltip_Initialized(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {

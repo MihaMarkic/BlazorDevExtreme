@@ -77,7 +77,7 @@
 		return DevExpress.Ui.DxTreeViewInterop.Init(dxTarget, options);
 	}
 	bool? animationEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? AnimationEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxTreeViewInterop.GetAnimationEnabled(dxTarget).Result : animationEnabled;
 		set {
@@ -89,7 +89,7 @@
 		}
 	}
 	object createChildren;
-	[Parameter]
+	[Parameter] public
 	object CreateChildren {
 		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetCreateChildren(dxTarget).Result : createChildren;
 		set {
@@ -101,7 +101,7 @@
 		}
 	}
 	string dataStructure;
-	[Parameter]
+	[Parameter] public
 	string DataStructure {
 		get => isInitialized ? (string)DevExpress.Ui.DxTreeViewInterop.GetDataStructure(dxTarget).Result : dataStructure;
 		set {
@@ -113,7 +113,7 @@
 		}
 	}
 	bool? expandAllEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? ExpandAllEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxTreeViewInterop.GetExpandAllEnabled(dxTarget).Result : expandAllEnabled;
 		set {
@@ -125,7 +125,7 @@
 		}
 	}
 	object expandedExpr;
-	[Parameter]
+	[Parameter] public
 	object ExpandedExpr {
 		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetExpandedExpr(dxTarget).Result : expandedExpr;
 		set {
@@ -137,7 +137,7 @@
 		}
 	}
 	bool? expandNodesRecursive;
-	[Parameter]
+	[Parameter] public
 	bool? ExpandNodesRecursive {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxTreeViewInterop.GetExpandNodesRecursive(dxTarget).Result : expandNodesRecursive;
 		set {
@@ -149,7 +149,7 @@
 		}
 	}
 	object hasItemsExpr;
-	[Parameter]
+	[Parameter] public
 	object HasItemsExpr {
 		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetHasItemsExpr(dxTarget).Result : hasItemsExpr;
 		set {
@@ -161,7 +161,7 @@
 		}
 	}
 	object items;
-	[Parameter]
+	[Parameter] public
 	object Items {
 		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetItems(dxTarget).Result : items;
 		set {
@@ -173,7 +173,7 @@
 		}
 	}
 	object parentIdExpr;
-	[Parameter]
+	[Parameter] public
 	object ParentIdExpr {
 		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetParentIdExpr(dxTarget).Result : parentIdExpr;
 		set {
@@ -185,7 +185,7 @@
 		}
 	}
 	object rootValue;
-	[Parameter]
+	[Parameter] public
 	object RootValue {
 		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetRootValue(dxTarget).Result : rootValue;
 		set {
@@ -197,7 +197,7 @@
 		}
 	}
 	string scrollDirection;
-	[Parameter]
+	[Parameter] public
 	string ScrollDirection {
 		get => isInitialized ? (string)DevExpress.Ui.DxTreeViewInterop.GetScrollDirection(dxTarget).Result : scrollDirection;
 		set {
@@ -209,7 +209,7 @@
 		}
 	}
 	string selectAllText;
-	[Parameter]
+	[Parameter] public
 	string SelectAllText {
 		get => isInitialized ? (string)DevExpress.Ui.DxTreeViewInterop.GetSelectAllText(dxTarget).Result : selectAllText;
 		set {
@@ -221,7 +221,7 @@
 		}
 	}
 	bool? selectByClick;
-	[Parameter]
+	[Parameter] public
 	bool? SelectByClick {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxTreeViewInterop.GetSelectByClick(dxTarget).Result : selectByClick;
 		set {
@@ -233,7 +233,7 @@
 		}
 	}
 	string selectionMode;
-	[Parameter]
+	[Parameter] public
 	string SelectionMode {
 		get => isInitialized ? (string)DevExpress.Ui.DxTreeViewInterop.GetSelectionMode(dxTarget).Result : selectionMode;
 		set {
@@ -245,7 +245,7 @@
 		}
 	}
 	bool? selectNodesRecursive;
-	[Parameter]
+	[Parameter] public
 	bool? SelectNodesRecursive {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxTreeViewInterop.GetSelectNodesRecursive(dxTarget).Result : selectNodesRecursive;
 		set {
@@ -257,7 +257,7 @@
 		}
 	}
 	string showCheckBoxesMode;
-	[Parameter]
+	[Parameter] public
 	string ShowCheckBoxesMode {
 		get => isInitialized ? (string)DevExpress.Ui.DxTreeViewInterop.GetShowCheckBoxesMode(dxTarget).Result : showCheckBoxesMode;
 		set {
@@ -269,7 +269,7 @@
 		}
 	}
 	bool? virtualModeEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? VirtualModeEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxTreeViewInterop.GetVirtualModeEnabled(dxTarget).Result : virtualModeEnabled;
 		set {
@@ -281,7 +281,7 @@
 		}
 	}
 	object disabledExpr;
-	[Parameter]
+	[Parameter] public
 	object DisabledExpr {
 		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetDisabledExpr(dxTarget).Result : disabledExpr;
 		set {
@@ -293,7 +293,7 @@
 		}
 	}
 	object displayExpr;
-	[Parameter]
+	[Parameter] public
 	object DisplayExpr {
 		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetDisplayExpr(dxTarget).Result : displayExpr;
 		set {
@@ -305,7 +305,7 @@
 		}
 	}
 	bool? focusStateEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? FocusStateEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxTreeViewInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
 		set {
@@ -317,7 +317,7 @@
 		}
 	}
 	bool? hoverStateEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? HoverStateEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxTreeViewInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
 		set {
@@ -329,7 +329,7 @@
 		}
 	}
 	object itemsExpr;
-	[Parameter]
+	[Parameter] public
 	object ItemsExpr {
 		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetItemsExpr(dxTarget).Result : itemsExpr;
 		set {
@@ -341,7 +341,7 @@
 		}
 	}
 	object keyExpr;
-	[Parameter]
+	[Parameter] public
 	object KeyExpr {
 		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetKeyExpr(dxTarget).Result : keyExpr;
 		set {
@@ -353,7 +353,7 @@
 		}
 	}
 	object selectedExpr;
-	[Parameter]
+	[Parameter] public
 	object SelectedExpr {
 		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetSelectedExpr(dxTarget).Result : selectedExpr;
 		set {
@@ -365,7 +365,7 @@
 		}
 	}
 	object dataSource;
-	[Parameter]
+	[Parameter] public
 	object DataSource {
 		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetDataSource(dxTarget).Result : dataSource;
 		set {
@@ -377,7 +377,7 @@
 		}
 	}
 	float? itemHoldTimeout;
-	[Parameter]
+	[Parameter] public
 	float? ItemHoldTimeout {
 		get => isInitialized ? (float?)DevExpress.Ui.DxTreeViewInterop.GetItemHoldTimeout(dxTarget).Result : itemHoldTimeout;
 		set {
@@ -389,7 +389,7 @@
 		}
 	}
 	object itemTemplate;
-	[Parameter]
+	[Parameter] public
 	object ItemTemplate {
 		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetItemTemplate(dxTarget).Result : itemTemplate;
 		set {
@@ -401,7 +401,7 @@
 		}
 	}
 	string noDataText;
-	[Parameter]
+	[Parameter] public
 	string NoDataText {
 		get => isInitialized ? (string)DevExpress.Ui.DxTreeViewInterop.GetNoDataText(dxTarget).Result : noDataText;
 		set {
@@ -413,7 +413,7 @@
 		}
 	}
 	float? selectedIndex;
-	[Parameter]
+	[Parameter] public
 	float? SelectedIndex {
 		get => isInitialized ? (float?)DevExpress.Ui.DxTreeViewInterop.GetSelectedIndex(dxTarget).Result : selectedIndex;
 		set {
@@ -425,7 +425,7 @@
 		}
 	}
 	object selectedItem;
-	[Parameter]
+	[Parameter] public
 	object SelectedItem {
 		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetSelectedItem(dxTarget).Result : selectedItem;
 		set {
@@ -437,7 +437,7 @@
 		}
 	}
 	object selectedItemKeys;
-	[Parameter]
+	[Parameter] public
 	object SelectedItemKeys {
 		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetSelectedItemKeys(dxTarget).Result : selectedItemKeys;
 		set {
@@ -449,7 +449,7 @@
 		}
 	}
 	object selectedItems;
-	[Parameter]
+	[Parameter] public
 	object SelectedItems {
 		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetSelectedItems(dxTarget).Result : selectedItems;
 		set {
@@ -461,7 +461,7 @@
 		}
 	}
 	string accessKey;
-	[Parameter]
+	[Parameter] public
 	string AccessKey {
 		get => isInitialized ? (string)DevExpress.Ui.DxTreeViewInterop.GetAccessKey(dxTarget).Result : accessKey;
 		set {
@@ -473,7 +473,7 @@
 		}
 	}
 	bool? activeStateEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? ActiveStateEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxTreeViewInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
 		set {
@@ -485,7 +485,7 @@
 		}
 	}
 	bool? disabled;
-	[Parameter]
+	[Parameter] public
 	bool? Disabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxTreeViewInterop.GetDisabled(dxTarget).Result : disabled;
 		set {
@@ -497,7 +497,7 @@
 		}
 	}
 	string hint;
-	[Parameter]
+	[Parameter] public
 	string Hint {
 		get => isInitialized ? (string)DevExpress.Ui.DxTreeViewInterop.GetHint(dxTarget).Result : hint;
 		set {
@@ -509,7 +509,7 @@
 		}
 	}
 	float? tabIndex;
-	[Parameter]
+	[Parameter] public
 	float? TabIndex {
 		get => isInitialized ? (float?)DevExpress.Ui.DxTreeViewInterop.GetTabIndex(dxTarget).Result : tabIndex;
 		set {
@@ -521,7 +521,7 @@
 		}
 	}
 	bool? visible;
-	[Parameter]
+	[Parameter] public
 	bool? Visible {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxTreeViewInterop.GetVisible(dxTarget).Result : visible;
 		set {
@@ -533,7 +533,7 @@
 		}
 	}
 	object bindingOptions;
-	[Parameter]
+	[Parameter] public
 	object BindingOptions {
 		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
 		set {
@@ -545,7 +545,7 @@
 		}
 	}
 	object elementAttr;
-	[Parameter]
+	[Parameter] public
 	object ElementAttr {
 		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetElementAttr(dxTarget).Result : elementAttr;
 		set {
@@ -557,7 +557,7 @@
 		}
 	}
 	object height;
-	[Parameter]
+	[Parameter] public
 	object Height {
 		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetHeight(dxTarget).Result : height;
 		set {
@@ -569,7 +569,7 @@
 		}
 	}
 	bool? rtlEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? RtlEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxTreeViewInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
 		set {
@@ -581,7 +581,7 @@
 		}
 	}
 	object width;
-	[Parameter]
+	[Parameter] public
 	object Width {
 		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetWidth(dxTarget).Result : width;
 		set {
@@ -593,7 +593,7 @@
 		}
 	}
 	object searchEditorOptions;
-	[Parameter]
+	[Parameter] public
 	object SearchEditorOptions {
 		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetSearchEditorOptions(dxTarget).Result : searchEditorOptions;
 		set {
@@ -605,7 +605,7 @@
 		}
 	}
 	bool? searchEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? SearchEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxTreeViewInterop.GetSearchEnabled(dxTarget).Result : searchEnabled;
 		set {
@@ -617,7 +617,7 @@
 		}
 	}
 	object searchExpr;
-	[Parameter]
+	[Parameter] public
 	object SearchExpr {
 		get => isInitialized ? DevExpress.Ui.DxTreeViewInterop.GetSearchExpr(dxTarget).Result : searchExpr;
 		set {
@@ -629,7 +629,7 @@
 		}
 	}
 	string searchMode;
-	[Parameter]
+	[Parameter] public
 	string SearchMode {
 		get => isInitialized ? (string)DevExpress.Ui.DxTreeViewInterop.GetSearchMode(dxTarget).Result : searchMode;
 		set {
@@ -641,7 +641,7 @@
 		}
 	}
 	float? searchTimeout;
-	[Parameter]
+	[Parameter] public
 	float? SearchTimeout {
 		get => isInitialized ? (float?)DevExpress.Ui.DxTreeViewInterop.GetSearchTimeout(dxTarget).Result : searchTimeout;
 		set {
@@ -653,7 +653,7 @@
 		}
 	}
 	string searchValue;
-	[Parameter]
+	[Parameter] public
 	string SearchValue {
 		get => isInitialized ? (string)DevExpress.Ui.DxTreeViewInterop.GetSearchValue(dxTarget).Result : searchValue;
 		set {
@@ -665,73 +665,73 @@
 		}
 	}
 	bool? onItemClickEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnItemClickEnabled {
 		get => onItemClickEnabled;
 		set => this.onItemClickEnabled = value;
 	}
 	bool? onItemCollapsedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnItemCollapsedEnabled {
 		get => onItemCollapsedEnabled;
 		set => this.onItemCollapsedEnabled = value;
 	}
 	bool? onItemContextMenuEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnItemContextMenuEnabled {
 		get => onItemContextMenuEnabled;
 		set => this.onItemContextMenuEnabled = value;
 	}
 	bool? onItemExpandedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnItemExpandedEnabled {
 		get => onItemExpandedEnabled;
 		set => this.onItemExpandedEnabled = value;
 	}
 	bool? onItemHoldEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnItemHoldEnabled {
 		get => onItemHoldEnabled;
 		set => this.onItemHoldEnabled = value;
 	}
 	bool? onItemRenderedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnItemRenderedEnabled {
 		get => onItemRenderedEnabled;
 		set => this.onItemRenderedEnabled = value;
 	}
 	bool? onItemSelectionChangedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnItemSelectionChangedEnabled {
 		get => onItemSelectionChangedEnabled;
 		set => this.onItemSelectionChangedEnabled = value;
 	}
 	bool? onSelectionChangedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnSelectionChangedEnabled {
 		get => onSelectionChangedEnabled;
 		set => this.onSelectionChangedEnabled = value;
 	}
 	bool? onContentReadyEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnContentReadyEnabled {
 		get => onContentReadyEnabled;
 		set => this.onContentReadyEnabled = value;
 	}
 	bool? onDisposingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnDisposingEnabled {
 		get => onDisposingEnabled;
 		set => this.onDisposingEnabled = value;
 	}
 	bool? onOptionChangedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnOptionChangedEnabled {
 		get => onOptionChangedEnabled;
 		set => this.onOptionChangedEnabled = value;
 	}
 	bool? onInitializedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnInitializedEnabled {
 		get => onInitializedEnabled;
 		set => this.onInitializedEnabled = value;
@@ -751,84 +751,84 @@
 		DevExpress.Ui.DxTreeViewInterop.OptionChanged += DxTreeView_OptionChanged;
 		DevExpress.Ui.DxTreeViewInterop.Initialized += DxTreeView_Initialized;
 	}
-	[Parameter]
+	[Parameter] public
 	Action ItemClick { get; set; }
 	void DxTreeView_ItemClick(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ItemClick?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action ItemCollapsed { get; set; }
 	void DxTreeView_ItemCollapsed(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ItemCollapsed?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action ItemContextMenu { get; set; }
 	void DxTreeView_ItemContextMenu(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ItemContextMenu?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action ItemExpanded { get; set; }
 	void DxTreeView_ItemExpanded(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ItemExpanded?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action ItemHold { get; set; }
 	void DxTreeView_ItemHold(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ItemHold?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action ItemRendered { get; set; }
 	void DxTreeView_ItemRendered(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ItemRendered?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action ItemSelectionChanged { get; set; }
 	void DxTreeView_ItemSelectionChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ItemSelectionChanged?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action SelectionChanged { get; set; }
 	void DxTreeView_SelectionChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			SelectionChanged?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action ContentReady { get; set; }
 	void DxTreeView_ContentReady(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ContentReady?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Disposing { get; set; }
 	void DxTreeView_Disposing(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Disposing?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action OptionChanged { get; set; }
 	void DxTreeView_OptionChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			OptionChanged?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Initialized { get; set; }
 	void DxTreeView_Initialized(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {

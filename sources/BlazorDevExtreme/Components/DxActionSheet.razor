@@ -55,7 +55,7 @@
 		return DevExpress.Ui.DxActionSheetInterop.Init(dxTarget, options);
 	}
 	string cancelText;
-	[Parameter]
+	[Parameter] public
 	string CancelText {
 		get => isInitialized ? (string)DevExpress.Ui.DxActionSheetInterop.GetCancelText(dxTarget).Result : cancelText;
 		set {
@@ -67,7 +67,7 @@
 		}
 	}
 	bool? showCancelButton;
-	[Parameter]
+	[Parameter] public
 	bool? ShowCancelButton {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxActionSheetInterop.GetShowCancelButton(dxTarget).Result : showCancelButton;
 		set {
@@ -79,7 +79,7 @@
 		}
 	}
 	bool? showTitle;
-	[Parameter]
+	[Parameter] public
 	bool? ShowTitle {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxActionSheetInterop.GetShowTitle(dxTarget).Result : showTitle;
 		set {
@@ -91,7 +91,7 @@
 		}
 	}
 	object target;
-	[Parameter]
+	[Parameter] public
 	object Target {
 		get => isInitialized ? DevExpress.Ui.DxActionSheetInterop.GetTarget(dxTarget).Result : target;
 		set {
@@ -103,7 +103,7 @@
 		}
 	}
 	string title;
-	[Parameter]
+	[Parameter] public
 	string Title {
 		get => isInitialized ? (string)DevExpress.Ui.DxActionSheetInterop.GetTitle(dxTarget).Result : title;
 		set {
@@ -115,7 +115,7 @@
 		}
 	}
 	bool? usePopover;
-	[Parameter]
+	[Parameter] public
 	bool? UsePopover {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxActionSheetInterop.GetUsePopover(dxTarget).Result : usePopover;
 		set {
@@ -127,7 +127,7 @@
 		}
 	}
 	bool? visible;
-	[Parameter]
+	[Parameter] public
 	bool? Visible {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxActionSheetInterop.GetVisible(dxTarget).Result : visible;
 		set {
@@ -139,7 +139,7 @@
 		}
 	}
 	object dataSource;
-	[Parameter]
+	[Parameter] public
 	object DataSource {
 		get => isInitialized ? DevExpress.Ui.DxActionSheetInterop.GetDataSource(dxTarget).Result : dataSource;
 		set {
@@ -151,7 +151,7 @@
 		}
 	}
 	float? itemHoldTimeout;
-	[Parameter]
+	[Parameter] public
 	float? ItemHoldTimeout {
 		get => isInitialized ? (float?)DevExpress.Ui.DxActionSheetInterop.GetItemHoldTimeout(dxTarget).Result : itemHoldTimeout;
 		set {
@@ -163,7 +163,7 @@
 		}
 	}
 	object items;
-	[Parameter]
+	[Parameter] public
 	object Items {
 		get => isInitialized ? DevExpress.Ui.DxActionSheetInterop.GetItems(dxTarget).Result : items;
 		set {
@@ -175,7 +175,7 @@
 		}
 	}
 	object itemTemplate;
-	[Parameter]
+	[Parameter] public
 	object ItemTemplate {
 		get => isInitialized ? DevExpress.Ui.DxActionSheetInterop.GetItemTemplate(dxTarget).Result : itemTemplate;
 		set {
@@ -187,7 +187,7 @@
 		}
 	}
 	object keyExpr;
-	[Parameter]
+	[Parameter] public
 	object KeyExpr {
 		get => isInitialized ? DevExpress.Ui.DxActionSheetInterop.GetKeyExpr(dxTarget).Result : keyExpr;
 		set {
@@ -199,7 +199,7 @@
 		}
 	}
 	string noDataText;
-	[Parameter]
+	[Parameter] public
 	string NoDataText {
 		get => isInitialized ? (string)DevExpress.Ui.DxActionSheetInterop.GetNoDataText(dxTarget).Result : noDataText;
 		set {
@@ -211,7 +211,7 @@
 		}
 	}
 	float? selectedIndex;
-	[Parameter]
+	[Parameter] public
 	float? SelectedIndex {
 		get => isInitialized ? (float?)DevExpress.Ui.DxActionSheetInterop.GetSelectedIndex(dxTarget).Result : selectedIndex;
 		set {
@@ -223,7 +223,7 @@
 		}
 	}
 	object selectedItem;
-	[Parameter]
+	[Parameter] public
 	object SelectedItem {
 		get => isInitialized ? DevExpress.Ui.DxActionSheetInterop.GetSelectedItem(dxTarget).Result : selectedItem;
 		set {
@@ -235,7 +235,7 @@
 		}
 	}
 	object selectedItemKeys;
-	[Parameter]
+	[Parameter] public
 	object SelectedItemKeys {
 		get => isInitialized ? DevExpress.Ui.DxActionSheetInterop.GetSelectedItemKeys(dxTarget).Result : selectedItemKeys;
 		set {
@@ -247,7 +247,7 @@
 		}
 	}
 	object selectedItems;
-	[Parameter]
+	[Parameter] public
 	object SelectedItems {
 		get => isInitialized ? DevExpress.Ui.DxActionSheetInterop.GetSelectedItems(dxTarget).Result : selectedItems;
 		set {
@@ -259,7 +259,7 @@
 		}
 	}
 	string accessKey;
-	[Parameter]
+	[Parameter] public
 	string AccessKey {
 		get => isInitialized ? (string)DevExpress.Ui.DxActionSheetInterop.GetAccessKey(dxTarget).Result : accessKey;
 		set {
@@ -271,7 +271,7 @@
 		}
 	}
 	bool? activeStateEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? ActiveStateEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxActionSheetInterop.GetActiveStateEnabled(dxTarget).Result : activeStateEnabled;
 		set {
@@ -283,7 +283,7 @@
 		}
 	}
 	bool? disabled;
-	[Parameter]
+	[Parameter] public
 	bool? Disabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxActionSheetInterop.GetDisabled(dxTarget).Result : disabled;
 		set {
@@ -295,7 +295,7 @@
 		}
 	}
 	bool? focusStateEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? FocusStateEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxActionSheetInterop.GetFocusStateEnabled(dxTarget).Result : focusStateEnabled;
 		set {
@@ -307,7 +307,7 @@
 		}
 	}
 	string hint;
-	[Parameter]
+	[Parameter] public
 	string Hint {
 		get => isInitialized ? (string)DevExpress.Ui.DxActionSheetInterop.GetHint(dxTarget).Result : hint;
 		set {
@@ -319,7 +319,7 @@
 		}
 	}
 	bool? hoverStateEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? HoverStateEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxActionSheetInterop.GetHoverStateEnabled(dxTarget).Result : hoverStateEnabled;
 		set {
@@ -331,7 +331,7 @@
 		}
 	}
 	float? tabIndex;
-	[Parameter]
+	[Parameter] public
 	float? TabIndex {
 		get => isInitialized ? (float?)DevExpress.Ui.DxActionSheetInterop.GetTabIndex(dxTarget).Result : tabIndex;
 		set {
@@ -343,7 +343,7 @@
 		}
 	}
 	object bindingOptions;
-	[Parameter]
+	[Parameter] public
 	object BindingOptions {
 		get => isInitialized ? DevExpress.Ui.DxActionSheetInterop.GetBindingOptions(dxTarget).Result : bindingOptions;
 		set {
@@ -355,7 +355,7 @@
 		}
 	}
 	object elementAttr;
-	[Parameter]
+	[Parameter] public
 	object ElementAttr {
 		get => isInitialized ? DevExpress.Ui.DxActionSheetInterop.GetElementAttr(dxTarget).Result : elementAttr;
 		set {
@@ -367,7 +367,7 @@
 		}
 	}
 	object height;
-	[Parameter]
+	[Parameter] public
 	object Height {
 		get => isInitialized ? DevExpress.Ui.DxActionSheetInterop.GetHeight(dxTarget).Result : height;
 		set {
@@ -379,7 +379,7 @@
 		}
 	}
 	bool? rtlEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? RtlEnabled {
 		get => isInitialized ? (bool?)DevExpress.Ui.DxActionSheetInterop.GetRtlEnabled(dxTarget).Result : rtlEnabled;
 		set {
@@ -391,7 +391,7 @@
 		}
 	}
 	object width;
-	[Parameter]
+	[Parameter] public
 	object Width {
 		get => isInitialized ? DevExpress.Ui.DxActionSheetInterop.GetWidth(dxTarget).Result : width;
 		set {
@@ -403,61 +403,61 @@
 		}
 	}
 	bool? onCancelClickEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnCancelClickEnabled {
 		get => onCancelClickEnabled;
 		set => this.onCancelClickEnabled = value;
 	}
 	bool? onItemClickEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnItemClickEnabled {
 		get => onItemClickEnabled;
 		set => this.onItemClickEnabled = value;
 	}
 	bool? onItemContextMenuEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnItemContextMenuEnabled {
 		get => onItemContextMenuEnabled;
 		set => this.onItemContextMenuEnabled = value;
 	}
 	bool? onItemHoldEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnItemHoldEnabled {
 		get => onItemHoldEnabled;
 		set => this.onItemHoldEnabled = value;
 	}
 	bool? onItemRenderedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnItemRenderedEnabled {
 		get => onItemRenderedEnabled;
 		set => this.onItemRenderedEnabled = value;
 	}
 	bool? onSelectionChangedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnSelectionChangedEnabled {
 		get => onSelectionChangedEnabled;
 		set => this.onSelectionChangedEnabled = value;
 	}
 	bool? onContentReadyEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnContentReadyEnabled {
 		get => onContentReadyEnabled;
 		set => this.onContentReadyEnabled = value;
 	}
 	bool? onDisposingEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnDisposingEnabled {
 		get => onDisposingEnabled;
 		set => this.onDisposingEnabled = value;
 	}
 	bool? onOptionChangedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnOptionChangedEnabled {
 		get => onOptionChangedEnabled;
 		set => this.onOptionChangedEnabled = value;
 	}
 	bool? onInitializedEnabled;
-	[Parameter]
+	[Parameter] public
 	bool? OnInitializedEnabled {
 		get => onInitializedEnabled;
 		set => this.onInitializedEnabled = value;
@@ -475,70 +475,70 @@
 		DevExpress.Ui.DxActionSheetInterop.OptionChanged += DxActionSheet_OptionChanged;
 		DevExpress.Ui.DxActionSheetInterop.Initialized += DxActionSheet_Initialized;
 	}
-	[Parameter]
+	[Parameter] public
 	Action CancelClick { get; set; }
 	void DxActionSheet_CancelClick(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			CancelClick?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action ItemClick { get; set; }
 	void DxActionSheet_ItemClick(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ItemClick?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action ItemContextMenu { get; set; }
 	void DxActionSheet_ItemContextMenu(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ItemContextMenu?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action ItemHold { get; set; }
 	void DxActionSheet_ItemHold(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ItemHold?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action ItemRendered { get; set; }
 	void DxActionSheet_ItemRendered(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ItemRendered?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action SelectionChanged { get; set; }
 	void DxActionSheet_SelectionChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			SelectionChanged?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action ContentReady { get; set; }
 	void DxActionSheet_ContentReady(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			ContentReady?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Disposing { get; set; }
 	void DxActionSheet_Disposing(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			Disposing?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action OptionChanged { get; set; }
 	void DxActionSheet_OptionChanged(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {
 			OptionChanged?.Invoke();
 		}
 	}
-	[Parameter]
+	[Parameter] public
 	Action Initialized { get; set; }
 	void DxActionSheet_Initialized(object sender, JQueryEventArgs e) {
 		if (e.Identifier == Id) {

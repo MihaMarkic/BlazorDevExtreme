@@ -1,0 +1,23 @@
+﻿@using Objects
+@using Services
+@addTagHelper *, BlazorDevExtreme
+@page "/scheduler"
+@inject SchedulerDataService DataService
+
+<DxScheduler DataSource="@schedulerdata" Views="@schedulerviews" CurrentView="week" StartDayHour="8"></DxScheduler>
+
+@functions {
+
+bool loading = false;
+string[] schedulerviews = { "week", "month" };
+SchedulerData[] schedulerdata;
+
+
+protected override async Task OnInitAsync()
+{
+    schedulerdata = await DataService.GetDataAsync();
+}
+
+
+
+}
